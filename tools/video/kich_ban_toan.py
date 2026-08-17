@@ -13321,7 +13321,140 @@ def kb5_ma_tran_khuyen_mai(b):
     ]
 
 
+def kb5_mo_neo_chat_kho(b):
+    """L5·B39·M1 Chất khô không bay — hai phần trăm hai chủ, nối qua cầu chất khô."""
+    return [
+        _c('bia', 'Phơi thì nước bay, còn gì ở lại?', so_bai(b),
+           loi=['Phơi nho thì nước bay hơi. Nhưng có một thứ ở lại nguyên vẹn.']),
+        _c('de_toan', 'Đề bài',
+           de='100 kg nho tươi chứa 90% nước. Phơi thành nho khô còn 20% nước.\n'
+              'Nho khô nặng bao nhiêu?',
+           loi=['Một trăm ki lô nho tươi chứa chín mươi phần trăm nước. Phơi thành nho '
+                'khô còn hai mươi phần trăm nước.']),
+        _c('y_toan', 'Nước bay — CHẤT KHÔ ở lại nguyên vẹn',
+           'đó là mỏ neo đi xuyên cả hai tấm ảnh', buoc=1, soBuoc=3,
+           loi=['Nước bay đi, còn chất khô ở lại nguyên vẹn. Đó là mỏ neo đi xuyên cả '
+                'hai tấm ảnh.']),
+        _c('day_so', 'Tấm ảnh TƯƠI', so=['90', '10'], nhanHang='kg tươi',
+           chuPhu='nước 90   ·   chất khô 10.',
+           loi=['Tấm ảnh tươi. Nước chín mươi ki lô, chất khô mười ki lô.']),
+        _c('y_toan', 'Đọc phần trăm bên kia bằng PHẦN BÙ',
+           'nho khô 20% nước   →   chất khô = 100% − 20% = 80% khối KHÔ',
+           buoc=2, soBuoc=3,
+           loi=['Bên nho khô, nước hai mươi phần trăm thì chất khô chiếm tám mươi phần '
+                'trăm.',
+                'Nhưng tám mươi ấy là của khối khô, còn chín mươi kia là của khối tươi. '
+                'Hai chủ khác nhau.']),
+        _c('day_so', 'Tấm ảnh KHÔ', so=['2,5', '10'], nhanHang='kg khô',
+           chuPhu='Nước còn 2,5 — mà chất khô VẪN đúng 10.',
+           loi=['Tấm ảnh khô. Nước còn hai phẩy năm, mà chất khô vẫn đúng mười ki lô.']),
+        _c('y_toan', 'Nên chia chất khô cho phần trăm khô MỚI',
+           '10 : 80% = 12,5 kg      ·      nước bay = 100 − 12,5 = 87,5 kg',
+           buoc=3, soBuoc=3,
+           loi=['Nên lấy mười chia tám mươi phần trăm, được mười hai phẩy năm ki lô.',
+                'Nước bay đi tám mươi bảy phẩy năm ki lô.']),
+        _c('de_toan', 'Còn đường trừ thẳng thì sao',
+           de='"90% xuống 20% là hao 70%, nên còn 30 kg"',
+           loi=['Còn đường trừ thẳng thì sao. Chín mươi trừ hai mươi, hao bảy mươi phần '
+                'trăm, còn ba mươi ki lô.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='chất khô KHÔNG bay   —   hai con số % là của HAI CHỦ',
+           thay='thử 30 kg: chất khô phải là 24 kg, mà bên tươi chỉ có 10 — mọc từ đâu ra?',
+           loi=['Thử lại thì ba mươi ki lô ấy cần hai mươi tư ki lô chất khô.',
+                'Mà bên tươi chỉ có mười. Nên muốn nối hai tấm ảnh phải đi qua cầu chất '
+                'khô.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_chieu_nguoc_kho_tuoi(b):
+    """L5·B39·M2 Chiều ngược cùng cây cầu; mỗi tấm ảnh một bộ phần trăm."""
+    return [
+        _c('bia', 'Đi ngược lại cũng qua cây cầu ấy', so_bai(b),
+           loi=['Lần này biết khối khô, hỏi phải phơi bao nhiêu nho tươi.']),
+        _c('de_toan', 'Đề bài',
+           de='Muốn thu 15 kg nho khô (20% nước)\nthì phải phơi bao nhiêu kg nho tươi (90% nước)?',
+           loi=['Muốn thu mười lăm ki lô nho khô chứa hai mươi phần trăm nước, phải '
+                'phơi bao nhiêu ki lô nho tươi.']),
+        _c('y_toan', 'Bước lên cầu từ bờ KHÔ',
+           'chất khô trong 15 kg khô   =   15 × 80%   =   12 kg', buoc=1, soBuoc=3,
+           loi=['Bước lên cầu từ bờ khô. Mười lăm nhân tám mươi phần trăm, được mười '
+                'hai ki lô chất khô.']),
+        _c('y_toan', 'Bờ TƯƠI có bộ nhãn riêng của nó',
+           'tươi 90% nước   →   chất khô chỉ 10%   →   12 kg chính là 10% khối tươi',
+           buoc=2, soBuoc=3,
+           loi=['Bờ tươi có bộ nhãn riêng. Nước chín mươi thì chất khô chỉ mười phần '
+                'trăm.',
+                'Nên mười hai ki lô ấy chính là mười phần trăm khối tươi.']),
+        _c('day_so', 'Hai bờ, một cây cầu', so=['120', '15'], nhanHang='kg',
+           chuPhu='tươi 120 → khô 15   ·   chất khô 12 đi xuyên cả hai.',
+           loi=['Nên khối tươi là một trăm hai mươi ki lô.',
+                'Chất khô mười hai ki lô đi xuyên cả hai bờ.']),
+        _c('y_toan', 'Cấm dán nhãn ảnh này sang ảnh kia',
+           '"nước vẫn 90%" cho khối ĐÃ PHƠI   →   phơi xong mà vẫn nặng y như cũ',
+           buoc=3, soBuoc=3,
+           loi=['Cấm dán nhãn ảnh này sang ảnh kia. Bảo khối đã phơi vẫn chín mươi phần '
+                'trăm nước là vô lý.',
+                'Vì thế thì phơi xong mà cân vẫn nặng y như cũ.']),
+        _c('de_toan', 'Ba câu hỏi, ba đáp khác hẳn nhau',
+           de='CÒN bao nhiêu kg   ·   BAY bao nhiêu kg   ·   còn bao nhiêu % nước',
+           loi=['Đề hay hỏi ba kiểu, và ba đáp khác hẳn nhau. Đọc kỹ trước khi tính.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='mỗi tấm ảnh MỘT bộ phần trăm   —   chỉ CHẤT KHÔ đi xuyên',
+           thay='ví dụ: còn 50 kg · bay 150 kg · còn 20% — lấy nhầm câu là mất điểm oan',
+           loi=['Con nhớ câu này. Mỗi tấm ảnh một bộ phần trăm, chỉ chất khô đi '
+                'xuyên.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_dua_hau_99(b):
+    """L5·B39·M3 Đừng nhìn phần nước nhích — hãy nhìn phần khô phình."""
+    return [
+        _c('bia', 'Một bài trông vô lý mà đúng', so_bai(b),
+           loi=['Bài này đáp số nghe vô lý tới mức nhiều người không tin. Nhưng đúng.']),
+        _c('de_toan', 'Đề bài',
+           de='Dưa hấu 100 kg chứa 99% nước. Phơi xong nước còn 98%.\nQuả dưa còn nặng bao nhiêu?',
+           loi=['Quả dưa hấu nặng một trăm ki lô, chứa chín mươi chín phần trăm nước.',
+                'Phơi xong nước còn chín mươi tám phần trăm.']),
+        _c('y_toan', 'Trực giác "hao 1 phần trăm, còn 99 kg" sai bét',
+           'lật kính sang phe CHẤT KHÔ mà nhìn', buoc=1, soBuoc=3,
+           loi=['Trực giác bảo hao một phần trăm nên còn chín mươi chín ki lô. Sai '
+                'bét.']),
+        _c('y_toan', 'Chất khô 1 kg — từ 1% vọt lên 2%',
+           'khối mới = 1 : 2% = 50 kg   →   GIẢM ĐI MỘT NỬA', buoc=2, soBuoc=3,
+           loi=['Chất khô chỉ một ki lô. Trước nó chiếm một phần trăm, nay chiếm hai '
+                'phần trăm.',
+                'Một chia hai phần trăm, khối mới còn năm mươi ki lô.']),
+        _c('day_so', 'Cân lại mà xem', so=['100', '50'], nhanHang='kg',
+           chuPhu='Chất khô vẫn đúng 1 kg — mà khối giảm một nửa.',
+           loi=['Cân lại thì quả dưa còn đúng một nửa, dù nước chỉ nhích có một phần '
+                'trăm.']),
+        _c('y_toan', 'Vì sao nhạy thế: %khô là MẪU SỐ tí hon',
+           'nhích 1% lên 2% là mẫu NHÂN ĐÔI   →   khối CHIA ĐÔI', buoc=3, soBuoc=3,
+           loi=['Vì phần khô là mẫu số tí hon. Nhích từ một lên hai phần trăm là mẫu '
+                'nhân đôi.',
+                'Mẫu nhân đôi thì khối chia đôi.']),
+        _c('de_toan', 'Thử ngược đáp quen tai',
+           de='99 kg thì cần chất khô 1,98 kg — mà quả dưa chỉ có 1 kg',
+           loi=['Thử ngược đáp chín mươi chín. Nó cần một phẩy chín tám ki lô chất khô, '
+                'mà dưa chỉ có một.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='đừng nhìn phần NƯỚC nhích — hãy nhìn phần KHÔ phình',
+           thay='nước còn 96% → khô 4% → còn 25 kg   ·   xe 500 kg 99% → 95% → còn 100 kg',
+           loi=['Con nhớ câu này. Đừng nhìn phần nước nhích, hãy nhìn phần khô '
+                'phình.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B39.M1': kb5_mo_neo_chat_kho,
+    'DL:KSN5Q1.B39.M2': kb5_chieu_nguoc_kho_tuoi,
+    'DL:KSN5Q1.B39.M3': kb5_dua_hau_99,
     'DL:KSN5Q1.B38.M1': kb5_von_ban_lai,
     'DL:KSN5Q1.B38.M2': kb5_hai_he_quy_chieu,
     'DL:KSN5Q1.B38.M3': kb5_ma_tran_khuyen_mai,

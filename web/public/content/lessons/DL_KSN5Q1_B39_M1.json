@@ -34,24 +34,7 @@
   "kidText": "Phơi nho thì nước bay đi, chất khô ở lại. Chất khô là mỏ neo — con đi qua nó, không trừ thẳng hai con số phần trăm."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Mỏ neo: khi phơi, NƯỚC bay hơi — CHẤT KHÔ ở lại nguyên vẹn: khối lượng chất khô đi xuyên cả hai tấm ảnh tươi và khô (100 kg nho tươi 90% nước → nước 90 kg, chất khô 10 kg — 10 kg ấy không bay đi đâu)."
-   },
-   {
-    "id": "K2",
-    "text": "Đọc % bằng phần bù: nho khô 20% nước → chất khô chiếm 100% − 20% = 80% khối KHÔ — nghi thức B37 gọi về: mỗi % có CHỦ (90% của khối TƯƠI; 20% của khối KHÔ — hai chủ khác nhau!)."
-   },
-   {
-    "id": "K3",
-    "text": "Máy tươi → khô hai nhịp: (1) chất khô = 100 × (100% − 90%) = 10 kg; (2) 10 kg = 80% khối khô → khối khô = $10 : 80  \\times  100 = 12,5$ kg; nước bay = $100 - 12,5 = 87,5$ kg."
-   },
-   {
-    "id": "K4",
-    "text": "Cấm trừ thẳng: \"90% xuống 20% là hao 70%, còn 30 kg\" — SAI vì 90% và 20% là % của HAI khối khác nhau: muốn nối hai tấm ảnh phải đi qua CẦU CHẤT KHÔ."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: MỎ NEO GIỮA HAI TẤM ẢNH. Sân phơi nho: 100 kg nho tươi chứa 90% nước. Tấm ảnh thứ nhất: nước CHÍN MƯƠI kg — chất khô MƯỜI kg. Phơi ba nắng, nho thành nho khô 20% nước. Trí Long trừ vèo: \"90 trừ 20 là hao 70% — còn 30 kg!\" Khoan — 90% là chín mươi phần trăm CỦA KHỐI TƯƠI, 20% là hai mươi phần trăm CỦA KHỐI KHÔ: hai % HAI CHỦ, trừ nhau vô nghĩa như lấy điểm Toán trừ điểm Vẽ! Cây cầu duy nhất nối hai tấm ảnh là MỎ NEO CHẤT KHÔ: mười kg chất khô không bay đi đâu. Tấm ảnh thứ hai: nước 20% — chất khô chiếm TÁM MƯƠI phần trăm khối khô. Mười kg là 80% → khối khô = 10 : 80 × 100 = MƯỜI HAI PHẨY NĂM kg! Nước bay = 100 − 12,5 = tám mươi bảy phẩy năm kg. Thần chú sân phơi: CHẤT KHÔ KHÔNG BAY!",
   "canonicalExamples": [
    {
@@ -82,14 +65,8 @@
     "counterExample": "Nếu còn 30 kg với 20% nước thì chất khô = 24 kg — mà tấm tươi chỉ có 10 kg chất khô: 14 kg từ đâu ra?!"
    }
   ],
-  "vocabulary": [
-   "mỏ neo chất khô",
-   "hai tấm ảnh tươi – khô",
-   "phần bù",
-   "hai % hai chủ",
-   "cầu chất khô"
-  ],
-  "mantra": "CHẤT KHÔ KHÔNG BAY — HAI % HAI CHỦ, NỐI QUA CẦU CHẤT KHÔ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,47 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "100 kg nho tươi chứa 90% nước. Tính lượng nước và lượng chất khô trong đó.",
-    "display": {
-     "type": "story_panel",
-     "caption": "90% − 20% = còn 30 kg??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để tìm mỏ neo!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
-    ],
-    "narration": "Tấm ảnh một: một trăm kg tươi — nước CHÍN MƯƠI, chất khô MƯỜI kg. Phơi nắng: nước bay — CHẤT KHÔ Ở LẠI: mười kg là MỎ NEO xuyên hai tấm ảnh! Tấm ảnh thứ hai: nước hai mươi — chất khô TÁM MƯƠI phần trăm khối khô: mười kg là tám mươi phần trăm → khô MƯỜI HAI PHẨY NĂM kg! Nước bay: tám mươi bảy phẩy năm kg!",
-    "display": {
-     "type": "anchor_bridge_interactive",
-     "spec": {
-      "photo1": "100 kg: nước 90 · khô 10",
-      "anchor": "10 kg chất khô KHÔNG BAY",
-      "photo2": "khô 20% nước → khô = 80%",
-      "result": "10 : 80 × 100 = 12,5 kg"
-     }
-    },
-    "interaction": {
-     "type": "carry_anchor",
-     "answerKey": {
-      "value": 12.5
-     },
-     "successMessage": "Neo 10 kg = 80% khối khô → 12,5 kg!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -172,46 +108,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K4"
-    ],
-    "narration": "Soi đường trừ thẳng: chín mươi trừ hai mươi — hao bảy mươi phần trăm, còn ba mươi kg? Thử ngược: ba mươi kg với hai mươi phần trăm nước thì chất khô là hai mươi tư kg — mà tấm tươi chỉ có MƯỜI kg chất khô: mười bốn kg dư từ đâu ra?! Chín mươi phần trăm là của khối TƯƠI — hai mươi phần trăm là của khối KHÔ: hai phần trăm HAI CHỦ, trừ nhau vô nghĩa như điểm Toán trừ điểm Vẽ — muốn nối hai tấm ảnh, chỉ một cây cầu: CHẤT KHÔ!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "qua cầu chất khô: 10 = 80% → 12,5 kg",
-       "output": "✓ khô 10 ✓",
-       "valid": true,
-       "reason": "neo đi xuyên"
-      },
-      {
-       "input": "trừ thẳng 90 − 20 → còn 30 kg",
-       "output": "✗ chất khô hóa 24 kg?!",
-       "valid": false,
-       "reason": "hai % hai chủ"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: chất khô không bay! Hai phần trăm hai chủ — nối qua cầu chất khô!",
-    "display": {
-     "type": "mantra_card",
-     "text": "CHẤT KHÔ KHÔNG BAY!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -552,134 +448,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B39.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "90% − 20% = còn 30 kg??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "90 trừ 20 hao 70% — còn 30 kg!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B39_M1_F1.png",
-   "sha256_16": "03486e77aab6d3ec"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "trừ thẳng 90 − 20 → còn 30 kg"
-     ],
-     "result": "chất khô hóa 24 kg?!"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "qua cầu chất khô: 10 = 80% →…"
-     ],
-     "result": "khô 10"
-    },
-    "verdict": "neo đi xuyên"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B39_M1_F2.png",
-   "sha256_16": "20c529cf5c4077e0"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Mỏ neo",
-      "text": "khi phơi, NƯỚC bay hơi",
-      "tone": "navy"
-     },
-     {
-      "label": "Đọc % bằng phần bù",
-      "text": "nho khô 20% nước → chất khô chiếm 100% − 20% = 80% khối KHÔ — nghi thức B37 gọi về: mỗi % có CHỦ (90% của khối TƯƠI; 20% của khối KHÔ — hai chủ khác nhau!).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CHẤT KHÔ KHÔNG BAY — HAI % HAI CHỦ, NỐI QUA CẦU CHẤT KHÔ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B39_M1_F3.png",
-   "sha256_16": "34344486f807bc3e"
-  },
-  {
-   "archetype": "stack_compare",
-   "params": {
-    "title": "PHƠI NHO: NƯỚC BAY — CHẤT KHÔ Ở LẠI",
-    "cols": [
-     {
-      "tag": "nho TƯƠI",
-      "total": 100,
-      "total_label": "100 kg",
-      "parts": [
-       {
-        "label": "chất khô 10 kg",
-        "val": 10,
-        "color": "anchor"
-       },
-       {
-        "label": "nước 90 kg (90%)",
-        "val": 90,
-        "color": "water"
-       }
-      ]
-     },
-     {
-      "tag": "nho KHÔ",
-      "total": 12.5,
-      "total_label": "12,5 kg",
-      "parts": [
-       {
-        "label": "chất khô 10 kg",
-        "val": 10,
-        "color": "anchor"
-       },
-       {
-        "label": "nước 2,5 kg (20%)",
-        "val": 2.5,
-        "color": "water"
-       }
-      ]
-     }
-    ],
-    "anchor_label": "MỎ NEO: chất khô 10 kg không đổi",
-    "formula": "chất khô 10 kg = 80% khối khô → khối khô = 10 : 0,8 = 12,5 kg",
-    "note": "90% là của khối TƯƠI · 20% là của khối KHÔ — hai ông chủ khác nhau"
-   },
-   "caption": "Cây cầu duy nhất nối hai bờ tươi – khô là khối chất khô",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B39_M1_F4.png",
-   "sha256_16": "af02b3bd6bde6cbd"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B42"
@@ -690,5 +459,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B39_M1_giang.mp4"
  }
 }
