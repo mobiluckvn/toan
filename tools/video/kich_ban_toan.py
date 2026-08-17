@@ -13058,7 +13058,138 @@ def kb5_tach_nhom_ghep_tang(b):
     ]
 
 
+def kb5_ba_dang_phan_tram(b):
+    """L5·B37·M1 Phần trăm là trên-một-trăm; ba dạng, và mỗi số % đều có CHỦ."""
+    return [
+        _c('bia', 'Phần trăm chỉ có MỘT cơ chế', so_bai(b),
+           loi=['Phần trăm nhìn thì nhiều dạng, nhưng chỉ có một cơ chế duy nhất.']),
+        _c('de_toan', 'Đề bài', de='Tính 25% của 240 000 đồng',
+           loi=['Tính hai mươi lăm phần trăm của hai trăm bốn mươi nghìn đồng.']),
+        _c('y_toan', 'Phần trăm nghĩa là TRÊN MỘT TRĂM',
+           '25% = 25/100 = 1/4   ·   1/5 = 20/100 = 20%   ·   0,25 = 25%',
+           buoc=1, soBuoc=4,
+           loi=['Phần trăm nghĩa là trên một trăm. Cứ đưa về mẫu một trăm là dịch '
+                'được.',
+                'Một phần năm nhân cả tử mẫu với hai mươi, thành hai mươi phần trăm.']),
+        _c('phan_so', '25% chính là một phần tư', tu=1, mau=4, nhan='25%',
+           chuPhu='Băng chia 4 phần, lấy 1 phần.',
+           chuCuoi='Nên 25% của 240 000 là chia cho 4 — được 60 000.',
+           loi=['Hai mươi lăm phần trăm chính là một phần tư.',
+                'Nên lấy hai trăm bốn mươi nghìn chia bốn, được sáu mươi nghìn.']),
+        _c('y_toan', 'Dạng 1 — đổi về phân số đẹp mà nhẩm',
+           '25% → chia 4   ·   50% → chia 2   ·   20% → chia 5', buoc=2, soBuoc=4,
+           loi=['Dạng một, đổi về phân số đẹp rồi nhẩm, khỏi cần đặt phép.']),
+        _c('de_toan', 'Dạng 2 đi ngược lại',
+           de='25% của một số là 60. Số ấy là bao nhiêu?',
+           loi=['Dạng hai đi ngược. Hai mươi lăm phần trăm của một số là sáu mươi.']),
+        _c('y_toan', 'Đi qua CẦU một phần trăm',
+           '1% = 60 : 25 = 2,4      →      cả số = 2,4 × 100 = 240', buoc=3, soBuoc=4,
+           loi=['Đi qua cầu một phần trăm. Sáu mươi chia hai mươi lăm, được hai phẩy '
+                'tư.',
+                'Nhân một trăm thì cả số là hai trăm bốn mươi.']),
+        _c('y_toan', 'Dạng 3 — tìm tỉ số phần trăm',
+           '60 : 240 = 1/4 = 25%      ·      nhưng 240 : 60 = 4 = 400%',
+           buoc=4, soBuoc=4,
+           loi=['Dạng ba, chia rồi đọc sang phần trăm. Nhưng đổi chiều là đổi gốc.',
+                'Cùng một cặp số mà ra hai mươi lăm phần trăm hoặc bốn trăm phần '
+                'trăm.']),
+        _c('cong_thuc', 'Câu hỏi đầu tiên của mọi bài phần trăm',
+           congThuc='mỗi con số % đều có CHỦ — hỏi ngay "phần trăm CỦA AI?"',
+           thay='dịch bằng cơ chế trên-một-trăm, đừng học vẹt từng ca',
+           loi=['Con nhớ hỏi ngay, phần trăm của ai. Mỗi con số phần trăm đều có chủ '
+                'của nó.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_cu_lua_doi_goc(b):
+    """L5·B37·M2 Chênh thì một, gốc thì hai — và "tăng LÊN" khác "tăng THÊM"."""
+    return [
+        _c('bia', 'Hai câu nghe giống nhau mà hai đáp', so_bai(b),
+           loi=['Có những cặp câu nghe hệt nhau, mà đáp số khác hẳn. Vì cái gốc đã '
+                'đổi.']),
+        _c('de_toan', 'Đề bài',
+           de='Số A hơn số B là 25%. Hỏi B kém A bao nhiêu phần trăm?',
+           loi=['Số A hơn số B là hai mươi lăm phần trăm. Hỏi B kém A bao nhiêu phần '
+                'trăm.']),
+        _c('y_toan', 'Chênh thì MỘT — gốc thì HAI',
+           '"A hơn B" đo trên gốc B   ·   "B kém A" đo trên gốc A (đã to hơn)',
+           buoc=1, soBuoc=3,
+           loi=['Phần chênh chỉ có một, nhưng gốc để đo thì có hai.',
+                'Câu đầu đo trên gốc B, câu sau đo trên gốc A, mà A đã to hơn.']),
+        _c('y_toan', 'Chiêu LẮP SỐ ĐẸP: gán gốc bằng 100',
+           'B = 100   →   A = 125   →   chênh 25', buoc=2, soBuoc=3,
+           loi=['Chiêu lắp số đẹp. Gán gốc bằng một trăm rồi tính con số kia.']),
+        _c('day_so', 'Lắp thử rồi soi', so=['100', '125'], nhanHang='lắp thử',
+           chuPhu='Chênh 25 — nhưng soi trên gốc nào?',
+           loi=['B một trăm thì A một trăm hai mươi lăm, chênh nhau hai mươi lăm.']),
+        _c('y_toan', 'Soi phần chênh trên ĐÚNG gốc của câu hỏi',
+           '25 : 125 = 20%      →      B kém A 20%, không phải 25%', buoc=3, soBuoc=3,
+           loi=['Câu hỏi là B kém A, nên soi trên gốc một trăm hai mươi lăm.',
+                'Hai mươi lăm chia một trăm hai mươi lăm, được hai mươi phần trăm.']),
+        _c('de_toan', 'Một chữ, hai đáp',
+           de='Giá 80 nghìn.  "Tăng LÊN 120%"  hay  "tăng THÊM 120%"?',
+           loi=['Còn cặp này nữa. Tăng lên một trăm hai mươi phần trăm, và tăng thêm '
+                'một trăm hai mươi phần trăm.',
+                'Chỉ khác một chữ mà hai đáp.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='chênh thì MỘT — gốc thì HAI: đổi gốc là đổi số',
+           thay='tăng LÊN 120% → × 1,2 = 96 nghìn   ·   tăng THÊM 120% → × 2,2 = 176 nghìn',
+           loi=['Tăng lên nghĩa là giá mới bằng ngần ấy phần trăm giá cũ, nhân một phẩy '
+                'hai.',
+                'Còn tăng thêm là cộng thêm cả ngần ấy nữa, nên nhân hai phẩy hai.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_goi_dau_he_so(b):
+    """L5·B37·M3 Biến động nối nhau thì nhân hệ số, cấm cộng thẳng."""
+    return [
+        _c('bia', 'Tăng rồi giảm cùng một mức — có về chỗ cũ không', so_bai(b),
+           loi=['Tăng mười phần trăm rồi giảm mười phần trăm. Nghe thì hoà, mà không '
+                'phải.']),
+        _c('de_toan', 'Đề bài',
+           de='Giá tăng 10%, sau đó giảm 10% TRÊN GIÁ MỚI.\nGiá cuối bằng bao nhiêu % giá ban đầu?',
+           loi=['Giá tăng mười phần trăm, sau đó giảm mười phần trăm trên giá mới.']),
+        _c('y_toan', 'Hai bậc GỐI ĐẦU — bậc sau đặt chân lên giá ĐÃ TĂNG',
+           'nên cấm cộng thẳng  +10 − 10 = 0', buoc=1, soBuoc=3,
+           loi=['Hai bậc gối đầu nhau. Bậc giảm đặt chân lên giá đã tăng rồi.',
+                'Nên không được cộng thẳng mười trừ mười ra không.']),
+        _c('day_so', 'Lắp số đẹp mà chạy thử', so=['100', '110', '99'], nhanHang='giá',
+           chuPhu='Giảm 10% của 110 là 11 — nên còn 99, hụt mất 1%.',
+           loi=['Lắp một trăm rồi chạy thử. Tăng mười phần trăm thành một trăm mười.',
+                'Giảm mười phần trăm của một trăm mười là mười một, nên còn chín mươi '
+                'chín.']),
+        _c('y_toan', 'Máy đúng là NHÂN HỆ SỐ',
+           'tăng 10% → × 1,1   ·   giảm 10% → × 0,9   ·   1,1 × 0,9 = 0,99',
+           buoc=2, soBuoc=3,
+           loi=['Máy đúng là nhân hệ số. Một phẩy một nhân không phẩy chín, được không '
+                'phẩy chín chín.']),
+        _c('y_toan', 'Diện tích thì ăn hệ số HAI LẦN',
+           'cạnh × 1,1   →   diện tích × 1,1 × 1,1 = 1,21   →   tăng 21%',
+           buoc=3, soBuoc=3,
+           loi=['Diện tích ăn hệ số hai lần, vì hình phình theo cả hai chiều.',
+                'Cạnh tăng mười phần trăm thì diện tích tăng hai mươi mốt phần trăm, '
+                'không phải hai mươi.']),
+        _c('de_toan', 'Phần trăm của phần trăm cũng gối đầu',
+           de='A = 80% của B;  B = 75% của C.  A bằng bao nhiêu % của C?',
+           loi=['Phần trăm của phần trăm cũng gối đầu như thế.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='biến động nối nhau — NHÂN hệ số, cấm cộng thẳng',
+           thay='0,8 × 0,75 = 0,6   →   A bằng 60% của C',
+           loi=['Con nhớ câu này. Biến động nối nhau thì nhân hệ số, cấm cộng thẳng.',
+                'Không phẩy tám nhân không phẩy bảy lăm, được không phẩy sáu.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B37.M1': kb5_ba_dang_phan_tram,
+    'DL:KSN5Q1.B37.M2': kb5_cu_lua_doi_goc,
+    'DL:KSN5Q1.B37.M3': kb5_goi_dau_he_so,
     'DL:KSN5Q1.B36.M1': kb5_mot_neo_ca_day,
     'DL:KSN5Q1.B36.M2': kb5_hai_luat_troi,
     'DL:KSN5Q1.B36.M3': kb5_tach_nhom_ghep_tang,

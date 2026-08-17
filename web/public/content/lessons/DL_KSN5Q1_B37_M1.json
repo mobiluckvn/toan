@@ -35,24 +35,7 @@
   "kidText": "Phần trăm nghĩa là trên 100. Con tìm được a% của N, tìm N khi biết a%, và tính tỉ số phần trăm — luôn hỏi phần trăm CỦA AI."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "% nghĩa là TRÊN 100: 25% = $\\frac{25}{100}$ = $\\frac{1}{4}$; $\\frac{1}{5}$ = $\\frac{20}{100}$ = 20% (không phải 15%!); 0,25 = 25% (không phải 2,5%); 12,5% = $\\frac{12,5}{100}$ = $\\frac{1}{8}$ — dịch bằng cơ chế, cấm học vẹt."
-   },
-   {
-    "id": "K2",
-    "text": "Dạng 1 — tìm a% của N: đổi về phân số đẹp mà nhân nhẩm: 25% của 240 $000 = 240 000 : 4 = 60$ 000."
-   },
-   {
-    "id": "K3",
-    "text": "Dạng 2 — biết a% của N là bao nhiêu, tìm N: đi qua CẦU 1%: 25% là 60 → 1% = $60 : 25 = 2,4$ → N = $2,4  \\times  100 = 240$."
-   },
-   {
-    "id": "K4",
-    "text": "Dạng 3 — tìm tỉ số %: chia rồi đọc sang %: $60 : 240$ = $\\frac{1}{4}$ = 25% — nhưng đổi chiều là đổi gốc: $240 : 60 = 4$ = 400%! Mỗi con số % đều có CHỦ: câu hỏi đầu tiên luôn là \"phần trăm CỦA AI?\""
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: QUẦY ĐỔI TIỀN BA THỨ TIẾNG. Chợ phần trăm khai trương! Ba thứ tiếng cùng lưu hành: tiếng phân số, tiếng thập phân, tiếng %. Trí Long dịch vẹt: \"1/5 là… 15%; 0,25 là 2,5%!\" — dịch trật vì học thuộc lòng. Máy dịch chỉ MỘT cơ chế: % nghĩa là TRÊN MỘT TRĂM. 1/5 — nhân cả tử mẫu với 20 thành 20/100: HAI MƯƠI phần trăm! 0,25 là 25/100: hai lăm phần trăm. Ngược lại 12,5% là 12,5 trên 100 — nhân đôi cả hai: 25/200… hay gọn hơn 1/8! Ba dạng nền chạy trên máy dịch: dạng một — 25% của 240 nghìn: đổi 1/4, chia bốn ra SÁU MƯƠI nghìn; dạng hai — 25% của số nào đó là 60: qua cầu MỘT PHẦN TRĂM — 1% là 2,4 → cả số 240; dạng ba — quầy nước 60, quầy bánh 240: 60 : 240 = 1/4 = 25% — nhưng hỏi ngược thì 240 : 60 = 400%: hai chiều hai gốc, mỗi % có CHỦ!",
   "canonicalExamples": [
    {
@@ -89,14 +72,8 @@
     "counterExample": "$\\frac{1}{5}$ = 15%? Thử: 15% của 100 là 15, còn $\\frac{1}{5}$ của 100 là 20 — vênh ngay 5 đơn vị!"
    }
   ],
-  "vocabulary": [
-   "ba thứ tiếng",
-   "máy dịch trên-100",
-   "cầu 1%",
-   "phần trăm của ai",
-   "phân số đẹp để nhẩm"
-  ],
-  "mantra": "PHẦN TRĂM LÀ 'TRÊN 100' — DỊCH BẰNG CƠ CHẾ, KHÔNG HỌC VẸT!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -118,50 +95,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Tính 25% của 240 000 đồng (đổi về phân số để tính nhẩm).",
-    "display": {
-     "type": "story_panel",
-     "caption": "$\\frac{1}{5}$ = 15%?? $0,25 = 2$,5%??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để mở máy dịch!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Máy dịch chỉ MỘT cơ chế: phần trăm nghĩa là TRÊN MỘT TRĂM! Một phần năm — nhân cả tử mẫu với hai mươi: HAI MƯƠI trên một trăm — hai mươi phần trăm! Không phẩy hai lăm là hai lăm trên một trăm; mười hai phẩy năm phần trăm rút gọn thành MỘT PHẦN TÁM. Dạng một: hai lăm phần trăm của hai trăm bốn mươi nghìn — MỘT PHẦN TƯ: chia bốn ra SÁU MƯƠI nghìn!",
-    "display": {
-     "type": "translator_interactive",
-     "spec": {
-      "rule": "% = trên 100",
-      "pairs": [
-       "1/5 = 20/100 = 20%",
-       "0,25 = 25%",
-       "12,5% = 1/8",
-       "3/4 = 0,75 = 75%"
-      ],
-      "d1": "25% của 240 000 = : 4 = 60 000"
-     }
-    },
-    "interaction": {
-     "type": "translate_by_rule",
-     "answerKey": {
-      "value": 20
-     },
-     "successMessage": "1/5 = 20/100 = 20% — cơ chế, không vẹt!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -182,38 +115,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Dạng hai — đi ngược qua CẦU MỘT PHẦN TRĂM: hai lăm phần trăm của số nào đó là sáu mươi — vậy MỘT phần trăm là sáu mươi chia hai lăm: hai phẩy tư — cả số bằng hai phẩy tư nhân một trăm: HAI TRĂM BỐN MƯƠI! Dạng ba — tỉ số phần trăm: quầy nước sáu mươi, quầy bánh hai bốn mươi — sáu mươi chia hai bốn mươi là một phần tư: HAI LĂM phần trăm; nhưng hỏi NGƯỢC — hai bốn mươi chia sáu mươi là bốn: BỐN TRĂM phần trăm! Hai chiều hai gốc — mỗi con số phần trăm đều có CHỦ: câu hỏi mở màn luôn là phần trăm CỦA AI?",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "cầu 1%: 60 : 25 = 2,4 → số = 240",
-      "60/240 = 25% — nhưng 240/60 = 400%",
-      "câu mở màn: phần trăm CỦA AI?"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: phần trăm là trên-một-trăm — dịch bằng cơ chế, không học vẹt!",
-    "display": {
-     "type": "mantra_card",
-     "text": "% = TRÊN 100 — CƠ CHẾ, KHÔNG VẸT!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -561,137 +462,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B37.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "1/5 = 15%?? 0,25 = 2,5%??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "1/5 là 15%, 0,25 là 2,5%!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B37_M1_F1.png",
-   "sha256_16": "c849383fe6dd459a"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Ba dạng % nền tảng & ba thứ tiếng: cầu 1% — dịch bằng cơ chế 'trên 100'",
-    "steps": [
-     {
-      "text": "cầu 1%: 60 : 25 = 2,4 → số = 240"
-     },
-     {
-      "text": "60/240 = 25% — nhưng 240/60 = 400%"
-     },
-     {
-      "text": "câu mở màn: phần trăm CỦA AI?"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B37_M1_F2.png",
-   "sha256_16": "bcff45b13c291c89"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "% nghĩa là TRÊN 100",
-      "text": "25% = 25/100 = 1/4",
-      "tone": "navy"
-     },
-     {
-      "label": "Dạng 1 — tìm a% của N",
-      "text": "đổi về phân số đẹp mà nhân nhẩm: 25% của 240 000 = 240 000 : 4 = 60 000.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "PHẦN TRĂM LÀ 'TRÊN 100' — DỊCH BẰNG CƠ CHẾ, KHÔNG HỌC VẸT!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B37_M1_F3.png",
-   "sha256_16": "1e72628e185c138b"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "BA THỨ TIẾNG CỦA MỘT LƯỢNG — MÁY DỊCH",
-    "headers": [
-     "phân số",
-     "thập phân",
-     "phần trăm"
-    ],
-    "comma_after": null,
-    "rows": [
-     {
-      "label": "",
-      "cells": [
-       "3/4",
-       "0,75",
-       "75%"
-      ],
-      "color": "#E6FAF5"
-     },
-     {
-      "label": "",
-      "cells": [
-       "1/5",
-       "0,2",
-       "20%"
-      ],
-      "color": "white"
-     },
-     {
-      "label": "",
-      "cells": [
-       "1/4",
-       "0,25",
-       "25%"
-      ],
-      "color": "#E6FAF5"
-     },
-     {
-      "label": "",
-      "cells": [
-       "1/8",
-       "0,125",
-       "12,5%"
-      ],
-      "color": "white"
-     }
-    ],
-    "note": "Cơ chế \"trên 100\": 25% của 240 000 = 240 000 : 4 = 60 000 đồng"
-   },
-   "caption": "Dịch được ba thứ tiếng thì mọi bài phần trăm đều tính nhẩm được",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B37_M1_F4.png",
-   "sha256_16": "bd4343e8cd4fcb46"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B39"
@@ -703,5 +474,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Ba dạng % nền tảng & ba thứ tiếng: cầu 1% — dịch bằng cơ chế 'trên 100'"
+ "titleDay": "Ba dạng % nền tảng & ba thứ tiếng: cầu 1% — dịch bằng cơ chế 'trên 100'",
+ "video": {
+  "giang": "DL_KSN5Q1_B37_M1_giang.mp4"
+ }
 }

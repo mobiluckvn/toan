@@ -34,20 +34,7 @@
   "kidText": "A hơn B 25% thì B không kém A 25% đâu, vì hai câu lấy hai gốc khác nhau. \"Tăng lên 120%\" cũng khác \"tăng thêm 120%\"."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Chênh thì MỘT — gốc thì HAI: A hơn B 25% (gốc B) không có nghĩa B kém A 25% (gốc A đã to hơn): lắp số đẹp B = 100 → A = 125 → chênh 25 so gốc A: $\\frac{25}{125}$ = 20% — B kém A 20%!"
-   },
-   {
-    "id": "K2",
-    "text": "Chiêu LẮP SỐ ĐẸP: gán gốc = 100, tính con số kia, rồi soi phần chênh trên ĐÚNG gốc câu hỏi — mọi cú đổi gốc đều lộ nguyên hình."
-   },
-   {
-    "id": "K3",
-    "text": "\"Tăng LÊN 120%\" — giá mới BẰNG 120% giá cũ: × 1,2 (80 → 96 nghìn); \"tăng THÊM 120%\" — cộng thêm cả 120% nữa: giá mới = 220%: × 2,2 (80 → 176 nghìn) — MỘT CHỮ HAI ĐÁP: gạch chân LÊN / THÊM và gốc 100% trước khi bấm."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: PHIÊN CHỢ ĐỔI GỐC. Cáo Đề rao: \"A hơn B hai lăm phần trăm — vậy B kém A hai lăm phần trăm, công bằng nhé!\" Cả chợ gật gù… Su Kem lắp số đẹp: B một trăm — A một trăm hai lăm. Chênh hai lăm đồng — nhưng câu hỏi \"B kém A\" soi trên gốc A một-trăm-hai-lăm: hai lăm chia một hai lăm bằng HAI MƯƠI phần trăm! Chênh thì một — gốc thì hai: đổi gốc là đổi số. Cú lừa thứ hai một chữ hai đáp: giá 80 nghìn \"tăng LÊN 120%\" — giá mới BẰNG 120% giá cũ: 96 nghìn; còn \"tăng THÊM 120%\" — gốc 100% cộng thêm 120%: hai trăm hai mươi phần trăm — 176 nghìn! Một chữ LÊN / THÊM mà lệch nhau 80 nghìn — gạch chân trước khi bấm máy.",
   "canonicalExamples": [
    {
@@ -72,14 +59,8 @@
     "counterExample": "B kém A 25%? 25% của 125 là 31,25 — B phải là 93,75 ≠ 100: lệch ngay!"
    }
   ],
-  "vocabulary": [
-   "phiên chợ đổi gốc",
-   "lắp số đẹp",
-   "chênh một — gốc hai",
-   "một chữ hai đáp",
-   "gạch chân gốc 100%"
-  ],
-  "mantra": "CHÊNH THÌ MỘT — GỐC THÌ HAI: ĐỔI GỐC LÀ ĐỔI SỐ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -106,46 +87,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Số A hơn số B là 25%. Hỏi số B kém số A bao nhiêu phần trăm? (Lắp cặp số đẹp!)",
-    "display": {
-     "type": "story_panel",
-     "caption": "hơn 25% = kém 25%??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để lắp số đẹp!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Lắp số đẹp: B một trăm — A hơn hai lăm phần trăm: một trăm hai lăm! Chênh hai lăm đồng. Nhưng câu hỏi B kém A — soi trên gốc A MỘT-TRĂM-HAI-LĂM: hai lăm chia một hai lăm bằng HAI MƯƠI phần trăm! Chênh thì MỘT — gốc thì HAI: đổi gốc là đổi số. Kiểm ngược cho chắc: nếu B kém A đúng hai lăm phần trăm thì B phải là chín ba phẩy bảy lăm — đâu phải một trăm: lệch ngay!",
-    "display": {
-     "type": "base_swap_interactive",
-     "spec": {
-      "plug": "B = 100 → A = 125",
-      "gap": 25,
-      "q1": "A hơn B: 25/100 = 25%",
-      "q2": "B kém A: 25/125 = 20%"
-     }
-    },
-    "interaction": {
-     "type": "plug_and_compare",
-     "answerKey": {
-      "value": 20
-     },
-     "successMessage": "Chênh 25 — gốc 125: B kém A 20%!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -161,37 +102,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Cú lừa một chữ hai đáp: giá tám mươi nghìn. \"Tăng LÊN một trăm hai mươi phần trăm\" — giá mới BẰNG một trăm hai mươi phần trăm giá cũ: nhân một phẩy hai — CHÍN SÁU nghìn. \"Tăng THÊM một trăm hai mươi phần trăm\" — gốc một trăm cộng thêm một trăm hai mươi: HAI TRĂM HAI MƯƠI phần trăm — nhân hai phẩy hai: MỘT TRĂM BẢY SÁU nghìn! Một chữ LÊN hay THÊM mà lệch nhau tám mươi nghìn — gạch chân chữ ấy và gốc một-trăm trước khi bấm máy!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "LÊN 120%: 80 × 1,2 = 96 nghìn",
-      "THÊM 120%: 80 × 2,2 = 176 nghìn",
-      "một chữ — lệch 80 nghìn: gạch chân trước!"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: chênh thì một — gốc thì hai: đổi gốc là đổi số!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ĐỔI GỐC LÀ ĐỔI SỐ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -501,108 +411,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B37.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "hơn 25% = kém 25%??",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "A hơn B 25% — vậy B kém A 25%, công bằng nhé!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B37_M2_F1.png",
-   "sha256_16": "5b57673c944e3ca2"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Cú lừa đổi gốc: hơn 25% ≠ kém 25% — 'tăng LÊN' ≠ 'tăng THÊM'",
-    "steps": [
-     {
-      "text": "LÊN 120%: 80 × 1,2 = 96 nghìn"
-     },
-     {
-      "text": "THÊM 120%: 80 × 2,2 = 176 nghìn"
-     },
-     {
-      "text": "một chữ — lệch 80 nghìn: gạch chân trước!"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B37_M2_F2.png",
-   "sha256_16": "2faefc3c09db3665"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Chênh thì MỘT",
-      "text": "gốc thì HAI: A hơn B 25% (gốc B) không có nghĩa B kém A 25% (gốc A đã to hơn): lắp số đẹp B = 100 → A = 125 → chênh 25 so gốc A: 25/125 = 20% — B kém A 20%!",
-      "tone": "navy"
-     },
-     {
-      "label": "Chiêu LẮP SỐ ĐẸP",
-      "text": "gán gốc = 100, tính con số kia, rồi soi phần chênh trên ĐÚNG gốc câu hỏi — mọi cú đổi gốc đều lộ nguyên hình.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CHÊNH THÌ MỘT — GỐC THÌ HAI: ĐỔI GỐC LÀ ĐỔI SỐ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B37_M2_F3.png",
-   "sha256_16": "a3b19c8907f66ef1"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÚ LỪA ĐỔI GỐC: A HƠN B 25% THÌ B KÉM A MẤY %?",
-    "wrong": {
-     "head": "TRẢ LỜI VỘI",
-     "steps": [
-      "thấy 25% liền đáp"
-     ],
-     "result": "B kém A 25% ✗"
-    },
-    "right": {
-     "head": "LẮP SỐ ĐẸP",
-     "steps": [
-      "B = 100 → A = 125",
-      "chênh 25 so GỐC A"
-     ],
-     "result": "25 : 125 = 20% ✓"
-    },
-    "verdict": "Chênh thì MỘT — gốc thì HAI: đổi gốc là đổi cả đáp"
-   },
-   "caption": "\"Tăng LÊN 120%\" khác hẳn \"tăng THÊM 120%\" — một chữ đổi cả bài",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B37_M2_F4.png",
-   "sha256_16": "3981ee3f8f808957"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B39"
@@ -613,5 +422,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B37_M2_giang.mp4"
  }
 }
