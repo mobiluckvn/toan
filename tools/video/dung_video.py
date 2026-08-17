@@ -650,9 +650,18 @@ def khung(c: dict) -> Image.Image:
         d.line([(x0, y_day), (x0 + w, y_day), (xd, yd), (x0, y_day)], fill=TEAL_DARK,
                width=6)
         if c.get("duongCao"):
-            if xd < x0 or xd > x0 + w:          # chân rơi NGOÀI đáy — kéo dài đáy ra
-                for t in range(int(min(xd, x0)), int(max(xd, x0 + w)), 22):
-                    d.line([t, y_day, t + 11, y_day], fill=MUTE, width=4)
+            # Chân rơi NGOÀI đáy — kéo dài đáy ra mà đón. Chỉ vẽ nét đứt trên ĐÚNG
+            # PHẦN DÔI RA, đừng phủ lên cạnh đáy thật: lời chú nói "nét đứt là phần
+            # đáy kéo dài", mà phủ cả đáy thì hình nói khác lời (bắt ở lớp 5 bài 45).
+            if xd > x0 + w:                     # đỉnh lệch sang phải
+                t0, t1 = x0 + w, xd
+            elif xd < x0:                       # đỉnh lệch sang trái
+                t0, t1 = xd, x0
+            else:
+                t0 = t1 = None
+            if t0 is not None:
+                for t in range(int(t0), int(t1), 22):
+                    d.line([t, y_day, min(t + 11, t1), y_day], fill=MUTE, width=4)
             d.line([xd, yd, xd, y_day], fill=ALERT, width=7)
             ke = 26 if xd <= x0 + w / 2 else -26
             d.rectangle([min(xd, xd + ke), y_day - 26, max(xd, xd + ke), y_day],

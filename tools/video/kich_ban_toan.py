@@ -14088,7 +14088,138 @@ def kb5_chuong_tho_bang_logic(b):
     ]
 
 
+def kb5_dien_tich_tam_giac(b):
+    """L5·B45·M1 Tam giác là nửa chữ nhật — xuôi chia hai, ngược nhân hai TRƯỚC."""
+    return [
+        _c('bia', 'Vì sao công thức tam giác lại chia hai', so_bai(b),
+           loi=['Công thức tam giác có một phép chia hai. Nhìn hình là hiểu ngay vì '
+                'sao.']),
+        _c('de_toan', 'Đề bài', de='Tính diện tích tam giác có đáy 12 cm và đường cao 5 cm',
+           loi=['Tính diện tích tam giác có đáy mười hai xăng ti mét và đường cao năm '
+                'xăng ti mét.']),
+        _c('tam_giac', 'Tam giác là NỬA hình chữ nhật', day=12, cao=5, dinh=0.35,
+           duongCao=True, nhanDay='đáy 12 cm', nhanCao='cao 5',
+           chuPhu='Cùng đáy, cùng cao — cắt chéo một nhát được hai nửa bằng nhau.',
+           loi=['Tấm bánh chữ nhật cùng đáy cùng cao, cắt chéo một nhát được hai tam '
+                'giác bằng nhau.',
+                'Mỗi tam giác ăn đúng nửa tấm.']),
+        _c('y_toan', 'Nên chiều xuôi thì CHIA HAI',
+           'S = đáy × cao : 2   =   12 × 5 : 2 = 30 xăng ti mét vuông', buoc=1, soBuoc=3,
+           loi=['Nên chiều xuôi thì chia hai. Mười hai nhân năm chia hai, được ba '
+                'mươi.',
+                'Quên chia hai là tam giác béo ra thành cả hình chữ nhật.']),
+        _c('y_toan', 'Chiều ngược phải DỰNG LẠI cả tấm trước',
+           'nhân 2 TRƯỚC:   đáy = S × 2 : cao = 30 × 2 : 5 = 12 cm', buoc=2, soBuoc=3,
+           loi=['Chiều ngược phải dựng lại cả tấm chữ nhật trước, tức nhân hai đã.',
+                'Ba mươi nhân hai chia năm, đáy mười hai xăng ti mét.']),
+        _c('de_toan', 'Chia thẳng thì hụt mất một bước',
+           de='30 : 5 = 6   —   con số ấy mới là NỬA đáy',
+           loi=['Chia thẳng ba mươi cho năm ra sáu. Con số ấy mới là nửa đáy thôi.']),
+        _c('y_toan', 'Bài ngược sâu cũng qua cửa nhân-2 ấy',
+           'S = 45, đáy hơn cao 9   →   đáy × cao = 90   →   cặp 15 và 6', buoc=3,
+           soBuoc=3,
+           loi=['Bài ngược sâu cũng qua cửa ấy. Diện tích bốn lăm thì tích đáy nhân cao '
+                'bằng chín mươi.',
+                'Lục cặp tích chín mươi có hiệu chín, được mười lăm và sáu.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='tam giác là NỬA chữ nhật — xuôi chia 2, ngược NHÂN 2 trước',
+           thay='mọi bài ngược của tam giác đều đi qua cửa nhân-hai ấy',
+           loi=['Con nhớ câu này. Tam giác là nửa chữ nhật, xuôi thì chia hai, ngược '
+                'thì nhân hai trước.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_ba_cap_day_cao(b):
+    """L5·B45·M2 Cặp vào công thức phải vuông góc — số thừa là mồi."""
+    return [
+        _c('bia', 'Đề cho ba số mà chỉ dùng hai', so_bai(b),
+           loi=['Đề cho ba con số. Nhưng chỉ hai số được vào công thức.']),
+        _c('de_toan', 'Đề bài',
+           de='Thửa đất tam giác: đáy 12 m, đường cao ứng với đáy 5 m, cạnh bên 13 m.\nTính diện tích',
+           loi=['Thửa đất tam giác có đáy mười hai mét, đường cao ứng với đáy năm mét, '
+                'cạnh bên mười ba mét.']),
+        _c('tam_giac', 'Chỉ tay hỏi: hai đường này có VUÔNG GÓC không?',
+           day=12, cao=5, dinh=0.78, duongCao=True,
+           nhanDay='đáy 12 m   ·   cạnh bên 13 m xiên xẹo', nhanCao='cao 5',
+           chuPhu='Chỉ cặp có ô vuông góc mới được vào công thức.',
+           loi=['Nghi thức trước khi bấm. Chỉ tay vào hai đường sắp vào công thức, hỏi '
+                'chúng có vuông góc không.',
+                'Cạnh bên mười ba xiên xẹo, không vuông góc với đáy.']),
+        _c('y_toan', 'Nên 13 là MỒI NHỬ đề cài để thử con',
+           'S = 12 × 5 : 2 = 30 mét vuông   —   số 13 không dùng đến', buoc=1, soBuoc=3,
+           loi=['Nên mười ba là mồi nhử. Diện tích bằng mười hai nhân năm chia hai, ba '
+                'mươi mét vuông.']),
+        _c('y_toan', 'Một tam giác có BA cặp đáy – cao',
+           'mỗi cạnh làm đáy thì có một đường cao riêng hạ từ đỉnh đối diện',
+           buoc=2, soBuoc=3,
+           loi=['Một tam giác có ba cặp đáy cao. Mỗi cạnh làm đáy thì có một đường cao '
+                'riêng.',
+                'Ba cặp khác nhau, nhưng chỉ một diện tích.']),
+        _c('y_toan', 'Bất biến nối ba cặp lại',
+           'đáy × cao = 2 × S với MỌI cặp   →   12 × 5 = 60', buoc=3, soBuoc=3,
+           loi=['Có một bất biến nối ba cặp lại. Đáy nhân cao luôn bằng hai lần diện '
+                'tích.']),
+        _c('de_toan', 'Nên biết cặp này suy được cặp kia',
+           de='Đường cao ứng với đáy 10 m là bao nhiêu?',
+           loi=['Nên biết cặp này thì suy được cặp kia, khỏi tính lại diện tích.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='cặp vào công thức phải VUÔNG GÓC — số thừa là MỒI',
+           thay='bất biến gánh: 60 : 10 = 6 m, khỏi tính lại diện tích',
+           loi=['Sáu mươi chia mười, được sáu mét.',
+                'Con nhớ câu này. Cặp vào công thức phải vuông góc, số thừa là mồi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tam_giac_vuong_tu(b):
+    """L5·B45·M3 Cao rơi ra ngoài thì kéo dài đáy mà đón lấy."""
+    return [
+        _c('bia', 'Hai địa hình đặc biệt: vuông và tù', so_bai(b),
+           loi=['Tam giác vuông là quà tặng. Còn tam giác tù thì có chỗ bé hay hoảng.']),
+        _c('de_toan', 'Đề bài', de='Tam giác vuông có hai cạnh góc vuông 6 cm và 8 cm.\nTính diện tích',
+           loi=['Tam giác vuông có hai cạnh góc vuông là sáu và tám xăng ti mét.']),
+        _c('y_toan', 'Tam giác vuông là QUÀ TẶNG',
+           'hai cạnh góc vuông đã vuông góc SẴN   →   cặp đáy – cao có sẵn, khỏi hạ thêm',
+           buoc=1, soBuoc=3,
+           loi=['Tam giác vuông là quà tặng. Hai cạnh góc vuông đã vuông góc sẵn với '
+                'nhau.',
+                'Nên cặp đáy cao có sẵn, sáu nhân tám chia hai, hai mươi tư xăng ti mét '
+                'vuông.']),
+        _c('y_toan', 'Lấy cạnh huyền làm đáy thì bất biến gánh',
+           'cao xuống huyền = 2S : huyền = 48 : 10 = 4,8 cm', buoc=2, soBuoc=3,
+           loi=['Lấy cạnh huyền làm đáy thì bất biến của bài trước gánh cho.',
+                'Bốn mươi tám chia mười, đường cao xuống huyền là bốn phẩy tám xăng ti '
+                'mét.']),
+        _c('de_toan', 'Còn tam giác TÙ thì lạ mắt hơn',
+           de='Đỉnh nghiêng hẳn ra ngoài — chân đường cao rơi đi đâu?',
+           loi=['Còn tam giác tù thì lạ mắt hơn. Chân đường cao rơi đi đâu.']),
+        _c('tam_giac', 'Chân đường cao rơi RA NGOÀI đáy', day=10, cao=6, dinh=1.35,
+           duongCao=True, nhanDay='đáy 10 cm', nhanCao='cao 6',
+           chuPhu='Nét đứt là phần đáy kéo dài ra để đón chân đường cao.',
+           loi=['Chân đường cao rơi ra ngoài đoạn đáy. Cách vẽ là kéo dài đáy bằng một '
+                'nét đứt rồi hạ vuông góc.',
+                'Cao vẫn là cao, tức khoảng cách vuông góc từ đỉnh tới đường thẳng chứa '
+                'đáy.']),
+        _c('y_toan', 'Công thức GIỮ NGUYÊN, không đổi gì',
+           'S = đáy × cao : 2 = 10 × 6 : 2 = 30 xăng ti mét vuông', buoc=3, soBuoc=3,
+           loi=['Công thức giữ nguyên, không đổi gì cả. Mười nhân sáu chia hai, ba '
+                'mươi.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='cao rơi RA NGOÀI — kéo dài đáy mà đón lấy',
+           thay='kéo đáy 12 thêm 3 mà S tăng 7,5 → 3 × cao : 2 = 7,5 → cao 5 → S cũ 30',
+           loi=['Con nhớ câu này. Cao rơi ra ngoài thì kéo dài đáy mà đón lấy.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B45.M1': kb5_dien_tich_tam_giac,
+    'DL:KSN5Q1.B45.M2': kb5_ba_cap_day_cao,
+    'DL:KSN5Q1.B45.M3': kb5_tam_giac_vuong_tu,
     'DL:KSN5Q1.B44.M1': kb5_khu_va_the,
     'DL:KSN5Q1.B44.M2': kb5_ven_ba_vong,
     'DL:KSN5Q1.B44.M3': kb5_chuong_tho_bang_logic,

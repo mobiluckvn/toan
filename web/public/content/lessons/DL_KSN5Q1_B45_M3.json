@@ -35,24 +35,7 @@
   "kidText": "Tam giác vuông có sẵn cặp đáy – cao là hai cạnh góc vuông. Tam giác tù thì kéo dài đáy ra mà đón đường cao."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tam giác vuông = quà tặng: hai cạnh góc vuông VUÔNG GÓC sẵn với nhau — cặp đáy - cao có sẵn, khỏi hạ thêm: S = $6  \\times  8 : 2 = 24 cm^2$."
-   },
-   {
-    "id": "K2",
-    "text": "Lấy HUYỀN làm đáy — bất biến M2 gánh: cao xuống huyền = 2S : huyền = $48 : 10 = 4,8$ cm (huyền 10 là cạnh thứ ba của bộ 6-8-10)."
-   },
-   {
-    "id": "K3",
-    "text": "Tam giác TÙ: đường cao từ đỉnh có thể rơi RA NGOÀI đoạn đáy — cách vẽ MỘT NÉT ĐỨT: kéo dài đáy về phía góc tù rồi hạ vuông góc mà đón; công thức S = đáy × cao : 2 GIỮ NGUYÊN: đáy 10, cao ngoài 6 → S = 30 cm²."
-   },
-   {
-    "id": "K4",
-    "text": "Bài kéo-dài-đáy của sư phụ: kéo đáy 12 thêm 3 cm (giữ cao) thì S tăng 7,5 $cm^2$ — phần tăng là tam giác đáy 3 chung cao: 3 × cao : $2 = 7,5$ → cao = 5 → S ban đầu = $12  \\times  5 : 2 = 30 cm^2$."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HAI ĐỊA HÌNH — QUÀ TẶNG VÀ NÉT ĐỨT. Địa hình một: tam giác VUÔNG là quà tặng — hai cạnh góc vuông sáu và tám đã VUÔNG GÓC sẵn: cặp đáy-cao có sẵn, khỏi hạ thêm: sáu nhân tám chia hai — HAI MƯƠI TƯ! Muốn lấy HUYỀN mười làm đáy? Bất biến ba-đôi-giày gánh: đáy nhân cao bằng hai lần diện tích — bốn mươi tám: cao xuống huyền bằng bốn tám chia mười — BỐN PHẨY TÁM! Địa hình hai: tam giác TÙ — Trí Long loay hoay thả vuông góc từ đỉnh mà mãi không chạm được đáy: đường cao rơi RA NGOÀI! Bí kíp MỘT NÉT ĐỨT: kéo dài đáy về phía góc tù bằng nét đứt — đường cao đáp xuống phần kéo dài: cao vẫn là cao, công thức GIỮ NGUYÊN: đáy mười nhân cao sáu chia hai — BA MƯƠI! Cao rơi ra ngoài — kéo dài đáy mà đón lấy!",
   "canonicalExamples": [
    {
@@ -89,14 +72,8 @@
     "counterExample": "Nếu tam giác tù \"không có cao\" thì nó không có diện tích à — miếng bánh tù vẫn ăn no mà!"
    }
   ],
-  "vocabulary": [
-   "quà tặng cạnh góc vuông",
-   "cao xuống huyền",
-   "một nét đứt",
-   "kéo dài đáy đón cao",
-   "phần tăng cũng là tam giác"
-  ],
-  "mantra": "CAO RƠI RA NGOÀI — KÉO DÀI ĐÁY MÀ ĐÓN LẤY!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -118,45 +95,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Tam giác vuông có hai cạnh góc vuông 6 cm và 8 cm. Tính diện tích.",
-    "display": {
-     "type": "story_panel",
-     "caption": "tam giác tù không có cao??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để kẻ nét đứt!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Cách vẽ MỘT NÉT ĐỨT: kéo dài đáy về phía góc tù bằng nét đứt — rồi từ đỉnh hạ vuông góc: đường cao đáp êm xuống phần kéo dài! Cao vẫn là cao — khoảng cách vuông góc từ đỉnh tới ĐƯỜNG THẲNG chứa đáy: công thức GIỮ NGUYÊN! Đáy mười, cao ngoài sáu: mười nhân sáu chia hai — BA MƯƠI xăng-ti-mét vuông! Tam giác tù vẫn tính diện tích như thường — nó vẫn có đủ ba đường cao, chỉ là có đường rơi ra ngoài đáy!",
-    "display": {
-     "type": "obtuse_extend_interactive",
-     "spec": {
-      "dashed": "kéo dài đáy (nét đứt)",
-      "drop": "hạ ⊥ từ đỉnh → chạm phần kéo dài",
-      "formula": "S = 10 × 6 : 2 = 30",
-      "note": "công thức giữ nguyên"
-     }
-    },
-    "interaction": {
-     "type": "extend_and_drop",
-     "answerKey": {
-      "value": 30
-     },
-     "successMessage": "Nét đứt đón cao — 30 cm², công thức giữ nguyên!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -177,39 +115,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2",
-     "K4"
-    ],
-    "narration": "Địa hình vuông là QUÀ TẶNG: hai cạnh góc vuông sáu và tám đã vuông góc sẵn — cặp đáy-cao có sẵn: sáu nhân tám chia hai — HAI MƯƠI TƯ! Lấy huyền mười làm đáy? Bất biến gánh: hai lần diện tích bằng bốn tám — cao xuống huyền: bốn tám chia mười — BỐN PHẨY TÁM! Bài sư phụ: kéo đáy mười hai thêm BA, diện tích tăng bảy phẩy năm — phần tăng cũng là tam giác đáy ba chung cao: ba nhân cao chia hai bằng bảy phẩy năm — cao NĂM: diện tích ban đầu mười hai nhân năm chia hai — BA MƯƠI!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "vuông: 6 × 8 : 2 = 24 (cặp có sẵn)",
-      "huyền: cao = 48 : 10 = 4,8",
-      "sư phụ: 3 × h : 2 = 7,5 → h = 5 → S = 30"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: cao rơi ra ngoài — kéo dài đáy mà đón lấy!",
-    "display": {
-     "type": "mantra_card",
-     "text": "KÉO DÀI ĐÁY MÀ ĐÓN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -529,214 +434,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B45.M3",
- "figureSpec": [
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "",
-    "points": {
-     "A": [
-      0,
-      6
-     ],
-     "B": [
-      0,
-      0
-     ],
-     "C": [
-      8,
-      0
-     ],
-     "H": [
-      2.88,
-      3.84
-     ]
-    },
-    "shapes": [
-     {
-      "pts": [
-       "A",
-       "B",
-       "C"
-      ],
-      "fill": "teal"
-     }
-    ],
-    "segments": [
-     {
-      "from": "B",
-      "to": "H",
-      "dashed": true,
-      "label": "cao xuống huyền 4,8",
-      "dx": 16
-     }
-    ],
-    "edge_labels": [
-     {
-      "from": "A",
-      "to": "B",
-      "text": "6 cm",
-      "dx": -8
-     },
-     {
-      "from": "B",
-      "to": "C",
-      "text": "8 cm",
-      "dy": -5
-     },
-     {
-      "from": "A",
-      "to": "C",
-      "text": "huyền 10 cm",
-      "dx": 10,
-      "dy": 4
-     }
-    ],
-    "show_points": [
-     "A",
-     "B",
-     "C"
-    ]
-   },
-   "caption": "Đề bài — số đo đã cho",
-   "id": "F0",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B45_M3_F0.png",
-   "sha256_16": "4580e9ac59c7e1b2"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Tam giác vuông (cặp có sẵn) & tam giác tù: kéo dài đáy đón đường cao ngoài",
-    "steps": [
-     {
-      "text": "vuông: 6 × 8 : 2 = 24 (cặp có sẵn)"
-     },
-     {
-      "text": "huyền: cao = 48 : 10 = 4,8"
-     },
-     {
-      "text": "sư phụ: 3 × h : 2 = 7,5 → h = 5 → S = 30"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B45_M3_F2.png",
-   "sha256_16": "2b3c5056e8b9efca"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tam giác vuông = quà tặng",
-      "text": "hai cạnh góc vuông VUÔNG GÓC sẵn với nhau — cặp đáy - cao có sẵn, khỏi hạ thêm: S = 6 × 8 : 2 = 24 cm².",
-      "tone": "navy"
-     },
-     {
-      "label": "Lấy HUYỀN làm đáy",
-      "text": "bất biến M2 gánh: cao xuống huyền = 2S : huyền = 48 : 10 = 4,8 cm (huyền 10 là cạnh thứ ba của bộ 6-8-10).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CAO RƠI RA NGOÀI — KÉO DÀI ĐÁY MÀ ĐÓN LẤY!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B45_M3_F3.png",
-   "sha256_16": "25bb754accc1d6b7"
-  },
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "TAM GIÁC VUÔNG: HAI CẠNH GÓC VUÔNG LÀ CẶP CÓ SẴN",
-    "points": {
-     "A": [
-      0,
-      6
-     ],
-     "B": [
-      0,
-      0
-     ],
-     "C": [
-      8,
-      0
-     ],
-     "H": [
-      2.88,
-      3.84
-     ]
-    },
-    "shapes": [
-     {
-      "pts": [
-       "A",
-       "B",
-       "C"
-      ],
-      "fill": "teal",
-      "label": "S = 24 cm²"
-     }
-    ],
-    "segments": [
-     {
-      "from": "B",
-      "to": "H",
-      "dashed": true,
-      "label": "cao xuống huyền 4,8",
-      "dx": 16
-     }
-    ],
-    "edge_labels": [
-     {
-      "from": "A",
-      "to": "B",
-      "text": "6 cm",
-      "dx": -8
-     },
-     {
-      "from": "B",
-      "to": "C",
-      "text": "8 cm",
-      "dy": -5
-     },
-     {
-      "from": "A",
-      "to": "C",
-      "text": "huyền 10 cm",
-      "dx": 10,
-      "dy": 4
-     }
-    ],
-    "show_points": [
-     "A",
-     "B",
-     "C"
-    ],
-    "formula": "6 × 8 : 2 = 24 → cao xuống huyền = 24 × 2 : 10 = 4,8",
-    "note": "Cạnh huyền chỉ được làm đáy khi có đường cao hạ xuống chính nó"
-   },
-   "caption": "Tam giác tù thì phải kéo dài đáy ra để đón đường cao rơi bên ngoài",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B45_M3_F4.png",
-   "sha256_16": "1b2f529a961fa4e7"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B45"
@@ -748,5 +446,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Tam giác vuông (cặp có sẵn) & tam giác tù: kéo dài đáy đón đường cao ngoài"
+ "titleDay": "Tam giác vuông (cặp có sẵn) & tam giác tù: kéo dài đáy đón đường cao ngoài",
+ "video": {
+  "giang": "DL_KSN5Q1_B45_M3_giang.mp4"
+ }
 }
