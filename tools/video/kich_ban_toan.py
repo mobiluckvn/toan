@@ -13963,7 +13963,135 @@ def kb5_gia_thiet_tam(b):
     ]
 
 
+def kb5_khu_va_the(b):
+    """L5·B44·M1 Khớp nhịp mới được trừ — và nhân là nhân cả cột tiền."""
+    return [
+        _c('bia', 'Hai hoá đơn, hai món chưa biết giá', so_bai(b),
+           loi=['Hai hoá đơn cùng hai món. Có hai chiêu gỡ ra được giá từng món.']),
+        _c('de_toan', 'Đề bài',
+           de='Mua 3 bút và 2 vở hết 21 nghìn.\nMua 3 bút và 5 vở hết 30 nghìn',
+           loi=['Mua ba bút và hai vở hết hai mươi mốt nghìn. Mua ba bút và năm vở hết '
+                'ba mươi nghìn.']),
+        _c('day_so', 'Đặt hai hoá đơn cạnh nhau', so=['21', '30'], nhanHang='nghìn',
+           chuPhu='Cùng 3 bút ở cả hai hoá đơn.',
+           loi=['Đặt hai hoá đơn cạnh nhau. Cả hai đều có đúng ba bút.']),
+        _c('y_toan', 'Hệ số KHỚP thì trừ thẳng',
+           '3 bút triệt nhau   →   3 vở = 9   →   vở 3 nghìn · bút 5 nghìn',
+           buoc=1, soBuoc=3,
+           loi=['Hệ số khớp thì trừ thẳng. Ba bút triệt nhau, còn ba vở bằng chín.',
+                'Vở ba nghìn, bút năm nghìn.']),
+        _c('de_toan', 'Nhưng hệ số thường LỆCH', de='2 gạo + 3 nếp = 39 · 3 gạo + 2 nếp = 36',
+           loi=['Nhưng hệ số thường lệch nhau, không triệt được ngay.']),
+        _c('y_toan', 'Ba nhịp: SO — NHÂN — TRỪ',
+           'bội chung 6   ·   HĐ1 × 3 = 6 gạo + 9 nếp = 117   ·   HĐ2 × 2 = 6 gạo + 4 nếp = 72',
+           buoc=2, soBuoc=3,
+           loi=['Ba nhịp là so, nhân, trừ. So hệ số gạo, bội chung là sáu.',
+                'Nhân hoá đơn một với ba, hoá đơn hai với hai.']),
+        _c('y_toan', 'NHÂN là nhân CẢ CỘT TIỀN, đừng bỏ quên',
+           'trừ hai dòng:   5 nếp = 45   →   nếp 9 nghìn · gạo 6 nghìn', buoc=3, soBuoc=3,
+           loi=['Nhân thì nhân cả cột tiền, đừng chỉ nhân cột hàng.',
+                'Trừ hai dòng thì năm nếp bằng bốn mươi lăm, nếp chín nghìn, gạo sáu '
+                'nghìn.']),
+        _c('cong_thuc', 'Hai chiêu, một đích',
+           congThuc='khớp nhịp mới được TRỪ   —   và nhân là nhân CẢ cột tiền',
+           thay='chiêu THẾ: 1 táo = 2 cam → 3 táo + 4 cam đổi hết về cam: 10 cam = 30',
+           loi=['Con nhớ hai chiêu. Khử thì phải khớp nhịp mới trừ được.',
+                'Còn thế là đổi hết về một mệnh giá, rồi tính như một món.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_ven_ba_vong(b):
+    """L5·B44·M2 Giao ba bị trừ lố — cộng trả đúng một lần."""
+    return [
+        _c('bia', 'Đếm người mà không đếm trùng', so_bai(b),
+           loi=['Đếm số bạn thích ít nhất một môn. Có một nhóm rất dễ bị đếm hai lần.']),
+        _c('de_toan', 'Đề bài',
+           de='Lớp 40 bạn: 25 thích toán, 20 thích văn, 10 thích CẢ HAI.\nMấy bạn không thích môn nào?',
+           loi=['Lớp bốn mươi bạn. Hai mươi lăm bạn thích toán, hai mươi bạn thích '
+                'văn, mười bạn thích cả hai.']),
+        _c('so_do_ven', 'Vẽ hai vòng chồng nhau', tenA='thích toán', tenB='thích văn',
+           chiA='15', caHai='10', chiB='10',
+           chuGiao='10 bạn thích CẢ HAI nằm ở phần chồng nhau',
+           chuPhu='Cộng hai vòng thì phần ấy bị đếm hai lần.',
+           loi=['Vẽ hai vòng chồng nhau thì thấy ngay. Mười bạn thích cả hai nằm ở '
+                'phần chồng.',
+                'Cộng hai vòng thì phần ấy bị đếm hai lần.']),
+        _c('y_toan', 'Nên trừ đi đúng MỘT lần',
+           '25 + 20 − 10 = 35   →   không môn nào: 40 − 35 = 5 bạn', buoc=1, soBuoc=3,
+           loi=['Nên trừ đi đúng một lần. Ba mươi lăm bạn thích ít nhất một môn.',
+                'Còn năm bạn không thích môn nào.']),
+        _c('de_toan', 'Ba vòng thì rắc rối hơn hẳn',
+           de='Nhóm ở giữa CẢ BA vòng được cộng 3 lần, rồi bị trừ 3 lần',
+           loi=['Ba vòng thì rắc rối hơn. Soi số phận nhóm nằm giữa cả ba vòng.']),
+        _c('y_toan', 'Cộng 3 rồi trừ 3 là về KHÔNG',
+           'nhóm chăm nhất lớp bị xoá sổ   →   phải CỘNG TRẢ đúng một lần',
+           buoc=2, soBuoc=3,
+           loi=['Cộng ba lần rồi trừ ba lần là về không. Nhóm chăm nhất lớp bị xoá sổ '
+                'oan.',
+                'Nên phải cộng trả đúng một lần.']),
+        _c('y_toan', 'Công thức Ven ba vòng',
+           'A + B + C − (ba giao đôi) + giao ba', buoc=3, soBuoc=3,
+           loi=['Công thức là cộng ba tập, trừ ba giao đôi, rồi cộng trả giao ba.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='giao ba bị trừ LỐ — cộng trả đúng MỘT lần',
+           thay='15+12+10−5−4−3+2 = 27 → còn 3 bạn · quên cộng trả thì ra 5, oan 2 bạn',
+           loi=['Con nhớ câu này. Giao ba bị trừ lố nên phải cộng trả đúng một lần.',
+                'Quên cộng trả là hai bạn chăm nhất bị xoá sổ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_chuong_tho_bang_logic(b):
+    """L5·B44·M3 Xấu nhất cộng một — và đọc kỹ "đôi gì"."""
+    return [
+        _c('bia', 'Chữ "chắc chắn" đòi một cách đếm riêng', so_bai(b),
+           loi=['Đề hỏi chắc chắn thì phải đúng trong mọi kịch bản, kể cả kịch bản đen '
+                'đủi nhất.']),
+        _c('de_toan', 'Đề bài',
+           de='Trong 13 bạn bất kỳ, vì sao CHẮC CHẮN có ít nhất 2 bạn sinh cùng tháng?',
+           loi=['Trong mười ba bạn bất kỳ, vì sao chắc chắn có ít nhất hai bạn sinh '
+                'cùng tháng.']),
+        _c('y_toan', 'Máy đếm là KỊCH BẢN XẤU NHẤT cộng 1',
+           'xấu nhất: 12 bạn rơi vào 12 tháng khác nhau, chưa ai trùng ai',
+           buoc=1, soBuoc=3,
+           loi=['Máy đếm là kịch bản xấu nhất cộng một.',
+                'Xấu nhất là mười hai bạn rơi vào mười hai tháng khác nhau, chưa ai '
+                'trùng ai.']),
+        _c('y_toan', 'Bạn thứ 13 buộc phải trùng ai đó',
+           'hết chỗ trống rồi   →   nên 13 là con số chắc chắn', buoc=2, soBuoc=3,
+           loi=['Bạn thứ mười ba bước vào thì hết chỗ trống, buộc phải trùng tháng ai '
+                'đó.']),
+        _c('de_toan', 'Hai câu na ná mà hai máy đếm khác xa',
+           de='Ngăn kéo có tất 3 màu.  (a) một đôi CÙNG MÀU bất kỳ   ·   (b) một đôi màu ĐỎ',
+           loi=['Hai câu na ná nhau mà hai máy đếm khác xa. Một đôi cùng màu bất kỳ, và '
+                'một đôi màu đỏ.']),
+        _c('day_so', 'Hai đáp cách nhau rất xa', so=['4', '9'], nhanHang='chiếc',
+           chuPhu='(a) xấu nhất 3 chiếc 3 màu → 3 + 1 = 4   ·   (b) phải vét sạch màu khác trước',
+           loi=['Câu a, xấu nhất là ba chiếc ba màu khác nhau, chiếc thứ tư buộc '
+                'trùng.',
+                'Câu b thì phải chín chiếc.']),
+        _c('y_toan', 'Vì câu (b) chỉ định MÀU, nên xấu nhất là vét sạch màu khác',
+           '4 xanh + 3 vàng = 7 chiếc không đỏ   →   rồi mới cần thêm 2 đỏ   →   9',
+           buoc=3, soBuoc=3,
+           loi=['Vì câu b chỉ định màu, nên xấu nhất là vét sạch bốn chiếc xanh và ba '
+                'chiếc vàng.',
+                'Bảy chiếc không đỏ, rồi mới cần thêm hai chiếc đỏ nữa.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='xấu nhất CỘNG MỘT   —   và đọc kỹ "đôi GÌ"',
+           thay='bảng logic thì điền ô CHẮC CHẮN trước, rồi loại dần từng ô',
+           loi=['Con nhớ câu này. Xấu nhất cộng một, và đọc kỹ xem đề hỏi đôi gì.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B44.M1': kb5_khu_va_the,
+    'DL:KSN5Q1.B44.M2': kb5_ven_ba_vong,
+    'DL:KSN5Q1.B44.M3': kb5_chuong_tho_bang_logic,
     'DL:KSN5Q1.B43.M1': kb5_luu_do_hai_chieu,
     'DL:KSN5Q1.B43.M2': kb5_hai_chu_con_lai,
     'DL:KSN5Q1.B43.M3': kb5_gia_thiet_tam,

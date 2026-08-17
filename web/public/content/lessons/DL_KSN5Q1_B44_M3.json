@@ -34,20 +34,7 @@
   "kidText": "Bốc chắc chắn được một đôi tất: con nghĩ kịch bản xấu nhất rồi cộng thêm 1. Nhớ đọc kỹ \"đôi cùng màu\" hay \"đôi màu đỏ\"."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Nguyên lý chuồng bồ câu: 13 bạn — 12 tháng: ít nhất một tháng có từ 2 bạn (13 chim chui 12 chuồng); \"chắc chắn\" nghĩa là đúng trong MỌI kịch bản — nên máy tính là KỊCH BẢN XẤU NHẤT + 1."
-   },
-   {
-    "id": "K2",
-    "text": "Hai câu na ná — hai máy đếm khác xa: đôi CÙNG MÀU (bất kỳ): xấu nhất mỗi màu MỘT chiếc (3 chiếc 3 màu) → $3 + 1 = 4$ chiếc; đôi màu ĐỎ chỉ định: xấu nhất VÉT SẠCH màu khác (4 xanh + 3 vàng) rồi cần thêm 2 đỏ → $4 + 3 + 2 = 9$ chiếc — đọc kỹ ĐÔI GÌ!"
-   },
-   {
-    "id": "K3",
-    "text": "Bảng logic: điền ô CHẮC CHẮN trước (Bình không đỏ, không xanh → Bình VÀNG), rồi loại dần (An không đỏ, vàng có chủ → An XANH; Cúc ĐỎ); bài \"chỉ một người nói thật\": DUYỆT từng giả thiết — giả An thật → hai người cùng làm vỡ: mâu thuẫn, loại; giả Bình thật → An dối (Bình không làm ✓), Cúc dối → CÚC làm vỡ: khớp trọn — chốt."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: NGĂN TỦ TRONG BÓNG TỐI VÀ KỊCH BẢN ĐEN ĐỦI NHẤT. Ngăn tủ 5 tất đỏ, 4 xanh, 3 vàng — bốc trong tối. Câu a: bốc mấy chiếc CHẮC CHẮN có một đôi cùng màu? Trí Long: \"hai chiếc là thành đôi!\" — nhưng 'chắc chắn' phải đúng cả khi ĐEN ĐỦI NHẤT: ba chiếc BA màu khác nhau vẫn chưa có đôi! Chiếc thứ TƯ buộc trùng một màu: 3 + 1 = BỐN chiếc! Câu b na ná mà khác xa: chắc chắn có đôi màu ĐỎ? Kịch bản đen đủi: vét SẠCH bốn xanh, ba vàng — bảy chiếc chưa dính đỏ nào — rồi thêm HAI đỏ: 4 + 3 + 2 = CHÍN chiếc! Đôi cùng màu bốn — đôi màu đỏ chín: hai thế giới, đọc kỹ ĐÔI GÌ! Bảng logic ba bạn ba áo: Bình không đỏ không xanh — ô chắc chắn: Bình VÀNG; An không đỏ mà vàng có chủ: An XANH; còn Cúc ĐỎ. Vụ bình vỡ chỉ-một-người-thật: DUYỆT — giả An thật: Bình làm; Cúc \"tớ không làm\" hóa dối → Cúc cũng làm: HAI thủ phạm, mâu thuẫn — loại! Giả Bình thật: An dối khớp, Cúc dối → CÚC làm vỡ — khớp trọn vành: chốt án!",
   "canonicalExamples": [
    {
@@ -84,14 +71,8 @@
     "counterExample": "Bốc 4 chiếc đòi đôi ĐỎ? Đen đủi: 4 xanh — chưa có chiếc đỏ nào chứ đừng nói đôi!"
    }
   ],
-  "vocabulary": [
-   "chuồng bồ câu",
-   "kịch bản xấu nhất + 1",
-   "đôi cùng màu — đôi màu chỉ định",
-   "ô chắc chắn điền trước",
-   "duyệt giả thiết tìm mâu thuẫn"
-  ],
-  "mantra": "DIRICHLET = XẤU NHẤT + 1 — VÀ ĐỌC KỸ ĐÔI GÌ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -113,48 +94,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Trong 13 bạn bất kỳ, vì sao chắc chắn có ít nhất 2 bạn sinh cùng tháng?",
-    "display": {
-     "type": "story_panel",
-     "caption": "bốc 2 chiếc = chắc có đôi??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để chơi ván đen đủi nhất!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Máy Dirichlet: KỊCH BẢN XẤU NHẤT cộng MỘT! Câu a — đôi CÙNG MÀU: đen đủi nhất là ba chiếc BA màu khác nhau, vẫn chưa đôi nào; chiếc thứ TƯ buộc trùng một màu: ba cộng một — BỐN chiếc! Câu b — đôi màu ĐỎ chỉ định: đen đủi nhất là vét SẠCH bốn xanh ba vàng, bảy chiếc chưa dính đỏ; rồi cần thêm HAI đỏ: bốn cộng ba cộng hai — CHÍN chiếc! Hai câu na ná — hai thế giới: đọc kỹ ĐÔI GÌ!",
-    "display": {
-     "type": "worst_case_interactive",
-     "spec": {
-      "caseA": "cùng màu: xấu nhất 3 chiếc 3 màu → 3+1 = 4",
-      "caseB": "màu đỏ: vét 4 xanh + 3 vàng → +2 = 9",
-      "law": "xấu nhất + 1"
-     }
-    },
-    "interaction": {
-     "type": "draw_worst",
-     "answerKey": {
-      "values": [
-       4,
-       9
-      ]
-     },
-     "successMessage": "4 và 9 — hai thế giới của một ngăn tủ!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -175,37 +114,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Bảng logic ba bạn ba áo — điền ô CHẮC CHẮN trước: Bình không đỏ, không xanh — Bình VÀNG! Loại dần: An không đỏ mà vàng đã có chủ — An XANH; còn Cúc ĐỎ. Vụ bình vỡ chỉ-một-người-thật thì DUYỆT từng giả thiết: giả An thật — Bình làm; Cúc nói \"tớ không làm\" hóa dối: Cúc cũng làm — HAI thủ phạm: mâu thuẫn, loại! Giả Bình thật: An dối khớp, Cúc dối — CÚC làm vỡ: khớp trọn vành, chốt án!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "bảng: Bình VÀNG → An XANH → Cúc ĐỎ",
-      "duyệt An thật: 2 thủ phạm ✗",
-      "duyệt Bình thật: Cúc làm vỡ ✓ chốt"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: Dirichlet bằng xấu nhất cộng một — và đọc kỹ đôi gì!",
-    "display": {
-     "type": "mantra_card",
-     "text": "XẤU NHẤT + 1 — ĐÔI GÌ?"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -600,108 +508,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B44.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "bốc 2 chiếc = chắc có đôi??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "hai chiếc là thành đôi!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B44_M3_F1.png",
-   "sha256_16": "4bc8b97f01de99b9"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Dirichlet xấu-nhất-+1 (đôi cùng màu ≠ đôi màu đỏ) & bảng logic duyệt giả thiết",
-    "steps": [
-     {
-      "text": "bảng: Bình VÀNG → An XANH → Cúc ĐỎ"
-     },
-     {
-      "text": "duyệt An thật: 2 thủ phạm"
-     },
-     {
-      "text": "duyệt Bình thật: Cúc làm vỡ chốt"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B44_M3_F2.png",
-   "sha256_16": "8ad6cb94099a223a"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Nguyên lý chuồng bồ câu",
-      "text": "13 bạn — 12 tháng: ít nhất một tháng có từ 2 bạn (13 chim chui 12 chuồng); \"chắc chắn\" nghĩa là đúng trong MỌI kịch bản — nên máy tính là KỊCH BẢN XẤU NHẤT + 1.",
-      "tone": "navy"
-     },
-     {
-      "label": "Hai câu na ná",
-      "text": "hai máy đếm khác xa: đôi CÙNG MÀU (bất kỳ): xấu nhất mỗi màu MỘT chiếc (3 chiếc 3 màu) → 3 + 1 = 4 chiếc; đôi màu ĐỎ chỉ định: xấu nhất VÉT SẠCH màu khác (4 xanh + 3 vàng) rồi cần thêm 2 đỏ → 4 + 3 + 2 = 9 chiếc — đọc kỹ ĐÔI GÌ!",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "DIRICHLET = XẤU NHẤT + 1 — VÀ ĐỌC KỸ ĐÔI GÌ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B44_M3_F3.png",
-   "sha256_16": "14f3c1e2e832c66c"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "TỦ TỐI: 5 TẤT ĐỎ · 4 XANH · 3 VÀNG — BỐC MẤY CHIẾC?",
-    "neutral": true,
-    "wrong": {
-     "head": "ĐÔI CÙNG MÀU",
-     "steps": [
-      "xấu nhất: 3 chiếc 3 màu khác nhau"
-     ],
-     "result": "3 + 1 = 4 chiếc"
-    },
-    "right": {
-     "head": "ĐÔI MÀU ĐỎ",
-     "steps": [
-      "xấu nhất: vét sạch xanh + vàng = 7"
-     ],
-     "result": "7 + 2 = 9 chiếc"
-    },
-    "verdict": "Hai câu na ná — kịch bản xấu nhất khác hẳn nhau"
-   },
-   "caption": "Máy Dirichlet: dựng kịch bản XẤU NHẤT rồi cộng thêm cho chắc chắn",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B44_M3_F4.png",
-   "sha256_16": "0d73bff84be03173"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B36",
@@ -715,5 +522,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Dirichlet xấu-nhất-+1 (đôi cùng màu ≠ đôi màu đỏ) & bảng logic duyệt giả thiết"
+ "titleDay": "Dirichlet xấu-nhất-+1 (đôi cùng màu ≠ đôi màu đỏ) & bảng logic duyệt giả thiết",
+ "video": {
+  "giang": "DL_KSN5Q1_B44_M3_giang.mp4"
+ }
 }

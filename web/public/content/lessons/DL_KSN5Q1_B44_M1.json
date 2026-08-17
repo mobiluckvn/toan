@@ -35,20 +35,7 @@
   "kidText": "Hai hoá đơn: con nhân cả hoá đơn — kể cả cột tiền — cho khớp nhịp rồi mới trừ nhau để khử bớt một loại."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Khử hệ số KHỚP — trừ thẳng: (3 bút + 5 vở = 30) − (3 bút + 2 vở = 21): cùng 3 bút triệt nhau → 3 vở = 9 → vở 3 nghìn; bút = ($21 - 6$) : $3 = 5$ nghìn. Thử cả hai hóa đơn ✓."
-   },
-   {
-    "id": "K2",
-    "text": "Hệ số LỆCH — nghi thức ba nhịp: SO hệ số (2 gạo vs 3 gạo) — NHÂN CẢ HÓA ĐƠN về bội chung 6 (HĐ1 × 3: 6 gạo + 9 nếp = 117; HĐ2 × 2: 6 gạo + 4 nếp = 72 — cột tiền nhân theo, không được bỏ quên!) — TRỪ: 5 nếp = 45 → nếp 9 nghìn; gạo = ($39 - 27$) : $2 = 6$ nghìn."
-   },
-   {
-    "id": "K3",
-    "text": "THẾ = đổi tiền cùng mệnh giá: biết 1 táo = 2 cam → hóa đơn 3 táo + 4 cam = 30 đổi hết về cam: 6 cam + 4 cam = 10 cam = 30 → cam 3 nghìn; thế ngược: táo = $2  \\times  3 = 6$ nghìn."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: QUẦY ĐỐI CHIẾU HAI HÓA ĐƠN. Hai tờ hóa đơn: 2 gạo + 3 nếp = 39 nghìn; 3 gạo + 2 nếp = 36 nghìn. Trí Long trừ luôn: một gạo trừ một nếp bằng… ba?! Hai hóa đơn LỆCH NHỊP — 2 gạo với 3 gạo trừ nhau chẳng triệt được ai! Nghi thức khử ba nhịp: SO hệ số — NHÂN cả hóa đơn về bội chung — TRỪ. Bội chung của 2 và 3 là SÁU: hóa đơn một nhân BA: sáu gạo chín nếp — và cột tiền nhân theo: MỘT TRĂM MƯỜI BẢY nghìn! Hóa đơn hai nhân HAI: sáu gạo bốn nếp — BẢY MƯƠI HAI nghìn! Giờ cùng sáu gạo — trừ: năm nếp bằng bốn lăm — nếp CHÍN nghìn; thế lại: gạo SÁU nghìn. Cấm quên cột tiền: nhân hàng mà giữ giá cũ thì chủ quầy lỗ sạt nghiệp! Còn phép THẾ là đổi tiền cùng mệnh giá: một táo bằng hai cam — hóa đơn 3 táo 4 cam 30 nghìn đổi hết về cam: sáu cộng bốn là MƯỜI cam bằng ba mươi — cam BA nghìn, táo SÁU nghìn!",
   "canonicalExamples": [
    {
@@ -79,14 +66,8 @@
     "counterExample": "Nhân hàng ×3 mà tiền vẫn 39: sáu gạo chín nếp giá 39 nghìn — chủ quầy bán một tặng hai, sạt nghiệp!"
    }
   ],
-  "vocabulary": [
-   "hai hóa đơn lệch nhịp",
-   "so — nhân — trừ",
-   "nhân cả cột tiền",
-   "bội chung hệ số",
-   "đổi tiền cùng mệnh giá"
-  ],
-  "mantra": "KHỚP NHỊP MỚI ĐƯỢC TRỪ — VÀ NHÂN LÀ NHÂN CẢ CỘT TIỀN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -108,47 +89,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Mua 3 bút và 2 vở hết 21 nghìn; mua 3 bút và 5 vở hết 30 nghìn. Tính giá mỗi loại.",
-    "display": {
-     "type": "story_panel",
-     "caption": "2 gạo − 3 gạo: triệt được ai??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để so nhịp!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K2"
-    ],
-    "narration": "Nghi thức khử ba nhịp: SO — NHÂN — TRỪ! So hệ số gạo: hai với ba — bội chung SÁU. Nhân hóa đơn một với BA: sáu gạo chín nếp — cột tiền nhân theo: MỘT TRĂM MƯỜI BẢY nghìn! Nhân hóa đơn hai với HAI: sáu gạo bốn nếp — BẢY MƯƠI HAI nghìn! Giờ cùng sáu gạo — trừ: năm nếp bằng bốn lăm: nếp CHÍN nghìn! Thế lại hóa đơn gốc: gạo SÁU nghìn. Cấm quên cột tiền: nhân hàng giữ giá cũ là chủ quầy bán một tặng hai!",
-    "display": {
-     "type": "invoice_align_interactive",
-     "spec": {
-      "inv1": "×3: 6 gạo + 9 nếp = 117",
-      "inv2": "×2: 6 gạo + 4 nếp = 72",
-      "sub": "5 nếp = 45 → nếp 9 · gạo 6"
-     }
-    },
-    "interaction": {
-     "type": "scale_then_subtract",
-     "answerKey": {
-      "values": [
-       9,
-       6
-      ]
-     },
-     "successMessage": "117 − 72: nếp 9, gạo 6 nghìn!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -164,38 +104,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Hệ số khớp sẵn thì trừ thẳng: ba bút hai vở hai mốt — ba bút năm vở ba mươi: cùng ba bút triệt nhau: ba vở bằng chín — vở BA nghìn, bút NĂM nghìn! Còn phép THẾ là đổi tiền cùng mệnh giá: một táo bằng HAI cam — hóa đơn ba táo bốn cam ba mươi nghìn đổi hết về cam: sáu cộng bốn bằng MƯỜI cam — cam BA nghìn; thế ngược: táo SÁU nghìn! Hai ẩn về một loại — bài toán mở khóa.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "khớp: 3 vở = 30 − 21 = 9 → vở 3, bút 5",
-      "thế: 1 táo = 2 cam → 10 cam = 30 → cam 3, táo 6",
-      "hai ẩn → một loại tiền"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: khớp nhịp mới được trừ — và nhân là nhân cả cột tiền!",
-    "display": {
-     "type": "mantra_card",
-     "text": "NHÂN LÀ NHÂN CẢ CỘT TIỀN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -531,110 +439,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B44.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "2 gạo − 3 gạo: triệt được ai??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "một gạo trừ một nếp bằng 3!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B44_M1_F1.png",
-   "sha256_16": "ee7bebfa9122c8f9"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Khử & thế: nhân CẢ hóa đơn (mọi cột) về bội chung rồi trừ — thế là đổi tiền cùng mệnh giá",
-    "steps": [
-     {
-      "text": "khớp: 3 vở = 30 − 21 = 9 → vở 3, bút 5"
-     },
-     {
-      "text": "thế: 1 táo = 2 cam → 10 cam = 30 → cam 3, táo 6"
-     },
-     {
-      "text": "hai ẩn → một loại tiền"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B44_M1_F2.png",
-   "sha256_16": "4b2c954676a4e33d"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Khử hệ số KHỚP",
-      "text": "trừ thẳng: (3 bút + 5 vở = 30) − (3 bút + 2 vở = 21): cùng 3 bút triệt nhau → 3 vở = 9 → vở 3 nghìn; bút = (21 − 6) : 3 = 5 nghìn. Thử cả hai hóa đơn.",
-      "tone": "navy"
-     },
-     {
-      "label": "Hệ số LỆCH",
-      "text": "nghi thức ba nhịp: SO hệ số (2 gạo vs 3 gạo) — NHÂN CẢ HÓA ĐƠN về bội chung 6 (HĐ1 × 3: 6 gạo + 9 nếp = 117; HĐ2 × 2: 6 gạo + 4 nếp = 72 — cột tiền nhân theo, không được bỏ quên!) — TRỪ: 5 nếp = 45 → nếp 9 nghìn; gạo = (39 − 27) : 2 = 6 nghìn.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "KHỚP NHỊP MỚI ĐƯỢC TRỪ — VÀ NHÂN LÀ NHÂN CẢ CỘT TIỀN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B44_M1_F3.png",
-   "sha256_16": "11d20590a56e9674"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "HAI HÓA ĐƠN — KHỬ HAY THẾ?",
-    "neutral": true,
-    "wrong": {
-     "head": "KHỬ (hệ số khớp)",
-     "steps": [
-      "3 bút + 2 vở = 21",
-      "3 bút + 5 vở = 30"
-     ],
-     "result": "3 vở = 9 → vở 3 · bút 5"
-    },
-    "right": {
-     "head": "THẾ (đổi tiền)",
-     "steps": [
-      "1 táo = 2 cam",
-      "3 táo + 4 cam = 10 cam"
-     ],
-     "result": "cam 3 · táo 6"
-    },
-    "verdict": "Hệ số LỆCH thì ba nhịp: SO — NHÂN cả hóa đơn — TRỪ"
-   },
-   "caption": "Nhân phải nhân CẢ hóa đơn (mọi cột), không nhân mỗi một cột",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B44_M1_F4.png",
-   "sha256_16": "48d944b2edf1b9ca"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B36",
@@ -648,5 +453,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Khử & thế: nhân CẢ hóa đơn (mọi cột) về bội chung rồi trừ — thế là đổi tiền cùng mệnh giá"
+ "titleDay": "Khử & thế: nhân CẢ hóa đơn (mọi cột) về bội chung rồi trừ — thế là đổi tiền cùng mệnh giá",
+ "video": {
+  "giang": "DL_KSN5Q1_B44_M1_giang.mp4"
+ }
 }
