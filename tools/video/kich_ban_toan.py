@@ -13709,7 +13709,136 @@ def kb5_luan_phien_chu_ky(b):
     ]
 
 
+def kb5_voi_vao_voi_ra(b):
+    """L5·B42·M1 Vào cộng, ra trừ — bể không nhận kẻ phá làm trợ thủ."""
+    return [
+        _c('bia', 'Bể nước chính là cái giếng bài trước đổi áo', so_bai(b),
+           loi=['Bài bể nước dùng đúng máy của bài trước. Chỉ thêm một chuyện.']),
+        _c('de_toan', 'Đề bài',
+           de='Vòi bơm chảy đầy bể sau 3 giờ. Van tháo làm cạn bể đầy sau 6 giờ.\n'
+              'Mở CẢ HAI thì bao lâu bể đầy?',
+           loi=['Vòi bơm chảy đầy bể sau ba giờ. Van tháo làm cạn bể đầy sau sáu giờ.',
+                'Mở cả hai thì bao lâu bể đầy.']),
+        _c('y_toan', 'Đầy bể = 1, y như cả công việc bài trước',
+           'đầy sau 3 giờ   →   năng suất 1/3 bể mỗi giờ', buoc=1, soBuoc=3,
+           loi=['Đầy bể coi là một, y như cả công việc bài trước.',
+                'Đầy sau ba giờ thì mỗi giờ được một phần ba bể.']),
+        _c('y_toan', 'Nhưng hai vòi chảy NGƯỢC chiều nhau',
+           'vòi bơm đẩy nước VÀO → dấu CỘNG   ·   van tháo kéo nước RA → dấu TRỪ',
+           buoc=2, soBuoc=3,
+           loi=['Nhưng hai vòi chảy ngược chiều nhau. Vòi bơm mang dấu cộng, van tháo '
+                'mang dấu trừ.']),
+        _c('phan_so', 'Mỗi giờ bể THỰC NHẬN bao nhiêu', tu=2, mau=6, nhan='vòi vào',
+           tu2=1, mau2=6, nhan2='van tháo',
+           chuPhu='Vào 1/3 tức 2/6   ·   tháo 1/6.',
+           chuCuoi='Thực nhận 2/6 − 1/6 = 1/6 bể mỗi giờ.',
+           loi=['Quy về cùng mẫu sáu cho dễ trừ. Vòi vào hai phần sáu, van tháo một '
+                'phần sáu.',
+                'Mỗi giờ bể thực nhận một phần sáu, nên sáu giờ mới đầy.']),
+        _c('y_toan', 'Chuông soi vào–ra',
+           'có kẻ tháo cùng mở thì phải đầy CHẬM hơn   ·   6 > 3 ✓', buoc=3, soBuoc=3,
+           loi=['Chuông soi rất nhanh. Có kẻ tháo cùng mở thì bể phải đầy chậm hơn lúc '
+                'chỉ mình vòi bơm.',
+                'Sáu lớn hơn ba, khớp. Nếu ra đáp hai giờ thì van tháo hoá trợ thủ, sai '
+                'chắc.']),
+        _c('de_toan', 'Đông vòi hơn cũng một luật',
+           de='1/3 + 1/6 − 1/4 = 1/4   →   4 giờ',
+           loi=['Đông vòi hơn cũng một luật. Cộng đại số hết lượt rồi lấy một chia.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='VÀO cộng   —   RA trừ',
+           thay='bể không bao giờ nhận kẻ phá làm trợ thủ',
+           loi=['Con nhớ câu này. Vào thì cộng, ra thì trừ.',
+                'Bể không bao giờ nhận kẻ phá làm trợ thủ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_be_co_san_be_ro(b):
+    """L5·B42·M2 Bơm phần thiếu — không bơm lại từ vạch số không."""
+    return [
+        _c('bia', 'Bể không phải lúc nào cũng bắt đầu từ cạn', so_bai(b),
+           loi=['Có bể đã sẵn nước. Bơm lại từ số không là làm dư việc.']),
+        _c('de_toan', 'Đề bài',
+           de='Bể đang có sẵn 1/3 nước. Vòi bơm đầy bể (từ cạn) trong 3 giờ.\n'
+              'Mở vòi thì bao lâu bể đầy?',
+           loi=['Bể đang có sẵn một phần ba nước. Vòi bơm đầy bể từ cạn trong ba '
+                'giờ.']),
+        _c('y_toan', 'Nghi thức: ghi rõ MỨC ĐẦU và MỨC ĐÍCH trước khi bấm',
+           'mức đầu 1/3   ·   mức đích 1 (đầy tràn)', buoc=1, soBuoc=3,
+           loi=['Nghi thức trước khi bấm. Kẻ lên thành bể mức đầu và mức đích.']),
+        _c('phan_so', 'Phần cần bơm chỉ là chỗ CÒN THIẾU', tu=1, mau=3, nhan='đã có',
+           chuPhu='Mức đầu 1/3 — đích là đầy tràn.',
+           chuCuoi='Phần cần bơm = 1 − 1/3 = 2/3 bể.',
+           loi=['Phần cần bơm chỉ là chỗ còn thiếu, tức hai phần ba bể.',
+                'Nước sẵn có ai đổ đi đâu mà bơm lại.']),
+        _c('y_toan', 'Thời gian = PHẦN THIẾU chia năng suất',
+           '2/3 : 1/3 = 2 giờ      ·      không phải 1 : 1/3 = 3 giờ', buoc=2, soBuoc=3,
+           loi=['Thời gian bằng phần thiếu chia năng suất. Hai phần ba chia một phần '
+                'ba, được hai giờ.']),
+        _c('de_toan', 'Bể RÒ chỉ là van tháo đội mũ',
+           de='Vòi bơm 4 giờ đầy. Bể rò làm cạn bể đầy trong 12 giờ',
+           loi=['Bể rò chỉ là van tháo đội mũ. Lốp xì hay két hao cũng cùng một họ.']),
+        _c('y_toan', 'Nên năng suất rò mang dấu TRỪ',
+           '1/4 − 1/12 = 3/12 − 1/12 = 1/6   →   6 giờ', buoc=3, soBuoc=3,
+           loi=['Năng suất rò mang dấu trừ. Một phần tư trừ một phần mười hai, còn một '
+                'phần sáu.',
+                'Nên sáu giờ mới đầy.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='bơm PHẦN THIẾU — không bơm lại từ vạch số không',
+           thay='bài nhiều chặng thì ghép khúc: 2 giờ vào-tháo được 1/3, khoá van rồi bơm nốt 2 giờ',
+           loi=['Con nhớ câu này. Bơm phần thiếu thôi, đừng bơm lại từ vạch số '
+                'không.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_ti_le_nghich(b):
+    """L5·B42·M3 Neo tổng công — kiểm chiều trước, bấm chia sau."""
+    return [
+        _c('bia', 'Ít người hơn thì lâu hơn hay nhanh hơn?', so_bai(b),
+           loi=['Đổi quân số thì số ngày đổi theo. Nhưng đổi theo chiều nào.']),
+        _c('de_toan', 'Đề bài',
+           de='Sáu người đào xong con mương trong 10 ngày.\nBốn người (sức như nhau) đào trong mấy ngày?',
+           loi=['Sáu người đào xong con mương trong mười ngày. Hỏi bốn người đào trong '
+                'mấy ngày.']),
+        _c('y_toan', 'Mỏ neo là KHO CÔNG: người × ngày',
+           '6 × 10 = 60 công   —   con mương đòi ngần ấy đất, đội nào đào cũng thế',
+           buoc=1, soBuoc=3,
+           loi=['Mỏ neo ở đây là kho công, bằng số người nhân số ngày.',
+                'Sáu nhân mười bằng sáu mươi công. Con mương đòi ngần ấy, đội nào đào '
+                'cũng vậy.']),
+        _c('y_toan', 'Đổi quân số thì chia lại kho công',
+           'ngày mới = 60 : 4 = 15 ngày', buoc=2, soBuoc=3,
+           loi=['Đổi quân số thì chia lại kho công. Sáu mươi chia bốn, được mười lăm '
+                'ngày.']),
+        _c('day_so', 'KIỂM CHIỀU trước khi tin', so=['10', '15'], nhanHang='ngày',
+           chuPhu='6 người → 10 ngày   ·   4 người → 15 ngày   ·   kho công vẫn 60.',
+           loi=['Kiểm chiều trước khi tin. Ít người hơn thì phải nhiều ngày hơn.',
+                'Mười lăm lớn hơn mười, khớp chiều nghịch.']),
+        _c('y_toan', 'Phép nhân chéo theo quán tính thì gãy chiều',
+           '4/6 × 10 = 6,7 ngày   →   ít người mà làm NHANH hơn, vô lý',
+           buoc=3, soBuoc=3,
+           loi=['Nhân chéo theo quán tính ra sáu phẩy bảy ngày.',
+                'Ít người mà làm nhanh hơn thì vô lý, gãy chiều ngay.']),
+        _c('de_toan', 'Máy chạy mọi đơn vị',
+           de='3 máy bơm đầy hồ trong 6 giờ. Hai máy thì mấy giờ?',
+           loi=['Máy chạy mọi đơn vị, không riêng người với ngày.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='neo TỔNG CÔNG — kiểm chiều TRƯỚC, bấm chia SAU',
+           thay='3 × 6 = 18 máy-giờ   →   18 : 2 = 9 giờ, và 9 > 6 nên khớp chiều',
+           loi=['Con nhớ câu này. Neo tổng công, kiểm chiều trước rồi mới bấm chia.',
+                'Ba nhân sáu là mười tám máy giờ, chia hai được chín giờ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B42.M1': kb5_voi_vao_voi_ra,
+    'DL:KSN5Q1.B42.M2': kb5_be_co_san_be_ro,
+    'DL:KSN5Q1.B42.M3': kb5_ti_le_nghich,
     'DL:KSN5Q1.B41.M1': kb5_lam_chung_cong_viec,
     'DL:KSN5Q1.B41.M2': kb5_ghep_doan_chung_rieng,
     'DL:KSN5Q1.B41.M3': kb5_luan_phien_chu_ky,

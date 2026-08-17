@@ -34,20 +34,7 @@
   "kidText": "6 người làm 10 ngày là 60 công. Đổi số người thì chia 60 cho số người mới. Ít người hơn thì phải nhiều ngày hơn."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Mỏ neo tỉ lệ nghịch: TỔNG CÔNG = người × ngày, bất biến của con mương: 6 người × 10 ngày = 60 công — mương vẫn ngần ấy đất dù đội thợ đổi quân."
-   },
-   {
-    "id": "K2",
-    "text": "Đổi quân số: ngày mới = tổng công : quân số mới: 4 người → $60 : 4 = 15$ ngày; máy chạy mọi đơn vị: 3 máy × 6 giờ = 18 máy-giờ → 2 máy: $18 : 2 = 9$ giờ."
-   },
-   {
-    "id": "K3",
-    "text": "KIỂM CHIỀU trước khi bấm: ÍT người hơn → NHIỀU ngày hơn ($15 > 10$ ✓); phép nhân chéo quán tính thuận ($\\frac{6}{4}$ × 10 hay $\\frac{4}{6}$ × $10 = 6,7$ ngày) cho ít người làm NHANH hơn — gãy chiều ngay."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: KHO CÔNG CỦA CON MƯƠNG. Sáu người đào xong con mương trong mười ngày — hỏi bốn người thì mấy ngày? Trí Long nhân chéo theo quán tính: \"bốn phần sáu nhân mười — sáu phẩy bảy ngày!\" Su Kem kiểm chiều: BỚT người mà XONG NHANH hơn?! Đây là chiều NGHỊCH — mỏ neo là KHO CÔNG: con mương đòi đúng sáu nhân mười bằng SÁU MƯƠI công, ai đào cũng ngần ấy đất! Bốn người gánh kho sáu mươi công: sáu mươi chia bốn — MƯỜI LĂM ngày! Kiểm chiều: mười lăm LỚN hơn mười — ít người nhiều ngày: chuẩn! Máy chạy mọi đơn vị: ba máy bơm đầy hồ sáu giờ — kho công mười tám máy-giờ; hai máy: mười tám chia hai — CHÍN giờ. Nghi thức hai bước: NEO tổng công — KIỂM chiều trước, bấm chia sau!",
   "canonicalExamples": [
    {
@@ -72,14 +59,8 @@
     "counterExample": "$6,7 < 10$: hai người nghỉ mà đội lại về đích sớm — hai bạn ấy ở nhà đào giúp bằng ý nghĩ à?!"
    }
   ],
-  "vocabulary": [
-   "kho công",
-   "người × ngày bất biến",
-   "máy-giờ",
-   "kiểm chiều trước bấm sau",
-   "ít người — nhiều ngày"
-  ],
-  "mantra": "NEO TỔNG CÔNG — KIỂM CHIỀU TRƯỚC, BẤM CHIA SAU!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -101,45 +82,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Sáu người đào xong con mương trong 10 ngày. Tính tổng số công — rồi cho biết bốn người (sức như nhau) đào trong mấy ngày?",
-    "display": {
-     "type": "story_panel",
-     "caption": "bớt người → xong nhanh hơn??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để mở kho công!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Đây là chiều NGHỊCH — mỏ neo là KHO CÔNG: con mương đòi đúng sáu nhân mười bằng SÁU MƯƠI công, đội nào đào cũng ngần ấy đất! Bốn người gánh kho sáu mươi công: sáu mươi chia bốn — MƯỜI LĂM ngày! Kiểm chiều đóng mộc: mười lăm LỚN hơn mười — ít người thì nhiều ngày: chuẩn!",
-    "display": {
-     "type": "work_bank_interactive",
-     "spec": {
-      "bank": "6 × 10 = 60 công (bất biến)",
-      "new": "4 người → 60 : 4 = 15 ngày",
-      "check": "15 > 10 ✓ ít người — nhiều ngày"
-     }
-    },
-    "interaction": {
-     "type": "anchor_then_divide",
-     "answerKey": {
-      "value": 15
-     },
-     "successMessage": "Kho 60 công : 4 người = 15 ngày ✓!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -160,38 +102,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Máy chạy mọi đơn vị: ba máy bơm đầy hồ trong sáu giờ — kho công MƯỜI TÁM máy-giờ; hai máy gánh kho: mười tám chia hai — CHÍN giờ, và chín lớn hơn sáu: ít máy nhiều giờ, khớp chiều! Nghi thức hai bước trước mọi bài đội thợ: NEO tổng công người-nhân-ngày — KIỂM chiều ít-người-nhiều-ngày — rồi mới bấm chia. Phép nhân chéo quán tính thuận cho đội ít quân về đích sớm: gãy chiều là loại ngay từ vòng gửi xe!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "máy: 3 × 6 = 18 máy-giờ → 2 máy: 9 giờ (9 > 6 ✓)",
-      "nghi thức: NEO → KIỂM CHIỀU → CHIA",
-      "nhân chéo thuận: gãy chiều — loại"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: neo tổng công — kiểm chiều trước, bấm chia sau!",
-    "display": {
-     "type": "mantra_card",
-     "text": "NEO TỔNG CÔNG — KIỂM CHIỀU!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -486,143 +396,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B42.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "bớt người → xong nhanh hơn??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "bốn phần sáu nhân mười — 6,7 ngày!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B42_M3_F1.png",
-   "sha256_16": "1698ab64a800b50f"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Tỉ lệ nghịch: neo TỔNG CÔNG người × ngày — kiểm chiều ít người nhiều ngày",
-    "steps": [
-     {
-      "text": "máy: 3 × 6 = 18 máy-giờ → 2 máy: 9 giờ (9 > 6 )"
-     },
-     {
-      "text": "nghi thức: NEO → KIỂM CHIỀU → CHIA"
-     },
-     {
-      "text": "nhân chéo thuận: gãy chiều — loại"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B42_M3_F2.png",
-   "sha256_16": "1048ab634c3d6b85"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Mỏ neo tỉ lệ nghịch",
-      "text": "TỔNG CÔNG = người × ngày",
-      "tone": "navy"
-     },
-     {
-      "label": "Đổi quân số",
-      "text": "4 = 15 ngày",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "NEO TỔNG CÔNG — KIỂM CHIỀU TRƯỚC, BẤM CHIA SAU!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B42_M3_F3.png",
-   "sha256_16": "a6a1e04320915a75"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "TỈ LỆ NGHỊCH — MỎ NEO LÀ TỔNG CÔNG",
-    "headers": [
-     "số người",
-     "số ngày",
-     "tổng công"
-    ],
-    "comma_after": null,
-    "rows": [
-     {
-      "label": "",
-      "cells": [
-       "6 người",
-       "10 ngày",
-       "60"
-      ],
-      "color": "#E6FAF5",
-      "highlight": [
-       2
-      ]
-     },
-     {
-      "label": "",
-      "cells": [
-       "4 người",
-       "15 ngày",
-       "60"
-      ],
-      "color": "#FFF4DF",
-      "highlight": [
-       2
-      ]
-     },
-     {
-      "label": "",
-      "cells": [
-       "3 máy",
-       "6 giờ",
-       "18"
-      ],
-      "color": "white"
-     },
-     {
-      "label": "",
-      "cells": [
-       "2 máy",
-       "9 giờ",
-       "18"
-      ],
-      "color": "white"
-     }
-    ],
-    "note": "Kiểm chiều: ÍT người thì NHIỀU ngày — 15 > 10 ✓ (nếu ra ngược là sai)"
-   },
-   "caption": "Người × ngày = số công không đổi — đổi quân số thì chia lại tổng công",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B42_M3_F4.png",
-   "sha256_16": "e952c31ccd1276b4"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B33"
@@ -634,5 +408,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Tỉ lệ nghịch: neo TỔNG CÔNG người × ngày — kiểm chiều ít người nhiều ngày"
+ "titleDay": "Tỉ lệ nghịch: neo TỔNG CÔNG người × ngày — kiểm chiều ít người nhiều ngày",
+ "video": {
+  "giang": "DL_KSN5Q1_B42_M3_giang.mp4"
+ }
 }
