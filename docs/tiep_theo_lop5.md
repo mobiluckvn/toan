@@ -7,15 +7,15 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **102/168** — bài 1 tới 34 |
-| Còn lại | 66 micro · 22 bài lớn · bài 35 tới 56 |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 · 34 chưa deploy** |
+| Đã xong | **105/168** — bài 1 tới 35 |
+| Còn lại | 63 micro · 21 bài lớn · bài 36 tới 56 |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 tới 35 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
-## Mở đầu buổi sau: làm bài 35
+## Mở đầu buổi sau: làm bài 36
 
-Chương 9 gồm bài 33–36; đã xong bài 33 và 34. Chạy đúng nhịp bảy bước ở dưới. Cây làm việc đang SẠCH,
+Chương 9 gồm bài 33–36; đã xong bài 33 · 34 · 35; bài 36 khép chương. Chạy đúng nhịp bảy bước ở dưới. Cây làm việc đang SẠCH,
 tám chương đầu đã deploy và đã đi thử bằng mắt trên bản thật.
 
 ```bash
@@ -31,7 +31,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**66**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**63**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 32 lần)
 

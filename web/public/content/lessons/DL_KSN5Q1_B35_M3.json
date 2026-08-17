@@ -34,20 +34,7 @@
   "kidText": "Lùi hay tiến t năm thì tổng tuổi hai người đổi 2 lần t. Con giải ở mốc có tỉ rồi trượt từng người về mốc đề hỏi."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tổng tuổi HAI người trôi 2 mỗi năm: lùi 3 năm → tổng bớt $2  \\times  3 = 6$ (nay 22 → trước 16, KHÔNG phải 19!); tiến 5 năm → tổng thêm 10 (nối B28.M1/B28.M3)."
-   },
-   {
-    "id": "K2",
-    "text": "Bốn nhịp bài tuổi trộn mốc: KẺ TRỤC — GHIM dữ kiện đúng mốc — GIẢI tại mốc thuận (nơi có tỉ: tổng trước 16, gấp 3 → 4 phần → em 4; anh 12) — TRƯỢT từng người về mốc hỏi (+3: em 7; anh 15)."
-   },
-   {
-    "id": "K3",
-    "text": "Xâu nhiều bước cùng một trục: mốc −2 năm mẹ 30 gấp 5 → con lúc đó 6 → trượt +2: nay 32 và 8 → trượt +4 nữa: 36 và 12 — gấp 3 lần; mỗi bước một cú trượt, số liệu soi lẫn nhau."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: TRỤC THỜI GIAN GHIM ĐINH — TRƯỢT TỪNG NGƯỜI. \"Nay tổng tuổi hai anh em là 22; ba năm trước anh gấp 3 em — tuổi nay?\" Trí Long lùi ẩu: 22 trừ 3 bằng 19?! Lùi ba năm là CẢ HAI anh em cùng trẻ đi ba — tổng bớt HAI NHÂN BA bằng sáu: tổng trước MƯỜI SÁU! Ghim trục: tổng 22 @ nay; tỉ gấp-3 @ −3 năm. Giải tại mốc thuận (có tỉ): mười sáu chia bốn phần — em BỐN, anh MƯỜI HAI. Trượt từng người về mốc hỏi: cộng ba — em BẢY, anh MƯỜI LĂM! Bài xâu chuỗi của sư phụ cùng trục: TBC nay 24 → tổng 48 → tổng trước 42 → bảy phần: con 6, bố 36 → trượt +3: nay con CHÍN, bố BA CHÍN — trục một cây, đinh ghim từng mốc, người trượt từng bước!",
   "canonicalExamples": [
    {
@@ -78,14 +65,8 @@
     "counterExample": "19 không chia hết 4 phần — còn $16 : 4 = 4$ tròn trịa: chính luật trôi mách đáp."
    }
   ],
-  "vocabulary": [
-   "tổng trôi theo quân số",
-   "ghim đinh đúng mốc",
-   "mốc thuận (nơi có tỉ)",
-   "trượt từng người",
-   "trục một cây"
-  ],
-  "mantra": "MỖI NGƯỜI MỘT TUỔI MỖI NĂM — TỔNG TRÔI THEO QUÂN SỐ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -107,49 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Hiện nay tổng tuổi hai anh em là 22. Hỏi tổng tuổi hai anh em: (a) ba năm trước; (b) năm năm nữa?",
-    "display": {
-     "type": "story_panel",
-     "caption": "lùi 3 năm: $22 - 3 = 19$??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để cho cả hai cùng lùi!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Lùi ba năm là CẢ HAI cùng trẻ đi ba — tổng bớt HAI NHÂN BA bằng SÁU: tổng trước MƯỜI SÁU! Ghim trục: tổng hai hai ở mốc nay; tỉ gấp-ba ở mốc trừ-ba-năm. Giải tại mốc THUẬN — nơi có tỉ: mười sáu chia bốn phần — em BỐN, anh MƯỜI HAI. Trượt từng người về mốc hỏi: cộng ba mỗi người — em BẢY, anh MƯỜI LĂM! Thử: bảy cộng mười lăm đúng hai hai!",
-    "display": {
-     "type": "timeline_slide_interactive",
-     "spec": {
-      "flow": "22 @nay → −2×3 → 16 @trước",
-      "solve": "16 = 4 phần → 4 & 12",
-      "slide": "+3 mỗi người → 7 & 15",
-      "check": "7 + 15 = 22"
-     }
-    },
-    "interaction": {
-     "type": "pin_solve_slide",
-     "answerKey": {
-      "values": [
-       7,
-       15
-      ]
-     },
-     "successMessage": "Tổng trước 16 → 4 & 12 → trượt +3 → 7 & 15!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -165,37 +103,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Xâu nhiều bước cùng một trục! Bài một: cách đây hai năm mẹ ba mươi và gấp năm con — con lúc đó SÁU; trượt cộng hai: nay ba hai và tám; trượt cộng bốn nữa: ba sáu và mười hai — mẹ gấp BA lần! Bài sư phụ: TBC nay hai tư — tổng bốn tám; lùi ba năm — tổng bốn hai: bảy phần — con sáu, bố ba sáu; trượt về nay: con CHÍN, bố BA CHÍN — cộng đúng bốn tám!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "−2 năm: con 6 → nay 32 & 8 → +4: 36 & 12 (gấp 3)",
-      "sư phụ: 48 → 42 = 7 phần → 6 & 36",
-      "trượt +3 → 9 & 39 (48 ✓)"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: mỗi người một tuổi mỗi năm — tổng trôi theo quân số!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TỔNG TRÔI THEO QUÂN SỐ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -575,131 +482,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B35.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "lùi 3 năm: 22 − 3 = 19??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "22 trừ 3 bằng 19!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B35_M3_F1.png",
-   "sha256_16": "a4361cf0c1f06bf2"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Tổng trôi 2t & ghim trục: giải tại mốc thuận — trượt về mốc được hỏi",
-    "steps": [
-     {
-      "text": "−2 năm: con 6 → nay 32 & 8 → +4: 36 & 12 (gấp 3)"
-     },
-     {
-      "text": "sư phụ: 48 → 42 = 7 phần → 6 & 36"
-     },
-     {
-      "text": "trượt +3 → 9 & 39 (48 )"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B35_M3_F2.png",
-   "sha256_16": "e7e7d0ee7f37cfa7"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tổng tuổi HAI người trôi 2 mỗi năm",
-      "text": "lùi 3 năm → tổng bớt 2 × 3 = 6 (nay 22 → trước 16, KHÔNG phải 19!); tiến 5 năm → tổng thêm 10 (nối B28.M1/B28.M3).",
-      "tone": "navy"
-     },
-     {
-      "label": "Bốn nhịp bài tuổi trộn mốc",
-      "text": "KẺ TRỤC — GHIM dữ kiện đúng mốc — GIẢI tại mốc thuận (nơi có tỉ: tổng trước 16, gấp 3 → 4 phần → em 4; anh 12) — TRƯỢT từng người về mốc hỏi (+3: em 7; anh 15).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "MỖI NGƯỜI MỘT TUỔI MỖI NĂM — TỔNG TRÔI THEO QUÂN SỐ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B35_M3_F3.png",
-   "sha256_16": "63abcd66b5f07d87"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "TỔNG TUỔI HAI NGƯỜI TRÔI 2 MỖI NĂM",
-    "headers": [
-     "3 năm trước",
-     "hiện nay",
-     "5 năm nữa"
-    ],
-    "comma_after": null,
-    "rows": [
-     {
-      "label": "tổng",
-      "cells": [
-       "16",
-       "22",
-       "32"
-      ],
-      "color": "#FFF4DF",
-      "highlight": [
-       1
-      ]
-     },
-     {
-      "label": "em",
-      "cells": [
-       "4",
-       "7",
-       "12"
-      ],
-      "color": "white"
-     },
-     {
-      "label": "anh",
-      "cells": [
-       "12",
-       "15",
-       "20"
-      ],
-      "color": "white"
-     }
-    ],
-    "note": "Giải tại mốc THUẬN (3 năm trước: 16 = 4 phần) rồi TRƯỢT về mốc được hỏi"
-   },
-   "caption": "Lùi t năm thì tổng giảm 2t · tiến t năm thì tổng tăng 2t",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B35_M3_F4.png",
-   "sha256_16": "7cbd4f758a9ca9a7"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B32"
@@ -711,5 +494,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Tổng trôi 2t & ghim trục: giải tại mốc thuận — trượt về mốc được hỏi"
+ "titleDay": "Tổng trôi 2t & ghim trục: giải tại mốc thuận — trượt về mốc được hỏi",
+ "video": {
+  "giang": "DL_KSN5Q1_B35_M3_giang.mp4"
+ }
 }
