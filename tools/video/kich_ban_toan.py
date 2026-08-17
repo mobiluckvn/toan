@@ -14732,6 +14732,146 @@ def kb5_ban_kinh_gap_k(b):
     ]
 
 
+def kb5_tam_ao_hinh_hop(b):
+    """L5·B51·M1 Bốn mặt bên trải ra là MỘT tấm áo: chu vi đáy nhân cao."""
+    return [
+        _c('bia', 'Tấm áo trải phẳng của hình hộp', so_bai(b),
+           loi=['Hộp quà dài sáu, rộng bốn, cao ba. Dán giấy bốn mặt bên hết bao '
+                'nhiêu?',
+                'Có một cách làm cho bốn phép nhân rút lại còn một.']),
+        _c('y_toan', 'Tính bốn mặt lẻ tẻ thì cộng dễ lộn',
+           'hai mặt trước sau, hai mặt hông — bốn phép nhân rồi mới cộng',
+           buoc=1, soBuoc=3,
+           loi=['Tính rời từng mặt thì phải làm bốn phép nhân rồi mới cộng, rất dễ '
+                'lộn.']),
+        _c('khoi', 'Bóc bốn mặt bên, trải phẳng ra một hàng', kieu='ao',
+           dai=6, rong=4, cao=3,
+           nhanDai='chiều dài tấm áo = chu vi đáy = (6 + 4) × 2 = 20',
+           nhanCao='cao 3',
+           chuPhu='Bốn mặt nối liền thành MỘT tấm chữ nhật.',
+           loi=['Bóc bốn mặt bên rồi trải phẳng ra, chúng nối thành một tấm chữ nhật '
+                'liền.',
+                'Chiều dài tấm áo chính là vòng quanh eo hộp, tức chu vi đáy, bằng hai '
+                'mươi.',
+                'Còn chiều cao tấm áo đúng bằng chiều cao hộp.']),
+        _c('y_toan', 'Nên diện tích xung quanh chỉ còn MỘT phép nhân',
+           'Sxq = chu vi đáy × cao = 20 × 3 = 60 dm²', buoc=2, soBuoc=3,
+           loi=['Nên diện tích xung quanh chỉ còn một phép nhân. Hai mươi nhân ba, sáu '
+                'mươi đề xi mét vuông.']),
+        _c('khoi', 'Toàn phần là tấm áo ĐỘI thêm hai nắp', kieu='ao',
+           dai=6, rong=4, cao=3, hangNap=True,
+           nhanDai='tấm áo 60', nhanNap='nắp 24', nhanDay='đáy 24',
+           chuPhu='Stp = 60 + 24 × 2 = 108 dm²',
+           loi=['Toàn phần là tấm áo đội thêm hai nắp trên dưới, mỗi nắp dài nhân '
+                'rộng.',
+                'Sáu mươi cộng hai lần hai mươi tư, được một trăm linh tám.']),
+        _c('y_toan', 'Lập phương thì sáu mặt giống hệt nhau',
+           'Stp = cạnh × cạnh × 6 = 5 × 5 × 6 = 150   ·   Sxq = 5 × 5 × 4 = 100',
+           buoc=3, soBuoc=3,
+           loi=['Lập phương thì sáu mặt giống hệt nhau, nên toàn phần bằng cạnh nhân '
+                'cạnh nhân sáu.',
+                'Năm nhân năm nhân sáu, một trăm năm mươi. Còn xung quanh chỉ bốn mặt, '
+                'nhân bốn thôi.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='bốn mặt bên là MỘT tấm áo — chu vi đáy nhân cao',
+           thay='hộp 6 × 4 × 3: Sxq = 20 × 3 = 60; Stp = 60 + 24 × 2 = 108 dm²',
+           loi=['Con nhớ câu này. Bốn mặt bên là một tấm áo, chu vi đáy nhân cao.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_thung_khong_nap(b):
+    """L5·B51·M2 Đếm mặt của VẬT THẬT, và hai mặt ăn sơn thì nhân đôi."""
+    return [
+        _c('bia', 'Thùng không nắp và chuyện sơn hai mặt', so_bai(b),
+           loi=['Thùng tôn sáu nhân bốn nhân ba, nhưng KHÔNG có nắp.']),
+        _c('de_toan', 'Đề bài',
+           de='Thùng tôn 6 × 4 × 3 dm, KHÔNG NẮP.\nTính diện tích tôn',
+           loi=['Tính diện tích tôn phải dùng để làm thùng ấy.']),
+        _c('y_toan', 'Bẫy: nghe "không nắp" là trừ luôn CẢ CẶP đáy',
+           '108 − 24 × 2 = 60   ←   sai, vì đáy dưới vẫn còn nguyên',
+           buoc=1, soBuoc=3,
+           loi=['Nghe không nắp mà trừ luôn cả cặp đáy thì mất hai mặt, trong khi đáy '
+                'dưới vẫn còn nguyên.']),
+        _c('khoi', 'Đếm mặt của VẬT THẬT: thùng còn năm mặt', kieu='ao',
+           dai=6, rong=4, cao=3, hangNap=True, boMat=['nắp'],
+           nhanDai='bốn mặt bên = 60', nhanNap='nắp', nhanDay='đáy 24',
+           chuPhu='Tôn = 60 + 24 = 84 dm² — chỉ mất đúng MỘT mặt.',
+           loi=['Đếm mặt của vật thật thì thùng còn năm mặt, bốn bên cộng một đáy '
+                'dưới.',
+                'Chỉ mất đúng mặt trên, nên tôn bằng sáu mươi cộng hai mươi tư, tám '
+                'mươi tư.']),
+        _c('de_toan', 'Điều khoản thứ hai của đề',
+           de='Sơn CẢ TRONG LẪN NGOÀI',
+           loi=['Còn một điều khoản nữa. Đề dặn sơn cả trong lẫn ngoài.']),
+        _c('y_toan', 'Mỗi tấm ván có HAI mặt ăn sơn',
+           'diện tích sơn = một lượt × 2 = 84 × 2 = 168 dm²', buoc=2, soBuoc=3,
+           loi=['Mỗi tấm ván có hai mặt ăn sơn, nên diện tích sơn bằng một lượt nhân '
+                'đôi.',
+                'Tám mươi tư nhân hai, một trăm sáu mươi tám.']),
+        _c('y_toan', 'Ghép cả hai điều khoản vào một bài',
+           'thùng lập phương cạnh 4 không nắp: 5 × 16 = 80   →   80 × 2 = 160 dm²',
+           buoc=3, soBuoc=3,
+           loi=['Ghép cả hai điều khoản. Thùng lập phương cạnh bốn không nắp còn năm '
+                'mặt, mỗi mặt mười sáu, được tám mươi.',
+                'Sơn trong lẫn ngoài thì nhân đôi, một trăm sáu mươi.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='không nắp thì mất MỘT mặt — đáy dưới vẫn giữ; hai mặt thì nhân đôi',
+           thay='thùng 6 × 4 × 3 không nắp: tôn 84 dm², sơn hai mặt 168 dm²',
+           loi=['Con nhớ câu này. Không nắp thì mất một mặt thôi, còn hai mặt thì nhân '
+                'đôi.',
+                'Đọc đề xong là đếm mặt của vật thật trước đã.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_quet_voi_can_phong(b):
+    """L5·B51·M3 Ngước — cúi — nhìn quanh, và lần ngược từ tấm áo."""
+    return [
+        _c('bia', 'Quét vôi căn phòng', so_bai(b),
+           loi=['Quét vôi căn phòng dài tám, rộng sáu, cao bốn, cửa mười mét vuông.',
+                'Tính bốn bức tường rồi nộp luôn là thiếu mất hai chỗ.']),
+        _c('y_toan', 'Ba cái nhìn của thợ quét vôi',
+           'NGƯỚC lên trần: CÓ quét   ·   CÚI xuống sàn: KHÔNG quét   ·   NHÌN QUANH: trừ cửa',
+           buoc=1, soBuoc=3,
+           loi=['Thợ quét vôi có ba cái nhìn. Ngước lên trần thì có quét, cúi xuống sàn '
+                'thì không.',
+                'Còn nhìn quanh tường thì phải trừ chỗ cửa ra.']),
+        _c('khoi', 'Bốn bức tường là tấm áo, trần có, sàn không', kieu='ao',
+           dai=8, rong=6, cao=4, hangNap=True, boMat=['sàn'], loiBo='KHÔNG quét',
+           nhanDai='tường = (8 + 6) × 2 × 4 = 112', nhanCao='cao 4',
+           nhanNap='trần 48', nhanDay='sàn',
+           chuPhu='Vôi = 112 + 48 − 10 = 150 m²',
+           loi=['Bốn bức tường chính là tấm áo, một trăm mười hai. Trần là bốn mươi '
+                'tám.',
+                'Sàn gạch chéo vì không ai quét vôi xuống sàn. Trừ nốt cửa mười, còn '
+                'một trăm năm mươi.']),
+        _c('y_toan', 'Chiều NGƯỢC: biết tấm áo, lần ra chiều cao',
+           'cao = Sxq : chu vi đáy = 60 : 20 = 3 dm', buoc=2, soBuoc=3,
+           loi=['Đi chiều ngược cũng được. Biết tấm áo sáu mươi và vòng eo hai mươi thì '
+                'cao bằng sáu mươi chia hai mươi, ba đề xi mét.']),
+        _c('y_toan', 'Có vòng eo thì lần tiếp ra chiều rộng',
+           'nửa chu vi = 10   →   rộng = 10 − 6 = 4   →   Stp = 60 + 24 × 2 = 108',
+           buoc=3, soBuoc=3,
+           loi=['Nửa vòng eo là mười, dài sáu, nên rộng bằng bốn. Có đủ ba số thì dựng '
+                'lại toàn phần một trăm linh tám.']),
+        _c('y_toan', 'Ngược ở lập phương thì chia SÁU trước',
+           'một mặt = 150 : 6 = 25   →   cạnh là số nhân chính nó ra 25, tức 5 cm',
+           loi=['Ngược ở lập phương thì chia sáu trước, một mặt hai mươi lăm.',
+                'Rồi tìm số nhân chính nó ra hai mươi lăm, đó là năm.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='trần CÓ — sàn KHÔNG — cửa TRỪ: ba chi tiết một hợp đồng',
+           thay='phòng 8 × 6 × 4, cửa 10: 112 + 48 − 10 = 150 m²',
+           loi=['Con nhớ câu này. Trần có, sàn không, cửa trừ, ba chi tiết một hợp '
+                'đồng.',
+                'Và biết tấm áo thì lần ngược ra được cả ba kích thước.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 def kb5_vanh_khan(b):
     """L5·B50·M1 Vành khăn là HIỆU hai diện tích — bề rộng vành không phải bán kính."""
     return [
@@ -14864,6 +15004,9 @@ def kb5_banh_xe_lan(b):
 
 
 BO = {
+    'DL:KSN5Q1.B51.M1': kb5_tam_ao_hinh_hop,
+    'DL:KSN5Q1.B51.M2': kb5_thung_khong_nap,
+    'DL:KSN5Q1.B51.M3': kb5_quet_voi_can_phong,
     'DL:KSN5Q1.B50.M1': kb5_vanh_khan,
     'DL:KSN5Q1.B50.M2': kb5_chu_vi_hinh_ghep,
     'DL:KSN5Q1.B50.M3': kb5_banh_xe_lan,

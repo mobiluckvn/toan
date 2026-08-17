@@ -778,6 +778,8 @@ def khung(c: dict) -> Image.Image:
         # ══ KHỐI HỘP — BA CÁCH NHÌN CÙNG MỘT CÁI HỘP ══
         # `trai` trải phẳng ra sáu mặt, TÔ MÀU THEO CẶP: hai mặt cùng màu là hai mặt
         #        đối diện, bằng nhau. Cả bài nằm trong cách tô ấy.
+        # `ao`   bóc RIÊNG bốn mặt bên rồi trải thành MỘT HÀNG — xem chú thích ở
+        #        nhánh ấy; đó là hình của bài diện tích xung quanh.
         # `chong` xếp các tầng chồng lên nhau — cho thấy hình khối trông thế nào.
         # `tang`  tách rời từng tầng ra cạnh nhau — cho thấy CÁCH ĐẾM.
         # Vẽ được `khuyet` là số khối bị nhấc đi ở mỗi tầng, cho ca khối bị khoét.
@@ -792,7 +794,79 @@ def khung(c: dict) -> Image.Image:
                 the(d, x + (i % cot) * o, y + (i // cot) * o, o, o,
                     nen=nen, vien=vien, day=2, bo=0)
 
-        if kieu == "trai":
+        if kieu == "ao":
+            # ══ TẤM ÁO: BỐN MẶT BÊN TRẢI THÀNH MỘT HÀNG ══
+            # Nhánh `trai` bày sáu mặt theo hình chữ thập — đúng cái hộp, nhưng bốn
+            # mặt bên nằm rời ba chỗ, nên nó KHÔNG kể được điều bài này dạy: bóc bốn
+            # mặt bên ra thì chúng nối thành MỘT tấm chữ nhật, chiều dài đúng bằng
+            # chu vi đáy. Ở đây xếp chúng liền nhau theo đúng vòng quanh hộp —
+            # trước · hông · sau · hông — rồi kẻ ngoặc đo suốt chiều dài. Bé ĐẾM
+            # được bốn khúc cộng lại thành vòng eo, thay vì phải tin lời.
+            #
+            # `hangNap` bày thêm hai mặt nắp và đáy rời ra bên dưới — đó là chỗ khác
+            # nhau giữa xung quanh và toàn phần. `boMat` là danh sách tên mặt KHÔNG
+            # có thật (thùng không nắp, sàn không quét): mặt ấy vẫn vẽ nhưng gạch
+            # chéo, vì bài đứng hay đổ ở chỗ ĐẾM MẶT CỦA VẬT THẬT.
+            bo_mat = set(c.get("boMat") or [])
+            g = phong(26)
+
+            def mat_phang(x, y, w_, h_, ten, nen, vien):
+                """Một mặt. Mặt bị bỏ thì trắng, viền xám và gạch chéo đỏ."""
+                mat_bo = ten in bo_mat
+                the(d, x, y, w_, h_, nen="#FFFFFF" if mat_bo else nen,
+                    vien=MUTE if mat_bo else vien, day=4, bo=0)
+                # Tên mặt bị bỏ phải nằm NGOÀI ô: đặt vào giữa như mặt còn lại thì
+                # hai vạch chéo cắt ngang chữ, đọc không ra. Bắt được khi rút khung
+                # hình bài 51 M2 — chữ "nắp" bị gạch nát.
+                if mat_bo:
+                    d.line([x, y, x + w_, y + h_], fill=ALERT, width=5)
+                    d.line([x + w_, y, x, y + h_], fill=ALERT, width=5)
+                    # `loiBo` nói mặt ấy bị bỏ VÌ SAO. Mặc định "KHÔNG có" hợp với
+                    # thùng không nắp, nhưng sàn phòng thì VẪN CÓ, chỉ là không
+                    # quét vôi — để mặc định ở đấy là hình nói sai.
+                    ten = f"{ten} — {c.get('loiBo', 'KHÔNG có')}"
+                d.text((x + (w_ - d.textlength(ten, font=g)) / 2,
+                        y + h_ + 8 if mat_bo else y + h_ / 2 - 16),
+                       ten, font=g, fill=MUTE if mat_bo else INK)
+
+            chu_vi = 2 * (dai + rong)
+            o = min(52, int(940 / max(chu_vi, 1)), int(170 / max(cao, 1)))
+            w, h = chu_vi * o, cao * o
+            x0, y0 = (W - w) // 2, 150
+            x = x0
+            for a, ten, nen, vien in ((dai, "trước", GOLD_PALE, GOLD),
+                                      (rong, "hông", TEAL_PALE, TEAL),
+                                      (dai, "sau", GOLD_PALE, GOLD),
+                                      (rong, "hông", TEAL_PALE, TEAL)):
+                mat_phang(x, y0, a * o, h, ten, nen, vien)
+                x += a * o
+            d.rectangle([x0, y0, x0 + w, y0 + h], outline=TEAL_DARK, width=5)
+
+            yb = y0 + h + 26                      # ngoặc đo suốt tấm áo
+            d.line([x0, yb, x0 + w, yb], fill=NAVY, width=4)
+            for xn in (x0, x0 + w):
+                d.line([xn, yb - 12, xn, yb + 12], fill=NAVY, width=4)
+            y_cuoi = yb + 14
+            if c.get("nhanDai"):
+                y_cuoi = giua(d, yb + 14, c["nhanDai"], phong(32), NAVY, rong=W - 200)
+            if c.get("nhanCao"):
+                fc = phong(32)
+                d.text((x0 - 22 - d.textlength(c["nhanCao"], font=fc),
+                        y0 + h / 2 - 18), c["nhanCao"], font=fc, fill=INK)
+
+            if c.get("hangNap"):
+                o2 = min(o, int(110 / max(rong, 1)), int(300 / max(dai, 1)))
+                wn, hn = dai * o2, rong * o2
+                yn = y_cuoi + 22
+                for i, ten in enumerate((c.get("nhanNap", "nắp"),
+                                         c.get("nhanDay", "đáy"))):
+                    mat_phang(W // 2 - wn - 30 + i * (wn + 60), yn, wn, hn,
+                              ten, TEAL_PALE, TEAL)
+                # Chừa chỗ cho dòng tên nằm dưới ô khi có mặt bị gạch.
+                y_cuoi = yn + hn + (32 if bo_mat else 0)
+            # `chuPhu` · `chuCuoi` do đuôi chung của nhánh `khoi` vẽ, không vẽ lại.
+
+        elif kieu == "trai":
             o = min(58, int(620 / (dai + 2 * cao)), int(400 / (2 * rong + 2 * cao)))
             tw, th = (dai + 2 * cao) * o, (2 * rong + 2 * cao) * o
             x0, y0 = (W - tw) // 2, 122

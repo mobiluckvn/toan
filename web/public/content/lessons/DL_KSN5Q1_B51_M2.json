@@ -36,20 +36,7 @@
   "kidText": "Thùng không nắp chỉ mất MỘT mặt trên, đáy dưới vẫn còn. Đề dặn sơn cả trong lẫn ngoài thì nhớ nhân đôi."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Hợp đồng mặt thùng: đếm vật THẬT có mấy mặt — thùng không nắp có 5 mặt (4 bên + 1 đáy dưới): tôn = Sxq + 1 đáy = $60 + 24 = 84 dm^2$; hăng hái trừ cả cặp đáy ($108 - 48 = 60$) là thùng thành ỐNG thủng hai đầu — gạo chảy sạch!"
-   },
-   {
-    "id": "K2",
-    "text": "Đề dặn \"sơn CẢ TRONG LẪN NGOÀI\" / \"hai mặt\": gạch chân cụm ấy ngay khi đọc — mỗi tấm ván có HAI mặt ăn sơn: diện tích sơn = một lượt × $2 = 84  \\times  2 = 168 dm^2$."
-   },
-   {
-    "id": "K3",
-    "text": "Ca sư phụ ghép cả hai luật: thùng lập phương cạnh 4 KHÔNG NẮP (5 mặt: $5  \\times  16 = 80$) sơn TRONG LẪN NGOÀI → $80  \\times  2 = 160 dm^2$."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: BẢN HỢP ĐỒNG ĐẾM MẶT VÀ TẤM VÁN HAI MẶT. Thùng tôn dài sáu rộng bốn cao ba, KHÔNG NẮP — tính tôn. Trí Long nghe \"không nắp\" hăng hái trừ cả cặp: một linh tám trừ bốn tám — sáu mươi! Su Kem lật thùng: trừ cả ĐÁY DƯỚI thì gạo đổ vào chảy đi đâu? Thùng thành ỐNG thủng hai đầu! Nghi thức hợp đồng: ĐẾM mặt vật thật — thùng không nắp còn NĂM mặt: bốn bên cộng một đáy dưới: tôn bằng sáu mươi cộng hai mươi tư — TÁM MƯƠI TƯ đề-xi-mét vuông! Không nắp là mất MỘT mặt — đáy dưới vẫn phải giữ! Điều khoản hai của hợp đồng: đề dặn sơn CẢ TRONG LẪN NGOÀI — gạch chân ngay! Mỗi tấm ván có HAI mặt ăn sơn: úp má trái, úp má phải — diện tích sơn bằng một lượt NHÂN ĐÔI: tám tư nhân hai — MỘT TRĂM SÁU MƯƠI TÁM! Ca sư phụ ghép cả hai điều khoản: thùng lập phương cạnh bốn không nắp — năm mặt, mỗi mặt mười sáu: tám mươi một lượt; sơn trong lẫn ngoài: MỘT TRĂM SÁU MƯƠI!",
   "canonicalExamples": [
    {
@@ -80,14 +67,8 @@
     "counterExample": "Trừ cả đáy dưới: đổ gạo vào thùng — gạo xuyên đáy chảy ra sàn: thùng hay ống khói đây?!"
    }
   ],
-  "vocabulary": [
-   "hợp đồng đếm mặt",
-   "năm mặt không nắp",
-   "ống thủng hai đầu",
-   "tấm ván hai mặt",
-   "gạch chân điều khoản"
-  ],
-  "mantra": "KHÔNG NẮP LÀ MẤT MỘT MẶT — ĐÁY DƯỚI VẪN PHẢI GIỮ; HAI MẶT THÌ NHÂN ĐÔI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -109,44 +90,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Thùng tôn không nắp dài 6 dm, rộng 4 dm, cao 3 dm. Tính diện tích tôn làm thùng — và giải thích vì sao đáp 60 dm² sai.",
-    "display": {
-     "type": "story_panel",
-     "caption": "không nắp = trừ cả cặp đáy??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đọc hợp đồng!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1"
-    ],
-    "narration": "Nghi thức HỢP ĐỒNG: đếm mặt vật THẬT! Thùng không nắp còn NĂM mặt — bốn mặt bên cộng MỘT đáy dưới: chỉ mất đúng mặt trên! Tôn bằng diện tích xung quanh cộng MỘT đáy: sáu mươi cộng hai mươi tư — TÁM MƯƠI TƯ đề-xi-mét vuông! Trừ cả cặp là thùng hóa ỐNG thủng hai đầu — gạo chảy sạch xuống sàn! Không nắp mất MỘT mặt — đáy dưới vẫn phải giữ!",
-    "display": {
-     "type": "contract_faces_interactive",
-     "spec": {
-      "count": "thùng không nắp: 5 mặt (4 bên + 1 đáy dưới)",
-      "calc": "tôn = 60 + 24 = 84",
-      "wrong": "$108 - 48 = 60$ → ống thủng ✗"
-     }
-    },
-    "interaction": {
-     "type": "count_faces",
-     "answerKey": {
-      "value": 84
-     },
-     "successMessage": "Đếm đủ 5 mặt: 84 dm²!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -162,38 +105,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Điều khoản hai: đề dặn sơn CẢ TRONG LẪN NGOÀI — gạch chân ngay khi đọc! Mỗi tấm ván HAI mặt ăn sơn — diện tích sơn NHÂN ĐÔI: tám tư nhân hai — MỘT TRĂM SÁU MƯƠI TÁM! Ca sư phụ ghép cả hai điều khoản: thùng lập phương cạnh bốn KHÔNG NẮP — năm mặt, mỗi mặt bốn nhân bốn là mười sáu: TÁM MƯƠI một lượt; sơn trong lẫn ngoài: nhân đôi — MỘT TRĂM SÁU MƯƠI đề-xi-mét vuông!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "'trong lẫn ngoài' → × 2: 84 × 2 = 168",
-      "sư phụ: 5 × 16 = 80 → × 2 = 160",
-      "hai điều khoản một hợp đồng"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: không nắp mất một mặt — đáy dưới vẫn giữ; hai mặt thì nhân đôi!",
-    "display": {
-     "type": "mantra_card",
-     "text": "MẤT MỘT MẶT — HAI MẶT NHÂN ĐÔI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -487,107 +398,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B51.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "không nắp = trừ cả cặp đáy??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "không nắp — trừ luôn cặp đáy: 108 − 48 = 60!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B51_M2_F1.png",
-   "sha256_16": "bb95b80fdbb7b3d3"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Thùng không nắp trừ đúng MỘT mặt & sơn trong-lẫn-ngoài nhân đôi — hợp đồng mặt thùng",
-    "steps": [
-     {
-      "text": "'trong lẫn ngoài' → × 2: 84 × 2 = 168"
-     },
-     {
-      "text": "sư phụ: 5 × 16 = 80 → × 2 = 160"
-     },
-     {
-      "text": "hai điều khoản một hợp đồng"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B51_M2_F2.png",
-   "sha256_16": "2d9d31b9446917b2"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Hợp đồng mặt thùng",
-      "text": "đếm vật THẬT có mấy mặt",
-      "tone": "navy"
-     },
-     {
-      "label": "Đề dặn \"sơn CẢ TRONG LẪN NGOÀI\" / \"hai mặt\"",
-      "text": "gạch chân cụm ấy ngay khi đọc — mỗi tấm ván có HAI mặt ăn sơn: diện tích sơn = một lượt × 2 = 84 × 2 = 168 dm².",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "KHÔNG NẮP LÀ MẤT MỘT MẶT — ĐÁY DƯỚI VẪN PHẢI GIỮ; HAI MẶT THÌ NHÂN ĐÔI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B51_M2_F3.png",
-   "sha256_16": "8b03374ec3cfbf9e"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "THÙNG KHÔNG NẮP — TRỪ MẤY MẶT?",
-    "wrong": {
-     "head": "TRỪ CẢ HAI ĐÁY",
-     "steps": [
-      "chỉ lấy Sxq = 60"
-     ],
-     "result": "thùng thành ống thủng ✗"
-    },
-    "right": {
-     "head": "TRỪ ĐÚNG MỘT MẶT",
-     "steps": [
-      "Sxq + 1 đáy = 60 + 24"
-     ],
-     "result": "84 dm² ✓"
-    },
-    "verdict": "Sơn cả trong lẫn ngoài: 84 × 2 = 168 dm² — mỗi tấm ván hai mặt ăn sơn"
-   },
-   "caption": "Đọc hợp đồng: không nắp thì bỏ nắp, đáy vẫn còn nguyên",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B51_M2_F4.png",
-   "sha256_16": "82bc5b43da9ef3eb"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B46"
@@ -599,5 +410,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Thùng không nắp trừ đúng MỘT mặt & sơn trong-lẫn-ngoài nhân đôi — hợp đồng mặt thùng"
+ "titleDay": "Thùng không nắp trừ đúng MỘT mặt & sơn trong-lẫn-ngoài nhân đôi — hợp đồng mặt thùng",
+ "video": {
+  "giang": "DL_KSN5Q1_B51_M2_giang.mp4"
+ }
 }

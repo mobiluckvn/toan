@@ -32,20 +32,7 @@
   "kidText": "Bốn mặt bên bóc ra trải phẳng thành một tấm áo dài bằng chu vi đáy. Nên diện tích xung quanh bằng chu vi đáy nhân chiều cao."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tấm áo trải phẳng: bóc bốn mặt bên của hộp, trải ra được MỘT tấm chữ nhật — chiều dài = CHU VI ĐÁY, chiều cao = CAO hộp → Sxq = chu vi đáy × cao: ($6 + 4$) × $2  \\times  3 = 20  \\times  3 = 60 dm^2$."
-   },
-   {
-    "id": "K2",
-    "text": "Stp = tấm áo + hai nắp: Stp = Sxq + 2 × (dài × rộng) = $60 + 2  \\times  24 = 108 dm^2$."
-   },
-   {
-    "id": "K3",
-    "text": "Lập phương — sáu mặt sinh đôi: mỗi mặt = cạnh × cạnh → Stp = cạnh × cạnh × $6 = 5  \\times  5  \\times  6 = 150 cm^2$ (bốn mặt bên = cạnh × cạnh × 4)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: BÓC HỘP THÀNH TẤM ÁO. Chiếc hộp dài sáu, rộng bốn, cao ba — muốn biết bốn mặt bên tốn bao nhiêu giấy dán? Đừng tính bốn mặt lẻ tẻ: BÓC cả bốn mặt bên rồi TRẢI PHẲNG — chúng nối nhau thành MỘT TẤM ÁO chữ nhật! Chiều dài tấm áo? Đi giáp một vòng quanh eo hộp: sáu cộng bốn cộng sáu cộng bốn — chính là CHU VI ĐÁY: hai mươi! Chiều cao tấm áo — đúng chiều cao hộp: ba! Diện tích xung quanh bằng chu vi đáy nhân cao: hai mươi nhân ba — SÁU MƯƠI đề-xi-mét vuông! Muốn TOÀN PHẦN thì mặc áo xong đội thêm HAI NẮP: sáu mươi cộng hai lần sáu-nhân-bốn — sáu mươi cộng bốn tám: MỘT TRĂM LINH TÁM! Lập phương là hoàng tử sáu mặt sinh đôi: mặt nào cũng cạnh-nhân-cạnh — toàn phần bằng năm nhân năm nhân SÁU: MỘT TRĂM NĂM MƯƠI xăng-ti-mét vuông!",
   "canonicalExamples": [
    {
@@ -76,14 +63,8 @@
     "counterExample": "Chu vi 10 là mới đi NỬA vòng eo hộp — tấm áo hụt lưng, hở cả hai mặt sau!"
    }
   ],
-  "vocabulary": [
-   "bóc hộp trải phẳng",
-   "tấm áo chữ nhật",
-   "vòng quanh eo hộp",
-   "áo + hai nắp",
-   "sáu mặt sinh đôi"
-  ],
-  "mantra": "BỐN MẶT BÊN LÀ MỘT TẤM ÁO: CHU VI ĐÁY NHÂN CAO!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -105,47 +86,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Tính diện tích xung quanh hình hộp chữ nhật có dài 6 dm, rộng 4 dm, cao 3 dm.",
-    "display": {
-     "type": "story_panel",
-     "caption": "bốn mặt lẻ tẻ — rối tung?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để bóc hộp!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Bóc bốn mặt bên TRẢI PHẲNG — chúng nối thành MỘT TẤM ÁO chữ nhật! Chiều dài tấm áo là vòng quanh eo hộp — CHU VI ĐÁY: HAI MƯƠI! Chiều cao tấm áo — đúng cao hộp: BA! Diện tích xung quanh bằng chu vi đáy nhân cao: hai mươi nhân ba — SÁU MƯƠI đề-xi-mét vuông! Muốn TOÀN PHẦN thì mặc áo xong đội thêm HAI NẮP: sáu mươi cộng hai lần hai mươi tư — MỘT TRĂM LINH TÁM!",
-    "display": {
-     "type": "unfold_jacket_interactive",
-     "spec": {
-      "jacket": "tấm áo: dài = chu vi đáy 20 · cao 3 → Sxq = 60",
-      "caps": "+ 2 nắp 24 → Stp = 108"
-     }
-    },
-    "interaction": {
-     "type": "unfold_then_cap",
-     "answerKey": {
-      "values": [
-       60,
-       108
-      ]
-     },
-     "successMessage": "Tấm áo 60 + hai nắp 48 = 108!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -166,37 +106,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Lập phương là hoàng tử SÁU MẶT SINH ĐÔI: mặt nào cũng cạnh-nhân-cạnh — toàn phần bằng cạnh nhân cạnh nhân SÁU: năm nhân năm nhân sáu — MỘT TRĂM NĂM MƯƠI xăng-ti-mét vuông! Tấm áo lập phương bốn mặt: cạnh nhân cạnh nhân BỐN. Nhớ vòng eo cho đủ: chu vi đáy phải nhân hai — sáu cộng bốn mới đi NỬA vòng, tấm áo hụt lưng hở hai mặt sau!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "lập phương: Stp = c × c × 6 = 150",
-      "Sxq = c × c × 4",
-      "eo hộp: (dài + rộng) × 2 — đủ vòng!"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: bốn mặt bên là một tấm áo — chu vi đáy nhân cao!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TẤM ÁO = CHU VI ĐÁY × CAO!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -471,109 +380,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B51.M1",
- "figureSpec": [
-  {
-   "archetype": "solid_3d",
-   "params": {
-    "title": "",
-    "kind": "box",
-    "dims": {
-     "a": "dài 6 dm",
-     "b": "rộng 4 dm",
-     "c": "cao 3 dm"
-    },
-    "memo": [
-     "Sxq = 20 × 3 = 60 dm²",
-     "hai đáy = 2 × 24 = 48",
-     "Stp = 60 + 48 = 108"
-    ],
-    "caption": "Chu vi đáy (6 + 4) × 2 = 20 chính là chiều dài tấm áo"
-   },
-   "caption": "Đề bài — số đo đã cho",
-   "id": "F0",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B51_M1_F0.png",
-   "sha256_16": "062f8c8cca5dfed7"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Tấm áo trải phẳng: Sxq = chu vi đáy × cao — Stp = Sxq + 2 đáy; lập phương 6 mặt",
-    "steps": [
-     {
-      "text": "lập phương: Stp = c × c × 6 = 150"
-     },
-     {
-      "text": "Sxq = c × c × 4"
-     },
-     {
-      "text": "eo hộp: (dài + rộng) × 2 — đủ vòng!"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B51_M1_F2.png",
-   "sha256_16": "eac7299b2f24ddfc"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tấm áo trải phẳng",
-      "text": "bóc bốn mặt bên của hộp",
-      "tone": "navy"
-     },
-     {
-      "label": "Stp = tấm áo + hai nắp",
-      "text": "Stp = Sxq + 2 × (dài × rộng) = 60 + 2 × 24 = 108 dm².",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "BỐN MẶT BÊN LÀ MỘT TẤM ÁO: CHU VI ĐÁY NHÂN CAO!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B51_M1_F3.png",
-   "sha256_16": "fd314e0558024a47"
-  },
-  {
-   "archetype": "solid_3d",
-   "params": {
-    "title": "TẤM ÁO TRẢI PHẲNG: Sxq = CHU VI ĐÁY × CAO",
-    "kind": "box",
-    "dims": {
-     "a": "dài 6 dm",
-     "b": "rộng 4 dm",
-     "c": "cao 3 dm"
-    },
-    "memo": [
-     "Sxq = 20 × 3 = 60 dm²",
-     "hai đáy = 2 × 24 = 48",
-     "Stp = 60 + 48 = 108"
-    ],
-    "caption": "Chu vi đáy (6 + 4) × 2 = 20 chính là chiều dài tấm áo"
-   },
-   "caption": "Tấm áo dài bằng chu vi đáy, rộng bằng chiều cao — trải ra là một chữ nhật",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B51_M1_F4.png",
-   "sha256_16": "1d47bdc28ba57943"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B46"
@@ -585,5 +392,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Tấm áo trải phẳng: Sxq = chu vi đáy × cao — Stp = Sxq + 2 đáy; lập phương 6 mặt"
+ "titleDay": "Tấm áo trải phẳng: Sxq = chu vi đáy × cao — Stp = Sxq + 2 đáy; lập phương 6 mặt",
+ "video": {
+  "giang": "DL_KSN5Q1_B51_M1_giang.mp4"
+ }
 }

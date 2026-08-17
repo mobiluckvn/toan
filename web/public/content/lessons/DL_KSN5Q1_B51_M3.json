@@ -34,24 +34,7 @@
   "kidText": "Quét vôi thì ngước lên có trần, cúi xuống không tính sàn, nhìn quanh thì trừ cửa. Ba chi tiết trong một hợp đồng."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Hợp đồng quét vôi ba chi tiết — nghi thức \"ngước — cúi — nhìn quanh\": NGƯỚC: trần CÓ quét ($8  \\times  6 = 48$); CÚI: sàn KHÔNG quét (ai quét vôi xuống sàn!); NHÌN QUANH: tường tính đủ rồi TRỪ cửa (không ai quét vôi lên cửa kính)."
-   },
-   {
-    "id": "K2",
-    "text": "Phòng $8  \\times  6  \\times  4$, cửa 10 $m^2$: tường = ($8 + 6$) × $2  \\times  4 = 112$; trần = 48; vôi = $112 + 48 - 10 = 150 m^2$."
-   },
-   {
-    "id": "K3",
-    "text": "Ngược từ Sxq: cao = Sxq : chu vi đáy = $60 : 20 = 3$ dm; rộng = nửa chu vi − dài = $10 - 6 = 4$ → Stp = $60 + 48 = 108$ (kiểm xuôi khớp)."
-   },
-   {
-    "id": "K4",
-    "text": "Ngược lập phương: một mặt = Stp : $6 = 150 : 6 = 25$ → cạnh = số nhân chính nó ra $25 = 5$ cm (câu đố B49 tái xuất!)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: NGHI THỨC BA CÁI NHÌN CỦA THỢ SƠN. Nhận hợp đồng quét vôi phòng dài tám rộng sáu cao bốn, cửa mười mét vuông — thợ non tay dính đủ ba lỗi: quên trần, quét cả sàn, tính luôn cửa! Nghi thức ba cái nhìn: NGƯỚC LÊN — trần CÓ quét: tám nhân sáu bằng bốn mươi tám! CÚI XUỐNG — sàn KHÔNG quét: ai đời quét vôi xuống sàn nhà! NHÌN QUANH — bốn bức tường là tấm áo: tám cộng sáu nhân hai nhân bốn — một trăm mười hai; nhưng TRỪ CỬA: không ai quét vôi lên cửa kính — trừ mười! Vôi bằng một trăm mười hai cộng bốn tám trừ mười: MỘT TRĂM NĂM MƯƠI mét vuông — trần có, sàn không, cửa trừ: ba chi tiết một hợp đồng! Chiều NGƯỢC lần dây: biết áo sáu mươi và vòng eo hai mươi — cao bằng sáu mươi chia hai mươi: BA! Nửa vòng eo là mười, dài sáu — rộng BỐN: toàn phần một linh tám, kiểm xuôi khớp! Lập phương ngược: toàn phần một trăm năm mươi chia sáu mặt — hai mươi lăm một mặt: cạnh là số nhân chính nó ra hai lăm — NĂM: câu đố hình tròn tái xuất!",
   "canonicalExamples": [
    {
@@ -82,14 +65,8 @@
     "counterExample": "Quét cả sàn: vôi ướt dưới chân, cả nhà đi đâu?! Còn quét lên cửa kính thì… nhìn ra sân bằng niềm tin!"
    }
   ],
-  "vocabulary": [
-   "ba cái nhìn thợ sơn",
-   "trần có — sàn không — cửa trừ",
-   "chia áo cho eo",
-   "nửa vòng eo",
-   "câu đố tái xuất"
-  ],
-  "mantra": "TRẦN CÓ — SÀN KHÔNG — CỬA TRỪ: BA CHI TIẾT MỘT HỢP ĐỒNG!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,46 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Phòng dài 8 m, rộng 6 m, cao 4 m; diện tích cửa 10 m². Tính diện tích quét vôi (tường và trần).",
-    "display": {
-     "type": "story_panel",
-     "caption": "chỉ 4 tường = xong hợp đồng??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để nhìn ba hướng!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Nghi thức ba cái nhìn của thợ sơn! NGƯỚC LÊN — trần CÓ quét: tám nhân sáu bằng BỐN MƯƠI TÁM! CÚI XUỐNG — sàn KHÔNG quét: ai đời quét vôi xuống sàn! NHÌN QUANH — tường là tấm áo: MỘT TRĂM MƯỜI HAI; nhưng TRỪ CỬA mười: không ai quét vôi lên cửa kính! Vôi bằng một trăm mười hai cộng bốn tám trừ mười: MỘT TRĂM NĂM MƯƠI mét vuông!",
-    "display": {
-     "type": "three_looks_interactive",
-     "spec": {
-      "up": "ngước: trần 48 ✓",
-      "down": "cúi: sàn ✗",
-      "around": "quanh: tường 112 − cửa 10",
-      "total": "112 + 48 − 10 = 150"
-     }
-    },
-    "interaction": {
-     "type": "three_looks",
-     "answerKey": {
-      "value": 150
-     },
-     "successMessage": "Ba cái nhìn: 150 m² tròn hợp đồng!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -171,38 +108,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Chiều NGƯỢC lần dây: biết tấm áo sáu mươi và vòng eo hai mươi — cao bằng áo chia eo: sáu mươi chia hai mươi — BA đề-xi-mét! Nửa vòng eo là mười, dài sáu — rộng BỐN: toàn phần sáu mươi cộng hai lần hai tư — MỘT TRĂM LINH TÁM, kiểm xuôi khớp! Lập phương ngược: một trăm năm mươi chia SÁU mặt — hai lăm; cạnh là số nhân chính nó — NĂM: câu đố hình tròn tái xuất!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "cao = Sxq : chu vi đáy = 60 : 20 = 3",
-      "rộng = 10 − 6 = 4 → Stp 108 ✓",
-      "lập phương: 150 : 6 = 25 → cạnh 5"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: trần có — sàn không — cửa trừ: ba chi tiết một hợp đồng!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TRẦN CÓ — SÀN KHÔNG — CỬA TRỪ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào kỳ sát hạch tiếp!"
     }
    }
   ]
@@ -504,107 +409,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B51.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "chỉ 4 tường = xong hợp đồng??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Phòng 8 × 6 × 4, quét bốn bức tường là 112 mét vuông — nộp!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B51_M3_F1.png",
-   "sha256_16": "442c396a340b9f5c"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Quét vôi: trần có — sàn không — cửa trừ; đi ngược từ Sxq/Stp về cao và cạnh",
-    "steps": [
-     {
-      "text": "cao = Sxq : chu vi đáy = 60 : 20 = 3"
-     },
-     {
-      "text": "rộng = 10 − 6 = 4 → Stp 108"
-     },
-     {
-      "text": "lập phương: 150 : 6 = 25 → cạnh 5"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B51_M3_F2.png",
-   "sha256_16": "60d1d82ccf69fc87"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Hợp đồng quét vôi ba chi tiết",
-      "text": "nghi thức \"ngước — cúi — nhìn quanh\": NGƯỚC: trần CÓ quét (8 × 6 = 48); CÚI: sàn KHÔNG quét (ai quét vôi xuống sàn!); NHÌN QUANH: tường tính đủ rồi TRỪ cửa (không ai quét vôi lên cửa kính).",
-      "tone": "navy"
-     },
-     {
-      "label": "Phòng 8 × 6 × 4, cửa 10 m²",
-      "text": "tường = (8 + 6) × 2 × 4 = 112; trần = 48; vôi = 112 + 48 − 10 = 150 m².",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "TRẦN CÓ — SÀN KHÔNG — CỬA TRỪ: BA CHI TIẾT MỘT HỢP ĐỒNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B51_M3_F3.png",
-   "sha256_16": "103c4d332c336830"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "QUÉT VÔI: TRẦN CÓ — SÀN KHÔNG — CỬA TRỪ",
-    "steps": [
-     {
-      "text": "Bốn bức tường",
-      "sub": "(8 + 6) × 2 × 4 = 112 m²"
-     },
-     {
-      "text": "Cộng TRẦN (không cộng sàn)",
-      "sub": "+ 8 × 6 = 48"
-     },
-     {
-      "text": "Trừ diện tích cửa",
-      "sub": "− 10 → 150 m²"
-     }
-    ],
-    "note": "Chiều ngược: cao = Sxq : chu vi đáy = 60 : 20 = 3 dm → rộng = 10 − 6 = 4 dm"
-   },
-   "caption": "Ba chi tiết phải nhớ đủ: trần có, sàn không, cửa trừ",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B51_M3_F4.png",
-   "sha256_16": "bd1c763c7c77c7aa"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B46"
@@ -616,5 +421,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Quét vôi: trần có — sàn không — cửa trừ; đi ngược từ Sxq/Stp về cao và cạnh"
+ "titleDay": "Quét vôi: trần có — sàn không — cửa trừ; đi ngược từ Sxq/Stp về cao và cạnh",
+ "video": {
+  "giang": "DL_KSN5Q1_B51_M3_giang.mp4"
+ }
 }
