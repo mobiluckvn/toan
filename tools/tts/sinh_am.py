@@ -53,6 +53,14 @@ CO_DAU = re.compile(
     r"ùúủũụưừứửữựỳýỷỹỵđ]", re.IGNORECASE)
 
 # Những chữ Việt KHÔNG dấu hay lọt vào câu tiếng Anh mà mắt thường bỏ qua.
+# Chữ Việt không dấu KHÁC, gặp trong nghĩa của từ vựng. Danh sách này chỉ để phép
+# đoán ngôn ngữ bớt báo oan — thêm chữ vào đây không nới lỏng gì về nội dung.
+# Khớp VIET_KHAC của web/test/tienganh_am.test.mjs.
+VIET_KHAC = {
+    "anh", "em", "trai", "chi", "ba", "ma", "bo", "me", "ong", "ban",
+    "cam", "canh", "xanh", "do", "den", "hoa", "qua", "cai", "chim", "ca",
+}
+
 VIET_KHONG_DAU = {
     "con", "cua", "cho", "va", "la", "co", "khong", "nhe", "hay", "bam",
     "nghe", "nhin", "chon", "dung", "sai", "roi", "moi", "hinh", "tu", "cau",
@@ -79,7 +87,17 @@ def soat_dong(m: dict) -> str | None:
     else:
         # Tiếng Việt mà KHÔNG có dấu nào, lại toàn chữ ASCII → gần như chắc là
         # tiếng Anh khai nhầm. Câu Việt thật hiếm khi dài mà không có dấu nào.
-        if not CO_DAU.search(chu) and len(chu.split()) >= 3:
+        #
+        # ⚠ "Hiếm khi" không phải "không bao giờ". Nghĩa của `brother` là
+        # "anh, em trai" — ba từ, không từ nào có dấu, tiếng Việt trăm phần trăm.
+        # Nên đòi thêm một dấu hiệu ĐỘC LẬP: có chữ nào KHÔNG đọc được bằng vần
+        # Việt không? Chuỗi mà mọi chữ đều đọc được thì Kokoro-VI đọc ra vẫn đúng,
+        # và đó mới là điều phép kiểm này thật sự lo.
+        # Luật này phải khớp `web/test/tienganh_am.test.mjs`; hai bên lệch nhau thì
+        # bộ sinh bỏ dòng mà cổng bảo không sao, hoặc ngược lại.
+        chu_cai = re.findall(r"[a-z]+", chu.lower())
+        if (not CO_DAU.search(chu) and len(chu.split()) >= 3
+                and not all(w in VIET_KHONG_DAU or w in VIET_KHAC for w in chu_cai)):
             return f"dòng khai 'vi' mà không có chữ nào có dấu: {chu!r}"
     return None
 

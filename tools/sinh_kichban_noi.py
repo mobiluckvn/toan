@@ -38,9 +38,20 @@ import sys
 from pathlib import Path
 
 GOC = Path(__file__).resolve().parent.parent
-NOI_DUNG = GOC / 'web' / 'public' / 'content' / 'ta1'
+
+# Quyển nào — `--lop N`, mặc định 1 để lệnh cũ trong sổ vẫn chạy.
+# ⚠ `RA_DATA` phải MANG SỐ LỚP. Bản đầu ghi thẳng `kichban_noi.json` cho mọi quyển,
+# nên chạy lớp 2 là đè mất kịch bản lớp 1 — mà lớp 1 có ba bài viết tay không sinh
+# lại được bằng máy (tools/kichban_tay_ta1.py mới dựng lại được).
+LOP = 1
+for _i, _a in enumerate(sys.argv):
+    if _a == '--lop' and _i + 1 < len(sys.argv):
+        LOP = int(sys.argv[_i + 1])
+NOI_DUNG = GOC / 'web' / 'public' / 'content' / f'ta{LOP}'
 RA_PUBLIC = NOI_DUNG / 'kichban_noi.json'
-RA_DATA = GOC / 'data' / 'tienganh' / 'kichban_noi.json'
+RA_DATA = GOC / 'data' / 'tienganh' / (
+    'kichban_noi.json' if LOP == 1 else f'kichban_noi_lop{LOP}.json')
+TIEN_TO_BAI = f'DL_TA{LOP}_B*.json'
 
 
 def so_o_trong(cong_thuc):
@@ -136,7 +147,7 @@ def kich_ban_cua(bai):
 
 
 def main():
-    tep = sorted(NOI_DUNG.glob('DL_TA1_B*.json'))
+    tep = sorted(NOI_DUNG.glob(TIEN_TO_BAI))
     if not tep:
         sys.exit(f'không thấy bài học nào ở {NOI_DUNG}')
 

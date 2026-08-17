@@ -27,16 +27,25 @@ import os
 import sys
 
 GOC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-THU_MUC = os.path.join(GOC, 'web', 'public', 'content', 'ta1')
-TEP = os.path.join(THU_MUC, 'ontap.json')
 SO_CAU = 10
+
+# Quyển nào — nhận `--lop N`, mặc định lớp 1 để lệnh cũ trong sổ vẫn chạy.
+# Bản đầu ghim cứng 'ta1' ở ba chỗ; thêm quyển lớp 2 là phải sửa cả ba, mà sót một
+# chỗ thì bộ dựng đọc bài lớp 2 rồi ghi đè đề ôn tập của lớp 1 — hỏng câm.
+LOP = 1
+for _i, _a in enumerate(sys.argv):
+    if _a == '--lop' and _i + 1 < len(sys.argv):
+        LOP = int(sys.argv[_i + 1])
+THU_MUC = os.path.join(GOC, 'web', 'public', 'content', f'ta{LOP}')
+TEP = os.path.join(THU_MUC, 'ontap.json')
+TIEN_TO_BAI = f'DL_TA{LOP}_B'
 
 
 def nap_bai():
     """16 bài đã sinh, gom theo chương. Chương lấy từ CHÍNH bài, không từ `_gom`."""
     theo_chuong = {}
     for ten in sorted(os.listdir(THU_MUC)):
-        if not ten.startswith('DL_TA1_B') or not ten.endswith('.json'):
+        if not ten.startswith(TIEN_TO_BAI) or not ten.endswith('.json'):
             continue
         with open(os.path.join(THU_MUC, ten), encoding='utf-8') as f:
             b = json.load(f)
