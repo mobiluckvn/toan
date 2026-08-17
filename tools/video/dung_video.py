@@ -774,6 +774,50 @@ def khung(c: dict) -> Image.Image:
         if c.get("chuPhu"):
             giua(d, cy + r + 66, c["chuPhu"], phong(36), INK, rong=W - 180)
 
+    elif L == "tam_giac_ct":
+        # ══ TAM GIÁC CÔNG THỨC — CHE Ô CẦN TÌM LÀ LỘ PHÉP TÍNH ══
+        # Đây KHÔNG phải hình tam giác của hình học; nó là cách xếp ba đại lượng để
+        # ba công thức rời thành một. Ô trên chia cho ô dưới, hai ô dưới nhân nhau —
+        # nên che ô nào thì phần còn lại tự đọc ra phép tính cho ô ấy.
+        #
+        # Chương chuyển động đứng hay đổ ở chỗ này: nói bằng lời thì bé phải thuộc ba
+        # công thức và rất hay nhân chỗ đáng chia. Vẽ ra thì chỉ còn một hình.
+        # `che` nhận 'tren' · 'trai' · 'phai' — ô bị che tô vàng và hiện dấu hỏi.
+        giua(d, 40, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        cx, y0, b, h = W // 2, 130, 210, 280
+        ym = y0 + h * 0.45                       # vạch ngang chia tầng trên · dưới
+        bm = b * 0.45                            # nửa bề ngang tại vạch ấy
+        y1 = y0 + h
+        vung = {
+            "tren": ([(cx, y0), (cx - bm, ym), (cx + bm, ym)],
+                     (cx, y0 + h * 0.26)),
+            "trai": ([(cx - bm, ym), (cx, ym), (cx, y1), (cx - b, y1)],
+                     (cx - b * 0.38, y0 + h * 0.76)),
+            "phai": ([(cx, ym), (cx + bm, ym), (cx + b, y1), (cx, y1)],
+                     (cx + b * 0.38, y0 + h * 0.76)),
+        }
+        che = c.get("che")
+        if che in vung:
+            d.polygon(vung[che][0], fill=GOLD)
+        d.line([(cx, y0), (cx + b, y1), (cx - b, y1), (cx, y0)],
+               fill=TEAL_DARK, width=6, joint="curve")
+        d.line([cx - bm, ym, cx + bm, ym], fill=TEAL, width=5)
+        d.line([cx, ym, cx, y1], fill=TEAL, width=5)
+        fo = phong(52, dam=True)
+        for ten, khoa in (("tren", "tren"), ("trai", "traiDuoi"),
+                          ("phai", "phaiDuoi")):
+            chu = "?" if ten == che else str(c.get(khoa, ""))
+            if not chu:
+                continue
+            tx, ty = vung[ten][1]
+            d.text((tx - d.textlength(chu, font=fo) / 2, ty - 34), chu,
+                   font=fo, fill=GOLD_DARK if ten == che else NAVY)
+        y_cuoi = y1 + 26
+        if c.get("chuPhu"):
+            y_cuoi = giua(d, y_cuoi, c["chuPhu"], phong(38), INK, rong=W - 180)
+        if c.get("chuCuoi"):
+            giua(d, y_cuoi + 18, c["chuCuoi"], phong(32), TEAL_DARK, rong=W - 200)
+
     elif L == "khoi":
         # ══ KHỐI HỘP — BA CÁCH NHÌN CÙNG MỘT CÁI HỘP ══
         # `trai` trải phẳng ra sáu mặt, TÔ MÀU THEO CẶP: hai mặt cùng màu là hai mặt

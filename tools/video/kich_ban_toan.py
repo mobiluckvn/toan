@@ -14732,6 +14732,151 @@ def kb5_ban_kinh_gap_k(b):
     ]
 
 
+def kb5_tam_giac_vst(b):
+    """L5·B53·M1 Một tam giác thay ba công thức, và bài sớm muộn cần mốc thật."""
+    return [
+        _c('bia', 'Tam giác V - S - T và bài sớm muộn', so_bai(b),
+           loi=['Ba bài hỏi ba thứ: tìm vận tốc, tìm quãng đường, tìm thời gian, mà '
+                'học ba công thức rời thì rất hay nhân đúng chỗ đáng chia.']),
+        _c('tam_giac_ct', 'Ba đại lượng ngồi chung MỘT tam giác',
+           tren='S', traiDuoi='V', phaiDuoi='T', che='trai',
+           chuPhu='Che ô V thì còn S nằm trên T:  V = S : T',
+           chuCuoi='45 : 3 = 15 km/giờ',
+           loi=['Xếp quãng đường lên đỉnh, vận tốc và thời gian ngồi dưới đáy.',
+                'Che ô vận tốc thì phần còn lại là ét nằm trên tê, đọc ra ngay phép '
+                'chia.']),
+        _c('tam_giac_ct', 'Che ô quãng đường',
+           tren='S', traiDuoi='V', phaiDuoi='T', che='tren',
+           chuPhu='Còn hai ô đứng CẠNH nhau:  S = V × T',
+           chuCuoi='5 × 2 = 10 km',
+           loi=['Che ô quãng đường thì hai ô còn lại đứng cạnh nhau, tức là nhân.']),
+        _c('tam_giac_ct', 'Che ô thời gian',
+           tren='S', traiDuoi='V', phaiDuoi='T', che='phai',
+           chuPhu='Lại là trên chia dưới:  T = S : V',
+           chuCuoi='12 : 4 = 3 giờ',
+           loi=['Che ô thời gian thì lại là trên chia dưới. Một hình thay được cả ba '
+                'công thức.']),
+        _c('y_toan', 'Bài sớm muộn cần thêm chiếc đồng hồ THẬT',
+           'nhịp một — thời gian đi:  3 : 12 = 0,25 giờ = 15 phút', buoc=1, soBuoc=3,
+           loi=['Bài hỏi đến sớm hay muộn thì cần thêm mốc giờ thật. Nhịp một là tính '
+                'thời gian đi.',
+                'Ba chia mười hai được không phẩy hai lăm giờ, tức mười lăm phút.']),
+        _c('y_toan', 'Nhịp hai: cộng vào mốc xuất phát',
+           '6 giờ 50 phút + 15 phút = 7 giờ 05   →   hẹn 7 giờ 15 nên đến SỚM 10 phút',
+           buoc=2, soBuoc=3,
+           loi=['Nhịp hai là cộng vào mốc xuất phát, sáu giờ năm mươi cộng mười lăm '
+                'phút thành bảy giờ năm.',
+                'Nhịp ba là so với giờ hẹn. Hẹn bảy giờ mười lăm thì đến sớm mười '
+                'phút.']),
+        _c('y_toan', 'Giờ nghỉ thì xe ĐỨNG, không chạy',
+           'trên đường = 10 giờ 15 − 7 giờ 15 = 3 giờ   ·   thực chạy = 3 − 0,5 = 2,5 giờ',
+           buoc=3, soBuoc=3,
+           loi=['Còn giờ nghỉ thì xe đứng chứ không chạy, nên phải trừ ra.',
+                'Trên đường ba giờ, nghỉ nửa giờ, thực chạy chỉ hai phẩy năm giờ.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='một tam giác — ba công thức: CHE ô cần tìm là ra',
+           thay='S ngồi đỉnh, V và T ngồi đáy: V = S : T · T = S : V · S = V × T',
+           loi=['Con nhớ câu này. Một tam giác thay ba công thức, che ô cần tìm là '
+                'ra.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_doi_km_gio_met_giay(b):
+    """L5·B53·M2 Chia ba phẩy sáu, và cặp ba mươi sáu — mười canh cửa."""
+    return [
+        _c('bia', 'Đổi km/giờ sang m/giây và ngược lại', so_bai(b),
+           loi=['Đổi ba mươi sáu ki lô mét giờ sang mét trên giây.',
+                'Vớ máy tính nhân ba phẩy sáu là ra một trăm hai mươi chín phẩy sáu, '
+                'và thế là hỏng.']),
+        _c('y_toan', 'Gốc của phép đổi nằm ở hai con số',
+           '1 km = 1 000 m   ·   1 giờ = 3 600 giây   →   × 1 000 rồi : 3 600, gọn thành : 3,6',
+           buoc=1, soBuoc=3,
+           loi=['Gốc của phép đổi nằm ở hai chỗ. Một ki lô mét là một nghìn mét, một '
+                'giờ là ba nghìn sáu trăm giây.',
+                'Nhân một nghìn rồi chia ba nghìn sáu trăm, gọn lại thành chia ba phẩy '
+                'sáu.']),
+        _c('day_so', 'Cặp bỏ túi để canh cửa', so=['36', '10'],
+           nhanHang='km/giờ → m/giây',
+           chuPhu='Ba mươi sáu km/giờ chính là mười m/giây. Nhớ đúng một cặp này.',
+           loi=['Nhớ lấy một cặp bỏ túi: ba mươi sáu ki lô mét giờ chính là mười mét '
+                'trên giây, quên chiều thì lôi ra thử là biết ngay.']),
+        _c('y_toan', 'Chiều ngược thì làm ngược lại',
+           'm/giây → km/giờ:  NHÂN 3,6   ·   20 × 3,6 = 72 km/giờ', buoc=2, soBuoc=3,
+           loi=['Chiều ngược thì nhân ba phẩy sáu. Hai mươi mét trên giây là bảy mươi '
+                'hai ki lô mét giờ.']),
+        _c('y_toan', 'Cách tự soi: đi trong MỘT GIÂY thì ít hơn nhiều',
+           'xuống m/giây thì số phải BÉ ĐI   ·   lên km/giờ thì số phải TO LÊN',
+           buoc=3, soBuoc=3,
+           loi=['Có cách tự soi khỏi cần nhớ chiều. Trong một giây thì đi được ít hơn '
+                'trong một giờ rất nhiều.',
+                'Nên xuống mét trên giây số phải bé đi, còn lên ki lô mét giờ số phải '
+                'to lên.']),
+        _c('day_so', 'Thử ngược cái đáp nhân nhầm', so=['129,6', '466'],
+           nhanHang='m/giây · đổi ngược ra km/giờ',
+           chuPhu='Xe đạp mà chạy 466 km/giờ thì biết ngay là gãy.',
+           loi=['Thử ngược cái đáp nhân nhầm mà xem. Một trăm hai mươi chín phẩy sáu '
+                'mét trên giây đổi ra là bốn trăm sáu mươi sáu ki lô mét giờ.',
+                'Xe đạp không chạy nhanh thế được, nên biết ngay là sai chiều.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='xuống m/giây thì số phải BÉ ĐI — chia 3,6',
+           thay='54 : 3,6 = 15 m/giây   ·   20 × 3,6 = 72 km/giờ',
+           loi=['Con nhớ câu này. Xuống mét trên giây thì số phải bé đi, tức là chia ba '
+                'phẩy sáu.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_van_toc_trung_binh(b):
+    """L5·B53·M3 Trung bình vận tốc phải về tận gốc: tổng đường chia tổng giờ."""
+    return [
+        _c('bia', 'Vận tốc trung bình về tận gốc', so_bai(b),
+           loi=['Đi sáu mươi cây với vận tốc ba mươi, về với sáu mươi. Trung bình là '
+                'bao nhiêu?']),
+        _c('y_toan', 'Cộng hai vận tốc rồi chia đôi là bẫy',
+           '(30 + 60) : 2 = 45   →   thử lại: 45 × 3 giờ = 135 km, mà đường chỉ có 120',
+           buoc=1, soBuoc=3,
+           loi=['Cộng hai vận tốc rồi chia đôi ra bốn mươi lăm. Nhưng thử lại thì bốn '
+                'mươi lăm nhân ba giờ là một trăm ba mươi lăm cây.',
+                'Đường chỉ có một trăm hai mươi thôi, nên đáp ấy sai.']),
+        _c('day_so', 'Vì sao? Chặng CHẬM ngốn nhiều giờ hơn', so=['2', '1'],
+           nhanHang='giờ mỗi chặng',
+           chuPhu='Cùng 60 km: đi mất 2 giờ, về chỉ 1 giờ — xe lết ở tốc độ chậm LÂU HƠN.',
+           loi=['Lý do nằm ở đây. Cùng sáu mươi cây, chặng chậm ngốn hai giờ còn chặng '
+                'nhanh chỉ một giờ.',
+                'Xe lết ở tốc độ chậm lâu hơn, nên trung bình bị kéo xuống chứ không '
+                'nằm chính giữa.']),
+        _c('y_toan', 'Về TẬN GỐC: cộng hết đường, cộng hết giờ, chia một lần',
+           'Vtb = tổng S : tổng T = 120 : 3 = 40 km/giờ', buoc=2, soBuoc=3,
+           loi=['Muốn đúng thì về tận gốc. Cộng hết đường được một trăm hai mươi, cộng '
+                'hết giờ được ba.',
+                'Chia một lần, bốn mươi ki lô mét giờ.']),
+        _c('y_toan', 'Gạch chân chữ đứng sau chữ NỬA',
+           'nửa THỜI GIAN → hai nửa bằng nhau → S = 30 + 60 = 90, Vtb = 90 : 2 = 45 ĐÚNG',
+           buoc=3, soBuoc=3,
+           loi=['Nhưng đề đổi một chữ là đáp đổi theo. Gạch chân chữ đứng ngay sau chữ '
+                'nửa.',
+                'Nửa thời gian thì hai nửa bằng nhau, và lúc ấy bốn mươi lăm lại '
+                'đúng.']),
+        _c('day_so', 'Bài muộn sớm cũng về gốc mà ra', so=['5', '4'],
+           nhanHang='phút cho mỗi km',
+           chuPhu='Chênh 1 phút mỗi km, lệch tổng 10 phút → quãng đường 10 km.',
+           loi=['Bài muộn sớm cũng vậy. Đi mười hai thì mỗi cây mất năm phút, đi mười '
+                'lăm thì mỗi cây mất bốn phút.',
+                'Chênh một phút mỗi cây, mà lệch tổng là mười phút, nên đường dài mười '
+                'cây.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='trung bình của vận tốc = TỔNG đường chia TỔNG giờ',
+           thay='120 : 3 = 40 km/giờ — không phải (30 + 60) : 2',
+           loi=['Con nhớ câu này. Trung bình của vận tốc bằng tổng đường chia tổng '
+                'giờ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 def kb5_the_tich_gap_k(b):
     """L5·B52·M1 Thể tích là sức chứa, và bộ ba gấp k đếm theo SỐ CHIỀU."""
     return [
@@ -15144,6 +15289,9 @@ def kb5_banh_xe_lan(b):
 
 
 BO = {
+    'DL:KSN5Q1.B53.M1': kb5_tam_giac_vst,
+    'DL:KSN5Q1.B53.M2': kb5_doi_km_gio_met_giay,
+    'DL:KSN5Q1.B53.M3': kb5_van_toc_trung_binh,
     'DL:KSN5Q1.B52.M1': kb5_the_tich_gap_k,
     'DL:KSN5Q1.B52.M2': kb5_be_nuoc_vat_chim,
     'DL:KSN5Q1.B52.M3': kb5_khoi_son_may_mat,

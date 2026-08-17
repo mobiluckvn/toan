@@ -35,24 +35,7 @@
   "kidText": "Vận tốc trung bình bằng TỔNG đường chia TỔNG giờ, không phải cộng hai vận tốc rồi chia đôi. Nhớ đọc kỹ chữ đứng sau chữ \"nửa\"."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Luật gốc: Vtb = TỔNG quãng đường : TỔNG thời gian — muốn trung bình phải VỀ TẬN GỐC: cộng hết đường, cộng hết giờ, chia một lần."
-   },
-   {
-    "id": "K2",
-    "text": "Bẫy vua — trung bình cộng: đi 60 km với 30 km/h (2 giờ), về với 60 km/h (1 giờ) → Vtb = $120 : 3 = 40$ km/h; đáp 45 = ($30 + 60$) : 2 sai vì xe LẾT Ở TỐC ĐỘ CHẬM LÂU HƠN — thời gian bên chậm nặng ký hơn: Vtb luôn nghiêng về vận tốc chậm."
-   },
-   {
-    "id": "K3",
-    "text": "Gạch chân chữ sau chữ NỬA: nửa THỜI GIAN đi 30 rồi 60 trong 2 giờ → hai nửa giờ BẰNG NHAU (mỗi nửa 1 giờ): S = $30 + 60 = 90$ → Vtb = $90 : 2 = 45$ ĐÚNG; còn nửa QUÃNG ĐƯỜNG thì thời gian hai nửa khác nhau — phải về gốc: hai đề khác nhau đúng hai chữ, hai đáp khác nhau."
-   },
-   {
-    "id": "K4",
-    "text": "Bài sư phụ muộn - sớm: đi 12 km/h muộn 6 phút, đi 15 km/h sớm 4 phút → hiệu thời gian = 10 phút; mỗi km: 5 phút (với 12) vs 4 phút (với 15) — chênh 1 phút/km → quãng đường = 10 km."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: VỀ TẬN GỐC VÀ HAI CHỮ SAU CHỮ NỬA. Đi sáu mươi cây với ba mươi, về với sáu mươi — Trí Long cộng chia đôi: \"bốn lăm!\" — BẪY VUA của cả chương! Vận tốc không sống một mình: nó sống bằng ĐƯỜNG và GIỜ — muốn trung bình phải VỀ TẬN GỐC: cộng hết đường — một trăm hai mươi cây; cộng hết giờ — đi hai giờ, về một giờ: BA giờ; chia MỘT lần: một trăm hai mươi chia ba — BỐN MƯƠI! Vì sao không phải bốn lăm? Xe LẾT ở tốc độ chậm những HAI giờ mà chỉ bay tốc độ nhanh MỘT giờ — bên chậm nặng ký hơn: kim trung bình bị kéo NGHIÊNG VỀ PHÍA CHẬM! Trận hai chỉ đổi HAI CHỮ: \"nửa đầu THỜI GIAN đi ba mươi, nửa sau sáu mươi, cả chuyến hai giờ\" — gạch chân chữ sau chữ NỬA: nửa THỜI GIAN — hai nửa giờ BẰNG NHAU, mỗi nửa một giờ: đường bằng ba mươi cộng sáu mươi — chín mươi; chín mươi chia hai — BỐN LĂM: lần này bốn lăm ĐÚNG! Nửa ĐƯỜNG hay nửa GIỜ — hai đề hai số phận: gạch chân rồi hãy tính!",
   "canonicalExamples": [
    {
@@ -83,14 +66,8 @@
     "counterExample": "Nếu 45 đúng thì cả chuyến 3 giờ đi được 135 km — mà đường đi về chỉ 120 km: dư 15 km ở đâu ra?!"
    }
   ],
-  "vocabulary": [
-   "về tận gốc",
-   "bẫy vua trung bình cộng",
-   "nghiêng về phía chậm",
-   "gạch chân chữ sau chữ nửa",
-   "hai đề hai số phận"
-  ],
-  "mantra": "TRUNG BÌNH CỦA VẬN TỐC SỐNG BẰNG TỔNG ĐƯỜNG CHIA TỔNG GIỜ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -112,46 +89,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Ô tô đi từ A đến B dài 60 km với vận tốc 30 km/h rồi về A với vận tốc 60 km/h. Tính vận tốc trung bình cả đi lẫn về.",
-    "display": {
-     "type": "story_panel",
-     "caption": "Vtb = ($30+60$):$2 = 45$??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để về tận gốc!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Vận tốc sống bằng ĐƯỜNG và GIỜ: muốn trung bình phải VỀ TẬN GỐC! Cộng hết đường: một trăm hai mươi! Cộng hết giờ: đi sáu mươi chia ba mươi — hai giờ; về sáu mươi chia sáu mươi — một giờ: BA giờ! Chia MỘT lần: một trăm hai mươi chia ba — BỐN MƯƠI! Vì sao không bốn lăm? Xe LẾT tốc độ chậm những HAI giờ, bay tốc độ nhanh MỘT giờ — bên chậm nặng ký: kim nghiêng VỀ PHÍA CHẬM!",
-    "display": {
-     "type": "back_to_root_interactive",
-     "spec": {
-      "sumS": "tổng S = 60 + 60 = 120",
-      "sumT": "tổng T = 2 + 1 = 3",
-      "vtb": "Vtb = 120 : 3 = 40 (≠ 45!)",
-      "lean": "nghiêng về phía chậm"
-     }
-    },
-    "interaction": {
-     "type": "sum_then_divide",
-     "answerKey": {
-      "value": 40
-     },
-     "successMessage": "Về gốc: 120 : 3 = 40 — kim nghiêng phía chậm!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -172,47 +109,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 44,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Trận hai đổi HAI CHỮ: nửa đầu THỜI GIAN ba mươi, nửa sau sáu mươi, hai giờ! Gạch chân chữ sau chữ NỬA: nửa THỜI GIAN — hai nửa giờ BẰNG NHAU, mỗi nửa một giờ: đường bằng ba mươi cộng sáu mươi — chín mươi; chín mươi chia hai — BỐN LĂM: lần này bốn lăm ĐÚNG! Nửa ĐƯỜNG hay nửa GIỜ — hai đề hai số phận! Sư phụ: muộn sáu sớm bốn — hiệu MƯỜI phút; mỗi cây chênh MỘT phút: quãng MƯỜI cây!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "nửa THỜI GIAN: (30 + 60) : 2",
-       "output": "✓ 45 (hai nửa giờ bằng nhau)",
-       "valid": true,
-       "reason": "gạch chân: giờ"
-      },
-      {
-       "input": "nửa QUÃNG ĐƯỜNG: lấy 45 luôn",
-       "output": "✗ phải về gốc → 40",
-       "valid": false,
-       "reason": "thời gian hai nửa khác nhau"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: trung bình của vận tốc sống bằng tổng đường chia tổng giờ!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TỔNG ĐƯỜNG : TỔNG GIỜ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -511,105 +407,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B53.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "Vtb = (30+60):2 = 45??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Vtb = 45!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B53_M3_F1.png",
-   "sha256_16": "32b2a73d375d9193"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "nửa QUÃNG ĐƯỜNG: lấy 45 luôn"
-     ],
-     "result": "phải về gốc → 40"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "nửa THỜI GIAN: (30 + 60) : 2"
-     ],
-     "result": "45 (hai nửa giờ bằng nhau)"
-    },
-    "verdict": "gạch chân: giờ"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B53_M3_F2.png",
-   "sha256_16": "640c3b888c26ff06"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Luật gốc",
-      "text": "Vtb = TỔNG quãng đường : TỔNG thời gian",
-      "tone": "navy"
-     },
-     {
-      "label": "Bẫy vua — trung bình cộng",
-      "text": "đi 60 km với 30 km/h (2 giờ), về với 60 km/h (1 giờ) → Vtb = 120 : 3 = 40 km/h; đáp 45 = (30 + 60) : 2 sai vì xe LẾT Ở TỐC ĐỘ CHẬM LÂU HƠN — thời gian bên chậm nặng ký hơn: Vtb luôn nghiêng về vận tốc chậm.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "TRUNG BÌNH CỦA VẬN TỐC SỐNG BẰNG TỔNG ĐƯỜNG CHIA TỔNG GIỜ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B53_M3_F3.png",
-   "sha256_16": "7b6b4fdd8bddc7da"
-  },
-  {
-   "archetype": "balance_scale",
-   "params": {
-    "title": "Vtb ĐI - VỀ: KIM NGHIÊNG VỀ PHÍA CHẬM",
-    "left": {
-     "text": "đi 30 km/h · LẾT 2 giờ",
-     "weight": 2
-    },
-    "right": {
-     "text": "về 60 km/h · bay 1 giờ",
-     "weight": 1
-    },
-    "verdict": "Vtb = 120 : 3 = 40 km/h — KHÔNG phải (30 + 60) : 2 = 45",
-    "note": "Phép thử: 45 × 3 giờ = 135 km mà đường đi về chỉ 120 km — dư 15 km ma!"
-   },
-   "caption": "Nửa THỜI GIAN thì khác: hai nửa giờ bằng nhau → 90 : 2 = 45 mới đúng",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B53_M3_F4.png",
-   "sha256_16": "976da715329029d5"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B47"
@@ -621,5 +419,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Vtb = tổng S : tổng T về tận gốc — bác trung bình cộng & gạch chân chữ sau chữ NỬA"
+ "titleDay": "Vtb = tổng S : tổng T về tận gốc — bác trung bình cộng & gạch chân chữ sau chữ NỬA",
+ "video": {
+  "giang": "DL_KSN5Q1_B53_M3_giang.mp4"
+ }
 }
