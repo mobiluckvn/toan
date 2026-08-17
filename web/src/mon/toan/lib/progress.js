@@ -24,7 +24,46 @@ const khoa = () => {
   return cho === CHO_DAU ? KEY_GOC : `${KEY_GOC}.${cho}`;
 };
 
-export const emptyProgress = () => ({ micros: {}, chapters: {}, updatedAt: null });
+export const emptyProgress = () => ({ micros: {}, chapters: {}, gio: {}, updatedAt: null });
+
+/**
+ * SỔ GIỜ TẠI MÁY, cộng dồn theo NGÀY — `{ '2026-08-17': {giay, giayXem, giayLam, luot} }`.
+ *
+ * Vì sao giữ một bản ở máy khi máy chủ đã có: bé chưa đăng nhập vẫn phải thấy số
+ * phút của mình, và bé đã đăng nhập cũng không nên phải chờ hàm chạy đêm mới biết
+ * hôm nay mình học bao lâu. Sổ máy chủ trả lời cho bố mẹ và cô giáo; sổ này trả lời
+ * cho chính bé, ngay lập tức.
+ *
+ * Cắt còn `SO_NGAY_GIU` ngày gần nhất: sổ tại máy nằm trong localStorage, để nó phình
+ * mãi thì đến lúc nào đó ghi hỏng, mà ghi hỏng ở đây là mất luôn cả tiến độ học.
+ */
+export const SO_NGAY_GIU = 60;
+
+export function congGio(progress, ngay, gio) {
+  if (!gio || !gio.giay) return progress;
+  const cu = progress.gio?.[ngay] || { giay: 0, giayXem: 0, giayLam: 0, luot: 0 };
+  const moi = {
+    ...(progress.gio || {}),
+    [ngay]: {
+      giay: cu.giay + gio.giay,
+      giayXem: cu.giayXem + (gio.giayXem || 0),
+      giayLam: cu.giayLam + (gio.giayLam || 0),
+      luot: cu.luot + 1,
+    },
+  };
+  const giu = Object.keys(moi).sort().slice(-SO_NGAY_GIU);
+  return { ...progress, gio: Object.fromEntries(giu.map((k) => [k, moi[k]])) };
+}
+
+/** Phút học của một ngày (mặc định hôm nay) — 0 khi chưa học. */
+export const phutNgay = (progress, ngay) =>
+  Math.round(((progress?.gio || {})[ngay]?.giay || 0) / 60);
+
+/** Phút học cộng dồn `n` ngày gần nhất, tính cả hôm nay. */
+export function phutGanDay(progress, dsNgay) {
+  const g = progress?.gio || {};
+  return Math.round(dsNgay.reduce((s, n) => s + (g[n]?.giay || 0), 0) / 60);
+}
 
 export function loadProgress(storage = globalThis.localStorage) {
   try {

@@ -9,7 +9,7 @@
  */
 import {
   doc, getDoc, setDoc, writeBatch, collection, query, where, orderBy, limit, getDocs,
-  serverTimestamp,
+  serverTimestamp, increment,
 } from 'firebase/firestore';
 import { httpsCallable } from 'firebase/functions';
 import { db, fns, hasFirebase } from '../../../chung/lib/nenTang.js';
@@ -18,6 +18,7 @@ import {
   isCloudLearner, maHocBa,
 } from './sync.js';
 import { napBanDoDang, dangCuaBai } from './noiDung.js';
+import { maNgay } from './dongHo.js';
 
 /**
  * Dựng lại SỔ HỌC ngay, không chờ 21:00.
@@ -165,7 +166,42 @@ export async function pushAttempts({ learnerId, sessionId, microId, bktUnit, eve
  * Kết thúc một lượt học micro: xếp hàng đợi trước (an toàn khi mất mạng), rồi thử gửi.
  * Không có Firebase (chế độ chỉ-học-máy) thì chỉ xếp hàng, không lỗi.
  */
-export async function submitSession({ learnerId, sessionId, microId, bktUnit, events, tomTat, grade }) {
+/**
+ * SỔ GIỜ THEO NGÀY — `hocBa/{uid}/muc/gio_2026_08_17`.
+ *
+ * Vì sao phải có, khi `progress/{uid}/micros` đã ghi giây từng bài: tài liệu bài bị
+ * GHI ĐÈ mỗi lần con học lại, nên cộng tất cả lại không ra "tuần này con học bao
+ * lâu" mà ra "tổng của các lượt gần nhất" — một con số không có nghĩa gì. Sổ theo
+ * ngày cộng dồn bằng `increment`, nên học lại bao nhiêu lượt cũng đúng.
+ *
+ * Cộng bằng `increment` chứ không đọc-rồi-ghi: hai máy tính bảng cùng mở một tài
+ * khoản (anh em dùng chung) thì đọc-rồi-ghi làm mất lượt của máy kia trong im lặng.
+ *
+ * Nằm trong `hocBa` cho khớp ba loại đã có (`chuong` · `chuDe` · `dau`), và cố ý
+ * KHÔNG nằm trong `progress/{uid}/micros`: hàm nền `onMicroDone` chạy trên mọi tài
+ * liệu thư mục ấy và đọc thẳng `after.microId` — thả một bản ghi khác hình dạng vào
+ * là hàm đêm ném lỗi, còn `microsPassed` thì đếm phồng lên.
+ */
+async function congGioTrongNgay(uid, gio, microId) {
+  if (!db || !gio || !gio.giay) return;
+  const ngay = maNgay();
+  await setDoc(
+    doc(db, COLLECTIONS.hocBa(uid), maHocBa('gio', ngay)),
+    {
+      loai: 'gio', ngay,
+      giay: increment(gio.giay),
+      giayXem: increment(gio.giayXem),
+      giayLam: increment(gio.giayLam),
+      soLuot: increment(1),
+      baiCuoi: microId,
+      at: Date.now(),
+      serverTs: serverTimestamp(),
+    },
+    { merge: true },
+  );
+}
+
+export async function submitSession({ learnerId, sessionId, microId, bktUnit, events, tomTat, grade, gio = null }) {
   // serverTs để null trong hàng đợi: dấu máy chủ chỉ đóng được lúc GỬI THẬT, không
   // đóng trước rồi cất vào localStorage được.
   await napBanDoDang().catch(() => {});
@@ -179,9 +215,13 @@ export async function submitSession({ learnerId, sessionId, microId, bktUnit, ev
       doc(db, COLLECTIONS.progress(learnerId), microId.replace(/[:.]/g, '_')),
       /* Tiến độ tính trên sổ TÓM TẮT (mỗi câu một dòng). Đưa sổ thô vào đây thì
          "làm đúng ngay lần đầu" sẽ đếm cả những lượt sai giữa chừng — sai nghĩa. */
-      { ...buildProgressDoc({ microId, grade, events: tomTat || events, sessionId }), serverTs: serverTimestamp() },
+      { ...buildProgressDoc({ microId, grade, events: tomTat || events, sessionId, gio }),
+        serverTs: serverTimestamp() },
       { merge: true },
     );
+    /* Sổ giờ theo ngày hỏng thì ĐỪNG kéo cả lượt nộp bài hỏng theo: mất một con số
+       thống kê là chuyện nhỏ, mất kết quả học của con mới là chuyện lớn. */
+    await congGioTrongNgay(learnerId, gio, microId).catch(() => {});
   }
   return hasFirebase ? flushQueue(writeRecords) : { sent: 0, left: recs.length };
 }

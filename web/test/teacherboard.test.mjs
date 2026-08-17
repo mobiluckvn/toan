@@ -1,7 +1,7 @@
 /** Kiểm bảng giáo viên — chạy: node test/teacherboard.test.mjs */
 import {
   buildTeacherBoard, topTraps, stuckLearners, learnerRows, boardHeadline, stampOf,
-  maSach, minutesOf,
+  maSach, minutesOf, phutDoThat, emCanGiup, NHANH_GIAY,
 } from '../functions/src/teacherboard.js';
 import { buildAttempts, isCloudLearner } from '../src/mon/toan/lib/sync.js';
 
@@ -175,6 +175,62 @@ const rPhut = learnerRows(
     .map((a) => ({ ...a, v: 2 })),
   [{ uid: 'u1', displayName: 'A' }], {})[0];
 t('dòng từng em mang theo số phút', rPhut.minutes === 3);
+
+/* ═══ SỐ PHÚT ĐO THẬT, VÀ "EM NÀO ĐANG YẾU" ═══ */
+{
+  const ngay = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Ho_Chi_Minh',
+    year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(D(1)));
+  const so = [{ loai: 'gio', ngay, giay: 1800, giayXem: 600, giayLam: 1200 }];
+  t('phutDoThat cộng đúng', phutDoThat(so, D(7), NOW) === 30);
+  t('chưa có sổ giờ thì trả null, KHÔNG trả 0',
+    phutDoThat([{ loai: 'chuong', khoa: 'c1' }], D(7), NOW) === null);
+  t('ngày ngoài khoảng thì cũng null',
+    phutDoThat([{ loai: 'gio', ngay: '2020-01-01', giay: 999 }], D(7), NOW) === null);
+
+  /* Đúng ca cả tính năng sinh ra: em xem giảng nhiều, trả lời ít lượt. Phép suy ra
+     thấy gần như 0 phút; phép đo thật thấy 30 phút. */
+  const luot = [att('u1', 'DL:KSN2.B01', { ts: D(1), sid: 's1' })].map((a) => ({ ...a, v: 2 }));
+  const rDo = learnerRows(luot, [{ uid: 'u1', displayName: 'A' }], {},
+    { u1: so }, { from: D(7), to: NOW })[0];
+  t('cột phút của cô lấy số ĐO THẬT', rDo.minutes === 30 && rDo.nguonGio === 'do');
+  const rSuy = learnerRows(luot, [{ uid: 'u1', displayName: 'A' }], {}, {}, {})[0];
+  t('không có sổ giờ thì lùi về suy ra và nói rõ', rSuy.nguonGio === 'suyRa');
+}
+
+{
+  /* Ba em cùng đúng 40% — nhìn phần trăm thì y hệt nhau, mà cần ba cách giúp khác nhau. */
+  const rows = [
+    { uid: 'au', displayName: 'Ẩu', answered: 20, correctRate: 40, minutes: 5 },
+    { uid: 'hong', displayName: 'Hổng', answered: 20, correctRate: 40, minutes: 40 },
+    { uid: 'vuot', displayName: 'Vượt', answered: 20, correctRate: 40, minutes: 20 },
+    { uid: 'gioi', displayName: 'Giỏi', answered: 30, correctRate: 92, minutes: 30 },
+    { uid: 'itqua', displayName: 'Ít', answered: 3, correctRate: 0, minutes: 1 },
+  ];
+  const prog = {
+    au:   { a: { giay: 8, giayXem: 4, giayLam: 4 }, b: { giay: 6, giayXem: 3, giayLam: 3 } },
+    hong: { a: { giay: 300, giayXem: 90, giayLam: 210 }, b: { giay: 250, giayXem: 80, giayLam: 170 } },
+    vuot: { a: { giay: 120, giayXem: 1, giayLam: 119 }, b: { giay: 100, giayXem: 0, giayLam: 100 } },
+  };
+  const ds = emCanGiup(rows, prog);
+  const tra = (u) => ds.find((x) => x.uid === u);
+  t('em giỏi KHÔNG bị gọi tên', !tra('gioi'));
+  t('em mới làm 3 câu chưa đủ để kết luận', !tra('itqua'));
+  t(`bấm quá nhanh rồi sai → "au" (dưới ${NHANH_GIAY} giây/bài)`, tra('au')?.viSao === 'au');
+  t('ngồi lâu vẫn sai → "hong"', tra('hong')?.viSao === 'hong');
+  t('bỏ qua video rồi lao vào làm → "boQuaGiang"', tra('vuot')?.viSao === 'boQuaGiang');
+
+  /* Chưa đo được giờ thì ĐỪNG đoán bừa — cô gọi nhầm em đắt hơn thiếu một cái nhãn. */
+  const chuaDo = emCanGiup([{ uid: 'x', displayName: 'X', answered: 20, correctRate: 30, minutes: 9 }], {});
+  t('chưa đo được giờ thì trả "chuaRo", không đoán', chuaDo[0].viSao === 'chuaRo');
+
+  /* Đảo chiều: danh sách phải THẬT SỰ lọc, không phải trả về tất cả. */
+  t('có lọc thật (3 em trong danh sách, không phải cả 5)', ds.length === 3);
+  t('em sai nhiều câu hơn xếp trên em sai ít câu hơn',
+    emCanGiup([
+      { uid: 'p', displayName: 'P', answered: 8, correctRate: 30, minutes: 5 },
+      { uid: 'q', displayName: 'Q', answered: 40, correctRate: 30, minutes: 5 },
+    ], {})[0].uid === 'q');
+}
 
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);

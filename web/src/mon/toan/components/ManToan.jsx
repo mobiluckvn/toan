@@ -10,10 +10,11 @@ import HoSoBay from './HoSoBay.jsx';
 import TheChienThuat from './TheChienThuat.jsx';
 import DauLoader from './DauLoader.jsx';
 import {
-  recordMicro, recordChapter, saveSpot, resumeSpot, setMode, ghiLuyenChuDe, khoaChuong,
+  recordMicro, recordChapter, saveSpot, resumeSpot, setMode, ghiLuyenChuDe, khoaChuong, congGio,
 } from '../lib/progress.js';
 import { neighborIds, baiDocCham } from '../lib/noiDung.js';
 import { submitSession, pushAttempts, luuMucHocBa } from '../lib/duLieu.js';
+import { maNgay } from '../lib/dongHo.js';
 
 /**
  * MÀN CỦA MÔN TOÁN — mọi đường đi bên trong môn, gói trọn trong MỘT cửa.
@@ -31,11 +32,16 @@ export default function ManToan({
   account, view, setView, veKeSach, onSoPhuHuynh, onMoXepHang,
 }) {
   const finishMicro = useCallback((microId, grade, lesson, session = {}, veLai = null) => {
-    setProgress((p) => recordMicro(p, microId, grade));
+    /* Ghi kết quả VÀ giờ học trong cùng một lần cập nhật: hai lần `setProgress` liên
+       tiếp thì lần sau đọc phải sổ cũ, và số phút của lượt vừa rồi bay mất. */
+    setProgress((p) => congGio(recordMicro(p, microId, grade), maNgay(), session.gio));
     submitSession({
       learnerId, sessionId: session.sessionId, microId,
       bktUnit: session.bktUnit, events: session.events || [],
       tomTat: session.tomTat || session.events || [], grade,
+      /* Đồng hồ học do `LessonPlayer` chốt lúc nộp — xem `lib/dongHo.js`. Không có
+         thì để null, `buildProgressDoc` phân biệt "chưa đo được" với "0 giây". */
+      gio: session.gio || null,
     }).catch(() => {});                       // mất mạng: đã nằm trong hàng đợi, lần sau gửi
     /* Có chỗ để quay về thì về đó, ĐỪNG đi tiếp bài kế trong quyển. Con vào bài này
        từ màn chủ đề (hoặc từ vòng luyện chủ đề) nên bài kế của quyển là chuyện khác

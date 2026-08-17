@@ -6,7 +6,7 @@ import {
 import { emptyProgress, recordMicro, recordChapter } from '../src/mon/toan/lib/progress.js';
 import { allMicroIds, chapterOf } from '../src/mon/toan/lib/noiDung.js';
 import {
-  minutesStudied, topTraps, stuckItems, buildParentReport, reportHeadline, inRange,
+  minutesStudied, phutHoc, topTraps, stuckItems, buildParentReport, reportHeadline, inRange,
 } from '../functions/src/report.js';
 
 let pass = 0, fail = 0;
@@ -117,6 +117,46 @@ const repCu = buildParentReport({ learnerId: 'L1', attempts: lanLon, index, now 
 t('sổ nói rõ có bao nhiêu lượt thiếu dữ liệu giờ giấc', repCu.luotThieuGio === 2);
 t('lượt cũ vẫn được đếm vào tổng số câu đã làm', repCu.answered === 3);
 t('chưa học thì báo rõ', reportHeadline({ answered: 0, topTraps: [] }).includes('chưa vào học'));
+
+/* ═══ SỐ PHÚT HỌC: ĐO THẬT thay cho SUY RA ═══
+ *
+ * Phép suy ra cộng khoảng cách giữa các lượt trả lời. Từ khi cả bốn quyển chuyển
+ * sang video, nó đếm hụt nặng: 405 video cộng lại 390,7 phút giảng, mà xem video thì
+ * con không bấm gì. Nay máy con bấm giờ từng bước rồi cộng dồn theo ngày.
+ */
+{
+  const ngayNay = new Date(now).toISOString().slice(0, 10);
+  const soGio = [{ ngay: ngayNay, giay: 900, giayXem: 300, giayLam: 600 }];
+
+  const doThat = phutHoc([], soGio, { from: now - 7 * 86400000, to: now });
+  t('có sổ giờ thì lấy số ĐO THẬT', doThat.phut === 15 && doThat.nguon === 'do');
+  t('và tách được xem với làm', doThat.phutXem === 5 && doThat.phutLam === 10);
+
+  /* Đây là ca cả tính năng sinh ra để chữa: con XEM TRỌN VIDEO rồi trả lời đúng ngay
+     câu chốt. Chỉ một lượt trả lời nên phép suy ra không có khoảng cách nào để cộng. */
+  const motLuot = [mk({ ts: now })];
+  t('phép SUY RA ra 0 phút khi con chỉ xem giảng rồi trả lời một câu',
+    minutesStudied(motLuot) === 0);
+  t('phép ĐO THẬT thấy đúng 15 phút của cùng buổi ấy',
+    phutHoc(motLuot, soGio, { from: now - 86400000, to: now }).phut === 15);
+
+  const suyRa = phutHoc([mk({ ts: now - 120000 }), mk({ ts: now })], [], {});
+  t('không có sổ giờ thì lùi về phép cũ và NÓI RÕ là suy ra',
+    suyRa.phut === 2 && suyRa.nguon === 'suyRa' && suyRa.phutXem === null);
+
+  /* Ngày ngoài khoảng thì không được cộng vào — nếu không, "tuần này" hoá ra "từ
+     trước tới nay" và con số cứ phình mãi. */
+  const cu2 = [{ ngay: '2020-01-01', giay: 9999, giayXem: 0, giayLam: 9999 }];
+  t('ngày ngoài khoảng bị loại',
+    phutHoc([], cu2, { from: now - 86400000, to: now }).nguon === 'suyRa');
+
+  const rep = buildParentReport({ learnerId: 'L1', attempts: motLuot, soGio, index, now });
+  t('sổ phụ huynh lấy số đo thật', rep.minutes === 15 && rep.nguonGio === 'do');
+  t('sổ nói rõ mấy phút xem giảng, mấy phút làm bài',
+    rep.phutXem === 5 && rep.phutLam === 10);
+  const repCu2 = buildParentReport({ learnerId: 'L1', attempts: motLuot, index, now });
+  t('không có sổ giờ thì sổ vẫn chạy và khai là suy ra', repCu2.nguonGio === 'suyRa');
+}
 
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);

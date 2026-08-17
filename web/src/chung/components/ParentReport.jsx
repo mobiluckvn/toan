@@ -120,7 +120,15 @@ export default function ParentReport({ mon = [], tienDo = {}, learnerId, onExit,
             <O nhan="BÀI ĐÃ ĐẠT" gia={td.tongBaiDat} />
             <O nhan="CHƯƠNG MASTER" gia={td.tongChuongMaster} />
             <O nhan="CHỦ ĐỀ VỮNG" gia={cd.tong ? `${cd.dem.vung}/${cd.tong}` : '—'} />
-            {r && <O nhan="PHÚT (7 NGÀY)" gia={r.minutes > 0 ? String(r.minutes) : (r.luotThieuGio > 0 ? '—' : '0')} />}
+            {/* Nhãn nói rõ số phút này ĐO ĐƯỢC hay SUY RA. Bản suy ra cộng khoảng
+                cách giữa các câu trả lời nên KHÔNG thấy phần con xem giảng — mà phần
+                giảng nay là toàn bộ video của bốn quyển. Hai con số khác nhau về bản
+                chất; để chung một nhãn là nói dối bố mẹ. */}
+            {r && <O nhan={r.nguonGio === 'suyRa' ? 'PHÚT (ƯỚC)' : 'PHÚT (7 NGÀY)'}
+                     gia={r.minutes > 0 ? String(r.minutes) : (r.luotThieuGio > 0 ? '—' : '0')} />}
+            {r?.nguonGio === 'do' && r.phutXem != null && (
+              <O nhan="XEM GIẢNG" gia={`${r.phutXem}′`} />
+            )}
             {r && <O nhan="ĐÚNG" gia={`${r.correctRate}%`} />}
           </div>
           {r?.headline && <p className="mt-3 text-[14.5px] leading-relaxed">{r.headline}</p>}

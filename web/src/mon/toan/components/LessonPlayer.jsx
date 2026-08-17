@@ -1,10 +1,11 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Chu from '../../../chung/components/Chu.jsx';
 import { buildFlow, PHASES } from '../lib/flow.js';
 import { loadLesson, figureSrc, chapterOf } from '../lib/noiDung.js';
 import { cachDoc } from '../../../chung/lib/soQuyen.js';
 import { gradeMicro } from '../lib/flow.js';
 import { newSessionId } from '../lib/sync.js';
+import { dongHo } from '../lib/dongHo.js';
 import StepView from './StepView.jsx';
 import CuonThem from '../../../chung/components/CuonThem.jsx';
 import TienTrinh from './TienTrinh.jsx';
@@ -66,6 +67,36 @@ export default function LessonPlayer({ microId, onFinish, onExit, onGhiRoiThoat,
   useEffect(() => { setXaNhat((x) => Math.max(x, i)); }, [i]);
 
   /**
+   * ĐỒNG HỒ HỌC — xem chú thích đầu `lib/dongHo.js` cho lý do đầy đủ.
+   *
+   * Tóm lại: phần giảng nay là VIDEO, mà xem video thì con không bấm gì, nên phép đo
+   * cũ (cộng khoảng cách giữa hai lượt trả lời) không thấy một giây nào của 390 phút
+   * giảng. Đo theo BƯỚC thì bước xem video có số như mọi bước khác.
+   *
+   * `useRef` chứ không `useState`: đồng hồ chạy mỗi lần con đổi bước, mà mỗi lần đổi
+   * state là vẽ lại cả màn — vẽ lại thì `useMemo` dựng `flow` phải so lại, và đây là
+   * đúng dòng họ vòng lặp đã dính ở sổ tiến độ. Đồng hồ không cần vẽ ra, nên nó
+   * không nên là state.
+   */
+  const dh = useRef(null);
+  if (!dh.current) dh.current = dongHo();
+  useEffect(() => { if (step?.type) dh.current.doiBuoc(step.type); }, [step?.type]);
+
+  /* Khuất màn hình thì DỪNG. Không có nhánh này thì mỗi lần con chuyển tab, đồng hồ
+     vẫn cho không đủ năm phút trần — mà trẻ con chuyển tab suốt. */
+  useEffect(() => {
+    const doi = () => (document.hidden ? dh.current.roi() : dh.current.vao());
+    document.addEventListener('visibilitychange', doi);
+    /* Đóng tab giữa chừng cũng phải chốt, không thì quãng cuối bay mất. `pagehide`
+       chứ không `beforeunload`: Safari trên máy tính bảng không bắn `beforeunload`. */
+    window.addEventListener('pagehide', () => dh.current.roi());
+    return () => document.removeEventListener('visibilitychange', doi);
+  }, []);
+
+  /* Bài mới thì đồng hồ mới. Cùng lý do với `setLog` ở trên. */
+  useEffect(() => { dh.current = dongHo(); }, [microId]);
+
+  /**
    * Đẩy nhật ký lên máy chủ NGAY sau mỗi lượt trả lời, không đợi con học hết bài.
    * Bỏ dở giữa chừng là chuyện thường ngày (mẹ gọi ăn cơm, hết pin) — đợi tới màn
    * kết bài mới gửi thì công học của con bay mất, mà cô giáo cũng không thấy gì
@@ -121,7 +152,11 @@ export default function LessonPlayer({ microId, onFinish, onExit, onGhiRoiThoat,
     /* attempts đi từ sổ THÔ (mọi lượt bấm, đủ bốn chặng); tóm tắt tiến độ vẫn đi từ
        sổ tóm tắt để con số "làm đúng ngay lần đầu" không đổi nghĩa. */
     { sessionId, events: log.raw, tomTat: [...log.practice, ...log.assess],
-      bktUnit: lesson.skills?.bktUnit || null },
+      bktUnit: lesson.skills?.bktUnit || null,
+      /* Chốt đồng hồ ĐÚNG LÚC NỘP, không đọc sổ giữa chừng: quãng đang ở bước cuối
+         chỉ được cộng khi `chot()` đóng nó lại. Đọc sớm là mất đúng cái bước con vừa
+         ngồi lâu nhất — màn kết. */
+      gio: dh.current.chot() },
   ];
 
   /**

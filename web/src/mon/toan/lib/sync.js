@@ -136,8 +136,17 @@ export function buildAttempts({
   }));
 }
 
-/** Tóm tắt phiên để ghi vào progress/{learner}/micros/{micro} */
-export function buildProgressDoc({ microId, grade, events, sessionId, serverTs = null, now = Date.now }) {
+/** Tóm tắt phiên để ghi vào progress/{learner}/micros/{micro}
+ *
+ * `gio` là sổ đồng hồ do `LessonPlayer` chốt (xem `lib/dongHo.js`). Ba con số giây
+ * ghi ở đây là của LƯỢT HỌC VỪA RỒI, không cộng dồn — tài liệu này bị ghi đè mỗi lần
+ * con học lại bài. Muốn cộng dồn thì đó là việc của sổ giờ theo NGÀY, và nó nằm ở
+ * `hocBa/{uid}/muc` với `loai='gio'`; hai nơi trả lời hai câu khác nhau:
+ *   · ở đây      — "bài NÀY con mất bao lâu" (so được giữa các bài, tìm bài con tắc)
+ *   · sổ theo ngày — "hôm nay con học bao lâu" (số bố mẹ và cô giáo nhìn)
+ */
+export function buildProgressDoc({ microId, grade, events, sessionId, gio = null,
+                                  serverTs = null, now = Date.now }) {
   const practice = events.filter((e) => e.phase === 'practice');
   return {
     microId,
@@ -149,6 +158,12 @@ export function buildProgressDoc({ microId, grade, events, sessionId, serverTs =
     total: grade.total ?? 0,
     practiceFirstTry: practice.filter((e) => e.ok && (e.tries ?? 1) === 1).length,
     practiceTotal: practice.length,
+    /* Không có đồng hồ (bản cũ, hoặc màn khác gọi vào) thì để null chứ ĐỪNG để 0:
+       0 giây là một lời khẳng định sai, null là "chưa đo được". Sổ và bảng cô giáo
+       đều phân biệt hai thứ ấy — thà nói chưa có số còn hơn hiện số sai. */
+    giay: gio ? gio.giay : null,
+    giayXem: gio ? gio.giayXem : null,
+    giayLam: gio ? gio.giayLam : null,
     sessionId,
     at: now(),
   };

@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { napChiMuc } from '../lib/noiDung.js';
 import { chuongTrinh as tra } from '../../../chung/lib/soQuyen.js';
-import { modeOf, resumeSpot, ketQuaChuong } from '../lib/progress.js';
+import { modeOf, resumeSpot, ketQuaChuong, phutNgay } from '../lib/progress.js';
+import { maNgay } from '../lib/dongHo.js';
 import { hocBaQuyen, trangThaiBai, NHAN_TRANG_THAI, NHAN_MUC_CHUONG } from '../lib/hocba.js';
 import ThanhTren from '../../../chung/components/ThanhTren.jsx';
 import ChanTrang from '../../../chung/components/ChanTrang.jsx';
@@ -96,6 +97,9 @@ export default function HomeQuyen({
 
   const list = chiMuc.bai.map((b) => b.id);
   const dx = hb.deXuat;
+  /* Phút học HÔM NAY. `maNgay()` theo giờ Việt Nam, không theo UTC — xem lib/dongHo.js:
+     lấy giờ UTC thì buổi học lúc 1h sáng bị ghi sang ngày hôm trước. */
+  const phutHomNay = phutNgay(progress, maNgay());
   const cheDo = modeOf(progress);
 
   return (
@@ -138,6 +142,10 @@ export default function HomeQuyen({
             <div className="mt-1.5 text-[12px] opacity-90">
               🏅 {hb.huyHieu}/{hb.tongChuong} huy hiệu chương
               {hb.masterChuong > 0 && ` · ⭐ ${hb.masterChuong} chương đã master`}
+              {/* Giờ học HÔM NAY, cho chính con xem. Chỉ hiện khi đã có phút nào —
+                  "hôm nay 0 phút" ngay lúc con vừa mở app là một lời trách vô cớ.
+                  Con số này lấy ở sổ tại máy nên hiện ngay, không chờ hàm chạy đêm. */}
+              {phutHomNay > 0 && ` · ⏱ hôm nay ${phutHomNay} phút`}
             </div>
           </>
         ) : (

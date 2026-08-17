@@ -162,6 +162,41 @@ export default function TeacherBoard({ mon = [], onExit }) {
         </div>
       </div>
 
+      {/* ── EM CẦN GIÚP, VÀ YẾU KIỂU GÌ ──
+          Đặt TRƯỚC mọi bảng khác vì đây là câu cô hỏi đầu tiên: sáng mai gọi em nào.
+          Ba nhãn không phải để phân loại trẻ con, mà để chọn CÁCH GIÚP: em bấm bừa
+          cần nhắc đọc kỹ, em bỏ video cần bảo xem hết, em ngồi lâu vẫn sai thì thiếu
+          phần giảng — giao thêm bài tập chỉ để em sai thêm một lượt nữa. */}
+      {board.canGiup?.length > 0 && (
+        <div className="card">
+          <div className="kicker">EM CẦN GIÚP TRƯỚC</div>
+          {board.canGiup.slice(0, 10).map((e) => {
+            const nhan = {
+              au: ['BẤM NHANH', 'Nhắc con đọc kỹ đề — con hiểu bài nhưng đang vội.'],
+              boQuaGiang: ['BỎ QUA GIẢNG', 'Con bấm vượt video. Bảo con xem hết đã.'],
+              hong: ['NGỒI LÂU VẪN SAI', 'Con thiếu phần giảng, không thiếu bài tập.'],
+              chuaRo: ['CHƯA ĐỦ SỐ LIỆU', 'Chưa đo được giờ học của con.'],
+            }[e.viSao] || ['', ''];
+            return (
+              <div key={e.uid} className="mt-2 rounded-xl border-[1.5px] border-line px-3 py-2.5">
+                <div className="flex items-center gap-2 text-[14px]">
+                  <b className="flex-1">{e.displayName || e.uid.slice(0, 6)}</b>
+                  <span className="rounded bg-navy px-1.5 py-0.5 text-[11px] font-extrabold text-white">
+                    {nhan[0]}
+                  </span>
+                  <b className="text-alert tabular-nums">{e.correctRate}%</b>
+                </div>
+                <div className="mt-1 text-[12.5px] text-mute">
+                  {e.answered} câu · {e.minutes} phút
+                  {e.giayMoiBai != null && ` · ${e.giayMoiBai}s mỗi bài`}
+                </div>
+                <div className="mt-1 text-[13px]">{nhan[1]}</div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
       {board.topTraps?.length > 0 && (
         <div className="card">
           <div className="kicker">BẪY NHIỀU EM SẬP NHẤT — NÊN DẠY LẠI</div>

@@ -92,8 +92,12 @@ service cloud.firestore {
        không dựng ra một hình dạng thứ tư mà sổ phụ huynh không đọc được. */
     match /hocBa/{userId}/muc/{mucId} {
       allow read:  if canRead(userId);
+      /* `gio` THÊM 17-08-2026 — sổ giờ học theo ngày (xem src/mon/toan/lib/dongHo.js).
+         ⚠ Danh sách này là chỗ đã từng nuốt dữ liệu trong im lặng: `loai` không có tên
+         ở đây thì Firestore từ chối mà KHÔNG báo gì, sổ tại máy vẫn đúng nên không ai
+         thấy. Thêm `loai` mới ở máy con là phải thêm vào đây VÀ deploy rules. */
       allow write: if isMine(userId)
-                   && request.resource.data.loai in ['chuong', 'chuDe', 'dau'];
+                   && request.resource.data.loai in ['chuong', 'chuDe', 'dau', 'gio'];
     }
 
     /* ══ MÔN TIẾNG ANH — collection RIÊNG ══

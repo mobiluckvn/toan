@@ -93,7 +93,24 @@ export function minutesOf(attempts, gapMs = 5 * 60 * 1000) {
   return Math.round(total / 60000);
 }
 
-export function learnerRows(attempts, roster = [], progress = {}) {
+/**
+ * Số phút ĐO THẬT của một em trong khoảng, lấy từ sổ giờ theo ngày.
+ * Trả `null` khi em chưa có sổ giờ nào — để nơi gọi biết mà lùi về phép suy ra,
+ * chứ không hiện 0 phút rồi cô đọc thành "em không học".
+ */
+export function phutDoThat(mucHocBa = [], from = null, to = null) {
+  const gio = mucHocBa.filter((m) => m?.loai === 'gio' && typeof m.giay === 'number');
+  if (!gio.length) return null;
+  const trong = gio.filter((g) => {
+    const t = Date.parse(`${g.ngay}T00:00:00+07:00`);
+    if (Number.isNaN(t)) return false;
+    return (from === null || t + 86399999 >= from) && (to === null || t <= to);
+  });
+  if (!trong.length) return null;
+  return Math.round(trong.reduce((s, g) => s + (g.giay || 0), 0) / 60);
+}
+
+export function learnerRows(attempts, roster = [], progress = {}, hocBa = {}, khoang = {}) {
   const rows = new Map(roster.map((r) => [r.uid, {
     uid: r.uid, displayName: r.displayName || '', email: r.email || '',
     sessions: new Set(), answered: 0, correct: 0, lastAt: null,
@@ -134,7 +151,12 @@ export function learnerRows(attempts, roster = [], progress = {}) {
       theoSach,
       /* Thời gian học thật, không phải số buổi: hai em cùng "3 buổi" mà một em ngồi
          12 phút, em kia 70 phút thì cần hai cách nhắc khác nhau. */
-      minutes: minutesOf(r.luot),
+      /* ĐO THẬT khi có, không thì suy ra như cũ. Phép suy ra không thấy phần xem
+         giảng — mà phần giảng nay là toàn bộ video của bốn quyển. */
+      minutes: phutDoThat(hocBa[r.uid], khoang.from ?? null, khoang.to ?? null)
+        ?? minutesOf(r.luot),
+      nguonGio: phutDoThat(hocBa[r.uid], khoang.from ?? null, khoang.to ?? null) === null
+        ? 'suyRa' : 'do',
       /* Cột riêng cho Quyển 2 — luyện thi có đồng hồ, khác hẳn học bài */
       q2Answered: r.q2Answered,
       q2CorrectRate: r.q2Answered ? Math.round((r.q2Correct / r.q2Answered) * 100) : null,
@@ -145,16 +167,77 @@ export function learnerRows(attempts, roster = [], progress = {}) {
 }
 
 /**
+ * EM NÀO ĐANG YẾU — và YẾU KIỂU GÌ.
+ *
+ * `stuckLearners` ở trên trả lời "em nào tắc ở BÀI nào". Câu cô hỏi trước đó một
+ * bậc là "sáng mai tôi nên gọi em nào", và câu ấy phải xếp theo EM chứ không theo bài.
+ *
+ * ── VÌ SAO PHẢI CÓ THỜI GIAN MỚI TRẢ LỜI ĐƯỢC ──
+ *
+ * Chỉ nhìn phần trăm đúng thì hai em cùng "đúng 40%" trông y hệt nhau, trong khi
+ * chúng cần hai cách giúp ngược nhau:
+ *
+ *   · ẨU        — trả lời rất nhanh rồi sai. Em hiểu bài nhưng bấm bừa; cần nhắc
+ *                 đọc kỹ, không cần giảng lại.
+ *   · BỎ GIẢNG  — bấm vượt video rồi lao vào làm. Cần bảo em xem hết đã.
+ *   · HỔNG      — ngồi lâu, thử đi thử lại, vẫn sai. Em thiếu phần GIẢNG; giao thêm
+ *                 bài tập chỉ để em sai thêm một lượt nữa.
+ *
+ * Phân biệt bằng `giay`/`giayXem` mỗi bài trong `progress` (máy con bấm giờ từng
+ * bước — xem `src/mon/toan/lib/dongHo.js`). Chưa đo được thì trả `'chuaRo'` chứ
+ * KHÔNG đoán bừa: cô gọi nhầm em đắt hơn hẳn việc thiếu một cái nhãn.
+ *
+ * Ngưỡng: phải làm đủ `toiThieuCau` câu mới xét — ba câu sai liền không đủ để kết
+ * luận gì về một đứa trẻ.
+ */
+export const NHANH_GIAY = 12;      // dưới ngần này giây một bài là bấm quá nhanh
+
+export function emCanGiup(rows, progress = {}, {
+  nguongDung = 60, toiThieuCau = 8, n = 20,
+} = {}) {
+  const ra = [];
+  for (const r of rows) {
+    if (r.answered < toiThieuCau) continue;
+    if (r.correctRate === null || r.correctRate >= nguongDung) continue;
+
+    /* Giây mỗi bài, chỉ lấy bài ĐO ĐƯỢC. `giay === null` là "chưa đo", khác hẳn 0. */
+    const bai = Object.values(progress[r.uid] || {})
+      .filter((m) => typeof m?.giay === 'number' && m.giay > 0);
+    const giayTB = bai.length
+      ? Math.round(bai.reduce((s, m) => s + m.giay, 0) / bai.length) : null;
+    /* Bài mà phần XEM gần như bằng không là em bấm vượt video. */
+    const boQuaGiang = bai.length
+      ? bai.filter((m) => (m.giayXem ?? 0) < 5).length / bai.length : null;
+
+    let vi = 'chuaRo';
+    if (giayTB !== null) {
+      if (giayTB < NHANH_GIAY) vi = 'au';
+      else if (boQuaGiang !== null && boQuaGiang >= 0.5) vi = 'boQuaGiang';
+      else vi = 'hong';
+    }
+    ra.push({
+      uid: r.uid, displayName: r.displayName,
+      correctRate: r.correctRate, answered: r.answered,
+      minutes: r.minutes, giayMoiBai: giayTB, viSao: vi,
+      /* Nặng nhất lên trước, nhưng có nhân với "đã làm bao nhiêu câu" (chặn ở 3 lần)
+         để em làm 8 câu sai không nhảy lên trên em làm 60 câu cũng sai. */
+      nang: Math.round((nguongDung - r.correctRate) * Math.min(r.answered / toiThieuCau, 3)),
+    });
+  }
+  return ra.sort((x, y) => y.nang - x.nang || x.uid.localeCompare(y.uid)).slice(0, n);
+}
+
+/**
  * Dựng bảng giáo viên cho một khoảng (mặc định 7 ngày).
  * roster:   [{uid, displayName, email}]  — mọi tài khoản vai trò learner
  * progress: { uid: { microId: {pass, ...} } }
  */
 export function buildTeacherBoard({
-  roster = [], attempts = [], progress = {}, index = {}, now = Date.now(), days = 7,
+  roster = [], attempts = [], progress = {}, hocBa = {}, index = {}, now = Date.now(), days = 7,
 }) {
   const from = now - days * 86400000;
   const win = inWindow(attempts, from, now);
-  const rows = learnerRows(win, roster, progress);
+  const rows = learnerRows(win, roster, progress, hocBa, { from, to: now });
   const answered = win.length;
   const active = rows.filter((r) => r.answered > 0);
   const q2 = win.filter(laQuyen2);
@@ -179,6 +262,8 @@ export function buildTeacherBoard({
     q2Vong: new Set(q2.map((a) => a.microId)).size,
     topTraps: topTraps(win, index),
     stuck: stuckLearners(win, progress),
+    /* Xếp theo EM, kèm lý do yếu — thứ cô nhìn trước khi nhìn bất cứ cột nào khác. */
+    canGiup: emCanGiup(rows, progress),
     rows,
   };
 }

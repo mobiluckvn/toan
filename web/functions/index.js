@@ -76,10 +76,14 @@ export const onMicroDone = onDocumentWritten('progress/{learnerId}/micros/{micro
  */
 async function dungSoHoc(learnerId, index, soNgay = 7) {
   const since = new Date(Date.now() - soNgay * 86400000);
-  const [attSnap, progSnap, mastSnap] = await Promise.all([
+  const [attSnap, progSnap, mastSnap, gioSnap] = await Promise.all([
     db.collection('attempts').where('learnerId', '==', learnerId).where('serverTs', '>=', since).get(),
     db.collection(`progress/${learnerId}/micros`).get(),
     db.collection(`mastery/${learnerId}/units`).get(),
+    /* SỔ GIỜ THEO NGÀY — số phút ĐO THẬT, kể cả lúc con xem giảng. Lọc bằng `loai`
+       chứ không bằng mã tài liệu: `hocBa` còn chứa kỳ sát hạch, bậc chủ đề và vòng
+       đấu, ba thứ ấy không có trường giây. */
+    db.collection(`hocBa/${learnerId}/muc`).where('loai', '==', 'gio').get(),
   ]);
   const attempts = attSnap.docs.map((d) => {
     const a = d.data();
@@ -89,7 +93,8 @@ async function dungSoHoc(learnerId, index, soNgay = 7) {
   const progress = {}; progSnap.forEach((d) => { progress[d.id] = d.data(); });
   const mastery = {}; mastSnap.forEach((d) => { mastery[d.id] = d.data(); });
 
-  const report = buildParentReport({ learnerId, attempts, progress, mastery, index, days: soNgay });
+  const soGio = gioSnap.docs.map((d) => d.data());
+  const report = buildParentReport({ learnerId, attempts, progress, mastery, soGio, index, days: soNgay });
   await db.doc(`report/${learnerId}`).set(report, { merge: true });
   return report;
 }
@@ -197,8 +202,11 @@ async function docDuLieuChung(soNgay = 7) {
 
 async function dungBangGiaoVien(soNgay = 7, du = null) {
   const index = await loadContentIndex();
-  const { roster, attempts, progress } = du || await docDuLieuChung(soNgay);
-  const board = buildTeacherBoard({ roster, attempts, progress, index, days: soNgay });
+  const { roster, attempts, progress, hocBa } = du || await docDuLieuChung(soNgay);
+  /* `hocBa` mang theo sổ giờ theo ngày (`loai='gio'`) — nhờ nó cột "số phút" của cô
+     là số ĐO THẬT, có tính cả lúc em xem giảng, thay vì số suy ra từ khoảng cách
+     giữa các câu trả lời. Xem `src/mon/toan/lib/dongHo.js`. */
+  const board = buildTeacherBoard({ roster, attempts, progress, hocBa, index, days: soNgay });
   await db.doc('teacherBoard/global').set(board, { merge: true });
   return board;
 }
