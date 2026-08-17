@@ -9,22 +9,25 @@
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
 | Đã xong | **168/168 — XONG TRỌN QUYỂN**, bài 1 tới 56 |
 | Còn lại | không còn bài nào. Bốn quyển Toán nay đều KHÔNG còn bài chữ. |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 tới 56 chưa deploy** |
+| Deploy | **ĐÃ LÊN TRỌN** `ky-su-nhi.web.app` 17-08-2026 — cả 168 micro |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
-## XONG QUYỂN. Còn hai việc phải hỏi bác
+## XONG QUYỂN VÀ ĐÃ DEPLOY TRỌN
 
-**1. Deploy.** Bài 33 tới 56 — hai mươi bốn bài lớn, 72 micro — chưa lên
-`ky-su-nhi.web.app`. Tám chương đầu đã lên từ 16-08. Trước khi đẩy thì đi thử bằng
-mắt trên bản dựng như mọi lần: mở vài micro, cho video chạy, kiểm bước `check`, và
-cố tình làm SAI một lượt.
+168/168 micro có video, đã đẩy hết lên `ky-su-nhi.web.app` ngày 17-08-2026. Đối
+chiếu lại bằng `curl` sau khi deploy: tệp bài và tệp video trên máy chủ đúng bằng
+byte với bản trong `dist`, kể cả chín video vừa dựng lại vì lỗi nhãn `day_so`.
 
-**2. `khoaBai` của lớp 5.** Vẫn đang `false` (xem mục dưới). Bác nhờ mở để đi thử
-trọn quyển; nay quyển đã trọn, nhưng bật lại lúc nào là bác quyết.
+⚠ Buổi ấy **extension Chrome không kết nối được**, nên bước đi thử bằng mắt trên
+bản chạy làm thay bằng phép chạy thẳng `buildFlow` cho 72 micro mới: đủ video, còn
+nguyên bước `check`, không còn màn giảng chữ nào. Cái mà chỉ mắt mới thấy thì đã
+soi trước đó rồi — mỗi bài đều rút khung hình ra nhìn. **Nhưng vẫn nên mở bản thật
+xem một lượt khi nào extension chạy lại** — xem [[kiem-bang-mat-truoc-khi-deploy]].
 
-Hết hai việc ấy thì quyển này khép. Việc kế tiếp có thể là **lớp 5 Quyển 2**, hoặc
-trả nốt **29 hình chết của lớp 4**.
+Còn **một** việc chờ bác quyết: `khoaBai` của lớp 5 vẫn `false` (mục dưới).
+
+Việc kế tiếp có thể là **lớp 5 Quyển 2**, hoặc trả nốt **29 hình chết của lớp 4**.
 
 ## ⚠ MÓN NỢ ĐANG TREO
 
