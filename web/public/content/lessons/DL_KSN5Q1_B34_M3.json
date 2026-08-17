@@ -32,20 +32,7 @@
   "kidText": "Đáp án chỉ rời xưởng khi qua đủ ba con dấu. Con lấy đáp diễn lại theo đúng kịch bản của đề để tự kiểm."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Ba trạm thử của bài hai tỉ số: (1) tỉ TRƯỚC khớp; (2) tỉ SAU khớp; (3) đúng CẢ HAI lượng thêm / bớt — bài khác-lượng phải kiểm cả hai con số, không kiểm một."
-   },
-   {
-    "id": "K2",
-    "text": "Đường THỬ-ĐÁP là lời giải độc lập: lấy đáp (16 và 32) DIỄN theo kịch bản — $\\frac{16}{32}$ = $\\frac{1}{2}$ ✓; thêm 8 và 4: $\\frac{24}{36}$ = $\\frac{2}{3}$ ✓; đủ ba trạm — đáp đứng vững không cần cân."
-   },
-   {
-    "id": "K3",
-    "text": "Bài số to vẫn ba nhịp cân: 3 × (3p + 15) = 2 × (5p + 5) → 9p + 45 = 10p + 10 → 1p = 35 → truyện 105; SGK 175 — số to chỉ dài phép nhân, không đổi luật."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: PHÒNG NGHIỆM THU BA CON DẤU. Án nào rời xưởng cân cũng phải qua phòng nghiệm thu đóng BA con dấu: dấu tỉ-trước, dấu tỉ-sau, dấu đúng-lượng — bài khác-lượng thì dấu thứ ba kiểm CẢ HAI con số (thêm 8 VÀ thêm 4). Đường thử-đáp còn là lời giải độc lập: cầm đáp 16 và 32 DIỄN nguyên kịch bản — mười sáu trên ba hai đúng một phần hai; thêm tám và bốn: hai tư trên ba sáu đúng hai phần ba; đủ ba dấu — đáp tự đứng vững! Đề sư phụ số to: truyện bằng ba phần năm SGK; thêm mười lăm truyện và năm SGK thì hai phần ba — cân: ba nhân ngoặc ba phần cộng mười lăm bằng hai nhân ngoặc năm phần cộng năm → chín phần cộng bốn lăm bằng mười phần cộng mười → phần BA LĂM: truyện một trăm lẻ năm, SGK một trăm bảy lăm — ba con dấu vẫn đóng gọn!",
   "canonicalExamples": [
    {
@@ -70,14 +57,8 @@
     "counterExample": "Đáp lệch chỉ ở lượng thêm (7 thay vì 8) vẫn khớp hai tỉ — dấu thứ ba mới tóm được."
    }
   ],
-  "vocabulary": [
-   "phòng nghiệm thu",
-   "ba con dấu",
-   "diễn nguyên kịch bản",
-   "đáp tự đứng vững",
-   "số to không đổi luật"
-  ],
-  "mantra": "BA CON DẤU CÙNG ĐÓNG — ÁN MỚI RỜI XƯỞNG!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -99,46 +80,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Giải lại bài truyện – SGK bằng đường THỬ ĐÁP: lấy đáp 16 và 32 diễn theo kịch bản đề, kiểm đủ ba trạm.",
-    "display": {
-     "type": "story_panel",
-     "caption": "hai dấu — nộp luôn?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đóng dấu thứ ba!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Phòng nghiệm thu đóng BA con dấu: dấu tỉ-trước — mười sáu trên ba hai đúng một phần hai; dấu tỉ-sau — thêm tám và bốn: hai tư trên ba sáu đúng hai phần ba; dấu đúng-lượng — kiểm CẢ HAI con số: cộng đúng tám truyện, đúng bốn SGK! Và để ý: thử-đáp tự nó là MỘT LỜI GIẢI — diễn nguyên kịch bản, đủ ba dấu là đáp đứng vững!",
-    "display": {
-     "type": "three_seals_interactive",
-     "spec": {
-      "seal1": "16/32 = 1/2 ✓",
-      "seal2": "24/36 = 2/3 ✓",
-      "seal3": "+8 VÀ +4 ✓",
-      "note": "thử-đáp = lời giải độc lập"
-     }
-    },
-    "interaction": {
-     "type": "stamp_three_seals",
-     "answerKey": {
-      "value": 3
-     },
-     "successMessage": "Ba con dấu cùng đóng — án rời xưởng!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -159,37 +100,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Đề sư phụ số to — luật không đổi: truyện bằng ba phần năm SGK; thêm mười lăm truyện và năm SGK thì hai phần ba. Cân: ba nhân ngoặc ba phần cộng mười lăm bằng hai nhân ngoặc năm phần cộng năm — trải: chín phần cộng bốn lăm bằng mười phần cộng mười — bớt đều: một phần BA LĂM! Truyện một trăm lẻ năm, SGK một trăm bảy lăm. Ba dấu: một lẻ năm trên một bảy lăm đúng ba phần năm; một hai mươi trên một tám mươi đúng hai phần ba; đúng thêm mười lăm và năm!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "cân: 9p + 45 = 10p + 10 → p = 35",
-      "truyện 105 · SGK 175",
-      "3 dấu: 3/5 ✓ · 2/3 ✓ · +15 & +5 ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: ba con dấu cùng đóng — án mới rời xưởng!",
-    "display": {
-     "type": "mantra_card",
-     "text": "BA CON DẤU CÙNG ĐÓNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -499,107 +409,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B34.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "hai dấu — nộp luôn?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "khớp tỉ 1/2, khớp tỉ 2/3 — hai dấu rồi, nộp!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B34_M3_F1.png",
-   "sha256_16": "b04019a05b26b7e7"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Ba trạm thử đóng án & đường thử-đáp",
-    "steps": [
-     {
-      "text": "cân: 9p + 45 = 10p + 10 → p = 35"
-     },
-     {
-      "text": "truyện 105 · SGK 175"
-     },
-     {
-      "text": "3 dấu: 3/5 · 2/3 · +15 & +5"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B34_M3_F2.png",
-   "sha256_16": "c20f5ebb59dce4cd"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Ba trạm thử của bài hai tỉ số",
-      "text": "(1) tỉ TRƯỚC khớp; (2) tỉ SAU khớp; (3) đúng CẢ HAI lượng thêm / bớt — bài khác-lượng phải kiểm cả hai con số, không kiểm một.",
-      "tone": "navy"
-     },
-     {
-      "label": "Đường THỬ-ĐÁP là lời giải độc lập",
-      "text": "lấy đáp (16 và 32) DIỄN theo kịch bản — 16/32 = 1/2; thêm 8 và 4: 24/36 = 2/3; đủ ba trạm — đáp đứng vững không cần cân.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "BA CON DẤU CÙNG ĐÓNG — ÁN MỚI RỜI XƯỞNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B34_M3_F3.png",
-   "sha256_16": "f64f6d160a4e55d1"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "BA TRẠM THỬ ĐÓNG ÁN MỌI BÀI HAI TỈ SỐ",
-    "steps": [
-     {
-      "text": "TRẠM 1 · tỉ TRƯỚC",
-      "sub": "16/32 = 1/2 ✓"
-     },
-     {
-      "text": "TRẠM 2 · tỉ SAU",
-      "sub": "(16+8)/(32+4) = 24/36 = 2/3 ✓"
-     },
-     {
-      "text": "TRẠM 3 · đúng CẢ HAI lượng",
-      "sub": "thêm đúng 8 truyện và 4 SGK ✓"
-     }
-    ],
-    "note": "Đường thử-đáp: có đáp rồi thì diễn lại kịch bản đề — qua ba trạm là trọn điểm"
-   },
-   "caption": "Qua đủ ba trạm mới được đóng án",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B34_M3_F4.png",
-   "sha256_16": "0e19c2c3c300ad6e"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B31"
@@ -610,5 +420,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B34_M3_giang.mp4"
  }
 }

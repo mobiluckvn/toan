@@ -12675,7 +12675,142 @@ def kb5_thuoc_tong_ba_tram(b):
     ]
 
 
+def kb5_khi_nao_het_thuoc(b):
+    """L5·B34·M1 Thước hiệu chỉ sống khi cùng MỘT lượng — bảng phân luồng bốn cửa."""
+    return [
+        _c('bia', 'Có đề không còn cái thước nào', so_bai(b),
+           loi=['Ba bài trước bài nào cũng tìm được thước. Nhưng có đề thì cả ba đều '
+                'gãy.']),
+        _c('de_toan', 'Chưa cần giải — gọi tên chiêu',
+           de='(a) cùng thêm 7   ·   (b) chuyển 7 từ A sang B   ·   (c) A thêm 8, B thêm 4',
+           loi=['Chưa cần giải, chỉ gọi tên chiêu cho ba đề này.']),
+        _c('day_so', 'Thử số thật cho ca (c)', so=['10', '20'], nhanHang='trước',
+           chuPhu='Hiệu đang là 10.',
+           loi=['Thử số thật. Hai bên là mười và hai mươi, hiệu mười.']),
+        _c('day_so', 'Sau khi thêm 8 và 4', so=['18', '24'], nhanHang='sau',
+           chuPhu='Hiệu còn 6 — trôi mất đúng 8 − 4.',
+           loi=['Thêm tám và bốn thì thành mười tám với hai mươi tư.',
+                'Hiệu còn sáu, trôi mất đúng bốn, tức là hiệu của hai lượng thêm.']),
+        _c('y_toan', 'Thước hiệu chỉ sống khi CÙNG MỘT lượng',
+           'khác lượng là hiệu trôi — thước gãy', buoc=1, soBuoc=3,
+           loi=['Thước hiệu chỉ sống khi hai bên cộng cùng một lượng. Khác lượng là '
+                'thước gãy.']),
+        _c('y_toan', 'Bảng phân luồng',
+           'một bên đổi → bên kia cầm thước  ·  cùng thêm bớt MỘT lượng → thước hiệu  ·  '
+           'chuyển qua lại → thước tổng', buoc=2, soBuoc=3,
+           loi=['Con nhớ bảng phân luồng. Một bên đổi thì bên kia cầm thước.',
+                'Cùng thêm bớt một lượng thì thước hiệu, còn chuyển qua lại thì thước '
+                'tổng.']),
+        _c('y_toan', 'Cửa thứ tư: ba thước cùng gãy',
+           'hai bên đổi KHÁC lượng   →   phải dựng CÂN HAI ĐĨA (bài kế tiếp)',
+           buoc=3, soBuoc=3,
+           loi=['Còn cửa thứ tư, hai bên đổi khác lượng thì ba thước cùng gãy, phải '
+                'dựng cân.']),
+        _c('de_toan', 'Nhưng soi kỹ trước khi kết luận hết thước',
+           de='A = 1/3 của B. CHUYỂN 12 từ B sang A thì A = 3/5 của B',
+           loi=['Nhưng soi kỹ trước khi kết luận. Đề này trông dữ mà vẫn còn thước.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='cùng MỘT lượng mới giữ hiệu — khác lượng là hiệu trôi',
+           thay='đề ấy CHUYỂN nên tổng vẫn bảo toàn: quy 8 khúc → A = 24 · B = 72',
+           loi=['Đề ấy là chuyển qua lại nên tổng vẫn bảo toàn, máy bài trước chạy '
+                'được.',
+                'Quy về tám khúc thì A hai mươi tư, B bảy mươi hai.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_nhan_cheo_dung_can(b):
+    """L5·B34·M2 Nhân chéo dựng cân hai đĩa — hai đĩa cùng bớt thì một phần lộ mặt."""
+    return [
+        _c('bia', 'Hết thước thì dựng CÂN HAI ĐĨA', so_bai(b),
+           loi=['Khi ba thước cùng gãy, mình dựng một cái cân hai đĩa.']),
+        _c('de_toan', 'Đề bài',
+           de='Truyện bằng 1/2 số sách giáo khoa. Mua thêm 8 truyện và 4 sách\n'
+              'thì truyện bằng 2/3 số sách',
+           loi=['Số truyện bằng một phần hai số sách. Mua thêm tám truyện và bốn sách '
+                'thì truyện bằng hai phần ba số sách.']),
+        _c('y_toan', 'Luật NHÂN CHÉO', 'A = m/n của B   ⟺   n × A = m × B',
+           buoc=1, soBuoc=4,
+           loi=['Luật nhân chéo. Mẫu số nhân sang bên có phân số.']),
+        _c('so_do_doan', 'Gọi phần theo tỉ ĐẦU', be=16, lon=32, phanBe=1, phanLon=2,
+           nhanBe='truyện', nhanLon='sách',
+           chuPhu='Truyện 1 phần, sách 2 phần.',
+           loi=['Gọi phần theo tỉ lúc đầu. Truyện một phần, sách hai phần.']),
+        _c('y_toan', 'Dựng cân theo tỉ SAU, có cả lượng thêm',
+           '3 × (1 phần + 8)  =  2 × (2 phần + 4)   →   3 phần + 24 = 4 phần + 8',
+           buoc=2, soBuoc=4,
+           loi=['Dựng cân theo tỉ lúc sau. Ba nhân một phần cộng tám, bằng hai nhân '
+                'hai phần cộng bốn.',
+                'Trải ra thì ba phần cộng hai mươi tư bằng bốn phần cộng tám.']),
+        _c('y_toan', 'Luật cân: làm gì đĩa này phải làm Y HỆT đĩa kia',
+           'bớt 3 phần ở CẢ HAI đĩa   →   24 = 1 phần + 8', buoc=3, soBuoc=4,
+           loi=['Luật cân rất thiêng. Làm gì với đĩa này thì phải làm y hệt với đĩa '
+                'kia.',
+                'Nhấc ba phần khỏi cả hai đĩa, còn hai mươi tư bằng một phần cộng '
+                'tám.']),
+        _c('y_toan', 'Bớt tiếp 8 ở cả hai — một phần lộ mặt',
+           '1 phần = 16   →   truyện 16 · sách 32', buoc=4, soBuoc=4,
+           loi=['Nhấc tiếp tám khỏi cả hai đĩa thì một phần lộ mặt, bằng mười sáu.',
+                'Truyện mười sáu, sách ba mươi hai.']),
+        _c('de_toan', 'Cách chống lộn vế khi nhân chéo',
+           de='thử một cặp số đẹp:  3 × 16 = 48 = 2 × 24  ✓',
+           loi=['Sợ lộn vế thì thử một cặp số đẹp là biết ngay.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='MẪU nhân bên có phân số   ·   hai đĩa cùng bớt thì một phần lộ mặt',
+           thay='thử lại: 24 trên 36 rút gọn đúng 2/3 ✓',
+           loi=['Con nhớ hai câu. Mẫu nhân sang bên có phân số, và hai đĩa cùng bớt thì '
+                'một phần lộ mặt.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_ba_tram_thu_dap(b):
+    """L5·B34·M3 Đường thử-đáp là lời giải độc lập — ba con dấu mới rời xưởng."""
+    return [
+        _c('bia', 'Thử đáp cũng là một lời giải', so_bai(b),
+           loi=['Có một đường đi không cần dựng cân. Lấy đáp ra mà diễn lại kịch bản.']),
+        _c('de_toan', 'Đề bài',
+           de='Kiểm đáp 16 và 32 của bài truyện – sách bằng đường THỬ ĐÁP',
+           loi=['Kiểm lại đáp mười sáu và ba mươi hai của bài trước, bằng đường thử '
+                'đáp.']),
+        _c('y_toan', 'Đường thử-đáp là lời giải ĐỘC LẬP',
+           'lấy đáp rồi DIỄN theo kịch bản đề, không mượn phép nào của bài giải',
+           buoc=1, soBuoc=3,
+           loi=['Đường thử đáp là một lời giải độc lập. Lấy đáp rồi diễn theo kịch bản '
+                'của đề.']),
+        _c('day_so', 'Trạm 1 — tỉ TRƯỚC', so=['16', '32'], nhanHang='đáp',
+           chuPhu='16 trên 32 rút gọn đúng 1/2 ✓',
+           loi=['Trạm một, tỉ trước. Mười sáu trên ba mươi hai rút gọn đúng một phần '
+                'hai.']),
+        _c('day_so', 'Trạm 2 — tỉ SAU', so=['24', '36'], nhanHang='sau',
+           chuPhu='Thêm 8 và 4 rồi: 24 trên 36 đúng 2/3 ✓',
+           loi=['Trạm hai, tỉ sau. Thêm tám và bốn thành hai mươi tư với ba mươi sáu.',
+                'Rút gọn đúng hai phần ba.']),
+        _c('y_toan', 'Trạm 3 — đúng CẢ HAI lượng',
+           '24 − 16 = 8 ✓      ·      36 − 32 = 4 ✓', buoc=2, soBuoc=3,
+           loi=['Trạm ba, đúng cả hai lượng thêm.',
+                'Bài khác lượng thì phải kiểm cả hai con số, kiểm một là chưa đủ.']),
+        _c('y_toan', 'Đủ ba trạm thì đáp đứng vững',
+           'không cần dựng lại cân — ba con dấu đã đóng', buoc=3, soBuoc=3,
+           loi=['Đủ ba trạm thì đáp đứng vững, khỏi cần dựng lại cân.']),
+        _c('de_toan', 'Số to cũng ba nhịp ấy',
+           de='Truyện = 3/5 sách; thêm 15 truyện và 5 sách thì = 2/3',
+           loi=['Số to cũng ba nhịp ấy, chỉ dài phép nhân chứ không đổi luật.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='ba con dấu cùng đóng — bài mới coi là xong',
+           thay='3(3p + 15) = 2(5p + 5) → 9p + 45 = 10p + 10 → p = 35 → 105 và 175',
+           loi=['Con nhớ câu này. Ba con dấu cùng đóng thì bài mới coi là xong.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B34.M1': kb5_khi_nao_het_thuoc,
+    'DL:KSN5Q1.B34.M2': kb5_nhan_cheo_dung_can,
+    'DL:KSN5Q1.B34.M3': kb5_ba_tram_thu_dap,
     'DL:KSN5Q1.B33.M1': kb5_cai_gi_khong_doi,
     'DL:KSN5Q1.B33.M2': kb5_thuoc_hieu,
     'DL:KSN5Q1.B33.M3': kb5_thuoc_tong_ba_tram,

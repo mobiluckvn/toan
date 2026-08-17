@@ -34,20 +34,7 @@
   "kidText": "Hai bên đổi khác lượng nhau là hết thước — cả hiệu lẫn tổng đều trôi. Con nhận ra để chuyển sang cách khác."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Thước hiệu chỉ sống khi hai bên cộng / trừ CÙNG MỘT LƯỢNG: thêm 8 và thêm 4 — khác lượng: hiệu TRÔI (nhích $8 - 4 = 4$), thước hiệu gãy."
-   },
-   {
-    "id": "K2",
-    "text": "Bảng phân luồng ba cửa: chỉ một bên đổi → bên kia cầm thước; cùng thêm / bớt MỘT lượng → thước hiệu; chuyển qua lại → thước tổng; hai bên đổi KHÁC lượng (thêm 8 và 4, bớt 6 và 12) → ba thước cùng gãy: DỰNG CÂN."
-   },
-   {
-    "id": "K3",
-    "text": "Trước khi kết luận hết thước, soi kỹ: nhiều đề trông dữ mà vẫn còn thước — chuyển 12 (tổng bảo toàn → máy B33); cùng thêm 8 (hiệu bảo toàn → quy khúc hiệu B33)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: TRẠM PHÂN LUỒNG TRƯỚC XƯỞNG CÂN. Đề: \"mua thêm 8 truyện và 4 SGK\" — Trí Long phán ngay: \"hai bên cùng được thêm — hiệu không đổi, lấy thước hiệu!\" Khoan! Thước hiệu chỉ sống khi hai bên cộng CÙNG MỘT lượng: bên 8 bên 4 — khoảng cách đã nhích 4: hiệu TRÔI, thước gãy! Trạm phân luồng hỏi ba câu: chỉ một bên đổi? — bên kia cầm thước. Cùng một lượng? — thước hiệu. Chuyển qua lại? — thước tổng. Cả ba đều KHÔNG — như thêm 8 và 4, hay bớt 6 và 12: ba thước cùng gãy — rẽ vào XƯỞNG CÂN (bài sau)! Nhưng chớ vội kết luận: \"chuyển 12 từ B sang A\" trông dữ mà tổng vẫn bảo toàn — máy Bài 33 chạy ngon; \"cùng thêm 8\" — thước hiệu vẫn sống.",
   "canonicalExamples": [
    {
@@ -78,14 +65,8 @@
     "counterExample": "A = 10, B = 20 (hiệu 10): thêm 8 và 4 → 18 và 24 — hiệu 6: trôi mất 4 rồi!"
    }
   ],
-  "vocabulary": [
-   "trạm phân luồng",
-   "hiệu trôi",
-   "ba thước cùng gãy",
-   "rẽ vào xưởng cân",
-   "đề trông dữ mà còn thước"
-  ],
-  "mantra": "CÙNG MỘT LƯỢNG MỚI GIỮ HIỆU — KHÁC LƯỢNG LÀ HIỆU TRÔI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -116,49 +97,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Chưa cần giải — gọi tên chiêu: (a) cả hai cùng thêm 7; (b) chuyển 7 từ A sang B; (c) A thêm 8 còn B thêm 4.",
-    "display": {
-     "type": "story_panel",
-     "caption": "thêm 8 và 4 — hiệu không đổi??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để thử với số thật!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Thử số thật: mười và hai mươi — hiệu MƯỜI. Thêm tám và bốn: mười tám và hai tư — hiệu còn SÁU: trôi mất bốn! Thước hiệu chỉ sống khi hai bên cộng CÙNG MỘT lượng — bên tám bên bốn là hiệu trôi, thước gãy! Trạm phân luồng ba câu: một bên đổi? Cùng lượng? Chuyển? Cả ba KHÔNG — ba thước cùng gãy: rẽ vào XƯỞNG CÂN!",
-    "display": {
-     "type": "routing_gate_interactive",
-     "spec": {
-      "test": "10 & 20 (+8, +4) → 18 & 24: hiệu 10 → 6",
-      "gates": [
-       "một bên đổi? → thước bên kia",
-       "cùng lượng? → thước hiệu",
-       "chuyển? → thước tổng"
-      ],
-      "fallthrough": "KHÁC LƯỢNG → dựng cân"
-     }
-    },
-    "interaction": {
-     "type": "route_the_problem",
-     "answerKey": {
-      "value": "dựng cân"
-     },
-     "successMessage": "Khác lượng — ba thước gãy: rẽ vào xưởng cân!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -174,37 +112,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Hai ca cứu được! Ca một: A bằng một phần ba B, CHUYỂN mười hai từ B sang A thì ba phần năm — chuyển là tổng bảo toàn: quy tám khúc: A nhích một khúc bằng mười hai — A hai tư, B bảy hai! Ca hai: cùng thêm TÁM cả hai bên — thước hiệu sống: hai-ba và ba-bốn hiệu đều một khúc — A tăng một khúc bằng tám: A mười sáu, B hai tư!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "chuyển 12 → thước TỔNG: 2:6 → 3:5, nhích 1 = 12 → 24 & 72",
-      "cùng thêm 8 → thước HIỆU: 2:3 → 3:4, tăng 1 = 8 → 16 & 24",
-      "chỉ KHÁC LƯỢNG mới phải dựng cân"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: cùng một lượng mới giữ hiệu — khác lượng là hiệu trôi!",
-    "display": {
-     "type": "mantra_card",
-     "text": "KHÁC LƯỢNG — HIỆU TRÔI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -534,138 +441,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B34.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "thêm 8 và 4 — hiệu không đổi??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "hai bên cùng được thêm — hiệu không đổi, thước hiệu!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B34_M1_F1.png",
-   "sha256_16": "e3b4a72aa613e97d"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "Khi nào hết thước: hai bên đổi KHÁC lượng — và các ca còn cứu được",
-    "formulas": [
-     {
-      "text": "10 & 20 (+8, +4) → 18 & 24: hiệu 10 → 6",
-      "tone": "navy"
-     },
-     {
-      "text": "KHÁC LƯỢNG → dựng cân",
-      "tone": "gold"
-     }
-    ]
-   },
-   "caption": "Ý chính của bài gói trong mấy dòng",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B34_M1_F2.png",
-   "sha256_16": "2baeb585d630c341"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Thước hiệu chỉ sống khi hai bên cộng / trừ CÙNG MỘT LƯỢNG",
-      "text": "thêm 8 và thêm 4 — khác lượng: hiệu TRÔI (nhích 8 − 4 = 4), thước hiệu gãy.",
-      "tone": "navy"
-     },
-     {
-      "label": "Bảng phân luồng ba cửa",
-      "text": "chỉ một bên đổi → bên kia cầm thước; cùng thêm / bớt MỘT lượng → thước hiệu; chuyển qua lại → thước tổng; hai bên đổi KHÁC lượng (thêm 8 và 4, bớt 6 và 12) → ba thước cùng gãy: DỰNG CÂN.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CÙNG MỘT LƯỢNG MỚI GIỮ HIỆU — KHÁC LƯỢNG LÀ HIỆU TRÔI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B34_M1_F3.png",
-   "sha256_16": "bae960e385dd0292"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "PHÂN LUỒNG: ĐỀ NÀY CÒN THƯỚC NÀO?",
-    "headers": [
-     "tình huống",
-     "cái gì bảo toàn",
-     "chiêu dùng"
-    ],
-    "comma_after": null,
-    "rows": [
-     {
-      "label": "",
-      "cells": [
-       "chỉ A đổi",
-       "B đứng im",
-       "thước B"
-      ],
-      "color": "#E6FAF5"
-     },
-     {
-      "label": "",
-      "cells": [
-       "cùng thêm/bớt như nhau",
-       "HIỆU",
-       "thước hiệu"
-      ],
-      "color": "white"
-     },
-     {
-      "label": "",
-      "cells": [
-       "chuyển qua lại",
-       "TỔNG",
-       "thước tổng"
-      ],
-      "color": "#E6FAF5"
-     },
-     {
-      "label": "",
-      "cells": [
-       "đổi KHÁC lượng",
-       "không gì cả",
-       "NHÂN CHÉO"
-      ],
-      "color": "#FDECE9",
-      "highlight": [
-       2
-      ]
-     }
-    ],
-    "note": "Ba thước gãy hết thì mới dựng cân nhân chéo — đừng vội bỏ thước khi vẫn còn"
-   },
-   "caption": "Nhận diện luồng trước, chọn chiêu sau",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B34_M1_F4.png",
-   "sha256_16": "173d827b81211d7f"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B31"
@@ -677,5 +453,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Khi nào hết thước: hai bên đổi KHÁC lượng — và các ca còn cứu được"
+ "titleDay": "Khi nào hết thước: hai bên đổi KHÁC lượng — và các ca còn cứu được",
+ "video": {
+  "giang": "DL_KSN5Q1_B34_M1_giang.mp4"
+ }
 }
