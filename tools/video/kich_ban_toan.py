@@ -12936,7 +12936,132 @@ def kb5_tong_tuoi_troi(b):
     ]
 
 
+def kb5_mot_neo_ca_day(b):
+    """L5·B36·M1 Một neo hiệu xử cả dãy mức gấp — dãy đáp soi lẫn nhau."""
+    return [
+        _c('bia', 'Một câu hỏi hỏi nhiều mức gấp cùng lúc', so_bai(b),
+           loi=['Đề hỏi liền ba mức gấp. Đừng giải rời từng câu từ số không.']),
+        _c('de_toan', 'Đề bài',
+           de='Con 8 tuổi, mẹ 32 tuổi.\nKhi nào mẹ gấp 5 lần con? gấp 4 lần? gấp 3 lần?',
+           loi=['Con tám tuổi, mẹ ba mươi hai tuổi. Hỏi khi nào mẹ gấp năm lần, gấp '
+                'bốn lần, gấp ba lần tuổi con.']),
+        _c('y_toan', 'Tính chiếc NEO một lần cho cả dãy',
+           '32 − 8 = 24   —   bất biến ở mọi mốc', buoc=1, soBuoc=4,
+           loi=['Tính chiếc neo một lần thôi. Ba mươi hai trừ tám bằng hai mươi tư.',
+                'Hiệu ấy bất biến ở mọi mốc, nên dùng chung được cho cả dãy câu hỏi.']),
+        _c('y_toan', 'Máy soi từng mức: gấp k thì hiệu là (k − 1) phần',
+           'tuổi con tại mốc ấy = neo : (k − 1)', buoc=2, soBuoc=4,
+           loi=['Máy soi từng mức. Gấp ka lần thì hiệu là ka trừ một phần.']),
+        _c('day_so', 'Chạy máy ba lần', so=['6', '8', '12'], nhanHang='con',
+           chuPhu='gấp 5 → 24 : 4 = 6   ·   gấp 4 → 8   ·   gấp 3 → 12.',
+           loi=['Chạy máy ba lần. Gấp năm thì con sáu tuổi, gấp bốn thì tám, gấp ba thì '
+                'mười hai.']),
+        _c('y_toan', 'So với tuổi NAY để đọc ra mốc',
+           '6 < 8 → 2 năm TRƯỚC   ·   8 = nay → NGAY HÔM NAY   ·   12 > 8 → 4 năm NỮA',
+           buoc=3, soBuoc=4,
+           loi=['So với tuổi nay để đọc ra mốc. Sáu bé hơn tám nên là hai năm trước.',
+                'Tám đúng bằng nay, còn mười hai thì bốn năm nữa.']),
+        _c('y_toan', 'Cả dãy soi lẫn nhau',
+           'đáp 6 · 8 · 12 TĂNG dần   ·   mà số gấp 5 · 4 · 3 CO dần', buoc=4, soBuoc=4,
+           loi=['Cả dãy soi lẫn nhau. Dãy đáp tăng dần, mà số lần gấp lại co dần.',
+                'Vì con lớn nhanh hơn theo tỉ lệ.']),
+        _c('de_toan', 'Đó là một cách tự kiểm rất nhanh',
+           de='một đáp lệch chen giữa dãy đẹp là bị tố ngay',
+           loi=['Đó là một cách tự kiểm rất nhanh, khỏi phải thử lại từng câu.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='một neo tính MỘT lần   —   cả dãy mốc soi lẫn nhau',
+           thay='gấp k → con = neo : (k − 1), rồi so với tuổi nay mà đọc chiều thời gian',
+           loi=['Con nhớ câu này. Một chiếc neo tính một lần, rồi cả dãy mốc soi lẫn '
+                'nhau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_hai_luat_troi(b):
+    """L5·B36·M2 TBC trôi 1 mỗi năm — tổng mới trôi theo quân số."""
+    return [
+        _c('bia', 'Hai thứ cùng trôi, mà trôi khác nhau', so_bai(b),
+           loi=['Tổng tuổi trôi, trung bình cộng cũng trôi. Nhưng hai cái trôi khác '
+                'nhau.']),
+        _c('de_toan', 'Đề bài',
+           de='TBC tuổi ba người trong nhà nay là 30.\nHỏi TBC ấy 5 năm nữa, và 4 năm trước?',
+           loi=['Trung bình cộng tuổi ba người trong nhà nay là ba mươi.']),
+        _c('y_toan', 'Mỗi người thêm 5 thì TỔNG thêm 5 nhân quân số',
+           'nhưng TBC lại chia lại cho quân số   →   chỉ thêm ĐÚNG 5', buoc=1, soBuoc=3,
+           loi=['Mỗi người thêm năm tuổi thì tổng thêm năm nhân ba, là mười lăm.',
+                'Nhưng trung bình cộng chia lại cho ba, nên chỉ thêm đúng năm.']),
+        _c('day_so', 'Nên TBC trôi rất đều', so=['26', '30', '35'], nhanHang='TBC',
+           chuPhu='4 năm trước · nay · 5 năm nữa — trôi đúng 1 mỗi năm.',
+           loi=['Nên trung bình cộng trôi đúng một mỗi năm.',
+                'Bốn năm trước hai mươi sáu, nay ba mươi, năm năm nữa ba mươi lăm.']),
+        _c('y_toan', 'Nhà mấy người cũng vậy',
+           'TBC trôi 1 mỗi năm   ·   còn TỔNG mới trôi theo quân số', buoc=2, soBuoc=3,
+           loi=['Nhà mấy người cũng vậy. Chỉ có tổng mới trôi theo quân số.']),
+        _c('de_toan', 'Luật thứ hai: dán nhãn quân số cho TỪNG tổng',
+           de='Tổng tuổi riêng nhóm bố mẹ, 4 năm trước là bao nhiêu?',
+           loi=['Luật thứ hai. Mỗi tổng phải dán nhãn quân số của riêng nó.']),
+        _c('y_toan', 'Nhóm bố mẹ chỉ có 2 người',
+           'lùi 4 năm  →  giảm 2 × 4 = 8   (không phải 12 của cả nhà)',
+           buoc=3, soBuoc=3,
+           loi=['Nhóm bố mẹ chỉ hai người, nên lùi bốn năm thì giảm tám.',
+                'Không phải mười hai như cả nhà ba người.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='TBC trôi 1 mỗi năm   —   TỔNG mới trôi theo QUÂN SỐ',
+           thay='tổng nào quân số nấy, mỗi tổng trôi đúng phần của mình',
+           loi=['Con nhớ hai câu. Trung bình cộng trôi một mỗi năm, còn tổng nào quân '
+                'số nấy.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tach_nhom_ghep_tang(b):
+    """L5·B36·M3 Kéo về cùng mốc rồi tách nhóm — bài trùm là chiêu cũ xếp hàng."""
+    return [
+        _c('bia', 'Tách một người ra khỏi cả nhà', so_bai(b),
+           loi=['Muốn biết tuổi một người, có khi phải tách người ấy khỏi cả nhóm.']),
+        _c('de_toan', 'Đề bài',
+           de='TBC tuổi bố, mẹ, con là 30.\nTổng tuổi bố mẹ 4 NĂM TRƯỚC là 70',
+           loi=['Trung bình cộng tuổi bố mẹ con là ba mươi. Tổng tuổi bố mẹ bốn năm '
+                'trước là bảy mươi.']),
+        _c('y_toan', 'Tầng 1 — kéo màn TBC', 'tổng cả nhà = 30 × 3 = 90',
+           buoc=1, soBuoc=4,
+           loi=['Tầng một, kéo màn trung bình cộng. Tổng cả nhà là chín mươi.']),
+        _c('y_toan', 'Tầng 2 — kéo tổng bố mẹ về ĐÚNG MỐC NAY',
+           'nhóm ấy 2 người   →   70 + 2 × 4 = 78', buoc=2, soBuoc=4,
+           loi=['Tầng hai, kéo tổng bố mẹ về đúng mốc nay. Nhóm ấy hai người nên trôi '
+                'hai mỗi năm.',
+                'Bảy mươi cộng tám, thành bảy mươi tám.']),
+        _c('y_toan', 'Tầng 3 — nay mới TÁCH nhóm được',
+           'hai tổng phải CÙNG MỘT MỐC   →   con = 90 − 78 = 12', buoc=3, soBuoc=4,
+           loi=['Tầng ba, nay hai tổng đã cùng một mốc nên trừ được.',
+                'Chín mươi trừ bảy mươi tám, con mười hai tuổi.']),
+        _c('san_bang', 'Cả nhà hiện ra', so=[12, 36, 42], mucTB=True,
+           chuPhu='Bố hơn mẹ 6 → bố 42 · mẹ 36 · vạch TBC đúng 30.',
+           loi=['Cả nhà hiện ra. Con mười hai, mẹ ba mươi sáu, bố bốn mươi hai.',
+                'Vạch trung bình đúng ba mươi.']),
+        _c('y_toan', 'Trong nhóm đã tách, chiêu cũ xử nốt',
+           'bố + mẹ = 78, bố hơn mẹ 6   →   máy tổng – hiệu của bài 25',
+           buoc=4, soBuoc=4,
+           loi=['Trong nhóm đã tách, máy tổng hiệu của bài hai lăm xử nốt.']),
+        _c('de_toan', 'Bài trùm cũng chỉ là chiêu cũ XẾP HÀNG',
+           de='tổng trôi → hiệu-tỉ → trượt → trượt tiếp rồi lập tỉ',
+           loi=['Bài trùm trông đồ sộ, nhưng cũng chỉ là mấy chiêu cũ xếp hàng.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='kéo về CÙNG MỐC rồi mới tách nhóm',
+           thay='22 − 6 = 16 → 4 và 12 → trượt +3 → 7 và 15 → trượt +9 → 16 và 24',
+           loi=['Con nhớ câu này. Kéo về cùng mốc rồi mới tách nhóm.',
+                'Đồ sộ mấy cũng là chiêu cũ xếp hàng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B36.M1': kb5_mot_neo_ca_day,
+    'DL:KSN5Q1.B36.M2': kb5_hai_luat_troi,
+    'DL:KSN5Q1.B36.M3': kb5_tach_nhom_ghep_tang,
     'DL:KSN5Q1.B35.M1': kb5_tuoi_mot_moc,
     'DL:KSN5Q1.B35.M2': kb5_hai_moc_tuoi,
     'DL:KSN5Q1.B35.M3': kb5_tong_tuoi_troi,
