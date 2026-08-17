@@ -1,0 +1,870 @@
+{
+ "_doc": [
+  "PHẦN BÙ SOẠN TAY — TIẾNG ANH LỚP 2.",
+  "",
+  "Mọi thứ bản đồ gốc thiếu mà bài học cần. `chuan_tienganh.py --lop 2` đắp tệp này",
+  "lên bản đồ để dựng `chuan_lop2.json`. KHÔNG sửa bản đồ gốc, KHÔNG sửa bản chuẩn.",
+  "",
+  "LỚP 2 NHẸ HƠN LỚP 1 MỘT MẢNG LỚN: bản đồ đã có sẵn nghĩa Việt và IPA cho cả",
+  "56/56 từ (lớp 1 thiếu sạch 0/60). Nên tệp này chỉ lo bốn việc: VAI của từ, HÌNH,",
+  "Ô NÀO NHẬN GÌ, và lời Việt cho tên cảnh."
+ ],
+ "_nguon": "data/ban_do_tieng_anh.json · nhánh g2 · 16 unit · 56 từ · 18 mẫu câu",
+ "_ngay": "2026-08-17",
+ "_vai_la_gi": {
+  "dt": "danh từ đếm được, đi với a/an",
+  "dongtu": "động từ",
+  "sonhieu": "từ ĐANG ở dạng số nhiều — ô [Plural Noun]",
+  "khongdem": "danh từ không đếm được, KHÔNG đi với a/an",
+  "so": "số đếm — ô [Number]",
+  "giadinh": "người trong nhà — ô [Family member]",
+  "vitri": "từ chỉ vị trí, KHÔNG phải danh từ — không được điền vào ô [Noun]"
+ },
+ "_vi_sao_can_vai": [
+  "Ô trống của mẫu câu chỉ nhận đúng vai của nó. Thiếu vai thì bộ sinh câu điền bừa,",
+  "ra câu sai ngữ pháp mà KHÔNG cổng nào bắt được — câu vẫn 'hợp lệ' về mặt chuỗi.",
+  "",
+  "Lớp 2 có ba chỗ nguy hơn lớp 1:",
+  "  · U16 có `near` là từ chỉ VỊ TRÍ, không phải danh từ. Để trống vai là nó rơi vào",
+  "    ô [Noun] và đẻ ra 'Is the near near the tent?'",
+  "  · U11 slide/ride/drive là ĐỘNG TỪ dù nghĩa Việt đọc như danh từ ('trượt').",
+  "  · U15 shoes/shorts vốn ĐÃ ở dạng số nhiều — điền vào ô số ít thì sai."
+ ],
+ "tu": {
+  "v_g2_u1_pasta": {
+   "vai": [
+    "khongdem"
+   ]
+  },
+  "v_g2_u1_popcorn": {
+   "vai": [
+    "khongdem"
+   ]
+  },
+  "v_g2_u1_pizza": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "pizzas"
+  },
+  "v_g2_u2_kite": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "kites"
+  },
+  "v_g2_u2_bike": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "bikes"
+  },
+  "v_g2_u2_kitten": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "kittens"
+  },
+  "v_g2_u3_sail": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "sails"
+  },
+  "v_g2_u3_sand": {
+   "vai": [
+    "khongdem"
+   ]
+  },
+  "v_g2_u3_sea": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "seas"
+  },
+  "v_g2_u4_rainbow": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "rainbows"
+  },
+  "v_g2_u4_river": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "rivers"
+  },
+  "v_g2_u4_road": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "roads"
+  },
+  "v_g2_u5_question": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "questions"
+  },
+  "v_g2_u5_square": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "squares"
+  },
+  "v_g2_u5_quiz": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "quizzes"
+  },
+  "v_g2_u6_box": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "boxes"
+  },
+  "v_g2_u6_fox": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "foxes"
+  },
+  "v_g2_u6_ox": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "oxen"
+  },
+  "v_g2_u7_juice": {
+   "vai": [
+    "khongdem"
+   ]
+  },
+  "v_g2_u7_jelly": {
+   "vai": [
+    "khongdem"
+   ]
+  },
+  "v_g2_u7_jam": {
+   "vai": [
+    "khongdem"
+   ]
+  },
+  "v_g2_u8_village": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "villages"
+  },
+  "v_g2_u8_van": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "vans"
+  },
+  "v_g2_u8_volleyball": {
+   "vai": [
+    "khongdem"
+   ]
+  },
+  "v_g2_u9_yogurt": {
+   "vai": [
+    "khongdem"
+   ]
+  },
+  "v_g2_u9_yam": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "yams"
+  },
+  "v_g2_u9_yo_yo": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "yo-yos"
+  },
+  "v_g2_u10_zoo": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "zoos"
+  },
+  "v_g2_u10_zebu": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "zebus"
+  },
+  "v_g2_u10_zebra": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "zebras"
+  },
+  "v_g2_u11_slide": {
+   "vai": [
+    "dongtu"
+   ],
+   "ing": "sliding"
+  },
+  "v_g2_u11_ride": {
+   "vai": [
+    "dongtu"
+   ],
+   "ing": "riding"
+  },
+  "v_g2_u11_drive": {
+   "vai": [
+    "dongtu"
+   ],
+   "ing": "driving"
+  },
+  "v_g2_u12_grape": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "grapes"
+  },
+  "v_g2_u12_cake": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "cakes"
+  },
+  "v_g2_u12_table": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "tables"
+  },
+  "v_g2_u13_eleven": {
+   "vai": [
+    "so"
+   ]
+  },
+  "v_g2_u13_twelve": {
+   "vai": [
+    "so"
+   ]
+  },
+  "v_g2_u13_thirteen": {
+   "vai": [
+    "so"
+   ]
+  },
+  "v_g2_u13_fourteen": {
+   "vai": [
+    "so"
+   ]
+  },
+  "v_g2_u13_fifteen": {
+   "vai": [
+    "so"
+   ]
+  },
+  "v_g2_u14_sixteen": {
+   "vai": [
+    "so"
+   ]
+  },
+  "v_g2_u14_seventeen": {
+   "vai": [
+    "so"
+   ]
+  },
+  "v_g2_u14_eighteen": {
+   "vai": [
+    "so"
+   ]
+  },
+  "v_g2_u14_nineteen": {
+   "vai": [
+    "so"
+   ]
+  },
+  "v_g2_u14_twenty": {
+   "vai": [
+    "so"
+   ]
+  },
+  "v_g2_u14_brother": {
+   "vai": [
+    "dt",
+    "giadinh"
+   ],
+   "sonhieu": "brothers"
+  },
+  "v_g2_u14_sister": {
+   "vai": [
+    "dt",
+    "giadinh"
+   ],
+   "sonhieu": "sisters"
+  },
+  "v_g2_u14_grandmother": {
+   "vai": [
+    "dt",
+    "giadinh"
+   ],
+   "sonhieu": "grandmothers"
+  },
+  "v_g2_u15_shirt": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "shirts"
+  },
+  "v_g2_u15_shoes": {
+   "vai": [
+    "sonhieu"
+   ]
+  },
+  "v_g2_u15_shorts": {
+   "vai": [
+    "sonhieu"
+   ]
+  },
+  "v_g2_u16_tent": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "tents"
+  },
+  "v_g2_u16_teapot": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "teapots"
+  },
+  "v_g2_u16_blanket": {
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "blankets"
+  },
+  "v_g2_u16_near": {
+   "vai": [
+    "vitri"
+   ]
+  }
+ },
+ "hinh": {
+  "pasta": "🍝",
+  "popcorn": "🍿",
+  "pizza": "🍕",
+  "kite": "🪁",
+  "bike": "🚲",
+  "kitten": "🐈",
+  "sail": "⛵",
+  "sand": "🏖️",
+  "sea": "🌊",
+  "rainbow": "🌈",
+  "river": "🏞️",
+  "road": "🛣️",
+  "question": "❓",
+  "square": "🟦",
+  "quiz": "📝",
+  "box": "📦",
+  "fox": "🦊",
+  "ox": "🐂",
+  "juice": "🧃",
+  "jelly": "🍮",
+  "jam": "🍯",
+  "village": "🏘️",
+  "van": "🚐",
+  "volleyball": "🏐",
+  "yogurt": "🥛",
+  "yam": "🍠",
+  "yo-yo": "🪀",
+  "zoo": "🦁",
+  "zebu": "🐄",
+  "zebra": "🦓",
+  "slide": "🛝",
+  "ride": "🚴",
+  "drive": "🚗",
+  "grape": "🍇",
+  "cake": "🍰",
+  "table": "🪑",
+  "eleven": "1️⃣1️⃣",
+  "twelve": "1️⃣2️⃣",
+  "thirteen": "1️⃣3️⃣",
+  "fourteen": "1️⃣4️⃣",
+  "fifteen": "1️⃣5️⃣",
+  "brother": "👦",
+  "sister": "👧",
+  "grandmother": "👵",
+  "sixteen": "1️⃣6️⃣",
+  "seventeen": "1️⃣7️⃣",
+  "eighteen": "1️⃣8️⃣",
+  "nineteen": "1️⃣9️⃣",
+  "twenty": "2️⃣0️⃣",
+  "shirt": "👕",
+  "shoes": "👟",
+  "shorts": "🩳",
+  "tent": "⛺",
+  "teapot": "🫖",
+  "blanket": "🛏️",
+  "near": "➡️",
+  "_vi_sao": [
+   "Bé bảy tuổi đọc chữ còn chậm, nên với bé thì HÌNH CHÍNH LÀ NGHĨA. Hình sai không",
+   "phải thiếu sót — nó là dạy sai, và bé mang cái sai ấy sang bài sau.",
+   "",
+   "Cách soi: đọc TÊN UNICODE CHÍNH THỨC của emoji đặt cạnh nghĩa, đừng tin cảm nhận.",
+   "Đó là cách lớp 1 bắt được `desk` → tên thật là CHAIR."
+  ],
+  "_ve_tay": {
+   "_ghi": [
+    "NĂM chỗ emoji SAI HẲN, không phải gần đúng. Phải vẽ tay SVG vào",
+    "web/src/mon/tienganh/lib/hinh_ve.json rồi khai `ve` ở đây.",
+    "Chừng nào chưa vẽ thì emoji tạm dưới đây vẫn SAI — đừng deploy."
+   ],
+   "table": {
+    "ten_that": "CHAIR",
+    "ve": "table",
+    "tam": "🪑",
+    "sai_o_dau": "Y HỆT lỗi `desk`→CHAIR của lớp 1. 🪑 là cái GHẾ, không phải cái bàn."
+   },
+   "zoo": {
+    "ten_that": "LION FACE",
+    "ve": "zoo",
+    "tam": "🦁",
+    "sai_o_dau": "Con sư tử KHÔNG phải vườn thú. Cần hình chuồng/cổng vườn thú."
+   },
+   "yogurt": {
+    "ten_that": "GLASS OF MILK",
+    "ve": "yogurt",
+    "tam": "🥛",
+    "sai_o_dau": "Cốc SỮA, không phải sữa chua. Hai thứ khác nhau với bé."
+   },
+   "blanket": {
+    "ten_that": "BED",
+    "ve": "blanket",
+    "tam": "🛏️",
+    "sai_o_dau": "Cái GIƯỜNG, không phải cái chăn. U16 dạy chăn nằm gần lều."
+   },
+   "near": {
+    "ten_that": "BLACK RIGHTWARDS ARROW",
+    "ve": "near",
+    "tam": "➡️",
+    "sai_o_dau": "Mũi tên nói HƯỚNG, không nói GẦN. Cần hai vật đặt cạnh nhau."
+   }
+  },
+  "_gan_dung": {
+   "_ghi": "Vẫn dùng được, nhưng phải ghi vào docs/hinh_da_soat.md để người sau biết.",
+   "sand": "🏖️ tên thật BEACH WITH UMBRELLA — bãi biển, đọc ra 'biển' trước 'cát'.",
+   "river": "🏞️ tên thật NATIONAL PARK — có dòng sông trong hình, nhưng không riêng sông.",
+   "jelly": "🍮 tên thật CUSTARD — bánh flan, gần với thạch chứ không phải thạch.",
+   "jam": "🍯 tên thật HONEY POT — hũ MẬT ONG, không phải mứt.",
+   "quiz": "📝 tên thật MEMO — tờ giấy ghi, gần với câu đố.",
+   "kitten": "🐈 tên thật CAT — mèo LỚN, mà từ đang dạy là mèo CON.",
+   "zebu": "🐄 tên thật COW — bò thường, zebu là bò có bướu.",
+   "fox": "🦊 và 🦓 là MẶT con vật, trong khi 🐂 🐄 là CẢ con — lớp 1 đã gặp lối lẫn này.",
+   "slide": "🛝 là emoji mới, máy cũ có thể không vẽ ra. Ngó lại trên máy thật."
+  }
+ },
+ "unit": {
+  "_vi_sao": "Bản đồ lớp 2 chỉ có tên cảnh tiếng Anh; bé bảy tuổi cần lời Việt.",
+  "u_g2_1": {
+   "canh": "Ở tiệc sinh nhật · At my birthday party",
+   "nang_luc": [
+    "Tả món ăn và nói ngon (The ... is yummy.)"
+   ]
+  },
+  "u_g2_2": {
+   "canh": "Ở sân sau nhà · In the backyard",
+   "nang_luc": [
+    "Hỏi và đáp xem ai đang làm gì"
+   ]
+  },
+  "u_g2_3": {
+   "canh": "Ở bờ biển · At the seaside",
+   "nang_luc": [
+    "Rủ nhau cùng làm một việc (Let's ...)"
+   ]
+  },
+  "u_g2_4": {
+   "canh": "Ở miền quê · In the countryside",
+   "nang_luc": [
+    "Hỏi và nói mình nhìn thấy gì"
+   ]
+  },
+  "u_g2_5": {
+   "canh": "Trong lớp học · In the classroom",
+   "nang_luc": [
+    "Hỏi và đáp xem bạn ấy đang làm gì"
+   ]
+  },
+  "u_g2_6": {
+   "canh": "Ở nông trại · On the farm",
+   "nang_luc": [
+    "Hỏi xem có con vật, đồ vật nào không"
+   ]
+  },
+  "u_g2_7": {
+   "canh": "Trong bếp · In the kitchen",
+   "nang_luc": [
+    "Nhờ người khác đưa đồ, và đáp lại"
+   ]
+  },
+  "u_g2_8": {
+   "canh": "Trong làng · In the village",
+   "nang_luc": [
+    "Hỏi xem mình có làm được việc gì không"
+   ]
+  },
+  "u_g2_9": {
+   "canh": "Ở cửa hàng tạp hoá · In the grocery store",
+   "nang_luc": [
+    "Hỏi và nói mình muốn mua gì"
+   ]
+  },
+  "u_g2_10": {
+   "canh": "Ở vườn thú · At the zoo",
+   "nang_luc": [
+    "Hỏi và đáp xem có thích không"
+   ]
+  },
+  "u_g2_11": {
+   "canh": "Ở sân chơi · In the playground",
+   "nang_luc": [
+    "Kể nhiều người đang cùng làm gì"
+   ]
+  },
+  "u_g2_12": {
+   "canh": "Ở quán nước · At the café",
+   "nang_luc": [
+    "Nói đồ vật nằm ở đâu, số ít và số nhiều"
+   ]
+  },
+  "u_g2_13": {
+   "canh": "Trong giờ Toán · In the maths class",
+   "nang_luc": [
+    "Đọc và nhận ra số từ mười một đến mười lăm"
+   ]
+  },
+  "u_g2_14": {
+   "canh": "Ở nhà · At home",
+   "nang_luc": [
+    "Hỏi tuổi người trong nhà",
+    "Đọc số từ mười sáu đến hai mươi"
+   ]
+  },
+  "u_g2_15": {
+   "canh": "Trong cửa hàng quần áo · In the clothes shop",
+   "nang_luc": [
+    "Hỏi đồ vật ở đâu, với từ số nhiều"
+   ]
+  },
+  "u_g2_16": {
+   "canh": "Ở khu cắm trại · At the campsite",
+   "nang_luc": [
+    "Nói vật này nằm gần hay ở trong vật kia"
+   ]
+  },
+  "_song_ngu": "Bác chốt 17-08-2026: từ lớp 2 trở đi tên cảnh để SONG NGỮ Việt · Anh. Bé lớp 2 đã đọc được chữ, và thấy tên tiếng Anh ngay trên đầu bài là quen mặt dần cái tên thật của bài."
+ },
+ "sua_slot": {
+  "_vi_sao": [
+   "Mẫu câu NHIỀU Ô mà không khai ở đây thì `sinh_cau` BỎ QUA CẢ MẪU (dòng 145-146",
+   "của tools/sinh_bai_tienganh.py) — im lặng, không báo gì. Lớp 2 có 6 mẫu như thế,",
+   "tức một phần ba vốn câu của quyển sẽ biến mất mà cổng vẫn xanh.",
+   "",
+   "⚠ U16 CHƯA KHAI ĐƯỢC — xem `_u16_con_no` bên dưới."
+  ],
+  "sp_g2_u2_1": {
+   "_cau": "Is + [Pronoun] + [Verb-ing] + a + [Noun]? - Yes,[Pronoun] is./No,[Pronoun] isn't.",
+   "_ghi": "Ba ô [Pronoun] dùng chung một kho — ở đây thế là ĐÚNG: hỏi về ai thì đáp về người ấy. Động từ khai đích danh: 'doing a kite' vô nghĩa. `kitten` bỏ khỏi ô Noun vì không ai 'fly a kitten'.",
+   "o": {
+    "Pronoun": [
+     "daitu"
+    ],
+    "Verb-ing": [
+     "fly",
+     "ride"
+    ],
+    "Noun": [
+     "kite",
+     "bike"
+    ]
+   }
+  },
+  "sp_g2_u5_1": {
+   "_cau": "What's + [Pronoun] + doing? - [Pronoun] + is + [Verb-ing] + a + [Noun].",
+   "o": {
+    "Pronoun": [
+     "daitu"
+    ],
+    "Verb-ing": [
+     "do",
+     "read"
+    ],
+    "Noun": [
+     "quiz",
+     "question"
+    ]
+   },
+   "_ghi": "Khai đích danh: 'flying a quiz' vô nghĩa. `square` bỏ vì không 'do a square'."
+  },
+  "sp_g2_u8_1": {
+   "_cau": "Can you + [Verb] + a + [Noun]? - Yes, I can. / No, I can't.",
+   "o": {
+    "Verb": [
+     "draw"
+    ],
+    "Noun": [
+     "van",
+     "village"
+    ]
+   },
+   "_ghi": "Chỉ `draw`: 'Can you do a van?' và 'Can you fly a van?' đều vô nghĩa."
+  },
+  "sp_g2_u11_1": {
+   "_cau": "They + are + [Verb-ing] + [Noun].",
+   "_ghi": "Từ của chính U11 là ĐỘNG TỪ. Danh từ mượn của U2 vì U11 không có danh từ nào — 'They are driving bikes.' hợp nghĩa.",
+   "o": {
+    "Verb-ing": [
+     "slide",
+     "ride",
+     "drive"
+    ],
+    "Noun": [
+     "cars",
+     "bikes"
+    ]
+   }
+  },
+  "sp_g2_u14_1": {
+   "_cau": "How old is + your + [Family member]? - He's/She's + [Number].",
+   "_ghi": "Hai ô hai vai hẳn nhau. Không khai thì `nineteen` rơi vào ô người nhà: 'How old is your nineteen?'",
+   "o": {
+    "Family member": [
+     "giadinh"
+    ],
+    "Number": [
+     "so"
+    ]
+   }
+  },
+  "_u16_con_no": {
+   "_cau": "Is the + [Noun] + near the + [Noun]? - No, it isn't. It's in/on the + [Noun].",
+   "_vi_sao_chua_khai": [
+    "Ba ô CÙNG TÊN [Noun]. `sinh_cau` dùng TÊN Ô làm khoá của kho (`kho[o]`), nên ba",
+    "ô gộp thành một — câu nền sẽ điền cùng một từ vào cả ba chỗ và ra",
+    "'Is the tent near the tent? … It's in the tent.'",
+    "",
+    "Khai bừa vào đây là ĐẺ RA CÂU SAI chứ không cứu được mẫu câu. Chỗ chữa đúng là",
+    "`chuan_tienganh.py`: đánh số ô trùng tên thành [Noun1] [Noun2] [Noun3] ngay khi",
+    "chuẩn hoá công thức — sửa ở tầng chuẩn hoá, đừng thêm nhánh `if lop == 2` vào bộ",
+    "sinh (luật §5 của docs/day_chuyen_du_lieu_tienganh.md).",
+    "",
+    "Chừng nào chưa chữa: U16 chỉ có câu SGK, không có câu thay ô. Bài vẫn chạy."
+   ]
+  },
+  "sp_g2_u12_1": {
+   "_cau": "The + [Singular Noun] + is + on the table.",
+   "_ghi": "Bỏ `table`: 'The table is on the table.' tự nói về chính nó.",
+   "o": {
+    "Singular Noun": [
+     "cake",
+     "grape"
+    ]
+   }
+  },
+  "sp_g2_u12_2": {
+   "_cau": "The + [Plural Noun] + are + on the table.",
+   "_ghi": "Bỏ `table` cùng lý do. `dang_can` tự đổi sang dạng số nhiều đã khai ở `tu` (grape→grapes).",
+   "o": {
+    "Plural Noun": [
+     "cake",
+     "grape"
+    ]
+   }
+  },
+  "_khai_bang_tu": "Ô nào khai bằng TÊN TỪ đích danh thay vì vai, thì mọi mục phải là tên từ. Dùng khi vai rộng quá đẻ ra câu vô nghĩa: ô [Verb] nhận mọi động từ nên ra 'Can you do a van?', ô [Verb-ing] ra 'Is she doing a kite?'. Câu đúng ngữ pháp, sai hẳn nghĩa — máy không hiểu 'doing a kite' là gì nên không cổng nào bắt được."
+ },
+ "them": {
+  "_vi_sao": [
+   "Sáu mẫu câu lớp 2 có ô mà bản đồ KHÔNG có node nào điền vào: [Pronoun],",
+   "[Verb], [Verb-ing], [Verb phrase]. Không đắp thì bộ sinh bỏ qua cả sáu mẫu —",
+   "tức mất 6/18 mẫu câu, một phần ba vốn câu của cả quyển.",
+   "",
+   "⚠ LUẬT TỪ PHỤ (kế thừa lớp 1): những từ ở đây sinh ra để ĐIỀN VÀO KHUNG cho có",
+   "câu mà luyện, KHÔNG phải để bé học thuộc. Chúng KHÔNG được làm đáp án của bất kỳ",
+   "câu hỏi nào — lớp 1 từng đẻ ra câu đáp án là `blue`, một từ cả quyển không dạy.",
+   "",
+   "SỐ ĐẾM LỚP 2 THÌ KHÁC HẲN: eleven…twenty là từ vựng CHÍNH của U13 · U14, nằm",
+   "trong bản đồ, nên chúng LÀ đáp án được. Đừng khai lại chúng ở đây."
+  ],
+  "dai_tu": {
+   "_dung_cho": "ô [Pronoun] của U2 · U5",
+   "muc": [
+    {
+     "word": "he",
+     "nghia": "bạn ấy (nam)",
+     "ipa": "/hiː/",
+     "vai": [
+      "daitu"
+     ]
+    },
+    {
+     "word": "she",
+     "nghia": "bạn ấy (nữ)",
+     "ipa": "/ʃiː/",
+     "vai": [
+      "daitu"
+     ]
+    }
+   ]
+  },
+  "dong_tu_phu": {
+   "_dung_cho": "ô [Verb] · [Verb-ing] của U2 · U5 · U8 · U11",
+   "_ghi": "Đều là việc bé đã biết mặt chữ hoặc đoán được qua hình; giữ ít cho dễ nhớ.",
+   "muc": [
+    {
+     "word": "fly",
+     "nghia": "thả, bay",
+     "ipa": "/flaɪ/",
+     "vai": [
+      "dongtu"
+     ],
+     "dang_ing": "flying"
+    },
+    {
+     "word": "do",
+     "nghia": "làm",
+     "ipa": "/duː/",
+     "vai": [
+      "dongtu"
+     ],
+     "dang_ing": "doing"
+    },
+    {
+     "word": "draw",
+     "nghia": "vẽ",
+     "ipa": "/drɔː/",
+     "vai": [
+      "dongtu"
+     ],
+     "dang_ing": "drawing"
+    },
+    {
+     "word": "eat",
+     "nghia": "ăn",
+     "ipa": "/iːt/",
+     "vai": [
+      "dongtu"
+     ],
+     "dang_ing": "eating"
+    },
+    {
+     "word": "read",
+     "nghia": "đọc",
+     "ipa": "/riːd/",
+     "vai": [
+      "dongtu"
+     ],
+     "dang_ing": "reading"
+    }
+   ]
+  },
+  "cum_dong_tu": {
+   "_dung_cho": "ô [Verb phrase] của U3",
+   "_ghi": "Cả CỤM, không tách ra — 'Let's + [Verb phrase]!' đòi nguyên cụm việc làm.",
+   "muc": [
+    {
+     "word": "look at the sea",
+     "nghia": "ngắm biển",
+     "ipa": "/lʊk æt ðə siː/",
+     "vai": [
+      "cumdongtu"
+     ]
+    },
+    {
+     "word": "play in the sand",
+     "nghia": "chơi trên cát",
+     "ipa": "/pleɪ ɪn ðə sænd/",
+     "vai": [
+      "cumdongtu"
+     ]
+    },
+    {
+     "word": "see the sail",
+     "nghia": "nhìn cánh buồm",
+     "ipa": "/siː ðə seɪl/",
+     "vai": [
+      "cumdongtu"
+     ]
+    }
+   ]
+  },
+  "danh_tu_phu": {
+   "_dung_cho": "ô [Noun] của U11 — unit ấy KHÔNG có danh từ nào, ba từ của nó đều là động từ",
+   "_ghi": "Khai sẵn ở dạng SỐ NHIỀU. Công thức U11 viết ô là [Noun] chứ không phải [Plural Noun], nên `dang_can` không tự đổi dạng — mà câu SGK là 'They're driving cars.' Khai dạng gốc thì ra 'They are sliding car.'",
+   "muc": [
+    {
+     "word": "cars",
+     "nghia": "những chiếc ô tô",
+     "ipa": "/kɑːz/",
+     "vai": [
+      "sonhieu"
+     ]
+    },
+    {
+     "word": "bikes",
+     "nghia": "những xe đạp",
+     "ipa": "/baɪks/",
+     "vai": [
+      "sonhieu"
+     ]
+    }
+   ]
+  }
+ },
+ "chuong": {
+  "_vi_sao": [
+   "Bản đồ không chia chương. Sách lớp 2 theo đúng nhịp lớp 1: cứ 4 unit thì một kỳ",
+   "Review, nên 16 unit thành 4 chương. Giữ y khuôn lớp 1 để hai quyển cùng một cách",
+   "mở kỳ ôn tập."
+  ],
+  "1": {
+   "ten": "Tiệc, sân sau, bờ biển và miền quê",
+   "unit": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "2": {
+   "ten": "Lớp học, nông trại, bếp và làng",
+   "unit": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "3": {
+   "ten": "Cửa hàng, vườn thú, sân chơi, quán nước",
+   "unit": [
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "4": {
+   "ten": "Giờ Toán, ở nhà, quần áo và cắm trại",
+   "unit": [
+    13,
+    14,
+    15,
+    16
+   ]
+  }
+ },
+ "kich_ban_noi": {},
+ "_khoa_tu": "`tu` khoá bằng MÃ NODE (v_g2_u1_pasta), không phải bằng chữ — chuan_tienganh.py tra `tu_bu.get(ma)`. Khoá bằng chữ thì mọi khai rơi im lặng: vai rỗng, và bộ sinh câu điền bừa. Trường là `sonhieu` · `ing` · `soit`, không phải `so_nhieu` · `dang_ing`."
+}

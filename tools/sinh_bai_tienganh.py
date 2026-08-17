@@ -104,24 +104,58 @@ def dang_can(o_ten: str, t: dict) -> str | None:
 
     Bản đồ cho từ ở dạng GỐC (`run`, `window`) còn câu cần dạng biến đổi
     (`running`, `windows`). Ghép thẳng thì ra "She's run." — xem lop1_bu.json.
+
+    ⚠ SO TÊN Ô KHÔNG PHÂN BIỆT HOA THƯỜNG. Lớp 1 viết `[Noun-plural]`, lớp 2 viết
+    `[Plural Noun]` — cùng một ý, khác cách gọi. Bản đầu so `"plural" in o_ten` nên
+    lớp 2 trượt hết: `grape` điền nguyên dạng gốc vào ô số nhiều, ra
+    "The grape are on the table." Cùng dòng họ với bảng khuôn lệch §0 của sổ dây
+    chuyền — ba lớp không ai gọi giống ai.
     """
-    if "Verb-ing" in o_ten:
+    ten = (o_ten or "").lower()
+    if "verb-ing" in ten or "verb ing" in ten:
         return t.get("dang_ing")
-    if "plural" in o_ten:
+    if "plural" in ten:
         return t.get("so_nhieu") or (t["tu"] if "sonhieu" in (t.get("vai") or []) else None)
     return t["tu"]
 
 
+# Những chữ được hiểu là VAI chứ không phải là một từ tiếng Anh. Khai ở `sua_slot`
+# mà không nằm trong danh sách này thì hiểu là TÊN TỪ đích danh.
+VAI_BIET = {"dt", "dongtu", "mau", "bophan", "thucan", "sonhieu", "khongdem",
+            "so", "ten", "daitu", "giadinh", "vitri", "cumdongtu"}
+
+
+def ung_vien_tat(tu: list, them: dict) -> list[dict]:
+    """Mọi ứng viên có thể, không lọc vai — để lọc lại bằng danh sách từ đích danh."""
+    return ung_vien(sorted(VAI_BIET), tu, them)
+
+
 def ung_vien(vai_can: list, tu: list, them: dict) -> list[dict]:
-    """Những từ được phép điền vào một ô, theo VAI đã khai ở lop1_bu.json."""
+    """Những từ được phép điền vào một ô, theo VAI đã khai ở `lopN_bu.json`.
+
+    ⚠ Bản đầu ghim cứng ba nhóm `so_dem` · `mau` · `ten` — đúng ba nhóm lớp 1 có.
+    Lớp 2 khai thêm `dai_tu` · `dong_tu_phu` · `cum_dong_tu` cho sáu mẫu câu có ô
+    [Pronoun] · [Verb] · [Verb-ing] · [Verb phrase], và cả sáu **rơi im lặng**: kho
+    ứng viên rỗng → `sinh_cau` bỏ qua cả mẫu, không báo gì, cổng vẫn xanh.
+
+    Nay duyệt MỌI nhóm trong `them`. Thêm nhóm mới ở phần bù là chạy được ngay,
+    không phải nhớ sửa thêm một danh sách ở đây — đúng luật "thêm quyển mới không
+    phải sửa bộ sinh" của §5 sổ dây chuyền.
+    """
     kho = list(tu)
-    for nhom in ("so_dem", "mau", "ten"):
-        for m in (them.get(nhom) or {}).get("muc", []):
+    for nhom, goi in them.items():
+        if nhom.startswith("_") or not isinstance(goi, dict):
+            continue
+        for m in (goi.get("muc") or []):
             kho.append({"tu": m["word"] if isinstance(m, dict) else m,
                         "nghia": m.get("nghia", "") if isinstance(m, dict) else "",
                         "ipa": m.get("ipa", "") if isinstance(m, dict) else "",
                         "vai": m.get("vai", ["ten"]) if isinstance(m, dict) else ["ten"],
                         "ma": f"them_{nhom}_{m if isinstance(m, str) else m['word']}",
+                        # Mang theo DẠNG BIẾN ĐỔI. Thiếu hai dòng này thì động từ phụ
+                        # vào ô [Verb-ing] ở dạng gốc: "Is he fly a kite?" — đã thấy thật.
+                        "dang_ing": m.get("dang_ing") if isinstance(m, dict) else None,
+                        "so_nhieu": m.get("so_nhieu") if isinstance(m, dict) else None,
                         "go_duoc": True})
     return [t for t in kho if set(t.get("vai") or []) & set(vai_can)]
 
@@ -148,12 +182,34 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
         kho = {}
         for o in os:
             if khai.get(o):
-                kho[o] = ung_vien(khai[o], tu, them)
+                # Khai bằng DANH SÁCH TỪ đích danh, hay bằng VAI?
+                #
+                # Vai là luật rộng, và rộng quá thì đẻ ra câu vô nghĩa: ô [Verb] của
+                # U8 nhận mọi `dongtu` nên ra "Can you do a van?", ô [Verb-ing] của
+                # U2 ra "Is she doing a kite?". Câu đúng ngữ pháp, sai hẳn nghĩa —
+                # và không cổng nào bắt được, vì máy không hiểu "doing a kite" là gì.
+                #
+                # Nên cho phép khai thẳng những từ HỢP NGHĨA với chính mẫu câu ấy.
+                # Vai vẫn dùng được cho ô nào rộng thật (ô [Number], ô [Family member]).
+                # Luật dứt khoát: MỌI mục đều là tên vai → hiểu là vai. Có bất kỳ
+                # mục nào không phải tên vai → hiểu là danh sách TỪ đích danh. Không
+                # trộn lẫn hai lối trong cùng một ô.
+                if all(x in VAI_BIET for x in khai[o]):
+                    kho[o] = ung_vien(khai[o], tu, them)
+                else:
+                    kho[o] = [t for t in ung_vien_tat(tu, them) if t["tu"] in khai[o]]
             else:
                 kho[o] = [t for t in tu if t["tu"] in mc["o_thay"]]
             if not kho[o]:
                 break
-        if any(not v for v in kho.values()) or len(kho) != len(os):
+        # ⚠ So với số ô KHÁC TÊN NHAU, không phải số lần ô xuất hiện.
+        #
+        # `kho` khoá bằng TÊN ô, nên công thức nhắc lại một tên thì `kho` chỉ có một
+        # khoá cho tên ấy. Lớp 1 không mẫu nào nhắc lại tên ô nên `len(kho) == len(os)`
+        # luôn đúng. Lớp 2 thì có: U2 nhắc [Pronoun] BA lần ("Is she flying a kite? -
+        # Yes, she is. / No, she isn't."), U5 hai lần. Phép so cũ thấy 3 ≠ 5 rồi bỏ
+        # qua CẢ MẪU — im lặng, không báo gì, và mất luôn hai unit khỏi vốn câu.
+        if any(not v for v in kho.values()) or len(kho) != len(set(os)):
             continue
 
         # Neo vào CÂU SGK: tìm xem mỗi ô đang là từ nào trong câu ấy. Khớp từ dài
