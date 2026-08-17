@@ -14732,6 +14732,147 @@ def kb5_ban_kinh_gap_k(b):
     ]
 
 
+def kb5_duong_vong(b):
+    """L5·B55·M1 Cắt vòng ra trải phẳng: khoảng cách cần gặm là TRỌN một vòng."""
+    return [
+        _c('bia', 'Chuyển động trên đường vòng', so_bai(b),
+           loi=['Vòng chạy bốn trăm mét, hai bạn xuất phát cùng một điểm, chạy ngược '
+                'chiều nhau.',
+                'Đứng cùng một chỗ thì khoảng cách bằng không, biết chia cho cái gì '
+                'bây giờ?']),
+        _c('duong_di', 'Cắt vòng ra rồi trải phẳng',
+           dauA='xuất phát', dauB='vòng khép lại',
+           xe1Dau=0.0, xe1Huong='phai', xe1Nhan='3 m/giây',
+           xe2Dau=1.0, xe2Huong='trai', xe2Nhan='2 m/giây',
+           nhanDai='một vòng = 400 m',
+           chuPhu='Hai bạn quay lưng nhau nên phải gặm hết TRỌN một vòng mới chạm mặt.',
+           chuCuoi='t = 400 : (3 + 2) = 80 giây',
+           loi=['Cắt vòng ngay chỗ xuất phát rồi trải phẳng ra thì thấy ngay. Hai bạn '
+                'quay lưng nhau nên đang ở hai đầu đoạn.',
+                'Khoảng cách phải gặm chính là trọn một vòng, bốn trăm chia năm, tám '
+                'mươi giây.']),
+        _c('y_toan', 'Điểm gặp KHÔNG nằm ở nửa vòng',
+           'người 3 m/giây đi 240 m   ·   người 2 m/giây đi 160 m   ·   240 + 160 = 400 ✓',
+           buoc=1, soBuoc=3,
+           loi=['Điểm gặp không nằm ở nửa vòng, vì hai bạn chạy nhanh chậm khác nhau.',
+                'Hai quãng khác nhau nhưng cộng lại vẫn tròn một vòng, kiểm là khớp.']),
+        _c('duong_di', 'Cùng chiều thì người nhanh phải DƯ ra một vòng',
+           dauA='cùng xuất phát', dauB='dư trọn 1 vòng',
+           xe1Dau=0.0, xe1Huong='phai', xe1Nhan='3 m/giây',
+           xe2Dau=0.0, xe2Huong='phai', xe2Nhan='2 m/giây',
+           nhanDai='phải dư ra 400 m',
+           chuPhu='Đuổi mà cái đích cũng chạy vòng quanh: chia HIỆU như mọi bài đuổi.',
+           chuCuoi='t = 400 : (3 − 2) = 400 giây',
+           loi=['Cùng chiều thì người nhanh phải chạy dư ra trọn một vòng mới vỗ được '
+                'vai người kia.',
+                'Vẫn là bài đuổi, nên chia hiệu: bốn trăm chia một, bốn trăm giây.']),
+        _c('y_toan', 'Đếm số lần gặp trong một khoảng dài',
+           'cứ 80 giây gặp một lần   →   600 : 80 = 7,5   →   lấy phần NGUYÊN: 7 lần',
+           buoc=2, soBuoc=3,
+           loi=['Muốn đếm số lần gặp thì lấy thời gian chia cho chu kỳ tám mươi giây.',
+                'Sáu trăm chia tám mươi được bảy phẩy năm, nhưng nửa chu kỳ dở dang '
+                'chưa kịp gặp, nên chỉ bảy lần.']),
+        _c('y_toan', 'Vẫn đúng hai câu cũ, chỉ đổi khoảng cách',
+           'ngược chiều chia TỔNG   ·   cùng chiều chia HIỆU   ·   khoảng cách = một vòng',
+           buoc=3, soBuoc=3,
+           loi=['Cả bài không có công thức mới nào cả, chỉ có khoảng cách đổi thành một '
+                'vòng.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='trên đường vòng, khoảng cách phải gặm là TRỌN một vòng',
+           thay='vòng 400 m: ngược chiều 400 : 5 = 80 giây · cùng chiều 400 : 1 = 400 giây',
+           loi=['Con nhớ câu này. Trên đường vòng, khoảng cách phải gặm là trọn một '
+                'vòng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_bon_cong_thuc_dong_nuoc(b):
+    """L5·B55·M2 Xuôi hơn ngược đúng HAI lần vận tốc nước — nhớ chia hai."""
+    return [
+        _c('bia', 'Bốn công thức của dòng nước', so_bai(b),
+           loi=['Thuyền xuôi mười lăm cây giờ, ngược chín. Hỏi vận tốc dòng nước.',
+                'Trừ phát ăn ngay ra sáu là hỏng, thử ngược lại sẽ thấy.']),
+        _c('y_toan', 'Dòng sông là một băng chuyền',
+           'XUÔI được cõng:  V xuôi = V thực + V nước   ·   NGƯỢC bị cản:  V ngược = V thực − V nước',
+           buoc=1, soBuoc=3,
+           loi=['Dòng sông giống cái băng chuyền ở sân bay. Đi xuôi thì được cõng thêm, '
+                'đi ngược thì bị cản lại.',
+                'Nên xuôi bằng thực cộng nước, ngược bằng thực trừ nước.']),
+        _c('so_do_doan', 'Xuôi hơn ngược đúng HAI lần vận tốc nước',
+           be=9, lon=15, nhanBe='V ngược', nhanLon='V xuôi', hienHieu=True,
+           chuHieu='hiệu 6 = 2 lần V nước', chuTong='tổng 24 = 2 lần V thực',
+           chuPhu='Cõng một lần rồi cản một lần, nên khoảng chênh là HAI lần nước.',
+           chuCuoi='V nước = 6 : 2 = 3   ·   V thực = 24 : 2 = 12',
+           loi=['Vẽ ra thì thấy khoảng chênh giữa hai vận tốc là hai lần vận tốc nước, '
+                'vì cõng một lần rồi cản một lần.',
+                'Nên nước bằng sáu chia hai, ba. Còn thực bằng hai mươi tư chia hai, '
+                'mười hai.']),
+        _c('y_toan', 'Đây đúng là bài tổng hiệu quen mặt',
+           'V nước = (V xuôi − V ngược) : 2   ·   V thực = (V xuôi + V ngược) : 2',
+           buoc=2, soBuoc=3,
+           loi=['Đây đúng là bài tổng hiệu đã học, chỉ đổi tên hai đại lượng.',
+                'Quên chia hai là ra ngay con số sáu, mà sáu thì thuyền thực chỉ còn '
+                'chín, đi ngược thành ba, không khớp.']),
+        _c('y_toan', 'Đề cho THỜI GIAN thì dựng vận tốc trước',
+           'khúc sông 36 km:  V xuôi = 36 : 2,4 = 15   ·   V ngược = 36 : 4 = 9',
+           buoc=3, soBuoc=3,
+           loi=['Đề thường không cho vận tốc mà cho thời gian, khi ấy phải dựng vận tốc '
+                'trước bằng tam giác đã học.',
+                'Ba mươi sáu chia hai phẩy tư được mười lăm, chia bốn được chín, rồi về '
+                'lại bài cũ.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='xuôi hơn ngược đúng HAI lần vận tốc nước — nhớ chia hai',
+           thay='xuôi 15, ngược 9 → nước (15 − 9) : 2 = 3 · thực (15 + 9) : 2 = 12',
+           loi=['Con nhớ câu này. Xuôi hơn ngược đúng hai lần vận tốc nước, nên phải '
+                'chia hai.',
+                'Và cộng lại thì được hai lần vận tốc thực, cũng chia hai.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_beo_troi_khuc_song(b):
+    """L5·B55·M3 Bèo không có máy, nên bèo trôi đúng bằng vận tốc dòng nước."""
+    return [
+        _c('bia', 'Bèo trôi và khúc sông hai chiều', so_bai(b),
+           loi=['Khóm bèo trôi ba mươi sáu cây từ A xuống B, hỏi mấy giờ?',
+                'Vớ ngay vận tốc thuyền đem chia là gắn nhầm máy cho khóm bèo.']),
+        _c('y_toan', 'Soi xem cái trôi ấy có MÁY không',
+           'bèo · khúc gỗ · chai nổi   →   không chân vịt, không máy nổ', buoc=1,
+           soBuoc=3,
+           loi=['Cứ soi xem cái đang trôi ấy có máy không. Bèo, khúc gỗ, chai nổi thì '
+                'không có chân vịt cũng chẳng có máy nổ.',
+                'Chúng nằm im trên mặt nước và được dòng nước khiêng đi.']),
+        _c('y_toan', 'Nên vận tốc bèo ĐÚNG BẰNG vận tốc dòng nước',
+           'V bèo = V nước = 3 km/giờ   →   t = 36 : 3 = 12 giờ', buoc=2, soBuoc=3,
+           loi=['Nên vận tốc bèo đúng bằng vận tốc dòng nước, ba cây giờ.',
+                'Ba mươi sáu chia ba là mười hai giờ, chậm rề rề so với thuyền máy, và '
+                'đúng là phải thế.']),
+        _c('day_so', 'Cùng một khúc sông, hai lượt hai vận tốc',
+           so=['2,4', '4'], nhanHang='giờ · xuôi và ngược',
+           chuPhu='36 : 15 = 2,4 giờ = 2 giờ 24 phút  ·  36 : 9 = 4 giờ',
+           loi=['Thuyền xuôi rồi ngược về trên cùng một khúc sông, nhưng hai lượt hai '
+                'vận tốc khác nhau.',
+                'Xuôi hết hai phẩy tư giờ, tức hai giờ hai mươi tư phút, còn ngược hết '
+                'bốn giờ.']),
+        _c('y_toan', 'Cả chuyến thì CỘNG hai lượt, đừng chia đôi',
+           '2,4 + 4 = 6,4 giờ   ·   không phải 36 × 2 chia cho một vận tốc nào cả',
+           buoc=3, soBuoc=3,
+           loi=['Cả chuyến thì cộng hai lượt lại, sáu phẩy bốn giờ.',
+                'Đừng lấy quãng đường gấp đôi rồi chia cho một vận tốc, vì có vận tốc '
+                'nào dùng cho cả hai lượt đâu.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='bèo không có máy — bèo trôi đúng bằng vận tốc DÒNG NƯỚC',
+           thay='nước 3 km/giờ, quãng 36 → bèo trôi 36 : 3 = 12 giờ',
+           loi=['Con nhớ câu này. Bèo không có máy, nên bèo trôi đúng bằng vận tốc dòng '
+                'nước.',
+                'Đọc đề thấy vật trôi là soi máy trước đã.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 def kb5_duoi_kip_gap_nhau(b):
     """L5·B54·M1 Vẽ hai mũi tên trước: cùng chiều chia HIỆU, đối đầu chia TỔNG."""
     return [
@@ -15453,6 +15594,9 @@ def kb5_banh_xe_lan(b):
 
 
 BO = {
+    'DL:KSN5Q1.B55.M1': kb5_duong_vong,
+    'DL:KSN5Q1.B55.M2': kb5_bon_cong_thuc_dong_nuoc,
+    'DL:KSN5Q1.B55.M3': kb5_beo_troi_khuc_song,
     'DL:KSN5Q1.B54.M1': kb5_duoi_kip_gap_nhau,
     'DL:KSN5Q1.B54.M2': kb5_xuat_phat_khac_gio,
     'DL:KSN5Q1.B54.M3': kb5_sau_khi_gap_lan_hai,

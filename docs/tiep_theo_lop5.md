@@ -7,17 +7,20 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **162/168** — bài 1 tới 54 |
-| Còn lại | 6 micro · 2 bài lớn · bài 55 · 56 — hết quyển |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 tới 54 chưa deploy** |
+| Đã xong | **165/168** — bài 1 tới 55 |
+| Còn lại | **3 micro · bài 56** — làm xong là HẾT QUYỂN |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 tới 55 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
-## Mở đầu buổi sau: làm bài 55
+## Mở đầu buổi sau: làm bài 56 — bài CUỐI của quyển
 
-Còn đúng hai bài: 55 (Chuyển động trên đường vòng) · 56 (Tàu dài qua mốc và qua
-cầu) là **HẾT QUYỂN**. Cả hai đều dùng được cảnh `duong_di` vừa dựng ở bài 54.
-Chạy đúng nhịp bảy bước ở dưới.
+Bài 56: M1 tàu dài qua mốc và qua cầu · M2 khi cái mốc cũng biết chạy · M3 hai kim
+đồng hồ đuổi nhau. Làm xong là **hết quyển 168/168**. M1 dùng `so_do_doan` (cầu là
+đoạn ngắn, quãng tàu đi là đoạn dài, phần dôi ra chính là thân tàu); M2 dùng
+`duong_di`; M3 dùng `dong_ho` sẵn có.
+
+Xong bài 56 thì còn HAI việc: bật lại `khoaBai`, và deploy trọn bài 33 tới 56.
 
 ```bash
 git -C /Users/v/Documents/Code/web5/repo log --oneline -3   # commit cuối: deploy chương 8
@@ -32,7 +35,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**6**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**3**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 32 lần)
 

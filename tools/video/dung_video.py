@@ -289,13 +289,28 @@ def khung(c: dict) -> Image.Image:
         x0 = (W - tong) // 2
         chi = c.get("chiSo")            # ô đang được chỉ tay vào, 1-based
         y_tt, y_gt = 190, 300
+        f_nh = phong(30)
+
+        def nhan_hang(y, chu):
+            """Nhãn bên trái hàng, CĂN PHẢI để nó dừng ngay trước ô đầu tiên.
+
+            Bản đầu đặt cứng ở `x0 - 130`, hợp với nhãn ngắn như "số". Nhãn dài thì
+            nó chạy đè lên ô đầu — lớp 5 bài 55 M3 có hai ô, nhãn "giờ · xuôi và
+            ngược" nuốt mất luôn con số thứ nhất. Nhãn dài quá cả lề thì cho leo lên
+            trên hàng, thà lệch chỗ còn hơn đè mất số.
+            """
+            w_ = d.textlength(chu, font=f_nh)
+            if x0 - 20 - w_ >= 12:
+                d.text((x0 - 20 - w_, y), chu, font=f_nh, fill=MUTE)
+            else:
+                d.text((max((W - w_) / 2, 12), y - 48), chu, font=f_nh, fill=MUTE)
+
         if c.get("hienThuTu"):
-            d.text((x0 - 130, y_tt + 22), "đứng thứ", font=phong(30), fill=MUTE)
+            nhan_hang(y_tt + 22, "đứng thứ")
         # Nhãn hàng giá trị. Mặc định là "số", nhưng khai `nhanHang` để đổi khi hàng
         # ấy KHÔNG phải là số của đề — lớp 5 bài 21 vẽ dãy PHẦN LỆCH (−3 +3 +1 −1),
         # để nguyên chữ "số" thì bé đọc ra một dãy số không có trong đề nào cả.
-        d.text((x0 - 130, y_gt + 26), c.get("nhanHang", "số"), font=phong(30),
-               fill=MUTE)
+        nhan_hang(y_gt + 26, c.get("nhanHang", "số"))
         for i, v in enumerate(so):
             x = x0 + i * (rong_o + cach)
             sang = chi is not None and (i + 1) == chi
@@ -1229,8 +1244,17 @@ def khung(c: dict) -> Image.Image:
             d.line([xb, y_be, xb, y_lon], fill=NAVY, width=5)
             for y in (y_be, y_lon):
                 d.line([xb - 16, y, xb, y], fill=NAVY, width=5)
+            # Nhãn tổng nằm bên PHẢI ngoặc, mà lề bên ấy chỉ còn hơn hai trăm điểm.
+            # Nhãn dài hơn thế thì chảy ra ngoài mép và bị xén — bắt được ở bài 55
+            # M2 ("tổng 24 = 2 lần V thực" mất luôn chữ cuối). Nay ngắt dòng cho vừa
+            # lề, rồi xếp cả cụm dòng ấy cân giữa ngoặc.
             f = phong(30)
-            d.text((xb + 16, (y_be + y_lon) / 2 - 16), c["chuTong"], font=f, fill=NAVY)
+            rong_le = W - 16 - (xb + 16)
+            dong = ngat_dong(d, c["chuTong"], f, rong_le)
+            b_dong = int(f.size * 1.3)
+            y_bd = (y_be + y_lon) / 2 - b_dong * len(dong) / 2
+            for i, dg in enumerate(dong):
+                d.text((xb + 16, y_bd + i * b_dong), dg, font=f, fill=NAVY)
 
         if c.get("chuPhu"):
             giua(d, 470, c["chuPhu"], phong(36), INK, rong=W - 160)

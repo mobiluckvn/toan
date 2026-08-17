@@ -34,20 +34,7 @@
   "kidText": "Bèo không có máy nên trôi đúng bằng vận tốc dòng nước. Cùng một khúc sông nhưng xuôi và ngược mất thời gian khác nhau."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bèo, khúc gỗ, chai nổi — KHÔNG CÓ MÁY: chúng nằm im trên mặt nước và được dòng nước khiêng đi → V trôi = V DÒNG NƯỚC (3 km/h), tuyệt đối không phải V thực của thuyền nào cả."
-   },
-   {
-    "id": "K2",
-    "text": "Khóm bèo trôi 36 km: t = $36 : 3 = 12$ giờ — chậm rề rề so với thuyền máy vì chỉ có nước đẩy; lấy $36 : 12 = 3$ giờ là gắn nhầm máy thuyền cho bèo."
-   },
-   {
-    "id": "K3",
-    "text": "Hành trình kép cùng khúc sông: hai lượt HAI vận tốc — T xuôi = $36 : 15 = 2,4$ giờ = 2 giờ 24 phút; T ngược = $36 : 9 = 4$ giờ: cùng quãng nhưng thời gian KHÁC nhau; cả chuyến = 6,4 giờ = 6 giờ 24 phút (họ hàng Vtb B53: không chia đôi vận tốc!)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: KHÓM BÈO NGỦ TRÊN VAI DÒNG NƯỚC. Khóm bèo trôi từ bến A xuống bến B ba mươi sáu cây — hỏi mấy giờ. Trí Long vớ ngay vận tốc thuyền: \"ba sáu chia mười hai — ba giờ!\" Khoan — nhìn khóm bèo xem: có chân vịt không? Có máy nổ không? KHÔNG! Bèo chỉ nằm NGỦ trên vai dòng nước — nước khiêng đi đâu thì đến đó: vận tốc bèo ĐÚNG BẰNG vận tốc dòng nước — BA cây giờ! Ba mươi sáu chia ba — MƯỜI HAI giờ: bèo trôi cả nửa ngày, chậm rề rề là phải! Gắn máy thuyền cho bèo là đề một đằng tính một nẻo! Trận hai — thuyền chạy HÀNH TRÌNH KÉP: xuôi ba sáu cây rồi ngược về. Cùng MỘT khúc sông nhưng HAI lượt HAI vận tốc: xuôi mười lăm — ba sáu chia mười lăm: hai phẩy tư giờ — HAI GIỜ HAI MƯƠI TƯ PHÚT; ngược chín — ba sáu chia chín: BỐN giờ tròn! Cả chuyến sáu phẩy tư giờ — SÁU GIỜ HAI MƯƠI TƯ PHÚT: cùng quãng đường mà lượt về lâu hơn hẳn — dòng nước cản không nể ai!",
   "canonicalExamples": [
    {
@@ -72,14 +59,8 @@
     "counterExample": "Bèo 'chạy' 12 km/h thì đua ngang thuyền máy tắt dòng — ao nhà ai có khóm bèo thần tốc thế?!"
    }
   ],
-  "vocabulary": [
-   "ngủ trên vai dòng nước",
-   "soi máy - soi chân vịt",
-   "gắn nhầm máy cho bèo",
-   "hành trình kép",
-   "hai lượt hai vận tốc"
-  ],
-  "mantra": "BÈO KHÔNG CÓ MÁY — BÈO TRÔI ĐÚNG BẰNG VẬN TỐC DÒNG NƯỚC!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -101,45 +82,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Vận tốc dòng nước là 3 km/h. Một khóm bèo trôi từ A đến B dài 36 km. Hỏi khóm bèo trôi hết bao lâu?",
-    "display": {
-     "type": "story_panel",
-     "caption": "bèo chạy 12 km/h??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để soi máy bèo!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Nhìn khóm bèo: có chân vịt không? Có máy nổ không? KHÔNG! Bèo chỉ nằm NGỦ trên vai dòng nước — nước khiêng đi đâu thì đến đó: vận tốc bèo ĐÚNG BẰNG vận tốc dòng nước — BA cây giờ! Ba mươi sáu chia ba — MƯỜI HAI giờ: bèo trôi cả nửa ngày, chậm rề rề là phải! Gắn máy thuyền cho bèo là đề một đằng tính một nẻo!",
-    "display": {
-     "type": "drift_check_interactive",
-     "spec": {
-      "scan": "soi máy: bèo — KHÔNG máy → V = V nước = 3",
-      "calc": "36 : 3 = 12 giờ",
-      "wrong": "$36 : 12 = 3$ giờ ✗ (gắn máy nhầm)"
-     }
-    },
-    "interaction": {
-     "type": "scan_engine",
-     "answerKey": {
-      "value": 12
-     },
-     "successMessage": "Không máy — trôi bằng nước: 12 giờ!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -160,37 +102,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Trận hai — HÀNH TRÌNH KÉP: thuyền xuôi ba sáu cây rồi ngược về. Cùng MỘT khúc sông nhưng HAI lượt HAI vận tốc! Xuôi mười lăm: ba sáu chia mười lăm — hai phẩy tư giờ: HAI GIỜ HAI MƯƠI TƯ PHÚT! Ngược chín: ba sáu chia chín — BỐN giờ tròn! Cả chuyến sáu phẩy tư giờ — SÁU GIỜ HAI MƯƠI TƯ PHÚT: cùng quãng đường mà lượt về lâu hơn hẳn — dòng nước cản không nể ai!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "xuôi: 36 : 15 = 2,4 giờ = 2 giờ 24 phút",
-      "ngược: 36 : 9 = 4 giờ",
-      "cả chuyến 6,4 giờ = 6 giờ 24 phút"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: bèo không có máy — bèo trôi đúng bằng vận tốc dòng nước!",
-    "display": {
-     "type": "mantra_card",
-     "text": "BÈO TRÔI = V DÒNG NƯỚC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -477,108 +388,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B55.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "bèo chạy 12 km/h??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "36 : 12 = 3 giờ!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B55_M3_F1.png",
-   "sha256_16": "5b7f86af6aec0bea"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Bèo không có máy — bèo trôi bằng V dòng nước; thời gian xuôi ≠ ngược trên cùng khúc sông",
-    "steps": [
-     {
-      "text": "xuôi: 36 : 15 = 2,4 giờ = 2 giờ 24 phút"
-     },
-     {
-      "text": "ngược: 36 : 9 = 4 giờ"
-     },
-     {
-      "text": "cả chuyến 6,4 giờ = 6 giờ 24 phút"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B55_M3_F2.png",
-   "sha256_16": "5b12d39d616174bb"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Bèo, khúc gỗ, chai nổi",
-      "text": "KHÔNG CÓ MÁY: chúng nằm im trên mặt nước và được dòng nước khiêng đi → V trôi = V DÒNG NƯỚC (3 km/h), tuyệt đối không phải V thực của thuyền nào cả.",
-      "tone": "navy"
-     },
-     {
-      "label": "Khóm bèo trôi 36 km",
-      "text": "3 = 12 giờ",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "BÈO KHÔNG CÓ MÁY — BÈO TRÔI ĐÚNG BẰNG VẬN TỐC DÒNG NƯỚC!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B55_M3_F3.png",
-   "sha256_16": "c4d5e49bdf8c714c"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "KHÓM BÈO TRÔI 36 km — CHIA CHO VẬN TỐC NÀO?",
-    "wrong": {
-     "head": "LẤY V THUYỀN",
-     "steps": [
-      "36 : 12"
-     ],
-     "result": "3 giờ ✗ (bèo mọc chân vịt?)"
-    },
-    "right": {
-     "head": "LẤY V DÒNG NƯỚC",
-     "steps": [
-      "bèo KHÔNG có máy",
-      "36 : 3"
-     ],
-     "result": "12 giờ ✓"
-    },
-    "verdict": "Hành trình kép: xuôi 2 giờ 24 phút + ngược 4 giờ = 6 giờ 24 phút"
-   },
-   "caption": "Vật trôi tự do đi đúng bằng vận tốc dòng nước — soi máy trước khi chia",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B55_M3_F4.png",
-   "sha256_16": "f8439178cb0f9a82"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B48"
@@ -590,5 +400,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Bèo không có máy — bèo trôi bằng V dòng nước; thời gian xuôi ≠ ngược trên cùng khúc sông"
+ "titleDay": "Bèo không có máy — bèo trôi bằng V dòng nước; thời gian xuôi ≠ ngược trên cùng khúc sông",
+ "video": {
+  "giang": "DL_KSN5Q1_B55_M3_giang.mp4"
+ }
 }
