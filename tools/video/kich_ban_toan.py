@@ -13575,7 +13575,144 @@ def kb5_tron_hai_binh(b):
     ]
 
 
+def kb5_lam_chung_cong_viec(b):
+    """L5·B41·M1 Sức người biết cộng — ngày tháng thì không."""
+    return [
+        _c('bia', 'Hai người làm chung thì nhanh hơn bao nhiêu', so_bai(b),
+           loi=['Đề cho thời gian từng người làm riêng. Có một thứ cộng được, và một '
+                'thứ không.']),
+        _c('de_toan', 'Đề bài',
+           de='Người A đào giếng một mình 6 ngày xong. Người B một mình 12 ngày.\n'
+              'Hai người làm chung thì mấy ngày?',
+           loi=['Người A đào giếng một mình sáu ngày xong, người B một mình mười hai '
+                'ngày.']),
+        _c('y_toan', 'Quy ước nền: CẢ CÔNG VIỆC = 1',
+           'xong trong 6 ngày   →   mỗi ngày làm được 1 : 6 = 1/6 công việc',
+           buoc=1, soBuoc=3,
+           loi=['Quy ước nền. Cả công việc coi là một.',
+                'Xong trong sáu ngày thì mỗi ngày làm được một phần sáu công việc.']),
+        _c('phan_so', 'Sức mỗi người trong MỘT ngày', tu=1, mau=6, nhan='người A',
+           tu2=1, mau2=12, nhan2='người B',
+           chuPhu='Cùng một cái giếng — nên hai băng dài bằng nhau.',
+           chuCuoi='A làm 1/6 mỗi ngày · B làm 1/12 mỗi ngày.',
+           loi=['Sức mỗi người trong một ngày. A làm một phần sáu, B làm một phần mười '
+                'hai.',
+                'Cùng một cái giếng nên hai băng dài bằng nhau, so được với nhau.']),
+        _c('y_toan', 'Thứ CỘNG ĐƯỢC là năng suất, không phải ngày',
+           '1/6 + 1/12 = 3/12 = 1/4 công việc mỗi ngày', buoc=2, soBuoc=3,
+           loi=['Thứ cộng được là năng suất, chứ không phải số ngày.',
+                'Một phần sáu cộng một phần mười hai, được một phần tư mỗi ngày.']),
+        _c('y_toan', 'Rồi lấy 1 chia cho năng suất chung',
+           '1 : 1/4 = 4 ngày      ·      phép (6 + 12) : 2 = 9 ngày SAI từ gốc',
+           buoc=3, soBuoc=3,
+           loi=['Một chia một phần tư, được bốn ngày.',
+                'Còn lấy sáu cộng mười hai chia đôi ra chín thì sai từ gốc, hai người '
+                'làm mà lâu hơn một người.']),
+        _c('de_toan', 'Chiều ngược cùng máy ấy',
+           de='Chung 4 ngày xong; A riêng 6 ngày. B riêng mấy ngày?',
+           loi=['Chiều ngược cũng máy ấy, chỉ đổi cộng thành trừ.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='sức người biết CỘNG — ngày tháng thì KHÔNG',
+           thay='chuông soi: thời gian chung phải BÉ hơn thời gian riêng ngắn nhất',
+           loi=['Con nhớ câu này. Sức người biết cộng, ngày tháng thì không.',
+                'Và luôn soi lại, thời gian chung phải bé hơn thời gian riêng ngắn '
+                'nhất.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_ghep_doan_chung_rieng(b):
+    """L5·B41·M2 Mỗi khúc một năng suất — cộng dồn về đủ một."""
+    return [
+        _c('bia', 'Làm chung một lúc rồi tách ra làm riêng', so_bai(b),
+           loi=['Đề chia công việc thành mấy khúc, mỗi khúc một kiểu làm.']),
+        _c('de_toan', 'Đề bài',
+           de='A (6 ngày) và B (12 ngày) cùng đào 2 ngày thì B bận.\n'
+              'A đào nốt. Hỏi A đào thêm mấy ngày?',
+           loi=['A và B cùng đào hai ngày thì B bận, A đào nốt một mình.']),
+        _c('y_toan', 'Chia bài thành các KHÚC, mỗi khúc một năng suất',
+           'khúc CHUNG dùng 1/4      ·      khúc RIÊNG dùng 1/6', buoc=1, soBuoc=3,
+           loi=['Chia bài thành các khúc. Mỗi khúc dùng đúng năng suất của khúc ấy.']),
+        _c('phan_so', 'Khúc CHUNG — 2 ngày', tu=1, mau=2, nhan='đã xong',
+           chuPhu='2 ngày × 1/4 = 1/2 giếng.',
+           chuCuoi='Còn lại 1 − 1/2 = 1/2 giếng.',
+           loi=['Khúc chung hai ngày, mỗi ngày một phần tư, nên xong nửa giếng.',
+                'Còn lại đúng nửa giếng nữa.']),
+        _c('y_toan', 'Khúc RIÊNG — phải đổi sang năng suất của A',
+           '1/2 : 1/6 = 3 ngày   →   A cầm xẻng tổng cộng 2 + 3 = 5 ngày',
+           buoc=2, soBuoc=3,
+           loi=['Khúc riêng thì đổi sang năng suất của A, một phần sáu mỗi ngày.',
+                'Nửa giếng chia một phần sáu, được ba ngày. A cầm xẻng tổng cộng năm '
+                'ngày.']),
+        _c('y_toan', 'Kịch bản lật ngược chạy y hệt',
+           'A riêng 3 ngày = 3/6 = 1/2   →   còn 1/2 : 1/4 = 2 ngày chung',
+           buoc=3, soBuoc=3,
+           loi=['Kịch bản lật ngược cũng thế. A làm riêng ba ngày trước, xong nửa '
+                'giếng.',
+                'Nửa còn lại làm chung hết hai ngày.']),
+        _c('de_toan', 'Phép kiểm của mọi bài ghép khúc',
+           de='cộng dồn phần việc các khúc phải về ĐÚNG 1',
+           loi=['Phép kiểm của mọi bài ghép khúc. Cộng dồn phần việc các khúc phải về '
+                'đúng một.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='mỗi khúc MỘT năng suất   —   cộng dồn về đủ 1',
+           thay='dùng nhầm năng suất chung cho khúc riêng là sai ngay khúc ấy',
+           loi=['Con nhớ câu này. Mỗi khúc một năng suất, và cộng dồn phải về đủ '
+                'một.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_luan_phien_chu_ky(b):
+    """L5·B41·M3 Chu kỳ cuối dở dang phải xét tay; phần lẻ của giờ nhân 60."""
+    return [
+        _c('bia', 'Hai người thay phiên nhau, mỗi người một giờ', so_bai(b),
+           loi=['Lần này hai người không làm cùng lúc, mà thay phiên nhau từng giờ.']),
+        _c('de_toan', 'Trước hết, làm liền mạch',
+           de='A sơn hàng rào một mình 4 giờ, B một mình 6 giờ.\nCùng sơn thì bao lâu?',
+           loi=['A sơn hàng rào một mình bốn giờ, B một mình sáu giờ. Cùng sơn thì bao '
+                'lâu xong.']),
+        _c('y_toan', 'Máy cũ chạy, nhưng đáp ra số lẻ',
+           '1/4 + 1/6 = 5/12   →   1 : 5/12 = 12/5 = 2,4 giờ', buoc=1, soBuoc=3,
+           loi=['Máy cũ chạy. Một phần tư cộng một phần sáu bằng năm phần mười hai.',
+                'Một chia năm phần mười hai, được hai phẩy tư giờ.']),
+        _c('y_toan', 'Đồng hồ KHÔNG chạy hệ mười',
+           'phần lẻ của giờ phải nhân 60   →   0,4 × 60 = 24 phút   →   2 giờ 24 phút',
+           buoc=2, soBuoc=3,
+           loi=['Nhưng đồng hồ không chạy hệ mười. Phần lẻ của giờ phải nhân sáu '
+                'mươi.',
+                'Không phẩy tư giờ là hai mươi tư phút, nên đáp là hai giờ hai mươi tư '
+                'phút.']),
+        _c('de_toan', 'Nay đổi kịch bản: LUÂN PHIÊN',
+           de='Mỗi người sơn một giờ rồi đổi ca. Bao lâu xong?',
+           loi=['Nay đổi kịch bản. Mỗi người sơn một giờ rồi đổi ca cho nhau.']),
+        _c('day_so', 'Gói theo CHU KỲ hai giờ', so=['5/12', '10/12', '1'],
+           nhanHang='đã xong', chuPhu='sau 1 chu kỳ · sau 2 chu kỳ · đích.',
+           loi=['Gói theo chu kỳ hai giờ. Mỗi chu kỳ xong năm phần mười hai.',
+                'Hai chu kỳ hết bốn giờ, xong mười phần mười hai.']),
+        _c('y_toan', 'Chu kỳ cuối DỞ DANG — phải xét tay',
+           'còn 1 − 10/12 = 1/6   ·   giờ thứ 5 là ca của A (1/4 mỗi giờ)',
+           buoc=3, soBuoc=3,
+           loi=['Chu kỳ cuối dở dang nên phải xét tay, cấm chia trơn tuột.',
+                'Còn một phần sáu, mà giờ thứ năm là ca của A.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='chu kỳ cuối dở dang — xét NGƯỜI, xét VIỆC, xét GIỜ',
+           thay='1/6 : 1/4 = 2/3 giờ = 40 phút   →   tổng cộng 4 giờ 40 phút',
+           loi=['Một phần sáu chia một phần tư, được hai phần ba giờ, tức bốn mươi '
+                'phút.',
+                'Tổng cộng bốn giờ bốn mươi phút. Con nhớ, phần lẻ của giờ nhân sáu '
+                'mươi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B41.M1': kb5_lam_chung_cong_viec,
+    'DL:KSN5Q1.B41.M2': kb5_ghep_doan_chung_rieng,
+    'DL:KSN5Q1.B41.M3': kb5_luan_phien_chu_ky,
     'DL:KSN5Q1.B40.M1': kb5_nong_do_dung_im,
     'DL:KSN5Q1.B40.M2': kb5_chieu_nguoc_pha_che,
     'DL:KSN5Q1.B40.M3': kb5_tron_hai_binh,
