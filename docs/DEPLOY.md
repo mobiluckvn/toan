@@ -285,28 +285,23 @@ Một phiên học 15 phút ≈ **30–40 lượt ghi** + vài lượt đọc.
 Một con học đều mỗi ngày ≈ **1.200 lượt ghi/tháng** — nằm gọn trong hạn mức miễn phí của Firebase.
 Nội dung tĩnh nằm ở Hosting nên **không tính vào Firestore**.
 
-## Cổng cho luật Firestore (17-08-2026)
+## Cổng cho luật Firestore
+
+Kho ĐÃ CÓ `web/test/luat_firestore.test.mjs` từ 12-08-2026 — xem `docs/di_thu_gia_lap.md`.
+Nó nằm trong `npm test` và **tự bỏ qua ÊM, có NÓI RA** khi không có bộ giả lập.
 
 ```bash
-cd web && npm run test:luat        # tự bật máy giả lập rồi tắt
+cd web && PATH="/usr/local/Cellar/openjdk/26.0.2/bin:$PATH" \
+  npx firebase emulators:start --only auth,firestore,functions
+cd web && node test/luat_firestore.test.mjs      # hoặc npm test
 ```
 
-Đứng NGOÀI `npm test` vì cần máy giả lập, mà loạt kia phải chạy được cả khi mất mạng.
-**Chạy nó mỗi lần đụng `firestore.rules`** — đó là tệp có kiểu hỏng tệ nhất trong kho:
-từ chối trong im lặng, sổ tại máy con vẫn đúng nên không ai thấy gì.
-
-Ba chỗ vướng đã gỡ, ghi lại để khỏi mò lại:
-
-| vướng | cách gỡ |
-|---|---|
-| máy này KHÔNG có `gcloud` | đã tìm cả PATH, shell đăng nhập, tắt sandbox — không có thật. Kiểm luật bằng máy giả lập, không bằng Rules API |
-| Java homebrew là **keg-only** | `test:luat` tự chèn `/usr/local/Cellar/openjdk/26.0.2/bin` vào PATH |
-| cổng 8080 đã có thứ khác nghe | dùng `firebase.thuluat.json`, cổng 8099 |
-| `@firebase/rules-unit-testing@5` đòi firebase 12 | app dùng firebase 10 → lấy bản `^3`. **Cài vào `web/`**, để npm leo lên gốc kho là hai bản `@firebase/firestore` khác nhau và `doc()` không nhận thể hiện bên kia |
+⚠ Java của homebrew là **keg-only**. Sổ cũ ghi `/usr/local/opt/openjdk/bin`; trên máy
+này đường thật là `/usr/local/Cellar/openjdk/26.0.2/bin`.
 
 ⚠ **Đụng `firestore.rules` thì deploy phải kèm rules**, không thì luật mới không lên:
 
 ```bash
-npx firebase deploy --only hosting,firestore:rules          # đổi luật
-npx firebase deploy --only hosting,firestore:rules,functions # đổi cả hàm máy chủ
+npx firebase deploy --only hosting,firestore:rules            # đổi luật
+npx firebase deploy --only hosting,firestore:rules,functions  # đổi cả hàm máy chủ
 ```
