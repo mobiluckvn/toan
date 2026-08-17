@@ -34,20 +34,7 @@
   "kidText": "Trộn hai bình: lấy tổng đường chia tổng khối lượng. Bình nặng kéo điểm cân về phía nó, đừng cộng hai nồng độ rồi chia đôi."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Trộn = cộng hai bình cả TỬ lẫn MẪU: đường = 200 × 5% + 300 × 10% = $10 + 30 = 40$ g; khối = 500 g → nồng độ hỗn hợp = $40 : 500$ = 8% — KHÔNG phải ($5 + 10$) : $2 = 7$,5%: bình 300 g nặng hơn kéo điểm cân lệch về phía 10%."
-   },
-   {
-    "id": "K2",
-    "text": "TBC hai nồng độ chỉ đúng khi hai KHỐI bằng nhau — mỗi gam một lá phiếu: bình nào đông phiếu (nặng) thì nồng độ hỗn hợp ngả về phía nồng độ bình ấy (8% gần 10% hơn 5%)."
-   },
-   {
-    "id": "K3",
-    "text": "Chiều ngược — tìm lượng pha bằng THỪA – THIẾU quanh đích 8% (cân TBC B21 tái xuất): mỗi g loại 10% THỪA 2 (so đích); mỗi g loại 5% THIẾU 3 → 300 g loại 10% thừa $300  \\times  2 = 600$ → cần $600 : 3 = 200$ g loại 5% để cân bằng."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: CUỘC BỎ PHIẾU CỦA CÁC GAM ĐƯỜNG NƯỚC. Trộn 200 g loại 5% với 300 g loại 10%. Trí Long tính vèo: \"năm cộng mười chia hai — bảy phẩy năm phần trăm!\" Khoan — phép TBC hai nồng độ chỉ đúng khi hai bình NẶNG BẰNG NHAU: đây là cuộc bỏ phiếu mà MỖI GAM MỘT LÁ PHIẾU! Cộng thật cả tử lẫn mẫu: đường bằng hai trăm nhân năm phần trăm cộng ba trăm nhân mười phần trăm — mười cộng ba mươi bằng BỐN MƯƠI g; khối năm trăm g: bốn mươi chia năm trăm bằng TÁM phần trăm — lệch về phía bình ba trăm g đông phiếu! Chiều ngược của sư phụ: \"trộn bao nhiêu g loại 5% với 300 g loại 10% để được loại 8%?\" Chiếc cân thừa – thiếu B21 tái xuất quanh đích tám: mỗi g loại mười THỪA hai; mỗi g loại năm THIẾU ba. Ba trăm g loại mười thừa SÁU TRĂM — cần sáu trăm chia ba bằng HAI TRĂM g loại năm cân lại. Thử: đường 10 + 30 = 40 trên 500 đúng tám phần trăm!",
   "canonicalExamples": [
    {
@@ -72,14 +59,8 @@
     "counterExample": "7,5% của 500 g là 37,5 g đường — mà hai bình góp đúng 40 g: 2,5 g biến đi đâu?!"
    }
   ],
-  "vocabulary": [
-   "mỗi gam một lá phiếu",
-   "bình nặng kéo điểm cân",
-   "cộng cả tử lẫn mẫu",
-   "thừa – thiếu quanh đích",
-   "cân TBC tái xuất"
-  ],
-  "mantra": "MỖI GAM MỘT LÁ PHIẾU — BÌNH NẶNG KÉO ĐIỂM CÂN VỀ PHÍA MÌNH!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -101,46 +82,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Trộn 200 g nước đường loại 5% với 300 g loại 10%. Tính nồng độ của bình hỗn hợp.",
-    "display": {
-     "type": "story_panel",
-     "caption": "($5 + 10$) : $2 = 7$,5%??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để mở cuộc bỏ phiếu!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "MỖI GAM MỘT LÁ PHIẾU — cộng cả tử lẫn mẫu: đường bằng hai trăm nhân năm phần trăm cộng ba trăm nhân mười phần trăm — mười cộng ba mươi bằng BỐN MƯƠI g; khối năm trăm g: bốn mươi chia năm trăm bằng TÁM phần trăm — lệch về phía bình đông phiếu! Thử đáp bảy phẩy năm: đòi ba bảy phẩy năm g đường — hai bình góp đúng bốn mươi: hai phẩy năm g biến đâu?!",
-    "display": {
-     "type": "vote_mix_interactive",
-     "spec": {
-      "sugar": "200×5% + 300×10% = 10 + 30 = 40 g",
-      "mass": "500 g",
-      "result": "40 : 500 = 8%",
-      "note": "8% ngả về phía 10% (bình nặng)"
-     }
-    },
-    "interaction": {
-     "type": "sum_both_then_divide",
-     "answerKey": {
-      "value": 8
-     },
-     "successMessage": "40/500 = 8% — bình nặng kéo điểm cân!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -156,37 +97,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Sư phụ hỏi ngược: trộn bao nhiêu g loại năm với ba trăm g loại mười để được TÁM phần trăm? Chiếc cân thừa – thiếu tái xuất quanh đích tám: mỗi g loại mười THỪA hai; mỗi g loại năm THIẾU ba! Ba trăm g loại mười thừa ba trăm nhân hai — SÁU TRĂM; muốn cân bằng cần sáu trăm chia ba: HAI TRĂM g loại năm! Thử: đường mười cộng ba mươi là bốn mươi trên năm trăm — đúng tám phần trăm: cân thăng bằng!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "đích 8%: loại 10% thừa 2/g · loại 5% thiếu 3/g",
-      "300 g thừa 600 → cần 600 : 3 = 200 g loại 5%",
-      "thử: 40/500 = 8% ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: mỗi gam một lá phiếu — bình nặng kéo điểm cân về phía mình!",
-    "display": {
-     "type": "mantra_card",
-     "text": "MỖI GAM MỘT LÁ PHIẾU!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -475,102 +385,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B40.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "(5 + 10) : 2 = 7,5%??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "năm cộng mười chia hai — 7,5%!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B40_M3_F1.png",
-   "sha256_16": "0332dd26388bef91"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Trộn hai bình: mỗi gam một lá phiếu — tổng đường : tổng khối & sơ đồ thừa-thiếu",
-    "steps": [
-     {
-      "text": "đích 8%: loại 10% thừa 2/g · loại 5% thiếu 3/g"
-     },
-     {
-      "text": "300 g thừa 600 → cần 600 : 3 = 200 g loại 5%"
-     },
-     {
-      "text": "thử: 40/500 = 8%"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B40_M3_F2.png",
-   "sha256_16": "72ab1d8320abf408"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Trộn = cộng hai bình cả TỬ lẫn MẪU",
-      "text": "đường = 200 × 5% + 300 × 10% = 10 + 30 = 40 g; khối = 500 g → nồng độ hỗn hợp = 40 : 500 = 8% — KHÔNG phải (5 + 10) : 2 = 7,5%: bình 300 g nặng hơn kéo điểm cân lệch về phía 10%.",
-      "tone": "navy"
-     },
-     {
-      "label": "TBC hai nồng độ chỉ đúng khi hai KHỐI bằng nhau",
-      "text": "mỗi gam một lá phiếu: bình nào đông phiếu (nặng) thì nồng độ hỗn hợp ngả về phía nồng độ bình ấy (8% gần 10% hơn 5%).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "MỖI GAM MỘT LÁ PHIẾU — BÌNH NẶNG KÉO ĐIỂM CÂN VỀ PHÍA MÌNH!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B40_M3_F3.png",
-   "sha256_16": "c09c43699642dded"
-  },
-  {
-   "archetype": "balance_scale",
-   "params": {
-    "title": "TRỘN HAI BÌNH: MỖI GAM MỘT LÁ PHIẾU",
-    "left": {
-     "text": "200 g loại 5% → 10 g đường",
-     "weight": 2
-    },
-    "right": {
-     "text": "300 g loại 10% → 30 g đường",
-     "weight": 3
-    },
-    "verdict": "40 g đường : 500 g = 8% — KHÔNG phải 7,5%",
-    "note": "Bình nặng kéo điểm cân về phía mình — đúng luật đòn gánh lệch của bài 24"
-   },
-   "caption": "Nồng độ hỗn hợp = tổng đường : tổng khối, không phải trung bình hai nồng độ",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B40_M3_F4.png",
-   "sha256_16": "21d1ac7dd093a9d4"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B42"
@@ -582,5 +397,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Trộn hai bình: mỗi gam một lá phiếu — tổng đường : tổng khối & sơ đồ thừa-thiếu"
+ "titleDay": "Trộn hai bình: mỗi gam một lá phiếu — tổng đường : tổng khối & sơ đồ thừa-thiếu",
+ "video": {
+  "giang": "DL_KSN5Q1_B40_M3_giang.mp4"
+ }
 }

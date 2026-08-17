@@ -34,20 +34,7 @@
   "kidText": "Thêm nước hay cô cạn thì lượng đường đứng im, nhưng bình phình ra hay co lại nên nồng độ phải tính lại."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Nồng độ = ĐƯỜNG : CẢ BÌNH (đọc sang %): bình 400 g loại 10% → đường 40 g; bình 500 g chứa 40 g đường → $40 : 500$ = 8% — anh em ruột của máy tươi – khô B39."
-   },
-   {
-    "id": "K2",
-    "text": "Câu hỏi vàng trước mọi biến cố: CHẤT NÀO ĐỨNG IM? Thêm nước → đường đứng im; CÔ CẠN (nước bay) → cũng đường đứng im; thêm đường → NƯỚC đứng im (bài M2) — kẻ đứng im cầm neo (nghi thức cầm-thước chương 9 gọi về)."
-   },
-   {
-    "id": "K3",
-    "text": "Đường đứng im NHƯNG bình đổi cỡ → nồng độ PHẢI tính lại trên bình mới: thêm 100 g nước: 40 : ($400 + 100$) = 8% (giảm); cô cạn còn 250 g: $40 : 250$ = 16% (tăng) — cô cạn là thêm-nước chạy ngược."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: GIAN HÀNG NƯỚC ĐƯỜNG — NHÃN DÁN TRÊN BÌNH PHÌNH. Bình 400 g nước đường loại 10% — đường BỐN MƯƠI g. Pha thêm 100 g nước lọc. Trí Long khoát tay: \"chỉ thêm nước, có động vào đường đâu — nhãn vẫn 10%!\" Câu hỏi vàng: chất nào đứng im? ĐƯỜNG — bốn mươi g vẫn nguyên: đường cầm neo! Nhưng nồng độ là đường chia CẢ BÌNH — mẫu số đã PHÌNH từ 400 lên NĂM TRĂM g: bốn mươi chia năm trăm bằng TÁM phần trăm! Đường đứng im mà nhãn vẫn phải thay — vì bình phình. Cô cạn là thêm-nước chạy NGƯỢC: đun bay bớt nước còn 250 g — đường vẫn bốn mươi g nhưng bình CO lại: bốn mươi chia hai trăm năm mươi bằng MƯỜI SÁU phần trăm — nồng độ TĂNG! Một neo đường — hai chiều bình: phình thì loãng, co thì đậm.",
   "canonicalExamples": [
    {
@@ -78,14 +65,8 @@
     "counterExample": "Nếu vẫn 10% thì bình 500 g phải chứa 50 g đường — 10 g đường mới ở đâu ra khi chỉ đổ nước lọc?!"
    }
   ],
-  "vocabulary": [
-   "nồng độ = đường : cả bình",
-   "câu hỏi vàng",
-   "kẻ đứng im cầm neo",
-   "bình phình thì loãng",
-   "cô cạn chạy ngược"
-  ],
-  "mantra": "ĐƯỜNG ĐỨNG IM NHƯNG BÌNH PHÌNH — NỒNG ĐỘ PHẢI TÍNH LẠI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -107,47 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "(a) Bình 400 g nước đường loại 10% — tính lượng đường. (b) Bình 500 g chứa 40 g đường — tính nồng độ.",
-    "display": {
-     "type": "story_panel",
-     "caption": "thêm nước lọc — nhãn vẫn 10%??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để cân lại bình!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
-    ],
-    "narration": "Câu hỏi vàng: chất nào ĐỨNG IM? Thêm nước — ĐƯỜNG đứng im: bốn mươi g vẫn nguyên, đường cầm neo! Nhưng nồng độ là đường chia CẢ BÌNH — mẫu số đã PHÌNH từ bốn trăm lên NĂM TRĂM g: bốn mươi chia năm trăm bằng TÁM phần trăm! Thử nhãn cũ: mười phần trăm của năm trăm là năm mươi g đường — mười g mới ở đâu ra?!",
-    "display": {
-     "type": "jar_dilute_interactive",
-     "spec": {
-      "before": "400 g · 10% → đường 40 g",
-      "event": "+100 g nước",
-      "anchor": "đường 40 g đứng im",
-      "after": "40 : 500 = 8%"
-     }
-    },
-    "interaction": {
-     "type": "ask_gold_then_recompute",
-     "answerKey": {
-      "value": 8
-     },
-     "successMessage": "Neo 40 g — bình 500: nồng độ 8%!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -168,38 +108,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Cô cạn là thêm-nước chạy NGƯỢC: đun bay bớt nước, bình còn hai trăm năm mươi g — chất nào đứng im? Vẫn ĐƯỜNG: nước bay chứ đường không bay (mỏ neo dưa hấu gọi về!). Đường bốn mươi g — bình CO còn hai trăm năm mươi: bốn mươi chia hai trăm năm mươi bằng MƯỜI SÁU phần trăm — nồng độ TĂNG! Một neo đường — hai chiều bình: phình thì loãng, co thì đậm. Còn biến cố THÊM ĐƯỜNG? Đường đang đổ thêm — mất quyền làm neo: chuyện của bài sau!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "cô cạn còn 250 g: neo 40 g → 40 : 250 = 16%",
-      "phình → loãng (8%) · co → đậm (16%)",
-      "thêm đường → neo đổi chủ (bài sau)"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: đường đứng im nhưng bình phình — nồng độ phải tính lại!",
-    "display": {
-     "type": "mantra_card",
-     "text": "BÌNH PHÌNH — TÍNH LẠI NỒNG ĐỘ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -569,131 +477,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B40.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "thêm nước lọc — nhãn vẫn 10%??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "chỉ thêm nước, có động vào đường đâu — nhãn vẫn 10%!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B40_M1_F1.png",
-   "sha256_16": "27dfc977fb3eb89c"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Nồng độ & câu hỏi vàng CHẤT NÀO ĐỨNG IM: thêm nước / cô cạn — đường làm neo",
-    "steps": [
-     {
-      "text": "cô cạn còn 250 g: neo 40 g → 40 : 250 = 16%"
-     },
-     {
-      "text": "phình → loãng (8%) · co → đậm (16%)"
-     },
-     {
-      "text": "thêm đường → neo đổi chủ (bài sau)"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B40_M1_F2.png",
-   "sha256_16": "1db4f18431f46059"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Nồng độ = ĐƯỜNG",
-      "text": "CẢ BÌNH (đọc sang %): bình 400 g loại 10% →…",
-      "tone": "navy"
-     },
-     {
-      "label": "Câu hỏi vàng trước mọi biến cố",
-      "text": "CHẤT NÀO ĐỨNG IM? Thêm nước → đường đứng im; CÔ CẠN (nước bay) → cũng đường đứng im; thêm đường → NƯỚC đứng im (bài M2) — kẻ đứng im cầm neo (nghi thức cầm-thước chương 9 gọi về).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "ĐƯỜNG ĐỨNG IM NHƯNG BÌNH PHÌNH — NỒNG ĐỘ PHẢI TÍNH LẠI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B40_M1_F3.png",
-   "sha256_16": "0ec836bc2ef66fb4"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "CÂU HỎI VÀNG: CHẤT NÀO ĐỨNG IM?",
-    "headers": [
-     "biến cố",
-     "chất đứng im",
-     "chất thay đổi"
-    ],
-    "comma_after": null,
-    "rows": [
-     {
-      "label": "",
-      "cells": [
-       "pha thêm nước",
-       "ĐƯỜNG",
-       "nước · khối"
-      ],
-      "color": "#E6FAF5"
-     },
-     {
-      "label": "",
-      "cells": [
-       "cô cạn bớt nước",
-       "ĐƯỜNG",
-       "nước · khối"
-      ],
-      "color": "#E6FAF5"
-     },
-     {
-      "label": "",
-      "cells": [
-       "thêm đường",
-       "NƯỚC",
-       "đường · khối"
-      ],
-      "color": "#FFF4DF",
-      "highlight": [
-       1
-      ]
-     }
-    ],
-    "note": "Nồng độ = đường : cả bình · bình 400 g loại 10% có 40 g đường"
-   },
-   "caption": "Mở mọi biến cố bằng câu hỏi vàng — ai đứng im người ấy làm mỏ neo",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B40_M1_F4.png",
-   "sha256_16": "e1d308e227930aac"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B42"
@@ -705,5 +489,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Nồng độ & câu hỏi vàng CHẤT NÀO ĐỨNG IM: thêm nước / cô cạn — đường làm neo"
+ "titleDay": "Nồng độ & câu hỏi vàng CHẤT NÀO ĐỨNG IM: thêm nước / cô cạn — đường làm neo",
+ "video": {
+  "giang": "DL_KSN5Q1_B40_M1_giang.mp4"
+ }
 }

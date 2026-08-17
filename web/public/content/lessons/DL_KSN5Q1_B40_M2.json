@@ -35,20 +35,7 @@
   "kidText": "Cần thêm bao nhiêu nước để đạt nồng độ mong muốn? Thêm gì thì thứ ấy mất quyền làm neo — trao neo cho kẻ đứng im."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Chiều ngược thêm-nước: muốn bình 400 g loại 10% về loại 8% — neo đường 40 g sẽ chiếm 8% khối MỚI → khối mới = $40 : 8  \\times  100 = 500$ g → thêm $500 - 400 = 100$ g nước (máy khô→tươi B39 đổi áo)."
-   },
-   {
-    "id": "K2",
-    "text": "Luật trao neo: THÊM GÌ thì thứ ấy mất quyền làm neo — thêm đường: đường đang đổi, NƯỚC mới là kẻ đứng im: nước = $400 - 40 = 360$ g."
-   },
-   {
-    "id": "K3",
-    "text": "Máy thêm-đường: muốn đạt 20% đường → nước chiếm 100% − 20% = 80% khối mới → khối mới = $360 : 80  \\times  100 = 450$ g → thêm $450 - 400 = 50$ g đường. Thử: đường $\\frac{90}{450}$ = 20% ✓ (đường cũ 40 chia tỉ lệ là đường-neo-ma!)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: BÀN PHA CHẾ — CHIẾC NEO ĐƯỢC TRAO TAY. Đơn một: \"bình 400 g loại 10% — thêm bao nhiêu nước để về loại 8%?\" Neo đường bốn mươi g; ở bình mới nó chiếm TÁM phần trăm → khối mới bằng bốn mươi chia tám nhân một trăm: NĂM TRĂM g — thêm MỘT TRĂM g nước! Đơn hai hiểm hơn: \"thêm bao nhiêu ĐƯỜNG để đạt hai mươi phần trăm?\" Trí Long quen tay lấy đường cũ bốn mươi chia hai mươi phần trăm… Khoan — lần này ĐƯỜNG đang được đổ thêm: kẻ đang đổi không được cầm neo (luật cầm-thước!): trao neo cho NƯỚC! Nước = 400 − 40 = BA TRĂM SÁU MƯƠI g, đứng im tuyệt đối. Bình mới hai mươi phần trăm đường thì nước chiếm TÁM MƯƠI phần trăm → khối mới = 360 : 80 × 100 = BỐN TRĂM NĂM MƯƠI g → thêm NĂM MƯƠI g đường! Thử: đường 40 + 50 = 90 trên 450 đúng hai mươi phần trăm. Thêm gì — thứ ấy mất neo!",
   "canonicalExamples": [
    {
@@ -73,14 +60,8 @@
     "counterExample": "Khối 200 g < 400 g — đổ thêm đường mà bình nhẹ đi một nửa?!"
    }
   ],
-  "vocabulary": [
-   "bàn pha chế",
-   "trao neo",
-   "kẻ đang đổi không cầm neo",
-   "khối mới = neo : tỉ-lệ-mới",
-   "đường-neo-ma"
-  ],
-  "mantra": "THÊM GÌ THÌ THỨ ẤY MẤT NEO — TRAO NEO CHO KẺ ĐỨNG IM!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -102,46 +83,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Phải thêm bao nhiêu gam nước lọc vào bình 400 g loại 10% để được nước đường loại 8%?",
-    "display": {
-     "type": "story_panel",
-     "caption": "thêm đường → bình 200 g??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để trao lại neo!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Luật trao neo: THÊM GÌ thì thứ ấy MẤT neo — kẻ đang đổi không cầm neo, y luật cầm-thước! Trao neo cho NƯỚC: BA TRĂM SÁU MƯƠI g đứng im. Bình mới hai mươi phần trăm đường — nước chiếm TÁM MƯƠI phần trăm: khối mới bằng ba sáu mươi chia tám mươi nhân một trăm: BỐN TRĂM NĂM MƯƠI g — thêm NĂM MƯƠI g đường! Thử: đường chín mươi trên bốn năm mươi đúng hai mươi phần trăm!",
-    "display": {
-     "type": "handover_anchor_interactive",
-     "spec": {
-      "law": "thêm đường → NƯỚC cầm neo",
-      "anchor": "nước 360 g",
-      "bridge": "360 = 80% khối mới → 450 g",
-      "result": "thêm 50 g đường · thử 90/450 = 20%"
-     }
-    },
-    "interaction": {
-     "type": "handover_then_solve",
-     "answerKey": {
-      "value": 50
-     },
-     "successMessage": "Neo nước 360 g = 80% → 450 g → thêm 50 g đường!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -162,37 +103,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K1"
-    ],
-    "narration": "Chiều thêm-nước cùng máy, neo vẫn là đường: \"thêm bao nhiêu nước để bình bốn trăm g loại mười phần trăm về loại tám phần trăm?\" Neo đường bốn mươi g — ở bình mới chiếm TÁM phần trăm: khối mới bằng bốn mươi chia tám nhân một trăm — NĂM TRĂM g: thêm MỘT TRĂM g nước! Cùng một cây cầu neo-chia-tỉ-lệ-mới của bài dưa hấu — chỉ khác chỗ CHIẾC NEO ĐƯỢC TRAO ĐÚNG TAY: thêm nước neo đường, thêm đường neo nước!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "thêm nước: neo đường 40 = 8% → 500 g → +100 g",
-      "thêm đường: neo nước 360 = 80% → 450 g → +50 g",
-      "máy chung: khối mới = neo : tỉ-lệ-mới"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: thêm gì thì thứ ấy mất neo — trao neo cho kẻ đứng im!",
-    "display": {
-     "type": "mantra_card",
-     "text": "THÊM GÌ — MẤT NEO ẤY!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -491,131 +401,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B40.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "thêm đường → bình 200 g??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "neo đường 40 g — chia 20% ra khối 200 g!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B40_M2_F1.png",
-   "sha256_16": "968c2832261e7109"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Chiều ngược pha chế: khối mới = neo : tỉ-lệ-mới — thêm đường thì NƯỚC cầm neo",
-    "steps": [
-     {
-      "text": "thêm nước: neo đường 40 = 8% → 500 g → +100 g"
-     },
-     {
-      "text": "thêm đường: neo nước 360 = 80% → 450 g → +50 g"
-     },
-     {
-      "text": "máy chung: khối mới = neo : tỉ-lệ-mới"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B40_M2_F2.png",
-   "sha256_16": "bfd49e58bf7c3b0f"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Chiều ngược thêm-nước",
-      "text": "muốn bình 400 g loại 10% về loại 8% — neo đường 40 g sẽ chiếm 8% khối MỚI → khối mới = 40 : 8 × 100 = 500 g → thêm 500 − 400 = 100 g nước (máy khô→tươi B39 đổi áo).",
-      "tone": "navy"
-     },
-     {
-      "label": "Luật trao neo",
-      "text": "THÊM GÌ thì thứ ấy mất quyền làm neo",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "THÊM GÌ THÌ THỨ ẤY MẤT NEO — TRAO NEO CHO KẺ ĐỨNG IM!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B40_M2_F3.png",
-   "sha256_16": "468993673895762b"
-  },
-  {
-   "archetype": "stack_compare",
-   "params": {
-    "title": "THÊM NƯỚC ĐỂ BÌNH 400 g LOẠI 10% THÀNH LOẠI 8%",
-    "cols": [
-     {
-      "tag": "TRƯỚC",
-      "total": 400,
-      "total_label": "400 g · 10%",
-      "parts": [
-       {
-        "label": "đường 40 g",
-        "val": 40,
-        "color": "anchor"
-       },
-       {
-        "label": "nước 360 g",
-        "val": 360,
-        "color": "water"
-       }
-      ]
-     },
-     {
-      "tag": "SAU",
-      "total": 500,
-      "total_label": "500 g · 8%",
-      "parts": [
-       {
-        "label": "đường 40 g",
-        "val": 40,
-        "color": "anchor"
-       },
-       {
-        "label": "nước 460 g",
-        "val": 460,
-        "color": "water"
-       }
-      ]
-     }
-    ],
-    "anchor_label": "thêm nước → ĐƯỜNG cầm neo: 40 g",
-    "formula": "40 g = 8% khối mới → khối mới = 500 g → thêm 100 g nước",
-    "note": "Thêm đường thì đổi neo: NƯỚC 360 g = 80% khối mới → khối mới 450 g → thêm 50 g đường"
-   },
-   "caption": "Khối mới = mỏ neo : tỉ lệ mới — công thức chung cho mọi ca pha chế",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B40_M2_F4.png",
-   "sha256_16": "65b70a2443321471"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B42"
@@ -627,5 +413,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Chiều ngược pha chế: khối mới = neo : tỉ-lệ-mới — thêm đường thì NƯỚC cầm neo"
+ "titleDay": "Chiều ngược pha chế: khối mới = neo : tỉ-lệ-mới — thêm đường thì NƯỚC cầm neo",
+ "video": {
+  "giang": "DL_KSN5Q1_B40_M2_giang.mp4"
+ }
 }

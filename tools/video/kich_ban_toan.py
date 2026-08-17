@@ -13451,7 +13451,134 @@ def kb5_dua_hau_99(b):
     ]
 
 
+def kb5_nong_do_dung_im(b):
+    """L5·B40·M1 Đường đứng im nhưng bình phình — nồng độ phải tính lại."""
+    return [
+        _c('bia', 'Câu hỏi vàng của mọi bài pha chế', so_bai(b),
+           loi=['Bài pha chế nào cũng mở bằng một câu hỏi. Chất nào đứng im.']),
+        _c('de_toan', 'Đề bài',
+           de='Bình 400 g nước đường loại 10%. Thêm 100 g nước lọc.\nNồng độ mới là bao nhiêu?',
+           loi=['Bình bốn trăm gam nước đường loại mười phần trăm. Thêm một trăm gam '
+                'nước lọc.']),
+        _c('y_toan', 'Nồng độ là ĐƯỜNG chia CẢ BÌNH',
+           'bình 400 g loại 10%   →   đường 40 g', buoc=1, soBuoc=3,
+           loi=['Nồng độ là lượng đường chia cho cả bình.',
+                'Bình bốn trăm gam loại mười phần trăm thì có bốn mươi gam đường.']),
+        _c('y_toan', 'Câu hỏi vàng: CHẤT NÀO ĐỨNG IM?',
+           'thêm nước   →   ĐƯỜNG đứng im, đường cầm neo', buoc=2, soBuoc=3,
+           loi=['Thêm nước thì đường đứng im, nên đường cầm neo. Đúng nghi thức '
+                'cầm-thước của chương chín.']),
+        _c('day_so', 'Nhưng cái MẪU SỐ thì phình ra', so=['400', '500'],
+           nhanHang='gam bình', chuPhu='Đường vẫn 40 — mà bình phình từ 400 lên 500.',
+           loi=['Nhưng cái mẫu số thì phình ra. Đường vẫn bốn mươi gam, mà bình lên năm '
+                'trăm gam.']),
+        _c('y_toan', 'Nên nồng độ phải TÍNH LẠI trên bình mới',
+           '40 : 500 = 8%   —   nồng độ giảm', buoc=3, soBuoc=3,
+           loi=['Nên phải tính lại trên bình mới. Bốn mươi chia năm trăm, được tám phần '
+                'trăm.']),
+        _c('de_toan', 'Cô cạn là thêm-nước chạy NGƯỢC',
+           de='Đun cho bay bớt nước, bình còn 250 g',
+           loi=['Cô cạn là thêm nước chạy ngược. Nước bay chứ đường không bay.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='đường đứng im NHƯNG bình phình — nồng độ phải tính lại',
+           thay='cô cạn còn 250 g:  40 : 250 = 16%  — nồng độ tăng lên',
+           loi=['Con nhớ câu này. Đường đứng im nhưng bình đổi cỡ, nên nồng độ phải '
+                'tính lại.',
+                'Cô cạn còn hai trăm năm mươi gam thì nồng độ lên mười sáu phần '
+                'trăm.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_chieu_nguoc_pha_che(b):
+    """L5·B40·M2 Thêm gì thì thứ ấy mất neo — trao neo cho kẻ đứng im."""
+    return [
+        _c('bia', 'Thêm đường thì ai còn đứng im?', so_bai(b),
+           loi=['Bài trước thêm nước nên đường cầm neo. Nay thêm đường thì sao.']),
+        _c('de_toan', 'Đề bài',
+           de='Bình 400 g loại 10%. Phải THÊM ĐƯỜNG bao nhiêu\nđể được loại 20%?',
+           loi=['Bình bốn trăm gam loại mười phần trăm. Phải thêm bao nhiêu gam đường '
+                'để được loại hai mươi phần trăm.']),
+        _c('y_toan', 'Luật trao neo: THÊM GÌ thì thứ ấy mất neo',
+           'thêm đường   →   đường đang đổi   →   NƯỚC mới là kẻ đứng im',
+           buoc=1, soBuoc=3,
+           loi=['Luật trao neo. Thêm gì thì thứ ấy mất quyền làm neo.',
+                'Thêm đường nên đường đang đổi, nước mới là kẻ đứng im.']),
+        _c('y_toan', 'Trao neo cho nước', 'nước = 400 − 40 = 360 g, đứng im suốt bài',
+           buoc=2, soBuoc=3,
+           loi=['Trao neo cho nước. Bốn trăm trừ bốn mươi, còn ba trăm sáu mươi gam '
+                'nước.']),
+        _c('y_toan', 'Đọc đích bằng PHẦN BÙ rồi chia',
+           'đích 20% đường   →   nước chiếm 80%   →   360 : 80% = 450 g', buoc=3,
+           soBuoc=3,
+           loi=['Đích là hai mươi phần trăm đường, nên nước chiếm tám mươi phần trăm.',
+                'Ba trăm sáu mươi chia tám mươi phần trăm, khối mới bốn trăm năm mươi '
+                'gam.']),
+        _c('day_so', 'So hai khối là ra lượng thêm', so=['360', '450'],
+           nhanHang='gam', chuPhu='Nước 360 đứng im · khối mới 450 → thêm 50 g đường.',
+           loi=['So hai khối thì ra lượng thêm. Bốn trăm năm mươi trừ bốn trăm, thêm '
+                'năm mươi gam đường.',
+                'Thử lại, đường thành chín mươi trên bốn trăm năm mươi, đúng hai mươi '
+                'phần trăm.']),
+        _c('de_toan', 'Chiều thêm-NƯỚC thì neo lại là đường',
+           de='400 g loại 10% muốn về loại 8% — thêm bao nhiêu nước?',
+           loi=['Chiều thêm nước thì neo lại là đường, y như bài trước.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='THÊM GÌ thì thứ ấy mất neo   —   trao neo cho kẻ ĐỨNG IM',
+           thay='neo đường 40 g chiếm 8% khối mới → khối mới 500 g → thêm 100 g nước',
+           loi=['Con nhớ câu này. Thêm gì thì thứ ấy mất neo, trao neo cho kẻ đứng '
+                'im.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tron_hai_binh(b):
+    """L5·B40·M3 Mỗi gam một lá phiếu — bình nặng kéo điểm cân về phía mình."""
+    return [
+        _c('bia', 'Trộn hai bình thì nồng độ đi về đâu', so_bai(b),
+           loi=['Trộn hai bình khác nồng độ. Nhiều bạn cộng hai nồng độ rồi chia đôi.']),
+        _c('de_toan', 'Đề bài',
+           de='Trộn 200 g loại 5% với 300 g loại 10%.\nNồng độ bình hỗn hợp là bao nhiêu?',
+           loi=['Trộn hai trăm gam loại năm phần trăm với ba trăm gam loại mười phần '
+                'trăm.']),
+        _c('y_toan', 'Trộn là cộng CẢ TỬ lẫn MẪU',
+           'đường = 200 × 5% + 300 × 10% = 10 + 30 = 40 g   ·   khối = 500 g',
+           buoc=1, soBuoc=3,
+           loi=['Trộn là cộng cả tử lẫn mẫu. Đường mười gam cộng ba mươi gam, được bốn '
+                'mươi.',
+                'Khối cả bình là năm trăm gam.']),
+        _c('y_toan', 'Nên nồng độ hỗn hợp là 8 phần trăm',
+           '40 : 500 = 8%      ·      KHÔNG phải (5 + 10) : 2 = 7,5%', buoc=2, soBuoc=3,
+           loi=['Bốn mươi chia năm trăm, được tám phần trăm. Không phải bảy phẩy năm '
+                'như cộng chia đôi.']),
+        _c('day_so', 'Điểm cân ngả về phía nào', so=['5%', '8%', '10%'],
+           nhanHang='nồng độ', chuPhu='8% ngả về phía 10% — vì bình 300 g nặng hơn.',
+           loi=['Nhìn ba con số thì rõ. Tám phần trăm ngả về phía mười, vì bình ba trăm '
+                'gam nặng hơn.']),
+        _c('y_toan', 'MỖI GAM MỘT LÁ PHIẾU',
+           'trung bình cộng hai nồng độ chỉ đúng khi hai KHỐI bằng nhau',
+           buoc=3, soBuoc=3,
+           loi=['Mỗi gam là một lá phiếu. Cộng chia đôi chỉ đúng khi hai khối bằng '
+                'nhau.']),
+        _c('de_toan', 'Chiều ngược — chiếc cân thừa thiếu của bài 21',
+           de='Trộn bao nhiêu g loại 5% với 300 g loại 10% để được đúng 8%?',
+           loi=['Chiều ngược thì chiếc cân thừa thiếu của bài hai mốt quay lại.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='mỗi gam một LÁ PHIẾU — bình NẶNG kéo điểm cân về phía mình',
+           thay='mỗi g loại 10% thừa 2 · mỗi g loại 5% thiếu 3 → 300 × 2 = 600 → cần 200 g',
+           loi=['Mỗi gam loại mười thừa hai, mỗi gam loại năm thiếu ba.',
+                'Ba trăm gam thừa sáu trăm, chia ba thì cần hai trăm gam loại năm.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B40.M1': kb5_nong_do_dung_im,
+    'DL:KSN5Q1.B40.M2': kb5_chieu_nguoc_pha_che,
+    'DL:KSN5Q1.B40.M3': kb5_tron_hai_binh,
     'DL:KSN5Q1.B39.M1': kb5_mo_neo_chat_kho,
     'DL:KSN5Q1.B39.M2': kb5_chieu_nguoc_kho_tuoi,
     'DL:KSN5Q1.B39.M3': kb5_dua_hau_99,
