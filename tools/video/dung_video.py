@@ -739,6 +739,17 @@ def khung(c: dict) -> Image.Image:
         giua(d, 44, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
         cx, cy, r = W // 2, 400, 190
         d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=TEAL_DARK, width=6)
+        if c.get("rTrong"):
+            # ══ VÀNH KHĂN — vòng trong ĐỒNG TÂM ══
+            # Thêm 17-08 cho lớp 5 bài 50. Cả bài đứng ở chỗ "vành khăn là hiệu HAI
+            # diện tích", và bẫy của nó là công thức giả lấy hiệu hai bán kính rồi
+            # bình phương. Vẽ hai vòng đồng tâm thì bé thấy ngay: trong hình chẳng có
+            # đường tròn nào bán kính bằng hiệu ấy cả.
+            #
+            # Khai bằng TỈ LỆ so với vòng ngoài (0 tới 1), để hai vòng luôn chung một
+            # thước — khai bằng số đo thật thì tỉ trên màn sai, vành rộng hẹp tuỳ ý.
+            rt = r * float(c["rTrong"])
+            d.ellipse([cx - rt, cy - rt, cx + rt, cy + rt], outline=GOLD, width=6)
         if c.get("dayLech"):
             dy = 116
             x = math.sqrt(r * r - dy * dy)

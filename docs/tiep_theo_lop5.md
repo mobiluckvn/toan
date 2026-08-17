@@ -7,13 +7,13 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **144/168** — bài 1 tới 48, **HẾT chương 12** |
-| Còn lại | 24 micro · 8 bài lớn · chương 13 và 14 |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 tới 48 chưa deploy** |
+| Đã xong | **147/168** — bài 1 tới 49 |
+| Còn lại | 21 micro · 7 bài lớn · bài 50 tới 56 |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 tới 49 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
-## Mở đầu buổi sau: làm bài 49
+## Mở đầu buổi sau: làm bài 50
 
 Chương 12 (hình học) gồm bài 45–48; đã xong bài 45 · 46 · 47. ⚠ Bài 48 là HÌNH THANG — bộ vẽ CHƯA có cảnh ấy. Chạy đúng nhịp bảy bước ở dưới. Cây làm việc đang SẠCH,
 tám chương đầu đã deploy và đã đi thử bằng mắt trên bản thật.
@@ -31,7 +31,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**24**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**21**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 32 lần)
 

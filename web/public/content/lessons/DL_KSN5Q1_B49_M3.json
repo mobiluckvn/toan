@@ -34,24 +34,7 @@
   "kidText": "Bán kính gấp đôi thì chu vi gấp đôi nhưng diện tích gấp bốn, vì diện tích chứa bán kính tới hai lần."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Soi công thức đếm r: C = r × $2  \\times  3,14$ chứa MỘT lần r → r gấp k thì C gấp k; S = r × r × 3,14 chứa HAI lần r → r gấp k thì S gấp k × k: r gấp 2 → C gấp 2, S gấp 4; r gấp 3 → S gấp 9."
-   },
-   {
-    "id": "K2",
-    "text": "Câu \"gấp mấy lần\" hay tráo hai đại lượng — đọc kỹ đề hỏi CHU VI hay DIỆN TÍCH: hai đại lượng hai số phận (họ hàng hệ-số-kép cạnh-tăng-20% của B48)."
-   },
-   {
-    "id": "K3",
-    "text": "Hồ mở rộng r 5 → 10 (cùng tâm): phần tăng = HIỆU hai diện tích: $10  \\times  10  \\times  3,14 - 5  \\times  5  \\times  3,14 = 314 - 78,5 = 235,5 m^2$ (gấp đôi bán kính nhưng phần thêm gấp BA hồ cũ — vì S mới gấp 4!)."
-   },
-   {
-    "id": "K4",
-    "text": "Pizza phần tư d = 30: chu vi MIẾNG = cung ($94,2 : 4 = 23,55$) + HAI cạnh thẳng là HAI BÁN KÍNH ($15 + 15 = 30$) → 53,55 cm — lần ngón tay một vòng kín quanh miếng."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: SOI CÔNG THỨC ĐẾM CHỮ r. Câu đố: \"bán kính gấp đôi thì hình tròn gấp mấy lần?\" Trí Long đáp vèo: \"gấp đôi tuốt!\" Khoan — soi hai công thức mà ĐẾM chữ r: chu vi r nhân HAI nhân ba phẩy mười bốn — chỉ MỘT chữ r: r gấp hai thì C gấp HAI! Diện tích r nhân r nhân ba phẩy mười bốn — HAI chữ r: r gấp hai thì S gấp hai nhân hai — BỐN! Một lần r gấp k — hai lần r gấp k nhân k: người anh em của hệ-số-kép cạnh-tăng-hai-mươi ở hình vuông! Hồ tròn kiểm chứng: bán kính năm mở rộng thành mười — diện tích từ bảy tám phẩy năm vọt lên ba trăm mười bốn: GẤP BỐN đúng hẹn; phần đào thêm là HIỆU: hai trăm ba lăm phẩy năm mét vuông — gấp BA hồ cũ! Pizza của sư phụ: bánh ba mươi cắt tư — chu vi miếng đâu chỉ cung cong hai ba phẩy năm lăm: lần ngón tay một vòng KÍN còn HAI cạnh thẳng — hai BÁN KÍNH mười lăm: tổng NĂM MƯƠI BA PHẨY NĂM LĂM!",
   "canonicalExamples": [
    {
@@ -82,14 +65,8 @@
     "counterExample": "Hồ r 5 → 10: S từ 78,5 lên 314 — chia thử: $314 : 78,5 = 4$, đâu phải 2!"
    }
   ],
-  "vocabulary": [
-   "đếm chữ r",
-   "một lần r — hai lần r",
-   "hai đại lượng hai số phận",
-   "hồ mở rộng hiệu hai S",
-   "vòng kín có cạnh thẳng"
-  ],
-  "mantra": "MỘT LẦN r GẤP k — HAI LẦN r GẤP k NHÂN k!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,48 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Bán kính hình tròn gấp lên 2 lần. Hỏi chu vi gấp lên mấy lần? Diện tích gấp lên mấy lần?",
-    "display": {
-     "type": "story_panel",
-     "caption": "gấp đôi tuốt??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đếm chữ r!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Soi công thức ĐẾM chữ r: chu vi — r nhân HAI nhân ba phẩy mười bốn: chỉ MỘT chữ r — r gấp hai thì chu vi gấp HAI! Diện tích — r nhân r nhân ba phẩy mười bốn: HAI chữ r — r gấp hai thì diện tích gấp BỐN! Một lần r gấp k — hai lần r gấp k nhân k: người anh em của hệ-số-kép cạnh-tăng-hai-mươi bên hình vuông! Đề hỏi CHU VI hay DIỆN TÍCH — đọc kỹ kẻo bị tráo!",
-    "display": {
-     "type": "count_r_interactive",
-     "spec": {
-      "C": "C = r × 2 × 3,14 → 1 chữ r → gấp k",
-      "S": "S = r × r × 3,14 → 2 chữ r → gấp k × k",
-      "k2": "r gấp 2: C ×2 · S ×4"
-     }
-    },
-    "interaction": {
-     "type": "count_letters",
-     "answerKey": {
-      "values": [
-       2,
-       4
-      ]
-     },
-     "successMessage": "Đếm r: C gấp 2 — S gấp 4!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -173,38 +108,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Hồ tròn kiểm chứng: bán kính năm mở rộng thành mười — diện tích từ bảy tám phẩy năm vọt lên ba trăm mười bốn: GẤP BỐN đúng hẹn! Phần đào thêm là HIỆU hai diện tích: hai trăm ba lăm phẩy năm mét vuông — gấp BA hồ cũ! Pizza của sư phụ: bánh ba mươi cắt tư qua tâm — chu vi miếng đâu chỉ cung cong: cung bằng chín tư phẩy hai chia bốn — hai ba phẩy năm lăm; lần ngón tay một vòng KÍN còn HAI cạnh thẳng — hai BÁN KÍNH mười lăm: tổng NĂM MƯƠI BA PHẨY NĂM LĂM xăng-ti-mét!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "hồ: 314 − 78,5 = 235,5 (S ×4 ✓)",
-      "pizza: cung 23,55 + 15 + 15 = 53,55",
-      "vòng kín: cong + hai bán kính"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: một lần r gấp k — hai lần r gấp k nhân k!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ĐẾM CHỮ r MÀ GẤP!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -499,174 +402,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B49.M3",
- "figureSpec": [
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "",
-    "points": {
-     "O": [
-      0,
-      0
-     ],
-     "A": [
-      10,
-      0
-     ],
-     "B": [
-      5,
-      0
-     ]
-    },
-    "shapes": [
-     {
-      "circle": {
-       "at": "O",
-       "r": 10
-      },
-      "fill": "teal",
-      "label": ""
-     },
-     {
-      "circle": {
-       "at": "O",
-       "r": 5,
-       "z": 4
-      },
-      "fill": "gold",
-      "label": "hồ cũ 78,5",
-      "dy": 0
-     }
-    ],
-    "segments": [
-     {
-      "from": "O",
-      "to": "A",
-      "dy": 5,
-      "dx": 12
-     }
-    ],
-    "show_points": []
-   },
-   "caption": "Đề bài — số đo đã cho",
-   "id": "F0",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B49_M3_F0.png",
-   "sha256_16": "d332513c1ce3458f"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Phép gấp k: một lần r gấp k — hai lần r gấp k × k; hồ mở rộng & pizza phần tư",
-    "steps": [
-     {
-      "text": "hồ: 314 − 78,5 = 235,5 (S ×4 )"
-     },
-     {
-      "text": "pizza: cung 23,55 + 15 + 15 = 53,55"
-     },
-     {
-      "text": "vòng kín: cong + hai bán kính"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B49_M3_F2.png",
-   "sha256_16": "df13badd75f6e25b"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Soi công thức đếm r",
-      "text": "C = r × 2 × 3,14 chứa MỘT lần r → r gấp k thì C gấp k; S = r × r × 3,14 chứa HAI lần r → r gấp k thì S gấp k × k: r gấp 2 → C gấp 2, S gấp 4; r gấp 3 → S gấp 9.",
-      "tone": "navy"
-     },
-     {
-      "label": "Câu \"gấp mấy lần\" hay tráo hai đại lượng",
-      "text": "đọc kỹ đề hỏi CHU VI hay DIỆN TÍCH: hai đại lượng hai số phận (họ hàng hệ-số-kép cạnh-tăng-20% của B48).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "MỘT LẦN r GẤP k — HAI LẦN r GẤP k NHÂN k!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B49_M3_F3.png",
-   "sha256_16": "c29a6aa4e6ed770e"
-  },
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "HỒ MỞ RỘNG: r GẤP 2 THÌ S GẤP 4 — PHẦN THÊM GẤP 3",
-    "points": {
-     "O": [
-      0,
-      0
-     ],
-     "A": [
-      10,
-      0
-     ],
-     "B": [
-      5,
-      0
-     ]
-    },
-    "shapes": [
-     {
-      "circle": {
-       "at": "O",
-       "r": 10
-      },
-      "fill": "teal",
-      "label": ""
-     },
-     {
-      "circle": {
-       "at": "O",
-       "r": 5,
-       "z": 4
-      },
-      "fill": "gold",
-      "label": "hồ cũ 78,5",
-      "dy": 0
-     }
-    ],
-    "segments": [
-     {
-      "from": "O",
-      "to": "A",
-      "label": "r mới = 10",
-      "dy": 5,
-      "dx": 12
-     }
-    ],
-    "show_points": [],
-    "formula": "S mới = 314 · phần mở rộng = 314 − 78,5 = 235,5 m² = 3 lần hồ cũ",
-    "note": "C chứa MỘT lần r → gấp 2 · S chứa HAI lần r → gấp 2 × 2 = 4"
-   },
-   "caption": "Đếm số chữ r trong công thức là biết gấp mấy lần",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B49_M3_F4.png",
-   "sha256_16": "1e578f177654c9b8"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B45"
@@ -678,5 +414,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Phép gấp k: một lần r gấp k — hai lần r gấp k × k; hồ mở rộng & pizza phần tư"
+ "titleDay": "Phép gấp k: một lần r gấp k — hai lần r gấp k × k; hồ mở rộng & pizza phần tư",
+ "video": {
+  "giang": "DL_KSN5Q1_B49_M3_giang.mp4"
+ }
 }

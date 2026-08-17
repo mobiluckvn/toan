@@ -35,20 +35,7 @@
   "kidText": "Biết chu vi thì chia thẳng ra đường kính. Biết diện tích thì gặp câu đố \"số nào nhân chính nó ra 25?\" — thử chứ đừng chia 2."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Ngược từ CHU VI — đường chia thẳng tắp: d = C : $3,14 = 31,4 : 3,14 = 10$ cm; r = $10 : 2 = 5$ cm. Thử xuôi: $10  \\times  3,14 = 31,4$ ✓."
-   },
-   {
-    "id": "K2",
-    "text": "Ngược từ DIỆN TÍCH — hai chặng: chặng 1 chia 3,14: r × r = $78,5 : 3,14 = 25$; chặng 2 là CÂU ĐỐ \"số nào nhân chính nó ra 25?\" — gỡ bằng phép thử: $5  \\times  5 = 25$ → r = 5 cm."
-   },
-   {
-    "id": "K3",
-    "text": "Quán tính nguy hiểm: công thức S có \"r hai lần\" khiến tay muốn chia tiếp 25 cho 2 thành 12,5 — nhưng $12,5  \\times  12,5 = 156,25$ ≠ 25: r nhân CHÍNH NÓ gỡ bằng phép thử, không bằng phép chia!"
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HAI LỐI VỀ — ĐƯỜNG THẲNG VÀ CÂU ĐỐ. Lối một — ngược từ CHU VI: đường chia thẳng tắp, không ổ gà: chu vi ba mốt phẩy tư — đường kính bằng ba mốt phẩy tư chia ba phẩy mười bốn: MƯỜI; bán kính NĂM. Thử xuôi khớp! Lối hai — ngược từ DIỆN TÍCH: bảy tám phẩy năm chia ba phẩy mười bốn được HAI MƯƠI LĂM… Trí Long theo quán tính \"công thức có số 2\": hai lăm chia hai bằng mười hai phẩy năm! Khoan — hai lăm không phải \"r nhân 2\", nó là \"r NHÂN CHÍNH NÓ\"! Đây là CÂU ĐỐ chứ không phải phép chia: số nào nhân chính nó ra hai mươi lăm? Thử: bốn nhân bốn — mười sáu, thiếu; NĂM nhân NĂM — HAI MƯƠI LĂM: trúng! r bằng năm. Còn mười hai phẩy năm? Thử nhân chính nó: một trăm năm sáu phẩy hai lăm — trật xa lắc! r nhân chính nó — gỡ bằng phép thử, không bằng phép chia!",
   "canonicalExamples": [
    {
@@ -73,14 +60,8 @@
     "counterExample": "Thử ngược 12,5: $12,5  \\times  12,5 = 156,25$ — muốn S tới 490 $cm^2$ chứ đâu phải 78,5!"
    }
   ],
-  "vocabulary": [
-   "đường chia thẳng tắp",
-   "câu đố số-nhân-chính-nó",
-   "gỡ bằng phép thử",
-   "quán tính số 2",
-   "thử ngược vạch mặt"
-  ],
-  "mantra": "r NHÂN CHÍNH NÓ — GỠ BẰNG PHÉP THỬ, KHÔNG BẰNG PHÉP CHIA!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -102,46 +83,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Hình tròn có chu vi 31,4 cm. Tính đường kính và bán kính.",
-    "display": {
-     "type": "story_panel",
-     "caption": "$25 : 2 = 12,5$??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để mở câu đố!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Chia ba phẩy mười bốn xong, con số HAI MƯƠI LĂM không phải \"r nhân 2\" — nó là \"r NHÂN CHÍNH NÓ\"! Đây là CÂU ĐỐ chứ không phải phép chia: số nào nhân chính nó ra hai mươi lăm? Thử: bốn nhân bốn — mười sáu, thiếu; NĂM nhân NĂM — HAI MƯƠI LĂM: trúng! Bán kính bằng NĂM! Phép chia cho hai là quán tính đánh lừa tay!",
-    "display": {
-     "type": "riddle_interactive",
-     "spec": {
-      "step1": "r × r = 78,5 : 3,14 = 25",
-      "riddle": "số nào × chính nó = 25?",
-      "trials": "4×4 = 16 ✗ · 5×5 = 25 ✓",
-      "wrong": "$25 : 2 = 12,5$ → 156,25 ✗"
-     }
-    },
-    "interaction": {
-     "type": "try_squares",
-     "answerKey": {
-      "value": 5
-     },
-     "successMessage": "5 × 5 = 25 — câu đố gỡ bằng phép thử!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -162,37 +103,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K1"
-    ],
-    "narration": "Lối về từ CHU VI thì thẳng tắp không ổ gà: chu vi ba mốt phẩy tư — đường kính bằng ba mốt phẩy tư chia ba phẩy mười bốn: MƯỜI xăng-ti-mét; bán kính mười chia hai: NĂM! Thử xuôi đóng mộc: mười nhân ba phẩy mười bốn — ba mốt phẩy tư, khớp! Hai lối về hai tính cách: từ C — chia thẳng; từ S — chia rồi GIẢI ĐỐ.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "từ C: d = 31,4 : 3,14 = 10 → r = 5",
-      "thử xuôi: 10 × 3,14 = 31,4 ✓",
-      "từ S: chia 3,14 rồi GIẢI ĐỐ"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: r nhân chính nó — gỡ bằng phép thử, không bằng phép chia!",
-    "display": {
-     "type": "mantra_card",
-     "text": "GỠ BẰNG PHÉP THỬ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -493,109 +403,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B49.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "25 : 2 = 12,5??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "25 : 2 = 12,5!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B49_M2_F1.png",
-   "sha256_16": "ac8e8415ccdc464c"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Bài ngược: d = C : 3,14 — từ S tìm r bằng câu đố số-nhân-chính-nó (cấm chia bừa cho 2)",
-    "steps": [
-     {
-      "text": "từ C: d = 31,4 : 3,14 = 10 → r = 5"
-     },
-     {
-      "text": "thử xuôi: 10 × 3,14 = 31,4"
-     },
-     {
-      "text": "từ S: chia 3,14 rồi GIẢI ĐỐ"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B49_M2_F2.png",
-   "sha256_16": "a9426689bda71718"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Ngược từ CHU VI",
-      "text": "đường chia thẳng tắp: d = C : 3,14 = 31,4 : 3,14 = 10 cm; r = 10 : 2 = 5 cm. Thử xuôi: 10 × 3,14 = 31,4.",
-      "tone": "navy"
-     },
-     {
-      "label": "Ngược từ DIỆN TÍCH",
-      "text": "hai chặng: chặng 1 chia 3,14: r × r = 78,5 : 3,14 = 25; chặng 2 là CÂU ĐỐ \"số nào nhân chính nó ra 25?\" — gỡ bằng phép thử: 5 × 5 = 25 → r = 5 cm.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "r NHÂN CHÍNH NÓ — GỠ BẰNG PHÉP THỬ, KHÔNG BẰNG PHÉP CHIA!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B49_M2_F3.png",
-   "sha256_16": "a5737ae9d7c3dda2"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "BÀI NGƯỢC: TỪ C VÀ TỪ S VỀ BÁN KÍNH",
-    "neutral": true,
-    "wrong": {
-     "head": "NGƯỢC TỪ CHU VI",
-     "steps": [
-      "31,4 : 3,14 = 10"
-     ],
-     "result": "d = 10 → r = 5"
-    },
-    "right": {
-     "head": "NGƯỢC TỪ DIỆN TÍCH",
-     "steps": [
-      "78,5 : 3,14 = 25",
-      "số nào nhân chính nó ra 25?"
-     ],
-     "result": "r = 5 (thử 5 × 5 = 25)"
-    },
-    "verdict": "CẤM chia 25 cho 2 — phải đố \"số nhân chính nó\""
-   },
-   "caption": "Từ C thì chia thẳng · từ S thì còn một câu đố nữa mới ra bán kính",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B49_M2_F4.png",
-   "sha256_16": "8edb9e751883700b"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B45"
@@ -607,5 +415,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Bài ngược: d = C : 3,14 — từ S tìm r bằng câu đố số-nhân-chính-nó (cấm chia bừa cho 2)"
+ "titleDay": "Bài ngược: d = C : 3,14 — từ S tìm r bằng câu đố số-nhân-chính-nó (cấm chia bừa cho 2)",
+ "video": {
+  "giang": "DL_KSN5Q1_B49_M2_giang.mp4"
+ }
 }

@@ -14607,7 +14607,135 @@ def kb5_hinh_ghep_he_so_kep(b):
     ]
 
 
+def kb5_chu_vi_dien_tich_tron(b):
+    """L5·B49·M1 Chu vi thân với đường kính, diện tích chỉ chơi với bán kính."""
+    return [
+        _c('bia', 'Hai công thức, hai người bạn khác nhau', so_bai(b),
+           loi=['Hình tròn có hai công thức. Mỗi công thức chơi với một người bạn '
+                'riêng.']),
+        _c('de_toan', 'Đề bài', de='Bánh xe có đường kính 20 cm. Tính chu vi và diện tích',
+           loi=['Bánh xe có đường kính hai mươi xăng ti mét. Tính chu vi và diện '
+                'tích.']),
+        _c('hinh_tron', 'CHU VI thân với ĐƯỜNG KÍNH', hienD=True, nhanD='d = 20 cm',
+           chuPhu='C = d × 3,14 = 62,8 cm — thay thẳng đường kính vào là xong.',
+           loi=['Chu vi thân với đường kính. Lấy đường kính nhân ba phẩy mười bốn.',
+                'Hai mươi nhân ba phẩy mười bốn, chu vi sáu mươi hai phẩy tám.']),
+        _c('hinh_tron', 'DIỆN TÍCH chỉ chơi với BÁN KÍNH', hienR=True, nhanR='r = 10 cm',
+           chuPhu='S = r × r × 3,14 — phải đổi sang bán kính trước.',
+           loi=['Nhưng diện tích chỉ chơi với bán kính. Phải đổi sang bán kính đã.',
+                'Mười nhân mười nhân ba phẩy mười bốn, ba trăm mười bốn.']),
+        _c('y_toan', 'Nghi thức BƯỚC 0 trước khi bấm',
+           'gạch chân chữ "đường kính" hay "bán kính" trong đề, rồi ĐỔI cho khớp',
+           buoc=1, soBuoc=3,
+           loi=['Nghi thức bước không. Gạch chân chữ đường kính hay bán kính trong đề, '
+                'rồi đổi cho khớp công thức.']),
+        _c('y_toan', 'Thay thẳng đường kính vào diện tích thì sao',
+           '20 × 20 × 3,14 = 1 256   —   GẤP BỐN LẦN hình thật', buoc=2, soBuoc=3,
+           loi=['Thay thẳng đường kính vào diện tích thì ra một nghìn hai trăm năm mươi '
+                'sáu.',
+                'Gấp bốn lần hình thật.']),
+        _c('y_toan', 'Vì sao đúng GẤP BỐN',
+           'd = 2r   →   d × d = 4 × r × r   —   sai đâu hỏng đó, rất đều đặn',
+           buoc=3, soBuoc=3,
+           loi=['Vì đường kính gấp đôi bán kính, nên nhân với chính nó là gấp bốn.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='CHU VI thân với ĐƯỜNG KÍNH   ·   DIỆN TÍCH chỉ chơi với BÁN KÍNH',
+           thay='miệng giếng d = 1 m → C = 3,14 m, nhưng vào S phải đổi r = 0,5',
+           loi=['Con nhớ câu này. Chu vi thân với đường kính, còn diện tích chỉ chơi '
+                'với bán kính.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_nguoc_tu_chu_vi_dien_tich(b):
+    """L5·B49·M2 Ngược từ chu vi thì chia thẳng; ngược từ diện tích phải gỡ bằng phép thử."""
+    return [
+        _c('bia', 'Hai bài ngược, hai độ khó khác hẳn', so_bai(b),
+           loi=['Đi ngược từ chu vi rất dễ. Nhưng đi ngược từ diện tích thì có một '
+                'chặng lạ.']),
+        _c('de_toan', 'Đề bài', de='(a) Biết C = 31,4 cm, tìm r   ·   (b) Biết S = 78,5 cm², tìm r',
+           loi=['Câu a biết chu vi ba mươi mốt phẩy tư. Câu b biết diện tích bảy mươi '
+                'tám phẩy năm.']),
+        _c('y_toan', 'Ngược từ CHU VI — đường chia thẳng tắp',
+           'd = C : 3,14 = 10 cm   →   r = 10 : 2 = 5 cm', buoc=1, soBuoc=3,
+           loi=['Ngược từ chu vi thì chia thẳng. Ba mươi mốt phẩy tư chia ba phẩy mười '
+                'bốn, đường kính mười.',
+                'Chia đôi nữa, bán kính năm.']),
+        _c('y_toan', 'Ngược từ DIỆN TÍCH — chặng 1 chia 3,14',
+           'r × r = 78,5 : 3,14 = 25', buoc=2, soBuoc=3,
+           loi=['Ngược từ diện tích thì chặng một chia ba phẩy mười bốn, được hai mươi '
+                'lăm.',
+                'Nhưng hai mươi lăm ấy chưa phải bán kính.']),
+        _c('y_toan', 'Chặng 2 là một CÂU ĐỐ, không phải phép chia',
+           'số nào nhân CHÍNH NÓ ra 25?   →   gỡ bằng phép thử: 5 × 5 = 25',
+           buoc=3, soBuoc=3,
+           loi=['Chặng hai là một câu đố. Số nào nhân chính nó ra hai mươi lăm.',
+                'Gỡ bằng phép thử, năm nhân năm bằng hai mươi lăm.']),
+        _c('hinh_tron', 'Bán kính lộ mặt', hienR=True, nhanR='r = 5 cm',
+           chuPhu='Thử xuôi lại: 5 × 5 × 3,14 = 78,5 ✓',
+           loi=['Bán kính là năm xăng ti mét. Thử xuôi lại thì đúng bảy mươi tám phẩy '
+                'năm.']),
+        _c('de_toan', 'Một quán tính rất nguy hiểm',
+           de='công thức có "r hai lần" → tay muốn chia tiếp 25 cho 2',
+           loi=['Có một quán tính rất nguy hiểm. Công thức có r hai lần nên tay muốn '
+                'chia tiếp cho hai.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='r nhân CHÍNH NÓ — gỡ bằng PHÉP THỬ, không bằng phép chia',
+           thay='chia 25 cho 2 ra 12,5 — mà 12,5 × 12,5 = 156,25, lệch xa lắm',
+           loi=['Chia hai mươi lăm cho hai ra mười hai phẩy năm.',
+                'Nhưng mười hai phẩy năm nhân chính nó ra một trăm năm mươi sáu, lệch '
+                'xa lắm.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_ban_kinh_gap_k(b):
+    """L5·B49·M3 Soi công thức đếm r — C chứa một lần r, S chứa hai lần."""
+    return [
+        _c('bia', 'Bán kính gấp đôi thì hình tròn to lên bao nhiêu', so_bai(b),
+           loi=['Bán kính gấp đôi. Chu vi và diện tích to lên khác nhau đấy.']),
+        _c('de_toan', 'Đề bài', de='Bán kính gấp 2 lần. Chu vi gấp mấy? Diện tích gấp mấy?',
+           loi=['Bán kính gấp hai lần. Hỏi chu vi gấp mấy, diện tích gấp mấy.']),
+        _c('y_toan', 'Soi công thức mà ĐẾM chữ r',
+           'C = r × 2 × 3,14 chứa MỘT lần r   ·   S = r × r × 3,14 chứa HAI lần r',
+           buoc=1, soBuoc=3,
+           loi=['Soi công thức mà đếm chữ r. Chu vi chứa một lần, diện tích chứa hai '
+                'lần.']),
+        _c('day_so', 'Nên hai đại lượng hai số phận', so=['2', '4'], nhanHang='gấp',
+           chuPhu='r gấp 2   →   C gấp 2   ·   S gấp 2 × 2 = 4.',
+           loi=['Nên bán kính gấp hai thì chu vi gấp hai, còn diện tích gấp bốn.',
+                'Bán kính gấp ba thì diện tích gấp chín.']),
+        _c('y_toan', 'Câu hỏi hay TRÁO hai đại lượng',
+           'đọc kỹ đề hỏi CHU VI hay DIỆN TÍCH   —   họ hàng hệ số kép của bài 48',
+           buoc=2, soBuoc=3,
+           loi=['Câu hỏi hay tráo hai đại lượng, nên đọc kỹ xem đề hỏi chu vi hay diện '
+                'tích.']),
+        _c('de_toan', 'Hồ nước mở rộng',
+           de='Hồ tròn bán kính 5 m mở thành 10 m (cùng tâm). Phần mở thêm bao nhiêu?',
+           loi=['Hồ tròn bán kính năm mét mở rộng thành mười mét, cùng tâm.']),
+        _c('y_toan', 'Phần mở thêm là HIỆU hai diện tích',
+           '314 − 78,5 = 235,5 m²   —   bán kính gấp đôi mà phần thêm gấp BA phần cũ',
+           buoc=3, soBuoc=3,
+           loi=['Phần mở thêm là hiệu hai diện tích, hai trăm ba mươi lăm phẩy năm mét '
+                'vuông.',
+                'Bán kính chỉ gấp đôi mà phần thêm gấp ba lần hồ cũ.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='đếm chữ r trong công thức — C một lần, S hai lần',
+           thay='miếng pizza 1/4 có chu vi = cung 23,55 + HAI bán kính 30 = 53,55 cm',
+           loi=['Con nhớ đếm chữ r trong công thức.',
+                'Và chu vi một miếng pizza phải cộng cả hai cạnh thẳng, tức hai bán '
+                'kính.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B49.M1': kb5_chu_vi_dien_tich_tron,
+    'DL:KSN5Q1.B49.M2': kb5_nguoc_tu_chu_vi_dien_tich,
+    'DL:KSN5Q1.B49.M3': kb5_ban_kinh_gap_k,
     'DL:KSN5Q1.B48.M1': kb5_hinh_thang_xuoi_nguoc,
     'DL:KSN5Q1.B48.M2': kb5_bon_vung_duong_cheo,
     'DL:KSN5Q1.B48.M3': kb5_hinh_ghep_he_so_kep,
