@@ -36,20 +36,7 @@
   "kidText": "Giảm 10% rồi giảm 20% là còn 72%, tức giảm 28% chứ không phải 30%. Hai món cùng giá một lãi một lỗ hoá ra vẫn LỖ."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Khuyến mại nối đuôi = cầu thang gối đầu B37: giảm 10% rồi 20% → $0,9  \\times  0,8 = 0,72$ → tổng giảm 28% (cộng thẳng 30% là sai — đợt hai ăn trên giá đã giảm)."
-   },
-   {
-    "id": "K2",
-    "text": "\"Mua m tặng n\" dịch ra hệ số: trả m món được (m + n) món → giá thực mỗi món = $\\frac{m}{m + n}$: mua 4 tặng 1 → $\\frac{4}{5}$ = 80% → tương đương giảm 20% (không phải 25%!)."
-   },
-   {
-    "id": "K3",
-    "text": "Hai món CÙNG GIÁ BÁN 240, một lãi 20% một lỗ 20% (theo vốn) — KHÔNG hòa: vốn món lãi = $240 : 1,2 = 200$; vốn món lỗ = $240 : 0,8 = 300$ → tổng vốn 500, tổng thu 480: LỖ 20 nghìn — cùng % nhưng hai gốc vốn khác nhau."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: MA TRẬN KHUYẾN MẠI — BA Ô BẪY. Ô một: \"giảm 10% rồi giảm tiếp 20%!\" — Trí Long cộng: ba mươi phần trăm! Cầu thang B37 gọi về: đợt hai ăn trên giá ĐÃ GIẢM — 0,9 nhân 0,8 bằng 0,72: giảm HAI MƯƠI TÁM phần trăm thôi. Ô hai: \"mua 4 tặng 1 — tặng hẳn một món, chắc giảm 25%?\" Dịch ra hệ số: trả BỐN được NĂM — giá thực mỗi món bốn phần năm: tám mươi phần trăm — giảm đúng HAI MƯƠI. Ô ba — bẫy trùm: hai hộp quà CÙNG bán 240, hộp A lãi 20%, hộp B lỗ 20% — cả chợ hô \"hòa!\" Nhưng cùng % mà HAI GỐC VỐN khác nhau: la bàn M1 tách từng món — vốn A = 240 : 1,2 = 200; vốn B = 240 : 0,8 = BA TRĂM! Tổng vốn năm trăm — tổng thu bốn trăm tám mươi: LỖ HAI MƯƠI nghìn! \"Hòa\" là ảo giác của kẻ quên hỏi phần-trăm-của-ai.",
   "canonicalExamples": [
    {
@@ -86,14 +73,8 @@
     "counterExample": "Vốn $200 + 300 = 500$ mà chỉ thu 480 — 'hòa' bay mất 20 nghìn!"
    }
   ],
-  "vocabulary": [
-   "ma trận ba ô",
-   "dịch lời rao ra hệ số",
-   "trả m được m + n",
-   "cùng % khác gốc",
-   "ảo giác hòa"
-  ],
-  "mantra": "KHUYẾN MẠI NỐI ĐUÔI — NHÂN HỆ SỐ; CÙNG % KHÁC GỐC — TÁCH VỐN TỪNG MÓN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -115,45 +96,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Một món hàng giảm giá 10%, sau đó giảm tiếp 20% trên giá đã giảm. Hỏi so với giá ban đầu, món hàng giảm tổng cộng bao nhiêu %?",
-    "display": {
-     "type": "story_panel",
-     "caption": "+20% và −20% = hòa??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để tách vốn từng món!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Cùng phần trăm mà HAI GỐC VỐN khác nhau — tách từng món! Hộp A lãi hai mươi: vốn bằng hai bốn mươi chia một phẩy hai — HAI TRĂM. Hộp B lỗ hai mươi: bán còn tám mươi phần trăm vốn — hai bốn mươi chia không phẩy tám: BA TRĂM! Tổng vốn NĂM TRĂM — tổng thu bốn trăm tám mươi: LỖ HAI MƯƠI nghìn! Ảo giác hòa tan biến khi hỏi đúng câu: phần trăm CỦA AI?",
-    "display": {
-     "type": "split_capital_interactive",
-     "spec": {
-      "A": "240 : 1,2 = 200",
-      "B": "240 : 0,8 = 300",
-      "total": "vốn 500 vs thu 480",
-      "verdict": "LỖ 20 nghìn"
-     }
-    },
-    "interaction": {
-     "type": "split_then_sum",
-     "answerKey": {
-      "value": -20000
-     },
-     "successMessage": "Vốn 500 — thu 480: LỖ 20 nghìn, không hòa!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -174,47 +116,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Hai ô còn lại của ma trận! Ô giảm nối đuôi: mười phần trăm rồi hai mươi phần trăm — cộng thành ba mươi? Cầu thang gối đầu gọi về: không phẩy chín nhân không phẩy tám bằng KHÔNG PHẨY BẢY HAI — giảm HAI MƯƠI TÁM phần trăm! Ô mua-bốn-tặng-một: giảm hai lăm? Trả BỐN được NĂM — giá thực bốn phần năm: TÁM MƯƠI phần trăm — giảm đúng HAI MƯƠI!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "10% + 20% = 30%?",
-       "output": "✗ 0,9 × 0,8 = 0,72 → 28%",
-       "valid": false,
-       "reason": "đợt sau ăn trên giá đã giảm"
-      },
-      {
-       "input": "mua 4 tặng 1 = giảm 25%?",
-       "output": "✗ trả 4 được 5 → 80% → giảm 20%",
-       "valid": false,
-       "reason": "chia cho 5 món nhận được"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Hai câu cần nhớ: khuyến mại nối đuôi — nhân hệ số, đừng cộng! Cùng phần trăm khác gốc — tách vốn từng món!",
-    "display": {
-     "type": "mantra_card",
-     "text": "NHÂN HỆ SỐ · TÁCH VỐN TỪNG MÓN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -545,133 +446,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B38.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "+20% và −20% = hòa??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Ma trận khuyến mại giăng ba ô!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B38_M3_F1.png",
-   "sha256_16": "7d41485d2ff3c951"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "Ma trận khuyến mại: gối đầu 0,9 × 0,8 — mua 4 tặng 1 — cùng giá lãi-lỗ tưởng hòa",
-    "formulas": [
-     {
-      "text": "240 : 1,2 = 200",
-      "tone": "navy"
-     },
-     {
-      "text": "240 : 0,8 = 300",
-      "tone": "teal"
-     },
-     {
-      "text": "vốn 500 vs thu 480",
-      "tone": "gold"
-     }
-    ]
-   },
-   "caption": "Ý chính của bài gói trong mấy dòng",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B38_M3_F2.png",
-   "sha256_16": "98f0870622ae6e7b"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Khuyến mại nối đuôi = cầu thang gối đầu B37",
-      "text": "giảm 10% rồi 20% → 0,9 × 0,8 = 0,72 → tổng giảm 28% (cộng thẳng 30% là sai — đợt hai ăn trên giá đã giảm).",
-      "tone": "navy"
-     },
-     {
-      "label": "\"Mua m tặng n\" dịch ra hệ số",
-      "text": "trả m món được (m + n) món → giá thực mỗi món = m/(m + n): mua 4 tặng 1 → 4/5 = 80% → tương đương giảm 20% (không phải 25%!).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "KHUYẾN MẠI NỐI ĐUÔI — NHÂN HỆ SỐ; CÙNG % KHÁC GỐC — TÁCH VỐN TỪNG MÓN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B38_M3_F3.png",
-   "sha256_16": "e1e23f01fa36a3bc"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "MA TRẬN KHUYẾN MẠI — QUY VỀ HỆ SỐ",
-    "headers": [
-     "khuyến mại",
-     "hệ số phải trả",
-     "giảm thực"
-    ],
-    "comma_after": null,
-    "rows": [
-     {
-      "label": "",
-      "cells": [
-       "giảm 10% rồi 20%",
-       "0,9 × 0,8 = 0,72",
-       "28%"
-      ],
-      "color": "#FDECE9",
-      "highlight": [
-       2
-      ]
-     },
-     {
-      "label": "",
-      "cells": [
-       "mua 4 tặng 1",
-       "4/5 = 0,8",
-       "20%"
-      ],
-      "color": "white"
-     },
-     {
-      "label": "",
-      "cells": [
-       "giảm 20%",
-       "0,8",
-       "20%"
-      ],
-      "color": "#E6FAF5"
-     }
-    ],
-    "note": "Giảm gối đầu KHÔNG phải 10 + 20 = 30% — nhân hệ số mới ra 28%"
-   },
-   "caption": "Mọi chiêu khuyến mại đều quy được về một hệ số phải trả",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B38_M3_F4.png",
-   "sha256_16": "bb91c6b214431d3c"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B42"
@@ -683,5 +458,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Ma trận khuyến mại: gối đầu $0,9  \\times  0,8$ — mua 4 tặng 1 — cùng giá lãi-lỗ tưởng hòa"
+ "titleDay": "Ma trận khuyến mại: gối đầu $0,9  \\times  0,8$ — mua 4 tặng 1 — cùng giá lãi-lỗ tưởng hòa",
+ "video": {
+  "giang": "DL_KSN5Q1_B38_M3_giang.mp4"
+ }
 }

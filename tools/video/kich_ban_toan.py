@@ -13186,7 +13186,145 @@ def kb5_goi_dau_he_so(b):
     ]
 
 
+def kb5_von_ban_lai(b):
+    """L5·B38·M1 Lãi ăn trên vốn — về vốn phải chia, không nhân."""
+    return [
+        _c('bia', 'Ba chiều của một thương vụ', so_bai(b),
+           loi=['Vốn, giá bán, tiền lãi. Ba thứ nối nhau, và có một chiều rất dễ đi '
+                'nhầm.']),
+        _c('de_toan', 'Đề bài',
+           de='Vốn một hộp bánh là 200 000 đồng, bán lãi 20% so với VỐN.\nTính giá bán',
+           loi=['Vốn một hộp bánh là hai trăm nghìn đồng, bán lãi hai mươi phần trăm so '
+                'với vốn.']),
+        _c('y_toan', 'Câu la bàn: vật nào làm 100 phần trăm?',
+           '"lãi 20% so với VỐN"   →   kim chỉ VỐN   →   giá bán = 120% vốn',
+           buoc=1, soBuoc=4,
+           loi=['Câu la bàn của mọi bài tiền nong. Vật nào làm một trăm phần trăm.',
+                'Đề nói so với vốn, nên vốn làm gốc, và giá bán là một trăm hai mươi '
+                'phần trăm vốn.']),
+        _c('y_toan', 'Chiều xuôi thì NHÂN',
+           '200 000 × 1,2 = 240 000      ·      lãi 40 000', buoc=2, soBuoc=4,
+           loi=['Chiều xuôi thì nhân. Hai trăm nghìn nhân một phẩy hai, bán hai trăm '
+                'bốn mươi nghìn.']),
+        _c('day_so', 'Hai đầu của một cây cầu', so=['200', '240'], nhanHang='nghìn',
+           chuPhu='vốn → bán: nhân 1,2   ·   bán → vốn: CHIA 1,2',
+           loi=['Hai đầu của một cây cầu. Đi xuôi thì nhân, đi ngược thì chia.']),
+        _c('y_toan', 'Chiều VỀ VỐN phải CHIA, không được nhân',
+           '240 000 : 1,2 = 200 000      ·      còn × 0,8 ra 192 000 — lệch 8 nghìn',
+           buoc=3, soBuoc=4,
+           loi=['Chiều về vốn phải chia. Nhiều bạn nhân không phẩy tám, ra một trăm '
+                'chín mươi hai nghìn.',
+                'Lệch tám nghìn, vì bớt hai mươi phần trăm ấy ăn trên giá bán chứ '
+                'không phải vốn.']),
+        _c('y_toan', 'Chiều thứ ba — tìm lãi phần trăm',
+           'lãi : VỐN   =   40 000 : 200 000   =   20%', buoc=4, soBuoc=4,
+           loi=['Chiều thứ ba là tìm lãi phần trăm. Lấy lãi chia cho vốn.']),
+        _c('de_toan', 'Bài hai bước',
+           de='Bán 138 000 đồng thì lãi 15%. Muốn lãi 25% thì phải bán bao nhiêu?',
+           loi=['Bài hai bước. Bán một trăm ba mươi tám nghìn thì lãi mười lăm phần '
+                'trăm.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='lãi ăn trên VỐN — về vốn phải CHIA, không nhân',
+           thay='vốn = 138 000 : 1,15 = 120 000   →   rồi 120 000 × 1,25 = 150 000',
+           loi=['Về vốn trước đã, được một trăm hai mươi nghìn. Rồi mới nhân một phẩy '
+                'hai lăm.',
+                'Phải bán một trăm năm mươi nghìn đồng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_hai_he_quy_chieu(b):
+    """L5·B38·M2 Gốc đã biết thì nhân thẳng, chưa biết thì chia."""
+    return [
+        _c('bia', 'Cùng một thương vụ, hai con số phần trăm', so_bai(b),
+           loi=['Cùng một khoản lãi, mà soi bằng hai cái gốc thì ra hai con số.']),
+        _c('de_toan', 'Đề bài',
+           de='Vốn 200 000, bán 240 000, lãi 40 000.\nLãi bằng bao nhiêu % so với GIÁ BÁN?',
+           loi=['Vốn hai trăm nghìn, bán hai trăm bốn mươi nghìn, lãi bốn mươi nghìn.',
+                'Hỏi lãi bằng bao nhiêu phần trăm so với giá bán.']),
+        _c('y_toan', 'Cùng một khoản lãi — hai mẫu số',
+           'theo VỐN: 40 : 200 = 20%      ·      theo GIÁ BÁN: 40 : 240 ≈ 16,7%',
+           buoc=1, soBuoc=3,
+           loi=['Cùng khoản lãi bốn mươi nghìn, nhưng hai mẫu số khác nhau.',
+                'Soi theo vốn ra hai mươi phần trăm, soi theo giá bán ra khoảng mười '
+                'sáu phẩy bảy.']),
+        _c('day_so', 'Hai cái mẫu', so=['200', '240'], nhanHang='mẫu số',
+           chuPhu='Mẫu to hơn thì con số phần trăm nhỏ hơn.',
+           loi=['Mẫu to hơn thì con số phần trăm nhỏ hơn.']),
+        _c('y_toan', 'Nên con số theo GIÁ BÁN luôn nhỏ hơn',
+           'vì giá bán bao giờ cũng lớn hơn vốn', buoc=2, soBuoc=3,
+           loi=['Nên con số theo giá bán bao giờ cũng nhỏ hơn con số theo vốn.']),
+        _c('de_toan', 'Câu đố còn nợ từ bài trước',
+           de='Sao "giảm giá 20%" lại được nhân 0,8 thẳng tay?',
+           loi=['Còn một câu đố từ bài trước. Sao giảm giá hai mươi phần trăm lại được '
+                'nhân thẳng.']),
+        _c('y_toan', 'Vì ở đó gốc 100% ĐÃ BIẾT',
+           'giá niêm yết 150 000 là con số đã biết   →   khách trả 150 000 × 0,8 = 120 000',
+           buoc=3, soBuoc=3,
+           loi=['Vì ở đó gốc một trăm phần trăm là giá niêm yết, mà giá ấy đã biết.',
+                'Nên nhân thẳng được. Khách trả một trăm hai mươi nghìn.']),
+        _c('cong_thuc', 'Quy tắc vàng khi đọc đề tiền nong',
+           congThuc='gốc 100% ĐÃ BIẾT → nhân thẳng   ·   CHƯA biết → lập tỉ rồi CHIA',
+           thay='về-vốn phải chia vì gốc 100% là VỐN, mà vốn thì chưa biết',
+           loi=['Con nhớ quy tắc này. Gốc đã biết thì nhân thẳng, gốc chưa biết thì '
+                'chia.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_ma_tran_khuyen_mai(b):
+    """L5·B38·M3 Khuyến mại nối đuôi nhân hệ số; cùng % khác gốc thì tách vốn."""
+    return [
+        _c('bia', 'Ba ô của bảng khuyến mại', so_bai(b),
+           loi=['Ba kiểu khuyến mại hay gặp, và cả ba đều có chỗ bẫy.']),
+        _c('de_toan', 'Ô thứ nhất',
+           de='Giảm 10%, sau đó giảm tiếp 20% trên giá ĐÃ GIẢM.\nTổng cộng giảm bao nhiêu %?',
+           loi=['Ô thứ nhất. Giảm mười phần trăm, rồi giảm tiếp hai mươi phần trăm trên '
+                'giá đã giảm.']),
+        _c('y_toan', 'Đây là cầu thang gối đầu của bài trước',
+           '0,9 × 0,8 = 0,72   →   còn 72%   →   giảm 28%, không phải 30%',
+           buoc=1, soBuoc=3,
+           loi=['Đây chính là cầu thang gối đầu của bài trước. Nhân hệ số chứ không '
+                'cộng.',
+                'Không phẩy chín nhân không phẩy tám còn không phẩy bảy hai, tức giảm '
+                'hai mươi tám phần trăm.']),
+        _c('de_toan', 'Ô thứ hai', de='"Mua 4 tặng 1" — tương đương giảm bao nhiêu %?',
+           loi=['Ô thứ hai. Mua bốn tặng một thì tương đương giảm bao nhiêu phần '
+                'trăm.']),
+        _c('y_toan', 'Trả 4 món mà được 5 món',
+           'giá thực mỗi món = 4/5 = 80%   →   giảm 20%, không phải 25%',
+           buoc=2, soBuoc=3,
+           loi=['Trả bốn món mà được năm món, nên giá thực mỗi món là bốn phần năm.',
+                'Tức tám mươi phần trăm, giảm hai mươi phần trăm chứ không phải hai '
+                'mươi lăm.']),
+        _c('de_toan', 'Ô khó nhất',
+           de='Hai món CÙNG bán 240, một lãi 20% một lỗ 20% (theo vốn). Có hoà không?',
+           loi=['Ô khó nhất. Hai món cùng bán hai trăm bốn mươi, một món lãi hai mươi '
+                'phần trăm, một món lỗ hai mươi phần trăm.']),
+        _c('day_so', 'Tách vốn từng món ra', so=['200', '300'], nhanHang='vốn',
+           chuPhu='Cùng bán 240 — mà hai gốc vốn khác hẳn nhau.',
+           loi=['Tách vốn từng món. Món lãi có vốn hai trăm, món lỗ có vốn ba trăm.',
+                'Cùng bán một giá, mà hai gốc vốn khác hẳn nhau.']),
+        _c('y_toan', 'Cộng lại mới thấy',
+           'tổng vốn 500   ·   tổng thu 480   →   LỖ 20 nghìn', buoc=3, soBuoc=3,
+           loi=['Cộng lại thì tổng vốn năm trăm, tổng thu bốn trăm tám mươi. Lỗ hai '
+                'mươi nghìn.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='nối đuôi thì NHÂN hệ số   ·   cùng % khác gốc thì TÁCH vốn',
+           thay='cộng thẳng 10 + 20 = 30% là sai, và tưởng lãi lỗ bù nhau cũng sai',
+           loi=['Con nhớ hai câu. Khuyến mại nối đuôi thì nhân hệ số.',
+                'Còn cùng phần trăm mà khác gốc thì phải tách vốn từng món.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B38.M1': kb5_von_ban_lai,
+    'DL:KSN5Q1.B38.M2': kb5_hai_he_quy_chieu,
+    'DL:KSN5Q1.B38.M3': kb5_ma_tran_khuyen_mai,
     'DL:KSN5Q1.B37.M1': kb5_ba_dang_phan_tram,
     'DL:KSN5Q1.B37.M2': kb5_cu_lua_doi_goc,
     'DL:KSN5Q1.B37.M3': kb5_goi_dau_he_so,

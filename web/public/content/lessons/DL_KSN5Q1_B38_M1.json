@@ -34,20 +34,7 @@
   "kidText": "Lãi 20% là ăn trên VỐN. Nên từ giá bán muốn quay về vốn thì phải CHIA 1,2, không được nhân 0,8."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "La bàn tiền nong: lãi 20% \"so với vốn\" → VỐN là 100% — giá bán = 100% + 20% = 120% vốn: bán = vốn × 1,2 (vốn 200 000 → bán 240 000, lãi 40 000)."
-   },
-   {
-    "id": "K2",
-    "text": "Chiều ngược VỀ VỐN đi bằng phép CHIA: bán 240 000 = 120% vốn → vốn = 240 $000 : 1,2 = 200$ 000. Đường nhân 0,8 là bớt 20% CỦA GIÁ BÁN — sai chủ %: $240  \\times  0,8 = 192$, lệch 8 nghìn!"
-   },
-   {
-    "id": "K3",
-    "text": "Chiều thứ ba — tìm lãi%: lãi : VỐN (40 $000 : 200$ 000 = 20%); và bài hai bước của sư phụ: bán 138 000 lãi 15% → vốn = 138 $000 : 1,15 = 120$ 000 → muốn lãi 25%: 120 $000  \\times  1,25 = 150$ 000 đồng."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: LA BÀN QUẦY HÀNG — MŨI KIM CHỈ VỐN. Mọi bài lãi-lỗ mở đầu bằng câu la bàn: VẬT NÀO LÀM MỘT TRĂM PHẦN TRĂM? \"Lãi 20% so với VỐN\" — kim chỉ VỐN: giá bán là 120% vốn. Chiều xuôi dễ: vốn 200 nghìn — bán 200 × 1,2 = 240 nghìn. Chiều NGƯỢC mới lắm người ngã: \"bán 240 lãi 20% — tìm vốn?\" Trí Long bớt luôn 20% của giá bán: 240 × 0,8 = 192?! Nhưng 20% ấy ăn trên VỐN — con số chưa biết — đâu phải trên 240! Đường đúng: bán = 120% vốn → vốn = 240 : 1,2 = HAI TRĂM nghìn. Thử xuôi: 200 × 1,2 đúng 240 — còn 192 × 1,2 = 230,4 lệch xa. Về vốn phải CHIA — không nhân! Chiều ba: lãi 40 chia vốn 200 = 20%. Sư phụ nối hai chiều: bán 138 lãi 15% → vốn 138 : 1,15 = 120 → muốn lãi 25%: 120 × 1,25 = MỘT TRĂM NĂM MƯƠI nghìn.",
   "canonicalExamples": [
    {
@@ -78,14 +65,8 @@
     "counterExample": "$192  \\times  1,2 = 230,4$ ≠ 240 — thử xuôi một phát là đường nhân 0,8 lộ ngay."
    }
   ],
-  "vocabulary": [
-   "la bàn 100%",
-   "kim chỉ vốn",
-   "chiều xuôi — chiều ngược",
-   "thử xuôi",
-   "sai chủ phần trăm"
-  ],
-  "mantra": "LÃI ĂN TRÊN VỐN — VỀ VỐN PHẢI CHIA, KHÔNG NHÂN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -112,46 +93,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Vốn một hộp bánh là 200 000 đồng, bán lãi 20% so với vốn. Tính giá bán.",
-    "display": {
-     "type": "story_panel",
-     "caption": "vốn = $240  \\times  0,8 = 192$??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để xoay la bàn!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Câu la bàn: vật nào làm MỘT TRĂM phần trăm? Lãi hai mươi phần trăm SO VỚI VỐN — kim chỉ VỐN: giá bán là một trăm hai mươi phần trăm vốn! Chiều ngược đi bằng phép CHIA: vốn bằng hai trăm bốn mươi chia một phẩy hai — HAI TRĂM nghìn! Thử xuôi: hai trăm nhân một phẩy hai đúng hai bốn mươi. Còn đường nhân không phẩy tám ra một chín hai — thử xuôi: một chín hai nhân một phẩy hai là hai trăm ba mươi phẩy tư, lệch xa: sai chủ phần trăm lộ ngay!",
-    "display": {
-     "type": "compass_divide_interactive",
-     "spec": {
-      "compass": "100% = VỐN",
-      "forward": "vốn × 1,2 = bán",
-      "backward": "vốn = 240 000 : 1,2 = 200 000",
-      "wrong": "$240  \\times  0,8 = 192$ ✗ (thử xuôi 230,4)"
-     }
-    },
-    "interaction": {
-     "type": "point_then_divide",
-     "answerKey": {
-      "value": 200000
-     },
-     "successMessage": "Bán = 120% vốn → vốn = 240 : 1,2 = 200 nghìn!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -167,38 +108,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Ba chiều một la bàn! Chiều xuôi: vốn hai trăm nghìn lãi hai mươi phần trăm — bán hai trăm nhân một phẩy hai: HAI TRĂM BỐN MƯƠI nghìn. Chiều ba — tìm lãi phần trăm: lãi bốn mươi chia VỐN hai trăm — HAI MƯƠI phần trăm. Sư phụ: bán một ba tám lãi mười lăm phần trăm — vốn một ba tám chia một phẩy mười lăm: MỘT TRĂM HAI MƯƠI; muốn lãi hai lăm — MỘT TRĂM NĂM MƯƠI nghìn!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "xuôi: 200 × 1,2 = 240 nghìn",
-      "lãi%: 40 : 200 = 20%",
-      "sư phụ: 138 : 1,15 = 120 → × 1,25 = 150 nghìn"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: lãi ăn trên vốn — về vốn phải chia, không nhân!",
-    "display": {
-     "type": "mantra_card",
-     "text": "VỀ VỐN PHẢI CHIA — KHÔNG NHÂN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -520,108 +429,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B38.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "vốn = 240 × 0,8 = 192??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "240 nhân 0,8 bằng 192 nghìn!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B38_M1_F1.png",
-   "sha256_16": "5c1d0886688ba0a8"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Hệ vốn ba chiều: bán = vốn × 1,2 — về vốn phải CHIA 1,2, không nhân 0,8",
-    "steps": [
-     {
-      "text": "xuôi: 200 × 1,2 = 240 nghìn"
-     },
-     {
-      "text": "lãi%: 40 : 200 = 20%"
-     },
-     {
-      "text": "sư phụ: 138 : 1,15 = 120 → × 1,25 = 150 nghìn"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B38_M1_F2.png",
-   "sha256_16": "83abd24c5239ded2"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "La bàn tiền nong",
-      "text": "lãi 20% \"so với vốn\" → VỐN là 100%",
-      "tone": "navy"
-     },
-     {
-      "label": "Chiều ngược VỀ VỐN đi bằng phép CHIA",
-      "text": "bán 240 000 = 120% vốn → vốn = 240 000 : 1,2 = 200 000. Đường nhân 0,8 là bớt 20% CỦA GIÁ BÁN — sai chủ %: 240 × 0,8 = 192, lệch 8 nghìn!",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "LÃI ĂN TRÊN VỐN — VỀ VỐN PHẢI CHIA, KHÔNG NHÂN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B38_M1_F3.png",
-   "sha256_16": "f64f8d51ca15b420"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "BÁN 240 000 · LÃI 20% SO VỐN — TÌM VỐN",
-    "wrong": {
-     "head": "NHÂN 0,8",
-     "steps": [
-      "240 000 × 0,8"
-     ],
-     "result": "192 000 ✗"
-    },
-    "right": {
-     "head": "CHIA 1,2",
-     "steps": [
-      "bán = 120% vốn",
-      "240 000 : 1,2"
-     ],
-     "result": "200 000 ✓"
-    },
-    "verdict": "× 0,8 là bớt 20% của GIÁ BÁN — không phải về vốn"
-   },
-   "caption": "Đi lên thì nhân, đi xuống phải CHIA — hai đường không thay nhau được",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B38_M1_F4.png",
-   "sha256_16": "d0662afa0367074e"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B42"
@@ -633,5 +441,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Hệ vốn ba chiều: bán = vốn × 1,2 — về vốn phải CHIA 1,2, không nhân 0,8"
+ "titleDay": "Hệ vốn ba chiều: bán = vốn × 1,2 — về vốn phải CHIA 1,2, không nhân 0,8",
+ "video": {
+  "giang": "DL_KSN5Q1_B38_M1_giang.mp4"
+ }
 }
