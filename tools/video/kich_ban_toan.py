@@ -12538,7 +12538,147 @@ def kb5_ti_bien_hinh(b):
     ]
 
 
+def kb5_cai_gi_khong_doi(b):
+    """L5·B33·M1 Kẻ đứng im cầm thước — hai tỉ số thì hai sơ đồ."""
+    return [
+        _c('bia', 'Câu hỏi mở cửa của cả chương', so_bai(b),
+           loi=['Đề cho hai tỉ số ở hai lúc khác nhau. Có một câu hỏi mở được cửa.']),
+        _c('de_toan', 'Đề bài',
+           de='A bằng 1/2 của B. A được thêm 4 viên thì bằng 2/3 của B.\n'
+              'Tìm A và B lúc đầu',
+           loi=['A bằng một phần hai của B. Thêm bốn viên vào A thì A bằng hai phần ba '
+                'của B.']),
+        _c('y_toan', 'Câu hỏi mở cửa: CÁI GÌ KHÔNG ĐỔI?',
+           'chỉ A được thêm   →   B đứng im   →   B cầm thước', buoc=1, soBuoc=4,
+           loi=['Câu hỏi mở cửa là cái gì không đổi. Chỉ A được thêm, nên B đứng im và '
+                'B cầm thước.']),
+        _c('y_toan', 'Hai tỉ số là HAI TẤM ẢNH — vẽ hai sơ đồ',
+           'biến cố "thêm 4" sống ở KHOẢNG GIỮA, không nhét vào một sơ đồ được',
+           buoc=2, soBuoc=4,
+           loi=['Hai tỉ số là hai tấm ảnh chụp hai lúc, nên phải vẽ hai sơ đồ riêng.']),
+        _c('y_toan', 'Quy đồng MẪU cho hai tầng cùng khúc thước',
+           '1/2 = 3/6      ·      2/3 = 4/6      →      thước B chia 6 khúc',
+           buoc=3, soBuoc=4,
+           loi=['Quy đồng mẫu cho hai tầng cùng khúc. Một phần hai thành ba phần sáu, '
+                'hai phần ba thành bốn phần sáu.',
+                'Vậy cây thước B chia làm sáu khúc ở cả hai tầng.']),
+        _c('so_do_doan', 'TẤM ẢNH TRƯỚC', be=12, lon=24, phanBe=3, phanLon=6,
+           thangDo=24, nhanBe='A trước', nhanLon='B (thước)',
+           chuPhu='A chiếm 3 trong 6 khúc.',
+           loi=['Tấm ảnh trước, A chiếm ba trong sáu khúc của thước.']),
+        _c('so_do_doan', 'TẤM ẢNH SAU', be=16, lon=24, phanBe=4, phanLon=6,
+           thangDo=24, nhanBe='A sau', nhanLon='B (thước)',
+           chuPhu='A lên 4 khúc — mà thước B không nhúc nhích.',
+           loi=['Tấm ảnh sau, A lên bốn khúc, mà thước B không nhúc nhích.',
+                'Vì cùng một thước nên hai tầng so được với nhau.']),
+        _c('y_toan', 'A nhích đúng MỘT khúc — mà đó là 4 viên',
+           'khúc = 4   →   B = 6 × 4 = 24   ·   A đầu = 3 × 4 = 12', buoc=4, soBuoc=4,
+           loi=['A nhích đúng một khúc, mà một khúc ấy chính là bốn viên vừa thêm.',
+                'Nên thước B là sáu khúc, tức hai mươi tư, còn A lúc đầu mười hai.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='hai tỉ số → HAI sơ đồ   ·   kẻ ĐỨNG IM mới được cầm thước',
+           thay='ba trạm: 12/24 = 1/2 ✓ · 16/24 = 2/3 ✓ · 16 − 12 = 4 ✓',
+           loi=['Con nhớ hai câu. Hai tỉ số thì hai sơ đồ, và kẻ đứng im mới được cầm '
+                'thước.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_thuoc_hieu(b):
+    """L5·B33·M2 Cùng thêm cùng bớt thì HIỆU cầm thước — quy đồng khúc trước."""
+    return [
+        _c('bia', 'Khi CẢ HAI bên cùng thay đổi', so_bai(b),
+           loi=['Lần này cả hai bên cùng thêm. Vậy ai còn đứng im mà cầm thước.']),
+        _c('de_toan', 'Đề bài',
+           de='A bằng 1/3 của B. Cả hai cùng mua thêm 5 viên\nthì A bằng 1/2 của B',
+           loi=['A bằng một phần ba của B. Cả hai cùng mua thêm năm viên thì A bằng một '
+                'phần hai của B.']),
+        _c('y_toan', 'Cùng thêm một lượng như nhau → HIỆU không đổi',
+           'hiệu là kẻ đứng im  →  HIỆU cầm thước   (tổng thì tăng, đừng nhầm)',
+           buoc=1, soBuoc=4,
+           loi=['Cùng thêm một lượng như nhau thì khoảng cách hai bên không đổi.',
+                'Nên hiệu là kẻ đứng im, và hiệu cầm thước. Tổng thì tăng, đừng nhầm.']),
+        _c('y_toan', 'Nhưng hai tầng chia hiệu thành số khúc KHÁC nhau',
+           'trước 1 : 3 → hiệu 2 khúc      ·      sau 1 : 2 → hiệu 1 khúc',
+           buoc=2, soBuoc=4,
+           loi=['Nhưng tầng trước chia hiệu làm hai khúc, tầng sau để nguyên một khúc. '
+                'Trừ thẳng là so nhầm.']),
+        _c('y_toan', 'Quy đồng khúc thước: nhân đôi sơ đồ SAU',
+           '1 : 2   →   2 : 4   →   nay hiệu cũng 2 khúc', buoc=3, soBuoc=4,
+           loi=['Nhân đôi cả sơ đồ sau thành hai trên bốn. Nay hiệu cũng hai khúc, so '
+                'được rồi.']),
+        _c('so_do_doan', 'TẦNG TRƯỚC', be=5, lon=15, phanBe=1, phanLon=3, thangDo=20,
+           nhanBe='A trước', nhanLon='B trước', hienHieu=True, chuHieu='hiệu 2 khúc',
+           chuPhu='A một khúc trong ba.',
+           loi=['Tầng trước, A một khúc còn B ba khúc.']),
+        _c('so_do_doan', 'TẦNG SAU — đã nhân đôi', be=10, lon=20, phanBe=2, phanLon=4,
+           thangDo=20, nhanBe='A sau', nhanLon='B sau', hienHieu=True,
+           chuHieu='hiệu VẪN 2 khúc', chuPhu='A lên 2 khúc — khúc hiệu dài y hệt tầng trên.',
+           loi=['Tầng sau, A lên hai khúc. Khúc hiệu dài y hệt tầng trên, nên hai tầng '
+                'cùng thước.']),
+        _c('y_toan', 'A từ 1 phần lên 2 phần — nhích đúng 1 phần',
+           'nhích ấy chính là 5   →   phần = 5   →   A = 5 · B = 15', buoc=4, soBuoc=4,
+           loi=['A từ một phần lên hai phần, nhích đúng một phần, mà đó là năm viên '
+                'vừa mua.',
+                'Nên A lúc đầu năm viên, B mười lăm viên.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='quy đồng khúc thước TRƯỚC   —   so phần chênh SAU',
+           thay='ca đã cùng khúc thì so luôn: 3/4 rồi 2/3, cùng bớt 6 → A = 18 · B = 24',
+           loi=['Con nhớ câu này. Quy đồng khúc thước trước, so phần chênh sau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_thuoc_tong_ba_tram(b):
+    """L5·B33·M3 Chuyển qua lại thì TỔNG cầm thước — và nghi thức ba trạm thử."""
+    return [
+        _c('bia', 'Cú chuyển thì ai cầm thước', so_bai(b),
+           loi=['Lần này không thêm không bớt, chỉ chuyển qua lại giữa hai bên.']),
+        _c('de_toan', 'Đề bài',
+           de='A bằng 2/3 của B. Chuyển 10 quyển từ B sang A\nthì hai bên bằng nhau',
+           loi=['A bằng hai phần ba của B. Chuyển mười quyển từ B sang A thì hai bên '
+                'bằng nhau.']),
+        _c('y_toan', 'Chuyển qua lại → TỔNG cầm thước',
+           'của không sinh không mất — chiếc neo của bài 18 và 27', buoc=1, soBuoc=4,
+           loi=['Chuyển qua lại thì của không sinh không mất, nên tổng cầm thước.']),
+        _c('y_toan', 'Đếm khúc TỔNG ở hai tầng',
+           'trước 2 : 3 → tổng 5 khúc      ·      sau 1 : 1 → tổng 2 khúc',
+           buoc=2, soBuoc=4,
+           loi=['Đếm khúc tổng ở hai tầng. Trước là năm khúc, sau chỉ hai khúc.',
+                'Khác khúc thì chưa so được.']),
+        _c('y_toan', 'Quy cả hai về 10 khúc',
+           'trước 4 : 6      ·      sau 5 : 5', buoc=3, soBuoc=4,
+           loi=['Quy cả hai về mười khúc. Tầng trước thành bốn trên sáu, tầng sau thành '
+                'năm trên năm.']),
+        _c('so_do_doan', 'TẦNG TRƯỚC', be=40, lon=60, phanBe=4, phanLon=6, thangDo=60,
+           nhanBe='A trước', nhanLon='B trước', chuTong='tổng 10 khúc',
+           chuPhu='A bốn khúc, B sáu khúc.',
+           loi=['Tầng trước, A bốn khúc còn B sáu khúc.']),
+        _c('so_do_doan', 'TẦNG SAU', be=50, lon=50, phanBe=5, phanLon=5, thangDo=60,
+           nhanBe='A sau', nhanLon='B sau', chuTong='tổng 10 khúc',
+           chuPhu='Mỗi bên 5 khúc — mà tổng vẫn thế.',
+           loi=['Tầng sau, mỗi bên năm khúc, mà tổng vẫn thế.']),
+        _c('y_toan', 'A nhích đúng MỘT khúc — bằng lượng chuyển',
+           'khúc = 10   →   A = 4 × 10 = 40   ·   B = 6 × 10 = 60', buoc=4, soBuoc=4,
+           loi=['A nhích đúng một khúc, mà đó là mười quyển vừa chuyển.',
+                'Nên A lúc đầu bốn mươi, B sáu mươi.']),
+        _c('cong_thuc', 'Nghi thức đóng án — BA TRẠM',
+           congThuc='trạm 1 tỉ TRƯỚC · trạm 2 tỉ SAU · trạm 3 đúng lượng thêm bớt chuyển',
+           thay='thiếu một trạm là án chưa đóng — đáp lọt hai trạm vẫn có thể gãy trạm ba',
+           loi=['Con nhớ nghi thức ba trạm. Thử tỉ trước, thử tỉ sau, và thử đúng lượng '
+                'đã chuyển.',
+                'Thiếu một trạm là án chưa đóng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B33.M1': kb5_cai_gi_khong_doi,
+    'DL:KSN5Q1.B33.M2': kb5_thuoc_hieu,
+    'DL:KSN5Q1.B33.M3': kb5_thuoc_tong_ba_tram,
     'DL:KSN5Q1.B32.M1': kb5_ti_an_sau_hai_phan_so,
     'DL:KSN5Q1.B32.M2': kb5_ti_an_trong_cau_tao_so,
     'DL:KSN5Q1.B32.M3': kb5_ti_bien_hinh,

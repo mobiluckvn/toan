@@ -35,24 +35,7 @@
   "kidText": "Bài hai tỉ số mở bằng một câu hỏi: cái gì không đổi? Kẻ đứng im mới được cầm thước. Hai tỉ thì hai sơ đồ."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Câu hỏi mở cửa của cả chương: CÁI GÌ KHÔNG ĐỔI? Chỉ một bên bị thêm / bớt → bên KIA đứng im — kẻ đứng im mới được cầm thước (kẻ đang đổi thì không)."
-   },
-   {
-    "id": "K2",
-    "text": "Hai tỉ số là HAI TẤM ẢNH ở hai thời điểm — mỗi tỉ một sơ đồ riêng (giấy hai tầng); biến cố (thêm 4 viên) sống ở KHOẢNG GIỮA hai tấm ảnh, không nhét được vào một sơ đồ."
-   },
-   {
-    "id": "K3",
-    "text": "Kỹ thuật lõi: quy đồng MẪU hai phân số theo thước — $\\frac{1}{2}$ = $\\frac{3}{6}$ và $\\frac{2}{3}$ = $\\frac{4}{6}$: cây thước Su Kem bị chia thành 6 khúc như nhau ở cả hai tầng — bên đổi nhích $\\frac{4}{6}$ − $\\frac{3}{6}$ = 1 phần = lượng thêm 4."
-   },
-   {
-    "id": "K4",
-    "text": "Một phần lộ → cả bài mở: phần 4 → thước Su Kem = $6  \\times  4 = 24$; Su Bống đầu = $3  \\times  4 = 12$. Thử ba trạm: tỉ trước $\\frac{12}{24}$ = $\\frac{1}{2}$ ✓; tỉ sau $\\frac{16}{24}$ = $\\frac{2}{3}$ ✓; đúng lượng thêm 4 ✓."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HAI TẤM ẢNH MỘT CÂY THƯỚC. Đề: \"kẹo Su Bống bằng 1/2 kẹo Su Kem; Su Bống được thêm 4 viên thì bằng 2/3 kẹo Su Kem.\" Trí Long cố nhét cả 1/2 lẫn 2/3 vào MỘT sơ đồ — phần rối tung! Đây là HAI tấm ảnh chụp ở hai thời điểm: giấy hai tầng, mỗi tỉ một sơ đồ. Đo bằng gì? Hỏi câu mở cửa: AI KHÔNG SUY SUYỂN? Su Bống được thêm kẹo — đang đổi; Su Kem không ai đụng — ĐỨNG IM: Su Kem cầm thước! Quy đồng MẪU để hai tầng cùng khúc thước: 1/2 = 3/6, 2/3 = 4/6 — thước Su Kem chia SÁU khúc ở cả hai tấm ảnh. Nhìn Su Bống: tầng trên 3 khúc — tầng dưới 4 khúc: nhích MỘT khúc = 4 viên vừa thêm! Khúc 4 → Su Kem 24 viên, Su Bống 12. Ba trạm thử: 12/24 = 1/2; 16/24 = 2/3; đúng thêm 4 — trọn án!",
   "canonicalExamples": [
    {
@@ -89,14 +72,8 @@
     "counterExample": "Su Bống trước 12 viên ≠ Su Bống sau 16 viên — 'một phần Su Bống' của hai tấm là hai độ dài khác nhau!"
    }
   ],
-  "vocabulary": [
-   "câu hỏi mở cửa",
-   "hai tấm ảnh hai thời điểm",
-   "kẻ đứng im cầm thước",
-   "quy đồng mẫu theo thước",
-   "ba trạm thử"
-  ],
-  "mantra": "HAI TỈ SỐ — HAI SƠ ĐỒ; KẺ ĐỨNG IM MỚI ĐƯỢC CẦM THƯỚC!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -123,46 +100,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Số kẹo Su Bống bằng $\\frac{1}{2}$ số kẹo Su Kem. Su Bống được cho thêm 4 viên thì bằng $\\frac{2}{3}$ số kẹo Su Kem. Tìm số kẹo mỗi bạn lúc đầu.",
-    "display": {
-     "type": "story_panel",
-     "caption": "$\\frac{1}{2}$ và $\\frac{2}{3}$ chung một sơ đồ??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để tách hai tấm ảnh!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Câu hỏi mở cửa: AI KHÔNG SUY SUYỂN? Su Bống đang đổi; Su Kem không ai đụng — Su Kem cầm thước! Quy đồng MẪU cho hai tầng cùng khúc: một phần hai bằng BA PHẦN SÁU; hai phần ba bằng BỐN PHẦN SÁU — thước Su Kem chia sáu khúc ở cả hai tấm ảnh. Nhìn Su Bống: ba khúc lên bốn khúc — nhích MỘT khúc, đúng bằng BỐN viên vừa thêm!",
-    "display": {
-     "type": "two_photo_ruler_interactive",
-     "spec": {
-      "ruler": "Su Kem (đứng im) = 6 khúc",
-      "before": "Su Bống 3/6",
-      "after": "Su Bống 4/6",
-      "gap": "1 khúc = 4 viên"
-     }
-    },
-    "interaction": {
-     "type": "ask_gate_then_align",
-     "answerKey": {
-      "value": 4
-     },
-     "successMessage": "Thước Su Kem 6 khúc: 3/6 → 4/6 — nhích 1 khúc = 4!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -183,37 +120,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K4"
-    ],
-    "narration": "Một khúc bốn viên — cả bài mở khóa: thước Su Kem sáu khúc — HAI MƯƠI TƯ viên; Su Bống đầu ba khúc — MƯỜI HAI viên! Ba trạm thử: mười hai trên hai tư đúng một phần hai; thêm bốn thành mười sáu trên hai tư — đúng hai phần ba; đúng lượng thêm bốn — trọn án! Chiều CHO ĐI cùng máy: A bằng ba phần tư B, cho đi sáu viên còn một phần hai — thước B bốn khúc: ba xuống hai, GIẢM một khúc bằng sáu: B hai tư, A mười tám!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "khúc 4 → Su Kem 24 · Su Bống 12",
-      "ba trạm: 1/2 ✓ · 2/3 ✓ · +4 ✓",
-      "chiều bớt: 3/4 → 2/4, giảm 1 = 6 → B 24 · A 18"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Hai câu cần nhớ: hai tỉ số — hai sơ đồ! Kẻ đứng im mới được cầm thước!",
-    "display": {
-     "type": "mantra_card",
-     "text": "HAI TỈ — HAI SƠ ĐỒ · ĐỨNG IM CẦM THƯỚC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -581,110 +487,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B33.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "1/2 và 2/3 chung một sơ đồ??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Một sơ đồ là đủ — tớ nhét cả 1/2 lẫn 2/3 vào chung nhé!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B33_M1_F1.png",
-   "sha256_16": "761b580ad391f98b"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Câu hỏi mở cửa: CÁI GÌ KHÔNG ĐỔI? — thước một-bên-đứng-im, hai tỉ hai sơ đồ",
-    "steps": [
-     {
-      "text": "khúc 4 → Su Kem 24 · Su Bống 12"
-     },
-     {
-      "text": "ba trạm: 1/2 · 2/3 · +4"
-     },
-     {
-      "text": "chiều bớt: 3/4 → 2/4, giảm 1 = 6 → B 24 · A 18"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B33_M1_F2.png",
-   "sha256_16": "f29ca80f6295b997"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Câu hỏi mở cửa của cả chương",
-      "text": "CÁI GÌ KHÔNG ĐỔI? Chỉ một bên bị thêm / bớt → bên KIA đứng im — kẻ đứng im mới được cầm thước (kẻ đang đổi thì không).",
-      "tone": "navy"
-     },
-     {
-      "text": "Hai tỉ số là HAI TẤM ẢNH ở hai thời điểm — mỗi tỉ một sơ đồ riêng (giấy hai tầng); biến cố (thêm 4 viên) sống ở KHOẢNG GIỮA hai tấm ảnh, không nhét được vào một sơ đồ.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "HAI TỈ SỐ — HAI SƠ ĐỒ; KẺ ĐỨNG IM MỚI ĐƯỢC CẦM THƯỚC!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B33_M1_F3.png",
-   "sha256_16": "c61351ab3a359805"
-  },
-  {
-   "archetype": "before_after_parts",
-   "params": {
-    "title": "CHỈ SU BỐNG ĐỔI — SU KEM ĐỨNG IM LÀM THƯỚC",
-    "before": {
-     "tag": "TRƯỚC",
-     "a": 3,
-     "b": 6,
-     "a_label": "Su Bống 3/6",
-     "b_label": "Su Kem 6 khúc"
-    },
-    "after": {
-     "tag": "SAU",
-     "a": 4,
-     "b": 6,
-     "a_label": "Su Bống 4/6",
-     "b_label": "Su Kem 6 khúc"
-    },
-    "delta": {
-     "label": "nhích 1 khúc = 4 viên"
-    },
-    "formula": "1 khúc = 4 → Su Kem = 24 · Su Bống lúc đầu = 12",
-    "note": "Quy 1/2 và 2/3 về cùng mẫu 6 rồi mới so — kẻ đứng im mới được cầm thước"
-   },
-   "caption": "Câu hỏi mở cửa mọi bài hai tỉ số: CÁI GÌ KHÔNG ĐỔI?",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B33_M1_F4.png",
-   "sha256_16": "efe5ed3004da8964"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B31"
@@ -696,5 +499,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Câu hỏi mở cửa: CÁI GÌ KHÔNG ĐỔI? — thước một-bên-đứng-im, hai tỉ hai sơ đồ"
+ "titleDay": "Câu hỏi mở cửa: CÁI GÌ KHÔNG ĐỔI? — thước một-bên-đứng-im, hai tỉ hai sơ đồ",
+ "video": {
+  "giang": "DL_KSN5Q1_B33_M1_giang.mp4"
+ }
 }
