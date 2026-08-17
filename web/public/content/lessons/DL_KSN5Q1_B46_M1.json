@@ -35,20 +35,7 @@
   "kidText": "Chung chiều cao thì tỉ diện tích bằng tỉ đáy; chung đáy thì bằng tỉ chiều cao. Mỗi dòng tỉ số phải kèm một dòng căn cứ."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Định lý 1 — CHUNG CAO: hai tam giác chung chiều cao thì tỉ S = tỉ ĐÁY (S = đáy × cao : 2 — cao chung rút nhau): đáy gấp đôi → S gấp đôi; hệ quả vàng: M trung điểm BC → S(ABM) = $\\frac{1}{2}$ S(ABC) = 18."
-   },
-   {
-    "id": "K2",
-    "text": "Định lý 2 — CHUNG ĐÁY: hai tam giác chung đáy thì tỉ S = tỉ CAO: cao 4 và 6 → tỉ S = $4 : 6 = 2 : 3$."
-   },
-   {
-    "id": "K3",
-    "text": "Nghi thức khai căn cứ ba chữ: CAO HẠ TỪ ĐÂU — XUỐNG ĐƯỜNG NÀO — CHUNG CHỖ NÀO: \"Hai tam giác ABM và AMC có chung đường cao hạ từ đỉnh A xuống đường thẳng BC, nên tỉ diện tích bằng tỉ hai đáy BM : MC\" — thiếu dòng căn cứ là mất điểm trình bày dù đáp số đúng."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: PHIÊN TÒA TỈ SỐ — MỖI PHÁN QUYẾT MỘT BẰNG CHỨNG. Hai tam giác đứng cạnh nhau, Trí Long phán vèo: \"chung chiều cao — tỉ diện tích bằng tỉ đáy!\" Thẩm phán Su Kem gõ búa: \"BẰNG CHỨNG? Cao hạ từ ĐỈNH NÀO, xuống ĐƯỜNG NÀO?\" Vì sao chung cao thì tỉ S bằng tỉ đáy? Nhìn công thức: S bằng đáy nhân cao chia hai — cao CHUNG thì rút nhau, chỉ còn tỉ ĐÁY! Đáy gấp đôi — diện tích gấp đôi; M là trung điểm BC thì hai đáy bằng nhau: S chia ĐÔI — hệ quả vàng mười tám trên ba sáu! Định lý hai soi gương: chung ĐÁY — tỉ S bằng tỉ CAO: cao bốn và sáu — tỉ hai phần ba! Nhưng phiên tòa chỉ nhận phán quyết CÓ BẰNG CHỨNG — nghi thức khai căn cứ ba chữ: cao hạ TỪ ĐÂU, XUỐNG đường nào, CHUNG chỗ nào: \"ABM và AMC chung đường cao hạ từ đỉnh A xuống đường thẳng BC\" — mỗi dòng tỉ số, một dòng căn cứ đi kèm: thiếu là mất điểm trình bày dù đáp đúng!",
   "canonicalExamples": [
    {
@@ -85,14 +72,8 @@
     "counterExample": "Hai tam giác chung một ĐỈNH nhưng đáy nằm hai đường khác nhau: phán 'chung cao' là gãy — cao từ đỉnh ấy xuống hai đường là hai đoạn khác nhau!"
    }
   ],
-  "vocabulary": [
-   "phiên tòa tỉ số",
-   "chung cao → tỉ đáy",
-   "chung đáy → tỉ cao",
-   "hệ quả vàng trung điểm",
-   "khai căn cứ ba chữ"
-  ],
-  "mantra": "MỖI DÒNG TỈ SỐ — MỘT DÒNG CĂN CỨ ĐI KÈM!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -114,45 +95,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Hai tam giác chung chiều cao, đáy tam giác thứ hai gấp đôi đáy tam giác thứ nhất. So sánh diện tích hai tam giác.",
-    "display": {
-     "type": "story_panel",
-     "caption": "phán 'chung cao' — bằng chứng đâu?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để mở phiên tòa!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Vì sao chung cao thì tỉ S bằng tỉ đáy? Nhìn công thức: S bằng đáy nhân cao chia hai — cao CHUNG thì rút nhau: chỉ còn tỉ ĐÁY! Đáy gấp đôi — diện tích gấp đôi; M trung điểm BC: hai đáy bằng nhau — S chia ĐÔI: ba sáu về MƯỜI TÁM, hệ quả vàng! Định lý hai soi gương: chung ĐÁY — tỉ S bằng tỉ CAO: cao bốn và sáu — tỉ HAI PHẦN BA!",
-    "display": {
-     "type": "twin_theorem_interactive",
-     "spec": {
-      "t1": "chung CAO → tỉ S = tỉ đáy (cao rút nhau)",
-      "gold": "trung điểm → S : 2 = 18",
-      "t2": "chung ĐÁY → tỉ S = tỉ cao = 2 : 3"
-     }
-    },
-    "interaction": {
-     "type": "cancel_common",
-     "answerKey": {
-      "value": 18
-     },
-     "successMessage": "Cao rút nhau — trung điểm chia đôi: 18!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -173,37 +115,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Phiên tòa chỉ nhận phán quyết CÓ BẰNG CHỨNG — nghi thức khai căn cứ ba chữ: cao hạ TỪ ĐÂU — XUỐNG đường nào — CHUNG chỗ nào! Mẫu câu chuẩn: \"Hai tam giác ABM và AMC có chung đường cao hạ từ đỉnh A xuống đường thẳng BC, nên tỉ diện tích bằng tỉ hai đáy BM chia MC.\" Thiếu dòng căn cứ là mất điểm trình bày dù đáp số đúng! Coi chừng phán chay: hai tam giác chung một ĐỈNH mà đáy nằm hai đường khác nhau — cao từ đỉnh ấy xuống hai đường là HAI đoạn khác nhau: không chung gì cả!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "ba chữ: TỪ ĐÂU — XUỐNG ĐƯỜNG NÀO — CHUNG CHỖ NÀO",
-      "mẫu: 'chung cao hạ từ A xuống BC → tỉ S = BM : MC'",
-      "thiếu căn cứ = mất điểm trình bày"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: mỗi dòng tỉ số — một dòng căn cứ đi kèm!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TỈ SỐ NÀO — CĂN CỨ NẤY!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -532,201 +443,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B46.M1",
- "figureSpec": [
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "",
-    "points": {
-     "B": [
-      0,
-      0
-     ],
-     "C": [
-      12,
-      0
-     ],
-     "A": [
-      5,
-      6
-     ],
-     "M": [
-      6,
-      0
-     ]
-    },
-    "shapes": [
-     {
-      "pts": [
-       "B",
-       "M",
-       "A"
-      ],
-      "fill": "teal"
-     },
-     {
-      "pts": [
-       "M",
-       "C",
-       "A"
-      ],
-      "fill": "gold"
-     }
-    ],
-    "edge_labels": [
-     {
-      "from": "B",
-      "to": "M",
-      "text": "BM",
-      "dy": -5
-     },
-     {
-      "from": "M",
-      "to": "C",
-      "text": "MC = BM",
-      "dy": -5
-     }
-    ],
-    "show_points": [
-     "A",
-     "B",
-     "C",
-     "M"
-    ]
-   },
-   "caption": "Đề bài — số đo đã cho",
-   "id": "F0",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B46_M1_F0.png",
-   "sha256_16": "b2681912721d206f"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Hai định lý nền: chung cao → tỉ đáy, chung đáy → tỉ cao — mỗi dòng tỉ số một dòng căn cứ",
-    "steps": [
-     {
-      "text": "ba chữ: TỪ ĐÂU — XUỐNG ĐƯỜNG NÀO — CHUNG CHỖ NÀO"
-     },
-     {
-      "text": "mẫu: 'chung cao hạ từ A xuống BC → tỉ S = BM : MC'"
-     },
-     {
-      "text": "thiếu căn cứ = mất điểm trình bày"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B46_M1_F2.png",
-   "sha256_16": "ead3579923853081"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Định lý 1",
-      "text": "CHUNG CAO: hai tam giác chung chiều cao thì tỉ S = tỉ ĐÁY (S = đáy × cao : 2 — cao chung rút nhau): đáy gấp đôi → S gấp đôi; hệ quả vàng: M trung điểm BC → S(ABM) = 1/2 S(ABC) = 18.",
-      "tone": "navy"
-     },
-     {
-      "label": "Định lý 2",
-      "text": "CHUNG ĐÁY: hai tam giác chung đáy thì tỉ S = tỉ CAO: cao 4 và 6 → tỉ S = 4 : 6 = 2 : 3.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "MỖI DÒNG TỈ SỐ — MỘT DÒNG CĂN CỨ ĐI KÈM!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B46_M1_F3.png",
-   "sha256_16": "4acebf4c0a249d68"
-  },
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "CHUNG CAO → TỈ DIỆN TÍCH BẰNG TỈ ĐÁY",
-    "points": {
-     "B": [
-      0,
-      0
-     ],
-     "C": [
-      12,
-      0
-     ],
-     "A": [
-      5,
-      6
-     ],
-     "M": [
-      6,
-      0
-     ]
-    },
-    "shapes": [
-     {
-      "pts": [
-       "B",
-       "M",
-       "A"
-      ],
-      "fill": "teal",
-      "label": "S(ABM) = 18"
-     },
-     {
-      "pts": [
-       "M",
-       "C",
-       "A"
-      ],
-      "fill": "gold",
-      "label": "S(AMC) = 18"
-     }
-    ],
-    "edge_labels": [
-     {
-      "from": "B",
-      "to": "M",
-      "text": "BM",
-      "dy": -5
-     },
-     {
-      "from": "M",
-      "to": "C",
-      "text": "MC = BM",
-      "dy": -5
-     }
-    ],
-    "show_points": [
-     "A",
-     "B",
-     "C",
-     "M"
-    ],
-    "formula": "M là TRUNG ĐIỂM BC → S(ABM) = S(AMC) = 36 : 2 = 18 cm²",
-    "note": "Hệ quả vàng: trung tuyến chia tam giác thành hai phần bằng nhau"
-   },
-   "caption": "Hai tam giác chung đường cao từ A — tỉ diện tích chính là tỉ hai đáy",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B46_M1_F4.png",
-   "sha256_16": "71713140c9978285"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B44",
@@ -740,5 +457,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Hai định lý nền: chung cao → tỉ đáy, chung đáy → tỉ cao — mỗi dòng tỉ số một dòng căn cứ"
+ "titleDay": "Hai định lý nền: chung cao → tỉ đáy, chung đáy → tỉ cao — mỗi dòng tỉ số một dòng căn cứ",
+ "video": {
+  "giang": "DL_KSN5Q1_B46_M1_giang.mp4"
+ }
 }

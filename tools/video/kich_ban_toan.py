@@ -14216,7 +14216,139 @@ def kb5_tam_giac_vuong_tu(b):
     ]
 
 
+def kb5_chung_cao_chung_day(b):
+    """L5·B46·M1 Chung cao thì tỉ S là tỉ đáy — mỗi dòng tỉ số một dòng căn cứ."""
+    return [
+        _c('bia', 'Hai định lý nền của cả chương', so_bai(b),
+           loi=['Cả chương hình học đứng trên hai câu. Và mỗi câu đều suy ra từ công '
+                'thức cũ.']),
+        _c('de_toan', 'Đề bài',
+           de='Hai tam giác CHUNG chiều cao, đáy tam giác thứ hai gấp đôi đáy thứ nhất.\nSo sánh diện tích',
+           loi=['Hai tam giác chung chiều cao, đáy tam giác thứ hai gấp đôi đáy thứ '
+                'nhất.']),
+        _c('y_toan', 'Nhìn thẳng vào công thức mà suy',
+           'S = đáy × cao : 2   —   cao CHUNG thì rút cho nhau, chỉ còn tỉ ĐÁY',
+           buoc=1, soBuoc=3,
+           loi=['Nhìn thẳng vào công thức mà suy. Diện tích bằng đáy nhân cao chia '
+                'hai.',
+                'Cao chung thì rút cho nhau, chỉ còn lại tỉ của hai đáy.']),
+        _c('so_do_doan', 'Hai đáy, một chiều cao', be=1, lon=2, phanBe=1, phanLon=2,
+           nhanBe='đáy nhỏ', nhanLon='đáy lớn',
+           chuPhu='Đáy gấp đôi thì diện tích cũng gấp đôi.',
+           loi=['Hai đáy đặt cạnh nhau. Đáy gấp đôi thì diện tích cũng gấp đôi.']),
+        _c('y_toan', 'Hệ quả vàng: TRUNG ĐIỂM chia đôi diện tích',
+           'trung điểm cạnh đáy   →   hai đáy bằng nhau   →   hai diện tích bằng nhau',
+           buoc=2, soBuoc=3,
+           loi=['Hệ quả vàng. Trung điểm cạnh đáy chia tam giác thành hai phần bằng '
+                'nhau.',
+                'Diện tích cả tấm là bốn mươi thì mỗi nửa hai mươi.']),
+        _c('y_toan', 'Định lý 2 — CHUNG ĐÁY thì tỉ S là tỉ CAO',
+           'cao 4 và cao 6   →   tỉ diện tích là 2 : 3', buoc=3, soBuoc=3,
+           loi=['Định lý hai đối xứng. Chung đáy thì tỉ diện tích bằng tỉ hai chiều '
+                'cao.']),
+        _c('de_toan', 'Nghi thức khai căn cứ ba chữ',
+           de='cao hạ TỪ ĐÂU   —   XUỐNG đường nào   —   CHUNG chỗ nào',
+           loi=['Nhưng viết tỉ số thôi chưa đủ. Phải khai căn cứ ba chữ.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='mỗi dòng TỈ SỐ — một dòng CĂN CỨ đi kèm',
+           thay='mẫu câu: "chung đường cao hạ từ đỉnh A xuống BC nên tỉ S bằng tỉ hai đáy"',
+           loi=['Con nhớ câu này. Mỗi dòng tỉ số phải có một dòng căn cứ đi kèm.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_diem_chia_hai_mau(b):
+    """L5·B46·M2 Hỏi SO VỚI AI trước khi viết tỉ."""
+    return [
+        _c('bia', 'Một điểm trên cạnh đáy chia luôn diện tích', so_bai(b),
+           loi=['Đặt một điểm trên cạnh đáy là chia luôn diện tích theo đúng tỉ ấy.']),
+        _c('de_toan', 'Đề bài',
+           de='Tam giác có S = 36. Điểm M trên BC với BM = 1/3 BC.\nTính S(ABM) — và tỉ S(ABM) : S(AMC)',
+           loi=['Tam giác có diện tích ba mươi sáu. Điểm chia nằm trên cạnh đáy, cắt ra '
+                'một phần ba cạnh ấy.']),
+        _c('so_do_doan', 'Đếm phần trên cạnh đáy', be=1, lon=2, phanBe=1, phanLon=2,
+           nhanBe='khúc đầu', nhanLon='khúc sau', chuTong='cả đáy = 3 phần',
+           chuPhu='Khúc đầu cầm 1 phần, khúc sau cầm 2 phần.',
+           loi=['Đếm phần trên cạnh đáy. Cả đáy ba phần, khúc đầu cầm một, khúc sau cầm '
+                'hai.']),
+        _c('y_toan', 'Câu 1 — so với CẢ tam giác',
+           'khúc đầu là 1 trong 3 phần   →   S = 1/3 × 36 = 12', buoc=1, soBuoc=3,
+           loi=['Câu một hỏi so với cả tam giác. Khúc đầu là một trong ba phần, nên '
+                'diện tích là một phần ba của ba mươi sáu.',
+                'Được mười hai.']),
+        _c('y_toan', 'Câu 2 — so với PHẦN KIA thì mẫu đổi',
+           'khúc sau cầm 2 phần   →   tỉ là 1 : 2, không phải 1 : 3', buoc=2, soBuoc=3,
+           loi=['Câu hai so với phần kia. Khúc sau cầm hai phần, nên tỉ là một trên '
+                'hai.',
+                'Không phải một trên ba như nhiều bạn viết vội.']),
+        _c('y_toan', 'Nên hỏi "SO VỚI AI?" trước khi viết tỉ',
+           'so CẢ tam giác → mẫu là m + n   ·   so PHẦN KIA → mẫu là n', buoc=3,
+           soBuoc=3,
+           loi=['Nên hỏi so với ai trước khi viết tỉ.',
+                'So cả tam giác thì mẫu là tổng hai phần, so phần kia thì mẫu chỉ là '
+                'phần kia.']),
+        _c('de_toan', 'Ca tổng quát chạy êm', de='BM : MC = 2 : 3, tổng S = 40',
+           loi=['Ca tổng quát chạy êm. Hai khúc theo tỉ hai trên ba, tổng diện tích bốn '
+                'mươi.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='hỏi SO VỚI AI trước — cả tam giác hay phần kia?',
+           thay='tổng 5 phần → một phần là 8 → hai tam giác 16 và 24, cộng lại đúng 40',
+           loi=['Tổng năm phần, mỗi phần tám, nên hai tam giác là mười sáu và hai mươi '
+                'tư.',
+                'Con nhớ hỏi so với ai trước khi viết tỉ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_chuoi_ti_noi_tiep(b):
+    """L5·B46·M3 Tỉ nối tiếp là nhân lồng nhau — càng lấy càng bé."""
+    return [
+        _c('bia', 'Lấy một phần, rồi lấy tiếp phần của phần ấy', so_bai(b),
+           loi=['Lấy nửa, rồi lấy một phần ba của chỗ vừa lấy. Kết quả đi về đâu.']),
+        _c('de_toan', 'Đề bài',
+           de='Tam giác có S = 48. M là trung điểm BC, N là trung điểm AM.\nTính S(ABN)',
+           loi=['Tam giác có diện tích bốn mươi tám. Lấy trung điểm cạnh đáy, rồi lấy '
+                'trung điểm của đoạn vừa dựng.']),
+        _c('y_toan', 'Tỉ nối tiếp là NHÂN LỒNG nhau',
+           '1/3 CỦA 1/2   =   1/2 × 1/3 = 1/6   —   càng lấy càng BÉ', buoc=1, soBuoc=3,
+           loi=['Tỉ nối tiếp là nhân lồng nhau. Một phần ba của một nửa là một phần '
+                'sáu.',
+                'Càng lấy càng bé đi, chứ cộng lại thành năm phần sáu là phình gần cả '
+                'tấm.']),
+        _c('day_so', 'Xuống từng tầng', so=['48', '24', '12'], nhanHang='diện tích',
+           chuPhu='tầng 1 lấy nửa   ·   tầng 2 lấy nửa nữa.',
+           loi=['Xuống từng tầng. Bốn mươi tám còn hai mươi tư, rồi còn mười hai.']),
+        _c('y_toan', 'Mỗi tầng một CĂN CỨ riêng',
+           'tầng 1 chung cao từ A xuống BC   ·   tầng 2 chung cao từ B xuống AM',
+           buoc=2, soBuoc=3,
+           loi=['Mỗi tầng phải khai căn cứ riêng của nó, vì hai tầng hạ cao xuống hai '
+                'đường khác nhau.']),
+        _c('y_toan', 'Điểm chia trên HAI cạnh thì tự dựng TRUNG GIAN',
+           'nối một đỉnh với điểm chia   →   có tam giác trung gian rồi hạ tiếp',
+           buoc=3, soBuoc=3,
+           loi=['Nếu hai điểm chia nằm trên hai cạnh khác nhau thì tự dựng một tam giác '
+                'trung gian.',
+                'Nối một đỉnh với điểm chia là có ngay bậc thang để xuống tiếp.']),
+        _c('de_toan', 'Bài ba trung điểm',
+           de='Ba tam giác góc, mỗi cái = 1/2 × 1/2 = 1/4 tấm',
+           loi=['Bài ba trung điểm cũng máy ấy. Mỗi tam giác ở góc bằng một phần tư '
+                'tấm.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='tỉ nối tiếp là NHÂN lồng nhau — càng lấy càng bé',
+           thay='ba góc chiếm 3/4 → phần giữa = 36 − 27 = 9, đúng 1/4 tấm',
+           loi=['Ba góc chiếm ba phần tư, nên phần giữa còn đúng một phần tư.',
+                'Con nhớ câu này. Tỉ nối tiếp là nhân lồng nhau, càng lấy càng bé.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B46.M1': kb5_chung_cao_chung_day,
+    'DL:KSN5Q1.B46.M2': kb5_diem_chia_hai_mau,
+    'DL:KSN5Q1.B46.M3': kb5_chuoi_ti_noi_tiep,
     'DL:KSN5Q1.B45.M1': kb5_dien_tich_tam_giac,
     'DL:KSN5Q1.B45.M2': kb5_ba_cap_day_cao,
     'DL:KSN5Q1.B45.M3': kb5_tam_giac_vuong_tu,
