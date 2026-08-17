@@ -180,7 +180,7 @@
     "DL:KSN3.B33",
     "DL:KSN3.B34"
    ],
-   "thuTu": 2,
+   "thuTu": 3,
    "khoaBai": false,
    "nhom": "Toán cấp 1"
   },
@@ -301,7 +301,7 @@
     "DL:KSN4.B95",
     "DL:KSN4.B49"
    ],
-   "thuTu": 3,
+   "thuTu": 4,
    "khoaBai": false,
    "nhom": "Toán cấp 1"
   },
@@ -325,7 +325,7 @@
     "_vi_sao": "Bạn 10-11 tuổi đọc nhanh, xem được nhiều khối trên một màn."
    },
    "bai": [],
-   "thuTu": 4,
+   "thuTu": 5,
    "chuong": [
     {
      "so": 1,
@@ -411,7 +411,7 @@
    },
    "bai": [],
    "donVi": "vòng đấu và bài kỹ năng",
-   "thuTu": 5,
+   "thuTu": 6,
    "choQuyen": "lop5",
    "nhom": "Toán cấp 1"
   },
@@ -462,6 +462,55 @@
    "_khoaBai_vi_sao": "16 unit dựng chồng lên nhau: chưa có a/the của unit 1 thì unit 16 chỉ là chữ lạ. Bé 6 tuổi chưa đọc được tên bài nên thấy ô nào cũng như nhau — không khoá thì nó bấm bài 16 trước bài 1. Mở bài sau khi bài trước ĐẠT, hoặc đã THỬ 2 lần (xem lib/dandat.js).",
    "khoaBai": false,
    "nhom": "Tiếng Anh"
+  },
+  "ta2": {
+   "ma": "ta2",
+   "mon": "tienganh",
+   "lop": 2,
+   "loai": "hoc",
+   "ten": "Tiếng Anh lớp 2",
+   "phuDe": "Nghe · hiểu · xếp câu · gõ lại — 16 cảnh quen thuộc",
+   "doTuoi": "Dành cho bé lớp 2",
+   "bieuTuong": "🔡",
+   "tienTo": "DL:TA2.",
+   "thuMuc": "ta2",
+   "soChuong": 4,
+   "soBai": 16,
+   "trangThai": "dangCo",
+   "donVi": "unit",
+   "doc": {
+    "chuTo": true,
+    "moiManMotMuc": true,
+    "_vi_sao": "Bé lớp 2 đọc tiếng Việt đã khá hơn lớp 1, nhưng tiếng Anh thì vẫn là năm đầu — giữ nguyên nhịp đọc chậm, mỗi màn một ý."
+   },
+   "am": {
+    "thuMuc": "tienganh/audio",
+    "so": "tienganh/lop2_am.json",
+    "_vi_sao": "Dùng CHUNG thư mục clip với lớp 1 (mã clip khoá theo chữ nên không đụng nhau), nhưng sổ tra RIÊNG từng quyển."
+   },
+   "bai": [
+    "DL:TA2.B01",
+    "DL:TA2.B02",
+    "DL:TA2.B03",
+    "DL:TA2.B04",
+    "DL:TA2.B05",
+    "DL:TA2.B06",
+    "DL:TA2.B07",
+    "DL:TA2.B08",
+    "DL:TA2.B09",
+    "DL:TA2.B10",
+    "DL:TA2.B11",
+    "DL:TA2.B12",
+    "DL:TA2.B13",
+    "DL:TA2.B14",
+    "DL:TA2.B15",
+    "DL:TA2.B16"
+   ],
+   "thuTu": 2,
+   "_khoaBai_vi_sao": "Như lớp 1: 16 unit dựng chồng lên nhau. Mở bài sau khi bài trước ĐẠT, hoặc đã THỬ 2 lần (lib/dandat.js).",
+   "khoaBai": false,
+   "nhom": "Tiếng Anh",
+   "_thuTu_vi_sao": "`thuTu` phải KHÔNG TRÙNG trên cả kệ sách, không phải trong từng nhóm — cổng canh đúng chuyện ấy. Đặt 1 cho khớp 'quyển thứ hai của Tiếng Anh' là đụng ngay lop2 của Toán."
   }
  },
  "_sapCo_doc": "Chưa có nội dung, nhưng HIỆN LÊN kệ sách để con và bố mẹ biết đường đi sắp tới. Làm xong lớp nào thì chuyển mục ấy sang `chuongTrinh` — kệ sách tự cập nhật, không phải sửa giao diện.",
