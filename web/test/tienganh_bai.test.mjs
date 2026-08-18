@@ -128,8 +128,13 @@ for (const q of quyens) {
       }
     }
     /* Kỳ sát hạch KHÔNG được cùng một đáp án liên tiếp quá 2 lần — bé qua bằng
-       cách đoán theo nhịp thì con số trong sổ bố mẹ là con số rỗng. */
-    const gt = b.assessment.items.map((x) => x.answerKey.value);
+       cách đoán theo nhịp thì con số trong sổ bố mẹ là con số rỗng.
+       Chỉ soi câu ĐÚNG/SAI: nhịp đoán được là bệnh của dạng hai lựa chọn. Ba unit
+       đầu lớp 3 không có từ nào vẽ được nên sát hạch bù bằng câu CHỌN NGHĨA — bốn
+       lựa chọn thì không có nhịp nào để mà đoán, và `answerKey.value` của chúng là
+       `undefined`: soi lẫn vào là cổng báo "ba câu liền cùng đáp án undefined". */
+    const gt = b.assessment.items.filter((x) => x.format === 'tf')
+      .map((x) => x.answerKey.value);
     for (let i = 2; i < gt.length; i += 1) {
       if (gt[i] === gt[i - 1] && gt[i] === gt[i - 2]) {
         nhip.push(`${b.id}: ba câu liền cùng đáp án ${gt[i]}`);
@@ -143,6 +148,45 @@ for (const q of quyens) {
   in5(goDai);
   t(`${q} · đáp án sát hạch không thành nhịp đoán được (${nhip.length})`, nhip.length === 0);
   in5(nhip);
+
+  /* ══ 3C · BẢO BÉ NHÌN HÌNH THÌ PHẢI CÓ HÌNH — CẢ BA QUYỂN ══
+   *
+   * `tienganh_hinh_dung_tu.test.mjs` đã canh điều này từ lâu, nhưng nó mở ĐÚNG thư
+   * mục `ta1` và chốt `assert.equal(tep.length, 16)`. Lớp 2 và lớp 3 chưa từng bị nó
+   * soi ngày nào — và lớp 3 thì hỏng đúng chỗ ấy, hàng loạt:
+   *
+   *   · 60 câu bậc 1 "Nghe rồi bấm vào HÌNH đúng" mà không nút nào có hình → bốn
+   *     dấu ❔ giống hệt nhau, bé chỉ còn cách đoán 1/4;
+   *   · 15 câu sát hạch "nhìn hình rồi đúng/sai" mà `anh` là null → nhìn vào chỗ
+   *     trống rồi bấm Đúng hay Sai, mà điểm vẫn ghi vào học bạ.
+   *
+   * Cổng đặt ở ĐÂY vì vòng lặp này chạy trên cả ba quyển. Bài học rút ra không phải
+   * "lớp 3 hỏng" mà là "cổng ghim cứng một quyển thì hai quyển sau không ai canh".
+   */
+  const doiHinh = [];
+  for (const b of bais) {
+    for (const c of Object.values(b.practice.pools).flat()) {
+      const nut = c.choices || [];
+      const coNut = (x) => !!((c.hinhNut || {})[x] || (c.veNut || {})[x]);
+      if (c.anhChon && !nut.every(coNut)) {
+        doiHinh.push(`${b.id}/${c.id}: bày HÌNH mà ${nut.filter((x) => !coNut(x)).length}`
+          + `/${nut.length} nút không có hình`);
+      }
+      /* Bắt LỜI SAI BẢO ("nhìn hình", "bấm vào hình"), không bắt mọi chữ "hình":
+         `“hình vuông” tiếng Anh là gì?` là NGHĨA của từ `square`, không phải lời
+         dẫn — và cổng báo oan thì người ta nới bừa cho xanh, mất cả cổng. */
+      if (/(nhìn|bấm vào) hình/i.test(c.text || '') && !c.anhChon && !c.anh && !c.anhVe) {
+        doiHinh.push(`${b.id}/${c.id}: đề nhắc "hình" mà không có hình nào — "${c.text}"`);
+      }
+    }
+    for (const c of b.assessment.items) {
+      if (c.nhinNghe && !c.anh && !c.anhVe) {
+        doiHinh.push(`${b.id}/${c.id}: câu NHÌN–NGHE mà không có hình để nhìn`);
+      }
+    }
+  }
+  t(`${q} · chỗ nào bảo nhìn hình thì có hình thật (${doiHinh.length})`, doiHinh.length === 0);
+  in5(doiHinh);
 
   /* ══ 3B · CHỖ DỄ NHẦM PHẢI NÓI VỀ CHÍNH CÂU CỦA BÀI ẤY ══
 

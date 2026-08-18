@@ -105,7 +105,20 @@ function ONhiemVu({ viec: x, dangO, onChon }) {
       >
         <span className={`relative text-3xl leading-none ${xong ? '' : 'opacity-70'}`}>
           {x.bieuTuong
-            ? <span aria-hidden="true">{x.bieuTuong}</span>
+            ? (
+              <span aria-hidden="true">
+                {x.bieuTuong}
+                {/* Bài lớp 3 có tới BỐN video từ mới, và bốn ô 🎬 giống hệt nhau thì
+                    bé không biết mình còn thiếu cái nào — đúng cái mà thanh việc
+                    sinh ra để tránh. Đánh số ngay trên biểu tượng. */}
+                {x.tong > 1 && (
+                  <span className="absolute -left-1 -top-1 rounded-full bg-navy px-1.5
+                    text-xs font-bold text-white">{x.thuTu}</span>
+                )}
+              </span>
+            )
+            /* Từ không có hình thì `HinhVe` hiện CHÍNH CHỮ ấy chứ không vẽ ❔ — sửa
+               ở đó, một chỗ cho cả ba màn cùng vẽ hình từ. */
             : <HinhVe ten={x.nhan} ve={x.ve} hinh={x.hinh} />}
           {(xong || dat) && (
             <span aria-hidden="true"

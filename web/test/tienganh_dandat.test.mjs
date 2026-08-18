@@ -218,7 +218,11 @@ const BA_TU = [
   { tu: 'bike', nghia: 'xe đạp' },
   { tu: 'book', nghia: 'quyển sách' },
 ];
-const tuMoi = (t = {}) => viecChangTu({ dsTu: BA_TU, coVideo: true, ...t });
+/* MỘT video từ mới — khuôn của lớp 1·2. Lớp 3 tách theo nhóm nghĩa nên có bài ba
+   video; nhóm phép kiểm riêng ở cuối tệp canh chuyện ấy. */
+const MOT_VIDEO = [{ ma: 'tu', ten: 'Từ mới', tep: 'B01_tu.mp4',
+  tu: ['ball', 'bike', 'book'] }];
+const tuMoi = (t = {}) => viecChangTu({ dsTu: BA_TU, dsVideo: MOT_VIDEO, ...t });
 
 /* Sổ nói: `dat(...)` là nói đạt điểm, `thu(...)` là thử thật đủ lần mà chưa đạt. */
 const dat = (...tu) => Object.fromEntries(tu.map((t) => [t, { caoNhat: 8, lan: 1 }]));
@@ -298,7 +302,7 @@ test('nghe đủ mọi từ mà CHƯA NÓI thì vẫn chưa được đi tiếp'
 });
 
 test('xem hết video vẫn chưa đủ — video không nói hộ được phần nói', () => {
-  assert.equal(tuMoi({ daXem: true }).mo, false);
+  assert.equal(tuMoi({ daXem: ['B01_tu.mp4'] }).mo, false);
 });
 
 test('nghe đủ và nói đủ thì mở, không cần xem video', () => {
@@ -308,7 +312,7 @@ test('nghe đủ và nói đủ thì mở, không cần xem video', () => {
 });
 
 test('xem hết video và nói đủ thì mở, không cần bấm nghe từng từ', () => {
-  assert.equal(tuMoi({ daXem: true, soNoi: dat(...BA) }).mo, true);
+  assert.equal(tuMoi({ daXem: ['B01_tu.mp4'], soNoi: dat(...BA) }).mo, true);
 });
 
 test('VIDEO HỎNG không được để bé kẹt', () => {
@@ -341,9 +345,48 @@ test('micro hỏng nhưng bé nói được hết thì không kêu ca gì', () =
 });
 
 test('bài không có video thì không mọc ra ô video trắng', () => {
-  const r = viecChangTu({ dsTu: BA_TU, coVideo: false });
+  const r = viecChangTu({ dsTu: BA_TU, dsVideo: [] });
   assert.equal(r.viec.length, 3);
   assert.equal(r.mo, false, 'vẫn phải nghe và nói đủ');
+});
+
+/* ── LỚP 3: video từ mới tách theo NHÓM NGHĨA, một unit có tới ba tệp ──
+ *
+ * Unit lớp 3 có tới 15 từ; một video là 75 giây và bé lớp ba ngồi không nổi. Nên
+ * `sinh_bai_tienganh.py` tách thành 2–3 tệp theo `vai`. Ba phép dưới đây canh đúng
+ * chỗ hay hỏng khi đổi từ MỘT sang NHIỀU: đếm ô, và điều kiện "đã xem hết". */
+const BA_VIDEO = [
+  { ma: 'tu_chao', ten: 'Lời chào', tep: 'B01_tu_chao.mp4', tu: ['ball'] },
+  { ma: 'tu_ten', ten: 'Tên bạn', tep: 'B01_tu_ten.mp4', tu: ['bike'] },
+  { ma: 'tu_hoi', ten: 'Từ để hỏi', tep: 'B01_tu_hoi.mp4', tu: ['book'] },
+];
+const baVideo = (t = {}) => viecChangTu({ dsTu: BA_TU, dsVideo: BA_VIDEO, ...t });
+
+test('ba nhóm nghĩa thì mọc ra BA ô video, mỗi ô mang tên nhóm', () => {
+  const r = baVideo();
+  const oV = r.viec.filter((x) => x.loai === 'video');
+  assert.equal(oV.length, 3, 'một ô chung cho ba tệp thì hai nhóm kia thành vô hình');
+  assert.deepEqual(oV.map((x) => x.nhan), ['Lời chào', 'Tên bạn', 'Từ để hỏi']);
+  assert.equal(r.conThieu, 6, 'ba ô video cộng ba ô từ');
+});
+
+test('xem MỘT nhóm chưa phải là xem hết — hai nhóm kia vẫn còn nợ', () => {
+  const r = baVideo({ daXem: ['B01_tu_chao.mp4'], soNoi: dat(...BA) });
+  assert.equal(r.viec.find((x) => x.tep === 'B01_tu_chao.mp4').tt, 'xong');
+  assert.equal(r.viec.find((x) => x.tep === 'B01_tu_ten.mp4').tt, 'chua');
+  assert.equal(r.mo, false, 'nói đủ rồi nhưng còn hai video chưa xem và chưa nghe đủ');
+});
+
+test('xem hết ba nhóm và nói đủ thì mở', () => {
+  const r = baVideo({ daXem: BA_VIDEO.map((g) => g.tep), daNghe: BA, soNoi: dat(...BA) });
+  assert.equal(r.mo, true);
+  assert.equal(r.conThieu, 0);
+});
+
+test('bài một nhóm vẫn giữ nhãn cũ “Xem từ mới”', () => {
+  /* Lớp 1·2 mỗi unit một video, và 32 tệp ấy đã chạy trên bản thật. Đổi nhãn ở đây
+     là đổi thứ bé đang quen mà chẳng đổi lấy gì. */
+  assert.equal(tuMoi().viec[0].nhan, 'Xem từ mới');
 });
 
 test('im lặng ba lần KHÔNG được tính là đã nói', () => {

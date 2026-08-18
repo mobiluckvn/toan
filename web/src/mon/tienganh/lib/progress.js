@@ -17,7 +17,9 @@ const khoa = () => {
   return cho === CHO_DAU ? KEY_GOC : `${KEY_GOC}.${cho}`;
 };
 
-export const soRong = () => ({ micros: {}, chapters: {}, updatedAt: null });
+export const soRong = () => ({
+  micros: {}, chapters: {}, docHieu: {}, baiViet: {}, updatedAt: null,
+});
 
 export function napTienDo(kho = globalThis.localStorage) {
   try {
@@ -151,6 +153,81 @@ export function ghiChuong(p, ma, chuong, kq) {
   };
 }
 
+/** Khoá bài đọc hiểu. Chữ D chứ không phải C — xem `ghiDocHieu`. */
+export const khoaDocHieu = (ma, chuong) => `${ma}:D${chuong}`;
+
+/**
+ * XONG MỘT BÀI ĐỌC HIỂU.
+ *
+ * ⚠ Ở BẢNG RIÊNG, KHÔNG nhét chung vào `chapters`.
+ *
+ * Nhét chung thì trông tiện — cùng hình dạng, cùng phạm vi một chương. Nhưng
+ * `hocBaQuyen()` đếm huy hiệu chương bằng cách quét MỌI khoá bắt đầu bằng mã quyển:
+ *
+ *     chuongDat = Object.entries(chapters).filter(([k, v]) => k.startsWith('ta3:') && v.dat)
+ *
+ * Thêm năm khoá `ta3:D*` vào đó là sổ bố mẹ hiện "10/5 chương" — một con số vô
+ * nghĩa, ở đúng chỗ bố mẹ tin nhất. Cùng dòng họ với cái bẫy "khoá chương phải kèm
+ * mã quyển" đã sập một lần.
+ *
+ * Bài đọc hiểu CHƯA đẩy lên máy chủ: `hocBaTA` chỉ nhận `loai: 'chuong'`, và thêm
+ * một `loai` là phải sửa cùng lúc `firestore.rules` · bên gửi · bên đọc, rồi deploy
+ * rules. Bác chốt bài đọc hiểu không cần vào sổ, nên để tại máy — nhưng ghi rõ ở
+ * đây rằng đó là một lựa chọn, không phải một chỗ sót.
+ */
+export function ghiDocHieu(p, ma, chuong, kq) {
+  const k = khoaDocHieu(ma, chuong);
+  const cu = (p.docHieu || {})[k] || {};
+  return {
+    ...p,
+    docHieu: {
+      ...(p.docHieu || {}),
+      [k]: {
+        dat: !!kq.dat || !!cu.dat,
+        best: Math.max(cu.best || 0, kq.dung || 0),
+        tong: kq.tong || 0,
+        at: new Date().toISOString(),
+      },
+    },
+  };
+}
+
+/** Khoá bài viết ngắn của một chương. */
+export const khoaBaiViet = (ma, chuong) => `${ma}:V${chuong}`;
+
+/**
+ * XONG MỘT BÀI VIẾT — giữ bài bé viết, điểm, và lời chấm.
+ *
+ * ⚠ GIỮ CẢ BÀI VIẾT, không chỉ điểm. Bác chốt "bố mẹ đọc được bài viết và lời
+ * chấm": giữ mỗi con số thì bố mẹ mở sổ ra thấy "8/10" mà không biết con viết gì,
+ * và cũng không biết máy chấm đúng hay sai. Con số một mình không kiểm tra được.
+ *
+ * ⚠ `nguon: 'ai'` ĐI KÈM MỌI CHỖ. Điểm này do máy chấm, và chỗ nào hiện nó ra cũng
+ * phải nói điều đó. Một con số không nhãn trong sổ học bạ sẽ được đọc thành điểm
+ * của cô giáo — đó là hiểu nhầm mà bố mẹ không có cách nào tự phát hiện.
+ */
+export function ghiBaiViet(p, ma, chuong, { viet, cham }) {
+  const k = khoaBaiViet(ma, chuong);
+  const cu = (p.baiViet || {})[k] || {};
+  const diem = Number(cham?.diem);
+  return {
+    ...p,
+    baiViet: {
+      ...(p.baiViet || {}),
+      [k]: {
+        viet: String(viet || ''),
+        diem: Number.isFinite(diem) ? diem : null,
+        best: Math.max(cu.best || 0, Number.isFinite(diem) ? diem : 0),
+        khen: cham?.khen || '',
+        soLoi: (cham?.loi || []).length,
+        choBoMe: cham?.choBoMe || '',
+        nguon: 'ai',
+        at: new Date().toISOString(),
+      },
+    },
+  };
+}
+
 /** Gộp sổ tại máy với sổ trên máy chủ — bản nào MỚI HƠN thì thắng, từng bài một. */
 export function gopTienDo(a, b) {
   if (!b) return a;
@@ -166,5 +243,13 @@ export function gopTienDo(a, b) {
     const cu = chapters[k];
     if (!cu || String(v.at || '') > String(cu.at || '')) chapters[k] = v;
   }
-  return { ...a, micros, chapters };
+  /* Bài viết cũng phải gộp, cùng luật "bản mới hơn thì thắng". Quên nó thì bé viết
+     bài trên máy bảng, mở laptop ra là bài biến mất — mà bài viết là thứ bé bỏ công
+     nhất trong cả quyển. */
+  const baiViet = { ...(a.baiViet || {}) };
+  for (const [k, v] of Object.entries(b.baiViet || {})) {
+    const cu = baiViet[k];
+    if (!cu || String(v.at || '') > String(cu.at || '')) baiViet[k] = v;
+  }
+  return { ...a, micros, chapters, baiViet };
 }

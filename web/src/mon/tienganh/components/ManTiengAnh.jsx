@@ -1,9 +1,16 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import BaiHoc from './BaiHoc.jsx';
 import OnTap from './OnTap.jsx';
+import DocHieu from './DocHieu.jsx';
+import VietBai from './VietBai.jsx';
 import NutNghe from './NutNghe.jsx';
-import { napBai, napSoAm, napOnTap, chuongCua, quyenDau, timQuyen } from '../lib/noiDung.js';
-import { ghiBai, ghiChang, ghiMoc, ghiChuong, khoaChuong } from '../lib/progress.js';
+import {
+  napBai, napSoAm, napOnTap, napDocHieu, napVietBai, chuongCua, quyenDau, timQuyen,
+} from '../lib/noiDung.js';
+import {
+  ghiBai, ghiChang, ghiMoc, ghiChuong, khoaChuong, ghiDocHieu, khoaDocHieu,
+  ghiBaiViet, khoaBaiViet,
+} from '../lib/progress.js';
 import { luuBai, luuMucHocBa } from '../lib/duLieu.js';
 import {
   trangThaiBai, baiNenHoc, moBai, moKyOnTap, conThieuChoOnTap,
@@ -27,6 +34,8 @@ export default function ManTiengAnh({
   const ct = (typeof quyen === 'string' ? timQuyen(quyen) : quyen) || quyenDau();
   const [bais, datBais] = useState(null);
   const [kyOn, datKyOn] = useState([]);
+  const [docs, datDocs] = useState([]);
+  const [viets, datViets] = useState([]);
 
   /* Nạp CHỈ MỤC 16 bài để vẽ trang chính. Mỗi tệp bài ~25 KB, 16 tệp là 400 KB —
      chấp nhận được cho một quyển, và đổi lại trang chính hiện đúng tên chương,
@@ -35,13 +44,19 @@ export default function ManTiengAnh({
     let song = true;
     (async () => {
       await napSoAm(ct?.ma);
-      const [ds, on] = await Promise.all([
+      const [ds, on, dh, vb] = await Promise.all([
         Promise.all((ct?.bai || []).map((id) => napBai(id).catch(() => null))),
         napOnTap(ct?.ma).catch(() => []),
+        /* Quyển chưa có bài đọc hiểu thì trả mảng rỗng và trang chính không mọc
+           thẻ nào — KHÔNG phải lỗi. Lớp 1·2 chưa có, lớp 3 có. */
+        napDocHieu(ct?.ma).catch(() => []),
+        napVietBai(ct?.ma).catch(() => []),
       ]);
       if (!song) return;
       datBais(ds.filter(Boolean));
       datKyOn(on || []);
+      datDocs(dh || []);
+      datViets(vb || []);
     })();
     return () => { song = false; };
   }, [ct?.ma]);
@@ -112,6 +127,44 @@ export default function ManTiengAnh({
     setView({ page: 'home' });
   }, [tienDo, datTienDo, setView, learnerId, ct.ma]);
 
+  /* XONG MỘT BÀI ĐỌC HIỂU — chỉ ghi sổ TẠI MÁY, không đẩy máy chủ. Lý do ở
+     `ghiDocHieu`: `hocBaTA` chỉ nhận `loai: 'chuong'`, thêm loại mới là phải sửa
+     luật Firestore và deploy nó, mà bác chốt bài đọc hiểu không cần vào sổ. */
+  const xongDocHieu = useCallback((bai, kq) => {
+    datTienDo((p) => ghiDocHieu(p, ct.ma, bai.chapter, kq));
+    setView({ page: 'home' });
+  }, [datTienDo, setView, ct.ma]);
+
+  /**
+   * XONG MỘT BÀI VIẾT — ghi hai nơi, đúng khuôn kỳ ôn tập.
+   *
+   * Sổ tại máy để bé mở lại thấy ngay; `hocBaTA` (loai `viet`) để BỐ MẸ đọc được
+   * bài viết và lời chấm — bác chốt điều ấy, và nó chỉ thành thật khi bài lên tới
+   * máy chủ. Gói bọc trong `giaTri` y như `chuong`: bên đọc chỉ nhận một hình dạng.
+   */
+  const xongVietBai = useCallback((bai, kq) => {
+    const sau = ghiBaiViet(tienDo, ct.ma, bai.chapter, kq);
+    datTienDo(sau);
+    const k = khoaBaiViet(ct.ma, bai.chapter);
+    luuMucHocBa(learnerId, 'viet', k, { giaTri: sau.baiViet[k] });
+  }, [tienDo, datTienDo, learnerId, ct.ma]);
+
+  if (view.page === 'vietbai' && view.vietId) {
+    const b = viets.find((x) => x.id === view.vietId);
+    return (
+      <VietBai bai={b} onThoat={() => setView({ page: 'home' })}
+               onXong={(kq) => xongVietBai(b, kq)} />
+    );
+  }
+
+  if (view.page === 'dochieu' && view.docId) {
+    const b = docs.find((x) => x.id === view.docId);
+    return (
+      <DocHieu bai={b} onThoat={() => setView({ page: 'home' })}
+               onXong={(kq) => xongDocHieu(b, kq)} />
+    );
+  }
+
   if (view.page === 'ontap' && view.kyId) {
     const ky = kyOn.find((k) => k.id === view.kyId);
     return (
@@ -141,9 +194,13 @@ export default function ManTiengAnh({
       ct={ct}
       bais={bais}
       kyOn={kyOn}
+      docs={docs}
+      viets={viets}
       tienDo={tienDo}
       onMoBai={(id) => setView({ page: 'bai', baiId: id })}
       onMoOnTap={(id) => setView({ page: 'ontap', kyId: id })}
+      onMoDocHieu={(id) => setView({ page: 'dochieu', docId: id })}
+      onMoVietBai={(id) => setView({ page: 'vietbai', vietId: id })}
       onVeKeSach={veKeSach}
     />
   );
@@ -151,7 +208,10 @@ export default function ManTiengAnh({
 
 /* ─────────── trang chính của quyển ─────────── */
 
-function NhaQuyen({ ct, bais, kyOn = [], tienDo, onMoBai, onMoOnTap, onVeKeSach }) {
+function NhaQuyen({
+  ct, bais, kyOn = [], docs = [], viets = [], tienDo,
+  onMoBai, onMoOnTap, onMoDocHieu, onMoVietBai, onVeKeSach,
+}) {
   if (!bais) {
     return <div className="p-6 text-mute">Đang mở quyển…</div>;
   }
@@ -236,6 +296,20 @@ function NhaQuyen({ ct, bais, kyOn = [], tienDo, onMoBai, onMoOnTap, onVeKeSach 
           {/* Kỳ ôn tập đứng NGAY SAU bốn bài của chính chương nó, không gom hết
               xuống cuối quyển: bé vừa học xong chương thì cái mốc phải nằm ngay
               đó, chứ không phải ở một chỗ khác mà bé chẳng bao giờ cuộn tới. */}
+          {/* Bài đọc hiểu đứng TRƯỚC kỳ ôn tập: đọc là việc học tiếp, còn kỳ ôn
+              tập là chỗ CHỐT chương. Chốt xong rồi mới đọc thì cái chốt hết nghĩa. */}
+          {docs.filter((d) => d.chapter === c.so).map((d) => (
+            <TheDocHieu key={d.id} bai={d} onMo={onMoDocHieu}
+                        mo={moKyOnTap(tienDo, c.bai.map((b) => b.id))}
+                        conThieu={conThieuChoOnTap(tienDo, c.bai.map((b) => b.id))}
+                        xong={tienDo?.docHieu?.[khoaDocHieu(ct.ma, c.so)]} />
+          ))}
+          {viets.filter((v) => v.chapter === c.so).map((v) => (
+            <TheVietBai key={v.id} bai={v} onMo={onMoVietBai}
+                        mo={moKyOnTap(tienDo, c.bai.map((b) => b.id))}
+                        conThieu={conThieuChoOnTap(tienDo, c.bai.map((b) => b.id))}
+                        xong={tienDo?.baiViet?.[khoaBaiViet(ct.ma, c.so)]} />
+          ))}
           {kyOn.filter((k) => k.chapter === c.so).map((k) => (
             <TheOnTap key={k.id} ky={k} onMo={onMoOnTap}
                       mo={moKyOnTap(tienDo, c.bai.map((b) => b.id))}
@@ -306,6 +380,66 @@ function DongBai({ bai, m, onMo, tt, moSau }) {
  * Khoá thì phải nói CÒN MẤY BÀI NỮA, không phải chỉ "chưa mở". Con số ấy là thứ
  * biến một cái cửa đóng thành một cái đích: bé biết còn hai bài nữa là tới.
  */
+/* Cùng dáng với thẻ kỳ ôn tập, khác BIỂU TƯỢNG và khác lời: 📖 chứ không 🏅, và
+   "Đọc" chứ không "Thi thử". Hai việc khác nhau thì phải nhìn ra là khác nhau. */
+function TheDocHieu({ bai, mo, conThieu, xong, onMo }) {
+  const dat = !!xong?.dat;
+  return (
+    <button type="button" disabled={!mo && !dat} onClick={() => onMo(bai.id)}
+      className={`flex items-center gap-3 rounded-xl2 border-2 border-dashed p-4 text-left
+        focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
+        ${dat ? 'border-teal bg-teal-pale'
+          : mo ? 'border-navy bg-soft hover:brightness-105'
+          : 'cursor-not-allowed border-line bg-soft opacity-60'}`}>
+      <span className="text-3xl" aria-hidden="true">{dat ? '📖' : mo ? '📖' : '🔒'}</span>
+      <span className="min-w-0 flex-1">
+        <span className="block font-bold text-ink">{bai.name}</span>
+        <span className="block text-sm text-mute">
+          {dat ? `Con đã đọc xong · ${xong.best}/${xong.tong} câu đúng`
+            : mo ? `Đoạn ${bai.doan?.length || 0} câu · ${bai.soCau} câu hỏi`
+            : conThieu === 1 ? 'Còn 1 bài nữa trong chương này là mở'
+            : `Còn ${conThieu} bài nữa trong chương này là mở`}
+        </span>
+      </span>
+      {(mo || dat) && (
+        <span className="flex-none rounded-xl2 bg-white px-3 py-1.5 text-sm font-bold text-navy">
+          {dat ? 'Đọc lại' : 'Đọc'}
+        </span>
+      )}
+    </button>
+  );
+}
+
+/* Thẻ bài viết. Điểm hiện trên thẻ thì PHẢI kèm chữ "máy chấm" — cùng một luật với
+   màn lời chấm, và đây là chỗ thứ hai con số ấy lộ ra. */
+function TheVietBai({ bai, mo, conThieu, xong, onMo }) {
+  const daViet = Number.isFinite(xong?.diem);
+  return (
+    <button type="button" disabled={!mo && !daViet} onClick={() => onMo(bai.id)}
+      className={`flex items-center gap-3 rounded-xl2 border-2 border-dashed p-4 text-left
+        focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
+        ${daViet ? 'border-teal bg-teal-pale'
+          : mo ? 'border-navy bg-soft hover:brightness-105'
+          : 'cursor-not-allowed border-line bg-soft opacity-60'}`}>
+      <span className="text-3xl" aria-hidden="true">{mo || daViet ? '✍️' : '🔒'}</span>
+      <span className="min-w-0 flex-1">
+        <span className="block font-bold text-ink">{bai.name}</span>
+        <span className="block text-sm text-mute">
+          {daViet ? `Con đã viết · ${xong.diem}/10 điểm (máy chấm)`
+            : mo ? `Viết ${bai.toiThieu}–3 câu, cô giáo máy chấm cho con`
+            : conThieu === 1 ? 'Còn 1 bài nữa trong chương này là mở'
+            : `Còn ${conThieu} bài nữa trong chương này là mở`}
+        </span>
+      </span>
+      {(mo || daViet) && (
+        <span className="flex-none rounded-xl2 bg-white px-3 py-1.5 text-sm font-bold text-navy">
+          {daViet ? 'Viết lại' : 'Viết'}
+        </span>
+      )}
+    </button>
+  );
+}
+
 function TheOnTap({ ky, mo, conThieu, xong, onMo }) {
   const dat = !!xong?.dat;
   return (

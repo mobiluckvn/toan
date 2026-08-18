@@ -46,7 +46,24 @@ export default function HinhVe({ ve, hinh, ten = '' }) {
       />
     );
   }
-  return <span role="img" aria-label={ten}>{hinh || '❔'}</span>;
+  if (hinh) return <span role="img" aria-label={ten}>{hinh}</span>;
+  /**
+   * KHÔNG CÓ HÌNH THÌ HIỆN CHÍNH CHỮ ẤY, đừng vẽ ❔.
+   *
+   * Lớp 1·2 từ nào cũng có hình nên nhánh này gần như không chạy. Lớp 3 thì 51/204
+   * từ không vẽ được (`hello` · `fine` · `my` · `this`), và Unit 1 thì KHÔNG TỪ NÀO
+   * có hình — cả màn thành một rừng dấu hỏi giống hệt nhau: thanh việc mất công
+   * dụng, thẻ từ hiện một ô trống to bằng bàn tay, và bé ngồi đợi tranh hiện ra.
+   *
+   * Cỡ chữ tính bằng `em` nên nó co theo chỗ gọi: ô nhỏ trên thanh việc thì chữ
+   * nhỏ, thẻ từ `text-7xl` thì chữ to. Một nhánh, mọi chỗ gọi cùng đúng.
+   */
+  return (
+    <span aria-label={ten}
+      className="block max-w-[3.2em] truncate text-[0.32em] font-bold leading-tight text-navy">
+      {ten || '❔'}
+    </span>
+  );
 }
 
 export const COI_HINH = Object.keys(BO);

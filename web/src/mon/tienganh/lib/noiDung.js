@@ -112,6 +112,30 @@ export async function napOnTap(ma = 'ta1') {
   } catch { return []; }
 }
 
+/**
+ * Bài đọc hiểu của một quyển — mỗi chương một bài.
+ *
+ * Quyển chưa có thì trả MẢNG RỖNG, không ném: lớp 1·2 chưa dựng bài đọc hiểu, và
+ * một tệp 404 không được phép làm trang chính của chúng trắng màn. Cùng lối với
+ * `napOnTap` ngay trên.
+ */
+export async function napDocHieu(ma = 'ta1') {
+  const ct = chuongTrinh(ma);
+  try {
+    const r = await fetch(dongDau(`${CONTENT}/${ct.thuMuc || ma}/dochieu.json`));
+    return r.ok ? await r.json() : [];
+  } catch { return []; }
+}
+
+/** Đề bài viết ngắn của một quyển — mỗi chương một đề. Chưa có thì mảng rỗng. */
+export async function napVietBai(ma = 'ta1') {
+  const ct = chuongTrinh(ma);
+  try {
+    const r = await fetch(dongDau(`${CONTENT}/${ct.thuMuc || ma}/vietbai.json`));
+    return r.ok ? await r.json() : [];
+  } catch { return []; }
+}
+
 /** Mã bài liền trước / liền sau, suy từ chính danh sách trong sổ. */
 export function hangXom(id) {
   const ma = quyenCua(id);
@@ -133,6 +157,29 @@ export function hangXom(id) {
  * mà lệch kiểu không cổng nào bắt được. Xem [[mot-nguon-cho-hai-ben-ve]].
  */
 export const hinhCuaTu = (bai, tu) => (bai?.hinhTu || []).find((h) => h.tu === tu) || {};
+
+/**
+ * VIDEO TỪ MỚI CỦA MỘT BÀI — luôn là một DANH SÁCH.
+ *
+ * Lớp 1·2 mỗi unit 3,5 từ nên một video là đủ. Lớp 3 là 9,7 từ, nhiều nhất 15 — giữ
+ * một tệp thì video dài 54 tới 75 giây, mà bé lớp ba ngồi không nổi thì nó bấm bỏ
+ * qua và cả bài giảng thành công cốc. Nên `sinh_bai_tienganh.py` tách theo NHÓM
+ * NGHĨA (`vai` đã chia sẵn) và khai ra `video.tu` một danh sách.
+ *
+ * Hàm này là NGUỒN DUY NHẤT trả danh sách ấy, kể cả với bài chỉ có một nhóm. Chỗ
+ * nào tự đọc `bai.video.tu` rồi tự đoán "chuỗi hay mảng" là chỗ sẽ đoán sai — cùng
+ * họ với `hinhCuaTu` ở trên, và cùng một cách chữa.
+ *
+ * Bài cũ (`"tu": "…_tu.mp4"`) vẫn đọc được: bọc thành một nhóm. Không phải để giữ
+ * tương thích mãi mãi, mà để một bản dựng cũ còn nằm trong cache trình duyệt không
+ * làm bé mất hẳn ô video.
+ */
+export function dsVideoTu(bai) {
+  const v = bai?.video?.tu;
+  if (!v) return [];
+  if (typeof v === 'string') return [{ ma: 'tu', ten: 'Từ mới', tep: v, tu: [] }];
+  return v.filter((g) => g && g.tep);
+}
 
 /**
  * Mã của tối đa `n` bài ĐỨNG TRƯỚC bài này, theo đúng thứ tự học.

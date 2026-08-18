@@ -9,7 +9,7 @@ import NutNoi from './NutNoi.jsx';
 import HoiThoai from './HoiThoai.jsx';
 import Video from '../../../chung/components/Video.jsx';
 import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
-import { napBai, napSoAm, hangXom, hinhCuaTu } from '../lib/noiDung.js';
+import { napBai, napSoAm, hangXom, hinhCuaTu, dsVideoTu } from '../lib/noiDung.js';
 import { maCua } from './NutNghe.jsx';
 import {
   changCua, NHAN_CHANG, trangThaiChang, THU_TOI_THIEU, viecChangTu, viecChangCau,
@@ -239,14 +239,23 @@ const NutTiep = ({ onClick, chu = 'Tiếp tục', tat = false, viSao }) => (
  * để bé kẹt vì tệp không tải được.
  */
 function ManTu({ bai, onTiep, onNoi, moc, onMoc }) {
+  const dsVideo = useMemo(() => dsVideoTu(bai), [bai]);
   /* Nghe bốn từ rồi bị gọi đi ăn cơm — vào lại mà thanh VIỆC CỦA CON trắng trơn
-     thì công vừa bỏ ra không để lại dấu, và đó đúng là lúc bé bỏ cuộc. */
-  const [daXem, datDaXem] = useState(!!moc?.daXem);
+     thì công vừa bỏ ra không để lại dấu, và đó đúng là lúc bé bỏ cuộc.
+
+     Mốc CŨ ghi `daXem: true` (hồi mỗi bài chỉ có một video). Bé đang học dở lớp 1
+     mà bản mới lên là mốc ấy vẫn nằm trong máy — đọc nó thành `new Set(true)` thì
+     ra Set rỗng, và bé vừa xem xong lại thấy ô video trắng. Nên dịch thẳng: đã xem
+     hết ngày ấy nghĩa là đã xem hết bây giờ. */
+  const [daXem, datDaXem] = useState(() => new Set(
+    moc?.daXem === true ? dsVideo.map((g) => g.tep) : (moc?.daXem || []),
+  ));
   const [videoHong, datVideoHong] = useState(false);
   const [daNghe, datDaNghe] = useState(() => new Set(moc?.daNghe || []));
   const [soNoi, datSoNoi] = useState(() => ({ ...(moc?.soNoi || {}) }));
   const [micHong, datMicHong] = useState(false);
   const [iTu, datITu] = useState(() => Math.max(0, Number(moc?.iTu) || 0));
+  const [iVideo, datIVideo] = useState(0);
   const K = bai.knowledgeCore.statements || [];
   const dsTu = bai.knowledgeCore.vocabulary || [];
   const oVideo = useRef(null);
@@ -254,7 +263,7 @@ function ManTu({ bai, onTiep, onNoi, moc, onMoc }) {
   /* Ghi mốc — `daNghe` là Set nên phải rải thành mảng, không thì JSON ra `{}` và
      phép so "có đổi không" bên `ghiMoc` luôn thấy giống nhau, mốc đứng im. */
   useEffect(() => {
-    onMoc?.({ daXem, daNghe: [...daNghe], soNoi, iTu });
+    onMoc?.({ daXem: [...daXem], daNghe: [...daNghe], soNoi, iTu });
   }, [daXem, daNghe, soNoi, iTu, onMoc]);
 
   /* Gắn hình vào từ TRƯỚC khi đưa cho thanh việc — cùng nguồn với thẻ từ. */
@@ -264,15 +273,17 @@ function ManTu({ bai, onTiep, onNoi, moc, onMoc }) {
   );
 
   const { viec, mo, conThieu, vuongMicro } = viecChangTu({
-    dsTu: dsTuCoHinh, coVideo: !!bai.video?.tu, daXem, videoHong,
+    dsTu: dsTuCoHinh, dsVideo, daXem: [...daXem], videoHong,
     daNghe: [...daNghe], soNoi, micHong, datNoi: DAT_NOI,
   });
 
   /* Bấm một ô trên thanh: ô TỪ thì chuyển hẳn sang từ ấy (màn chỉ hiện một từ
-     một lúc), ô VIDEO thì cuộn lên video. Biết mình thiếu gì mà không tới được
-     chỗ ấy thì thanh mới đi nửa đường. */
+     một lúc), ô VIDEO thì MỞ ĐÚNG video ấy rồi cuộn lên. Biết mình thiếu gì mà
+     không tới được chỗ ấy thì thanh mới đi nửa đường. */
   const toiViec = useCallback((x) => {
     if (x.loai === 'video') {
+      const k = dsVideo.findIndex((g) => g.tep === x.tep);
+      if (k >= 0) datIVideo(k);
       const dich = oVideo.current;
       if (!dich) return;
       dich.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -282,7 +293,7 @@ function ManTu({ bai, onTiep, onNoi, moc, onMoc }) {
     }
     const i = dsTuCoHinh.findIndex((v) => v.tu === x.ma);
     if (i >= 0) datITu(i);
-  }, [dsTuCoHinh]);
+  }, [dsTuCoHinh, dsVideo]);
 
   /* `lan` chỉ cộng khi máy NGHE RA CHỮ. Bé bấm nút rồi ngồi im thì không tính —
      nếu tính thì bấm hai cái trong im lặng là "đã thử thật 2 lần" và qua luôn. */
@@ -307,12 +318,30 @@ function ManTu({ bai, onTiep, onNoi, moc, onMoc }) {
       <ThanhViec viec={viec} conThieu={conThieu} mo={mo} dangO={dsTuCoHinh[iTu]?.tu}
                  vuongMicro={vuongMicro} onChon={toiViec} />
 
+      {/* MỘT video một lúc, đúng khuôn chặng Mẫu câu. Bày cả ba tệp cùng lúc thì
+          màn dài ra và bé không biết xem cái nào trước; thanh việc ở trên đã lo
+          phần nhìn bao quát, bấm ô nào là nhảy tới video ấy.
+          `key` là tên tệp: không có nó thì React giữ nguyên thẻ <video> cũ, đổi ô
+          mà tranh vẫn đứng im ở khung cuối của video trước. */}
       <div ref={oVideo} className="rounded-xl2 transition">
+        {dsVideo.length > 1 && (
+          <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-mute">
+            Nhóm từ {iVideo + 1} / {dsVideo.length} · {dsVideo[iVideo]?.ten}
+          </p>
+        )}
         <Video
-          tep={bai.video?.tu}
-          ten="Xem từ mới"
-          phu={`${dsTu.length} từ · khoảng nửa phút`}
-          onXongLan1={() => datDaXem(true)}
+          key={dsVideo[iVideo]?.tep}
+          tep={dsVideo[iVideo]?.tep}
+          ten={dsVideo.length > 1 ? dsVideo[iVideo]?.ten : 'Xem từ mới'}
+          phu={`${(dsVideo[iVideo]?.tu || dsTu).length} từ · khoảng nửa phút`}
+          onXongLan1={() => {
+            const t = dsVideo[iVideo]?.tep;
+            datDaXem((s) => (s.has(t) ? s : new Set(s).add(t)));
+            /* Xem xong thì tự sang nhóm CHƯA XEM kế tiếp — bé không phải đi tìm.
+               Không tự chạy, chỉ đổi tệp: luật "không tự chạy" nằm ở `Video`. */
+            const k = dsVideo.findIndex((g, j) => j > iVideo && !daXem.has(g.tep));
+            if (k >= 0) datIVideo(k);
+          }}
           onLoi={() => datVideoHong(true)}
         />
       </div>
@@ -391,9 +420,17 @@ function LuyenTu({ bai, ds, i, onDoi, soNoi, micHong, onNoi, onNghe, onMicHong }
         )}
       </div>
 
-      {/* Hình to hẳn: đây là thứ bé nhìn vào để nhớ nghĩa lúc đang cố nói. */}
+      {/* Hình to hẳn: đây là thứ bé nhìn vào để nhớ nghĩa lúc đang cố nói.
+          ⚠ KHÔNG CÓ HÌNH thì đừng vẽ gì Ở ĐÂY — 51 từ của lớp 3 không vẽ được, và
+          chữ thì ngay bên dưới đã có, to và rõ. (`HinhVe` lui về hiện chữ, nhưng ở
+          chỗ này lui như thế là hiện hai lần cùng một chữ.) */}
       <div className="flex flex-col items-center gap-1 py-2">
-        <span className="text-7xl leading-none"><HinhVe ten={v.tu} {...hinhCuaTu(bai, v.tu)} /></span>
+        {(() => {
+          const h = hinhCuaTu(bai, v.tu);
+          return (h.hinh || h.ve)
+            ? <span className="text-7xl leading-none"><HinhVe ten={v.tu} {...h} /></span>
+            : null;
+        })()}
         <p className="text-3xl font-bold text-navy">{v.tu}</p>
         <p className="font-mono text-sm text-mute">{v.ipa}</p>
         <p className="text-lg text-ink">{v.nghia}</p>

@@ -210,23 +210,36 @@ export function noiDuoc({ caoNhat = null, lan = 0 } = {}, dat = 6) {
  * @param  {object} t.soNoi  sổ nói: `{ [từ]: { caoNhat, lan } }` — xem `noiDuoc`
  * @return {{viec: Array, mo: boolean, conThieu: number, vuongMicro: boolean}}
  *
- * `viec[0]` là ô video nếu bài có video từ mới; sau đó mỗi từ một ô.
+ * `viec` mở đầu bằng MỘT Ô CHO MỖI VIDEO từ mới; sau đó mỗi từ một ô.
+ *
+ * ── VÌ SAO KHÔNG CÒN MỘT Ô VIDEO ──
+ * Lớp 3 có unit 15 từ, và video từ mới tách theo NHÓM NGHĨA thành ba tệp (xem
+ * `dsVideoTu`). Một ô chung cho ba tệp thì ô ấy sáng lên ngay khi bé xem xong tệp
+ * đầu, và hai tệp kia thành thứ không ai biết là có — đúng cái mà thanh VIỆC CỦA
+ * CON sinh ra để tránh.
  */
 export function viecChangTu({
-  dsTu = [], coVideo = false, daXem = false, videoHong = false,
+  dsTu = [], dsVideo = [], daXem = [], videoHong = false,
   daNghe = [], soNoi = {}, micHong = false, datNoi = 6,
 } = {}) {
   const nghe = new Set(daNghe);
+  const xem = new Set(daXem);
   const mucNoi = (tu) => noiDuoc(soNoi[tu], datNoi);
   const noi = new Set(dsTu.map((v) => v.tu).filter((tu) => mucNoi(tu) !== 'chua'));
   const viec = [];
 
-  if (coVideo) {
+  for (const [i, g] of dsVideo.entries()) {
     viec.push({
-      ma: '__video', loai: 'video', nhan: 'Xem từ mới', bieuTuong: '🎬',
+      ma: `__video:${g.tep}`, loai: 'video', tep: g.tep, bieuTuong: '🎬',
+      /* Số thứ tự để thanh việc đánh số lên ô: bốn ô 🎬 giống hệt nhau thì bé
+         không biết mình còn thiếu cái nào. */
+      thuTu: i + 1, tong: dsVideo.length,
+      /* Bài một nhóm thì nhãn y như cũ; nhiều nhóm thì nhãn phải NÓI RA nhóm nào,
+         không thì ba ô giống hệt nhau và bé không biết mình còn thiếu cái nào. */
+      nhan: dsVideo.length === 1 ? 'Xem từ mới' : g.ten,
       /* Video hỏng KHÔNG phải là "xong" — bé chưa xem gì cả. Nhưng cũng không
          được để "chưa", vì thế là bắt bé làm một việc bất khả. Ô riêng: `hong`. */
-      tt: videoHong ? 'hong' : (daXem ? TT_VIEC.xong : TT_VIEC.chua),
+      tt: videoHong ? 'hong' : (xem.has(g.tep) ? TT_VIEC.xong : TT_VIEC.chua),
       viecCon: [],
     });
   }
@@ -251,7 +264,10 @@ export function viecChangTu({
   /* Xem hết video HOẶC nghe đủ từng từ — hai đường, cả hai đều là nghe đủ chừng
      ấy từ. Bài không có video thì vế ấy tự đúng, không phải chờ gì. */
   const ngheDu = dsTu.length > 0 && dsTu.every((v) => nghe.has(v.tu));
-  const xemXong = !coVideo || daXem || videoHong;
+  /* XEM HẾT nghĩa là hết MỌI video của bài. Bài ba nhóm mà xem một tệp đã kể là
+     xong thì hai nhóm từ kia không ai giảng — cùng cái bẫy đã sửa ở chặng mẫu câu. */
+  const xemXong = dsVideo.length === 0 || videoHong
+    || dsVideo.every((g) => xem.has(g.tep));
   const noiDu = dsTu.length === 0 || dsTu.every((v) => mucNoi(v.tu) !== 'chua');
 
   return {
