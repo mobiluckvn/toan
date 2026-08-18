@@ -195,6 +195,16 @@
    },
    {
     "id": "K4",
+    "text": "Câu hôm nay dùng để: Giới thiệu người trong nhà qua tấm ảnh. Ví dụ: Con khoe ảnh gia đình cho bạn xem.",
+    "doanAm": [
+     [
+      "Câu hôm nay dùng để giới thiệu người trong nhà qua tấm ảnh. Con khoe ảnh gia đình cho bạn xem.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K5",
     "text": "Mẫu câu: Who's this? - It's my + [Family member]. — ví dụ: Who's this? - It's my sister.",
     "doanAm": [
      [
@@ -326,13 +336,80 @@
    "How old is she? - She's twelve years old.",
    "How old is she? - She's thirteen years old."
   ],
-  "mauCauDs": [],
+  "mauCauDs": [
+   {
+    "cau": "Who's this? - It's my sister.",
+    "congThuc": "Who's this? - It's my + [Family member].",
+    "dungDe": "Giới thiệu người trong nhà qua tấm ảnh.",
+    "tinhHuong": "Con khoe ảnh gia đình cho bạn xem.",
+    "phan": [
+     {
+      "chu": "Who's this?",
+      "lam_gi": "“đây là ai”"
+     },
+     {
+      "chu": "It's my",
+      "lam_gi": "“đây là … của mình”"
+     },
+     {
+      "chu": "sister",
+      "lam_gi": "NGƯỜI trong nhà",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "How old is he? - He's twenty years old.",
+    "congThuc": "How old is she? - She's + [Number] + years old.",
+    "dungDe": "Nói tuổi của người trong nhà.",
+    "tinhHuong": "Bạn hỏi chị con bao nhiêu tuổi.",
+    "phan": [
+     {
+      "chu": "How old is she?",
+      "lam_gi": "hỏi tuổi người NỮ; người nam thì “he”"
+     },
+     {
+      "chu": "She's",
+      "lam_gi": "“chị ấy”"
+     },
+     {
+      "chu": "twenty",
+      "lam_gi": "SỐ tuổi",
+      "thay": true
+     },
+     {
+      "chu": "years old",
+      "lam_gi": "“tuổi”"
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   }
+  ],
   "mauCau": {
    "cau": "Who's this? - It's my sister.",
    "congThuc": "Who's this? - It's my + [Family member].",
-   "dungDe": null,
-   "tinhHuong": null,
-   "phan": [],
+   "dungDe": "Giới thiệu người trong nhà qua tấm ảnh.",
+   "tinhHuong": "Con khoe ảnh gia đình cho bạn xem.",
+   "phan": [
+    {
+     "chu": "Who's this?",
+     "lam_gi": "“đây là ai”"
+    },
+    {
+     "chu": "It's my",
+     "lam_gi": "“đây là … của mình”"
+    },
+    {
+     "chu": "sister",
+     "lam_gi": "NGƯỜI trong nhà",
+     "thay": true
+    }
+   ],
    "khacVoi": null
   },
   "misconceptions": [
@@ -391,6 +468,14 @@
    },
    {
     "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S7",
     "kind": "trap",
     "teaches": [],
     "narration": "Nghe câu này: Who this? - It's my sister. — câu này có một chỗ chưa đúng. Con nghe lại rồi tìm xem sai ở đâu nhé.",
@@ -2276,7 +2361,18 @@
  },
  "video": {
   "tu": "DL_TA3_B11_tu.mp4",
-  "cau": []
+  "cau": [
+   {
+    "vai": "cau",
+    "cau": "Who's this? - It's my sister.",
+    "tep": "DL_TA3_B11_cau1.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "How old is he? - He's twenty years old.",
+    "tep": "DL_TA3_B11_cau2.mp4"
+   }
+  ]
  },
  "hinhTu": [
   {

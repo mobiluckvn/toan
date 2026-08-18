@@ -147,6 +147,16 @@
    },
    {
     "id": "K4",
+    "text": "Câu hôm nay dùng để: Hỏi và nói mình nhìn thấy con gì. Ví dụ: Con đứng trước chuồng thú, mẹ hỏi thấy gì.",
+    "doanAm": [
+     [
+      "Câu hôm nay dùng để hỏi và nói mình nhìn thấy con gì. Con đứng trước chuồng thú, mẹ hỏi thấy gì.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K5",
     "text": "Mẫu câu: What can you see? - I can see + a/an + [Animal]. — ví dụ: What can you see? - I can see a tiger.",
     "doanAm": [
      [
@@ -236,13 +246,85 @@
    "What's the tiger doing? - It's climbing.",
    "What's the horse doing? - It's swinging."
   ],
-  "mauCauDs": [],
+  "mauCauDs": [
+   {
+    "cau": "What can you see? - I can see a tiger.",
+    "congThuc": "What can you see? - I can see + a/an + [Animal].",
+    "dungDe": "Hỏi và nói mình nhìn thấy con gì.",
+    "tinhHuong": "Con đứng trước chuồng thú, mẹ hỏi thấy gì.",
+    "phan": [
+     {
+      "chu": "What can you see?",
+      "lam_gi": "câu hỏi"
+     },
+     {
+      "chu": "I can see a",
+      "lam_gi": "“mình nhìn thấy một”"
+     },
+     {
+      "chu": "tiger",
+      "lam_gi": "CON VẬT",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "What's the tiger doing? - It's swinging.",
+    "congThuc": "What's the + [Animal] + doing? - It's + [Animal action].",
+    "dungDe": "Hỏi con vật đang làm gì.",
+    "tinhHuong": "Con hổ trong chuồng đang leo trèo.",
+    "phan": [
+     {
+      "chu": "What's the",
+      "lam_gi": "câu hỏi"
+     },
+     {
+      "chu": "tiger",
+      "lam_gi": "CON VẬT",
+      "thay": true
+     },
+     {
+      "chu": "doing?",
+      "lam_gi": "“đang làm gì”"
+     },
+     {
+      "chu": "It's",
+      "lam_gi": "“nó đang”"
+     },
+     {
+      "chu": "swinging",
+      "lam_gi": "VIỆC con vật làm",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   }
+  ],
   "mauCau": {
    "cau": "What can you see? - I can see a tiger.",
    "congThuc": "What can you see? - I can see + a/an + [Animal].",
-   "dungDe": null,
-   "tinhHuong": null,
-   "phan": [],
+   "dungDe": "Hỏi và nói mình nhìn thấy con gì.",
+   "tinhHuong": "Con đứng trước chuồng thú, mẹ hỏi thấy gì.",
+   "phan": [
+    {
+     "chu": "What can you see?",
+     "lam_gi": "câu hỏi"
+    },
+    {
+     "chu": "I can see a",
+     "lam_gi": "“mình nhìn thấy một”"
+    },
+    {
+     "chu": "tiger",
+     "lam_gi": "CON VẬT",
+     "thay": true
+    }
+   ],
    "khacVoi": null
   },
   "misconceptions": [
@@ -301,6 +383,14 @@
    },
    {
     "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S7",
     "kind": "trap",
     "teaches": [],
     "narration": "Nghe câu này: What can you see? - I can see tiger. — câu này có một chỗ chưa đúng. Con nghe lại rồi tìm xem sai ở đâu nhé.",
@@ -1552,7 +1642,18 @@
  },
  "video": {
   "tu": "DL_TA3_B20_tu.mp4",
-  "cau": []
+  "cau": [
+   {
+    "vai": "cau",
+    "cau": "What can you see? - I can see a tiger.",
+    "tep": "DL_TA3_B20_cau1.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "What's the tiger doing? - It's swinging.",
+    "tep": "DL_TA3_B20_cau2.mp4"
+   }
+  ]
  },
  "hinhTu": [
   {

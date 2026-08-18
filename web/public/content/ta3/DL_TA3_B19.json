@@ -139,6 +139,16 @@
    },
    {
     "id": "K4",
+    "text": "Câu hôm nay dùng để: Kể một người đang chơi gì ngoài trời. Ví dụ: Con nhìn ra sân, thấy chị đang đạp xe.",
+    "doanAm": [
+     [
+      "Câu hôm nay dùng để kể một người đang chơi gì ngoài trời. Con nhìn ra sân, thấy chị đang đạp xe.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K5",
     "text": "Mẫu câu: She's + [Outdoor activity]. — ví dụ: She's cycling.",
     "doanAm": [
      [
@@ -216,18 +226,73 @@
    "She's flying a kite.",
    "She's painting.",
    "She's playing badminton.",
-   "What's he doing? - He's cycling.",
+   "What's she doing? - She's cycling.",
    "What's she doing? - She's flying a kite.",
    "What's she doing? - She's painting.",
    "What's she doing? - She's playing badminton."
   ],
-  "mauCauDs": [],
+  "mauCauDs": [
+   {
+    "cau": "She's cycling.",
+    "congThuc": "She's + [Outdoor activity].",
+    "dungDe": "Kể một người đang chơi gì ngoài trời.",
+    "tinhHuong": "Con nhìn ra sân, thấy chị đang đạp xe.",
+    "phan": [
+     {
+      "chu": "She's",
+      "lam_gi": "“chị ấy đang”"
+     },
+     {
+      "chu": "cycling",
+      "lam_gi": "VIỆC ngoài trời",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "What's she doing? - She's cycling.",
+    "congThuc": "What's she doing? - She's + [Outdoor activity].",
+    "dungDe": "Hỏi một người đang làm gì.",
+    "tinhHuong": "Con chỉ ra sân hỏi mẹ.",
+    "phan": [
+     {
+      "chu": "What's she doing?",
+      "lam_gi": "câu hỏi"
+     },
+     {
+      "chu": "She's",
+      "lam_gi": "“chị ấy đang”"
+     },
+     {
+      "chu": "cycling",
+      "lam_gi": "VIỆC",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   }
+  ],
   "mauCau": {
    "cau": "She's cycling.",
    "congThuc": "She's + [Outdoor activity].",
-   "dungDe": null,
-   "tinhHuong": null,
-   "phan": [],
+   "dungDe": "Kể một người đang chơi gì ngoài trời.",
+   "tinhHuong": "Con nhìn ra sân, thấy chị đang đạp xe.",
+   "phan": [
+    {
+     "chu": "She's",
+     "lam_gi": "“chị ấy đang”"
+    },
+    {
+     "chu": "cycling",
+     "lam_gi": "VIỆC ngoài trời",
+     "thay": true
+    }
+   ],
    "khacVoi": null
   },
   "misconceptions": [
@@ -286,6 +351,14 @@
    },
    {
     "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S7",
     "kind": "trap",
     "teaches": [],
     "narration": "Nghe câu này: She cycling. — câu này có một chỗ chưa đúng. Con nghe lại rồi tìm xem sai ở đâu nhé.",
@@ -1110,7 +1183,7 @@
     {
      "id": "S9",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What's he doing? - He's ___.",
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What's she doing? - She's ___.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
      "anh": "🚴",
      "anhVe": null,
@@ -1124,7 +1197,7 @@
      "answerKey": {
       "choice": "cycling"
      },
-     "solutionNarrative": "What's he doing? - He's cycling.",
+     "solutionNarrative": "What's she doing? - She's cycling.",
      "hints": [
       "Nhìn hình xem đó là con gì, cái gì.",
       "Rồi nhớ lại từ tiếng Anh của nó."
@@ -1585,7 +1658,18 @@
  },
  "video": {
   "tu": "DL_TA3_B19_tu.mp4",
-  "cau": []
+  "cau": [
+   {
+    "vai": "cau",
+    "cau": "She's cycling.",
+    "tep": "DL_TA3_B19_cau1.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "What's she doing? - She's cycling.",
+    "tep": "DL_TA3_B19_cau2.mp4"
+   }
+  ]
  },
  "hinhTu": [
   {

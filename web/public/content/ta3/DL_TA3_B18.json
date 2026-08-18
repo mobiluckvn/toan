@@ -139,6 +139,16 @@
    },
    {
     "id": "K4",
+    "text": "Câu hôm nay dùng để: Kể việc mình đang làm. Ví dụ: Mẹ gọi, con đáp mình đang làm gì.",
+    "doanAm": [
+     [
+      "Câu hôm nay dùng để kể việc mình đang làm. Mẹ gọi, con đáp mình đang làm gì.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K5",
     "text": "Mẫu câu: I'm + [Action]. — ví dụ: I'm reading.",
     "doanAm": [
      [
@@ -221,13 +231,68 @@
    "What are you doing? - I'm drawing a picture.",
    "What are you doing? - I'm listening to music."
   ],
-  "mauCauDs": [],
+  "mauCauDs": [
+   {
+    "cau": "I'm reading.",
+    "congThuc": "I'm + [Action].",
+    "dungDe": "Kể việc mình đang làm.",
+    "tinhHuong": "Mẹ gọi, con đáp mình đang làm gì.",
+    "phan": [
+     {
+      "chu": "I'm",
+      "lam_gi": "“mình đang”"
+     },
+     {
+      "chu": "reading",
+      "lam_gi": "VIỆC, có đuôi -ing",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "What are you doing? - I'm singing.",
+    "congThuc": "What are you doing? - I'm + [Action].",
+    "dungDe": "Hỏi bạn đang làm gì.",
+    "tinhHuong": "Gọi điện cho bạn, con hỏi bạn đang làm gì.",
+    "phan": [
+     {
+      "chu": "What are you doing?",
+      "lam_gi": "câu hỏi"
+     },
+     {
+      "chu": "I'm",
+      "lam_gi": "“mình đang”"
+     },
+     {
+      "chu": "singing",
+      "lam_gi": "VIỆC",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   }
+  ],
   "mauCau": {
    "cau": "I'm reading.",
    "congThuc": "I'm + [Action].",
-   "dungDe": null,
-   "tinhHuong": null,
-   "phan": [],
+   "dungDe": "Kể việc mình đang làm.",
+   "tinhHuong": "Mẹ gọi, con đáp mình đang làm gì.",
+   "phan": [
+    {
+     "chu": "I'm",
+     "lam_gi": "“mình đang”"
+    },
+    {
+     "chu": "reading",
+     "lam_gi": "VIỆC, có đuôi -ing",
+     "thay": true
+    }
+   ],
    "khacVoi": null
   },
   "misconceptions": [
@@ -286,6 +351,14 @@
    },
    {
     "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S7",
     "kind": "trap",
     "teaches": [],
     "narration": "Nghe câu này: I reading. — câu này có một chỗ chưa đúng. Con nghe lại rồi tìm xem sai ở đâu nhé.",
@@ -1623,7 +1696,18 @@
  },
  "video": {
   "tu": "DL_TA3_B18_tu.mp4",
-  "cau": []
+  "cau": [
+   {
+    "vai": "cau",
+    "cau": "I'm reading.",
+    "tep": "DL_TA3_B18_cau1.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "What are you doing? - I'm singing.",
+    "tep": "DL_TA3_B18_cau2.mp4"
+   }
+  ]
  },
  "hinhTu": [
   {

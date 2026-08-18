@@ -155,6 +155,16 @@
    },
    {
     "id": "K4",
+    "text": "Câu hôm nay dùng để: Hỏi và nói TÊN. Ví dụ: Bạn mới chuyển đến, con hỏi tên bạn ấy.",
+    "doanAm": [
+     [
+      "Câu hôm nay dùng để hỏi và nói tên. Bạn mới chuyển đến, con hỏi tên bạn ấy.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K5",
     "text": "Mẫu câu: What's your name? - My name's + [Name]. — ví dụ: What's your name? - My name's Mary.",
     "doanAm": [
      [
@@ -247,13 +257,80 @@
    "What's your name? - My name's Linh.",
    "What's your name? - My name's Nam."
   ],
-  "mauCauDs": [],
+  "mauCauDs": [
+   {
+    "cau": "What's your name? - My name's Mary.",
+    "congThuc": "What's your name? - My name's + [Name].",
+    "dungDe": "Hỏi và nói TÊN.",
+    "tinhHuong": "Bạn mới chuyển đến, con hỏi tên bạn ấy.",
+    "phan": [
+     {
+      "chu": "What's your name?",
+      "lam_gi": "câu hỏi"
+     },
+     {
+      "chu": "My name's",
+      "lam_gi": "“tên mình là”"
+     },
+     {
+      "chu": "Mary",
+      "lam_gi": "TÊN",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "How old are you? - I'm eight years old.",
+    "congThuc": "How old are you? - I'm + [Number] + years old.",
+    "dungDe": "Hỏi và nói TUỔI.",
+    "tinhHuong": "Bạn hỏi con năm nay mấy tuổi.",
+    "phan": [
+     {
+      "chu": "How old are you?",
+      "lam_gi": "“bạn bao nhiêu tuổi”"
+     },
+     {
+      "chu": "I'm",
+      "lam_gi": "“mình”"
+     },
+     {
+      "chu": "eight",
+      "lam_gi": "SỐ tuổi",
+      "thay": true
+     },
+     {
+      "chu": "years old",
+      "lam_gi": "“tuổi” — không được bỏ"
+     }
+    ],
+    "khacVoi": "Tiếng Việt hỏi “bao nhiêu tuổi”; tiếng Anh hỏi “già bao nhiêu” (how OLD).",
+    "vai": "cau",
+    "capVoi": null
+   }
+  ],
   "mauCau": {
    "cau": "What's your name? - My name's Mary.",
    "congThuc": "What's your name? - My name's + [Name].",
-   "dungDe": null,
-   "tinhHuong": null,
-   "phan": [],
+   "dungDe": "Hỏi và nói TÊN.",
+   "tinhHuong": "Bạn mới chuyển đến, con hỏi tên bạn ấy.",
+   "phan": [
+    {
+     "chu": "What's your name?",
+     "lam_gi": "câu hỏi"
+    },
+    {
+     "chu": "My name's",
+     "lam_gi": "“tên mình là”"
+    },
+    {
+     "chu": "Mary",
+     "lam_gi": "TÊN",
+     "thay": true
+    }
+   ],
    "khacVoi": null
   },
   "misconceptions": [
@@ -312,6 +389,14 @@
    },
    {
     "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S7",
     "kind": "trap",
     "teaches": [],
     "narration": "Nghe câu này: What your name? - My name's Mary. — câu này có một chỗ chưa đúng. Con nghe lại rồi tìm xem sai ở đâu nhé.",
@@ -1441,7 +1526,18 @@
  },
  "video": {
   "tu": "DL_TA3_B02_tu.mp4",
-  "cau": []
+  "cau": [
+   {
+    "vai": "cau",
+    "cau": "What's your name? - My name's Mary.",
+    "tep": "DL_TA3_B02_cau1.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "How old are you? - I'm eight years old.",
+    "tep": "DL_TA3_B02_cau2.mp4"
+   }
+  ]
  },
  "hinhTu": [
   {

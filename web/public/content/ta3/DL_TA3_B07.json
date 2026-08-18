@@ -131,6 +131,16 @@
    },
    {
     "id": "K4",
+    "text": "Câu hôm nay dùng để: Nói một lời dặn cho lịch sự. Ví dụ: Cô đứng ở cửa lớp, gọi bạn đến muộn.",
+    "doanAm": [
+     [
+      "Câu hôm nay dùng để nói một lời dặn cho lịch sự. Cô đứng ở cửa lớp, gọi bạn đến muộn.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K5",
     "text": "Mẫu câu: [Instruction], please! — ví dụ: Come in, please!",
     "doanAm": [
      [
@@ -206,13 +216,64 @@
    "May I sit down? - Yes, you can. / No, you can't.",
    "May I stand up? - Yes, you can. / No, you can't."
   ],
-  "mauCauDs": [],
+  "mauCauDs": [
+   {
+    "cau": "Come in, please!",
+    "congThuc": "[Instruction], please!",
+    "dungDe": "Nói một lời dặn cho lịch sự.",
+    "tinhHuong": "Cô đứng ở cửa lớp, gọi bạn đến muộn.",
+    "phan": [
+     {
+      "chu": "Come in",
+      "lam_gi": "LỜI DẶN",
+      "thay": true
+     },
+     {
+      "chu": "please",
+      "lam_gi": "tiếng “ạ” — thiếu nó thành ra lệnh"
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "May I come in? - Yes, you can. / No, you can't.",
+    "congThuc": "May I + [Instruction]? - Yes, you can. / No, you can't.",
+    "dungDe": "Xin phép làm một việc.",
+    "tinhHuong": "Con đến lớp muộn, đứng ngoài cửa xin vào.",
+    "phan": [
+     {
+      "chu": "May I",
+      "lam_gi": "“con xin phép… được không ạ”"
+     },
+     {
+      "chu": "come in",
+      "lam_gi": "VIỆC muốn làm",
+      "thay": true
+     }
+    ],
+    "khacVoi": "“May I” lịch sự hơn “Can I” — dùng khi xin phép người lớn.",
+    "vai": "cau",
+    "capVoi": null
+   }
+  ],
   "mauCau": {
    "cau": "Come in, please!",
    "congThuc": "[Instruction], please!",
-   "dungDe": null,
-   "tinhHuong": null,
-   "phan": [],
+   "dungDe": "Nói một lời dặn cho lịch sự.",
+   "tinhHuong": "Cô đứng ở cửa lớp, gọi bạn đến muộn.",
+   "phan": [
+    {
+     "chu": "Come in",
+     "lam_gi": "LỜI DẶN",
+     "thay": true
+    },
+    {
+     "chu": "please",
+     "lam_gi": "tiếng “ạ” — thiếu nó thành ra lệnh"
+    }
+   ],
    "khacVoi": null
   },
   "misconceptions": [],
@@ -261,6 +322,14 @@
     "narration": "",
     "teaches": [
      "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K5"
     ]
    }
   ]
@@ -1370,7 +1439,18 @@
  },
  "video": {
   "tu": "DL_TA3_B07_tu.mp4",
-  "cau": []
+  "cau": [
+   {
+    "vai": "cau",
+    "cau": "Come in, please!",
+    "tep": "DL_TA3_B07_cau1.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "May I come in? - Yes, you can. / No, you can't.",
+    "tep": "DL_TA3_B07_cau2.mp4"
+   }
+  ]
  },
  "hinhTu": [
   {

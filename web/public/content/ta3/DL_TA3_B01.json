@@ -179,6 +179,16 @@
    },
    {
     "id": "K4",
+    "text": "Câu hôm nay dùng để: Giới thiệu tên mình khi gặp người mới. Ví dụ: Ngày đầu tới lớp, con đứng cạnh một bạn chưa quen.",
+    "doanAm": [
+     [
+      "Câu hôm nay dùng để giới thiệu tên mình khi gặp người mới. Ngày đầu tới lớp, con đứng cạnh một bạn chưa quen.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K5",
     "text": "Mẫu câu: Hello. I'm + [Name]. — ví dụ: Hello. I'm Ben.",
     "doanAm": [
      [
@@ -296,13 +306,119 @@
    "Hello, Lucy. I'm Ben.",
    "Hello, Mai. I'm Lucy."
   ],
-  "mauCauDs": [],
+  "mauCauDs": [
+   {
+    "cau": "Hello. I'm Ben.",
+    "congThuc": "Hello. I'm + [Name].",
+    "dungDe": "Giới thiệu tên mình khi gặp người mới.",
+    "tinhHuong": "Ngày đầu tới lớp, con đứng cạnh một bạn chưa quen.",
+    "phan": [
+     {
+      "chu": "Hello.",
+      "lam_gi": "lời chào"
+     },
+     {
+      "chu": "I'm",
+      "lam_gi": "“mình là”"
+     },
+     {
+      "chu": "Ben",
+      "lam_gi": "TÊN của con",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "Hello, Minh. I'm Lucy.",
+    "congThuc": "Hello, + [Name A]. I'm + [Name B].",
+    "dungDe": "Chào đích danh một người rồi giới thiệu mình.",
+    "tinhHuong": "Con gặp bạn Minh ở cổng trường.",
+    "phan": [
+     {
+      "chu": "Hello,",
+      "lam_gi": "lời chào"
+     },
+     {
+      "chu": "Minh",
+      "lam_gi": "tên NGƯỜI KIA",
+      "thay": true
+     },
+     {
+      "chu": "I'm",
+      "lam_gi": "“mình là”"
+     },
+     {
+      "chu": "Lucy",
+      "lam_gi": "tên CON",
+      "thay": true
+     }
+    ],
+    "khacVoi": "Tiếng Việt chào “Chào Minh, mình là Lucy” — thứ tự giống nhau, chỉ khác dấu phẩy bắt buộc sau tên.",
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "How are you? - Fine, thank you.",
+    "congThuc": "How are you? - Fine, thank you.",
+    "dungDe": "Hỏi thăm và đáp lại lời hỏi thăm.",
+    "tinhHuong": "Gặp bạn ở sân trường buổi sáng.",
+    "phan": [
+     {
+      "chu": "How are you?",
+      "lam_gi": "“bạn khoẻ không”"
+     },
+     {
+      "chu": "Fine,",
+      "lam_gi": "“mình khoẻ”"
+     },
+     {
+      "chu": "thank you",
+      "lam_gi": "lời cảm ơn — KHÔNG được quên"
+     }
+    ],
+    "khacVoi": "Tiếng Việt đáp “khoẻ” là xong. Tiếng Anh gần như luôn kèm lời cảm ơn.",
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "Goodbye.",
+    "congThuc": "Goodbye.",
+    "dungDe": "Chào tạm biệt.",
+    "tinhHuong": "Hết giờ học, con chào cô và các bạn ra về.",
+    "phan": [
+     {
+      "chu": "Goodbye.",
+      "lam_gi": "lời tạm biệt — nói đủ chữ thì lịch sự hơn “Bye”"
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   }
+  ],
   "mauCau": {
    "cau": "Hello. I'm Ben.",
    "congThuc": "Hello. I'm + [Name].",
-   "dungDe": null,
-   "tinhHuong": null,
-   "phan": [],
+   "dungDe": "Giới thiệu tên mình khi gặp người mới.",
+   "tinhHuong": "Ngày đầu tới lớp, con đứng cạnh một bạn chưa quen.",
+   "phan": [
+    {
+     "chu": "Hello.",
+     "lam_gi": "lời chào"
+    },
+    {
+     "chu": "I'm",
+     "lam_gi": "“mình là”"
+    },
+    {
+     "chu": "Ben",
+     "lam_gi": "TÊN của con",
+     "thay": true
+    }
+   ],
    "khacVoi": null
   },
   "misconceptions": [
@@ -361,6 +477,14 @@
    },
    {
     "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S7",
     "kind": "trap",
     "teaches": [],
     "narration": "Nghe câu này: Hello. I Ben. — câu này có một chỗ chưa đúng. Con nghe lại rồi tìm xem sai ở đâu nhé.",
@@ -2074,7 +2198,28 @@
  },
  "video": {
   "tu": "DL_TA3_B01_tu.mp4",
-  "cau": []
+  "cau": [
+   {
+    "vai": "cau",
+    "cau": "Hello. I'm Ben.",
+    "tep": "DL_TA3_B01_cau1.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "Hello, Minh. I'm Lucy.",
+    "tep": "DL_TA3_B01_cau2.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "How are you? - Fine, thank you.",
+    "tep": "DL_TA3_B01_cau3.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "Goodbye.",
+    "tep": "DL_TA3_B01_cau4.mp4"
+   }
+  ]
  },
  "hinhTu": [
   {

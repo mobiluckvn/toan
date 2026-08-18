@@ -147,6 +147,16 @@
    },
    {
     "id": "K4",
+    "text": "Câu hôm nay dùng để: Hỏi và gọi tên một bộ phận trên mặt. Ví dụ: Cô chỉ vào mặt mình và hỏi cả lớp.",
+    "doanAm": [
+     [
+      "Câu hôm nay dùng để hỏi và gọi tên một bộ phận trên mặt. Cô chỉ vào mặt mình và hỏi cả lớp.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K5",
     "text": "Mẫu câu: What's this? - It's + a/an + [Body part]. — ví dụ: What's this? - It's a nose.",
     "doanAm": [
      [
@@ -231,18 +241,81 @@
    "What's this? - It's a face.",
    "What's this? - It's a hair.",
    "What's this? - It's a hand.",
-   "Touch your face! / Open your mouth!",
    "Touch your face!",
    "Touch your hair!",
-   "Touch your hand!"
+   "Touch your hand!",
+   "Touch your ear!"
   ],
-  "mauCauDs": [],
+  "mauCauDs": [
+   {
+    "cau": "What's this? - It's a nose.",
+    "congThuc": "What's this? - It's + a/an + [Body part].",
+    "dungDe": "Hỏi và gọi tên một bộ phận trên mặt.",
+    "tinhHuong": "Cô chỉ vào mặt mình và hỏi cả lớp.",
+    "phan": [
+     {
+      "chu": "What's this?",
+      "lam_gi": "câu hỏi"
+     },
+     {
+      "chu": "It's a",
+      "lam_gi": "“nó là một”"
+     },
+     {
+      "chu": "nose",
+      "lam_gi": "BỘ PHẬN",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "Touch your face!",
+    "congThuc": "Touch your + [Body part]!",
+    "dungDe": "Bảo bạn chạm vào một chỗ trên người.",
+    "tinhHuong": "Cô cho cả lớp chơi trò làm theo lời dặn.",
+    "phan": [
+     {
+      "chu": "Touch",
+      "lam_gi": "“chạm vào”"
+     },
+     {
+      "chu": "your",
+      "lam_gi": "“của con”"
+     },
+     {
+      "chu": "face",
+      "lam_gi": "BỘ PHẬN",
+      "thay": true
+     }
+    ],
+    "khacVoi": "Câu sai khiến tiếng Anh KHÔNG có chủ ngữ — bắt đầu thẳng bằng động từ.",
+    "vai": "cau",
+    "capVoi": null
+   }
+  ],
   "mauCau": {
    "cau": "What's this? - It's a nose.",
    "congThuc": "What's this? - It's + a/an + [Body part].",
-   "dungDe": null,
-   "tinhHuong": null,
-   "phan": [],
+   "dungDe": "Hỏi và gọi tên một bộ phận trên mặt.",
+   "tinhHuong": "Cô chỉ vào mặt mình và hỏi cả lớp.",
+   "phan": [
+    {
+     "chu": "What's this?",
+     "lam_gi": "câu hỏi"
+    },
+    {
+     "chu": "It's a",
+     "lam_gi": "“nó là một”"
+    },
+    {
+     "chu": "nose",
+     "lam_gi": "BỘ PHẬN",
+     "thay": true
+    }
+   ],
    "khacVoi": null
   },
   "misconceptions": [
@@ -301,6 +374,14 @@
    },
    {
     "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S7",
     "kind": "trap",
     "teaches": [],
     "narration": "Nghe câu này: What this? - It's a nose. — câu này có một chỗ chưa đúng. Con nghe lại rồi tìm xem sai ở đâu nhé.",
@@ -1015,7 +1096,7 @@
    ],
    "standard": [
     {
-     "id": "S6",
+     "id": "S5",
      "bac": 3,
      "text": "Xếp các thẻ thành câu đúng.",
      "am": "cau_touch_your_face",
@@ -1038,7 +1119,7 @@
      ]
     },
     {
-     "id": "S7",
+     "id": "S6",
      "bac": 3,
      "text": "Xếp các thẻ thành câu đúng.",
      "am": "cau_touch_your_hair",
@@ -1061,7 +1142,7 @@
      ]
     },
     {
-     "id": "S8",
+     "id": "S7",
      "bac": 3,
      "text": "Xếp các thẻ thành câu đúng.",
      "am": "cau_touch_your_hand",
@@ -1084,7 +1165,30 @@
      ]
     },
     {
-     "id": "S4",
+     "id": "S8",
+     "bac": 3,
+     "text": "Xếp các thẻ thành câu đúng.",
+     "am": "cau_touch_your_ear",
+     "the": [
+      "Touch",
+      "your",
+      "ear!"
+     ],
+     "answerKey": {
+      "the": [
+       "Touch",
+       "your",
+       "ear!"
+      ]
+     },
+     "solutionNarrative": "Touch your ear!",
+     "hints": [
+      "Câu tiếng Anh bắt đầu bằng chữ viết hoa.",
+      "Thẻ có dấu chấm là thẻ cuối cùng."
+     ]
+    },
+    {
+     "id": "S5",
      "bac": 3,
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What's this? - It's a ___.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
@@ -1107,7 +1211,7 @@
      ]
     },
     {
-     "id": "S5",
+     "id": "S6",
      "bac": 3,
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What's this? - It's a ___.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
@@ -1130,7 +1234,7 @@
      ]
     },
     {
-     "id": "S6",
+     "id": "S7",
      "bac": 3,
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What's this? - It's a ___.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
@@ -1153,7 +1257,7 @@
      ]
     },
     {
-     "id": "S7",
+     "id": "S8",
      "bac": 3,
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What's this? - It's a ___.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
@@ -1170,29 +1274,6 @@
       "choice": "hand"
      },
      "solutionNarrative": "What's this? - It's a hand.",
-     "hints": [
-      "Nhìn hình xem đó là con gì, cái gì.",
-      "Rồi nhớ lại từ tiếng Anh của nó."
-     ]
-    },
-    {
-     "id": "S8",
-     "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Touch your face! / Open your ___!",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "👄",
-     "anhVe": null,
-     "format": "chon",
-     "choices": [
-      "mouth",
-      "face",
-      "hair",
-      "hand"
-     ],
-     "answerKey": {
-      "choice": "mouth"
-     },
-     "solutionNarrative": "Touch your face! / Open your mouth!",
      "hints": [
       "Nhìn hình xem đó là con gì, cái gì.",
       "Rồi nhớ lại từ tiếng Anh của nó."
@@ -1262,6 +1343,29 @@
       "choice": "hand"
      },
      "solutionNarrative": "Touch your hand!",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    },
+    {
+     "id": "S12",
+     "bac": 3,
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Touch your ___!",
+     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": "👂",
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "face",
+      "hair",
+      "ear",
+      "hand"
+     ],
+     "answerKey": {
+      "choice": "ear"
+     },
+     "solutionNarrative": "Touch your ear!",
      "hints": [
       "Nhìn hình xem đó là con gì, cái gì.",
       "Rồi nhớ lại từ tiếng Anh của nó."
@@ -1503,7 +1607,18 @@
  },
  "video": {
   "tu": "DL_TA3_B04_tu.mp4",
-  "cau": []
+  "cau": [
+   {
+    "vai": "cau",
+    "cau": "What's this? - It's a nose.",
+    "tep": "DL_TA3_B04_cau1.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "Touch your face!",
+    "tep": "DL_TA3_B04_cau2.mp4"
+   }
+  ]
  },
  "hinhTu": [
   {

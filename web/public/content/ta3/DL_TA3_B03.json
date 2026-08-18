@@ -163,6 +163,16 @@
    },
    {
     "id": "K4",
+    "text": "Câu hôm nay dùng để: Giới thiệu một người đang ở GẦN. Ví dụ: Con dắt bạn tới chào cô giáo đứng ngay cạnh.",
+    "doanAm": [
+     [
+      "Câu hôm nay dùng để giới thiệu một người đang ở gần. Con dắt bạn tới chào cô giáo đứng ngay cạnh.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K5",
     "text": "Mẫu câu: This is + [Person]. — ví dụ: This is Ms Hoa.",
     "doanAm": [
      [
@@ -262,14 +272,69 @@
    "Is this Mr Long? - Yes, it is.",
    "Is this Ms Hoa? - Yes, it is. / No, it isn't."
   ],
-  "mauCauDs": [],
+  "mauCauDs": [
+   {
+    "cau": "This is Ms Hoa.",
+    "congThuc": "This is + [Person].",
+    "dungDe": "Giới thiệu một người đang ở GẦN.",
+    "tinhHuong": "Con dắt bạn tới chào cô giáo đứng ngay cạnh.",
+    "phan": [
+     {
+      "chu": "This is",
+      "lam_gi": "“đây là” — người ở GẦN"
+     },
+     {
+      "chu": "Ms Hoa",
+      "lam_gi": "NGƯỜI",
+      "thay": true
+     }
+    ],
+    "khacVoi": "“This” là gần, “That” là xa — tiếng Việt cũng có “đây/kia”, nghĩ theo đó là nhớ.",
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "Is this Mr Long? - Yes, it is.",
+    "congThuc": "Is this + [Person]? - Yes, it is. / No, it isn't.",
+    "dungDe": "Hỏi cho chắc xem có đúng người ấy không.",
+    "tinhHuong": "Con nhìn thấy một thầy ở xa, không chắc là ai.",
+    "phan": [
+     {
+      "chu": "Is this",
+      "lam_gi": "đứng đầu câu hỏi"
+     },
+     {
+      "chu": "Mr Long",
+      "lam_gi": "NGƯỜI",
+      "thay": true
+     },
+     {
+      "chu": "Yes, it is.",
+      "lam_gi": "lời đáp khi đúng"
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   }
+  ],
   "mauCau": {
    "cau": "This is Ms Hoa.",
    "congThuc": "This is + [Person].",
-   "dungDe": null,
-   "tinhHuong": null,
-   "phan": [],
-   "khacVoi": null
+   "dungDe": "Giới thiệu một người đang ở GẦN.",
+   "tinhHuong": "Con dắt bạn tới chào cô giáo đứng ngay cạnh.",
+   "phan": [
+    {
+     "chu": "This is",
+     "lam_gi": "“đây là” — người ở GẦN"
+    },
+    {
+     "chu": "Ms Hoa",
+     "lam_gi": "NGƯỜI",
+     "thay": true
+    }
+   ],
+   "khacVoi": "“This” là gần, “That” là xa — tiếng Việt cũng có “đây/kia”, nghĩ theo đó là nhớ."
   },
   "misconceptions": [
    {
@@ -327,6 +392,14 @@
    },
    {
     "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S7",
     "kind": "trap",
     "teaches": [],
     "narration": "Nghe câu này: This Ms Hoa. — câu này có một chỗ chưa đúng. Con nghe lại rồi tìm xem sai ở đâu nhé.",
@@ -1654,7 +1727,18 @@
  },
  "video": {
   "tu": "DL_TA3_B03_tu.mp4",
-  "cau": []
+  "cau": [
+   {
+    "vai": "cau",
+    "cau": "This is Ms Hoa.",
+    "tep": "DL_TA3_B03_cau1.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "Is this Mr Long? - Yes, it is.",
+    "tep": "DL_TA3_B03_cau2.mp4"
+   }
+  ]
  },
  "hinhTu": [
   {

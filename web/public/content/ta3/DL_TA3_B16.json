@@ -139,6 +139,16 @@
    },
    {
     "id": "K4",
+    "text": "Câu hôm nay dùng để: Hỏi bạn có nuôi con vật ấy không. Ví dụ: Con hỏi bạn nhà có nuôi chó không.",
+    "doanAm": [
+     [
+      "Câu hôm nay dùng để hỏi bạn có nuôi con vật ấy không. Con hỏi bạn nhà có nuôi chó không.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K5",
     "text": "Mẫu câu: Do you have any + [Pets-plural]? - Yes, I do. / No, I don't. — ví dụ: Do you have any dogs? - Yes, I do. / No, I don't.",
     "doanAm": [
      [
@@ -221,14 +231,74 @@
    "How many dog do you have? - I have some.",
    "How many cat do you have? - I have many."
   ],
-  "mauCauDs": [],
+  "mauCauDs": [
+   {
+    "cau": "Do you have any dogs? - Yes, I do. / No, I don't.",
+    "congThuc": "Do you have any + [Pets-plural]? - Yes, I do. / No, I don't.",
+    "dungDe": "Hỏi bạn có nuôi con vật ấy không.",
+    "tinhHuong": "Con hỏi bạn nhà có nuôi chó không.",
+    "phan": [
+     {
+      "chu": "Do you have any",
+      "lam_gi": "“bạn có nuôi … không”"
+     },
+     {
+      "chu": "dogs",
+      "lam_gi": "CON VẬT, ở dạng SỐ NHIỀU",
+      "thay": true
+     }
+    ],
+    "khacVoi": "Sau “any” phải là số nhiều — vì câu hỏi không biết có mấy con.",
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "How many dogs do you have? - I have some.",
+    "congThuc": "How many + [Pets] + do you have? - I have + [Quantity].",
+    "dungDe": "Hỏi nuôi MẤY con.",
+    "tinhHuong": "Bạn bảo có nuôi chó, con hỏi thêm mấy con.",
+    "phan": [
+     {
+      "chu": "How many",
+      "lam_gi": "“mấy, bao nhiêu”"
+     },
+     {
+      "chu": "dogs",
+      "lam_gi": "CON VẬT, số nhiều",
+      "thay": true
+     },
+     {
+      "chu": "I have",
+      "lam_gi": "“mình có”"
+     },
+     {
+      "chu": "some",
+      "lam_gi": "TỪ CHỈ SỐ LƯỢNG",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   }
+  ],
   "mauCau": {
    "cau": "Do you have any dogs? - Yes, I do. / No, I don't.",
    "congThuc": "Do you have any + [Pets-plural]? - Yes, I do. / No, I don't.",
-   "dungDe": null,
-   "tinhHuong": null,
-   "phan": [],
-   "khacVoi": null
+   "dungDe": "Hỏi bạn có nuôi con vật ấy không.",
+   "tinhHuong": "Con hỏi bạn nhà có nuôi chó không.",
+   "phan": [
+    {
+     "chu": "Do you have any",
+     "lam_gi": "“bạn có nuôi … không”"
+    },
+    {
+     "chu": "dogs",
+     "lam_gi": "CON VẬT, ở dạng SỐ NHIỀU",
+     "thay": true
+    }
+   ],
+   "khacVoi": "Sau “any” phải là số nhiều — vì câu hỏi không biết có mấy con."
   },
   "misconceptions": [],
   "hoiThoai": null
@@ -276,6 +346,14 @@
     "narration": "",
     "teaches": [
      "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K5"
     ]
    }
   ]
@@ -1347,7 +1425,18 @@
  },
  "video": {
   "tu": "DL_TA3_B16_tu.mp4",
-  "cau": []
+  "cau": [
+   {
+    "vai": "cau",
+    "cau": "Do you have any dogs? - Yes, I do. / No, I don't.",
+    "tep": "DL_TA3_B16_cau1.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "How many dogs do you have? - I have some.",
+    "tep": "DL_TA3_B16_cau2.mp4"
+   }
+  ]
  },
  "hinhTu": [
   {
