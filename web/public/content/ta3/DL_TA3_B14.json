@@ -452,7 +452,7 @@
       "window": "🪟"
      },
      "veNut": {
-      "desk": null,
+      "desk": "desk",
       "door": null,
       "bed": null,
       "window": null
@@ -489,7 +489,7 @@
       "bed": null,
       "door": null,
       "window": null,
-      "desk": null
+      "desk": "desk"
      },
      "answerKey": {
       "choice": "desk"
@@ -521,7 +521,7 @@
      },
      "veNut": {
       "bed": null,
-      "desk": null,
+      "desk": "desk",
       "window": null,
       "door": null
      },
@@ -556,7 +556,7 @@
      "veNut": {
       "bed": null,
       "window": null,
-      "desk": null,
+      "desk": "desk",
       "door": null
      },
      "answerKey": {
@@ -571,9 +571,9 @@
     {
      "id": "C5",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_room",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "bed",
@@ -585,11 +585,11 @@
       "bed": "🛏️",
       "desk": "🪑",
       "door": "🚪",
-      "room": "🚪"
+      "room": null
      },
      "veNut": {
       "bed": null,
-      "desk": null,
+      "desk": "desk",
       "door": null,
       "room": null
      },
@@ -623,7 +623,7 @@
      },
      "veNut": {
       "bed": null,
-      "desk": null,
+      "desk": "desk",
       "big": null,
       "door": null
      },
@@ -657,7 +657,7 @@
      },
      "veNut": {
       "bed": null,
-      "desk": null,
+      "desk": "desk",
       "new": null,
       "door": null
      },
@@ -691,7 +691,7 @@
      },
      "veNut": {
       "bed": null,
-      "desk": null,
+      "desk": "desk",
       "old": null,
       "door": null
      },
@@ -726,7 +726,7 @@
      "veNut": {
       "small": null,
       "bed": null,
-      "desk": null,
+      "desk": "desk",
       "door": null
      },
      "answerKey": {
@@ -1203,9 +1203,9 @@
     {
      "id": "S5",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  There's a bed in the ___.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🚪",
+     "text": "Chọn từ điền vào chỗ trống:  There's a bed in the ___.",
+     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": null,
      "anhVe": null,
      "format": "chon",
      "choices": [
@@ -1229,7 +1229,7 @@
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  There's a ___ in the room.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
      "anh": "🪑",
-     "anhVe": null,
+     "anhVe": "desk",
      "format": "chon",
      "choices": [
       "bed",
@@ -1367,7 +1367,7 @@
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  The ___ is big.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
      "anh": "🪑",
-     "anhVe": null,
+     "anhVe": "desk",
      "format": "chon",
      "choices": [
       "bed",
@@ -1577,7 +1577,7 @@
     "id": "Q2",
     "am": "tu_bed",
     "anh": "🪑",
-    "anhVe": null,
+    "anhVe": "desk",
     "text": "",
     "format": "tf",
     "nhinNghe": true,
@@ -1590,7 +1590,7 @@
     "id": "Q3",
     "am": "tu_desk",
     "anh": "🪑",
-    "anhVe": null,
+    "anhVe": "desk",
     "text": "",
     "format": "tf",
     "nhinNghe": true,
@@ -1681,7 +1681,7 @@
   {
    "tu": "desk",
    "hinh": "🪑",
-   "ve": null,
+   "ve": "desk",
    "no": null
   },
   {
@@ -1698,7 +1698,7 @@
   },
   {
    "tu": "room",
-   "hinh": "🚪",
+   "hinh": null,
    "ve": null,
    "no": null
   },

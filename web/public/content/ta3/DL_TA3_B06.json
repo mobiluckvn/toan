@@ -392,9 +392,9 @@
     {
      "id": "C1",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_school",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "classroom",
@@ -403,15 +403,15 @@
       "gym"
      ],
      "hinhNut": {
-      "classroom": "🪑",
+      "classroom": null,
       "school": "🏫",
       "library": "📚",
-      "gym": "🤸"
+      "gym": "🏋️"
      },
      "veNut": {
       "classroom": null,
       "school": null,
-      "library": null,
+      "library": "library",
       "gym": null
      },
      "answerKey": {
@@ -426,9 +426,9 @@
     {
      "id": "C2",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_classroom",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "classroom",
@@ -437,15 +437,15 @@
       "gym"
      ],
      "hinhNut": {
-      "classroom": "🪑",
+      "classroom": null,
       "school": "🏫",
       "library": "📚",
-      "gym": "🤸"
+      "gym": "🏋️"
      },
      "veNut": {
       "classroom": null,
       "school": null,
-      "library": null,
+      "library": "library",
       "gym": null
      },
      "answerKey": {
@@ -460,9 +460,9 @@
     {
      "id": "C3",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_library",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "school",
@@ -472,14 +472,14 @@
      ],
      "hinhNut": {
       "school": "🏫",
-      "classroom": "🪑",
+      "classroom": null,
       "library": "📚",
-      "gym": "🤸"
+      "gym": "🏋️"
      },
      "veNut": {
       "school": null,
       "classroom": null,
-      "library": null,
+      "library": "library",
       "gym": null
      },
      "answerKey": {
@@ -494,9 +494,9 @@
     {
      "id": "C4",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_gym",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "school",
@@ -506,15 +506,15 @@
      ],
      "hinhNut": {
       "school": "🏫",
-      "classroom": "🪑",
-      "gym": "🤸",
+      "classroom": null,
+      "gym": "🏋️",
       "library": "📚"
      },
      "veNut": {
       "school": null,
       "classroom": null,
       "gym": null,
-      "library": null
+      "library": "library"
      },
      "answerKey": {
       "choice": "gym"
@@ -528,9 +528,9 @@
     {
      "id": "C5",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_playground",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "school",
@@ -541,14 +541,14 @@
      "hinhNut": {
       "school": "🏫",
       "playground": "🛝",
-      "classroom": "🪑",
+      "classroom": null,
       "library": "📚"
      },
      "veNut": {
       "school": null,
       "playground": null,
       "classroom": null,
-      "library": null
+      "library": "library"
      },
      "answerKey": {
       "choice": "playground"
@@ -562,9 +562,9 @@
     {
      "id": "C6",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_art_room",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "school",
@@ -574,15 +574,15 @@
      ],
      "hinhNut": {
       "school": "🏫",
-      "classroom": "🪑",
+      "classroom": null,
       "library": "📚",
       "art room": "🖼️"
      },
      "veNut": {
       "school": null,
       "classroom": null,
-      "library": null,
-      "art room": null
+      "library": "library",
+      "art room": "art_room"
      },
      "answerKey": {
       "choice": "art room"
@@ -596,9 +596,9 @@
     {
      "id": "C7",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_music_room",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "school",
@@ -609,14 +609,14 @@
      "hinhNut": {
       "school": "🏫",
       "music room": "🎹",
-      "classroom": "🪑",
+      "classroom": null,
       "library": "📚"
      },
      "veNut": {
       "school": null,
-      "music room": null,
+      "music room": "music_room",
       "classroom": null,
-      "library": null
+      "library": "library"
      },
      "answerKey": {
       "choice": "music room"
@@ -630,9 +630,9 @@
     {
      "id": "C8",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_computer_room",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "computer room",
@@ -643,14 +643,14 @@
      "hinhNut": {
       "computer room": "💻",
       "school": "🏫",
-      "classroom": "🪑",
+      "classroom": null,
       "library": "📚"
      },
      "veNut": {
-      "computer room": null,
+      "computer room": "computer_room",
       "school": null,
       "classroom": null,
-      "library": null
+      "library": "library"
      },
      "answerKey": {
       "choice": "computer room"
@@ -676,7 +676,7 @@
      ],
      "hinhNut": {
       "school": "🏫",
-      "classroom": "🪑",
+      "classroom": null,
       "our": null,
       "library": "📚"
      },
@@ -684,7 +684,7 @@
       "school": null,
       "classroom": null,
       "our": null,
-      "library": null
+      "library": "library"
      },
      "answerKey": {
       "choice": "our"
@@ -1060,9 +1060,9 @@
     {
      "id": "S1",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Is this our ___? - Yes, it is. / No, it isn't.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🪑",
+     "text": "Chọn từ điền vào chỗ trống:  Is this our ___? - Yes, it is. / No, it isn't.",
+     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": null,
      "anhVe": null,
      "format": "chon",
      "choices": [
@@ -1109,7 +1109,7 @@
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Is this our ___? - Yes, it is. / No, it isn't.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
      "anh": "📚",
-     "anhVe": null,
+     "anhVe": "library",
      "format": "chon",
      "choices": [
       "school",
@@ -1131,7 +1131,7 @@
      "bac": 3,
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Is this our ___? - Yes, it is. / No, it isn't.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🤸",
+     "anh": "🏋️",
      "anhVe": null,
      "format": "chon",
      "choices": [
@@ -1155,7 +1155,7 @@
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Let's go to the ___. - OK, let's go.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
      "anh": "📚",
-     "anhVe": null,
+     "anhVe": "library",
      "format": "chon",
      "choices": [
       "school",
@@ -1198,9 +1198,9 @@
     {
      "id": "S7",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Let's go to the ___. - OK, let's go.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🪑",
+     "text": "Chọn từ điền vào chỗ trống:  Let's go to the ___. - OK, let's go.",
+     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": null,
      "anhVe": null,
      "format": "chon",
      "choices": [
@@ -1223,7 +1223,7 @@
      "bac": 3,
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Let's go to the ___. - OK, let's go.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🤸",
+     "anh": "🏋️",
      "anhVe": null,
      "format": "chon",
      "choices": [
@@ -1559,47 +1559,21 @@
    {
     "id": "Q2",
     "am": "tu_school",
-    "anh": "🪑",
-    "anhVe": null,
+    "anh": "📚",
+    "anhVe": "library",
     "text": "",
     "format": "tf",
     "nhinNghe": true,
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — đó là classroom. school là trường học."
+    "solutionNarrative": "SAI — đó là library. school là trường học."
    },
    {
     "id": "Q3",
-    "am": "tu_classroom",
-    "anh": "🪑",
-    "anhVe": null,
-    "text": "",
-    "format": "tf",
-    "nhinNghe": true,
-    "answerKey": {
-     "value": true
-    },
-    "solutionNarrative": "ĐÚNG — classroom là lớp học."
-   },
-   {
-    "id": "Q4",
-    "am": "tu_classroom",
-    "anh": "📚",
-    "anhVe": null,
-    "text": "",
-    "format": "tf",
-    "nhinNghe": true,
-    "answerKey": {
-     "value": false
-    },
-    "solutionNarrative": "SAI — đó là library. classroom là lớp học."
-   },
-   {
-    "id": "Q5",
     "am": "tu_library",
     "anh": "📚",
-    "anhVe": null,
+    "anhVe": "library",
     "text": "",
     "format": "tf",
     "nhinNghe": true,
@@ -1607,6 +1581,32 @@
      "value": true
     },
     "solutionNarrative": "ĐÚNG — library là thư viện."
+   },
+   {
+    "id": "Q4",
+    "am": "tu_library",
+    "anh": "🏋️",
+    "anhVe": null,
+    "text": "",
+    "format": "tf",
+    "nhinNghe": true,
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — đó là gym. library là thư viện."
+   },
+   {
+    "id": "Q5",
+    "am": "tu_gym",
+    "anh": "🏋️",
+    "anhVe": null,
+    "text": "",
+    "format": "tf",
+    "nhinNghe": true,
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "ĐÚNG — gym là nhà thể chất."
    }
   ]
  },
@@ -1663,19 +1663,19 @@
   },
   {
    "tu": "classroom",
-   "hinh": "🪑",
+   "hinh": null,
    "ve": null,
    "no": null
   },
   {
    "tu": "library",
    "hinh": "📚",
-   "ve": null,
+   "ve": "library",
    "no": null
   },
   {
    "tu": "gym",
-   "hinh": "🤸",
+   "hinh": "🏋️",
    "ve": null,
    "no": null
   },
@@ -1688,19 +1688,19 @@
   {
    "tu": "art room",
    "hinh": "🖼️",
-   "ve": null,
+   "ve": "art_room",
    "no": null
   },
   {
    "tu": "music room",
    "hinh": "🎹",
-   "ve": null,
+   "ve": "music_room",
    "no": null
   },
   {
    "tu": "computer room",
    "hinh": "💻",
-   "ve": null,
+   "ve": "computer_room",
    "no": null
   },
   {
