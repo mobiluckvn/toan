@@ -482,9 +482,51 @@ Phần bù nay **THÊM được mẫu câu**, không chỉ đắp phần dạy: 
 ⚠ Dùng dè: mỗi mẫu thêm là một câu KHÔNG có trong sách, phải nằm trọn trong năng lực
 unit đã khai và ghi rõ lý do ở `_them_moi`.
 
-### Còn lại cho lớp 3
+### Còn lại cho lớp 3 — ĐÃ LÀM XONG 18-08, xem §7
 
-Video theo cấu trúc MỚI · rồi **bài đọc hiểu ngắn** (đọc + trắc nghiệm ý chính +
-trắc nghiệm chi tiết, dựng CHỈ từ vốn từ đã học của lớp 1+2+3) và **bài viết chấm
-bằng AI** (bác chốt 18-08: sửa lỗi và khen cụ thể · có điểm vào sổ · chỉ gợi ý bằng
-từ đã học · bố mẹ đọc được bài). Hạ tầng AI đã có sẵn: hàm `luyenNoi` chạy Groq.
+---
+
+## 7 · BA TẦNG MỚI (18-08-2026) — video nhóm nghĩa · đọc hiểu · bài viết
+
+Dây chuyền nay **13 tầng**. Ba tầng thêm đều đọc từ ④ (16/21 bài đã sinh), nên
+**phải chạy SAU `sinh_bai`** — cùng luật với `ontap.json` ở §3 bẫy 2.
+
+```
+④ bài học ─┬─ tools/sinh_dochieu_tienganh.py  → ⑪ ta3/dochieu.json   5 bài · 30 dòng
+           ├─ tools/sinh_vietbai_tienganh.py  → ⑫ ta3/vietbai.json   5 đề
+           └─ (video.tu là DANH SÁCH nhóm)    → ⑬ 43 video từ mới thay vì 21
+```
+
+### ⑪ Bài đọc hiểu — `sinh_dochieu_tienganh.py`
+
+Đoạn 4–6 câu, mỗi dòng là một câu **SẴN CÓ** của chính bốn bài trong chương, cắt đôi
+ở cặp hỏi–đáp. Không bịa câu tiếng Anh — luật xuyên suốt cả môn.
+
+Bốn câu hỏi: 1 ý chính (đáp án là TÊN CHƯƠNG, mồi là tên chương khác) · 2 chi tiết
+"câu nào CÓ trong bài" (mồi CÙNG KHUÔN khác từ) · 1 có/không.
+
+⚠ Câu "câu nào CÓ trong bài" **không được có nút nghe** — `am` của nó là clip đáp án.
+
+### ⑫ Đề bài viết — `sinh_vietbai_tienganh.py`
+
+Đề bằng TIẾNG VIỆT (viết tiếng Anh, đọc đề tiếng Việt — một việc một lúc), kèm mẫu
+câu của chương và **vốn từ DỒN** từ chương 1 tới đó. `vonTu` đi thẳng vào lời dặn
+máy chấm và vào phép soi chữ lạ, nên nó không phải chỗ trang trí.
+
+### ⑬ Video từ mới, mỗi NHÓM NGHĨA một tệp
+
+`video.tu` của bài nay là DANH SÁCH `{ma, ten, tu[], tep}`; `kich_ban.py` đọc thẳng
+danh sách ấy chứ KHÔNG chia lại. Hai chỗ cùng chia một thứ thì sớm muộn lệch, mà
+lệch ở đây nghĩa là app hỏi một tệp không tồn tại.
+
+⚠ **Chia theo GIÂY, không theo số từ** (`GIAY_TU_CO_HINH` = 4 · `GIAY_TU_KHONG_HINH`
+= 7). Từ không vẽ được thì dạy bằng CÂU nên tốn gần gấp đôi; đếm đầu từ thì nhóm
+*Lời chào* của U1 ra 56 giây trong khi phép đếm bảo nó bằng 6 từ thường.
+
+### Cổng mới
+
+| tệp | canh gì |
+|---|---|
+| `tienganh_video` | bài khai tệp nào thì có tệp ấy · không mp4 mồ côi · nhóm khớp hai chiều với `vocabulary` · độ dài 12–50s (từ mới) |
+| `tienganh_dochieu` | mọi chữ trong đoạn ĐÃ HỌC tới chương ấy · đáp án có thật trong đoạn, mồi thì không |
+| `tienganh_chamviet` | chốt cửa máy chủ · lời dặn đòi đủ bốn điều bác chốt · soi chữ lạ hai chiều · điểm đeo nhãn "máy chấm" |
