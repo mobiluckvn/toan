@@ -110,7 +110,7 @@ async function docTienDo(uid) {
 
 async function docHocBa(uid) {
   const snap = await getDocs(collection(db, KHO.hocBa(uid)));
-  const chapters = {};
+  const chapters = {}, baiViet = {};
   snap.forEach((d) => {
     const v = d.data();
     /* `|| {}` chứ KHÔNG `|| v`. Bản cũ đỡ lấy cả tài liệu khi thiếu `giaTri`, và
@@ -118,8 +118,13 @@ async function docHocBa(uid) {
        vẫn có gì đó, chỉ là thiếu `best` — thẻ huy hiệu hiện "undefined/undefined".
        Nay chỉ nhận đúng một hình dạng, giống hệt Toán (`toan/lib/duLieu.js`). */
     if (v.loai === 'chuong' && v.khoa) chapters[v.khoa] = v.giaTri || {};
+    /* `viet` — bài viết ngắn, điểm do AI chấm. Đọc ở đây chứ không bỏ mặc: luật
+       Firestore CHO ghi loại nào thì bên đọc phải nhặt đúng chừng ấy loại, nếu
+       không thì ghi lên rồi bỏ đó — cổng `hocba_khop_luat.test.mjs` canh chuyện
+       này, và nó canh vì đã xảy ra thật với chính `hocBaTA`. */
+    else if (v.loai === 'viet' && v.khoa) baiViet[v.khoa] = v.giaTri || {};
   });
-  return chapters;
+  return { chapters, baiViet };
 }
 
 /**
@@ -127,12 +132,12 @@ async function docHocBa(uid) {
  * được bằng sổ tại máy, đó mới là nguồn chính.
  */
 export async function tienDoTuMay(uid) {
-  if (!dungDuoc(uid)) return { micros: {}, chapters: {} };
-  const [micros, chapters] = await Promise.all([
+  if (!dungDuoc(uid)) return { micros: {}, chapters: {}, baiViet: {} };
+  const [micros, hb] = await Promise.all([
     docTienDo(uid).catch((e) => { nuot(e); return {}; }),
-    docHocBa(uid).catch((e) => { nuot(e); return {}; }),
+    docHocBa(uid).catch((e) => { nuot(e); return { chapters: {}, baiViet: {} }; }),
   ]);
-  return { micros, chapters };
+  return { micros, chapters: hb.chapters || {}, baiViet: hb.baiViet || {} };
 }
 
 /**

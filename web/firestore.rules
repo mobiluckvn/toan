@@ -132,10 +132,17 @@ service cloud.firestore {
 
     match /hocBaTA/{userId}/muc/{mucId} {
       allow read:  if canRead(userId);
-      /* Tiếng Anh hiện chỉ có kỳ ôn tập chương. Danh sách hẹp là cố ý — máy con
-         không dựng được một hình dạng thứ hai mà sổ phụ huynh không đọc nổi. */
+      /* Hai loại, và danh sách vẫn hẹp là cố ý — máy con không dựng được một hình
+         dạng thứ ba mà sổ phụ huynh không đọc nổi.
+           chuong  kỳ ôn tập chương
+           viet    bài viết ngắn, ĐIỂM DO AI CHẤM (bác chốt 18-08-2026)
+
+         ⚠ `viet` chứa CHÍNH BÀI BÉ VIẾT và lời chấm — bố mẹ phải đọc được (bác
+         chốt), nên vẫn nằm trong học bạ mà `canRead` cho cả giáo viên xem, đúng như
+         mọi kết quả học khác. Khác hẳn `phongNoiTA`: chỗ ấy là tiếng nói riêng tư
+         của bé nên chỉ chính chủ đọc được. */
       allow write: if isMine(userId)
-                   && request.resource.data.loai in ['chuong'];
+                   && request.resource.data.loai in ['chuong', 'viet'];
     }
 
     /* ── PHÒNG LUYỆN NÓI: buổi nói chuyện của bé với cô giáo máy ──

@@ -19,6 +19,7 @@ import { buildBangXepHang } from './src/bangxephang.js';
 import { makeCode, canSend, nextRecord, verify, otpEmail } from './src/otp.js';
 import { normalizeEmail, buildUserDoc } from './src/user.js';
 import { hoiMay, LoiGoi } from './src/luyennoi.js';
+import { chamBaiViet } from './src/chamviet.js';
 
 setGlobalOptions({ region: 'asia-southeast1', maxInstances: 10 });
 initializeApp();
@@ -458,6 +459,36 @@ const GROQ_API_KEY = defineSecret('GROQ_API_KEY');
  * Ngữ cảnh do client giữ và client tự đẩy lên `phongNoiTA` — bác chốt như thế, và
  * nó cũng là cách giữ tiếng nói của bé ở ít chỗ nhất.
  */
+/**
+ * CHẤM BÀI VIẾT NGẮN của bé — cùng một khoá Groq, cùng một luật cửa với `luyenNoi`.
+ *
+ * KHÔNG ghi gì xuống Firestore ở đây: điểm và lời chấm do MÁY CON đẩy lên
+ * `hocBaTA` (loai `viet`), y như cách buổi luyện nói được lưu. Một chỗ giữ dữ liệu
+ * của bé là đủ, và chỗ ấy đã có luật canh.
+ */
+export const chamViet = onCall(
+  { secrets: [GROQ_API_KEY], region: 'asia-southeast1' },
+  async (req) => {
+    if (!req.auth) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
+    const khoa = GROQ_API_KEY.value();
+    if (!khoa) {
+      throw new HttpsError('failed-precondition',
+        'Máy chủ chưa có khoá Groq. Đặt bằng: firebase functions:secrets:set GROQ_API_KEY');
+    }
+    try {
+      const { Groq } = await import('groq-sdk');
+      return await chamBaiViet(req.data, () => new Groq({ apiKey: khoa }));
+    } catch (e) {
+      if (e instanceof LoiGoi) throw new HttpsError('invalid-argument', e.message);
+      if (e?.status === 401 || e?.status === 403) {
+        throw new HttpsError('permission-denied',
+          'Khoá Groq không dùng được. Người lớn kiểm tra lại GROQ_API_KEY giúp con nhé.');
+      }
+      throw new HttpsError('unavailable', 'Chưa chấm được bài. Con thử lại nhé.');
+    }
+  },
+);
+
 export const luyenNoi = onCall(
   { secrets: [GROQ_API_KEY], region: 'asia-southeast1' },
   async (req) => {

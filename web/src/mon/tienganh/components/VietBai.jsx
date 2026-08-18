@@ -1,0 +1,232 @@
+import React, { useMemo, useState } from 'react';
+import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
+import { duocGui, DIEM_TOI_DA } from '../lib/chamviet.js';
+import { nhoCham } from '../lib/goiChamViet.js';
+
+/**
+ * BÀI VIẾT NGẮN — bé viết 2–3 câu, MÁY chấm. Bác chốt 18-08-2026.
+ *
+ * ── VIỆC THỨ TƯ CỦA MÔN ──
+ * Nghe · nói · đọc đã có chỗ. Viết thì chưa: bậc 4 của mỗi bài chỉ là GÕ LẠI một
+ * từ hoặc một câu đã cho. Gõ lại không phải viết — viết là tự chọn nói gì.
+ *
+ * ── BỐN ĐIỀU BÁC CHỐT, VÀ CHÚNG NẰM Ở ĐÂU TRÊN MÀN NÀY ──
+ *
+ *   1. sửa lỗi và khen CỤ THỂ  → khối "Cô khen" và bảng lỗi từng câu, có câu sửa
+ *   2. có điểm, NÓI RÕ AI CHẤM → số điểm to, và ngay dưới nó là dòng "máy chấm"
+ *   3. gợi ý chỉ bằng từ đã học → bảng từ bấm được ở trên, và lời chấm đã bị SOI
+ *                                 (`soiLoiCham`) trước khi tới đây
+ *   4. bố mẹ đọc được          → Góc bố mẹ mở ra là thấy nguyên bài viết và lời chấm
+ *
+ * ── VÌ SAO BẢNG TỪ BẤM ĐƯỢC ──
+ * Bé lớp 3 gõ tiếng Anh còn chậm và nhớ mặt chữ chưa chắc. Bấm một từ là nó rơi
+ * vào ô viết. Đây KHÔNG phải cho sẵn đáp án: bé vẫn phải chọn từ nào, xếp theo thứ
+ * tự nào, và tự thêm dấu chấm câu. Cái được là bé không bỏ cuộc vì gõ sai chính tả
+ * một từ mình biết rõ.
+ *
+ * ── ĐIỂM KHÔNG KHOÁ ĐƯỜNG ĐI ──
+ * Không có nút "đi tiếp" nào ở đây, và điểm thấp cũng không chặn gì. Viết là việc
+ * khó nhất; gắn cửa vào nó là bé né luôn cả bài.
+ */
+export default function VietBai({ bai, onXong, onThoat }) {
+  const [viet, datViet] = useState('');
+  const [dangCham, datDangCham] = useState(false);
+  const [kq, datKq] = useState(null);
+  const [loi, datLoi] = useState('');
+
+  const vonTu = bai?.vonTu || [];
+  const mauCau = bai?.mauCau || [];
+  const toiThieu = bai?.toiThieu || 2;
+  const duoc = useMemo(() => duocGui(viet, toiThieu), [viet, toiThieu]);
+
+  if (!bai) {
+    return (
+      <Khung ten="Bài viết" onThoat={onThoat}>
+        <p className="text-alert">Chưa có đề bài viết cho chương này.</p>
+      </Khung>
+    );
+  }
+
+  const themTu = (t) => datViet((s) => (s.trim() ? `${s.replace(/\s+$/, '')} ${t}` : t));
+
+  const cham = async () => {
+    datLoi('');
+    datDangCham(true);
+    try {
+      const r = await nhoCham({ de: bai.de, viet, vonTu, mauCau, lop: 3 });
+      datKq(r);
+      /* Ghi NGAY khi có kết quả, không đợi bé bấm gì thêm: bé tám tuổi đọc xong lời
+         chấm là đóng máy, và lúc ấy công viết cả bài mất trắng. Cùng cái bẫy "thoát
+         ở màn kết phải ghi" đã sập một lần. */
+      onXong?.({ viet, cham: r.cham });
+    } catch (e) {
+      /* Nói ĐÚNG chỗ hỏng. "Thử lại nhé" cho mọi thứ thì bé bấm mãi trong khi lỗi
+         nằm ở chỗ chẳng ai xem — cùng lý do với phòng luyện nói. */
+      const ma = String(e?.code || '');
+      datLoi(ma.includes('unauthenticated') ? 'Con đăng nhập rồi cô chấm cho nhé.'
+        : ma.includes('permission-denied') ? 'Máy chấm chưa dùng được. Nhờ người lớn xem giúp nhé.'
+        : ma.includes('invalid-argument') ? (e.message || 'Bài viết chưa gửi được.')
+        : 'Chưa gọi được cô giáo máy. Con thử lại nhé.');
+    } finally {
+      datDangCham(false);
+    }
+  };
+
+  return (
+    <Khung ten={bai.name} onThoat={onThoat}>
+      <section className="rounded-xl2 border-2 border-navy bg-white p-4">
+        <h2 className="mb-1 text-sm font-semibold uppercase tracking-wider text-mute">
+          Đề bài
+        </h2>
+        <p className="text-lg text-ink">{bai.de}</p>
+        {!!mauCau.length && (
+          <details className="mt-3">
+            <summary className="cursor-pointer text-sm font-semibold text-navy">
+              Mẫu câu con đã học ({mauCau.length})
+            </summary>
+            <ul className="mt-2 flex flex-col gap-1 text-ink">
+              {mauCau.map((m) => <li key={m} className="text-sm">· {m}</li>)}
+            </ul>
+          </details>
+        )}
+      </section>
+
+      <label className="flex flex-col gap-2">
+        <span className="text-sm font-semibold uppercase tracking-wider text-mute">
+          Con viết ở đây
+        </span>
+        <textarea
+          value={viet}
+          onChange={(e) => datViet(e.target.value)}
+          rows={5}
+          maxLength={600}
+          spellCheck={false}
+          placeholder="Hello. I'm ..."
+          className="w-full rounded-xl2 border-2 border-line bg-white p-3 text-lg text-ink
+            focus:border-navy focus:outline-none focus-visible:ring-4 focus-visible:ring-gold"
+        />
+      </label>
+
+      <section>
+        <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-mute">
+          Từ con đã học — bấm để thêm vào bài
+        </h2>
+        <div className="flex flex-wrap gap-2">
+          {vonTu.map((v) => (
+            <button key={v.tu} type="button" onClick={() => themTu(v.tu)}
+              title={v.nghia}
+              className="rounded-xl2 border-2 border-line bg-white px-3 py-1.5 text-ink
+                hover:border-navy focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+              {v.tu}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <div className="flex flex-wrap items-center gap-3">
+        <button type="button" onClick={cham} disabled={!duoc.ok || dangCham}
+          className="rounded-xl2 bg-navy px-6 py-3 text-lg font-semibold text-white
+            disabled:opacity-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+          {dangCham ? 'Cô đang đọc bài…' : 'Nhờ cô chấm'}
+        </button>
+        {!duoc.ok && <p className="text-sm text-mute">{duoc.vi}</p>}
+      </div>
+      {!!loi && <p className="rounded-xl2 bg-gold-pale px-4 py-2.5 text-gold-dark">{loi}</p>}
+
+      {kq?.cham && <LoiCham kq={kq} viet={viet} />}
+    </Khung>
+  );
+}
+
+/** Lời chấm — điểm, khen, sửa từng lỗi, gợi ý. Và NÓI RÕ là máy chấm. */
+function LoiCham({ kq, viet }) {
+  const { cham, boQua } = kq;
+  return (
+    <section className="flex flex-col gap-4 rounded-xl2 border-2 border-teal bg-teal-pale p-4">
+      <div className="flex items-baseline gap-3">
+        <p className="text-4xl font-bold text-teal-dark">
+          {cham.diem ?? '—'}<span className="text-2xl">/{DIEM_TOI_DA}</span>
+        </p>
+        {/* ⚠ DÒNG NÀY KHÔNG ĐƯỢC BỎ. Bác chốt: có điểm thì phải nói rõ ai chấm.
+            Con số không nhãn sẽ được đọc thành điểm của cô giáo, và đó là hiểu nhầm
+            bố mẹ không có cách nào tự phát hiện. */}
+        <p className="text-sm text-teal-dark">
+          Máy chấm (AI), không phải điểm của cô giáo
+        </p>
+      </div>
+
+      {!!cham.khen && (
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-mute">Cô khen</h3>
+          <p className="text-ink">{cham.khen}</p>
+        </div>
+      )}
+
+      {!!cham.loi.length && (
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-mute">
+            Chỗ cần sửa
+          </h3>
+          <ul className="flex flex-col gap-2">
+            {cham.loi.map((x) => (
+              <li key={`${x.cau}|${x.sua}`} className="rounded-xl2 bg-white p-3">
+                <p className="text-ink line-through decoration-alert">{x.cau}</p>
+                <p className="font-semibold text-teal-dark">{x.sua}</p>
+                {!!x.viSao && <p className="mt-1 text-sm text-mute">{x.viSao}</p>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {!cham.loi.length && (
+        <p className="text-teal-dark">Cô không tìm thấy lỗi nào trong bài của con.</p>
+      )}
+
+      {!!cham.goiY && (
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-mute">
+            Lần sau con thử
+          </h3>
+          <p className="text-ink">{cham.goiY}</p>
+        </div>
+      )}
+
+      {/* Bỏ bớt thì PHẢI NÓI. Giấu đi thì lời chấm trông đầy đủ trong khi nó vừa
+          mất một mục, và lần sau chẳng ai biết lời dặn đang không ăn. */}
+      {!!boQua.length && (
+        <p className="text-sm text-mute">
+          Cô có {boQua.length} câu gợi ý dùng từ con chưa học, nên cô giấu đi rồi.
+        </p>
+      )}
+
+      <GocBoMe ten="Góc bố mẹ · bài viết và lời chấm">
+        <MucBoMe nhan="Con viết">{viet}</MucBoMe>
+        <MucBoMe nhan="Máy chấm">
+          {`${cham.diem ?? '—'}/${DIEM_TOI_DA} · ${cham.loi.length} lỗi`}
+        </MucBoMe>
+        {!!cham.choBoMe && <MucBoMe nhan="Lời cho bố mẹ">{cham.choBoMe}</MucBoMe>}
+        <MucBoMe nhan="Ai chấm">
+          {`Điểm và lời chấm do mô hình ${kq.moHinh || 'AI'} sinh ra. Đây là gợi ý `
+           + 'cho con tự sửa, không phải điểm của giáo viên.'}
+        </MucBoMe>
+      </GocBoMe>
+    </section>
+  );
+}
+
+function Khung({ ten, children, onThoat }) {
+  return (
+    <div className="mx-auto flex min-h-screen w-full max-w-3xl flex-col gap-5 p-4 pb-24">
+      <div className="flex items-center gap-3">
+        <button type="button" onClick={onThoat}
+          className="rounded-xl2 border-2 border-line px-3 py-2 text-sm font-semibold text-mute
+            hover:border-navy hover:text-navy focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+          ← Về
+        </button>
+        <h1 className="flex-1 text-lg font-bold text-ink sm:text-xl">✍️ {ten}</h1>
+      </div>
+      {children}
+    </div>
+  );
+}
