@@ -15,8 +15,8 @@ cách làm, và cùng một giới hạn: bảng này không thay được ngư�
 | | số từ |
 |---|---|
 | ✔️ đúng | 41 |
-| ⚠️ gần đúng | 3 |
-| ✅ đã sửa | 9 |
+| ⚠️ gần đúng | 2 |
+| ✅ đã sửa | 10 |
 | ℹ️ ghi chú | 3 |
 
 **Không từ nào dùng chung hình với từ khác** — quyển này sạch khoản ấy (lớp 3 thì
@@ -25,17 +25,25 @@ có tám chỗ).
 **Đã sửa `jam`** (bác chốt 18-08): 🍯 là hũ MẬT ONG, không phải lọ mứt — vẽ tay lọ
 thuỷ tinh có nắp vặn và nhãn dâu, dựng lại video B07.
 
-## Còn nợ — `zebu`, và vì sao cháu bỏ dở
+## Còn nợ — `zebu` và `slide`, và vì sao cháu bỏ dở
 
-`zebu` (bò u) không có emoji nào đúng: 🐄 là bò sữa thường — lưng thẳng, không u,
-không yếm. Cháu đã vẽ tay **bốn lần** (thân ghép từ hình chữ nhật · một nét liền ·
-bốn chân · hai chân với thân bầu dục) và lần nào render ra nhìn cũng đọc thành CON
-SÂU hoặc CON BỌ, không ra con bò.
+**`zebu`** (bò u): 🐄 là bò sữa thường — lưng thẳng, không u, không yếm. Vẽ tay **bốn
+lần** (thân ghép từ hình chữ nhật · một nét liền · bốn chân · hai chân với thân bầu
+dục), lần nào render ra nhìn cũng đọc thành CON SÂU hoặc CON BỌ.
 
-Nên **giữ 🐄 và ghi lại**, chứ không thay bằng hình cháu vẽ: 🐄 ít nhất còn đúng họ
-(một con bò, chỉ thiếu cái u), còn hình vẽ hỏng thì dạy bé một con vật không có thật.
-Vật tĩnh (lọ mứt · viên thạch · bàn ghế · căn phòng) cháu vẽ được; CON VẬT ở cỡ icon
-thì chưa. Chỗ này cần người vẽ, hoặc bác chấp nhận 🐄 kèm lời cô giảng thêm cái u.
+**`slide`** (trượt): thử vẽ một bé đang tuột xuống máng, có vệt gió phía sau. Ra một
+vật nhọn bay chéo màn hình — giống cái bút hoặc quả tên lửa hơn là một đứa trẻ. Cái
+khó không phải cái máng (máng thì vẽ được, `playground` của lớp 3 có rồi) mà là NGƯỜI
+ĐANG TRƯỢT: bỏ người đi thì lại thành đồ vật, đúng cái 🛝 đang sai.
+
+Nên **giữ nguyên hai emoji ấy và ghi lại**, chứ không thay bằng hình cháu vẽ: 🐄 ít
+nhất còn đúng họ (một con bò, chỉ thiếu cái u), 🛝 còn đúng chỗ chơi. Hình vẽ hỏng thì
+dạy bé một thứ không có thật, tệ hơn hẳn.
+
+**Ranh giới đo được của cháu**, sau 14 hình vẽ trong hai ngày: VẬT TĨNH và NƠI CHỐN
+thì vẽ được (bàn · lọ mứt · viên thạch · vô lăng · căn phòng · sân chơi). CON VẬT thì
+tuỳ: `kitten` được vì mèo dựng trên KHUÔN MẶT — tròn, đối xứng, tai tam giác; `zebu`
+không được vì bò phải vẽ THÂN BỐN CHÂN nhìn ngang. NGƯỜI ĐANG LÀM GÌ ĐÓ thì chưa.
 
 **Bác chốt 18-08: vẽ nốt 7 chỗ vẽ được.** `river` · `van` · `quiz` · `sand` · `sail` ·
 `road` · `drive` — đều là VẬT TĨNH. Dựng lại video của B03 · B04 · B05 · B08 · B11.
@@ -54,7 +62,7 @@ thì cần người vẽ — xem phần dưới.
 | `pizza` | B01 | bánh pizza | 🍕 | SLICE OF PIZZA | ✔️ đúng |  |
 | `kite` | B02 | cái diều | 🪁 | KITE | ✔️ đúng |  |
 | `bike` | B02 | xe đạp | 🚲 | BICYCLE | ✔️ đúng |  |
-| `kitten` | B02 | con mèo con | 🐈 | CAT | ⚠️ gần đúng | 🐈 là con mèo LỚN. Bài dạy "mèo con" — bé không thấy chỗ khác nhau. |
+| `kitten` | B02 | con mèo con | vẽ tay `kitten` | mèo con | ✅ đã sửa | trước là 🐈 **CAT — con mèo LỚN**. Vẽ mới: đầu to hơn thân, mắt to — cách vẽ nói ra "con NON". |
 | `sail` | B03 | cánh buồm | vẽ tay `sail` | cánh buồm | ✅ đã sửa | trước là ⛵ **SAILBOAT** — cả chiếc thuyền. Vẽ mới: cột và hai cánh buồm, KHÔNG vẽ thân thuyền. |
 | `sand` | B03 | cát | vẽ tay `sand` | cát | ✅ đã sửa | trước là 🏖️ **BEACH WITH UMBRELLA** — cả một bãi biển. Vẽ mới: đống cát có xô và xẻng. |
 | `sea` | B03 | biển | 🌊 | WATER WAVE | ✔️ đúng |  |
@@ -79,7 +87,7 @@ thì cần người vẽ — xem phần dưới.
 | `zoo` | B10 | vườn thú | vẽ tay `zoo` | vườn thú | ✔️ đúng |  |
 | `zebu` | B10 | bò u | 🐄 | COW | ⚠️ gần đúng | 🐄 là con BÒ SỮA thường: lưng thẳng, không u, không yếm. **Đã thử vẽ tay bốn lần và BỎ** — xem "Còn nợ" ở cuối trang. |
 | `zebra` | B10 | ngựa vằn | 🦓 | ZEBRA FACE | ℹ️ ghi chú | 🦓 là MẶT ngựa vằn — như trên. |
-| `slide` | B11 | trượt | 🛝 | ? | ⚠️ gần đúng | 🛝 là CẦU TRƯỢT (đồ vật); sách chú là "trượt" (động tác). |
+| `slide` | B11 | trượt | 🛝 | ? | ⚠️ gần đúng | 🛝 là CẦU TRƯỢT (đồ vật); sách chú là "trượt" (động tác). **Đã thử vẽ bé đang tuột xuống máng và BỎ** — xem "Còn nợ". |
 | `ride` | B11 | lái xe (đạp, máy) | 🚴 | BICYCLIST | ✔️ đúng |  |
 | `drive` | B11 | lái xe (ô tô) | vẽ tay `drive` | lái xe | ✅ đã sửa | trước là 🚗 **AUTOMOBILE** — cái xe, không phải động tác lái. Vẽ mới: cái VÔ LĂNG. |
 | `grape` | B12 | quả nho | 🍇 | GRAPES | ✔️ đúng |  |
