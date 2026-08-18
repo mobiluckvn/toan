@@ -40,6 +40,17 @@ Hai việc phải làm:
 **(a) Tách video từ mới theo NHÓM NGHĨA** — mỗi unit 2–3 tệp ~30 giây thay vì một
 tệp dài. Ví dụ U13: *phòng ốc* / *đồ đạc* / *chỗ đứng*. Tên tệp nói ra nhóm nào.
 
+✅ **Nhóm nghĩa KHÔNG phải soạn thêm — `vai` đã chia sẵn.** Gom từ trong unit theo
+`vai` là ra nhóm ngay:
+
+```
+U1  13 từ →  chao 6 · ten 4 · daitu 2 · hoi 1     → 3 video
+U4   9 từ →  bophan 7 · dongtu 2                  → 2 video
+U5   8 từ →  sothich 8                            → 1 video
+```
+
+Nhóm lẻ 1–2 từ thì gộp vào nhóm cạnh nó, đừng dựng một video 8 giây.
+
 **(b) Thêm loại cảnh cho 39 TỪ TRỪU TƯỢNG.** Chúng đã khai `hinh._khong_ve` kèm lý
 do, và bản chuẩn gắn cờ `khong_ve`. Không vẽ `hello` được, nhưng DIỄN được: cảnh
 **dùng trong câu** — hai người chào nhau, chữ `hello` sáng lên trong câu.
