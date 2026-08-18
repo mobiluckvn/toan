@@ -249,7 +249,7 @@ for (const q of quyens) {
   t(`${q} · bài nào cũng đủ bốn bậc (${thieuBac.length} chỗ thiếu)`, thieuBac.length === 0);
   in5(thieuBac);
 
-  /* ══ 4D · KHÔNG ĐƯỢC NÓI MỘT ĐIỀU KHÔNG ĐÚNG VỀ ÂM ══
+  /* ══ 4D · KHÔNG BÀI NÀO ĐƯỢC NÓI CHUYỆN "BA TỪ CÙNG ÂM ĐẦU" ══
 
      Bác bắt 18-08-2026: "từ lớp 2 đến lớp 3 là nhiều từ mới không có trong nhóm
      âm. Nhưng video dạy từ mới bạn vẫn mô típ là hãy nghe 03 từ thấy giống nhau
@@ -263,37 +263,31 @@ for (const q of quyens) {
          bird · cat · dog      — chẳng có âm nào chung
          cooking · dancing · drawing  (bài khai chữ "p")
 
-     Không cổng nào bắt được, vì mọi thứ đo được đều đúng: câu đúng ngữ pháp, clip
-     tiếng có đủ, video dựng ra bình thường. Chỉ NGHE mới biết nó nói sai — nên
-     phép kiểm phải hỏi đúng câu con người hỏi: ba từ ấy có thật sự bắt đầu giống
-     nhau không.
+     Bản chữa đầu tiên chỉ giữ K2 ở 18 bài mà điều ấy đúng thật. Bác xem rồi chốt
+     BỎ SẠCH: một quyển có hai kiểu mở màn thì bé không hiểu vì sao bài này khác
+     bài kia, mà cái được thì nhỏ.
 
-     Bài nào không đúng thì KHÔNG được có K2, và `kich_ban.py` (`if "K2" in K`)
-     tự bỏ luôn cảnh chữ cái. Một chỗ khai, hai nơi nghe theo. */
-  const chuGoc = (x) => {
-    const c = String(x || '').replace(/[^a-zA-Z]/g, '').toLowerCase();
-    /* `Bb` · `Cc` là cách sách lớp 1 viết MỘT chữ cái, không phải hai. */
-    return (c.length === 2 && c[0] === c[1]) ? c[0] : c;
-  };
-  const noiSai = [], thieuK2 = [];
+     Cổng này canh chiều CẤM, không còn chiều "chỉ khi đúng". Hai chỗ phải soi, vì
+     `u["phonics"]` vẫn còn trong bản đồ và vẫn nằm ngay cạnh chỗ sinh K1 — viết
+     lại mấy dòng ấy rất dễ, mà viết lại thì KHÔNG có gì kêu: câu đúng ngữ pháp,
+     clip tiếng vẫn sinh được, video vẫn dựng ra bình thường. Chỉ nghe mới biết. */
+  const conK2 = [], conNhac = [];
+  const NHAC_AM = /bắt đầu giống nhau|âm của chữ|chữ hôm nay/i;
   for (const b of bais) {
-    const K = Object.fromEntries((b.knowledgeCore.statements || []).map((x) => [x.id, x]));
-    const ba = (b.knowledgeCore.vocabulary || []).slice(0, 3).map((v) => v.tu);
-    const g = chuGoc(String(b.dangGoc || '').split(' ')[0]);
-    const dung = !!g && ba.length === 3
-      && ba.every((w) => w.toLowerCase().replace(/[^a-z]/g, '').startsWith(g));
-    if (K.K2 && !dung) {
-      noiSai.push(`${b.id}: bảo “${ba.join(' · ')}” cùng bắt đầu bằng “${g || '?'}”`);
+    for (const x of b.knowledgeCore.statements || []) {
+      if (x.id === 'K2') conK2.push(`${b.id}: khai lại mục K2`);
+      const doc = (x.doanAm || []).map((d) => d[0]).join(' ');
+      if (NHAC_AM.test(x.text || '') || NHAC_AM.test(doc)) {
+        conNhac.push(`${b.id}/${x.id}: “${String(x.text || doc).slice(0, 60)}…”`);
+      }
     }
-    /* Chiều ngược: đúng thật thì đừng bỏ mất — lớp 1 là quyển dạy phonics, bỏ hết
-       là bỏ đúng phần sách ấy sinh ra để dạy. */
-    if (!K.K2 && dung) thieuK2.push(`${b.id}: “${ba.join(' · ')}” cùng âm “${g}” mà bỏ`);
   }
-  t(`${q} · không bài nào nói sai về âm đầu (${noiSai.length})`, noiSai.length === 0);
-  in5(noiSai);
-  t(`${q} · bài CÓ âm đầu chung thì vẫn dạy (${thieuK2.length} bị bỏ oan)`,
-    thieuK2.length === 0);
-  in5(thieuK2);
+  t(`${q} · không bài nào còn mục K2 “ba từ cùng âm” (${conK2.length})`,
+    conK2.length === 0);
+  in5(conK2);
+  t(`${q} · không lời giảng nào còn nhắc chuyện âm đầu (${conNhac.length})`,
+    conNhac.length === 0);
+  in5(conNhac);
 
   /* ══ 5 · KHOÁ BKT PHẢI KÈM MÃ QUYỂN ══
      Khoá số trần làm huy hiệu lây giữa các quyển — đã dính thật bên Toán. */

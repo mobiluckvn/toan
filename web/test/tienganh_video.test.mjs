@@ -140,6 +140,46 @@ const quaTran = doDai.filter((x) => x.s > TRAN_CAU);
 t(`không video nào vượt trần cứng ${TRAN_CAU} giây (${quaTran.length})`, !quaTran.length);
 in5(quaTran.map((x) => `${x.f} · ${x.s.toFixed(1)}s`));
 
+/* ══ KHÔNG KỊCH BẢN NÀO ĐƯỢC CÓ LẠI CẢNH "CHỮ CÁI" ══
+
+   Bác chốt 18-08-2026 bỏ sạch lời mở "nghe ba từ này, chúng bắt đầu giống nhau"
+   — nó nói sai ở 35/53 bài của ba quyển (lớp 3 sai cả 21). Cảnh `chu_cai` là chỗ
+   lời ấy hiện lên màn hình.
+
+   Soi ở tầng KỊCH BẢN chứ không soi tệp mp4: mp4 thì chỉ có pixel, mà đọc lại
+   pixel để tìm một dòng chữ là việc không đáng. Kịch bản là thứ đẻ ra mp4, chặn ở
+   đó là chặn đúng chỗ. Chạy `kich_ban.py` bằng chính venv của bộ dựng.
+
+   ⚠ Dựng lại cảnh ấy chỉ mất bốn dòng: `bai["dangGoc"]` vẫn còn trong mọi bài học.
+   Mà dựng lại thì KHÔNG có gì kêu — cảnh vẽ ra rất đẹp, chỉ có lời là sai. */
+{
+  const py = join(R, 'tools/tts/.venv/bin/python');
+  if (!existsSync(py)) {
+    console.log('   ⏸ chưa có venv dựng video — bỏ qua phép soi cảnh chữ cái');
+  } else {
+    const ma = quyens.flatMap((q) => readdirSync(join(R, 'web/public/content', q))
+      .filter((f) => /^DL_.*\.json$/.test(f)).map((f) => [q, f.replace('.json', '')]));
+    const loai = execFileSync(py, ['-c', `
+import sys, json, glob
+sys.path.insert(0, 'tools/video')
+import kich_ban
+ra = []
+for f in sorted(glob.glob('web/public/content/ta*/DL_*.json')):
+    b = json.load(open(f))
+    for g in kich_ban.cac_phan(b)['tu']:
+        for c in g['canh']:
+            ra.append([b['id'], c['loai']])
+print(json.dumps(ra))
+`], { cwd: R, encoding: 'utf8' });
+    const canh = JSON.parse(loai);
+    const xau = canh.filter(([, l]) => l === 'chu_cai').map(([id]) => id);
+    t(`soi ${ma.length} bài · không kịch bản nào còn cảnh “chữ cái” (${xau.length})`,
+      xau.length === 0);
+    in5([...new Set(xau)]);
+    t('và có thật cảnh để mà soi (glob rỗng thì mọi phép đều xanh)', canh.length > 0);
+  }
+}
+
 const tong = doDai.reduce((a, x) => a + x.s, 0);
 console.log(`\n   ${tep.length} video · ${(tong / 60).toFixed(1)} phút · `
   + `từ mới ${doDai.filter((x) => x.loai === 'tu').length} `

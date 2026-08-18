@@ -28,7 +28,7 @@ xếp theo CHỦ ĐỀ, nên tiền đề sụp hẳn — mà câu vẫn đượ
 
 | Quyển | Sai | Tổng | |
 |---|---|---|---|
-| Lớp 1 | 6 | 16 | quyển dạy phonics, phần lớn còn đúng |
+| Lớp 1 | 6 | 16 | quyển dạy phonics, phần lớn còn đúng — nhưng nay cũng bỏ |
 | Lớp 2 | 8 | 16 | |
 | Lớp 3 | **21** | **21** | không unit nào đúng |
 
@@ -46,18 +46,35 @@ bình thường, độ dài trong ngưỡng. Chỉ NGHE mới biết nó nói sa
 
 ## Nay làm gì
 
-1. `am_dau_khop()` trong `sinh_bai_tienganh.py` **hỏi lại** trước khi sinh: ba từ
-   ấy có thật sự bắt đầu bằng chữ bài khai không.
-2. Không đúng thì **K2 không tồn tại**. `kich_ban.py` vốn đã viết
-   `if dau_tien and "K2" in K` — nên cảnh `chu_cai` tự biến mất, không phải sửa
-   thêm dòng nào. Một chỗ khai, hai nơi nghe theo.
-3. K1 thay bằng câu đúng và có ích: *"Hôm nay chúng mình học 8 từ mới — Sở thích
-   của mình."*
-4. Cổng mới ở `tienganh_bai.test.mjs` §4D soi **hai chiều**: bài nói sai thì đỏ,
-   mà bài có âm chung thật lại bỏ mất phần dạy cũng đỏ. Đã đảo chiều thử: nhét lại
-   K2 vào U16 lớp 3 → cổng đỏ đúng chỗ.
+Bản chữa **đầu tiên** chỉ bỏ lời mở ở những bài nó nói sai, giữ lại 18 bài mà ba
+từ thật sự cùng âm đầu. Bác xem rồi chốt: **"Bỏ sạch luôn đi."**
 
-## Bảng chi tiết
+Chốt thế là đúng — giữ lại 18 bài thì cùng một quyển có hai kiểu mở màn, bé lớp 1
+xem bài 3 thấy khác bài 4 mà không hiểu vì sao; cái được thì nhỏ, cái mất là một
+luật đơn giản.
+
+1. **K2 bỏ hẳn** khỏi `sinh_bai_tienganh.py`. Lời mở nay là K1: *"Hôm nay chúng
+   mình học 8 từ mới — Sở thích của mình."* Đúng với mọi quyển, và nói ra thứ bé
+   sắp học thật.
+2. **Cảnh `chu_cai` bỏ hẳn khỏi cả hai tệp video** — chỗ sinh cảnh
+   (`kich_ban.py`) và chỗ vẽ cảnh (`dung_video.py`). Bỏ cả nhánh vẽ chứ không chỉ
+   bỏ chỗ sinh: để lại là mời người sau bật lên, mà bật lên thì không có gì kêu —
+   cảnh vẽ ra rất đẹp, chỉ có lời là sai.
+3. **Hai cổng canh, cả hai đã đảo chiều thử:**
+   * `tienganh_bai.test.mjs` §4D — bài nào khai lại K2, hoặc lời giảng nào nhắc
+     lại chuyện "bắt đầu giống nhau / âm của chữ", thì đỏ.
+   * `tienganh_video.test.mjs` — chạy `kich_ban.py` thật rồi soi từng cảnh; kịch
+     bản nào có lại `chu_cai` thì đỏ. Thử nhét lại một cảnh → đỏ đúng 76 chỗ.
+
+⚠ `u["phonics"]` (chữ + IPA) **vẫn còn** trong bản đồ và vẫn nằm ngay cạnh chỗ
+sinh K1, nên viết lại mấy dòng ấy rất dễ. Hai cổng trên là thứ giữ cho nó đừng
+quay lại.
+
+## Bảng chi tiết — trạng thái TRƯỚC khi sửa
+
+Cột "Nay" của bảng dưới là bản chữa đầu tiên. Sau khi bác chốt bỏ sạch thì **mọi
+dòng đều là "bỏ"** — bảng giữ lại để thấy chỗ nào sai thật và sai kiểu gì.
+
 
 ### LỚP 1
 

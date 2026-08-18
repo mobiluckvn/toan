@@ -256,17 +256,18 @@ def _mot_nhom_tu(bai, g, theo_tu, hinh_cua, dau_tien: bool, so_nhom: int) -> dic
         ds.append(_canh("bia", bai["title"], f"Từ mới · {g['ten']}",
                         loi=(loi_hook if dau_tien else []) + [(dan_nhom(g["ten"]), "vi")]))
 
-    # ── 2 · CHỮ CÁI, DẠY QUA TỪ ─────────────────────────────────────────
-    # Bác chốt bỏ phần âm rời: /d/ tách khỏi từ không tồn tại trong lời nói tự
-    # nhiên. Nên dạy âm bằng cách cho nghe LIỀN ba từ cùng chữ đầu.
-    # Chỉ ở nhóm ĐẦU: âm của bài chỉ có một, dạy lại ba lần là ba lần bé ngồi chờ.
-    chu = (bai.get("dangGoc") or "?").split()[0]
-    K = {s["id"]: s for s in kc["statements"]}
-    if dau_tien and "K2" in K:
-        ds.append(_canh("chu_cai", chu, "",
-                        loi=[(c, t) for c, t in (K["K2"].get("doanAm") or [])]))
-
-    # ── 3 · TỪ MỚI — mỗi từ MỘT cảnh ────────────────────────────────────
+    # ── 2 · TỪ MỚI — mỗi từ MỘT cảnh ────────────────────────────────────
+    #
+    # ⚠ Ở ĐÂY TỪNG CÓ MỘT CẢNH "CHỮ CÁI" — bỏ hẳn 18-08-2026, bác chốt.
+    #
+    # Nó lấy `bai["dangGoc"]` làm chữ hôm nay rồi đọc lời K2: "nghe ba từ này,
+    # chúng bắt đầu giống nhau không?". Ba từ ấy là ba từ ĐẦU TIÊN của unit, lấy
+    # bừa. Lớp 3 sai 21/21 bài, lớp 2 sai 8/16 (`box · fox · ox` — chữ x nằm CUỐI;
+    # `bird · cat · dog` — chẳng có âm nào chung).
+    #
+    # `dangGoc` VẪN CÒN trong bài học và vẫn đọc được từ đây, nên dựng lại cảnh ấy
+    # chỉ mất bốn dòng. Đừng. Xem lời dài ở `sinh_bai_tienganh.py`, chỗ K1.
+    # `tienganh_video.test.mjs` đỏ nếu kịch bản nào có lại cảnh `chu_cai`.
     for ten_tu in g["tu"]:
         t = theo_tu.get(ten_tu)
         if not t:

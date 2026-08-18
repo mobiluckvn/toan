@@ -186,11 +186,11 @@ def khung(c: dict) -> Image.Image:
                  rong=W - 260)
         giua(d, max(y + 34, 380), c["chuPhu"], phong(36), "#BFD8F5")
 
-    elif L == "chu_cai":
-        giua(d, 70, "Chữ hôm nay", phong(34), MUTE)
-        the(d, W // 2 - 150, 150, 300, 300, nen=GOLD_PALE, vien=GOLD, day=5)
-        giua(d, 210, c["chuChinh"], phong(180), NAVY)
-        giua(d, 510, "Nghe ba từ này — chúng bắt đầu giống nhau", phong(40), INK)
+    # ⚠ Ở ĐÂY TỪNG CÓ NHÁNH VẼ "chu_cai" — một chữ cái to giữa màn và dòng
+    # "Nghe ba từ này — chúng bắt đầu giống nhau". Bỏ hẳn 18-08-2026: câu ấy nói
+    # sai ở 35/53 bài của ba quyển (lớp 3 sai cả 21). Xem `kich_ban.py` mục 2.
+    # Bỏ cả nhánh vẽ chứ không chỉ bỏ chỗ sinh cảnh: để lại là mời người sau bật
+    # lên, và bật lên thì không có gì kêu — cảnh vẽ ra rất đẹp, chỉ có lời là sai.
 
     elif L == "tu":
         # Hai đường ra hình, cùng thứ tự ưu tiên với màn hình (`HinhVe.jsx`):
