@@ -421,3 +421,70 @@ cái gì*. Thêm từ mới mà quên nhìn hình là đỏ ngay.
 **Việc chưa làm, để lại cho lớp 2 cân nhắc:** 5 từ số nhiều mà hình vẽ một vật (riêng U9
 dạy đếm) · 4 hình "gần đúng" (`cup` ☕ · `bag` 👜 · `hat` 🎩 · `mother`/`father`) · và
 chuyện emoji mặt (🐱🐴) lẫn với emoji cả con (🐕🦆). Cả ba đều ghi ở `docs/hinh_da_soat.md`.
+
+---
+
+## 6 · LỚP 3 — quyển đầu tiên khuôn cũ KHÔNG chịu nổi
+
+Ghi 18-08-2026, sau khi dựng xong nền lớp 3.
+
+| | lớp 1 | lớp 2 | **lớp 3** |
+|---|---|---|---|
+| Unit | 16 | 16 | **21** |
+| Từ | 60 | 56 | **204** |
+| Từ / unit | 3,8 | 3,5 | **9,7** (nhiều nhất 15) |
+| Mẫu câu | 19 | 18 | **43** |
+
+### Năm khác biệt về CHẤT
+
+**1 · 39/204 từ KHÔNG vẽ được.** `hello · fine · my · this · yes · please · many ·
+here`… Cả hai quyển trước dựng trên một câu: *"bé chưa đọc được chữ nên HÌNH CHÍNH
+LÀ NGHĨA"*. Câu ấy đúng khi quyển chỉ dạy vật cụ thể; lớp 3 thì gãy, và gãy đúng các
+unit mở đầu (U1 có 9/13 từ trừu tượng).
+
+→ Khai `hinh._khong_ve` **kèm lý do**. `chuan_tienganh.py` không tính là thiếu và gắn
+cờ `khong_ve`. **Đừng cố tìm emoji** — đó chính là cách đẻ ra `desk` → 🪑 (tên Unicode
+thật: CHAIR) của lớp 1.
+
+**2 · 26/42 công thức có dấu `/`** — bản đồ để người soạn tự chọn. Ba cách xử:
+
+| loại | xử |
+|---|---|
+| `a/an` | MÁY chọn (`_chon_mao_tu`): chữ sau bắt đầu bằng nguyên âm thì `an` |
+| `/` ở ĐẦU câu (`Hello / Hi` · `he / she` · `Touch / Open`) | NGƯỜI chọn — đè `cong_thuc` VÀ `vi_du` ở phần bù |
+| `/` ở lời ĐÁP (`Yes, I do. / No, I don't.`) | GIỮ — cặp đáp mẫu hợp lệ |
+
+**3 · 9,7 từ/unit.** Giữ khuôn video cũ (~8 giây một từ) thì video từ mới dài **73
+giây**, unit nặng nhất **112** — lớp 1·2 chỉ 30. **Phải tách video theo NHÓM NGHĨA**,
+mỗi nhóm một tệp ~30 giây, và từ trừu tượng cần một loại cảnh khác (dạy bằng CÂU,
+không dạy bằng tranh).
+
+**4 · 8 từ dạy lại ở nhiều unit · 24 mục là CỤM nhiều chữ.** Lớp 1·2 mỗi từ chỉ thuộc
+một unit — bộ sinh mồi nhử dựa vào giả định ấy.
+
+**5 · U0 "Starter" số hiệu là CHỮ và không có mẫu câu nào.**
+
+### Bốn lỗi câm của bộ sinh, chỉ lộ khi có quyển thứ BA
+
+- **`VAI_BIET` ghim cứng** 13 vai của lớp 1·2. Lớp 3 khai thêm 13 vai mới → `sua_slot`
+  bị hiểu nhầm là danh sách TỪ, kho rỗng, bỏ qua cả mẫu, im lặng. Nay **suy từ chính
+  dữ liệu** (`vai_biet()`).
+- **`str.capitalize()` hạ chữ hoa phía sau**: `"Ms Hoa"` → `"Ms hoa"`.
+- **`a/an` không ai giải** → `"I can see a/an elephant."`
+- **`cau_hoi` bỏ từ KHÔNG có nghĩa tiếng Việt**, mà tên riêng thì không cần dịch →
+  U1 mất sạch ứng viên cho ô `[Name]`, mất luôn bậc 3. Cho tên một nghĩa ngắn
+  ("bạn Ben") là chữa được và cũng đúng hơn.
+
+### Một cửa mới ở tầng chuẩn hoá
+
+Phần bù nay **THÊM được mẫu câu**, không chỉ đắp phần dạy: khai `_unit` trong
+`mau_cau`. Dùng cho Starter — sách không khai mẫu nào nên bài mất bậc 3.
+⚠ Dùng dè: mỗi mẫu thêm là một câu KHÔNG có trong sách, phải nằm trọn trong năng lực
+unit đã khai và ghi rõ lý do ở `_them_moi`.
+
+### Còn lại cho lớp 3
+
+Video theo cấu trúc MỚI · rồi **bài đọc hiểu ngắn** (đọc + trắc nghiệm ý chính +
+trắc nghiệm chi tiết, dựng CHỈ từ vốn từ đã học của lớp 1+2+3) và **bài viết chấm
+bằng AI** (bác chốt 18-08: sửa lỗi và khen cụ thể · có điểm vào sổ · chỉ gợi ý bằng
+từ đã học · bố mẹ đọc được bài). Hạ tầng AI đã có sẵn: hàm `luyenNoi` chạy Groq.
