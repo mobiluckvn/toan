@@ -44,7 +44,14 @@ for (const q of quyens) {
   const chuongCua = Object.fromEntries(bais.map((b) => [b.so, b.chuong]));
   const soChuong = new Set(bais.map((b) => b.chuong)).size;
 
-  t(`${q} · mỗi chương một bài đọc (${ds.length}/${soChuong})`, ds.length === soChuong);
+  /* Hai PHẠM VI, đếm riêng: mỗi chương một bài, và mỗi unit một bài — trừ những
+     unit vốn câu quá mỏng, `sinh_dochieu_tienganh.py` in ra tên chúng khi dựng. */
+  const theoChuong = ds.filter((k) => k.phamVi !== 'unit');
+  const theoUnit = ds.filter((k) => k.phamVi === 'unit');
+  t(`${q} · mỗi chương một bài đọc (${theoChuong.length}/${soChuong})`,
+    theoChuong.length === soChuong);
+  t(`${q} · bài đọc theo unit phủ gần hết quyển (${theoUnit.length}/${bais.length})`,
+    theoUnit.length >= bais.length - 2);
   t(`${q} · đọc được danh sách và có bài để soi`, ds.length > 0 && bais.length > 0);
 
   /* Túi từ ĐÃ HỌC TỚI CHƯƠNG NÀY — dựng lại ở đây chứ không gọi bộ sinh: bộ sinh tự
@@ -78,8 +85,12 @@ for (const q of quyens) {
     const kho = khoDen(k.chapter);
     const doan = (k.doan || []).map((d) => d.cau);
 
-    if (doan.length < 4 || doan.length > 6) {
-      hinhDang.push(`${k.id}: đoạn ${doan.length} câu (bác chốt 4–6)`);
+    /* Bài theo CHƯƠNG gom câu của bốn unit nên luôn đủ 4–6 dòng. Bài theo UNIT chỉ
+       có vốn câu một unit; ba dòng vẫn là một đoạn đọc, còn đòi đủ bốn thì ba unit
+       mất hẳn bài. */
+    const sanDong = k.phamVi === 'unit' ? 3 : 4;
+    if (doan.length < sanDong || doan.length > 6) {
+      hinhDang.push(`${k.id}: đoạn ${doan.length} câu (cần ${sanDong}–6)`);
     }
     if (!k.cau?.length) hinhDang.push(`${k.id}: không câu hỏi nào`);
     if (!(k.need >= 2 && k.need <= (k.cau || []).length)) {

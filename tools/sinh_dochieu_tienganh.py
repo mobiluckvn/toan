@@ -62,6 +62,10 @@ QUYEN = {1: "ta1", 2: "ta2", 3: "ta3"}
 
 SO_DONG_TOI_DA = 6      # bác chốt: đoạn 4–6 câu
 SO_DONG_TOI_THIEU = 4
+# Bài theo UNIT chỉ có vốn câu của một unit, nên cho phép đoạn ngắn hơn một dòng.
+# Ba câu vẫn là một đoạn đọc; đòi đủ bốn thì ba unit mất hẳn bài đọc.
+SO_DONG_TOI_THIEU_UNIT = 3
+SO_CAU_TOI_THIEU = 3    # dưới ngần này thì bỏ bài — một câu ý chính không thành bài đọc
 # Qua bài khi sai NHIỀU NHẤT MỘT CÂU. Không đòi đúng hết: đây là bài đọc đầu tiên
 # của cả môn, và sai một câu chi tiết rồi phải làm lại từ đầu thì bé bỏ.
 
@@ -119,6 +123,20 @@ def _tach_doi(c: str) -> list[str]:
 TEN_RIENG = re.compile(r"\b(Ben|Lucy|Mai|Minh|Bill|Linh|Mary|Nam|Ms Hoa|Mr Long)\b")
 
 
+def _dang(cau: str) -> tuple:
+    """Khuôn của một câu: chữ đầu + số chữ. Cùng khuôn nghĩa là cùng công thức."""
+    return (cau.split()[0].lower(), len(cau.split())) if cau.split() else ("", 0)
+
+
+# Nhiều nhất hai dòng CÙNG KHUÔN trong một đoạn.
+#
+# U17 khai 4 ví dụ "She has a …" và đoạn ăn cả bốn, nên KHÔNG còn câu nào cùng khuôn
+# để làm mồi, mà khoét chữ thì chỗ trống nào cũng có hai đáp án đúng. Kết quả: unit
+# ấy chỉ dựng được câu ý chính, tức là mất bài đọc. Chừa lại hai câu là vừa đủ mồi,
+# và đoạn cũng đỡ đọc như đọc bảng cửu chương.
+CUNG_KHUON_TOI_DA = 2
+
+
 def _doan(bais: list[dict], kho: set[str]) -> list[str]:
     """Đoạn đọc: mỗi bài trong chương góp một mẩu, theo đúng thứ tự học.
 
@@ -158,6 +176,9 @@ def _doan(bais: list[dict], kho: set[str]) -> list[str]:
             mau = _tach_doi(con[0])
             if len(dong) + len(mau) > SO_DONG_TOI_DA:
                 continue
+            if any(sum(1 for y in dong if _dang(y) == _dang(x)) >= CUNG_KHUON_TOI_DA
+                   for x in mau):
+                continue
             them = True
             for x in mau:
                 if x not in dong:
@@ -165,7 +186,36 @@ def _doan(bais: list[dict], kho: set[str]) -> list[str]:
                     ten_da_dung += TEN_RIENG.findall(x)
         if not them or len(dong) >= SO_DONG_TOI_DA:
             break
+
+    # ── VÉT NỐT vế đáp còn thừa, khi cả unit chỉ có MỘT câu hỏi ──
+    #
+    # U0 · U2 · U5 khai bốn ví dụ mà cả bốn chung một vế hỏi ("What's your name? -
+    # My name's Mary/Bill/Linh…"). Luật "lấy trọn cặp" ở trên loại sạch ba ví dụ sau
+    # vì vế hỏi đã dùng rồi, và đoạn đọc dừng ở HAI dòng — ba unit mất hẳn bài đọc.
+    #
+    # Nên vét thêm những vế CHƯA dùng: đoạn thành một mẩu nhiều bạn cùng trả lời một
+    # câu hỏi, đọc vẫn xuôi. Chỉ vét khi còn thiếu, để đoạn của unit bình thường
+    # không bị lắp thêm dòng thừa.
+    if len(dong) < SO_DONG_TOI_THIEU_UNIT:
+        for b in bais:
+            for c in (b["knowledgeCore"].get("canonicalExamples") or []):
+                if not all(w in kho for w in chu_trong(c)):
+                    continue
+                for x in _tach_doi(c):
+                    if (x not in dong and len(dong) < SO_DONG_TOI_DA
+                            and sum(1 for y in dong if _dang(y) == _dang(x))
+                            < CUNG_KHUON_TOI_DA):
+                        dong.append(x)
     return dong
+
+
+def _ten_unit(b: dict) -> str:
+    """`"Unit 5 · Sở thích của mình · My hobbies"` → `"Sở thích của mình"`.
+
+    Lấy mẩu TIẾNG VIỆT ở giữa: mẩu đầu là số hiệu, mẩu cuối là tên tiếng Anh của
+    sách. Câu hỏi ý chính hỏi bằng tiếng Việt nên đáp án cũng phải tiếng Việt."""
+    phan = [x.strip() for x in str(b.get("title") or "").split("·")]
+    return phan[1] if len(phan) > 2 else (phan[-1] if phan else "?")
 
 
 def _cung_khuon(bais: list[dict], cau: str, tru: set[str]) -> list[str]:
@@ -191,18 +241,84 @@ def _cung_khuon(bais: list[dict], cau: str, tru: set[str]) -> list[str]:
     return ra
 
 
-def _cau_hoi(ky: dict, doan: list[str], bais: list[dict], ten_chuong: dict) -> list[dict]:
+def _khoet(cau: str, d: str) -> str:
+    return re.sub(rf"\b{re.escape(d)}\b", "___", cau, count=1, flags=re.I)
+
+
+def _mo_ho(cau: str, d: str, doan: list[str], tu: list[str]) -> bool:
+    """Khoét chữ `d` khỏi `cau` xong, có DÒNG KHÁC trong đoạn cũng ra đúng chỗ trống ấy không?
+
+    ⚠ Không hỏi câu này thì U0 ra hai câu y hệt nhau — "Trong bài có câu 'It's ___.'"
+    — trong khi đoạn có cả "It's five." lẫn "It's one.". Hai đáp án cùng đúng, mà máy
+    chỉ nhận một: bé đọc kỹ vẫn bị chấm sai.
+    """
+    k = _khoet(cau, d)
+    for x in doan:
+        if x == cau:
+            continue
+        for t in tu:
+            if t.lower() == d.lower():
+                continue
+            if re.search(rf"\b{re.escape(t)}\b", x, re.I) and _khoet(x, t) == k:
+                return True
+    return False
+
+
+def _cau_dien(doan: list[str], bais: list[dict], da_dung: set) -> dict | None:
+    """Khoét một chữ khỏi MỘT DÒNG của đoạn rồi hỏi chữ ấy là gì.
+
+    Vì sao cần dạng này: câu "câu nào CÓ trong bài" lấy mồi từ chính vốn câu của
+    sách, mà một unit chỉ có 8 câu ví dụ — đoạn đọc ăn hết 4–6 câu thì không còn đủ
+    ba mồi. Bảy unit vì thế chỉ dựng được đúng câu Ý CHÍNH, tức là không thành bài
+    đọc. Dạng điền chữ lấy mồi từ VỐN TỪ (9–15 từ mỗi unit) nên lúc nào cũng có.
+
+    KHÔNG gắn clip: nghe câu là nghe luôn chữ bị khoét — bé khỏi cần đọc.
+    """
+    tu = [t["tu"] for b in bais for t in b["knowledgeCore"]["vocabulary"]]
+    for cau in doan:
+        if cau in da_dung:          # mỗi dòng chỉ hỏi một lần, cho đỡ lặp
+            continue
+        # Khoét từ DÀI NHẤT khớp trước, để `pen` không cướp chỗ của `pencil`;
+        # trong số ấy ưu tiên chữ CHƯA từng làm đáp án.
+        hop = sorted((t for t in dict.fromkeys(tu)
+                      if re.search(rf"\b{re.escape(t)}\b", cau, re.I)),
+                     key=lambda t: (t.lower() in da_dung, -len(t)))
+        d = next((t for t in hop if not _mo_ho(cau, t, doan, tu)), None)
+        if not d:
+            continue
+        moi = [t for t in dict.fromkeys(tu) if t.lower() != d.lower()][:3]
+        if len(moi) < 2:
+            continue
+        da_dung.add(cau)
+        da_dung.add(d.lower())
+        return {
+            "id": "", "loai": "chiTiet",
+            "text": f"Trong bài có câu “{_khoet(cau, d)}”. Chỗ trống là chữ nào?",
+            "format": "chon",
+            "choices": _tron(d, moi),
+            "answerKey": {"choice": d},
+            "solutionNarrative": f"“{cau}” — con đọc lại đoạn trên xem nhé.",
+        }
+    return None
+
+
+def _cau_hoi(dung_ten: str, khac_ten: list[str], doan: list[str],
+             bais: list[dict]) -> list[dict]:
+    """`dung_ten` là chủ đề của chính bài đọc; `khac_ten` là ba chủ đề để làm mồi.
+
+    Bài theo CHƯƠNG lấy tên chương, bài theo UNIT lấy tên unit — cùng một phép hỏi
+    ý chính, chỉ khác cái tên đem so. Nhét riêng nhánh cho từng phạm vi thì hai
+    nhánh sớm muộn lệch nhau."""
     ra: list[dict] = []
 
     # ── Q1 · Ý CHÍNH ──
-    khac = [t for s, t in sorted(ten_chuong.items()) if s != ky["chapter"]][:3]
     ra.append({
         "id": "D1", "loai": "yChinh",
         "text": "Bài đọc này nói về chuyện gì?",
         "format": "chon",
-        "choices": _tron(ten_chuong[ky["chapter"]], khac),
-        "answerKey": {"choice": ten_chuong[ky["chapter"]]},
-        "solutionNarrative": f"Cả đoạn nói về {ten_chuong[ky['chapter']].lower()}.",
+        "choices": _tron(dung_ten, khac_ten[:3]),
+        "answerKey": {"choice": dung_ten},
+        "solutionNarrative": f"Cả đoạn nói về {dung_ten.lower()}.",
     })
 
     # ── Q2·Q3 · CHI TIẾT · câu nào CÓ trong bài ──
@@ -253,6 +369,16 @@ def _cau_hoi(ky: dict, doan: list[str], bais: list[dict], ten_chuong: dict) -> l
             "answerKey": {"choice": "Không"},
             "solutionNarrative": f"KHÔNG — đoạn trên không có câu “{ngoai}”.",
         })
+
+    # ── bù bằng câu ĐIỀN CHỮ cho đủ số câu tối thiểu ──
+    da_dung: set = set()
+    while len(ra) < SO_CAU_TOI_THIEU:
+        c = _cau_dien(doan, bais, da_dung)
+        if not c:
+            break
+        ra.append(c)
+    for i, c in enumerate(ra, 1):
+        c["id"] = f"D{i}"
     return ra
 
 
@@ -278,28 +404,61 @@ def dung(lop: int) -> tuple[list[dict], list[dict]]:
     # unit số → chương, để cắt túi từ đúng chỗ
     chuong_cua = {b["so"]: b["chuong"] for b in bais}
 
+    ten_unit = {b["so"]: _ten_unit(b) for b in bais}
+
     ra, loi = [], {}
+
+    def them(ky, doan, ds, dung_ten, khac_ten):
+        ky["doan"] = [{"cau": x, "am": ma_am("cau", x)} for x in doan]
+        ky["cau"] = _cau_hoi(dung_ten, khac_ten, doan, ds)
+        ky["soCau"] = len(ky["cau"])
+        if ky["soCau"] < SO_CAU_TOI_THIEU:
+            print(f"  ⚠ {ky['id']}: chỉ dựng được {ky['soCau']} câu hỏi, bỏ qua")
+            return
+        # `need` KHÔNG được vượt số câu — từng ra "cần 2/1", tức là bài không bao
+        # giờ qua được.
+        ky["need"] = min(ky["soCau"], max(2, ky["soCau"] - 1))
+        ra.append(ky)
+        for x in doan:
+            loi[ma_am("cau", x)] = {"id": ma_am("cau", x), "chu": x, "tieng": "en"}
+        for q in ky["cau"]:
+            # `amChu` khai THẲNG câu mà clip đọc lên. Suy ngược từ `answerKey` là
+            # chỗ vừa sai: câu Có/Không có đáp án là chữ "Không", và bộ sinh âm
+            # ngoan ngoãn đem chữ Việt ấy đi đọc bằng giọng Anh.
+            if q.get("am") and q.get("amChu"):
+                loi[q["am"]] = {"id": q["am"], "chu": q["amChu"], "tieng": "en"}
+
+    # ══ MỖI UNIT MỘT BÀI ĐỌC ══
+    #
+    # Bác chốt 18-08: bài theo chương là chỗ ÔN LẠI cả bốn unit, nhưng bé học xong
+    # MỘT unit thì cần đọc ngay của unit ấy — không phải chờ hết chương. Đoạn đọc
+    # chỉ lấy câu của chính unit, nên bé vừa học xong là đọc được luôn.
+    for b in bais:
+        kho = _kho_tu(chuans, b["chuong"], chuong_cua)
+        doan = _doan([b], kho)
+        if len(doan) < SO_DONG_TOI_THIEU_UNIT:
+            print(f"  ⚠ unit {b['so']}: chỉ dựng được {len(doan)} dòng, bỏ qua")
+            continue
+        khac = [t for s2, t in sorted(ten_unit.items()) if s2 != b["so"]]
+        # Mồi lấy unit GẦN NHẤT hai bên, không lấy đầu sổ: hai chủ đề cạnh nhau
+        # mới thật sự dễ lẫn, chứ "Khởi động" thì bé loại ngay.
+        gan = sorted(khac, key=lambda t: abs(list(ten_unit.values()).index(t) - b["so"]))
+        them({"id": f"DOC:TA{lop}.U{b['so']:02d}", "unit": b["so"],
+              "chapter": b["chuong"], "phamVi": "unit", "loai": "dochieu",
+              "name": f"ĐỌC HIỂU · UNIT {b['so']} · {ten_unit[b['so']].upper()}"},
+             doan, [b], ten_unit[b["so"]], gan)
+
+    # ══ MỖI CHƯƠNG MỘT BÀI ĐỌC — ôn lại cả bốn unit ══
     for c, ds in sorted(theo_chuong.items()):
         kho = _kho_tu(chuans, c, chuong_cua)
         doan = _doan(ds, kho)
         if len(doan) < SO_DONG_TOI_THIEU:
             print(f"  ⚠ chương {c}: chỉ dựng được {len(doan)} dòng, bỏ qua")
             continue
-        ky = {"id": f"DOC:TA{lop}.C{c}", "chapter": c, "loai": "dochieu",
-              "name": f"ĐỌC HIỂU {c} · {ten_chuong[c].upper()}",
-              "doan": [{"cau": x, "am": ma_am("cau", x)} for x in doan]}
-        ky["cau"] = _cau_hoi(ky, doan, ds, ten_chuong)
-        ky["soCau"] = len(ky["cau"])
-        ky["need"] = max(2, len(ky["cau"]) - 1)
-        ra.append(ky)
-        for x in doan:
-            loi[ma_am("cau", x)] = {"id": ma_am("cau", x), "chu": x, "tieng": "en"}
-        for q in ky["cau"]:
-            # `amChu` khai THẲNG câu mà clip đọc lên. Suy ngược từ `answerKey` là
-            # chỗ vừa sai: câu Có/Không có đáp án là chữ "Không", và bộ sinh âm ngoan
-            # ngoãn đem chữ Việt ấy đi đọc bằng giọng Anh.
-            if q.get("am") and q.get("amChu"):
-                loi[q["am"]] = {"id": q["am"], "chu": q["amChu"], "tieng": "en"}
+        them({"id": f"DOC:TA{lop}.C{c}", "chapter": c, "phamVi": "chuong",
+              "loai": "dochieu", "name": f"ĐỌC HIỂU CHƯƠNG {c} · {ten_chuong[c].upper()}"},
+             doan, ds, ten_chuong[c],
+             [t for s2, t in sorted(ten_chuong.items()) if s2 != c])
     return ra, list(loi.values())
 
 
@@ -313,7 +472,8 @@ def main() -> int:
     ra = GOC / f"web/public/content/{QUYEN[a.lop]}/dochieu.json"
     ra.write_text(json.dumps(ds, ensure_ascii=False, indent=1), "utf8")
     for k in ds:
-        print(f"  chương {k['chapter']}: {len(k['doan'])} dòng · {len(k['cau'])} câu hỏi "
+        cho = f"unit {k['unit']}" if k.get("phamVi") == "unit" else f"chương {k['chapter']}"
+        print(f"  {cho:10s}: {len(k['doan'])} dòng · {len(k['cau'])} câu hỏi "
               f"· cần {k['need']}/{k['soCau']}")
     print(f"→ {ra}")
 

@@ -58,6 +58,12 @@ DE = {
 }
 
 
+def _ten_unit(b: dict) -> str:
+    """`"Unit 5 · Sở thích của mình · My hobbies"` → `"Sở thích của mình"`."""
+    phan = [x.strip() for x in str(b.get("title") or "").split("·")]
+    return phan[1] if len(phan) > 2 else (phan[-1] if phan else "?")
+
+
 def chu_trong(s: str) -> list[str]:
     return re.findall(r"[a-z']+", str(s or "").lower())
 
@@ -66,6 +72,12 @@ def dung(lop: int) -> list[dict]:
     tm = GOC / f"web/public/content/{QUYEN[lop]}"
     bais = [json.loads(p.read_text("utf8"))
             for p in sorted(tm.glob(f"DL_{QUYEN[lop].upper()}_B*.json"))]
+    # Năng lực lấy từ BẢN CHUẨN, nơi nó còn là DANH SÁCH. `objective.text` của bài
+    # đã nối chúng lại thành một chuỗi không dấu phân cách ("Đọc số từ một đến mười
+    # Nhận mặt bảng chữ cái"), đem làm đề thì đọc không ra câu.
+    chuan = json.loads((GOC / f"data/tienganh/chuan_lop{lop}.json").read_text("utf8"))
+    nang_luc = {u["so"]: [x for x in (u.get("nang_luc") or []) if x] for u in chuan["unit"]}
+
     theo_chuong: dict[int, list[dict]] = {}
     for b in bais:
         theo_chuong.setdefault(b["chuong"], []).append(b)
@@ -73,6 +85,39 @@ def dung(lop: int) -> list[dict]:
     ra = []
     von: list[dict] = []          # dồn dần: chương sau có cả vốn của chương trước
     da_co: set[str] = set()
+
+    # ══ MỖI UNIT MỘT ĐỀ ══
+    #
+    # Bác chốt 18-08: đề theo chương là chỗ viết TỔNG HỢP cả bốn unit, nhưng bé học
+    # xong MỘT unit thì cần viết ngay của unit ấy. Đề suy thẳng từ `objective.text`
+    # của bài — đó chính là NĂNG LỰC sách khai cho unit ("Nói mình thích làm gì"),
+    # nên không phải soạn tay 21 đề và cũng không lệch khỏi sách.
+    for b in bais:
+        for v in b["knowledgeCore"]["vocabulary"]:
+            if v["tu"] not in da_co:
+                da_co.add(v["tu"])
+                von.append({"tu": v["tu"], "nghia": v["nghia"]})
+        nl = [x.strip().rstrip(".") for x in nang_luc.get(b["so"], [])]
+        # Nối bằng dấu chấm phẩy, KHÔNG bằng "và": nhiều năng lực tự nó đã có chữ
+        # "và" bên trong ("Chào và tạm biệt"), nối thêm nữa thành "và … và …".
+        viec = "; ".join(x[0].lower() + x[1:] for x in nl)
+        mau = [m["cau"] for m in (b["knowledgeCore"].get("mauCauDs") or [])]
+        if not viec or not mau:
+            print(f"  ⚠ unit {b['so']}: thiếu năng lực hoặc mẫu câu, bỏ qua")
+            continue
+        ra.append({
+            "id": f"VIET:TA{lop}.U{b['so']:02d}",
+            "unit": b["so"], "chapter": b["chuong"], "phamVi": "unit",
+            "loai": "vietbai",
+            "name": f"BÀI VIẾT · UNIT {b['so']} · {_ten_unit(b).upper()}",
+            "de": f"Con viết {CAU_TOI_THIEU}–3 câu: {viec[0].lower()}{viec[1:]}.",
+            "toiThieu": CAU_TOI_THIEU,
+            "mauCau": list(dict.fromkeys(mau)),
+            "vonTu": list(von),
+        })
+
+    # ══ MỖI CHƯƠNG MỘT ĐỀ — viết tổng hợp cả bốn unit ══
+    von, da_co = [], set()
     for c, ds in sorted(theo_chuong.items()):
         for b in ds:
             for v in b["knowledgeCore"]["vocabulary"]:
@@ -85,9 +130,9 @@ def dung(lop: int) -> list[dict]:
         mau = [m["cau"] for b in ds for m in (b["knowledgeCore"].get("mauCauDs") or [])]
         ra.append({
             "id": f"VIET:TA{lop}.C{c}",
-            "chapter": c,
+            "chapter": c, "phamVi": "chuong",
             "loai": "vietbai",
-            "name": f"BÀI VIẾT {c} · {ds[0]['tenChuong'].upper()}",
+            "name": f"BÀI VIẾT CHƯƠNG {c} · {ds[0]['tenChuong'].upper()}",
             "de": DE[c],
             "toiThieu": CAU_TOI_THIEU,
             # Mẫu câu của CHÍNH chương này — bé ghép theo, không phải nhớ suông.
@@ -107,7 +152,8 @@ def main() -> int:
     ra = GOC / f"web/public/content/{QUYEN[a.lop]}/vietbai.json"
     ra.write_text(json.dumps(ds, ensure_ascii=False, indent=1), "utf8")
     for k in ds:
-        print(f"  chương {k['chapter']}: {len(k['vonTu'])} từ · {len(k['mauCau'])} mẫu câu")
+        cho = f"unit {k['unit']}" if k.get("phamVi") == "unit" else f"chương {k['chapter']}"
+        print(f"  {cho:10s}: {len(k['vonTu'])} từ · {len(k['mauCau'])} mẫu câu")
     print(f"→ {ra}")
     return 0
 

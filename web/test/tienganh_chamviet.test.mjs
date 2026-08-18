@@ -210,17 +210,25 @@ test('đề bài viết đã dựng và đủ hình dạng', () => {
   if (!existsSync(p)) return;                 // quyển chưa dựng thì bỏ qua
   const ds = JSON.parse(readFileSync(p, 'utf8'));
   assert.ok(ds.length >= 4, `phải có đề cho mỗi chương, đang ${ds.length}`);
+  assert.ok(ds.filter((d) => d.phamVi === 'unit').length >= 15,
+    'phải có đề cho từng unit nữa — bác chốt 18-08');
   for (const d of ds) {
     assert.ok(d.de && /[àáảãạăâêôơư]/i.test(d.de), `${d.id}: đề phải bằng TIẾNG VIỆT`);
     assert.ok(d.vonTu.length > 10, `${d.id}: vốn từ quá ít (${d.vonTu.length})`);
     assert.ok(d.mauCau.length > 0, `${d.id}: không có mẫu câu nào để bé dựa vào`);
     assert.ok(d.toiThieu >= 2, `${d.id}: số câu tối thiểu vô lý`);
   }
-  /* Vốn từ DỒN theo chương: chương sau phải chứa trọn chương trước. Cắt đúng theo
-     chương là cắt mất câu chào của chương 1 ở bài chương 4. */
-  for (let i = 1; i < ds.length; i += 1) {
-    const truoc = new Set(ds[i - 1].vonTu.map((v) => v.tu));
-    const nay = new Set(ds[i].vonTu.map((v) => v.tu));
-    for (const t of truoc) assert.ok(nay.has(t), `${ds[i].id}: mất từ "${t}" của chương trước`);
+  /* Vốn từ DỒN, và dồn RIÊNG TỪNG PHẠM VI: đề unit 5 chứa trọn vốn của unit 4, đề
+     chương 2 chứa trọn vốn của chương 1. So lẫn hai phạm vi thì đề chương 1 (44 từ)
+     đứng ngay sau đề unit 20 (204 từ) và cổng báo mất 160 từ — báo oan. */
+  for (const pv of ['unit', 'chuong']) {
+    const nhom = ds.filter((d) => (d.phamVi || 'chuong') === pv);
+    for (let i = 1; i < nhom.length; i += 1) {
+      const truoc = new Set(nhom[i - 1].vonTu.map((v) => v.tu));
+      const nay = new Set(nhom[i].vonTu.map((v) => v.tu));
+      for (const t of truoc) {
+        assert.ok(nay.has(t), `${nhom[i].id}: mất từ "${t}" của ${pv} trước`);
+      }
+    }
   }
 });

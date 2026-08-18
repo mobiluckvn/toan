@@ -154,7 +154,12 @@ export function ghiChuong(p, ma, chuong, kq) {
 }
 
 /** Khoá bài đọc hiểu. Chữ D chứ không phải C — xem `ghiDocHieu`. */
-export const khoaDocHieu = (ma, chuong) => `${ma}:D${chuong}`;
+/* `phamVi` tách bài của UNIT khỏi bài của CHƯƠNG: `ta3:D2` là bài đọc chương 2,
+   `ta3:DU2` là bài đọc unit 2. Không tách thì hai bài khác hẳn nhau ghi đè lên nhau,
+   và bé làm bài unit xong thì thẻ chương cũng sáng lên. Khoá của chương giữ NGUYÊN
+   hình dạng cũ để sổ đang có trong máy bé không mất. */
+export const khoaDocHieu = (ma, so, phamVi = 'chuong') =>
+  `${ma}:D${phamVi === 'unit' ? 'U' : ''}${so}`;
 
 /**
  * XONG MỘT BÀI ĐỌC HIỂU.
@@ -175,8 +180,8 @@ export const khoaDocHieu = (ma, chuong) => `${ma}:D${chuong}`;
  * rules. Bác chốt bài đọc hiểu không cần vào sổ, nên để tại máy — nhưng ghi rõ ở
  * đây rằng đó là một lựa chọn, không phải một chỗ sót.
  */
-export function ghiDocHieu(p, ma, chuong, kq) {
-  const k = khoaDocHieu(ma, chuong);
+export function ghiDocHieu(p, ma, so, kq, phamVi = 'chuong') {
+  const k = khoaDocHieu(ma, so, phamVi);
   const cu = (p.docHieu || {})[k] || {};
   return {
     ...p,
@@ -193,7 +198,8 @@ export function ghiDocHieu(p, ma, chuong, kq) {
 }
 
 /** Khoá bài viết ngắn của một chương. */
-export const khoaBaiViet = (ma, chuong) => `${ma}:V${chuong}`;
+export const khoaBaiViet = (ma, so, phamVi = 'chuong') =>
+  `${ma}:V${phamVi === 'unit' ? 'U' : ''}${so}`;
 
 /**
  * XONG MỘT BÀI VIẾT — giữ bài bé viết, điểm, và lời chấm.
@@ -206,8 +212,8 @@ export const khoaBaiViet = (ma, chuong) => `${ma}:V${chuong}`;
  * phải nói điều đó. Một con số không nhãn trong sổ học bạ sẽ được đọc thành điểm
  * của cô giáo — đó là hiểu nhầm mà bố mẹ không có cách nào tự phát hiện.
  */
-export function ghiBaiViet(p, ma, chuong, { viet, cham }) {
-  const k = khoaBaiViet(ma, chuong);
+export function ghiBaiViet(p, ma, so, { viet, cham }, phamVi = 'chuong') {
+  const k = khoaBaiViet(ma, so, phamVi);
   const cu = (p.baiViet || {})[k] || {};
   const diem = Number(cham?.diem);
   return {

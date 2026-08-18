@@ -15,8 +15,8 @@ cách làm, và cùng một giới hạn: bảng này không thay được ngư�
 | | số từ |
 |---|---|
 | ✔️ đúng | 41 |
-| ⚠️ gần đúng | 2 |
-| ✅ đã sửa | 10 |
+| ⚠️ gần đúng | 1 |
+| ✅ đã sửa | 11 |
 | ℹ️ ghi chú | 3 |
 
 **Không từ nào dùng chung hình với từ khác** — quyển này sạch khoản ấy (lớp 3 thì
@@ -25,33 +25,29 @@ có tám chỗ).
 **Đã sửa `jam`** (bác chốt 18-08): 🍯 là hũ MẬT ONG, không phải lọ mứt — vẽ tay lọ
 thuỷ tinh có nắp vặn và nhãn dâu, dựng lại video B07.
 
-## Còn nợ — `zebu` và `slide`, và vì sao cháu bỏ dở
-
-**`zebu`** (bò u): 🐄 là bò sữa thường — lưng thẳng, không u, không yếm. Vẽ tay **bốn
-lần** (thân ghép từ hình chữ nhật · một nét liền · bốn chân · hai chân với thân bầu
-dục), lần nào render ra nhìn cũng đọc thành CON SÂU hoặc CON BỌ.
+## Còn nợ — `slide`, và một kết luận cháu đã rút SAI
 
 **`slide`** (trượt): thử vẽ một bé đang tuột xuống máng, có vệt gió phía sau. Ra một
-vật nhọn bay chéo màn hình — giống cái bút hoặc quả tên lửa hơn là một đứa trẻ. Cái
-khó không phải cái máng (máng thì vẽ được, `playground` của lớp 3 có rồi) mà là NGƯỜI
-ĐANG TRƯỢT: bỏ người đi thì lại thành đồ vật, đúng cái 🛝 đang sai.
+vật nhọn bay chéo màn hình — giống cái bút hay quả tên lửa hơn là một đứa trẻ. Cái khó
+không phải cái máng (`playground` của lớp 3 vẽ được rồi) mà là NGƯỜI ĐANG TRƯỢT; bỏ
+người đi thì lại thành đồ vật, đúng cái 🛝 đang sai. Giữ 🛝 và ghi lại.
 
-Nên **giữ nguyên hai emoji ấy và ghi lại**, chứ không thay bằng hình cháu vẽ: 🐄 ít
-nhất còn đúng họ (một con bò, chỉ thiếu cái u), 🛝 còn đúng chỗ chơi. Hình vẽ hỏng thì
-dạy bé một thứ không có thật, tệ hơn hẳn.
+### `zebu`: bốn lần hỏng, lần thứ năm được — và cháu đã kết luận SAI ở giữa
 
-**Ranh giới đo được của cháu**, sau 14 hình vẽ trong hai ngày: VẬT TĨNH và NƠI CHỐN
-thì vẽ được (bàn · lọ mứt · viên thạch · vô lăng · căn phòng · sân chơi). CON VẬT thì
-tuỳ: `kitten` được vì mèo dựng trên KHUÔN MẶT — tròn, đối xứng, tai tam giác; `zebu`
-không được vì bò phải vẽ THÂN BỐN CHÂN nhìn ngang. NGƯỜI ĐANG LÀM GÌ ĐÓ thì chưa.
+Bốn lần đầu vẽ con bò NHÌN NGANG (thân ghép hình chữ nhật · một nét liền · bốn chân ·
+hai chân với thân bầu dục), lần nào render ra nhìn cũng thành CON SÂU. Từ đó cháu kết
+luận *"con vật ở cỡ icon thì không vẽ được"* và bỏ.
 
-**Bác chốt 18-08: vẽ nốt 7 chỗ vẽ được.** `river` · `van` · `quiz` · `sand` · `sail` ·
-`road` · `drive` — đều là VẬT TĨNH. Dựng lại video của B03 · B04 · B05 · B08 · B11.
+**Kết luận ấy sai** — bác bảo thử lại bằng KHUÔN MẶT, và được ngay lần đầu. Ranh giới
+thật không nằm ở "con vật hay đồ vật":
 
-⚠ **Còn 3 dòng `⚠️ gần đúng`, và cả ba đều là chỗ cháu KHÔNG vẽ nổi:**
-`kitten` 🐈 (con mèo LỚN cho chữ "mèo con") · `zebu` 🐄 (bò sữa, không u) — hai con
-vật; và `slide` 🛝 (cầu trượt, đồ vật, cho chữ "trượt" là động tác). Con vật ở cỡ icon
-thì cần người vẽ — xem phần dưới.
+| dựng bằng gì | vẽ được không |
+|---|---|
+| hình tròn và tam giác ĐỐI XỨNG (mặt nhìn thẳng) | ✅ `kitten` · `zebu` |
+| khối hộp và đường thẳng (vật tĩnh, nơi chốn) | ✅ 12 hình |
+| TƯ THẾ nhìn ngang (thân bốn chân, người đang làm gì) | ❌ bò nhìn ngang · bé đang trượt |
+
+Bài học: **hỏng bốn lần theo CÙNG MỘT LỐI thì đừng kết luận "không làm được" — đổi lối.**
 
 ## Bảng 56 từ
 
@@ -85,7 +81,7 @@ thì cần người vẽ — xem phần dưới.
 | `yam` | B09 | củ khoai sọ | 🍠 | ROASTED SWEET POTATO | ✔️ đúng |  |
 | `yo-yo` | B09 | cái yo-yo | 🪀 | YO-YO | ✔️ đúng |  |
 | `zoo` | B10 | vườn thú | vẽ tay `zoo` | vườn thú | ✔️ đúng |  |
-| `zebu` | B10 | bò u | 🐄 | COW | ⚠️ gần đúng | 🐄 là con BÒ SỮA thường: lưng thẳng, không u, không yếm. **Đã thử vẽ tay bốn lần và BỎ** — xem "Còn nợ" ở cuối trang. |
+| `zebu` | B10 | bò u | vẽ tay `zebu` | con bò u | ✅ đã sửa | trước là 🐄 **COW — bò sữa thường** (lưng thẳng, không u, không yếm). Vẽ mới bằng KHUÔN MẶT nhìn thẳng: cái u sau gáy · tai dài rủ · cái yếm dưới cổ. |
 | `zebra` | B10 | ngựa vằn | 🦓 | ZEBRA FACE | ℹ️ ghi chú | 🦓 là MẶT ngựa vằn — như trên. |
 | `slide` | B11 | trượt | 🛝 | ? | ⚠️ gần đúng | 🛝 là CẦU TRƯỢT (đồ vật); sách chú là "trượt" (động tác). **Đã thử vẽ bé đang tuột xuống máng và BỎ** — xem "Còn nợ". |
 | `ride` | B11 | lái xe (đạp, máy) | 🚴 | BICYCLIST | ✔️ đúng |  |

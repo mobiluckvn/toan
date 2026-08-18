@@ -131,7 +131,9 @@ export default function ManTiengAnh({
      `ghiDocHieu`: `hocBaTA` chỉ nhận `loai: 'chuong'`, thêm loại mới là phải sửa
      luật Firestore và deploy nó, mà bác chốt bài đọc hiểu không cần vào sổ. */
   const xongDocHieu = useCallback((bai, kq) => {
-    datTienDo((p) => ghiDocHieu(p, ct.ma, bai.chapter, kq));
+    const unit = bai.phamVi === 'unit';
+    datTienDo((p) => ghiDocHieu(p, ct.ma, unit ? bai.unit : bai.chapter, kq,
+      unit ? 'unit' : 'chuong'));
     setView({ page: 'home' });
   }, [datTienDo, setView, ct.ma]);
 
@@ -143,9 +145,11 @@ export default function ManTiengAnh({
    * máy chủ. Gói bọc trong `giaTri` y như `chuong`: bên đọc chỉ nhận một hình dạng.
    */
   const xongVietBai = useCallback((bai, kq) => {
-    const sau = ghiBaiViet(tienDo, ct.ma, bai.chapter, kq);
+    const unit = bai.phamVi === 'unit';
+    const so = unit ? bai.unit : bai.chapter;
+    const sau = ghiBaiViet(tienDo, ct.ma, so, kq, unit ? 'unit' : 'chuong');
     datTienDo(sau);
-    const k = khoaBaiViet(ct.ma, bai.chapter);
+    const k = khoaBaiViet(ct.ma, so, unit ? 'unit' : 'chuong');
     luuMucHocBa(learnerId, 'viet', k, { giaTri: sau.baiViet[k] });
   }, [tienDo, datTienDo, learnerId, ct.ma]);
 
@@ -225,6 +229,17 @@ function NhaQuyen({
   const khoaBai = !!ct?.khoaBai;
   const opt = { khoaBai };
   const nen = baiNenHoc(tienDo, thuTu, opt);
+  /* ── ĐỌC HIỂU · BÀI VIẾT · ÔN TẬP MỞ THEO CÙNG MỘT CỜ VỚI BÀI HỌC ──
+   *
+   * Ba loại thẻ ấy trước đây đòi XONG CẢ BỐN BÀI của chương mới mở, trong khi bài học
+   * thì mở sẵn (`khoaBai: false` cho cả ba quyển Tiếng Anh). Hai luật ngược nhau trên
+   * cùng một trang: bé bấm vào unit nào cũng học được, nhưng bài đọc của chính unit ấy
+   * lại khoá.
+   *
+   * Nay hỏi ĐÚNG MỘT CỜ. Quyển nào khoá bài tuần tự thì ba thẻ này cũng khoá theo (và
+   * vẫn hiện "còn mấy bài nữa"); quyển mở thì mở hết — người lớn xem trước được, bé
+   * muốn đọc lại chương cũ cũng không phải làm lại bài. */
+  const moThem = (dsBai) => (khoaBai ? moKyOnTap(tienDo, dsBai) : true);
   const baiNen = bais.find((b) => b.id === nen);
 
   return (
@@ -288,9 +303,22 @@ function NhaQuyen({
           </h2>
           <ul className="flex flex-col gap-2">
             {c.bai.map((b) => (
-              <DongBai key={b.id} bai={b} m={tienDo?.micros?.[b.id]} onMo={onMoBai}
-                       tt={trangThaiBai(tienDo, b.id, thuTu, opt)}
-                       moSau={khoaBai ? moBai(tienDo, b.id, thuTu) : true} />
+              <React.Fragment key={b.id}>
+                <DongBai bai={b} m={tienDo?.micros?.[b.id]} onMo={onMoBai}
+                         tt={trangThaiBai(tienDo, b.id, thuTu, opt)}
+                         moSau={khoaBai ? moBai(tienDo, b.id, thuTu) : true} />
+                {/* Hai ô luyện của CHÍNH unit ấy, nằm ngay dưới bài — bác chốt
+                    18-08: học xong một unit thì đọc và viết ngay của unit ấy, không
+                    phải chờ hết chương. Bài theo chương vẫn còn, ở cuối chương, và
+                    là chỗ ÔN LẠI cả bốn unit. */}
+                <OLuyenUnit
+                  doc={docs.find((d) => d.phamVi === 'unit' && d.unit === b.so)}
+                  viet={viets.find((v) => v.phamVi === 'unit' && v.unit === b.so)}
+                  xongDoc={tienDo?.docHieu?.[khoaDocHieu(ct.ma, b.so, 'unit')]}
+                  xongViet={tienDo?.baiViet?.[khoaBaiViet(ct.ma, b.so, 'unit')]}
+                  mo={khoaBai ? moBai(tienDo, b.id, thuTu) : true}
+                  onDoc={onMoDocHieu} onViet={onMoVietBai} />
+              </React.Fragment>
             ))}
           </ul>
           {/* Kỳ ôn tập đứng NGAY SAU bốn bài của chính chương nó, không gom hết
@@ -298,21 +326,21 @@ function NhaQuyen({
               đó, chứ không phải ở một chỗ khác mà bé chẳng bao giờ cuộn tới. */}
           {/* Bài đọc hiểu đứng TRƯỚC kỳ ôn tập: đọc là việc học tiếp, còn kỳ ôn
               tập là chỗ CHỐT chương. Chốt xong rồi mới đọc thì cái chốt hết nghĩa. */}
-          {docs.filter((d) => d.chapter === c.so).map((d) => (
+          {docs.filter((d) => d.chapter === c.so && d.phamVi !== 'unit').map((d) => (
             <TheDocHieu key={d.id} bai={d} onMo={onMoDocHieu}
-                        mo={moKyOnTap(tienDo, c.bai.map((b) => b.id))}
+                        mo={moThem(c.bai.map((b) => b.id))}
                         conThieu={conThieuChoOnTap(tienDo, c.bai.map((b) => b.id))}
                         xong={tienDo?.docHieu?.[khoaDocHieu(ct.ma, c.so)]} />
           ))}
-          {viets.filter((v) => v.chapter === c.so).map((v) => (
+          {viets.filter((v) => v.chapter === c.so && v.phamVi !== 'unit').map((v) => (
             <TheVietBai key={v.id} bai={v} onMo={onMoVietBai}
-                        mo={moKyOnTap(tienDo, c.bai.map((b) => b.id))}
+                        mo={moThem(c.bai.map((b) => b.id))}
                         conThieu={conThieuChoOnTap(tienDo, c.bai.map((b) => b.id))}
                         xong={tienDo?.baiViet?.[khoaBaiViet(ct.ma, c.so)]} />
           ))}
           {kyOn.filter((k) => k.chapter === c.so).map((k) => (
             <TheOnTap key={k.id} ky={k} onMo={onMoOnTap}
-                      mo={moKyOnTap(tienDo, c.bai.map((b) => b.id))}
+                      mo={moThem(c.bai.map((b) => b.id))}
                       conThieu={conThieuChoOnTap(tienDo, c.bai.map((b) => b.id))}
                       xong={tienDo?.chapters?.[`${ct.ma}:C${c.so}`]} />
           ))}
@@ -380,6 +408,36 @@ function DongBai({ bai, m, onMo, tt, moSau }) {
  * Khoá thì phải nói CÒN MẤY BÀI NỮA, không phải chỉ "chưa mở". Con số ấy là thứ
  * biến một cái cửa đóng thành một cái đích: bé biết còn hai bài nữa là tới.
  */
+/**
+ * HAI Ô LUYỆN CỦA MỘT UNIT — đọc hiểu và bài viết của chính bài vừa học.
+ *
+ * Dáng NHỎ và nằm thụt vào so với dòng bài: chúng là phần luyện thêm của bài ấy,
+ * không phải một bài ngang hàng. Ba thẻ to (đọc hiểu · bài viết · ôn tập) của chương
+ * vẫn giữ nguyên ở cuối chương.
+ *
+ * Unit nào không dựng được bài (vốn câu quá mỏng, xem `sinh_dochieu_tienganh.py`)
+ * thì ô ấy không hiện — chứ không hiện một nút bấm vào chẳng có gì.
+ */
+function OLuyenUnit({ doc, viet, xongDoc, xongViet, mo, onDoc, onViet }) {
+  if (!doc && !viet) return null;
+  const o = (bai, xong, onMo, chu, bieuTuong) => (bai ? (
+    <button type="button" disabled={!mo} onClick={() => onMo(bai.id)}
+      className={`flex items-center gap-1.5 rounded-xl2 border-2 px-3 py-1.5 text-sm
+        font-semibold focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
+        ${xong ? 'border-teal bg-teal-pale text-teal-dark'
+          : mo ? 'border-line bg-white text-navy hover:border-navy'
+          : 'cursor-not-allowed border-line bg-soft text-mute opacity-60'}`}>
+      <span aria-hidden="true">{bieuTuong}</span>{chu}{xong ? ' ✓' : ''}
+    </button>
+  ) : null);
+  return (
+    <li className="-mt-1 flex flex-wrap gap-2 pl-4">
+      {o(doc, xongDoc?.dat, onDoc, 'Đọc hiểu', '📖')}
+      {o(viet, Number.isFinite(xongViet?.diem), onViet, 'Viết', '✍️')}
+    </li>
+  );
+}
+
 /* Cùng dáng với thẻ kỳ ôn tập, khác BIỂU TƯỢNG và khác lời: 📖 chứ không 🏅, và
    "Đọc" chứ không "Thi thử". Hai việc khác nhau thì phải nhìn ra là khác nhau. */
 function TheDocHieu({ bai, mo, conThieu, xong, onMo }) {
