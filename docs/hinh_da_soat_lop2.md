@@ -15,8 +15,8 @@ cách làm, và cùng một giới hạn: bảng này không thay được ngư�
 | | số từ |
 |---|---|
 | ✔️ đúng | 41 |
-| ⚠️ gần đúng | 11 |
-| ✅ đã sửa | 1 |
+| ⚠️ gần đúng | 10 |
+| ✅ đã sửa | 2 |
 | ℹ️ ghi chú | 3 |
 
 **Không từ nào dùng chung hình với từ khác** — quyển này sạch khoản ấy (lớp 3 thì
@@ -25,7 +25,19 @@ có tám chỗ).
 **Đã sửa `jam`** (bác chốt 18-08): 🍯 là hũ MẬT ONG, không phải lọ mứt — vẽ tay lọ
 thuỷ tinh có nắp vặn và nhãn dâu, dựng lại video B07.
 
-⚠ **11 dòng `⚠️ gần đúng` thì CHƯA sửa.** Lớp 2 đã deploy, sửa một hình là phải dựng
+## Còn nợ — `zebu`, và vì sao cháu bỏ dở
+
+`zebu` (bò u) không có emoji nào đúng: 🐄 là bò sữa thường — lưng thẳng, không u,
+không yếm. Cháu đã vẽ tay **bốn lần** (thân ghép từ hình chữ nhật · một nét liền ·
+bốn chân · hai chân với thân bầu dục) và lần nào render ra nhìn cũng đọc thành CON
+SÂU hoặc CON BỌ, không ra con bò.
+
+Nên **giữ 🐄 và ghi lại**, chứ không thay bằng hình cháu vẽ: 🐄 ít nhất còn đúng họ
+(một con bò, chỉ thiếu cái u), còn hình vẽ hỏng thì dạy bé một con vật không có thật.
+Vật tĩnh (lọ mứt · viên thạch · bàn ghế · căn phòng) cháu vẽ được; CON VẬT ở cỡ icon
+thì chưa. Chỗ này cần người vẽ, hoặc bác chấp nhận 🐄 kèm lời cô giảng thêm cái u.
+
+⚠ **10 dòng `⚠️ gần đúng` khác thì CHƯA sửa.** Lớp 2 đã deploy, sửa một hình là phải dựng
 lại video của bài ấy; và cả 11 chỗ đều "vẫn dùng được, chỉ lệch một nấc" chứ không
 sai vật như `jam`. Bảng này là bản GHI để bác quyết từng chỗ — đáng xem trước là
 `jelly` 🍮 (bánh flan) · `zebu` 🐄 (bò sữa thường) · `river` 🏞️ (mà lớp 1 đã dùng
@@ -54,7 +66,7 @@ chính 🏞️ ấy cho `lake`).
 | `fox` | B06 | con cáo | 🦊 | FOX FACE | ℹ️ ghi chú | 🦊 là MẶT cáo; `ox` 🐂 thì cả con. Không nhất quán trong cùng một bài. |
 | `ox` | B06 | con bò | 🐂 | OX | ✔️ đúng |  |
 | `juice` | B07 | nước ép | 🧃 | BEVERAGE BOX | ✔️ đúng |  |
-| `jelly` | B07 | thạch | 🍮 | CUSTARD | ⚠️ gần đúng | 🍮 là bánh FLAN/CARAMEN, không phải miếng thạch. |
+| `jelly` | B07 | thạch | vẽ tay `jelly` | thạch | ✅ đã sửa | trước là 🍮 **CUSTARD — bánh flan** (vàng nhạt, có caramen). Vẽ mới: ba viên rau câu vuông trên đĩa. |
 | `jam` | B07 | mứt | vẽ tay `jam` | lọ mứt | ✅ đã sửa | trước là 🍯 **HONEY POT — hũ MẬT ONG** (hũ lùn, vàng óng, thường có que khuấy). Vẽ mới: lọ thuỷ tinh cao, nắp vặn, nhãn dán có quả dâu. |
 | `village` | B08 | làng | 🏘️ | HOUSE BUILDINGS | ✔️ đúng |  |
 | `van` | B08 | xe tải | 🚐 | MINIBUS | ⚠️ gần đúng | 🚐 là xe MINIBUS chở người; sách chú là "xe tải". |
@@ -63,7 +75,7 @@ chính 🏞️ ấy cho `lake`).
 | `yam` | B09 | củ khoai sọ | 🍠 | ROASTED SWEET POTATO | ✔️ đúng |  |
 | `yo-yo` | B09 | cái yo-yo | 🪀 | YO-YO | ✔️ đúng |  |
 | `zoo` | B10 | vườn thú | vẽ tay `zoo` | vườn thú | ✔️ đúng |  |
-| `zebu` | B10 | bò u | 🐄 | COW | ⚠️ gần đúng | 🐄 là con BÒ SỮA thường; bò u có cái u trên vai, không thấy. |
+| `zebu` | B10 | bò u | 🐄 | COW | ⚠️ gần đúng | 🐄 là con BÒ SỮA thường: lưng thẳng, không u, không yếm. **Đã thử vẽ tay bốn lần và BỎ** — xem "Còn nợ" ở cuối trang. |
 | `zebra` | B10 | ngựa vằn | 🦓 | ZEBRA FACE | ℹ️ ghi chú | 🦓 là MẶT ngựa vằn — như trên. |
 | `slide` | B11 | trượt | 🛝 | ? | ⚠️ gần đúng | 🛝 là CẦU TRƯỢT (đồ vật); sách chú là "trượt" (động tác). |
 | `ride` | B11 | lái xe (đạp, máy) | 🚴 | BICYCLIST | ✔️ đúng |  |
