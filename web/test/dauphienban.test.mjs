@@ -35,6 +35,36 @@ const motBai = readdirSync(join(GOC, 'lessons')).find((f) => f.endsWith('.json')
 const goc = readFileSync(join(GOC, 'lessons', motBai), 'utf8');
 t('sửa một bài → mã đổi', bam({ ten: motBai, noi: goc.replace('}', ' }') }) !== v1);
 
+/* ══ ĐỔI MỘT VIDEO THÌ MÃ CŨNG PHẢI ĐỔI ══ (bác bắt 19-08-2026)
+
+   Bác dựng lại video xong, mở app ra vẫn thấy y bản cũ. Gốc: `bamNoiDung` chỉ băm
+   JSON. Hình thì không sao — mỗi bài giữ `sha256_16` của hình mình dùng nên hình
+   đổi là JSON đổi theo. Nhưng VIDEO thì `bai.video.tu[].tep` chỉ khai TÊN TỆP:
+
+       video mới trên máy chủ  →  JSON không đổi  →  `?v=` không đổi
+                               →  trình duyệt giữ bản cũ ĐỦ BẢY NGÀY
+
+   Mà đó đúng là kiểu việc hay làm nhất — sửa lời kịch bản rồi dựng lại 158 video,
+   không đụng một chữ nào trong bài học. Không có gì đỏ ở bất cứ đâu, chỉ có bé là
+   xem bản cũ.
+
+   Phép thử này giả vờ một video đổi kích thước. Nó chạy được vì `bamNoiDung` cho
+   tệp nặng đi qua đúng đường tiêm `doc` như tệp JSON. */
+{
+  const tenVideo = (() => {
+    const d = join(GOC, 'tienganh/video');
+    try { return readdirSync(d).find((f) => f.endsWith('.mp4')); } catch { return null; }
+  })();
+  if (!tenVideo) {
+    console.log('   ⏸ chưa có video nào để thử');
+  } else {
+    t('đổi MỘT video → mã đổi (nếu không, dựng lại video xong bé vẫn xem bản cũ)',
+      bam({ ten: tenVideo, noi: 'x'.repeat(999) }) !== v1);
+    /* Chiều ngược: đừng bắt tải lại khi không có gì đổi. */
+    t('video không đổi thì mã giữ nguyên', bam() === v1);
+  }
+}
+
 /* ── dán dấu vào đường dẫn ── */
 t('dán dấu vào đường dẫn bài học',
   dongDau('/content/lessons/a.json', 'abc123') === '/content/lessons/a.json?v=abc123');
