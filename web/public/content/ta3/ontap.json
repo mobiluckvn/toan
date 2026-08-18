@@ -397,6 +397,42 @@
     "tenBai": "Unit 5 · Sở thích của mình · My hobbies"
    },
    {
+    "id": "K2_B06_C1",
+    "bac": 1,
+    "text": "Nghe rồi bấm vào hình đúng.",
+    "am": "tu_school",
+    "anhChon": true,
+    "format": "chon",
+    "choices": [
+     "classroom",
+     "school",
+     "library",
+     "gym"
+    ],
+    "hinhNut": {
+     "classroom": "🪑",
+     "school": "🏫",
+     "library": "📚",
+     "gym": "🏋️"
+    },
+    "veNut": {
+     "classroom": "classroom",
+     "school": null,
+     "library": "library",
+     "gym": "gym"
+    },
+    "answerKey": {
+     "choice": "school"
+    },
+    "solutionNarrative": "school — trường học",
+    "hints": [
+     "Nghe lại xem từ này bắt đầu bằng âm nào.",
+     "Từ này nghĩa là “trường học”."
+    ],
+    "tuBai": "DL:TA3.B06",
+    "tenBai": "Unit 6 · Trường của chúng mình · Our school"
+   },
+   {
     "id": "K2_B06_Q1",
     "am": "tu_school",
     "anh": "🏫",
@@ -458,33 +494,18 @@
    },
    {
     "id": "K2_B06_Q4",
-    "am": "tu_library",
-    "anh": "🏋️",
-    "anhVe": null,
+    "am": "tu_classroom",
+    "anh": "📚",
+    "anhVe": "library",
     "text": "",
     "format": "tf",
     "nhinNghe": true,
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — đó là gym. library là thư viện.",
+    "solutionNarrative": "SAI — đó là library. classroom là lớp học.",
     "tuBai": "DL:TA3.B06",
     "tenBai": "Unit 6 · Trường của chúng mình · Our school"
-   },
-   {
-    "id": "K2_B07_Q3",
-    "am": "tu_stand_up",
-    "anh": "🧍",
-    "anhVe": null,
-    "text": "",
-    "format": "tf",
-    "nhinNghe": true,
-    "answerKey": {
-     "value": true
-    },
-    "solutionNarrative": "ĐÚNG — stand up là đứng lên.",
-    "tuBai": "DL:TA3.B07",
-    "tenBai": "Unit 7 · Lời dặn trong lớp · Classroom instructions"
    }
   ],
   "tuBai": [
@@ -783,7 +804,7 @@
     },
     "veNut": {
      "bedroom": null,
-     "kitchen": null,
+     "kitchen": "kitchen",
      "living room": null,
      "bathroom": null
     },

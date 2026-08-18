@@ -24,9 +24,9 @@ Cái bảng này **KHÔNG** thay được người: nó không biết bé tám t
 | | số từ | |
 |---|---|---|
 | ✔️ đúng | 107 | tên Unicode khớp nghĩa sách |
-| 🚫 không vẽ | 59 | cố ý — từ trừu tượng, tên riêng, lời sai bảo |
-| ⚠️ gần đúng | 16 | vẫn dùng được, nhưng lệch một nấc — bác xem lại |
-| ✅ đã sửa | 15 | sai hẳn vật, hoặc trùng hình với từ khác |
+| 🚫 không vẽ | 58 | cố ý — từ trừu tượng, tên riêng, lời sai bảo |
+| ⚠️ gần đúng | 14 | vẫn dùng được, nhưng lệch một nấc — bác xem lại |
+| ✅ đã sửa | 18 | sai hẳn vật, hoặc trùng hình với từ khác |
 | ℹ️ ghi chú | 7 | không sai, chỉ là không nhất quán |
 
 ### Năm chỗ SAI HẲN VẬT — cùng một dòng họ với `desk` → 🪑 bác bắt ở lớp 1
@@ -43,7 +43,7 @@ Cái bảng này **KHÔNG** thay được người: nó không biết bé tám t
 phải cùng một hình). `eraser` và `pencil case` vẽ mới. `swinging` chuyển sang "không
 vẽ được" vì chưa có emoji nào đúng.
 
-### Bốn PHÒNG của U6 — đồ vật đứng thay cho căn phòng (bác chốt vẽ, 18-08)
+### TÁM NƠI CHỐN — đồ vật đứng thay cho một chỗ (bác chốt vẽ, 18-08)
 
 | từ | hình cũ | tên thật | vấn đề |
 |---|---|---|---|
@@ -51,8 +51,12 @@ vẽ được" vì chưa có emoji nào đúng.
 | `art room` | 🖼️ | FRAME WITH PICTURE | bức TRANH treo tường, treo ở đâu cũng được |
 | `music room` | 🎹 | MUSICAL KEYBOARD | cái ĐÀN, không phải căn phòng |
 | `computer room` | 💻 | PERSONAL COMPUTER | cái LAPTOP, mang đi đâu cũng được |
+| `classroom` | 🪑 | CHAIR | cái GHẾ — phòng nào cũng có |
+| `gym` | 🏋️ | WEIGHT LIFTER | một NGƯỜI tập tạ |
+| `playground` | 🛝 | PLAYGROUND SLIDE | chỉ mỗi CÁI CẦU TRƯỢT |
+| `kitchen` | 🍳 | COOKING | cái CHẢO — và trùng hệt `cooking` |
 
-Cả bốn hình mới đều dựng trên MỘT KHUNG PHÒNG chung (tường + sàn) rồi mới tới đồ đạc
+Cả tám hình mới đều dựng trên MỘT KHUNG PHÒNG chung (tường + sàn) rồi mới tới đồ đạc
 bên trong — chính cái khung ấy là chỗ phân biệt "cái đàn" với "phòng có cái đàn".
 
 ### Sáu chỗ HAI TỪ MỘT HÌNH — phép 2 của cổng, chưa từng chạy cho quyển này
@@ -142,10 +146,10 @@ chuyển sang bấm CHỮ. Thà trống còn hơn hình sai.
 | `swimming` | B05 | bơi | 🏊 | SWIMMER | ✔️ đúng |  |
 | `walking` | B05 | đi bộ | 🚶 | PEDESTRIAN | ✔️ đúng |  |
 | `school` | B06 | trường học | 🏫 | SCHOOL | ✔️ đúng |  |
-| `classroom` | B06 | lớp học | — | *không vẽ* | 🚫 không vẽ | 🪑 là cái GHẾ; 🧑‍🏫 thì trùng dáng với `teacher`. Chưa có emoji lớp học — dạy bằng CÂU ("Is this our classroom?"). |
+| `classroom` | B06 | lớp học | vẽ tay `classroom` | lớp học | ✅ đã sửa | trước là 🪑 **CHAIR — cái ghế**, rồi để trống vì 🧑‍🏫 trùng dáng với `teacher`. Vẽ mới: bảng đen treo tường và hai bộ bàn học. |
 | `library` | B06 | thư viện | vẽ tay `library` | thư viện | ✅ đã sửa | trước là 📚 **BOOKS — chồng sách**, đồ vật đứng thay cho căn phòng. Vẽ mới: giá sách hai tầng TRONG khung phòng. |
-| `gym` | B06 | nhà thể chất | 🏋️ | WEIGHT LIFTER | ✅ đã sửa | trước 🤸, **trùng hệt `skipping`**. Nay 🏋️. |
-| `playground` | B06 | sân chơi | 🛝 | ? | ⚠️ gần đúng | 🛝 là CẦU TRƯỢT — một món trong sân chơi, đứng thay cho cả sân. |
+| `gym` | B06 | nhà thể chất | vẽ tay `gym` | nhà thể chất | ✅ đã sửa | trước 🤸 (trùng `skipping`), rồi 🏋️ (một NGƯỜI tập tạ). Vẽ mới: thang gióng gắn tường và tấm đệm. Cố ý KHÔNG vẽ rổ bóng — `basketball` đã là 🏀. |
+| `playground` | B06 | sân chơi | vẽ tay `playground` | sân chơi | ✅ đã sửa | trước là 🛝 — chỉ mỗi CÁI CẦU TRƯỢT. Vẽ mới có khung NGOÀI TRỜI (trời và cỏ) vì sân chơi không phải căn phòng. |
 | `art room` | B06 | phòng mĩ thuật | vẽ tay `art_room` | phòng mĩ thuật | ✅ đã sửa | trước là 🖼️ **FRAME WITH PICTURE — bức tranh treo tường**, treo ở đâu cũng được. Vẽ mới: giá vẽ có tranh dở dang và bảng màu. |
 | `music room` | B06 | phòng âm nhạc | vẽ tay `music_room` | phòng âm nhạc | ✅ đã sửa | trước là 🎹 **MUSICAL KEYBOARD — cái đàn**, không phải căn phòng. Vẽ mới: đàn phím đứng trong phòng, kèm hai nốt nhạc. |
 | `computer room` | B06 | phòng tin học | vẽ tay `computer_room` | phòng tin học | ✅ đã sửa | trước là 💻 **PERSONAL COMPUTER — cái laptop**, mang đi đâu cũng được. Vẽ mới: máy tính đặt trên bàn, có bàn phím và chuột. |
@@ -212,7 +216,7 @@ chuyển sang bấm CHỮ. Thà trống còn hơn hình sai.
 | `worker` | B12 | công nhân | 👷 | CONSTRUCTION WORKER | ✔️ đúng |  |
 | `bathroom` | B13 | phòng tắm | 🛁 | BATHTUB | ✔️ đúng |  |
 | `bedroom` | B13 | phòng ngủ | 🛌 | SLEEPING ACCOMMODATION | ✅ đã sửa | trước 🛏️, **trùng hệt `bed`**. Nay 🛌 — người đang ngủ. |
-| `kitchen` | B13 | nhà bếp | 🍳 | COOKING | ⚠️ gần đúng | 🍳 là cái CHẢO, không phải căn bếp. Chưa có emoji nhà bếp. |
+| `kitchen` | B13 | nhà bếp | vẽ tay `kitchen` | nhà bếp | ✅ đã sửa | trước là 🍳 **COOKING — cái chảo**, lại trùng hệt `cooking`. Vẽ mới: bệ bếp hai vòng lửa, nồi bốc hơi, tủ treo. |
 | `living room` | B13 | phòng khách | 🛋️ | COUCH AND LAMP | ✔️ đúng |  |
 | `chair` | B13 | cái ghế | 🪑 | CHAIR | ✔️ đúng |  |
 | `lamp` | B13 | đèn | 💡 | ELECTRIC LIGHT BULB | ✔️ đúng |  |
@@ -288,11 +292,15 @@ chuyển sang bấm CHỮ. Thà trống còn hơn hình sai.
 
 ## Còn nợ — chỗ cần NGƯỜI nhìn
 
-1. **16 dòng `⚠️ gần đúng`.** Máy đọc được tên Unicode, không đoán được bé nghĩ gì
-   khi nhìn. Bốn phòng của U6 đã vẽ tay xong; còn ba chỗ cùng họ "đồ vật thay cho
-   nơi chốn" chưa vẽ: `gym` 🏋️ (người tập tạ) · `playground` 🛝 (cầu trượt) ·
-   `kitchen` 🍳 (cái chảo). Và `classroom` thì hiện đang để TRỐNG — 🪑 là cái ghế,
-   🧑‍🏫 thì trùng dáng với `teacher`.
+1. **14 dòng `⚠️ gần đúng`.** Máy đọc được tên Unicode, không đoán được bé
+   nghĩ gì khi nhìn. Nhóm "đồ vật thay cho nơi chốn" đã vẽ hết tám hình. Còn lại là
+   những chỗ lệch một nấc về DÁNG (`face` 🙂 mặt cười · `touch` 👉 ngón tay chỉ ·
+   `sit down` 💺 chỗ ngồi trên tàu xe · `break time` ⏰ đồng hồ báo thức) và ba chỗ
+   chưa có emoji đúng (`skipping` 🤸 lộn nhào · `counting` 🔢 · `word puzzle` 🔠).
+
+   ⚠ `gym` vẽ bằng THANG GIÓNG — cháu đã thử ba kiểu (rổ bóng dễ đọc nhầm thành
+   "bóng rổ", người tập tạ là một người chứ không phải căn phòng) và đây là kiểu ít
+   lẫn nhất, nhưng nó vẫn có thể đọc ra "cái thang". Bác xem lại giúp.
 2. **Hai hình vừa vẽ** (`eraser` · `pencil_case`) cháu đã render ra ảnh và nhìn, nhưng
    bác nên liếc lại một lần trên máy thật.
 3. **Lớp 2 vẫn chưa ai soát** — `docs/hinh_da_soat_lop2.md` chưa có. Chạy
