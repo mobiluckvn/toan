@@ -16,15 +16,20 @@ cách làm, và cùng một giới hạn: bảng này không thay được ngư�
 |---|---|
 | ✔️ đúng | 41 |
 | ⚠️ gần đúng | 11 |
-| ❗ sai vật | 1 |
+| ✅ đã sửa | 1 |
 | ℹ️ ghi chú | 3 |
 
 **Không từ nào dùng chung hình với từ khác** — quyển này sạch khoản ấy (lớp 3 thì
 có tám chỗ).
 
-⚠ **CHƯA SỬA GÌ Ở QUYỂN NÀY.** Lớp 2 đã deploy và 34 video đã dựng; sửa một hình là
-phải dựng lại video của bài ấy. Bảng này là bản GHI, để bác quyết — nặng nhất là
-`jam` 🍯 (hũ mật ong đứng thay cho lọ mứt).
+**Đã sửa `jam`** (bác chốt 18-08): 🍯 là hũ MẬT ONG, không phải lọ mứt — vẽ tay lọ
+thuỷ tinh có nắp vặn và nhãn dâu, dựng lại video B07.
+
+⚠ **11 dòng `⚠️ gần đúng` thì CHƯA sửa.** Lớp 2 đã deploy, sửa một hình là phải dựng
+lại video của bài ấy; và cả 11 chỗ đều "vẫn dùng được, chỉ lệch một nấc" chứ không
+sai vật như `jam`. Bảng này là bản GHI để bác quyết từng chỗ — đáng xem trước là
+`jelly` 🍮 (bánh flan) · `zebu` 🐄 (bò sữa thường) · `river` 🏞️ (mà lớp 1 đã dùng
+chính 🏞️ ấy cho `lake`).
 
 ## Bảng 56 từ
 
@@ -50,7 +55,7 @@ phải dựng lại video của bài ấy. Bảng này là bản GHI, để bác
 | `ox` | B06 | con bò | 🐂 | OX | ✔️ đúng |  |
 | `juice` | B07 | nước ép | 🧃 | BEVERAGE BOX | ✔️ đúng |  |
 | `jelly` | B07 | thạch | 🍮 | CUSTARD | ⚠️ gần đúng | 🍮 là bánh FLAN/CARAMEN, không phải miếng thạch. |
-| `jam` | B07 | mứt | 🍯 | HONEY POT | ❗ sai vật | 🍯 là **HŨ MẬT ONG**, không phải lọ mứt. Sai vật — cần bác quyết vì sửa là phải dựng lại video B07. |
+| `jam` | B07 | mứt | vẽ tay `jam` | lọ mứt | ✅ đã sửa | trước là 🍯 **HONEY POT — hũ MẬT ONG** (hũ lùn, vàng óng, thường có que khuấy). Vẽ mới: lọ thuỷ tinh cao, nắp vặn, nhãn dán có quả dâu. |
 | `village` | B08 | làng | 🏘️ | HOUSE BUILDINGS | ✔️ đúng |  |
 | `van` | B08 | xe tải | 🚐 | MINIBUS | ⚠️ gần đúng | 🚐 là xe MINIBUS chở người; sách chú là "xe tải". |
 | `volleyball` | B08 | bóng chuyền | 🏐 | VOLLEYBALL | ✔️ đúng |  |
