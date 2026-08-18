@@ -108,7 +108,22 @@ def dien(cong_thuc: str, gan: dict) -> str:
     s = cong_thuc.replace(" + ", " ")
     for o, w in gan.items():
         s = s.replace(f"[{o}]", w)
-    return s
+    return _chon_mao_tu(s)
+
+
+def _chon_mao_tu(cau: str) -> str:
+    """`a/an elephant` → `an elephant`; `a/an book` → `a book`.
+
+    Bản đồ lớp 3 viết `a/an` ở BẢY công thức, để người soạn tự chọn. Máy điền thẳng
+    thì ra "I can see a/an elephant." — bé đọc lên không biết đọc thế nào, và dấu
+    gạch chéo giữa câu là thứ không ai nói ra miệng.
+    Chọn được bằng MÁY vì luật rõ: chữ cái đầu của từ ngay sau là nguyên âm thì "an".
+    Lớp 1·2 không có ca này nên bản cũ chưa cần.
+    """
+    def thay(m):
+        sau = m.group(1)
+        return ("an " if sau[:1].lower() in "aeiou" else "a ") + sau
+    return re.sub(r"\ba/an\s+(\S+)", thay, cau)
 
 
 def dang_can(o_ten: str, t: dict) -> str | None:
@@ -133,13 +148,33 @@ def dang_can(o_ten: str, t: dict) -> str | None:
 
 # Những chữ được hiểu là VAI chứ không phải là một từ tiếng Anh. Khai ở `sua_slot`
 # mà không nằm trong danh sách này thì hiểu là TÊN TỪ đích danh.
-VAI_BIET = {"dt", "dongtu", "mau", "bophan", "thucan", "sonhieu", "khongdem",
-            "so", "ten", "daitu", "giadinh", "vitri", "cumdongtu"}
+#
+# ⚠ SUY TỪ CHÍNH DỮ LIỆU, ĐỪNG GHIM CỨNG. Bản đầu liệt kê 13 vai của lớp 1·2. Lớp 3
+# khai thêm 13 vai mới (convat · soluong · dodac · tinhtu · noichon · nghe · sothich
+# …), và vì chúng không có tên trong danh sách nên `sua_slot` của lớp 3 bị hiểu nhầm
+# là DANH SÁCH TỪ: kho ứng viên rỗng, `sinh_cau` bỏ qua cả mẫu, im lặng. U16 mất
+# sạch bậc 3 vì đúng chuyện này.
+VAI_GOC = {"dt", "dongtu", "mau", "bophan", "thucan", "sonhieu", "khongdem",
+           "so", "ten", "daitu", "giadinh", "vitri", "cumdongtu"}
+
+
+def vai_biet(tu: list, them: dict) -> set:
+    """Mọi tên vai CÓ THẬT trong quyển này — gom từ chính `vai` của từng từ."""
+    ra = set(VAI_GOC)
+    for t in tu:
+        ra.update(t.get("vai") or [])
+    for nhom, goi in (them or {}).items():
+        if nhom.startswith("_") or not isinstance(goi, dict):
+            continue
+        for x in (goi.get("muc") or []):
+            if isinstance(x, dict):
+                ra.update(x.get("vai") or [])
+    return ra
 
 
 def ung_vien_tat(tu: list, them: dict) -> list[dict]:
     """Mọi ứng viên có thể, không lọc vai — để lọc lại bằng danh sách từ đích danh."""
-    return ung_vien(sorted(VAI_BIET), tu, them)
+    return ung_vien(sorted(vai_biet(tu, them)), tu, them)
 
 
 def ung_vien(vai_can: list, tu: list, them: dict) -> list[dict]:
@@ -179,6 +214,7 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
     đổi một chỗ, để bé thấy chỗ nào là chỗ thay được. Đổi hai ô cùng lúc thì bé
     không biết cái gì vừa đổi.
     """
+    VAI = vai_biet(tu, them)
     ra = []
     for mc in u["mau_cau"]:
         ct, goc = mc.get("cong_thuc") or "", mc.get("vi_du") or ""
@@ -206,7 +242,7 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
                 # Luật dứt khoát: MỌI mục đều là tên vai → hiểu là vai. Có bất kỳ
                 # mục nào không phải tên vai → hiểu là danh sách TỪ đích danh. Không
                 # trộn lẫn hai lối trong cùng một ô.
-                if all(x in VAI_BIET for x in khai[o]):
+                if all(x in VAI for x in khai[o]):
                     kho[o] = ung_vien(khai[o], tu, them)
                 else:
                     kho[o] = [t for t in ung_vien_tat(tu, them) if t["tu"] in khai[o]]
@@ -233,7 +269,7 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
             for t in hop:
                 for d in filter(None, {dang_can(o, t), t["tu"]}):
                     if d.lower() in goc.lower():
-                        found, hoa[o] = t, d[0].isupper() or d.capitalize() in goc
+                        found, hoa[o] = t, d[0].isupper() or (d[:1].upper() + d[1:]) in goc
                         break
                 if found:
                     break
@@ -247,7 +283,11 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
 
         def chu(o, t):
             d = dang_can(o, t) or t["tu"]
-            return d.capitalize() if hoa.get(o) else d
+            # ⚠ KHÔNG dùng `str.capitalize()` — nó HẠ chữ hoa ở phần sau:
+            #     "Ms Hoa".capitalize()  →  "Ms hoa"
+            # Lớp 1·2 không lộ vì mọi từ đều một chữ, toàn chữ thường. Lớp 3 có
+            # "Ms Hoa" · "Mr Long" · "TV", và câu sinh ra thành "This is Ms hoa."
+            return (d[:1].upper() + d[1:]) if hoa.get(o) else d
 
         # câu SGK trước — đó là câu đã có người soạn sách duyệt
         # `dang` = HÌNH DẠNG THẬT đã điền vào câu, không phải từ gốc. Hai thứ này

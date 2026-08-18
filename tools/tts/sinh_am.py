@@ -59,6 +59,7 @@ CO_DAU = re.compile(
 VIET_KHAC = {
     "anh", "em", "trai", "chi", "ba", "ma", "bo", "me", "ong", "ban",
     "cam", "canh", "xanh", "do", "den", "hoa", "qua", "cai", "chim", "ca",
+    "xem", "ti", "vi", "tivi", "nam", "lam", "tay", "chan", "sao", "hai",
 }
 
 VIET_KHONG_DAU = {

@@ -148,6 +148,18 @@ def mau_cau_cua_unit(u: dict, nut: dict, canh: dict, nguoc: dict,
             # Bản đồ không có — soạn tay ở lopN_bu.json, xem mục `mau_cau`.
             **{k: v for k, v in ((day or {}).get(i) or {}).items() if not k.startswith("_")},
         })
+    # ── MẪU CÂU SOẠN THÊM ──
+    # Phần bù xưa nay chỉ ĐẮP THÊM phần dạy cho mẫu câu bản đồ đã có. Nhưng lớp 3
+    # có unit "Starter" mà sách không khai mẫu câu nào, nên bài ấy mất hẳn bậc 3 —
+    # bé học xong không ráp được câu nào, và điều đó không lộ ra ở con số nào.
+    # Khai `_unit` trong `mau_cau` của phần bù thì mẫu ấy được THÊM vào unit tương
+    # ứng. Dùng dè: mỗi mẫu thêm là một câu KHÔNG có trong sách, phải nằm trọn
+    # trong năng lực unit đã khai và ghi rõ lý do ở `_them_moi`.
+    for ma, d in (day or {}).items():
+        if ma.startswith("_") or d.get("_unit") != u["id"] or any(x["ma"] == ma for x in ra):
+            continue
+        ra.append({"ma": ma, "o_thay": [],
+                   **{k: v for k, v in d.items() if not k.startswith("_")}})
     return ra
 
 
@@ -170,6 +182,8 @@ def chuan(lop: int, bu: dict) -> dict:
         if not k.startswith("_"):
             hinh[k] = {"emoji": v["tam"], "ve": v.get("ve"),
                        "ve_tay": True, "vi_sao": v["sai_o_dau"]}
+    khong_ve = {k: v for k, v in ((bu.get("hinh") or {}).get("_khong_ve") or {}).items()
+                if not k.startswith("_")}
     canh_am = {}
     for k, v in (bu.get("sua_phonics") or {}).items():
         if not k.startswith("_"):
@@ -196,7 +210,18 @@ def chuan(lop: int, bu: dict) -> dict:
             if not ipa and not ten_rieng:
                 thieu.append(f"{i} ({n['word']}): thiếu IPA")
             h = hinh.get(n["word"])
-            if not h and not ten_rieng:
+            # ── TỪ CỐ Ý KHÔNG CÓ HÌNH ──
+            #
+            # Lớp 1·2 dựng trên một câu: "bé chưa đọc được chữ nên HÌNH CHÍNH LÀ
+            # NGHĨA". Câu ấy đúng khi cả quyển chỉ dạy vật cụ thể. Lớp 3 thì 39/204
+            # từ là hello · fine · my · this · yes · please · many · here… — không
+            # vẽ được, và CỐ TÌM một emoji cho chúng chính là cách đẻ ra hình sai
+            # (`desk` → 🪑 tên thật CHAIR, lỗi đắt nhất của lớp 1).
+            #
+            # Nên khai thẳng "từ này không có hình, vì …" ở `hinh._khong_ve`. Chúng
+            # KHÔNG bị tính là thiếu, nhưng mang cờ `khong_ve` để bộ sinh câu biết mà
+            # đừng bảo bé "nhìn hình", và để video dùng cảnh khác.
+            if not h and not ten_rieng and n["word"] not in khong_ve:
                 thieu.append(f"{i} ({n['word']}): thiếu hình")
             ds.append({
                 "ma": i,
@@ -213,6 +238,9 @@ def chuan(lop: int, bu: dict) -> dict:
                 "nhom_nghia": n.get("semantic_field"),
                 "ten_rieng": ten_rieng or None,
                 "hinh": (h or {}).get("emoji"),
+                # Vì sao từ này không có hình — để bộ sinh câu và bộ dựng video biết
+                # đây là chuyện CỐ Ý, không phải sót.
+                "khong_ve": khong_ve.get(n["word"]),
                 # `ve` = khoá tra vào bộ hình vẽ tay (HinhVe.jsx); có thì ưu tiên
                 # hơn emoji, vì emoji của bảy từ này chỉ GẦN đúng.
                 "hinh_ve": (h or {}).get("ve"),
