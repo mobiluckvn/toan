@@ -148,7 +148,7 @@ chuyển sang bấm CHỮ. Thà trống còn hơn hình sai.
 | `school` | B06 | trường học | 🏫 | SCHOOL | ✔️ đúng |  |
 | `classroom` | B06 | lớp học | vẽ tay `classroom` | lớp học | ✅ đã sửa | trước là 🪑 **CHAIR — cái ghế**, rồi để trống vì 🧑‍🏫 trùng dáng với `teacher`. Vẽ mới: bảng đen treo tường và hai bộ bàn học. |
 | `library` | B06 | thư viện | vẽ tay `library` | thư viện | ✅ đã sửa | trước là 📚 **BOOKS — chồng sách**, đồ vật đứng thay cho căn phòng. Vẽ mới: giá sách hai tầng TRONG khung phòng. |
-| `gym` | B06 | nhà thể chất | vẽ tay `gym` | nhà thể chất | ✅ đã sửa | trước 🤸 (trùng `skipping`), rồi 🏋️ (một NGƯỜI tập tạ). Vẽ mới: thang gióng gắn tường và tấm đệm. Cố ý KHÔNG vẽ rổ bóng — `basketball` đã là 🏀. |
+| `gym` | B06 | nhà thể chất | vẽ tay `gym` | nhà thể chất | ✅ đã sửa | trước 🤸 (trùng `skipping`), rồi 🏋️ (một NGƯỜI tập tạ). Vẽ mới: rổ bóng gắn tường (bảng + vành cam + lưới) và tấm đệm dưới sàn — bác chốt dùng rổ vì nó dễ đọc nhất. |
 | `playground` | B06 | sân chơi | vẽ tay `playground` | sân chơi | ✅ đã sửa | trước là 🛝 — chỉ mỗi CÁI CẦU TRƯỢT. Vẽ mới có khung NGOÀI TRỜI (trời và cỏ) vì sân chơi không phải căn phòng. |
 | `art room` | B06 | phòng mĩ thuật | vẽ tay `art_room` | phòng mĩ thuật | ✅ đã sửa | trước là 🖼️ **FRAME WITH PICTURE — bức tranh treo tường**, treo ở đâu cũng được. Vẽ mới: giá vẽ có tranh dở dang và bảng màu. |
 | `music room` | B06 | phòng âm nhạc | vẽ tay `music_room` | phòng âm nhạc | ✅ đã sửa | trước là 🎹 **MUSICAL KEYBOARD — cái đàn**, không phải căn phòng. Vẽ mới: đàn phím đứng trong phòng, kèm hai nốt nhạc. |
@@ -298,9 +298,10 @@ chuyển sang bấm CHỮ. Thà trống còn hơn hình sai.
    `sit down` 💺 chỗ ngồi trên tàu xe · `break time` ⏰ đồng hồ báo thức) và ba chỗ
    chưa có emoji đúng (`skipping` 🤸 lộn nhào · `counting` 🔢 · `word puzzle` 🔠).
 
-   ⚠ `gym` vẽ bằng THANG GIÓNG — cháu đã thử ba kiểu (rổ bóng dễ đọc nhầm thành
-   "bóng rổ", người tập tạ là một người chứ không phải căn phòng) và đây là kiểu ít
-   lẫn nhất, nhưng nó vẫn có thể đọc ra "cái thang". Bác xem lại giúp.
+   `gym` vẽ bằng RỔ BÓNG gắn tường cộng tấm đệm — bác chốt 18-08 sau khi cháu thử
+   thang gióng (dễ đọc ra "cái thang", lại giống cái thang trong `playground`). Chỗ
+   phân biệt với 🏀 của `basketball`: rổ ở đây GẮN TƯỜNG trong khung phòng, có tấm
+   đệm, và KHÔNG có quả bóng — cái bé thấy là căn phòng, không phải môn thể thao.
 2. **Hai hình vừa vẽ** (`eraser` · `pencil_case`) cháu đã render ra ảnh và nhìn, nhưng
    bác nên liếc lại một lần trên máy thật.
 3. **Lớp 2 vẫn chưa ai soát** — `docs/hinh_da_soat_lop2.md` chưa có. Chạy
