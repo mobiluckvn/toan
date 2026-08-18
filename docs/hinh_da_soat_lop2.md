@@ -15,8 +15,8 @@ cách làm, và cùng một giới hạn: bảng này không thay được ngư�
 | | số từ |
 |---|---|
 | ✔️ đúng | 41 |
-| ⚠️ gần đúng | 10 |
-| ✅ đã sửa | 2 |
+| ⚠️ gần đúng | 3 |
+| ✅ đã sửa | 9 |
 | ℹ️ ghi chú | 3 |
 
 **Không từ nào dùng chung hình với từ khác** — quyển này sạch khoản ấy (lớp 3 thì
@@ -37,11 +37,13 @@ Nên **giữ 🐄 và ghi lại**, chứ không thay bằng hình cháu vẽ: �
 Vật tĩnh (lọ mứt · viên thạch · bàn ghế · căn phòng) cháu vẽ được; CON VẬT ở cỡ icon
 thì chưa. Chỗ này cần người vẽ, hoặc bác chấp nhận 🐄 kèm lời cô giảng thêm cái u.
 
-⚠ **10 dòng `⚠️ gần đúng` khác thì CHƯA sửa.** Lớp 2 đã deploy, sửa một hình là phải dựng
-lại video của bài ấy; và cả 11 chỗ đều "vẫn dùng được, chỉ lệch một nấc" chứ không
-sai vật như `jam`. Bảng này là bản GHI để bác quyết từng chỗ — đáng xem trước là
-`jelly` 🍮 (bánh flan) · `zebu` 🐄 (bò sữa thường) · `river` 🏞️ (mà lớp 1 đã dùng
-chính 🏞️ ấy cho `lake`).
+**Bác chốt 18-08: vẽ nốt 7 chỗ vẽ được.** `river` · `van` · `quiz` · `sand` · `sail` ·
+`road` · `drive` — đều là VẬT TĨNH. Dựng lại video của B03 · B04 · B05 · B08 · B11.
+
+⚠ **Còn 3 dòng `⚠️ gần đúng`, và cả ba đều là chỗ cháu KHÔNG vẽ nổi:**
+`kitten` 🐈 (con mèo LỚN cho chữ "mèo con") · `zebu` 🐄 (bò sữa, không u) — hai con
+vật; và `slide` 🛝 (cầu trượt, đồ vật, cho chữ "trượt" là động tác). Con vật ở cỡ icon
+thì cần người vẽ — xem phần dưới.
 
 ## Bảng 56 từ
 
@@ -53,15 +55,15 @@ chính 🏞️ ấy cho `lake`).
 | `kite` | B02 | cái diều | 🪁 | KITE | ✔️ đúng |  |
 | `bike` | B02 | xe đạp | 🚲 | BICYCLE | ✔️ đúng |  |
 | `kitten` | B02 | con mèo con | 🐈 | CAT | ⚠️ gần đúng | 🐈 là con mèo LỚN. Bài dạy "mèo con" — bé không thấy chỗ khác nhau. |
-| `sail` | B03 | cánh buồm | ⛵ | SAILBOAT | ⚠️ gần đúng | ⛵ là CẢ CHIẾC THUYỀN buồm, không phải riêng cánh buồm. |
-| `sand` | B03 | cát | 🏖️ | BEACH WITH UMBRELLA | ⚠️ gần đúng | 🏖️ là BÃI BIỂN có ô dù, không phải nắm cát. |
+| `sail` | B03 | cánh buồm | vẽ tay `sail` | cánh buồm | ✅ đã sửa | trước là ⛵ **SAILBOAT** — cả chiếc thuyền. Vẽ mới: cột và hai cánh buồm, KHÔNG vẽ thân thuyền. |
+| `sand` | B03 | cát | vẽ tay `sand` | cát | ✅ đã sửa | trước là 🏖️ **BEACH WITH UMBRELLA** — cả một bãi biển. Vẽ mới: đống cát có xô và xẻng. |
 | `sea` | B03 | biển | 🌊 | WATER WAVE | ✔️ đúng |  |
 | `rainbow` | B04 | cầu vồng | 🌈 | RAINBOW | ✔️ đúng |  |
-| `river` | B04 | dòng sông | 🏞️ | NATIONAL PARK | ⚠️ gần đúng | 🏞️ tên thật NATIONAL PARK — và lớp 1 đã dùng chính 🏞️ cho `lake`. Cùng một hình, hai quyển hai nghĩa. |
-| `road` | B04 | con đường | 🛣️ | MOTORWAY | ⚠️ gần đúng | 🛣️ là đường CAO TỐC, không phải con đường làng của bài. |
+| `river` | B04 | dòng sông | vẽ tay `river` | dòng sông | ✅ đã sửa | trước là 🏞️ **NATIONAL PARK**, mà lớp 1 đã dùng CHÍNH 🏞️ ấy cho `lake` — một bức tranh không thể vừa là hồ vừa là sông. Vẽ mới: dòng nước uốn giữa hai bờ cỏ. |
+| `road` | B04 | con đường | vẽ tay `road` | con đường | ✅ đã sửa | trước là 🛣️ **MOTORWAY** — đường cao tốc nhiều làn. Vẽ mới: đường giữa hai bên cỏ, vạch đứt ở giữa. |
 | `question` | B05 | câu hỏi | ❓ | BLACK QUESTION MARK ORNAMENT | ✔️ đúng |  |
 | `square` | B05 | hình vuông | 🟦 | LARGE BLUE SQUARE | ✔️ đúng |  |
-| `quiz` | B05 | câu đố | 📝 | MEMO | ⚠️ gần đúng | 📝 là tờ GHI CHÚ, không phải câu đố. |
+| `quiz` | B05 | câu đố | vẽ tay `quiz` | câu đố | ✅ đã sửa | trước là 📝 **MEMO** — tờ ghi chú. Vẽ mới: tờ đề có dấu hỏi to và hai ô chọn. |
 | `box` | B06 | cái hộp | 📦 | PACKAGE | ✔️ đúng |  |
 | `fox` | B06 | con cáo | 🦊 | FOX FACE | ℹ️ ghi chú | 🦊 là MẶT cáo; `ox` 🐂 thì cả con. Không nhất quán trong cùng một bài. |
 | `ox` | B06 | con bò | 🐂 | OX | ✔️ đúng |  |
@@ -69,7 +71,7 @@ chính 🏞️ ấy cho `lake`).
 | `jelly` | B07 | thạch | vẽ tay `jelly` | thạch | ✅ đã sửa | trước là 🍮 **CUSTARD — bánh flan** (vàng nhạt, có caramen). Vẽ mới: ba viên rau câu vuông trên đĩa. |
 | `jam` | B07 | mứt | vẽ tay `jam` | lọ mứt | ✅ đã sửa | trước là 🍯 **HONEY POT — hũ MẬT ONG** (hũ lùn, vàng óng, thường có que khuấy). Vẽ mới: lọ thuỷ tinh cao, nắp vặn, nhãn dán có quả dâu. |
 | `village` | B08 | làng | 🏘️ | HOUSE BUILDINGS | ✔️ đúng |  |
-| `van` | B08 | xe tải | 🚐 | MINIBUS | ⚠️ gần đúng | 🚐 là xe MINIBUS chở người; sách chú là "xe tải". |
+| `van` | B08 | xe tải | vẽ tay `van` | xe tải | ✅ đã sửa | trước là 🚐 **MINIBUS** — xe chở NGƯỜI, cửa sổ suốt thân. Vẽ mới: thùng chở hàng kín. |
 | `volleyball` | B08 | bóng chuyền | 🏐 | VOLLEYBALL | ✔️ đúng |  |
 | `yogurt` | B09 | sữa chua | vẽ tay `yogurt` | hộp sữa chua | ✔️ đúng |  |
 | `yam` | B09 | củ khoai sọ | 🍠 | ROASTED SWEET POTATO | ✔️ đúng |  |
@@ -79,7 +81,7 @@ chính 🏞️ ấy cho `lake`).
 | `zebra` | B10 | ngựa vằn | 🦓 | ZEBRA FACE | ℹ️ ghi chú | 🦓 là MẶT ngựa vằn — như trên. |
 | `slide` | B11 | trượt | 🛝 | ? | ⚠️ gần đúng | 🛝 là CẦU TRƯỢT (đồ vật); sách chú là "trượt" (động tác). |
 | `ride` | B11 | lái xe (đạp, máy) | 🚴 | BICYCLIST | ✔️ đúng |  |
-| `drive` | B11 | lái xe (ô tô) | 🚗 | AUTOMOBILE | ⚠️ gần đúng | 🚗 là CÁI XE, không phải động tác lái. Cùng kiểu với `driver` của lớp 3 (đã chuyển sang không vẽ). |
+| `drive` | B11 | lái xe (ô tô) | vẽ tay `drive` | lái xe | ✅ đã sửa | trước là 🚗 **AUTOMOBILE** — cái xe, không phải động tác lái. Vẽ mới: cái VÔ LĂNG. |
 | `grape` | B12 | quả nho | 🍇 | GRAPES | ✔️ đúng |  |
 | `cake` | B12 | cái bánh | 🍰 | SHORTCAKE | ✔️ đúng |  |
 | `table` | B12 | cái bàn | vẽ tay `table` | cái bàn | ℹ️ ghi chú | nét vẽ tay `table` này chính là hình lớp 3 đang dùng lại. Một vật, một hình. |
