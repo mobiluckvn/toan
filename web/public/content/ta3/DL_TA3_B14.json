@@ -605,9 +605,9 @@
     {
      "id": "C6",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_big",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "bed",
@@ -639,9 +639,9 @@
     {
      "id": "C7",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_new",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "bed",
@@ -673,9 +673,9 @@
     {
      "id": "C8",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_old",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "bed",
@@ -707,9 +707,9 @@
     {
      "id": "C9",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_small",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "small",
@@ -1633,7 +1633,31 @@
   "watchFor": "NÊN: cho con NGHE trước rồi mới nhìn chữ. KHÔNG NÊN: bắt con đánh vần theo kiểu tiếng Việt — tiếng Anh viết một đằng đọc một nẻo, đánh vần sẽ hại."
  },
  "video": {
-  "tu": "DL_TA3_B14_tu.mp4",
+  "tu": [
+   {
+    "ma": "tu_dodac",
+    "ten": "Đồ đạc trong nhà · Nơi chốn",
+    "tu": [
+     "bed",
+     "desk",
+     "door",
+     "window",
+     "room"
+    ],
+    "tep": "DL_TA3_B14_tu_dodac.mp4"
+   },
+   {
+    "ma": "tu_tinhtu",
+    "ten": "Từ tả đồ vật",
+    "tu": [
+     "big",
+     "new",
+     "old",
+     "small"
+    ],
+    "tep": "DL_TA3_B14_tu_tinhtu.mp4"
+   }
+  ],
   "cau": [
    {
     "vai": "cau",

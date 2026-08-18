@@ -445,9 +445,9 @@
     {
      "id": "C1",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_colour",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "black",
@@ -479,9 +479,9 @@
     {
      "id": "C2",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_black",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "black",
@@ -513,9 +513,9 @@
     {
      "id": "C3",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_blue",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "colour",
@@ -547,9 +547,9 @@
     {
      "id": "C4",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_brown",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "brown",
@@ -581,9 +581,9 @@
     {
      "id": "C5",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_green",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "green",
@@ -615,9 +615,9 @@
     {
      "id": "C6",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_orange",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "colour",
@@ -649,9 +649,9 @@
     {
      "id": "C7",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_red",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "colour",
@@ -683,9 +683,9 @@
     {
      "id": "C8",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_white",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "white",
@@ -717,9 +717,9 @@
     {
      "id": "C9",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_yellow",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "colour",
@@ -751,9 +751,9 @@
     {
      "id": "C10",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_they",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "colour",
@@ -1588,32 +1588,6 @@
   "items": [
    {
     "id": "Q1",
-    "am": "tu_colour",
-    "anh": null,
-    "anhVe": null,
-    "text": "",
-    "format": "tf",
-    "nhinNghe": true,
-    "answerKey": {
-     "value": true
-    },
-    "solutionNarrative": "ĐÚNG — colour là màu sắc."
-   },
-   {
-    "id": "Q2",
-    "am": "tu_colour",
-    "anh": "⬛",
-    "anhVe": null,
-    "text": "",
-    "format": "tf",
-    "nhinNghe": true,
-    "answerKey": {
-     "value": false
-    },
-    "solutionNarrative": "SAI — đó là black. colour là màu sắc."
-   },
-   {
-    "id": "Q3",
     "am": "tu_black",
     "anh": "⬛",
     "anhVe": null,
@@ -1626,7 +1600,7 @@
     "solutionNarrative": "ĐÚNG — black là màu đen."
    },
    {
-    "id": "Q4",
+    "id": "Q2",
     "am": "tu_black",
     "anh": "🟦",
     "anhVe": null,
@@ -1639,7 +1613,7 @@
     "solutionNarrative": "SAI — đó là blue. black là màu đen."
    },
    {
-    "id": "Q5",
+    "id": "Q3",
     "am": "tu_blue",
     "anh": "🟦",
     "anhVe": null,
@@ -1650,6 +1624,32 @@
      "value": true
     },
     "solutionNarrative": "ĐÚNG — blue là màu xanh da trời."
+   },
+   {
+    "id": "Q4",
+    "am": "tu_blue",
+    "anh": "🟫",
+    "anhVe": null,
+    "text": "",
+    "format": "tf",
+    "nhinNghe": true,
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — đó là brown. blue là màu xanh da trời."
+   },
+   {
+    "id": "Q5",
+    "am": "tu_brown",
+    "anh": "🟫",
+    "anhVe": null,
+    "text": "",
+    "format": "tf",
+    "nhinNghe": true,
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "ĐÚNG — brown là màu nâu."
    }
   ]
  },
@@ -1659,7 +1659,32 @@
   "watchFor": "NÊN: cho con NGHE trước rồi mới nhìn chữ. KHÔNG NÊN: bắt con đánh vần theo kiểu tiếng Việt — tiếng Anh viết một đằng đọc một nẻo, đánh vần sẽ hại."
  },
  "video": {
-  "tu": "DL_TA3_B09_tu.mp4",
+  "tu": [
+   {
+    "ma": "tu_mau1",
+    "ten": "Màu sắc · Từ hay gặp · phần 1",
+    "tu": [
+     "colour",
+     "black",
+     "blue",
+     "brown",
+     "green"
+    ],
+    "tep": "DL_TA3_B09_tu_mau1.mp4"
+   },
+   {
+    "ma": "tu_mau2",
+    "ten": "Màu sắc · Tôi, bạn, nó · phần 2",
+    "tu": [
+     "orange",
+     "red",
+     "white",
+     "yellow",
+     "they"
+    ],
+    "tep": "DL_TA3_B09_tu_mau2.mp4"
+   }
+  ],
   "cau": [
    {
     "vai": "cau",

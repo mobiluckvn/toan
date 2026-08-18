@@ -287,9 +287,8 @@
    "Where's the kitchen? - It's here.",
    "Where's the living room? - It's here.",
    "Where are the chairs? - They're in the living room.",
-   "Where are the lamp? - They're here the room.",
-   "Where are the chair? - They're there the room.",
-   "Where are the table? - They're here the room."
+   "Where are the lamps? - They're in the room.",
+   "Where are the tables? - They're in the room."
   ],
   "mauCauDs": [
    {
@@ -318,7 +317,7 @@
    },
    {
     "cau": "Where are the chairs? - They're in the living room.",
-    "congThuc": "Where are the + [Furniture]? - They're + [Preposition] + the room.",
+    "congThuc": "Where are the + [Furniture-plural]? - They're + [Preposition] + the room.",
     "dungDe": "Hỏi NHIỀU đồ vật đang ở đâu.",
     "tinhHuong": "Con giúp mẹ dọn nhà, không thấy mấy cái ghế.",
     "phan": [
@@ -752,9 +751,9 @@
     {
      "id": "C9",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_here",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "bathroom",
@@ -786,9 +785,9 @@
     {
      "id": "C10",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_there",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "there",
@@ -820,9 +819,9 @@
     {
      "id": "C11",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_in",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "bathroom",
@@ -854,9 +853,9 @@
     {
      "id": "C12",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_on",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "bathroom",
@@ -1462,19 +1461,19 @@
     {
      "id": "S5",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Where are the ___s? - They're in the living room.",
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Where are the ___? - They're in the living room.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
      "anh": "🪑",
      "anhVe": null,
      "format": "chon",
      "choices": [
-      "chair",
       "bathroom",
+      "chairs",
       "bedroom",
       "kitchen"
      ],
      "answerKey": {
-      "choice": "chair"
+      "choice": "chairs"
      },
      "solutionNarrative": "Where are the chairs? - They're in the living room.",
      "hints": [
@@ -1485,21 +1484,21 @@
     {
      "id": "S6",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Where are the ___? - They're here the room.",
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Where are the ___? - They're in the room.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
      "anh": "💡",
      "anhVe": null,
      "format": "chon",
      "choices": [
+      "lamps",
       "bathroom",
       "bedroom",
-      "kitchen",
-      "lamp"
+      "kitchen"
      ],
      "answerKey": {
-      "choice": "lamp"
+      "choice": "lamps"
      },
-     "solutionNarrative": "Where are the lamp? - They're here the room.",
+     "solutionNarrative": "Where are the lamps? - They're in the room.",
      "hints": [
       "Nhìn hình xem đó là con gì, cái gì.",
       "Rồi nhớ lại từ tiếng Anh của nó."
@@ -1508,44 +1507,21 @@
     {
      "id": "S7",
      "bac": 3,
-     "text": "Chọn từ điền vào chỗ trống:  Where are the chair? - They're ___ the room.",
-     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": null,
-     "anhVe": null,
-     "format": "chon",
-     "choices": [
-      "there",
-      "bathroom",
-      "bedroom",
-      "kitchen"
-     ],
-     "answerKey": {
-      "choice": "there"
-     },
-     "solutionNarrative": "Where are the chair? - They're there the room.",
-     "hints": [
-      "Nhìn hình xem đó là con gì, cái gì.",
-      "Rồi nhớ lại từ tiếng Anh của nó."
-     ]
-    },
-    {
-     "id": "S8",
-     "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Where are the ___? - They're here the room.",
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Where are the ___? - They're in the room.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
      "anh": "🪑",
      "anhVe": null,
      "format": "chon",
      "choices": [
-      "table",
       "bathroom",
+      "tables",
       "bedroom",
       "kitchen"
      ],
      "answerKey": {
-      "choice": "table"
+      "choice": "tables"
      },
-     "solutionNarrative": "Where are the table? - They're here the room.",
+     "solutionNarrative": "Where are the tables? - They're in the room.",
      "hints": [
       "Nhìn hình xem đó là con gì, cái gì.",
       "Rồi nhớ lại từ tiếng Anh của nó."
@@ -1902,7 +1878,34 @@
   "watchFor": "NÊN: cho con NGHE trước rồi mới nhìn chữ. KHÔNG NÊN: bắt con đánh vần theo kiểu tiếng Việt — tiếng Anh viết một đằng đọc một nẻo, đánh vần sẽ hại."
  },
  "video": {
-  "tu": "DL_TA3_B13_tu.mp4",
+  "tu": [
+   {
+    "ma": "tu_noichon",
+    "ten": "Nơi chốn · Đồ đạc trong nhà",
+    "tu": [
+     "bathroom",
+     "bedroom",
+     "kitchen",
+     "living room",
+     "house",
+     "chair",
+     "lamp",
+     "table"
+    ],
+    "tep": "DL_TA3_B13_tu_noichon.mp4"
+   },
+   {
+    "ma": "tu_vitri",
+    "ten": "Ở đâu",
+    "tu": [
+     "here",
+     "there",
+     "in",
+     "on"
+    ],
+    "tep": "DL_TA3_B13_tu_vitri.mp4"
+   }
+  ],
   "cau": [
    {
     "vai": "cau",

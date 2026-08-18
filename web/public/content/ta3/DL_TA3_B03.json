@@ -448,9 +448,9 @@
     {
      "id": "C1",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_this",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "that",
@@ -482,9 +482,9 @@
     {
      "id": "C2",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_that",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "this",
@@ -516,9 +516,9 @@
     {
      "id": "C3",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_it",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "this",
@@ -550,9 +550,9 @@
     {
      "id": "C4",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_friend",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "this",
@@ -584,9 +584,9 @@
     {
      "id": "C5",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_teacher",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "this",
@@ -618,9 +618,9 @@
     {
      "id": "C6",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_yes",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "this",
@@ -652,9 +652,9 @@
     {
      "id": "C7",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_no",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "this",
@@ -686,9 +686,9 @@
     {
      "id": "C8",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_mr",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "this",
@@ -720,9 +720,9 @@
     {
      "id": "C9",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_ms",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "this",
@@ -754,9 +754,9 @@
     {
      "id": "C10",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_ms_hoa",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "this",
@@ -788,9 +788,9 @@
     {
      "id": "C11",
      "bac": 1,
-     "text": "Nghe rồi bấm vào hình đúng.",
+     "text": "Nghe rồi bấm vào từ đúng.",
      "am": "tu_mr_long",
-     "anhChon": true,
+     "anhChon": false,
      "format": "chon",
      "choices": [
       "this",
@@ -1655,8 +1655,8 @@
   "items": [
    {
     "id": "Q1",
-    "am": "tu_this",
-    "anh": null,
+    "am": "tu_teacher",
+    "anh": "👩‍🏫",
     "anhVe": null,
     "text": "",
     "format": "tf",
@@ -1664,59 +1664,71 @@
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "ĐÚNG — this là đây."
+    "solutionNarrative": "ĐÚNG — teacher là giáo viên."
    },
    {
     "id": "Q2",
+    "text": "“this” nghĩa là gì?",
     "am": "tu_this",
-    "anh": null,
-    "anhVe": null,
-    "text": "",
-    "format": "tf",
-    "nhinNghe": true,
+    "format": "chon",
+    "choices": [
+     "đó, kia",
+     "nó, cái đó, điều đó",
+     "đây",
+     "bạn, bạn bè"
+    ],
     "answerKey": {
-     "value": false
+     "choice": "đây"
     },
-    "solutionNarrative": "SAI — đó là that. this là đây."
+    "solutionNarrative": "this /ðɪs/ — đây"
    },
    {
     "id": "Q3",
+    "text": "“that” nghĩa là gì?",
     "am": "tu_that",
-    "anh": null,
-    "anhVe": null,
-    "text": "",
-    "format": "tf",
-    "nhinNghe": true,
+    "format": "chon",
+    "choices": [
+     "đây",
+     "nó, cái đó, điều đó",
+     "đó, kia",
+     "bạn, bạn bè"
+    ],
     "answerKey": {
-     "value": true
+     "choice": "đó, kia"
     },
-    "solutionNarrative": "ĐÚNG — that là đó, kia."
+    "solutionNarrative": "that /ðæt/ — đó, kia"
    },
    {
     "id": "Q4",
-    "am": "tu_that",
-    "anh": null,
-    "anhVe": null,
-    "text": "",
-    "format": "tf",
-    "nhinNghe": true,
+    "text": "“it” nghĩa là gì?",
+    "am": "tu_it",
+    "format": "chon",
+    "choices": [
+     "đây",
+     "đó, kia",
+     "nó, cái đó, điều đó",
+     "bạn, bạn bè"
+    ],
     "answerKey": {
-     "value": false
+     "choice": "nó, cái đó, điều đó"
     },
-    "solutionNarrative": "SAI — đó là it. that là đó, kia."
+    "solutionNarrative": "it /ɪt/ — nó, cái đó, điều đó"
    },
    {
     "id": "Q5",
-    "am": "tu_it",
-    "anh": null,
-    "anhVe": null,
-    "text": "",
-    "format": "tf",
-    "nhinNghe": true,
+    "text": "“friend” nghĩa là gì?",
+    "am": "tu_friend",
+    "format": "chon",
+    "choices": [
+     "đây",
+     "đó, kia",
+     "bạn, bạn bè",
+     "nó, cái đó, điều đó"
+    ],
     "answerKey": {
-     "value": true
+     "choice": "bạn, bạn bè"
     },
-    "solutionNarrative": "ĐÚNG — it là nó, cái đó, điều đó."
+    "solutionNarrative": "friend /frend/ — bạn, bạn bè"
    }
   ]
  },
@@ -1726,7 +1738,40 @@
   "watchFor": "NÊN: cho con NGHE trước rồi mới nhìn chữ. KHÔNG NÊN: bắt con đánh vần theo kiểu tiếng Việt — tiếng Anh viết một đằng đọc một nẻo, đánh vần sẽ hại."
  },
  "video": {
-  "tu": "DL_TA3_B03_tu.mp4",
+  "tu": [
+   {
+    "ma": "tu_chidinh",
+    "ten": "Cái này, cái kia · Tôi, bạn, nó",
+    "tu": [
+     "this",
+     "that",
+     "it"
+    ],
+    "tep": "DL_TA3_B03_tu_chidinh.mp4"
+   },
+   {
+    "ma": "tu_chao",
+    "ten": "Lời chào · Từ hay gặp · …",
+    "tu": [
+     "friend",
+     "teacher",
+     "yes",
+     "no"
+    ],
+    "tep": "DL_TA3_B03_tu_chao.mp4"
+   },
+   {
+    "ma": "tu_xungho",
+    "ten": "Gọi người lớn · Tên bạn",
+    "tu": [
+     "Mr",
+     "Ms",
+     "Ms Hoa",
+     "Mr Long"
+    ],
+    "tep": "DL_TA3_B03_tu_xungho.mp4"
+   }
+  ],
   "cau": [
    {
     "vai": "cau",
