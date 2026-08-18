@@ -130,8 +130,12 @@ soi ba thứ: điểm có ra không · câu sửa có đúng không · có từ 
   NÓI bằng micro thật · 19 mẫu câu chưa soát xong theo "một video một việc" · ba nhóm
   hình "gần đúng" ở `docs/hinh_da_soat.md`.
 - **Lớp 2**: chưa mở app nhìn tận mắt một vòng.
-- **Lớp 3**: `hinh_da_soat.md` chưa có từ nào của lớp 3 — cổng `tienganh_hinh_dung_tu`
-  hiện chỉ soi `ta1`, nên 204 từ lớp 3 KHÔNG có ai nhìn hình.
+- **Lớp 2**: 11 chỗ `⚠️ gần đúng` và MỘT chỗ sai vật — `jam` 🍯 là hũ MẬT ONG.
+  Chưa sửa vì sửa một hình là phải dựng lại video của bài ấy (quyển đã deploy).
+  Xem `docs/hinh_da_soat_lop2.md`.
+- **Lớp 3**: 20 chỗ `⚠️ gần đúng` còn để nguyên, nặng nhất là bốn phòng của U6
+  (`library` 📚 · `art room` 🖼️ · `music room` 🎹 · `computer room` 💻) — cả bốn đều
+  lấy một ĐỒ VẬT đứng thay cho CĂN PHÒNG. Xem `docs/hinh_da_soat_lop3.md`.
 - Bài đọc hiểu chưa vào học bạ máy chủ (cố ý, xem `ghiDocHieu`).
 
 ---
@@ -142,6 +146,10 @@ soi ba thứ: điểm có ra không · câu sửa có đúng không · có từ 
 `ta1` và `assert.equal(tep.length, 16)`. Lớp 2 và lớp 3 chưa từng bị nó soi ngày nào —
 và đúng những lỗi nó sinh ra để bắt ("câu bảo nhìn hình thì phải CÓ hình") lại nằm đầy
 trong lớp 3. Cổng im lặng là cổng không ai biết đã ngừng canh.
+
+→ **Đã chữa cuối ngày 18-08**: cổng nay suy danh sách quyển từ ĐĨA và soi cả ba (53
+bài), mỗi quyển một sổ soát riêng. Bật lên là đỏ ngay năm chỗ — `table` · `desk` ·
+`eraser` · `pencil case` · `swinging` đều vẽ nhầm vật, và tám chỗ hai từ một hình.
 
 **2 · Bộ sinh LUI VỀ MẶC ĐỊNH thay vì kêu lên.** `dang_can(o, t) or t["tu"]`: ô đòi số
 nhiều mà từ không có dạng ấy thì lấy dạng gốc. Câu vẫn ra, cổng vẫn xanh, bé đọc

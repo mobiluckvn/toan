@@ -1,5 +1,12 @@
 # Hình đã soát — Tiếng Anh lớp 1
 
+> Mỗi quyển một sổ: lớp 2 ở `hinh_da_soat_lop2.md`, lớp 3 ở `hinh_da_soat_lop3.md`.
+> Dùng chung một sổ thì từ trùng tên giữa hai quyển (`cat` · `table` · `eleven`) tự
+> "đã soát" ở quyển sau, trong khi hình của nó có thể khác hẳn — lớp 1 dùng 🐱 MẶT
+> MÈO, lớp 3 dùng 🐈 CẢ CON.
+>
+> Bảng lấy ra bằng `python3 tools/soat_hinh_tienganh.py --lop N`.
+
 **Soát ngày 14-08-2026.** Bác bắt: *"hình là ghế nhưng từ lại là Desk … rất nghiêm trọng"*.
 
 ## Vì sao cần bảng này
