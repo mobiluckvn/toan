@@ -274,6 +274,16 @@ def chuan(lop: int, bu: dict) -> dict:
             "mau_cau": mau_cau_cua_unit(u, nut, canh, nguoc, day_mau_cau),
         })
 
+    # ── TÊN NHÓM NGHĨA ──
+    # Hỏi NGƯỢC: đi từ vai ĐANG DÙNG THẬT rồi tìm tên, chứ không duyệt bảng tên rồi
+    # tick. Duyệt bảng tên thì lớp sau khai thêm vai mới là bảng cũ vẫn "đủ" — đúng
+    # cái bẫy `VAI_BIET` ghim cứng 13 vai của lớp 1·2, để lớp 3 rơi kho rỗng im lặng.
+    ten_bu = {k: v for k, v in (bu.get("vai_ten") or {}).items() if not k.startswith("_")}
+    dang_dung = {v for u in ra_unit for t in u["tu"] for v in (t["vai"] or [])}
+    vai_ten = {v: ten_bu[v] for v in sorted(dang_dung) if v in ten_bu}
+    for v in sorted(dang_dung - set(ten_bu)):
+        thieu.append(f"vai {v!r}: chưa có tên ngắn ở `vai_ten` (video nhóm nghĩa cần)")
+
     # Thang tiên quyết TRONG lớp — dùng để xếp thứ tự học và dựng màn chủ đề.
     thang = []
     ids = {n["id"] for n in trong_lop}
@@ -297,6 +307,9 @@ def chuan(lop: int, bu: dict) -> dict:
         "them": bu.get("them", {}),
         "sua_slot": {k: v for k, v in (bu.get("sua_slot") or {}).items()
                      if not k.startswith("_")},
+        # Tên NGẮN của mỗi vai — video từ mới tách theo NHÓM NGHĨA và nhóm phải có
+        # tên nói được với bé. Xem `_vai_ten_la_gi` ở phần bù.
+        "vai_ten": vai_ten,
         "_thieu": thieu,
     }
 

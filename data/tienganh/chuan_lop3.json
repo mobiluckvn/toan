@@ -4030,7 +4030,7 @@
      ],
      "am_o": "dau",
      "so_it": null,
-     "so_nhieu": null,
+     "so_nhieu": "chairs",
      "dang_ing": null,
      "go_duoc": true,
      "nhom_nghia": null,
@@ -4050,7 +4050,7 @@
      ],
      "am_o": "dau",
      "so_it": null,
-     "so_nhieu": null,
+     "so_nhieu": "lamps",
      "dang_ing": null,
      "go_duoc": true,
      "nhom_nghia": null,
@@ -4070,7 +4070,7 @@
      ],
      "am_o": "dau",
      "so_it": null,
-     "so_nhieu": null,
+     "so_nhieu": "tables",
      "dang_ing": null,
      "go_duoc": true,
      "nhom_nghia": null,
@@ -4215,7 +4215,7 @@
     {
      "ma": "sp_g3_u13_2",
      "vi_du": "Where are the chairs? - They're in the living room.",
-     "cong_thuc": "Where are the + [Furniture]? - They're + [Preposition] + the room.",
+     "cong_thuc": "Where are the + [Furniture-plural]? - They're + [Preposition] + the room.",
      "thi": "present_simple",
      "kieu_cau": "wh_question",
      "o_thay": [
@@ -4284,7 +4284,7 @@
      ],
      "am_o": "dau",
      "so_it": null,
-     "so_nhieu": null,
+     "so_nhieu": "beds",
      "dang_ing": null,
      "go_duoc": true,
      "nhom_nghia": null,
@@ -4304,7 +4304,7 @@
      ],
      "am_o": "dau",
      "so_it": null,
-     "so_nhieu": null,
+     "so_nhieu": "desks",
      "dang_ing": null,
      "go_duoc": true,
      "nhom_nghia": null,
@@ -4324,7 +4324,7 @@
      ],
      "am_o": "dau",
      "so_it": null,
-     "so_nhieu": null,
+     "so_nhieu": "doors",
      "dang_ing": null,
      "go_duoc": true,
      "nhom_nghia": null,
@@ -4344,7 +4344,7 @@
      ],
      "am_o": "dau",
      "so_it": null,
-     "so_nhieu": null,
+     "so_nhieu": "windows",
      "dang_ing": null,
      "go_duoc": true,
      "nhom_nghia": null,
@@ -6378,17 +6378,6 @@
     ]
    }
   },
-  "sp_g3_u13_2": {
-   "_cau": "Where are the + [Furniture]? - They're + [Preposition] + the living room.",
-   "o": {
-    "Furniture": [
-     "dodac"
-    ],
-    "Preposition": [
-     "vitri"
-    ]
-   }
-  },
   "sp_g3_u16_2": {
    "_cau": "How many + [Pets] + do you have? - I have + [Quantity].",
    "o": {
@@ -6446,6 +6435,32 @@
     ]
    }
   },
+  "sp_g3_u15_2": {
+   "_cau": "What would you like to eat? - I'd like some + [Food / Drink], please.",
+   "_ghi": "Cùng luật với sp_g3_u15_1 — 'some' đi với từ KHÔNG đếm được. Khai một mẫu mà quên mẫu kia thì ra 'I'd like some bean, please.'",
+   "o": {
+    "Food / Drink": [
+     "bread",
+     "rice",
+     "milk",
+     "water",
+     "juice",
+     "meat"
+    ]
+   }
+  },
+  "sp_g3_u13_2": {
+   "_cau": "Where are the + [Furniture-plural]? - They're + [Preposition] + the room.",
+   "_ghi": "HAI chỗ sai cùng một câu: 'Where are the lamp?' (are đi với số nhiều — tên ô mang chữ 'plural', và bảy từ đồ đạc nay khai `sonhieu`), và 'They're here the room' (here · there KHÔNG phải giới từ). Chỉ 'in' đứng trước 'the room' được — 'on the room' cũng sai, nên ô này chỉ nhận một từ.",
+   "o": {
+    "Furniture-plural": [
+     "dodac"
+    ],
+    "Preposition": [
+     "in"
+    ]
+   }
+  },
   "sp_g3_starter_1": {
    "_cau": "What number is it? - It's + [Number].",
    "o": {
@@ -6454,6 +6469,36 @@
     ]
    }
   }
+ },
+ "vai_ten": {
+  "bophan": "Bộ phận cơ thể",
+  "chao": "Lời chào",
+  "chidinh": "Cái này, cái kia",
+  "convat": "Con vật",
+  "daitu": "Tôi, bạn, nó",
+  "dochoi": "Đồ chơi",
+  "dodac": "Đồ đạc trong nhà",
+  "dodung": "Đồ dùng học tập",
+  "dongtu": "Hành động",
+  "douong": "Đồ uống",
+  "dt": "Từ hay gặp",
+  "giadinh": "Người trong nhà",
+  "hoi": "Từ để hỏi",
+  "mau": "Màu sắc",
+  "nghe": "Nghề nghiệp",
+  "noichon": "Nơi chốn",
+  "so": "Số đếm",
+  "sohuu": "Của ai",
+  "soluong": "Nhiều hay ít",
+  "sothich": "Sở thích",
+  "ten": "Tên bạn",
+  "thucan": "Đồ ăn",
+  "tinhtu": "Từ tả đồ vật",
+  "trochoi": "Trò chơi",
+  "viec": "Việc đang làm",
+  "viecthu": "Con vật làm gì",
+  "vitri": "Ở đâu",
+  "xungho": "Gọi người lớn"
  },
  "_thieu": []
 }

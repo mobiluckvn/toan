@@ -84,6 +84,17 @@ DAN_CAU = "Phần hai: mẫu câu của bài."
 KET_TU = "Con đã học xong từ mới rồi. Giỏi lắm!"
 KET_CAU = "Con đã nói được cả câu rồi. Giỏi lắm!"
 DAN_NOI = "Giờ con nói theo cô nhé. Ba lần, chậm rồi nhanh dần."
+# Từ không vẽ được thì dạy bằng CÂU — xem `_canh_mot_tu`.
+DAN_TRONG_CAU = "Con nghe từ này trong một câu nhé."
+
+
+def dan_nhom(ten: str) -> str:
+    """Lời mở của một video nhóm nghĩa. Tên nhóm ghép bằng “ · ” cho MẮT đọc; đem
+    ĐỌC LÊN thì phải thành dấu phẩy, không thì Kokoro đọc chấm giữa thành khoảng
+    lặng và nghe như máy vấp."""
+    # Dấu “…” là ký hiệu cho MẮT (nhóm gộp quá hai vai). Đọc lên thì Kokoro nhả ra
+    # một khoảng lặng giữa câu, nghe như máy vấp — bỏ hẳn.
+    return f"Từ mới của bài. Nhóm {ten.replace(' · …', '').replace(' · ', ', ')}."
 
 # Ba tốc độ của phần tập nói. Hậu tố mã clip lấy từ tốc độ, nên đổi bảng này là
 # phải sinh lại clip — cổng `tienganh_am` bắt được vì mã không tra ra.
@@ -118,14 +129,19 @@ def _canh(loai, chu_chinh="", chu_phu="", hinh=None, loi=None, **k):
     script khác. Hai chỗ tính cùng một thứ nên sớm muộn cũng lệch — và đã lệch thật:
     đổi câu sai của "chỗ dễ nhầm" là bộ dựng báo cảnh câm, vì script gom clip không
     biết câu ấy đã đổi. Nay chỉ còn MỘT chỗ khai, mã và chữ đi liền nhau.
+
+    `am1` / `am2` là clip ĐÃ CÓ SẴN trong sổ (mã `tu_…`, `nghia_…`) chèn trước hoặc
+    sau phần suy từ `loi`. Thứ tự nghe là thứ tự dạy, nên hai đầu phải phân biệt
+    được: cảnh "dùng trong câu" đọc TỪ trước rồi mới tới CÂU chứa nó.
     """
     loi = [tuple(x) for x in (loi or [])]
-    them = k.pop("am2", [])
+    truoc, them = k.pop("am1", []), k.pop("am2", [])
     am = [ma_cham(c, x[2]) if len(x) > 2 and x[2] != 1.0
           else (ma_am("loi", c) if x[1] == "vi" else ma_am("cau", c))
           for x in loi for c in [x[0]]]
     return {"loai": loai, "chuChinh": chu_chinh, "chuPhu": chu_phu,
-            "hinh": hinh, "am": am + them, "loiAm": [list(x) for x in loi], **k}
+            "hinh": hinh, "am": truoc + am + them,
+            "loiAm": [list(x) for x in loi], **k}
 
 
 def _hinh_cua_tu(h: dict):
@@ -141,48 +157,127 @@ def _hinh_cua_tu(h: dict):
     return {"ve": h.get("ve")} if h.get("ve") else {"hinh": h.get("hinh")}
 
 
+def _cau_chua_tu(kc: dict, tu: str) -> str | None:
+    """Câu NGẮN NHẤT của bài có chứa từ này — chỗ dựa của cảnh "dùng trong câu".
+
+    Chỉ lấy câu SẴN CÓ (`canonicalExamples` · `mauCauDs`), không ghép câu mới: luật
+    "không bịa câu" của cả bộ. Cặp hỏi–đáp thì cắt lấy vế nói được, cùng luật với
+    `cau_noi_duoc()` — dấu gạch chéo trong "Yes, I do. / No, I don't." không đọc lên
+    được.
+    """
+    # ⚠ Lấy CẢ HAI VẾ của cặp hỏi–đáp, không chỉ vế trước.
+    #
+    # `cau_noi_duoc()` chỉ giữ vế hỏi, và chỗ ĐIỀN TỪ của quá nửa mẫu câu lớp 3 nằm
+    # ở vế ĐÁP: "Where's your bedroom? - It's here." Bỏ vế sau đi thì `here` · `in` ·
+    # `there` thành "không câu nào chứa" và cả bốn từ chỉ vị trí rơi về thẻ chữ trần
+    # — đúng cái cảnh "dùng trong câu" sinh ra để cứu.
+    vd = list(dict.fromkeys(
+        x for c in ([c for c in (kc.get("canonicalExamples") or [])]
+                    + [m["cau"] for m in (kc.get("mauCauDs") or []) if m.get("cau")])
+        for x in [p.split(" / ")[0].strip() for p in str(c).split(" - ")] if x))
+    hop = [c for c in vd if re.search(rf"\b{re.escape(tu)}\b", c, re.I)]
+    return min(hop, key=len) if hop else None
+
+
+def _canh_mot_tu(t: dict, hinh: dict, kc: dict) -> dict:
+    """Một cảnh cho một từ. HAI loại cảnh, và cái quyết định là CÓ HÌNH HAY KHÔNG.
+
+    ── VÌ SAO PHẢI CÓ LOẠI THỨ HAI ──
+    Lớp 1·2 dựng trên một câu: *bé chưa đọc được chữ nên HÌNH CHÍNH LÀ NGHĨA*. Câu ấy
+    đúng khi cả quyển chỉ dạy vật cụ thể. Lớp 3 thì 41/204 từ là `hello · fine · my ·
+    this · yes · please · many · here` — không vẽ được, và CỐ TÌM emoji cho chúng
+    chính là cách đẻ ra `desk` → 🪑 (tên Unicode thật: CHAIR).
+
+    Không vẽ được `hello`, nhưng DIỄN được: cho nghe từ ấy NẰM TRONG CÂU. Bé không
+    thấy "hello" là cái gì, nhưng nghe được người ta dùng nó lúc nào.
+
+    Còn 9 từ chẳng câu nào của bài chứa (`hi` · `bye` · `sure` · `old`…) thì vẫn là
+    thẻ chữ trần như cũ — thà trống còn hơn bịa một câu tiếng Anh không có trong sách.
+    """
+    # Ghép NHỮNG THỨ CÓ THẬT. Bản trước ghép thẳng bằng f-string, nên 10 tên riêng
+    # của lớp 3 — `Ben` · `Lucy` · `Ms Hoa` — không có phiên âm và màn hình hiện
+    # "bạn Lucy None". Tên riêng thì đúng là không cần IPA, chỗ sai là phép ghép.
+    chu_phu = "  ".join(str(x) for x in (t.get("nghia"), t.get("ipa")) if x)
+    am = [ma_am("tu", t["tu"]), ma_am("nghia", t["nghia"])]
+    anh = _hinh_cua_tu(hinh)
+    if anh.get("hinh") or anh.get("ve"):
+        # tiếng Anh trước (bé nghe từ), rồi tiếng Việt (bé hiểu nghĩa)
+        return _canh("tu", t["tu"], chu_phu, **anh, loi=[], am2=am)
+    cau = _cau_chua_tu(kc, t["tu"])
+    if not cau:
+        return _canh("tu", t["tu"], chu_phu, **anh, loi=[], am2=am)
+    return _canh("tu_cau", t["tu"], chu_phu, cau=cau, am1=am,
+                 loi=[(DAN_TRONG_CAU, "vi"), (cau, "en")])
+
+
 def _phan(bai: dict) -> dict:
     kc = bai["knowledgeCore"]
     tu = kc["vocabulary"]
     hinh_cua = {h["tu"]: h for h in (bai.get("hinhTu") or [])}
     mc = kc.get("mauCau") or {}
-    ds = []
 
     def anh(t):
         """Hình của một từ: emoji, hoặc khoá hình vẽ tay. Xem `_hinh_cua_tu`."""
         return _hinh_cua_tu(hinh_cua.get(t["tu"]) or {})
 
-    # ══ VIDEO 1 · TỪ ══
-    # ── 1 · BÌA ──────────────────────────────────────────────────────────
-    hook = next((m for m in bai["lecture"]["screens"] if m["kind"] == "hook"), None)
-    ds.append(_canh("bia", bai["title"], "Từ mới",
-                    loi=[(c, "vi") for c, t in (hook.get("doanAm") or []) if t == "vi"]
-                        + [(DAN_TU, "vi")]))
+    # ══ VIDEO 1..n · TỪ MỚI, MỖI NHÓM NGHĨA MỘT VIDEO ══
+    # Nhóm do `sinh_bai_tienganh.py` chia và khai sẵn ở `video.tu` — ĐỪNG chia lại ở
+    # đây. Hai chỗ cùng chia một thứ thì sớm muộn lệch, mà lệch ở đây nghĩa là bài
+    # khai tệp `_tu_chao.mp4` còn bộ dựng đẻ ra `_tu_hoi.mp4`: app hỏi một tệp không
+    # tồn tại, và cái duy nhất hiện ra là ô video hỏng.
+    nhom = bai.get("video", {}).get("tu") or []
+    if not nhom:
+        nhom = [{"ma": "tu", "ten": "Từ mới", "tu": [t["tu"] for t in tu]}]
+    theo_tu = {t["tu"]: t for t in tu}
+    tu_ds = [_mot_nhom_tu(bai, g, theo_tu, hinh_cua, i == 0, len(nhom))
+             for i, g in enumerate(nhom)]
 
-    # ── 2 · CHỮ CÁI, DẠY QUA TỪ ─────────────────────────────────────────
-    # Bác chốt bỏ phần âm rời: /d/ tách khỏi từ không tồn tại trong lời nói tự
-    # nhiên. Nên dạy âm bằng cách cho nghe LIỀN ba từ cùng chữ đầu.
-    chu = (bai.get("dangGoc") or "?").split()[0]
-    K = {s["id"]: s for s in kc["statements"]}
-    if "K2" in K:
-        ds.append(_canh("chu_cai", chu, "",
-                        loi=[(c, t) for c, t in (K["K2"].get("doanAm") or [])]))
-
-    # ── 3 · TỪ MỚI — mỗi từ MỘT cảnh ────────────────────────────────────
-    for t in tu:
-        ds.append(_canh("tu", t["tu"], f"{t['nghia']}  {t['ipa']}", **anh(t),
-                        # tiếng Anh trước (bé nghe từ), rồi tiếng Việt (bé hiểu nghĩa)
-                        loi=[], am2=[ma_am("tu", t["tu"]), ma_am("nghia", t["nghia"])]))
-
-    ds.append(_canh("ket", "Giỏi lắm!", f"Con đã biết {len(tu)} từ mới của bài.",
-                    loi=[(KET_TU, "vi")]))
-    tu_ds, ds = ds, []
-
-    # ══ VIDEO 2..n · MỖI MẪU CÂU MỘT VIDEO ══
+    # ══ VIDEO n+1.. · MỖI MẪU CÂU MỘT VIDEO ══
     cau_ds = []
     for mc in (kc.get("mauCauDs") or ([mc0] if (mc0 := kc.get("mauCau")) else [])):
         cau_ds.append(_mot_mau_cau(bai, mc, tu, anh))
     return {"tu": tu_ds, "cau": cau_ds}
+
+
+def _mot_nhom_tu(bai, g, theo_tu, hinh_cua, dau_tien: bool, so_nhom: int) -> dict:
+    """Trọn một video từ mới cho MỘT nhóm nghĩa."""
+    kc = bai["knowledgeCore"]
+    ds = []
+
+    # ── 1 · BÌA ──────────────────────────────────────────────────────────
+    # Unit một nhóm thì bìa nói y như hai quyển trước — 32 video đã dựng vẫn đúng
+    # từng khung hình. Unit nhiều nhóm thì bìa phải NÓI RA nhóm nào, vì mỗi tệp là
+    # một video đứng riêng: bé bấm thẳng vào tệp thứ ba thì không có ai giới thiệu hộ.
+    hook = next((m for m in bai["lecture"]["screens"] if m["kind"] == "hook"), None)
+    loi_hook = [(c, "vi") for c, t in (hook.get("doanAm") or []) if t == "vi"]
+    if so_nhom == 1:
+        ds.append(_canh("bia", bai["title"], "Từ mới", loi=loi_hook + [(DAN_TU, "vi")]))
+    else:
+        ds.append(_canh("bia", bai["title"], f"Từ mới · {g['ten']}",
+                        loi=(loi_hook if dau_tien else []) + [(dan_nhom(g["ten"]), "vi")]))
+
+    # ── 2 · CHỮ CÁI, DẠY QUA TỪ ─────────────────────────────────────────
+    # Bác chốt bỏ phần âm rời: /d/ tách khỏi từ không tồn tại trong lời nói tự
+    # nhiên. Nên dạy âm bằng cách cho nghe LIỀN ba từ cùng chữ đầu.
+    # Chỉ ở nhóm ĐẦU: âm của bài chỉ có một, dạy lại ba lần là ba lần bé ngồi chờ.
+    chu = (bai.get("dangGoc") or "?").split()[0]
+    K = {s["id"]: s for s in kc["statements"]}
+    if dau_tien and "K2" in K:
+        ds.append(_canh("chu_cai", chu, "",
+                        loi=[(c, t) for c, t in (K["K2"].get("doanAm") or [])]))
+
+    # ── 3 · TỪ MỚI — mỗi từ MỘT cảnh ────────────────────────────────────
+    for ten_tu in g["tu"]:
+        t = theo_tu.get(ten_tu)
+        if not t:
+            raise SystemExit(f"nhóm {g['ma']!r} khai từ {ten_tu!r} mà bài không dạy")
+        ds.append(_canh_mot_tu(t, hinh_cua.get(ten_tu) or {}, kc))
+
+    ds.append(_canh("ket", "Giỏi lắm!",
+                    f"Con đã biết {len(g['tu'])} từ mới của bài." if so_nhom == 1
+                    else f"Con đã biết {len(g['tu'])} từ nhóm “{g['ten']}”.",
+                    loi=[(KET_TU, "vi")]))
+    return {"ma": g["ma"], "ten": g["ten"], "tep": g.get("tep"), "canh": ds}
 
 
 def _mot_mau_cau(bai, mc, tu, anh) -> list[dict]:
@@ -260,13 +355,17 @@ def _mot_mau_cau(bai, mc, tu, anh) -> list[dict]:
 
 
 def cac_phan(bai: dict) -> dict:
-    """{"tu": [cảnh…], "cau": [[cảnh…] cho mỗi mẫu câu]}"""
+    """{"tu": [{ma, ten, tep, canh: […]}…], "cau": [[cảnh…] cho mỗi mẫu câu]}"""
     return _phan(bai)
 
 
+def moi_canh(hp: dict) -> list[dict]:
+    """Mọi cảnh của mọi video trong bài — dùng để soát và để gom lời cần sinh."""
+    return [c for g in hp["tu"] for c in g["canh"]] + [c for kh in hp["cau"] for c in kh]
+
+
 def kich_ban(bai: dict) -> list[dict]:
-    d = _phan(bai)
-    return d["tu"] + [c for kh in d["cau"] for c in kh]
+    return moi_canh(_phan(bai))
 
 
 def loi_can_sinh(ds: list[dict], so_am: dict) -> list[dict]:
@@ -306,12 +405,43 @@ def lop_cua(ma: str) -> int:
     return int(m.group(1))
 
 
+def loi_thieu_ca_quyen(lop: int) -> list[dict]:
+    """Mọi dòng chữ mà kịch bản video của CẢ QUYỂN cần mà sổ âm chưa có.
+
+    Video là tầng cuối của dây chuyền, và là tầng duy nhất tự đẻ ra lời mới (lời dẫn
+    nhóm nghĩa · "con nghe từ này trong câu" · ba tốc độ đọc chậm). `sinh_bai` không
+    biết những dòng ấy, nên không có chỗ này thì phải gõ tay danh sách — mà gõ tay
+    thì thêm một cảnh mới là lặng lẽ thiếu clip, và cảnh câm không kêu lên.
+    """
+    so = json.loads((GOC / f"web/public/content/tienganh/lop{lop}_am.json").read_text("utf8"))
+    ra = {}
+    for f in sorted((GOC / f"web/public/content/ta{lop}").glob("DL_TA*_B*.json")):
+        bai = json.loads(f.read_text("utf8"))
+        for m in loi_can_sinh(moi_canh(cac_phan(bai)), so):
+            ra.setdefault(m["id"], m)
+    return list(ra.values())
+
+
 def main() -> int:
     import argparse
     p = argparse.ArgumentParser()
-    p.add_argument("--bai", required=True, help="vd DL_TA1_B04")
+    p.add_argument("--bai", help="vd DL_TA1_B04")
+    p.add_argument("--lop", type=int, help="gom lời còn THIẾU của cả quyển")
+    p.add_argument("--thieu", help="ghi danh sách lời còn thiếu ra tệp này")
     p.add_argument("--ra")
     a = p.parse_args()
+
+    if a.lop:
+        ds = loi_thieu_ca_quyen(a.lop)
+        print(f"lớp {a.lop}: {len(ds)} dòng kịch bản video chưa có clip")
+        for m in ds[:6]:
+            print(f"  · [{m['tieng']}] {m['chu'][:60]}")
+        if a.thieu:
+            Path(a.thieu).write_text(json.dumps(ds, ensure_ascii=False, indent=1), "utf8")
+            print("→", a.thieu)
+        return 0
+    if not a.bai:
+        p.error("cần --bai DL_TA3_B04 hoặc --lop 3 [--thieu tệp.json]")
 
     # Thư mục và sổ âm SUY TỪ CHÍNH MÃ BÀI, không ghim 'ta1'.
     # `DL_TA2_B04` đã mang sẵn số lớp; bắt người gọi khai thêm `--lop` là mở đường
@@ -321,9 +451,11 @@ def main() -> int:
     bai = json.loads((GOC / f"web/public/content/ta{lop}/{a.bai}.json").read_text("utf8"))
     so = json.loads((GOC / f"web/public/content/tienganh/lop{lop}_am.json").read_text("utf8"))
     hp = cac_phan(bai)
-    ds = hp["tu"] + [c for kh in hp["cau"] for c in kh]
+    ds = moi_canh(hp)
     loi = soat(ds, so)
-    print(f"{a.bai}: từ {len(hp['tu'])} cảnh · "
+    print(f"{a.bai}: "
+          + " · ".join(f"{g['ma']}: {len(g['canh'])} cảnh" for g in hp["tu"])
+          + " · "
           + " · ".join(f"mẫu {i+1}: {len(kh)} cảnh" for i, kh in enumerate(hp["cau"]))
           + f" · {sum(len(c['am']) for c in ds)} clip")
     for x in loi[:8]:

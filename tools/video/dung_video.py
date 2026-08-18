@@ -111,6 +111,63 @@ def the(d, x, y, w, h, nen="#FFFFFF", vien=LINE, day=3, bo=26):
     d.rounded_rectangle([x, y, x + w, y + h], radius=bo, fill=nen, outline=vien, width=day)
 
 
+def _tach_sang(cau: str, tu: str) -> list[tuple[str, bool]]:
+    """Cắt câu thành chữ, đánh dấu chữ nào là TỪ ĐANG DẠY.
+
+    So theo CHUỖI CHỮ chứ không `replace`: 24 mục của lớp 3 là cụm nhiều chữ
+    (`come in` · `thank you` · `art room`), và `replace` thì `on` trong `on` khớp cả
+    `nose`. Bỏ dấu câu hai đầu trước khi so — `Hello.` vẫn là `hello`.
+    """
+    toks = cau.split()
+    dich = tu.lower().split()
+    sach = [t.strip(".,!?;:“”\"'").lower() for t in toks]
+    sang = [False] * len(toks)
+    for i in range(len(toks) - len(dich) + 1):
+        if sach[i:i + len(dich)] == dich:
+            for k in range(len(dich)):
+                sang[i + k] = True
+            break
+    return list(zip(toks, sang))
+
+
+# Ô vàng phình ra hai bên chữ được đánh dấu; không cộng thêm chừng ấy vào bề rộng
+# thì viền ô chạm vào chữ ngay sau nó — "Hello." và "I'm" dính liền, nhìn như một
+# chữ. Phép NGẮT DÒNG và phép VẼ phải cộng CÙNG một số, lệch là chữ tràn khỏi khung.
+SANG_ROI = 12
+
+
+def _dong_cau_sang(d, cau: str, tu: str, f, rong: int):
+    """Ngắt câu thành dòng, giữ dấu SÁNG của từng chữ. Trả [(chữ…, bề rộng dòng)]."""
+    cach = d.textlength(" ", font=f)
+    dong, hien, w = [], [], 0.0
+    for t, s in _tach_sang(cau, tu):
+        wt = d.textlength(t, font=f) + (SANG_ROI * 2 if s else 0)
+        if hien and w + cach + wt > rong:
+            dong.append((hien, w))
+            hien, w = [], 0.0
+        w += (cach if hien else 0) + wt
+        hien.append((t, s, wt))
+    if hien:
+        dong.append((hien, w))
+    return dong
+
+
+def ve_cau_sang(d, y: int, dong, f, cao_dong: int):
+    """Vẽ câu đã ngắt dòng, chữ đang dạy nằm trong ô vàng."""
+    cach = d.textlength(" ", font=f)
+    for toks, tong in dong:
+        x = (W - tong) / 2
+        for t, s, wt in toks:
+            if s:
+                d.rounded_rectangle([x, y - 8, x + wt, y + f.size + 12],
+                                    radius=12, fill=GOLD_PALE, outline=GOLD, width=3)
+            d.text((x + (SANG_ROI if s else 0), y), t, font=f,
+                   fill=GOLD_DARK if s else NAVY)
+            x += wt + cach
+        y += cao_dong
+    return y
+
+
 # ─────────────────────────── vẽ từng loại cảnh ───────────────────────────
 
 def khung(c: dict) -> Image.Image:
@@ -146,11 +203,39 @@ def khung(c: dict) -> Image.Image:
             ve_emoji(im, c["hinh"], W // 2, 250, 260)
             y = 430
         else:
-            the(d, W // 2 - 260, 140, 520, 210, nen=SOFT, vien=LINE)
-            giua(d, 200, "🔤", phong(1))     # chỗ giữ, không vẽ emoji sai
-            y = 400
+            # KHÔNG hình, mà cũng không câu nào của bài chứa từ này (`hi` · `bye` ·
+            # `on` · `sure`… — 9 từ của lớp 3). Bản trước vẽ một cái khung RỖNG rồi
+            # đặt chữ ở dưới: bé nhìn thấy một ô trống to đùng và ngồi đợi cái gì đó
+            # hiện ra. Thà không có khung: chỉ chữ và nghĩa, đàng hoàng ở giữa màn.
+            the(d, W // 2 - 380, 200, 760, 250, nen=SOFT, vien=LINE)
+            y = 255
         giua(d, y, c["chuChinh"], phong(96), NAVY)
         giua(d, y + 130, c["chuPhu"], phong(42), INK)
+
+    elif L == "tu_cau":
+        # TỪ KHÔNG VẼ ĐƯỢC — dạy bằng CÂU.
+        #
+        # `hello · fine · my · this · yes · please` không có hình nào đúng, và cố tìm
+        # một emoji cho chúng chính là cách đẻ ra `desk` → 🪑 (tên Unicode: CHAIR).
+        # Nhưng không vẽ được thì vẫn DIỄN được: cho thấy từ ấy NẰM TRONG một câu bé
+        # sắp học, ô vàng chỉ đúng chỗ. Bé không thấy "hello" là cái gì, nhưng thấy
+        # được người ta đặt nó ở đâu trong câu.
+        #
+        # ⚠ Khung câu tính chiều cao THEO SỐ DÒNG THẬT, không đóng cứng: 72 màn công
+        # thức của lớp 5 đã tràn chữ ra ngoài khung đúng vì đóng cứng chiều cao.
+        giua(d, 50, "Từ này nghe trong câu", phong(32), MUTE)
+        the(d, 240, 108, W - 480, 196, nen=GOLD_PALE, vien=GOLD, day=4)
+        giua(d, 126, c["chuChinh"], phong(80), NAVY, rong=W - 540)
+        giua(d, 232, c["chuPhu"], phong(36), INK, rong=W - 540)
+
+        co = 52 if len(c.get("cau") or "") <= 34 else 42
+        f = phong(co)
+        cao_dong = co + 26
+        dong = _dong_cau_sang(d, c.get("cau") or "", c["chuChinh"], f, W - 300)
+        cao = len(dong) * cao_dong + 36
+        y0 = max(360, 500 - cao // 2)     # khung câu CĂN GIỮA nửa dưới màn
+        the(d, 110, y0, W - 220, cao, nen="#FFFFFF", vien=NAVY, day=4)
+        ve_cau_sang(d, y0 + 24, dong, f, cao_dong)
 
     elif L == "dung_de":
         giua(d, 60, "Câu hôm nay dùng để làm gì", phong(34), MUTE)
@@ -1461,8 +1546,13 @@ def main() -> int:
     a = p.parse_args()
 
     # `--tat-ca` phải biết QUYỂN NÀO. Mặc định lớp 1 để lệnh cũ trong sổ vẫn chạy.
-    dsm = ([f"DL_TA{a.lop}_B{i:02d}" for i in range(1, 17)] if a.tat_ca
-           else [a.bai] if a.bai else None)
+    #
+    # Danh sách bài ĐẾM TỪ ĐĨA, không ghim `range(1, 17)`. Con số 16 ấy đúng cho hai
+    # quyển đầu và sai ngay ở quyển thứ ba: lớp 3 có 21 bài, đánh số từ B00 (Starter).
+    # Ghim cứng thì `--tat-ca` lặng lẽ bỏ qua năm bài cuối và bài mở đầu — cùng họ
+    # với "glob rỗng báo 0 lỗi", chạy xong thấy toàn dấu ✓.
+    dsm = (sorted(x.stem for x in (GOC / f"web/public/content/ta{a.lop}").glob("DL_TA*_B*.json"))
+           if a.tat_ca else [a.bai] if a.bai else None)
     if not dsm:
         p.error("cần --bai DL_TA2_B04 hoặc --tat-ca [--lop N]")
     # Sổ âm SUY TỪ MÃ BÀI, không ghim 'lop1'. Đọc bài lớp 2 mà tra sổ lớp 1 thì mọi
@@ -1471,7 +1561,7 @@ def main() -> int:
     if any(lop_cua(m) != lop for m in dsm):
         p.error("một lượt chạy chỉ dựng được MỘT quyển")
     so = json.loads((GOC / f"web/public/content/tienganh/lop{lop}_am.json").read_text("utf8"))
-    tong = 0.0
+    tong, so_video = 0.0, 0
     for m in dsm:
         bai = json.loads((GOC / f"web/public/content/ta{lop}/{m}.json").read_text("utf8"))
         hp = cac_phan(bai)
@@ -1479,7 +1569,11 @@ def main() -> int:
         # mà gộp chung thì bé xem xong không biết vừa học một cấu trúc hay hai.
         # Tên tệp nói ra VAI của video: `_hoi` / `_dap` cho cặp hỏi–đáp, `_cauN`
         # cho mẫu câu thường. Nhìn tên là biết mở cái nào, không phải đoán số.
-        phan = [("tu", hp["tu"])]
+        # Video TỪ MỚI: tên tệp lấy thẳng từ nhóm nghĩa mà BÀI đã khai (`video.tu`),
+        # không đoán lại. Bài là chỗ app đọc để biết mở tệp nào; bộ dựng đoán một
+        # kiểu khác là app trỏ vào tệp không có, mà thứ duy nhất hiện ra là ô video
+        # hỏng — không cổng nào bắt, chỉ bé là thấy.
+        phan = [(g["ma"], g["canh"]) for g in hp["tu"]]
         vais = [kh[0].get("vaiKhoi", "cau") for kh in hp["cau"]]
         dem = {}
         for kh, v in zip(hp["cau"], vais):
@@ -1489,9 +1583,12 @@ def main() -> int:
         for ten, canh in phan:
             kq = dung(m, GOC / a.ra / f"{m}_{ten}.mp4", canh, so)
             tong += kq["giay"]
+            so_video += 1
             print(f"  ✓ {m}_{ten}.mp4  {kq['canh']:2d} cảnh · "
                   f"{kq['giay']:5.1f}s · {kq['mb']} MB")
-    print(f"\n{len(dsm) * 2} video · tổng {tong / 60:.1f} phút")
+    # ĐẾM tệp đã dựng, đừng nhân `len(dsm) * 2`: từ ngày video tách theo nhóm nghĩa
+    # thì một bài ra hai tới năm tệp, và một con số nhân bừa thì lúc nào cũng "đúng".
+    print(f"\n{so_video} video · tổng {tong / 60:.1f} phút")
     return 0
 
 

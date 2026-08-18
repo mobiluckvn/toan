@@ -42,6 +42,51 @@
   "soluong": "từ chỉ số lượng — ô [Quantity]",
   "dt": "danh từ chung"
  },
+ "_vai_ten_la_gi": [
+  "TÊN NHÓM NGHĨA — chữ HIỆN LÊN và ĐỌC LÊN trong video từ mới.",
+  "",
+  "Unit lớp 3 có tới 15 từ, gấp bốn lớp 1. Một video cho cả unit thì dài 73 tới 112",
+  "giây — bé lớp ba ngồi không nổi, mà bé bỏ dở thì cả bài giảng thành công cốc. Nên",
+  "video từ mới TÁCH THEO NHÓM NGHĨA, mỗi nhóm một tệp.",
+  "",
+  "Nhóm KHÔNG soạn thêm: `vai` đã chia sẵn. Chỗ cần người là cái TÊN — `_vai_la_gi`",
+  "ở trên viết cho người soạn đọc ('sở thích dạng -ing — ô [Hobby]'), không đọc lên",
+  "cho bé nghe được. Đây là bản tên NGẮN, nói với bé.",
+  "",
+  "LUẬT: mọi vai đang dùng thật đều phải có tên ở đây. Thiếu một cái là",
+  "`chuan_tienganh.py` kêu trong `_thieu` — cùng họ với cái bẫy `VAI_BIET` ghim cứng:",
+  "danh sách gõ tay thì lớp sau thêm vai mới là nó im lặng bỏ qua."
+ ],
+ "vai_ten": {
+  "so": "Số đếm",
+  "chao": "Lời chào",
+  "hoi": "Từ để hỏi",
+  "daitu": "Tôi, bạn, nó",
+  "sohuu": "Của ai",
+  "chidinh": "Cái này, cái kia",
+  "ten": "Tên bạn",
+  "xungho": "Gọi người lớn",
+  "bophan": "Bộ phận cơ thể",
+  "dongtu": "Hành động",
+  "sothich": "Sở thích",
+  "viec": "Việc đang làm",
+  "viecthu": "Con vật làm gì",
+  "noichon": "Nơi chốn",
+  "dodung": "Đồ dùng học tập",
+  "dodac": "Đồ đạc trong nhà",
+  "mau": "Màu sắc",
+  "trochoi": "Trò chơi",
+  "giadinh": "Người trong nhà",
+  "nghe": "Nghề nghiệp",
+  "thucan": "Đồ ăn",
+  "douong": "Đồ uống",
+  "convat": "Con vật",
+  "dochoi": "Đồ chơi",
+  "tinhtu": "Từ tả đồ vật",
+  "vitri": "Ở đâu",
+  "soluong": "Nhiều hay ít",
+  "dt": "Từ hay gặp"
+ },
  "tu": {
   "v_g3_ustarter_one": {
    "vai": [
@@ -754,17 +799,20 @@
   "v_g3_u13_chair": {
    "vai": [
     "dodac"
-   ]
+   ],
+   "sonhieu": "chairs"
   },
   "v_g3_u13_lamp": {
    "vai": [
     "dodac"
-   ]
+   ],
+   "sonhieu": "lamps"
   },
   "v_g3_u13_table": {
    "vai": [
     "dodac"
-   ]
+   ],
+   "sonhieu": "tables"
   },
   "v_g3_u13_house": {
    "vai": [
@@ -794,22 +842,26 @@
   "v_g3_u14_bed": {
    "vai": [
     "dodac"
-   ]
+   ],
+   "sonhieu": "beds"
   },
   "v_g3_u14_desk": {
    "vai": [
     "dodac"
-   ]
+   ],
+   "sonhieu": "desks"
   },
   "v_g3_u14_door": {
    "vai": [
     "dodac"
-   ]
+   ],
+   "sonhieu": "doors"
   },
   "v_g3_u14_window": {
    "vai": [
     "dodac"
-   ]
+   ],
+   "sonhieu": "windows"
   },
   "v_g3_u14_room": {
    "vai": [
@@ -1682,7 +1734,7 @@
    ]
   },
   "sp_g3_u13_2": {
-   "cong_thuc": "Where are the + [Furniture]? - They're + [Preposition] + the room.",
+   "cong_thuc": "Where are the + [Furniture-plural]? - They're + [Preposition] + the room.",
    "dung_de": "Hỏi NHIỀU đồ vật đang ở đâu.",
    "tinh_huong": "Con giúp mẹ dọn nhà, không thấy mấy cái ghế.",
    "phan": [
@@ -2312,17 +2364,6 @@
     ]
    }
   },
-  "sp_g3_u13_2": {
-   "_cau": "Where are the + [Furniture]? - They're + [Preposition] + the living room.",
-   "o": {
-    "Furniture": [
-     "dodac"
-    ],
-    "Preposition": [
-     "vitri"
-    ]
-   }
-  },
   "sp_g3_u16_2": {
    "_cau": "How many + [Pets] + do you have? - I have + [Quantity].",
    "o": {
@@ -2377,6 +2418,32 @@
    "o": {
     "Pets-plural": [
      "convat"
+    ]
+   }
+  },
+  "sp_g3_u15_2": {
+   "_cau": "What would you like to eat? - I'd like some + [Food / Drink], please.",
+   "_ghi": "Cùng luật với sp_g3_u15_1 — 'some' đi với từ KHÔNG đếm được. Khai một mẫu mà quên mẫu kia thì ra 'I'd like some bean, please.'",
+   "o": {
+    "Food / Drink": [
+     "bread",
+     "rice",
+     "milk",
+     "water",
+     "juice",
+     "meat"
+    ]
+   }
+  },
+  "sp_g3_u13_2": {
+   "_cau": "Where are the + [Furniture-plural]? - They're + [Preposition] + the room.",
+   "_ghi": "HAI chỗ sai cùng một câu: 'Where are the lamp?' (are đi với số nhiều — tên ô mang chữ 'plural', và bảy từ đồ đạc nay khai `sonhieu`), và 'They're here the room' (here · there KHÔNG phải giới từ). Chỉ 'in' đứng trước 'the room' được — 'on the room' cũng sai, nên ô này chỉ nhận một từ.",
+   "o": {
+    "Furniture-plural": [
+     "dodac"
+    ],
+    "Preposition": [
+     "in"
     ]
    }
   },

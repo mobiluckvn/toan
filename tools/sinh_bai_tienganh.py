@@ -74,6 +74,17 @@ def am_id(loai: str, khoa: str) -> str:
     return f"{loai}_{sach}"[:60]
 
 
+def tu_ipa(t: dict) -> str:
+    """“hello /həˈləʊ/”, hoặc chỉ “Lucy” khi từ không có phiên âm.
+
+    ⚠ Ghép thẳng bằng f-string là chỗ đã lọt lỗi thật: 8 tên riêng của lớp 3 (`Ben` ·
+    `Lucy` · `Ms Hoa`…) không có IPA — mà tên riêng thì đúng là không cần — nên lời
+    giải hiện lên màn hình thành “Ben None — bạn Ben”. Bốn chỗ cùng ghép một kiểu,
+    nên gom về một hàm; chỗ nào tự ghép lại là chỗ ấy sẽ hiện `None` lần nữa.
+    """
+    return " ".join(str(x) for x in (t.get("tu"), t.get("ipa")) if x)
+
+
 def moi_nhu(dung: dict, ho: list[dict], n: int = 3, khoa: str = "tu") -> list[str]:
     """n mồi nhử LẤY TỪ CÙNG UNIT — xem luật 2 ở đầu tệp."""
     ra = [x[khoa] for x in ho if x["ma"] != dung["ma"] and x.get(khoa)]
@@ -248,6 +259,17 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
                     kho[o] = [t for t in ung_vien_tat(tu, them) if t["tu"] in khai[o]]
             else:
                 kho[o] = [t for t in tu if t["tu"] in mc["o_thay"]]
+            # ── Ô ĐÒI MỘT DẠNG THÌ TỪ PHẢI CÓ DẠNG ẤY ──
+            #
+            # `chu()` ở dưới viết `dang_can(o, t) or t["tu"]`: ô đòi số nhiều mà từ
+            # không khai `so_nhieu` thì nó lẳng lặng điền dạng GỐC. Câu vẫn ra, cổng
+            # vẫn xanh, và bé đọc "Where are the lamp?" — sai đúng cái mà chính công
+            # thức đang dạy ("nhiều vật nên dùng are").
+            #
+            # Nên lọc ngay từ kho: từ nào không có dạng ô cần thì không phải ứng viên
+            # của ô ấy. Kho rỗng thì mẫu bị bỏ — và bỏ CÓ TIẾNG, vì `_thieu` của bản
+            # chuẩn kêu lên là từ chưa khai `so_nhieu`.
+            kho[o] = [t for t in kho[o] if dang_can(o, t)]
             if not kho[o]:
                 break
         # ⚠ So với số ô KHÁC TÊN NHAU, không phải số lần ô xuất hiện.
@@ -346,21 +368,39 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
 
     # ── ★ bậc 1 · NGHE rồi bấm HÌNH ──
     for i, t in enumerate(tu, 1):
+        chon_ds = tron(t["tu"], moi_nhu(t, tu))
+        hinh_nut = {x: (next((y.get("hinh") for y in tu if y["tu"] == x), None))
+                    for x in chon_ds}
+        ve_nut = {x: (next((y.get("hinh_ve") for y in tu if y["tu"] == x), None))
+                  for x in chon_ds}
+        # ⚠ ĐỦ HÌNH CẢ BỐN NÚT thì mới bày hình.
+        #
+        # Lớp 1·2 từ nào cũng có hình nên câu này luôn đúng. Lớp 3 thì 51/204 từ
+        # không có hình — và ba unit ĐẦU (`hello · hi · fine · how · I · you`)
+        # KHÔNG CÓ TỪ NÀO có hình. Bày hình cho những câu ấy thì bốn nút ra bốn dấu
+        # ❔ y hệt nhau: câu hỏi không trả lời được, chỉ đoán 1/4. Mà đề vẫn bảo
+        # "bấm vào HÌNH đúng" — nói dối bé đúng cái kiểu 15 câu của lớp 1 từng làm.
+        #
+        # Lẫn lộn còn tệ hơn cả trống: ba nút có hình một nút ❔ thì cái ❔ lộ ngay
+        # ra là khác biệt, và bé chọn theo hình dạng chứ không theo tiếng nghe được.
+        #
+        # Không có hình thì bấm vào CHỮ — bé lớp 3 đọc được, và đó cũng là việc lớp
+        # 3 đang tập. Chữ hiện lên, không dối bé câu nào.
+        du_hinh = all(hinh_nut.get(x) or ve_nut.get(x) for x in chon_ds)
         warmup.append({
             "id": f"C{i}",
             "bac": 1,
-            "text": "Nghe rồi bấm vào hình đúng.",
+            "text": "Nghe rồi bấm vào hình đúng." if du_hinh
+                    else "Nghe rồi bấm vào từ đúng.",
             "am": am_id("tu", t["tu"]),
-            "anhChon": True,
+            "anhChon": du_hinh,
             "format": "chon",
-            "choices": tron(t["tu"], moi_nhu(t, tu)),
+            "choices": chon_ds,
             # Nút của bậc 1 hiện HÌNH chứ không hiện chữ — bé chưa đọc được chữ
             # tiếng Anh thì bấm vào chữ là đoán mò. Chữ vẫn là giá trị đáp án để
             # bộ chấm so, nhưng cái bé NHÌN là emoji.
-            "hinhNut": {x: (next((y.get("hinh") for y in tu if y["tu"] == x), None))
-                        for x in tron(t["tu"], moi_nhu(t, tu))},
-            "veNut": {x: (next((y.get("hinh_ve") for y in tu if y["tu"] == x), None))
-                      for x in tron(t["tu"], moi_nhu(t, tu))},
+            "hinhNut": hinh_nut,
+            "veNut": ve_nut,
             "answerKey": {"choice": t["tu"]},
             "solutionNarrative": f"{t['tu']} — {t['nghia']}",
             "hints": [f"Nghe lại xem từ này bắt đầu bằng âm nào.",
@@ -378,7 +418,7 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
             "format": "chon",
             "choices": tron(t["nghia"], moi_nhu(t, tu, khoa="nghia")),
             "answerKey": {"choice": t["nghia"]},
-            "solutionNarrative": f"{t['tu']} {t['ipa']} — {t['nghia']}",
+            "solutionNarrative": f"{tu_ipa(t)} — {t['nghia']}",
             "hints": ["Nghe lại từ rồi nghĩ xem con nhìn thấy nó ở đâu."],
         })
     n = len(warmup)
@@ -393,7 +433,7 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
             "format": "chon",
             "choices": tron(t["tu"], moi_nhu(t, tu)),
             "answerKey": {"choice": t["tu"]},
-            "solutionNarrative": f"{t['nghia']} — {t['tu']} {t['ipa']}",
+            "solutionNarrative": f"{t['nghia']} — {tu_ipa(t)}",
             "hints": ["Cả bốn từ đều bắt đầu giống nhau — nghe kỹ phần GIỮA của từ."],
         })
 
@@ -486,7 +526,7 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
                 "text": f"Nghe rồi gõ lại từ này. ({t['nghia']})",
                 "am": am_id("tu", t["tu"]),
                 "answerKey": {"value": t["tu"]},
-                "solutionNarrative": f"{t['tu']} {t['ipa']} — {t['nghia']}",
+                "solutionNarrative": f"{tu_ipa(t)} — {t['nghia']}",
                 "hints": [f"Từ này có {len(t['tu'])} chữ cái.",
                           f"Bắt đầu bằng chữ “{t['tu'][0]}”."],
             })
@@ -499,7 +539,7 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
                 "am": am_id("tu", t["tu"]),
                 "the": list(t["tu"]),
                 "answerKey": {"the": list(t["tu"])},
-                "solutionNarrative": f"{t['tu']} {t['ipa']} — {t['nghia']}",
+                "solutionNarrative": f"{tu_ipa(t)} — {t['nghia']}",
                 "hints": [f"Từ này dài {len(t['tu'])} chữ cái."],
             })
     n = len(challenge)
@@ -689,19 +729,33 @@ def sat_hach(u: dict, cau: list, hinh_cua: dict) -> list:
 
     ── ĐÁP ÁN VẪN XEN KẼ ──
     Ba câu đúng liền nhau là bé qua bằng cách đoán theo nhịp.
+
+    ── ⚠ TỪ KHÔNG CÓ HÌNH THÌ KHÔNG DỰNG ĐƯỢC CÂU NÀY ──
+    Cả khuôn trên đứng trên một điều: có một BỨC HÌNH để mà nhìn. Lớp 3 có 51/204
+    từ không vẽ được, và ba unit đầu thì KHÔNG TỪ NÀO có hình — nên bản trước đẻ ra
+    16 câu `anh: null`: bé nghe một từ, nhìn vào chỗ trống, rồi bấm Đúng hoặc Sai.
+    Đúng 15 câu sát hạch của ba bài đầu là câu KHÔNG THỂ TRẢ LỜI, mà điểm vẫn ghi
+    vào học bạ và bố mẹ vẫn đọc được con số ấy.
+
+    Nên câu đúng/sai chỉ dựng từ từ CÓ HÌNH. Chỗ còn thiếu bù bằng câu NGHE → CHỌN
+    NGHĨA: bé lớp 3 đọc được tiếng Việt, và câu ấy vẫn kiểm đúng một việc — nối ÂM
+    với NGHĨA. Thà đổi dạng câu còn hơn giữ đúng dạng mà hỏi vào chỗ trống.
     """
     tu = [t for t in u["tu"] if t.get("nghia")]
     if len(tu) < 2:
         return []
     anh = lambda t: (hinh_cua.get(t["tu"]) or {})
+    co_hinh = [t for t in tu if anh(t).get("hinh") or anh(t).get("ve")]
 
     dung, sai = [], []
-    for i, t in enumerate(tu):
+    for i, t in enumerate(co_hinh):
         h = anh(t)
         dung.append(({"am": am_id("tu", t["tu"]), "anh": h.get("hinh"),
                       "anhVe": h.get("ve"), "text": ""},
                      True, f"ĐÚNG — {t['tu']} là {t['nghia']}."))
-        khac = tu[(i + 1) % len(tu)]
+        khac = co_hinh[(i + 1) % len(co_hinh)]
+        if khac["tu"] == t["tu"]:
+            continue            # unit chỉ có MỘT từ có hình → không ghép lệch được
         hk = anh(khac)
         sai.append(({"am": am_id("tu", t["tu"]), "anh": hk.get("hinh"),
                      "anhVe": hk.get("ve"), "text": ""},
@@ -710,11 +764,11 @@ def sat_hach(u: dict, cau: list, hinh_cua: dict) -> list:
     # Câu cuối dùng CẢ CÂU, nếu bài có: kiểm bé nghe được nguyên câu chứ không chỉ từ.
     if cau:
         c = cau[0]
-        t0 = c["tu"]
-        h = anh(t0)
-        dung.append(({"am": am_id("cau", c["cau"]), "anh": h.get("hinh"),
-                      "anhVe": h.get("ve"), "text": ""},
-                     True, f"ĐÚNG — {c['cau']}"))
+        h = anh(c["tu"])
+        if h.get("hinh") or h.get("ve"):
+            dung.append(({"am": am_id("cau", c["cau"]), "anh": h.get("hinh"),
+                          "anhVe": h.get("ve"), "text": ""},
+                         True, f"ĐÚNG — {c['cau']}"))
 
     ra, k = [], 0
     while len(ra) < 5 and (dung or sai):
@@ -728,9 +782,207 @@ def sat_hach(u: dict, cau: list, hinh_cua: dict) -> list:
                    "nhinNghe": True, "answerKey": {"value": gt},
                    "solutionNarrative": loi})
         k += 1
+
+    # ── bù cho đủ 5 câu bằng NGHE → CHỌN NGHĨA ──
+    # Cùng khuôn bậc 2 của phần luyện tập, nên không có gì mới phải học lúc đi thi.
+    for t in tu:
+        if len(ra) >= 5:
+            break
+        moi = moi_nhu(t, tu, khoa="nghia")
+        if len(moi) < 2:
+            break
+        ra.append({
+            "id": f"Q{len(ra) + 1}",
+            "text": f"“{t['tu']}” nghĩa là gì?",
+            "am": am_id("tu", t["tu"]),
+            "format": "chon",
+            "choices": tron(t["nghia"], moi),
+            "answerKey": {"choice": t["nghia"]},
+            "solutionNarrative": f"{tu_ipa(t)} — {t['nghia']}",
+        })
     return ra
 
-def _ten_video(u: dict, ma_bai: str) -> dict:
+# ── VIDEO TỪ MỚI TÁCH THEO NHÓM NGHĨA ──
+#
+# Đo thật trên 34 video đã dựng: độ dài ≈ 15 giây khung + 4 giây mỗi từ.
+#     3 từ → 27,1s      5 từ → 37,1s      8 từ → 47,0s
+# Lớp 1·2 mỗi unit 3,5 từ nên một video là đủ. Lớp 3 là 9,7 từ, nhiều nhất 15 —
+# giữ khuôn cũ thì ra 54 tới 75 giây, mà bé lớp ba ngồi không nổi thì nó bấm bỏ
+# qua và cả bài giảng thành công cốc.
+#
+# ⚠ KHÔNG PHẢI TỪ NÀO CŨNG DÀI BẰNG NHAU.
+#
+# Từ CÓ HÌNH mất ~4 giây: đọc từ, đọc nghĩa, xong. Từ KHÔNG vẽ được thì dạy bằng
+# CÂU (xem `_canh_mot_tu` của kich_ban.py) — thêm một lời dẫn tiếng Việt và một câu
+# tiếng Anh nữa, thành ~7 giây. Đếm đầu từ thì `Lời chào` của U1 (6 từ, cả sáu đều
+# trừu tượng) ra 56 giây trong khi phép đếm bảo nó chỉ bằng 6 từ thường (39 giây).
+#
+# Nên đo bằng GIÂY, không bằng số từ. Ba con số dưới đây đều suy từ phép đo thật
+# trên 74 video đã dựng, đừng chỉnh bừa:
+GIAY_TU_CO_HINH = 4     # 3 từ → 27,1s · 5 từ → 37,1s · 8 từ → 47,0s
+GIAY_TU_KHONG_HINH = 7  # cảnh "dùng trong câu" dài gần gấp đôi
+GIAY_KHUNG = 15         # bìa + cảnh chữ cái của nhóm ĐẦU (nhóm sau chỉ ~4 giây)
+TRAN_GIAY = 50          # trần một video từ mới — trùng cổng `tienganh_video`
+NHOM_TOI_DA = TRAN_GIAY - GIAY_KHUNG        # 35 giây "ruột" một nhóm
+# Dưới 20 giây ruột (≈24s cả khung) thì gộp vào nhóm cạnh. Ngưỡng này KHÔNG chỉ để
+# tránh video quá ngắn — nó để tránh VỠ VỤN: U3 toàn từ trừu tượng, mỗi vai đúng
+# một hai từ, và ngưỡng 12 giây đẻ ra NĂM tệp cho một unit. Năm ô video trên thanh
+# việc, mỗi ô mười tám giây, thì bé bấm cả buổi không hết.
+NHOM_TOI_THIEU = 5 * GIAY_TU_CO_HINH
+NUA_TOI_THIEU = 3 * GIAY_TU_CO_HINH   # cắt đôi thì mỗi nửa vẫn phải đủ dài
+
+
+def _dai(tu: dict) -> int:
+    """Từ này ngốn mấy giây trong video."""
+    return (GIAY_TU_CO_HINH if (tu.get("hinh") or tu.get("hinh_ve"))
+            else GIAY_TU_KHONG_HINH)
+
+
+def _cat_doi(g: list[str], dai: dict) -> list[list[str]]:
+    """Cắt một nhóm làm đôi, cân theo GIÂY chứ không theo đầu từ."""
+    nua, chay = sum(dai[x] for x in g) / 2, 0
+    for i, x in enumerate(g[:-1]):
+        chay += dai[x]
+        if chay >= nua:
+            return [g[:i + 1], g[i + 1:]]
+    return [g[:1], g[1:]]
+
+
+def _gom_nhom_nghia(tu: list[dict], vai_ten: dict) -> list[dict]:
+    """Gom từ của một unit thành các NHÓM NGHĨA, mỗi nhóm một video.
+
+    Nhóm KHÔNG phải soạn thêm: `vai` đã chia sẵn từ phần bù. U13 gom theo `vai` là
+    ra ngay *nơi chốn* / *đồ đạc* / *chỗ đứng* — đúng ba nhóm người soạn sẽ chia.
+
+    Ba bước, theo đúng thứ tự:
+      1. gom theo `vai` (thứ tự xuất hiện, không phải a·b·c — bé học theo thứ tự sách)
+      2. CẮT nhóm quá `NHOM_TOI_DA`, chia đều
+      3. rồi mới GỘP nhóm lẻ dưới `NHOM_TOI_THIEU` vào nhóm cạnh nó nhỏ nhất
+
+    Cắt trước gộp sau, và thứ tự ấy đổi hẳn kết quả. U4 có *bộ phận cơ thể* 7 từ và
+    *động từ* 2 từ:
+        gộp trước → 9 từ rồi cắt đôi → hai tệp đều mang tên "Bộ phận cơ thể · Hành
+                    động", hai tay chân nằm lẫn trong cả hai
+        cắt trước → 4 + 3, rồi hai động từ nhập vào nửa nhỏ → "Bộ phận cơ thể" (4) và
+                    "Bộ phận cơ thể · Hành động" (5) — một tệp SẠCH tên, tệp kia nói
+                    đúng cái nó chứa
+    """
+    dai = {t["tu"]: _dai(t) for t in tu}
+    tong = sum(dai.values())
+    if tong <= NHOM_TOI_DA:
+        # Unit gọn thì một video, tên tệp `_tu.mp4` như hai quyển trước. Tách một
+        # unit 4 từ ra hai tệp 20 giây là đổi tên tệp của 34 video đang chạy thật để
+        # đổi lấy một cái không ai xin.
+        return [{"ma": "tu", "ten": "Từ mới", "vai": [], "tu": [t["tu"] for t in tu]}]
+
+    vai_cua = {t["tu"]: (t.get("vai") or ["dt"])[0] for t in tu}
+    nhom: list[list[str]] = []
+    cho: dict[str, int] = {}
+    for t in tu:
+        v = vai_cua[t["tu"]]
+        if v not in cho:
+            cho[v] = len(nhom)
+            nhom.append([])
+        nhom[cho[v]].append(t["tu"])
+
+    def do(g):
+        return sum(dai[x] for x in g)
+
+    # ── cắt nhóm quá dài, chia ĐỀU ──
+    # Chia đều chứ không cắt 7+3: hai tệp cân nhau, còn một tệp sát trần một tệp hụt
+    # thì bé xem cái sau thấy cụt.
+    def cat_deu(g):
+        so_phan = max(1, -(-do(g) // NHOM_TOI_DA))
+        if so_phan == 1:
+            return [g]
+        moi, ra, phan = do(g) / so_phan, [], []
+        for x in g:
+            phan.append(x)
+            if do(phan) >= moi and len(ra) < so_phan - 1:
+                ra.append(phan)
+                phan = []
+        return ra + ([phan] if phan else [])
+
+    cat: list[list[str]] = []
+    for g in nhom:
+        cat += cat_deu(g)
+
+    # ── gộp nhóm lẻ vào nhóm cạnh nó NHỎ NHẤT ──
+    #
+    # Chỉ gộp khi gộp xong vẫn dưới trần: gộp bừa thì `bộ phận cơ thể` 28 giây nuốt
+    # hai động từ thành 36 — 51 giây cả khung, đúng cái vừa đi tránh. Nhóm cạnh đã
+    # kín chỗ mà đủ dài để CẮT ĐÔI thì cắt rồi hãy gộp: U4 có `bộ phận cơ thể` 28
+    # giây + `động từ` 8, cắt đôi rồi nhập vào nửa nhỏ là ra hai tệp cân nhau.
+    #
+    # ⚠ CHỖ NÀY TỪNG QUAY VÒNG KHÔNG DỪNG. Nhóm MỘT TỪ thì gộp bằng mọi giá (một
+    # video tám giây không phải bài giảng), gộp xong quá trần thì lại cắt, cắt xong
+    # hai nửa lại dưới ngưỡng nên lại đòi gộp — đúng hai nhóm ấy, mãi mãi. Nên nhóm
+    # nào đã bị CẮT BẮT BUỘC thì ĐÓNG (`khoa`): nó không đi tìm chỗ gộp nữa, nhưng
+    # vẫn NHẬN được nhóm khác nhập vào nếu vẫn dưới trần. Mỗi vòng lặp hoặc bớt một
+    # nhóm, hoặc đóng thêm một nhóm — nên chắc chắn dừng.
+    ds = [{"tu": g, "khoa": False} for g in cat]
+    while len(ds) > 1:
+        i = next((k for k, g in enumerate(ds)
+                  if do(g["tu"]) < NHOM_TOI_THIEU and not g["khoa"]), None)
+        if i is None:
+            break
+        canh = [k for k in (i - 1, i + 1) if 0 <= k < len(ds)]
+        vua = [k for k in canh if do(ds[k]["tu"]) + do(ds[i]["tu"]) <= NHOM_TOI_DA]
+        if not vua:
+            j = min(canh, key=lambda k: (do(ds[k]["tu"]), k))
+            # Cắt đôi nhóm cạnh chỉ đáng làm khi HAI NỬA đều còn đủ dài để đứng
+            # thành video (≥ 3 từ có hình). Cắt một nhóm 20 giây làm đôi thì được
+            # hai tệp mười giây — chữa một video ngắn bằng cách đẻ ra hai cái ngắn hơn.
+            if (not ds[j]["khoa"] and len(ds[j]["tu"]) > 1
+                    and do(ds[j]["tu"]) >= 2 * NUA_TOI_THIEU):
+                ds[j:j + 1] = [{"tu": x, "khoa": True} for x in _cat_doi(ds[j]["tu"], dai)]
+                continue
+            if len(ds[i]["tu"]) > 1:
+                ds[i]["khoa"] = True     # hai từ đứng riêng còn hơn một tệp 51 giây
+                continue
+        j = min(vua or canh, key=lambda k: (do(ds[k]["tu"]), k))
+        a, b = (min(i, j), max(i, j))
+        moi = ds[a]["tu"] + ds[b]["tu"]
+        khoa = ds[a]["khoa"] or ds[b]["khoa"]
+        ds[a:b + 1] = ([{"tu": moi, "khoa": khoa}] if do(moi) <= NHOM_TOI_DA
+                       else [{"tu": x, "khoa": True} for x in _cat_doi(moi, dai)])
+    cat = [g["tu"] for g in ds]
+
+    # ── đặt tên SAU CÙNG, theo vai ĐÔNG NHẤT trong nhóm ──
+    # Đếm lại từ danh sách đã chốt, đừng mang con số lúc cắt đi theo: gộp có thể nuốt
+    # mất một mảnh, và "phần 1" đứng một mình là hỏi bé phần 2 đâu. Và vai đông nhất
+    # mới được đặt tên tệp — nhóm 4 màu cộng một chữ `colour` mà gọi là `tu_dt` thì
+    # người đi tìm tệp phải mở ra mới biết trong đó có gì.
+    chinh = [max(dict.fromkeys(vai_cua[t] for t in g),
+                 key=lambda v: (sum(1 for t in g if vai_cua[t] == v), -g.index(
+                     next(t for t in g if vai_cua[t] == v))))
+             for g in cat]
+    dem = {v: chinh.count(v) for v in chinh}
+    thu: dict[str, int] = {}
+    ra = []
+    for g, v in zip(cat, chinh):
+        thu[v] = thu.get(v, 0) + 1
+        phan = thu[v] if dem[v] > 1 else 0
+        vai = [v] + [x for x in dict.fromkeys(vai_cua[t] for t in g) if x != v]
+        ra.append({"ma": f"tu_{v}{phan}" if phan else f"tu_{v}", "phan": phan,
+                   "vai": vai, "tu": g, "ten": _ten_nhom(vai, vai_ten, phan)})
+    return ra
+
+
+def _ten_nhom(vai: list[str], vai_ten: dict, phan: int) -> str:
+    """Tên NÓI ĐƯỢC VỚI BÉ, hiện trên bìa video và trên thanh việc.
+
+    Nhóm gộp thì ghép tên hai vai — thà dài một chút còn hơn gọi cả nhóm là "Số
+    đếm" trong khi trong đó có `the alphabet`. Nhóm bị cắt thì đánh số phần, vì
+    hai ô cùng tên trên thanh việc thì bé không biết mình còn thiếu cái nào.
+    """
+    ten = " · ".join(vai_ten.get(v, v) for v in vai[:2])
+    if len(vai) > 2:
+        ten += " · …"
+    return f"{ten} · phần {phan}" if phan else ten
+
+
+def _ten_video(u: dict, ma_bai: str, vai_ten: dict, tu: list[dict]) -> dict:
     """Tên tệp video, suy theo ĐÚNG luật `dung_video.py` đặt tên."""
     tep = ma_bai.replace("DL:", "DL_").replace(".", "_")
     ds = [x for m in u["mau_cau"] for x in _tach_mau(m)]
@@ -740,7 +992,17 @@ def _ten_video(u: dict, ma_bai: str) -> dict:
         dem[v] = dem.get(v, 0) + 1
         ten = v if vais.count(v) == 1 else f"{v}{dem[v]}"
         ra.append({"vai": v, "cau": x["cau"], "tep": f"{tep}_{ten}.mp4"})
-    return {"tu": f"{tep}_tu.mp4", "cau": ra}
+    # `tu` là DANH SÁCH, kể cả khi chỉ có một nhóm. Một trường hai hình dạng (khi
+    # thì chuỗi khi thì mảng) là chỗ mọi bên đọc phải tự đoán, và sớm muộn có bên
+    # đoán sai — xem `dsVideoTu()` ở `lib/noiDung.js`, nay chỉ còn MỘT hình dạng.
+    # Gom trên ĐÚNG danh sách từ mà bài đem dạy (`vocabulary`), không phải trên
+    # `u["tu"]` thô. Hai danh sách chỉ lệch khi có từ chưa có nghĩa — nhưng lệch là
+    # nhóm khai một đằng, video dạy một nẻo, và không cổng nào hỏi được câu ấy.
+    nhom = _gom_nhom_nghia(tu, vai_ten)
+    return {"tu": [{"ma": g["ma"], "ten": g["ten"], "tu": g["tu"],
+                    "tep": f"{tep}_{g['ma']}.mp4" if g["ma"] != "tu"
+                           else f"{tep}_tu.mp4"} for g in nhom],
+            "cau": ra}
 
 
 def _tach_mau(m: dict) -> list[dict]:
@@ -762,7 +1024,7 @@ def _tach_mau(m: dict) -> list[dict]:
 
 
 def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
-              them: dict, sua_slot: dict, chuong: dict) -> dict:
+              them: dict, sua_slot: dict, chuong: dict, vai_ten: dict) -> dict:
     ph = u.get("phonics") or {}
     hinh_cua = {t["tu"]: {"hinh": t.get("hinh"), "ve": t.get("hinh_ve")} for t in u["tu"]}
     tu = [t for t in u["tu"] if t.get("nghia")]
@@ -800,7 +1062,7 @@ def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
                        "Đó chính là âm của chữ hôm nay.", "vi")]},
         {"id": "K3",
          "text": "Từ mới của bài: "
-                 + " · ".join(f"{t['tu']} {t['ipa']} = {t['nghia']}" for t in tu),
+                 + " · ".join(f"{tu_ipa(t)} = {t['nghia']}" for t in tu),
          "doanAm": [("Từ mới của bài.", "vi")]
                    + [x for t in tu for x in ((t["tu"], "en"), (t["nghia"], "vi"))]},
     ]
@@ -943,7 +1205,7 @@ def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
         # Video của bài — app hỏi chỗ này chứ KHÔNG tự đoán tên tệp. Đoán tên là
         # chỗ lệch câm: bài hai mẫu câu ra `_cau1/_cau2`, bài hỏi–đáp ra `_hoi/_dap`,
         # bài một mẫu ra `_cau`. Bộ sinh biết chắc, giao diện thì không.
-        "video": _ten_video(u, ma_bai),
+        "video": _ten_video(u, ma_bai, vai_ten, tu),
         "hinhTu": [{"tu": t["tu"], "hinh": t.get("hinh"), "ve": t.get("hinh_ve"),
                     "no": True if t.get("hinh_no") else None} for t in tu],
     }
@@ -1022,7 +1284,8 @@ def main() -> int:
         truoc = f"{TIEN_TO[a.lop]}B{tat[i - 1]['so']:02d}" if i > 0 else None
         sau = f"{TIEN_TO[a.lop]}B{tat[i + 1]['so']:02d}" if i + 1 < len(tat) else None
         bai = dung_bai(u, a.lop, truoc, sau, chuan.get("them") or {},
-                       chuan.get("sua_slot") or {}, chuan.get("chuong") or {})
+                       chuan.get("sua_slot") or {}, chuan.get("chuong") or {},
+                       chuan.get("vai_ten") or {})
         ten = f"DL_{QUYEN[a.lop].upper()}_B{u['so']:02d}.json"
         (tm / ten).write_text(json.dumps(bai, ensure_ascii=False, indent=1), "utf8")
         moi_loi += loi_can_doc(bai)
