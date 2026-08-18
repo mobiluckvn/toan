@@ -10,7 +10,9 @@
     "//test": "Quét CẢ thư mục, không gõ tay từng tệp: danh sách gõ tay thì thêm tệp kiểm mà quên đăng ký là nó nằm im, tưởng có kiểm mà không có. Chạy HẾT rồi mới báo hỏng (không dừng ở tệp đầu tiên) để thấy đủ chỗ sai trong một lần.",
     "test": "fail=0; for f in test/*.test.mjs; do node \"$f\" || fail=1; done; exit $fail",
     "emulators": "firebase emulators:start",
-    "deploy": "npm run build && firebase deploy"
+    "deploy": "npm run build && firebase deploy",
+    "gia-lap": "PATH=\"/usr/local/Cellar/openjdk/26.0.2/bin:$PATH\" firebase emulators:start --only firestore,auth --config firebase.gialap.json --project ky-su-nhi-thu-luat",
+    "test:luat": "FS_EMU=127.0.0.1:8099 node test/luat_firestore.test.mjs"
   },
   "dependencies": {
     "firebase": "^10.12.4",

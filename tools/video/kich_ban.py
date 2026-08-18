@@ -62,6 +62,7 @@ nhưng làm nhoè phụ âm — mà phụ âm mới là chỗ bé cần nghe rõ
 from __future__ import annotations
 
 import json
+import re
 import unicodedata
 from pathlib import Path
 
@@ -215,18 +216,36 @@ def _mot_mau_cau(bai, mc, tu, anh) -> list[dict]:
     cung_khung = list(dict.fromkeys(
         nua(c) for c in (kc.get("canonicalExamples") or [])
         if khung and c.startswith(khung))) or [mc["cau"]]
+    # Cảnh này cũng bảo bé "nghe rồi NHẮC LẠI", nên cùng luật với `nhac_theo`:
+    # chỉ vế nói ra miệng được. Giữ nguyên cả cặp hỏi - đáp thì bé phải nhắc lại
+    # "… / No, she isn't." — dấu gạch chéo không đọc được, và nói cả hai câu đáp
+    # ngược nhau là vô nghĩa.
     for c in cung_khung[:3]:
-        ds.append(_canh("ca_cau", c, "Con nghe rồi nhắc lại nhé",
-                        **next((anh(t) for t in tu if t["tu"] in c), {}),
-                        loi=[(c, "en")], lapLai=2))
+        cn = cau_noi_duoc(c)
+        ds.append(_canh("ca_cau", cn, "Con nghe rồi nhắc lại nhé",
+                        **next((anh(t) for t in tu if t["tu"] in cn), {}),
+                        loi=[(cn, "en")], lapLai=2))
 
     # ── TẬP NÓI: ba lần, chậm dần lên bình thường, có lặng để bé nói ──
     ds.append(_canh("dan_noi", "Nói theo cô nhé", "Ba lần — chậm rồi nhanh dần",
                     loi=[(DAN_NOI, "vi")]))
+    # ⚠ TẬP NÓI thì chỉ nói VẾ ĐẦU, không nói cả cặp hỏi - đáp.
+    #
+    # Mẫu câu lớp 1 đều là câu trần thuật ngắn nên `mc["cau"]` nói ra miệng được.
+    # Quá nửa mẫu câu lớp 2 là hỏi - đáp kèm CẢ HAI phương án:
+    #     "Is she flying a kite? - Yes, she is. / No, she isn't."
+    # Bắt bé nhắc lại nguyên cụm ấy ba lần là bắt bé đọc một thứ không ai nói ra
+    # miệng bao giờ — dấu gạch chéo không đọc được, và hai câu đáp ngược nhau thì
+    # nói cả hai là vô nghĩa. Video B02 vì thế dài 124 giây, trong khi trần của
+    # lớp 1 là 90.
+    #
+    # Vế trước " - " chính là câu bé cần nói. Cùng một luật với ô gõ ở
+    # `sinh_bai_tienganh.py` — hai chỗ phải nghĩ giống nhau về "câu nói được".
+    cau_noi = cau_noi_duoc(mc["cau"])
     for k, td in enumerate(TOC_DO, 1):
-        ds.append(_canh("nhac_theo", mc["cau"], NHAN_TOC[td],
+        ds.append(_canh("nhac_theo", cau_noi, NHAN_TOC[td],
                         lan=k, soLan=len(TOC_DO), tocDo=td,
-                        loi=[(mc["cau"], "en", td)], choNoi=True))
+                        loi=[(cau_noi, "en", td)], choNoi=True))
 
     nham = (kc.get("misconceptions") or [None])[0]
     trap = next((m for m in bai["lecture"]["screens"] if m["kind"] == "trap"), None)
@@ -274,6 +293,19 @@ def soat(ds: list[dict], so_am: dict) -> list[str]:
             for i, c in enumerate(ds) for m in c["am"] if m not in co]
 
 
+def cau_noi_duoc(cau: str) -> str:
+    """Vế bé NÓI RA MIỆNG được: phần trước dấu " - " của cặp hỏi - đáp."""
+    return (cau or "").split(" - ")[0].strip()
+
+
+def lop_cua(ma: str) -> int:
+    """`DL_TA2_B04` → 2. Mã bài đã mang số lớp, đừng bắt người gọi khai lại."""
+    m = re.match(r"DL_TA(\d+)_", ma or "")
+    if not m:
+        raise SystemExit(f"mã bài không đọc ra lớp: {ma!r} (phải dạng DL_TA2_B04)")
+    return int(m.group(1))
+
+
 def main() -> int:
     import argparse
     p = argparse.ArgumentParser()
@@ -281,8 +313,13 @@ def main() -> int:
     p.add_argument("--ra")
     a = p.parse_args()
 
-    bai = json.loads((GOC / f"web/public/content/ta1/{a.bai}.json").read_text("utf8"))
-    so = json.loads((GOC / "web/public/content/tienganh/lop1_am.json").read_text("utf8"))
+    # Thư mục và sổ âm SUY TỪ CHÍNH MÃ BÀI, không ghim 'ta1'.
+    # `DL_TA2_B04` đã mang sẵn số lớp; bắt người gọi khai thêm `--lop` là mở đường
+    # cho hai thứ lệch nhau — đọc bài lớp 2 mà tra sổ âm lớp 1 thì mọi clip đều
+    # "chưa có" và video ra câm, không lỗi nào hiện.
+    lop = lop_cua(a.bai)
+    bai = json.loads((GOC / f"web/public/content/ta{lop}/{a.bai}.json").read_text("utf8"))
+    so = json.loads((GOC / f"web/public/content/tienganh/lop{lop}_am.json").read_text("utf8"))
     hp = cac_phan(bai)
     ds = hp["tu"] + [c for kh in hp["cau"] for c in kh]
     loi = soat(ds, so)

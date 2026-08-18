@@ -1,0 +1,22 @@
+{
+  "_doc": "Cấu hình RIÊNG để bật bộ giả lập đi thử. Cổng 8080/9099 quen bị thứ khác chiếm; đổi ở đây thì không đụng firebase.json dùng để deploy.",
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "emulators": {
+    "firestore": {
+      "port": 8099
+    },
+    "auth": {
+      "port": 9199
+    },
+    "ui": {
+      "enabled": true,
+      "port": 4499
+    },
+    "hub": {
+      "port": 4498
+    }
+  }
+}

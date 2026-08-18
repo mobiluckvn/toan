@@ -29,6 +29,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
 import subprocess
 import sys
 import tempfile
@@ -1443,21 +1444,36 @@ def dung(bai_ma: str, ra: Path, ds: list[dict], so: dict) -> dict:
     return {"canh": len(ds), "giay": round(tong, 1), "mb": round(ra.stat().st_size / 1e6, 2)}
 
 
+def lop_cua(ma: str) -> int:
+    """`DL_TA2_B04` → 2. Mã bài đã mang số lớp, đừng bắt người gọi khai lại."""
+    m = re.match(r"DL_TA(\d+)_", ma or "")
+    if not m:
+        raise SystemExit(f"mã bài không đọc ra lớp: {ma!r} (phải dạng DL_TA2_B04)")
+    return int(m.group(1))
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--bai")
     p.add_argument("--tat-ca", action="store_true")
+    p.add_argument("--lop", type=int, default=1, help="quyển nào khi dùng --tat-ca")
     p.add_argument("--ra", default="web/public/content/tienganh/video")
     a = p.parse_args()
 
-    dsm = ([f"DL_TA1_B{i:02d}" for i in range(1, 17)] if a.tat_ca
+    # `--tat-ca` phải biết QUYỂN NÀO. Mặc định lớp 1 để lệnh cũ trong sổ vẫn chạy.
+    dsm = ([f"DL_TA{a.lop}_B{i:02d}" for i in range(1, 17)] if a.tat_ca
            else [a.bai] if a.bai else None)
     if not dsm:
-        p.error("cần --bai DL_TA1_B04 hoặc --tat-ca")
-    so = json.loads((GOC / "web/public/content/tienganh/lop1_am.json").read_text("utf8"))
+        p.error("cần --bai DL_TA2_B04 hoặc --tat-ca [--lop N]")
+    # Sổ âm SUY TỪ MÃ BÀI, không ghim 'lop1'. Đọc bài lớp 2 mà tra sổ lớp 1 thì mọi
+    # clip đều "chưa có" và video ra CÂM — không lỗi nào hiện, chỉ bé là thấy.
+    lop = lop_cua(dsm[0])
+    if any(lop_cua(m) != lop for m in dsm):
+        p.error("một lượt chạy chỉ dựng được MỘT quyển")
+    so = json.loads((GOC / f"web/public/content/tienganh/lop{lop}_am.json").read_text("utf8"))
     tong = 0.0
     for m in dsm:
-        bai = json.loads((GOC / f"web/public/content/ta1/{m}.json").read_text("utf8"))
+        bai = json.loads((GOC / f"web/public/content/ta{lop}/{m}.json").read_text("utf8"))
         hp = cac_phan(bai)
         # Một tệp cho TỪ, rồi MỖI MẪU CÂU một tệp. Bài hai mẫu câu (U1 · U11 · U13)
         # mà gộp chung thì bé xem xong không biết vừa học một cấu trúc hay hai.

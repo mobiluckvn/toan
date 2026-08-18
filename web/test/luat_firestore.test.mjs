@@ -21,7 +21,11 @@
  */
 import { readFileSync, existsSync } from 'node:fs';
 
-const HOST = '127.0.0.1:8080';
+/* Cổng mạng của bộ giả lập. 8080 là cổng quen của rất nhiều thứ khác, nên cho phép
+   đổi bằng biến môi trường thay vì ghim cứng:
+       FS_EMU=127.0.0.1:8099 node test/luat_firestore.test.mjs
+   `npm run gia-lap` bật bộ giả lập ở đúng cổng ấy. */
+const HOST = process.env.FS_EMU || '127.0.0.1:8080';
 const envTep = new URL('../.env.local', import.meta.url).pathname;
 const DU_AN = process.env.DU_AN
   || (existsSync(envTep)
@@ -30,8 +34,19 @@ const DU_AN = process.env.DU_AN
   || 'demo-test';
 const goc = `http://${HOST}/v1/projects/${DU_AN}/databases/(default)/documents`;
 
-const song = await fetch(`http://${HOST}/`, { signal: AbortSignal.timeout(1500) })
-  .then(() => true).catch(() => false);
+/* ⚠ "Có ai trả lời ở cổng 8080" KHÔNG CÓ NGHĨA là bộ giả lập Firestore.
+   Cổng 8080 là cổng quen của nhiều thứ khác — 18-08 nó bị một tiến trình node khác
+   chiếm, trả 200 cho `/` nhưng 404 cho mọi đường Firestore, và cổng này đỏ 24 phép
+   vì một lý do KHÔNG PHẢI lỗi. Nhận diện đúng thì phải hỏi CHÍNH đường mà phép thử
+   sẽ dùng: đọc một tài liệu bất kỳ. Bộ giả lập trả 200 (có) hoặc 404 kèm thân JSON
+   có `error.status` — thứ khác thì trả 404 trần hoặc HTML. */
+const song = await fetch(`${goc}/__song__/__song__`, { signal: AbortSignal.timeout(1500) })
+  .then(async (r) => {
+    if (r.status === 200) return true;
+    const t = await r.text().catch(() => '');
+    try { return !!JSON.parse(t)?.error?.status; } catch { return false; }
+  })
+  .catch(() => false);
 if (!song) {
   console.log('   ⏸ BỘ GIẢ LẬP KHÔNG CHẠY — bỏ qua phần thử luật thật.');
   console.log('      Bật bằng: PATH="/usr/local/opt/openjdk/bin:$PATH" \\');
