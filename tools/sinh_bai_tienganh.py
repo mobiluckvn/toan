@@ -1023,6 +1023,42 @@ def _tach_mau(m: dict) -> list[dict]:
              "vai": "cau", "capVoi": None}]
 
 
+def am_dau_khop(chu: str, tu: list[dict]) -> bool:
+    """Ba từ đầu của unit có THẬT SỰ bắt đầu bằng chữ hôm nay không.
+
+    ══ VÌ SAO PHẢI HỎI CÂU NÀY ══ (bác bắt 18-08-2026)
+
+    Bác xem video từ mới rồi bảo: "từ lớp 2 đến lớp 3 là nhiều từ mới không có
+    trong nhóm âm. Nhưng video dạy từ mới bạn vẫn mô típ là hãy nghe 03 từ thấy
+    giống nhau gì không? Giống nhau âm… Hoàn toàn sai."
+
+    Đúng, và rộng hơn tưởng. Lời mở ấy lấy BA TỪ ĐẦU của unit rồi khẳng định chúng
+    bắt đầu giống nhau — không hỏi lại lấy một lần. Soi cả ba quyển:
+
+        lớp 1: sai  6/16   (apple · bag · can  — "a" là nguyên âm, và bag/can
+                            không hề mở đầu bằng nó)
+        lớp 2: sai  8/16   (box · fox · ox     — "x" nằm CUỐI từ, không phải đầu)
+        lớp 3: sai 21/21   (bird · cat · dog   — chẳng có âm nào chung)
+
+    Lớp 1 phần lớn còn đúng vì sách ấy xếp bài THEO chữ cái; từ lớp 2 sách xếp
+    theo CHỦ ĐỀ, nên tiền đề của cả lời mở sụp hẳn. Cổng cũ không bắt được: câu
+    vẫn đúng ngữ pháp, clip tiếng vẫn có, video vẫn dựng ra bình thường. Chỉ nghe
+    mới biết là nó nói sai.
+
+    Nay lời mở ấy chỉ được sinh khi phép kiểm này đúng. Sai thì K2 KHÔNG tồn tại,
+    và `kich_ban.py` bỏ luôn cảnh chữ cái — bác dặn "bỏ cái kiểu mở màn đó đi".
+
+    `Bb` · `Cc` là cách sách lớp 1 viết một chữ cái, không phải hai chữ.
+    """
+    goc = re.sub(r"[^a-z]", "", str(chu or "").lower())
+    if len(goc) == 2 and goc[0] == goc[1]:
+        goc = goc[0]
+    if not goc or len(tu) < 3:
+        return False
+    return all(re.sub(r"[^a-z]", "", str(t["tu"]).lower()).startswith(goc)
+               for t in tu[:3])
+
+
 def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
               them: dict, sua_slot: dict, chuong: dict, vai_ten: dict) -> dict:
     ph = u.get("phonics") or {}
@@ -1049,23 +1085,36 @@ def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
     # rời. Âm ấy dạy QUA TỪ VÍ DỤ ở K2 — cũng là cách dạy phonics đúng hơn, vì âm
     # /d/ tách khỏi từ thì không tồn tại trong lời nói tự nhiên.
     ba = " · ".join(t["tu"] for t in tu[:3])
+    canh_vi = str(u.get("canh") or "").split("·")[0].strip()
     K = [
         {"id": "K1",
-         "text": f"Hôm nay chúng mình học chữ {chu}. Chữ {chu} đọc là {am}.",
-         "doanAm": [("Hôm nay chúng mình học một chữ cái mới. Con nhìn lên bảng nhé.", "vi")]},
-        {"id": "K2",
-         "text": f"Nghe ba từ này: {ba}. Con có nghe thấy chúng bắt đầu giống nhau "
-                 f"không? Đó chính là âm {am} của chữ {chu}.",
-         "doanAm": [("Nghe ba từ này.", "vi")]
-                   + [(t["tu"], "en") for t in tu[:3]]
-                   + [("Con có nghe thấy ba từ này bắt đầu giống nhau không? "
-                       "Đó chính là âm của chữ hôm nay.", "vi")]},
+         "text": (f"Hôm nay chúng mình học chữ {chu}. Chữ {chu} đọc là {am}."
+                  if am_dau_khop(chu, tu)
+                  else f"Hôm nay chúng mình học {len(tu)} từ mới — {canh_vi}."),
+         "doanAm": [(("Hôm nay chúng mình học một chữ cái mới. Con nhìn lên bảng nhé."
+                      if am_dau_khop(chu, tu)
+                      else f"Hôm nay chúng mình học {len(tu)} từ mới — {canh_vi}."),
+                     "vi")]},
         {"id": "K3",
          "text": "Từ mới của bài: "
                  + " · ".join(f"{tu_ipa(t)} = {t['nghia']}" for t in tu),
          "doanAm": [("Từ mới của bài.", "vi")]
                    + [x for t in tu for x in ((t["tu"], "en"), (t["nghia"], "vi"))]},
     ]
+    # ── LỜI MỞ "BA TỪ CÙNG ÂM" CHỈ CÓ KHI ĐIỀU ẤY ĐÚNG ──
+    # Chèn K2 vào GIỮA K1 và K3 chứ không dựng sẵn trong danh sách: bài nào không
+    # có thì mã K2 biến mất hẳn, và `kich_ban.py` (`if "K2" in K`) tự bỏ luôn cảnh
+    # chữ cái. Một chỗ khai, hai nơi nghe theo.
+    if am_dau_khop(chu, tu):
+        K.insert(1, {
+            "id": "K2",
+            "text": f"Nghe ba từ này: {ba}. Con có nghe thấy chúng bắt đầu giống nhau "
+                    f"không? Đó chính là âm {am} của chữ {chu}.",
+            "doanAm": [("Nghe ba từ này.", "vi")]
+                      + [(t["tu"], "en") for t in tu[:3]]
+                      + [("Con có nghe thấy ba từ này bắt đầu giống nhau không? "
+                          "Đó chính là âm của chữ hôm nay.", "vi")],
+        })
     if u["mau_cau"]:
         mc = u["mau_cau"][0]
         # ── DẠY VIỆC TRƯỚC, DẠY CÂU SAU ──

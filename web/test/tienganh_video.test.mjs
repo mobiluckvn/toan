@@ -125,7 +125,7 @@ in5(tuXau.map((x) => `${x.f} · ${x.s.toFixed(1)}s`));
  * đi, và mất luôn cả phần đang canh được. Ghi đúng món nợ vẫn hơn.
  */
 const DAI_CAU = 70;
-const NO_CAU = 35;
+const NO_CAU = 31;   // chốt lại 18-08: đang 31, đừng để bò lên nữa
 const TRAN_CAU = 100;
 const cauDai = doDai.filter((x) => x.loai === 'cau' && x.s > DAI_CAU)
   .sort((a, b) => b.s - a.s);

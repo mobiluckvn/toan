@@ -249,6 +249,52 @@ for (const q of quyens) {
   t(`${q} · bài nào cũng đủ bốn bậc (${thieuBac.length} chỗ thiếu)`, thieuBac.length === 0);
   in5(thieuBac);
 
+  /* ══ 4D · KHÔNG ĐƯỢC NÓI MỘT ĐIỀU KHÔNG ĐÚNG VỀ ÂM ══
+
+     Bác bắt 18-08-2026: "từ lớp 2 đến lớp 3 là nhiều từ mới không có trong nhóm
+     âm. Nhưng video dạy từ mới bạn vẫn mô típ là hãy nghe 03 từ thấy giống nhau
+     gì không? Giống nhau âm… Hoàn toàn sai."
+
+     Lời mở ấy (`statements` K2, và cảnh `chu_cai` của video) lấy BA TỪ ĐẦU của
+     unit rồi khẳng định chúng bắt đầu giống nhau — không hỏi lại lấy một lần. Soi
+     ra: lớp 3 sai 21/21, lớp 2 sai 8/16, lớp 1 sai 6/16. Ví dụ có thật:
+
+         box · fox · ox        — "x" nằm CUỐI từ
+         bird · cat · dog      — chẳng có âm nào chung
+         cooking · dancing · drawing  (bài khai chữ "p")
+
+     Không cổng nào bắt được, vì mọi thứ đo được đều đúng: câu đúng ngữ pháp, clip
+     tiếng có đủ, video dựng ra bình thường. Chỉ NGHE mới biết nó nói sai — nên
+     phép kiểm phải hỏi đúng câu con người hỏi: ba từ ấy có thật sự bắt đầu giống
+     nhau không.
+
+     Bài nào không đúng thì KHÔNG được có K2, và `kich_ban.py` (`if "K2" in K`)
+     tự bỏ luôn cảnh chữ cái. Một chỗ khai, hai nơi nghe theo. */
+  const chuGoc = (x) => {
+    const c = String(x || '').replace(/[^a-zA-Z]/g, '').toLowerCase();
+    /* `Bb` · `Cc` là cách sách lớp 1 viết MỘT chữ cái, không phải hai. */
+    return (c.length === 2 && c[0] === c[1]) ? c[0] : c;
+  };
+  const noiSai = [], thieuK2 = [];
+  for (const b of bais) {
+    const K = Object.fromEntries((b.knowledgeCore.statements || []).map((x) => [x.id, x]));
+    const ba = (b.knowledgeCore.vocabulary || []).slice(0, 3).map((v) => v.tu);
+    const g = chuGoc(String(b.dangGoc || '').split(' ')[0]);
+    const dung = !!g && ba.length === 3
+      && ba.every((w) => w.toLowerCase().replace(/[^a-z]/g, '').startsWith(g));
+    if (K.K2 && !dung) {
+      noiSai.push(`${b.id}: bảo “${ba.join(' · ')}” cùng bắt đầu bằng “${g || '?'}”`);
+    }
+    /* Chiều ngược: đúng thật thì đừng bỏ mất — lớp 1 là quyển dạy phonics, bỏ hết
+       là bỏ đúng phần sách ấy sinh ra để dạy. */
+    if (!K.K2 && dung) thieuK2.push(`${b.id}: “${ba.join(' · ')}” cùng âm “${g}” mà bỏ`);
+  }
+  t(`${q} · không bài nào nói sai về âm đầu (${noiSai.length})`, noiSai.length === 0);
+  in5(noiSai);
+  t(`${q} · bài CÓ âm đầu chung thì vẫn dạy (${thieuK2.length} bị bỏ oan)`,
+    thieuK2.length === 0);
+  in5(thieuK2);
+
   /* ══ 5 · KHOÁ BKT PHẢI KÈM MÃ QUYỂN ══
      Khoá số trần làm huy hiệu lây giữa các quyển — đã dính thật bên Toán. */
   const khoaTran = bais.filter((b) => !String(b.skills?.bktUnit || '').includes('@'))
