@@ -6,7 +6,7 @@
  * thêm một mục ở đó, không sửa giao diện. Nên sổ sai là kệ sách hỏng, mà hỏng kiểu
  * im lặng — mục thiếu trường thì chỉ mất một dòng chữ, không ai thấy.
  */
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { LOP_HOC, gomNhomKeSach } from '../src/chung/lib/soQuyen.js';
 
@@ -205,5 +205,35 @@ t('đề ôn thi nào cũng khai trạng thái',
 
 console.log(`\n   ${ct.length} chương trình · ${(dk.sapCo || []).length} nhóm sắp có`
   + ` · ${(dk.luyenThi || []).length} đề ôn thi`);
+/* ═══ HỎI NGƯỢC CHIỀU: THƯ MỤC NÀO CÓ BÀI MÀ SỔ KHÔNG NHẮC TỚI? ═══
+ *
+ * Mọi phép trên đây đi từ SỔ ĐĂNG KÝ ra: quyển khai trong sổ thì bài phải có thật.
+ * Chiều ngược lại chưa ai hỏi — và đó đúng là chỗ đã hỏng HAI LẦN LIỀN:
+ *
+ *   · lớp 2 Tiếng Anh (17-08): bài · ôn tập · kịch bản nói · clip tiếng dựng xong
+ *     hết, `ta2` chưa khai → kệ sách không hiện, mọi thứ chỉ là tệp nằm trên đĩa.
+ *   · lớp 3 Tiếng Anh (18-08): y hệt, cộng thêm cổng âm báo "chưa sinh âm" trong
+ *     khi sổ có đủ 1011 clip — nó tìm quyển QUA SỔ ĐĂNG KÝ chứ không quét thư mục.
+ *
+ * Cả hai lần đều hỏng CÂM: không lỗi nào hiện, cổng vẫn xanh, chỉ là bé không vào
+ * được. Phép dưới đây bắt đúng chuyện ấy ngay lần dựng đầu tiên.
+ */
+{
+  const ND = D;
+  const thuMucKhai = new Set(Object.values(dk.chuongTrinh || {}).map((c) => c.thuMuc));
+  const boQua = new Set(['figures', 'reviews', 'toan', 'tienganh']);
+  const quen = [];
+  for (const d of readdirSync(ND, { withFileTypes: true })) {
+    if (!d.isDirectory() || boQua.has(d.name) || thuMucKhai.has(d.name)) continue;
+    const soBai = readdirSync(join(ND, d.name)).filter((f) => /^D[LR]_.*\.json$/.test(f)).length;
+    if (soBai) quen.push(`${d.name}/ có ${soBai} bài mà sổ đăng ký không quyển nào nhắc tới`);
+  }
+  t(`không thư mục nội dung nào bị bỏ quên ngoài sổ (${quen.length})`, quen.length === 0);
+  quen.forEach((x) => console.log('     ', x));
+  /* Đảo chiều: phép trên chỉ có nghĩa nếu nó THẬT SỰ quét được thư mục. */
+  t(`có quét thấy thư mục nội dung (${thuMucKhai.size} thư mục đang khai)`,
+    thuMucKhai.size >= 5);
+}
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);
