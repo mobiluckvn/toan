@@ -12,7 +12,7 @@ import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { fns, db, hasFirebase } from '../../../chung/lib/nenTang.js';
 import {
   loiDan, goiGui, docTraLoi, viecTiepTheo, cauHopLe, cauThayThe,
-  buocTiepTheo, dienBuoc, dongBuoc, loiVietHopLe,
+  buocTiepTheo, dienBuoc, dongBuoc, loiVietHopLe, luotBeCuoi,
 } from './phongnoi.js';
 
 /** Collection riêng của Tiếng Anh — hậu tố TA để không bao giờ lẫn với Toán. */
@@ -39,9 +39,16 @@ export async function hoiCoGiao({
      Không có (bài chưa sinh kịch bản) thì rơi về cách cũ — máy con tự chọn việc. */
   const buoc = kichBan ? buocTiepTheo({ kichBan, lichSu, hoSo, haDoKho }) : null;
   const viec = buoc ? null : viecTiepTheo({ von, lichSu, haDoKho, hoSo });
+  /* Lượt vừa rồi của bé — kèm ĐIỂM và những chữ bé bỏ sót. `goiGui` cắt sạch mấy
+     thứ ấy khi gửi lịch sử (nó chỉ gửi vai + chữ), nên nếu không đi đường này thì
+     mô hình không có cách nào biết bé nói được mấy điểm. Xem `dongBuoc`. */
+  const luotBe = luotBeCuoi(lichSu);
+  const unit = kichBan
+    ? { ten: kichBan.ten, muc_tieu: kichBan.muc_tieu, tinh_huong: kichBan.tinh_huong }
+    : null;
   const dan = buoc
-    ? `${loiDan({ von, tenBe, lop, viec: null, hoSo })}\n${dongBuoc(buoc, { tenBe, thich: hoSo?.thich })}`
-    : loiDan({ von, tenBe, lop, viec, hoSo });
+    ? `${loiDan({ von, tenBe, lop, viec: null, hoSo, unit })}\n${dongBuoc(buoc, { tenBe, thich: hoSo?.thich }, luotBe)}`
+    : loiDan({ von, tenBe, lop, viec, hoSo, unit });
   const messages = [{ role: 'system', content: dan }, ...goiGui(lichSu)];
   const { data } = await httpsCallable(fns, 'luyenNoi')({ messages });
   const tra = docTraLoi(data?.chu);
@@ -57,8 +64,32 @@ export async function hoiCoGiao({
      bé vẫn nghe đúng câu của bài. */
   if (buoc) {
     const dung = dienBuoc(buoc, { tenBe, thich: hoSo?.thich });
+    /* ⚠ BƯỚC KHÔNG CÓ CÂU VIẾT SẴN VẪN PHẢI SOI.
+       `hoiThich` không mang câu tiếng Anh nào — thẻ chọn hình do máy con tự vẽ. Nên
+       `dung` rỗng, và dòng dưới cho `tra.en` đi thẳng. Mà nhánh có kịch bản thì cố
+       ý bỏ qua `cauHopLe` (câu đã biết trước, soi làm gì) — cộng lại thành đúng MỘT
+       lượt mỗi buổi mà câu của mô hình không ai soi. Đúng lượt thứ hai, lượt bé
+       vừa mới vào phòng. Không gì kêu: câu ấy thường vẫn đúng. */
+    if (!dung && !cauHopLe(tra.en, { von, tenBe, cauTruoc })) {
+      /* Lui về một lời lớp học cố định. Không dùng `cauThayThe`: nó cần một `viec`,
+         mà nhánh kịch bản thì không có `viec` nào — gọi vào là nhận `null` rồi lại
+         thả câu hỏng đi tiếp, tức là chốt soi có mà như không. */
+      return { ...tra,
+        en: 'Your turn.',
+        vi: 'Con chọn một hình con thích nhất nhé, rồi mình tập nói về nó.',
+        buoc: buoc.loai,
+        daThay: true };
+    }
     const en = dung && tra.en !== dung ? dung : tra.en;
-    return { ...tra, en, vi: loiVietSach(tra.vi, { von, cauDich: en, lui: buoc.vi }),
+    return { ...tra,
+      en,
+      /* Lượt này do bước NÀO sinh ra. Màn hình giữ lại trong lịch sử, để
+         `luotLuyen` biết lượt đáp lời chào không phải một lần luyện — thiếu nó thì
+         buổi kết sớm một nấc và bước làm mẫu bị nhảy cóc. */
+      buoc: buoc.loai,
+      /* `beNoi` đi kèm để lời SỬA được phép trích lại đúng chữ bé vừa nói — không
+         có nó thì lượt sửa nào cũng bị gạt rồi lui về câu chung chung. */
+      vi: loiVietSach(tra.vi, { von, cauDich: en, lui: buoc.vi, beNoi: luotBe?.chu }),
       daThay: en !== tra.en };
   }
 
@@ -67,9 +98,9 @@ export async function hoiCoGiao({
     /* Thay thì thay CẢ CẶP. Giữ lời tiếng Việt cũ là để nó tả một câu đã bị bỏ —
        đã thấy thật: cô nói "Hi, I'm Bill." mà lời Việt vẫn là "Chào tạm biệt bike".
        Bé nghe hai thứ ngược nhau còn rối hơn là nghe câu sai. */
-    if (thay) return { ...tra, en: thay.en, vi: thay.vi, daThay: true };
+    if (thay) return { ...tra, en: thay.en, vi: thay.vi, buoc: null, daThay: true };
   }
-  return { ...tra, vi: loiVietSach(tra.vi, { von, cauDich: tra.en }) };
+  return { ...tra, buoc: null, vi: loiVietSach(tra.vi, { von, cauDich: tra.en, beNoi: luotBe?.chu }) };
 }
 
 /**
@@ -85,8 +116,8 @@ export async function hoiCoGiao({
  */
 const LUI_CHUNG = 'Con nghe rồi nói lại nhé.';
 
-export function loiVietSach(vi, { von, cauDich = '', lui = '' } = {}) {
-  const kq = loiVietHopLe(vi, { von, cauDich });
+export function loiVietSach(vi, { von, cauDich = '', lui = '', beNoi = '' } = {}) {
+  const kq = loiVietHopLe(vi, { von, cauDich, beNoi });
   if (kq.ok) return vi;
   LOI_LOI_VIET.so += 1;
   LOI_LOI_VIET.ganNhat = kq.vi;

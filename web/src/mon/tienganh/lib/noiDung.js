@@ -189,22 +189,46 @@ export function dsVideoTu(bai) {
  * cách đánh số của quyển này vào chỗ chẳng liên quan gì.
  */
 export function maBaiTruoc(id, n = 3) {
-  const ct = quyenCua(id);
-  const ds = ct?.bai || [];
+  /* ⚠ `quyenCua` trả về MỘT CHUỖI mã ('ta3'), không phải mục chương trình. Bản đầu
+     viết `const ct = quyenCua(id); const ds = ct?.bai` — `'ta3'.bai` là undefined,
+     nên hàm này trả mảng RỖNG cho mọi bài, mọi quyển, từ ngày viết. Phòng luyện
+     nói vì thế không bao giờ mở rộng vốn từ sang mấy unit trước dù bé đã đạt: cờ
+     `von.moRong` luôn tắt, và dòng "có cả từ mấy bài trước con đã học" không bao
+     giờ hiện. Không lỗi, không cảnh báo — chỉ là một tính năng nằm im.
+     `hangXom` ngay trên cùng tệp này làm đúng: `chuongTrinh(quyenCua(id))`. */
+  const ds = chuongTrinh(quyenCua(id))?.bai || [];
   const i = ds.indexOf(id);
   if (i <= 0) return [];
   return ds.slice(Math.max(0, i - n), i);
 }
 
-/** Kịch bản phòng luyện nói của cả quyển — sinh bằng `tools/sinh_kichban_noi.py`. */
-let khoKichBan = null;
+/**
+ * Kịch bản phòng luyện nói của cả quyển — sinh bằng `tools/sinh_kichban_noi.py`.
+ *
+ * ⚠ NHỚ THEO TỪNG QUYỂN, KHÔNG NHỚ CHUNG MỘT Ô.
+ *
+ * Bản đầu giữ đúng một biến `khoKichBan` và một tham số `ma = 'ta1'`. Hai chỗ hỏng
+ * chồng lên nhau, và cả hai đều câm:
+ *
+ *   · `PhongNoi.jsx` gọi `napKichBanNoi()` KHÔNG tham số, nên lớp 2 và lớp 3 tải
+ *     về kịch bản của LỚP 1. `kichBanCua(ds, 'DL:TA3.B05')` không thấy bài nào →
+ *     `kichBan = null` → cả tầng kịch bản tắt, phòng rơi về lối mô hình tự nghĩ
+ *     câu. Đúng cái bác nhìn thấy khi bảo "chẳng có hiệu quả gì".
+ *   · Kể cả có truyền mã, ô nhớ chung cũng trả về quyển tải trước đó — bé học
+ *     xong lớp 2 rồi mở lớp 3 trong cùng một phiên là dính.
+ *
+ * Không có gì đỏ: `napKichBanNoi` trả về một mảng hợp lệ, chỉ là mảng của quyển
+ * khác. Chỉ lộ khi mở phòng lớp 3 rồi so từng lượt với tệp kịch bản.
+ */
+const khoKichBan = new Map();
 export async function napKichBanNoi(ma = 'ta1') {
-  if (khoKichBan) return khoKichBan;
+  if (khoKichBan.has(ma)) return khoKichBan.get(ma);
   const ct = chuongTrinh(ma);
   const url = dongDau(`${CONTENT}/${ct.thuMuc || ma}/kichban_noi.json`);
   const r = await fetch(url);
   if (!r.ok) throw new Error(`Không mở được kịch bản luyện nói (${r.status})`);
-  khoKichBan = await r.json();
-  return khoKichBan;
+  const ds = await r.json();
+  khoKichBan.set(ma, ds);
+  return ds;
 }
 export const kichBanCua = (ds, id) => (ds || []).find((k) => k.bai === id) || null;

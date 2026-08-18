@@ -106,9 +106,19 @@ function cauSachCuaBai(k) {
   const ra = [];
   for (const c of k.canonicalExamples || []) {
     for (const nua of String(c).split(' - ')) {
-      const s = nua.trim();
-      if (!s || !chuTrongCau(s).every((w) => biet.has(w))) continue;
-      if (!ra.includes(s)) ra.push(s);
+      /* ── TÁCH CẢ HAI LỐI ĐÁP CỦA MẪU YES/NO ──
+         45 câu của lớp 2·3 viết cả hai lối đáp trong một chuỗi:
+         `"Yes, it is. / No, it isn't."`. Không tách thì túi câu hợp lệ chỉ có
+         chuỗi ghép ấy, nên "Yes, it is." — một câu trọn của sách, và đúng thứ bé
+         phải nói — lại bị `cauHopLe` gạt. Cổng bắt được khi kịch bản lớp 2·3 lần
+         đầu được đem ra soi.
+         ⚠ `sinh_kichban_noi.py` (`tach_lua_chon`) tách y hệt. Hai bên lệch nhau
+         thì câu ở kịch bản rơi ra ngoài túi này, và không gì kêu. */
+      for (const x of nua.split('/')) {
+        const s = x.trim();
+        if (!s || !chuTrongCau(s).every((w) => biet.has(w))) continue;
+        if (!ra.includes(s)) ra.push(s);
+      }
     }
   }
   return ra;
@@ -299,7 +309,7 @@ function dongViec(v, tenBe) {
 
 /* Mặc định là "con", KHÔNG phải "bạn nhỏ". Bản cũ để "bạn nhỏ" nên chính lời dặn
    gieo chữ "bạn" vào rồi trách mô hình dùng nó — xem `XUNG_HO_CAM`. */
-export function loiDan({ von, tenBe = 'con', lop = 1, viec = null, hoSo = null }) {
+export function loiDan({ von, tenBe = 'con', lop = 1, viec = null, hoSo = null, unit = null }) {
   const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
   const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
   const bangTu = tu.map((t) => `${t.tu} (${t.nghia})`).join(', ');
@@ -315,6 +325,19 @@ export function loiDan({ von, tenBe = 'con', lop = 1, viec = null, hoSo = null }
 
   return [
     `You are a warm, patient English tutor for a ${lop === 1 ? 'six-year-old' : `grade ${lop}`} Vietnamese child named ${tenBe}.`,
+    /* ── VIỆC CỦA CÔ, NÓI NGAY DÒNG ĐẦU ── (bác chốt 18-08)
+       "AI đóng vai trò là Cô giáo dạy học sinh nói được các câu giao tiếp hoàn
+       chỉnh chứ không như máy như giờ." Lời dặn cũ mở bằng "a warm, patient English
+       tutor" rồi đi thẳng vào mười điều cấm — không chỗ nào nói cô phải DẠY cái gì.
+       Mô hình đọc xong biết mình không được nói gì, không biết mình phải làm gì. */
+    'Your job: get her SAYING WHOLE SENTENCES out loud, and fix what goes wrong.',
+    'A real lesson has three beats, and every turn of yours is one of them:',
+    '  TEACH  — show the sentence and what it is for;',
+    '  SPEAK  — make her say it, or answer you, or ask you;',
+    '  FIX    — name what went wrong in her last try, then let her try again.',
+    'You are her teacher, not a flashcard machine. Never drill a bare word when a',
+    'whole sentence would do — a child who can only say "cooking" cannot talk.',
+    ...(unit ? dongUnit(unit) : []),
     '',
     'HARD RULES — breaking any of these makes the lesson useless:',
     `1. Use ONLY these English words: ${bangTu}.`,
@@ -335,6 +358,17 @@ export function loiDan({ von, tenBe = 'con', lop = 1, viec = null, hoSo = null }
     '   Never discuss anything other than practising these words.',
     '8. If the child repeated correctly, put the praise in the VIETNAMESE line and',
     '   still do this turn\'s task in English — praise is not a turn of its own.',
+    /* Bác chốt 18-08: "dạy học sinh nói rồi hướng dẫn học sinh sửa". Luật 8 cũ chỉ
+       nói tới lúc bé nói ĐÚNG; lúc bé nói SAI thì không luật nào bảo phải làm gì,
+       nên mô hình khen chung chung rồi đi tiếp. Chỗ hỏng thì nằm lại đó. */
+    '8b. When she gets it wrong, CORRECT HER — that is the whole point of the room.',
+    '   Say the one thing that was already right, name the ONE thing to fix (a missing',
+    '   word, a swapped word order), and ask her to say it again. One fix per turn:',
+    '   a six-year-old cannot hold three corrections at once.',
+    '   Never say "sai rồi" on its own, and never let a wrong sentence pass in silence.',
+    '8c. Do not reuse your own Vietnamese wording from an earlier turn. Saying',
+    '   "Con nghe rồi nói lại nhé" every single turn is exactly what makes a lesson',
+    '   feel like a machine. Talk to her about THIS sentence.',
     /* Hai luật dưới đây bác chốt 14-08, và cả hai đều CÓ CHỐT SOI LẠI ở
        `loiVietHopLe` — dặn dò một mình chưa bao giờ đủ trong phòng này. */
     '9. Vietnamese pronouns are FIXED: call yourself "cô", call the child "con".',
@@ -463,6 +497,21 @@ export function docTraLoi(chu) {
  *   · một câu ví dụ của bài                   ("Hi, I'm Bill.")
  *   · một công thức đã điền đúng LOẠI ô trống ("Hi, I'm Bo." · "I like fish.")
  */
+/**
+ * MỘT CÂU SÁCH TÁCH RA THÀNH NHỮNG CÂU BÉ NÓI ĐƯỢC.
+ *
+ * `" - "` chia lượt HỎI và lượt ĐÁP; `"/"` chia hai lối đáp của mẫu yes/no. Cả cặp
+ * nguyên vẫn được giữ, vì bước `mau` đọc cả cặp làm mẫu.
+ * `sinh_kichban_noi.py` (`tach_doi` · `tach_lua_chon`) tách y hệt — lệch nhau thì
+ * câu ở kịch bản rơi ra ngoài vốn hợp lệ, và không gì kêu.
+ */
+const nuaCua = (s) => {
+  const t = String(s || '').trim();
+  const ra = [t];
+  for (const a of t.split(' - ')) for (const b of a.split('/')) ra.push(b.trim());
+  return ra.filter(Boolean);
+};
+
 const gonCau = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9' ]/g, '').replace(/\s+/g, ' ').trim();
 
 export function cauHopLe(en, { von, tenBe = '', cauTruoc = '' } = {}) {
@@ -477,7 +526,11 @@ export function cauHopLe(en, { von, tenBe = '', cauTruoc = '' } = {}) {
 
   if (tu.some((t) => gonCau(t.tu) === c)) return true;
   if (LOI_LOP_HOC.some((x) => gonCau(x) === c)) return true;
-  if (cau.some((x) => gonCau(x.cau) === c)) return true;
+  /* Cả cặp, VÀ từng nửa của cặp. Mẫu `How are you? - Fine, thank you.` không có ô
+     trống nào và cũng không nằm trong `canonicalExamples`, nên nửa đáp của nó
+     không có đường nào khác để được công nhận — mà đó chính là câu bé phải nói ở
+     bước `noiCa`. Cổng bắt được ở lớp 3 unit 1. */
+  if (cau.some((x) => nuaCua(x.cau).some((n) => gonCau(n) === c))) return true;
   /* Câu sẵn của sách — đã lọc theo từ ở `cauSachCuaBai`. Mở chỗ này ăn hai đường:
      ba bài công thức hai ô nay có câu để luyện, và cô giáo máy bớt nhàm vì có
      nhiều câu đúng để chọn thay vì đúng một mẫu. */
@@ -488,12 +541,22 @@ export function cauHopLe(en, { von, tenBe = '', cauTruoc = '' } = {}) {
      câu × số từ), nên cứ dựng hết còn hơn đoán bằng biểu thức chính quy. */
   for (const x of cau) {
     if (!x.congThuc) continue;
-    const loai = loaiOTrong(x.congThuc);
-    const dienDuoc = loai === 'ten' ? [tenBe, 'Bill', 'Mai'] : tu.map((t) => t.tu);
-    for (const d of dienDuoc) {
-      if (!d) continue;
-      const thu = x.congThuc.replace(/\s*\+\s*/g, ' ').replace(/\[[^\]]+\]/, d);
-      if (gonCau(thu) === c) return true;
+    /* ── NỬA CỦA MỘT CẶP HỎI–ĐÁP CŨNG LÀ CÔNG THỨC ──
+       Từ 18-08 phòng nói dạy theo lối đối đáp: cô hỏi nửa trước, bé đáp nửa sau.
+       Nên câu hợp lệ của một lượt thường là NỬA của mẫu, không phải cả cặp:
+       `What's your hobby? - It's + [Hobby].` → bé nói `It's cooking.`
+       Bản cũ chỉ điền vào cả cặp, nên mọi câu đáp lẻ đều rơi ra ngoài — cổng bắt
+       được ở lớp 2 unit 9 ("I want some yogurt." bị gạt dù là đúng khuôn sách).
+       Vẫn thử cả cặp NGUYÊN, vì bước `mau` nói cả cặp. */
+    for (const khung of [x.congThuc, ...x.congThuc.split(' - ')]) {
+      const loai = loaiOTrong(khung);
+      if (!loai) continue;
+      const dienDuoc = loai === 'ten' ? [tenBe, 'Bill', 'Mai'] : tu.map((t) => t.tu);
+      for (const d of dienDuoc) {
+        if (!d) continue;
+        const thu = khung.replace(/\s*\+\s*/g, ' ').replace(/\[[^\]]+\]/, d);
+        if (gonCau(thu) === c) return true;
+      }
     }
   }
   return false;
@@ -604,11 +667,45 @@ export function tachTheoTieng(chu, von) {
  */
 export const XUNG_HO_CAM = ['bạn', 'em', 'tớ', 'cậu'];
 
+/**
+ * NHỮNG CHỮ ĐI SAU LÀM CHO NÓ THÀNH DANH TỪ, không còn là đại từ gọi bé.
+ *
+ * "bạn" đã có ngoại lệ từ 14-08 vì sách chú `girl` là "bạn gái". Nay thêm "em":
+ * sách chú `brother` là "anh trai, em trai" và `sister` là "chị gái, em gái" —
+ * lời viết sẵn của kịch bản lớp 2·3 nhắc lại đúng lời chú ấy, và bị chặn oan. Chặn
+ * oan ở đây không kêu thành lỗi: `loiVietSach` lặng lẽ lui về câu chung chung, nên
+ * bé mất lời giảng nghĩa mà chẳng ai biết.
+ *
+ * Cổng bắt được ngay lần đầu soi kịch bản lớp 2 — trước đó cổng chỉ soi lớp 1, mà
+ * lớp 1 không dạy "brother".
+ *
+ * Nới đúng chỗ, KHÔNG nới cả chữ: "Em nói lại đi." vẫn phải bị chặn.
+ */
+const SAU_KHONG_CAM = {
+  bạn: '(?!\\s+(gái|trai|nhỏ|ấy|bè|học))',
+  em: '(?!\\s+(gái|trai|bé|nhỏ|ấy|họ))',
+};
+
 /* Chữ chỉ có trong tiếng Việt — dùng để biết một mẩu trong ngoặc kép là lời Việt
    hay là tiếng Anh. Không cần bộ đoán ngôn ngữ, chỉ cần dấu. */
 const CO_DAU_VIET = /[ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩịòóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ]/i;
 
-const MOC_NGOAC = /[""“”]([^""“”]+)[""“”]|'([^']{2,})'/g;
+/**
+ * MẨU NẰM TRONG NGOẶC KÉP — chỗ cô trích lại một câu tiếng Anh.
+ *
+ * ⚠ DẤU NHÁY GIỮA MỘT TỪ KHÔNG PHẢI DẤU MỞ NGOẶC. Bản cũ viết `'([^']{2,})'`, nên
+ * một dòng có HAI chữ rút gọn tiếng Anh là hỏng ngay: `He's/She's + [Number].` bị
+ * đọc thành mẩu trích `s/She`, rồi báo `chữ "s" không có trong bài`. Câu hoàn toàn
+ * đúng mà bị gạt — và gạt thì `loiVietSach` lặng lẽ lui về lời chung chung, không
+ * ai biết là đã mất một lời dẫn.
+ *
+ * Mà tiếng Anh lớp 1·2·3 thì đầy chữ rút gọn: It's · What's · He's · isn't. Nên
+ * đây không phải ca hiếm, chỉ là chưa có kịch bản nào dùng tới hai cái một dòng.
+ * Cổng bắt được ngay lần đầu soi kịch bản lớp 2.
+ *
+ * Nay dấu nháy chỉ được coi là ngoặc khi nó KHÔNG dính vào chữ ở phía ngoài.
+ */
+const MOC_NGOAC = /[""“”]([^""“”]+)[""“”]|(?<![\p{L}\p{N}])'([^']{2,})'(?![\p{L}\p{N}])/gu;
 
 /**
  * SOI LỜI TIẾNG VIỆT CỦA CÔ. Trả `{ ok, vi }` — `vi` là lý do khi hỏng.
@@ -636,7 +733,7 @@ const MOC_NGOAC = /[""“”]([^""“”]+)[""“”]|'([^']{2,})'/g;
  * còn hỏng theo hướng kia là bé học sai. Và đường lui luôn có — lời viết sẵn của
  * chính bước ấy.
  */
-export function loiVietHopLe(vi, { von, cauDich = '' } = {}) {
+export function loiVietHopLe(vi, { von, cauDich = '', beNoi = '' } = {}) {
   const s = String(vi || '');
   if (!s.trim()) return { ok: false, vi: 'lời Việt rỗng' };
 
@@ -644,9 +741,17 @@ export function loiVietHopLe(vi, { von, cauDich = '' } = {}) {
      gái", `friend` là "bạn bè" — ở đó nó là DANH TỪ, và chặn nhầm là chặn luôn
      lời giải nghĩa của chính sách. Cổng bắt được thật: Unit 7, từ "girl".
      Nên trừ mấy dạng ghép ra. Danh sách ngắn và có cổng canh cả hai chiều. */
+  /* ⚠ BỎ PHẦN TRONG NGOẶC KÉP TRƯỚC KHI SOI ĐẠI TỪ.
+     Luật này canh CÁCH CÔ GỌI BÉ, không canh chữ. Mà sách chú `you` là "bạn, các
+     bạn" và `friend` là "bạn, bạn bè" — cô giảng nghĩa thì phải nhắc lại đúng lời
+     chú ấy. Bản cũ chặn luôn, và chặn thì `loiVietSach` lặng lẽ lui về lời chung
+     chung: bé mất hẳn lời giảng nghĩa mà không ai biết. Cổng bắt được ở lớp 3
+     unit 1 — trước đó cổng chỉ soi lớp 1, mà lớp 1 không dạy "you".
+     Trong ngoặc là TRÍCH DẪN, ngoài ngoặc mới là lời cô nói với bé. `Bạn nói lại
+     đi.` vẫn bị chặn như cũ vì nó không nằm trong ngoặc nào. */
+  const ngoaiNgoac = s.replace(/[""“”][^""“”]*[""“”]/g, ' ');
   const xau = XUNG_HO_CAM.find((x) => new RegExp(
-    `(?<![\\p{L}])${x}(?![\\p{L}])${x === 'bạn' ? '(?!\\s+(gái|trai|nhỏ|ấy|bè|học))' : ''}`,
-    'iu').test(s));
+    `(?<![\\p{L}])${x}(?![\\p{L}])${SAU_KHONG_CAM[x] || ''}`, 'iu').test(ngoaiNgoac));
   if (xau) return { ok: false, vi: `gọi bé bằng "${xau}" — cô phải gọi "con"` };
 
   if (!von) return { ok: true, vi: '' };
@@ -666,6 +771,23 @@ export function loiVietHopLe(vi, { von, cauDich = '' } = {}) {
     ...[...von.loi.cau, ...von.on.flatMap((x) => x.cau)].map((c) => c.cau),
     ...(von.loi.cauSach || []), ...von.on.flatMap((x) => x.cauSach || []),
     ...LOI_LOP_HOC, cauDich,
+    /* ⚠ CHỮ BÉ VỪA NÓI CŨNG ĐƯỢC PHÉP NHẮC LẠI — nếu không thì lượt SỬA tự bóp cổ
+       mình. Cô sửa bé thì phải trích đúng cái bé vừa nói ("con nói 'It cooking',
+       thiếu chữ 's' "), mà cái bé nói lại chính là một chữ KHÔNG có trong bài —
+       nên `loiVietHopLe` gạt, và `loiVietSach` lui về câu viết sẵn. Lời sửa cụ thể
+       bị vứt đi đúng lượt cần nó nhất, và không gì kêu cả.
+       Mở chỗ này KHÔNG phá luật 10: luật cấm cô BỊA ra một chữ bé chưa từng nói,
+       chứ không cấm cô nhắc lại chữ bé vừa nói ra miệng. */
+    beNoi,
+    /* ⚠ LỜI CHÚ NGHĨA CỦA SÁCH CŨNG ĐƯỢC PHÉP TRÍCH.
+       Phép soi này đoán "trong ngoặc là tiếng Anh hay tiếng Việt" bằng DẤU. Mà
+       tiếng Việt không phải lúc nào cũng có dấu: sách chú `top` là "con quay",
+       `ba` là "cha" — không một ký tự nào có dấu, nên mẩu ấy bị soi như tiếng Anh
+       và "con" hoá thành chữ lạ. Cô giảng nghĩa đúng lời sách mà bị gạt, rồi
+       `loiVietSach` lặng lẽ lui về câu chung chung. Cổng bắt được ở lớp 1 unit 14.
+       Nghĩa nằm ngay trong `von`, nên nhận chúng vào túi là đủ và không nới thêm
+       gì ngoài đúng lời sách. */
+    ...[...von.loi.tu, ...von.on.flatMap((x) => x.tu)].map((t) => t.nghia),
   ].filter(Boolean).flatMap((x) => chuTrongCau(x)));
 
   for (const m of s.matchAll(MOC_NGOAC)) {
@@ -710,8 +832,41 @@ export const KEM_LIEN_DE_HA = 3;
  * @param batDau  mốc thời gian mở phòng (ms)
  * @param bayGio  ms — tiêm vào để cổng chạy được mà không phụ thuộc đồng hồ thật
  */
+/**
+ * NHỮNG LƯỢT CỦA BÉ THẬT SỰ LÀ MỘT LẦN LUYỆN.
+ *
+ * ⚠ LƯỢT ĐÁP LỜI CHÀO KHÔNG PHẢI MỘT LẦN LUYỆN, và bỏ sót chuyện này làm hỏng hai
+ * thứ cùng lúc — cả hai chỉ lộ ra khi trải từng lượt của một buổi ra giấy:
+ *
+ *   · BUỔI KẾT SỚM MỘT NẤC. `DAT_LIEN_DE_XONG = 3`, mà lượt "hello" của bé đã ăn
+ *     mất một suất. Bé giỏi chỉ phải nói ĐÚNG HAI câu là được khen "con nắm bài
+ *     rồi" — trong khi bác chốt con số 3 là ba lần NẮM BÀI.
+ *   · BƯỚC ĐẦU BỊ NHẢY CÓC. Bước luyện chọn theo `soDat % n`; lượt chào đẩy chỉ số
+ *     lên 1, nên bước thứ 0 — bước `mau`, chỗ cô LÀM MẪU — không bao giờ tới lượt.
+ *     Bé bị hỏi "What's your hobby?" ngay khi chưa hề nghe mẫu câu nào.
+ *
+ * Không có gì đỏ ở cả hai chỗ: cô vẫn nói đúng câu của bài, màn kết vẫn chúc mừng.
+ *
+ * Biết được lượt nào là luyện nhờ mỗi lượt của cô nay mang theo `buoc` — loại bước
+ * đã sinh ra nó (`goiPhongNoi.js` trả về, `PhongNoi.jsx` giữ lại). Buổi cũ không có
+ * trường ấy thì coi như luyện: thà đếm rộng còn hơn bỏ mất tiến độ đã có của bé.
+ */
+const BUOC_KHONG_LUYEN = new Set(['chao', 'hoiThich', 'ket']);
+
+export function luotLuyen(lichSu = []) {
+  const ra = [];
+  for (let i = 0; i < lichSu.length; i += 1) {
+    const x = lichSu[i];
+    if (x?.vai !== 'be' || x.diem == null) continue;
+    const truoc = lichSu.slice(0, i).reverse().find((y) => y?.vai === 'may');
+    if (truoc?.buoc && BUOC_KHONG_LUYEN.has(truoc.buoc)) continue;
+    ra.push(x);
+  }
+  return ra;
+}
+
 export function tinhBuoi({ lichSu = [], batDau = null, bayGio = null, datNguong = 6 } = {}) {
-  const cuaBe = lichSu.filter((x) => x.vai === 'be' && x.diem != null);
+  const cuaBe = luotLuyen(lichSu);
   /* `batDau == null` mới là "chưa bấm giờ". Viết `batDau ? … : 0` thì mốc 0 — một
      con số hợp lệ — bị coi là chưa bắt đầu, và đồng hồ không bao giờ chạy. Cùng họ
      với lỗi `Date.parse(0)` ra năm 2000 đã ghi trong sổ. */
@@ -819,6 +974,26 @@ export function cauHoiSoThich(von) {
   };
 }
 
+/**
+ * BUỔI HÔM NAY DẠY GÌ — lấy từ chính kịch bản của unit.
+ *
+ * Bác dặn 18-08: "xây dựng kịch bản/prompt cho AI theo từng Unit mới đảm bảo sát
+ * nội dung". Câu tiếng Anh thì đã sát từ trước (kịch bản ép từng câu một), nhưng
+ * cái KHUNG buổi học thì chưa: lời dặn cũ chỉ đưa một bảng từ và một bảng công
+ * thức: đủ để nói đúng, không đủ để biết đang dạy bài gì.
+ *
+ * Ba dòng, và cả ba đều đã có sẵn trong bài — `objective.text` là năng lực sách
+ * khai cho unit, `tinhHuong` là hoàn cảnh sách đặt ra cho mẫu câu. Không soạn tay,
+ * nên không lệch với sách được.
+ */
+function dongUnit(u) {
+  const d = [];
+  if (u.ten) d.push(`TODAY'S UNIT: ${u.ten}`);
+  if (u.muc_tieu) d.push(`  By the end she should be able to: ${u.muc_tieu}`);
+  if (u.tinh_huong) d.push(`  The situation the book sets up: ${u.tinh_huong}`);
+  return d;
+}
+
 /** Lời dặn thêm về bé — chỉ những gì app đã có, không hỏi thêm gì. */
 function dongHoSo(hoSo, tenBe) {
   if (!hoSo) return '';
@@ -851,7 +1026,24 @@ function dongHoSo(hoSo, tenBe) {
  * Bé chưa đạt thì đứng yên ở bước ấy để được thử lại. Tiến theo số lượt đã nói thì
  * bé nói sai cũng bị đẩy sang bài mới — đúng cái làm bé hụt hơi rồi bỏ.
  */
-const BUOC_LUYEN = new Set(['tu', 'mau', 'thay']);
+/**
+ * NHỮNG BƯỚC NẰM TRONG VÒNG LUYỆN THƯỜNG — TOÀN LÀ BƯỚC CÂU.
+ *
+ * ⚠ `tu` KHÔNG còn ở đây, và đó là chỗ sửa chính của bản 18-08.
+ *
+ * Bác xem phòng rồi bảo "chẳng có hiệu quả gì". Trải kịch bản ra thì rõ: unit 5
+ * lớp 3 có 15 bước, tám bước là MỘT CHỮ TRẦN ("cooking", "dancing"). Mà buổi kết
+ * thúc ở `DAT_LIEN_DE_XONG = 3` lần nói đúng — nên bé giỏi làm xong buổi mà chưa
+ * hề nói một câu nào. Bé học được tám cái nhãn, không học được cách nói.
+ *
+ * Nay bước `tu` chỉ còn là ĐƯỜNG LUI: bé trượt mấy lượt liền thì `haDoKho` bật và
+ * vòng luyện thu về đúng mấy bước ấy. Bỏ hẳn chúng đi thì bé đuối không còn gì
+ * bám — xem nhánh `haDoKho` ngay dưới.
+ */
+const BUOC_LUYEN = new Set(['mau', 'noiCa', 'hoiBe', 'doiVai', 'thay']);
+
+/** Bước lùi về khi bé đuối — dễ nhất, và chỉ có ở đây. */
+const BUOC_DE = new Set(['tu']);
 
 /** Điền {ten} và {thich} vào câu của bước. Thiếu thì dùng `mac_dinh` đã ghi sẵn. */
 export function dienBuoc(buoc, { tenBe = '', thich = '' } = {}) {
@@ -867,7 +1059,10 @@ export function buocTiepTheo({
   const ds = kichBan?.buoc || [];
   if (!ds.length) return null;
 
-  const soDat = lichSu.filter((x) => x.vai === 'be' && x.diem >= datNguong).length;
+  /* Chỉ đếm lượt LUYỆN — lượt đáp lời chào không đẩy kịch bản đi được. Xem
+     `luotLuyen`: bỏ sót chỗ này thì bước `mau` bị nhảy cóc, và bé bị hỏi trước khi
+     nghe mẫu. */
+  const soDat = luotLuyen(lichSu).filter((x) => x.diem >= datNguong).length;
   const daChao = lichSu.some((x) => x.vai === 'may');
 
   /* Lọc những bước KHÔNG còn phải làm nữa: chào rồi thì thôi chào, bé chọn sở
@@ -898,22 +1093,101 @@ export function buocTiepTheo({
      * kịch bản thì đi tiếp.
      */
     if (b.loai === 'hoiThich') return !hoSo?.thich && soLuotBe === 0;
-    return haDoKho ? b.loai === 'tu' : BUOC_LUYEN.has(b.loai);
+    return haDoKho ? BUOC_DE.has(b.loai) : BUOC_LUYEN.has(b.loai);
   });
-  if (!conLai.length) return null;
+  /* Kịch bản không có bước dễ nào (mấy bản sửa tay của lớp 1) thì đừng trả rỗng:
+     rỗng nghĩa là cả tầng kịch bản tắt, và bé đang đuối lại rơi vào chỗ mô hình tự
+     nghĩ câu — đúng lúc ít chịu nổi nhất. */
+  const ds2 = conLai.length ? conLai
+    : ds.filter((b) => BUOC_LUYEN.has(b.loai));
+  if (!ds2.length) return null;
 
   /* Bước MỘT LẦN (chào · hỏi sở thích) làm cho xong trước, và KHÔNG đếm chung với
      bước luyện: chào không phải một lần "đạt". Bản đầu trộn hai loại vào cùng phép
      đếm nên bước hỏi sở thích bị nhảy cóc — bé chưa kịp chọn gì thì đã sang luyện
      từ, và cả phần "nói về chính bé" thành vô dụng. */
-  const motLan = conLai.filter((b) => !BUOC_LUYEN.has(b.loai));
+  /* ⚠ "Bước một lần" là bước KHÔNG thuộc vòng luyện NÀO — kể cả vòng dễ. Bản đầu
+     viết `!BUOC_LUYEN.has(...)`, mà từ 18-08 `tu` đã rời khỏi `BUOC_LUYEN`; thế là
+     mọi bước `tu` bị coi là bước một lần và hàm này trả về CÙNG MỘT TỪ cho mọi
+     lượt của buổi. Không có gì đỏ — cô vẫn nói, chỉ là nói mãi một chữ. */
+  const motLan = ds2.filter((b) => !BUOC_LUYEN.has(b.loai) && !BUOC_DE.has(b.loai));
   if (motLan.length) return motLan[0];
+
+  /* ── LƯỢT SỬA ĐỨNG TRƯỚC MỌI BƯỚC KHÁC ── (bác chốt 18-08)
+     "Cần dạy học sinh nói rồi hướng dẫn học sinh sửa."
+     Bé vừa nói trượt thì việc của lượt này là SỬA đúng câu ấy, không phải đi tiếp.
+     Trước nay không có bước nào làm việc này: bé được 3 điểm thì `soDat` không
+     tăng, nên kịch bản đứng yên và cô nhắc lại y nguyên câu cũ với y nguyên lời
+     dặn — bé nghe lại lần hai chứ không được chỉ sai ở đâu. */
+  const sua = buocSua(lichSu, datNguong);
+  if (sua) return sua;
 
   /* Hết kịch bản thì QUAY VÒNG phần luyện, đừng dừng: buổi kết là việc của
      `tinhBuoi` (đạt đủ, hoặc hết giờ), không phải của việc hết bước. */
-  const luyen = conLai.filter((b) => BUOC_LUYEN.has(b.loai));
+  const luyen = ds2.filter((b) => BUOC_LUYEN.has(b.loai) || BUOC_DE.has(b.loai));
   if (!luyen.length) return null;
-  return xenKe(luyen)[soDat % luyen.length];
+  const thu = xenKe(luyen);
+  return thu[soDat % thu.length];
+}
+
+/** Lượt gần nhất bé nói VÀ được chấm. Chưa nói câu nào thì `null`. */
+export const luotBeCuoi = (lichSu = []) => [...lichSu].reverse()
+  .find((x) => x?.vai === 'be' && x.diem != null) || null;
+
+/**
+ * BƯỚC SỬA — dựng lúc chạy, không nằm trong `kichban_noi.json`.
+ *
+ * Không sinh sẵn được, vì nó phụ thuộc vào CÂU BÉ VỪA NÓI: câu ấy chỉ có lúc chạy,
+ * và mỗi bé mỗi khác. Câu tiếng Anh của bước là chính câu bé đang cố nói (`mau` —
+ * `PhongNoi.jsx` giữ lại ngay trong lượt của bé), nên cô đọc lại đúng thứ bé cần
+ * chứ không đọc một câu khác.
+ *
+ * ── VÌ SAO KHÔNG ĐẶT NGƯỠNG RIÊNG ──
+ * Dùng luôn `datNguong` của cả phòng (6/10, `DAT` ở `chamnoi.js`). Đặt thêm một
+ * ngưỡng "đáng sửa" thứ hai thì có hai con số nói về cùng một việc, và sớm muộn
+ * lệch nhau: bé "đạt" mà vẫn bị sửa, hoặc "chưa đạt" mà không ai sửa.
+ *
+ * ── CÓ SỢ SỬA MÃI KHÔNG ──
+ * Không. Bé trượt liên tiếp thì `tinhBuoi` bật `haDoKho`, và vòng luyện thu về
+ * mấy bước TỪ — câu ngắn hẳn lại. Đó mới là đường lui, chứ không phải bỏ sửa.
+ */
+export const SUA_TOI_DA = 2;
+
+export function buocSua(lichSu = [], datNguong = 6) {
+  /* ⚠ CHỈ SỬA LƯỢT LUYỆN. Lượt bé đáp lời chào cũng được chấm, nên không lọc thì
+     bé lí nhí chữ "hello" là bị cô bắt sửa ngay trước khi vào bài — trải buổi ra
+     giấy mới thấy: lượt 2 của cả buổi đã là một lượt sửa. */
+  const ds = luotLuyen(lichSu);
+  const be = ds.at(-1);
+  if (!be || be.diem >= datNguong || !be.mau) return null;
+
+  /**
+   * ⚠ SỬA HAI LẦN RỒI ĐI TIẾP — nếu không thì phòng này thành cái bẫy.
+   *
+   * `soDat` chỉ tăng khi bé ĐẠT, nên bé chưa nói được thì kịch bản đứng yên; mà
+   * lượt sửa lại chen lên trước cả vòng luyện. Cộng hai thứ ấy: bé đuối bị hỏi
+   * đúng một câu cho tới hết 20 phút, kể cả khi `haDoKho` đã bật — vì mấy bước TỪ
+   * dễ hơn không bao giờ tới lượt. Đã trải ra giấy và thấy tận mắt: mười lượt liền
+   * đều là "Hello!".
+   *
+   * Sửa hai lần là đủ cho một chỗ khó. Lần thứ ba mà vẫn chưa được thì cái bé cần
+   * không phải nghe lại lần nữa, mà là một việc DỄ HƠN — đó đúng là việc của
+   * `haDoKho`. Nên tới đó thì nhường đường cho vòng luyện.
+   */
+  let lien = 0;
+  for (let i = ds.length - 1; i >= 0; i -= 1) {
+    if (ds[i].mau !== be.mau || ds[i].diem >= datNguong) break;
+    lien += 1;
+  }
+  if (lien > SUA_TOI_DA) return null;
+  const thieu = (be.thieu || []).filter(Boolean);
+  return {
+    loai: 'sua',
+    en: be.mau,
+    vi: thieu.length
+      ? `Con nói lại câu này nhé — lần vừa rồi chưa có chữ “${thieu[0]}”.`
+      : 'Con nói lại câu này, chậm hơn một chút nhé.',
+  };
 }
 
 /**
@@ -942,33 +1216,70 @@ export function buocTiepTheo({
  * nghe hết cả bốn từ mới được ghép.
  */
 export function xenKe(ds) {
-  const tu = ds.filter((b) => b.loai === 'tu');
-  const cau = ds.filter((b) => b.loai !== 'tu');
-  if (!tu.length || !cau.length) return ds;
+  /* ── BẢN 18-08: XEN GIỮA "NHẮC LẠI" VÀ "TỰ NÓI" ──
+     Từ rời không còn nằm trong vòng luyện thường nữa (xem `BUOC_LUYEN`), nên phép
+     xen cũ — hai TỪ rồi một CÂU — không còn gì để xen. Cái cần xen nay là hai
+     việc khác hẳn nhau về chất:
+
+       · NHẮC LẠI (`mau` · `noiCa`)  — cô cho sẵn câu, bé nói theo;
+       · TỰ NÓI  (`hoiBe` · `doiVai` · `thay`) — bé phải tự nghĩ ra nội dung.
+
+     Đi hết vế nhắc lại rồi mới tới vế tự nói thì bé giỏi xong buổi ở lượt thứ ba,
+     tức là chưa bao giờ phải tự đáp một câu nào — đúng cái lỗi cũ, chỉ dời lên
+     một tầng. Nên cứ một bước nhắc lại thì một bước tự nói.
+
+     HAI nhắc lại rồi MỘT tự nói, chứ không một-một. Buổi kết ở ba lần đạt, nên ba
+     bước đầu là tất cả những gì bé giỏi được gặp — và ba bước ấy phải đúng ba nhịp
+     của một buổi dạy: LÀM MẪU → NÓI LẠI → TỰ NÓI. Xen một-một thì nhịp thành
+     làm mẫu → tự nói, bé bị hỏi khi chưa kịp nói câu ấy lần nào.
+
+     `mau` đứng đầu là cố ý: bé phải NGHE mẫu trước khi bị hỏi. */
+  const nhac = ds.filter((b) => b.loai === 'mau' || b.loai === 'noiCa' || b.loai === 'tu');
+  const tuNoi = ds.filter((b) => !['mau', 'noiCa', 'tu'].includes(b.loai));
+  if (!nhac.length || !tuNoi.length) return ds;
   const ra = [];
   let i = 0;
   let j = 0;
   while (ra.length < ds.length) {
-    /* Hai từ, một câu. Bên nào hết thì bên kia chảy nốt — đừng để sót bước nào,
-       vì phần luyện quay vòng và bước bị sót là bước bé không bao giờ gặp. */
-    for (let k = 0; k < 2 && i < tu.length; k += 1, i += 1) ra.push(tu[i]);
-    if (j < cau.length) { ra.push(cau[j]); j += 1; }
-    if (i >= tu.length && j >= cau.length) break;
+    for (let k = 0; k < 2 && i < nhac.length; k += 1, i += 1) ra.push(nhac[i]);
+    if (j < tuNoi.length) { ra.push(tuNoi[j]); j += 1; }
+    if (i >= nhac.length && j >= tuNoi.length) break;
   }
   return ra;
 }
 
 /** Lời dặn cho lượt này khi ĐÃ CÓ kịch bản — câu tiếng Anh không để mô hình nghĩ. */
-export function dongBuoc(buoc, hoSo) {
+export function dongBuoc(buoc, hoSo, luotBe = null) {
   if (!buoc) return '';
   if (buoc.loai === 'ket' || buoc.loai === 'hoiThich') return '';
   const en = dienBuoc(buoc, hoSo);
   const d = [
     `THIS TURN: your English sentence MUST be exactly: "${en}"`,
     '  Copy it character for character. Do not rephrase, extend, or substitute.',
+    '  This overrides the "never repeat yourself" rule: the script decides.',
     '  Your only job is the Vietnamese line: react to what the child just said',
     '  (praise a good try, gently fix a wrong one), then point at this sentence.',
-  ];
+    /* VIỆC CỦA BÉ Ở LƯỢT NÀY — thứ mô hình không suy ra được từ câu tiếng Anh.
+       "What's your hobby?" xuất hiện ở HAI bước khác hẳn nhau: `hoiBe` (cô hỏi
+       thật, bé đáp) và `doiVai` (bé hỏi, cô đáp). Cùng một câu, ngược hẳn vai.
+       Không nói ra thì mô hình đoán, và đoán sai thì bé được dặn làm nhầm việc. */
+    dongViecBe(buoc),
+  ].filter(Boolean);
+
+  /* ── CÁI BÉ VỪA NÓI, VÀ ĐIỂM ── (bác chốt 18-08)
+     `goiGui` cố ý cắt bỏ điểm khi gửi lịch sử (nó chỉ gửi vai + chữ), nên trước
+     nay mô hình KHÔNG hề biết bé nói được 9 điểm hay 2 điểm — nó chỉ thấy một
+     dòng chữ mà bộ nhận dạng nghe ra. Thế nên lời khen lượt nào cũng như lượt
+     nào, và không lượt nào chỉ ra chỗ sai. Đúng chỗ bác gọi là "như máy".
+     Điểm và chữ THIẾU đi qua đường này, không qua lịch sử: lịch sử là lời nói,
+     còn đây là lời dặn. */
+  if (luotBe?.diem != null && luotBe.mau) {
+    const t = [`  She was trying to say: "${luotBe.mau}"`,
+      `  She actually said: "${luotBe.chu}" — scored ${luotBe.diem}/10.`];
+    const thieu = [...(luotBe.thieu || []), ...(luotBe.thieuChucNang || [])].filter(Boolean);
+    if (thieu.length) t.push(`  Words she left out: ${thieu.join(', ')}.`);
+    d.push('WHAT THE CHILD JUST DID:', ...t);
+  }
   /**
    * CHỖ KHÓ CỦA BƯỚC NÀY — thứ mô hình KHÔNG thể tự biết.
    *
@@ -987,5 +1298,57 @@ export function dongBuoc(buoc, hoSo) {
     d.push(`  Your Vietnamese line MUST get this teaching point across: "${buoc.vi}"`,
       '  Say it in your own words, warmly — but do not drop the point.');
   }
+  /* Ngữ cảnh SÁCH đặt ra cho mẫu câu này. Cố ý không nằm trong `buoc.vi`: mấy dòng
+     ấy dùng chữ "bạn" theo nghĩa DANH TỪ ("đứng cạnh một bạn chưa quen"), mà
+     `loiVietHopLe` thì cấm chữ "bạn" vì cô không được gọi bé là bạn. Ghép thẳng
+     vào lời viết sẵn là lời viết sẵn tự nó trượt phép soi — cổng bắt được thật ở
+     lớp 1 unit 1. Đưa sang đây thì mô hình kể lại bằng lời của nó, đúng đại từ. */
+  if (buoc.dungDe) d.push(`  What this sentence is for: ${buoc.dungDe}`);
+  if (buoc.cho && buoc.vaiCho) {
+    d.push(`  The changeable slot here is "${buoc.cho}" — the book calls it: ${buoc.vaiCho}`);
+  }
+  if (buoc.tinhHuong) {
+    d.push(`  The situation the book pictures: ${buoc.tinhHuong}`,
+      '  Retell it in your own Vietnamese words — call yourself "cô", the child "con".');
+  }
+  /* Cái bẫy SÁCH khai cho đúng mẫu câu này (`misconceptions[].why`). Chỉ đi kèm
+     bước `mau` — nói lượt nào cũng nói thì nó thành tiếng ồn và bé bỏ ngoài tai. */
+  if (buoc.bay) {
+    d.push(`  The book warns about this mistake — work it in: "${buoc.bay}"`);
+  }
   return d.join('\n');
+}
+
+/**
+ * VIỆC CỦA BÉ Ở LƯỢT NÀY, nói bằng tiếng Anh cho mô hình.
+ *
+ * Tách hẳn ra khỏi `buoc.vi` vì hai thứ khác nhau: `buoc.vi` là Ý PHẢI TRUYỀN ĐẠT
+ * (viết bằng tiếng Việt, cho bé), còn đây là LUẬT CỦA LƯỢT (viết bằng tiếng Anh,
+ * cho mô hình). Trộn vào nhau thì mô hình dịch nguyên luật ra cho bé nghe.
+ */
+function dongViecBe(buoc) {
+  switch (buoc.loai) {
+    case 'mau':
+      return '  ROLE: you are DEMONSTRATING the whole exchange — both the question'
+        + ' and the answer. She may just listen, or repeat after you; say which.';
+    case 'noiCa':
+      return '  ROLE: she repeats the WHOLE sentence after you, not just one word.';
+    case 'hoiBe':
+      return '  ROLE: you are ASKING her a real question. She must answer it herself'
+        + ` with a full sentence${buoc.dapMau ? ` like "${buoc.dapMau}"` : ''}.`
+        + ' Do NOT answer it for her.';
+    case 'doiVai':
+      return '  ROLE: roles swap — SHE asks this question, you will answer next turn.'
+        + ' Tell her it is her turn to be the one asking.';
+    case 'thay':
+      return '  ROLE: same frame, but the sentence is now about HER, not about you.';
+    case 'sua':
+      return '  ROLE: this is a CORRECTION turn. Name the one thing that went wrong,'
+        + ' say what was already good, then have her try the same sentence again.'
+        + ' Do not move on to new material.';
+    case 'tu':
+      return '  ROLE: one bare word — she is struggling, so keep it to that one word.';
+    default:
+      return '';
+  }
 }

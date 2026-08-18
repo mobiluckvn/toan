@@ -21,7 +21,7 @@ import {
   viecTiepTheo, cauHopLe, cauThayThe, loaiOTrong, tachTheoTieng,
   tinhBuoi, loiKet, tuLoiKetHopLe, cauHoiSoThich, PHUT_TOI_DA, DAT_LIEN_DE_XONG,
   loiVietHopLe, XUNG_HO_CAM,
-  buocTiepTheo, dienBuoc, dongBuoc, xenKe,
+  buocTiepTheo, dienBuoc, dongBuoc, xenKe, buocSua, luotBeCuoi, luotLuyen, SUA_TOI_DA,
 } from '../src/mon/tienganh/lib/phongnoi.js';
 
 const bai = (id, tu, cau, hinh = []) => ({
@@ -695,35 +695,99 @@ test('đồng hồ 20 phút KHÔNG được vô hiệu khi ai đó dọn mã', (
 
 /* ═══════════ KỊCH BẢN VIẾT SẴN CHO TỪNG BÀI ═══════════ */
 
-const KB = JSON.parse(readFileSync(
-  new URL('../public/content/ta1/kichban_noi.json', import.meta.url), 'utf8'));
+/**
+ * ⚠ SOI CẢ BA QUYỂN, KHÔNG CHỈ QUYỂN 1.
+ *
+ * Bản cũ chỉ đọc `ta1/kichban_noi.json`. Lớp 2 và lớp 3 có kịch bản riêng từ lâu
+ * mà chưa một phép kiểm nào đụng tới — mà chính hai quyển ấy mới là chỗ hỏng: máy
+ * con gọi `napKichBanNoi()` không tham số nên chúng KHÔNG BAO GIỜ được nạp. Cổng
+ * soi một quyển thì "0 lỗi" chỉ có nghĩa là quyển ấy sạch, không có nghĩa là môn
+ * này sạch — cùng họ với chuyện glob rỗng báo 0 lỗi đã ghi trong sổ.
+ */
+const QUYEN = ['ta1', 'ta2', 'ta3'];
+const SO_BAI = { ta1: 16, ta2: 16, ta3: 21 };
+const kbCua = (ma) => JSON.parse(readFileSync(
+  new URL(`../public/content/${ma}/kichban_noi.json`, import.meta.url), 'utf8'));
+const baiTrong = (ma, id) => JSON.parse(readFileSync(new URL(
+  `../public/content/${ma}/${id.replace('DL:', 'DL_').replace(/\./g, '_')}.json`,
+  import.meta.url), 'utf8'));
+
+const KB = kbCua('ta1');
+/** Mọi kịch bản của mọi quyển, mỗi cái mang theo mã quyển của nó. */
+const MOI_KB = QUYEN.flatMap((ma) => kbCua(ma).map((k) => ({ ...k, ma })));
+const vonCua = (k) => vonTu({ baiNay: baiTrong(k.ma, k.bai), baiCu: [], daDat: false });
+
+/** Bước DẠY CÂU — thứ bác đòi phải là phần chính của buổi. */
+const BUOC_CAU = new Set(['mau', 'noiCa', 'hoiBe', 'doiVai', 'thay']);
 
 test('mỗi bài có đúng một kịch bản, không thiếu bài nào', () => {
-  assert.equal(KB.length, 16);
-  assert.equal(new Set(KB.map((k) => k.bai)).size, 16, 'mã bài không được trùng');
+  for (const ma of QUYEN) {
+    const kb = kbCua(ma);
+    assert.equal(kb.length, SO_BAI[ma], `${ma}: thiếu hoặc thừa kịch bản`);
+    assert.equal(new Set(kb.map((k) => k.bai)).size, SO_BAI[ma], `${ma}: mã bài trùng`);
+  }
 });
 
 test('kịch bản nào cũng mở bằng CHÀO và đóng bằng KẾT', () => {
-  for (const k of KB) {
-    assert.equal(k.buoc[0].loai, 'chao', `${k.bai} không mở bằng lời chào`);
-    assert.equal(k.buoc.at(-1).loai, 'ket', `${k.bai} không có chỗ kết`);
+  for (const k of MOI_KB) {
+    assert.equal(k.buoc[0].loai, 'chao', `${k.ma}/${k.bai} không mở bằng lời chào`);
+    assert.equal(k.buoc.at(-1).loai, 'ket', `${k.ma}/${k.bai} không có chỗ kết`);
   }
 });
 
 test('MỌI câu trong kịch bản đều hợp lệ với chính bài của nó', () => {
   /* Đây là phép kiểm đáng giá nhất của cả tệp kịch bản. Sinh sai một câu thì bé
      nghe câu sai suốt buổi, mà nhìn tệp JSON thì không ai thấy. */
-  const bai = (id) => JSON.parse(readFileSync(new URL(
-    `../public/content/ta1/${id.replace('DL:', 'DL_').replace(/\./g, '_')}.json`,
-    import.meta.url), 'utf8'));
-  for (const k of KB) {
-    const von = vonTu({ baiNay: bai(k.bai), baiCu: [], daDat: false });
+  for (const k of MOI_KB) {
+    const von = vonCua(k);
     for (const b of k.buoc) {
       if (!b.en) continue;
       const en = dienBuoc(b, { tenBe: 'Bo', thich: k.tu[0] });
       assert.ok(cauHopLe(en, { von, tenBe: 'Bo' }),
-        `${k.bai} · bước "${b.loai}" sinh ra câu KHÔNG hợp lệ: "${en}"`);
+        `${k.ma}/${k.bai} · bước "${b.loai}" sinh ra câu KHÔNG hợp lệ: "${en}"`);
     }
+  }
+});
+
+test('phần luyện của MỌI bài là dạy CÂU, không phải đọc từ rời', () => {
+  /* ⚠ ĐÂY LÀ CỔNG CHO ĐÚNG CHỖ BÁC CHỈ RA 18-08: "dạy học sinh nói được các câu
+     giao tiếp hoàn chỉnh chứ không như máy như giờ".
+
+     Bản cũ: unit 5 lớp 3 có 15 bước thì 8 bước là MỘT CHỮ TRẦN. Đếm được, nhưng
+     không cổng nào đếm — nên nó nằm đó từ ngày dựng phòng. Nay bước `tu` chỉ còn
+     là đường lui lúc bé đuối, và phép kiểm này giữ cho nó đừng bò lại vào vòng
+     luyện thường. */
+  for (const k of MOI_KB) {
+    const cau = k.buoc.filter((b) => BUOC_CAU.has(b.loai));
+    assert.ok(cau.length >= 2,
+      `${k.ma}/${k.bai}: chỉ ${cau.length} bước dạy câu — buổi này vẫn là đọc từ rời`);
+    /* Và từ rời KHÔNG được nằm trong vòng luyện: `buocTiepTheo` khi bé nói đúng
+       không bao giờ được trả về một bước `tu`. */
+    const dat = (n) => Array.from({ length: n }, () => ({ vai: 'be', diem: 9 }));
+    for (const n of [0, 1, 2, 3, 5, 9]) {
+      const b = buocTiepTheo({ kichBan: k, lichSu: [{ vai: 'may', en: 'x' }, ...dat(n)],
+                               hoSo: { thich: k.tu[0] } });
+      assert.notEqual(b?.loai, 'tu',
+        `${k.ma}/${k.bai}: lượt thứ ${n + 1} vẫn là một chữ trần "${b?.en}"`);
+    }
+  }
+});
+
+test('bé phải gặp một câu NGAY TRONG BA LƯỢT ĐẦU', () => {
+  /* Buổi kết ở `DAT_LIEN_DE_XONG = 3`. Bé giỏi nói đúng ba lượt liền là XONG — nên
+     ba lượt ấy phải chứa việc đáng học nhất. Đếm tới lượt thứ tư là đếm một chỗ bé
+     giỏi không bao giờ tới. */
+  for (const k of MOI_KB) {
+    let ls = [{ vai: 'be', chu: 'chào' }];
+    const gap = [];
+    for (let i = 0; i < 4; i += 1) {
+      const b = buocTiepTheo({ kichBan: k, lichSu: ls, hoSo: { thich: k.tu[0] } });
+      if (!b) break;
+      gap.push(b.loai);
+      ls = [...ls, { vai: 'may', en: dienBuoc(b, { tenBe: 'An' }) }, { vai: 'be', diem: 9 }];
+    }
+    assert.ok(gap.slice(0, 3).some((l) => BUOC_CAU.has(l)),
+      `${k.ma}/${k.bai}: ba lượt đầu là [${gap.slice(0, 3)}] — chưa câu nào`);
   }
 });
 
@@ -737,14 +801,14 @@ test('bé KHÔNG bấm chọn sở thích thì kịch bản VẪN đi tiếp', (
      Không đỏ, không chậm, cô vẫn nói trôi chảy (vì `cauHopLe` vẫn gác vốn từ) —
      chỉ là nó TỰ NGHĨ, đúng cái việc kịch bản sinh ra để lấy khỏi tay nó. */
   const dat = (n) => Array(n).fill(0).flatMap(() => [{ vai: 'may', en: 'x' }, { vai: 'be', diem: 9 }]);
-  for (const k of KB) {
+  for (const k of MOI_KB) {
     for (const n of [1, 2, 5]) {
       const b = buocTiepTheo({ kichBan: k, lichSu: dat(n), hoSo: {} });
-      assert.ok(b, `${k.bai}: hết bước sau ${n} lượt`);
+      assert.ok(b, `${k.ma}/${k.bai}: hết bước sau ${n} lượt`);
       assert.notEqual(b.loai, 'hoiThich',
-        `${k.bai}: sau ${n} lượt vẫn kẹt ở hoiThich — kịch bản không dẫn được lượt nào`);
+        `${k.ma}/${k.bai}: sau ${n} lượt vẫn kẹt ở hoiThich — kịch bản không dẫn được lượt nào`);
       assert.ok(dongBuoc(b, {}).length > 0,
-        `${k.bai}: lượt thứ ${n + 1} có lời dặn RỖNG — mô hình tự nghĩ câu`);
+        `${k.ma}/${k.bai}: lượt thứ ${n + 1} có lời dặn RỖNG — mô hình tự nghĩ câu`);
     }
   }
 });
@@ -758,7 +822,7 @@ test('bé nói ĐÚNG HẾT vẫn phải gặp ít nhất MỘT CÂU trước kh
 
      Không lỗi, không cảnh báo, màn kết vẫn chúc mừng vui vẻ. Chỉ trải từng lượt ra
      mới thấy — nên phải có cổng trải đúng như thế. */
-  for (const k of KB) {
+  for (const k of MOI_KB) {
     let ls = [{ vai: 'be', chu: 'chào' }];
     const gap = [];
     for (let i = 0; i < 8; i += 1) {
@@ -768,19 +832,20 @@ test('bé nói ĐÚNG HẾT vẫn phải gặp ít nhất MỘT CÂU trước kh
       gap.push(b.loai);
       ls = [...ls, { vai: 'may', en: dienBuoc(b, { tenBe: 'An' }) }, { vai: 'be', diem: 9 }];
     }
-    assert.ok(gap.some((l) => l === 'mau' || l === 'thay'),
-      `${k.bai}: bé nói đúng hết mà chỉ gặp [${gap}] — hết buổi chưa nói câu nào`);
+    assert.ok(gap.some((l) => BUOC_CAU.has(l)),
+      `${k.ma}/${k.bai}: bé nói đúng hết mà chỉ gặp [${gap}] — hết buổi chưa nói câu nào`);
   }
 });
 
 test('xen kẽ KHÔNG được đánh rơi bước nào', () => {
   /* Phần luyện quay vòng, nên bước bị rơi khỏi thứ tự là bước bé KHÔNG BAO GIỜ
      gặp — mất hẳn một từ hoặc một câu mà chẳng ai thấy. */
-  for (const k of KB) {
-    const luyen = k.buoc.filter((b) => ['tu', 'mau', 'thay'].includes(b.loai));
+  for (const k of MOI_KB) {
+    const luyen = k.buoc.filter((b) => BUOC_CAU.has(b.loai));
     const sau = xenKe(luyen);
-    assert.equal(sau.length, luyen.length, `${k.bai}: số bước đổi sau khi xen kẽ`);
-    assert.deepEqual(new Set(sau), new Set(luyen), `${k.bai}: xen kẽ làm rơi hoặc nhân đôi bước`);
+    assert.equal(sau.length, luyen.length, `${k.ma}/${k.bai}: số bước đổi sau khi xen kẽ`);
+    assert.deepEqual(new Set(sau), new Set(luyen),
+      `${k.ma}/${k.bai}: xen kẽ làm rơi hoặc nhân đôi bước`);
   }
   /* Một bên rỗng thì trả nguyên — đừng dựng mảng mới cho khác đi. */
   const chiTu = [{ loai: 'tu' }, { loai: 'tu' }];
@@ -790,11 +855,11 @@ test('xen kẽ KHÔNG được đánh rơi bước nào', () => {
 
 test('vẫn hỏi sở thích ĐÚNG MỘT LẦN, ngay sau lời chào', () => {
   /* Sửa chỗ kẹt mà bỏ luôn câu hỏi thì mất phần "nói về chính bé" bác dặn 13-08. */
-  for (const k of KB) {
+  for (const k of MOI_KB) {
     if (!k.buoc.some((b) => b.loai === 'hoiThich')) continue;
     const sauChao = [{ vai: 'may', en: 'Hello!' }];
     assert.equal(buocTiepTheo({ kichBan: k, lichSu: sauChao, hoSo: {} }).loai, 'hoiThich',
-      `${k.bai}: phải hỏi sở thích ngay sau lời chào`);
+      `${k.ma}/${k.bai}: phải hỏi sở thích ngay sau lời chào`);
   }
 });
 
@@ -895,12 +960,12 @@ test('ĐƯỜNG LUI phải sạch — mọi lời viết sẵn tự nó qua đư
      câu hỏng của mô hình rồi thay bằng một câu hỏng khác. Cả 16 kịch bản, kể cả
      ba bản viết tay. */
   assert.ok(XUNG_HO_CAM.includes('bạn'), 'danh sách cấm phải có "bạn"');
-  for (const k of KB) {
-    const von = vonTu({ baiNay: baiCua(k.bai), baiCu: [], daDat: false });
+  for (const k of MOI_KB) {
+    const von = vonCua(k);
     for (const b of k.buoc) {
       if (!b.vi) continue;
       const kq = loiVietHopLe(b.vi, { von, cauDich: b.en || '' });
-      assert.ok(kq.ok, `${k.bai} · "${b.en}": lời viết sẵn tự nó hỏng — ${kq.vi}`);
+      assert.ok(kq.ok, `${k.ma}/${k.bai} · "${b.en}": lời viết sẵn tự nó hỏng — ${kq.vi}`);
     }
   }
 });
@@ -1013,10 +1078,10 @@ test('SỐ ĐẾM chỉ được nhận ở bài mà công thức ĐÒI một co
 test('ô của TÊN không bao giờ bị điền đồ vật', () => {
   /* "Bye, book." — mô hình đã sinh ra thật khi được thả tự do. Kịch bản không được
      phép mắc lại lỗi ấy, và đây là chỗ soi. */
-  for (const k of KB) {
+  for (const k of MOI_KB) {
     for (const b of k.buoc) {
       if (b.loai !== 'thay' || b.o !== 'ten') continue;
-      assert.match(b.en, /\{ten\}/, `${k.bai}: ô tên phải điền {ten}, không phải từ vựng`);
+      assert.match(b.en, /\{ten\}/, `${k.ma}/${k.bai}: ô tên phải điền {ten}, không phải từ vựng`);
     }
   }
 });
@@ -1047,9 +1112,13 @@ test('bước MỘT LẦN làm xong trước, không bị nhảy cóc', () => {
      thử phải là lúc bé CHƯA nói câu nào có điểm. */
   const vuaChao = [{ vai: 'be', chu: 'Chào cô' }, { vai: 'may', en: 'Hello!' }];
   assert.equal(buocTiepTheo({ kichBan: k, lichSu: vuaChao, hoSo: {} }).loai, 'hoiThich');
-  assert.equal(
-    buocTiepTheo({ kichBan: k, lichSu: vuaChao, hoSo: { thich: 'ball' } }).loai, 'tu',
-    'chọn rồi thì thôi hỏi lại');
+  /* ⚠ MỐC NÀY ĐỔI LẦN NỮA 18-08. Bản cũ đòi bước kế tiếp là `tu` — đúng với thiết
+     kế cũ, nơi vòng luyện mở đầu bằng từ rời. Nay vòng luyện toàn bước CÂU và `tu`
+     lùi về làm đường lui, nên đòi `tu` ở đây là đòi đúng cái vừa bỏ đi. */
+  const sau = buocTiepTheo({ kichBan: k, lichSu: vuaChao, hoSo: { thich: 'ball' } });
+  assert.notEqual(sau.loai, 'hoiThich', 'chọn rồi thì thôi hỏi lại');
+  assert.ok(BUOC_CAU.has(sau.loai),
+    `chọn xong phải vào luyện CÂU, không phải "${sau.loai}"`);
 });
 
 test('đuối thì lùi hẳn về bước TỪ', () => {
@@ -1122,16 +1191,15 @@ test('vỏ app TRUYỀN hồ sơ con xuống môn', () => {
 test('tên dự phòng lấy TỪ SÁCH, không bịa tên lạ', () => {
   /* Bé chưa khai tên mà bị gọi bằng một cái tên bịa sẵn thì đó là tên người khác.
      Lấy tên trong chính câu ví dụ của bài thì ít nhất bé đang nhại đúng nhân vật. */
-  const kb = JSON.parse(readFileSync(
-    new URL('../public/content/ta1/kichban_noi.json', import.meta.url), 'utf8'));
-  for (const k of kb) {
+  for (const k of MOI_KB) {
     for (const b of k.buoc) {
       if (b.o !== 'ten') continue;
-      assert.ok(b.mac_dinh, `${k.bai}: ô tên thiếu giá trị dự phòng`);
-      assert.notEqual(b.mac_dinh, 'Bo', `${k.bai}: vẫn bịa tên "Bo"`);
+      assert.ok(b.mac_dinh, `${k.ma}/${k.bai}: ô tên thiếu giá trị dự phòng`);
+      assert.notEqual(b.mac_dinh, 'Bo', `${k.ma}/${k.bai}: vẫn bịa tên "Bo"`);
       /* Phải là cái tên CHÍNH SÁCH dùng — tìm thấy trong một câu ví dụ của bài. */
       const coTrongSach = k.buoc.some((x) => x.loai === 'mau' && x.en?.includes(b.mac_dinh));
-      assert.ok(coTrongSach, `${k.bai}: "${b.mac_dinh}" không có trong câu ví dụ nào của bài`);
+      assert.ok(coTrongSach,
+        `${k.ma}/${k.bai}: "${b.mac_dinh}" không có trong câu ví dụ nào của bài`);
     }
   }
 });
@@ -1140,4 +1208,242 @@ test('có tên thật thì DÙNG tên thật, không dùng dự phòng', () => {
   const b = { loai: 'thay', o: 'ten', en: "Hi, I'm {ten}.", mac_dinh: 'Bill' };
   assert.equal(dienBuoc(b, { tenBe: 'An' }), "Hi, I'm An.");
   assert.equal(dienBuoc(b, { tenBe: '' }), "Hi, I'm Bill.", 'chưa khai tên thì dùng tên trong sách');
+});
+
+/* ═══════════ DẠY NÓI VÀ SỬA LỖI — bác chốt 18-08-2026 ═══════════ */
+
+test('bé nói trượt thì lượt sau là lượt SỬA, không phải bài mới', () => {
+  /* ⚠ ĐÂY LÀ CHỖ BÁC CHỈ RA: "Cần dạy học sinh nói rồi hướng dẫn học sinh sửa."
+     Trước 18-08 không có bước nào làm việc này. Bé được 3 điểm thì `soDat` không
+     tăng, kịch bản đứng yên, và cô nhắc lại Y NGUYÊN câu cũ với Y NGUYÊN lời dặn
+     — bé nghe lại lần hai chứ không được chỉ sai ở đâu. Không lỗi, không cảnh
+     báo; nhìn màn hình thì thấy cô vẫn nói năng tử tế. */
+  const k = MOI_KB[0];
+  const truot = [{ vai: 'may', en: "Hi, I'm Bill." },
+                 { vai: 'be', chu: 'hi im bi', diem: 3, mau: "Hi, I'm Bill.", thieu: ['bill'] }];
+  const b = buocTiepTheo({ kichBan: k, lichSu: truot, hoSo: { thich: k.tu[0] } });
+  assert.equal(b.loai, 'sua', 'trượt mà không có lượt sửa thì chỗ hỏng nằm lại đó');
+  assert.equal(b.en, "Hi, I'm Bill.", 'phải sửa ĐÚNG câu bé đang cố nói');
+  assert.match(b.vi, /bill/i, 'lời viết sẵn phải chỉ ra chữ bé bỏ sót');
+
+  /* Đạt rồi thì thôi sửa — sửa một câu bé đã nói được là làm bé mất tự tin. */
+  const dat = [{ vai: 'may', en: "Hi, I'm Bill." },
+               { vai: 'be', chu: "hi i'm bill", diem: 9, mau: "Hi, I'm Bill." }];
+  assert.notEqual(
+    buocTiepTheo({ kichBan: k, lichSu: dat, hoSo: { thich: k.tu[0] } })?.loai, 'sua');
+});
+
+test('bé nói lung tung KHÔNG theo câu nào thì đừng sửa', () => {
+  /* Không có `mau` nghĩa là bé tự nói chứ không nhại — chấm theo một câu bé không
+     định nói đã là sai, sửa theo câu ấy còn sai hơn. */
+  assert.equal(buocSua([{ vai: 'be', chu: 'con thích cái này', diem: 2 }]), null);
+  assert.equal(buocSua([]), null);
+  assert.equal(luotBeCuoi([{ vai: 'be', chu: 'chào cô' }]), null,
+    'lượt chưa chấm thì không tính');
+});
+
+test('lời dặn MANG THEO cái bé vừa nói, điểm, và chữ bỏ sót', () => {
+  /* `goiGui` cố ý cắt sạch điểm khi gửi lịch sử (chỉ vai + chữ). Nên nếu không đi
+     đường `dongBuoc` thì mô hình KHÔNG có cách nào biết bé được 9 hay 2 điểm — và
+     lời khen lượt nào cũng như lượt nào. Đúng chỗ bác gọi là "như máy". */
+  const luot = { vai: 'be', chu: 'it cooking', diem: 4,
+                 mau: "It's cooking.", thieu: [], thieuChucNang: ["it's"] };
+  const d = dongBuoc({ loai: 'sua', en: "It's cooking.", vi: 'x' }, {}, luot);
+  assert.match(d, /it cooking/, 'phải chở CÂU BÉ VỪA NÓI lên');
+  assert.match(d, /4\/10/, 'phải chở ĐIỂM lên');
+  assert.match(d, /it's/i, 'phải chở chữ bỏ sót lên');
+  assert.match(d, /CORRECTION turn/i, 'và nói rõ đây là lượt sửa');
+  assert.match(d, /Do not move on/i, 'sửa xong mới đi tiếp, không bỏ qua');
+
+  /* Chưa có lượt nào của bé thì đừng dựng khối rỗng. */
+  assert.doesNotMatch(dongBuoc({ loai: 'mau', en: 'Hello!' }, {}, null),
+    /WHAT THE CHILD JUST DID/);
+});
+
+test('mỗi loại bước nói rõ VIỆC CỦA BÉ — cùng một câu, ngược hẳn vai', () => {
+  /* "What's your hobby?" xuất hiện ở hai bước khác hẳn nhau: `hoiBe` (cô hỏi thật,
+     bé đáp) và `doiVai` (bé hỏi, cô đáp). Không nói ra thì mô hình đoán, và đoán
+     sai thì bé được dặn làm nhầm việc — mà câu tiếng Anh thì vẫn đúng nên không
+     gì kêu. */
+  const en = "What's your hobby?";
+  const a = dongBuoc({ loai: 'hoiBe', en, dapMau: "It's cooking." }, {});
+  const b = dongBuoc({ loai: 'doiVai', en }, {});
+  assert.match(a, /ASKING her a real question/i);
+  assert.match(a, /Do NOT answer it for her/i);
+  assert.match(b, /roles swap/i);
+  assert.match(b, /SHE asks/i);
+  assert.notEqual(a, b, 'cùng một câu mà hai bước phải dặn khác nhau');
+  assert.match(dongBuoc({ loai: 'noiCa', en: "It's cooking." }, {}), /WHOLE sentence/i);
+});
+
+test('lời dặn nói rõ CÔ PHẢI DẠY GÌ, không chỉ liệt kê điều cấm', () => {
+  /* Bản cũ mở bằng "a warm, patient English tutor" rồi đi thẳng vào mười điều cấm.
+     Mô hình đọc xong biết mình KHÔNG được nói gì, không biết mình PHẢI làm gì —
+     nên nó chọn việc an toàn nhất: đọc từng từ cho bé nhại. */
+  const s = loiDan({ von: vonB09(), tenBe: 'An', lop: 1 });
+  assert.match(s, /WHOLE SENTENCES/);
+  assert.match(s, /TEACH/); assert.match(s, /SPEAK/); assert.match(s, /FIX/);
+  assert.match(s, /CORRECT HER/i, 'phải dặn cả việc sửa lỗi');
+  assert.match(s, /One fix per turn/i, 'sáu tuổi không ôm nổi ba lỗi một lúc');
+  assert.match(s, /Do not reuse your own Vietnamese wording/i);
+});
+
+test('lời dặn mang BỐI CẢNH của chính unit ấy', () => {
+  /* Bác dặn 18-08: "kịch bản/prompt theo từng Unit mới đảm bảo sát nội dung". Câu
+     tiếng Anh thì sát từ trước (kịch bản ép từng câu), nhưng cái KHUNG buổi học
+     thì chưa — lời dặn cũ chỉ đưa một bảng từ và một bảng công thức. */
+  const u = { ten: 'Unit 5 · Sở thích', muc_tieu: 'Nói mình thích làm gì',
+              tinh_huong: 'Bạn hỏi con thích làm gì lúc rảnh.' };
+  const s = loiDan({ von: vonB09(), tenBe: 'An', lop: 3, unit: u });
+  assert.match(s, /TODAY'S UNIT: Unit 5/);
+  assert.match(s, /Nói mình thích làm gì/);
+  assert.ok(!loiDan({ von: vonB09() }).includes("TODAY'S UNIT"),
+    'không có kịch bản thì đừng dựng khối rỗng');
+
+  /* Và mọi kịch bản phải MANG được bối cảnh ấy — sinh thiếu thì lời dặn rỗng. */
+  for (const k of MOI_KB) {
+    assert.ok(k.muc_tieu || k.tay, `${k.ma}/${k.bai}: thiếu mục tiêu unit`);
+  }
+});
+
+test('chỗ gọi TRUYỀN điểm của bé và bối cảnh unit lên lời dặn', () => {
+  /* Tính ra mà không gửi đi thì y như không tính — đúng cái đã xảy ra với `thieu`:
+     `chamCau` tính nó từ lâu, `PhongNoi.jsx` vứt ngay tại chỗ nhận. */
+  const g = readFileSync(new URL('../src/mon/tienganh/lib/goiPhongNoi.js', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(g, /luotBeCuoi\(lichSu\)/, 'phải lấy lượt vừa rồi của bé');
+  assert.match(g, /dongBuoc\(buoc, \{[^}]*\}, luotBe\)/, 'và gửi kèm lời dặn');
+  assert.match(g, /unit\b/, 'bối cảnh unit phải đi cùng');
+
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(pn, /thieu: kq\?\.thieu/, 'chữ bé bỏ sót phải được GIỮ trong lượt');
+  assert.match(pn, /thieuChucNang/, 'cả chữ chức năng');
+});
+
+test('phòng nói mở ĐÚNG QUYỂN của bài, không phải lúc nào cũng quyển 1', () => {
+  /* ⚠ Lỗi câm sống lâu nhất của phòng này. `napKichBanNoi()` gọi không tham số nên
+     mặc định `'ta1'`; lớp 2 và lớp 3 tải về kịch bản LỚP 1, `kichBanCua` không
+     thấy bài nào, `kichBan = null`, và cả tầng kịch bản tắt — phòng rơi về lối mô
+     hình tự nghĩ câu. Không có gì đỏ: tệp tải về hợp lệ, chỉ là của quyển khác.
+     Kèm theo đó `lop` mặc định 1 (lời dặn gọi bé lớp 3 là "a six-year-old") và
+     `quyen: 'ta1'` ghi cứng vào sổ trên máy chủ. */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(pn, /napKichBanNoi\(ma\)/, 'phải nạp kịch bản theo mã quyển của bài');
+  assert.match(pn, /const ma = bai\?\.quyen/, 'mã quyển suy từ chính bài');
+  assert.match(pn, /const lop = bai\?\.grade/, 'lớp cũng thế');
+  assert.doesNotMatch(pn, /quyen: 'ta1'/, 'không được ghi cứng quyển khi lưu buổi');
+
+  const nd = readFileSync(new URL('../src/mon/tienganh/lib/noiDung.js', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\*\*[\s\S]*?\*\//g, '');
+  assert.match(nd, /khoKichBan = new Map\(\)/, 'ô nhớ phải tách theo quyển');
+  assert.match(nd, /chuongTrinh\(quyenCua\(id\)\)\?\.bai/,
+    'maBaiTruoc phải tra sổ đăng ký, `quyenCua` chỉ trả về một CHUỖI mã');
+});
+
+test('dấu nháy giữa một từ tiếng Anh KHÔNG phải dấu mở ngoặc', () => {
+  /* `He's/She's + [Number].` từng bị đọc thành mẩu trích `s/She`, rồi báo
+     `chữ "s" không có trong bài` — câu hoàn toàn đúng mà bị gạt. Mà tiếng Anh ba
+     quyển này đầy chữ rút gọn: It's · What's · He's · isn't. */
+  const von = vonB09();
+  assert.ok(loiVietHopLe("Con đáp theo khuôn: He's/She's + [Number].", { von }).ok);
+  /* Nhưng dấu nháy đứng riêng thì vẫn là ngoặc, và vẫn phải soi. */
+  assert.ok(!loiVietHopLe("Con vừa nói 'washes machine' nhỉ.", { von }).ok);
+});
+
+test('cô được trích lại LỜI CHÚ NGHĨA của sách, kể cả khi nó dùng chữ "bạn"', () => {
+  /* Sách chú `you` là "bạn, các bạn" và `top` là "con quay". Chặn cả hai thì cô
+     mất hẳn cách giảng nghĩa — mà chặn ở đây không kêu thành lỗi: `loiVietSach`
+     lặng lẽ lui về câu chung chung. Hai kiểu hỏng khác nhau, cùng một hậu quả:
+       · "bạn"      → phép soi ĐẠI TỪ tưởng cô gọi bé là bạn;
+       · "con quay" → phép soi CHỮ LẠ tưởng đó là tiếng Anh (không dấu nào cả). */
+  const v14 = vonTu({
+    baiNay: JSON.parse(readFileSync(
+      new URL('../public/content/ta1/DL_TA1_B14.json', import.meta.url), 'utf8')),
+    baiCu: [], daDat: false,
+  });
+  assert.ok(loiVietHopLe('Chỉ một chữ thôi: “top” — nghĩa là “con quay”.', { von: v14 }).ok);
+  /* Nới cho lời chú KHÔNG được thành cửa cho đại từ lọt: ngoài ngoặc vẫn chặn. */
+  assert.ok(!loiVietHopLe('Bạn nói lại từ “top” đi.', { von: v14 }).ok);
+});
+
+test('cô được trích lại đúng câu BÉ VỪA NÓI để mà sửa', () => {
+  /* Không mở chỗ này thì lượt sửa tự bóp cổ mình: cô trích cái bé vừa nói ("con
+     nói It cooking"), mà cái ấy vốn KHÔNG phải chữ của bài — nên bị gạt, và lời
+     sửa cụ thể bị vứt đi đúng lượt cần nó nhất. */
+  const von = vonB09();
+  const s = 'Con vừa nói "How many clock" — thiếu mất chữ cuối.';
+  assert.ok(!loiVietHopLe(s, { von }).ok, 'không kèm lời bé thì vẫn phải gạt');
+  assert.ok(loiVietHopLe(s, { von, beNoi: 'how many clock' }).ok,
+    'kèm lời bé thì cô được nhắc lại để sửa');
+});
+
+test('lượt đáp LỜI CHÀO không phải một lần luyện', () => {
+  /* ⚠ Hai chỗ hỏng cùng một gốc, và cả hai chỉ lộ khi trải một buổi ra giấy:
+       · buổi kết ở `DAT_LIEN_DE_XONG = 3`, mà lượt "hello" ăn mất một suất — bé
+         giỏi chỉ phải nói đúng HAI câu là được khen "con nắm bài rồi";
+       · bước luyện chọn theo `soDat % n`, lượt chào đẩy chỉ số lên 1, nên bước
+         `mau` — chỗ cô LÀM MẪU — không bao giờ tới lượt. Bé bị hỏi
+         "What's your hobby?" khi chưa hề nghe một mẫu câu nào.
+     Không có gì đỏ ở cả hai: cô vẫn nói đúng câu của bài, màn kết vẫn chúc mừng. */
+  const ls = [{ vai: 'be', chu: 'chào cô' },
+              { vai: 'may', en: 'Hello!', buoc: 'chao' },
+              { vai: 'be', chu: 'hello', diem: 9, mau: 'Hello!' }];
+  assert.equal(luotLuyen(ls).length, 0, 'đáp lời chào không tính là luyện');
+  assert.equal(tinhBuoi({ lichSu: ls }).datLien, 0, 'và không đẩy buổi tới gần vạch kết');
+
+  const k = MOI_KB.find((x) => x.ma === 'ta3');
+  assert.equal(buocTiepTheo({ kichBan: k, lichSu: ls, hoSo: { thich: k.tu[0] } }).loai,
+    'mau', 'bước luyện ĐẦU TIÊN phải là cô làm mẫu');
+
+  /* Buổi cũ chưa có trường `buoc` thì vẫn phải đếm — thà rộng còn hơn xoá mất
+     tiến độ bé đã có. */
+  const cu = [{ vai: 'may', en: 'Hello!' }, { vai: 'be', chu: 'hello', diem: 9 }];
+  assert.equal(luotLuyen(cu).length, 1);
+});
+
+test('sửa nhiều nhất HAI lần rồi nhường đường cho việc dễ hơn', () => {
+  /* ⚠ Không có chốt này thì phòng nói thành cái bẫy: `soDat` chỉ tăng khi bé ĐẠT,
+     mà lượt sửa lại chen lên trước cả vòng luyện — nên bé đuối bị hỏi đúng MỘT câu
+     suốt 20 phút, kể cả khi `haDoKho` đã bật. Trải ra giấy thấy mười lượt liền đều
+     là "Hello!". Không lỗi, không cảnh báo, đồng hồ vẫn chạy. */
+  const may = { vai: 'may', en: "It's cooking.", buoc: 'noiCa' };
+  const truot = { vai: 'be', chu: 'it cook', diem: 3, mau: "It's cooking.", thieu: ['cooking'] };
+  const n = (lan) => Array.from({ length: lan }, () => [may, truot]).flat();
+  assert.equal(buocSua(n(1))?.loai, 'sua', 'lần đầu phải sửa');
+  assert.equal(buocSua(n(SUA_TOI_DA))?.loai, 'sua', `sửa đủ ${SUA_TOI_DA} lần`);
+  assert.equal(buocSua(n(SUA_TOI_DA + 1)), null, 'quá thì thôi, để bé làm việc dễ hơn');
+
+  /* Và lúc ấy vòng luyện phải nhận được đường — dưới `haDoKho` là bước TỪ. */
+  const k = MOI_KB.find((x) => x.ma === 'ta3');
+  const b = buocTiepTheo({ kichBan: k, lichSu: n(SUA_TOI_DA + 1),
+                           hoSo: { thich: k.tu[0] }, haDoKho: true });
+  assert.equal(b.loai, 'tu', 'đuối mãi thì phải được lùi về một chữ');
+
+  /* Câu KHÁC thì đếm lại từ đầu — bé sai chỗ mới vẫn được sửa. */
+  const khac = [...n(SUA_TOI_DA + 1), { vai: 'may', en: "It's dancing.", buoc: 'noiCa' },
+                { vai: 'be', chu: 'it dan', diem: 3, mau: "It's dancing." }];
+  assert.equal(buocSua(khac)?.loai, 'sua');
+});
+
+test('lượt CHÀO không bị đem ra sửa', () => {
+  /* Bé lí nhí chữ "hello" mà bị cô bắt sửa ngay trước khi vào bài thì buổi học mở
+     đầu bằng một lời chê. Trải ra giấy: lượt 2 của cả buổi đã là một lượt sửa. */
+  const ls = [{ vai: 'may', en: 'Hello!', buoc: 'chao' },
+              { vai: 'be', chu: '', diem: 2, mau: 'Hello!' }];
+  assert.equal(buocSua(ls), null);
+});
+
+test('lượt hỏi sở thích: câu của mô hình VẪN bị soi', () => {
+  /* ⚠ Đúng MỘT lượt mỗi buổi lọt lưới, và là lượt thứ hai — lúc bé vừa vào phòng.
+     `hoiThich` không mang câu tiếng Anh nào (thẻ chọn hình do máy con vẽ), nên
+     `dienBuoc` trả chuỗi rỗng; mà nhánh CÓ kịch bản thì cố ý bỏ qua `cauHopLe` vì
+     câu đã biết trước. Hai điều đúng riêng lẻ, ghép lại thành một lỗ. */
+  const g = readFileSync(new URL('../src/mon/tienganh/lib/goiPhongNoi.js', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(g, /!dung && !cauHopLe\(/, 'bước không có câu viết sẵn thì phải soi');
+  assert.ok(!/cauThayThe\(null/.test(g),
+    '`cauThayThe` cần một `viec`; nhánh kịch bản không có, gọi vào là nhận null');
+  assert.ok(LOI_LOP_HOC.includes('Your turn.'), 'câu lui phải là lời lớp học có sẵn');
 });
