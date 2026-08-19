@@ -149,9 +149,12 @@ gọi. Rải ra từng nhánh là để ngỏ chỗ cho các nhánh lệch nhau.
 ## LÀM CHO LỚP KHÁC
 
 1. Chép `tools/soan_tranh_lop3.py` → `soan_tranh_lopN.py`, đổi `3` thành `N`.
-   Ba bảng cần xem lại theo sách của quyển ấy: `VAI_VAT` / `VAI_BO` (vai nào đặt
-   được sau "a"), `KHONG_DEM`, và `NGUOI_MA` (thêm mã nếu quyển ấy dạy hoạt động
-   mà emoji chưa nằm trong danh sách).
+   Bốn bảng cần xem lại theo sách của quyển ấy: `VAI_VAT` / `VAI_BO` (vai nào đặt
+   được sau "a"), `KHONG_DEM`, `NGUOI_MA` (thêm mã nếu quyển ấy dạy hoạt động mà
+   emoji chưa nằm trong danh sách), và `UU_TIEN`.
+   ⚠ **Chạy soạn một lượt rồi ĐỌC hết danh sách vật in ra trước khi vẽ.** `UU_TIEN`
+   là thứ chỉ người mới thấy cần: bức nào đọc lên thấy lạc chủ đề thì khai vật cho
+   nó, đừng đợi tới lúc mở bản chạy.
 2. `tranh_tienganh.py` · `sinh_bai_tranh.py` · `kho_cau_tienganh.py` đã nhận
    `--lop`, không phải sửa.
 3. Cổng đã soi theo `dang: 'tranh'` nên tự áp cho quyển mới; riêng
@@ -159,19 +162,68 @@ gọi. Rải ra từng nhánh là để ngỏ chỗ cho các nhánh lệch nhau.
 4. Bức nào soạn ra còn kỳ thì **sửa tay** trong `tranh_lopN.json` rồi đặt cờ
    `tay: true` — lần soạn sau không đè lên.
 
-## CÒN THÔ, CHƯA SỬA TAY
+---
 
-Máy soạn được khung đúng luật, nhưng vài bức đọc lên vẫn khô. Ghi ra để còn sửa:
+## `UU_TIEN` — CHỖ KHAI TAY CÁI MÁY KHÔNG SUY ĐƯỢC
 
-* **U04 Cơ thể** — tả từng bộ phận như vật rời: *"This is a face. That's an ear."*
-  Đúng vốn, nhưng người ta không tả mặt kiểu ấy.
-* **U07 Lời dặn trong lớp** và **U10 Giờ ra chơi** — từ của hai unit này
-  (`come in` · `badminton` · `chess`) không đặt được sau "a", nên tranh phải mượn
-  vật của unit khác, và lạc chủ đề.
-* **U18 Chơi và làm** — luật 7 loại `singing` · `reading` (hình là mic và quyển
-  sách), nên bức chỉ còn `dancing` cộng bốn đạo cụ. Đúng luật, nhưng chưa ra được
-  cảnh "chơi và làm". Chữa được bằng cách vẽ tay người-đang-hát vào `hinh_ve`.
-* **U09 Màu sắc** — tranh có đồ vật nhưng đoạn chưa nói MÀU; cần khuôn hai ô
-  `It's a + [Colour] + [Noun].`
-* **U15 Ở bàn ăn** — món ăn phần lớn không đếm được (`rice` · `bread` · `meat`) nên
-  bị loại khỏi vật; tranh còn `bean` và `egg`.
+Luật chọn vật (từ của unit → cùng chương → lớp 1·2) **hợp lệ nhưng vô vị** ở sáu
+bức, vì có unit không dạy lấy một danh từ vẽ được:
+
+| | máy soạn ra | hỏng ở chỗ |
+|---|---|---|
+| U04 Cơ thể | *This is a face. That's an ear.* | không ai tả mặt kiểu liệt kê vật rời |
+| U07 Lời dặn trong lớp | school · library · playground · classroom · gym | năm địa điểm trong bức tên là "trong lớp" |
+| U09 Màu sắc | book · pen · table · notebook · pencil | bức dạy MÀU mà đoạn không nhắc màu nào |
+| U10 Giờ ra chơi | book · pen · table · notebook · pencil | y hệt U09 — hai bức liền nhau trùng nhau |
+| U15 Ở bàn ăn | bean · bed · egg · desk | cái giường giữa bàn ăn |
+| U18 Chơi và làm | dancing · bike · table · kite · cake | chẳng dính gì tới "chơi và làm" |
+
+Nên `UU_TIEN` trong `soan_tranh_lop3.py`: **người khai vật, máy vẫn soi luật.**
+Vật khai ra vẫn phải đã học tới unit ấy, phải có hình, phải đặt được sau "a" —
+khai nhầm thì nó bị loại và in cảnh báo, không lọt ra bản chạy. Ba khoá:
+
+* `vat` — danh sách vật, theo thứ tự muốn vẽ.
+* `chinh` — vật **chủ thể**: vẽ to, đứng một mình kệ trên, câu đầu tả nó, mấy vật
+  còn lại là bộ phận nên dùng `I can see …` / `There's …` (bỏ `That's …` — nghe
+  như chỉ sang người khác). U04 nay là **một khuôn mặt** với mắt · mũi · mồm của
+  chính nó.
+* `mau` — bức dạy màu, xem ngay dưới.
+
+Nhờ `UU_TIEN`, unit 10 lấy lại được từ của CHÍNH nó: `basketball` · `volleyball` ·
+`football` mang vai `trochoi` nên luật chung gạt đi (đúng, vì *"a badminton"* sai),
+nhưng ba quả bóng thì đếm được và vẽ được.
+
+## BỨC DẠY MÀU — HAI CÂU MỘT VẬT, VÀ BA PHÉP KIỂM PHẢI BIẾT ĐIỀU ĐÓ
+
+```
+This is an apple. It's red.   I can see a leaf.  It's green.
+That's a box.     It's brown. There's a square.  It's blue.
+```
+
+`MAU_CUA` chỉ nhận emoji **một màu, gọi tên không cãi được** — `apple` đỏ, `leaf`
+xanh lá, `box` nâu, `square` xanh dương. Đừng thêm `cake 🍰`: trắng hay hồng hay
+nâu, ba người nhìn ra ba màu.
+
+Kiểu này phá ba phép kiểm cũ, và phá **đúng** — cả ba đều ngầm cho rằng *mỗi câu
+nêu một vật*. Nên cổng có thêm khái niệm **CÂU NỐI** (`laCauNoi`), định nghĩa hẹp
+đúng một dạng: câu không nêu vật nào, mang đúng khuôn `It's + [một màu ĐÃ HỌC].`,
+và câu ngay trước có nêu vật. Ba chỗ bỏ qua câu nối: đếm câu ↔ đếm vật · "đoạn tả
+vật tranh không có" · "không quá 2 dòng cùng khuôn". Nới rộng hơn thế — ví dụ cho
+mọi câu không nêu vật đi qua — là mở lại cửa cho đúng thứ ba phép kiểm ấy sinh ra
+để bắt.
+
+⚠ Câu hỏi màu phải **chốt được hỏi vật nào**. `What colour is it?` một mình thì cả
+bốn lựa chọn đều đúng với một vật nào đó — đúng cái bác bắt: *"nhiều câu trả lời ý
+same same nhau"*. Sách chưa dạy `What colour is the apple?`, nên chốt ở **dòng phụ
+tiếng Việt** ("quả táo (apple) màu gì?"): dòng phụ vốn sinh ra để làm chỗ bám, còn
+câu tiếng Anh vẫn nguyên si câu của sách.
+
+## CÒN THÔ, CHƯA SỬA
+
+* **U18 Chơi và làm** — luật 7 loại `singing` · `reading` · `writing` (hình là mic,
+  quyển sách, cái bút). `UU_TIEN` đã kéo bức về đúng chủ đề bằng ĐỒ (sách · bút ·
+  bóng), nhưng vẫn chỉ có một người đang làm việc thật là `dancing`. Chữa hẳn thì
+  phải vẽ tay người-đang-hát / đang-đọc vào `hinh_ve` — và sửa ở đó là sửa cho cả
+  thẻ từ lẫn video, không riêng tranh.
+  ⚠ Đừng chữa bằng cách đổi `hinhTu` của `singing` sang 🧑‍🎤: từ `singer` (U12)
+  đang dùng đúng emoji ấy, hai từ khác nhau mà một mặt thì thẻ từ hỏng.

@@ -40,6 +40,7 @@ from pathlib import Path
 GOC = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(GOC / "tools"))
 from kho_cau_tienganh import kho_chu, chu_trong  # noqa: E402
+from kho_cau_tienganh import hinh_cua_tu  # noqa: E402
 
 # Vai ĐẶT ĐƯỢC sau "a" và vẽ ra hình được.
 VAI_VAT = {"convat", "dochoi", "dodac", "dodung", "bophan", "giadinh", "nghe",
@@ -65,6 +66,48 @@ KHUON_VIEC = ["She's {ing}.", "He's {ing}."]
 # `chuan_tienganh.py` cũng chưa có chỗ nào khai nó.
 KHONG_DEM = {"rice", "bread", "meat", "milk", "water", "juice", "chicken", "fish",
              "popcorn", "pasta", "sand", "water", "hair", "homework"}
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# VẬT ƯU TIÊN — chỗ khai TAY cái mà máy không suy được: bức này nên vẽ những gì.
+#
+# Máy chọn vật theo luật (từ của unit → cùng chương → lớp 1·2) và luật ấy hợp lệ
+# nhưng VÔ VỊ ở sáu bức: unit 7 "Lời dặn trong lớp" toàn động từ nên máy mượn của
+# unit liền trước, ra "school · library · playground · classroom · gym" — năm chỗ
+# khác nhau trong một bức tên là "trong lớp".
+#
+# Nên: người khai vật, MÁY VẪN SOI LUẬT — vật phải đã học tới unit ấy, phải có
+# hình, phải đặt được sau "a". Khai một từ chưa học thì nó bị loại và bức tự bù,
+# không có chuyện lọt ra bản chạy.
+#
+#   vat   danh sách vật, theo thứ tự muốn vẽ
+#   chinh vật CHỦ THỂ của bức — vẽ to, đứng một mình kệ trên, và câu đầu tả nó;
+#         mấy vật còn lại là bộ phận/đồ đi kèm nên đều dùng "I can see …"
+#   mau   bức dạy MÀU: mỗi vật kèm một câu "It's + [Colour]." ngay sau
+UU_TIEN = {
+    # Tả một khuôn mặt thì phải có khuôn mặt, rồi mới tới mắt mũi mồm. Bản máy soạn
+    # ra "This is a face. That's an ear." — đúng vốn, nhưng không ai tả mặt kiểu ấy.
+    4:  {"vat": ["face", "eye", "nose", "mouth", "ear"], "chinh": "face"},
+    # Lời dặn trong lớp: vẽ CÁI LỚP. Bàn · cửa · cặp · sách · bút đều đã học.
+    7:  {"vat": ["desk", "door", "bag", "book", "pen"]},
+    # Màu sắc: chọn vật mà emoji chỉ có MỘT màu ai nhìn cũng gọi đúng tên.
+    9:  {"vat": ["apple", "leaf", "box", "square"], "mau": True},
+    # Giờ ra chơi: bóng rổ · bóng đá · bóng chuyền là từ của CHÍNH unit này (vai
+    # `trochoi` nên luật cũ gạt đi), thêm diều với xe đạp cho ra sân chơi.
+    10: {"vat": ["basketball", "volleyball", "football", "kite", "bike"]},
+    # Ở bàn ăn: món đếm được và đồ dọn bàn. Máy vốn ra "bean · bed · egg · desk" —
+    # cái giường giữa bàn ăn.
+    15: {"vat": ["egg", "apple", "cake", "cup", "teapot"]},
+    # Chơi và làm: quyển sách (reading) · cái bút (writing) · quả bóng (playing) —
+    # đúng những việc unit dạy, chỉ là vẽ ĐỒ thay vì vẽ người, vì chưa có hình
+    # người đang hát/đọc/viết. Bạn đang nhảy thì có hình người thật.
+    18: {"vat": ["book", "pen", "ball", "bike"]},
+}
+
+# Màu của vật — CHỈ những emoji một màu, gọi tên không cãi được. Đừng thêm bừa:
+# "cake 🍰" trắng hay hồng hay nâu, ba người nhìn ra ba màu.
+MAU_CUA = {"apple": "red", "leaf": "green", "box": "brown", "square": "blue",
+           "sun": "yellow"}
 
 
 def mao_tu(tu: str) -> str:
@@ -265,9 +308,33 @@ def hoi_doc(doan: list[str], nhom: list[dict], chuan_tu: dict, ct12: dict,
         if sn and len(ra) < 3 and not any("How many" in x["en"] for x in ra):
             ra.append({"loai": "chiTiet",
                        "en": f"How many {sn} can you see?",
-                       "vi": f"Con thấy mấy {n['tu']}?",
+                       # Dòng phụ là chỗ bám TIẾNG VIỆT — chép nguyên chữ tiếng Anh
+                       # vào ("Con thấy mấy box?") thì nó chẳng bám hộ được gì.
+                       "vi": f"Con thấy mấy {(chuan_tu.get(n['tu']) or ct12.get(n['tu']) or {}).get('nghia') or n['tu']}?",
                        "dap": "I can see one."})
             break
+
+    # MÀU — bức dạy màu thì hỏi bằng đúng khuôn của nó: "What colour is it?"
+    # Mồi là màu KHÁC, cùng khuôn "It's + [Colour]." — bé phải đọc mới chọn được.
+    #
+    # ⚠ "What colour is it?" KHÔNG NÓI RÕ HỎI VẬT NÀO — mà đoạn có bốn vật bốn màu,
+    # nên bốn lựa chọn đều đúng với một vật nào đó. Đúng cái bác bắt: "nhiều câu
+    # trả lời ý same same nhau rất khó cho con chọn". Sửa được bằng ĐỀ TIẾNG ANH
+    # thì phải viết "What colour is the apple?" — sách chưa dạy khuôn ấy. Nên chốt
+    # vật ở DÒNG PHỤ tiếng Việt: dòng phụ vốn sinh ra để làm chỗ bám, đây đúng chỗ
+    # dùng nó, mà câu tiếng Anh vẫn nguyên si câu của sách.
+    mau = next(((i, c) for i, c in enumerate(doan)
+                if re.fullmatch(r"It's (\w+)\.", c)
+                and c[5:-1].strip() in MAU_CUA.values()), None)
+    if mau and len(ra) < 3:
+        i, cau = mau
+        cua = next((n["tu"] for n in nhom if n["tu"] in (doan[i - 1] if i else "")), None)
+        nghia = ((chuan_tu.get(cua) or ct12.get(cua) or {}).get("nghia") or cua or "vật")
+        khac = [m for m in ("black", "blue", "green", "red", "white", "yellow")
+                if m in kho and f"It's {m}." != cau]
+        ra.append({"loai": "chiTiet", "en": "What colour is it?",
+                   "vi": f"{nghia} ({cua}) màu gì?", "dap": cau,
+                   "moi": [f"It's {m}." for m in khac[:3]]})
 
     # ĐANG LÀM GÌ — cho unit dạy hoạt động, hoặc "What's this?" cho unit từ 4 trở đi.
     if lam and len(ra) < 3 and not any(x["en"].startswith("What's she") for x in ra) and False:
@@ -336,7 +403,18 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
     # được trong bất kỳ cảnh nào. Mượn bừa thì U05 "Sở thích" ra "cooking · running
     # · dancing · face" — đúng cái lạc chủ đề đoạn trên vừa chép ra làm ví dụ.
     tu_minh = {t["tu"] for t in b["knowledgeCore"]["vocabulary"]}
-    if viec:
+    uu = UU_TIEN.get(b["so"]) or {}
+    if uu:
+        # Người đã khai vật cho bức này. MÁY VẪN SOI: chưa học tới thì loại, không
+        # có hình thì loại — khai sai không lọt ra bản chạy được, chỉ mất chỗ ấy.
+        hinh_da = hinh_cua_tu(3, b["so"])
+        vat = [t for t in uu["vat"]
+               if t in kho and " " not in t and t.lower() not in KHONG_DEM
+               and (hinh_da.get(t, {}).get("hinh") or hinh_da.get(t, {}).get("ve"))]
+        thieu = [t for t in uu["vat"] if t not in vat]
+        if thieu:
+            print(f"   ⚠ U{b['so']:02d} khai vật chưa dùng được: {' '.join(thieu)}")
+    elif viec:
         viec = viec[:3]
         rieng = [t for t in vat if t in tu_minh]
         khac = [t for t in PHU if t in kho and t not in rieng]
@@ -349,15 +427,39 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
         for i, v in enumerate(viec):
             nhom.append({"tu": v, "so": 1, "ke": i % 2, "co": 110})
             doan.append(KHUON_VIEC[i % 2].format(ing=v))
+    # Vật CHỦ THỂ đứng trước, vẽ to, một mình kệ trên: bức "Cơ thể chúng mình" là
+    # tả MỘT khuôn mặt, mắt mũi mồm là bộ phận của nó — không phải năm vật rời.
+    # ⚠ CẮT Ở ĐÂY, TRƯỚC KHI SINH CÂU. Kệ dưới chỉ chứa ba vật, nên bức có chủ thể
+    # tối đa 1 + 3. Cắt sau khi đã sinh câu thì ra bốn vật đi với năm câu — bé đọc
+    # một câu tả thứ không có trên tranh, đúng cái bẫy "cắt cả hai cùng một chỗ".
+    chinh = uu.get("chinh")
+    if chinh and chinh in vat:
+        vat = [chinh] + [t for t in vat if t != chinh][:3]
     for i, t in enumerate(vat):
-        if len(doan) >= 5:
+        if len(doan) >= 5 and not uu.get("mau"):
             break
-        nhom.append({"tu": t, "so": 1, "ke": (len(nhom)) % 2, "co": 110})
+        la_chinh = bool(chinh) and t == chinh
+        nhom.append({"tu": t, "so": 1,
+                     "ke": 0 if la_chinh else (1 if chinh else len(nhom) % 2),
+                     "co": 190 if la_chinh else 110})
         vai = set((chuan_tu.get(t) or {}).get("vai") or [])
-        if vai & VAI_NHA:
+        if la_chinh:
+            doan.append(f"This is {mao_tu(t)}.")
+        elif chinh:
+            # Bộ phận của chủ thể: BỎ khuôn "That's …" — "That's an ear." nghe như
+            # chỉ sang tai người khác, mà đây là mắt mũi mồm của CHÍNH khuôn mặt ấy.
+            # Vẫn phải xoay hai khuôn, vì ba dòng liền cùng khuôn là đoạn văn lặp và
+            # cổng "không quá 2 dòng cùng khuôn" bắt đúng.
+            doan.append(["I can see {a}.", "There's {a}."][(i - 1) % 2].format(a=mao_tu(t)))
+        elif vai & VAI_NHA:
             doan.append(KHUON_NHA[i % len(KHUON_NHA)].format(t=t))
         else:
             doan.append(KHUON_KE[i % len(KHUON_KE)].format(a=mao_tu(t)))
+        # BỨC DẠY MÀU: nói tên vật rồi nói màu nó, đúng khuôn của chính unit 9
+        # ("What colour is it? - It's + [Colour]."). Không có câu màu thì bức "Màu
+        # sắc" chẳng nhắc tới màu nào — bé đọc xong không biết bài dạy gì.
+        if uu.get("mau") and MAU_CUA.get(t) in kho:
+            doan.append(f"It's {MAU_CUA[t]}.")
 
     # ── LUÔN CÓ MỘT VẬT ĐẾM ĐƯỢC ──
     # Không có thì bức tranh chỉ hỏi được MỘT câu, mà cổng đòi đủ cả tổng quan lẫn
@@ -365,9 +467,13 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
     # (U11) đều rơi vào đó: đoạn toàn "She's dancing." hoặc "This is my father.",
     # không câu nào đếm được và cũng không câu nào mở đầu bằng "I can see".
     # Thêm một vật phụ vừa chữa được cả hai, vừa làm tranh đỡ trống.
+    #
+    # ⚠ KHÔNG ĐỘN VÀO BỨC ĐÃ KHAI TAY. Bức "Cơ thể chúng mình" mà độn thêm cái diều
+    # cho đủ câu hỏi đếm thì lại hỏng đúng chỗ vừa chữa. Bức khai tay hỏi được
+    # "What's this?" (khuôn của chính unit 4) nên vẫn đủ hai câu.
     co_dem = any(so_nhieu_cua(n["tu"], chuan_tu, chuan_tu12 or {}, kho) for n in nhom)
     co_nhin = any(c.startswith("I can see") for c in doan)
-    if (not co_dem or not co_nhin) and len(nhom) < 6:
+    if not uu and (not co_dem or not co_nhin) and len(nhom) < 6:
         for t in PHU[b["so"] % len(PHU):] + PHU[:b["so"] % len(PHU)]:
             if t in {n["tu"] for n in nhom} or t not in kho:
                 continue
@@ -381,16 +487,29 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
     # Đoạn bị cắt ở năm câu (`doan[:5]`) trong khi `nhom` giữ cả sáu vật, nên tranh
     # vẽ một vật không ai tả — đúng cái bác bắt ở unit 0 ("nội dung phải đồng bộ với
     # tranh"), chỉ ngược chiều. Cắt CẢ HAI cùng một chỗ.
-    nhom, doan = nhom[:5], doan[:5]
+    #
+    # Bức dạy MÀU có HAI câu cho một vật ("This is an apple." + "It's red.") nên cắt
+    # theo số VẬT, không theo số câu.
+    if uu.get("mau"):
+        nhom = nhom[:5]
+        doan = doan[:len(nhom) * 2]
+    else:
+        nhom, doan = nhom[:5], doan[:5]
 
-    # Xếp chỗ: mỗi kệ nhiều nhất ba vật, cách đều.
+    # Xếp chỗ: mỗi kệ nhiều nhất ba vật, cách đều. Vật chủ thể vẽ to thì đứng giữa
+    # kệ trên một mình.
+    #
+    # ⚠ CẮT Ở ĐÂY LÀ CẮT VẬT MÀ KHÔNG CẮT CÂU — đúng cái bẫy đã dính một lần. Kệ
+    # dưới chỉ chứa được ba, nên bức có chủ thể tối đa là 1 + 3 vật; cắt `doan`
+    # theo đó luôn, đừng để bốn vật đi với năm câu.
     tren = [n for n in nhom if n["ke"] == 0][:3]
     duoi = [n for n in nhom if n["ke"] == 1][:3]
+    assert len(tren) + len(duoi) == len(nhom), "kệ không chứa hết vật — cắt sớm hơn"
     nhom = []
     for ke, ds in ((0, tren), (1, duoi)):
         for i, n in enumerate(ds):
             n["ke"] = ke
-            n["x"] = 250 + i * 300
+            n["x"] = 640 if len(ds) == 1 else 250 + i * 300
             nhom.append(n)
 
     return {
@@ -399,8 +518,11 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
         "ten": canh, "ten_en": canh_en,
         "ke": [360, 620],
         "nhom": nhom,
-        "doan": doan[:5],
-        "hoiDoc": hoi_doc(doan[:5], nhom, chuan_tu, chuan_tu12 or {}, b["so"], kho),
+        # ⚠ KHÔNG cắt lại ở đây. Cắt đã làm xong ở trên, theo số VẬT; cắt lần nữa
+        # theo số CÂU thì bức dạy màu (hai câu một vật) mất sạch mấy câu màu — và
+        # đó chính là thứ unit ấy dạy.
+        "doan": doan,
+        "hoiDoc": hoi_doc(doan, nhom, chuan_tu, chuan_tu12 or {}, b["so"], kho),
         "sai": moi_sai(nhom, chuan_tu, chuan_tu12 or {}, kho),
         "hoiGoiY": [{"hoi": "What can you see?", "y": "bé kể một vật trong tranh"}],
     }

@@ -195,6 +195,29 @@ def cau_tich_luy(lop: int, den_unit: int, kho_tu: set[str],
     return ra
 
 
+def hinh_cua_tu(lop: int, den_unit: int) -> dict:
+    """Tra `tu → {hinh, ve}` trong mọi bài bé đã học tới đây.
+
+    Đọc từ chính `bai.hinhTu` — cùng nguồn với thẻ từ, thanh việc và video. Chỗ nào
+    tự dựng lại một bảng hình riêng là chỗ ấy sẽ lệch.
+
+    ⚠ Ở ĐÂY chứ không ở `tranh_tienganh.py`: bộ soạn tranh cũng cần nó, mà bộ soạn
+    chạy bằng python hệ thống — `tranh_tienganh` kéo theo Pillow và cairosvg, chỉ có
+    trong venv. Hàm tra dữ liệu thì để ở module không phụ thuộc gì.
+    """
+    ra = {}
+    for l in range(1, lop + 1):
+        tm = GOC / f"web/public/content/{QUYEN[l]}"
+        for p in sorted(tm.glob(f"DL_{QUYEN[l].upper()}_B*.json")):
+            b = json.loads(p.read_text("utf8"))
+            if l == lop and b["so"] > den_unit:
+                continue
+            for h in b.get("hinhTu") or []:
+                if h.get("hinh") or h.get("ve"):
+                    ra.setdefault(h["tu"], {"hinh": h.get("hinh"), "ve": h.get("ve")})
+    return ra
+
+
 def kho_chu(lop: int, den_unit: int) -> set[str]:
     """Túi TỪ bé đã học, từ lớp 1 tới `den_unit` của lớp `lop`.
 

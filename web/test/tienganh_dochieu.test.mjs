@@ -29,6 +29,36 @@ const tranhKhai = (() => {
   } catch { return []; }
 })();
 
+/* ══ CÂU NỐI — nói THÊM về vật của câu ngay trước ══ (thêm 20-08-2026)
+
+   Ba phép kiểm dưới đây đều ngầm cho rằng MỖI CÂU NÊU MỘT VẬT: đếm câu là đếm
+   vật, câu nào không nêu vật là câu tả thứ không có trên tranh, và hai câu cùng
+   khuôn là đoạn văn lặp.
+
+   Bức "Màu sắc" phá cả ba, mà phá ĐÚNG: nó tả bốn vật bằng tám câu —
+
+       This is an apple. It's red.  I can see a leaf. It's green.
+       That's a box.     It's brown. There's a square. It's blue.
+
+   "It's red." không nêu vật nào, và bốn câu màu thì cùng một khuôn. Nhưng đó
+   chính là khuôn unit 9 dạy (`What colour is it? - It's + [Colour].`) — bỏ chúng
+   đi thì bức "Màu sắc" không nhắc tới màu nào.
+
+   Nên định nghĩa hẹp, đúng một dạng: câu KHÔNG nêu vật nào của tranh, mang đúng
+   khuôn "It's + [một màu ĐÃ HỌC].", và câu NGAY TRƯỚC có nêu vật. Lỏng hơn thế —
+   ví dụ cho mọi câu không nêu vật đi qua — là mở cửa lại cho đúng thứ ba phép
+   kiểm ấy sinh ra để bắt. */
+const MAU_HOC = new Set(['black', 'blue', 'brown', 'green', 'orange', 'red',
+  'white', 'yellow']);
+const laCauNoi = (khai, cau, truoc) => {
+  if (!khai) return false;
+  const m = /^It's (\w+)\.$/.exec(String(cau || '').trim());
+  if (!m || !MAU_HOC.has(m[1].toLowerCase())) return false;
+  const neuVat = (c) => (khai.nhom || [])
+    .some((n) => String(c || '').toLowerCase().includes(n.tu.toLowerCase()));
+  return !neuVat(cau) && neuVat(truoc);
+};
+
 const R = new URL('../../', import.meta.url).pathname;
 let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
@@ -291,10 +321,12 @@ for (const q of quyens) {
   const lap = [];
   for (const k of ds) {
     const dem = new Map();
-    for (const d of (k.doan || [])) {
+    const khaiK = k.dang === 'tranh' ? tranhKhai.find((x) => x.unit === k.unit) : null;
+    (k.doan || []).forEach((d, i) => {
+      if (laCauNoi(khaiK, d.cau, k.doan[i - 1]?.cau)) return;
       const kh = `${(d.cau.split(' ')[0] || '').toLowerCase()}|${d.cau.split(' ').length}`;
       dem.set(kh, (dem.get(kh) || 0) + 1);
-    }
+    });
     for (const [kh, n] of dem) {
       if (n > 2) lap.push(`${k.id}: ${n} dòng cùng khuôn “${kh}”`);
     }
@@ -413,11 +445,14 @@ for (const q of quyens) {
           tranhHong.push(`${k.id}: tranh vẽ ${n.so} ${n.tu} mà đoạn không nói số nào`);
         }
       }
-      /* Và ngược chiều: đoạn nhắc tới vật nào thì tranh phải CÓ vật ấy. */
-      for (const c of khai.doan || []) {
+      /* Và ngược chiều: đoạn nhắc tới vật nào thì tranh phải CÓ vật ấy — trừ CÂU
+         NỐI, thứ nói thêm về vật của câu ngay trước (xem `laCauNoi` đầu tệp). */
+      (khai.doan || []).forEach((c, i) => {
         const co = (khai.nhom || []).some((n) => c.toLowerCase().includes(n.tu.toLowerCase()));
-        if (!co) tranhHong.push(`${k.id}: đoạn tả “${c}” mà tranh không có vật ấy`);
-      }
+        if (!co && !laCauNoi(khai, c, khai.doan[i - 1])) {
+          tranhHong.push(`${k.id}: đoạn tả “${c}” mà tranh không có vật ấy`);
+        }
+      });
       /* ══ CÂU "She's …ing." THÌ TRÊN TRANH PHẢI CÓ NGƯỜI ══ (lộ ra 19-08-2026)
 
          Bức "Ở vườn thú" viết *"He's counting."* mà trên tranh là cái bàn phím số
@@ -474,8 +509,11 @@ for (const q of quyens) {
        tìm không ra; thừa vật thì bé nhìn thấy thứ không ai tả. */
     if (khai) {
       const soVat = (khai.nhom || []).length;
-      if ((k.doan || []).length !== soVat) {
-        tranhHong.push(`${k.id}: ${soVat} vật mà đoạn có ${(k.doan || []).length} câu`);
+      // Đếm câu NÊU VẬT, không đếm câu nối — bức dạy màu có hai câu cho một vật.
+      const soCau = (k.doan || [])
+        .filter((d, i) => !laCauNoi(khai, d.cau, k.doan[i - 1]?.cau)).length;
+      if (soCau !== soVat) {
+        tranhHong.push(`${k.id}: ${soVat} vật mà đoạn có ${soCau} câu nêu vật`);
       }
     }
   }

@@ -49,27 +49,13 @@ sys.path.insert(0, str(GOC / "tools" / "video"))
 from PIL import Image, ImageDraw  # noqa: E402
 import hinh_ve  # noqa: E402
 from dung_video import W, H, NEN, INK, MUTE, NAVY, phong, giua, the, ve_emoji  # noqa: E402
+sys.path.insert(0, str(GOC / "tools"))
+# `hinh_cua_tu` ở `kho_cau_tienganh` — bộ soạn tranh cũng cần nó mà chạy bằng
+# python hệ thống (không có cairosvg), nên nó phải nằm ở module KHÔNG kéo theo
+# Pillow/cairo. Cùng một nguồn cho cả hai bên, không chép đôi.
+from kho_cau_tienganh import hinh_cua_tu  # noqa: E402,F401
 
 QUYEN = {1: "ta1", 2: "ta2", 3: "ta3"}
-
-
-def hinh_cua_tu(lop: int, den_unit: int) -> dict:
-    """Tra `tu → {hinh, ve}` trong mọi bài bé đã học tới đây.
-
-    Đọc từ chính `bai.hinhTu` — cùng nguồn với thẻ từ, thanh việc và video. Chỗ nào
-    tự dựng lại một bảng hình riêng là chỗ ấy sẽ lệch.
-    """
-    ra = {}
-    for l in range(1, lop + 1):
-        tm = GOC / f"web/public/content/{QUYEN[l]}"
-        for p in sorted(tm.glob(f"DL_{QUYEN[l].upper()}_B*.json")):
-            b = json.loads(p.read_text("utf8"))
-            if l == lop and b["so"] > den_unit:
-                continue
-            for h in b.get("hinhTu") or []:
-                if h.get("hinh") or h.get("ve"):
-                    ra.setdefault(h["tu"], {"hinh": h.get("hinh"), "ve": h.get("ve")})
-    return ra
 
 
 def ve_vat(im: Image.Image, tu: str, hinh: dict, x: int, y: int, co: int) -> bool:

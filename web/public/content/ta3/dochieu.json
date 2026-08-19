@@ -141,7 +141,7 @@
     "id": "T2",
     "loai": "chiTiet",
     "text": "How many tables can you see?",
-    "phu": "Con thấy mấy table?",
+    "phu": "Con thấy mấy cái bàn?",
     "format": "chon",
     "choices": [
      "I can see two.",
@@ -212,7 +212,7 @@
     "id": "T2",
     "loai": "chiTiet",
     "text": "How many tables can you see?",
-    "phu": "Con thấy mấy table?",
+    "phu": "Con thấy mấy cái bàn?",
     "format": "chon",
     "choices": [
      "I can see two.",
@@ -283,7 +283,7 @@
     "id": "T2",
     "loai": "chiTiet",
     "text": "How many tables can you see?",
-    "phu": "Con thấy mấy table?",
+    "phu": "Con thấy mấy cái bàn?",
     "format": "chon",
     "choices": [
      "I can see two.",
@@ -418,20 +418,16 @@
     "am": "cau_this_is_a_face"
    },
    {
-    "cau": "I can see a hand.",
-    "am": "cau_i_can_see_a_hand"
+    "cau": "I can see an eye.",
+    "am": "cau_i_can_see_an_eye"
    },
    {
-    "cau": "That's an ear.",
-    "am": "cau_that_s_an_ear"
+    "cau": "There's a nose.",
+    "am": "cau_there_s_a_nose"
    },
    {
-    "cau": "There's an eye.",
-    "am": "cau_there_s_an_eye"
-   },
-   {
-    "cau": "This is a nose.",
-    "am": "cau_this_is_a_nose"
+    "cau": "I can see a mouth.",
+    "am": "cau_i_can_see_a_mouth"
    }
   ],
   "cau": [
@@ -442,15 +438,15 @@
     "phu": "Con nhìn thấy gì trong tranh?",
     "format": "chon",
     "choices": [
-     "I can see a hand.",
+     "I can see an eye.",
      "I can see a dog.",
      "I can see a cat.",
      "I can see a duck."
     ],
     "answerKey": {
-     "choice": "I can see a hand."
+     "choice": "I can see an eye."
     },
-    "solutionNarrative": "“I can see a hand.”."
+    "solutionNarrative": "“I can see an eye.”."
    },
    {
     "id": "T2",
@@ -527,7 +523,7 @@
     "id": "T2",
     "loai": "chiTiet",
     "text": "How many tents can you see?",
-    "phu": "Con thấy mấy tent?",
+    "phu": "Con thấy mấy lều, rạp?",
     "format": "chon",
     "choices": [
      "I can see two.",
@@ -644,24 +640,24 @@
   "tranhTen": "Lời dặn trong lớp · Classroom instructions",
   "doan": [
    {
-    "cau": "This is a school.",
-    "am": "cau_this_is_a_school"
+    "cau": "This is a desk.",
+    "am": "cau_this_is_a_desk"
    },
    {
-    "cau": "I can see a classroom.",
-    "am": "cau_i_can_see_a_classroom"
+    "cau": "I can see a door.",
+    "am": "cau_i_can_see_a_door"
    },
    {
-    "cau": "That's a library.",
-    "am": "cau_that_s_a_library"
+    "cau": "That's a bag.",
+    "am": "cau_that_s_a_bag"
    },
    {
-    "cau": "There's a gym.",
-    "am": "cau_there_s_a_gym"
+    "cau": "There's a book.",
+    "am": "cau_there_s_a_book"
    },
    {
-    "cau": "I can see a table.",
-    "am": "cau_i_can_see_a_table"
+    "cau": "This is a pen.",
+    "am": "cau_this_is_a_pen"
    }
   ],
   "cau": [
@@ -672,52 +668,35 @@
     "phu": "Con nhìn thấy gì trong tranh?",
     "format": "chon",
     "choices": [
+     "I can see a door.",
      "I can see a dog.",
-     "I can see a classroom.",
      "I can see a cat.",
      "I can see a duck."
     ],
     "answerKey": {
-     "choice": "I can see a classroom."
+     "choice": "I can see a door."
     },
-    "solutionNarrative": "“I can see a classroom.”."
+    "solutionNarrative": "“I can see a door.”."
    },
    {
     "id": "T2",
-    "loai": "chiTiet",
-    "text": "How many tables can you see?",
-    "phu": "Con thấy mấy table?",
-    "format": "chon",
-    "choices": [
-     "I can see two.",
-     "I can see one.",
-     "I can see three.",
-     "I can see four."
-    ],
-    "answerKey": {
-     "choice": "I can see one."
-    },
-    "solutionNarrative": "“I can see one.”."
-   },
-   {
-    "id": "T3",
     "loai": "chiTiet",
     "text": "What's this?",
     "phu": "Đây là cái gì?",
     "format": "chon",
     "choices": [
      "It's a dog.",
-     "It's a school.",
      "It's a cat.",
-     "It's a duck."
+     "It's a duck.",
+     "It's a desk."
     ],
     "answerKey": {
-     "choice": "It's a school."
+     "choice": "It's a desk."
     },
-    "solutionNarrative": "“It's a school.”."
+    "solutionNarrative": "“It's a desk.”."
    }
   ],
-  "soCau": 3,
+  "soCau": 2,
   "need": 2
  },
  {
@@ -915,24 +894,36 @@
   "tranhTen": "Màu sắc · Colours",
   "doan": [
    {
-    "cau": "This is a book.",
-    "am": "cau_this_is_a_book"
+    "cau": "This is an apple.",
+    "am": "cau_this_is_an_apple"
    },
    {
-    "cau": "I can see a notebook.",
-    "am": "cau_i_can_see_a_notebook"
+    "cau": "It's red.",
+    "am": "cau_it_s_red"
    },
    {
-    "cau": "That's a pen.",
-    "am": "cau_that_s_a_pen"
+    "cau": "I can see a leaf.",
+    "am": "cau_i_can_see_a_leaf"
    },
    {
-    "cau": "There's a pencil.",
-    "am": "cau_there_s_a_pencil"
+    "cau": "It's green.",
+    "am": "cau_it_s_green"
    },
    {
-    "cau": "I can see a table.",
-    "am": "cau_i_can_see_a_table"
+    "cau": "That's a box.",
+    "am": "cau_that_s_a_box"
+   },
+   {
+    "cau": "It's brown.",
+    "am": "cau_it_s_brown"
+   },
+   {
+    "cau": "There's a square.",
+    "am": "cau_there_s_a_square"
+   },
+   {
+    "cau": "It's blue.",
+    "am": "cau_it_s_blue"
    }
   ],
   "cau": [
@@ -943,21 +934,21 @@
     "phu": "Con nhìn thấy gì trong tranh?",
     "format": "chon",
     "choices": [
-     "I can see a notebook.",
+     "I can see a leaf.",
      "I can see a dog.",
      "I can see a cat.",
      "I can see a duck."
     ],
     "answerKey": {
-     "choice": "I can see a notebook."
+     "choice": "I can see a leaf."
     },
-    "solutionNarrative": "“I can see a notebook.”."
+    "solutionNarrative": "“I can see a leaf.”."
    },
    {
     "id": "T2",
     "loai": "chiTiet",
-    "text": "How many tables can you see?",
-    "phu": "Con thấy mấy table?",
+    "text": "How many boxes can you see?",
+    "phu": "Con thấy mấy cái hộp?",
     "format": "chon",
     "choices": [
      "I can see two.",
@@ -973,19 +964,19 @@
    {
     "id": "T3",
     "loai": "chiTiet",
-    "text": "What's this?",
-    "phu": "Đây là cái gì?",
+    "text": "What colour is it?",
+    "phu": "quả táo (apple) màu gì?",
     "format": "chon",
     "choices": [
-     "It's a dog.",
-     "It's a cat.",
-     "It's a duck.",
-     "It's a book."
+     "It's red.",
+     "It's black.",
+     "It's blue.",
+     "It's green."
     ],
     "answerKey": {
-     "choice": "It's a book."
+     "choice": "It's red."
     },
-    "solutionNarrative": "“It's a book.”."
+    "solutionNarrative": "“It's red.”."
    }
   ],
   "soCau": 3,
@@ -1003,24 +994,24 @@
   "tranhTen": "Giờ ra chơi · Break time activities",
   "doan": [
    {
-    "cau": "This is a book.",
-    "am": "cau_this_is_a_book"
+    "cau": "This is a basketball.",
+    "am": "cau_this_is_a_basketball"
    },
    {
-    "cau": "I can see a notebook.",
-    "am": "cau_i_can_see_a_notebook"
+    "cau": "I can see a volleyball.",
+    "am": "cau_i_can_see_a_volleyball"
    },
    {
-    "cau": "That's a pen.",
-    "am": "cau_that_s_a_pen"
+    "cau": "That's a football.",
+    "am": "cau_that_s_a_football"
    },
    {
-    "cau": "There's a pencil.",
-    "am": "cau_there_s_a_pencil"
+    "cau": "There's a kite.",
+    "am": "cau_there_s_a_kite"
    },
    {
-    "cau": "I can see a table.",
-    "am": "cau_i_can_see_a_table"
+    "cau": "This is a bike.",
+    "am": "cau_this_is_a_bike"
    }
   ],
   "cau": [
@@ -1031,52 +1022,35 @@
     "phu": "Con nhìn thấy gì trong tranh?",
     "format": "chon",
     "choices": [
-     "I can see a notebook.",
      "I can see a dog.",
      "I can see a cat.",
+     "I can see a volleyball.",
      "I can see a duck."
     ],
     "answerKey": {
-     "choice": "I can see a notebook."
+     "choice": "I can see a volleyball."
     },
-    "solutionNarrative": "“I can see a notebook.”."
+    "solutionNarrative": "“I can see a volleyball.”."
    },
    {
     "id": "T2",
-    "loai": "chiTiet",
-    "text": "How many tables can you see?",
-    "phu": "Con thấy mấy table?",
-    "format": "chon",
-    "choices": [
-     "I can see two.",
-     "I can see one.",
-     "I can see three.",
-     "I can see four."
-    ],
-    "answerKey": {
-     "choice": "I can see one."
-    },
-    "solutionNarrative": "“I can see one.”."
-   },
-   {
-    "id": "T3",
     "loai": "chiTiet",
     "text": "What's this?",
     "phu": "Đây là cái gì?",
     "format": "chon",
     "choices": [
      "It's a dog.",
+     "It's a basketball.",
      "It's a cat.",
-     "It's a duck.",
-     "It's a book."
+     "It's a duck."
     ],
     "answerKey": {
-     "choice": "It's a book."
+     "choice": "It's a basketball."
     },
-    "solutionNarrative": "“It's a book.”."
+    "solutionNarrative": "“It's a basketball.”."
    }
   ],
-  "soCau": 3,
+  "soCau": 2,
   "need": 2
  },
  {
@@ -1133,7 +1107,7 @@
     "id": "T2",
     "loai": "chiTiet",
     "text": "How many tables can you see?",
-    "phu": "Con thấy mấy table?",
+    "phu": "Con thấy mấy cái bàn?",
     "format": "chon",
     "choices": [
      "I can see two.",
@@ -1409,7 +1383,7 @@
     "id": "T2",
     "loai": "chiTiet",
     "text": "How many lamps can you see?",
-    "phu": "Con thấy mấy lamp?",
+    "phu": "Con thấy mấy đèn?",
     "format": "chon",
     "choices": [
      "I can see two.",
@@ -1493,7 +1467,7 @@
     "id": "T2",
     "loai": "chiTiet",
     "text": "How many beds can you see?",
-    "phu": "Con thấy mấy bed?",
+    "phu": "Con thấy mấy cái giường?",
     "format": "chon",
     "choices": [
      "I can see two.",
@@ -1539,20 +1513,24 @@
   "tranhTen": "Ở bàn ăn · At the dining table",
   "doan": [
    {
-    "cau": "This is a bean.",
-    "am": "cau_this_is_a_bean"
+    "cau": "This is an egg.",
+    "am": "cau_this_is_an_egg"
    },
    {
-    "cau": "I can see an egg.",
-    "am": "cau_i_can_see_an_egg"
+    "cau": "I can see an apple.",
+    "am": "cau_i_can_see_an_apple"
    },
    {
-    "cau": "That's a bed.",
-    "am": "cau_that_s_a_bed"
+    "cau": "That's a cake.",
+    "am": "cau_that_s_a_cake"
    },
    {
-    "cau": "There's a desk.",
-    "am": "cau_there_s_a_desk"
+    "cau": "There's a cup.",
+    "am": "cau_there_s_a_cup"
+   },
+   {
+    "cau": "This is a teapot.",
+    "am": "cau_this_is_a_teapot"
    }
   ],
   "cau": [
@@ -1563,21 +1541,21 @@
     "phu": "Con nhìn thấy gì trong tranh?",
     "format": "chon",
     "choices": [
-     "I can see an egg.",
      "I can see a dog.",
      "I can see a cat.",
+     "I can see an apple.",
      "I can see a duck."
     ],
     "answerKey": {
-     "choice": "I can see an egg."
+     "choice": "I can see an apple."
     },
-    "solutionNarrative": "“I can see an egg.”."
+    "solutionNarrative": "“I can see an apple.”."
    },
    {
     "id": "T2",
     "loai": "chiTiet",
-    "text": "How many beds can you see?",
-    "phu": "Con thấy mấy bed?",
+    "text": "How many teapots can you see?",
+    "phu": "Con thấy mấy ấm pha trà?",
     "format": "chon",
     "choices": [
      "I can see two.",
@@ -1600,12 +1578,12 @@
      "It's a dog.",
      "It's a cat.",
      "It's a duck.",
-     "It's a bean."
+     "It's an egg."
     ],
     "answerKey": {
-     "choice": "It's a bean."
+     "choice": "It's an egg."
     },
-    "solutionNarrative": "“It's a bean.”."
+    "solutionNarrative": "“It's an egg.”."
    }
   ],
   "soCau": 3,
@@ -1782,7 +1760,7 @@
     "id": "T2",
     "loai": "chiTiet",
     "text": "How many birds can you see?",
-    "phu": "Con thấy mấy bird?",
+    "phu": "Con thấy mấy con chim?",
     "format": "chon",
     "choices": [
      "I can see two.",
@@ -1903,20 +1881,20 @@
     "am": "cau_she_s_dancing"
    },
    {
-    "cau": "This is a kite.",
-    "am": "cau_this_is_a_kite"
+    "cau": "This is a book.",
+    "am": "cau_this_is_a_book"
    },
    {
-    "cau": "I can see a bike.",
-    "am": "cau_i_can_see_a_bike"
+    "cau": "I can see a pen.",
+    "am": "cau_i_can_see_a_pen"
    },
    {
-    "cau": "That's a cake.",
-    "am": "cau_that_s_a_cake"
+    "cau": "That's a ball.",
+    "am": "cau_that_s_a_ball"
    },
    {
-    "cau": "I can see a table.",
-    "am": "cau_i_can_see_a_table"
+    "cau": "There's a bike.",
+    "am": "cau_there_s_a_bike"
    }
   ],
   "cau": [
@@ -1927,35 +1905,18 @@
     "phu": "Con nhìn thấy gì trong tranh?",
     "format": "chon",
     "choices": [
-     "I can see a bike.",
      "I can see a dog.",
      "I can see a cat.",
-     "I can see a duck."
+     "I can see a duck.",
+     "I can see a pen."
     ],
     "answerKey": {
-     "choice": "I can see a bike."
+     "choice": "I can see a pen."
     },
-    "solutionNarrative": "“I can see a bike.”."
+    "solutionNarrative": "“I can see a pen.”."
    },
    {
     "id": "T2",
-    "loai": "chiTiet",
-    "text": "How many tables can you see?",
-    "phu": "Con thấy mấy table?",
-    "format": "chon",
-    "choices": [
-     "I can see two.",
-     "I can see one.",
-     "I can see three.",
-     "I can see four."
-    ],
-    "answerKey": {
-     "choice": "I can see one."
-    },
-    "solutionNarrative": "“I can see one.”."
-   },
-   {
-    "id": "T3",
     "loai": "chiTiet",
     "text": "What's this?",
     "phu": "Đây là cái gì?",
@@ -1964,15 +1925,15 @@
      "It's a dog.",
      "It's a cat.",
      "It's a duck.",
-     "It's a kite."
+     "It's a book."
     ],
     "answerKey": {
-     "choice": "It's a kite."
+     "choice": "It's a book."
     },
-    "solutionNarrative": "“It's a kite.”."
+    "solutionNarrative": "“It's a book.”."
    }
   ],
-  "soCau": 3,
+  "soCau": 2,
   "need": 2
  },
  {
@@ -2029,7 +1990,7 @@
     "id": "T2",
     "loai": "chiTiet",
     "text": "How many tables can you see?",
-    "phu": "Con thấy mấy table?",
+    "phu": "Con thấy mấy cái bàn?",
     "format": "chon",
     "choices": [
      "I can see two.",
@@ -2117,7 +2078,7 @@
     "id": "T2",
     "loai": "chiTiet",
     "text": "How many boxes can you see?",
-    "phu": "Con thấy mấy box?",
+    "phu": "Con thấy mấy cái hộp?",
     "format": "chon",
     "choices": [
      "I can see two.",
