@@ -82,14 +82,30 @@ video, không vào tranh. Danh sách mã cố tình để HẸP — đoán hụt
 
 Cách chữa TẬN GỐC là **vẽ tay một người đang làm việc ấy** rồi đặt cờ `nguoi:
 true` trong `hinh_ve.json` — `la_nguoi()` và cổng cùng đọc cờ đó, không đoán mã.
-`singing` đã vẽ (20-08): người đứng, miệng há, micro đưa lên tận miệng, hai nốt
-nhạc bay ra. ⚠ Vẽ xong thì phải chạy lại **cả dây chuyền từ tầng ②**: khai
-`_ve_tay` trong `lopN_bu.json` → `chuan_tienganh.py` → `sinh_bai_tienganh.py`
-(để `hinhTu[].ve` có tên hình) → tranh → **và dựng lại VIDEO của mọi unit dạy từ
-ấy**, vì thẻ từ trong video cũng đọc cùng nguồn hình.
+Đã vẽ ba (20-08-2026), cùng một họ nét với `run` có sẵn:
+
+| | vẽ gì | emoji cũ sai ở đâu |
+|---|---|---|
+| `singing` | người đứng, miệng há, micro đưa lên tận miệng, hai nốt nhạc bay ra | 🎤 là CÁI MICRO |
+| `reading` | người cầm quyển sách MỞ trước mặt, mắt nhìn xuống trang | 📖 là QUYỂN SÁCH — mà lớp 1 đã dạy chính từ `book` |
+| `writing` | người cầm bút CHẤM XUỐNG tờ giấy có dòng kẻ | ✍️ tên thật WRITING HAND: chỉ có bàn tay, không có người |
+
+⚠ Vẽ xong thì phải chạy lại **cả dây chuyền từ tầng ②**: khai `_ve_tay` trong
+`lopN_bu.json` → `chuan_tienganh.py` → `sinh_bai_tienganh.py` (để `hinhTu[].ve`
+có tên hình) → tranh → **và dựng lại VIDEO của mọi unit dạy từ ấy**, vì thẻ từ
+trong video cũng đọc cùng nguồn hình.
+
 ⚠ Đừng vẽ đè lên một từ khác: `singer` (U12, nghề nghiệp) dùng 🧑‍🎤. Phân biệt
 bằng khung hình — nghề là chân dung nửa người mặc đồng phục, hoạt động là người
 đủ thân đang làm động tác.
+
+⚠ **`BOT_VIEC = 4`, đừng nới.** `KHUON_VIEC` chỉ có hai khuôn (`She's …` /
+`He's …`) xoay vòng, nên năm hoạt động là ba dòng cùng một khuôn và cổng "không
+quá 2 dòng cùng khuôn" đỏ ngay. Bốn thì vừa đúng hai/hai. Đã đảo chiều thử.
+
+⚠ **Vẽ thêm người thì bỏ bớt đạo cụ.** U18 vốn mượn `book` và `pen` làm đạo cụ;
+khi `reading`/`writing` thành người, đoạn có cả người-đang-đọc-sách LẪN câu "This
+is a book." — bé không biết câu ấy tả cái nào. Sửa `UU_TIEN` cùng lúc.
 
 **8 · Chữ trên tranh phân cấp bằng CỠ, không bằng ĐỘ NHẠT.** Dòng tên cảnh tiếng
 Anh từng tô bằng `LINE` (#D4E1EE) cho "nhạt hơn một nấc" — nhưng `LINE` là màu kẻ
@@ -231,7 +247,11 @@ câu tiếng Anh vẫn nguyên si câu của sách.
 
 ## CÒN THÔ, CHƯA SỬA
 
-* **`reading` 📖 và `writing` ✍️** — hai từ này vẫn chỉ có hình ĐỒ nên chưa vào
-  tranh được. Vẽ tay như `singing` là chữa được, theo đúng bảy bước ở luật 7.
-  Bức U18 hiện có hai người (`dancing` · `singing`) cộng sách · bút · bóng, nên
-  không còn gấp.
+* **Lẫn hai lối vẽ trong một bức.** U18 nay có ba hình vẽ tay (`singing` ·
+  `reading` · `writing`) đứng cạnh emoji 💃 của `dancing`; nét vẽ tay mảnh hơn và
+  nhạt hơn emoji nhiều. Đọc vẫn ra, nhưng nhìn không đều tay. Chữa được bằng cách
+  vẽ nốt `dancing` (và mấy hoạt động còn dùng emoji người: `cooking` 🧑‍🍳 ·
+  `running` 🏃 · `cycling` 🚴 · `walking` 🚶 · `climbing` 🧗 · `swimming` 🏊).
+  Không gấp — emoji người vẫn ĐÚNG nghĩa, chỉ khác lối vẽ.
+* **`counting` 🔢 · `painting` 🎨 · `drawing` 🖌️** — vẫn là hình đồ vật nên chưa
+  vào tranh được. Cùng cách chữa như trên, chưa unit nào cần tới.

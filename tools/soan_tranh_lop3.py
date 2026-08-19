@@ -61,6 +61,10 @@ KHUON_KE = ["This is {a}.", "I can see {a}.", "That's {a}.", "There's {a}."]
 KHUON_NHA = ["This is my {t}.", "That's my {t}.", "This is my {t}.", "That's my {t}."]
 VAI_NHA = {"giadinh"}
 KHUON_VIEC = ["She's {ing}.", "He's {ing}."]
+# Nhiều nhất BỐN hoạt động trong một bức. Không phải con số cho đẹp: `KHUON_VIEC`
+# chỉ có hai khuôn, xoay vòng She's/He's, nên năm hoạt động là ba dòng cùng một
+# khuôn — và cổng "không quá 2 dòng cùng khuôn" đỏ ngay. Bốn thì vừa đúng hai/hai.
+BOT_VIEC = 4
 
 # Không đếm được — "a rice" sai. Sách không khai cờ này nên liệt kê ở đây, và
 # `chuan_tienganh.py` cũng chưa có chỗ nào khai nó.
@@ -98,10 +102,11 @@ UU_TIEN = {
     # Ở bàn ăn: món đếm được và đồ dọn bàn. Máy vốn ra "bean · bed · egg · desk" —
     # cái giường giữa bàn ăn.
     15: {"vat": ["egg", "apple", "cake", "cup", "teapot"]},
-    # Chơi và làm: hai bạn đang LÀM (dancing · singing — `singing` nay có hình vẽ
-    # tay một người đang hát), cộng quyển sách (reading) · cái bút (writing) · quả
-    # bóng (playing). Ba việc còn lại chỉ có hình ĐỒ nên đứng làm đạo cụ.
-    18: {"vat": ["book", "ball", "pen", "bike"]},
+    # Chơi và làm: bốn bạn đang LÀM (dancing · reading · singing · writing — cả ba
+    # từ sau nay đều có hình vẽ tay một NGƯỜI), cộng quả bóng cho ra chỗ chơi.
+    # ⚠ ĐỪNG để `book` với `pen` làm đạo cụ nữa: có người đang đọc sách rồi mà đoạn
+    # còn thêm câu "This is a book." thì bé không biết câu ấy tả cái nào.
+    18: {"vat": ["ball", "bike"]},
 }
 
 # Màu của vật — CHỈ những emoji một màu, gọi tên không cãi được. Đừng thêm bừa:
@@ -424,7 +429,7 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
         if thieu:
             print(f"   ⚠ U{b['so']:02d} khai vật chưa dùng được: {' '.join(thieu)}")
     elif viec:
-        viec = viec[:3]
+        viec = viec[:BOT_VIEC]
         rieng = [t for t in vat if t in tu_minh]
         khac = [t for t in PHU if t in kho and t not in rieng]
         khac += [t for t in vat if t not in tu_minh and t not in khac]
