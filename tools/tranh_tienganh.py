@@ -99,7 +99,12 @@ def dung_tranh(khai: dict, hinh: dict) -> Image.Image:
     # lại cho sẵn chữ thì hỏng cả bài viết lẫn bài nói.
     for y in khai.get("ke") or []:
         the(d, 60, y, W - 120, 22, nen="#C8A87C", vien="#8A6B45", day=3, bo=8)
-    giua(d, 22, khai["ten"], phong(34), MUTE)
+    # TÊN CẢNH SONG NGỮ — bác chốt 19-08: "Trên hình có text cũng nên song ngữ."
+    # Tiếng Việt trước (bé đọc được ngay), tiếng Anh dưới, nhạt hơn một nấc: nó là
+    # thứ bé đang tập đọc, không phải thứ dẫn bé vào bài.
+    giua(d, 18, khai["ten"], phong(32), MUTE)
+    if khai.get("ten_en"):
+        giua(d, 58, khai["ten_en"], phong(26), LINE)
 
     for n in khai["nhom"]:
         co = n.get("co", 110)

@@ -243,8 +243,22 @@ for (const q of quyens) {
     for (const c of k.cau || []) {
       const en = (c.choices || []).filter((x) => /^[A-Za-z]/.test(x) && !/[^\x20-\x7E'’]/.test(x));
       if (en.length < 3) continue;              // câu Có/Không thì không áp
-      const khuon = en.map((x) => `${(x.split(' ')[0] || '').toLowerCase()}|${x.split(' ').length}`);
-      if (new Set(khuon).size !== khuon.length) {
+      const dang = (x) => `${(x.split(' ')[0] || '').toLowerCase()}|${x.split(' ').length}`;
+      const khuon = en.map(dang);
+      if (k.dang === 'tranh') {
+        /* ⚠ BÀI TẢ TRANH HỎI KIỂU KHÁC, NÊN CANH KIỂU KHÁC.
+           Câu "What number is it?" thì cả bốn lựa chọn PHẢI cùng khuôn — It's three
+           · four · five · six — vì việc của bé là đọc CON SỐ, không phải phân biệt
+           hình dạng câu. Đòi chúng khác khuôn nhau là đòi ngược.
+           Cái thật sự cần chặn vẫn còn nguyên: ĐÁP ÁN không được là lựa chọn DUY
+           NHẤT mang khuôn của nó — lúc ấy bé chọn đúng bằng mắt mà không cần đọc.
+           Đó đúng là ca hỏng cũ: [It's a face. · It's a hair. · It's a hand. ·
+           What's this? ✓] — ba mồi giống hệt, đáp án lẻ loi. */
+        const dapKhuon = dang(c.answerKey?.choice || '');
+        if (khuon.filter((x) => x === dapKhuon).length === 1 && en.length > 2) {
+          samSam.push(`${k.id}/${c.id}: đáp án lẻ loi về hình dạng — [${en.join(' · ')}]`);
+        }
+      } else if (new Set(khuon).size !== khuon.length) {
         samSam.push(`${k.id}/${c.id}: [${en.join(' · ')}]`);
       }
     }
@@ -400,6 +414,24 @@ for (const q of quyens) {
         const co = (khai.nhom || []).some((n) => c.toLowerCase().includes(n.tu.toLowerCase()));
         if (!co) tranhHong.push(`${k.id}: đoạn tả “${c}” mà tranh không có vật ấy`);
       }
+    }
+
+    /* ══ CÂU HỎI HỎI BẰNG TIẾNG ANH, VÀ CHỈ BẰNG KHUÔN ĐÃ HỌC ══ (bác chốt 19-08)
+       "phần câu hỏi và câu trả lời của bài đọc hãy dùng tiếng anh bạn ơi."
+
+       Nhưng hỏi bằng một khuôn bé chưa gặp thì bài đọc hiểu hoá ra bài ĐOÁN ĐỀ —
+       bé không hiểu người ta hỏi gì. Nên `text` của câu hỏi cũng phải đi qua đúng
+       túi từ như đoạn văn. Phép soi chữ lạ ở khối trên đã lo phần LỰA CHỌN; đây
+       lo phần ĐỀ BÀI. */
+    const khoDe = khoDen(k.chapter);
+    for (const c of k.cau || []) {
+      if (!/[A-Za-z]/.test(c.text || '') || /[^\x20-\x7E’‘]/.test(c.text || '')) continue;
+      for (const w of chu(c.text)) {
+        if (!khoDe.has(w)) tranhHong.push(`${k.id}/${c.id}: đề hỏi “${c.text}” — chữ lạ “${w}”`);
+      }
+      /* Và phải có dòng phụ tiếng Việt: hỏi tiếng Anh mà bé chưa đọc nổi đề thì bé
+         ngồi nhìn. Dòng phụ là chỗ bám, không phải câu hỏi — màn hình để nó nhỏ. */
+      if (!c.phu) tranhHong.push(`${k.id}/${c.id}: đề tiếng Anh mà không có dòng phụ tiếng Việt`);
     }
 
     /* Đoạn mô tả phải là câu KỂ, không phải hỏi–đáp: bác bắt đúng chỗ này —

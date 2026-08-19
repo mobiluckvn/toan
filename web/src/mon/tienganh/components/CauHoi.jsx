@@ -79,6 +79,11 @@ function De({ cau }) {
       {cau.am && <NutNghe ma={cau.am} to nhan="Nghe lại" tuDong />}
       <div className="flex-1">
         <p className="text-lg leading-snug text-ink sm:text-xl">{cau.text}</p>
+        {/* DÒNG PHỤ TIẾNG VIỆT — bác chốt 19-08-2026: câu hỏi bài đọc hỏi bằng TIẾNG
+            ANH, nhưng bé lớp 3 mới tập đọc thì phải có chỗ bám. Để NHỎ và nhạt hơn:
+            nó là chỗ dựa, không phải câu hỏi. Bài nào không khai `phu` thì không
+            hiện gì — 20 unit kia không đổi. */}
+        {cau.phu && <p className="mt-0.5 text-sm text-mute">{cau.phu}</p>}
         {(cau.anh || cau.anhVe) && (
           <div className="mt-2 text-6xl leading-none sm:text-7xl">
             <HinhVe ve={cau.anhVe} hinh={cau.anh} ten="hình gợi ý" />
