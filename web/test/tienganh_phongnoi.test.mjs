@@ -1580,3 +1580,50 @@ test('màn phòng nói KHÔNG bày sẵn vốn từ ở bài tả tranh', () => 
   /* Nhưng bài THƯỜNG thì giữ — đó là vốn từ của unit, đúng việc của nó. */
   assert.match(pn, /Con nói về/, 'bài thường vẫn còn bảng vốn từ');
 });
+
+test('bé đáp nhầm thì cô DẪN VỀ ĐÚNG CÂU HỎI, không chỉ chê', async () => {
+  /* Bác chốt 19-08-2026: "Khi học sinh nói chưa đúng → Giúp học sinh nói đúng theo
+     nội dung đang hỏi nhé."
+
+     Bước sửa cũ chỉ đọc lại câu đích và nói "con thiếu chữ X". Ở bài tả tranh thì
+     hụt hẳn một nửa: bé sai vì ĐÁP NHẦM CÂU HỎI, không phải vì thiếu chữ. Cô hỏi
+     "How many kites can you see?" mà bé nói "I can see a kite." — không thiếu chữ
+     nào cả. Bảo "thiếu chữ three" thì bé càng rối. */
+  const { buocSua, loiDanTranh } = await import('../src/mon/tienganh/lib/phongnoi.js');
+  const ls = [
+    { vai: 'may', en: 'How many kites can you see?', buoc: 'goiY' },
+    { vai: 'be', chu: 'I can see a kite.', diem: 3, mau: 'I can see three.', thieu: [] },
+  ];
+  const b = buocSua(ls);
+  assert.equal(b.loai, 'sua');
+  assert.equal(b.hoiLai, 'How many kites can you see?', 'bước sửa phải NHỚ câu đang hỏi');
+  assert.equal(b.en, 'I can see three.', 'và đọc câu đáp ĐÚNG cho câu hỏi ấy');
+  assert.match(b.vi, /How many kites can you see\?/, 'lời viết sẵn phải nhắc lại câu hỏi');
+
+  const s = loiDanTranh({ tenBe: 'An', lop: 3, buoc: b,
+    kichBan: { dang: 'tranh', moTaTranh: ['I can see a kite.'] },
+    luotBe: ls[1] });
+  assert.match(s, /You had asked: "How many kites can you see\?"/);
+  assert.match(s, /answer that fits that question/i);
+  assert.match(s, /answered a different question/i, 'phải kể ra ca đáp nhầm câu');
+  assert.match(s, /Do not move on/i, 'sửa xong mới đi tiếp');
+
+  /* Bài THƯỜNG không có câu hỏi trước thì giữ nguyên lối cũ — 20 kịch bản kia
+     không được đổi hành vi. */
+  const bt = buocSua([{ vai: 'may', en: "It's cooking.", buoc: 'noiCa' },
+    { vai: 'be', chu: 'it cook', diem: 3, mau: "It's cooking.", thieu: ['cooking'] }]);
+  assert.equal(bt.hoiLai, null);
+  assert.match(bt.vi, /chưa có chữ/);
+});
+
+test('bài tả tranh KHÔNG hỏi "con thích cái nào nhất"', () => {
+  /* Bác chốt 19-08: "Bỏ phần con thích cái nào nhất."
+     Thẻ ấy sinh ra cho bài thường — bé chọn một thứ rồi cô điền nó vào ô trống của
+     mẫu câu. Bài tả tranh không có ô trống nào, và cũng không hỏi bé THÍCH gì; nó
+     hỏi bé NHÌN THẤY gì. Để lại là chen một việc lạ vào giữa, lại còn bày sẵn tên
+     mấy vật trong tranh kèm hình — tức là cho sẵn đáp án lần nữa. */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '').replace(/\{\/\*[\s\S]*?\*\/\}/g, '');
+  assert.match(pn, /!laTranh && !thich && hoiThich/, 'bài tả tranh phải giấu thẻ sở thích');
+  assert.match(pn, /Con thích cái nào nhất\?|cauHoiSoThich/, 'bài thường vẫn còn thẻ ấy');
+});

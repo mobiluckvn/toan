@@ -431,7 +431,12 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
           mà nói tự do thì bộ nhận dạng nghe ra gì cũng được. Câu trả lời rơi đúng
           vào vốn từ của bài nên không có từ lạ nào lọt vào phòng, và KHÔNG có
           thông tin riêng tư nào mới rời khỏi máy — chỉ là một từ trong sách. */}
-      {!thich && hoiThich && buoi.trangThai === 'dang' && (
+      {/* ⚠ BỎ THẺ "CON THÍCH CÁI NÀO NHẤT" Ở BÀI TẢ TRANH — bác chốt 19-08-2026.
+          Thẻ ấy sinh ra cho bài thường: bé chọn một thứ rồi cô lấy nó điền vào ô
+          trống của mẫu câu. Bài tả tranh không có ô trống nào, và cũng không hỏi
+          bé thích gì — nó hỏi bé NHÌN THẤY gì. Để lại là chen một việc lạ vào giữa,
+          lại còn bày sẵn tên mấy vật trong tranh kèm hình. */}
+      {!laTranh && !thich && hoiThich && buoi.trangThai === 'dang' && (
         <div className="rounded-xl2 border-2 border-gold bg-gold-pale p-4">
           <p className="text-lg font-bold text-navy">{hoiThich.hoi}</p>
           <p className="text-sm text-gold-dark">Con chọn một cái, rồi mình sẽ tập nói về nó.</p>

@@ -483,6 +483,17 @@ export function dongBuocTranh(buoc, luotBe, moTa) {
       `  The true answer is "${buoc.dapMau || '(see the lines above)'}".`,
       '  Ask it and wait. Do NOT answer it yourself, and do NOT ask her to repeat',
       '  the question — you want her ANSWER.');
+  } else if (buoc.loai === 'sua') {
+    /* ── DẪN BÉ TỚI CÂU ĐÚNG, KHÔNG CHỈ CHÊ ── (bác chốt 19-08-2026)
+       "Khi học sinh nói chưa đúng → Giúp học sinh nói đúng theo nội dung đang hỏi."
+       Ở bài tả tranh bé thường sai vì ĐÁP NHẦM CÂU HỎI, không phải vì thiếu chữ.
+       Nên lượt sửa phải nhắc lại câu hỏi trước đã, rồi mới tới chỗ lệch. */
+    d.push('  ROLE: this is a CORRECTION turn. She answered the wrong thing.');
+    if (buoc.hoiLai) d.push(`  You had asked: "${buoc.hoiLai}"`);
+    d.push(`  The answer that fits that question is "${buoc.en}".`,
+      '  In Vietnamese: say what she DID get right, then name the ONE thing that is',
+      '  off (wrong number? wrong object? answered a different question?), then say',
+      '  the English answer once and ask her to say it back. Do not move on.');
   } else if (buoc.loai === 'caDoan') {
     d.push('  ROLE: string it all together. Say the whole description once, then ask',
       '  her to say all of it herself. This is what the session was for.');
@@ -1341,12 +1352,28 @@ export function buocSua(lichSu = [], datNguong = 6) {
   }
   if (lien > SUA_TOI_DA) return null;
   const thieu = (be.thieu || []).filter(Boolean);
+
+  /* ── SỬA THEO ĐÚNG NỘI DUNG ĐANG HỎI ── (bác chốt 19-08-2026)
+     "Khi học sinh nói chưa đúng → Giúp học sinh nói đúng theo nội dung đang hỏi."
+
+     Bước sửa cũ chỉ đọc lại câu đích và nói "con thiếu chữ X". Ở bài tả tranh thì
+     thế là hụt hẳn một nửa: bé sai vì không biết ĐÁP CÂU HỎI NÀO. Cô hỏi
+     "How many kites can you see?" mà bé nói "I can see a kite." — không thiếu chữ
+     nào cả, chỉ là đáp nhầm câu. Bảo "thiếu chữ three" thì bé càng rối.
+
+     Nên bước sửa mang theo CÂU HỎI vừa rồi. Cô nhắc lại câu hỏi, chỉ ra chỗ lệch,
+     rồi mới cho nói lại. */
+  const truoc = [...lichSu].reverse().find((x) => x?.vai === 'may' && x.en);
+  const hoiLai = (truoc?.buoc === 'goiY' || truoc?.buoc === 'taTranh') ? truoc.en : null;
   return {
     loai: 'sua',
+    hoiLai,
     en: be.mau,
-    vi: thieu.length
-      ? `Con nói lại câu này nhé — lần vừa rồi chưa có chữ “${thieu[0]}”.`
-      : 'Con nói lại câu này, chậm hơn một chút nhé.',
+    vi: hoiLai
+      ? `Cô đang hỏi “${hoiLai}”. Con nhìn tranh rồi nói lại cho đúng câu hỏi ấy nhé.`
+      : (thieu.length
+        ? `Con nói lại câu này nhé — lần vừa rồi chưa có chữ “${thieu[0]}”.`
+        : 'Con nói lại câu này, chậm hơn một chút nhé.'),
   };
 }
 
