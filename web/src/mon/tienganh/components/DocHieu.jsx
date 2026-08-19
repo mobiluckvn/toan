@@ -35,6 +35,19 @@ export default function DocHieu({ bai, onXong, onThoat }) {
   const [dung, datDung] = useState(0);
   const [het, datHet] = useState(false);
 
+  /* ⚠ MỘT CHỖ DUY NHẤT dựng "tranh + đoạn", ba màn cùng gọi.
+     Bản trước rải `<Tranh>` ra từng nhánh bằng phép thay chuỗi, và hỏng đúng kiểu
+     hay hỏng nhất: màn KẾT dựng tranh HAI LẦN, còn màn ĐANG HỎI thì KHÔNG CÓ TRANH
+     — mà đó mới là màn bé ngồi lâu nhất, và câu hỏi thì hỏi "trong tranh có con
+     vật nào". Cổng không bắt được vì cổng soi dữ liệu, không soi màn hình; tôi thì
+     không mở ra nhìn. Gom về một hàm thì không còn chỗ cho ba nhánh lệch nhau. */
+  const dauBai = () => (
+    <>
+      <Tranh src={bai.tranh} ten={bai.tranhTen} />
+      <Doan doan={bai.doan} lien={bai.dang === 'tranh'} />
+    </>
+  );
+
   /* ══ BÀI TẢ TRANH — ĐỌC LÀ XONG, KHÔNG CÓ CÂU HỎI ══ (bác chốt 19-08-2026)
      "Rõ ràng mô tả tranh thì làm gì có câu hỏi mà nhét câu hỏi vô làm gì. Câu hỏi
      dùng cho cô giáo gợi ý học sinh để tả thôi."
@@ -43,8 +56,7 @@ export default function DocHieu({ bai, onXong, onThoat }) {
   if (!ds.length && bai?.doan?.length) {
     return (
       <Khung ten={bai.name} onThoat={onThoat}>
-        <Tranh src={bai.tranh} ten={bai.tranhTen} />
-        <Doan doan={bai.doan} lien={bai.dang === 'tranh'} />
+        {dauBai()}
         <button type="button" onClick={() => onXong?.({ dat: true, dung: 0, tong: 0 })}
           className="rounded-xl2 bg-navy px-6 py-4 text-lg font-semibold text-white
             focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
@@ -68,9 +80,7 @@ export default function DocHieu({ bai, onXong, onThoat }) {
     const dat = dung >= can;
     return (
       <Khung ten={bai.name} onThoat={onThoat}>
-        <Tranh src={bai.tranh} ten={bai.tranhTen} />
-        <Tranh src={bai.tranh} ten={bai.tranhTen} />
-      <Doan doan={bai.doan} />
+        {dauBai()}
         <div className={`rounded-xl2 p-6 ${dat ? 'bg-teal-pale' : 'bg-gold-pale'}`}>
           <p className="text-5xl" aria-hidden="true">{dat ? '📖' : '💪'}</p>
           <p className="mt-2 text-3xl font-bold text-ink">{dung}/{ds.length} câu đúng</p>
@@ -107,7 +117,7 @@ export default function DocHieu({ bai, onXong, onThoat }) {
 
   return (
     <Khung ten={bai.name} onThoat={onThoat}>
-      <Doan doan={bai.doan} />
+      {dauBai()}
 
       <div className="flex items-center gap-3">
         <p className="text-sm font-semibold text-mute">Câu {i + 1}/{ds.length}</p>
