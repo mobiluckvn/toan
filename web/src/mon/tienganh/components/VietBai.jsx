@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
+import { Tranh } from './DocHieu.jsx';
 import { duocGui, DIEM_TOI_DA } from '../lib/chamviet.js';
 import { nhoCham } from '../lib/goiChamViet.js';
 
@@ -75,12 +76,16 @@ export default function VietBai({ bai, onXong, onThoat }) {
 
   return (
     <Khung ten={bai.name} onThoat={onThoat}>
+      {/* ⚠ CÓ TRANH THÌ KHÔNG BÀY "Mẫu câu con đã học" — với bài tả tranh, mấy mẫu
+          ấy CHÍNH LÀ bản mô tả bức tranh. Bày ra là cho sẵn đáp án, và bài viết
+          hoá ra bài chép lại. Bác chốt: bài viết thì bé "chỉ được nhìn tranh". */}
+      <Tranh src={bai.tranh} ten={bai.tranhTen} />
       <section className="rounded-xl2 border-2 border-navy bg-white p-4">
         <h2 className="mb-1 text-sm font-semibold uppercase tracking-wider text-mute">
           Đề bài
         </h2>
         <p className="text-lg text-ink">{bai.de}</p>
-        {!!mauCau.length && (
+        {!bai.tranh && !!mauCau.length && (
           <details className="mt-3">
             <summary className="cursor-pointer text-sm font-semibold text-navy">
               Mẫu câu con đã học ({mauCau.length})

@@ -739,6 +739,25 @@ test('MỌI câu trong kịch bản đều hợp lệ với chính bài của n�
   /* Đây là phép kiểm đáng giá nhất của cả tệp kịch bản. Sinh sai một câu thì bé
      nghe câu sai suốt buổi, mà nhìn tệp JSON thì không ai thấy. */
   for (const k of MOI_KB) {
+    /* ⚠ KỊCH BẢN TẢ TRANH SOI BẰNG LUẬT KHÁC, và luật ấy CHẶT HƠN.
+       `cauHopLe` hỏi "câu này có nằm trong vốn của UNIT này không" — đúng cho kịch
+       bản thường, sai cho bài tả tranh: bức tranh cố ý dùng cả vốn tích luỹ từ lớp
+       1 (bác chốt 19-08: "không giới hạn trong chính bài học đó khiến nội dung
+       nhàm chán"). Nới `cauHopLe` ra cho nó thì mất luôn chốt cho 20 kịch bản kia.
+       Nên hỏi thẳng: mọi câu của kịch bản tranh phải nằm trong BẢN MÔ TẢ bức tranh
+       ấy, hoặc là tên một vật CÓ trong tranh. Không câu nào được ở ngoài. */
+    if (k.dang === 'tranh') {
+      const cho = new Set([...(k.moTaTranh || []), ...(k.tu || []), 'Hello!']);
+      for (const c of k.moTaTranh || []) {
+        for (const n of String(c).split(' - ')) cho.add(n.trim());
+      }
+      for (const b of k.buoc) {
+        if (!b.en) continue;
+        assert.ok(cho.has(b.en),
+          `${k.ma}/${k.bai} · bước "${b.loai}" nói “${b.en}” — không có trong bản mô tả tranh`);
+      }
+      continue;
+    }
     const von = vonCua(k);
     for (const b of k.buoc) {
       if (!b.en) continue;

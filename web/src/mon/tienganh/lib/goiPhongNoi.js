@@ -44,7 +44,13 @@ export async function hoiCoGiao({
      mô hình không có cách nào biết bé nói được mấy điểm. Xem `dongBuoc`. */
   const luotBe = luotBeCuoi(lichSu);
   const unit = kichBan
-    ? { ten: kichBan.ten, muc_tieu: kichBan.muc_tieu, tinh_huong: kichBan.tinh_huong }
+    ? { ten: kichBan.ten,
+        muc_tieu: kichBan.muc_tieu,
+        tinh_huong: kichBan.tinh_huong,
+        /* Bản mô tả BỨC TRANH — thứ CÔ có mà BÉ không có. Nhờ nó cô sửa được cả Ý,
+           không chỉ sửa tiếng: bé nói "I can see two kites." thì cô biết sai SỐ, vì
+           bản mô tả ghi ba. Bác chốt 19-08. */
+        moTaTranh: kichBan.moTaTranh || null }
     : null;
   const dan = buoc
     ? `${loiDan({ von, tenBe, lop, viec: null, hoSo, unit })}\n${dongBuoc(buoc, { tenBe, thich: hoSo?.thich }, luotBe)}`

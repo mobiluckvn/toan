@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CONTENT, dongDau } from '../../../chung/lib/soQuyen.js';
 import CauHoi from './CauHoi.jsx';
 import NutNghe from './NutNghe.jsx';
 
@@ -48,7 +49,9 @@ export default function DocHieu({ bai, onXong, onThoat }) {
     const dat = dung >= can;
     return (
       <Khung ten={bai.name} onThoat={onThoat}>
-        <Doan doan={bai.doan} />
+        <Tranh src={bai.tranh} ten={bai.tranhTen} />
+        <Tranh src={bai.tranh} ten={bai.tranhTen} />
+      <Doan doan={bai.doan} />
         <div className={`rounded-xl2 p-6 ${dat ? 'bg-teal-pale' : 'bg-gold-pale'}`}>
           <p className="text-5xl" aria-hidden="true">{dat ? '📖' : '💪'}</p>
           <p className="mt-2 text-3xl font-bold text-ink">{dung}/{ds.length} câu đúng</p>
@@ -122,6 +125,24 @@ export default function DocHieu({ bai, onXong, onThoat }) {
  * Bài cũ chưa có `ai` thì vẫn bày được, chỉ là không có tên — để một bản dựng cũ
  * còn nằm trong cache trình duyệt không làm bé mất hẳn đoạn đọc.
  */
+/**
+ * BỨC TRANH — nền chung cho đọc · viết · nói (bác chốt 19-08-2026).
+ *
+ * Đóng dấu phiên bản như mọi thứ trong `content/`: ảnh để `immutable` 7 ngày mà tên
+ * tệp không đổi khi vẽ lại, nên không có `?v=` thì sửa tranh xong bé vẫn xem bản cũ
+ * cả tuần. `bamNoiDung` nay đã băm cả tệp nặng — xem `noidung_version.mjs`.
+ */
+export function Tranh({ src, ten }) {
+  if (!src) return null;
+  return (
+    <figure className="rounded-xl2 border-2 border-navy bg-white p-2">
+      <img src={dongDau(`${CONTENT}/${src}`)} alt={ten || 'Bức tranh'}
+        className="w-full rounded-xl2" />
+      {ten && <figcaption className="p-1 text-center text-sm text-mute">{ten}</figcaption>}
+    </figure>
+  );
+}
+
 function Doan({ doan = [] }) {
   const coVai = doan.some((d) => d.ai);
   return (

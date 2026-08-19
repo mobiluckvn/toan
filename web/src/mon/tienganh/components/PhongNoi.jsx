@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import HinhVe from './HinhVe.jsx';
+import { Tranh } from './DocHieu.jsx';
 import { hinhCuaTu, napBai, maBaiTruoc, napKichBanNoi, kichBanCua } from '../lib/noiDung.js';
 import {
   vonTu, tuTrongCau, tachTheoTieng, UNIT_CU_TOI_DA,
@@ -376,6 +377,13 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
           ))}
         </ul>
       </div>
+
+      {/* ══ BỨC TRANH — bé CHỈ ĐƯỢC NHÌN TRANH ══ (bác chốt 19-08-2026)
+          "Bài nói sẽ cho một bức tranh và cùng mô tả về bức tranh đó (AI sẽ có phần
+          mô tả bức tranh bằng chữ còn học sinh thì chỉ được nhìn tranh thôi)."
+          Nên trên màn KHÔNG bày `moTaTranh` ra ở đâu cả — nó chỉ đi lên lời dặn cho
+          mô hình. Bày ra là bé đọc chứ không phải tả. */}
+      <Tranh src={kichBan?.tranh} ten={kichBan?.ten} />
 
       {!docDuoc() && (
         <p className="rounded-xl2 bg-gold-pale p-3 text-sm text-gold-dark">

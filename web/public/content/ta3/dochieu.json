@@ -1,5 +1,134 @@
 [
  {
+  "id": "DOC:TA3.U00",
+  "unit": 0,
+  "chapter": 1,
+  "phamVi": "unit",
+  "loai": "dochieu",
+  "dang": "tranh",
+  "name": "ĐỌC HIỂU · UNIT 0 · TRONG CỬA HÀNG ĐỒ CHƠI",
+  "tranh": "tienganh/tranh/TRANH_TA3_U00.png",
+  "tranhTen": "Trong cửa hàng đồ chơi",
+  "doan": [
+   {
+    "cau": "How many kites can you see?",
+    "am": "cau_how_many_kites_can_you_see"
+   },
+   {
+    "cau": "I can see three.",
+    "am": "cau_i_can_see_three"
+   },
+   {
+    "cau": "How many yo-yos can you see?",
+    "am": "cau_how_many_yo_yos_can_you_see"
+   },
+   {
+    "cau": "I can see four.",
+    "am": "cau_i_can_see_four"
+   },
+   {
+    "cau": "I can see a kitten.",
+    "am": "cau_i_can_see_a_kitten"
+   },
+   {
+    "cau": "I can see a teddy bear.",
+    "am": "cau_i_can_see_a_teddy_bear"
+   },
+   {
+    "cau": "What number is it?",
+    "am": "cau_what_number_is_it"
+   },
+   {
+    "cau": "It's five.",
+    "am": "cau_it_s_five"
+   }
+  ],
+  "cau": [
+   {
+    "id": "T1",
+    "loai": "yChinh",
+    "text": "Bức tranh này vẽ ở đâu?",
+    "format": "chon",
+    "choices": [
+     "Ở sân trường",
+     "Trong cửa hàng đồ chơi",
+     "Trong phòng ăn",
+     "Ở chợ"
+    ],
+    "answerKey": {
+     "choice": "Trong cửa hàng đồ chơi"
+    },
+    "solutionNarrative": "Đây là cảnh trong cửa hàng đồ chơi."
+   },
+   {
+    "id": "T2",
+    "loai": "chiTiet",
+    "text": "Trong tranh có mấy con diều?",
+    "format": "chon",
+    "choices": [
+     "3",
+     "2",
+     "4",
+     "5"
+    ],
+    "answerKey": {
+     "choice": "3"
+    },
+    "solutionNarrative": "Con đếm lại nhé — có 3 con diều."
+   },
+   {
+    "id": "T3",
+    "loai": "chiTiet",
+    "text": "Trong tranh có mấy cái yo-yo?",
+    "format": "chon",
+    "choices": [
+     "4",
+     "3",
+     "5",
+     "6"
+    ],
+    "answerKey": {
+     "choice": "4"
+    },
+    "solutionNarrative": "Con đếm lại nhé — có 4 cái yo-yo."
+   },
+   {
+    "id": "T4",
+    "loai": "chiTiet",
+    "text": "Câu nào ĐÚNG với bức tranh?",
+    "format": "chon",
+    "choices": [
+     "There's a garden.",
+     "She's running.",
+     "I can see a kitten.",
+     "The cake is on the table."
+    ],
+    "answerKey": {
+     "choice": "I can see a kitten."
+    },
+    "solutionNarrative": "“I can see a kitten.” — con nhìn lại tranh xem nhé."
+   },
+   {
+    "id": "T5",
+    "loai": "chiTiet",
+    "text": "Có người hỏi “How many kites can you see?” — con đáp thế nào?",
+    "format": "chon",
+    "choices": [
+     "It's five.",
+     "I can see a kitten.",
+     "I can see a teddy bear.",
+     "I can see three."
+    ],
+    "answerKey": {
+     "choice": "I can see three."
+    },
+    "solutionNarrative": "“I can see three.”."
+   }
+  ],
+  "soCau": 5,
+  "need": 4
+ },
+ {
   "id": "DOC:TA3.U01",
   "unit": 1,
   "chapter": 1,
@@ -272,6 +401,108 @@
      "choice": "Không"
     },
     "solutionNarrative": "KHÔNG — đoạn trên không có câu “Is this Mr Long?”."
+   }
+  ],
+  "soCau": 4,
+  "need": 3
+ },
+ {
+  "id": "DOC:TA3.C1",
+  "chapter": 1,
+  "phamVi": "chuong",
+  "loai": "dochieu",
+  "name": "ĐỌC HIỂU CHƯƠNG 1 · CHÀO HỎI, TÊN VÀ BẠN BÈ",
+  "doan": [
+   {
+    "cau": "This is Ms Hoa.",
+    "ai": "Mai",
+    "am": "cau_this_is_ms_hoa"
+   },
+   {
+    "cau": "How old are you?",
+    "ai": "Nam",
+    "am": "cau_how_old_are_you"
+   },
+   {
+    "cau": "I'm eight years old.",
+    "ai": "Mai",
+    "am": "cau_i_m_eight_years_old"
+   },
+   {
+    "cau": "What number is it?",
+    "ai": "Nam",
+    "am": "cau_what_number_is_it"
+   },
+   {
+    "cau": "It's five.",
+    "ai": "Mai",
+    "am": "cau_it_s_five"
+   }
+  ],
+  "cau": [
+   {
+    "id": "D1",
+    "loai": "yChinh",
+    "text": "Bài đọc này nói về chuyện gì?",
+    "format": "chon",
+    "choices": [
+     "Cơ thể, sở thích, trường lớp",
+     "Đồ dùng, màu sắc, giờ ra chơi",
+     "Chào hỏi, tên và bạn bè",
+     "Nghề nghiệp, nhà cửa, bữa ăn"
+    ],
+    "answerKey": {
+     "choice": "Chào hỏi, tên và bạn bè"
+    },
+    "solutionNarrative": "Cả đoạn nói về chào hỏi, tên và bạn bè."
+   },
+   {
+    "id": "D2",
+    "loai": "chiTiet",
+    "text": "Câu nào CÓ trong bài đọc?",
+    "format": "chon",
+    "choices": [
+     "It's one.",
+     "Hello. I'm Ben.",
+     "This is Ms Hoa.",
+     "Hello, Minh. I'm Lucy."
+    ],
+    "answerKey": {
+     "choice": "This is Ms Hoa."
+    },
+    "solutionNarrative": "“This is Ms Hoa.” — con đọc lại đoạn trên xem nhé."
+   },
+   {
+    "id": "D3",
+    "loai": "chiTiet",
+    "text": "Câu nào CÓ trong bài đọc?",
+    "format": "chon",
+    "choices": [
+     "It's two.",
+     "Hello. I'm Lucy.",
+     "Hello, Ben. I'm Lucy.",
+     "How old are you?"
+    ],
+    "answerKey": {
+     "choice": "How old are you?"
+    },
+    "solutionNarrative": "“How old are you?” — con đọc lại đoạn trên xem nhé."
+   },
+   {
+    "id": "D4",
+    "loai": "chiTiet",
+    "text": "Câu “It's one.” có trong bài đọc không?",
+    "format": "chon",
+    "choices": [
+     "Có",
+     "Không"
+    ],
+    "am": "cau_it_s_one",
+    "amChu": "It's one.",
+    "answerKey": {
+     "choice": "Không"
+    },
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's one.”."
    }
   ],
   "soCau": 4,
@@ -641,6 +872,118 @@
   ],
   "soCau": 3,
   "need": 2
+ },
+ {
+  "id": "DOC:TA3.C2",
+  "chapter": 2,
+  "phamVi": "chuong",
+  "loai": "dochieu",
+  "name": "ĐỌC HIỂU CHƯƠNG 2 · CƠ THỂ, SỞ THÍCH, TRƯỜNG LỚP",
+  "doan": [
+   {
+    "cau": "Come in, please!",
+    "ai": "Nam",
+    "am": "cau_come_in__please"
+   },
+   {
+    "cau": "May I come in?",
+    "ai": "Linh",
+    "am": "cau_may_i_come_in"
+   },
+   {
+    "cau": "Yes, you can.",
+    "ai": "Nam",
+    "am": "cau_yes__you_can"
+   },
+   {
+    "cau": "Is this our classroom?",
+    "ai": "Linh",
+    "am": "cau_is_this_our_classroom"
+   },
+   {
+    "cau": "Yes, it is.",
+    "ai": "Nam",
+    "am": "cau_yes__it_is"
+   },
+   {
+    "cau": "Let's go to the library.",
+    "ai": "Linh",
+    "am": "cau_let_s_go_to_the_library"
+   },
+   {
+    "cau": "OK, let's go.",
+    "ai": "Nam",
+    "am": "cau_ok__let_s_go"
+   }
+  ],
+  "cau": [
+   {
+    "id": "D1",
+    "loai": "yChinh",
+    "text": "Bài đọc này nói về chuyện gì?",
+    "format": "chon",
+    "choices": [
+     "Chào hỏi, tên và bạn bè",
+     "Đồ dùng, màu sắc, giờ ra chơi",
+     "Nghề nghiệp, nhà cửa, bữa ăn",
+     "Cơ thể, sở thích, trường lớp"
+    ],
+    "answerKey": {
+     "choice": "Cơ thể, sở thích, trường lớp"
+    },
+    "solutionNarrative": "Cả đoạn nói về cơ thể, sở thích, trường lớp."
+   },
+   {
+    "id": "D2",
+    "loai": "chiTiet",
+    "text": "Câu nào CÓ trong bài đọc?",
+    "format": "chon",
+    "choices": [
+     "What's this?",
+     "It's a nose.",
+     "Touch your face!",
+     "Come in, please!"
+    ],
+    "answerKey": {
+     "choice": "Come in, please!"
+    },
+    "solutionNarrative": "“Come in, please!” — con đọc lại đoạn trên xem nhé."
+   },
+   {
+    "id": "D3",
+    "loai": "chiTiet",
+    "text": "Câu nào CÓ trong bài đọc?",
+    "format": "chon",
+    "choices": [
+     "It's a face.",
+     "May I come in?",
+     "Touch your hair!",
+     "What's your hobby?"
+    ],
+    "answerKey": {
+     "choice": "May I come in?"
+    },
+    "solutionNarrative": "“May I come in?” — con đọc lại đoạn trên xem nhé."
+   },
+   {
+    "id": "D4",
+    "loai": "chiTiet",
+    "text": "Câu “What's this?” có trong bài đọc không?",
+    "format": "chon",
+    "choices": [
+     "Có",
+     "Không"
+    ],
+    "am": "cau_what_s_this",
+    "amChu": "What's this?",
+    "answerKey": {
+     "choice": "Không"
+    },
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “What's this?”."
+   }
+  ],
+  "soCau": 4,
+  "need": 3
  },
  {
   "id": "DOC:TA3.U08",
@@ -1028,6 +1371,123 @@
      "choice": "Không"
     },
     "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's my father.”."
+   }
+  ],
+  "soCau": 4,
+  "need": 3
+ },
+ {
+  "id": "DOC:TA3.C3",
+  "chapter": 3,
+  "phamVi": "chuong",
+  "loai": "dochieu",
+  "name": "ĐỌC HIỂU CHƯƠNG 3 · ĐỒ DÙNG, MÀU SẮC, GIỜ RA CHƠI",
+  "doan": [
+   {
+    "cau": "Who's this?",
+    "ai": "Ben",
+    "am": "cau_who_s_this"
+   },
+   {
+    "cau": "It's my sister.",
+    "ai": "Linh",
+    "am": "cau_it_s_my_sister"
+   },
+   {
+    "cau": "I play football at break time.",
+    "ai": "Ben",
+    "am": "cau_i_play_football_at_break_time"
+   },
+   {
+    "cau": "What do you do at break time?",
+    "ai": "Ben",
+    "am": "cau_what_do_you_do_at_break_time"
+   },
+   {
+    "cau": "I play chess.",
+    "ai": "Linh",
+    "am": "cau_i_play_chess"
+   },
+   {
+    "cau": "What colour is it?",
+    "ai": "Ben",
+    "am": "cau_what_colour_is_it"
+   },
+   {
+    "cau": "It's blue.",
+    "ai": "Linh",
+    "am": "cau_it_s_blue"
+   },
+   {
+    "cau": "I have a pen.",
+    "ai": "Ben",
+    "am": "cau_i_have_a_pen"
+   }
+  ],
+  "cau": [
+   {
+    "id": "D1",
+    "loai": "yChinh",
+    "text": "Bài đọc này nói về chuyện gì?",
+    "format": "chon",
+    "choices": [
+     "Đồ dùng, màu sắc, giờ ra chơi",
+     "Chào hỏi, tên và bạn bè",
+     "Cơ thể, sở thích, trường lớp",
+     "Nghề nghiệp, nhà cửa, bữa ăn"
+    ],
+    "answerKey": {
+     "choice": "Đồ dùng, màu sắc, giờ ra chơi"
+    },
+    "solutionNarrative": "Cả đoạn nói về đồ dùng, màu sắc, giờ ra chơi."
+   },
+   {
+    "id": "D2",
+    "loai": "chiTiet",
+    "text": "Câu nào CÓ trong bài đọc?",
+    "format": "chon",
+    "choices": [
+     "I have a book.",
+     "Do you have a ruler?",
+     "Who's this?",
+     "Yes, I do."
+    ],
+    "answerKey": {
+     "choice": "Who's this?"
+    },
+    "solutionNarrative": "“Who's this?” — con đọc lại đoạn trên xem nhé."
+   },
+   {
+    "id": "D3",
+    "loai": "chiTiet",
+    "text": "Câu nào CÓ trong bài đọc?",
+    "format": "chon",
+    "choices": [
+     "I have a notebook.",
+     "Do you have a book?",
+     "It's my sister.",
+     "It's black."
+    ],
+    "answerKey": {
+     "choice": "It's my sister."
+    },
+    "solutionNarrative": "“It's my sister.” — con đọc lại đoạn trên xem nhé."
+   },
+   {
+    "id": "D4",
+    "loai": "chiTiet",
+    "text": "Câu “I have a book.” có trong bài đọc không?",
+    "format": "chon",
+    "choices": [
+     "Có",
+     "Không"
+    ],
+    "am": "cau_i_have_a_book",
+    "amChu": "I have a book.",
+    "answerKey": {
+     "choice": "Không"
+    },
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “I have a book.”."
    }
   ],
   "soCau": 4,
@@ -1454,6 +1914,123 @@
      "choice": "Không"
     },
     "solutionNarrative": "KHÔNG — đoạn trên không có câu “I'd like some bread, please.”."
+   }
+  ],
+  "soCau": 4,
+  "need": 3
+ },
+ {
+  "id": "DOC:TA3.C4",
+  "chapter": 4,
+  "phamVi": "chuong",
+  "loai": "dochieu",
+  "name": "ĐỌC HIỂU CHƯƠNG 4 · NGHỀ NGHIỆP, NHÀ CỬA, BỮA ĂN",
+  "doan": [
+   {
+    "cau": "Would you like some bread?",
+    "ai": "Lucy",
+    "am": "cau_would_you_like_some_bread"
+   },
+   {
+    "cau": "Yes, please.",
+    "ai": "Ben",
+    "am": "cau_yes__please"
+   },
+   {
+    "cau": "What would you like to eat?",
+    "ai": "Lucy",
+    "am": "cau_what_would_you_like_to_eat"
+   },
+   {
+    "cau": "I'd like some rice, please.",
+    "ai": "Ben",
+    "am": "cau_i_d_like_some_rice__please"
+   },
+   {
+    "cau": "There's a bed in the room.",
+    "ai": "Lucy",
+    "am": "cau_there_s_a_bed_in_the_room"
+   },
+   {
+    "cau": "The door is big.",
+    "ai": "Ben",
+    "am": "cau_the_door_is_big"
+   },
+   {
+    "cau": "Where's your bedroom?",
+    "ai": "Lucy",
+    "am": "cau_where_s_your_bedroom"
+   },
+   {
+    "cau": "It's here.",
+    "ai": "Ben",
+    "am": "cau_it_s_here"
+   }
+  ],
+  "cau": [
+   {
+    "id": "D1",
+    "loai": "yChinh",
+    "text": "Bài đọc này nói về chuyện gì?",
+    "format": "chon",
+    "choices": [
+     "Chào hỏi, tên và bạn bè",
+     "Cơ thể, sở thích, trường lớp",
+     "Đồ dùng, màu sắc, giờ ra chơi",
+     "Nghề nghiệp, nhà cửa, bữa ăn"
+    ],
+    "answerKey": {
+     "choice": "Nghề nghiệp, nhà cửa, bữa ăn"
+    },
+    "solutionNarrative": "Cả đoạn nói về nghề nghiệp, nhà cửa, bữa ăn."
+   },
+   {
+    "id": "D2",
+    "loai": "chiTiet",
+    "text": "Câu nào CÓ trong bài đọc?",
+    "format": "chon",
+    "choices": [
+     "What's her job?",
+     "Would you like some bread?",
+     "She's a doctor.",
+     "Is he a doctor?"
+    ],
+    "answerKey": {
+     "choice": "Would you like some bread?"
+    },
+    "solutionNarrative": "“Would you like some bread?” — con đọc lại đoạn trên xem nhé."
+   },
+   {
+    "id": "D3",
+    "loai": "chiTiet",
+    "text": "Câu nào CÓ trong bài đọc?",
+    "format": "chon",
+    "choices": [
+     "She's a cook.",
+     "Yes, he is.",
+     "Is she a cook?",
+     "Yes, please."
+    ],
+    "answerKey": {
+     "choice": "Yes, please."
+    },
+    "solutionNarrative": "“Yes, please.” — con đọc lại đoạn trên xem nhé."
+   },
+   {
+    "id": "D4",
+    "loai": "chiTiet",
+    "text": "Câu “What's her job?” có trong bài đọc không?",
+    "format": "chon",
+    "choices": [
+     "Có",
+     "Không"
+    ],
+    "am": "cau_what_s_her_job",
+    "amChu": "What's her job?",
+    "answerKey": {
+     "choice": "Không"
+    },
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “What's her job?”."
    }
   ],
   "soCau": 4,
@@ -1971,454 +2548,6 @@
      "choice": "Không"
     },
     "solutionNarrative": "KHÔNG — đoạn trên không có câu “I can see an elephant.”."
-   }
-  ],
-  "soCau": 4,
-  "need": 3
- },
- {
-  "id": "DOC:TA3.C1",
-  "chapter": 1,
-  "phamVi": "chuong",
-  "loai": "dochieu",
-  "name": "ĐỌC HIỂU CHƯƠNG 1 · CHÀO HỎI, TÊN VÀ BẠN BÈ",
-  "doan": [
-   {
-    "cau": "This is Ms Hoa.",
-    "ai": "Mai",
-    "am": "cau_this_is_ms_hoa"
-   },
-   {
-    "cau": "How old are you?",
-    "ai": "Nam",
-    "am": "cau_how_old_are_you"
-   },
-   {
-    "cau": "I'm eight years old.",
-    "ai": "Mai",
-    "am": "cau_i_m_eight_years_old"
-   },
-   {
-    "cau": "What number is it?",
-    "ai": "Nam",
-    "am": "cau_what_number_is_it"
-   },
-   {
-    "cau": "It's five.",
-    "ai": "Mai",
-    "am": "cau_it_s_five"
-   }
-  ],
-  "cau": [
-   {
-    "id": "D1",
-    "loai": "yChinh",
-    "text": "Bài đọc này nói về chuyện gì?",
-    "format": "chon",
-    "choices": [
-     "Cơ thể, sở thích, trường lớp",
-     "Đồ dùng, màu sắc, giờ ra chơi",
-     "Chào hỏi, tên và bạn bè",
-     "Nghề nghiệp, nhà cửa, bữa ăn"
-    ],
-    "answerKey": {
-     "choice": "Chào hỏi, tên và bạn bè"
-    },
-    "solutionNarrative": "Cả đoạn nói về chào hỏi, tên và bạn bè."
-   },
-   {
-    "id": "D2",
-    "loai": "chiTiet",
-    "text": "Câu nào CÓ trong bài đọc?",
-    "format": "chon",
-    "choices": [
-     "It's one.",
-     "Hello. I'm Ben.",
-     "This is Ms Hoa.",
-     "Hello, Minh. I'm Lucy."
-    ],
-    "answerKey": {
-     "choice": "This is Ms Hoa."
-    },
-    "solutionNarrative": "“This is Ms Hoa.” — con đọc lại đoạn trên xem nhé."
-   },
-   {
-    "id": "D3",
-    "loai": "chiTiet",
-    "text": "Câu nào CÓ trong bài đọc?",
-    "format": "chon",
-    "choices": [
-     "It's two.",
-     "Hello. I'm Lucy.",
-     "Hello, Ben. I'm Lucy.",
-     "How old are you?"
-    ],
-    "answerKey": {
-     "choice": "How old are you?"
-    },
-    "solutionNarrative": "“How old are you?” — con đọc lại đoạn trên xem nhé."
-   },
-   {
-    "id": "D4",
-    "loai": "chiTiet",
-    "text": "Câu “It's one.” có trong bài đọc không?",
-    "format": "chon",
-    "choices": [
-     "Có",
-     "Không"
-    ],
-    "am": "cau_it_s_one",
-    "amChu": "It's one.",
-    "answerKey": {
-     "choice": "Không"
-    },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's one.”."
-   }
-  ],
-  "soCau": 4,
-  "need": 3
- },
- {
-  "id": "DOC:TA3.C2",
-  "chapter": 2,
-  "phamVi": "chuong",
-  "loai": "dochieu",
-  "name": "ĐỌC HIỂU CHƯƠNG 2 · CƠ THỂ, SỞ THÍCH, TRƯỜNG LỚP",
-  "doan": [
-   {
-    "cau": "Come in, please!",
-    "ai": "Nam",
-    "am": "cau_come_in__please"
-   },
-   {
-    "cau": "May I come in?",
-    "ai": "Linh",
-    "am": "cau_may_i_come_in"
-   },
-   {
-    "cau": "Yes, you can.",
-    "ai": "Nam",
-    "am": "cau_yes__you_can"
-   },
-   {
-    "cau": "Is this our classroom?",
-    "ai": "Linh",
-    "am": "cau_is_this_our_classroom"
-   },
-   {
-    "cau": "Yes, it is.",
-    "ai": "Nam",
-    "am": "cau_yes__it_is"
-   },
-   {
-    "cau": "Let's go to the library.",
-    "ai": "Linh",
-    "am": "cau_let_s_go_to_the_library"
-   },
-   {
-    "cau": "OK, let's go.",
-    "ai": "Nam",
-    "am": "cau_ok__let_s_go"
-   }
-  ],
-  "cau": [
-   {
-    "id": "D1",
-    "loai": "yChinh",
-    "text": "Bài đọc này nói về chuyện gì?",
-    "format": "chon",
-    "choices": [
-     "Chào hỏi, tên và bạn bè",
-     "Đồ dùng, màu sắc, giờ ra chơi",
-     "Nghề nghiệp, nhà cửa, bữa ăn",
-     "Cơ thể, sở thích, trường lớp"
-    ],
-    "answerKey": {
-     "choice": "Cơ thể, sở thích, trường lớp"
-    },
-    "solutionNarrative": "Cả đoạn nói về cơ thể, sở thích, trường lớp."
-   },
-   {
-    "id": "D2",
-    "loai": "chiTiet",
-    "text": "Câu nào CÓ trong bài đọc?",
-    "format": "chon",
-    "choices": [
-     "What's this?",
-     "It's a nose.",
-     "Touch your face!",
-     "Come in, please!"
-    ],
-    "answerKey": {
-     "choice": "Come in, please!"
-    },
-    "solutionNarrative": "“Come in, please!” — con đọc lại đoạn trên xem nhé."
-   },
-   {
-    "id": "D3",
-    "loai": "chiTiet",
-    "text": "Câu nào CÓ trong bài đọc?",
-    "format": "chon",
-    "choices": [
-     "It's a face.",
-     "May I come in?",
-     "Touch your hair!",
-     "What's your hobby?"
-    ],
-    "answerKey": {
-     "choice": "May I come in?"
-    },
-    "solutionNarrative": "“May I come in?” — con đọc lại đoạn trên xem nhé."
-   },
-   {
-    "id": "D4",
-    "loai": "chiTiet",
-    "text": "Câu “What's this?” có trong bài đọc không?",
-    "format": "chon",
-    "choices": [
-     "Có",
-     "Không"
-    ],
-    "am": "cau_what_s_this",
-    "amChu": "What's this?",
-    "answerKey": {
-     "choice": "Không"
-    },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “What's this?”."
-   }
-  ],
-  "soCau": 4,
-  "need": 3
- },
- {
-  "id": "DOC:TA3.C3",
-  "chapter": 3,
-  "phamVi": "chuong",
-  "loai": "dochieu",
-  "name": "ĐỌC HIỂU CHƯƠNG 3 · ĐỒ DÙNG, MÀU SẮC, GIỜ RA CHƠI",
-  "doan": [
-   {
-    "cau": "Who's this?",
-    "ai": "Ben",
-    "am": "cau_who_s_this"
-   },
-   {
-    "cau": "It's my sister.",
-    "ai": "Linh",
-    "am": "cau_it_s_my_sister"
-   },
-   {
-    "cau": "I play football at break time.",
-    "ai": "Ben",
-    "am": "cau_i_play_football_at_break_time"
-   },
-   {
-    "cau": "What do you do at break time?",
-    "ai": "Ben",
-    "am": "cau_what_do_you_do_at_break_time"
-   },
-   {
-    "cau": "I play chess.",
-    "ai": "Linh",
-    "am": "cau_i_play_chess"
-   },
-   {
-    "cau": "What colour is it?",
-    "ai": "Ben",
-    "am": "cau_what_colour_is_it"
-   },
-   {
-    "cau": "It's blue.",
-    "ai": "Linh",
-    "am": "cau_it_s_blue"
-   },
-   {
-    "cau": "I have a pen.",
-    "ai": "Ben",
-    "am": "cau_i_have_a_pen"
-   }
-  ],
-  "cau": [
-   {
-    "id": "D1",
-    "loai": "yChinh",
-    "text": "Bài đọc này nói về chuyện gì?",
-    "format": "chon",
-    "choices": [
-     "Đồ dùng, màu sắc, giờ ra chơi",
-     "Chào hỏi, tên và bạn bè",
-     "Cơ thể, sở thích, trường lớp",
-     "Nghề nghiệp, nhà cửa, bữa ăn"
-    ],
-    "answerKey": {
-     "choice": "Đồ dùng, màu sắc, giờ ra chơi"
-    },
-    "solutionNarrative": "Cả đoạn nói về đồ dùng, màu sắc, giờ ra chơi."
-   },
-   {
-    "id": "D2",
-    "loai": "chiTiet",
-    "text": "Câu nào CÓ trong bài đọc?",
-    "format": "chon",
-    "choices": [
-     "I have a book.",
-     "Do you have a ruler?",
-     "Who's this?",
-     "Yes, I do."
-    ],
-    "answerKey": {
-     "choice": "Who's this?"
-    },
-    "solutionNarrative": "“Who's this?” — con đọc lại đoạn trên xem nhé."
-   },
-   {
-    "id": "D3",
-    "loai": "chiTiet",
-    "text": "Câu nào CÓ trong bài đọc?",
-    "format": "chon",
-    "choices": [
-     "I have a notebook.",
-     "Do you have a book?",
-     "It's my sister.",
-     "It's black."
-    ],
-    "answerKey": {
-     "choice": "It's my sister."
-    },
-    "solutionNarrative": "“It's my sister.” — con đọc lại đoạn trên xem nhé."
-   },
-   {
-    "id": "D4",
-    "loai": "chiTiet",
-    "text": "Câu “I have a book.” có trong bài đọc không?",
-    "format": "chon",
-    "choices": [
-     "Có",
-     "Không"
-    ],
-    "am": "cau_i_have_a_book",
-    "amChu": "I have a book.",
-    "answerKey": {
-     "choice": "Không"
-    },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “I have a book.”."
-   }
-  ],
-  "soCau": 4,
-  "need": 3
- },
- {
-  "id": "DOC:TA3.C4",
-  "chapter": 4,
-  "phamVi": "chuong",
-  "loai": "dochieu",
-  "name": "ĐỌC HIỂU CHƯƠNG 4 · NGHỀ NGHIỆP, NHÀ CỬA, BỮA ĂN",
-  "doan": [
-   {
-    "cau": "Would you like some bread?",
-    "ai": "Lucy",
-    "am": "cau_would_you_like_some_bread"
-   },
-   {
-    "cau": "Yes, please.",
-    "ai": "Ben",
-    "am": "cau_yes__please"
-   },
-   {
-    "cau": "What would you like to eat?",
-    "ai": "Lucy",
-    "am": "cau_what_would_you_like_to_eat"
-   },
-   {
-    "cau": "I'd like some rice, please.",
-    "ai": "Ben",
-    "am": "cau_i_d_like_some_rice__please"
-   },
-   {
-    "cau": "There's a bed in the room.",
-    "ai": "Lucy",
-    "am": "cau_there_s_a_bed_in_the_room"
-   },
-   {
-    "cau": "The door is big.",
-    "ai": "Ben",
-    "am": "cau_the_door_is_big"
-   },
-   {
-    "cau": "Where's your bedroom?",
-    "ai": "Lucy",
-    "am": "cau_where_s_your_bedroom"
-   },
-   {
-    "cau": "It's here.",
-    "ai": "Ben",
-    "am": "cau_it_s_here"
-   }
-  ],
-  "cau": [
-   {
-    "id": "D1",
-    "loai": "yChinh",
-    "text": "Bài đọc này nói về chuyện gì?",
-    "format": "chon",
-    "choices": [
-     "Chào hỏi, tên và bạn bè",
-     "Cơ thể, sở thích, trường lớp",
-     "Đồ dùng, màu sắc, giờ ra chơi",
-     "Nghề nghiệp, nhà cửa, bữa ăn"
-    ],
-    "answerKey": {
-     "choice": "Nghề nghiệp, nhà cửa, bữa ăn"
-    },
-    "solutionNarrative": "Cả đoạn nói về nghề nghiệp, nhà cửa, bữa ăn."
-   },
-   {
-    "id": "D2",
-    "loai": "chiTiet",
-    "text": "Câu nào CÓ trong bài đọc?",
-    "format": "chon",
-    "choices": [
-     "What's her job?",
-     "Would you like some bread?",
-     "She's a doctor.",
-     "Is he a doctor?"
-    ],
-    "answerKey": {
-     "choice": "Would you like some bread?"
-    },
-    "solutionNarrative": "“Would you like some bread?” — con đọc lại đoạn trên xem nhé."
-   },
-   {
-    "id": "D3",
-    "loai": "chiTiet",
-    "text": "Câu nào CÓ trong bài đọc?",
-    "format": "chon",
-    "choices": [
-     "She's a cook.",
-     "Yes, he is.",
-     "Is she a cook?",
-     "Yes, please."
-    ],
-    "answerKey": {
-     "choice": "Yes, please."
-    },
-    "solutionNarrative": "“Yes, please.” — con đọc lại đoạn trên xem nhé."
-   },
-   {
-    "id": "D4",
-    "loai": "chiTiet",
-    "text": "Câu “What's her job?” có trong bài đọc không?",
-    "format": "chon",
-    "choices": [
-     "Có",
-     "Không"
-    ],
-    "am": "cau_what_s_her_job",
-    "amChu": "What's her job?",
-    "answerKey": {
-     "choice": "Không"
-    },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “What's her job?”."
    }
   ],
   "soCau": 4,

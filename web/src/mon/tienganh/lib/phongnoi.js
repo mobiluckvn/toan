@@ -991,6 +991,20 @@ function dongUnit(u) {
   if (u.ten) d.push(`TODAY'S UNIT: ${u.ten}`);
   if (u.muc_tieu) d.push(`  By the end she should be able to: ${u.muc_tieu}`);
   if (u.tinh_huong) d.push(`  The situation the book sets up: ${u.tinh_huong}`);
+  /* ══ BỨC TRANH — CÔ CÓ BẢN MÔ TẢ, BÉ THÌ KHÔNG ══ (bác chốt 19-08-2026)
+     "AI sẽ có phần mô tả bức tranh bằng chữ còn học sinh thì chỉ được nhìn tranh
+     thôi."
+     Đây là chỗ phòng nói làm được việc mà nó chưa bao giờ làm được: SỬA Ý. Trước
+     nay cô chỉ có câu mẫu, nên bé nói sai số hay sai vật thì cô không biết — chấm
+     phát âm vẫn cao. Nay cô biết trong tranh có gì. */
+  if (u.moTaTranh?.length) {
+    d.push('THE PICTURE — she can see it, you only have these words for it:');
+    for (const c of u.moTaTranh) d.push(`  · ${c}`);
+    d.push('  Ask her about the picture and check her answer against these lines.',
+      '  If she says a wrong number or names a thing that is not there, correct THAT',
+      '  — not just her pronunciation. Never read the whole description out to her:',
+      '  she is meant to find the words herself.');
+  }
   return d;
 }
 

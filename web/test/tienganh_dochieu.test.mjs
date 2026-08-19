@@ -91,7 +91,10 @@ for (const q of quyens) {
     /* Bài theo CHƯƠNG gom bốn unit, mà một lượt đối đáp ăn HAI dòng — sáu dòng chỉ
        đủ ba lượt, chưa đi hết chương đã hết chỗ. Nên trần của bài chương là 8. */
     const sanDong = k.phamVi === 'unit' ? 3 : 4;
-    const tranDong = k.phamVi === 'unit' ? 8 : 10;
+    /* Bài TẢ TRANH: mỗi cặp hỏi–đáp trong bản mô tả thành HAI dòng, nên nó luôn
+       dài hơn đoạn hội thoại thường. Bù lại bé có bức tranh đỡ — không phải giữ cả
+       đoạn trong đầu, chỉ cần đối chiếu từng dòng với hình. */
+    const tranDong = k.dang === 'tranh' ? 12 : (k.phamVi === 'unit' ? 8 : 10);
     if (doan.length < sanDong || doan.length > tranDong) {
       hinhDang.push(`${k.id}: đoạn ${doan.length} câu (cần ${sanDong}–${tranDong})`);
     }
@@ -287,6 +290,10 @@ for (const q of quyens) {
   const GOI = /\b(?:Hello|Hi|Bye|Goodbye),\s+((?:Ms |Mr )?[A-Z][a-z]+)/g;
   const roiRac = [];
   for (const k of ds) {
+    /* ⚠ Bài TẢ TRANH không có người nói, và đúng là không nên có: đó là một đoạn
+       MÔ TẢ, không phải hai bạn nói chuyện. Miễn phép này cho nó — nhưng miễn ĐÚNG
+       một phép, mọi phép khác (chữ đã học · clip · lựa chọn khác khuôn) vẫn áp. */
+    if (k.dang === 'tranh') continue;
     const doan = k.doan || [];
     if (!doan.every((d) => d.ai)) { roiRac.push(`${k.id}: có dòng không rõ ai nói`); continue; }
     const nguoi = [...new Set(doan.map((d) => d.ai))];
@@ -323,6 +330,28 @@ for (const q of quyens) {
   t(`${q} · mọi dòng và mọi câu hỏi đều có clip tiếng (${amThieu.length} thiếu)`,
     amThieu.length === 0);
   in5(amThieu);
+
+  /* ══ BÀI TẢ TRANH PHẢI CÓ TRANH, VÀ TRANH PHẢI CÓ THẬT ══ (bác chốt 19-08-2026)
+
+     "Bài đọc sẽ là các dạng như một bức tranh: mô tả về bức tranh đó."
+
+     Khai `dang: 'tranh'` mà thiếu tệp ảnh thì màn hình hiện một ô vỡ, còn câu hỏi
+     thì hỏi "trong tranh có mấy con diều" — bé không có gì để đếm. Không lỗi đỏ ở
+     đâu cả, vì `<img>` hỏng không làm React nổ. */
+  const tranhHong = [];
+  for (const k of ds.filter((x) => x.dang === 'tranh')) {
+    if (!k.tranh) { tranhHong.push(`${k.id}: khai dạng tranh mà không có ảnh`); continue; }
+    if (!existsSync(join(R, 'web/public/content', k.tranh))) {
+      tranhHong.push(`${k.id}: thiếu tệp ${k.tranh}`);
+    }
+    /* Câu hỏi đếm phải có ít nhất một cái — đó là chỗ bài tranh hơn hẳn bài chữ. */
+    if (!(k.cau || []).some((c) => /mấy/.test(c.text || ''))) {
+      tranhHong.push(`${k.id}: không có câu hỏi đếm nào`);
+    }
+  }
+  t(`${q} · bài tả tranh có đủ tranh và câu hỏi về tranh (${tranhHong.length})`,
+    tranhHong.length === 0);
+  in5(tranhHong);
 
   const tongDong = ds.reduce((a, k) => a + (k.doan || []).length, 0);
   const tongCau = ds.reduce((a, k) => a + (k.cau || []).length, 0);
