@@ -418,6 +418,32 @@ for (const q of quyens) {
         const co = (khai.nhom || []).some((n) => c.toLowerCase().includes(n.tu.toLowerCase()));
         if (!co) tranhHong.push(`${k.id}: đoạn tả “${c}” mà tranh không có vật ấy`);
       }
+      /* ══ CÂU "She's …ing." THÌ TRÊN TRANH PHẢI CÓ NGƯỜI ══ (lộ ra 19-08-2026)
+
+         Bức "Ở vườn thú" viết *"He's counting."* mà trên tranh là cái bàn phím số
+         🔢; unit 18 viết *"She's reading."* mà tranh là quyển sách 📖. Cả hai đều
+         qua được phép kiểm cũ, vì phép kiểm cũ chỉ hỏi "từ này CÓ hình không" —
+         có, nhưng hình là ĐỒ VẬT. Bé nhìn quyển sách thì bé nói "a book"; không ai
+         nói được "She's reading" từ một quyển sách nằm trên kệ.
+
+         Đây là loại lỗi cổng xanh không bắt được nếu không hỏi đúng câu hỏi, và
+         chỉ lộ khi rút bức tranh ra nhìn — cùng họ với [[hình trong video phải
+         khớp lời đọc]]. */
+      const hinhCua = Object.fromEntries(
+        bais.flatMap((b) => (b.hinhTu || []).map((h) => [h.tu, h.hinh || ''])));
+      const coNguoi = (e) => [...String(e || '')].some((ch) => {
+        const m = ch.codePointAt(0);
+        return (m >= 0x1F466 && m <= 0x1F478) || (m >= 0x1F481 && m <= 0x1F487)
+          || (m >= 0x1F574 && m <= 0x1F57A) || (m >= 0x1F645 && m <= 0x1F64F)
+          || (m >= 0x1F3C3 && m <= 0x1F3CC) || (m >= 0x1F6B4 && m <= 0x1F6B6)
+          || (m >= 0x1F930 && m <= 0x1F93E) || (m >= 0x1F9CD && m <= 0x1F9DF);
+      });
+      for (const c of khai.doan || []) {
+        const m = /^(?:She|He)'s (\w+ing)\.$/.exec(c.trim());
+        if (m && !coNguoi(hinhCua[m[1]])) {
+          tranhHong.push(`${k.id}: đoạn nói “${c}” mà hình của “${m[1]}” là đồ vật, không có người`);
+        }
+      }
     }
 
     /* ══ CÂU HỎI HỎI BẰNG TIẾNG ANH, VÀ CHỈ BẰNG KHUÔN ĐÃ HỌC ══ (bác chốt 19-08)

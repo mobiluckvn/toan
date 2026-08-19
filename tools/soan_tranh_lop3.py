@@ -146,12 +146,56 @@ def vat_cua(b: dict, chuan_tu: dict, truoc: list[dict],
     return ra
 
 
+# Emoji NÀO là "một người đang làm gì đó". Chỉ những mã này mới được vào tranh
+# dưới khuôn "She's …ing." — xem `la_nguoi` ngay dưới để biết vì sao.
+NGUOI_MA = [
+    (0x1F466, 0x1F469),   # boy · girl · man · woman
+    (0x1F46B, 0x1F478),   # cặp đôi · người đi bộ · cảnh sát · cô dâu…
+    (0x1F481, 0x1F483),   # chỉ đường · gội đầu · nhảy 💃
+    (0x1F486, 0x1F487),   # massage · cắt tóc
+    (0x1F574, 0x1F575),   # người mặc vest · thám tử
+    (0x1F57A, 0x1F57A),   # nam nhảy
+    (0x1F645, 0x1F64F),   # khoanh tay · cúi chào · giơ tay…
+    (0x1F3C3, 0x1F3CC),   # chạy 🏃 · lướt · bơi · nâng tạ · chơi gôn
+    (0x1F6B4, 0x1F6B6),   # đạp xe 🚴 · xe đạp địa hình · đi bộ
+    (0x1F6CC, 0x1F6CC),   # nằm
+    (0x1F930, 0x1F939),   # bế bé · nhún vai · làm xiếc…
+    (0x1F93C, 0x1F93E),   # vật · bóng nước · bóng ném
+    (0x1F9CD, 0x1F9CF),   # đứng · quỳ · người khiếm thính
+    (0x1F9D1, 0x1F9DF),   # người 🧑 (kể cả 🧑‍🍳) · trẻ · leo núi 🧗 · ngồi thiền
+]
+
+
+def la_nguoi(hinh: str | None) -> bool:
+    """Emoji này có VẼ MỘT NGƯỜI không?
+
+    ⚠ Đây là chỗ đã lên bản thật rồi mới lộ. Bức "Ở vườn thú" viết *"He's
+    counting."* mà trên tranh là cái bàn phím số 🔢; unit 18 viết *"She's
+    reading."* mà tranh là quyển sách 📖 — bé nhìn quyển sách thì bé nói "a book",
+    không ai nói được "She's reading" từ một quyển sách nằm trên kệ.
+
+    Phép kiểm cũ chỉ hỏi "từ này CÓ hình không". Có hình, nhưng hình là ĐỒ VẬT.
+    Nay hỏi thêm: hình ấy có người không. Không có người thì hoạt động ấy ở lại
+    thẻ từ và video, không vào tranh.
+
+    Cố tình để danh sách HẸP: đoán sai theo hướng hẹp thì mất một hoạt động (tranh
+    tự bù bằng đồ vật), đoán sai theo hướng rộng thì bé lại đứng nhìn quyển sách.
+    """
+    for ch in hinh or "":
+        m = ord(ch)
+        if any(a <= m <= b for a, b in NGUOI_MA):
+            return True
+    return False
+
+
 def viec_cua(b: dict, chuan_tu: dict) -> list[str]:
     """Hoạt động của unit — từ có `dang_ing`, để dùng khuôn "She's …ing.".
 
     ⚠ PHẢI CÓ HÌNH. Bỏ sót phép kiểm này thì bộ dựng tranh dừng hẳn giữa chừng ở
     "không có hình cho swinging" — và nó dừng ĐÚNG, vì vẽ một ô trống rồi bảo bé tả
     thì bé không có gì để tả.
+
+    ⚠ VÀ HÌNH ẤY PHẢI CÓ NGƯỜI — xem `la_nguoi`.
     """
     hinh = {h["tu"]: h for h in (b.get("hinhTu") or [])}
     ra = []
@@ -161,7 +205,7 @@ def viec_cua(b: dict, chuan_tu: dict) -> list[str]:
         if vai & VAI_VIEC:
             ing = c.get("dang_ing") or (t["tu"] if t["tu"].endswith("ing") else None)
             h = hinh.get(ing) or hinh.get(t["tu"]) or {}
-            if ing and " " not in ing and (h.get("hinh") or h.get("ve")):
+            if ing and " " not in ing and la_nguoi(h.get("hinh")):
                 ra.append(ing)
     return ra[:4]
 
@@ -266,6 +310,11 @@ def moi_sai(nhom: list[dict], chuan_tu: dict, ct12: dict, kho: set) -> list[str]
     return ra
 
 
+# Đạo cụ trung tính — đứng được trong bất kỳ cảnh nào, và đếm được. Dùng ở hai
+# chỗ: độn cho unit dạy hoạt động, và bảo đảm bức nào cũng hỏi được câu "How many".
+PHU = ["kite", "bike", "cake", "table", "box", "tent", "van", "car"]
+
+
 def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> dict:
     viec = viec_cua(b, chuan_tu)
     vat = vat_cua(b, chuan_tu, truoc, chuan_tu12, du_phong)
@@ -278,10 +327,23 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
     # NHƯNG unit dạy CẢ HAI thì phải có cả hai: unit 20 dạy con vật (elephant ·
     # tiger · monkey) LẪN việc chúng đang làm (climbing · swinging). Bỏ hết vật thì
     # bức "Ở vườn thú" không có lấy một con thú. Vật của CHÍNH unit ấy thì giữ.
+    #
+    # ⚠ NHƯNG "không độn" mà thành TRANH TRỐNG thì còn tệ hơn lạc chủ đề. Từ khi
+    # `viec_cua` đòi hình phải có NGƯỜI, unit 18 chỉ còn `dancing` + `table` — hai
+    # vật, đoạn hai câu, ở gần cuối quyển. Nên: ưu tiên vật của chính unit, còn
+    # THIẾU thì mượn tiếp cho đủ bốn.
+    # Mượn thì mượn ĐỒ ĐẠO CỤ, không mượn từ đầu danh sách: `PHU` là mấy thứ đứng
+    # được trong bất kỳ cảnh nào. Mượn bừa thì U05 "Sở thích" ra "cooking · running
+    # · dancing · face" — đúng cái lạc chủ đề đoạn trên vừa chép ra làm ví dụ.
     tu_minh = {t["tu"] for t in b["knowledgeCore"]["vocabulary"]}
     if viec:
-        vat = [t for t in vat if t in tu_minh][:2]
         viec = viec[:3]
+        rieng = [t for t in vat if t in tu_minh]
+        khac = [t for t in PHU if t in kho and t not in rieng]
+        khac += [t for t in vat if t not in tu_minh and t not in khac]
+        vat = rieng[:2]
+        while len(viec) + len(vat) < 4 and khac:
+            vat.append(khac.pop(0))
     if viec:
         # Unit dạy HOẠT ĐỘNG: tranh vẽ người đang làm, câu dùng khuôn "She's …ing."
         for i, v in enumerate(viec):
@@ -303,7 +365,6 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
     # (U11) đều rơi vào đó: đoạn toàn "She's dancing." hoặc "This is my father.",
     # không câu nào đếm được và cũng không câu nào mở đầu bằng "I can see".
     # Thêm một vật phụ vừa chữa được cả hai, vừa làm tranh đỡ trống.
-    PHU = ["kite", "bike", "cake", "table", "box", "tent", "van", "car"]
     co_dem = any(so_nhieu_cua(n["tu"], chuan_tu, chuan_tu12 or {}, kho) for n in nhom)
     co_nhin = any(c.startswith("I can see") for c in doan)
     if (not co_dem or not co_nhin) and len(nhom) < 6:

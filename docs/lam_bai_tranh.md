@@ -66,7 +66,24 @@ là hỏi bằng một chữ bé chưa gặp.
 
 **6 · Không độn vật của unit khác chủ đề.** Mượn bừa thì ra *"bean · bed · egg ·
 desk"* — cái giường lạc vào bàn ăn. Mượn theo thứ tự: cùng unit → cùng chương →
-lớp 1·2, và xoay theo số unit để hai bức liền nhau không trùng.
+lớp 1·2, và xoay theo số unit để hai bức liền nhau không trùng. Riêng unit dạy
+HOẠT ĐỘNG thì mượn `PHU` — mấy đạo cụ đứng được trong bất kỳ cảnh nào (`kite` ·
+`bike` · `cake` · `table` · `box` · `tent` · `van` · `car`); mượn từ đầu danh sách
+vốn thì bức "Sở thích của mình" ra *"cooking · running · dancing · face"*.
+
+**7 · Câu "She's …ing." thì trên tranh phải CÓ NGƯỜI.** Phép kiểm cũ chỉ hỏi *từ
+này có hình không*. Có — nhưng hình là ĐỒ VẬT: `counting` → 🔢, `reading` → 📖,
+`singing` → 🎤, `painting` → 🎨, `drawing` → 🖌️. Bức "Ở vườn thú" viết *"He's
+counting."* bên cạnh một cái bàn phím số. Bé nhìn quyển sách thì bé nói *"a
+book"*, không ai nói được *"She's reading"* từ quyển sách nằm trên kệ. Nay
+`la_nguoi()` soi mã emoji; hoạt động nào hình không có người thì ở lại thẻ từ và
+video, không vào tranh. Danh sách mã cố tình để HẸP — đoán hụt thì mất một hoạt
+động (tranh tự bù bằng đạo cụ), đoán rộng thì bé lại đứng nhìn quyển sách.
+
+**8 · Chữ trên tranh phân cấp bằng CỠ, không bằng ĐỘ NHẠT.** Dòng tên cảnh tiếng
+Anh từng tô bằng `LINE` (#D4E1EE) cho "nhạt hơn một nấc" — nhưng `LINE` là màu kẻ
+viền, đặt trên nền `NEN` (#EEF4FA) thì gần như vô hình. Việt `INK`, Anh `MUTE`,
+khác nhau ở cỡ chữ 32/26.
 
 ---
 
@@ -132,8 +149,9 @@ gọi. Rải ra từng nhánh là để ngỏ chỗ cho các nhánh lệch nhau.
 ## LÀM CHO LỚP KHÁC
 
 1. Chép `tools/soan_tranh_lop3.py` → `soan_tranh_lopN.py`, đổi `3` thành `N`.
-   Hai bảng cần xem lại theo sách của quyển ấy: `VAI_VAT` / `VAI_BO` (vai nào đặt
-   được sau "a") và `KHONG_DEM`.
+   Ba bảng cần xem lại theo sách của quyển ấy: `VAI_VAT` / `VAI_BO` (vai nào đặt
+   được sau "a"), `KHONG_DEM`, và `NGUOI_MA` (thêm mã nếu quyển ấy dạy hoạt động
+   mà emoji chưa nằm trong danh sách).
 2. `tranh_tienganh.py` · `sinh_bai_tranh.py` · `kho_cau_tienganh.py` đã nhận
    `--lop`, không phải sửa.
 3. Cổng đã soi theo `dang: 'tranh'` nên tự áp cho quyển mới; riêng
@@ -150,6 +168,9 @@ Máy soạn được khung đúng luật, nhưng vài bức đọc lên vẫn kh
 * **U07 Lời dặn trong lớp** và **U10 Giờ ra chơi** — từ của hai unit này
   (`come in` · `badminton` · `chess`) không đặt được sau "a", nên tranh phải mượn
   vật của unit khác, và lạc chủ đề.
+* **U18 Chơi và làm** — luật 7 loại `singing` · `reading` (hình là mic và quyển
+  sách), nên bức chỉ còn `dancing` cộng bốn đạo cụ. Đúng luật, nhưng chưa ra được
+  cảnh "chơi và làm". Chữa được bằng cách vẽ tay người-đang-hát vào `hinh_ve`.
 * **U09 Màu sắc** — tranh có đồ vật nhưng đoạn chưa nói MÀU; cần khuôn hai ô
   `It's a + [Colour] + [Noun].`
 * **U15 Ở bàn ăn** — món ăn phần lớn không đếm được (`rice` · `bread` · `meat`) nên

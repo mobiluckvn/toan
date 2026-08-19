@@ -48,7 +48,7 @@ sys.path.insert(0, str(GOC / "tools" / "video"))
 
 from PIL import Image, ImageDraw  # noqa: E402
 import hinh_ve  # noqa: E402
-from dung_video import W, H, NEN, LINE, INK, MUTE, NAVY, phong, giua, the, ve_emoji  # noqa: E402
+from dung_video import W, H, NEN, INK, MUTE, NAVY, phong, giua, the, ve_emoji  # noqa: E402
 
 QUYEN = {1: "ta1", 2: "ta2", 3: "ta3"}
 
@@ -100,11 +100,14 @@ def dung_tranh(khai: dict, hinh: dict) -> Image.Image:
     for y in khai.get("ke") or []:
         the(d, 60, y, W - 120, 22, nen="#C8A87C", vien="#8A6B45", day=3, bo=8)
     # TÊN CẢNH SONG NGỮ — bác chốt 19-08: "Trên hình có text cũng nên song ngữ."
-    # Tiếng Việt trước (bé đọc được ngay), tiếng Anh dưới, nhạt hơn một nấc: nó là
+    # Tiếng Việt trước (bé đọc được ngay), tiếng Anh dưới, nhỏ hơn một nấc: nó là
     # thứ bé đang tập đọc, không phải thứ dẫn bé vào bài.
-    giua(d, 18, khai["ten"], phong(32), MUTE)
+    # ⚠ Phân cấp bằng CỠ CHỮ, không bằng độ nhạt. Bản đầu tôi tô dòng tiếng Anh
+    # bằng LINE (#D4E1EE) — đó là màu kẻ viền, đặt trên nền NEN (#EEF4FA) thì gần
+    # như vô hình. Mở bản chạy thật mới thấy: dòng "Our bodies" chìm hẳn vào nền.
+    giua(d, 18, khai["ten"], phong(32), INK)
     if khai.get("ten_en"):
-        giua(d, 58, khai["ten_en"], phong(26), LINE)
+        giua(d, 58, khai["ten_en"], phong(26), MUTE)
 
     for n in khai["nhom"]:
         co = n.get("co", 110)
