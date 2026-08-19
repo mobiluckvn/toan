@@ -98,9 +98,17 @@ for (const q of quyens) {
     if (doan.length < sanDong || doan.length > tranDong) {
       hinhDang.push(`${k.id}: đoạn ${doan.length} câu (cần ${sanDong}–${tranDong})`);
     }
-    if (!k.cau?.length) hinhDang.push(`${k.id}: không câu hỏi nào`);
-    if (!(k.need >= 2 && k.need <= (k.cau || []).length)) {
-      hinhDang.push(`${k.id}: cần ${k.need}/${(k.cau || []).length} câu — vô lý`);
+    /* ⚠ BÀI TẢ TRANH KHÔNG CÓ CÂU HỎI, và đó là chủ ý. Bác chốt 19-08: "Rõ ràng
+       mô tả tranh thì làm gì có câu hỏi mà nhét câu hỏi vô làm gì. Câu hỏi dùng cho
+       cô giáo gợi ý học sinh để tả thôi." Bé đọc đoạn mô tả rồi nhìn tranh — đối
+       chiếu được là xong. Câu hỏi chuyển hẳn sang phòng nói, làm công cụ của cô. */
+    if (k.dang !== 'tranh') {
+      if (!k.cau?.length) hinhDang.push(`${k.id}: không câu hỏi nào`);
+      if (!(k.need >= 2 && k.need <= (k.cau || []).length)) {
+        hinhDang.push(`${k.id}: cần ${k.need}/${(k.cau || []).length} câu — vô lý`);
+      }
+    } else if (k.cau?.length) {
+      hinhDang.push(`${k.id}: bài tả tranh mà vẫn còn ${k.cau.length} câu hỏi`);
     }
 
     for (const d of (k.doan || [])) {
@@ -344,10 +352,12 @@ for (const q of quyens) {
     if (!existsSync(join(R, 'web/public/content', k.tranh))) {
       tranhHong.push(`${k.id}: thiếu tệp ${k.tranh}`);
     }
-    /* Câu hỏi đếm phải có ít nhất một cái — đó là chỗ bài tranh hơn hẳn bài chữ. */
-    if (!(k.cau || []).some((c) => /mấy/.test(c.text || ''))) {
-      tranhHong.push(`${k.id}: không có câu hỏi đếm nào`);
+    /* Đoạn mô tả phải là câu KỂ, không phải hỏi–đáp: bác bắt đúng chỗ này —
+       "viết thành một đoạn không viết rời rạc như bạn đang làm". */
+    for (const d of k.doan || []) {
+      if (/\?/.test(d.cau)) tranhHong.push(`${k.id}: đoạn mô tả còn câu hỏi “${d.cau}”`);
     }
+    if ((k.doan || []).length < 3) tranhHong.push(`${k.id}: đoạn mô tả quá ngắn`);
   }
   t(`${q} · bài tả tranh có đủ tranh và câu hỏi về tranh (${tranhHong.length})`,
     tranhHong.length === 0);

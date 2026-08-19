@@ -718,7 +718,9 @@ const MOI_KB = QUYEN.flatMap((ma) => kbCua(ma).map((k) => ({ ...k, ma })));
 const vonCua = (k) => vonTu({ baiNay: baiTrong(k.ma, k.bai), baiCu: [], daDat: false });
 
 /** Bước DẠY CÂU — thứ bác đòi phải là phần chính của buổi. */
-const BUOC_CAU = new Set(['mau', 'noiCa', 'hoiBe', 'doiVai', 'thay']);
+const BUOC_CAU = new Set(['mau', 'noiCa', 'hoiBe', 'doiVai', 'thay',
+  // Ba nhịp của bài TẢ TRANH — cũng là dạy câu, chỉ khác cách.
+  'taTranh', 'goiY', 'caDoan']);
 
 test('mỗi bài có đúng một kịch bản, không thiếu bài nào', () => {
   for (const ma of QUYEN) {
@@ -730,6 +732,20 @@ test('mỗi bài có đúng một kịch bản, không thiếu bài nào', () =>
 
 test('kịch bản nào cũng mở bằng CHÀO và đóng bằng KẾT', () => {
   for (const k of MOI_KB) {
+    /* ⚠ Kịch bản TẢ TRANH cố ý KHÔNG chào. Bác chốt 19-08: "Phần Nói bạn hãy xoá
+       tất cả các thứ đi. Chỉ để một bức tranh sau đó yêu cầu học sinh mô tả bức
+       tranh. […] Đừng làm những thứ khác ngoài mấy thứ đó ra." Để lại lời chào là
+       để lại đúng thứ bác bảo xoá — và nó ăn mất lượt đầu, lượt định ra cả buổi. */
+    if (k.dang === 'tranh') {
+      assert.equal(k.buoc[0].loai, 'taTranh',
+        `${k.ma}/${k.bai}: bài tả tranh phải mở bằng lời MỜI TẢ, không phải gì khác`);
+      assert.equal(k.buoc.at(-1).loai, 'ket', `${k.ma}/${k.bai} không có chỗ kết`);
+      assert.ok(k.buoc.some((b) => b.loai === 'caDoan'),
+        `${k.ma}/${k.bai}: thiếu bước XÂU CHUỖI — cả buổi là để tới đó`);
+      assert.ok(!k.buoc.some((b) => ['chao', 'tu', 'mau', 'noiCa'].includes(b.loai)),
+        `${k.ma}/${k.bai}: còn sót bước của kịch bản cũ`);
+      continue;
+    }
     assert.equal(k.buoc[0].loai, 'chao', `${k.ma}/${k.bai} không mở bằng lời chào`);
     assert.equal(k.buoc.at(-1).loai, 'ket', `${k.ma}/${k.bai} không có chỗ kết`);
   }
@@ -747,10 +763,11 @@ test('MỌI câu trong kịch bản đều hợp lệ với chính bài của n�
        Nên hỏi thẳng: mọi câu của kịch bản tranh phải nằm trong BẢN MÔ TẢ bức tranh
        ấy, hoặc là tên một vật CÓ trong tranh. Không câu nào được ở ngoài. */
     if (k.dang === 'tranh') {
-      const cho = new Set([...(k.moTaTranh || []), ...(k.tu || []), 'Hello!']);
-      for (const c of k.moTaTranh || []) {
-        for (const n of String(c).split(' - ')) cho.add(n.trim());
-      }
+      /* Được phép nói: từng câu của BẢN MÔ TẢ, cả đoạn ghép lại (bước `caDoan`),
+         và những CÂU HỎI GỢI Ý đã khai sẵn ở bản khai tranh. Không gì khác. */
+      const cho = new Set([...(k.moTaTranh || []), ...(k.tu || []),
+        (k.moTaTranh || []).join(' ')]);
+      for (const b of k.buoc) if (b.loai === 'goiY' || b.loai === 'taTranh') cho.add(b.en);
       for (const b of k.buoc) {
         if (!b.en) continue;
         assert.ok(cho.has(b.en),
@@ -1412,7 +1429,9 @@ test('lượt đáp LỜI CHÀO không phải một lần luyện', () => {
   assert.equal(luotLuyen(ls).length, 0, 'đáp lời chào không tính là luyện');
   assert.equal(tinhBuoi({ lichSu: ls }).datLien, 0, 'và không đẩy buổi tới gần vạch kết');
 
-  const k = MOI_KB.find((x) => x.ma === 'ta3');
+  /* Lấy một kịch bản THƯỜNG: bài tả tranh cố ý không có bước `mau` nào, nên hỏi
+     nó câu này là hỏi sai chỗ. */
+  const k = MOI_KB.find((x) => x.ma === 'ta3' && x.dang !== 'tranh');
   assert.equal(buocTiepTheo({ kichBan: k, lichSu: ls, hoSo: { thich: k.tu[0] } }).loai,
     'mau', 'bước luyện ĐẦU TIÊN phải là cô làm mẫu');
 
@@ -1435,10 +1454,20 @@ test('sửa nhiều nhất HAI lần rồi nhường đường cho việc dễ h
   assert.equal(buocSua(n(SUA_TOI_DA + 1)), null, 'quá thì thôi, để bé làm việc dễ hơn');
 
   /* Và lúc ấy vòng luyện phải nhận được đường — dưới `haDoKho` là bước TỪ. */
-  const k = MOI_KB.find((x) => x.ma === 'ta3');
+  const k = MOI_KB.find((x) => x.ma === 'ta3' && x.dang !== 'tranh');
   const b = buocTiepTheo({ kichBan: k, lichSu: n(SUA_TOI_DA + 1),
                            hoSo: { thich: k.tu[0] }, haDoKho: true });
   assert.equal(b.loai, 'tu', 'đuối mãi thì phải được lùi về một chữ');
+
+  /* Bài TẢ TRANH thì đường lui là CÂU HỎI GỢI Ý — bác chốt 19-08: "học sinh không
+     biết tả thì cô hỏi how many kite in the picture". Bí thì được hỏi, chứ không
+     phải bị đẩy về nhại một chữ. */
+  const kt = MOI_KB.find((x) => x.dang === 'tranh');
+  if (kt) {
+    const bt = buocTiepTheo({ kichBan: kt, lichSu: n(SUA_TOI_DA + 1),
+                              hoSo: {}, haDoKho: true });
+    assert.equal(bt.loai, 'goiY', 'tả tranh mà bí thì cô phải HỎI, không bắt nhại từ');
+  }
 
   /* Câu KHÁC thì đếm lại từ đầu — bé sai chỗ mới vẫn được sửa. */
   const khac = [...n(SUA_TOI_DA + 1), { vai: 'may', en: "It's dancing.", buoc: 'noiCa' },

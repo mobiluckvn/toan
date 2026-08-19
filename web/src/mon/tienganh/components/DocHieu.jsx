@@ -35,6 +35,25 @@ export default function DocHieu({ bai, onXong, onThoat }) {
   const [dung, datDung] = useState(0);
   const [het, datHet] = useState(false);
 
+  /* ══ BÀI TẢ TRANH — ĐỌC LÀ XONG, KHÔNG CÓ CÂU HỎI ══ (bác chốt 19-08-2026)
+     "Rõ ràng mô tả tranh thì làm gì có câu hỏi mà nhét câu hỏi vô làm gì. Câu hỏi
+     dùng cho cô giáo gợi ý học sinh để tả thôi."
+     Bé nhìn tranh, đọc đoạn tả, đối chiếu được là xong. Bản trước tôi nhét năm câu
+     trắc nghiệm vào đây — thói quen của bài đọc hiểu cũ, mang sang chỗ không hợp. */
+  if (!ds.length && bai?.doan?.length) {
+    return (
+      <Khung ten={bai.name} onThoat={onThoat}>
+        <Tranh src={bai.tranh} ten={bai.tranhTen} />
+        <Doan doan={bai.doan} lien={bai.dang === 'tranh'} />
+        <button type="button" onClick={() => onXong?.({ dat: true, dung: 0, tong: 0 })}
+          className="rounded-xl2 bg-navy px-6 py-4 text-lg font-semibold text-white
+            focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+          Con đọc xong rồi →
+        </button>
+      </Khung>
+    );
+  }
+
   if (!ds.length) {
     return (
       <Khung ten={bai?.name} onThoat={onThoat}>
@@ -143,8 +162,34 @@ export function Tranh({ src, ten }) {
   );
 }
 
-function Doan({ doan = [] }) {
+function Doan({ doan = [], lien = false }) {
   const coVai = doan.some((d) => d.ai);
+  /* ══ ĐOẠN TẢ TRANH BÀY LIỀN MỘT KHỐI ══ (bác chốt 19-08-2026)
+     "viết thành một đoạn không viết rời rạc như bạn đang làm. Đảm bảo đó là một
+     đoạn mô tả tranh nhé."
+     Bày mỗi câu một dòng thì dù chữ có đúng, MẮT vẫn đọc ra một danh sách. Một đoạn
+     văn phải trông như một đoạn văn. Nút nghe vẫn còn — nhưng gom về một chỗ, nghe
+     cả đoạn, chứ không rải mỗi câu một nút cắt đoạn thành từng mẩu. */
+  if (lien) {
+    return (
+      <section className="rounded-xl2 border-2 border-navy bg-white p-4">
+        <div className="mb-2 flex items-center gap-2">
+          <h2 className="flex-1 text-sm font-semibold uppercase tracking-wider text-mute">
+            Con đọc đoạn này
+          </h2>
+        </div>
+        <p className="text-lg leading-relaxed text-ink sm:text-xl">
+          {doan.map((d) => d.cau).join(' ')}
+        </p>
+        <ul className="mt-3 flex flex-wrap gap-2">
+          {doan.map((d, i) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <li key={i}><NutNghe ma={d.am} nhan={`Nghe câu ${i + 1}`} /></li>
+          ))}
+        </ul>
+      </section>
+    );
+  }
   return (
     <section className="rounded-xl2 border-2 border-navy bg-white p-4">
       <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-mute">

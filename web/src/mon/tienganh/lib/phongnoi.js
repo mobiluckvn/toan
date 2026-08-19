@@ -865,7 +865,8 @@ export function luotLuyen(lichSu = []) {
   return ra;
 }
 
-export function tinhBuoi({ lichSu = [], batDau = null, bayGio = null, datNguong = 6 } = {}) {
+export function tinhBuoi({ lichSu = [], batDau = null, bayGio = null, datNguong = 6,
+                          dichCaDoan = false } = {}) {
   const cuaBe = luotLuyen(lichSu);
   /* `batDau == null` mới là "chưa bấm giờ". Viết `batDau ? … : 0` thì mốc 0 — một
      con số hợp lệ — bị coi là chưa bắt đầu, và đồng hồ không bao giờ chạy. Cùng họ
@@ -883,7 +884,21 @@ export function tinhBuoi({ lichSu = [], batDau = null, bayGio = null, datNguong 
   }
 
   const hetGio = phut >= PHUT_TOI_DA;
-  const xongGioi = datLien >= DAT_LIEN_DE_XONG;
+
+  /* ══ BÀI TẢ TRANH KẾT Ở CHỖ KHÁC ══ (bác chốt 19-08-2026)
+     "sau vài câu trả lời thì cô xâu chuỗi lại thành 01 đoạn nói cho học sinh nói cả
+     đoạn đó" — bước `caDoan` LÀ ĐÍCH của cả buổi.
+
+     Mà `DAT_LIEN_DE_XONG = 3` thì cắt buổi ở lượt thứ ba, tức là ngay trước khi tới
+     đó: trải ra giấy thấy buổi kết sau taTranh + hai câu gợi ý, bé chưa bao giờ nói
+     cả đoạn. Không lỗi, không cảnh báo, màn kết vẫn chúc mừng — đúng kiểu hỏng đã
+     gặp mấy lần ở phòng này.
+
+     Nên buổi tả tranh chỉ xong khi bé đã NÓI ĐƯỢC CẢ ĐOẠN. Chưa được thì cứ tiếp,
+     và `hetGio` vẫn là cái phanh cuối. */
+  const daCaDoan = dichCaDoan && lichSu.some((x, i) => x.vai === 'may' && x.buoc === 'caDoan'
+    && lichSu.slice(i + 1).some((y) => y.vai === 'be' && y.diem >= datNguong));
+  const xongGioi = dichCaDoan ? daCaDoan : datLien >= DAT_LIEN_DE_XONG;
   return {
     trangThai: xongGioi ? 'xongGioi' : hetGio ? 'hetGio' : 'dang',
     haDoKho: !xongGioi && kemLien >= KEM_LIEN_DE_HA,
@@ -1054,10 +1069,21 @@ function dongHoSo(hoSo, tenBe) {
  * vòng luyện thu về đúng mấy bước ấy. Bỏ hẳn chúng đi thì bé đuối không còn gì
  * bám — xem nhánh `haDoKho` ngay dưới.
  */
-const BUOC_LUYEN = new Set(['mau', 'noiCa', 'hoiBe', 'doiVai', 'thay']);
+const BUOC_LUYEN = new Set(['mau', 'noiCa', 'hoiBe', 'doiVai', 'thay',
+  /* ── BA NHỊP CỦA BÀI TẢ TRANH ── (bác chốt 19-08-2026)
+     "Chỉ để một bức tranh sau đó yêu cầu học sinh mô tả bức tranh. […] học sinh
+     không biết tả thì cô hỏi how many kite in the picture. […] sau vài câu trả lời
+     thì cô xâu chuỗi lại thành 01 đoạn nói cho học sinh nói cả đoạn đó."
+       taTranh  cô mời bé tả
+       goiY     bé bí thì cô hỏi từng chi tiết
+       caDoan   tả được rồi thì nói CẢ ĐOẠN — đích của buổi */
+  'taTranh', 'goiY', 'caDoan']);
 
 /** Bước lùi về khi bé đuối — dễ nhất, và chỉ có ở đây. */
-const BUOC_DE = new Set(['tu']);
+/* Bước lùi về khi bé đuối. Với bài TẢ TRANH thì đường lui là CÂU HỎI GỢI Ý — bé
+   không tả nổi thì được hỏi từng chi tiết một, đúng như bác tả. Nên kịch bản tranh
+   không cần bước `tu` nào. */
+const BUOC_DE = new Set(['tu', 'goiY']);
 
 /** Điền {ten} và {thich} vào câu của bước. Thiếu thì dùng `mac_dinh` đã ghi sẵn. */
 export function dienBuoc(buoc, { tenBe = '', thich = '' } = {}) {
@@ -1362,6 +1388,20 @@ function dongViecBe(buoc) {
         + ' Do not move on to new material.';
     case 'tu':
       return '  ROLE: one bare word — she is struggling, so keep it to that one word.';
+    case 'taTranh':
+      return '  ROLE: you are ASKING HER TO DESCRIBE THE PICTURE, in her own words.'
+        + ' She can see it; you only have the written description. Do NOT read that'
+        + ' description out — invite her, then wait. Anything she says that matches'
+        + ' the picture counts.';
+    case 'goiY':
+      return '  ROLE: she got stuck, so you are HELPING with one small question about'
+        + ` the picture${buoc.dapMau ? ` — the true answer is "${buoc.dapMau}"` : ''}.`
+        + ' Ask it, let her answer, and tell her if the number or the thing is wrong.'
+        + ' One question only. Never answer it for her.';
+    case 'caDoan':
+      return '  ROLE: she has described the pieces; now STRING THEM TOGETHER. Say the'
+        + ' whole description once, then ask her to say all of it herself. This is'
+        + ' what the whole session was for — do not cut it short.';
     default:
       return '';
   }

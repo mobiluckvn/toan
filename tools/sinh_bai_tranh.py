@@ -64,179 +64,139 @@ def _tron(dung: str, moi: list[str]) -> list[str]:
 def _dang(cau: str) -> tuple:
     return (cau.split()[0].lower(), len(cau.split())) if cau.split() else ("", 0)
 
+def muc_doc(k: dict, lop: int) -> tuple[dict, list[dict]]:
+    """Mục ĐỌC — một ĐOẠN mô tả tranh, KHÔNG câu hỏi.
 
-def cau_hoi_tranh(k: dict, canh_khac: list[str]) -> list[dict]:
-    """Bốn câu hỏi VỀ BỨC TRANH."""
-    ra = []
+    ══ BÁC BẮT LÀM LẠI 19-08-2026 ══
 
-    # ① Ở ĐÂU — thay cho câu "ý chính" cũ. Bé nhìn tranh là trả lời được, không
-    #    phải đọc lấy một chữ tiếng Anh nào. Câu mở đầu nên dễ.
-    ra.append({
-        "id": "T1", "loai": "yChinh",
-        "text": "Bức tranh này vẽ ở đâu?",
-        "format": "chon",
-        "choices": _tron(k["ten"], canh_khac[:3]),
-        "answerKey": {"choice": k["ten"]},
-        "solutionNarrative": f"Đây là cảnh {k['ten'].lower()}.",
-    })
+        "phần đọc sẽ là các câu mô tả tranh, viết thành một đoạn không viết rời rạc
+         như bạn đang làm. […] Rõ ràng mô tả tranh thì làm gì có câu hỏi mà nhét câu
+         hỏi vô làm gì. Câu hỏi dùng cho cô giáo gợi ý học sinh để tả thôi."
 
-    # ② ĐẾM — con số lấy thẳng từ bản khai tranh, nên không thể lệch với hình.
-    #    Mồi là những số GẦN, để bé phải đếm thật chứ không loại bằng cảm giác.
-    for h in (k.get("hoiDem") or [])[:2]:
-        so = h["so"]
-        moi = [str(x) for x in (so - 1, so + 1, so + 2) if 1 <= x <= 10][:3]
-        ra.append({
-            "id": f"T{len(ra) + 1}", "loai": "chiTiet",
-            "text": f"Trong tranh có mấy {h['viet']}?",
-            "format": "chon",
-            "choices": _tron(str(so), moi),
-            "answerKey": {"choice": str(so)},
-            "solutionNarrative": f"Con đếm lại nhé — có {so} {h['viet']}.",
-        })
+    Bản trước tôi làm sai hai chỗ cùng lúc: đoạn là mấy cặp HỎI–ĐÁP xếp cạnh nhau
+    (không phải văn mô tả), và nhét thêm năm câu trắc nghiệm. Cả hai đều là thói
+    quen của bài đọc hiểu cũ, mang nguyên sang chỗ không hợp.
 
-    # ③ CÂU NÀO ĐÚNG VỚI TRANH — chỗ bé phải đối chiếu chữ với hình.
-    #    Đáp án lấy câu ĐƠN trong `moTa` (không phải nửa của cặp hỏi–đáp), mồi lấy
-    #    từ `sai` — những câu người soạn khai là CHẮC CHẮN sai với tranh này.
-    don = [c for c in k["moTa"] if " - " not in c]
-    if don and k.get("sai"):
-        dung = don[0]
-        # Mồi khác khuôn nhau, đúng luật bác chốt 19-08: ba mồi giống hệt nhau thì
-        # bé chọn đúng bằng HÌNH DẠNG mà không cần đọc.
-        moi, khuon = [], {_dang(dung)}
-        for x in k["sai"]:
-            if _dang(x) in khuon:
-                continue
-            khuon.add(_dang(x))
-            moi.append(x)
-        if len(moi) >= 2:
-            ra.append({
-                "id": f"T{len(ra) + 1}", "loai": "chiTiet",
-                "text": "Câu nào ĐÚNG với bức tranh?",
-                "format": "chon",
-                "choices": _tron(dung, moi[:3]),
-                "answerKey": {"choice": dung},
-                "solutionNarrative": f"“{dung}” — con nhìn lại tranh xem nhé.",
-            })
-
-    # ④ ĐÁP LẠI MỘT CÂU HỎI — dùng đúng cặp hỏi–đáp trong đoạn mô tả.
-    cap = [c for c in k["moTa"] if " - " in c]
-    if cap:
-        hoi, dap = _tach_doi(cap[0])[:2]
-        khac = [_tach_doi(c)[1] for c in cap[1:]] + [c for c in don if c != dap]
-        moi, khuon = [], {_dang(dap)}
-        for x in khac:
-            if _dang(x) in khuon:
-                continue
-            khuon.add(_dang(x))
-            moi.append(x)
-        if len(moi) >= 2:
-            ra.append({
-                "id": f"T{len(ra) + 1}", "loai": "chiTiet",
-                "text": f"Có người hỏi “{hoi}” — con đáp thế nào?",
-                "format": "chon",
-                "choices": _tron(dap, moi[:3]),
-                "answerKey": {"choice": dap},
-                "solutionNarrative": f"“{dap}”.",
-            })
-    return ra
-
-
-def muc_doc(k: dict, lop: int, canh_khac: list[str]) -> tuple[dict, list[dict]]:
-    """Mục đọc hiểu + những dòng cần clip tiếng."""
-    dong = [x for c in k["moTa"] for x in _tach_doi(c)]
-    cau = cau_hoi_tranh(k, canh_khac)
+    Nay: đúng một đoạn văn kể, đọc xong là xong. Không có gì để bấm ngoài nút nghe
+    và nút "con đọc xong rồi".
+    """
     muc = {
         "id": f"DOC:TA{lop}.U{k['unit']:02d}",
         "unit": k["unit"], "chapter": k.get("chuong", 1),
         "phamVi": "unit", "loai": "dochieu", "dang": "tranh",
-        "name": f"ĐỌC HIỂU · UNIT {k['unit']} · {k['ten'].upper()}",
+        "name": f"ĐỌC · UNIT {k['unit']} · {k['ten'].upper()}",
         "tranh": f"{DUONG_TRANH}/{k['id'].replace(':', '_').replace('.', '_')}.png",
         "tranhTen": k["ten"],
-        # Đoạn mô tả giữ nguyên CẶP hỏi–đáp thành hai dòng, đúng cách đoạn hội thoại
-        # đang làm — nút nghe của từng dòng mới khớp một clip.
-        "doan": [{"cau": x, "am": ma_am("cau", x)} for x in dong],
-        "cau": cau,
-        "soCau": len(cau),
-        "need": min(len(cau), max(2, len(cau) - 1)),
+        "doan": [{"cau": x, "am": ma_am("cau", x)} for x in k["doan"]],
+        "cau": [],
     }
-    return muc, [{"id": ma_am("cau", x), "chu": x, "tieng": "en"} for x in dong]
+    return muc, [{"id": ma_am("cau", x), "chu": x, "tieng": "en"} for x in k["doan"]]
+
+
+def tu_trong_tranh(k: dict, lop: int) -> list[dict]:
+    """Bảng từ cho màn viết: đúng những VẬT CÓ TRONG TRANH, kèm nghĩa của sách.
+
+    ⚠ Bản đầu lấy `vonTu` của mục viết cũ — tức là vốn từ của chính unit 0, tức là
+    mười con số. Bé nhìn tranh thấy diều và mèo con, mở bảng từ ra thấy one · two ·
+    three: không gõ nổi một câu nào. Từ phải là từ CỦA BỨC TRANH, mà tranh thì cố ý
+    lấy vật từ lớp 1·2.
+    """
+    nghia = {}
+    for l in range(1, lop + 1):
+        tm = GOC / f"web/public/content/{QUYEN[l]}"
+        for f in sorted(tm.glob(f"DL_{QUYEN[l].upper()}_B*.json")):
+            b = json.loads(f.read_text("utf8"))
+            for v in b["knowledgeCore"]["vocabulary"]:
+                nghia.setdefault(v["tu"], v.get("nghia") or "")
+    ra = [{"tu": n["tu"], "nghia": nghia.get(n["tu"], "")} for n in k["nhom"]]
+    # Thêm mấy chữ NỀN của khuôn mô tả — không có chúng thì bấm được vật mà không
+    # ghép được câu.
+    for t in ("I", "can", "see", "this", "is", "there's", "a"):
+        ra.append({"tu": t, "nghia": ""})
+    return ra
 
 
 def muc_viet(k: dict, lop: int, von: list[dict]) -> dict:
-    """Mục bài viết — CHỈ có tranh, không có đoạn mô tả."""
-    goi = []
-    dem = [c for c in k["moTa"] if c.startswith("How many")]
-    nhin = [c for c in k["moTa"] if c.startswith("I can see")]
-    mau = [c for c in k["moTa"] if c.startswith("It's a") and " - " not in c]
-    so = [c for c in k["moTa"] if c.startswith("What number")]
-    if dem:
-        goi.append({"nhan": "Đếm xem có mấy cái",
-                    "cum": list(dict.fromkeys([x for c in dem for x in _tach_doi(c)]))})
-    if nhin:
-        goi.append({"nhan": "Nói con nhìn thấy gì", "cum": list(dict.fromkeys(nhin))})
-    if mau:
-        goi.append({"nhan": "Nói màu", "cum": list(dict.fromkeys(mau))})
-    if so:
-        goi.append({"nhan": "Đọc con số",
-                    "cum": list(dict.fromkeys([x for c in so for x in _tach_doi(c)]))})
+    """Mục VIẾT — tranh và một cái ô trống. Không câu hỏi, không mẫu câu.
+
+    Bác chốt: "Về phần viết cũng vậy." Bày mẫu câu ra thì bé chép lại, mà bản mẫu
+    câu của bài tả tranh CHÍNH LÀ đoạn mô tả — tức là cho sẵn đáp án.
+
+    Bảng từ thì giữ: bé lớp 3 gõ tiếng Anh còn chậm, và bấm một TỪ không phải là
+    được cho một CÂU.
+    """
     return {
         "id": f"VIET:TA{lop}.U{k['unit']:02d}",
         "unit": k["unit"], "chapter": k.get("chuong", 1),
         "phamVi": "unit", "loai": "vietbai", "dang": "tranh",
-        "name": f"BÀI VIẾT · UNIT {k['unit']} · {k['ten'].upper()}",
+        "name": f"VIẾT · UNIT {k['unit']} · {k['ten'].upper()}",
         "tranh": f"{DUONG_TRANH}/{k['id'].replace(':', '_').replace('.', '_')}.png",
         "tranhTen": k["ten"],
-        "de": "Con nhìn bức tranh rồi viết 2–3 câu tả bức tranh nhé.",
+        "de": "Con nhìn bức tranh rồi viết một đoạn tả bức tranh nhé.",
         "toiThieu": 2,
-        "mauCau": list(k["moTa"]),
-        "goiY": goi,
+        "mauCau": [],
+        "goiY": [],
         "vonTu": von,
-        # Máy chấm đối chiếu với đây: bé viết được ý nào CÓ THẬT trong tranh thì
-        # tính ý ấy. Không có nó thì máy chỉ chấm được ngữ pháp, và một câu đúng
-        # ngữ pháp nhưng tả sai tranh vẫn qua.
-        "yTrongTranh": list(k["moTa"]),
+        # Máy chấm đối chiếu với đây — bé viết được ý nào CÓ THẬT trong tranh thì
+        # tính ý ấy. Không bày ra màn hình.
+        "yTrongTranh": list(k["doan"]),
     }
 
 
 def kich_ban_noi(k: dict) -> dict:
-    """Kịch bản phòng nói quanh bức tranh.
+    """Kịch bản NÓI — chỉ một việc: tả bức tranh.
 
-    Cô giáo máy CÓ bản mô tả bằng chữ, bé thì chỉ nhìn tranh — bác chốt đúng thế.
-    Nhờ vậy cô sửa được cả Ý chứ không chỉ sửa tiếng: bé nói "I can see two balls."
-    thì cô biết là sai SỐ, vì bản mô tả ghi ba.
+    ══ BÁC TẢ ĐÚNG NHỊP CẦN CÓ, 19-08-2026 ══
+
+        "Phần Nói bạn hãy xoá tất cả các thứ đi. Chỉ để một bức tranh sau đó yêu cầu
+         học sinh mô tả bức tranh. Khi học sinh nói thì căn cứ theo mô tả tranh bạn
+         có bạn sẽ hướng dẫn học sinh mô tả được tranh. […] Ví dụ học sinh không
+         biết tả thì cô hỏi how many kite in the picture. Nếu học sinh trả lời đúng
+         thì okay sau vài câu trả lời thì cô xâu chuỗi lại thành 01 đoạn nói cho học
+         sinh nói cả đoạn đó."
+
+    Ba nhịp, đúng thế:
+
+        taTranh   cô mời bé tả — "What can you see?" (câu của sách, L2 U04)
+        goiY      bé bí thì cô HỎI từng chi tiết một
+        caDoan    tả được rồi thì cô xâu chuỗi, bé nói cả đoạn
+
+    KHÔNG có bước chào, không có bước từ mới, không có bước mẫu câu. Bác bảo xoá
+    tất cả các thứ khác đi thì xoá thật — để lại là bé lại đi nhại từ như cũ.
+
+    `goiY` cũng chính là ĐƯỜNG LUI khi bé đuối (`haDoKho`): bí thì được hỏi, đúng
+    như bác tả. Nên kịch bản này không cần bước `tu` nào.
     """
-    buoc = [{"loai": "chao", "en": "Hello!",
-             "vi": "Chào con! Hôm nay cô con mình cùng tả một bức tranh nhé."}]
-    # ĐƯỜNG LUI: tên từng vật trong tranh. Bé đuối thì `haDoKho` lùi về đây — chỉ
-    # cần chỉ vào tranh và gọi tên một thứ, không phải nói cả câu.
-    for n in k["nhom"]:
-        buoc.append({"loai": "tu", "en": n["tu"], "tu": n["tu"],
-                     "vi": f"Con tìm “{n['tu']}” trong tranh rồi nói tên nó nhé."})
-    # CÔ LÀM MẪU TRƯỚC. Bé chưa bao giờ tả tranh bằng tiếng Anh; không có mẫu thì
-    # lượt đầu tiên bé ngồi im. `buocTiepTheo` cũng đòi bước luyện đầu là `mau`.
-    buoc.append({"loai": "mau", "en": k["moTa"][0], "mauCau": k["moTa"][0],
-                 "vi": "Cô tả trước một câu, con nghe rồi nhìn vào tranh nhé."})
-    for c in k["moTa"]:
-        phan = _tach_doi(c)
-        if len(phan) == 2:
-            hoi, dap = phan
-            buoc.append({"loai": "hoiBe", "en": hoi, "mauCau": c, "dapMau": dap,
-                         "vi": f"Con nhìn tranh rồi đáp nhé. Con đáp theo khuôn: {dap}"})
-        else:
-            buoc.append({"loai": "noiCa", "en": phan[0], "mauCau": phan[0],
-                         "vi": "Con nói lại cả câu này, rồi tìm nó trong tranh nhé."})
+    buoc = [{
+        "loai": "taTranh",
+        "en": "What can you see?",
+        "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?",
+    }]
+    for h in k.get("hoiGoiY") or []:
+        if not h.get("dap"):
+            continue          # câu mời chung đã là bước `taTranh` ở trên
+        buoc.append({
+            "loai": "goiY", "en": h["hoi"], "dapMau": h["dap"],
+            "vi": f"Con nhìn tranh rồi đáp nhé — {h.get('y') or 'con xem kỹ trong tranh'}.",
+        })
+    # XÂU CHUỖI: cả đoạn thành MỘT lượt nói. Đây là đích của cả buổi.
+    buoc.append({
+        "loai": "caDoan",
+        "en": " ".join(k["doan"]),
+        "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé.",
+    })
     buoc.append({"loai": "ket"})
     return {
         "bai": f"DL:TA3.B{k['unit']:02d}",
         "ten": f"Tả tranh · {k['ten']}",
-        "muc_tieu": f"Tả được bức tranh “{k['ten']}” bằng câu đã học",
+        "muc_tieu": f"Tả được bức tranh “{k['ten']}” thành một đoạn",
         "tinh_huong": f"Con và cô cùng nhìn một bức tranh: {k['ten'].lower()}.",
         "tranh": f"{DUONG_TRANH}/{k['id'].replace(':', '_').replace('.', '_')}.png",
-        "moTaTranh": list(k["moTa"]),
+        "moTaTranh": list(k["doan"]),
         "dang": "tranh",
         "tu": [n["tu"] for n in k["nhom"]],
         "buoc": buoc,
-        "tay": True,      # đừng để `sinh_kichban_noi.py` ghi đè
+        "tay": True,
     }
 
 
@@ -250,45 +210,23 @@ def main() -> int:
 
     kho = json.loads((GOC / f"data/tienganh/tranh_lop{a.lop}.json").read_text("utf8"))
     canh = [k["ten"] for k in kho]
-    # Chưa đủ tranh để lấy mồi "ở đâu" từ chính chúng, nên mượn tên CẢNH của các
-    # unit khác — đều là nơi bé đã gặp, nên mồi vẫn có nghĩa.
-    #
-    # ⚠ LẤY `canh` CỦA BẢN CHUẨN, KHÔNG LẤY TÊN UNIT. Bản đầu lấy tên unit và ra
-    # bốn lựa chọn: "Trong cửa hàng đồ chơi · Khởi động · Chào hỏi · Tên của chúng
-    # mình" — ba mồi không phải NƠI CHỐN nào cả, nên bé loại được mà không cần nhìn
-    # tranh. Câu hỏi vẫn "chạy đúng", chỉ là không hỏi gì.
-    ten_unit = []
-    for l in range(1, a.lop + 1):
-        cn = json.loads((GOC / f"data/tienganh/chuan_lop{l}.json").read_text("utf8"))
-        for u in cn["unit"]:
-            c = str(u.get("canh") or "").split("·")[0].strip()
-            # Chỉ nhận cái NÓI RA MỘT NƠI: "Ở chợ" · "Trong phòng ngủ" · "Bên hồ".
-            if c and re.match(r"^(Ở|Trong|Bên|Tại)\b", c):
-                ten_unit.append(c)
-    ten_unit = list(dict.fromkeys(ten_unit))
-
     docs = json.loads((tm / "dochieu.json").read_text("utf8"))
     viets = json.loads((tm / "vietbai.json").read_text("utf8"))
     kbs = json.loads((tm / "kichban_noi.json").read_text("utf8"))
     loi = []
 
     for k in kho:
-        khac = [t for t in ten_unit if t != k["ten"]][:3] or ["Ở vườn thú", "Trong bếp"]
-        muc, am = muc_doc(k, a.lop, khac)
+        muc, am = muc_doc(k, a.lop)
         loi += am
         docs = [x for x in docs if x["id"] != muc["id"]] + [muc]
 
-        # Vốn từ cho bài viết: lấy lại của mục cũ nếu có, không thì gom từ tranh.
-        cu = next((x for x in viets if x.get("unit") == k["unit"]
-                   and x.get("phamVi") == "unit"), None)
-        von = (cu or {}).get("vonTu") or [{"tu": n["tu"], "nghia": ""} for n in k["nhom"]]
-        mv = muc_viet(k, a.lop, von)
+        mv = muc_viet(k, a.lop, tu_trong_tranh(k, a.lop))
         viets = [x for x in viets if x["id"] != mv["id"]] + [mv]
 
         kb = kich_ban_noi(k)
         kbs = [x for x in kbs if x["bai"] != kb["bai"]] + [kb]
-        print(f"  unit {k['unit']}: {len(muc['doan'])} dòng · {len(muc['cau'])} câu hỏi "
-              f"· {len(mv['goiY'])} nhóm gợi ý · {len(kb['buoc'])} bước nói")
+        print(f"  unit {k['unit']}: đoạn {len(muc['doan'])} câu "
+              f"· {len(kb['buoc'])} bước nói")
 
     docs.sort(key=lambda x: (x.get("chapter", 0), x.get("phamVi") != "unit",
                              x.get("unit", 99)))

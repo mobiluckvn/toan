@@ -115,7 +115,8 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
      Bản cũ có chữ `.reverse()` nằm ngay cạnh chỗ bày danh sách, mà chiều bày thì
      vừa đổi hai lần; để lẫn vào đấy là sớm muộn có người sửa nhầm. */
   const cauCoVuaNoi = lichSu.findLast((x) => x.vai === 'may')?.en || '';
-  const buoi = tinhBuoi({ lichSu, batDau: batDau.current, bayGio: Date.now() });
+  const buoi = tinhBuoi({ lichSu, batDau: batDau.current, bayGio: Date.now(),
+                         dichCaDoan: kichBan?.dang === 'tranh' });
   const ket = loiKet(buoi);
   const hoiThich = cauHoiSoThich(von);
 

@@ -221,14 +221,22 @@ test('đề bài viết đã dựng và đủ hình dạng', () => {
        Đây không phải nới cổng cho dễ thở: phần "nhiều hơn" bác đòi nay nằm ở
        `goiY` — những CỤM ghép được, có cổng riêng ngay dưới. */
     assert.ok(d.vonTu.length >= 10, `${d.id}: vốn từ quá ít (${d.vonTu.length})`);
-    assert.ok(d.mauCau.length > 0, `${d.id}: không có mẫu câu nào để bé dựa vào`);
+    /* Bài TẢ TRANH cố ý không có mẫu câu — chỗ dựa của bé là BỨC TRANH, không phải
+       một danh sách câu để chép. Xem phép soi riêng ở khối dưới. */
+    if (d.dang !== 'tranh') {
+      assert.ok(d.mauCau.length > 0, `${d.id}: không có mẫu câu nào để bé dựa vào`);
+    }
     assert.ok(d.toiThieu >= 2, `${d.id}: số câu tối thiểu vô lý`);
   }
   /* Vốn từ DỒN, và dồn RIÊNG TỪNG PHẠM VI: đề unit 5 chứa trọn vốn của unit 4, đề
      chương 2 chứa trọn vốn của chương 1. So lẫn hai phạm vi thì đề chương 1 (44 từ)
      đứng ngay sau đề unit 20 (204 từ) và cổng báo mất 160 từ — báo oan. */
   for (const pv of ['unit', 'chuong']) {
-    const nhom = ds.filter((d) => (d.phamVi || 'chuong') === pv);
+    /* ⚠ BÀI TẢ TRANH ĐỨNG NGOÀI PHÉP DỒN DẦN. Bảng từ của nó là VẬT CÓ TRONG BỨC
+       TRANH ấy (kite · yo-yo · kitten…), không phải vốn tích luỹ của quyển — nên
+       unit sau không có nghĩa vụ chứa chúng. Không loại ra thì cổng báo "unit 1 mất
+       từ kite", một lỗi không có thật. */
+    const nhom = ds.filter((d) => (d.phamVi || 'chuong') === pv && d.dang !== 'tranh');
     for (let i = 1; i < nhom.length; i += 1) {
       const truoc = new Set(nhom[i - 1].vonTu.map((v) => v.tu));
       const nay = new Set(nhom[i].vonTu.map((v) => v.tu));
@@ -260,6 +268,19 @@ test('gợi ý là CỤM ghép được, xếp theo chỗ trong đoạn', async 
   assert.ok(ds.length > 0, 'không có đề nào thì mọi vòng lặp chạy 0 lần');
 
   for (const k of ds) {
+    /* ⚠ BÀI TẢ TRANH KHÔNG CÓ GỢI Ý CÂU, và đó là chủ ý. Bác chốt 19-08: "Về phần
+       viết cũng vậy" — bày mẫu câu ra thì bé chép lại, mà mẫu câu của bài tả tranh
+       CHÍNH LÀ đoạn mô tả, tức là cho sẵn đáp án. Bảng TỪ thì vẫn còn (bấm một từ
+       không phải được cho một câu), và cổng dưới vẫn soi nó. */
+    if (k.dang === 'tranh') {
+      assert.ok(k.tranh, `${k.id}: khai dạng tranh mà không có ảnh`);
+      assert.ok(!k.goiY?.length && !k.mauCau?.length,
+        `${k.id}: bài tả tranh mà vẫn bày mẫu câu — thành bài chép lại`);
+      assert.ok(k.yTrongTranh?.length, `${k.id}: thiếu bản mô tả để máy chấm đối chiếu`);
+      assert.ok((k.vonTu || []).some((v) => /kite|yo-yo|kitten|bear/.test(v.tu)),
+        `${k.id}: bảng từ không có vật nào của tranh`);
+      continue;
+    }
     assert.ok(k.goiY?.length, `${k.id}: không có gợi ý theo nhóm nào`);
     for (const g of k.goiY) {
       assert.ok(g.nhan && g.cum?.length, `${k.id}: nhóm “${g.nhan}” rỗng`);

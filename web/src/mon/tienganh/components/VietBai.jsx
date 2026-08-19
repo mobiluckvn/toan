@@ -107,7 +107,7 @@ export default function VietBai({ bai, onXong, onThoat }) {
           rows={5}
           maxLength={600}
           spellCheck={false}
-          placeholder="Hello. I'm ..."
+          placeholder={bai.tranh ? 'I can see ...' : "Hello. I'm ..."}
           className="w-full rounded-xl2 border-2 border-line bg-white p-3 text-lg text-ink
             focus:border-navy focus:outline-none focus-visible:ring-4 focus-visible:ring-gold"
         />
@@ -156,7 +156,9 @@ export default function VietBai({ bai, onXong, onThoat }) {
 
       <section>
         <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-mute">
-          {goiY.length ? 'Từ để thay vào chỗ trống' : 'Từ con đã học — bấm để thêm vào bài'}
+          {bai.tranh
+            ? 'Từ trong tranh — bấm để thêm vào bài'
+            : (goiY.length ? 'Từ để thay vào chỗ trống' : 'Từ con đã học — bấm để thêm vào bài')}
         </h2>
         <div className="flex flex-wrap gap-2">
           {vonTu.map((v) => (
