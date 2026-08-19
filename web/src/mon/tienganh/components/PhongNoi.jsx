@@ -95,6 +95,23 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
   const [thich, datThich] = useState(null);
   const [kichBan, datKichBan] = useState(null);
   const [kbXong, datKbXong] = useState(false);   // đã nạp xong HOẶC đã bỏ cuộc
+
+  const laTranh = kichBan?.dang === 'tranh';
+
+  /**
+   * MỐC TIẾNG ANH CỦA CHÍNH BUỔI NÀY — để lời cô không bị đọc nhầm sang giọng Việt.
+   *
+   * Bác bắt 19-08-2026: lời hướng dẫn có lẫn tiếng Anh mà máy đọc hết bằng giọng
+   * Việt. `tachTheoTieng` vốn chỉ nhận ra tiếng Anh nằm trong VỐN TỪ CỦA UNIT —
+   * đúng cho bài thường, hỏng ở bài tả tranh vì câu cô trích là câu của kho tích
+   * luỹ. Nên đưa thêm: bản mô tả tranh, mọi câu trong kịch bản, và mọi câu cô ĐÃ
+   * NÓI trong buổi. Ba nguồn ấy chắc hơn vốn từ, vì chúng là chữ có thật trên màn.
+   */
+  const mocEn = React.useMemo(() => [
+    ...(kichBan?.moTaTranh || []),
+    ...((kichBan?.buoc || []).map((b) => b.en).filter(Boolean)),
+    ...lichSu.filter((x) => x.vai === 'may' && x.en).map((x) => x.en),
+  ], [kichBan, lichSu]);
   const batDau = useRef(Date.now());
   /* `nhip` KHÔNG mang giá trị nào — nó chỉ để bắt màn hình vẽ lại mỗi 30 giây, để
      đồng hồ 20 phút tự tới nơi. Bản đầu viết `Date.now() + nhip * 0`: chạy đúng,
@@ -178,7 +195,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
     (async () => {
       thoiDoc();
       if (ket.en) await docLen(ket.en, 'en-GB', { nhanh: 0.9 });
-      await docDoan(tachTheoTieng(ket.chu, von));
+      await docDoan(tachTheoTieng(ket.chu, von, mocEn));
     })();
   }, [ket, von]);
 
@@ -205,7 +222,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
       (async () => {
         thoiDoc();
         if (tra.en) await docLen(tra.en, 'en-GB', { nhanh: 0.9 });
-        await docDoan(tachTheoTieng(tra.vi, von));
+        await docDoan(tachTheoTieng(tra.vi, von, mocEn));
       })();
     } catch (e) {
       /* Nói đúng chỗ hỏng. "Có lỗi xảy ra" là câu vô dụng nhất — bố mẹ không biết
@@ -216,7 +233,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
           ? 'Con đăng nhập rồi mới vào phòng này được nhé.'
           : 'Cô giáo máy chưa trả lời được. Con thử lại nhé.');
     } finally { datDangHoi(false); }
-  }, [von, tenBe, lop, bai, buoi.haDoKho, thich, kichBan]);
+  }, [von, tenBe, lop, bai, buoi.haDoKho, thich, kichBan, ma, mocEn]);
 
   /* Cô chào trước. Bé 6 tuổi mở ra thấy màn trắng thì không biết làm gì cả. */
   useEffect(() => {
@@ -363,7 +380,6 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
   }, [bai?.id]);
 
   const dsTu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
-  const laTranh = kichBan?.dang === 'tranh';
 
   return (
     <section className="flex flex-col gap-3">      {/* ⚠ BỎ KHỐI "CON NÓI VỀ" Ở BÀI TẢ TRANH — bác chốt 19-08-2026.
@@ -509,7 +525,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
           )}
           <div className="mt-1 flex items-center gap-2">
             <p className="flex-1 text-ink">{ket.chu}</p>
-            <button type="button" onClick={() => docDoan(tachTheoTieng(ket.chu, von))}
+            <button type="button" onClick={() => docDoan(tachTheoTieng(ket.chu, von, mocEn))}
               aria-label={`Nghe lại lời tiếng Việt: ${ket.chu}`}
               className="h-9 w-9 flex-none rounded-full border-2 border-line text-sm text-mute
                 hover:border-navy hover:text-navy
@@ -596,7 +612,7 @@ function LuotCo({ luot, bai, von }) {
       {luot.vi && (
         <div className="flex items-center gap-2">
           <p className="flex-1 text-ink">{luot.vi}</p>
-          <button type="button" onClick={() => docDoan(tachTheoTieng(luot.vi, von))}
+          <button type="button" onClick={() => docDoan(tachTheoTieng(luot.vi, von, mocEn))}
             aria-label={`Nghe lại lời tiếng Việt: ${luot.vi}`}
             className="h-9 w-9 flex-none rounded-full border-2 border-line text-sm text-mute
               hover:border-navy hover:text-navy

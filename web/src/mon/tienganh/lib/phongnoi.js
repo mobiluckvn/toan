@@ -751,15 +751,45 @@ export function cauThayThe(viec, tenBe = 'con', cauTruoc = '') {
  *
  * Tên bé (Bo, Minh An…) CỐ Ý không tách: đó là tên Việt, đọc giọng Việt mới đúng.
  */
-export function tachTheoTieng(chu, von) {
+export function tachTheoTieng(chu, von, them = []) {
   const s = String(chu || '');
-  if (!s.trim() || !von) return [];
+  if (!s.trim()) return [];
+  /* Chưa có vốn VÀ chưa có mốc nào thì đừng đọc gì cả — `von` là null khi bài chưa
+     nạp xong, và đọc bừa lúc ấy là đọc một dòng chưa thuộc về bài nào. Giữ đúng
+     hành vi cũ; cái mới chỉ là: CÓ mốc thì tách được kể cả khi `von` chưa về. */
+  if (!von && !them.length) return [];
 
-  const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)].map((t) => t.tu);
-  const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)].map((c) => c.cau);
-  /* Câu TRƯỚC từ, và trong mỗi nhóm thì dài trước: "I like milk." phải khớp trọn
-     câu, đừng để nó bị xé thành "milk" rời rồi đọc lệch nhịp. */
-  const moc = [...cau, ...tu, ...LOI_LOP_HOC].filter(Boolean)
+  const tu = von ? [...von.loi.tu, ...von.on.flatMap((x) => x.tu)].map((t) => t.tu) : [];
+  const cau = von ? [...von.loi.cau, ...von.on.flatMap((x) => x.cau)].map((c) => c.cau) : [];
+
+  /**
+   * ⚠ MẨU TRONG NGOẶC KÉP CŨNG LÀ TIẾNG ANH — bác bắt 19-08-2026:
+   *
+   *     "Ở phần hướng dẫn khi có cả tiếng việt và tiếng anh thì bạn lại phát hết
+   *      bằng tiếng Việt khiến từ tiếng anh rất khó đọc."
+   *
+   * Phép tách cũ chỉ nhận ra tiếng Anh khi mẩu ấy nằm trong VỐN TỪ CỦA UNIT. Đúng
+   * cho bài thường, hỏng hẳn ở bài tả tranh: câu cô trích là câu của kho TÍCH LUỸ
+   * ("How many kites can you see?"), mà vốn của unit 0 chỉ có mười con số — nên cả
+   * câu rơi vào nhánh `vi` và Kokoro-VI đọc "kites" theo vần Việt.
+   *
+   * Đo được: `tachTheoTieng('Cô đang hỏi "How many kites can you see?"…')` trả về
+   * ĐÚNG MỘT mẩu, gắn cờ `vi`.
+   *
+   * Nay lấy thêm hai nguồn mốc, cả hai đều chắc hơn vốn từ:
+   *   · mẩu trong NGOẶC KÉP mà không mang dấu tiếng Việt — cô trích thì phải là
+   *     tiếng Anh (cùng luật `loiVietHopLe` đang dùng để soi lời Việt);
+   *   · `them` — câu cô ĐÃ NÓI trong buổi và bản mô tả tranh, do chỗ gọi đưa vào.
+   */
+  const trich = [];
+  for (const m of s.matchAll(MOC_NGOAC)) {
+    const t = (m[1] ?? m[2] ?? '').trim();
+    if (t && !CO_DAU_VIET.test(t)) trich.push(t);
+  }
+
+  /* Dài trước: "I like milk." phải khớp trọn câu, đừng để nó bị xé thành "milk"
+     rời rồi đọc lệch nhịp. Trích dẫn và `them` đứng cùng nhóm câu. */
+  const moc = [...trich, ...them, ...cau, ...tu, ...LOI_LOP_HOC].filter(Boolean)
     .sort((a, b) => b.length - a.length);
   if (!moc.length) return [{ chu: s, tieng: 'vi' }];
 

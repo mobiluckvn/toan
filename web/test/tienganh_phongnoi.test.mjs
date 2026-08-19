@@ -1627,3 +1627,48 @@ test('bài tả tranh KHÔNG hỏi "con thích cái nào nhất"', () => {
   assert.match(pn, /!laTranh && !thich && hoiThich/, 'bài tả tranh phải giấu thẻ sở thích');
   assert.match(pn, /Con thích cái nào nhất\?|cauHoiSoThich/, 'bài thường vẫn còn thẻ ấy');
 });
+
+test('mẩu tiếng Anh trong lời hướng dẫn phải đọc bằng GIỌNG ANH', async () => {
+  /* ⚠ Bác bắt 19-08-2026: "Ở phần hướng dẫn khi có cả tiếng việt và tiếng anh thì
+     bạn lại phát hết bằng tiếng Việt khiến từ tiếng anh rất khó đọc."
+
+     Phép tách cũ chỉ nhận ra tiếng Anh khi mẩu ấy nằm trong VỐN TỪ CỦA UNIT. Đúng
+     cho bài thường; hỏng hẳn ở bài tả tranh, vì câu cô trích là câu của kho TÍCH
+     LUỸ ("How many kites can you see?") mà vốn của unit 0 chỉ có mười con số. Cả
+     câu rơi vào nhánh `vi` và Kokoro-VI đọc "kites" theo vần Việt.
+
+     Không có gì đỏ: `docDoan` vẫn chạy, vẫn phát ra tiếng. Chỉ tai mới biết. */
+  const { readFileSync } = await import('node:fs');
+  const bai = JSON.parse(readFileSync(
+    new URL('../public/content/ta3/DL_TA3_B00.json', import.meta.url), 'utf8'));
+  const von = vonTu({ baiNay: bai, baiCu: [], daDat: false });
+
+  const loi = 'Cô đang hỏi “How many kites can you see?”. Con nhìn tranh rồi nói lại nhé.';
+  const ra = tachTheoTieng(loi, von);
+  assert.ok(ra.some((x) => x.tieng === 'en' && /How many kites/.test(x.chu)),
+    'mẩu trong ngoặc kép phải được đánh dấu tiếng Anh');
+  assert.ok(ra.some((x) => x.tieng === 'vi' && /Cô đang hỏi/.test(x.chu)),
+    'phần tiếng Việt vẫn phải là tiếng Việt');
+
+  /* Mẩu trong ngoặc mà CÓ dấu tiếng Việt thì vẫn là tiếng Việt — cô trích lời mình
+     chứ không trích tiếng Anh. Cùng luật `loiVietHopLe` đang dùng. */
+  const v = tachTheoTieng('Mình nói “đỏ” rồi mới nói “bút chì” nhé.', von);
+  assert.ok(!v.some((x) => x.tieng === 'en'), 'trích tiếng Việt thì đừng đọc giọng Anh');
+
+  /* Và nguồn mốc thứ hai: câu cô ĐÃ NÓI trong buổi, do màn hình đưa vào. */
+  const r2 = tachTheoTieng('Con nói lại I can see three. nhé.', von, ['I can see three.']);
+  assert.ok(r2.some((x) => x.tieng === 'en' && x.chu === 'I can see three.'));
+});
+
+test('màn phòng nói ĐƯA nguồn mốc tiếng Anh của buổi vào phép tách', () => {
+  /* Tính đúng mà không truyền đi thì y như không tính — `tachTheoTieng` nhận `them`
+     mà màn hình gọi thiếu tham số thì mọi câu của kho tích luỹ lại rơi về giọng
+     Việt. Đúng cái bẫy đã sập với `thieu` và với `can`. */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(pn, /const mocEn = React\.useMemo/, 'phải gom mốc tiếng Anh của buổi');
+  assert.match(pn, /moTaTranh \|\| \[\]/, 'bản mô tả tranh phải nằm trong mốc');
+  for (const m of pn.matchAll(/tachTheoTieng\(([^)]*)\)/g)) {
+    assert.match(m[1], /mocEn/, `còn chỗ gọi thiếu mốc: tachTheoTieng(${m[1]})`);
+  }
+});
