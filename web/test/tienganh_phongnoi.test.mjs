@@ -1672,3 +1672,38 @@ test('màn phòng nói ĐƯA nguồn mốc tiếng Anh của buổi vào phép t
     assert.match(m[1], /mocEn/, `còn chỗ gọi thiếu mốc: tachTheoTieng(${m[1]})`);
   }
 });
+
+test('mẩu tiếng Việt không mang dấu mồ côi để đọc thành chữ', async () => {
+  /* Bác bắt 19-08-2026: "Khi đọc tiếng Việt bạn đọc cả dấu . đâu cần thiết như vậy."
+
+     Cắt một câu ra làm ba thì dấu ở chỗ cắt thành mồ côi:
+
+         Cô đang hỏi “  |  How many kites can you see?  |  ”. Con nhìn tranh…
+
+     `docDoan` đưa thẳng chuỗi cho bộ đọc, mà giọng Việt đọc luôn cái ngoặc kép và
+     cái chấm ấy thành chữ — nghe ra "ngoặc kép chấm". Dấu ngoặc vốn là ký hiệu cho
+     MẮT, còn cái chấm thuộc về câu tiếng Anh vừa đọc xong.
+
+     Không có gì đỏ: chuỗi hợp lệ, bộ đọc chạy bình thường. Chỉ tai mới biết. */
+  const { readFileSync } = await import('node:fs');
+  const bai = JSON.parse(readFileSync(
+    new URL('../public/content/ta3/DL_TA3_B00.json', import.meta.url), 'utf8'));
+  const von = vonTu({ baiNay: bai, baiCu: [], daDat: false });
+
+  const ra = tachTheoTieng(
+    'Cô đang hỏi “How many kites can you see?”. Con nhìn tranh rồi nói lại nhé.', von);
+  const viet = ra.filter((x) => x.tieng === 'vi').map((x) => x.chu);
+  assert.deepEqual(viet, ['Cô đang hỏi', 'Con nhìn tranh rồi nói lại nhé.']);
+  for (const x of viet) {
+    assert.ok(!/[“”"]/.test(x), `mẩu Việt còn ngoặc kép: ${JSON.stringify(x)}`);
+    assert.ok(!/^[\s\p{P}]/u.test(x), `mẩu Việt mở đầu bằng dấu: ${JSON.stringify(x)}`);
+  }
+
+  /* ⚠ Mẩu TIẾNG ANH giữ nguyên dấu. Dấu hỏi cuối câu là thứ làm nên ngữ điệu hỏi;
+     bỏ đi thì "How many kites can you see" đọc ra như một câu kể. */
+  assert.ok(ra.some((x) => x.tieng === 'en' && x.chu.endsWith('?')),
+    'câu hỏi tiếng Anh phải giữ dấu hỏi');
+
+  /* Và dấu chấm CUỐI câu tiếng Việt thì giữ — nó là chỗ ngắt nhịp tự nhiên. */
+  assert.ok(viet[1].endsWith('.'));
+});

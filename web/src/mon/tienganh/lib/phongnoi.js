@@ -807,8 +807,33 @@ export function tachTheoTieng(chu, von, them = []) {
   }
   if (i < s.length) ra.push({ chu: s.slice(i), tieng: 'vi' });
 
+  /**
+   * DỌN DẤU MỒ CÔI KHỎI MẨU TIẾNG VIỆT — bác bắt 19-08-2026:
+   * "Khi đọc tiếng Việt bạn đọc cả dấu . đâu cần thiết như vậy."
+   *
+   * Cắt một câu ra làm ba thì dấu câu ở chỗ cắt thành mồ côi:
+   *
+   *     Cô đang hỏi “   |  How many kites can you see?  |  ”. Con nhìn tranh…
+   *                  ↑                                     ↑↑
+   * `docDoan` đưa thẳng chuỗi cho bộ đọc, mà giọng Việt thì đọc luôn cái ngoặc kép
+   * và cái chấm ấy thành chữ — nghe ra "ngoặc kép chấm". Dấu ngoặc vốn chỉ là ký
+   * hiệu cho MẮT, và cái chấm ở đây thuộc về câu tiếng Anh vừa đọc xong, không
+   * phải của câu tiếng Việt đứng sau.
+   *
+   * Chỉ dọn ở mẩu VIỆT. Mẩu tiếng Anh giữ nguyên dấu — dấu hỏi cuối câu là thứ làm
+   * nên ngữ điệu hỏi, bỏ đi thì "How many kites can you see" đọc ra như câu kể.
+   */
+  const donViet = (x) => x
+    .replace(/[“”„‟"]/g, ' ')          // ngoặc kép: ký hiệu cho mắt, không phải để đọc
+    .replace(/^[\s\p{P}]+/u, '')       // dấu mồ côi ở ĐẦU — của mẩu tiếng Anh vừa rồi
+    .replace(/\s+([,.;:!?])/g, '$1')   // khoảng trắng lọt vào trước dấu câu
+    .replace(/\s+/g, ' ')
+    .trim();
+
   /* Bỏ mẩu chỉ còn dấu câu hoặc khoảng trắng — đọc lên nghe như bị nấc. */
-  return ra.filter((x) => /[\p{L}\p{N}]/u.test(x.chu)).map((x) => ({ ...x, chu: x.chu.trim() }));
+  return ra
+    .map((x) => ({ ...x, chu: x.tieng === 'vi' ? donViet(x.chu) : x.chu.trim() }))
+    .filter((x) => /[\p{L}\p{N}]/u.test(x.chu));
 }
 
 /* ─────────── soi LỜI TIẾNG VIỆT ─────────── */
