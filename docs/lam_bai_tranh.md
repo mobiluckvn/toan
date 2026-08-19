@@ -80,6 +80,17 @@ book"*, không ai nói được *"She's reading"* từ quyển sách nằm trên
 video, không vào tranh. Danh sách mã cố tình để HẸP — đoán hụt thì mất một hoạt
 động (tranh tự bù bằng đạo cụ), đoán rộng thì bé lại đứng nhìn quyển sách.
 
+Cách chữa TẬN GỐC là **vẽ tay một người đang làm việc ấy** rồi đặt cờ `nguoi:
+true` trong `hinh_ve.json` — `la_nguoi()` và cổng cùng đọc cờ đó, không đoán mã.
+`singing` đã vẽ (20-08): người đứng, miệng há, micro đưa lên tận miệng, hai nốt
+nhạc bay ra. ⚠ Vẽ xong thì phải chạy lại **cả dây chuyền từ tầng ②**: khai
+`_ve_tay` trong `lopN_bu.json` → `chuan_tienganh.py` → `sinh_bai_tienganh.py`
+(để `hinhTu[].ve` có tên hình) → tranh → **và dựng lại VIDEO của mọi unit dạy từ
+ấy**, vì thẻ từ trong video cũng đọc cùng nguồn hình.
+⚠ Đừng vẽ đè lên một từ khác: `singer` (U12, nghề nghiệp) dùng 🧑‍🎤. Phân biệt
+bằng khung hình — nghề là chân dung nửa người mặc đồng phục, hoạt động là người
+đủ thân đang làm động tác.
+
 **8 · Chữ trên tranh phân cấp bằng CỠ, không bằng ĐỘ NHẠT.** Dòng tên cảnh tiếng
 Anh từng tô bằng `LINE` (#D4E1EE) cho "nhạt hơn một nấc" — nhưng `LINE` là màu kẻ
 viền, đặt trên nền `NEN` (#EEF4FA) thì gần như vô hình. Việt `INK`, Anh `MUTE`,
@@ -220,10 +231,7 @@ câu tiếng Anh vẫn nguyên si câu của sách.
 
 ## CÒN THÔ, CHƯA SỬA
 
-* **U18 Chơi và làm** — luật 7 loại `singing` · `reading` · `writing` (hình là mic,
-  quyển sách, cái bút). `UU_TIEN` đã kéo bức về đúng chủ đề bằng ĐỒ (sách · bút ·
-  bóng), nhưng vẫn chỉ có một người đang làm việc thật là `dancing`. Chữa hẳn thì
-  phải vẽ tay người-đang-hát / đang-đọc vào `hinh_ve` — và sửa ở đó là sửa cho cả
-  thẻ từ lẫn video, không riêng tranh.
-  ⚠ Đừng chữa bằng cách đổi `hinhTu` của `singing` sang 🧑‍🎤: từ `singer` (U12)
-  đang dùng đúng emoji ấy, hai từ khác nhau mà một mặt thì thẻ từ hỏng.
+* **`reading` 📖 và `writing` ✍️** — hai từ này vẫn chỉ có hình ĐỒ nên chưa vào
+  tranh được. Vẽ tay như `singing` là chữa được, theo đúng bảy bước ở luật 7.
+  Bức U18 hiện có hai người (`dancing` · `singing`) cộng sách · bút · bóng, nên
+  không còn gấp.

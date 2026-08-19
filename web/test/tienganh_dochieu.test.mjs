@@ -48,6 +48,14 @@ const tranhKhai = (() => {
    khuôn "It's + [một màu ĐÃ HỌC].", và câu NGAY TRƯỚC có nêu vật. Lỏng hơn thế —
    ví dụ cho mọi câu không nêu vật đi qua — là mở cửa lại cho đúng thứ ba phép
    kiểm ấy sinh ra để bắt. */
+/* Hình vẽ tay — cùng tệp mà màn hình và video đọc; cờ `nguoi` xem `_nguoi` trong đó. */
+const hinhVe = (() => {
+  try {
+    return JSON.parse(readFileSync(
+      new URL('../src/mon/tienganh/lib/hinh_ve.json', import.meta.url), 'utf8')).hinh;
+  } catch { return {}; }
+})();
+
 const MAU_HOC = new Set(['black', 'blue', 'brown', 'green', 'orange', 'red',
   'white', 'yellow']);
 const laCauNoi = (khai, cau, truoc) => {
@@ -465,14 +473,19 @@ for (const q of quyens) {
          chỉ lộ khi rút bức tranh ra nhìn — cùng họ với [[hình trong video phải
          khớp lời đọc]]. */
       const hinhCua = Object.fromEntries(
-        bais.flatMap((b) => (b.hinhTu || []).map((h) => [h.tu, h.hinh || ''])));
-      const coNguoi = (e) => [...String(e || '')].some((ch) => {
-        const m = ch.codePointAt(0);
-        return (m >= 0x1F466 && m <= 0x1F478) || (m >= 0x1F481 && m <= 0x1F487)
-          || (m >= 0x1F574 && m <= 0x1F57A) || (m >= 0x1F645 && m <= 0x1F64F)
-          || (m >= 0x1F3C3 && m <= 0x1F3CC) || (m >= 0x1F6B4 && m <= 0x1F6B6)
-          || (m >= 0x1F930 && m <= 0x1F93E) || (m >= 0x1F9CD && m <= 0x1F9DF);
-      });
+        bais.flatMap((b) => (b.hinhTu || []).map((h) => [h.tu, h])));
+      /* Hình VẼ TAY thì không đoán được bằng mã emoji — hỏi thẳng cờ `nguoi` khai
+         trong hinh_ve.json, cùng nguồn với bộ soạn (`soan_tranh_lop3.la_nguoi`). */
+      const coNguoi = (h) => {
+        if (h?.ve) return !!hinhVe[h.ve]?.nguoi;
+        return [...String(h?.hinh || '')].some((ch) => {
+          const m = ch.codePointAt(0);
+          return (m >= 0x1F466 && m <= 0x1F478) || (m >= 0x1F481 && m <= 0x1F487)
+            || (m >= 0x1F574 && m <= 0x1F57A) || (m >= 0x1F645 && m <= 0x1F64F)
+            || (m >= 0x1F3C3 && m <= 0x1F3CC) || (m >= 0x1F6B4 && m <= 0x1F6B6)
+            || (m >= 0x1F930 && m <= 0x1F93E) || (m >= 0x1F9CD && m <= 0x1F9DF);
+        });
+      };
       for (const c of khai.doan || []) {
         const m = /^(?:She|He)'s (\w+ing)\.$/.exec(c.trim());
         if (m && !coNguoi(hinhCua[m[1]])) {

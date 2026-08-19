@@ -98,10 +98,10 @@ UU_TIEN = {
     # Ở bàn ăn: món đếm được và đồ dọn bàn. Máy vốn ra "bean · bed · egg · desk" —
     # cái giường giữa bàn ăn.
     15: {"vat": ["egg", "apple", "cake", "cup", "teapot"]},
-    # Chơi và làm: quyển sách (reading) · cái bút (writing) · quả bóng (playing) —
-    # đúng những việc unit dạy, chỉ là vẽ ĐỒ thay vì vẽ người, vì chưa có hình
-    # người đang hát/đọc/viết. Bạn đang nhảy thì có hình người thật.
-    18: {"vat": ["book", "pen", "ball", "bike"]},
+    # Chơi và làm: hai bạn đang LÀM (dancing · singing — `singing` nay có hình vẽ
+    # tay một người đang hát), cộng quyển sách (reading) · cái bút (writing) · quả
+    # bóng (playing). Ba việc còn lại chỉ có hình ĐỒ nên đứng làm đạo cụ.
+    18: {"vat": ["book", "ball", "pen", "bike"]},
 }
 
 # Màu của vật — CHỈ những emoji một màu, gọi tên không cãi được. Đừng thêm bừa:
@@ -209,8 +209,12 @@ NGUOI_MA = [
 ]
 
 
-def la_nguoi(hinh: str | None) -> bool:
-    """Emoji này có VẼ MỘT NGƯỜI không?
+HINH_VE = json.loads(
+    (GOC / "web/src/mon/tienganh/lib/hinh_ve.json").read_text("utf8"))["hinh"]
+
+
+def la_nguoi(h: dict | None) -> bool:
+    """Hình của từ này có VẼ MỘT NGƯỜI không?
 
     ⚠ Đây là chỗ đã lên bản thật rồi mới lộ. Bức "Ở vườn thú" viết *"He's
     counting."* mà trên tranh là cái bàn phím số 🔢; unit 18 viết *"She's
@@ -223,8 +227,13 @@ def la_nguoi(hinh: str | None) -> bool:
 
     Cố tình để danh sách HẸP: đoán sai theo hướng hẹp thì mất một hoạt động (tranh
     tự bù bằng đồ vật), đoán sai theo hướng rộng thì bé lại đứng nhìn quyển sách.
+
+    HÌNH VẼ TAY thì không đoán được bằng mã — hỏi thẳng cờ `nguoi` khai trong
+    `hinh_ve.json`. Một nguồn cho cả ba bên (bộ soạn · màn hình · cổng).
     """
-    for ch in hinh or "":
+    if (h or {}).get("ve"):
+        return bool(HINH_VE.get(h["ve"], {}).get("nguoi"))
+    for ch in (h or {}).get("hinh") or "":
         m = ord(ch)
         if any(a <= m <= b for a, b in NGUOI_MA):
             return True
@@ -248,7 +257,7 @@ def viec_cua(b: dict, chuan_tu: dict) -> list[str]:
         if vai & VAI_VIEC:
             ing = c.get("dang_ing") or (t["tu"] if t["tu"].endswith("ing") else None)
             h = hinh.get(ing) or hinh.get(t["tu"]) or {}
-            if ing and " " not in ing and la_nguoi(h.get("hinh")):
+            if ing and " " not in ing and la_nguoi(h):
                 ra.append(ing)
     return ra[:4]
 

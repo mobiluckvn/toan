@@ -2,6 +2,7 @@
  "_doc": "BẢY HÌNH VẼ TAY — chỗ emoji không diễn đạt nổi. MỘT NGUỒN DUY NHẤT cho cả màn hình (web/src/mon/tienganh/components/HinhVe.jsx) lẫn video (tools/video/hinh_ve.py). Trước đây hình chỉ nằm trong JSX, nên video không vẽ được và phải hiện thẻ chữ thay thế; vẽ lại bằng Pillow thì thành hai bản, và hai bản thì sớm muộn cũng lệch.",
  "_khungNhin": "0 0 64 64",
  "_veChoBe6Tuoi": "Nét dày, ít chi tiết, màu phẳng. Mỗi hình chỉ giữ đúng cái làm nó khác mọi thứ còn lại trong unit ấy. Thêm chi tiết là bé nhìn lâu hơn chứ không hiểu hơn.",
+ "_nguoi": "Cờ `nguoi: true` = hình này VẼ MỘT NGƯỜI ĐANG LÀM VIỆC GÌ ĐÓ. Bài tả tranh đọc cờ này: chỉ hoạt động nào có người mới được vào tranh, vì câu tả nó là \"She's …ing.\" — mà bé nhìn quyển sách 📖 thì bé nói \"a book\", không ai nói được \"She's reading\" từ một quyển sách nằm trên kệ. Bên Python (`soan_tranh_lop3.la_nguoi`) và cổng `tienganh_dochieu` cùng đọc cờ này, đừng khai lại ở chỗ thứ ba.",
  "_mau": {
   "_doc": "Bảng MOBILUCK cộng vài màu tự nhiên — con dê phải ra màu dê, cái hồ phải ra màu nước.",
   "go": "#A9714B",
@@ -46,7 +47,14 @@
   "run": {
    "ten": "chạy",
    "than": "<circle cx=\"40\" cy=\"13\" r=\"7\" fill=\"#F2C79A\" stroke=\"#15263A\" stroke-width=\"2.4\"/>\n<g stroke=\"#15263A\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\">\n  <path d=\"M38 22l-6 14\"/>\n  <path d=\"M32 36l-9 16M32 36l12 10\"/>\n  <path d=\"M36 26l-14 2M36 26l13 8\"/>\n</g>\n<g stroke=\"#1FCBAB\" stroke-width=\"2.6\" stroke-linecap=\"round\" fill=\"none\" opacity=\"0.9\">\n  <path d=\"M8 20h9M5 28h7M9 36h6\"/>\n</g>",
+   "nguoi": true,
    "ghiChu": "Thân nghiêng về trước + hai chân mở rộng = đang CHẠY, không phải đang đứng"
+  },
+  "singing": {
+   "ten": "đang hát",
+   "than": "<circle cx=\"24\" cy=\"14\" r=\"7.5\" fill=\"#F2C79A\"/>\n<ellipse cx=\"27.8\" cy=\"17\" rx=\"2.8\" ry=\"3.6\" fill=\"#C0392B\"/>\n<circle cx=\"22\" cy=\"12.5\" r=\"1.5\" fill=\"#15263A\"/>\n<g stroke=\"#15263A\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\">\n  <path d=\"M23 22v15\"/>\n  <path d=\"M23 37l-6 17M23 37l8 17\"/>\n  <path d=\"M22 27l-9 7\"/>\n  <path d=\"M22 28l10-5.5\"/>\n</g>\n<path d=\"M32 22.5l3-2\" stroke=\"#5B6E85\" stroke-width=\"3.4\" stroke-linecap=\"round\" fill=\"none\"/>\n<circle cx=\"37\" cy=\"18.5\" r=\"4.4\" fill=\"#5B6E85\"/>\n<g fill=\"#0B4EA8\">\n  <ellipse cx=\"47\" cy=\"17\" rx=\"3.4\" ry=\"2.6\" transform=\"rotate(-20 47 17)\"/>\n  <ellipse cx=\"55\" cy=\"29\" rx=\"3\" ry=\"2.3\" transform=\"rotate(-20 55 29)\"/>\n</g>\n<g stroke=\"#0B4EA8\" stroke-width=\"2.2\" stroke-linecap=\"round\" fill=\"none\">\n  <path d=\"M50 16V6\"/>\n  <path d=\"M50 6q5 1 4 6\"/>\n  <path d=\"M57.7 28v-8\"/>\n  <path d=\"M57.7 20q4 1 3 5\"/>\n</g>\n<g stroke=\"#15263A\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\">\n  <circle cx=\"24\" cy=\"14\" r=\"7.5\"/>\n  <ellipse cx=\"27.8\" cy=\"17\" rx=\"2.8\" ry=\"3.6\" stroke-width=\"1.6\"/>\n  <circle cx=\"37\" cy=\"18.5\" r=\"4.4\" stroke-width=\"2\"/>\n</g>",
+   "nguoi": true,
+   "ghiChu": "MỘT NGƯỜI ĐỨNG, miệng há tròn, tay đưa micro lên tận miệng, hai nốt nhạc bay ra. 🎤 chỉ là CÁI MICRO — bé nhìn cái micro trên kệ thì nói \"a microphone\", không ai nói được \"She's singing\" từ một cái micro.\n⚠ Chỗ dễ lẫn là từ `singer` (U12, nghề nghiệp, emoji 🧑‍🎤). Phân biệt bằng KHUNG HÌNH: mấy từ nghề (cook 👨‍🍳 · doctor 👨‍⚕️ · farmer 👨‍🌾 · nurse 👩‍⚕️ · singer 🧑‍🎤) đều là chân dung nửa người mặc đồng phục; còn đây là NGƯỜI ĐỦ THÂN đang làm động tác, cộng nốt nhạc — cùng họ với `run`."
   },
   "wash": {
    "ten": "rửa",
