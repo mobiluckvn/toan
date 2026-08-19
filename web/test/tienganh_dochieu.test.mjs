@@ -91,7 +91,7 @@ for (const q of quyens) {
     /* Bài theo CHƯƠNG gom bốn unit, mà một lượt đối đáp ăn HAI dòng — sáu dòng chỉ
        đủ ba lượt, chưa đi hết chương đã hết chỗ. Nên trần của bài chương là 8. */
     const sanDong = k.phamVi === 'unit' ? 3 : 4;
-    const tranDong = k.phamVi === 'unit' ? 6 : 8;
+    const tranDong = k.phamVi === 'unit' ? 7 : 9;
     if (doan.length < sanDong || doan.length > tranDong) {
       hinhDang.push(`${k.id}: đoạn ${doan.length} câu (cần ${sanDong}–${tranDong})`);
     }
@@ -149,6 +149,56 @@ for (const q of quyens) {
         if (doan.includes(trong)) hoiHong.push(`${k.id}/${c.id}: hỏi câu ĐANG CÓ mà đáp "Không"`);
         if (dap !== 'Không') hoiHong.push(`${k.id}/${c.id}: đáp án phải là "Không"`);
       }
+    }
+  }
+
+  /* ══ ĐỪNG LẶP ══ (bác bắt 19-08-2026)
+
+     "sao nhiều câu lặp lại quá đi kiểu như Hello, I'm ben .... Bài đọc bạn nên dùng
+     vốn câu tích luỹ từ lớp 1 đến bài đó của lớp 3 chứ không nhất thiết là trong
+     bài đó của lớp 3."
+
+     Lặp ở HAI TẦNG, và cổng cũ không đo tầng nào:
+
+       · TRONG một đoạn — nguồn câu chỉ có mấy ví dụ của chính unit, mà bốn ví dụ
+         thì chỉ khác nhau ở một chữ, nên đoạn thành bảng cửu chương;
+       · GIỮA các bài — bài nào cũng mở bằng đúng "Hi, I'm Bill. / Hello. I'm Mai.",
+         vì bộ dựng luôn lấy cái tên đầu danh sách. Bé đọc tới bài thứ ba là thuộc
+         hai dòng ấy rồi lướt qua không đọc nữa.
+
+     Cả hai đều KHÔNG sai một chữ nào, nên không có phép kiểm nào cũ bắt được. Phải
+     đo thẳng cái người đọc thấy: bao nhiêu dòng cùng khuôn, và bao nhiêu bài mở
+     đầu giống hệt nhau. */
+  const lap = [];
+  for (const k of ds) {
+    const dem = new Map();
+    for (const d of (k.doan || [])) {
+      const kh = `${(d.cau.split(' ')[0] || '').toLowerCase()}|${d.cau.split(' ').length}`;
+      dem.set(kh, (dem.get(kh) || 0) + 1);
+    }
+    for (const [kh, n] of dem) {
+      if (n > 2) lap.push(`${k.id}: ${n} dòng cùng khuôn “${kh}”`);
+    }
+  }
+  t(`${q} · trong một đoạn không quá 2 dòng cùng khuôn (${lap.length} chỗ)`,
+    lap.length === 0);
+  in5(lap);
+
+  const theoUnitDs = ds.filter((k) => k.phamVi === 'unit');
+  if (theoUnitDs.length >= 5) {
+    const dauTien = new Map();
+    for (const k of theoUnitDs) {
+      const d0 = k.doan?.[0]?.cau || '';
+      dauTien.set(d0, (dauTien.get(d0) || 0) + 1);
+    }
+    const nhieuNhat = Math.max(...dauTien.values());
+    /* Ngưỡng là MỘT PHẦN BA số bài. Không đòi mỗi bài một câu mở khác nhau — sách
+       chỉ có ngần ấy lời chào — nhưng quá một phần ba thì bé nhận ra ngay. */
+    const tran = Math.ceil(theoUnitDs.length / 3);
+    t(`${q} · câu mở đầu không lặp quá ${tran}/${theoUnitDs.length} bài (đang ${nhieuNhat})`,
+      nhieuNhat <= tran);
+    if (nhieuNhat > tran) {
+      in5([...dauTien].filter(([, n]) => n === nhieuNhat).map(([c, n]) => `${n} bài mở bằng “${c}”`));
     }
   }
 

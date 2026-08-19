@@ -36,7 +36,11 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from kho_cau_tienganh import cau_tich_luy, kho_chu  # noqa: E402
 
 GOC = Path(__file__).resolve().parent.parent
 QUYEN = {1: "ta1", 2: "ta2", 3: "ta3"}
@@ -120,84 +124,108 @@ def _bo_ten(cau: str, tens: list[str]) -> str:
         ra = re.sub(rf"\b{re.escape(t)}\b", "___", ra)
     return re.sub(r"___(\s+___)+", "___", ra)
 
-
 MO_DAU = re.compile(r"^(Hello|Hi)\b|^(I'm|My name's)\b", re.I)
 KET_BAI = re.compile(r"^(Bye|Goodbye)\b", re.I)
 
+# Nhiều nhất bao nhiêu NHÓM GIỮA (ngoài mở đầu và tạm biệt). Kho tích luỹ tới cuối
+# lớp 3 có hơn năm mươi mẫu câu; bày hết ra thì bảng gợi ý dài gấp mười lần bài bé
+# phải viết, và bé tám tuổi cuộn tới giữa là bỏ.
+#
+# Hai con số vì hai loại đề khác nhau hẳn:
+#   · đề UNIT — bé viết 2–3 câu về đúng bài vừa học. Bốn nhóm là quá đủ, mà cắt
+#     chặt còn giữ cho gợi ý khỏi lạc đề: unit 1 lớp 3 dạy chào hỏi, lấy rộng ra
+#     thì nhóm cũ gần nhất lại là chuyện lều trại của lớp 2 unit 16.
+#   · đề CHƯƠNG — viết tổng hợp bốn unit, nên bốn nhóm là chưa đủ chỗ cho cả bốn.
+#     Chương 2 từng mất hẳn nhóm "chỉ một bộ phận trên mặt" trong khi ĐỀ BÀI đòi
+#     đúng thứ ấy.
+NHOM_GIUA_UNIT = 4
+NHOM_GIUA_CHUONG = 7
 
-def _goi_y(bais: list[dict], truoc: list[dict] = (),
-             tens: list[str] = ()) -> list[dict]:
+
+def _goi_y(nguon: list[dict], tens: list[str], so_giua: int) -> list[dict]:
     """GỢI Ý THEO NHÓM — mỗi nhóm là một CHỖ trong đoạn văn bé sắp viết.
 
-    ══ VÌ SAO ĐỔI ══ (bác chốt 18-08-2026)
+    ══ NGUỒN LÀ CẢ KHO TÍCH LUỸ ══ (bác chốt 19-08-2026)
 
-    Bác thử xong bảo: "phần gợi ý nên bổ sung thêm nhiều từ hơn cho con chọn và ghi
-    là gợi ý. Con có thể typing thêm theo ý của con. Lưu ý là các từ gợi ý ấy phải
-    ghép lại thành được đoạn văn có ý nghĩa chứ như giờ bạn cho linh tinh."
+    Bác đọc rồi bảo: "sao nhiều câu lặp lại quá đi kiểu như Hello, I'm ben ....
+    Bài đọc bạn nên dùng vốn câu tích luỹ từ lớp 1 đến bài đó của lớp 3 chứ không
+    nhất thiết là trong bài đó của lớp 3. Bài viết cũng vậy."
 
-    Bản cũ bày đúng MỘT bảng: toàn bộ từ đã học, dồn từ chương 1 tới đây, xếp theo
-    thứ tự sách. Bé lớp 3 unit 4 mở ra thấy:
+    Bản trước chỉ lấy mẫu câu của CHÍNH unit ấy, nên unit 5 có đúng hai nhóm và cả
+    hai đều nói về sở thích. Bé bấm ba cái là ra ba câu sở thích liền nhau — đúng
+    khuôn, nhưng không phải một đoạn. Nay `kho_cau_tienganh.cau_tich_luy` đưa vào
+    tất cả những gì bé đã học, và bảng gợi ý thành một dàn ý thật:
 
-        one · two · three · … · ten · the alphabet (A–Z) · hello · hi · bye ·
-        goodbye · fine · how · I · you · thank you · Ben · Lucy · Mai · Minh · my ·
-        name · what · your · old · …
+        [Mở đầu]            Hello. I'm ___.
+        [Nói sở thích]      It's cooking. · It's dancing.
+        [Nói về đồ của mình] This is my bag. · This is my hat.
+        [Chào tạm biệt]     Bye, ___.
 
-    Năm mươi ba ô chữ rời. Bấm bừa vài cái thì ra "ten hello your old" — không phải
-    câu, càng không phải đoạn. Đó đúng là chữ "linh tinh" của bác.
+    ── VẪN PHẢI LÀ BÀI CỦA UNIT NÀY ──
+    Mở cả kho ra mà xếp bừa thì gợi ý của unit 5 lại toàn chuyện lớp 1. Nên thứ tự
+    cố định: mở đầu → nhóm của CHÍNH unit → nhóm cũ (gần nhất trước) → tạm biệt.
 
-    ── NAY: CỤM GHÉP ĐƯỢC, XẾP THEO CHỖ TRONG ĐOẠN ──
-
-    Mỗi mẫu câu của sách thành MỘT nhóm. Nhãn nhóm là `dungDe` — chính lời sách nói
-    mẫu ấy dùng để làm gì ("Hỏi và nói sở thích"). Các mục trong nhóm là những câu
-    TRỌN VẸN cùng khuôn, lấy từ `canonicalExamples`.
-
-    Bé bấm mỗi nhóm một cái là ra một đoạn có đầu có cuối:
-
-        Hello. I'm Mai.  ·  It's cooking.  ·  Bye.
-
-    Chỉ lấy VẾ ĐÁP của cặp hỏi–đáp: bài viết là bé kể về mình, không phải bé tự hỏi
-    tự trả lời. Vế hỏi vẫn còn ở mục "Mẫu câu con đã học" ngay trên đề bài.
+    ── VÌ SAO CẮT Ở BẢY NHÓM ──
+    Xem `NHOM_TOI_DA`. Cắt thì phải NÓI RA mình cắt gì, nên nhóm bị bỏ vẫn còn
+    nguyên trong "Mẫu câu con đã học" ngay trên đề bài.
     """
-    nhom: list[dict] = []
     da_co: set[str] = set()
-    for b in bais:
-        vi_du = [str(x) for x in (b["knowledgeCore"].get("canonicalExamples") or [])]
-        for m in (b["knowledgeCore"].get("mauCauDs") or []):
-            _, dap = _tach_doi(m.get("cau"))
-            khung = _tach_doi(m.get("congThuc") or "")[1]
-            cum = [dap] + [_tach_doi(x)[1] for x in vi_du
-                           if _khop_khung(khung, _tach_doi(x)[1])]
-            cum = [_bo_ten(c, tens) for c in cum]
-            cum = [c for c in dict.fromkeys(cum) if c and _sach_se(c) and c not in da_co]
-            if not cum:
-                continue
-            da_co.update(cum[:CUM_TOI_DA])
-            nhan = str(m.get("dungDe") or "").strip().rstrip(".") or "Câu con có thể viết"
-            nhom.append({"nhan": nhan, "cum": cum[:CUM_TOI_DA]})
 
-    # ── ĐOẠN VĂN PHẢI CÓ ĐẦU VÀ CÓ CUỐI ──
-    # Unit 5 chỉ dạy về sở thích, nên nhóm của chính nó toàn "It's cooking." Bé bấm
-    # ba cái là ra ba câu sở thích liền nhau — đúng khuôn, nhưng không phải một
-    # đoạn. Lời chào và lời tự giới thiệu thì bé HỌC RỒI ở mấy unit đầu; mượn lại
-    # là đoạn có chỗ mở và chỗ đóng. Không mượn của unit CHƯA học: `truoc` chỉ gồm
-    # những bài đứng trước bài này.
-    mo, ket = [], []
-    for b in list(truoc) + list(bais):
-        for x in (b["knowledgeCore"].get("canonicalExamples") or []):
-            for nua in (str(x).split(" - ") if " - " in str(x) else [str(x)]):
-                nua = _bo_ten(nua.strip(), tens)
-                if not _sach_se(nua) or nua in da_co:
-                    continue
-                if MO_DAU.match(nua) and len(mo) < CUM_TOI_DA:
-                    mo.append(nua); da_co.add(nua)
-                elif KET_BAI.match(nua) and len(ket) < CUM_TOI_DA:
-                    ket.append(nua); da_co.add(nua)
-    ra = []
-    if mo:
-        ra.append({"nhan": "Mở đầu — chào và nói con là ai", "cum": mo})
-    ra += nhom
-    if ket:
-        ra.append({"nhan": "Chào tạm biệt", "cum": ket})
+    def lam_nhom(m: dict) -> dict | None:
+        cum = [_bo_ten(c, tens) for c in m["vidu"]]
+        cum = [c for c in dict.fromkeys(cum) if c and c not in da_co]
+        if not cum:
+            return None
+        cum = cum[:CUM_TOI_DA]
+        da_co.update(cum)
+        nhan = m["dungDe"] or "Câu con có thể viết"
+        return {"nhan": nhan, "cum": cum}
+
+    def la_mo(m: dict) -> bool:
+        return bool(MO_DAU.match(m["dap"]))
+
+    def la_ket(m: dict) -> bool:
+        return bool(KET_BAI.match(m["dap"]))
+
+    mo = [m for m in nguon if la_mo(m)]
+    ket = [m for m in nguon if la_ket(m) and not la_mo(m)]
+    giua = [m for m in nguon if not la_mo(m) and not la_ket(m)]
+    # Mới trước, rồi cũ theo unit giảm dần — unit ngay trước thường cùng chủ đề.
+    giua.sort(key=lambda m: (not m["moi"], -m["lop"], -m["unit"]))
+
+    ra: list[dict] = []
+
+    # ① MỘT nhóm mở đầu, gom mọi cách chào thành một chỗ. Tách ra nhiều nhóm thì bé
+    #    thấy ba nhãn khác nhau cho cùng một việc, và đó đúng là chỗ bác kêu "lặp".
+    cum_mo: list[str] = []
+    for m in mo:
+        for c in m["vidu"]:
+            c = _bo_ten(c, tens)
+            if c and c not in cum_mo and c not in da_co:
+                cum_mo.append(c)
+    if cum_mo:
+        da_co.update(cum_mo[:CUM_TOI_DA])
+        ra.append({"nhan": "Mở đầu — chào và nói con là ai", "cum": cum_mo[:CUM_TOI_DA]})
+
+    # ② phần giữa
+    dem = 0
+    for m in giua:
+        if dem >= so_giua:
+            break
+        g = lam_nhom(m)
+        if g:
+            ra.append(g)
+            dem += 1
+
+    # ③ một nhóm chào tạm biệt
+    cum_ket: list[str] = []
+    for m in ket:
+        for c in m["vidu"]:
+            c = _bo_ten(c, tens)
+            if c and c not in cum_ket and c not in da_co:
+                cum_ket.append(c)
+    if cum_ket:
+        ra.append({"nhan": "Chào tạm biệt", "cum": cum_ket[:CUM_TOI_DA]})
     return ra
 
 
@@ -273,7 +301,8 @@ def dung(lop: int) -> list[dict]:
             "de": f"Con viết {CAU_TOI_THIEU}–3 câu: {viec[0].lower()}{viec[1:]}.",
             "toiThieu": CAU_TOI_THIEU,
             "mauCau": list(dict.fromkeys(mau)),
-            "goiY": _goi_y([b], bais[:bais.index(b)], tens),
+            "goiY": _goi_y(cau_tich_luy(lop, b["so"], kho_chu(lop, b["so"]), {b["so"]}),
+                           tens, NHOM_GIUA_UNIT),
             "vonTu": _von_dung_duoc(von),
         })
 
@@ -300,7 +329,9 @@ def dung(lop: int) -> list[dict]:
             "mauCau": list(dict.fromkeys(mau)),
             # Gợi ý gom của CẢ BỐN unit — bài chương là chỗ viết tổng hợp, nên
             # nhóm nào cũng phải có mặt để bé ghép thành một đoạn dài hơn.
-            "goiY": _goi_y(ds, bais[:bais.index(ds[0])], tens),
+            "goiY": _goi_y(cau_tich_luy(lop, max(x["so"] for x in ds),
+                                       kho_chu(lop, max(x["so"] for x in ds)),
+                                       {x["so"] for x in ds}), tens, NHOM_GIUA_CHUONG),
             # Vốn từ DỒN từ chương 1 tới đây: bé viết về mình thì vẫn cần "I'm" của
             # chương 1 ở bài chương 4. Cắt theo đúng chương là cắt mất cả câu chào.
             "vonTu": _von_dung_duoc(von),

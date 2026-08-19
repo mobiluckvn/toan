@@ -55,16 +55,24 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from kho_cau_tienganh import cau_tich_luy  # noqa: E402
 
 GOC = Path(__file__).resolve().parent.parent
 QUYEN = {1: "ta1", 2: "ta2", 3: "ta3"}
 
-SO_DONG_TOI_DA = 6      # bác chốt: đoạn 4–6 câu
+# Đoạn nay là HỘI THOẠI, và một lượt đối đáp ăn HAI dòng. Trần cũ 6 (bác chốt hồi
+# đoạn còn là mấy câu rời) chỉ đủ ba lượt: chào hai dòng, một cặp hỏi–đáp, rồi hết
+# chỗ cho cả lời tạm biệt lẫn mẫu câu thứ hai của bài. Bảy dòng là chào + hai cặp +
+# tạm biệt — vừa đủ một mẩu chuyện có đầu có cuối, và vẫn ngắn hơn một màn hình.
+SO_DONG_TOI_DA = 7
 # Bài theo CHƯƠNG gom bốn unit, mà một lượt đối đáp ăn HAI dòng — sáu dòng chỉ đủ
 # ba lượt, tức là chưa đi hết chương đã hết chỗ. Tám dòng là bốn lượt, vừa đủ để
 # câu hỏi "bài đọc nói về chuyện gì" có nghĩa là ý chính của cả chương.
-SO_DONG_TOI_DA_CHUONG = 8
+SO_DONG_TOI_DA_CHUONG = 9
 SO_DONG_TOI_THIEU = 4
 # Bài theo UNIT chỉ có vốn câu của một unit, nên cho phép đoạn ngắn hơn một dòng.
 # Ba câu vẫn là một đoạn đọc; đòi đủ bốn thì ba unit mất hẳn bài đọc.
@@ -172,148 +180,222 @@ def _hop_vai(cau: str, toi: str, ban: str) -> bool:
     return True
 
 
-def _hai_ban(bais: list[dict], kho: set[str], ten_sach: list[str]) -> tuple[str, str]:
+def _hai_ban(nguon: list[dict], ten_sach: list[str], xoay: int = 0) -> tuple[str, str]:
     """Chọn TÊN cho hai bạn nói chuyện.
 
-    Ưu tiên tên chính unit ấy dùng: bạn ĐÁP là người tự xưng tên trong câu ví dụ,
-    bạn HỎI là người được gọi tên. Unit nào không có câu xưng tên thì mượn tên
-    trong `them.ten` của bản chuẩn — chúng nằm trong vốn từ đã học, nên không phải
-    tên lạ, và cũng không phải tên tôi bịa ra.
+    Bạn ĐÁP là người tự xưng tên trong câu ví dụ; bạn HỎI cũng phải là một người có
+    câu tự xưng, vì lúc đổi vai chính bạn ấy phải đáp "My name's …" — mà câu ấy chỉ
+    tồn tại cho những cái tên sách đã viết. Hết mới mượn tên trong `them.ten`.
     """
     xung, goi = [], []
-    for b in bais:
-        for c in (b["knowledgeCore"].get("canonicalExamples") or []):
-            if not all(w in kho for w in chu_trong(c)):
-                continue
+    for m in nguon:
+        for c in m["vidu"] + [x for x in (m["hoi"], m["dap"]) if x]:
             xung += TU_XUNG.findall(c)
             goi += GOI_TEN.findall(c)
-    du = [x for x in dict.fromkeys(xung + goi + ten_sach) if x]
+    du = [x for x in dict.fromkeys(xung + goi + list(ten_sach)) if x]
     tu_xung = list(dict.fromkeys(xung))
+    # ⚠ XOAY VÒNG THEO UNIT. Bác bắt 19-08: "sao nhiều câu lặp lại quá đi kiểu như
+    # Hello, I'm ben". Một phần là do nguồn câu hẹp (đã chữa), nhưng phần còn lại là
+    # do CHỌN LUÔN TÊN ĐẦU DANH SÁCH: hai mươi bài đọc thì cả hai mươi đều mở bằng
+    # "Hi, I'm Bill. / Hello. I'm Mai." Bé đọc bài thứ ba là thuộc lòng hai dòng ấy
+    # và bỏ qua không đọc nữa.
+    #
+    # Xoay theo số unit chứ không random: chạy hai lần phải ra đúng một tệp, nếu
+    # không thì mỗi lần dựng lại là 20 bài đọc đổi hết và clip tiếng phải sinh lại.
+    if tu_xung:
+        tu_xung = tu_xung[xoay % len(tu_xung):] + tu_xung[:xoay % len(tu_xung)]
+    if du:
+        du = du[xoay % len(du):] + du[:xoay % len(du)]
     b_ = (tu_xung[0] if tu_xung else (du[0] if du else "Lucy"))
-    # ⚠ Bạn HỎI cũng nên là một người CÓ CÂU TỰ XƯNG trong sách. Lúc đổi vai, chính
-    # bạn ấy phải đáp "My name's …" — mà câu ấy chỉ tồn tại cho những cái tên sách
-    # đã viết. Bản đầu ưu tiên tên được GỌI ("Hello, Minh.") nên Minh không có câu
-    # nào để tự xưng, `_hop_vai` gạt sạch, và unit 2 · 5 tụt xuống hai dòng rồi bị
-    # bỏ hẳn. Tên tự xưng trước, rồi mới tới tên được gọi.
     a_ = next((x for x in tu_xung[1:] + list(dict.fromkeys(goi)) + du if x != b_),
               None) or "Ben"
     return a_, b_
 
 
-def _hoi_thoai(bais: list[dict], kho: set[str], ten_sach: list[str],
-               toi_da: int) -> list[dict]:
+NAM = re.compile(r"\b(he|his|him|brother|father|grandfather|uncle|Mr [A-Z][a-z]+)\b", re.I)
+NU = re.compile(r"\b(she|her|hers|sister|mother|grandmother|aunt|Ms [A-Z][a-z]+)\b", re.I)
+
+
+def _gioi(cau: str) -> str | None:
+    """Câu này nói về nam hay nữ? Không rõ thì `None`."""
+    co_nam, co_nu = bool(NAM.search(cau)), bool(NU.search(cau))
+    return "nam" if co_nam and not co_nu else ("nu" if co_nu and not co_nam else None)
+
+
+def _hop_gioi(cau: str, dong: list[dict]) -> bool:
+    """Câu này có mâu thuẫn giới tính với dòng ngay trước không?
+
+    ⚠ LỖI THẬT, và nó chỉ lộ khi đọc HAI DÒNG LIỀN NHAU:
+
+        Mai:  Who's this?
+        Bill: It's my sister.
+        Mai:  How old is he?        ← sister là "she"
+
+    Từng dòng đều là câu đúng của sách, mọi chữ đều đã học, cổng soi từng dòng thì
+    dòng nào cũng qua. Mở cả kho câu tích luỹ ra càng dễ dính, vì nay hai lượt cạnh
+    nhau có thể đến từ hai unit khác nhau.
+
+    Chỉ soi ngược MỘT dòng: xa hơn thì trong hội thoại thật người ta đổi chủ đề, và
+    chặn quá tay là mất câu vô cớ.
+    """
+    g = _gioi(cau)
+    if not g or not dong:
+        return True
+    truoc = _gioi(dong[-1]["cau"])
+    return truoc is None or truoc == g
+
+
+CHAO = re.compile(r"^(Hello|Hi)\b", re.I)
+TAM_BIET = re.compile(r"^(Bye|Goodbye)\b", re.I)
+
+
+def _hoi_thoai(nguon: list[dict], ten_sach: list[str], toi_da: int,
+               xoay: int = 0) -> list[dict]:
     """ĐOẠN HỘI THOẠI giữa hai bạn — trả `[{"cau", "ai"}]`.
 
-    ══ VÌ SAO ĐỔI HẲN CÁCH DỰNG ══ (bác chốt 18-08-2026)
+    ══ NGUỒN CÂU LÀ CẢ KHO TÍCH LUỸ ══ (bác chốt 19-08-2026)
 
-    Bác đọc thử rồi bảo: "Bài đọc phải là một đoạn văn hoặc đoạn hội thoại có ý
-    nghĩa chứ không phải mấy câu rời rạc chẳng liên quan gì đến nhau."
+    Bác đọc rồi bảo: "sao nhiều câu lặp lại quá đi kiểu như Hello, I'm ben .... Bài
+    đọc bạn nên dùng vốn câu tích luỹ từ lớp 1 đến bài đó của lớp 3 chứ không nhất
+    thiết là trong bài đó của lớp 3."
 
-    Bản cũ xếp bốn tới sáu câu SẴN CÓ của sách cạnh nhau theo thứ tự unit và tin
-    rằng thế là thành một mẩu hội thoại. Không thành. Nó ra những đoạn thế này:
+    Đúng, và con số nói thẳng: tính tới unit 5 lớp 3, bé đã học 52 MẪU CÂU (135 câu
+    dùng được), mà bản trước chỉ lấy đúng 2 mẫu của chính unit ấy. Hai mẫu mà phải
+    rải ra bốn tới sáu dòng thì không còn đường nào ngoài lặp — bốn ví dụ của unit 1
+    chỉ khác nhau ở cái tên, nên đoạn nào cũng "Hello. I'm Ben. / Hello. I'm Lucy."
 
-        What's this?              ← hỏi cái gì? ai hỏi?
-        It's a nose.
-        What's your hobby?        ← nhảy sang chuyện khác, không ai dẫn
-        It's cooking.
-        Is this our classroom?
-        Yes, it is.
+    Nay `kho_cau_tienganh.cau_tich_luy` đưa cả kho vào, và luật xếp đoạn đổi hẳn:
+    MỖI MẪU CHỈ MỘT LƯỢT. Trước phải vét nhiều ví dụ của cùng một mẫu vì không có gì
+    khác; nay dư mẫu nên không bao giờ phải lặp khuôn.
 
-    Ba câu hỏi của ba người vô hình, ba câu đáp của ba người khác. Bé đọc xong
-    không biết ai nói với ai — mà câu hỏi "bài đọc nói về chuyện gì" thì lại đòi
-    bé tóm được một ý chung.
+    ── ĐOẠN VẪN PHẢI LÀ CỦA UNIT NÀY ──
 
-    ── NAY: HAI BẠN, VÀ CÂU CHUYỆN PHẢI NHẤT QUÁN ──
+    Mở cả kho ra mà xếp bừa thì bài đọc của unit 5 lại toàn chuyện lớp 1. Nên thứ
+    tự cố định:
 
-    Mẫu câu của sách vốn ĐÃ LÀ lượt đối đáp — `"What's your hobby? - It's cooking."`
-    là HAI lượt nói, không phải một câu. Trước nay chỗ ấy bị cắt đôi rồi rải ra như
-    hai câu rời. Nay giữ nguyên cặp và GẮN VAI: bạn A hỏi, bạn B đáp.
+        chào  →  mẫu của CHÍNH unit (`moi`)  →  mẫu cũ, gần nhất trước  →  tạm biệt
 
-    Ba luật giữ cho đoạn không tự mâu thuẫn:
+    Câu mới là trọng tâm, câu cũ là phần ôn, và hai đầu là chỗ mở/đóng cho đoạn
+    thành một mẩu chuyện có đầu có cuối.
 
-      1. hai bạn có TÊN, lấy từ chính câu ví dụ của unit (`_hai_ban`);
-      2. câu tự xưng tên phải đúng tên người nói, câu gọi tên phải gọi bạn kia
-         (`_hop_vai`);
-      3. một câu hỏi chỉ được đáp MỘT LẦN. Sách có bốn ví dụ chung một câu hỏi
-         ("What's your name? - My name's Mary/Bill/Linh…") — nhét cả bốn vào thì
-         một người đổi tên bốn lần. Gặp lại đúng câu hỏi ấy thì ĐỔI VAI: lần này
-         B hỏi, A đáp. Đúng cách hai người thật nói chuyện, và vẫn chỉ dùng câu
-         có sẵn của sách.
-
-    Mẫu KHÔNG có vế hỏi (cả lớp 1 là thế) thì một bạn nói liền mạch, ra đoạn kể về
-    chính mình: "Hi, I'm Bill. This is my bag. This is my hat."
-
-    ⚠ VẪN KHÔNG BỊA CÂU TIẾNG ANH. Mọi dòng vẫn là câu sẵn của sách, cắt ở " - "
-    đúng như cũ. Cái đổi là THỨ TỰ và VAI — hai thứ không phải chữ nghĩa.
+    ── HAI LUẬT GIỮ CHO ĐOẠN KHÔNG TỰ MÂU THUẪN ──
+    Câu tự xưng phải đúng tên người nói, câu gọi tên phải gọi bạn kia (`_hop_vai`).
+    Thiếu chúng thì ra đoạn cũ: Lucy tự giới thiệu ba lần với ba người khác nhau,
+    và chào "Hello, Minh." trong khi Minh không hề có mặt.
     """
-    a_, b_ = _hai_ban(bais, kho, ten_sach)
+    a_, b_ = _hai_ban(nguon, ten_sach, xoay)
     dong: list[dict] = []
-    da_hoi: dict[str, int] = {}          # câu hỏi → đã dùng mấy lần
 
     def them_duoc(cau: str) -> bool:
-        """Còn chỗ, chưa có, và chưa quá hai dòng cùng khuôn."""
         if len(dong) >= toi_da or any(d["cau"] == cau for d in dong):
             return False
         return sum(1 for d in dong if _dang(d["cau"]) == _dang(cau)) < CUNG_KHUON_TOI_DA
 
-    # ── LỜI CHÀO ĐỨNG ĐẦU ──
-    # Giữ đúng thứ tự sách thì ra đoạn thế này, và đọc lên thấy sai ngay:
-    #     Minh: What number is it?
-    #     Ben:  It's five.
-    #     Ben:  Hello. I'm Ben.      ← chào giữa chừng, sau khi đã nói chuyện xong
-    # Xếp lại là việc của THỨ TỰ, không phải của chữ nghĩa — vẫn không bịa câu nào.
-    def uu_tien(c: str) -> int:
-        return 0 if re.match(r"^(Hello|Hi)\b", c) else 1
+    def la_chao(m: dict) -> bool:
+        return bool(CHAO.match(m["hoi"] or m["dap"]))
 
-    ung_vien = [c for b in bais
-                for c in (b["knowledgeCore"].get("canonicalExamples") or [])]
-    for c in sorted(ung_vien, key=uu_tien):
-        if len(dong) >= toi_da:
-            break
-        if not all(w in kho for w in chu_trong(c)):
-            continue
-        phan = _tach_doi(c)
-        if len(phan) == 2:
-            hoi, dap = phan
-            lan = da_hoi.get(hoi, 0)
-            if lan >= 2:
-                continue      # hỏi đi hỏi lại ba lần thì không còn là câu chuyện
-            # Lượt đầu A hỏi B đáp; gặp lại đúng câu hỏi ấy thì ĐỔI VAI.
-            ai_hoi, ai_dap = (a_, b_) if lan == 0 else (b_, a_)
-            if not (_hop_vai(hoi, ai_hoi, ai_dap) and _hop_vai(dap, ai_dap, ai_hoi)):
-                continue
-            # Lấy TRỌN cặp hoặc không lấy. Cắt giữa cặp thì đoạn kết thúc bằng
-            # một câu hỏi bỏ lửng, và bé ngồi tìm câu đáp không có ở đâu cả.
-            # ── ĐỔI VAI THÌ ĐƯỢC HỎI LẠI ĐÚNG CÂU ẤY ──
-            # Sách cho bốn ví dụ chung một câu hỏi ("What's your name? - My name's
-            # Mary/Bill/Linh/Nam"). Chặn câu hỏi trùng thì unit ấy chỉ còn HAI dòng
-            # và mất hẳn bài đọc — bốn unit lớp 3 đã rớt đúng thế. Mà trong một
-            # cuộc trò chuyện thật, hỏi lại là chuyện thường nhất:
-            #     Ben: What's your name?   Mai: My name's Mai.
-            #     Mai: What's your name?   Ben: My name's Ben.
-            # Nên vế HỎI của lượt đổi vai được phép trùng; vế ĐÁP thì không, vì hai
-            # người không thể cùng mang một cái tên.
+    def la_tam_biet(m: dict) -> bool:
+        return bool(TAM_BIET.match(m["hoi"] or m["dap"]))
+
+    # Chào và tạm biệt đứng riêng; phần giữa xếp MỚI trước, rồi cũ theo unit giảm
+    # dần — unit ngay trước thường cùng chương, cùng chủ đề, nên đọc liền mạch hơn
+    # là lôi bài lớp 1 lên.
+    chao = [m for m in nguon if la_chao(m)]
+    biet = [m for m in nguon if la_tam_biet(m) and not la_chao(m)]
+    giua = [m for m in nguon if not la_chao(m) and not la_tam_biet(m)]
+    giua.sort(key=lambda m: (not m["moi"], -m["lop"], -m["unit"]))
+
+    def dat(m: dict, chi_mot: bool = False) -> None:
+        """Đặt một mẫu thành một hoặc hai dòng. Mỗi mẫu dùng ĐÚNG MỘT LẦN."""
+        hoi, dap = m["hoi"], m["dap"]
+        # ── CÙNG MỘT CÂU HỎI, HAI MẪU ĐÁP ──
+        # Unit 5 có hai mẫu chung câu hỏi "What's your hobby?" ("It's cooking." và
+        # "I like singing."). Chặn câu hỏi trùng thì mẫu thứ hai không bao giờ được
+        # dạy. Nên hỏi một lần, rồi vế đáp thứ hai thành một dòng NÓI THÊM của
+        # chính bạn ấy — đúng cách người ta nói: "It's cooking. I like cooking."
+        ai_ep = None
+        if hoi and any(d["cau"] == hoi for d in dong):
+            # Ai đã ĐÁP câu hỏi ấy thì chính người đó nói thêm. Để luân phiên như
+            # câu đơn bình thường thì ra "Mai: I like singing." — Mai tự trả lời
+            # câu Mai vừa hỏi, và Bill thì im. Đọc lên thấy sai ngay.
+            i = next(k for k, d in enumerate(dong) if d["cau"] == hoi)
+            ai_ep = dong[i + 1]["ai"] if i + 1 < len(dong) else None
+            hoi = None
+        if hoi and not chi_mot:
             if len(dong) + 2 > toi_da:
+                return
+            if not (_hop_vai(hoi, a_, b_) and _hop_vai(dap, b_, a_)):
+                return
+            if not _hop_gioi(hoi, dong):
+                return
+            if not them_duoc(hoi) or any(d["cau"] == dap for d in dong):
+                return
+            dong.append({"cau": hoi, "ai": a_})
+            dong.append({"cau": dap, "ai": b_})
+            return
+        # Câu đơn: ưu tiên người CHƯA nói ở dòng trên, để hai bên thay phiên.
+        vua = dong[-1]["ai"] if dong else None
+        for c in ([dap] + [x for x in m["vidu"] if x != dap]):
+            if not _hop_gioi(c, dong):
                 continue
-            if lan == 0 and not them_duoc(hoi):
-                continue
-            if any(d["cau"] == dap for d in dong):
-                continue
-            dong.append({"cau": hoi, "ai": ai_hoi})
-            dong.append({"cau": dap, "ai": ai_dap})
-            da_hoi[hoi] = lan + 1
-        elif phan:
-            # ── CÂU ĐƠN: ĐỔI LƯỢT, đừng dồn hết cho một bạn ──
-            # Dồn hết cho bạn ĐÁP thì ra "Bill: Touch your face! / Bill: Touch
-            # your hair!" — Bill ra lệnh hai lần liền còn Mai đứng im. Ưu tiên
-            # người CHƯA nói ở dòng trên; `_hop_vai` vẫn gác, nên câu tự xưng
-            # tên không bao giờ rơi vào miệng người khác.
-            x = phan[0]
-            vua_noi = dong[-1]["ai"] if dong else None
-            for ai in ([a_, b_] if vua_noi == b_ else [b_, a_]):
-                if _hop_vai(x, ai, a_ if ai == b_ else b_) and them_duoc(x):
-                    dong.append({"cau": x, "ai": ai})
-                    break
+            thu = [ai_ep] if ai_ep else ([a_, b_] if vua == b_ else [b_, a_])
+            for ai in thu:
+                if _hop_vai(c, ai, a_ if ai == b_ else b_) and them_duoc(c):
+                    dong.append({"cau": c, "ai": ai})
+                    return
+
+    # ① một lượt chào — hai bạn chào nhau, không phải một bạn chào hai lần.
+    #    Xoay cả CÁCH chào, cùng lý do với việc xoay tên: hai mươi bài mở bằng đúng
+    #    một câu thì bé không đọc nữa.
+    if chao:
+        chao = chao[xoay % len(chao):] + chao[:xoay % len(chao)]
+
+    def dat_chao(ai: str, ban: str) -> None:
+        """Một lượt chào của ĐÚNG người này.
+
+        ⚠ Không để phép luân phiên tự chọn. Luân phiên chỉ ngó dòng ngay trước, nên
+        khi mẫu chào thứ hai lại chỉ có ví dụ mang tên bạn A thì `_hop_vai` ép nó về
+        bạn A lần nữa, và ra:
+
+            Mai: Hello. I'm Mai.
+            Mai: Hi, I'm Mai.          ← Mai tự giới thiệu hai lần
+
+        Đúng cái lỗi bác bắt ở bản trước. Ở đây ép vai: lượt một của bạn ĐÁP, lượt
+        hai của bạn HỎI. Không tìm được câu hợp cho bạn thứ hai thì thôi — một lời
+        chào vẫn hơn hai lời chào của cùng một người.
+        """
+        for m in chao:
+            for c in ([m["dap"]] + [x for x in m["vidu"] if x != m["dap"]]):
+                if _hop_vai(c, ai, ban) and them_duoc(c):
+                    dong.append({"cau": c, "ai": ai})
+                    return
+
+    dat_chao(b_, a_)
+    dat_chao(a_, b_)
+
+    # ② phần giữa
+    for m in giua:
+        # Chừa ĐÚNG MỘT dòng cho lời tạm biệt, không chừa hai: nội dung của bài
+        # quan trọng hơn lời chia tay. Chừa hai thì unit hai mẫu câu chỉ kịp dạy
+        # một mẫu — đã thấy thật ở unit 5.
+        if len(dong) >= toi_da - (1 if biet else 0):
+            break
+        dat(m)
+
+    # ③ một lời tạm biệt, nếu còn chỗ
+    for m in biet[:1]:
+        dat(m, chi_mot=True)
+
+    # ④ hết mẫu mà đoạn vẫn ngắn thì vét thêm cách điền khác — chỉ khi thiếu, để
+    #    đoạn bình thường không bị lắp thêm dòng cùng khuôn.
+    if len(dong) < SO_DONG_TOI_THIEU_UNIT:
+        for m in giua:
+            for c in m["vidu"]:
+                vua = dong[-1]["ai"] if dong else None
+                for ai in ([a_, b_] if vua == b_ else [b_, a_]):
+                    if _hop_vai(c, ai, a_ if ai == b_ else b_) and them_duoc(c):
+                        dong.append({"cau": c, "ai": ai})
+                        break
     return dong
 
 
@@ -556,7 +638,10 @@ def dung(lop: int) -> tuple[list[dict], list[dict]]:
     # chỉ lấy câu của chính unit, nên bé vừa học xong là đọc được luôn.
     for b in bais:
         kho = _kho_tu(chuans, b["chuong"], chuong_cua)
-        doan = _hoi_thoai([b], kho, ten_sach, SO_DONG_TOI_DA)
+        # Nguồn câu là CẢ KHO TÍCH LUỸ tới unit này, không chỉ mấy ví dụ của
+        # chính nó — bác chốt 19-08. Xem `kho_cau_tienganh`.
+        nguon = cau_tich_luy(lop, b["so"], kho, {b["so"]})
+        doan = _hoi_thoai(nguon, ten_sach, SO_DONG_TOI_DA, b["so"])
         if len(doan) < SO_DONG_TOI_THIEU_UNIT:
             print(f"  ⚠ unit {b['so']}: chỉ dựng được {len(doan)} dòng, bỏ qua")
             continue
@@ -572,7 +657,9 @@ def dung(lop: int) -> tuple[list[dict], list[dict]]:
     # ══ MỖI CHƯƠNG MỘT BÀI ĐỌC — ôn lại cả bốn unit ══
     for c, ds in sorted(theo_chuong.items()):
         kho = _kho_tu(chuans, c, chuong_cua)
-        doan = _hoi_thoai(ds, kho, ten_sach, SO_DONG_TOI_DA_CHUONG)
+        nguon = cau_tich_luy(lop, max(x["so"] for x in ds), kho,
+                             {x["so"] for x in ds})
+        doan = _hoi_thoai(nguon, ten_sach, SO_DONG_TOI_DA_CHUONG, c)
         if len(doan) < SO_DONG_TOI_THIEU:
             print(f"  ⚠ chương {c}: chỉ dựng được {len(doan)} dòng, bỏ qua")
             continue

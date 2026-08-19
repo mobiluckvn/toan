@@ -8,6 +8,16 @@
   "name": "ĐỌC HIỂU · UNIT 0 · KHỞI ĐỘNG",
   "doan": [
    {
+    "cau": "Hi, I'm Bill.",
+    "ai": "Bill",
+    "am": "cau_hi__i_m_bill"
+   },
+   {
+    "cau": "Hi, I'm Mai.",
+    "ai": "Mai",
+    "am": "cau_hi__i_m_mai"
+   },
+   {
     "cau": "What number is it?",
     "ai": "Mai",
     "am": "cau_what_number_is_it"
@@ -18,14 +28,19 @@
     "am": "cau_it_s_five"
    },
    {
-    "cau": "What number is it?",
-    "ai": "Bill",
-    "am": "cau_what_number_is_it"
+    "cau": "Is the blanket near the tent?",
+    "ai": "Mai",
+    "am": "cau_is_the_blanket_near_the_tent"
    },
    {
-    "cau": "It's one.",
+    "cau": "No, it isn't. It's in the tent.",
+    "ai": "Bill",
+    "am": "cau_no__it_isn_t__it_s_in_the_tent"
+   },
+   {
+    "cau": "Bye, Bill.",
     "ai": "Mai",
-    "am": "cau_it_s_one"
+    "am": "cau_bye__bill"
    }
   ],
   "cau": [
@@ -51,6 +66,7 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
+     "It's one.",
      "It's five.",
      "It's two.",
      "It's three."
@@ -63,18 +79,18 @@
    {
     "id": "D3",
     "loai": "chiTiet",
-    "text": "Câu “It's two.” có trong bài đọc không?",
+    "text": "Câu “It's one.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_it_s_two",
-    "amChu": "It's two.",
+    "am": "cau_it_s_one",
+    "amChu": "It's one.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's two.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's one.”."
    }
   ],
   "soCau": 3,
@@ -89,24 +105,39 @@
   "name": "ĐỌC HIỂU · UNIT 1 · CHÀO HỎI",
   "doan": [
    {
-    "cau": "Hello. I'm Ben.",
-    "ai": "Ben",
-    "am": "cau_hello__i_m_ben"
+    "cau": "Hello. I'm Mai.",
+    "ai": "Mai",
+    "am": "cau_hello__i_m_mai"
    },
    {
-    "cau": "Hello. I'm Lucy.",
-    "ai": "Lucy",
-    "am": "cau_hello__i_m_lucy"
+    "cau": "Hi, I'm Nam.",
+    "ai": "Nam",
+    "am": "cau_hi__i_m_nam"
    },
    {
-    "cau": "Hello, Ben. I'm Lucy.",
-    "ai": "Lucy",
-    "am": "cau_hello__ben__i_m_lucy"
+    "cau": "How are you?",
+    "ai": "Nam",
+    "am": "cau_how_are_you"
    },
    {
-    "cau": "Hello, Lucy. I'm Ben.",
-    "ai": "Ben",
-    "am": "cau_hello__lucy__i_m_ben"
+    "cau": "Fine, thank you.",
+    "ai": "Mai",
+    "am": "cau_fine__thank_you"
+   },
+   {
+    "cau": "What number is it?",
+    "ai": "Nam",
+    "am": "cau_what_number_is_it"
+   },
+   {
+    "cau": "It's five.",
+    "ai": "Mai",
+    "am": "cau_it_s_five"
+   },
+   {
+    "cau": "Bye, Mai.",
+    "ai": "Nam",
+    "am": "cau_bye__mai"
    }
   ],
   "cau": [
@@ -132,49 +163,35 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
+     "Hello. I'm Ben.",
+     "Hello. I'm Lucy.",
      "Hello. I'm Mai.",
-     "Hello. I'm Minh.",
-     "Hello. I'm Ben."
+     "Hello. I'm Minh."
     ],
     "answerKey": {
-     "choice": "Hello. I'm Ben."
+     "choice": "Hello. I'm Mai."
     },
-    "solutionNarrative": "“Hello. I'm Ben.” — con đọc lại đoạn trên xem nhé."
+    "solutionNarrative": "“Hello. I'm Mai.” — con đọc lại đoạn trên xem nhé."
    },
    {
     "id": "D3",
     "loai": "chiTiet",
-    "text": "Câu nào CÓ trong bài đọc?",
-    "format": "chon",
-    "choices": [
-     "Hello, Minh. I'm Lucy.",
-     "Hello, Mai. I'm Lucy.",
-     "Hello, Ben. I'm Lucy."
-    ],
-    "answerKey": {
-     "choice": "Hello, Ben. I'm Lucy."
-    },
-    "solutionNarrative": "“Hello, Ben. I'm Lucy.” — con đọc lại đoạn trên xem nhé."
-   },
-   {
-    "id": "D4",
-    "loai": "chiTiet",
-    "text": "Câu “Hello. I'm Mai.” có trong bài đọc không?",
+    "text": "Câu “Hello. I'm Ben.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_hello__i_m_mai",
-    "amChu": "Hello. I'm Mai.",
+    "am": "cau_hello__i_m_ben",
+    "amChu": "Hello. I'm Ben.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “Hello. I'm Mai.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “Hello. I'm Ben.”."
    }
   ],
-  "soCau": 4,
-  "need": 3
+  "soCau": 3,
+  "need": 2
  },
  {
   "id": "DOC:TA3.U02",
@@ -185,24 +202,39 @@
   "name": "ĐỌC HIỂU · UNIT 2 · TÊN CỦA CHÚNG MÌNH",
   "doan": [
    {
-    "cau": "What's your name?",
-    "ai": "Bill",
-    "am": "cau_what_s_your_name"
+    "cau": "Hi, I'm Nam.",
+    "ai": "Nam",
+    "am": "cau_hi__i_m_nam"
    },
    {
-    "cau": "My name's Mary.",
-    "ai": "Mary",
-    "am": "cau_my_name_s_mary"
+    "cau": "Hi, I'm Linh.",
+    "ai": "Linh",
+    "am": "cau_hi__i_m_linh"
    },
    {
-    "cau": "What's your name?",
-    "ai": "Mary",
-    "am": "cau_what_s_your_name"
+    "cau": "How old are you?",
+    "ai": "Linh",
+    "am": "cau_how_old_are_you"
    },
    {
-    "cau": "My name's Bill.",
-    "ai": "Bill",
-    "am": "cau_my_name_s_bill"
+    "cau": "I'm eight years old.",
+    "ai": "Nam",
+    "am": "cau_i_m_eight_years_old"
+   },
+   {
+    "cau": "How are you?",
+    "ai": "Linh",
+    "am": "cau_how_are_you"
+   },
+   {
+    "cau": "Fine, thank you.",
+    "ai": "Nam",
+    "am": "cau_fine__thank_you"
+   },
+   {
+    "cau": "Bye, Nam.",
+    "ai": "Linh",
+    "am": "cau_bye__nam"
    }
   ],
   "cau": [
@@ -225,33 +257,34 @@
    {
     "id": "D2",
     "loai": "chiTiet",
-    "text": "Câu nào CÓ trong bài đọc?",
+    "text": "Trong bài có câu “___ old are you?”. Chỗ trống là chữ nào?",
     "format": "chon",
     "choices": [
-     "My name's Linh.",
-     "My name's Nam.",
-     "My name's Mary."
+     "my",
+     "name",
+     "how",
+     "what"
     ],
     "answerKey": {
-     "choice": "My name's Mary."
+     "choice": "how"
     },
-    "solutionNarrative": "“My name's Mary.” — con đọc lại đoạn trên xem nhé."
+    "solutionNarrative": "“How old are you?” — con đọc lại đoạn trên xem nhé."
    },
    {
     "id": "D3",
     "loai": "chiTiet",
-    "text": "Câu “My name's Linh.” có trong bài đọc không?",
+    "text": "Trong bài có câu “I'm eight years ___.”. Chỗ trống là chữ nào?",
     "format": "chon",
     "choices": [
-     "Có",
-     "Không"
+     "my",
+     "name",
+     "old",
+     "what"
     ],
-    "am": "cau_my_name_s_linh",
-    "amChu": "My name's Linh.",
     "answerKey": {
-     "choice": "Không"
+     "choice": "old"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “My name's Linh.”."
+    "solutionNarrative": "“I'm eight years old.” — con đọc lại đoạn trên xem nhé."
    }
   ],
   "soCau": 3,
@@ -266,24 +299,39 @@
   "name": "ĐỌC HIỂU · UNIT 3 · BẠN BÈ CỦA CHÚNG MÌNH",
   "doan": [
    {
+    "cau": "Hi, I'm Linh.",
+    "ai": "Linh",
+    "am": "cau_hi__i_m_linh"
+   },
+   {
+    "cau": "Hello. I'm Ben.",
+    "ai": "Ben",
+    "am": "cau_hello__i_m_ben"
+   },
+   {
     "cau": "This is Ms Hoa.",
-    "ai": "Bill",
+    "ai": "Linh",
     "am": "cau_this_is_ms_hoa"
    },
    {
-    "cau": "This is Mr Long.",
-    "ai": "Mai",
-    "am": "cau_this_is_mr_long"
+    "cau": "How old are you?",
+    "ai": "Ben",
+    "am": "cau_how_old_are_you"
    },
    {
-    "cau": "Is this Mr Long?",
-    "ai": "Mai",
-    "am": "cau_is_this_mr_long"
+    "cau": "I'm eight years old.",
+    "ai": "Linh",
+    "am": "cau_i_m_eight_years_old"
    },
    {
-    "cau": "Yes, it is.",
-    "ai": "Bill",
-    "am": "cau_yes__it_is"
+    "cau": "How are you?",
+    "ai": "Ben",
+    "am": "cau_how_are_you"
+   },
+   {
+    "cau": "Fine, thank you.",
+    "ai": "Linh",
+    "am": "cau_fine__thank_you"
    }
   ],
   "cau": [
@@ -306,32 +354,32 @@
    {
     "id": "D2",
     "loai": "chiTiet",
-    "text": "Câu “Is this Ms Hoa?” có trong bài đọc không?",
+    "text": "Câu “This is Mr Long.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_is_this_ms_hoa",
-    "amChu": "Is this Ms Hoa?",
+    "am": "cau_this_is_mr_long",
+    "amChu": "This is Mr Long.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “Is this Ms Hoa?”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “This is Mr Long.”."
    },
    {
     "id": "D3",
     "loai": "chiTiet",
-    "text": "Trong bài có câu “___ is Ms Hoa.”. Chỗ trống là chữ nào?",
+    "text": "Trong bài có câu “This is ___.”. Chỗ trống là chữ nào?",
     "format": "chon",
     "choices": [
+     "this",
+     "Ms Hoa",
      "that",
-     "it",
-     "friend",
-     "this"
+     "it"
     ],
     "answerKey": {
-     "choice": "this"
+     "choice": "Ms Hoa"
     },
     "solutionNarrative": "“This is Ms Hoa.” — con đọc lại đoạn trên xem nhé."
    }
@@ -348,34 +396,34 @@
   "name": "ĐỌC HIỂU · UNIT 4 · CƠ THỂ CHÚNG MÌNH",
   "doan": [
    {
+    "cau": "Hello. I'm Ben.",
+    "ai": "Ben",
+    "am": "cau_hello__i_m_ben"
+   },
+   {
+    "cau": "Hello. I'm Lucy.",
+    "ai": "Lucy",
+    "am": "cau_hello__i_m_lucy"
+   },
+   {
     "cau": "What's this?",
-    "ai": "Mai",
+    "ai": "Lucy",
     "am": "cau_what_s_this"
    },
    {
     "cau": "It's a nose.",
-    "ai": "Bill",
+    "ai": "Ben",
     "am": "cau_it_s_a_nose"
    },
    {
-    "cau": "What's this?",
-    "ai": "Bill",
-    "am": "cau_what_s_this"
-   },
-   {
-    "cau": "It's a face.",
-    "ai": "Mai",
-    "am": "cau_it_s_a_face"
-   },
-   {
     "cau": "Touch your face!",
-    "ai": "Bill",
+    "ai": "Lucy",
     "am": "cau_touch_your_face"
    },
    {
-    "cau": "Touch your hair!",
-    "ai": "Mai",
-    "am": "cau_touch_your_hair"
+    "cau": "This is Ms Hoa.",
+    "ai": "Ben",
+    "am": "cau_this_is_ms_hoa"
    }
   ],
   "cau": [
@@ -401,6 +449,7 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
+     "It's a face.",
      "It's a hair.",
      "It's a hand.",
      "It's a nose."
@@ -416,9 +465,10 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "Touch your face!",
+     "Touch your hair!",
      "Touch your hand!",
-     "Touch your ear!"
+     "Touch your ear!",
+     "Touch your face!"
     ],
     "answerKey": {
      "choice": "Touch your face!"
@@ -428,18 +478,18 @@
    {
     "id": "D4",
     "loai": "chiTiet",
-    "text": "Câu “It's a hair.” có trong bài đọc không?",
+    "text": "Câu “It's a face.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_it_s_a_hair",
-    "amChu": "It's a hair.",
+    "am": "cau_it_s_a_face",
+    "amChu": "It's a face.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's a hair.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's a face.”."
    }
   ],
   "soCau": 4,
@@ -454,24 +504,39 @@
   "name": "ĐỌC HIỂU · UNIT 5 · SỞ THÍCH CỦA MÌNH",
   "doan": [
    {
+    "cau": "Hello, Minh. I'm Lucy.",
+    "ai": "Lucy",
+    "am": "cau_hello__minh__i_m_lucy"
+   },
+   {
+    "cau": "Hello. I'm Minh.",
+    "ai": "Minh",
+    "am": "cau_hello__i_m_minh"
+   },
+   {
     "cau": "What's your hobby?",
-    "ai": "Mai",
+    "ai": "Minh",
     "am": "cau_what_s_your_hobby"
    },
    {
     "cau": "It's cooking.",
-    "ai": "Bill",
+    "ai": "Lucy",
     "am": "cau_it_s_cooking"
    },
    {
-    "cau": "What's your hobby?",
-    "ai": "Bill",
-    "am": "cau_what_s_your_hobby"
+    "cau": "I like singing.",
+    "ai": "Lucy",
+    "am": "cau_i_like_singing"
    },
    {
-    "cau": "It's dancing.",
-    "ai": "Mai",
-    "am": "cau_it_s_dancing"
+    "cau": "What's this?",
+    "ai": "Minh",
+    "am": "cau_what_s_this"
+   },
+   {
+    "cau": "It's a nose.",
+    "ai": "Lucy",
+    "am": "cau_it_s_a_nose"
    }
   ],
   "cau": [
@@ -498,6 +563,7 @@
     "format": "chon",
     "choices": [
      "It's cooking.",
+     "It's dancing.",
      "It's drawing.",
      "It's painting."
     ],
@@ -509,22 +575,38 @@
    {
     "id": "D3",
     "loai": "chiTiet",
-    "text": "Câu “It's drawing.” có trong bài đọc không?",
+    "text": "Câu nào CÓ trong bài đọc?",
+    "format": "chon",
+    "choices": [
+     "I like cooking.",
+     "I like dancing.",
+     "I like singing.",
+     "I like drawing."
+    ],
+    "answerKey": {
+     "choice": "I like singing."
+    },
+    "solutionNarrative": "“I like singing.” — con đọc lại đoạn trên xem nhé."
+   },
+   {
+    "id": "D4",
+    "loai": "chiTiet",
+    "text": "Câu “It's dancing.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_it_s_drawing",
-    "amChu": "It's drawing.",
+    "am": "cau_it_s_dancing",
+    "amChu": "It's dancing.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's drawing.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's dancing.”."
    }
   ],
-  "soCau": 3,
-  "need": 2
+  "soCau": 4,
+  "need": 3
  },
  {
   "id": "DOC:TA3.U06",
@@ -535,24 +617,39 @@
   "name": "ĐỌC HIỂU · UNIT 6 · TRƯỜNG CỦA CHÚNG MÌNH",
   "doan": [
    {
+    "cau": "Hello. I'm Minh.",
+    "ai": "Minh",
+    "am": "cau_hello__i_m_minh"
+   },
+   {
     "cau": "Is this our classroom?",
-    "ai": "Mai",
+    "ai": "Mary",
     "am": "cau_is_this_our_classroom"
    },
    {
     "cau": "Yes, it is.",
-    "ai": "Bill",
+    "ai": "Minh",
     "am": "cau_yes__it_is"
    },
    {
     "cau": "Let's go to the library.",
-    "ai": "Mai",
+    "ai": "Mary",
     "am": "cau_let_s_go_to_the_library"
    },
    {
     "cau": "OK, let's go.",
-    "ai": "Bill",
+    "ai": "Minh",
     "am": "cau_ok__let_s_go"
+   },
+   {
+    "cau": "What's your hobby?",
+    "ai": "Mary",
+    "am": "cau_what_s_your_hobby"
+   },
+   {
+    "cau": "It's cooking.",
+    "ai": "Minh",
+    "am": "cau_it_s_cooking"
    }
   ],
   "cau": [
@@ -633,34 +730,39 @@
   "name": "ĐỌC HIỂU · UNIT 7 · LỜI DẶN TRONG LỚP",
   "doan": [
    {
-    "cau": "Come in, please!",
+    "cau": "Hi, I'm Bill.",
     "ai": "Bill",
+    "am": "cau_hi__i_m_bill"
+   },
+   {
+    "cau": "Come in, please!",
+    "ai": "Mary",
     "am": "cau_come_in__please"
    },
    {
-    "cau": "Go out, please!",
-    "ai": "Mai",
-    "am": "cau_go_out__please"
-   },
-   {
-    "cau": "Sit down, please!",
-    "ai": "Bill",
-    "am": "cau_sit_down__please"
-   },
-   {
-    "cau": "Stand up, please!",
-    "ai": "Mai",
-    "am": "cau_stand_up__please"
-   },
-   {
     "cau": "May I come in?",
-    "ai": "Mai",
+    "ai": "Bill",
     "am": "cau_may_i_come_in"
    },
    {
     "cau": "Yes, you can.",
-    "ai": "Bill",
+    "ai": "Mary",
     "am": "cau_yes__you_can"
+   },
+   {
+    "cau": "Is this our classroom?",
+    "ai": "Bill",
+    "am": "cau_is_this_our_classroom"
+   },
+   {
+    "cau": "Yes, it is.",
+    "ai": "Mary",
+    "am": "cau_yes__it_is"
+   },
+   {
+    "cau": "Bye, Bill.",
+    "ai": "Mary",
+    "am": "cau_bye__bill"
    }
   ],
   "cau": [
@@ -725,14 +827,19 @@
   "name": "ĐỌC HIỂU · UNIT 8 · ĐỒ DÙNG HỌC TẬP",
   "doan": [
    {
+    "cau": "Hi, I'm Bill.",
+    "ai": "Bill",
+    "am": "cau_hi__i_m_bill"
+   },
+   {
+    "cau": "Hi, I'm Mai.",
+    "ai": "Mai",
+    "am": "cau_hi__i_m_mai"
+   },
+   {
     "cau": "I have a pen.",
     "ai": "Bill",
     "am": "cau_i_have_a_pen"
-   },
-   {
-    "cau": "I have a book.",
-    "ai": "Mai",
-    "am": "cau_i_have_a_book"
    },
    {
     "cau": "Do you have a ruler?",
@@ -743,6 +850,16 @@
     "cau": "Yes, I do.",
     "ai": "Bill",
     "am": "cau_yes__i_do"
+   },
+   {
+    "cau": "Come in, please!",
+    "ai": "Mai",
+    "am": "cau_come_in__please"
+   },
+   {
+    "cau": "Bye, Bill.",
+    "ai": "Mai",
+    "am": "cau_bye__bill"
    }
   ],
   "cau": [
@@ -769,6 +886,7 @@
     "format": "chon",
     "choices": [
      "I have a pen.",
+     "I have a book.",
      "I have a notebook.",
      "I have a pencil."
     ],
@@ -796,18 +914,18 @@
    {
     "id": "D4",
     "loai": "chiTiet",
-    "text": "Câu “I have a notebook.” có trong bài đọc không?",
+    "text": "Câu “I have a book.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_i_have_a_notebook",
-    "amChu": "I have a notebook.",
+    "am": "cau_i_have_a_book",
+    "amChu": "I have a book.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “I have a notebook.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “I have a book.”."
    }
   ],
   "soCau": 4,
@@ -822,24 +940,39 @@
   "name": "ĐỌC HIỂU · UNIT 9 · MÀU SẮC",
   "doan": [
    {
-    "cau": "What colour is it?",
+    "cau": "Hi, I'm Mai.",
     "ai": "Mai",
+    "am": "cau_hi__i_m_mai"
+   },
+   {
+    "cau": "Hi, I'm Nam.",
+    "ai": "Nam",
+    "am": "cau_hi__i_m_nam"
+   },
+   {
+    "cau": "What colour is it?",
+    "ai": "Nam",
     "am": "cau_what_colour_is_it"
    },
    {
     "cau": "It's blue.",
-    "ai": "Bill",
+    "ai": "Mai",
     "am": "cau_it_s_blue"
    },
    {
-    "cau": "What colour is it?",
-    "ai": "Bill",
-    "am": "cau_what_colour_is_it"
+    "cau": "What colour are they?",
+    "ai": "Nam",
+    "am": "cau_what_colour_are_they"
    },
    {
-    "cau": "It's black.",
+    "cau": "They're red.",
     "ai": "Mai",
-    "am": "cau_it_s_black"
+    "am": "cau_they_re_red"
+   },
+   {
+    "cau": "Bye, Mai.",
+    "ai": "Nam",
+    "am": "cau_bye__mai"
    }
   ],
   "cau": [
@@ -865,6 +998,7 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
+     "It's black.",
      "It's blue.",
      "It's brown.",
      "It's green."
@@ -877,22 +1011,38 @@
    {
     "id": "D3",
     "loai": "chiTiet",
-    "text": "Câu “What colour are they?” có trong bài đọc không?",
+    "text": "Câu nào CÓ trong bài đọc?",
+    "format": "chon",
+    "choices": [
+     "They're black.",
+     "They're blue.",
+     "They're brown.",
+     "They're red."
+    ],
+    "answerKey": {
+     "choice": "They're red."
+    },
+    "solutionNarrative": "“They're red.” — con đọc lại đoạn trên xem nhé."
+   },
+   {
+    "id": "D4",
+    "loai": "chiTiet",
+    "text": "Câu “It's black.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_what_colour_are_they",
-    "amChu": "What colour are they?",
+    "am": "cau_it_s_black",
+    "amChu": "It's black.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “What colour are they?”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's black.”."
    }
   ],
-  "soCau": 3,
-  "need": 2
+  "soCau": 4,
+  "need": 3
  },
  {
   "id": "DOC:TA3.U10",
@@ -903,29 +1053,39 @@
   "name": "ĐỌC HIỂU · UNIT 10 · GIỜ RA CHƠI",
   "doan": [
    {
+    "cau": "Hi, I'm Nam.",
+    "ai": "Nam",
+    "am": "cau_hi__i_m_nam"
+   },
+   {
+    "cau": "Hi, I'm Linh.",
+    "ai": "Linh",
+    "am": "cau_hi__i_m_linh"
+   },
+   {
     "cau": "I play football at break time.",
-    "ai": "Bill",
+    "ai": "Nam",
     "am": "cau_i_play_football_at_break_time"
    },
    {
-    "cau": "I chat at break time.",
-    "ai": "Mai",
-    "am": "cau_i_chat_at_break_time"
-   },
-   {
-    "cau": "I badminton at break time.",
-    "ai": "Bill",
-    "am": "cau_i_badminton_at_break_time"
-   },
-   {
     "cau": "What do you do at break time?",
-    "ai": "Mai",
+    "ai": "Linh",
     "am": "cau_what_do_you_do_at_break_time"
    },
    {
     "cau": "I play chess.",
-    "ai": "Bill",
+    "ai": "Nam",
     "am": "cau_i_play_chess"
+   },
+   {
+    "cau": "What colour is it?",
+    "ai": "Linh",
+    "am": "cau_what_colour_is_it"
+   },
+   {
+    "cau": "It's blue.",
+    "ai": "Nam",
+    "am": "cau_it_s_blue"
    }
   ],
   "cau": [
@@ -948,22 +1108,6 @@
    {
     "id": "D2",
     "loai": "chiTiet",
-    "text": "Câu “I basketball at break time.” có trong bài đọc không?",
-    "format": "chon",
-    "choices": [
-     "Có",
-     "Không"
-    ],
-    "am": "cau_i_basketball_at_break_time",
-    "amChu": "I basketball at break time.",
-    "answerKey": {
-     "choice": "Không"
-    },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “I basketball at break time.”."
-   },
-   {
-    "id": "D3",
-    "loai": "chiTiet",
     "text": "Trong bài có câu “I play football at ___.”. Chỗ trống là chữ nào?",
     "format": "chon",
     "choices": [
@@ -976,6 +1120,22 @@
      "choice": "break time"
     },
     "solutionNarrative": "“I play football at break time.” — con đọc lại đoạn trên xem nhé."
+   },
+   {
+    "id": "D3",
+    "loai": "chiTiet",
+    "text": "Trong bài có câu “What do you do at ___?”. Chỗ trống là chữ nào?",
+    "format": "chon",
+    "choices": [
+     "chat",
+     "break time",
+     "play",
+     "badminton"
+    ],
+    "answerKey": {
+     "choice": "break time"
+    },
+    "solutionNarrative": "“What do you do at break time?” — con đọc lại đoạn trên xem nhé."
    }
   ],
   "soCau": 3,
@@ -990,34 +1150,39 @@
   "name": "ĐỌC HIỂU · UNIT 11 · GIA ĐÌNH MÌNH",
   "doan": [
    {
+    "cau": "Hi, I'm Linh.",
+    "ai": "Linh",
+    "am": "cau_hi__i_m_linh"
+   },
+   {
+    "cau": "Hello. I'm Ben.",
+    "ai": "Ben",
+    "am": "cau_hello__i_m_ben"
+   },
+   {
     "cau": "Who's this?",
-    "ai": "Mai",
+    "ai": "Ben",
     "am": "cau_who_s_this"
    },
    {
     "cau": "It's my sister.",
-    "ai": "Bill",
+    "ai": "Linh",
     "am": "cau_it_s_my_sister"
    },
    {
-    "cau": "Who's this?",
-    "ai": "Bill",
-    "am": "cau_who_s_this"
+    "cau": "I play football at break time.",
+    "ai": "Ben",
+    "am": "cau_i_play_football_at_break_time"
    },
    {
-    "cau": "It's my father.",
-    "ai": "Mai",
-    "am": "cau_it_s_my_father"
+    "cau": "What do you do at break time?",
+    "ai": "Ben",
+    "am": "cau_what_do_you_do_at_break_time"
    },
    {
-    "cau": "How old is he?",
-    "ai": "Mai",
-    "am": "cau_how_old_is_he"
-   },
-   {
-    "cau": "He's twenty years old.",
-    "ai": "Bill",
-    "am": "cau_he_s_twenty_years_old"
+    "cau": "I play chess.",
+    "ai": "Linh",
+    "am": "cau_i_play_chess"
    }
   ],
   "cau": [
@@ -1043,9 +1208,10 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
+     "It's my father.",
      "It's my mother.",
-     "It's my brother.",
-     "It's my sister."
+     "It's my sister.",
+     "It's my brother."
     ],
     "answerKey": {
      "choice": "It's my sister."
@@ -1055,18 +1221,18 @@
    {
     "id": "D3",
     "loai": "chiTiet",
-    "text": "Câu “It's my mother.” có trong bài đọc không?",
+    "text": "Câu “It's my father.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_it_s_my_mother",
-    "amChu": "It's my mother.",
+    "am": "cau_it_s_my_father",
+    "amChu": "It's my father.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's my mother.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's my father.”."
    }
   ],
   "soCau": 3,
@@ -1081,34 +1247,34 @@
   "name": "ĐỌC HIỂU · UNIT 12 · NGHỀ NGHIỆP",
   "doan": [
    {
+    "cau": "Hello. I'm Ben.",
+    "ai": "Ben",
+    "am": "cau_hello__i_m_ben"
+   },
+   {
+    "cau": "Hello. I'm Lucy.",
+    "ai": "Lucy",
+    "am": "cau_hello__i_m_lucy"
+   },
+   {
     "cau": "What's her job?",
-    "ai": "Mai",
+    "ai": "Lucy",
     "am": "cau_what_s_her_job"
    },
    {
     "cau": "She's a doctor.",
-    "ai": "Bill",
+    "ai": "Ben",
     "am": "cau_she_s_a_doctor"
    },
    {
-    "cau": "What's her job?",
-    "ai": "Bill",
-    "am": "cau_what_s_her_job"
+    "cau": "Who's this?",
+    "ai": "Lucy",
+    "am": "cau_who_s_this"
    },
    {
-    "cau": "She's a cook.",
-    "ai": "Mai",
-    "am": "cau_she_s_a_cook"
-   },
-   {
-    "cau": "Is he a doctor?",
-    "ai": "Mai",
-    "am": "cau_is_he_a_doctor"
-   },
-   {
-    "cau": "Yes, he is.",
-    "ai": "Bill",
-    "am": "cau_yes__he_is"
+    "cau": "It's my sister.",
+    "ai": "Ben",
+    "am": "cau_it_s_my_sister"
    }
   ],
   "cau": [
@@ -1134,9 +1300,10 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
+     "She's a cook.",
      "She's a driver.",
-     "She's a farmer.",
-     "She's a doctor."
+     "She's a doctor.",
+     "She's a farmer."
     ],
     "answerKey": {
      "choice": "She's a doctor."
@@ -1146,38 +1313,22 @@
    {
     "id": "D3",
     "loai": "chiTiet",
-    "text": "Câu nào CÓ trong bài đọc?",
-    "format": "chon",
-    "choices": [
-     "Is she a cook?",
-     "Is she a driver?",
-     "Is he a doctor?",
-     "Is she a farmer?"
-    ],
-    "answerKey": {
-     "choice": "Is he a doctor?"
-    },
-    "solutionNarrative": "“Is he a doctor?” — con đọc lại đoạn trên xem nhé."
-   },
-   {
-    "id": "D4",
-    "loai": "chiTiet",
-    "text": "Câu “She's a driver.” có trong bài đọc không?",
+    "text": "Câu “She's a cook.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_she_s_a_driver",
-    "amChu": "She's a driver.",
+    "am": "cau_she_s_a_cook",
+    "amChu": "She's a cook.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “She's a driver.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “She's a cook.”."
    }
   ],
-  "soCau": 4,
-  "need": 3
+  "soCau": 3,
+  "need": 2
  },
  {
   "id": "DOC:TA3.U13",
@@ -1188,34 +1339,34 @@
   "name": "ĐỌC HIỂU · UNIT 13 · NGÔI NHÀ CỦA MÌNH",
   "doan": [
    {
+    "cau": "Hello. I'm Lucy.",
+    "ai": "Lucy",
+    "am": "cau_hello__i_m_lucy"
+   },
+   {
+    "cau": "Hello. I'm Minh.",
+    "ai": "Minh",
+    "am": "cau_hello__i_m_minh"
+   },
+   {
     "cau": "Where's your bedroom?",
-    "ai": "Mai",
+    "ai": "Minh",
     "am": "cau_where_s_your_bedroom"
    },
    {
     "cau": "It's here.",
-    "ai": "Bill",
+    "ai": "Lucy",
     "am": "cau_it_s_here"
    },
    {
     "cau": "Where are the chairs?",
-    "ai": "Mai",
+    "ai": "Minh",
     "am": "cau_where_are_the_chairs"
    },
    {
     "cau": "They're in the living room.",
-    "ai": "Bill",
+    "ai": "Lucy",
     "am": "cau_they_re_in_the_living_room"
-   },
-   {
-    "cau": "Where are the lamps?",
-    "ai": "Mai",
-    "am": "cau_where_are_the_lamps"
-   },
-   {
-    "cau": "They're in the room.",
-    "ai": "Bill",
-    "am": "cau_they_re_in_the_room"
    }
   ],
   "cau": [
@@ -1253,6 +1404,21 @@
    {
     "id": "D3",
     "loai": "chiTiet",
+    "text": "Câu nào CÓ trong bài đọc?",
+    "format": "chon",
+    "choices": [
+     "Where are the lamps?",
+     "Where are the tables?",
+     "Where are the chairs?"
+    ],
+    "answerKey": {
+     "choice": "Where are the chairs?"
+    },
+    "solutionNarrative": "“Where are the chairs?” — con đọc lại đoạn trên xem nhé."
+   },
+   {
+    "id": "D4",
+    "loai": "chiTiet",
     "text": "Câu “Where's the bathroom?” có trong bài đọc không?",
     "format": "chon",
     "choices": [
@@ -1267,8 +1433,8 @@
     "solutionNarrative": "KHÔNG — đoạn trên không có câu “Where's the bathroom?”."
    }
   ],
-  "soCau": 3,
-  "need": 2
+  "soCau": 4,
+  "need": 3
  },
  {
   "id": "DOC:TA3.U14",
@@ -1279,24 +1445,39 @@
   "name": "ĐỌC HIỂU · UNIT 14 · PHÒNG NGỦ CỦA MÌNH",
   "doan": [
    {
+    "cau": "Hello. I'm Minh.",
+    "ai": "Minh",
+    "am": "cau_hello__i_m_minh"
+   },
+   {
     "cau": "There's a bed in the room.",
-    "ai": "Bill",
+    "ai": "Mary",
     "am": "cau_there_s_a_bed_in_the_room"
    },
    {
-    "cau": "There's a desk in the room.",
-    "ai": "Mai",
-    "am": "cau_there_s_a_desk_in_the_room"
-   },
-   {
     "cau": "The door is big.",
-    "ai": "Bill",
+    "ai": "Minh",
     "am": "cau_the_door_is_big"
    },
    {
-    "cau": "The bed is big.",
-    "ai": "Mai",
-    "am": "cau_the_bed_is_big"
+    "cau": "Where's your bedroom?",
+    "ai": "Mary",
+    "am": "cau_where_s_your_bedroom"
+   },
+   {
+    "cau": "It's here.",
+    "ai": "Minh",
+    "am": "cau_it_s_here"
+   },
+   {
+    "cau": "Where are the chairs?",
+    "ai": "Mary",
+    "am": "cau_where_are_the_chairs"
+   },
+   {
+    "cau": "They're in the living room.",
+    "ai": "Minh",
+    "am": "cau_they_re_in_the_living_room"
    }
   ],
   "cau": [
@@ -1322,8 +1503,9 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "There's a door in the room.",
+     "There's a desk in the room.",
      "There's a bed in the room.",
+     "There's a door in the room.",
      "There's a window in the room."
     ],
     "answerKey": {
@@ -1337,9 +1519,10 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "The door is big.",
+     "The bed is big.",
      "The door is new.",
-     "The desk is big."
+     "The desk is big.",
+     "The door is big."
     ],
     "answerKey": {
      "choice": "The door is big."
@@ -1349,18 +1532,18 @@
    {
     "id": "D4",
     "loai": "chiTiet",
-    "text": "Câu “There's a door in the room.” có trong bài đọc không?",
+    "text": "Câu “There's a desk in the room.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_there_s_a_door_in_the_room",
-    "amChu": "There's a door in the room.",
+    "am": "cau_there_s_a_desk_in_the_room",
+    "amChu": "There's a desk in the room.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “There's a door in the room.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “There's a desk in the room.”."
    }
   ],
   "soCau": 4,
@@ -1375,34 +1558,39 @@
   "name": "ĐỌC HIỂU · UNIT 15 · Ở BÀN ĂN",
   "doan": [
    {
+    "cau": "Hi, I'm Bill.",
+    "ai": "Bill",
+    "am": "cau_hi__i_m_bill"
+   },
+   {
     "cau": "Would you like some bread?",
-    "ai": "Mai",
+    "ai": "Bill",
     "am": "cau_would_you_like_some_bread"
    },
    {
     "cau": "Yes, please.",
-    "ai": "Bill",
+    "ai": "Mary",
     "am": "cau_yes__please"
    },
    {
     "cau": "What would you like to eat?",
-    "ai": "Mai",
+    "ai": "Bill",
     "am": "cau_what_would_you_like_to_eat"
    },
    {
     "cau": "I'd like some rice, please.",
-    "ai": "Bill",
+    "ai": "Mary",
     "am": "cau_i_d_like_some_rice__please"
    },
    {
-    "cau": "What would you like to eat?",
+    "cau": "There's a bed in the room.",
     "ai": "Bill",
-    "am": "cau_what_would_you_like_to_eat"
+    "am": "cau_there_s_a_bed_in_the_room"
    },
    {
-    "cau": "I'd like some bread, please.",
-    "ai": "Mai",
-    "am": "cau_i_d_like_some_bread__please"
+    "cau": "Bye, Bill.",
+    "ai": "Mary",
+    "am": "cau_bye__bill"
    }
   ],
   "cau": [
@@ -1444,9 +1632,10 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
+     "I'd like some bread, please.",
      "I'd like some meat, please.",
-     "I'd like some juice, please.",
-     "I'd like some rice, please."
+     "I'd like some rice, please.",
+     "I'd like some juice, please."
     ],
     "answerKey": {
      "choice": "I'd like some rice, please."
@@ -1482,6 +1671,16 @@
   "name": "ĐỌC HIỂU · UNIT 16 · THÚ NUÔI CỦA MÌNH",
   "doan": [
    {
+    "cau": "Hi, I'm Bill.",
+    "ai": "Bill",
+    "am": "cau_hi__i_m_bill"
+   },
+   {
+    "cau": "Hello. I'm Mai.",
+    "ai": "Mai",
+    "am": "cau_hello__i_m_mai"
+   },
+   {
     "cau": "Do you have any dogs?",
     "ai": "Mai",
     "am": "cau_do_you_have_any_dogs"
@@ -1502,14 +1701,9 @@
     "am": "cau_i_have_some"
    },
    {
-    "cau": "How many bird do you have?",
+    "cau": "Bye, Bill.",
     "ai": "Mai",
-    "am": "cau_how_many_bird_do_you_have"
-   },
-   {
-    "cau": "I have many.",
-    "ai": "Bill",
-    "am": "cau_i_have_many"
+    "am": "cau_bye__bill"
    }
   ],
   "cau": [
@@ -1551,8 +1745,9 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "How many dog do you have?",
+     "How many bird do you have?",
      "How many dogs do you have?",
+     "How many dog do you have?",
      "How many cat do you have?"
     ],
     "answerKey": {
@@ -1589,24 +1784,39 @@
   "name": "ĐỌC HIỂU · UNIT 17 · ĐỒ CHƠI CỦA CHÚNG MÌNH",
   "doan": [
    {
+    "cau": "Hi, I'm Mai.",
+    "ai": "Mai",
+    "am": "cau_hi__i_m_mai"
+   },
+   {
+    "cau": "Hi, I'm Nam.",
+    "ai": "Nam",
+    "am": "cau_hi__i_m_nam"
+   },
+   {
     "cau": "She has a kite.",
-    "ai": "Bill",
+    "ai": "Mai",
     "am": "cau_she_has_a_kite"
    },
    {
-    "cau": "She has a bus.",
-    "ai": "Mai",
-    "am": "cau_she_has_a_bus"
-   },
-   {
     "cau": "They have toys.",
-    "ai": "Bill",
+    "ai": "Nam",
     "am": "cau_they_have_toys"
    },
    {
-    "cau": "They have bus.",
+    "cau": "Do you have any dogs?",
+    "ai": "Nam",
+    "am": "cau_do_you_have_any_dogs"
+   },
+   {
+    "cau": "Yes, I do.",
     "ai": "Mai",
-    "am": "cau_they_have_bus"
+    "am": "cau_yes__i_do"
+   },
+   {
+    "cau": "Bye, Mai.",
+    "ai": "Nam",
+    "am": "cau_bye__mai"
    }
   ],
   "cau": [
@@ -1632,9 +1842,10 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
+     "She has a bus.",
      "She has a car.",
-     "She has a plane.",
-     "She has a kite."
+     "She has a kite.",
+     "She has a plane."
     ],
     "answerKey": {
      "choice": "She has a kite."
@@ -1647,9 +1858,10 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
+     "They have bus.",
      "They have car.",
-     "They have kite.",
-     "They have toys."
+     "They have toys.",
+     "They have kite."
     ],
     "answerKey": {
      "choice": "They have toys."
@@ -1659,22 +1871,119 @@
    {
     "id": "D4",
     "loai": "chiTiet",
-    "text": "Câu “She has a car.” có trong bài đọc không?",
+    "text": "Câu “She has a bus.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_she_has_a_car",
-    "amChu": "She has a car.",
+    "am": "cau_she_has_a_bus",
+    "amChu": "She has a bus.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “She has a car.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “She has a bus.”."
    }
   ],
   "soCau": 4,
   "need": 3
+ },
+ {
+  "id": "DOC:TA3.U19",
+  "unit": 19,
+  "chapter": 5,
+  "phamVi": "unit",
+  "loai": "dochieu",
+  "name": "ĐỌC HIỂU · UNIT 19 · CHƠI NGOÀI TRỜI",
+  "doan": [
+   {
+    "cau": "Hi, I'm Linh.",
+    "ai": "Linh",
+    "am": "cau_hi__i_m_linh"
+   },
+   {
+    "cau": "Hello. I'm Ben.",
+    "ai": "Ben",
+    "am": "cau_hello__i_m_ben"
+   },
+   {
+    "cau": "She's cycling.",
+    "ai": "Linh",
+    "am": "cau_she_s_cycling"
+   },
+   {
+    "cau": "I'm reading.",
+    "ai": "Ben",
+    "am": "cau_i_m_reading"
+   },
+   {
+    "cau": "What are you doing?",
+    "ai": "Ben",
+    "am": "cau_what_are_you_doing"
+   },
+   {
+    "cau": "I'm singing.",
+    "ai": "Linh",
+    "am": "cau_i_m_singing"
+   },
+   {
+    "cau": "Bye, Linh.",
+    "ai": "Ben",
+    "am": "cau_bye__linh"
+   }
+  ],
+  "cau": [
+   {
+    "id": "D1",
+    "loai": "yChinh",
+    "text": "Bài đọc này nói về chuyện gì?",
+    "format": "chon",
+    "choices": [
+     "Chơi và làm",
+     "Ở vườn thú",
+     "Chơi ngoài trời",
+     "Đồ chơi của chúng mình"
+    ],
+    "answerKey": {
+     "choice": "Chơi ngoài trời"
+    },
+    "solutionNarrative": "Cả đoạn nói về chơi ngoài trời."
+   },
+   {
+    "id": "D2",
+    "loai": "chiTiet",
+    "text": "Câu “She's painting.” có trong bài đọc không?",
+    "format": "chon",
+    "choices": [
+     "Có",
+     "Không"
+    ],
+    "am": "cau_she_s_painting",
+    "amChu": "She's painting.",
+    "answerKey": {
+     "choice": "Không"
+    },
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “She's painting.”."
+   },
+   {
+    "id": "D3",
+    "loai": "chiTiet",
+    "text": "Trong bài có câu “She's ___.”. Chỗ trống là chữ nào?",
+    "format": "chon",
+    "choices": [
+     "flying a kite",
+     "painting",
+     "cycling",
+     "playing badminton"
+    ],
+    "answerKey": {
+     "choice": "cycling"
+    },
+    "solutionNarrative": "“She's cycling.” — con đọc lại đoạn trên xem nhé."
+   }
+  ],
+  "soCau": 3,
+  "need": 2
  },
  {
   "id": "DOC:TA3.U20",
@@ -1685,33 +1994,33 @@
   "name": "ĐỌC HIỂU · UNIT 20 · Ở VƯỜN THÚ",
   "doan": [
    {
+    "cau": "Hello, Lucy. I'm Ben.",
+    "ai": "Ben",
+    "am": "cau_hello__lucy__i_m_ben"
+   },
+   {
+    "cau": "Hello, Ben. I'm Lucy.",
+    "ai": "Lucy",
+    "am": "cau_hello__ben__i_m_lucy"
+   },
+   {
     "cau": "What can you see?",
-    "ai": "Mai",
+    "ai": "Lucy",
     "am": "cau_what_can_you_see"
    },
    {
     "cau": "I can see a tiger.",
-    "ai": "Bill",
+    "ai": "Ben",
     "am": "cau_i_can_see_a_tiger"
    },
    {
-    "cau": "What can you see?",
-    "ai": "Bill",
-    "am": "cau_what_can_you_see"
-   },
-   {
-    "cau": "I can see an elephant.",
-    "ai": "Mai",
-    "am": "cau_i_can_see_an_elephant"
-   },
-   {
     "cau": "What's the tiger doing?",
-    "ai": "Mai",
+    "ai": "Lucy",
     "am": "cau_what_s_the_tiger_doing"
    },
    {
     "cau": "It's swinging.",
-    "ai": "Bill",
+    "ai": "Ben",
     "am": "cau_it_s_swinging"
    }
   ],
@@ -1738,9 +2047,10 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
+     "I can see an elephant.",
+     "I can see a tiger.",
      "I can see a horse.",
-     "I can see a monkey.",
-     "I can see a tiger."
+     "I can see a monkey."
     ],
     "answerKey": {
      "choice": "I can see a tiger."
@@ -1765,18 +2075,18 @@
    {
     "id": "D4",
     "loai": "chiTiet",
-    "text": "Câu “I can see a horse.” có trong bài đọc không?",
+    "text": "Câu “I can see an elephant.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_i_can_see_a_horse",
-    "amChu": "I can see a horse.",
+    "am": "cau_i_can_see_an_elephant",
+    "amChu": "I can see an elephant.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “I can see a horse.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “I can see an elephant.”."
    }
   ],
   "soCau": 4,
@@ -1790,44 +2100,49 @@
   "name": "ĐỌC HIỂU CHƯƠNG 1 · CHÀO HỎI, TÊN VÀ BẠN BÈ",
   "doan": [
    {
-    "cau": "Hello. I'm Ben.",
-    "ai": "Ben",
-    "am": "cau_hello__i_m_ben"
+    "cau": "Hello. I'm Mai.",
+    "ai": "Mai",
+    "am": "cau_hello__i_m_mai"
    },
    {
-    "cau": "Hello. I'm Lucy.",
-    "ai": "Lucy",
-    "am": "cau_hello__i_m_lucy"
+    "cau": "Hi, I'm Nam.",
+    "ai": "Nam",
+    "am": "cau_hi__i_m_nam"
    },
    {
-    "cau": "Hello, Ben. I'm Lucy.",
-    "ai": "Lucy",
-    "am": "cau_hello__ben__i_m_lucy"
+    "cau": "This is Ms Hoa.",
+    "ai": "Mai",
+    "am": "cau_this_is_ms_hoa"
    },
    {
-    "cau": "Hello, Lucy. I'm Ben.",
-    "ai": "Ben",
-    "am": "cau_hello__lucy__i_m_ben"
+    "cau": "How old are you?",
+    "ai": "Nam",
+    "am": "cau_how_old_are_you"
+   },
+   {
+    "cau": "I'm eight years old.",
+    "ai": "Mai",
+    "am": "cau_i_m_eight_years_old"
+   },
+   {
+    "cau": "How are you?",
+    "ai": "Nam",
+    "am": "cau_how_are_you"
+   },
+   {
+    "cau": "Fine, thank you.",
+    "ai": "Mai",
+    "am": "cau_fine__thank_you"
    },
    {
     "cau": "What number is it?",
-    "ai": "Lucy",
+    "ai": "Nam",
     "am": "cau_what_number_is_it"
    },
    {
     "cau": "It's five.",
-    "ai": "Ben",
+    "ai": "Mai",
     "am": "cau_it_s_five"
-   },
-   {
-    "cau": "What number is it?",
-    "ai": "Ben",
-    "am": "cau_what_number_is_it"
-   },
-   {
-    "cau": "It's one.",
-    "ai": "Lucy",
-    "am": "cau_it_s_one"
    }
   ],
   "cau": [
@@ -1853,14 +2168,15 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
+     "Hello. I'm Ben.",
+     "Hello. I'm Lucy.",
      "Hello. I'm Mai.",
-     "Hello. I'm Minh.",
-     "Hello. I'm Ben."
+     "Hello. I'm Minh."
     ],
     "answerKey": {
-     "choice": "Hello. I'm Ben."
+     "choice": "Hello. I'm Mai."
     },
-    "solutionNarrative": "“Hello. I'm Ben.” — con đọc lại đoạn trên xem nhé."
+    "solutionNarrative": "“Hello. I'm Mai.” — con đọc lại đoạn trên xem nhé."
    },
    {
     "id": "D3",
@@ -1868,30 +2184,31 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "Hello, Minh. I'm Lucy.",
-     "Hello, Mai. I'm Lucy.",
-     "Hello, Ben. I'm Lucy."
+     "It's one.",
+     "It's five.",
+     "It's two.",
+     "It's three."
     ],
     "answerKey": {
-     "choice": "Hello, Ben. I'm Lucy."
+     "choice": "It's five."
     },
-    "solutionNarrative": "“Hello, Ben. I'm Lucy.” — con đọc lại đoạn trên xem nhé."
+    "solutionNarrative": "“It's five.” — con đọc lại đoạn trên xem nhé."
    },
    {
     "id": "D4",
     "loai": "chiTiet",
-    "text": "Câu “Hello. I'm Mai.” có trong bài đọc không?",
+    "text": "Câu “Hello. I'm Ben.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_hello__i_m_mai",
-    "amChu": "Hello. I'm Mai.",
+    "am": "cau_hello__i_m_ben",
+    "amChu": "Hello. I'm Ben.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “Hello. I'm Mai.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “Hello. I'm Ben.”."
    }
   ],
   "soCau": 4,
@@ -1905,44 +2222,49 @@
   "name": "ĐỌC HIỂU CHƯƠNG 2 · CƠ THỂ, SỞ THÍCH, TRƯỜNG LỚP",
   "doan": [
    {
-    "cau": "What's this?",
-    "ai": "Mai",
-    "am": "cau_what_s_this"
+    "cau": "Hi, I'm Nam.",
+    "ai": "Nam",
+    "am": "cau_hi__i_m_nam"
    },
    {
-    "cau": "It's a nose.",
-    "ai": "Bill",
-    "am": "cau_it_s_a_nose"
+    "cau": "Hi, I'm Linh.",
+    "ai": "Linh",
+    "am": "cau_hi__i_m_linh"
    },
    {
-    "cau": "What's this?",
-    "ai": "Bill",
-    "am": "cau_what_s_this"
+    "cau": "Come in, please!",
+    "ai": "Nam",
+    "am": "cau_come_in__please"
    },
    {
-    "cau": "It's a face.",
-    "ai": "Mai",
-    "am": "cau_it_s_a_face"
+    "cau": "May I come in?",
+    "ai": "Linh",
+    "am": "cau_may_i_come_in"
    },
    {
-    "cau": "Touch your face!",
-    "ai": "Bill",
-    "am": "cau_touch_your_face"
+    "cau": "Yes, you can.",
+    "ai": "Nam",
+    "am": "cau_yes__you_can"
    },
    {
-    "cau": "Touch your hair!",
-    "ai": "Mai",
-    "am": "cau_touch_your_hair"
+    "cau": "Is this our classroom?",
+    "ai": "Linh",
+    "am": "cau_is_this_our_classroom"
    },
    {
-    "cau": "What's your hobby?",
-    "ai": "Mai",
-    "am": "cau_what_s_your_hobby"
+    "cau": "Yes, it is.",
+    "ai": "Nam",
+    "am": "cau_yes__it_is"
    },
    {
-    "cau": "It's cooking.",
-    "ai": "Bill",
-    "am": "cau_it_s_cooking"
+    "cau": "Let's go to the library.",
+    "ai": "Linh",
+    "am": "cau_let_s_go_to_the_library"
+   },
+   {
+    "cau": "OK, let's go.",
+    "ai": "Nam",
+    "am": "cau_ok__let_s_go"
    }
   ],
   "cau": [
@@ -1968,14 +2290,15 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "It's a hair.",
-     "It's a hand.",
-     "It's a nose."
+     "May I go out?",
+     "May I come in?",
+     "May I sit down?",
+     "May I stand up?"
     ],
     "answerKey": {
-     "choice": "It's a nose."
+     "choice": "May I come in?"
     },
-    "solutionNarrative": "“It's a nose.” — con đọc lại đoạn trên xem nhé."
+    "solutionNarrative": "“May I come in?” — con đọc lại đoạn trên xem nhé."
    },
    {
     "id": "D3",
@@ -1983,30 +2306,31 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "Touch your face!",
-     "Touch your hand!",
-     "Touch your ear!"
+     "Is this our school?",
+     "Is this our classroom?",
+     "Is this our library?",
+     "Is this our gym?"
     ],
     "answerKey": {
-     "choice": "Touch your face!"
+     "choice": "Is this our classroom?"
     },
-    "solutionNarrative": "“Touch your face!” — con đọc lại đoạn trên xem nhé."
+    "solutionNarrative": "“Is this our classroom?” — con đọc lại đoạn trên xem nhé."
    },
    {
     "id": "D4",
     "loai": "chiTiet",
-    "text": "Câu “It's a hair.” có trong bài đọc không?",
+    "text": "Câu “May I go out?” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_it_s_a_hair",
-    "amChu": "It's a hair.",
+    "am": "cau_may_i_go_out",
+    "amChu": "May I go out?",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's a hair.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “May I go out?”."
    }
   ],
   "soCau": 4,
@@ -2020,44 +2344,49 @@
   "name": "ĐỌC HIỂU CHƯƠNG 3 · ĐỒ DÙNG, MÀU SẮC, GIỜ RA CHƠI",
   "doan": [
    {
-    "cau": "I have a pen.",
-    "ai": "Bill",
-    "am": "cau_i_have_a_pen"
+    "cau": "Hi, I'm Linh.",
+    "ai": "Linh",
+    "am": "cau_hi__i_m_linh"
    },
    {
-    "cau": "I have a book.",
-    "ai": "Mai",
-    "am": "cau_i_have_a_book"
+    "cau": "Hello. I'm Ben.",
+    "ai": "Ben",
+    "am": "cau_hello__i_m_ben"
    },
    {
-    "cau": "Do you have a ruler?",
-    "ai": "Mai",
-    "am": "cau_do_you_have_a_ruler"
+    "cau": "Who's this?",
+    "ai": "Ben",
+    "am": "cau_who_s_this"
    },
    {
-    "cau": "Yes, I do.",
-    "ai": "Bill",
-    "am": "cau_yes__i_do"
+    "cau": "It's my sister.",
+    "ai": "Linh",
+    "am": "cau_it_s_my_sister"
+   },
+   {
+    "cau": "I play football at break time.",
+    "ai": "Ben",
+    "am": "cau_i_play_football_at_break_time"
+   },
+   {
+    "cau": "What do you do at break time?",
+    "ai": "Ben",
+    "am": "cau_what_do_you_do_at_break_time"
+   },
+   {
+    "cau": "I play chess.",
+    "ai": "Linh",
+    "am": "cau_i_play_chess"
    },
    {
     "cau": "What colour is it?",
-    "ai": "Mai",
+    "ai": "Ben",
     "am": "cau_what_colour_is_it"
    },
    {
     "cau": "It's blue.",
-    "ai": "Bill",
+    "ai": "Linh",
     "am": "cau_it_s_blue"
-   },
-   {
-    "cau": "What colour is it?",
-    "ai": "Bill",
-    "am": "cau_what_colour_is_it"
-   },
-   {
-    "cau": "It's black.",
-    "ai": "Mai",
-    "am": "cau_it_s_black"
    }
   ],
   "cau": [
@@ -2083,14 +2412,15 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "I have a pen.",
-     "I have a notebook.",
-     "I have a pencil."
+     "It's my father.",
+     "It's my mother.",
+     "It's my sister.",
+     "It's my brother."
     ],
     "answerKey": {
-     "choice": "I have a pen."
+     "choice": "It's my sister."
     },
-    "solutionNarrative": "“I have a pen.” — con đọc lại đoạn trên xem nhé."
+    "solutionNarrative": "“It's my sister.” — con đọc lại đoạn trên xem nhé."
    },
    {
     "id": "D3",
@@ -2098,31 +2428,31 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "Do you have a book?",
-     "Do you have a notebook?",
-     "Do you have a pen?",
-     "Do you have a ruler?"
+     "It's black.",
+     "It's blue.",
+     "It's brown.",
+     "It's green."
     ],
     "answerKey": {
-     "choice": "Do you have a ruler?"
+     "choice": "It's blue."
     },
-    "solutionNarrative": "“Do you have a ruler?” — con đọc lại đoạn trên xem nhé."
+    "solutionNarrative": "“It's blue.” — con đọc lại đoạn trên xem nhé."
    },
    {
     "id": "D4",
     "loai": "chiTiet",
-    "text": "Câu “I have a notebook.” có trong bài đọc không?",
+    "text": "Câu “It's my father.” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_i_have_a_notebook",
-    "amChu": "I have a notebook.",
+    "am": "cau_it_s_my_father",
+    "amChu": "It's my father.",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “I have a notebook.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “It's my father.”."
    }
   ],
   "soCau": 4,
@@ -2136,44 +2466,44 @@
   "name": "ĐỌC HIỂU CHƯƠNG 4 · NGHỀ NGHIỆP, NHÀ CỬA, BỮA ĂN",
   "doan": [
    {
-    "cau": "What's her job?",
-    "ai": "Mai",
-    "am": "cau_what_s_her_job"
+    "cau": "Hello. I'm Ben.",
+    "ai": "Ben",
+    "am": "cau_hello__i_m_ben"
    },
    {
-    "cau": "She's a doctor.",
-    "ai": "Bill",
-    "am": "cau_she_s_a_doctor"
+    "cau": "Hello. I'm Lucy.",
+    "ai": "Lucy",
+    "am": "cau_hello__i_m_lucy"
    },
    {
-    "cau": "What's her job?",
-    "ai": "Bill",
-    "am": "cau_what_s_her_job"
+    "cau": "Would you like some bread?",
+    "ai": "Lucy",
+    "am": "cau_would_you_like_some_bread"
    },
    {
-    "cau": "She's a cook.",
-    "ai": "Mai",
-    "am": "cau_she_s_a_cook"
+    "cau": "Yes, please.",
+    "ai": "Ben",
+    "am": "cau_yes__please"
    },
    {
-    "cau": "Is he a doctor?",
-    "ai": "Mai",
-    "am": "cau_is_he_a_doctor"
+    "cau": "What would you like to eat?",
+    "ai": "Lucy",
+    "am": "cau_what_would_you_like_to_eat"
    },
    {
-    "cau": "Yes, he is.",
-    "ai": "Bill",
-    "am": "cau_yes__he_is"
+    "cau": "I'd like some rice, please.",
+    "ai": "Ben",
+    "am": "cau_i_d_like_some_rice__please"
    },
    {
-    "cau": "Is she a cook?",
-    "ai": "Mai",
-    "am": "cau_is_she_a_cook"
+    "cau": "There's a bed in the room.",
+    "ai": "Lucy",
+    "am": "cau_there_s_a_bed_in_the_room"
    },
    {
-    "cau": "Yes, she is.",
-    "ai": "Bill",
-    "am": "cau_yes__she_is"
+    "cau": "The door is big.",
+    "ai": "Ben",
+    "am": "cau_the_door_is_big"
    }
   ],
   "cau": [
@@ -2199,14 +2529,15 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "She's a driver.",
-     "She's a farmer.",
-     "She's a doctor."
+     "Would you like some meat?",
+     "Would you like some bread?",
+     "Would you like some rice?",
+     "Would you like some juice?"
     ],
     "answerKey": {
-     "choice": "She's a doctor."
+     "choice": "Would you like some bread?"
     },
-    "solutionNarrative": "“She's a doctor.” — con đọc lại đoạn trên xem nhé."
+    "solutionNarrative": "“Would you like some bread?” — con đọc lại đoạn trên xem nhé."
    },
    {
     "id": "D3",
@@ -2214,30 +2545,31 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "Is she a driver?",
-     "Is she a farmer?",
-     "Is he a doctor?"
+     "I'd like some bread, please.",
+     "I'd like some meat, please.",
+     "I'd like some rice, please.",
+     "I'd like some juice, please."
     ],
     "answerKey": {
-     "choice": "Is he a doctor?"
+     "choice": "I'd like some rice, please."
     },
-    "solutionNarrative": "“Is he a doctor?” — con đọc lại đoạn trên xem nhé."
+    "solutionNarrative": "“I'd like some rice, please.” — con đọc lại đoạn trên xem nhé."
    },
    {
     "id": "D4",
     "loai": "chiTiet",
-    "text": "Câu “She's a driver.” có trong bài đọc không?",
+    "text": "Câu “Would you like some meat?” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_she_s_a_driver",
-    "amChu": "She's a driver.",
+    "am": "cau_would_you_like_some_meat",
+    "amChu": "Would you like some meat?",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “She's a driver.”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “Would you like some meat?”."
    }
   ],
   "soCau": 4,
@@ -2251,44 +2583,44 @@
   "name": "ĐỌC HIỂU CHƯƠNG 5 · THÚ NUÔI, ĐỒ CHƠI VÀ VƯỜN THÚ",
   "doan": [
    {
-    "cau": "Do you have any dogs?",
-    "ai": "Mai",
-    "am": "cau_do_you_have_any_dogs"
+    "cau": "Hello, Minh. I'm Lucy.",
+    "ai": "Lucy",
+    "am": "cau_hello__minh__i_m_lucy"
    },
    {
-    "cau": "Yes, I do.",
-    "ai": "Bill",
-    "am": "cau_yes__i_do"
+    "cau": "Hello. I'm Minh.",
+    "ai": "Minh",
+    "am": "cau_hello__i_m_minh"
    },
    {
-    "cau": "How many dogs do you have?",
-    "ai": "Mai",
-    "am": "cau_how_many_dogs_do_you_have"
+    "cau": "What can you see?",
+    "ai": "Minh",
+    "am": "cau_what_can_you_see"
    },
    {
-    "cau": "I have some.",
-    "ai": "Bill",
-    "am": "cau_i_have_some"
+    "cau": "I can see a tiger.",
+    "ai": "Lucy",
+    "am": "cau_i_can_see_a_tiger"
    },
    {
-    "cau": "How many bird do you have?",
-    "ai": "Mai",
-    "am": "cau_how_many_bird_do_you_have"
+    "cau": "What's the tiger doing?",
+    "ai": "Minh",
+    "am": "cau_what_s_the_tiger_doing"
    },
    {
-    "cau": "I have many.",
-    "ai": "Bill",
-    "am": "cau_i_have_many"
+    "cau": "It's swinging.",
+    "ai": "Lucy",
+    "am": "cau_it_s_swinging"
    },
    {
-    "cau": "She has a kite.",
-    "ai": "Mai",
-    "am": "cau_she_has_a_kite"
+    "cau": "She's cycling.",
+    "ai": "Minh",
+    "am": "cau_she_s_cycling"
    },
    {
-    "cau": "She has a bus.",
-    "ai": "Bill",
-    "am": "cau_she_has_a_bus"
+    "cau": "I'm reading.",
+    "ai": "Lucy",
+    "am": "cau_i_m_reading"
    }
   ],
   "cau": [
@@ -2314,15 +2646,15 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "Do you have any dogs?",
-     "Do you have any birds?",
-     "Do you have any cats?",
-     "Do you have any goldfish?"
+     "I can see an elephant.",
+     "I can see a tiger.",
+     "I can see a horse.",
+     "I can see a monkey."
     ],
     "answerKey": {
-     "choice": "Do you have any dogs?"
+     "choice": "I can see a tiger."
     },
-    "solutionNarrative": "“Do you have any dogs?” — con đọc lại đoạn trên xem nhé."
+    "solutionNarrative": "“I can see a tiger.” — con đọc lại đoạn trên xem nhé."
    },
    {
     "id": "D3",
@@ -2330,30 +2662,30 @@
     "text": "Câu nào CÓ trong bài đọc?",
     "format": "chon",
     "choices": [
-     "How many dog do you have?",
-     "How many dogs do you have?",
-     "How many cat do you have?"
+     "What's the elephant doing?",
+     "What's the tiger doing?",
+     "What's the horse doing?"
     ],
     "answerKey": {
-     "choice": "How many dogs do you have?"
+     "choice": "What's the tiger doing?"
     },
-    "solutionNarrative": "“How many dogs do you have?” — con đọc lại đoạn trên xem nhé."
+    "solutionNarrative": "“What's the tiger doing?” — con đọc lại đoạn trên xem nhé."
    },
    {
     "id": "D4",
     "loai": "chiTiet",
-    "text": "Câu “Do you have any birds?” có trong bài đọc không?",
+    "text": "Câu “What are you doing?” có trong bài đọc không?",
     "format": "chon",
     "choices": [
      "Có",
      "Không"
     ],
-    "am": "cau_do_you_have_any_birds",
-    "amChu": "Do you have any birds?",
+    "am": "cau_what_are_you_doing",
+    "amChu": "What are you doing?",
     "answerKey": {
      "choice": "Không"
     },
-    "solutionNarrative": "KHÔNG — đoạn trên không có câu “Do you have any birds?”."
+    "solutionNarrative": "KHÔNG — đoạn trên không có câu “What are you doing?”."
    }
   ],
   "soCau": 4,
