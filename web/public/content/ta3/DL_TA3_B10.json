@@ -228,12 +228,12 @@
   "canonicalExamples": [
    "I play football at break time.",
    "I chat at break time.",
-   "I badminton at break time.",
-   "I basketball at break time.",
+   "I play badminton at break time.",
+   "I play basketball at break time.",
    "What do you do at break time? - I play chess.",
    "What do you do at break time? - I chat.",
-   "What do you do at break time? - I badminton.",
-   "What do you do at break time? - I basketball."
+   "What do you do at break time? - I play badminton.",
+   "What do you do at break time? - I play basketball."
   ],
   "mauCauDs": [
    {
@@ -370,7 +370,7 @@
     "phan": "giai"
    },
    {
-    "show": "Chữ cuối là “football” — bóng đá. Đổi chữ ấy là được câu mới.",
+    "show": "Chữ cuối là “play football” — None. Đổi chữ ấy là được câu mới.",
     "phan": "giai"
    }
   ]
@@ -1148,75 +1148,21 @@
      ]
     },
     {
-     "id": "S3",
+     "id": "S2",
      "bac": 3,
-     "text": "Xếp các thẻ thành câu đúng.",
-     "am": "cau_i_badminton_at_break_time",
-     "the": [
-      "I",
-      "badminton",
-      "at",
-      "break",
-      "time."
-     ],
-     "answerKey": {
-      "the": [
-       "I",
-       "badminton",
-       "at",
-       "break",
-       "time."
-      ]
-     },
-     "solutionNarrative": "I badminton at break time.",
-     "hints": [
-      "Câu tiếng Anh bắt đầu bằng chữ viết hoa.",
-      "Thẻ có dấu chấm là thẻ cuối cùng."
-     ]
-    },
-    {
-     "id": "S4",
-     "bac": 3,
-     "text": "Xếp các thẻ thành câu đúng.",
-     "am": "cau_i_basketball_at_break_time",
-     "the": [
-      "I",
-      "basketball",
-      "at",
-      "break",
-      "time."
-     ],
-     "answerKey": {
-      "the": [
-       "I",
-       "basketball",
-       "at",
-       "break",
-       "time."
-      ]
-     },
-     "solutionNarrative": "I basketball at break time.",
-     "hints": [
-      "Câu tiếng Anh bắt đầu bằng chữ viết hoa.",
-      "Thẻ có dấu chấm là thẻ cuối cùng."
-     ]
-    },
-    {
-     "id": "S4",
-     "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  I play ___ at break time.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "⚽",
+     "text": "Chọn từ điền vào chỗ trống:  I ___ at break time.",
+     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": null,
      "anhVe": null,
      "format": "chon",
      "choices": [
+      "play football",
       "break time",
       "chat",
-      "play",
-      "football"
+      "play"
      ],
      "answerKey": {
-      "choice": "football"
+      "choice": "play football"
      },
      "solutionNarrative": "I play football at break time.",
      "hints": [
@@ -1225,7 +1171,7 @@
      ]
     },
     {
-     "id": "S5",
+     "id": "S3",
      "bac": 3,
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  I ___ at break time.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
@@ -1248,67 +1194,67 @@
      ]
     },
     {
+     "id": "S4",
+     "bac": 3,
+     "text": "Chọn từ điền vào chỗ trống:  I ___ at break time.",
+     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": null,
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "break time",
+      "play badminton",
+      "chat",
+      "play"
+     ],
+     "answerKey": {
+      "choice": "play badminton"
+     },
+     "solutionNarrative": "I play badminton at break time.",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    },
+    {
+     "id": "S5",
+     "bac": 3,
+     "text": "Chọn từ điền vào chỗ trống:  I ___ at break time.",
+     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": null,
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "break time",
+      "chat",
+      "play basketball",
+      "play"
+     ],
+     "answerKey": {
+      "choice": "play basketball"
+     },
+     "solutionNarrative": "I play basketball at break time.",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    },
+    {
      "id": "S6",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  I ___ at break time.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🏸",
-     "anhVe": null,
-     "format": "chon",
-     "choices": [
-      "badminton",
-      "break time",
-      "chat",
-      "play"
-     ],
-     "answerKey": {
-      "choice": "badminton"
-     },
-     "solutionNarrative": "I badminton at break time.",
-     "hints": [
-      "Nhìn hình xem đó là con gì, cái gì.",
-      "Rồi nhớ lại từ tiếng Anh của nó."
-     ]
-    },
-    {
-     "id": "S7",
-     "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  I ___ at break time.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🏀",
+     "text": "Chọn từ điền vào chỗ trống:  What do you do at break time? - I ___.",
+     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": null,
      "anhVe": null,
      "format": "chon",
      "choices": [
       "break time",
-      "basketball",
+      "play chess",
       "chat",
       "play"
      ],
      "answerKey": {
-      "choice": "basketball"
-     },
-     "solutionNarrative": "I basketball at break time.",
-     "hints": [
-      "Nhìn hình xem đó là con gì, cái gì.",
-      "Rồi nhớ lại từ tiếng Anh của nó."
-     ]
-    },
-    {
-     "id": "S8",
-     "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What do you do at break time? - I play ___.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "♟️",
-     "anhVe": null,
-     "format": "chon",
-     "choices": [
-      "chess",
-      "break time",
-      "chat",
-      "play"
-     ],
-     "answerKey": {
-      "choice": "chess"
+      "choice": "play chess"
      },
      "solutionNarrative": "What do you do at break time? - I play chess.",
      "hints": [
@@ -1317,7 +1263,7 @@
      ]
     },
     {
-     "id": "S9",
+     "id": "S7",
      "bac": 3,
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What do you do at break time? - I ___.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
@@ -1340,46 +1286,46 @@
      ]
     },
     {
-     "id": "S10",
+     "id": "S8",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What do you do at break time? - I ___.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🏸",
+     "text": "Chọn từ điền vào chỗ trống:  What do you do at break time? - I ___.",
+     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": null,
      "anhVe": null,
      "format": "chon",
      "choices": [
-      "badminton",
       "break time",
+      "play badminton",
       "chat",
       "play"
      ],
      "answerKey": {
-      "choice": "badminton"
+      "choice": "play badminton"
      },
-     "solutionNarrative": "What do you do at break time? - I badminton.",
+     "solutionNarrative": "What do you do at break time? - I play badminton.",
      "hints": [
       "Nhìn hình xem đó là con gì, cái gì.",
       "Rồi nhớ lại từ tiếng Anh của nó."
      ]
     },
     {
-     "id": "S11",
+     "id": "S9",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What do you do at break time? - I ___.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🏀",
+     "text": "Chọn từ điền vào chỗ trống:  What do you do at break time? - I ___.",
+     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": null,
      "anhVe": null,
      "format": "chon",
      "choices": [
       "break time",
-      "basketball",
       "chat",
+      "play basketball",
       "play"
      ],
      "answerKey": {
-      "choice": "basketball"
+      "choice": "play basketball"
      },
-     "solutionNarrative": "What do you do at break time? - I basketball.",
+     "solutionNarrative": "What do you do at break time? - I play basketball.",
      "hints": [
       "Nhìn hình xem đó là con gì, cái gì.",
       "Rồi nhớ lại từ tiếng Anh của nó."

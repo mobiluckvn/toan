@@ -249,6 +249,53 @@ for (const q of quyens) {
   t(`${q} · bài nào cũng đủ bốn bậc (${thieuBac.length} chỗ thiếu)`, thieuBac.length === 0);
   in5(thieuBac);
 
+  /* ══ 4C-b · CÂU PHẢI CÓ ĐỘNG TỪ ══ (bác bắt 19-08-2026)
+
+     Bản đồ khai ô `[Activity]` của lớp 3 unit 10 bằng đúng tên mấy môn thể thao
+     (badminton · basketball · chess…), nên bộ sinh điền thẳng và đẻ ra:
+
+         ✗  I badminton at break time.
+         ✗  What do you do at break time? - I basketball.
+
+     Câu KHÔNG CÓ ĐỘNG TỪ. Sách hiểu ngầm là "play + môn", nhưng chữ "play" không
+     nằm ở đâu trong bản đồ cả.
+
+     Không phép kiểm nào cũ bắt được, vì mọi thứ đo được đều đúng: từng CHỮ đều là
+     từ đã học (`phép 2`), khuôn thì khớp công thức, và máy thì không biết
+     "badminton" là danh từ. Chỉ đọc lên mới thấy.
+
+     Phép đo hẹp mà chắc: câu mở đầu bằng ĐẠI TỪ CHỦ NGỮ thì chữ ngay sau phải là
+     một động từ — hoặc động từ nền (am/is/are/have/like/can/do…), hoặc một từ mà
+     chính bản chuẩn khai `vai: dongtu`/`cumdongtu`. Không đòi phân tích ngữ pháp,
+     chỉ chặn đúng chỗ đã va. */
+  const NEN = new Set(["am", "is", "are", "'m", "'re", "'s", "have", "has", "like",
+    "likes", "can", "can't", "do", "don't", "does", "play", "plays", "want", "wants",
+    "see", "go", "goes", "would", "'d", "'ve", "'ll", "will"]);
+  const dongTu = new Set(NEN);
+  for (const u of chuan.unit) {
+    for (const t of u.tu || []) {
+      const v = t.vai || [];
+      if (v.includes('dongtu') || v.includes('cumdongtu')) dongTu.add(t.tu.toLowerCase());
+    }
+  }
+  const CHU_NGU = /^(I|You|We|They)\b\s+(\S+)/;
+  const thieuDongTu = [];
+  for (const b of bais) {
+    for (const c of b.knowledgeCore.canonicalExamples || []) {
+      for (const nua of String(c).split(' - ')) {
+        const m = CHU_NGU.exec(nua.trim());
+        if (!m) continue;
+        const w = m[2].toLowerCase().replace(/[.,!?]+$/, '');
+        if (!dongTu.has(w)) {
+          thieuDongTu.push(`${b.id}: “${nua.trim()}” — sau “${m[1]}” là “${w}”`);
+        }
+      }
+    }
+  }
+  t(`${q} · câu nào cũng có động từ sau chủ ngữ (${thieuDongTu.length} chỗ)`,
+    thieuDongTu.length === 0);
+  in5(thieuDongTu);
+
   /* ══ 4D · KHÔNG BÀI NÀO ĐƯỢC NÓI CHUYỆN "BA TỪ CÙNG ÂM ĐẦU" ══
 
      Bác bắt 18-08-2026: "từ lớp 2 đến lớp 3 là nhiều từ mới không có trong nhóm

@@ -218,6 +218,52 @@ def ung_vien(vai_can: list, tu: list, them: dict) -> list[dict]:
     return [t for t in kho if set(t.get("vai") or []) & set(vai_can)]
 
 
+def cum_khai(khai: list, da_co: list, ma_mau: str, o: str) -> list[dict]:
+    """Mục khai trong `sua_slot` là một CỤM, không phải một từ trong bảng từ vựng.
+
+    ══ VÌ SAO CẦN ══ (bác chốt 19-08-2026)
+
+    Bản đồ khai ô `[Activity]` của lớp 3 unit 10 bằng đúng tên mấy môn thể thao:
+
+        o_thay: chat · badminton · basketball · chess · football · …
+
+    Sách hiểu ngầm là "play + môn", nhưng bản đồ không ghi chữ "play" ở đâu cả. Nên
+    bộ sinh điền thẳng và đẻ ra:
+
+        ✗  I badminton at break time.
+        ✗  What do you do at break time? - I basketball.
+
+    Câu không có động từ. Không cổng nào bắt được: mọi CHỮ đều là từ đã học, khuôn
+    thì khớp công thức, và máy thì không biết "badminton" là danh từ.
+
+    Ô kiểu ấy cần một CỤM ("play badminton"), mà cụm thì không phải một mục trong
+    bảng từ vựng — nên nhánh "danh sách từ đích danh" ở trên tra không ra và bỏ hết.
+
+    ⚠ CHỈ NHẬN MỤC NHIỀU CHỮ. Mục một chữ mà tra không ra thì đó là GÕ NHẦM tên từ,
+    không phải cụm — và gõ nhầm phải kêu lên chứ không được lặng lẽ thành một chuỗi
+    tự do. Đây là chỗ dễ nuốt lỗi nhất của cả tệp này.
+
+    Mọi chữ trong cụm vẫn phải là từ ĐÃ HỌC — cổng `tienganh_bai` phép 2 soi lại
+    trên tệp đã ghi, nên khai bừa một chữ lạ thì đỏ ngay.
+    """
+    co = {t["tu"] for t in da_co}
+    ra = []
+    for x in khai:
+        if x in co:
+            continue
+        if " " not in x:
+            print(f"  ⚠ {ma_mau}/[{o}]: khai “{x}” mà bài không dạy từ ấy — gõ nhầm?")
+            continue
+        # Dựng đủ mọi khoá một mục từ vẫn có, để `sinh_cau` khỏi phải biết mục này
+        # là cụm hay là từ. Thiếu `ma` thì phép neo vào câu SGK nổ KeyError.
+        ra.append({"ma": f"cum_{re.sub(r'[^a-z0-9]+', '_', x.lower())}",
+                   "tu": x, "nghia": None, "ipa": None, "vai": [], "am_o": "dau",
+                   "so_it": None, "so_nhieu": None, "dang_ing": None,
+                   "go_duoc": True, "nhom_nghia": None, "ten_rieng": None,
+                   "hinh": None, "khong_ve": None, "hinh_ve": None, "hinh_no": None})
+    return ra
+
+
 def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> list[dict]:
     """Câu của một unit: câu SGK đứng đầu, rồi các câu thay MỘT ô mỗi lần.
 
@@ -257,6 +303,7 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
                     kho[o] = ung_vien(khai[o], tu, them)
                 else:
                     kho[o] = [t for t in ung_vien_tat(tu, them) if t["tu"] in khai[o]]
+                    kho[o] += cum_khai(khai[o], kho[o], mc["ma"], o)
             else:
                 kho[o] = [t for t in tu if t["tu"] in mc["o_thay"]]
             # ── Ô ĐÒI MỘT DẠNG THÌ TỪ PHẢI CÓ DẠNG ẤY ──
