@@ -91,7 +91,7 @@ for (const q of quyens) {
     /* Bài theo CHƯƠNG gom bốn unit, mà một lượt đối đáp ăn HAI dòng — sáu dòng chỉ
        đủ ba lượt, chưa đi hết chương đã hết chỗ. Nên trần của bài chương là 8. */
     const sanDong = k.phamVi === 'unit' ? 3 : 4;
-    const tranDong = k.phamVi === 'unit' ? 7 : 9;
+    const tranDong = k.phamVi === 'unit' ? 8 : 10;
     if (doan.length < sanDong || doan.length > tranDong) {
       hinhDang.push(`${k.id}: đoạn ${doan.length} câu (cần ${sanDong}–${tranDong})`);
     }
@@ -151,6 +151,71 @@ for (const q of quyens) {
       }
     }
   }
+
+  /* ══ BÀI ĐỌC PHẢI CÓ THÔNG TIN, KHÔNG PHẢI CHÀO HỎI ══ (bác bắt 19-08-2026)
+
+     "Cả một chương bạn toàn có nói về mấy câu chào hỏi. […] Căn bản đoạn văn nó
+     phải có ý nghĩa một chút thay vì chỉ chào hỏi linh tinh. Phần chào hỏi, luyện
+     tập nên để ở phần Luyện nói. Đọc nên là một bài đọc ngắn có thông tin."
+
+     Đoạn cũ mở bằng HAI dòng chào và đóng bằng một lời tạm biệt, trong khi cả đoạn
+     chỉ dài 4–7 dòng — gần một nửa bài đọc không mang mẩu thông tin nào. Bé đọc
+     xong không biết thêm điều gì về ai.
+
+     Chào hỏi vẫn còn, nhưng đúng chỗ: PHÒNG LUYỆN NÓI và nhóm "Mở đầu" của BÀI
+     VIẾT. Bài đọc thì không. */
+  const XA_GIAO = /^(Hello|Hi|Bye|Goodbye|How are you|Fine, thank you)\b/i;
+  const xaGiao = [];
+  for (const k of ds) {
+    for (const d of (k.doan || [])) {
+      if (XA_GIAO.test(d.cau)) xaGiao.push(`${k.id}: “${d.cau}”`);
+    }
+  }
+  t(`${q} · đoạn đọc không có dòng chào hỏi suông (${xaGiao.length})`, xaGiao.length === 0);
+  in5(xaGiao);
+
+  /* ══ ĐOẠN NGẮN Ở ĐẦU QUYỂN, DÀI DẦN VỀ CUỐI ══
+     "Mấy bài đầu bạn có thể viết một đoạn ngắn thôi rồi tăng dần độ dài về cuối."
+     Unit 0 bé mới có mười một từ; bắt đọc tám dòng thì tám dòng ấy chỉ có thể là
+     tám biến thể của một câu. Đo bằng trung bình nửa đầu so với nửa sau — từng bài
+     một thì nhiễu, vì có unit vốn nghèo mẫu câu. */
+  const theoUnitSap = ds.filter((k) => k.phamVi === 'unit')
+    .sort((a, b) => a.unit - b.unit);
+  if (theoUnitSap.length >= 8) {
+    const giua = Math.floor(theoUnitSap.length / 2);
+    const tb = (xs) => xs.reduce((a, k) => a + (k.doan?.length || 0), 0) / xs.length;
+    const dau = tb(theoUnitSap.slice(0, giua));
+    const cuoi = tb(theoUnitSap.slice(giua));
+    t(`${q} · đoạn dài dần về cuối quyển (${dau.toFixed(1)} → ${cuoi.toFixed(1)} dòng)`,
+      cuoi > dau);
+  }
+
+  /* ══ LỰA CHỌN PHẢI KHÁC NHAU ĐỦ ĐỂ BÉ CHỌN ĐƯỢC ══
+     "Câu hỏi phải đảm bảo con dễ dàng trả lời chứ nhiều câu trả lời ý same same
+     nhau rất khó cho con chọn câu trả lời đúng."
+
+     Bản cũ CỐ Ý lấy mồi cùng khuôn (`It's a nose.` ↔ `It's a hair.`) để buộc bé đọc
+     kỹ. Với bé lớp 3 mới tập đọc thì việc ấy không còn là đọc hiểu mà là dò chính
+     tả — bé hiểu đúng vẫn chọn sai.
+
+     ⚠ Nhưng nới sang chiều kia cũng hỏng, và đã hỏng thật ở bản sửa đầu tiên:
+         It's a face. · It's a hair. · It's a hand. · What's this? ✓
+     ba mồi giống hệt nhau, đáp án lẻ loi — bé chọn đúng bằng HÌNH DẠNG, không cần
+     đọc một chữ. Nên luật là MỌI lựa chọn khác khuôn nhau, kể cả mồi với mồi. */
+  const samSam = [];
+  for (const k of ds) {
+    for (const c of k.cau || []) {
+      const en = (c.choices || []).filter((x) => /^[A-Za-z]/.test(x) && !/[^\x20-\x7E'’]/.test(x));
+      if (en.length < 3) continue;              // câu Có/Không thì không áp
+      const khuon = en.map((x) => `${(x.split(' ')[0] || '').toLowerCase()}|${x.split(' ').length}`);
+      if (new Set(khuon).size !== khuon.length) {
+        samSam.push(`${k.id}/${c.id}: [${en.join(' · ')}]`);
+      }
+    }
+  }
+  t(`${q} · các lựa chọn khác khuôn nhau, bé phân biệt được (${samSam.length} chỗ)`,
+    samSam.length === 0);
+  in5(samSam);
 
   /* ══ ĐỪNG LẶP ══ (bác bắt 19-08-2026)
 

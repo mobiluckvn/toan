@@ -64,15 +64,42 @@ from kho_cau_tienganh import cau_tich_luy  # noqa: E402
 GOC = Path(__file__).resolve().parent.parent
 QUYEN = {1: "ta1", 2: "ta2", 3: "ta3"}
 
-# Đoạn nay là HỘI THOẠI, và một lượt đối đáp ăn HAI dòng. Trần cũ 6 (bác chốt hồi
-# đoạn còn là mấy câu rời) chỉ đủ ba lượt: chào hai dòng, một cặp hỏi–đáp, rồi hết
-# chỗ cho cả lời tạm biệt lẫn mẫu câu thứ hai của bài. Bảy dòng là chào + hai cặp +
-# tạm biệt — vừa đủ một mẩu chuyện có đầu có cuối, và vẫn ngắn hơn một màn hình.
-SO_DONG_TOI_DA = 7
+# ── ĐOẠN NGẮN Ở ĐẦU QUYỂN, DÀI DẦN VỀ CUỐI ── (bác chốt 19-08-2026)
+#
+# "Mấy bài đầu bạn có thể viết một đoạn ngắn thôi rồi tăng dần độ dài về cuối."
+#
+# Đúng: unit 0 bé mới có mười một từ, mà bắt đọc bảy dòng thì bảy dòng ấy chỉ có thể
+# là bảy biến thể của một câu. Cuối quyển bé đã có gần hai trăm từ, bốn dòng thì phí.
+# Nên độ dài suy từ VỊ TRÍ của unit trong quyển, không phải một con số chung.
+DONG_DAU_QUYEN = 4
+DONG_CUOI_QUYEN = 8
+
+
+def so_dong_cua(unit: int, unit_cuoi: int) -> int:
+    """Đoạn của unit này nên dài mấy dòng."""
+    if unit_cuoi <= 0:
+        return DONG_DAU_QUYEN
+    phan = max(0.0, min(1.0, unit / unit_cuoi))
+    return round(DONG_DAU_QUYEN + (DONG_CUOI_QUYEN - DONG_DAU_QUYEN) * phan)
+
+
+SO_DONG_TOI_DA = DONG_CUOI_QUYEN
 # Bài theo CHƯƠNG gom bốn unit, mà một lượt đối đáp ăn HAI dòng — sáu dòng chỉ đủ
 # ba lượt, tức là chưa đi hết chương đã hết chỗ. Tám dòng là bốn lượt, vừa đủ để
 # câu hỏi "bài đọc nói về chuyện gì" có nghĩa là ý chính của cả chương.
-SO_DONG_TOI_DA_CHUONG = 9
+# Bài chương gom bốn unit nên luôn dài hơn bài unit, và cũng dài dần theo chương.
+DONG_DAU_CHUONG = 6
+DONG_CUOI_CHUONG = 10
+
+
+def so_dong_chuong(c: int, c_cuoi: int) -> int:
+    if c_cuoi <= 1:
+        return DONG_DAU_CHUONG
+    phan = max(0.0, min(1.0, (c - 1) / (c_cuoi - 1)))
+    return round(DONG_DAU_CHUONG + (DONG_CUOI_CHUONG - DONG_DAU_CHUONG) * phan)
+
+
+SO_DONG_TOI_DA_CHUONG = DONG_CUOI_CHUONG
 SO_DONG_TOI_THIEU = 4
 # Bài theo UNIT chỉ có vốn câu của một unit, nên cho phép đoạn ngắn hơn một dòng.
 # Ba câu vẫn là một đoạn đọc; đòi đủ bốn thì ba unit mất hẳn bài đọc.
@@ -245,12 +272,8 @@ def _hop_gioi(cau: str, dong: list[dict]) -> bool:
     return truoc is None or truoc == g
 
 
-CHAO = re.compile(r"^(Hello|Hi)\b", re.I)
-TAM_BIET = re.compile(r"^(Bye|Goodbye)\b", re.I)
-
-
 def _hoi_thoai(nguon: list[dict], ten_sach: list[str], toi_da: int,
-               xoay: int = 0) -> list[dict]:
+               xoay: int = 0, chuong_dich: int | None = None) -> list[dict]:
     """ĐOẠN HỘI THOẠI giữa hai bạn — trả `[{"cau", "ai"}]`.
 
     ══ NGUỒN CÂU LÀ CẢ KHO TÍCH LUỸ ══ (bác chốt 19-08-2026)
@@ -291,19 +314,21 @@ def _hoi_thoai(nguon: list[dict], ten_sach: list[str], toi_da: int,
             return False
         return sum(1 for d in dong if _dang(d["cau"]) == _dang(cau)) < CUNG_KHUON_TOI_DA
 
-    def la_chao(m: dict) -> bool:
-        return bool(CHAO.match(m["hoi"] or m["dap"]))
-
-    def la_tam_biet(m: dict) -> bool:
-        return bool(TAM_BIET.match(m["hoi"] or m["dap"]))
-
-    # Chào và tạm biệt đứng riêng; phần giữa xếp MỚI trước, rồi cũ theo unit giảm
-    # dần — unit ngay trước thường cùng chương, cùng chủ đề, nên đọc liền mạch hơn
-    # là lôi bài lớp 1 lên.
-    chao = [m for m in nguon if la_chao(m)]
-    biet = [m for m in nguon if la_tam_biet(m) and not la_chao(m)]
-    giua = [m for m in nguon if not la_chao(m) and not la_tam_biet(m)]
-    giua.sort(key=lambda m: (not m["moi"], -m["lop"], -m["unit"]))
+    # Phần giữa xếp MỚI trước, rồi cũ theo unit giảm dần — unit ngay trước thường
+    # cùng chương, cùng chủ đề, nên đọc liền mạch hơn là lôi bài lớp 1 lên.
+    # ⚠ XÃ GIAO KHÔNG VÀO BÀI ĐỌC. Bác chốt 19-08: "Cả một chương bạn toàn có nói về
+    # mấy câu chào hỏi. […] Đọc nên là một bài đọc ngắn có thông tin." Đoạn chỉ dài
+    # 4–8 dòng, mà chào mất hai dòng và tạm biệt mất một — nghĩa là gần một nửa bài
+    # đọc không mang mẩu thông tin nào. Chào hỏi vẫn còn ở PHÒNG LUYỆN NÓI và ở
+    # nhóm "Mở đầu" của BÀI VIẾT; đó mới là chỗ của nó.
+    giua = [m for m in nguon if not m.get("xaGiao")]
+    # ⚠ CÙNG CHƯƠNG TRƯỚC ĐÃ. Chỉ xếp theo unit giảm dần thì đoạn của unit 11 kết
+    # bằng "I have a pen." của lớp 1 — câu đúng, đã học, nhưng chẳng liên quan gì
+    # tới gia đình. Bác gọi đúng tên: "đoạn văn nó phải có ý nghĩa một chút".
+    # Cùng chương nghĩa là cùng chủ đề sách đã gom sẵn, nên gần như miễn phí.
+    giua.sort(key=lambda m: (not m["moi"],
+                             m.get("chuong") != chuong_dich,
+                             -m["lop"], -m["unit"]))
 
     def dat(m: dict, chi_mot: bool = False) -> None:
         """Đặt một mẫu thành một hoặc hai dòng. Mỗi mẫu dùng ĐÚNG MỘT LẦN."""
@@ -344,49 +369,28 @@ def _hoi_thoai(nguon: list[dict], ten_sach: list[str], toi_da: int,
                     dong.append({"cau": c, "ai": ai})
                     return
 
-    # ① một lượt chào — hai bạn chào nhau, không phải một bạn chào hai lần.
-    #    Xoay cả CÁCH chào, cùng lý do với việc xoay tên: hai mươi bài mở bằng đúng
-    #    một câu thì bé không đọc nữa.
-    if chao:
-        chao = chao[xoay % len(chao):] + chao[:xoay % len(chao)]
-
-    def dat_chao(ai: str, ban: str) -> None:
-        """Một lượt chào của ĐÚNG người này.
-
-        ⚠ Không để phép luân phiên tự chọn. Luân phiên chỉ ngó dòng ngay trước, nên
-        khi mẫu chào thứ hai lại chỉ có ví dụ mang tên bạn A thì `_hop_vai` ép nó về
-        bạn A lần nữa, và ra:
-
-            Mai: Hello. I'm Mai.
-            Mai: Hi, I'm Mai.          ← Mai tự giới thiệu hai lần
-
-        Đúng cái lỗi bác bắt ở bản trước. Ở đây ép vai: lượt một của bạn ĐÁP, lượt
-        hai của bạn HỎI. Không tìm được câu hợp cho bạn thứ hai thì thôi — một lời
-        chào vẫn hơn hai lời chào của cùng một người.
-        """
-        for m in chao:
-            for c in ([m["dap"]] + [x for x in m["vidu"] if x != m["dap"]]):
-                if _hop_vai(c, ai, ban) and them_duoc(c):
-                    dong.append({"cau": c, "ai": ai})
-                    return
-
-    dat_chao(b_, a_)
-    dat_chao(a_, b_)
-
-    # ② phần giữa
-    for m in giua:
-        # Chừa ĐÚNG MỘT dòng cho lời tạm biệt, không chừa hai: nội dung của bài
-        # quan trọng hơn lời chia tay. Chừa hai thì unit hai mẫu câu chỉ kịp dạy
-        # một mẫu — đã thấy thật ở unit 5.
-        if len(dong) >= toi_da - (1 if biet else 0):
+    # ── VÒNG 1: CHỈ CÂU CÙNG CHỦ ĐỀ ──
+    # Đoạn NGẮN còn hơn đoạn LẠC. Lấp cho đủ số dòng bằng câu của chương khác thì ra
+    # đoạn kết bằng "I have a pen." trong một bài về gia đình — đúng cái bác gọi là
+    # "chào hỏi linh tinh", chỉ đổi chủ đề. Nên chỉ khi chưa đạt ngưỡng TỐI THIỂU
+    # mới mở ra ngoài chương.
+    cung_chu_de = [m for m in giua
+                   if m["moi"] or (chuong_dich is not None
+                                   and m.get("chuong") == chuong_dich
+                                   and m["lop"] == max(x["lop"] for x in giua))]
+    for m in cung_chu_de:
+        if len(dong) >= toi_da:
             break
         dat(m)
 
-    # ③ một lời tạm biệt, nếu còn chỗ
-    for m in biet[:1]:
-        dat(m, chi_mot=True)
+    # ── VÒNG 2: nới ra, chỉ khi đoạn còn quá ngắn ──
+    if len(dong) < SO_DONG_TOI_THIEU_UNIT:
+        for m in giua:
+            if len(dong) >= toi_da:
+                break
+            dat(m)
 
-    # ④ hết mẫu mà đoạn vẫn ngắn thì vét thêm cách điền khác — chỉ khi thiếu, để
+    # Hết mẫu mà đoạn vẫn ngắn thì vét thêm cách điền khác — chỉ khi thiếu, để
     #    đoạn bình thường không bị lắp thêm dòng cùng khuôn.
     if len(dong) < SO_DONG_TOI_THIEU_UNIT:
         for m in giua:
@@ -409,25 +413,47 @@ def _ten_unit(b: dict) -> str:
 
 
 def _cung_khuon(bais: list[dict], cau: str, tru: set[str]) -> list[str]:
-    """Câu CÙNG KHUÔN với `cau` mà KHÔNG nằm trong đoạn — dùng làm mồi nhử.
+    """Mồi nhử cho câu hỏi "câu nào CÓ trong bài đọc?".
 
-    Cùng khuôn = cùng CHỮ ĐẦU và cùng SỐ CHỮ. Thô, nhưng đúng việc: mọi câu của
-    một mẫu đều sinh ra từ một công thức, nên chúng chỉ khác nhau ở chỗ điền vào ô
-    trống — tức là khác nhau ĐÚNG CHI TIẾT mà câu hỏi đang hỏi. Mồi khác khuôn thì
-    bé loại được bằng hình dạng câu, không cần đọc đoạn văn lấy một chữ.
+    ══ ĐỔI HẲN CHIỀU 19-08-2026 ══
 
-    ⚠ So bằng BA CHỮ ĐẦU thì hỏng: chỗ điền của quá nửa mẫu câu lớp 3 nằm ở vế
-    ĐÁP (`It's five.` ↔ `It's one.`), mà hai câu ấy chỉ chung đúng một chữ đầu.
+    Bác thử rồi bảo: "Câu hỏi phải đảm bảo con dễ dàng trả lời chứ nhiều câu trả lời
+    ý same same nhau rất khó cho con chọn câu trả lời đúng."
+
+    Bản cũ CỐ Ý lấy mồi CÙNG KHUÔN — `It's a nose.` ↔ `It's a hair.` — với lý do
+    "mồi cùng khuôn buộc bé phải đọc lại đoạn để tìm đúng chi tiết". Lý do ấy đúng
+    với một bài kiểm tra, sai với bé lớp 3 mới tập đọc: bốn lựa chọn chỉ khác nhau
+    một chữ ở giữa thì việc bé làm không còn là ĐỌC HIỂU nữa mà là dò chính tả, và
+    bé đọc hiểu đúng vẫn chọn sai.
+
+    Nay mồi phải KHÁC RÕ: khác chữ mở đầu, hoặc lệch hẳn độ dài. Bé hiểu đoạn thì
+    loại được ngay; bé không hiểu thì vẫn phải đọc, vì cả bốn đều là câu đã học và
+    đều đúng ngữ pháp.
+
+    Vẫn giữ tên hàm cũ để chỗ gọi khỏi đổi — cái đổi là LUẬT CHỌN, không phải chỗ
+    dùng.
     """
-    khoa = (cau.split()[0].lower(), len(cau.split()))
-    ra = []
+    ra: list[str] = []
+    da_dung_khuon = {_dang(cau)}          # kể cả khuôn của chính ĐÁP ÁN
     for b in bais:
         for c in b["knowledgeCore"].get("canonicalExamples") or []:
             for x in _tach_doi(c):
-                if x in tru or x in ra:
+                if x in tru or x in ra or x == cau:
                     continue
-                if (x.split()[0].lower(), len(x.split())) == khoa:
-                    ra.append(x)
+                # ⚠ BA MỒI CŨNG PHẢI KHÁC NHAU, không chỉ khác đáp án.
+                #
+                # Bản đầu của phép sửa này mới chỉ đòi "mồi khác đáp án", và nó ra:
+                #
+                #     It's a face. · It's a hair. · It's a hand. · What's this? ✓
+                #
+                # Ba mồi giống hệt nhau, đáp án lẻ loi — bé chọn đúng bằng HÌNH DẠNG
+                # mà không cần đọc lấy một chữ. Dễ, nhưng dễ vì đoán chứ không phải
+                # vì hiểu. Mỗi lựa chọn một khuôn thì bé buộc phải nhớ đoạn vừa đọc,
+                # mà vẫn không phải dò chính tả giữa hai câu khác nhau một chữ.
+                if _dang(x) in da_dung_khuon:
+                    continue
+                da_dung_khuon.add(_dang(x))
+                ra.append(x)
     return ra
 
 
@@ -641,7 +667,9 @@ def dung(lop: int) -> tuple[list[dict], list[dict]]:
         # Nguồn câu là CẢ KHO TÍCH LUỸ tới unit này, không chỉ mấy ví dụ của
         # chính nó — bác chốt 19-08. Xem `kho_cau_tienganh`.
         nguon = cau_tich_luy(lop, b["so"], kho, {b["so"]})
-        doan = _hoi_thoai(nguon, ten_sach, SO_DONG_TOI_DA, b["so"])
+        doan = _hoi_thoai(nguon, ten_sach,
+                          so_dong_cua(b["so"], max(x["so"] for x in bais)),
+                          b["so"], b["chuong"])
         if len(doan) < SO_DONG_TOI_THIEU_UNIT:
             print(f"  ⚠ unit {b['so']}: chỉ dựng được {len(doan)} dòng, bỏ qua")
             continue
@@ -659,7 +687,8 @@ def dung(lop: int) -> tuple[list[dict], list[dict]]:
         kho = _kho_tu(chuans, c, chuong_cua)
         nguon = cau_tich_luy(lop, max(x["so"] for x in ds), kho,
                              {x["so"] for x in ds})
-        doan = _hoi_thoai(nguon, ten_sach, SO_DONG_TOI_DA_CHUONG, c)
+        doan = _hoi_thoai(nguon, ten_sach,
+                          so_dong_chuong(c, max(theo_chuong)), c, c)
         if len(doan) < SO_DONG_TOI_THIEU:
             print(f"  ⚠ chương {c}: chỉ dựng được {len(doan)} dòng, bỏ qua")
             continue

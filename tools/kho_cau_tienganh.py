@@ -105,6 +105,28 @@ def sach_se(cau: str) -> bool:
     return bool(cau) and not re.search(r"[,;](?=\S)", cau) and "/" not in cau
 
 
+# ── CÂU XÃ GIAO ── (bác chốt 19-08-2026)
+#
+# "Cả một chương bạn toàn có nói về mấy câu chào hỏi. […] Căn bản đoạn văn nó phải
+# có ý nghĩa một chút thay vì chỉ chào hỏi linh tinh. Phần chào hỏi, luyện tập nên
+# để ở phần Luyện nói. Đọc nên là một bài đọc ngắn có thông tin."
+#
+# Đúng. Bài đọc mở đầu bằng hai dòng chào ở MỌI bài, mà đoạn chỉ dài 4–7 dòng —
+# nghĩa là một phần ba tới một nửa bài đọc không mang một mẩu thông tin nào. Bé đọc
+# xong không biết thêm điều gì về ai.
+#
+# Chào hỏi vẫn cần, nhưng đúng chỗ của nó: PHÒNG LUYỆN NÓI (bước `chao`) và BÀI
+# VIẾT (nhóm "Mở đầu" — một đoạn văn tự giới thiệu thì phải có lời chào). Bài đọc
+# thì bỏ hẳn.
+XA_GIAO = re.compile(
+    r"^(Hello|Hi|Bye|Goodbye|How are you|Fine, thank you|Nice to meet you)\b", re.I)
+
+
+def la_xa_giao(m: dict) -> bool:
+    """Mẫu câu này chỉ để chào hỏi, không mang thông tin gì."""
+    return bool(XA_GIAO.match(m.get("hoi") or m.get("dap") or ""))
+
+
 def bai_cua(lop: int) -> list[dict]:
     tm = GOC / f"web/public/content/{QUYEN[lop]}"
     return [json.loads(p.read_text("utf8"))
@@ -166,8 +188,10 @@ def cau_tich_luy(lop: int, den_unit: int, kho_tu: set[str],
                     "vidu": list(dict.fromkeys((dap_sach or []) + cach)),
                     "lop": l,
                     "unit": b["so"],
+                    "chuong": b.get("chuong"),
                     "moi": (l == lop and b["so"] in dich),
                 })
+                ra[-1]["xaGiao"] = la_xa_giao(ra[-1])
     return ra
 
 
