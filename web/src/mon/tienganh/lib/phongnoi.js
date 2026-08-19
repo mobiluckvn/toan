@@ -386,6 +386,126 @@ export function loiDan({ von, tenBe = 'con', lop = 1, viec = null, hoSo = null, 
   ].filter((x) => x !== null).join('\n');
 }
 
+/* ═══════════ BÀI TẢ TRANH — LỜI DẶN RIÊNG, KHÔNG DÙNG LỜI DẶN CŨ ═══════════ */
+
+/**
+ * CÂU BÉ CẦN NÓI ở lượt tới — KHÔNG phải câu cô vừa nói.
+ *
+ * ══ CHỖ HỎNG NẶNG NHẤT, BÁC BẮT 19-08-2026 ══
+ *
+ *     "Phần nói là AI đóng vai trò giáo viên hướng dẫn học sinh tả tranh chứ không
+ *      phải là bắt học sinh nói theo mấy câu kiểu What can you see. Mấy câu What
+ *      can you see dùng để hướng dẫn học sinh nói thôi."
+ *
+ * Cả phòng nói tới giờ dựng trên một giả định: BÉ NHẠI LẠI CÂU CÔ VỪA NÓI. Chấm
+ * điểm cũng thế — `PhongNoi.jsx` so lời bé với `cauCoVuaNoi`.
+ *
+ * Với bài tả tranh thì giả định ấy sai hẳn. Cô hỏi "What can you see?", bé phải
+ * ĐÁP ("I can see a kite."), không phải nhại lại câu hỏi. Trải một buổi ra giấy
+ * thấy rõ: bé nói "what can you see?" và được **9/10** — hệ thống đang KHEN bé vì
+ * nhại đúng câu hỏi của cô. Không lỗi đỏ ở đâu, điểm còn cao.
+ *
+ * Nên mỗi lượt của cô nay mang theo `can`: những câu ĐƯỢC TÍNH LÀ ĐÚNG.
+ *
+ *   taTranh  bé tả gì cũng được, miễn có trong tranh → cả bản mô tả
+ *   goiY     cô hỏi một chi tiết → đúng một câu đáp
+ *   caDoan   cả đoạn
+ *   còn lại  giữ nguyên lối cũ (nhại lại câu cô nói) — 20 kịch bản kia không đổi
+ */
+export function canNoi(buoc, kichBan) {
+  if (!buoc) return [];
+  const moTa = kichBan?.moTaTranh || [];
+  if (buoc.loai === 'taTranh') return [...moTa];
+  if (buoc.loai === 'goiY') return buoc.dapMau ? [buoc.dapMau] : [...moTa];
+  if (buoc.loai === 'caDoan') return [buoc.en];
+  return buoc.en ? [buoc.en] : [];
+}
+
+/**
+ * LỜI DẶN CHO BÀI TẢ TRANH — dựng lại từ đầu, không mượn `loiDan`.
+ *
+ * Bác bảo "Hãy xoá hết prompt cũ để cài đặt lại." Đúng: lời dặn cũ dài mười điều,
+ * và gần như điều nào cũng nói về việc DẠY NHẠI CÂU — "say exactly ONE short
+ * English sentence", "take the pattern and put the word in the slot", "she repeats
+ * after you". Ghép thêm vài dòng về tranh vào đấy thì mô hình vẫn đọc ra "dạy bé
+ * nói theo mẫu", vì chín phần mười lời dặn nói thế.
+ *
+ * Lời dặn này ngắn, và chỉ nói đúng một việc: cô hướng dẫn bé TẢ BỨC TRANH.
+ */
+export function loiDanTranh({ tenBe = 'con', lop = 3, kichBan, buoc, luotBe = null }) {
+  const moTa = kichBan?.moTaTranh || [];
+  const d = [
+    `You are a warm, patient English teacher for a grade ${lop} Vietnamese child named ${tenBe}.`,
+    '',
+    'THE ONE THING YOU ARE DOING: helping her DESCRIBE A PICTURE in English.',
+    'She is looking at the picture. You cannot see it — you only have these lines,',
+    'which are everything that is true about it:',
+    ...moTa.map((c) => `  · ${c}`),
+    '',
+    'HOW THIS WORKS:',
+    '1. She talks about the picture. Anything she says that matches a line above is',
+    '   RIGHT — even if she says it in a different order, or only part of it.',
+    '2. You are NOT teaching her to repeat your sentences. Questions like',
+    '   "What can you see?" are YOUR tool for prompting her — she must never be',
+    '   asked to say them back. If she repeats your question instead of answering,',
+    '   tell her gently in Vietnamese that you want HER words about the picture.',
+    '3. When she is stuck, ask ONE small question about one detail, wait, then check',
+    '   her answer against the lines above. Wrong number or wrong thing → say so.',
+    '4. NEVER read the whole description out to her. She has to find the words.',
+    '5. At the end you will string her sentences into one short paragraph and have',
+    '   her say all of it. That is the goal of the whole session.',
+    '',
+    'HOW YOU SPEAK:',
+    '6. ONE short English sentence per turn, and it must be the exact sentence given',
+    '   below. Everything else you say is the ONE Vietnamese line.',
+    '7. Vietnamese pronouns are FIXED: call yourself "cô", call the child "con".',
+    '   Never "bạn", "em", "tớ", "cậu".',
+    '8. Write the Vietnamese for an eight-year-old, warm and short. Praise what was',
+    '   right first, then the one thing to fix.',
+    '',
+    dongBuocTranh(buoc, luotBe, moTa),
+    '',
+    'Reply as JSON only: {"en": "<the English sentence>", "vi": "<the Vietnamese line>"}',
+  ];
+  return d.filter((x) => x !== null).join('\n');
+}
+
+/** Lời dặn của riêng lượt này, cho bài tả tranh. */
+export function dongBuocTranh(buoc, luotBe, moTa) {
+  if (!buoc || buoc.loai === 'ket') return '';
+  const d = [`THIS TURN: your English sentence MUST be exactly: "${buoc.en}"`,
+    '  Copy it character for character.'];
+  if (buoc.loai === 'taTranh') {
+    d.push('  ROLE: invite her to describe the picture, then WAIT. Do not list',
+      '  anything for her. Whatever she says next that matches a line above counts.');
+  } else if (buoc.loai === 'goiY') {
+    d.push('  ROLE: she is stuck, so you are prompting with ONE detail question.',
+      `  The true answer is "${buoc.dapMau || '(see the lines above)'}".`,
+      '  Ask it and wait. Do NOT answer it yourself, and do NOT ask her to repeat',
+      '  the question — you want her ANSWER.');
+  } else if (buoc.loai === 'caDoan') {
+    d.push('  ROLE: string it all together. Say the whole description once, then ask',
+      '  her to say all of it herself. This is what the session was for.');
+  }
+  if (luotBe?.diem != null) {
+    d.push('WHAT THE CHILD JUST SAID:',
+      `  "${luotBe.chu}" — scored ${luotBe.diem}/10 against "${luotBe.mau}".`);
+    const thieu = [...(luotBe.thieu || []), ...(luotBe.thieuChucNang || [])].filter(Boolean);
+    if (thieu.length) d.push(`  Words she left out: ${thieu.join(', ')}.`);
+    /* Chỗ dễ hỏng nhất của bài tả tranh, và mô hình không tự nhận ra: bé nhại lại
+       câu hỏi thay vì đáp. Điểm phát âm khi ấy rất cao, nên nếu chỉ nhìn điểm thì
+       cô lại khen. */
+    if (moTa.length && luotBe.chu && /\?$/.test(String(luotBe.chu).trim())) {
+      d.push('  ⚠ She repeated your QUESTION instead of answering it. Say so kindly',
+        '  in Vietnamese and ask again for her own words about the picture.');
+    }
+  }
+  if (buoc.vi) {
+    d.push(`  Your Vietnamese line MUST get this across: "${buoc.vi}"`);
+  }
+  return d.join('\n');
+}
+
 /* ─────────── ngữ cảnh ─────────── */
 
 /**

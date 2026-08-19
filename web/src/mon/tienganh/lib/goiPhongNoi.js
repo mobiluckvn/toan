@@ -13,6 +13,7 @@ import { fns, db, hasFirebase } from '../../../chung/lib/nenTang.js';
 import {
   loiDan, goiGui, docTraLoi, viecTiepTheo, cauHopLe, cauThayThe,
   buocTiepTheo, dienBuoc, dongBuoc, loiVietHopLe, luotBeCuoi,
+  loiDanTranh, canNoi,
 } from './phongnoi.js';
 
 /** Collection riêng của Tiếng Anh — hậu tố TA để không bao giờ lẫn với Toán. */
@@ -52,9 +53,18 @@ export async function hoiCoGiao({
            bản mô tả ghi ba. Bác chốt 19-08. */
         moTaTranh: kichBan.moTaTranh || null }
     : null;
-  const dan = buoc
-    ? `${loiDan({ von, tenBe, lop, viec: null, hoSo, unit })}\n${dongBuoc(buoc, { tenBe, thich: hoSo?.thich }, luotBe)}`
-    : loiDan({ von, tenBe, lop, viec, hoSo, unit });
+  /* ⚠ BÀI TẢ TRANH DÙNG LỜI DẶN RIÊNG, KHÔNG GHÉP THÊM VÀO LỜI DẶN CŨ.
+     Bác chốt 19-08: "Hãy xoá hết prompt cũ để cài đặt lại. Đảm bảo AI là một giáo
+     viên hướng dẫn học sinh mô tả tranh không phải đi dạy học sinh nói câu hỏi."
+     Lời dặn cũ dài mười điều và gần như điều nào cũng nói về DẠY NHẠI CÂU. Ghép
+     thêm mấy dòng về tranh vào đấy thì mô hình vẫn đọc ra "dạy bé nói theo mẫu",
+     vì chín phần mười lời dặn nói thế. */
+  const laTranh = kichBan?.dang === 'tranh';
+  const dan = laTranh
+    ? loiDanTranh({ tenBe, lop, kichBan, buoc, luotBe })
+    : (buoc
+      ? `${loiDan({ von, tenBe, lop, viec: null, hoSo, unit })}\n${dongBuoc(buoc, { tenBe, thich: hoSo?.thich }, luotBe)}`
+      : loiDan({ von, tenBe, lop, viec, hoSo, unit }));
   const messages = [{ role: 'system', content: dan }, ...goiGui(lichSu)];
   const { data } = await httpsCallable(fns, 'luyenNoi')({ messages });
   const tra = docTraLoi(data?.chu);
@@ -89,6 +99,10 @@ export async function hoiCoGiao({
     const en = dung && tra.en !== dung ? dung : tra.en;
     return { ...tra,
       en,
+      /* Câu bé CẦN nói ở lượt tới — KHÔNG phải câu cô vừa nói. Với bài tả tranh, cô
+         hỏi "What can you see?" mà bé phải ĐÁP; chấm theo câu cô nói thì hệ thống
+         khen bé vì nhại đúng câu hỏi. Xem `canNoi`. */
+      can: canNoi(buoc, kichBan),
       /* Lượt này do bước NÀO sinh ra. Màn hình giữ lại trong lịch sử, để
          `luotLuyen` biết lượt đáp lời chào không phải một lần luyện — thiếu nó thì
          buổi kết sớm một nấc và bước làm mẫu bị nhảy cóc. */

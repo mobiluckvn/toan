@@ -114,7 +114,23 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
      không phải chép cả mảng, và quan trọng hơn — nói thẳng ý "câu CUỐI của cô".
      Bản cũ có chữ `.reverse()` nằm ngay cạnh chỗ bày danh sách, mà chiều bày thì
      vừa đổi hai lần; để lẫn vào đấy là sớm muộn có người sửa nhầm. */
-  const cauCoVuaNoi = lichSu.findLast((x) => x.vai === 'may')?.en || '';
+  const luotCoCuoi = lichSu.findLast((x) => x.vai === 'may');
+  /**
+   * CÂU BÉ CẦN NÓI — không phải câu cô vừa nói.
+   *
+   * ⚠ Bác bắt 19-08-2026: "Phần nói là AI đóng vai trò giáo viên hướng dẫn học sinh
+   * tả tranh chứ không phải là bắt học sinh nói theo mấy câu kiểu What can you see."
+   *
+   * Cả phòng này dựng trên giả định BÉ NHẠI LẠI CÂU CÔ VỪA NÓI, và phép chấm cũng
+   * thế. Với bài tả tranh thì sai hẳn: cô HỎI, bé phải ĐÁP. Trải một buổi ra giấy
+   * thấy bé nói "what can you see?" và được 9/10 — hệ thống khen bé vì nhại đúng
+   * câu hỏi. Không có gì đỏ, điểm còn cao.
+   *
+   * Nay lượt của cô mang theo `can` (những câu được tính là đúng). Bài thường thì
+   * `can` chính là câu cô nói, nên 20 kịch bản kia không đổi hành vi.
+   */
+  const canNoiGi = luotCoCuoi?.can?.length ? luotCoCuoi.can
+    : (luotCoCuoi?.en ? [luotCoCuoi.en] : []);
   const buoi = tinhBuoi({ lichSu, batDau: batDau.current, bayGio: Date.now(),
                          dichCaDoan: kichBan?.dang === 'tranh' });
   const ket = loiKet(buoi);
@@ -175,7 +191,8 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
         haDoKho: buoi.haDoKho, hoSo: { thich }, kichBan });
       /* `buoc` — bước nào sinh ra lượt này. Không bày ra màn hình, nhưng
          `luotLuyen` cần: lượt bé đáp lời chào KHÔNG được tính là một lần luyện. */
-      const luot = { vai: 'may', chu: tra.en || tra.vi, en: tra.en, vi: tra.vi, buoc: tra.buoc };
+      const luot = { vai: 'may', chu: tra.en || tra.vi, en: tra.en, vi: tra.vi,
+                     buoc: tra.buoc, can: tra.can };
       const sau = [...ds, luot];
       datLichSu(sau);
       /* Client giữ ngữ cảnh và tự đẩy lên máy chủ — bác chốt như thế; server không
@@ -248,8 +265,13 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
     if (!r) return;
     /* Chấm khi bé đang NHẠI LẠI câu cô vừa nói. Bé nói câu khác thì không chấm —
        chấm một câu bé tự nghĩ ra theo mẫu của câu khác là chấm sai. */
-    const kq = cauCoVuaNoi
-      ? chamTot(chamCau, cauCoVuaNoi, r.phuongAn?.length ? r.phuongAn : [r.noiGi]) : null;
+    /* Chấm với TỪNG câu được chấp nhận rồi lấy điểm cao nhất: ở bước `taTranh` bé
+       tả câu nào trong tranh cũng đúng, nên bắt khớp đúng một câu là chấm sai. */
+    const nghe = r.phuongAn?.length ? r.phuongAn : [r.noiGi];
+    const kq = canNoiGi.length
+      ? canNoiGi.map((c) => ({ ...chamTot(chamCau, c, nghe), mau: c }))
+        .reduce((a, b) => (b.diem > a.diem ? b : a))
+      : null;
     /* GIỮ LẠI CÂU MẪU ngay trong lượt của bé. Không giữ thì nút "nói lại" sau này
        chẳng biết đang chấm theo câu nào — lúc bé bấm thì cô đã nói sang câu khác
        rồi, và chấm theo câu mới là chấm sai một câu bé không hề định nói. */
@@ -263,7 +285,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
       vai: 'be',
       chu: r.noiGi,
       diem: kq?.diem ?? null,
-      mau: cauCoVuaNoi || null,
+      mau: kq?.mau || luotCoCuoi?.en || null,
       thieu: kq?.thieu || [],
       thieuChucNang: kq?.thieuChucNang || [],
     }];
@@ -274,7 +296,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
     const sauKhiNoi = tinhBuoi({ lichSu: sau, batDau: batDau.current, bayGio: Date.now() });
     if (sauKhiNoi.trangThai !== 'dang') { datLoi(null); return; }
     guiLuot(sau);
-  }, [ghiAm, lichSu, cauCoVuaNoi, guiLuot]);
+  }, [ghiAm, lichSu, canNoiGi, luotCoCuoi, guiLuot]);
 
   /**
    * NÓI LẠI MỘT CÂU — bác dặn 14-08.
@@ -341,22 +363,26 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
   }, [bai?.id]);
 
   const dsTu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
+  const laTranh = kichBan?.dang === 'tranh';
 
   return (
-    <section className="flex flex-col gap-3">
-      {/* VỐN TỪ HÔM NAY — bé nhìn vào là biết phòng này nói về những gì. Bấm vào
-          một hình là nghe từ ấy, để bé bắt chuyện được mà không cần ai gợi. */}
+    <section className="flex flex-col gap-3">      {/* ⚠ BỎ KHỐI "CON NÓI VỀ" Ở BÀI TẢ TRANH — bác chốt 19-08-2026.
+          Nó liệt kê sẵn từng vật kèm HÌNH: kite · yo-yo · kitten · teddy bear. Với
+          bài tả tranh thì đó chính là ĐÁP ÁN bày ra trước mặt — bé chỉ việc đọc
+          bảng chứ không phải nhìn tranh mà tìm chữ. Bài thường thì bảng ấy vẫn
+          đúng việc của nó (vốn từ của unit), nên giữ.
+          Đồng hồ "còn mấy phút" tách ra đứng riêng, vì nó cần cho cả hai loại. */}
+      {buoi.trangThai === 'dang' && buoi.phutConLai <= 5 && (
+        <p className="text-right">
+          <span className="rounded-full bg-gold-pale px-2 py-0.5 text-xs font-bold text-gold-dark">
+            còn {Math.ceil(buoi.phutConLai)} phút
+          </span>
+        </p>
+      )}
+      {laTranh ? null : (
       <div className="rounded-xl2 border-2 border-line bg-white p-3">
         <div className="flex flex-wrap items-baseline gap-x-3">
           <h3 className="text-sm font-bold uppercase tracking-wide text-navy">Con nói về</h3>
-          {/* Còn bao lâu — cho bố mẹ, và để hết giờ không cắt ngang đột ngột. Chỉ
-              hiện khi sắp hết: đếm ngược suốt buổi chỉ làm bé nhìn đồng hồ thay vì
-              nhìn bài. */}
-          {buoi.trangThai === 'dang' && buoi.phutConLai <= 5 && (
-            <span className="rounded-full bg-gold-pale px-2 py-0.5 text-xs font-bold text-gold-dark">
-              còn {Math.ceil(buoi.phutConLai)} phút
-            </span>
-          )}
           <p className="text-sm text-mute">
             {von.moRong
               ? `${dsTu.length} từ — có cả từ mấy bài trước con đã học`
@@ -378,6 +404,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
           ))}
         </ul>
       </div>
+      )}
 
       {/* ══ BỨC TRANH — bé CHỈ ĐƯỢC NHÌN TRANH ══ (bác chốt 19-08-2026)
           "Bài nói sẽ cho một bức tranh và cùng mô tả về bức tranh đó (AI sẽ có phần

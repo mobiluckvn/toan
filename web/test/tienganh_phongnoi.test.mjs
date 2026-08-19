@@ -482,7 +482,21 @@ test('nói lại: lượt của bé phải GIỮ câu mẫu đã chấm theo', (
      nói, và bé càng sửa càng thấp điểm mà không hiểu vì sao. */
   const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
     .replace(/\/\*[\s\S]*?\*\//g, '');
-  assert.match(pn, /mau:\s*cauCoVuaNoi/, 'lượt của bé phải ghi lại câu mẫu');
+  /* ⚠ Tên biến đổi 19-08: không còn là `cauCoVuaNoi` (câu CÔ vừa nói) mà là câu bé
+     CẦN nói. Bác bắt: cô hỏi "What can you see?" thì bé phải ĐÁP, không phải nhại
+     câu hỏi — chấm theo câu cô nói là khen bé vì nhại đúng. Điều phép này canh thì
+     không đổi: lượt của bé phải GIỮ LẠI câu đã chấm theo. */
+  assert.match(pn, /mau: kq\?\.mau \|\| luotCoCuoi\?\.en/, 'lượt của bé phải ghi lại câu mẫu');
+  assert.match(pn, /canNoiGi/, 'phải chấm theo câu bé CẦN nói, không theo câu cô vừa nói');
+
+  /* ⚠ VÀ CHỖ NỐI PHẢI GỬI `can` ĐI THẬT. `canNoi` tính đúng mà `goiPhongNoi` không
+     gọi nó thì màn hình nhận `can` rỗng, rơi về `[luotCoCuoi.en]` — tức là quay
+     đúng về lối cũ: chấm bé theo câu CÔ vừa nói. Tính rồi không gửi thì y như
+     không tính, và đó là cái bẫy đã sập một lần với `thieu` của bộ chấm. */
+  const gp = readFileSync(new URL('../src/mon/tienganh/lib/goiPhongNoi.js', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(gp, /can: canNoi\(buoc, kichBan\)/, 'lượt của cô phải mang theo `can`');
+  assert.match(gp, /loiDanTranh\(\{/, 'bài tả tranh phải dùng lời dặn riêng');
   assert.match(pn, /chamTot\(chamCau,\s*cu\.mau/, 'nói lại phải chấm theo câu mẫu CỦA CHÍNH lượt ấy');
   assert.doesNotMatch(pn, /chamTot\(chamCau,\s*cauCoVuaNoi,[^)]*\)\s*;?\s*const hon/,
     'nói lại KHÔNG được chấm theo câu mới nhất');
@@ -1494,4 +1508,75 @@ test('lượt hỏi sở thích: câu của mô hình VẪN bị soi', () => {
   assert.ok(!/cauThayThe\(null/.test(g),
     '`cauThayThe` cần một `viec`; nhánh kịch bản không có, gọi vào là nhận null');
   assert.ok(LOI_LOP_HOC.includes('Your turn.'), 'câu lui phải là lời lớp học có sẵn');
+});
+
+/* ═══════════ BÀI TẢ TRANH — CÔ HƯỚNG DẪN, KHÔNG DẠY NHẠI CÂU HỎI ═══════════ */
+
+test('bé phải ĐÁP câu hỏi của cô, không nhại lại câu hỏi', async () => {
+  /* ⚠ CHỖ HỎNG NẶNG NHẤT CỦA CẢ PHÒNG NÀY, bác bắt 19-08-2026:
+
+       "Phần nói là AI đóng vai trò giáo viên hướng dẫn học sinh tả tranh chứ không
+        phải là bắt học sinh nói theo mấy câu kiểu What can you see. Mấy câu What
+        can you see dùng để hướng dẫn học sinh nói thôi."
+
+     Cả phòng nói dựng trên giả định BÉ NHẠI LẠI CÂU CÔ VỪA NÓI, và phép chấm cũng
+     thế. Với bài tả tranh thì sai hẳn. Trải một buổi ra giấy: bé nói
+     "what can you see?" và được **9/10** — hệ thống KHEN bé vì nhại đúng câu hỏi
+     của cô. Không có gì đỏ, điểm còn cao hơn khi bé tả thật. */
+  const { canNoi } = await import('../src/mon/tienganh/lib/phongnoi.js');
+  const kb = { dang: 'tranh', moTaTranh: ['I can see a kite.', 'This is a kitten.'] };
+
+  const hoi = { loai: 'goiY', en: 'How many kites can you see?', dapMau: 'I can see three.' };
+  assert.deepEqual(canNoi(hoi, kb), ['I can see three.'],
+    'cô HỎI thì câu đúng là câu ĐÁP, không phải câu hỏi');
+  assert.ok(!canNoi(hoi, kb).includes(hoi.en), 'câu hỏi của cô KHÔNG được tính là đúng');
+
+  /* Bước mời tả: bé nói câu nào trong tranh cũng đúng — bắt khớp một câu là chấm
+     sai đứa tả đúng theo thứ tự khác. */
+  const moi = { loai: 'taTranh', en: 'What can you see?' };
+  assert.deepEqual(canNoi(moi, kb), kb.moTaTranh);
+
+  /* Bài THƯỜNG giữ nguyên lối cũ — 20 kịch bản kia không được đổi hành vi. */
+  assert.deepEqual(canNoi({ loai: 'noiCa', en: "It's cooking." }, null), ["It's cooking."]);
+});
+
+test('lời dặn bài tả tranh KHÔNG mượn lời dặn cũ', async () => {
+  /* Bác chốt: "Hãy xoá hết prompt cũ để cài đặt lại." Lời dặn cũ dài mười điều và
+     gần như điều nào cũng nói về DẠY NHẠI CÂU. Ghép thêm mấy dòng về tranh vào đấy
+     thì mô hình vẫn đọc ra "dạy bé nói theo mẫu", vì chín phần mười lời dặn nói
+     thế — nên phải là một lời dặn RIÊNG, ngắn, chỉ nói một việc. */
+  const { loiDanTranh } = await import('../src/mon/tienganh/lib/phongnoi.js');
+  const kb = { dang: 'tranh', moTaTranh: ['I can see a kite.', 'This is a kitten.'] };
+  const s = loiDanTranh({ tenBe: 'An', lop: 3, kichBan: kb,
+    buoc: { loai: 'goiY', en: 'How many kites can you see?', dapMau: 'I can see three.' } });
+
+  assert.match(s, /DESCRIBE A PICTURE/i, 'phải nói rõ việc là tả tranh');
+  assert.match(s, /NOT teaching her to repeat your sentences/i);
+  assert.match(s, /she must never be/i);
+  assert.match(s, /NEVER read the whole description out/i,
+    'đọc hết bản mô tả ra là làm hộ bé cả bài');
+  assert.match(s, /call yourself "cô", call the child "con"/i, 'xưng hô vẫn phải gác');
+
+  /* Và KHÔNG được có dấu vết của lời dặn cũ. */
+  assert.ok(!/put the word "?\w+"? in the slot/i.test(s), 'còn sót lối dạy điền ô trống');
+  assert.ok(!/A pattern is a FRAME/i.test(s), 'còn sót bảng công thức của lời dặn cũ');
+
+  /* Bé nhại lại câu hỏi thì lời dặn phải BẮT được — điểm phát âm lúc ấy rất cao,
+     nên chỉ nhìn điểm thì cô lại khen. */
+  const s2 = loiDanTranh({ tenBe: 'An', lop: 3, kichBan: kb,
+    buoc: { loai: 'goiY', en: 'How many kites can you see?', dapMau: 'I can see three.' },
+    luotBe: { chu: 'how many kites can you see?', diem: 9, mau: 'I can see three.' } });
+  assert.match(s2, /repeated your QUESTION instead of answering/i);
+});
+
+test('màn phòng nói KHÔNG bày sẵn vốn từ ở bài tả tranh', () => {
+  /* Bác chốt 19-08: "Bỏ phần: Con nói về". Khối ấy liệt kê từng vật kèm HÌNH —
+     kite · yo-yo · kitten · teddy bear. Với bài tả tranh thì đó chính là đáp án bày
+     ra trước mặt: bé đọc bảng chứ không nhìn tranh mà tìm chữ. */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '').replace(/\{\/\*[\s\S]*?\*\/\}/g, '');
+  assert.match(pn, /laTranh \? null : \(/, 'bài tả tranh phải giấu khối vốn từ');
+  assert.match(pn, /const laTranh = kichBan\?\.dang === 'tranh'/);
+  /* Nhưng bài THƯỜNG thì giữ — đó là vốn từ của unit, đúng việc của nó. */
+  assert.match(pn, /Con nói về/, 'bài thường vẫn còn bảng vốn từ');
 });
