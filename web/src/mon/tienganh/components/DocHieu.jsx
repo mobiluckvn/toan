@@ -104,17 +104,41 @@ export default function DocHieu({ bai, onXong, onThoat }) {
   );
 }
 
-/** Đoạn văn — luôn hiện, kể cả ở màn kết quả. */
+/**
+ * ĐOẠN HỘI THOẠI — luôn hiện, kể cả ở màn kết quả.
+ *
+ * ── VÌ SAO PHẢI HIỆN TÊN NGƯỜI NÓI ── (bác chốt 18-08-2026)
+ * Bác đọc thử rồi bảo: "Bài đọc phải là một đoạn văn hoặc đoạn hội thoại có ý
+ * nghĩa chứ không phải mấy câu rời rạc chẳng liên quan gì đến nhau."
+ *
+ * `sinh_dochieu_tienganh.py` nay dựng đoạn thành cuộc trò chuyện giữa HAI bạn, và
+ * khai người nói ở `doan[].ai`. Không hiện tên ra thì công ấy mất sạch: trên màn
+ * hình vẫn là mấy dòng chữ chồng nhau, bé vẫn không biết ai hỏi ai đáp.
+ *
+ * ⚠ `key` phải là VỊ TRÍ, không phải câu. Đoạn hội thoại được phép có hai dòng
+ * trùng chữ — chính là lúc hai bạn hỏi lại nhau ("What's your name?" hỏi hai
+ * lượt). Lấy câu làm khoá thì React thấy khoá trùng và nuốt mất một dòng.
+ *
+ * Bài cũ chưa có `ai` thì vẫn bày được, chỉ là không có tên — để một bản dựng cũ
+ * còn nằm trong cache trình duyệt không làm bé mất hẳn đoạn đọc.
+ */
 function Doan({ doan = [] }) {
+  const coVai = doan.some((d) => d.ai);
   return (
     <section className="rounded-xl2 border-2 border-navy bg-white p-4">
       <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-mute">
-        Con đọc đoạn này
+        {coVai ? 'Hai bạn nói chuyện' : 'Con đọc đoạn này'}
       </h2>
       <ul className="flex flex-col gap-2">
-        {doan.map((d) => (
-          <li key={d.cau} className="flex items-center gap-3">
+        {doan.map((d, i) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <li key={i} className="flex items-center gap-3">
             <NutNghe ma={d.am} nhan="Nghe câu này" />
+            {d.ai && (
+              <span className="w-16 flex-none text-right text-sm font-bold text-navy sm:w-20">
+                {d.ai}
+              </span>
+            )}
             <span className="text-lg text-ink sm:text-xl">{d.cau}</span>
           </li>
         ))}

@@ -58,6 +58,149 @@ DE = {
 }
 
 
+# Nhiều nhất bao nhiêu cụm trong một nhóm gợi ý. Sách có unit khai 12 ví dụ cùng
+# khuôn; bày hết ra thì bảng gợi ý dài hơn cả bài bé phải viết.
+CUM_TOI_DA = 6
+
+
+def _tach_doi(s: str) -> tuple[str | None, str]:
+    """`"What's your hobby? - It's cooking."` → `("What's your hobby?", "It's cooking.")`.
+
+    Cắt ở `" - "` đúng như `cauSachCuaBai` (phongnoi.js) và `sinh_kichban_noi.py`.
+    Không phải cặp thì trả `(None, cả câu)`.
+    """
+    phan = [x.strip() for x in str(s or "").split(" - ")]
+    if len(phan) == 2 and all(phan):
+        return phan[0], phan[1]
+    return None, str(s or "").strip()
+
+
+def _khop_khung(cong_thuc: str, cau: str) -> bool:
+    """Câu này có phải một cách điền của công thức kia không."""
+    if not cong_thuc:
+        return False
+    khung = re.sub(r"\s*\+\s*", " ", cong_thuc)
+    mau = re.escape(khung).replace(r"\[", "[").replace(r"\]", "]")
+    mau = re.sub(r"\[[^\]]+\]", "(.+?)", mau)
+    return re.fullmatch(mau, str(cau or "").strip()) is not None
+
+
+def _sach_se(cau: str) -> bool:
+    """Câu có sạch để đưa cho bé chép không.
+
+    Bản đồ lớp 2 khai `"Yes,[Pronoun] is."` — thiếu dấu cách sau dấu phẩy. Đưa cho
+    bé chép là dạy bé viết sai. Bỏ qua chứ không tự chèn dấu cách: sửa hộ ở đây thì
+    câu trong bài viết khác câu trên màn bài học, mà chỗ sai thật vẫn nằm nguyên
+    trong bản đồ.
+    """
+    return bool(cau) and not re.search(r"[,;](?=\S)", cau) and "/" not in cau
+
+
+# Mục không phải MỘT TỪ bé gõ được thì đừng bày ra bảng bấm. Sách khai
+# `"the alphabet (A–Z)"` như một "từ vựng"; bấm vào nó thì bài của bé có một chuỗi
+# không ai viết bao giờ. Lọc ở đây chứ không ở màn hình: màn hình chỉ nên bày thứ
+# nó nhận được.
+def _von_dung_duoc(von: list[dict]) -> list[dict]:
+    return [v for v in von if not re.search(r"[()–]", v["tu"])]
+
+
+def _bo_ten(cau: str, tens: list[str]) -> str:
+    """Thay TÊN NGƯỜI trong câu gợi ý bằng một chỗ trống.
+
+    ⚠ Bản đầu bày thẳng câu của sách: "Hello. I'm Ben." Bé tên Mai bấm vào đó thì
+    bài của bé viết "I'm Ben" — sai về chính bé, và cô giáo máy chấm đúng ngữ pháp
+    nên không ai bắt được. Bốn ví dụ của unit 1 chỉ khác nhau ở cái tên, nên bày cả
+    bốn cũng chỉ là bày bốn cái tên người khác.
+
+    Thay tên bằng `___` thì cụm thành đúng cái nó vốn là: một KHUÔN để bé điền tên
+    MÌNH vào. Không bịa chữ nào — chỉ bỏ đi một chữ vốn không dành cho bé.
+    """
+    ra = cau
+    for t in sorted(tens, key=len, reverse=True):
+        ra = re.sub(rf"\b{re.escape(t)}\b", "___", ra)
+    return re.sub(r"___(\s+___)+", "___", ra)
+
+
+MO_DAU = re.compile(r"^(Hello|Hi)\b|^(I'm|My name's)\b", re.I)
+KET_BAI = re.compile(r"^(Bye|Goodbye)\b", re.I)
+
+
+def _goi_y(bais: list[dict], truoc: list[dict] = (),
+             tens: list[str] = ()) -> list[dict]:
+    """GỢI Ý THEO NHÓM — mỗi nhóm là một CHỖ trong đoạn văn bé sắp viết.
+
+    ══ VÌ SAO ĐỔI ══ (bác chốt 18-08-2026)
+
+    Bác thử xong bảo: "phần gợi ý nên bổ sung thêm nhiều từ hơn cho con chọn và ghi
+    là gợi ý. Con có thể typing thêm theo ý của con. Lưu ý là các từ gợi ý ấy phải
+    ghép lại thành được đoạn văn có ý nghĩa chứ như giờ bạn cho linh tinh."
+
+    Bản cũ bày đúng MỘT bảng: toàn bộ từ đã học, dồn từ chương 1 tới đây, xếp theo
+    thứ tự sách. Bé lớp 3 unit 4 mở ra thấy:
+
+        one · two · three · … · ten · the alphabet (A–Z) · hello · hi · bye ·
+        goodbye · fine · how · I · you · thank you · Ben · Lucy · Mai · Minh · my ·
+        name · what · your · old · …
+
+    Năm mươi ba ô chữ rời. Bấm bừa vài cái thì ra "ten hello your old" — không phải
+    câu, càng không phải đoạn. Đó đúng là chữ "linh tinh" của bác.
+
+    ── NAY: CỤM GHÉP ĐƯỢC, XẾP THEO CHỖ TRONG ĐOẠN ──
+
+    Mỗi mẫu câu của sách thành MỘT nhóm. Nhãn nhóm là `dungDe` — chính lời sách nói
+    mẫu ấy dùng để làm gì ("Hỏi và nói sở thích"). Các mục trong nhóm là những câu
+    TRỌN VẸN cùng khuôn, lấy từ `canonicalExamples`.
+
+    Bé bấm mỗi nhóm một cái là ra một đoạn có đầu có cuối:
+
+        Hello. I'm Mai.  ·  It's cooking.  ·  Bye.
+
+    Chỉ lấy VẾ ĐÁP của cặp hỏi–đáp: bài viết là bé kể về mình, không phải bé tự hỏi
+    tự trả lời. Vế hỏi vẫn còn ở mục "Mẫu câu con đã học" ngay trên đề bài.
+    """
+    nhom: list[dict] = []
+    da_co: set[str] = set()
+    for b in bais:
+        vi_du = [str(x) for x in (b["knowledgeCore"].get("canonicalExamples") or [])]
+        for m in (b["knowledgeCore"].get("mauCauDs") or []):
+            _, dap = _tach_doi(m.get("cau"))
+            khung = _tach_doi(m.get("congThuc") or "")[1]
+            cum = [dap] + [_tach_doi(x)[1] for x in vi_du
+                           if _khop_khung(khung, _tach_doi(x)[1])]
+            cum = [_bo_ten(c, tens) for c in cum]
+            cum = [c for c in dict.fromkeys(cum) if c and _sach_se(c) and c not in da_co]
+            if not cum:
+                continue
+            da_co.update(cum[:CUM_TOI_DA])
+            nhan = str(m.get("dungDe") or "").strip().rstrip(".") or "Câu con có thể viết"
+            nhom.append({"nhan": nhan, "cum": cum[:CUM_TOI_DA]})
+
+    # ── ĐOẠN VĂN PHẢI CÓ ĐẦU VÀ CÓ CUỐI ──
+    # Unit 5 chỉ dạy về sở thích, nên nhóm của chính nó toàn "It's cooking." Bé bấm
+    # ba cái là ra ba câu sở thích liền nhau — đúng khuôn, nhưng không phải một
+    # đoạn. Lời chào và lời tự giới thiệu thì bé HỌC RỒI ở mấy unit đầu; mượn lại
+    # là đoạn có chỗ mở và chỗ đóng. Không mượn của unit CHƯA học: `truoc` chỉ gồm
+    # những bài đứng trước bài này.
+    mo, ket = [], []
+    for b in list(truoc) + list(bais):
+        for x in (b["knowledgeCore"].get("canonicalExamples") or []):
+            for nua in (str(x).split(" - ") if " - " in str(x) else [str(x)]):
+                nua = _bo_ten(nua.strip(), tens)
+                if not _sach_se(nua) or nua in da_co:
+                    continue
+                if MO_DAU.match(nua) and len(mo) < CUM_TOI_DA:
+                    mo.append(nua); da_co.add(nua)
+                elif KET_BAI.match(nua) and len(ket) < CUM_TOI_DA:
+                    ket.append(nua); da_co.add(nua)
+    ra = []
+    if mo:
+        ra.append({"nhan": "Mở đầu — chào và nói con là ai", "cum": mo})
+    ra += nhom
+    if ket:
+        ra.append({"nhan": "Chào tạm biệt", "cum": ket})
+    return ra
+
+
 def _ten_unit(b: dict) -> str:
     """`"Unit 5 · Sở thích của mình · My hobbies"` → `"Sở thích của mình"`."""
     phan = [x.strip() for x in str(b.get("title") or "").split("·")]
@@ -77,6 +220,23 @@ def dung(lop: int) -> list[dict]:
     # Nhận mặt bảng chữ cái"), đem làm đề thì đọc không ra câu.
     chuan = json.loads((GOC / f"data/tienganh/chuan_lop{lop}.json").read_text("utf8"))
     nang_luc = {u["so"]: [x for x in (u.get("nang_luc") or []) if x] for u in chuan["unit"]}
+
+    # Tên người SÁCH dạy — để bỏ khỏi câu gợi ý. KHÔNG gõ tay một danh sách: gõ tay
+    # thì thêm quyển mới là lệch, mà lệch ở đây nghĩa là bé chép nguyên tên bạn khác
+    # vào bài tự giới thiệu của mình.
+    #
+    # ⚠ HAI NƠI, VÌ BA QUYỂN KHAI HAI KIỂU. Lớp 1 gom tên vào `them.ten`; lớp 3 để
+    # tên ngay trong `vocabulary` của từng bài và `them` thì RỖNG. Chỉ đọc `them.ten`
+    # thì lớp 3 ra danh sách rỗng, `_bo_ten` không bỏ được gì, và bảng gợi ý lại bày
+    # "Hello. I'm Ben." như cũ — im lặng, vì rỗng không phải là lỗi.
+    #
+    # Dấu nhận biết tên riêng trong bài: `ipa` là null và chữ đầu viết hoa — đúng
+    # luật `chuan_tienganh.py` đang dùng, chứ không phải một phép đoán mới.
+    tens = [x if isinstance(x, str) else x.get("word")
+            for x in (((chuan.get("them") or {}).get("ten") or {}).get("muc") or [])]
+    tens += [v["tu"] for b in bais for v in b["knowledgeCore"]["vocabulary"]
+             if not v.get("ipa") and v["tu"][:1].isupper()]
+    tens = [x for x in dict.fromkeys(tens) if x]
 
     theo_chuong: dict[int, list[dict]] = {}
     for b in bais:
@@ -113,7 +273,8 @@ def dung(lop: int) -> list[dict]:
             "de": f"Con viết {CAU_TOI_THIEU}–3 câu: {viec[0].lower()}{viec[1:]}.",
             "toiThieu": CAU_TOI_THIEU,
             "mauCau": list(dict.fromkeys(mau)),
-            "vonTu": list(von),
+            "goiY": _goi_y([b], bais[:bais.index(b)], tens),
+            "vonTu": _von_dung_duoc(von),
         })
 
     # ══ MỖI CHƯƠNG MỘT ĐỀ — viết tổng hợp cả bốn unit ══
@@ -137,9 +298,12 @@ def dung(lop: int) -> list[dict]:
             "toiThieu": CAU_TOI_THIEU,
             # Mẫu câu của CHÍNH chương này — bé ghép theo, không phải nhớ suông.
             "mauCau": list(dict.fromkeys(mau)),
+            # Gợi ý gom của CẢ BỐN unit — bài chương là chỗ viết tổng hợp, nên
+            # nhóm nào cũng phải có mặt để bé ghép thành một đoạn dài hơn.
+            "goiY": _goi_y(ds, bais[:bais.index(ds[0])], tens),
             # Vốn từ DỒN từ chương 1 tới đây: bé viết về mình thì vẫn cần "I'm" của
             # chương 1 ở bài chương 4. Cắt theo đúng chương là cắt mất cả câu chào.
-            "vonTu": list(von),
+            "vonTu": _von_dung_duoc(von),
         })
     return ra
 

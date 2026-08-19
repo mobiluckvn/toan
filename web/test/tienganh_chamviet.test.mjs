@@ -214,7 +214,13 @@ test('đề bài viết đã dựng và đủ hình dạng', () => {
     'phải có đề cho từng unit nữa — bác chốt 18-08');
   for (const d of ds) {
     assert.ok(d.de && /[àáảãạăâêôơư]/i.test(d.de), `${d.id}: đề phải bằng TIẾNG VIỆT`);
-    assert.ok(d.vonTu.length > 10, `${d.id}: vốn từ quá ít (${d.vonTu.length})`);
+    /* ⚠ Ngưỡng hạ từ `> 10` xuống `>= 10` ngày 18-08, và hạ vì một lý do CỤ THỂ:
+       bảng từ nay lọc bỏ những mục bé không gõ được — sách khai "the alphabet
+       (A–Z)" như một từ vựng, bấm vào là bài của bé có một chuỗi không ai viết bao
+       giờ. Unit 0 vì thế còn đúng 10 từ, mà vốn THẬT thì không mất gì.
+       Đây không phải nới cổng cho dễ thở: phần "nhiều hơn" bác đòi nay nằm ở
+       `goiY` — những CỤM ghép được, có cổng riêng ngay dưới. */
+    assert.ok(d.vonTu.length >= 10, `${d.id}: vốn từ quá ít (${d.vonTu.length})`);
     assert.ok(d.mauCau.length > 0, `${d.id}: không có mẫu câu nào để bé dựa vào`);
     assert.ok(d.toiThieu >= 2, `${d.id}: số câu tối thiểu vô lý`);
   }
@@ -231,4 +237,70 @@ test('đề bài viết đã dựng và đủ hình dạng', () => {
       }
     }
   }
+});
+
+/* ═══════════ GỢI Ý PHẢI GHÉP ĐƯỢC THÀNH MỘT ĐOẠN ═══════════ */
+
+test('gợi ý là CỤM ghép được, xếp theo chỗ trong đoạn', async () => {
+  /* Bác chốt 18-08-2026: "phần gợi ý nên bổ sung thêm nhiều từ hơn cho con chọn và
+     ghi là gợi ý. Con có thể typing thêm theo ý của con. Lưu ý là các từ gợi ý ấy
+     phải ghép lại thành được đoạn văn có ý nghĩa chứ như giờ bạn cho linh tinh."
+
+     Bản cũ bày đúng một bảng: 53 ô CHỮ RỜI, dồn từ chương 1 tới đây, xếp theo thứ
+     tự sách — `one · two · … · the alphabet (A–Z) · hello · … · your`. Bấm bừa vài
+     cái ra "ten hello your old": không phải câu, càng không phải đoạn.
+
+     Không cổng nào bắt được, vì mọi thứ đo được đều đúng: từ nào cũng đã học, số
+     lượng thì dư dả. Chỉ MỞ RA BẤM THỬ mới thấy. Nên phép kiểm phải hỏi đúng câu
+     ấy: bấm mỗi nhóm một cái thì có ra một đoạn không. */
+  const { readFileSync, existsSync } = await import('node:fs');
+  const url = new URL('../public/content/ta3/vietbai.json', import.meta.url);
+  if (!existsSync(url)) return;
+  const ds = JSON.parse(readFileSync(url, 'utf8'));
+  assert.ok(ds.length > 0, 'không có đề nào thì mọi vòng lặp chạy 0 lần');
+
+  for (const k of ds) {
+    assert.ok(k.goiY?.length, `${k.id}: không có gợi ý theo nhóm nào`);
+    for (const g of k.goiY) {
+      assert.ok(g.nhan && g.cum?.length, `${k.id}: nhóm “${g.nhan}” rỗng`);
+      for (const c of g.cum) {
+        /* Mỗi mục là một CÂU TRỌN: mở đầu chữ hoa (hoặc chỗ trống), đóng bằng dấu
+           câu. Một từ trần thì bấm vào không ghép được với gì cả — đúng chỗ hỏng cũ. */
+        assert.match(c, /^([A-Z]|___)/, `${k.id}: “${c}” không mở đầu chữ hoa`);
+        assert.match(c, /[.!?]$/, `${k.id}: “${c}” không phải một câu trọn`);
+        /* Dấu vết của một phép cắt hỏng, và của nguồn thiếu dấu cách. */
+        assert.ok(!/ - |\/|\[/.test(c), `${k.id}: “${c}” còn dấu ghép câu`);
+        assert.ok(!/[,;]\S/.test(c), `${k.id}: “${c}” thiếu dấu cách sau dấu phẩy`);
+      }
+      assert.equal(new Set(g.cum).size, g.cum.length, `${k.id}: nhóm “${g.nhan}” có mục trùng`);
+    }
+    /* ⚠ KHÔNG ĐƯỢC BÀY TÊN NGƯỜI KHÁC. Bé tên Mai mà bấm "Hello. I'm Ben." thì bài
+       của bé viết sai về CHÍNH BÉ, và máy chấm vẫn cho đúng ngữ pháp. Bốn ví dụ của
+       unit 1 chỉ khác nhau ở cái tên, nên bày cả bốn là bày bốn tên người lạ. */
+    const ten = new Set(['Ben', 'Lucy', 'Mai', 'Minh', 'Bill', 'Linh', 'Mary', 'Nam']);
+    for (const g of k.goiY) {
+      for (const c of g.cum) {
+        for (const w of c.split(/[^A-Za-z']+/)) {
+          assert.ok(!ten.has(w), `${k.id}: gợi ý “${c}” bắt bé xưng tên người khác`);
+        }
+      }
+    }
+    /* Bảng từ chỉ nhận thứ bé GÕ ĐƯỢC. Sách khai "the alphabet (A–Z)" như một từ
+       vựng; bấm vào là bài của bé có một chuỗi không ai viết bao giờ. */
+    for (const v of k.vonTu || []) {
+      assert.ok(!/[()–]/.test(v.tu), `${k.id}: bảng từ còn mục không gõ được “${v.tu}”`);
+    }
+  }
+});
+
+test('màn bài viết NÓI RÕ đó là gợi ý, và bé được tự gõ thêm', async () => {
+  /* Bác dặn "ghi là gợi ý" và "con có thể typing thêm theo ý của con". Ô nhập vốn
+     đã cho gõ tự do từ đầu — nhưng không nói ra thì bé tám tuổi tưởng chỉ được bấm
+     mấy cái nút, và cả phần tự viết coi như không có. */
+  const { readFileSync } = await import('node:fs');
+  const s = readFileSync(new URL('../src/mon/tienganh/components/VietBai.jsx', import.meta.url), 'utf8')
+    .replace(/\{\/\*[\s\S]*?\*\/\}/g, '');
+  assert.match(s, /Gợi ý — bấm để thêm vào bài/);
+  assert.match(s, /tự gõ thêm câu của riêng con/);
+  assert.match(s, /bai\?\.goiY/, 'màn phải đọc gợi ý theo nhóm từ đề bài');
 });

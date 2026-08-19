@@ -36,6 +36,7 @@ export default function VietBai({ bai, onXong, onThoat }) {
 
   const vonTu = bai?.vonTu || [];
   const mauCau = bai?.mauCau || [];
+  const goiY = bai?.goiY || [];
   const toiThieu = bai?.toiThieu || 2;
   const duoc = useMemo(() => duocGui(viet, toiThieu), [viet, toiThieu]);
 
@@ -107,9 +108,50 @@ export default function VietBai({ bai, onXong, onThoat }) {
         />
       </label>
 
+      {/* ══ GỢI Ý — CỤM GHÉP ĐƯỢC, XẾP THEO CHỖ TRONG ĐOẠN ══
+
+          Bác chốt 18-08-2026: "phần gợi ý nên bổ sung thêm nhiều từ hơn cho con
+          chọn và ghi là gợi ý. Con có thể typing thêm theo ý của con. Lưu ý là các
+          từ gợi ý ấy phải ghép lại thành được đoạn văn có ý nghĩa chứ như giờ bạn
+          cho linh tinh."
+
+          Bản cũ bày đúng một bảng: 53 ô chữ rời, dồn từ chương 1 tới đây, xếp theo
+          thứ tự sách — `one · two · … · the alphabet (A–Z) · hello · … · your`.
+          Bấm bừa vài cái ra "ten hello your old": không phải câu, càng không phải
+          đoạn. Nay mỗi nhóm là một CHỖ trong đoạn (mở đầu → nội dung → chào tạm
+          biệt), và mỗi mục là một câu trọn vẹn của sách. Bấm mỗi nhóm một cái là
+          ra một đoạn có đầu có cuối. Bảng từ vẫn còn, nhưng lùi xuống làm việc của
+          nó: thay vào chỗ trống. */}
+      {!!goiY.length && (
+        <section>
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-mute">
+            Gợi ý — bấm để thêm vào bài
+          </h2>
+          <p className="mb-2 text-sm text-mute">
+            Đây chỉ là gợi ý thôi. Con tự gõ thêm câu của riêng con cũng được nhé.
+          </p>
+          <div className="flex flex-col gap-3">
+            {goiY.map((g) => (
+              <div key={g.nhan}>
+                <p className="text-sm font-semibold text-navy">{g.nhan}</p>
+                <div className="mt-1 flex flex-wrap gap-2">
+                  {g.cum.map((c) => (
+                    <button key={c} type="button" onClick={() => themTu(c)}
+                      className="rounded-xl2 border-2 border-line bg-white px-3 py-1.5 text-ink
+                        hover:border-navy focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+                      {c}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section>
         <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-mute">
-          Từ con đã học — bấm để thêm vào bài
+          {goiY.length ? 'Từ để thay vào chỗ trống' : 'Từ con đã học — bấm để thêm vào bài'}
         </h2>
         <div className="flex flex-wrap gap-2">
           {vonTu.map((v) => (
