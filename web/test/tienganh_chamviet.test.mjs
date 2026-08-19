@@ -279,6 +279,28 @@ test('gợi ý là CỤM ghép được, xếp theo chỗ trong đoạn', async 
       assert.ok(k.yTrongTranh?.length, `${k.id}: thiếu bản mô tả để máy chấm đối chiếu`);
       assert.ok((k.vonTu || []).some((v) => /kite|yo-yo|kitten|bear/.test(v.tu)),
         `${k.id}: bảng từ không có vật nào của tranh`);
+
+      /* ══ BẢNG TỪ PHẢI ĐỦ ĐỂ VIẾT LẠI CẢ ĐOẠN MÔ TẢ ══ (bác chốt 19-08-2026)
+         "Phần từ trong tranh cần đầy đủ hơn như nội dung của phần đọc (ít nhất là
+          thế)."
+
+         Bản trước gom tên VẬT rồi thêm tay mấy chữ nối ĐOÁN CHỪNG — và đoán thiếu:
+         "That's" của câu "That's a yo-yo." không có trong bảng, nên bé bấm hết bảng
+         vẫn không viết nổi đoạn mà chính bài đọc vừa cho đọc. Không lỗi đỏ ở đâu:
+         bảng vẫn đầy chữ, chỉ là thiếu đúng một chữ bé cần.
+
+         Phép đo: xoá mọi từ trong bảng khỏi từng câu của đoạn; còn sót chữ nào thì
+         chữ ấy bé không có cách nào gõ ra. */
+      const bang = (k.vonTu || []).map((v) => v.tu).filter(Boolean);
+      for (const cau of k.yTrongTranh || []) {
+        let con = cau;
+        for (const t of bang) {
+          con = con.replace(new RegExp(`\\b${t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi'), ' ');
+        }
+        const sot = con.match(/[A-Za-z][A-Za-z']*/g) || [];
+        assert.equal(sot.length, 0,
+          `${k.id}: bảng từ thiếu ${JSON.stringify(sot)} — bé không viết nổi “${cau}”`);
+      }
       continue;
     }
     assert.ok(k.goiY?.length, `${k.id}: không có gợi ý theo nhóm nào`);

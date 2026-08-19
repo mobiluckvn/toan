@@ -132,12 +132,24 @@ def muc_doc(k: dict, lop: int) -> tuple[dict, list[dict]]:
 
 
 def tu_trong_tranh(k: dict, lop: int) -> list[dict]:
-    """Bảng từ cho màn viết: đúng những VẬT CÓ TRONG TRANH, kèm nghĩa của sách.
+    """Bảng từ cho màn viết — ĐỦ ĐỂ VIẾT LẠI CẢ ĐOẠN MÔ TẢ.
 
-    ⚠ Bản đầu lấy `vonTu` của mục viết cũ — tức là vốn từ của chính unit 0, tức là
-    mười con số. Bé nhìn tranh thấy diều và mèo con, mở bảng từ ra thấy one · two ·
-    three: không gõ nổi một câu nào. Từ phải là từ CỦA BỨC TRANH, mà tranh thì cố ý
-    lấy vật từ lớp 1·2.
+    ══ BÁC CHỐT 19-08-2026 ══
+        "Phần từ trong tranh cần đầy đủ hơn như nội dung của phần đọc (ít nhất là
+         thế)."
+
+    Bản trước gom tên VẬT rồi thêm tay bảy chữ nối đoán chừng — và đoán thiếu:
+    "That's" của câu "That's a yo-yo." không có trong bảng, nên bé bấm hết bảng vẫn
+    không viết nổi đoạn mà chính bài đọc vừa cho đọc.
+
+    Nay suy THẲNG từ đoạn mô tả: mọi chữ trong đoạn đều phải có mặt. Đoán thì còn
+    thiếu, chứ suy từ đoạn thì không thể thiếu.
+
+    Ba nhóm, xếp theo việc:
+      · VẬT trong tranh — kèm nghĩa, đây là thứ bé chọn để nói về;
+      · CHỮ NỐI lấy từ chính đoạn (This · I · can · see · That's · There's…);
+      · SỐ trên tấm biển, cộng "It's" để nói về nó — tranh có mà đoạn không nhắc,
+        bé muốn viết thêm thì phải có chữ.
     """
     nghia = {}
     for l in range(1, lop + 1):
@@ -146,11 +158,31 @@ def tu_trong_tranh(k: dict, lop: int) -> list[dict]:
             b = json.loads(f.read_text("utf8"))
             for v in b["knowledgeCore"]["vocabulary"]:
                 nghia.setdefault(v["tu"], v.get("nghia") or "")
-    ra = [{"tu": n["tu"], "nghia": nghia.get(n["tu"], "")} for n in k["nhom"]]
-    # Thêm mấy chữ NỀN của khuôn mô tả — không có chúng thì bấm được vật mà không
-    # ghép được câu.
-    for t in ("I", "can", "see", "this", "is", "there's", "a"):
-        ra.append({"tu": t, "nghia": ""})
+
+    ra, da = [], set()
+
+    def them(t, ng=""):
+        if t and t.lower() not in da:
+            da.add(t.lower())
+            ra.append({"tu": t, "nghia": ng or nghia.get(t, "")})
+
+    # ① vật trong tranh
+    for n in k["nhom"]:
+        them(n["tu"])
+    # ② mọi chữ của đoạn mô tả, giữ nguyên dạng viết trong đoạn ("That's", "This")
+    for c in k["doan"]:
+        # Bỏ những chữ đã nằm trong một CỤM đã thêm ("teddy bear" → bỏ teddy, bear).
+        con = c
+        for t in list(da):
+            con = re.sub(rf"\b{re.escape(t)}\b", " ", con, flags=re.I)
+        for w in re.findall(r"[A-Za-z][A-Za-z']*", con):
+            them(w)
+    # ③ số trên biển — tranh có mà đoạn không nhắc
+    if k.get("bienSo"):
+        so = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five",
+              6: "six", 7: "seven", 8: "eight", 9: "nine", 10: "ten"}
+        them("It's")
+        them(so.get(k["bienSo"]["so"], ""))
     return ra
 
 
