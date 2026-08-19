@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CONTENT, dongDau } from '../../../chung/lib/soQuyen.js';
 import CauHoi from './CauHoi.jsx';
-import NutNghe from './NutNghe.jsx';
+import NutNghe, { NutNgheDoan } from './NutNghe.jsx';
 
 /**
  * BÀI ĐỌC HIỂU NGẮN — mỗi chương một bài. Bác chốt 18-08-2026.
@@ -181,12 +181,13 @@ function Doan({ doan = [], lien = false }) {
         <p className="text-lg leading-relaxed text-ink sm:text-xl">
           {doan.map((d) => d.cau).join(' ')}
         </p>
-        <ul className="mt-3 flex flex-wrap gap-2">
-          {doan.map((d, i) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <li key={i}><NutNghe ma={d.am} nhan={`Nghe câu ${i + 1}`} /></li>
-          ))}
-        </ul>
+        {/* MỘT nút loa, phát CẢ ĐOẠN — bác chốt 19-08-2026.
+            Rải mỗi câu một nút thì trên màn lại thành một hàng nút, tức là lại cắt
+            đoạn văn ra thành từng mẩu — đúng cái vừa gom lại. Bé muốn nghe thì bấm
+            một lần và nghe hết. */}
+        <div className="mt-3">
+          <NutNgheDoan mas={doan.map((d) => d.am)} nhan="Nghe cả đoạn" />
+        </div>
       </section>
     );
   }

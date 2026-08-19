@@ -93,9 +93,16 @@ export default function NutNghe({
  * Hai model khác nhau nên KHÔNG thể sinh thành một clip: mỗi đoạn một tệp, ở đây
  * nối lại lúc phát. Xem `tools/tts/README.md` mục 1.
  */
-export function NutNgheDoan({ doan = [], nhan = 'Nghe cả đoạn' }) {
+export function NutNgheDoan({ doan = [], mas = null, nhan = 'Nghe cả đoạn' }) {
   const [i, datI] = useState(-1);
-  const ds = doan.map(([chu, tieng]) => ({ chu, tieng, ma: maCua(chu, tieng) }))
+  /* Hai đường vào, vì hai chỗ gọi có sẵn hai thứ khác nhau:
+       `doan` — mảng [chữ, tiếng], nút tự tính mã (lời giảng lẫn Việt–Anh);
+       `mas`  — mảng MÃ CLIP có sẵn (bài đọc: mỗi dòng đã khai `am`).
+     Bắt bài đọc suy ngược từ chữ ra mã là mời một chỗ lệch: mã trong tệp mới là mã
+     thật, còn suy lại thì chỉ cần một dấu câu khác là tra không ra clip. */
+  const ds = (mas
+    ? mas.filter(Boolean).map((ma) => ({ ma }))
+    : doan.map(([chu, tieng]) => ({ chu, tieng, ma: maCua(chu, tieng) })))
     .filter((x) => duongAm(x.ma));
   const tk = useRef(null);
 

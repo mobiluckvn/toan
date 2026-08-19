@@ -11,23 +11,96 @@
   "tranhTen": "Trong cửa hàng đồ chơi",
   "doan": [
    {
-    "cau": "I can see a kite.",
-    "am": "cau_i_can_see_a_kite"
+    "cau": "This is a kite.",
+    "am": "cau_this_is_a_kite"
    },
    {
-    "cau": "I can see a yo-yo.",
-    "am": "cau_i_can_see_a_yo_yo"
+    "cau": "I can see a ball.",
+    "am": "cau_i_can_see_a_ball"
    },
    {
-    "cau": "This is a kitten.",
-    "am": "cau_this_is_a_kitten"
+    "cau": "That's a yo-yo.",
+    "am": "cau_that_s_a_yo_yo"
    },
    {
-    "cau": "There's a teddy bear.",
-    "am": "cau_there_s_a_teddy_bear"
+    "cau": "There's a kitten.",
+    "am": "cau_there_s_a_kitten"
+   },
+   {
+    "cau": "I can see a teddy bear.",
+    "am": "cau_i_can_see_a_teddy_bear"
    }
   ],
-  "cau": []
+  "cau": [
+   {
+    "id": "T1",
+    "loai": "yChinh",
+    "text": "Bức tranh này vẽ ở đâu?",
+    "format": "chon",
+    "choices": [
+     "Ở sân trường",
+     "Trong cửa hàng đồ chơi",
+     "Trong phòng ăn",
+     "Ở chợ"
+    ],
+    "answerKey": {
+     "choice": "Trong cửa hàng đồ chơi"
+    },
+    "solutionNarrative": "Đây là cảnh trong cửa hàng đồ chơi."
+   },
+   {
+    "id": "T2",
+    "loai": "chiTiet",
+    "text": "Trong tranh có con vật nào?",
+    "format": "chon",
+    "tiengViet": true,
+    "choices": [
+     "Con chó",
+     "Con voi",
+     "Con mèo con",
+     "Con cá"
+    ],
+    "answerKey": {
+     "choice": "Con mèo con"
+    },
+    "solutionNarrative": "Con nhìn lại tranh nhé — con mèo con."
+   },
+   {
+    "id": "T3",
+    "loai": "chiTiet",
+    "text": "Trên tấm biển là số mấy?",
+    "format": "chon",
+    "tiengViet": true,
+    "choices": [
+     "5",
+     "3",
+     "4",
+     "6"
+    ],
+    "answerKey": {
+     "choice": "5"
+    },
+    "solutionNarrative": "Con nhìn lại tranh nhé — 5."
+   },
+   {
+    "id": "T4",
+    "loai": "chiTiet",
+    "text": "Câu nào ĐÚNG với bức tranh?",
+    "format": "chon",
+    "choices": [
+     "I can see a dog.",
+     "There's a garden.",
+     "This is a kite.",
+     "She's running."
+    ],
+    "answerKey": {
+     "choice": "This is a kite."
+    },
+    "solutionNarrative": "“This is a kite.” — con nhìn lại tranh xem nhé."
+   }
+  ],
+  "soCau": 4,
+  "need": 3
  },
  {
   "id": "DOC:TA3.U01",

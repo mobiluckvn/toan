@@ -20,6 +20,15 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
+/* Bản khai bức tranh — thứ ĐẺ RA ảnh, nên soi nó là soi đúng nguồn. Đọc ảnh để đếm
+   diều thì phải nhận dạng hình, mà bản khai đã nói sẵn "3 × kite". */
+const tranhKhai = (() => {
+  try {
+    return JSON.parse(readFileSync(
+      new URL('../../data/tienganh/tranh_lop3.json', import.meta.url), 'utf8'));
+  } catch { return []; }
+})();
+
 const R = new URL('../../', import.meta.url).pathname;
 let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
@@ -107,8 +116,19 @@ for (const q of quyens) {
       if (!(k.need >= 2 && k.need <= (k.cau || []).length)) {
         hinhDang.push(`${k.id}: cần ${k.need}/${(k.cau || []).length} câu — vô lý`);
       }
-    } else if (k.cau?.length) {
-      hinhDang.push(`${k.id}: bài tả tranh mà vẫn còn ${k.cau.length} câu hỏi`);
+    } else {
+      /* ⚠ ĐẢO LẠI 19-08 (lần hai). Lượt trước bác bảo "mô tả tranh thì làm gì có câu
+         hỏi mà nhét câu hỏi vô làm gì", nên phép này đòi bài tranh KHÔNG có câu hỏi.
+         Nay bác nói rõ hơn: "Thiếu phần câu hỏi sau khi đọc. Và đọc xong rồi thì
+         phải trả lời câu hỏi." Hai điều không mâu thuẫn — lần ấy tôi nhét câu hỏi
+         vào GIỮA đoạn mô tả, nay là ĐỌC XONG RỒI mới hỏi. */
+      if (!k.cau?.length) hinhDang.push(`${k.id}: bài tả tranh mà không có câu hỏi nào`);
+      if (!(k.cau || []).some((c) => c.loai === 'yChinh')) {
+        hinhDang.push(`${k.id}: thiếu câu hỏi TỔNG QUAN`);
+      }
+      if (!(k.cau || []).some((c) => c.loai === 'chiTiet')) {
+        hinhDang.push(`${k.id}: thiếu câu hỏi CHI TIẾT`);
+      }
     }
 
     for (const d of (k.doan || [])) {
@@ -139,6 +159,11 @@ for (const q of quyens) {
          ("Cơ thể, sở thích, trường lớp"), và đem nó đi so với túi từ tiếng Anh thì
          mọi âm tiết đều "lạ" — cổng kêu 170 lỗi mà không lỗi nào có thật. Dấu nhận
          biết: chữ Việt có ký tự ngoài bảng ASCII. */
+      /* Câu hỏi khai `tiengViet` thì lựa chọn của nó là TIẾNG VIỆT — đừng soi bằng
+         túi từ tiếng Anh. Tiếng Việt KHÔNG DẤU ("Con voi") trông hệt tiếng Anh, nên
+         phép dò dấu ở dòng dưới không đủ; phải để người khai nói ra. Cùng bẫy với
+         "con quay" đã dính ở phòng nói. */
+      if (c.tiengViet) continue;
       for (const x of c.choices) {
         if (!/[a-z]/i.test(x) || /[^\x20-\x7E’‘]/.test(x)) continue;
         for (const w of chu(x)) {
@@ -352,6 +377,31 @@ for (const q of quyens) {
     if (!existsSync(join(R, 'web/public/content', k.tranh))) {
       tranhHong.push(`${k.id}: thiếu tệp ${k.tranh}`);
     }
+    /* ══ ĐOẠN PHẢI ĐỒNG BỘ VỚI TRANH ══ (bác bắt 19-08-2026)
+       "Trên hình là 3 cái diều. Câu mô tả lại lại I can see a kite. Nội dung phải
+       đồng bộ với Tranh bạn nhé."
+
+       Đúng, và không có cách sửa CÂU cho khớp tranh: tới unit 0 sách chưa có khuôn
+       nào nói "ba con diều" trong một câu kể — chỉ có "I can see a tiger." (một
+       vật) và "I can see six." (trần một con số). Nên phải sửa TRANH.
+
+       Phép đo: mỗi vật khai `so > 1` thì đoạn phải có một câu nói được số ấy; chưa
+       có khuôn thì tranh không được vẽ nhiều. Máy không nhìn ảnh, nhưng bản khai
+       tranh thì đọc được — và bản khai chính là thứ đẻ ra ảnh. */
+    const khai = tranhKhai.find((x) => x.unit === k.unit);
+    if (khai) {
+      for (const n of khai.nhom || []) {
+        if (n.so > 1 && !(khai.doan || []).some((c) => /\b(two|three|four|five|six|seven|eight|nine|ten)\b/i.test(c))) {
+          tranhHong.push(`${k.id}: tranh vẽ ${n.so} ${n.tu} mà đoạn không nói số nào`);
+        }
+      }
+      /* Và ngược chiều: đoạn nhắc tới vật nào thì tranh phải CÓ vật ấy. */
+      for (const c of khai.doan || []) {
+        const co = (khai.nhom || []).some((n) => c.toLowerCase().includes(n.tu.toLowerCase()));
+        if (!co) tranhHong.push(`${k.id}: đoạn tả “${c}” mà tranh không có vật ấy`);
+      }
+    }
+
     /* Đoạn mô tả phải là câu KỂ, không phải hỏi–đáp: bác bắt đúng chỗ này —
        "viết thành một đoạn không viết rời rạc như bạn đang làm". */
     for (const d of k.doan || []) {

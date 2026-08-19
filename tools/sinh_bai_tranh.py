@@ -64,7 +64,69 @@ def _tron(dung: str, moi: list[str]) -> list[str]:
 def _dang(cau: str) -> tuple:
     return (cau.split()[0].lower(), len(cau.split())) if cau.split() else ("", 0)
 
-def muc_doc(k: dict, lop: int) -> tuple[dict, list[dict]]:
+def cau_hoi_sau_doc(k: dict, canh_khac: list[str]) -> list[dict]:
+    """CÂU HỎI SAU KHI ĐỌC — một câu tổng quan, rồi các câu chi tiết.
+
+    ══ BÁC CHỐT 19-08-2026 ══
+        "Thiếu phần câu hỏi sau khi đọc. Và đọc xong rồi thì phải trả lời câu hỏi.
+         Câu hỏi về tổng quan cả bài: Câu hỏi về chi tiết bài."
+
+    ⚠ KHÔNG MÂU THUẪN với lần bác bảo "mô tả tranh thì làm gì có câu hỏi mà nhét câu
+    hỏi vô". Lần ấy tôi nhét câu hỏi vào GIỮA lúc bé đang đọc đoạn mô tả; nay là
+    ĐỌC XONG RỒI mới hỏi. Hai chỗ khác nhau hẳn.
+
+    Câu hỏi hỏi bằng TIẾNG VIỆT: bé lớp 3 mới tập đọc tiếng Anh, hỏi bằng tiếng Anh
+    thì bài kiểm tra đọc hiểu hoá ra kiểm tra đọc đề.
+    """
+    ra = [{
+        "id": "T1", "loai": "yChinh",
+        "text": "Bức tranh này vẽ ở đâu?",
+        "format": "chon",
+        "choices": _tron(k["ten"], canh_khac[:3]),
+        "answerKey": {"choice": k["ten"]},
+        "solutionNarrative": f"Đây là cảnh {k['ten'].lower()}.",
+    }]
+
+    # Chi tiết soạn TAY trong bản khai: máy không nhìn được tranh, nên hỏi "trong
+    # tranh có con vật nào" thì phải do người khai. Đoán ở đây là đẻ ra câu hỏi hai
+    # đáp án đúng.
+    for h in k.get("hoiChiTiet") or []:
+        ra.append({
+            "id": f"T{len(ra) + 1}", "loai": "chiTiet",
+            "text": h["hoi"], "format": "chon",
+            # ⚠ Lựa chọn của câu này là TIẾNG VIỆT ("Con mèo con" · "Con voi"). Không
+            # khai cờ thì cổng soi chúng như tiếng Anh và báo "chữ lạ voi" — cùng bẫy
+            # với "con quay" đã dính ở phòng nói: tiếng Việt không dấu trông hệt
+            # tiếng Anh, `CO_DAU_VIET` không phân biệt được.
+            "tiengViet": True,
+            "choices": _tron(h["dap"], h["moi"][:3]),
+            "answerKey": {"choice": h["dap"]},
+            "solutionNarrative": h.get("giai") or f"Con nhìn lại tranh nhé — {h['dap'].lower()}.",
+        })
+
+    # Chi tiết cuối: đối chiếu CHỮ với TRANH. Đây là chỗ bài đọc có tranh làm được
+    # mà bài đọc chữ không làm được — bé phải hiểu câu ấy nói gì mới soi được.
+    if k.get("sai"):
+        dung = k["doan"][0]
+        moi, khuon = [], {_dang(dung)}
+        for x in k["sai"]:
+            if _dang(x) in khuon:
+                continue
+            khuon.add(_dang(x))
+            moi.append(x)
+        if len(moi) >= 2:
+            ra.append({
+                "id": f"T{len(ra) + 1}", "loai": "chiTiet",
+                "text": "Câu nào ĐÚNG với bức tranh?",
+                "format": "chon",
+                "choices": _tron(dung, moi[:3]),
+                "answerKey": {"choice": dung},
+                "solutionNarrative": f"“{dung}” — con nhìn lại tranh xem nhé.",
+            })
+    return ra
+
+
+def muc_doc(k: dict, lop: int, canh_khac: list[str]) -> tuple[dict, list[dict]]:
     """Mục ĐỌC — một ĐOẠN mô tả tranh, KHÔNG câu hỏi.
 
     ══ BÁC BẮT LÀM LẠI 19-08-2026 ══
@@ -88,8 +150,10 @@ def muc_doc(k: dict, lop: int) -> tuple[dict, list[dict]]:
         "tranh": f"{DUONG_TRANH}/{k['id'].replace(':', '_').replace('.', '_')}.png",
         "tranhTen": k["ten"],
         "doan": [{"cau": x, "am": ma_am("cau", x)} for x in k["doan"]],
-        "cau": [],
+        "cau": cau_hoi_sau_doc(k, canh_khac),
     }
+    muc["soCau"] = len(muc["cau"])
+    muc["need"] = min(muc["soCau"], max(2, muc["soCau"] - 1))
     return muc, [{"id": ma_am("cau", x), "chu": x, "tieng": "en"} for x in k["doan"]]
 
 
@@ -209,6 +273,18 @@ def main() -> int:
     tm = GOC / f"web/public/content/{q}"
 
     kho = json.loads((GOC / f"data/tienganh/tranh_lop{a.lop}.json").read_text("utf8"))
+    # Tên CẢNH của các unit — mồi cho câu hỏi "bức tranh này vẽ ở đâu".
+    # ⚠ Lấy `canh` của bản chuẩn, KHÔNG lấy tên unit: tên unit là "Khởi động" ·
+    # "Chào hỏi" — không phải NƠI CHỐN nào cả, nên bé loại được mà chẳng cần nhìn
+    # tranh. Câu hỏi vẫn "chạy đúng", chỉ là không hỏi gì.
+    ten_canh = []
+    for l in range(1, a.lop + 1):
+        cn = json.loads((GOC / f"data/tienganh/chuan_lop{l}.json").read_text("utf8"))
+        for u in cn["unit"]:
+            c = str(u.get("canh") or "").split("·")[0].strip()
+            if c and re.match(r"^(Ở|Trong|Bên|Tại)\b", c):
+                ten_canh.append(c)
+    ten_canh = list(dict.fromkeys(ten_canh))
     canh = [k["ten"] for k in kho]
     docs = json.loads((tm / "dochieu.json").read_text("utf8"))
     viets = json.loads((tm / "vietbai.json").read_text("utf8"))
@@ -216,7 +292,9 @@ def main() -> int:
     loi = []
 
     for k in kho:
-        muc, am = muc_doc(k, a.lop)
+        # Mồi cho câu "vẽ ở đâu" là tên CẢNH của unit khác — đều là nơi bé đã gặp.
+        khac = [t for t in ten_canh if t != k["ten"]][:3]
+        muc, am = muc_doc(k, a.lop, khac)
         loi += am
         docs = [x for x in docs if x["id"] != muc["id"]] + [muc]
 
