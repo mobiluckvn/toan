@@ -82,6 +82,22 @@ def cau_hoi_sau_doc(k: dict) -> list[dict]:
     """
     ra = []
     for h in k.get("hoiDoc") or []:
+        # Mồi: khai riêng ở câu hỏi thì dùng; không thì lấy từ `sai` của bức tranh —
+        # những câu ĐÃ HỌC mà KHÔNG tả bức này. Phải khác khuôn ĐÁP ÁN, nếu không
+        # bé chọn đúng bằng hình dạng.
+        moi = list(h.get("moi") or [])
+        if not moi:
+            dd = _dang(h["dap"])
+            for x in k.get("sai") or []:
+                if _dang(x) != dd and x not in moi:
+                    moi.append(x)
+        # Câu ĐẾM và câu SỐ: mồi phải CÙNG khuôn, chỉ khác con số — việc của bé là
+        # đọc số chứ không phải phân biệt dáng câu.
+        if h["dap"].startswith("I can see ") and h["dap"].split()[-1].rstrip('.').isalpha() \
+                and h["en"].startswith("How many"):
+            moi = ["I can see two.", "I can see three.", "I can see four."]
+        if len(moi) < 2:
+            continue
         ra.append({
             "id": f"T{len(ra) + 1}",
             "loai": h.get("loai") or "chiTiet",
@@ -89,7 +105,7 @@ def cau_hoi_sau_doc(k: dict) -> list[dict]:
             # Dòng phụ tiếng Việt — chỗ bám cho bé chưa đọc nổi đề.
             "phu": h.get("vi"),
             "format": "chon",
-            "choices": _tron(h["dap"], h["moi"][:3]),
+            "choices": _tron(h["dap"], moi[:3]),
             "answerKey": {"choice": h["dap"]},
             "solutionNarrative": h.get("giai") or f"“{h['dap']}”.",
         })

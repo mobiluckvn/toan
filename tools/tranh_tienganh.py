@@ -138,23 +138,25 @@ def dung_tranh(khai: dict, hinh: dict) -> Image.Image:
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--lop", type=int, default=3)
-    p.add_argument("--unit", type=int, required=True)
+    p.add_argument("--unit", type=int)
+    p.add_argument("--tat-ca", action="store_true")
     p.add_argument("--ra", default="web/public/content/tienganh/tranh")
     a = p.parse_args()
 
     kho = json.loads((GOC / f"data/tienganh/tranh_lop{a.lop}.json").read_text("utf8"))
-    khai = next((k for k in kho if k["unit"] == a.unit), None)
-    if not khai:
+    ds = kho if a.tat_ca else [k for k in kho if k["unit"] == a.unit]
+    if not ds:
         return print(f"✗ chưa khai tranh cho unit {a.unit}") or 1
 
-    hinh = hinh_cua_tu(a.lop, a.unit)
-    im = dung_tranh(khai, hinh)
     ra = GOC / a.ra
     ra.mkdir(parents=True, exist_ok=True)
-    tep = ra / f"{khai['id'].replace(':', '_').replace('.', '_')}.png"
-    im.save(tep)
-    print(f"  ✓ {tep.relative_to(GOC)}  {im.width}×{im.height}")
-    print(f"  vật: {', '.join(f'{n['so']}×{n['tu']}' for n in khai['nhom'])}")
+    for khai in ds:
+        hinh = hinh_cua_tu(a.lop, khai["unit"])
+        im = dung_tranh(khai, hinh)
+        tep = ra / f"{khai['id'].replace(':', '_').replace('.', '_')}.png"
+        im.save(tep)
+        print(f"  ✓ U{khai['unit']:02d} {tep.name:24s} "
+              f"{', '.join(n['tu'] for n in khai['nhom'])}")
     return 0
 
 

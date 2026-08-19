@@ -530,3 +530,23 @@ lệch ở đây nghĩa là app hỏi một tệp không tồn tại.
 | `tienganh_video` | bài khai tệp nào thì có tệp ấy · không mp4 mồ côi · nhóm khớp hai chiều với `vocabulary` · độ dài 12–50s (từ mới) |
 | `tienganh_dochieu` | mọi chữ trong đoạn ĐÃ HỌC tới chương ấy · đáp án có thật trong đoạn, mồi thì không |
 | `tienganh_chamviet` | chốt cửa máy chủ · lời dặn đòi đủ bốn điều bác chốt · soi chữ lạ hai chiều · điểm đeo nhãn "máy chấm" |
+
+---
+
+## §8 · BÀI TẢ TRANH — tầng thứ 14 (19-08-2026)
+
+Bác chốt: một BỨC TRANH làm nền cho cả ba màn — đọc · viết · nói. Toàn bộ quy trình,
+sáu luật dựng tranh, và những chỗ đã dính nằm ở **`docs/lam_bai_tranh.md`**; đọc tệp
+ấy TRƯỚC khi làm bài tranh cho một quyển mới.
+
+Bốn tệp mới trong dây chuyền:
+
+| Tệp | Việc |
+|---|---|
+| `data/tienganh/tranh_lopN.json` | bản khai từng bức: vật · đoạn mô tả · câu hỏi |
+| `tools/soan_tranh_lop3.py` | soạn bản khai từ chính vốn của unit |
+| `tools/tranh_tienganh.py` | vẽ PNG, ghép từ bộ hình màn hình và video đang dùng |
+| `tools/sinh_bai_tranh.py` | sinh ba màn quanh bức tranh |
+
+⚠ **Thứ tự**: `sinh_bai_tranh.py` chạy SAU `sinh_dochieu` và `sinh_vietbai` — nó
+CHÈN ĐÈ mục của unit có tranh. Chạy trước thì bị ghi đè lại, im lặng.

@@ -215,7 +215,11 @@ for (const q of quyens) {
      Unit 0 bé mới có mười một từ; bắt đọc tám dòng thì tám dòng ấy chỉ có thể là
      tám biến thể của một câu. Đo bằng trung bình nửa đầu so với nửa sau — từng bài
      một thì nhiễu, vì có unit vốn nghèo mẫu câu. */
-  const theoUnitSap = ds.filter((k) => k.phamVi === 'unit')
+  /* ⚠ Phép này dành cho đoạn HỘI THOẠI, nơi độ dài do bộ dựng chọn. Bài TẢ TRANH
+     thì độ dài = SỐ VẬT TRONG TRANH, và số vật do sách có bao nhiêu từ vẽ được
+     quyết định — unit cuối không nhất thiết nhiều vật hơn unit đầu. Đòi nó dài dần
+     là đòi một thứ bức tranh không hứa. Bài tranh có phép riêng ngay dưới. */
+  const theoUnitSap = ds.filter((k) => k.phamVi === 'unit' && k.dang !== 'tranh')
     .sort((a, b) => a.unit - b.unit);
   if (theoUnitSap.length >= 8) {
     const giua = Math.floor(theoUnitSap.length / 2);
@@ -440,6 +444,14 @@ for (const q of quyens) {
       if (/\?/.test(d.cau)) tranhHong.push(`${k.id}: đoạn mô tả còn câu hỏi “${d.cau}”`);
     }
     if ((k.doan || []).length < 3) tranhHong.push(`${k.id}: đoạn mô tả quá ngắn`);
+    /* Mỗi vật trong tranh phải có ĐÚNG một câu tả nó, và ngược lại. Thừa câu thì bé
+       tìm không ra; thừa vật thì bé nhìn thấy thứ không ai tả. */
+    if (khai) {
+      const soVat = (khai.nhom || []).length;
+      if ((k.doan || []).length !== soVat) {
+        tranhHong.push(`${k.id}: ${soVat} vật mà đoạn có ${(k.doan || []).length} câu`);
+      }
+    }
   }
   t(`${q} · bài tả tranh có đủ tranh và câu hỏi về tranh (${tranhHong.length})`,
     tranhHong.length === 0);

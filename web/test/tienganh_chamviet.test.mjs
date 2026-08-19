@@ -22,6 +22,8 @@ import { readFileSync, existsSync } from 'node:fs';
 import {
   docLoiCham, soiLoiCham, chuLa, demCau, duocGui, DIEM_TOI_DA,
 } from '../src/mon/tienganh/lib/chamviet.js';
+import { readFileSync as _rf } from 'node:fs';
+const tranhKhai = (() => { try { return JSON.parse(_rf(new URL('../../data/tienganh/tranh_lop3.json', import.meta.url), 'utf8')); } catch { return []; } })();
 import { soiBaiViet, loiDanCham, TOI_DA_CHU_BAI_VIET } from '../functions/src/chamviet.js';
 
 const VON = [
@@ -277,8 +279,14 @@ test('gợi ý là CỤM ghép được, xếp theo chỗ trong đoạn', async 
       assert.ok(!k.goiY?.length && !k.mauCau?.length,
         `${k.id}: bài tả tranh mà vẫn bày mẫu câu — thành bài chép lại`);
       assert.ok(k.yTrongTranh?.length, `${k.id}: thiếu bản mô tả để máy chấm đối chiếu`);
-      assert.ok((k.vonTu || []).some((v) => /kite|yo-yo|kitten|bear/.test(v.tu)),
-        `${k.id}: bảng từ không có vật nào của tranh`);
+      /* ⚠ Soi ĐỘNG, đừng ghim tên vật. Bản đầu viết /kite|yo-yo|kitten|bear/ — đúng
+         cho bức tranh unit 0 và sai cho hai mươi bức còn lại. Bảng từ phải chứa MỌI
+         vật của chính bức tranh ấy, và bản khai tranh nói sẵn vật nào. */
+      const khaiT = tranhKhai.find((x) => x.unit === k.unit);
+      for (const n of (khaiT?.nhom || [])) {
+        assert.ok((k.vonTu || []).some((v) => v.tu === n.tu),
+          `${k.id}: bảng từ thiếu vật “${n.tu}” của tranh`);
+      }
 
       /* ══ BẢNG TỪ PHẢI ĐỦ ĐỂ VIẾT LẠI CẢ ĐOẠN MÔ TẢ ══ (bác chốt 19-08-2026)
          "Phần từ trong tranh cần đầy đủ hơn như nội dung của phần đọc (ít nhất là

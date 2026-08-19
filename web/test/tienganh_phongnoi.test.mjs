@@ -1443,9 +1443,10 @@ test('lượt đáp LỜI CHÀO không phải một lần luyện', () => {
   assert.equal(luotLuyen(ls).length, 0, 'đáp lời chào không tính là luyện');
   assert.equal(tinhBuoi({ lichSu: ls }).datLien, 0, 'và không đẩy buổi tới gần vạch kết');
 
-  /* Lấy một kịch bản THƯỜNG: bài tả tranh cố ý không có bước `mau` nào, nên hỏi
-     nó câu này là hỏi sai chỗ. */
-  const k = MOI_KB.find((x) => x.ma === 'ta3' && x.dang !== 'tranh');
+  /* Lấy một kịch bản THƯỜNG. ⚠ Không tìm trong ta3 nữa: từ 19-08 CẢ 21 unit lớp 3
+     đều là bài tả tranh, nên `find` trả undefined và phép kiểm nổ ở `k.tu[0]` —
+     không phải vì luật sai mà vì hết mẫu để thử. Lấy quyển còn kịch bản thường. */
+  const k = MOI_KB.find((x) => x.dang !== 'tranh' && x.tu?.length);
   assert.equal(buocTiepTheo({ kichBan: k, lichSu: ls, hoSo: { thich: k.tu[0] } }).loai,
     'mau', 'bước luyện ĐẦU TIÊN phải là cô làm mẫu');
 
@@ -1468,7 +1469,7 @@ test('sửa nhiều nhất HAI lần rồi nhường đường cho việc dễ h
   assert.equal(buocSua(n(SUA_TOI_DA + 1)), null, 'quá thì thôi, để bé làm việc dễ hơn');
 
   /* Và lúc ấy vòng luyện phải nhận được đường — dưới `haDoKho` là bước TỪ. */
-  const k = MOI_KB.find((x) => x.ma === 'ta3' && x.dang !== 'tranh');
+  const k = MOI_KB.find((x) => x.dang !== 'tranh' && x.tu?.length);
   const b = buocTiepTheo({ kichBan: k, lichSu: n(SUA_TOI_DA + 1),
                            hoSo: { thich: k.tu[0] }, haDoKho: true });
   assert.equal(b.loai, 'tu', 'đuối mãi thì phải được lùi về một chữ');

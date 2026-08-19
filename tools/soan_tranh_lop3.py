@@ -1,0 +1,390 @@
+#!/usr/bin/env python3
+"""SOẠN BẢN KHAI TRANH cho cả quyển lớp 3 — mỗi unit một bức.
+
+    python3 tools/soan_tranh_lop3.py            # in ra để xem
+    python3 tools/soan_tranh_lop3.py --ghi      # ghi vào data/tienganh/tranh_lop3.json
+
+Bác chốt 19-08-2026: "Bạn apply cách làm này cho tất cả các bài nhé."
+
+── VÌ SAO SINH CHỨ KHÔNG GÕ TAY 20 BỨC ──
+Mỗi bức cần: vật vẽ được · đoạn mô tả · câu hỏi tiếng Anh · mồi nhử · câu hỏi gợi ý
+cho phòng nói. Gõ tay 20 bức là gõ 20 lần cùng một luật, và sớm muộn lệch — quên
+một chữ trong bảng từ, hay dùng một khuôn unit ấy chưa học, thì không có gì báo
+ngoài cổng.
+
+Sinh ra từ chính vốn của unit thì cả năm thứ ấy cùng một nguồn, và cổng soi lại
+được. Bức nào ra kỳ thì SỬA TAY trong `tranh_lop3.json` rồi đặt cờ `tay: true` —
+lần soạn sau không đè lên.
+
+── LUẬT SOẠN ──
+1. VẬT là từ MỚI của unit, có hình, và ĐẶT ĐƯỢC SAU "a": loại từ không đếm được,
+   loại hoạt động, loại nơi chốn. Thiếu thì mượn thêm của unit trước.
+2. ĐOẠN: mỗi vật một câu, xoay vòng bốn khuôn KỂ của sách —
+   `This is a X.` · `I can see a X.` · `That's a X.` · `There's a X.`
+   Unit dạy HOẠT ĐỘNG thì dùng `She's Xing.` / `He's Xing.` (khuôn lớp 1 unit 11).
+3. CÂU HỎI bằng tiếng Anh, chỉ dùng khuôn ĐÃ HỌC tới unit ấy.
+4. MỒI là câu của kho mà KHÔNG tả bức tranh này.
+
+⚠ MẠO TỪ. Khuôn của sách ghi "a", nhưng "a elephant" là sai. Đổi sang "an" trước
+nguyên âm — đó là sửa ngữ pháp bắt buộc, không phải bịa câu; `sinh_bai_tienganh.py`
+cũng làm đúng thế ở `_chon_mao_tu`.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from pathlib import Path
+
+GOC = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(GOC / "tools"))
+from kho_cau_tienganh import kho_chu, chu_trong  # noqa: E402
+
+# Vai ĐẶT ĐƯỢC sau "a" và vẽ ra hình được.
+VAI_VAT = {"convat", "dochoi", "dodac", "dodung", "bophan", "giadinh", "nghe",
+           "dt", "thucan", "noichon"}
+# Vai KHÔNG đặt sau "a": nơi chốn (a school nghe được nhưng tranh vẽ cả cảnh),
+# màu, số, hoạt động, đồ uống (không đếm được).
+# ⚠ `trochoi` (badminton · chess · football) KHÔNG đặt được sau "a": "a badminton"
+# sai hẳn. Unit 10 vì thế phải mượn vật của unit khác cùng chương.
+VAI_BO = {"mau", "so", "sothich", "viec", "viecthu", "douong", "trochoi",
+          "chao", "hoi", "daitu", "ten", "sohuu", "tinhtu", "chidinh", "xungho",
+          "dongtu", "soluong", "vitri", "nghe_"}
+# Hoạt động — dùng khuôn "She's …ing."
+VAI_VIEC = {"sothich", "viec", "viecthu"}
+
+KHUON_KE = ["This is {a}.", "I can see {a}.", "That's {a}.", "There's {a}."]
+# ⚠ NGƯỜI THÂN ĐI VỚI "my", KHÔNG ĐI VỚI "a". "This is a father." sai hẳn — tiếng
+# Anh nói "This is my father." Khuôn `This is my + [Noun].` là của lớp 1 unit 3.
+KHUON_NHA = ["This is my {t}.", "That's my {t}.", "This is my {t}.", "That's my {t}."]
+VAI_NHA = {"giadinh"}
+KHUON_VIEC = ["She's {ing}.", "He's {ing}."]
+
+# Không đếm được — "a rice" sai. Sách không khai cờ này nên liệt kê ở đây, và
+# `chuan_tienganh.py` cũng chưa có chỗ nào khai nó.
+KHONG_DEM = {"rice", "bread", "meat", "milk", "water", "juice", "chicken", "fish",
+             "popcorn", "pasta", "sand", "water", "hair", "homework"}
+
+
+def mao_tu(tu: str) -> str:
+    return ("an " if tu[:1].lower() in "aeiou" else "a ") + tu
+
+
+def bai_lop3() -> list[dict]:
+    tm = GOC / "web/public/content/ta3"
+    return [json.loads(p.read_text("utf8")) for p in sorted(tm.glob("DL_TA3_B*.json"))]
+
+
+def bai_lop12() -> list[dict]:
+    """Bài lớp 1·2 — chỗ mượn vật khi unit lớp 3 không có gì vẽ được.
+
+    Chương 1 của lớp 3 dạy chào hỏi · tên · bạn bè: bốn unit liền không có lấy một
+    danh từ vẽ ra tranh được. Không mượn thì bốn bức ấy trống trơn.
+    """
+    ra = []
+    for q in ("ta1", "ta2"):
+        tm = GOC / f"web/public/content/{q}"
+        ra += [json.loads(p.read_text("utf8"))
+               for p in sorted(tm.glob(f"DL_{q.upper()}_B*.json"))]
+    return ra
+
+
+def vat_cua(b: dict, chuan_tu: dict, truoc: list[dict],
+            chuan_tu12: dict | None = None, du_phong: list[dict] | None = None) -> list[dict]:
+    """Vật cho bức tranh: từ MỚI của unit, có hình, đặt được sau "a"."""
+    hinh = {h["tu"]: h for h in (b.get("hinhTu") or [])}
+
+    def duoc(t: str) -> bool:
+        c = chuan_tu.get(t) or {}
+        vai = set(c.get("vai") or [])
+        if not (hinh.get(t, {}).get("hinh") or hinh.get(t, {}).get("ve")):
+            return False
+        if t.lower() in KHONG_DEM or " " in t and not c.get("dang_ing"):
+            return False
+        return bool(vai & VAI_VAT) and not (vai & VAI_BO)
+
+    ra = [t["tu"] for t in b["knowledgeCore"]["vocabulary"] if duoc(t["tu"])][:5]
+    # Thiếu thì mượn của unit trước — bức tranh vẫn phải đủ vật để tả.
+    if len(ra) < 3:
+        # ⚠ CHỈ MƯỢN CỦA UNIT CÙNG CHƯƠNG. Mượn bừa thì ra "bean · bed · egg · desk"
+        # — cái giường lạc vào bàn ăn. Cùng chương là cùng chủ đề sách đã gom sẵn.
+        for x in reversed([y for y in truoc if y["chuong"] == b["chuong"]] or truoc):
+            hx = {h["tu"]: h for h in (x.get("hinhTu") or [])}
+            for t in x["knowledgeCore"]["vocabulary"]:
+                if len(ra) >= 4:
+                    break
+                tu = t["tu"]
+                c = chuan_tu.get(tu) or {}
+                vai = set(c.get("vai") or [])
+                if (tu not in ra and (hx.get(tu, {}).get("hinh") or hx.get(tu, {}).get("ve"))
+                        and tu.lower() not in KHONG_DEM and " " not in tu
+                        and vai & VAI_VAT and not (vai & VAI_BO)):
+                    ra.append(tu)
+            if len(ra) >= 4:
+                break
+    # Vẫn thiếu thì mượn lớp 1·2 — bé học rồi, và bức tranh phải có gì để tả.
+    if len(ra) < 3 and du_phong:
+        ct = {**(chuan_tu12 or {}), **chuan_tu}
+        # XOAY theo số unit: không xoay thì unit 1 và unit 2 mượn đúng bốn vật đầu
+        # danh sách và ra HAI BỨC GIỐNG HỆT NHAU.
+        n = b["so"] % max(1, len(du_phong))
+        du_phong = du_phong[n:] + du_phong[:n]
+        for x in du_phong:
+            hx = {h["tu"]: h for h in (x.get("hinhTu") or [])}
+            for t in x["knowledgeCore"]["vocabulary"]:
+                if len(ra) >= 4:
+                    break
+                tu = t["tu"]
+                vai = set((ct.get(tu) or {}).get("vai") or [])
+                if (tu not in ra and (hx.get(tu, {}).get("hinh") or hx.get(tu, {}).get("ve"))
+                        and tu.lower() not in KHONG_DEM and " " not in tu
+                        and vai & VAI_VAT and not (vai & VAI_BO)):
+                    ra.append(tu)
+            if len(ra) >= 4:
+                break
+    return ra
+
+
+def viec_cua(b: dict, chuan_tu: dict) -> list[str]:
+    """Hoạt động của unit — từ có `dang_ing`, để dùng khuôn "She's …ing.".
+
+    ⚠ PHẢI CÓ HÌNH. Bỏ sót phép kiểm này thì bộ dựng tranh dừng hẳn giữa chừng ở
+    "không có hình cho swinging" — và nó dừng ĐÚNG, vì vẽ một ô trống rồi bảo bé tả
+    thì bé không có gì để tả.
+    """
+    hinh = {h["tu"]: h for h in (b.get("hinhTu") or [])}
+    ra = []
+    for t in b["knowledgeCore"]["vocabulary"]:
+        c = chuan_tu.get(t["tu"]) or {}
+        vai = set(c.get("vai") or [])
+        if vai & VAI_VIEC:
+            ing = c.get("dang_ing") or (t["tu"] if t["tu"].endswith("ing") else None)
+            h = hinh.get(ing) or hinh.get(t["tu"]) or {}
+            if ing and " " not in ing and (h.get("hinh") or h.get("ve")):
+                ra.append(ing)
+    return ra[:4]
+
+
+
+def so_nhieu_cua(tu: str, chuan_tu: dict, ct12: dict, kho: set | None = None) -> str | None:
+    """Dạng số nhiều của từ — CHỈ khi bé đã học tới đây.
+
+    ⚠ `chuan_lop3.json` khai `cat → cats` ở unit 16. Tra thẳng vào đó khi soạn tranh
+    cho unit 1 thì ra câu hỏi "How many cats can you see?" — mà "cats" là chữ bé
+    chưa gặp. Cổng bắt được: "đề hỏi … chữ lạ cats".
+    """
+    sn = ((chuan_tu.get(tu) or ct12.get(tu) or {}) or {}).get("so_nhieu")
+    if sn and kho is not None and sn.lower() not in kho:
+        return None
+    return sn
+
+
+def hoi_doc(doan: list[str], nhom: list[dict], chuan_tu: dict, ct12: dict,
+            unit: int, kho: set) -> list[dict]:
+    """Câu hỏi sau khi đọc — BẰNG TIẾNG ANH, chỉ dùng khuôn đã học tới unit này.
+
+    Ba khuôn hỏi, xếp theo lúc sách dạy chúng:
+        What can you see?              lớp 2 unit 4  — dùng được từ đầu quyển
+        How many … can you see?        lớp 1 unit 16 — cần từ có dạng số nhiều
+        What's she doing?              lớp 2 unit 5  — cho unit dạy hoạt động
+        What's this?                   lớp 3 unit 4  — chỉ từ unit 4 trở đi
+
+    Cổng `tienganh_dochieu` soi lại từng chữ của ĐỀ theo túi từ đã học, nên khuôn
+    nào lỡ dùng sớm là đỏ ngay.
+    """
+    ra = []
+    nhin = next((c for c in doan if c.startswith("I can see")), None)
+    lam = next((c for c in doan if c.startswith(("She's", "He's"))), None)
+
+    co = {n["tu"] for n in nhom}
+    # ⚠ MỒI PHẢI CÙNG KHUÔN VỚI ĐÁP ÁN, chỉ khác TÊN VẬT.
+    # Mồi khác khuôn thì đáp án thành lựa chọn DUY NHẤT mang khuôn của nó — bé chọn
+    # đúng bằng mắt, không cần đọc. Cổng bắt được 33 chỗ đúng kiểu ấy.
+    ngoai = [t for t in ("dog", "cat", "duck", "goat", "car", "bag", "hat", "cup")
+             if t not in co and t in kho]
+
+    if nhin:
+        ra.append({"loai": "yChinh", "en": "What can you see?",
+                   "vi": "Con nhìn thấy gì trong tranh?", "dap": nhin,
+                   "moi": [f"I can see {mao_tu(t)}." for t in ngoai[:3]]})
+    elif lam:
+        khac = [x for x in ("running", "walking", "swimming") if x in kho]
+        ra.append({"loai": "yChinh", "en": "What's she doing?",
+                   "vi": "Bạn ấy đang làm gì?", "dap": lam,
+                   "moi": [f"She's {x}." for x in khac[:3]]})
+
+    # ĐẾM — chỉ khi từ ấy có dạng số nhiều đã khai, nếu không thì "How many kites"
+    # thành một chữ bé chưa gặp.
+    for n in nhom:
+        sn = so_nhieu_cua(n["tu"], chuan_tu, ct12, kho)
+        if sn and len(ra) < 3 and not any("How many" in x["en"] for x in ra):
+            ra.append({"loai": "chiTiet",
+                       "en": f"How many {sn} can you see?",
+                       "vi": f"Con thấy mấy {n['tu']}?",
+                       "dap": "I can see one."})
+            break
+
+    # ĐANG LÀM GÌ — cho unit dạy hoạt động, hoặc "What's this?" cho unit từ 4 trở đi.
+    if lam and len(ra) < 3 and not any(x["en"].startswith("What's she") for x in ra) and False:
+        ra.append({"loai": "chiTiet", "en": "What's she doing?",
+                   "vi": "Bạn ấy đang làm gì?", "dap": lam})
+    elif unit >= 4 and len(ra) < 3:
+        vat = next((c for c in doan if c.startswith(("This is", "That's"))), None)
+        # ⚠ NGƯỜI thì hỏi "Who's this?" — "What's this?" về bố mẹ là hỏi bố mẹ là
+        # CÁI GÌ. Khuôn "Who's this? - It's my sister." là của chính unit 11.
+        nguoi = bool(vat and " my " in vat)
+        if nguoi and unit < 11:
+            vat = None
+        if vat:
+            ra.append({"loai": "chiTiet",
+                       "en": "Who's this?" if nguoi else "What's this?",
+                       "vi": "Đây là ai?" if nguoi else "Đây là cái gì?",
+                       "moi": [f"It's {mao_tu(t)}." for t in ngoai[:3]],
+                       "dap": "It's " + vat.split(" is ", 1)[-1].replace("That's ", "")
+                              if " is " in vat else "It's " + vat[len("That's "):]})
+    return ra
+
+
+def moi_sai(nhom: list[dict], chuan_tu: dict, ct12: dict, kho: set) -> list[str]:
+    """Mồi nhử — câu ĐÃ HỌC nhưng KHÔNG tả bức tranh này, và khác khuôn nhau.
+
+    Không suy được bằng máy rằng một câu "sai với tranh": "There's a cat." có thể
+    đúng dù không nằm trong đoạn. Nên chỉ lấy vật KHÔNG có trong tranh — chắc chắn
+    sai, vì tranh chỉ vẽ đúng những vật đã khai.
+    """
+    co = {n["tu"] for n in nhom}
+    ung = [t for t in ("dog", "cat", "ball", "car", "duck", "goat", "garden", "bag")
+           if t not in co and t in kho]
+    khuon = ["I can see {a}.", "There's {a}.", "This is {a}."]
+    ra = []
+    for i, t in enumerate(ung[:3]):
+        ra.append(khuon[i % len(khuon)].format(a=mao_tu(t)))
+    # Một câu hoạt động cho khác hẳn hình dạng — "She's running." của lớp 1 unit 11.
+    if "running" in kho:
+        ra.append("She's running.")
+    return ra
+
+
+def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> dict:
+    viec = viec_cua(b, chuan_tu)
+    vat = vat_cua(b, chuan_tu, truoc, chuan_tu12, du_phong)
+    kho = kho_chu(3, b["so"])
+
+    nhom, doan = [], []
+    # ⚠ UNIT DẠY HOẠT ĐỘNG THÌ KHÔNG ĐỘN VẬT CỦA UNIT KHÁC vào — ra tranh
+    # "cooking · drawing · face · dancing", cái mặt lạc giữa mấy người đang làm việc.
+    #
+    # NHƯNG unit dạy CẢ HAI thì phải có cả hai: unit 20 dạy con vật (elephant ·
+    # tiger · monkey) LẪN việc chúng đang làm (climbing · swinging). Bỏ hết vật thì
+    # bức "Ở vườn thú" không có lấy một con thú. Vật của CHÍNH unit ấy thì giữ.
+    tu_minh = {t["tu"] for t in b["knowledgeCore"]["vocabulary"]}
+    if viec:
+        vat = [t for t in vat if t in tu_minh][:2]
+        viec = viec[:3]
+    if viec:
+        # Unit dạy HOẠT ĐỘNG: tranh vẽ người đang làm, câu dùng khuôn "She's …ing."
+        for i, v in enumerate(viec):
+            nhom.append({"tu": v, "so": 1, "ke": i % 2, "co": 110})
+            doan.append(KHUON_VIEC[i % 2].format(ing=v))
+    for i, t in enumerate(vat):
+        if len(doan) >= 5:
+            break
+        nhom.append({"tu": t, "so": 1, "ke": (len(nhom)) % 2, "co": 110})
+        vai = set((chuan_tu.get(t) or {}).get("vai") or [])
+        if vai & VAI_NHA:
+            doan.append(KHUON_NHA[i % len(KHUON_NHA)].format(t=t))
+        else:
+            doan.append(KHUON_KE[i % len(KHUON_KE)].format(a=mao_tu(t)))
+
+    # ── LUÔN CÓ MỘT VẬT ĐẾM ĐƯỢC ──
+    # Không có thì bức tranh chỉ hỏi được MỘT câu, mà cổng đòi đủ cả tổng quan lẫn
+    # chi tiết. Unit dạy hoạt động (U05 · U18 · U19 · U20) và unit dạy người nhà
+    # (U11) đều rơi vào đó: đoạn toàn "She's dancing." hoặc "This is my father.",
+    # không câu nào đếm được và cũng không câu nào mở đầu bằng "I can see".
+    # Thêm một vật phụ vừa chữa được cả hai, vừa làm tranh đỡ trống.
+    PHU = ["kite", "bike", "cake", "table", "box", "tent", "van", "car"]
+    co_dem = any(so_nhieu_cua(n["tu"], chuan_tu, chuan_tu12 or {}, kho) for n in nhom)
+    co_nhin = any(c.startswith("I can see") for c in doan)
+    if (not co_dem or not co_nhin) and len(nhom) < 6:
+        for t in PHU[b["so"] % len(PHU):] + PHU[:b["so"] % len(PHU)]:
+            if t in {n["tu"] for n in nhom} or t not in kho:
+                continue
+            if not so_nhieu_cua(t, chuan_tu, chuan_tu12 or {}, kho):
+                continue
+            nhom.append({"tu": t, "so": 1, "ke": len(nhom) % 2, "co": 100})
+            doan.append(f"I can see {mao_tu(t)}.")
+            break
+
+    # ⚠ MỖI VẬT ĐÚNG MỘT CÂU, KHÔNG THỪA KHÔNG THIẾU.
+    # Đoạn bị cắt ở năm câu (`doan[:5]`) trong khi `nhom` giữ cả sáu vật, nên tranh
+    # vẽ một vật không ai tả — đúng cái bác bắt ở unit 0 ("nội dung phải đồng bộ với
+    # tranh"), chỉ ngược chiều. Cắt CẢ HAI cùng một chỗ.
+    nhom, doan = nhom[:5], doan[:5]
+
+    # Xếp chỗ: mỗi kệ nhiều nhất ba vật, cách đều.
+    tren = [n for n in nhom if n["ke"] == 0][:3]
+    duoi = [n for n in nhom if n["ke"] == 1][:3]
+    nhom = []
+    for ke, ds in ((0, tren), (1, duoi)):
+        for i, n in enumerate(ds):
+            n["ke"] = ke
+            n["x"] = 250 + i * 300
+            nhom.append(n)
+
+    return {
+        "id": f"TRANH:TA3.U{b['so']:02d}",
+        "unit": b["so"], "chuong": b["chuong"],
+        "ten": canh, "ten_en": canh_en,
+        "ke": [360, 620],
+        "nhom": nhom,
+        "doan": doan[:5],
+        "hoiDoc": hoi_doc(doan[:5], nhom, chuan_tu, chuan_tu12 or {}, b["so"], kho),
+        "sai": moi_sai(nhom, chuan_tu, chuan_tu12 or {}, kho),
+        "hoiGoiY": [{"hoi": "What can you see?", "y": "bé kể một vật trong tranh"}],
+    }
+
+
+def main() -> int:
+    p = argparse.ArgumentParser()
+    p.add_argument("--ghi", action="store_true")
+    a = p.parse_args()
+
+    chuan = json.loads((GOC / "data/tienganh/chuan_lop3.json").read_text("utf8"))
+    chuan_tu = {t["tu"]: t for u in chuan["unit"] for t in u["tu"]}
+    canh_cua = {u["so"]: str(u.get("canh") or "").split("·") for u in chuan["unit"]}
+
+    ct12 = {}
+    for l in (1, 2):
+        cn = json.loads((GOC / f"data/tienganh/chuan_lop{l}.json").read_text("utf8"))
+        for u in cn["unit"]:
+            for t in u["tu"]:
+                ct12.setdefault(t["tu"], t)
+    du_phong = bai_lop12()
+    bais = bai_lop3()
+    ra = []
+    for i, b in enumerate(bais):
+        if b["so"] == 0:
+            continue                      # unit 0 đã khai tay, giữ nguyên
+        c = canh_cua.get(b["so"]) or [""]
+        k = soan(b, chuan_tu, bais[:i], c[0].strip(),
+                 (c[1].strip() if len(c) > 1 else ''), ct12, du_phong)
+        k.pop("_kho", None)
+        ra.append(k)
+        print(f"U{b['so']:02d} {k['ten'][:26]:28s} {len(k['nhom'])} vật · "
+              f"{len(k['doan'])} câu · {' '.join(n['tu'] for n in k['nhom'])}")
+
+    if a.ghi:
+        p2 = GOC / "data/tienganh/tranh_lop3.json"
+        cu = json.loads(p2.read_text("utf8"))
+        giu = {k["unit"]: k for k in cu if k.get("tay") or k["unit"] == 0}
+        moi = [giu[0]] if 0 in giu else []
+        for k in ra:
+            moi.append(giu.get(k["unit"], k))
+        p2.write_text(json.dumps(moi, ensure_ascii=False, indent=1) + "\n", "utf8")
+        print(f"→ {p2.relative_to(GOC)}  ({len(moi)} bức)")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
