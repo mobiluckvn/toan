@@ -196,6 +196,11 @@ gọi. Rải ra từng nhánh là để ngỏ chỗ cho các nhánh lệch nhau.
 
 ## LÀM CHO LỚP KHÁC
 
+⚠ Tệp này chỉ nói phần TRANH. Thêm hẳn một quyển mới thì đọc
+**`docs/lam_quyen_tienganh_moi.md`** trước — nó có danh sách 11 chỗ phải khai
+thêm tên quyển, và thứ tự chạy cả dây chuyền.
+
+
 1. Chép `tools/soan_tranh_lop3.py` → `soan_tranh_lopN.py`, đổi `3` thành `N`.
    Bốn bảng cần xem lại theo sách của quyển ấy: `VAI_VAT` / `VAI_BO` (vai nào đặt
    được sau "a"), `KHONG_DEM`, `NGUOI_MA` (thêm mã nếu quyển ấy dạy hoạt động mà

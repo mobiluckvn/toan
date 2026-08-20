@@ -550,3 +550,11 @@ Bốn tệp mới trong dây chuyền:
 
 ⚠ **Thứ tự**: `sinh_bai_tranh.py` chạy SAU `sinh_dochieu` và `sinh_vietbai` — nó
 CHÈN ĐÈ mục của unit có tranh. Chạy trước thì bị ghi đè lại, im lặng.
+
+---
+
+## §9 · LÀM QUYỂN MỚI (lớp 4 trở đi)
+
+Đọc **`docs/lam_quyen_tienganh_moi.md`** — danh sách 11 chỗ phải khai thêm tên
+quyển, thứ tự chạy dây chuyền, và ba bộ mặc định LỚP 1 mà quên cờ `--lop` là
+đè mất bản đang chạy.
