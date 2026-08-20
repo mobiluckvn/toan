@@ -37,7 +37,7 @@ import re
 from pathlib import Path
 
 GOC = Path(__file__).resolve().parent.parent
-QUYEN = {1: "ta1", 2: "ta2", 3: "ta3"}
+QUYEN = {1: "ta1", 2: "ta2", 3: "ta3", 4: "ta4"}
 DUONG_TRANH = "tienganh/tranh"
 
 

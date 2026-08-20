@@ -43,7 +43,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from kho_cau_tienganh import cau_tich_luy, kho_chu  # noqa: E402
 
 GOC = Path(__file__).resolve().parent.parent
-QUYEN = {1: "ta1", 2: "ta2", 3: "ta3"}
+QUYEN = {1: "ta1", 2: "ta2", 3: "ta3", 4: "ta4"}
 
 # Bé lớp 3 viết 2–3 câu là một bài. Đòi nhiều hơn thì bé chép lại mẫu cho xong.
 CAU_TOI_THIEU = 2
@@ -341,7 +341,7 @@ def dung(lop: int) -> list[dict]:
 
 def main() -> int:
     p = argparse.ArgumentParser()
-    p.add_argument("--lop", type=int, default=3, choices=[1, 2, 3])
+    p.add_argument("--lop", type=int, default=3, choices=[1, 2, 3, 4])
     a = p.parse_args()
     ds = dung(a.lop)
     ra = GOC / f"web/public/content/{QUYEN[a.lop]}/vietbai.json"

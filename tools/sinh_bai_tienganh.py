@@ -42,8 +42,8 @@ import sys
 from pathlib import Path
 
 GOC = Path(__file__).resolve().parent.parent
-QUYEN = {1: "ta1", 2: "ta2", 3: "ta3"}
-TIEN_TO = {1: "DL:TA1.", 2: "DL:TA2.", 3: "DL:TA3."}
+QUYEN = {1: "ta1", 2: "ta2", 3: "ta3", 4: "ta4"}
+TIEN_TO = {1: "DL:TA1.", 2: "DL:TA2.", 3: "DL:TA3.", 4: "DL:TA4."}
 
 # Gõ được thì gõ; dài hơn ngần này thì bậc 4 chuyển sang GHÉP THẺ CHỮ CÁI.
 # Bé 6 tuổi gõ ~10 ký tự/phút — từ 10 ký tự là bỏ cuộc chứ không phải làm sai.
@@ -383,6 +383,34 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
         # sang ô sau, nên U6 ("It's a + [Colour] + [Noun].") có 6 màu là đủ chạm
         # trần 4 câu — bé thấy bốn câu đổi màu mà KHÔNG BAO GIỜ thấy danh từ đổi,
         # tức là học một nửa mẫu câu.
+        # ── HAI Ô KHÔNG ĐƯỢC TRÙNG TỪ ── (bắt được ở lớp 4, 20-08-2026)
+        #
+        # `kho` khoá bằng TÊN ô, nên hai ô CÙNG TÊN luôn nhận cùng một từ. Với
+        # `[Routine]…[Routine]` (hỏi gì đáp nấy) thì đó là ĐÚNG. Nhưng lớp 4 unit 9
+        # là `Is your sports day in [Month]? … It's in [Month].` — đoán một tháng
+        # rồi SỬA LẠI, nên hai tháng phải KHÁC. Máy điền giống nhau và ra:
+        #
+        #     ✗  Is your sports day in June? - No, it isn't. It's in June.
+        #
+        # Ô khác tên cũng đụng: unit 18 khai `[shop]` và `[moc tham chieu]` cùng vai
+        # `noichon`, nên bốc trúng nhau thì ra "The bookshop is near the bookshop."
+        #
+        # Không cổng nào bắt được — mọi chữ đều đã học, khuôn khớp công thức, câu
+        # đúng ngữ pháp. Chỉ đọc lên mới thấy vô nghĩa. Nên khai `khac_nhau` trong
+        # `sua_slot`, và MÁY canh, chứ `_ghi` thì chỉ người đọc được.
+        khac = bool((sua_slot.get(mc["ma"]) or {}).get("khac_nhau"))
+
+        def hop_le(gan: dict) -> bool:
+            if not khac:
+                return True
+            # ⚠ So sau khi BỎ MẠO TỪ. Bản đầu so chuỗi trần, nên "bookshop" và
+            # "the bookshop" là hai chuỗi khác nhau và lọt lưới:
+            #     ✗  Where's the bookshop? - It's opposite the bookshop.
+            def goc_tu(x):
+                return re.sub(r"^(the|a|an)\s+", "", str(x).strip().lower())
+            dung = [goc_tu(v) for v in gan.values() if v]
+            return len(dung) == len(set(dung))
+
         hang = {o: [t for t in kho[o] if not (neo_duoc[o] and t["ma"] == nen[o]["ma"])]
                 for o in os}
         while sum(1 for x in ra if x["mc"] is mc) < toi_da and any(hang.values()):
@@ -392,6 +420,8 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
                 t = hang[o].pop(0)
                 gan = {x: chu(x, nen[x]) for x in os}
                 gan[o] = chu(o, t)
+                if not hop_le(gan):
+                    continue
                 c = dien(ct, gan)
                 if c != goc:
                     ra.append({"cau": c, "tu": t, "dang": gan[o], "neo": True, "mc": mc})
@@ -1331,7 +1361,7 @@ def loi_can_doc(bai: dict) -> list[dict]:
 
 def main() -> int:
     p = argparse.ArgumentParser()
-    p.add_argument("--lop", type=int, default=1, choices=[1, 2, 3])
+    p.add_argument("--lop", type=int, default=1, choices=[1, 2, 3, 4])
     p.add_argument("--unit", type=int)
     p.add_argument("--tat-ca", action="store_true")
     a = p.parse_args()

@@ -62,7 +62,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from kho_cau_tienganh import cau_tich_luy  # noqa: E402
 
 GOC = Path(__file__).resolve().parent.parent
-QUYEN = {1: "ta1", 2: "ta2", 3: "ta3"}
+QUYEN = {1: "ta1", 2: "ta2", 3: "ta3", 4: "ta4"}
 
 # ── ĐOẠN NGẮN Ở ĐẦU QUYỂN, DÀI DẦN VỀ CUỐI ── (bác chốt 19-08-2026)
 #
@@ -701,7 +701,7 @@ def dung(lop: int) -> tuple[list[dict], list[dict]]:
 
 def main() -> int:
     p = argparse.ArgumentParser()
-    p.add_argument("--lop", type=int, default=3, choices=[1, 2, 3])
+    p.add_argument("--lop", type=int, default=3, choices=[1, 2, 3, 4])
     p.add_argument("--thieu", help="ghi ra tệp những dòng chưa có clip")
     a = p.parse_args()
 

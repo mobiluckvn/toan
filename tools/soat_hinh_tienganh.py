@@ -38,7 +38,8 @@ VE = GOC / 'web' / 'src' / 'mon' / 'tienganh' / 'lib' / 'hinh_ve.json'
 # không ai nhìn hình mà mọi cổng vẫn xanh. Xem `docs/tiep_theo_tienganh.md`.
 SO_SOAT = {1: GOC / 'docs' / 'hinh_da_soat.md',
            2: GOC / 'docs' / 'hinh_da_soat_lop2.md',
-           3: GOC / 'docs' / 'hinh_da_soat_lop3.md'}
+           3: GOC / 'docs' / 'hinh_da_soat_lop3.md',
+           4: GOC / 'docs' / 'hinh_da_soat_lop4.md'}
 
 
 def ten_unicode(e: str) -> str:
@@ -83,7 +84,7 @@ def doc_bang(lop: int) -> list[tuple]:
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--lop', type=int, default=1, choices=[1, 2, 3])
+    p.add_argument('--lop', type=int, default=1, choices=[1, 2, 3, 4])
     p.add_argument('--lech', action='store_true',
                    help='chỉ in từ chưa có trong sổ soát của quyển ấy')
     a = p.parse_args()
