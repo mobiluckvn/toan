@@ -470,13 +470,13 @@
       "but": null,
       "cook": "🧑‍🍳",
       "can": null,
-      "draw": "🖌️"
+      "draw": null
      },
      "veNut": {
       "but": null,
       "cook": "cooking",
       "can": null,
-      "draw": "drawing"
+      "draw": null
      },
      "answerKey": {
       "choice": "can"
@@ -504,13 +504,13 @@
       "can": null,
       "cook": "🧑‍🍳",
       "but": null,
-      "draw": "🖌️"
+      "draw": null
      },
      "veNut": {
       "can": null,
       "cook": "cooking",
       "but": null,
-      "draw": "drawing"
+      "draw": null
      },
      "answerKey": {
       "choice": "but"
@@ -537,13 +537,13 @@
      "hinhNut": {
       "can": null,
       "but": null,
-      "draw": "🖌️",
+      "draw": null,
       "cook": "🧑‍🍳"
      },
      "veNut": {
       "can": null,
       "but": null,
-      "draw": "drawing",
+      "draw": null,
       "cook": "cooking"
      },
      "answerKey": {
@@ -572,13 +572,13 @@
       "can": null,
       "but": null,
       "cook": "🧑‍🍳",
-      "draw": "🖌️"
+      "draw": null
      },
      "veNut": {
       "can": null,
       "but": null,
       "cook": "cooking",
-      "draw": "drawing"
+      "draw": null
      },
      "answerKey": {
       "choice": "draw"
@@ -1466,10 +1466,10 @@
     {
      "id": "S3",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Can you ___? - Yes, I can. / No, I can't.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🖌️",
-     "anhVe": "drawing",
+     "text": "Chọn từ điền vào chỗ trống:  Can you ___? - Yes, I can. / No, I can't.",
+     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": null,
+     "anhVe": null,
      "format": "chon",
      "choices": [
       "can",
@@ -1535,10 +1535,10 @@
     {
      "id": "S6",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Can he/she ___? - Yes, he/she can. / No, he/she can't, but he/she can cook.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🖌️",
-     "anhVe": "drawing",
+     "text": "Chọn từ điền vào chỗ trống:  Can he/she ___? - Yes, he/she can. / No, he/she can't, but he/she can cook.",
+     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": null,
+     "anhVe": null,
      "format": "chon",
      "choices": [
       "can",
@@ -1558,10 +1558,10 @@
     {
      "id": "S7",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Can he/she cook? - Yes, he/she can. / No, he/she can't, but he/she can ___.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🖌️",
-     "anhVe": "drawing",
+     "text": "Chọn từ điền vào chỗ trống:  Can he/she cook? - Yes, he/she can. / No, he/she can't, but he/she can ___.",
+     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": null,
+     "anhVe": null,
      "format": "chon",
      "choices": [
       "can",
@@ -2003,32 +2003,6 @@
    {
     "id": "Q2",
     "am": "tu_cook",
-    "anh": "🖌️",
-    "anhVe": "drawing",
-    "text": "",
-    "format": "tf",
-    "nhinNghe": true,
-    "answerKey": {
-     "value": false
-    },
-    "solutionNarrative": "SAI — đó là draw. cook là nấu ăn."
-   },
-   {
-    "id": "Q3",
-    "am": "tu_draw",
-    "anh": "🖌️",
-    "anhVe": "drawing",
-    "text": "",
-    "format": "tf",
-    "nhinNghe": true,
-    "answerKey": {
-     "value": true
-    },
-    "solutionNarrative": "ĐÚNG — draw là vẽ."
-   },
-   {
-    "id": "Q4",
-    "am": "tu_draw",
     "anh": "🎸",
     "anhVe": null,
     "text": "",
@@ -2037,10 +2011,10 @@
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — đó là play the guitar. draw là vẽ."
+    "solutionNarrative": "SAI — đó là play the guitar. cook là nấu ăn."
    },
    {
-    "id": "Q5",
+    "id": "Q3",
     "am": "tu_play_the_guitar",
     "anh": "🎸",
     "anhVe": null,
@@ -2051,6 +2025,32 @@
      "value": true
     },
     "solutionNarrative": "ĐÚNG — play the guitar là chơi ghi ta."
+   },
+   {
+    "id": "Q4",
+    "am": "tu_play_the_guitar",
+    "anh": "🎹",
+    "anhVe": null,
+    "text": "",
+    "format": "tf",
+    "nhinNghe": true,
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — đó là play the piano. play the guitar là chơi ghi ta."
+   },
+   {
+    "id": "Q5",
+    "am": "tu_play_the_piano",
+    "anh": "🎹",
+    "anhVe": null,
+    "text": "",
+    "format": "tf",
+    "nhinNghe": true,
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "ĐÚNG — play the piano là chơi piano."
    }
   ]
  },
@@ -2130,8 +2130,8 @@
   },
   {
    "tu": "draw",
-   "hinh": "🖌️",
-   "ve": "drawing",
+   "hinh": null,
+   "ve": null,
    "no": null
   },
   {
