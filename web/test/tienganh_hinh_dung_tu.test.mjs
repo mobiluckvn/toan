@@ -40,7 +40,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
  * Nay danh sách quyển suy từ ĐĨA, và chốt "có tệp để mà soi" chứ không chốt một con
  * số — thêm quyển thứ tư là nó tự soi theo. Mỗi quyển một sổ soát riêng.
  */
-const QUYEN = ['ta1', 'ta2', 'ta3']
+const QUYEN = ['ta1', 'ta2', 'ta3', 'ta4']
   .map((q) => ({ q, url: new URL(`../public/content/${q}/`, import.meta.url) }))
   .map(({ q, url }) => ({
     q,
@@ -160,10 +160,16 @@ test('5 · đáp án phải là từ bé ĐÃ ĐƯỢC DẠY', () => {
        `nghia`                                   — đáp án của câu "nghe → chọn nghĩa"
      Đoán dạng biến đổi bằng tiền tố (`d.startsWith(goc)`) thì `drive` → `driving`
      trượt (mất chữ e), và cổng báo oan bốn câu đúng của lớp 2. */
+  /* ⚠ VỐN LÀ TÍCH LUỸ, KHÔNG PHẢI RIÊNG QUYỂN ẤY. Bé lên lớp 4 thì vẫn nhớ
+     `eight` của lớp 1 — mà bản đầu chỉ nạp `chuan_lop4.json`, nên đáp án
+     "eight thirty" (đúng ví dụ của SÁCH) bị gọi là "cả quyển không dạy".
+     Lớp 1·2·3 không lộ vì chúng gần như không mượn chữ của quyển trước. */
   const von = new Map(QUYEN.map(({ q }) => {
-    const c = JSON.parse(readFileSync(
-      new URL(`../../data/tienganh/chuan_lop${q.slice(2)}.json`, import.meta.url), 'utf8'));
+    const lop = Number(q.slice(2));
     const bo = new Set();
+    for (let l = 1; l <= lop; l += 1) {
+    const c = JSON.parse(readFileSync(
+      new URL(`../../data/tienganh/chuan_lop${l}.json`, import.meta.url), 'utf8'));
     for (const u of c.unit) {
       for (const t of u.tu) {
         for (const x of [t.tu, t.so_it, t.so_nhieu, t.dang_ing, t.nghia]) if (x) bo.add(x);
@@ -171,6 +177,7 @@ test('5 · đáp án phải là từ bé ĐÃ ĐƯỢC DẠY', () => {
     }
     for (const nhom of Object.values(c.them || {})) {
       for (const m of nhom.muc || []) bo.add(typeof m === 'string' ? m : m.word);
+    }
     }
     return [q, bo];
   }));
@@ -196,6 +203,16 @@ test('5 · đáp án phải là từ bé ĐÃ ĐƯỢC DẠY', () => {
          (không gốc nào, dù có trong một câu ví dụ) thì không lọt. */
       const goc = daDay.find((t) => d.length > t.length && d.startsWith(t));
       if (goc && cauBai.includes(d.toLowerCase())) continue;
+      /* ⚠ CỤM cũng hợp lệ, nếu MỌI MẨU của nó đều được dạy VÀ cụm ấy có mặt
+         trong câu của bài. Lớp 4 khai ô bằng cụm ("eight thirty" · "the gift
+         shop") vì khai bằng vai thì bốc trúng chữ rời và ra "It's o'clock."
+         Cụm gồm toàn chữ đã dạy thì không phải chữ lạ — nhưng vẫn đòi nó XUẤT
+         HIỆN trong câu của bài, để một cụm bịa không lọt qua. */
+      if (d.includes(' ') && cauBai.includes(d.toLowerCase())
+          && d.toLowerCase().split(/\s+/).every((w) => bo.has(w)
+              || daDay.some((t) => t.toLowerCase().split(/\s+/).includes(w)))) {
+        continue;
+      }
       xau.push(`${b.id} · ${x._o} ${x.id}: đáp án "${d}" — cả quyển không dạy`);
     }
   }
@@ -286,7 +303,8 @@ test('8 · MỌI từ phải có trong bảng NGƯỜI ĐÃ SOÁT tận mắt', 
   /* MỖI QUYỂN MỘT SỔ. Dùng chung một sổ thì từ trùng tên giữa hai quyển (`cat` ·
      `table` · `eleven`) tự "đã soát" ở quyển sau, trong khi hình của nó có thể
      khác hẳn — lớp 1 dùng 🐱 MẶT MÈO, lớp 3 dùng 🐈 CẢ CON. */
-  const SO = { ta1: 'hinh_da_soat.md', ta2: 'hinh_da_soat_lop2.md', ta3: 'hinh_da_soat_lop3.md' };
+  const SO = { ta1: 'hinh_da_soat.md', ta2: 'hinh_da_soat_lop2.md',
+    ta3: 'hinh_da_soat_lop3.md', ta4: 'hinh_da_soat_lop4.md' };
   const daSoat = Object.fromEntries(QUYEN.map(({ q }) => {
     const bang = readFileSync(new URL(`../../docs/${SO[q]}`, import.meta.url), 'utf8');
     return [q, new Set([...bang.matchAll(/^\|\s*`([^`]+)`\s*\|/gm)].map((m) => m[1]))];

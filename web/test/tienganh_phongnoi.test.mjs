@@ -718,8 +718,14 @@ test('đồng hồ 20 phút KHÔNG được vô hiệu khi ai đó dọn mã', (
  * soi một quyển thì "0 lỗi" chỉ có nghĩa là quyển ấy sạch, không có nghĩa là môn
  * này sạch — cùng họ với chuyện glob rỗng báo 0 lỗi đã ghi trong sổ.
  */
-const QUYEN = ['ta1', 'ta2', 'ta3'];
-const SO_BAI = { ta1: 16, ta2: 16, ta3: 21 };
+const QUYEN = ['ta1', 'ta2', 'ta3', 'ta4'];
+/* ⚠ ĐẾM TỪ SỔ ĐĂNG KÝ, đừng gõ tay. Bảng gõ tay `{ta1:16, ta2:16, ta3:21}` thiếu
+   `ta4` nên phép so ra "21 !== undefined" — nghe như thiếu kịch bản, thật ra là
+   thiếu MỘT DÒNG TRONG CỔNG. Cùng họ "ghim cứng tên quyển". */
+const _dk = JSON.parse(readFileSync(
+  new URL('../public/content/chuong_trinh.json', import.meta.url), 'utf8'));
+const SO_BAI = Object.fromEntries(Object.values(_dk.chuongTrinh)
+  .filter((c) => c.mon === 'tienganh').map((c) => [c.ma, c.soBai]));
 const kbCua = (ma) => JSON.parse(readFileSync(
   new URL(`../public/content/${ma}/kichban_noi.json`, import.meta.url), 'utf8'));
 const baiTrong = (ma, id) => JSON.parse(readFileSync(new URL(

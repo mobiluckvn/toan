@@ -33,7 +33,7 @@ let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
 const in5 = (xs) => xs.slice(0, 5).forEach((x) => console.log('     ', x));
 
-const quyens = ['ta1', 'ta2', 'ta3'].filter((q) => existsSync(join(R, 'web/public/content', q)));
+const quyens = ['ta1', 'ta2', 'ta3', 'ta4'].filter((q) => existsSync(join(R, 'web/public/content', q)));
 if (!quyens.length || !existsSync(V)) {
   console.log('   ⏸ chưa có bài hoặc chưa có thư mục video');
   console.log('\n0 PASS · 0 FAIL');
@@ -125,14 +125,24 @@ in5(tuXau.map((x) => `${x.f} · ${x.s.toFixed(1)}s`));
  * đi, và mất luôn cả phần đang canh được. Ghi đúng món nợ vẫn hơn.
  */
 const DAI_CAU = 70;
-const NO_CAU = 31;   // chốt lại 18-08: đang 31, đừng để bò lên nữa
+/* ⚠ CHỐT THEO TỪNG QUYỂN, không phải một con số gộp.
+   Niêm phong này sinh ra để chặn món nợ ÂM THẦM PHÌNH RA. Thêm hẳn một quyển thì
+   không âm thầm — nhưng nới con số gộp là làm yếu cổng cho cả ba quyển cũ. Chốt
+   riêng từng quyển thì nợ của lớp 1·2·3 vẫn không bò lên được, mà lớp 4 vẫn khai
+   đúng phần nợ nó mang vào (26/91 video mẫu câu, cùng kịch bản dùng chung).
+   Ai viết lại kịch bản mẫu câu thì hạ con số của quyển ấy. */
+const NO_CAU_QUYEN = { ta1: 9, ta2: 11, ta3: 11, ta4: 26 };
+const NO_CAU = Object.values(NO_CAU_QUYEN).reduce((a, b) => a + b, 0);
 const TRAN_CAU = 100;
 const cauDai = doDai.filter((x) => x.loai === 'cau' && x.s > DAI_CAU)
   .sort((a, b) => b.s - a.s);
-t(`video mẫu câu quá ${DAI_CAU} giây không nhiều hơn ${NO_CAU} (đang ${cauDai.length})`,
-  cauDai.length <= NO_CAU);
+for (const [q, no] of Object.entries(NO_CAU_QUYEN)) {
+  const cua = cauDai.filter((x) => x.f.startsWith(`DL_${q.toUpperCase()}_`));
+  t(`${q} · video mẫu câu quá ${DAI_CAU} giây không nhiều hơn ${no} (đang ${cua.length})`,
+    cua.length <= no);
+}
 if (cauDai.length < NO_CAU) {
-  console.log(`     ↓ đã bớt: ${cauDai.length}/${NO_CAU} — hạ \`NO_CAU\` xuống để chốt lại.`);
+  console.log(`     ↓ đã bớt: ${cauDai.length}/${NO_CAU} — hạ \`NO_CAU_QUYEN\` xuống để chốt lại.`);
 }
 in5(cauDai.map((x) => `${x.f} · ${x.s.toFixed(1)}s`));
 

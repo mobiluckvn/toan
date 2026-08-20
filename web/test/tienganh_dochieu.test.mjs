@@ -22,12 +22,16 @@ import { join } from 'node:path';
 
 /* Bản khai bức tranh — thứ ĐẺ RA ảnh, nên soi nó là soi đúng nguồn. Đọc ảnh để đếm
    diều thì phải nhận dạng hình, mà bản khai đã nói sẵn "3 × kite". */
-const tranhKhai = (() => {
+/* ⚠ MỘT BẢN KHAI CHO MỖI QUYỂN. Bản đầu ghim cứng `tranh_lop3.json`, nên khi có
+   lớp 4 thì cổng đem ĐOẠN VĂN LỚP 4 so với TRANH LỚP 3 — cùng số unit nên nó khớp
+   được, và báo "5 vật mà đoạn có 7 câu" ở cả 21 bài. Sai hoàn toàn, mà nghe rất
+   giống một lỗi nội dung thật. Đây đúng họ "cổng chỉ soi một quyển". */
+const khaiTranh = (lop) => {
   try {
     return JSON.parse(readFileSync(
-      new URL('../../data/tienganh/tranh_lop3.json', import.meta.url), 'utf8'));
+      new URL(`../../data/tienganh/tranh_lop${lop}.json`, import.meta.url), 'utf8'));
   } catch { return []; }
-})();
+};
 
 /* ══ CÂU NỐI — nói THÊM về vật của câu ngay trước ══ (thêm 20-08-2026)
 
@@ -72,7 +76,7 @@ let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
 const in5 = (xs) => xs.slice(0, 5).forEach((x) => console.log('     ', x));
 
-const quyens = ['ta1', 'ta2', 'ta3']
+const quyens = ['ta1', 'ta2', 'ta3', 'ta4']
   .filter((q) => existsSync(join(R, 'web/public/content', q, 'dochieu.json')));
 if (!quyens.length) {
   console.log('   ⏸ chưa quyển nào có bài đọc hiểu');
@@ -329,7 +333,7 @@ for (const q of quyens) {
   const lap = [];
   for (const k of ds) {
     const dem = new Map();
-    const khaiK = k.dang === 'tranh' ? tranhKhai.find((x) => x.unit === k.unit) : null;
+    const khaiK = k.dang === 'tranh' ? khaiTranh(lop).find((x) => x.unit === k.unit) : null;
     (k.doan || []).forEach((d, i) => {
       if (laCauNoi(khaiK, d.cau, k.doan[i - 1]?.cau)) return;
       const kh = `${(d.cau.split(' ')[0] || '').toLowerCase()}|${d.cau.split(' ').length}`;
@@ -446,7 +450,7 @@ for (const q of quyens) {
        Phép đo: mỗi vật khai `so > 1` thì đoạn phải có một câu nói được số ấy; chưa
        có khuôn thì tranh không được vẽ nhiều. Máy không nhìn ảnh, nhưng bản khai
        tranh thì đọc được — và bản khai chính là thứ đẻ ra ảnh. */
-    const khai = tranhKhai.find((x) => x.unit === k.unit);
+    const khai = khaiTranh(lop).find((x) => x.unit === k.unit);
     if (khai) {
       for (const n of khai.nhom || []) {
         if (n.so > 1 && !(khai.doan || []).some((c) => /\b(two|three|four|five|six|seven|eight|nine|ten)\b/i.test(c))) {

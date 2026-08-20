@@ -27,7 +27,7 @@ let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
 const in5 = (xs) => xs.slice(0, 5).forEach((x) => console.log('     ', x));
 
-const quyens = ['ta1', 'ta2', 'ta3'].filter((q) => existsSync(join(R, 'web/public/content', q)));
+const quyens = ['ta1', 'ta2', 'ta3', 'ta4'].filter((q) => existsSync(join(R, 'web/public/content', q)));
 if (!quyens.length) {
   console.log('   ⏸ chưa sinh bài tiếng Anh nào');
   console.log('\n0 PASS · 0 FAIL');
@@ -270,12 +270,23 @@ for (const q of quyens) {
      chỉ chặn đúng chỗ đã va. */
   const NEN = new Set(["am", "is", "are", "'m", "'re", "'s", "have", "has", "like",
     "likes", "can", "can't", "do", "don't", "does", "play", "plays", "want", "wants",
-    "see", "go", "goes", "would", "'d", "'ve", "'ll", "will"]);
+    "see", "go", "goes", "would", "'d", "'ve", "'ll", "will",
+    // ⚠ Lớp 4 là quyển đầu tiên dạy thì QUÁ KHỨ ("Where were you last summer?
+    // - I was in Tokyo."). Không có was/were thì cổng gọi câu ấy là thiếu động từ.
+    "was", "were", "wasn't", "weren't"]);
   const dongTu = new Set(NEN);
   for (const u of chuan.unit) {
     for (const t of u.tu || []) {
       const v = t.vai || [];
-      if (v.includes('dongtu') || v.includes('cumdongtu')) dongTu.add(t.tu.toLowerCase());
+      /* ⚠ LỚP 4 ĐẶT HOẠT ĐỘNG Ở VAI `viec`, không phải `dongtu` — "get up" ·
+         "study at school" · "watch TV". Chỉ nhận `dongtu` thì cổng gọi
+         "I get up at six o'clock." là câu THIẾU ĐỘNG TỪ, mà câu ấy đúng hẳn.
+         Cụm thì phải nhận cả CHỮ ĐẦU, vì trong câu chỉ có "get" đứng sau chủ ngữ. */
+      if (v.some((x) => ['dongtu', 'cumdongtu', 'viec', 'viecthu'].includes(x))) {
+        const w = t.tu.toLowerCase();
+        dongTu.add(w);
+        dongTu.add(w.split(' ')[0]);
+      }
     }
   }
   const CHU_NGU = /^(I|You|We|They)\b\s+(\S+)/;

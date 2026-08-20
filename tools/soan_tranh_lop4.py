@@ -121,7 +121,7 @@ UU_TIEN = {
     #
     # Bác chốt 20-08: lớp 4 phải DÀI HƠN lớp 3 → mỗi cảnh nhắm 6–7 vật, không phải 5.
     0:  {"vat": ["friend", "girl", "ball", "kite", "bike", "hat", "cat"]},
-    1:  {"vat": ["friend", "girl", "brother", "sister", "mother", "father", "teacher"]},
+    1:  {"vat": ["friend", "girl", "brother", "sister", "mother", "father", "cake"]},
     2:  {"vat": ["bed", "cup", "egg", "bag", "school", "door", "window"]},
     3:  {"vat": ["school", "library", "playground", "gym", "bike", "ball", "book"]},
     # `grapes` là số nhiều nên phép soi loại — "a grapes" sai. Thay bằng apple.
@@ -543,6 +543,45 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
         # sắc" chẳng nhắc tới màu nào — bé đọc xong không biết bài dạy gì.
         if uu.get("mau") and MAU_CUA.get(t) in kho:
             doan.append(f"It's {MAU_CUA[t]}.")
+
+    # ── RẢI KHUÔN: không quá HAI dòng cùng hình dạng ──
+    # Cổng đo hình dạng bằng (chữ đầu | số chữ). Với 7 vật mà chỉ 4 khuôn kể thì
+    # một khuôn phải dùng ba lần → đỏ. Tệ hơn: `KHUON_NHA` ("This is my X.") ĐỤNG
+    # hình dạng với `KHUON_KE` ("This is a X.") — cùng "this|4" — nên bức có người
+    # nhà chạm trần mà nhìn thì tưởng đã xoay đủ.
+    def dang(c):
+        w = c.split()
+        return f"{w[0].lower()}|{len(w)}" if w else ""
+
+    def la_nha(i):
+        if i >= len(nhom):
+            return True
+        t = nhom[i]["tu"]
+        vai = set(((chuan_tu.get(t) or (chuan_tu12 or {}).get(t)) or {}).get("vai") or [])
+        return bool(vai & VAI_NHA)
+
+    dem = {}
+    for i, c in enumerate(doan):
+        d = dang(c)
+        dem[d] = dem.get(d, 0) + 1
+        if dem[d] <= 2:
+            continue
+        # ⚠ KHÔNG đổi khuôn của NGƯỜI NHÀ — họ chỉ có hai khuôn, và cả hai đều
+        # phải giữ chữ "my". Bản đầu đổi bừa và ra "I can see a mother."
+        # Đổi một dòng KHÁC cùng hình dạng, dòng nào không phải người nhà.
+        thay_o = i if not la_nha(i) else next(
+            (j for j in range(len(doan))
+             if j != i and dang(doan[j]) == d and not la_nha(j)), None)
+        if thay_o is None:
+            continue
+        tu = nhom[thay_o]["tu"]
+        for kh in KHUON_KE:
+            thu = kh.format(a=mao_tu(tu))
+            if dang(thu) != d and dem.get(dang(thu), 0) < 2:
+                dem[d] -= 1
+                dem[dang(thu)] = dem.get(dang(thu), 0) + 1
+                doan[thay_o] = thu
+                break
 
     # ── LUÔN CÓ MỘT VẬT ĐẾM ĐƯỢC ──
     # Không có thì bức tranh chỉ hỏi được MỘT câu, mà cổng đòi đủ cả tổng quan lẫn
