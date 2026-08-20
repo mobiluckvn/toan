@@ -56,6 +56,21 @@ tools/tranh_tienganh.py:58          (như trên)
 Thêm `4: "ta4"` vào cả sáu. (`tools/dung_chu_de.py` cũng có một bảng `QUYEN`
 nhưng đó là của môn TOÁN — đừng đụng.)
 
+⚠ **CÒN HAI BẢNG NỮA, KHÔNG TÊN `QUYEN`** — danh sách này lúc đầu bỏ sót cả hai,
+và cả hai đều làm bộ sinh vỡ giữa chừng khi làm lớp 4 thật:
+
+```
+tools/sinh_bai_tienganh.py   TIEN_TO = {1: "DL:TA1.", …}   ← KeyError: 4
+tools/soat_hinh_tienganh.py  SO_SOAT = {1: …hinh_da_soat.md, …}
+```
+
+Cách tìm cho chắc, đừng tin danh sách này:
+
+```
+grep -rn "= {1:" tools --exclude-dir=tts --exclude-dir=__pycache__
+grep -rn "choices=\[1, 2, 3" tools --exclude-dir=tts --exclude-dir=__pycache__
+```
+
 ### b) `tools/soat_hinh_tienganh.py`
 
 ```
@@ -171,6 +186,29 @@ Với ba tệp này đừng tin `--help`; đọc thẳng dòng `LOP = 1` / `defa
 ⚠ `sinh_bai_tienganh --tat-ca` dựng lại toàn bộ tệp DL. Kiểm bằng **`git status`**,
 đừng kiểm bằng bản chụp thư mục: `cp -r src dest` khi `dest` đã có thì nó **lồng
 vào trong**, và tôi đã đối chiếu nhầm với một bản chụp cũ hai ngày.
+
+---
+
+## 3b · KHAI Ô CHO MẪU CÂU — chỗ đẻ ra câu vô nghĩa nhiều nhất
+
+Mẫu NHIỀU Ô mà không khai `sua_slot` thì `sinh_cau` **bỏ qua CẢ MẪU, im lặng**.
+Lớp 3 có 6 mẫu như thế, lớp 4 có **15**. Nhưng khai rồi vẫn chưa xong — bốn bệnh
+đã gặp thật ở lớp 4, và **không cổng nào bắt được** vì mọi chữ đều đã học và khuôn
+thì khớp công thức:
+
+| bệnh | câu máy đẻ ra | chữa |
+|---|---|---|
+| hai ô CÙNG TÊN mà phải khác | *Is your sports day in June? … It's in June.* | đè `cong_thuc` trong bản bù, đổi thành `[Month A]`/`[Month B]` |
+| hai ô KHÁC TÊN mà trùng từ | *Where's the bookshop? - It's opposite the bookshop.* | cờ `khac_nhau: true` |
+| ô nuốt mất mạo từ | *It's near bookshop.* | khai ô bằng CỤM có sẵn `the` |
+| ô bốc chữ rời | *I have breakfast at o'clock.* | khai ô bằng CỤM (`six o'clock`) |
+
+⚠ **`_ghi` chỉ NGƯỜI đọc được.** Tôi viết "hai ô này phải khác nhau" vào `_ghi`
+rồi tưởng xong — máy không đọc chú thích. Muốn máy canh thì phải có CỜ.
+
+⚠ Ô cùng tên thì `sinh_cau` **luôn** điền giống nhau. Đó là ĐÚNG cho
+`[Routine]…[Routine]` (hỏi gì đáp nấy) và SAI cho `[Month]…[Month]`. Đọc công
+thức xem nó muốn gì, đừng suy từ hình dạng.
 
 ---
 
