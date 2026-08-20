@@ -51,7 +51,12 @@ VAI_VAT = {"convat", "dochoi", "dodac", "dodung", "bophan", "giadinh", "nghe",
 # sai hẳn. Unit 10 vì thế phải mượn vật của unit khác cùng chương.
 VAI_BO = {"mau", "so", "sothich", "viec", "viecthu", "douong", "trochoi",
           "chao", "hoi", "daitu", "ten", "sohuu", "tinhtu", "chidinh", "xungho",
-          "dongtu", "soluong", "vitri", "nghe_"}
+          "dongtu", "soluong", "vitri", "nghe_",
+          # ⚠ VAI MỚI CỦA LỚP 4 — bản chép từ lớp 3 không biết chúng, nên
+          # `sunny` · `maths` · `today` · `left` lọt qua phép "đặt được sau a"
+          # và đẻ ra "This is a sunny."
+          "thoitiet", "monhoc", "thang", "thu", "thoigian", "mua",
+          "huong", "quocgia", "tien", "sukien"}
 # Hoạt động — dùng khuôn "She's …ing."
 VAI_VIEC = {"sothich", "viec", "viecthu"}
 
@@ -115,16 +120,17 @@ UU_TIEN = {
     # bức "Tiệc sinh nhật" hiện ra mắt mũi mồm. Đã dính, nên xoá sạch rồi soạn lại.
     #
     # Bác chốt 20-08: lớp 4 phải DÀI HƠN lớp 3 → mỗi cảnh nhắm 6–7 vật, không phải 5.
-    0:  {"vat": ["friend", "ball", "kite", "bike", "book", "bag", "table"]},
-    1:  {"vat": ["friend", "girl", "teacher", "table", "book", "bag", "cake"]},
-    2:  {"vat": ["bed", "book", "bag", "table", "door", "cake", "cup"]},
-    3:  {"vat": ["book", "pen", "bag", "table", "ball", "bike", "door"]},
-    4:  {"vat": ["cake", "grapes", "cup", "box", "table", "kite", "ball"],
+    0:  {"vat": ["friend", "girl", "ball", "kite", "bike", "hat", "cat"]},
+    1:  {"vat": ["friend", "girl", "brother", "sister", "mother", "father", "teacher"]},
+    2:  {"vat": ["bed", "cup", "egg", "bag", "school", "door", "window"]},
+    3:  {"vat": ["school", "library", "playground", "gym", "bike", "ball", "book"]},
+    # `grapes` là số nhiều nên phép soi loại — "a grapes" sai. Thay bằng apple.
+    4:  {"vat": ["cake", "apple", "cup", "box", "table", "kite", "ball"],
         "chinh": "cake"},
     6:  {"vat": ["school", "playground", "garden", "building", "gym", "library",
                  "classroom"]},
     7:  {"vat": ["book", "pen", "pencil", "notebook", "eraser", "desk", "bag"]},
-    8:  {"vat": ["book", "pen", "pencil", "table", "ball", "bag", "box"]},
+    8:  {"vat": ["book", "ruler", "pencil", "notebook", "eraser", "quiz", "bell"]},
     9:  {"vat": ["ball", "basketball", "volleyball", "football", "kite", "bike",
                  "box"]},
     10: {"vat": ["beach", "campsite", "zoo", "tent", "kite", "bike", "box"]},
@@ -133,17 +139,20 @@ UU_TIEN = {
     # chúng ra khuôn mặt trơn / trùng hệt farmer. Xem `_khong_ve` trong lop4_bu.
     12: {"vat": ["farmer", "policeman", "teacher", "worker", "actor",
                  "singer", "painter"]},
-    13: {"vat": ["face", "eyes", "nose", "hand", "ear", "mouth", "head"],
+    13: {"vat": ["face", "eye", "nose", "hand", "ear", "mouth", "head"],
         "chinh": "face"},
-    14: {"vat": ["book", "table", "cup", "bed", "door", "ball", "box"]},
+    14: {"vat": ["bed", "teapot", "cup", "blanket", "lamp", "chair", "window"]},
     15: {"vat": ["cinema", "gym", "table", "book", "ball", "cake", "cup"]},
-    16: {"vat": ["sunny", "rainy", "windy", "cloudy", "kite", "tent", "table"]},
+    # ⚠ KHÔNG vẽ tính từ thời tiết (sunny · rainy · windy · cloudy): chúng không
+    # đặt được sau "a", và một bức không thể vừa nắng vừa mưa vừa gió. Unit vẫn
+    # dạy thời tiết qua CÂU; tranh vẽ cảnh ngoài trời để tả.
+    16: {"vat": ["kite", "tent", "table", "ball", "bike", "box", "car"]},
     17: {"vat": ["road", "bookshop", "bakery", "supermarket", "car", "bus",
                  "bike"]},
     18: {"vat": ["bookshop", "bakery", "skirt", "pen", "bag", "cake", "cup"]},
     19: {"vat": ["crocodile", "giraffe", "hippo", "lion", "peacock", "bird",
                  "elephant"]},
-    20: {"vat": ["tent", "campsite", "box", "kite", "ball", "cake", "table"]},
+    20: {"vat": ["tent", "campsite", "lake", "river", "beach", "sail", "bird"]},
 }
 
 # Màu của vật — CHỈ những emoji một màu, gọi tên không cãi được. Đừng thêm bừa:
@@ -459,9 +468,26 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
         # Người đã khai vật cho bức này. MÁY VẪN SOI: chưa học tới thì loại, không
         # có hình thì loại — khai sai không lọt ra bản chạy được, chỉ mất chỗ ấy.
         hinh_da = hinh_cua_tu(4, b["so"])
+        # ⚠ PHÉP SOI CỦA `UU_TIEN` PHẢI CHẶT BẰNG LUẬT CHUNG, không lỏng hơn.
+        # Bản đầu chỉ hỏi "đã học chưa · có hình chưa · đếm được không", KHÔNG hỏi
+        # "đặt được sau chữ a không". Nên khai tay là lọt thẳng, và ra:
+        #     ✗ This is a sunny.   (tính từ)
+        #     ✗ I can see an eyes. (danh từ số nhiều)
+        # Cả hai đều đúng khuôn, đúng túi từ, không cổng nào bắt — chỉ đọc mới thấy.
+        def dat_duoc_sau_a(t: str) -> bool:
+            vai = set((chuan_tu.get(t) or (chuan_tu12 or {}).get(t) or {}).get("vai") or [])
+            if vai & VAI_BO:
+                return False
+            # số nhiều: `eyes` · `shoes` · `chips`. Danh sách ngoại lệ vì tiếng Anh
+            # có `glass` · `bus` · `dress` tận cùng bằng s mà vẫn là số ít.
+            if t.endswith("s") and not t.endswith(("ss", "us")) and t[:-1] in kho:
+                return False
+            return True
+
         vat = [t for t in uu["vat"]
                if t in kho and " " not in t and t.lower() not in KHONG_DEM
-               and (hinh_da.get(t, {}).get("hinh") or hinh_da.get(t, {}).get("ve"))]
+               and (hinh_da.get(t, {}).get("hinh") or hinh_da.get(t, {}).get("ve"))
+               and dat_duoc_sau_a(t)]
         thieu = [t for t in uu["vat"] if t not in vat]
         if thieu:
             print(f"   ⚠ U{b['so']:02d} khai vật chưa dùng được: {' '.join(thieu)}")
@@ -493,8 +519,13 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
         nhom.append({"tu": t, "so": 1,
                      "ke": 0 if la_chinh else (1 + (len(nhom) - 1) % (SO_KE - 1) if chinh
                                        else len(nhom) % SO_KE),
-                     "co": 190 if la_chinh else 110})
-        vai = set((chuan_tu.get(t) or {}).get("vai") or [])
+                     # ⚠ 190 là cỡ của bố cục HAI kệ. Với ba kệ thì kệ trên cùng thấp hơn,
+                     # vật to đè lên dòng tựa đề tiếng Anh — che mất chữ.
+                     "co": 150 if la_chinh else 110})
+        # ⚠ Tra CẢ hai kho. `chuan_tu` chỉ có từ lớp 4; `mother` · `brother` ·
+        # `sister` · `father` là từ lớp 1–3 nên tra hụt → vai rỗng → rơi vào khuôn
+        # "This is a …" và ra "That's a brother." Người nhà phải đi với "my".
+        vai = set(((chuan_tu.get(t) or (chuan_tu12 or {}).get(t)) or {}).get("vai") or [])
         if la_chinh:
             doan.append(f"This is {mao_tu(t)}.")
         elif chinh:
@@ -568,7 +599,7 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
         "unit": b["so"], "chuong": b["chuong"],
         "ten": canh, "ten_en": canh_en,
         # ⚠ Kệ dưới cùng ở y=700 thì thanh kệ chạm mép ảnh (cao 720) và bị cắt.
-        "ke": [250, 450, 650],
+        "ke": [300, 480, 660],
         "nhom": nhom,
         # ⚠ KHÔNG cắt lại ở đây. Cắt đã làm xong ở trên, theo số VẬT; cắt lần nữa
         # theo số CÂU thì bức dạy màu (hai câu một vật) mất sạch mấy câu màu — và
@@ -589,12 +620,18 @@ def main() -> int:
     chuan_tu = {t["tu"]: t for u in chuan["unit"] for t in u["tu"]}
     canh_cua = {u["so"]: str(u.get("canh") or "").split("·") for u in chuan["unit"]}
 
+    # ⚠ LỚP 4 GỘP BA QUYỂN, không phải hai. Tên biến `ct12` là di sản của lớp 3;
+    # để nguyên (1, 2) thì từ của lớp 3 tra hụt — `mother` · `father` rơi vào khuôn
+    # "This is a mother." thay vì "This is my mother."
     ct12 = {}
-    for l in (1, 2):
+    # ⚠ GHI ĐÈ, KHÔNG `setdefault`. Sách dạy lại một từ ở lớp sau thì bản sau
+    # thường KHAI ĐÚNG HƠN: `mother` ở lớp 1 khai vai `dt`, lớp 3 khai `giadinh`.
+    # Giữ bản đầu tiên là giữ bản thô nhất, và ra "This is a mother."
+    for l in (1, 2, 3):
         cn = json.loads((GOC / f"data/tienganh/chuan_lop{l}.json").read_text("utf8"))
         for u in cn["unit"]:
             for t in u["tu"]:
-                ct12.setdefault(t["tu"], t)
+                ct12[t["tu"]] = t
     du_phong = bai_lop123()
     bais = bai_lop4()
     ra = []
@@ -613,10 +650,11 @@ def main() -> int:
     if a.ghi:
         p2 = GOC / "data/tienganh/tranh_lop4.json"
         cu = json.loads(p2.read_text("utf8"))
-        giu = {k["unit"]: k for k in cu if k.get("tay") or k["unit"] == 0}
-        moi = [giu[0]] if 0 in giu else []
-        for k in ra:
-            moi.append(giu.get(k["unit"], k))
+        # ⚠ Bộ lớp 3 GIỮ RIÊNG unit 0 vì bức ấy khai tay và không nằm trong `ra`.
+        # Lớp 4 tự soạn cả U0, nên giữ riêng là ĐẾM HAI LẦN — ra 22 bức cho 21 unit.
+        # Chỉ giữ bức nào mang cờ `tay`.
+        giu = {k["unit"]: k for k in cu if k.get("tay")}
+        moi = [giu.get(k["unit"], k) for k in ra]
         p2.write_text(json.dumps(moi, ensure_ascii=False, indent=1) + "\n", "utf8")
         print(f"→ {p2.relative_to(GOC)}  ({len(moi)} bức)")
     return 0

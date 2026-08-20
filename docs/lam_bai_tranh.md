@@ -282,3 +282,54 @@ câu tiếng Anh vẫn nguyên si câu của sách.
   thì bộ hoạt động của lớp 3 trọn vẹn.
 * **`counting` 🔢 · `painting` 🎨 · `drawing` 🖌️** — vẫn là hình ĐỒ VẬT nên luật 7
   loại khỏi tranh. Vẽ tay là vào được, nhưng chưa bức nào cần tới.
+
+---
+
+## LỚP 4 DẠY THÊM GÌ — bảy chỗ khác lớp 3 (20-08-2026)
+
+Bác chốt: *"các bài đọc, nói, viết sẽ dài hơn lớp 3."* Làm thật thì lộ ra bảy chỗ,
+và chỉ có chỗ đầu là chuyện độ dài.
+
+**1 · Dài hơn = BA con số đi với nhau.** 5 vật · 2 kệ · 4–5 câu → **7 vật · 3 kệ ·
+6–7 câu**. Nới số vật mà quên thêm kệ thì vật rơi ra ngoài; `assert` cuối `soan()`
+bắt ngay (đã bắt thật).
+
+**2 · Nhiều hoạt động hơn thì THÊM KHUÔN, đừng nới số.** `BOT_VIEC = 4` của lớp 3
+không phải con số đẹp — nó là hệ quả của việc chỉ có HAI khuôn (`She's…`/`He's…`)
+và cổng "không quá 2 dòng cùng khuôn". Lớp 4 thêm `They're …ing.` → ba khuôn →
+`BOT_VIEC = 6`. ⚠ Không thêm `I can + [Ability]`: nó đòi động từ NGUYÊN THỂ mà kho
+tranh chỉ giữ dạng `-ing`, và cắt đuôi để suy ngược là chỗ đẻ ra `dancing` → `danc`.
+
+**3 · `UU_TIEN` phải soi CHẶT BẰNG luật chung, không lỏng hơn.** Bản đầu chỉ hỏi
+"đã học chưa · có hình chưa · đếm được không", KHÔNG hỏi "đặt được sau chữ *a*
+không". Khai tay là lọt thẳng:
+
+    ✗ This is a sunny.     (tính từ)
+    ✗ I can see an eyes.   (danh từ số nhiều)
+    ✗ This is a maths.     (tên môn học)
+
+Cả ba đúng khuôn, đúng túi từ, không cổng nào bắt. Nay có `dat_duoc_sau_a()`.
+
+**4 · `VAI_BO` phải biết vai MỚI của quyển ấy.** Chép bảng của lớp 3 sang thì
+`thoitiet` · `monhoc` · `thang` · `thu` · `thoigian` · `mua` · `huong` · `quocgia`
+đều không có trong đó, nên chúng lọt qua mọi phép soi.
+
+**5 · Kho phụ phải GỘP ĐỦ QUYỂN, và GHI ĐÈ chứ đừng `setdefault`.** Lớp 4 mượn
+được của ta1·ta2·ta3, nhưng tên biến vẫn là `ct12` (di sản lớp 3) nên dễ để nguyên
+`(1, 2)`. Và sách dạy lại một từ ở lớp sau thì bản sau thường KHAI ĐÚNG HƠN:
+`mother` ở lớp 1 khai vai `dt`, lớp 3 khai `giadinh`. Giữ bản đầu tiên là giữ bản
+thô nhất → *"This is a mother."* thay vì *"This is my mother."*
+
+**6 · Bỏ qua unit 0 là di sản, không phải luật.** Bộ lớp 3 bỏ qua U0 vì bức ấy khai
+tay. Quyển mới không có bản khai tay nào → mất trắng bức Starter, 20 bức thay vì
+21, và không gì báo. Cùng chỗ ấy còn giữ riêng U0 lúc ghi tệp → đếm HAI LẦN, ra 22
+bức. Chỉ giữ bức nào mang cờ `tay`.
+
+**7 · ĐỌC TÊN UNICODE LÀ CHƯA ĐỦ — phải VẼ RA NHÌN.** Bộ vẽ emoji của kho KHÔNG
+ghép chuỗi ZWJ; nó vẽ từng mảnh cạnh nhau, mảnh nào phông không có thì rơi mất im
+lặng. Nên `doctor` 👨‍⚕️ và `nurse` 👩‍⚕️ ra HAI KHUÔN MẶT TRƠN GIỐNG HỆT NHAU —
+tên Unicode vẫn đúng, hình vẫn hỏng. `gardener` 🧑‍🌾 thì trùng hệt `farmer` 👨‍🌾.
+Dựng một TỜ ẢNH GỘP cả quyển rồi nhìn một lượt là cách rẻ nhất để bắt.
+
+⚠ Tờ ảnh gộp còn bắt được một thứ khác không lỗi nào kêu: **nhiều bức dùng chung
+một bộ đạo cụ** nên nhìn na ná nhau. Mỗi bức nên có bộ vật riêng.
