@@ -230,7 +230,7 @@ def muc_viet(k: dict, lop: int, von: list[dict]) -> dict:
     }
 
 
-def kich_ban_noi(k: dict) -> dict:
+def kich_ban_noi(k: dict, lop: int) -> dict:
     """Kịch bản NÓI — chỉ một việc: tả bức tranh.
 
     ══ BÁC TẢ ĐÚNG NHỊP CẦN CÓ, 19-08-2026 ══
@@ -274,7 +274,11 @@ def kich_ban_noi(k: dict) -> dict:
     })
     buoc.append({"loai": "ket"})
     return {
-        "bai": f"DL:TA3.B{k['unit']:02d}",
+        # ⚠ GHIM CỨNG "TA3" Ở ĐÂY LÀ HỎNG CÂM. Kịch bản tranh của lớp 4 mang
+        # mã lớp 3 nên phép thay `x["bai"] != kb["bai"]` không khớp bài nào —
+        # nó NỐI THÊM thay vì THAY THẾ, và `kichban_noi.json` có 42 mục cho 21
+        # bài. Không cổng nào bắt, chỉ đếm mới thấy.
+        "bai": f"DL:{QUYEN[lop].upper()}.B{k['unit']:02d}",
         "ten": f"Tả tranh · {k['ten']}",
         "muc_tieu": f"Tả được bức tranh “{k['ten']}” thành một đoạn",
         "tinh_huong": f"Con và cô cùng nhìn một bức tranh: {k['ten'].lower()}.",
@@ -322,7 +326,7 @@ def main() -> int:
         mv = muc_viet(k, a.lop, tu_trong_tranh(k, a.lop))
         viets = [x for x in viets if x["id"] != mv["id"]] + [mv]
 
-        kb = kich_ban_noi(k)
+        kb = kich_ban_noi(k, a.lop)
         kbs = [x for x in kbs if x["bai"] != kb["bai"]] + [kb]
         print(f"  unit {k['unit']}: đoạn {len(muc['doan'])} câu "
               f"· {len(kb['buoc'])} bước nói")
