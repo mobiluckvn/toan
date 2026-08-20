@@ -90,6 +90,19 @@ true` trong `hinh_ve.json` — `la_nguoi()` và cổng cùng đọc cờ đó, k
 | `reading` | người cầm quyển sách MỞ trước mặt, mắt nhìn xuống trang | 📖 là QUYỂN SÁCH — mà lớp 1 đã dạy chính từ `book` |
 | `writing` | người cầm bút CHẤM XUỐNG tờ giấy có dòng kẻ | ✍️ tên thật WRITING HAND: chỉ có bàn tay, không có người |
 | `dancing` | người hai tay giơ lên, chân bước rộng, váy xoè đỏ | 💃 **không sai nghĩa** — vẽ lại chỉ vì LỐI NÉT, xem ngay dưới |
+| `cooking` | người đội mũ bếp, tay khuấy nồi đang bốc hơi | 🧑‍🍳 TRÙNG HỆT `cook` (U12, nghề nghiệp) |
+| `climbing` | người bám vách đá, hai tay với lên, chân đạp vào đá bám màu | 🧗 đúng nghĩa — lối nét |
+| `cycling` | người ngồi trên xe đạp, thân nghiêng, chân đạp bàn đạp | 🚴 đúng nghĩa — lối nét |
+| `walking` | người bước đi, thân ĐỨNG THẲNG, tay đánh nhẹ | 🚶 đúng nghĩa — lối nét |
+| `skipping` | người nhảy dây, dây đỏ vòng qua đầu xuống dưới chân | 🤸 tên thật PERSON CARTWHEELING — **người LỘN NHÀO**, sai nghĩa hẳn |
+| `running` | *dùng lại* nét `run` lớp 1 đã vẽ | 🏃 đúng nghĩa — lối nét |
+
+⚠ `run` và `running` là **một việc, hai dạng của một từ** → dùng chung một hình.
+Vẽ bản thứ hai là tự tạo chỗ cho hai bên lệch nhau. Khác hẳn `ball` ≠ `football`.
+
+⚠ **Đừng vẽ vạch đất dưới chân.** `walking` và `skipping` bản đầu có, nhìn riêng
+thì hợp lý; nhưng trong bài tả tranh mỗi vật đã đứng sẵn trên KỆ, nên thành ra
+người đứng trên tấm ván đặt trên kệ. Chỉ lộ khi dựng bức tranh ra nhìn.
 
 **Lối nét cũng là một lý do vẽ lại.** Ba từ trên vẽ xong thì bức U18 có bốn bạn
 đang làm việc, ba bạn là hình vẽ tay mảnh-phẳng còn 💃 là emoji đậm-có-khối —
@@ -255,14 +268,8 @@ câu tiếng Anh vẫn nguyên si câu của sách.
 
 ## CÒN THÔ, CHƯA SỬA
 
-* **Còn hai bức lẫn lối vẽ.** U18 nay đều tay cả bốn người. Nhưng:
-  * **U05 Sở thích** — `dancing`/`singing` vẽ tay, còn `cooking` 🧑‍🍳 và
-    `running` 🏃 vẫn là emoji;
-  * **U20 Ở vườn thú** — `dancing` vẽ tay, `climbing` 🧗 vẫn là emoji.
-
-  Vẽ nốt là hết: `cooking` · `running` · `climbing`, rồi tới `cycling` 🚴 ·
-  `walking` 🚶 · `swimming` 🏊 · `skipping` cho U19. Không gấp — emoji người vẫn
-  ĐÚNG nghĩa, chỉ khác lối vẽ. ⚠ Vẽ từ nào thì nhớ **dựng lại video mọi unit dạy
-  từ ấy**; `dancing` một từ thôi đã kéo theo ba unit (U05 · U18 · U20).
-* **`counting` 🔢 · `painting` 🎨 · `drawing` 🖌️** — vẫn là hình đồ vật nên chưa
-  vào tranh được. Cùng cách chữa như trên, chưa unit nào cần tới.
+* **`swimming` 🏊** — hoạt động NGƯỜI duy nhất còn dùng emoji. Chưa bức nào vẽ nó
+  (U05 đã đủ bốn hoạt động trước khi tới lượt), nên chưa lẫn lối ở đâu cả; vẽ nốt
+  thì bộ hoạt động của lớp 3 trọn vẹn.
+* **`counting` 🔢 · `painting` 🎨 · `drawing` 🖌️** — vẫn là hình ĐỒ VẬT nên luật 7
+  loại khỏi tranh. Vẽ tay là vào được, nhưng chưa bức nào cần tới.

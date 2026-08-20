@@ -334,7 +334,7 @@ cổng khác nhau.
 
 | | |
 |---|---|
-| **là gì** | 41 hình SVG, khung nhìn `0 0 64 64`, nét dày, màu phẳng. Hình nào vẽ MỘT NGƯỜI đang làm việc gì đó thì mang cờ `nguoi: true` — bài tả tranh đọc cờ ấy để biết hoạt động nào vẽ ra tranh được (xem `docs/lam_bai_tranh.md` luật 7). |
+| **là gì** | 46 hình SVG, khung nhìn `0 0 64 64`, nét dày, màu phẳng. Hình nào vẽ MỘT NGƯỜI đang làm việc gì đó thì mang cờ `nguoi: true` — bài tả tranh đọc cờ ấy để biết hoạt động nào vẽ ra tranh được (xem `docs/lam_bai_tranh.md` luật 7). |
 | **dựng** | Viết tay. Render ra PNG **nhìn tận mắt** trước khi chốt. |
 | **dùng** | Màn hình đọc trực tiếp; video rasterize bằng cairosvg. Một tệp, hai bên. |
 
