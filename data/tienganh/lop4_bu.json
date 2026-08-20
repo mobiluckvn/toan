@@ -39,7 +39,22 @@
   "mua": "Mùa trong năm",
   "sukien": "Dịp, ngày hội",
   "tien": "Tiền",
-  "quanao": "Quần áo"
+  "quanao": "Quần áo",
+  "bophan": "Bộ phận cơ thể",
+  "convat": "Con vật",
+  "dodac": "Đồ đạc trong nhà",
+  "dongtu": "Hành động",
+  "douong": "Đồ uống",
+  "dt": "Từ hay gặp",
+  "hoi": "Từ để hỏi",
+  "nghe": "Nghề nghiệp",
+  "noichon": "Nơi chốn",
+  "so": "Số đếm",
+  "thucan": "Đồ ăn",
+  "tinhtu": "Từ tả đồ vật",
+  "viec": "Việc đang làm",
+  "vitri": "Ở đâu",
+  "_vi_sao": "Vai CŨ chép nguyên tên từ lop3_bu để ba quyển gọi cùng một thứ bằng cùng một tên — bé học lên lớp 4 vẫn thấy nhãn quen. Vai MỚI của lớp 4 đặt tên ở đây."
  },
  "tu": {
   "v_g4_st_come_in": {
@@ -1442,198 +1457,478 @@
   }
  },
  "hinh": {
-  "friend": "🧑‍🤝‍🧑"
+  "_vi_sao": "HÌNH CỦA TỪNG TỪ. Ba loại: emoji · dùng lại nét VẼ TAY đã có · khai KHÔNG VẼ kèm lý do. Luật của kho: TÊN UNICODE LÀ BẰNG CHỨNG — đọc tên chính thức của emoji đặt cạnh nghĩa, đừng tin cảm nhận. Bảng đầu tôi soạn có ~40 chỗ hỏng và phép ấy bắt hết: PE 🤸 hoá ra PERSON DOING CARTWHEEL, jump 🤾 là HANDBALL, skip 🪢 là KNOT, zoo 🦁 trùng hệt lion, tall 🦒 trùng hệt giraffe, clothes shop 👗 trùng hệt skirt.",
+  "_luat": [
+   "1. Hai TỪ KHÁC NGHĨA thì hai HÌNH KHÁC NHAU. Cùng nghĩa thì dùng chung, khai ở `_trung_duoc`.",
+   "2. Chữ trừu tượng (giới từ · liên từ · tính chất · tên tháng · tên thứ) KHÔNG cố tìm emoji.",
+   "   Cố tìm chính là cách đẻ ra hình sai — `desk` → 🪑 tên thật CHAIR, lỗi đắt nhất của lớp 1.",
+   "3. Việc CÓ NGƯỜI LÀM thì hình phải có NGƯỜI (luật 7, docs/lam_bai_tranh.md)."
+  ],
+  "_trung_duoc": [
+   [
+    "do housework",
+    "do the housework"
+   ],
+   [
+    "watch TV",
+    "watch television"
+   ],
+   [
+    "cook meals",
+    "help with the cooking"
+   ],
+   [
+    "Viet Nam",
+    "Vietnamese"
+   ],
+   [
+    "English teacher",
+    "maths teacher",
+    "teacher"
+   ]
+  ],
+  "America": "🇺🇸",
+  "Australia": "🇦🇺",
+  "Bangkok": "🛕",
+  "Britain": "🇬🇧",
+  "English": "🔤",
+  "IT": "💻",
+  "Japan": "🇯🇵",
+  "London": "🎡",
+  "Malaysia": "🇲🇾",
+  "Singapore": "🇸🇬",
+  "Sydney": "🌉",
+  "T-shirt": "👕",
+  "Thailand": "🇹🇭",
+  "Tokyo": "🗼",
+  "Viet Nam": "🇻🇳",
+  "actor": "🎭",
+  "art": "🎨",
+  "at noon": "🌞",
+  "bakery": "🥖",
+  "beach": "🏖️",
+  "bird": "🐦",
+  "birthday": "🎂",
+  "bookshop": "📚",
+  "building": "🏢",
+  "building a campfire": "🔥",
+  "campsite": "🏕️",
+  "chips": "🍟",
+  "cinema": "🎦",
+  "city": "🏙️",
+  "clean the floor": "🧽",
+  "clothes shop": "👚",
+  "cloudy": "☁️",
+  "cook meals": "🍲",
+  "countryside": "🌾",
+  "crocodile": "🐊",
+  "do yoga": "🧘",
+  "doctor": "👨‍⚕️",
+  "dong": "💵",
+  "email": "📧",
+  "eyes": "👀",
+  "face": "🙂",
+  "factory": "🏭",
+  "farm": "🚜",
+  "farmer": "👨‍🌾",
+  "food stall": "🍢",
+  "friend": "🧑‍🤝‍🧑",
+  "gardener": "🧑‍🌾",
+  "get up": "⏰",
+  "gift shop": "🎁",
+  "giraffe": "🦒",
+  "go straight": "⬆️",
+  "go to bed": "🛌",
+  "go to school": "🚸",
+  "grapes": "🍇",
+  "hand": "✋",
+  "have breakfast": "🍳",
+  "hippo": "🦛",
+  "history and geography": "🗺️",
+  "hospital": "🏥",
+  "in the afternoon": "🌇",
+  "in the evening": "🌙",
+  "in the morning": "🌅",
+  "juice": "🧃",
+  "kick": "🦵",
+  "left": "⬅️",
+  "lemonade": "🍋",
+  "lion": "🦁",
+  "listen to music": "🎧",
+  "maths": "➗",
+  "mountains": "⛰️",
+  "music": "🎵",
+  "nose": "👃",
+  "nurse": "👩‍⚕️",
+  "nursing home": "🏨",
+  "o'clock": "🕐",
+  "office worker": "🧑‍💼",
+  "painter": "👨‍🎨",
+  "party": "🎉",
+  "peacock": "🦚",
+  "pen": "🖊️",
+  "pet shop": "🐈‍⬛",
+  "play badminton": "🏸",
+  "play football": "⚽",
+  "play tennis": "🎾",
+  "play the guitar": "🎸",
+  "play the piano": "🎹",
+  "playing card games": "🃏",
+  "policeman": "👮",
+  "pupil": "🧑‍🎓",
+  "rainy": "🌧️",
+  "ride a horse": "🏇",
+  "right": "➡️",
+  "road sign": "🚧",
+  "roller skate": "🛼",
+  "round": "⭕",
+  "school": "🏫",
+  "school bag": "🎒",
+  "school garden": "🌱",
+  "science": "🔬",
+  "shopping centre": "🏬",
+  "singer": "🧑‍🎤",
+  "singing songs": "🎶",
+  "skirt": "👗",
+  "sports centre": "🏟️",
+  "sports day": "🏅",
+  "sports shop": "👟",
+  "stay at home": "🏠",
+  "stop": "🛑",
+  "street": "🏘️",
+  "study at school": "✏️",
+  "summer": "🌻",
+  "sunny": "☀️",
+  "supermarket": "🛒",
+  "swim": "🏊",
+  "swimming pool": "🏊‍♀️",
+  "taking a photo": "📷",
+  "teacher": "👩‍🏫",
+  "telling a story": "🗣️",
+  "tent": "⛺",
+  "today": "📅",
+  "town": "🌆",
+  "turn left": "↩️",
+  "turn right": "↪️",
+  "turn round": "🔄",
+  "village": "🏡",
+  "wash the clothes": "🧺",
+  "wash the dishes": "🍽️",
+  "watch TV": "📺",
+  "watch films": "🎬",
+  "water": "💧",
+  "water park": "💦",
+  "weather": "🌤️",
+  "weekend": "🗓️",
+  "windy": "🌬️",
+  "worker": "👷",
+  "yesterday": "📆",
+  "_ve_tay": {
+   "computer room": {
+    "ten_that": "",
+    "ve": "computer_room",
+    "tam": "💻",
+    "sai_o_dau": "💻 là CÁI LAPTOP — mang đi đâu cũng được, không phải căn phòng. Và trùng hệt `IT`."
+   },
+   "cook": {
+    "ten_that": "",
+    "ve": "cooking",
+    "tam": "🧑‍🍳",
+    "sai_o_dau": "🧑‍🍳 trùng hệt `cook` NGHỀ NGHIỆP. Đây là ĐỘNG TỪ 'nấu ăn' nên vẽ người đủ thân đang làm."
+   },
+   "cycle": {
+    "ten_that": "",
+    "ve": "cycling",
+    "tam": "🚴",
+    "sai_o_dau": "🚴 đúng nghĩa nhưng là emoji; lớp 3 đã vẽ tay `cycling` cho đều lối nét."
+   },
+   "dance": {
+    "ten_that": "",
+    "ve": "dancing",
+    "tam": "💃",
+    "sai_o_dau": "💃 đúng nghĩa; dùng lại nét vẽ tay `dancing` của lớp 3 cho đều lối."
+   },
+   "draw": {
+    "ten_that": "",
+    "ve": "drawing",
+    "tam": "🖌️",
+    "sai_o_dau": "🖌️ là CÂY CỌ. Việc VẼ phải có người."
+   },
+   "garden": {
+    "ten_that": "",
+    "ve": "garden",
+    "tam": "🌷",
+    "sai_o_dau": "🌷 là MỘT BÔNG HOA lẻ, không phải khu vườn. Lớp 3 đã vẽ."
+   },
+   "gym": {
+    "ten_that": "",
+    "ve": "gym",
+    "tam": "🏋️",
+    "sai_o_dau": "🏋️ là NGƯỜI TẬP TẠ, không phải căn phòng. Lớp 3 đã vẽ nhà thể chất."
+   },
+   "hair": {
+    "ten_that": "",
+    "ve": "hair",
+    "tam": "💇",
+    "sai_o_dau": "💇 là NGƯỜI ĐANG CẮT TÓC, không phải mái tóc. Lớp 1 đã vẽ."
+   },
+   "jam": {
+    "ten_that": "",
+    "ve": "jam",
+    "tam": "🍯",
+    "sai_o_dau": "🍯 là HŨ MẬT ONG, không phải lọ mứt. Lớp 3 đã vẽ."
+   },
+   "playground": {
+    "ten_that": "",
+    "ve": "playground",
+    "tam": "🛝",
+    "sai_o_dau": "🛝 là CÁI CẦU TRƯỢT lẻ. Lớp 3 đã vẽ cả sân chơi ngoài trời."
+   },
+   "read books": {
+    "ten_that": "",
+    "ve": "reading",
+    "tam": "📖",
+    "sai_o_dau": "📖 là QUYỂN SÁCH, mà lớp 1 đã dạy `book`. Việc ĐỌC phải có người."
+   },
+   "ride a bike": {
+    "ten_that": "",
+    "ve": "cycling",
+    "tam": "🚲",
+    "sai_o_dau": "🚲 là CÁI XE ĐẠP không người — đây là việc ĐANG LÀM. Dùng nét `cycling`."
+   },
+   "road": {
+    "ten_that": "",
+    "ve": "road",
+    "tam": "🛣️",
+    "sai_o_dau": "🛣️ là ĐƯỜNG CAO TỐC nhiều làn. Lớp 3 đã vẽ con đường hai bên cỏ."
+   },
+   "sing": {
+    "ten_that": "",
+    "ve": "singing",
+    "tam": "🎤",
+    "sai_o_dau": "🎤 là CÁI MICRO. Việc HÁT phải có người."
+   },
+   "skip": {
+    "ten_that": "",
+    "ve": "skipping",
+    "tam": "🤸",
+    "sai_o_dau": "🤸 tên thật PERSON DOING CARTWHEEL — người LỘN NHÀO, không phải nhảy dây. Lớp 3 đã vẽ đúng."
+   },
+   "write": {
+    "ten_that": "",
+    "ve": "writing",
+    "tam": "✍️",
+    "sai_o_dau": "✍️ tên thật WRITING HAND — chỉ có bàn tay, không có người."
+   },
+   "zoo": {
+    "ten_that": "",
+    "ve": "zoo",
+    "tam": "🦁",
+    "sai_o_dau": "🦁 là MẶT SƯ TỬ — trùng hệt `lion` của chính unit này, và sư tử không phải vườn thú. Lớp 3 đã vẽ chuồng có song sắt."
+   }
+  },
+  "_khong_ve": {
+   "April": "tên tháng — Unicode không có emoji riêng cho từng tháng; 📅 thì tháng nào cũng thế. Dạy bằng CÂU và bằng lịch.",
+   "August": "tên tháng — Unicode không có emoji riêng cho từng tháng; 📅 thì tháng nào cũng thế. Dạy bằng CÂU và bằng lịch.",
+   "December": "tên tháng — Unicode không có emoji riêng cho từng tháng; 📅 thì tháng nào cũng thế. Dạy bằng CÂU và bằng lịch.",
+   "English teacher": "cùng hình với `teacher` 👩‍🏫 — muốn tách thì phải vẽ tay cô giáo cầm sách Tiếng Anh.",
+   "February": "tên tháng — Unicode không có emoji riêng cho từng tháng; 📅 thì tháng nào cũng thế. Dạy bằng CÂU và bằng lịch.",
+   "Friday": "tên thứ — cùng lý do như tên tháng. Dạy bằng CÂU: 'What day is it today?'",
+   "January": "tên tháng — Unicode không có emoji riêng cho từng tháng; 📅 thì tháng nào cũng thế. Dạy bằng CÂU và bằng lịch.",
+   "July": "tên tháng — Unicode không có emoji riêng cho từng tháng; 📅 thì tháng nào cũng thế. Dạy bằng CÂU và bằng lịch.",
+   "June": "tên tháng — Unicode không có emoji riêng cho từng tháng; 📅 thì tháng nào cũng thế. Dạy bằng CÂU và bằng lịch.",
+   "March": "tên tháng — Unicode không có emoji riêng cho từng tháng; 📅 thì tháng nào cũng thế. Dạy bằng CÂU và bằng lịch.",
+   "May": "tên tháng — Unicode không có emoji riêng cho từng tháng; 📅 thì tháng nào cũng thế. Dạy bằng CÂU và bằng lịch.",
+   "Monday": "tên thứ — cùng lý do như tên tháng. Dạy bằng CÂU: 'What day is it today?'",
+   "November": "tên tháng — Unicode không có emoji riêng cho từng tháng; 📅 thì tháng nào cũng thế. Dạy bằng CÂU và bằng lịch.",
+   "October": "tên tháng — Unicode không có emoji riêng cho từng tháng; 📅 thì tháng nào cũng thế. Dạy bằng CÂU và bằng lịch.",
+   "PE": "môn Thể dục — 🤸 tên thật PERSON DOING CARTWHEEL (người lộn nhào), và trùng hệt hình `skipping` lớp 3 từng dùng sai. Cần vẽ tay.",
+   "Saturday": "tên thứ — cùng lý do như tên tháng. Dạy bằng CÂU: 'What day is it today?'",
+   "September": "tên tháng — Unicode không có emoji riêng cho từng tháng; 📅 thì tháng nào cũng thế. Dạy bằng CÂU và bằng lịch.",
+   "Sunday": "tên thứ — cùng lý do như tên tháng. Dạy bằng CÂU: 'What day is it today?'",
+   "Thursday": "tên thứ — cùng lý do như tên tháng. Dạy bằng CÂU: 'What day is it today?'",
+   "Tuesday": "tên thứ — cùng lý do như tên tháng. Dạy bằng CÂU: 'What day is it today?'",
+   "Vietnamese": "môn Tiếng Việt — 🇻🇳 trùng hệt `Viet Nam`. Cần vẽ tay.",
+   "Wednesday": "tên thứ — cùng lý do như tên tháng. Dạy bằng CÂU: 'What day is it today?'",
+   "at": "giới từ chỉ vị trí — vẽ một mình thì không ra nghĩa, phải có HAI vật mới thấy quan hệ. Lớp 3 đã vẽ tay `near` đúng kiểu ấy.",
+   "because": "liên từ. Dạy bằng câu.",
+   "behind": "giới từ chỉ vị trí — vẽ một mình thì không ra nghĩa, phải có HAI vật mới thấy quan hệ. Lớp 3 đã vẽ tay `near` đúng kiểu ấy.",
+   "between": "giới từ chỉ vị trí — vẽ một mình thì không ra nghĩa, phải có HAI vật mới thấy quan hệ. Lớp 3 đã vẽ tay `near` đúng kiểu ấy.",
+   "big": "tính chất, không phải vật. 🐘 là CON VOI — mà lớp 3 đã dạy `elephant`. Dạy bằng cặp đối: a big house / a small house.",
+   "busy": "tính chất của một nơi. Dạy bằng câu: 'The city is busy.'",
+   "but": "liên từ. Dạy bằng câu.",
+   "can": "từ chỉ khả năng. Dạy bằng câu: 'I can swim.'",
+   "come in": "lời sai bảo — cần vẽ NGƯỜI đang làm; xem luật 7 của docs/lam_bai_tranh.md.",
+   "dance beautifully": "trạng từ đi kèm — hình sẽ trùng hệt `dance`. Dạy bằng câu.",
+   "dancing around the campfire": "cảnh nhiều người quanh đống lửa — 🔥 trùng `building a campfire`. Cần vẽ tay.",
+   "do housework": "việc nhà nói chung — 🧹 là CÁI CHỔI, trùng `clean the floor`. Cần vẽ tay người đang làm.",
+   "do the housework": "cùng nghĩa `do housework`.",
+   "favourite": "'yêu thích' — ❤️ là TRÁI TIM, nói về tình cảm chứ không nói 'thích nhất'.",
+   "fifteen": "số đếm — hiện bằng CHỮ SỐ, không bằng emoji. Lớp 3 đã chốt: emoji số của một số máy hiện ra ô vuông.",
+   "forty-five": "số đếm — hiện bằng CHỮ SỐ, không bằng emoji. Lớp 3 đã chốt: emoji số của một số máy hiện ra ô vuông.",
+   "get (to)": "'đến được chỗ nào' — hỏi đường, không vẽ được.",
+   "help with the cooking": "cùng cảnh với `cook meals` 🍲; muốn khác thì phải vẽ NGƯỜI đang phụ bếp.",
+   "in": "giới từ chỉ vị trí — vẽ một mình thì không ra nghĩa, phải có HAI vật mới thấy quan hệ. Lớp 3 đã vẽ tay `near` đúng kiểu ấy.",
+   "jump": "🤾 tên thật HANDBALL — bóng ném, KHÔNG phải nhảy. Chưa có emoji đúng; cần vẽ tay người đang nhảy.",
+   "last": "'lần trước' — chỉ thời gian đã qua, không vẽ được.",
+   "like": "'thích' — dạy bằng câu 'I like maths.'",
+   "live": "'sống ở đâu' — 🏠 là CÁI NHÀ, trùng `stay at home`. Dạy bằng câu 'I live in Ha Noi.'",
+   "long": "📏 là CÁI THƯỚC, không phải 'dài'. Dạy bằng cặp đối với `short`.",
+   "maths teacher": "cùng hình với `teacher` 👩‍🏫.",
+   "near": "giới từ chỉ vị trí — vẽ một mình thì không ra nghĩa, phải có HAI vật mới thấy quan hệ. Lớp 3 đã vẽ tay `near` đúng kiểu ấy.",
+   "noisy": "tính chất — 🔊 là CÁI LOA. Dạy bằng cặp đối với `quiet`.",
+   "open your books": "lời sai bảo — cần vẽ NGƯỜI đang làm; xem luật 7 của docs/lam_bai_tranh.md.",
+   "opposite": "giới từ chỉ vị trí — vẽ một mình thì không ra nghĩa, phải có HAI vật mới thấy quan hệ. Lớp 3 đã vẽ tay `near` đúng kiểu ấy.",
+   "playing tug of war": "🪢 là CÁI NÚT THẮT. Kéo co cần HAI NHÓM người kéo — phải vẽ tay.",
+   "putting up a tent": "hành động dựng lều — ⛺ là CÁI LỀU đã dựng xong, trùng `tent`. Cần vẽ tay người đang dựng.",
+   "quiet": "tính chất — 🤫 là NGƯỜI SUỴT, khác nghĩa. Dạy bằng cặp đối với `noisy`.",
+   "read aloud": "lời sai bảo — cần vẽ NGƯỜI đang làm; xem luật 7 của docs/lam_bai_tranh.md.",
+   "roar loudly": "tiếng con vật — trùng `lion`. Dạy bằng câu.",
+   "run quickly": "trạng từ đi kèm — trùng `run` của lớp 1.",
+   "say goodbye": "lời chào — diễn bằng CÂU, không vẽ được (lớp 3 cũng để `hello`/`bye` không vẽ).",
+   "short": "📐 là ê-ke. Dạy bằng cặp đối với `long`/`tall`.",
+   "sing merrily": "trạng từ đi kèm — trùng `sing`.",
+   "sit down": "lời sai bảo — cần vẽ NGƯỜI đang làm; xem luật 7 của docs/lam_bai_tranh.md.",
+   "slim": "dáng người — không có emoji, và vẽ ra dễ thành chê bai hình thể. Dạy bằng câu.",
+   "stand up": "lời sai bảo — cần vẽ NGƯỜI đang làm; xem luật 7 của docs/lam_bai_tranh.md.",
+   "tall": "🦒 là CON HƯƠU CAO CỔ — trùng hệt `giraffe` của chính unit này. Dạy bằng cặp đối.",
+   "thirty": "số đếm — hiện bằng CHỮ SỐ, không bằng emoji. Lớp 3 đã chốt: emoji số của một số máy hiện ra ô vuông.",
+   "thousand": "số đếm — hiện bằng CHỮ SỐ, không bằng emoji. Lớp 3 đã chốt: emoji số của một số máy hiện ra ô vuông.",
+   "turn": "'rẽ' — đã có `turn left` ↩️ và `turn right` ↪️; riêng chữ `turn` không có hướng nên không vẽ.",
+   "visit": "'đi thăm' — 🚪 là CÁI CỬA, trùng `door` của lớp 1. Dạy bằng câu.",
+   "watch television": "cùng nghĩa `watch TV` 📺.",
+   "why": "từ để hỏi. Dạy bằng câu."
+  }
  },
  "unit": {
-  "0": {
-   "ma": "u_g4_starter",
-   "topic": "Starter - Hello again / Classroom & Outdoor activities",
-   "theme": "Me and My Friends",
-   "trang": 7,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_starter": {
+   "_topic": "Starter - Hello again / Classroom & Outdoor activities",
+   "_theme": "Me and My Friends",
+   "_trang": 7,
+   "canh": "Chào lại nhau · Hello again"
   },
-  "1": {
-   "ma": "u_g4_1",
-   "topic": "My friends",
-   "theme": "Me and My Friends",
-   "trang": 10,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_1": {
+   "_topic": "My friends",
+   "_theme": "Me and My Friends",
+   "_trang": 10,
+   "canh": "Bạn bè của mình · My friends"
   },
-  "2": {
-   "ma": "u_g4_2",
-   "topic": "Time and daily routines",
-   "theme": "Me and My Friends",
-   "trang": 16,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_2": {
+   "_topic": "Time and daily routines",
+   "_theme": "Me and My Friends",
+   "_trang": 16,
+   "canh": "Giờ giấc mỗi ngày · Time and daily routines"
   },
-  "3": {
-   "ma": "u_g4_3",
-   "topic": "My week",
-   "theme": "Me and My Friends",
-   "trang": 22,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_3": {
+   "_topic": "My week",
+   "_theme": "Me and My Friends",
+   "_trang": 22,
+   "canh": "Một tuần của mình · My week"
   },
-  "4": {
-   "ma": "u_g4_4",
-   "topic": "My birthday party",
-   "theme": "Me and My Friends",
-   "trang": 28,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_4": {
+   "_topic": "My birthday party",
+   "_theme": "Me and My Friends",
+   "_trang": 28,
+   "canh": "Tiệc sinh nhật · My birthday party"
   },
-  "5": {
-   "ma": "u_g4_5",
-   "topic": "Things we can do",
-   "theme": "Me and My Friends",
-   "trang": 34,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_5": {
+   "_topic": "Things we can do",
+   "_theme": "Me and My Friends",
+   "_trang": 34,
+   "canh": "Những việc mình làm được · Things we can do"
   },
-  "6": {
-   "ma": "u_g4_6",
-   "topic": "Our school facilities",
-   "theme": "Me and My School",
-   "trang": 44,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_6": {
+   "_topic": "Our school facilities",
+   "_theme": "Me and My School",
+   "_trang": 44,
+   "canh": "Trường mình có gì · Our school facilities"
   },
-  "7": {
-   "ma": "u_g4_7",
-   "topic": "Our timetables",
-   "theme": "Me and My School",
-   "trang": 50,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_7": {
+   "_topic": "Our timetables",
+   "_theme": "Me and My School",
+   "_trang": 50,
+   "canh": "Thời khoá biểu · Our timetables"
   },
-  "8": {
-   "ma": "u_g4_8",
-   "topic": "My favourite subjects",
-   "theme": "Me and My School",
-   "trang": 56,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_8": {
+   "_topic": "My favourite subjects",
+   "_theme": "Me and My School",
+   "_trang": 56,
+   "canh": "Môn con thích nhất · My favourite subjects"
   },
-  "9": {
-   "ma": "u_g4_9",
-   "topic": "Our sports day",
-   "theme": "Me and My School",
-   "trang": 62,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_9": {
+   "_topic": "Our sports day",
+   "_theme": "Me and My School",
+   "_trang": 62,
+   "canh": "Ngày hội thể thao · Our sports day"
   },
-  "10": {
-   "ma": "u_g4_10",
-   "topic": "Our summer holidays",
-   "theme": "Me and My School",
-   "trang": 68,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_10": {
+   "_topic": "Our summer holidays",
+   "_theme": "Me and My School",
+   "_trang": 68,
+   "canh": "Kì nghỉ hè · Our summer holidays"
   },
-  "11": {
-   "ma": "u_g4_11",
-   "topic": "My home",
-   "theme": "Me and My Family",
-   "trang": 6,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_11": {
+   "_topic": "My home",
+   "_theme": "Me and My Family",
+   "_trang": 6,
+   "canh": "Nhà của mình · My home"
   },
-  "12": {
-   "ma": "u_g4_12",
-   "topic": "Jobs",
-   "theme": "Me and My Family",
-   "trang": 12,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_12": {
+   "_topic": "Jobs",
+   "_theme": "Me and My Family",
+   "_trang": 12,
+   "canh": "Nghề nghiệp · Jobs"
   },
-  "13": {
-   "ma": "u_g4_13",
-   "topic": "Appearance",
-   "theme": "Me and My Family",
-   "trang": 18,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_13": {
+   "_topic": "Appearance",
+   "_theme": "Me and My Family",
+   "_trang": 18,
+   "canh": "Trông người ta thế nào · Appearance"
   },
-  "14": {
-   "ma": "u_g4_14",
-   "topic": "Daily activities",
-   "theme": "Me and My Family",
-   "trang": 24,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_14": {
+   "_topic": "Daily activities",
+   "_theme": "Me and My Family",
+   "_trang": 24,
+   "canh": "Việc mỗi ngày · Daily activities"
   },
-  "15": {
-   "ma": "u_g4_15",
-   "topic": "My family's weekends",
-   "theme": "Me and My Family",
-   "trang": 30,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_15": {
+   "_topic": "My family's weekends",
+   "_theme": "Me and My Family",
+   "_trang": 30,
+   "canh": "Cuối tuần của nhà mình · My family's weekends"
   },
-  "16": {
-   "ma": "u_g4_16",
-   "topic": "Weather",
-   "theme": "Me and the World Around",
-   "trang": 40,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_16": {
+   "_topic": "Weather",
+   "_theme": "Me and the World Around",
+   "_trang": 40,
+   "canh": "Thời tiết · Weather"
   },
-  "17": {
-   "ma": "u_g4_17",
-   "topic": "In the city",
-   "theme": "Me and the World Around",
-   "trang": 46,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_17": {
+   "_topic": "In the city",
+   "_theme": "Me and the World Around",
+   "_trang": 46,
+   "canh": "Trong thành phố · In the city"
   },
-  "18": {
-   "ma": "u_g4_18",
-   "topic": "At the shopping centre",
-   "theme": "Me and the World Around",
-   "trang": 52,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_18": {
+   "_topic": "At the shopping centre",
+   "_theme": "Me and the World Around",
+   "_trang": 52,
+   "canh": "Ở trung tâm mua sắm · At the shopping centre"
   },
-  "19": {
-   "ma": "u_g4_19",
-   "topic": "The animal world",
-   "theme": "Me and the World Around",
-   "trang": 58,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
+  "u_g4_19": {
+   "_topic": "The animal world",
+   "_theme": "Me and the World Around",
+   "_trang": 58,
+   "canh": "Thế giới loài vật · The animal world"
   },
-  "20": {
-   "ma": "u_g4_20",
-   "topic": "At summer camp",
-   "theme": "Me and the World Around",
-   "trang": 64,
-   "ten": null,
-   "ten_en": null,
-   "canh": null
-  }
+  "u_g4_20": {
+   "_topic": "At summer camp",
+   "_theme": "Me and the World Around",
+   "_trang": 64,
+   "canh": "Ở trại hè · At summer camp"
+  },
+  "_song_ngu": "Tên cảnh SONG NGỮ Việt · Anh — bác chốt 17-08, áp từ lớp 2 trở đi.",
+  "_ma": "Khoá là MÃ unit của bản đồ. ⚠ MÃ KHÔNG KHỚP SỐ BÀI: bốn bài ôn tập chen vào giữa nên `u_g4_6` là bài thứ BẢY (Our school facilities), không phải Review 1. Tra mã theo `topic`, đừng suy từ số — tôi đã đoán nhầm HAI LẦN trong cùng một buổi."
  },
  "mau_cau": {
   "sp_g4_review1": {

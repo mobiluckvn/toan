@@ -335,10 +335,13 @@ def main() -> int:
         "vai_ten": VAI_TEN_MOI,
         "tu": tu,
         "hinh": {},
-        "unit": {str(i): {"ma": u["id"], "topic": u["topic"], "theme": u["theme"],
-                          "trang": u.get("page"), "ten": None, "ten_en": None,
-                          "canh": None}
-                 for i, u in enumerate(hoc)},
+        # ⚠ KHOÁ THEO MÃ UNIT, không theo số thứ tự. `chuan_tienganh` tra phần bù
+        # bằng `bu["unit"][u["id"]]`, nên khoá số thì nó KHÔNG TÌM THẤY GÌ — mà
+        # cũng không báo, chỉ lặng lẽ để tên cảnh bằng tiếng Anh. Bản đầu tôi khai
+        # số, và phép dọn mã mồ côi ở cuối tệp này xoá sạch chính thứ nó vừa sinh.
+        "unit": {u["id"]: {"_topic": u["topic"], "_theme": u["theme"],
+                           "_trang": u.get("page"), "canh": None}
+                 for u in hoc},
         "mau_cau": mau_cau,
         "sua_slot": {},
         "them": {},
@@ -389,6 +392,29 @@ def main() -> int:
                     khung[k] = {**khung[k], **v}
                 else:
                     khung[k] = v
+        # ── DỌN MÃ MỒ CÔI ──
+        # "Giữ tất cả" chữa được chuyện MẤT, nhưng đẻ ra chuyện TÍCH RÁC: tôi khai
+        # 21 tên cảnh bằng mã ĐOÁN SAI, sửa lại bằng mã đúng, chạy lại bộ bóc — và
+        # nó giữ cả hai, thành 42 mục, trong đó 21 mục gán tên cảnh cho nhầm unit.
+        # Không có gì đỏ, vì mỗi mục nhìn riêng đều hợp lệ.
+        hop_le = {u["id"] for u in units} | {u["id"] for u in review}
+        for kho, ten in ((khung.get("unit") or {}), "unit"), \
+                        ((khung.get("bo_unit") or {}), "bo_unit"):
+            if ten == "bo_unit":
+                continue
+            moi_coi = [k for k in kho if not k.startswith("_") and k not in hop_le]
+            for k in moi_coi:
+                kho.pop(k)
+            if moi_coi:
+                print(f"  ⚠ dọn {len(moi_coi)} mã mồ côi trong `{ten}`: "
+                      f"{' '.join(sorted(moi_coi))}")
+        tu_hop_le = {v["id"] for v in tv}
+        moi_coi = [k for k in (khung.get("tu") or {}) if k not in tu_hop_le]
+        for k in moi_coi:
+            khung["tu"].pop(k)
+        if moi_coi:
+            print(f"  ⚠ dọn {len(moi_coi)} mã từ mồ côi: {' '.join(sorted(moi_coi))}")
+
         RA.write_text(json.dumps(khung, ensure_ascii=False, indent=1) + "\n", "utf8")
         print(f"→ {RA.relative_to(GOC)}")
     return 0
