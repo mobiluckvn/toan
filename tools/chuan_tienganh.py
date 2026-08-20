@@ -64,8 +64,13 @@ def so_unit(u: dict) -> int:
     gọi thẳng `int()` nên vỡ ngay ở lớp 3, đúng cái mà bộ chuẩn hoá sinh ra để
     tránh. Unit không đánh số thì xếp LÊN ĐẦU (số 0), vì "starter" theo nghĩa đen
     là bài mở đầu — và đối chiếu số trang thì đúng: nó ở trang nhỏ nhất.
+
+    ⚠ LỚP 4 KHAI CÁCH THỨ TƯ: `order`. Không đọc nó thì CẢ 25 UNIT đều ra số 0 —
+    mà bộ chuẩn hoá vẫn chạy trọn, vẫn ghi tệp, vẫn in "25 unit · 233 từ". Chỉ mở
+    tệp ra đếm mới thấy. Đây đúng thứ hàm này sinh ra để gói lại; thêm cách thứ tư
+    vào đây, đừng vá ở chỗ gọi.
     """
-    for k in ("unit_no", "unit_number", "unit_index"):
+    for k in ("unit_no", "unit_number", "unit_index", "order"):
         v = u.get(k)
         if v is None:
             continue
@@ -169,6 +174,42 @@ def chuan(lop: int, bu: dict) -> dict:
     nut, canh, nguoc = nap()
     trong_lop = [n for n in nut.values() if str(n.get("grade")) == str(lop)]
     units = sorted([n for n in trong_lop if n.get("node_kind") == "unit"], key=so_unit)
+    thieu: list[str] = []
+
+    # ── BÀI ÔN TẬP KHÔNG PHẢI BÀI HỌC ──
+    # Lớp 1·2·3: bản đồ khai chúng riêng, `node_kind == "review"`, nên chúng không
+    # lọt vào đây. LỚP 4 khai chúng là `unit` — "Review 1 & Extension activities" —
+    # nên bốn bài ôn tập trôi thẳng vào danh sách bài học, thành 25 bài thay vì 21,
+    # và bốn bài trong đó KHÔNG CÓ TỪ NÀO.
+    #
+    # Loại bằng DANH SÁCH KHAI TAY ở `lopN_bu.json → bo_unit`, không đoán bằng chuỗi
+    # "Review": quyển sau đặt tên khác một chữ là phép đoán trượt, mà trượt thì im.
+    bo = set((bu.get("bo_unit") or {}).get("ma") or [])
+    if bo:
+        thua = bo - {u["id"] for u in units}
+        if thua:
+            thieu.append(f"bo_unit khai {sorted(thua)} mà bản đồ không có unit ấy")
+        bo_that = [u for u in units if u["id"] in bo]
+        units = [u for u in units if u["id"] not in bo]
+        # ĐẢO CHIỀU NGAY TẠI CHỖ: loại nhầm thì phải kêu.
+        #   · bài bị loại mà CÓ TỪ  → đó là bài học, không phải bài ôn tập;
+        #   · bài còn lại mà KHÔNG CÓ TỪ → một bài ôn tập lọt lưới.
+        # Bản đầu tôi khai nhầm mã (đoán theo số thứ tự thay vì tra), nên phép loại
+        # xoá mất BA bài học thật và giữ nguyên cả bốn bài ôn tập — mà chỉ có đúng
+        # một dòng cảnh báo, vì tình cờ một mã đoán ra không tồn tại.
+        for u in bo_that:
+            if tu_cua_unit(u, nut, canh):
+                thieu.append(f"bo_unit loại {u['id']} nhưng bài ấy CÓ TỪ — "
+                             f"đó là bài học chứ không phải ôn tập")
+        for u in units:
+            if not tu_cua_unit(u, nut, canh):
+                thieu.append(f"{u['id']} ({u.get('topic')}) không có từ nào — "
+                             f"bài ôn tập lọt lưới? khai vào bo_unit")
+
+    # Đánh số lại theo VỊ TRÍ sau khi đã loại: mã bài `DL:TA4.B00…B20` phải liền
+    # mạch. Giữ `order` gốc thì số nhảy cóc qua chỗ bài ôn tập.
+    for i, u in enumerate(units):
+        u["_so_bai"] = i
 
     tu_bu = bu.get("tu", {})
     day_mau_cau = {k: v for k, v in (bu.get("mau_cau") or {}).items()
@@ -189,7 +230,7 @@ def chuan(lop: int, bu: dict) -> dict:
         if not k.startswith("_"):
             canh_am[k] = v
 
-    ra_unit, thieu = [], []
+    ra_unit = []
     for u in units:
         ds = []
         for i in tu_cua_unit(u, nut, canh):
@@ -260,7 +301,7 @@ def chuan(lop: int, bu: dict) -> dict:
 
         ra_unit.append({
             "ma": u["id"],
-            "so": so_unit(u),
+            "so": u.get("_so_bai", so_unit(u)),
             "canh": ub.get("canh") or u.get("topic"),
             "canh_en": u.get("topic"),
             "chu_de": u.get("theme"),

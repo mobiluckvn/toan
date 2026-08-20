@@ -1,0 +1,1942 @@
+{
+ "_doc": [
+  "PHẦN BÙ SOẠN TAY — TIẾNG ANH LỚP 4.",
+  "",
+  "21 bài học + 4 bài ôn tập · 233 từ · 48 mẫu câu (25 unit trong bản đồ).",
+  "Bộ khung do `tools/boc_sach_lop4.py` sinh; chạy lại KHÔNG đè phần đã sửa tay.",
+  "",
+  "── BA CHỖ LỚP 4 KHÁC HẲN BA QUYỂN TRƯỚC ──",
+  "1. Bản đồ khai bốn bài ÔN TẬP là `unit` (lớp 1·2·3 khai riêng `node_kind:",
+  "   review`). Không loại thì thành 25 bài học, bốn bài trong đó rỗng. Xem",
+  "   `bo_unit`, và đọc `_da_dinh` của nó trước khi sửa danh sách.",
+  "2. Số hiệu unit khai bằng `order`, không phải `unit_number`. Ba cách cũ đều",
+  "   trượt → cả 25 unit ra số 0, mà bộ chuẩn hoá vẫn chạy trọn và vẫn ghi tệp.",
+  "3. NGHĨA TIẾNG VIỆT KHÔNG DẤU — cả 233/233 từ ('ban be' · 'thang Tu' · 'hieu",
+  "   banh mi'). Ba quyển trước không bị. Bù ở `tu[].nghia`; bảng gốc nằm ở",
+  "   `boc_sach_lop4.NGHIA`. Không cổng nào bắt được — chỉ đọc ra mới thấy.",
+  "",
+  "── BÁC CHỐT 20-08-2026: ĐỌC · NÓI · VIẾT PHẢI DÀI HƠN LỚP 3 ──",
+  "Lớp 3 hiện: đoạn tả tranh 4-5 câu · tối đa 5 vật · 2 kệ · BOT_VIEC = 4.",
+  "Muốn dài hơn thì phải sửa BA chỗ, sửa một chỗ không ăn thua:",
+  "   · số vật tối đa      `nhom[:5]` trong soan_tranh_lopN.py",
+  "   · số kệ trong tranh  `ke: [360, 620]` — hai kệ, mỗi kệ ba vật",
+  "   · số hoạt động       BOT_VIEC",
+  "⚠ Nới BOT_VIEC quá 4 là đụng cổng 'không quá 2 dòng cùng khuôn', vì KHUON_VIEC",
+  "chỉ có hai khuôn (She's… / He's…). Muốn nhiều hoạt động hơn thì THÊM KHUÔN",
+  "(lớp 4 có sẵn: They're …ing · I can … · She likes …), không phải nới số.",
+  "Xem `docs/lam_bai_tranh.md` khi tới tầng ⑭."
+ ],
+ "_nguon": "data/ban_do_tieng_anh.json — graph.nodes, grade == 4",
+ "_ngay": "20-08-2026",
+ "vai_ten": {
+  "thang": "Tháng trong năm",
+  "thu": "Thứ trong tuần",
+  "thoigian": "Giờ giấc, lúc nào",
+  "monhoc": "Môn học",
+  "quocgia": "Nước nào",
+  "thoitiet": "Thời tiết",
+  "huong": "Bên trái, bên phải",
+  "mua": "Mùa trong năm",
+  "sukien": "Dịp, ngày hội",
+  "tien": "Tiền",
+  "quanao": "Quần áo"
+ },
+ "tu": {
+  "v_g4_st_come_in": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "vào"
+  },
+  "v_g4_st_cycle": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "đạp xe"
+  },
+  "v_g4_st_friend": {
+   "vai": [
+    "dt"
+   ],
+   "nghia": "bạn bè"
+  },
+  "v_g4_st_jump": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "nhảy"
+  },
+  "v_g4_st_kick": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "đá (bóng)"
+  },
+  "v_g4_st_open_books": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "mở sách ra"
+  },
+  "v_g4_st_play_football": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "chơi bóng đá"
+  },
+  "v_g4_st_read_aloud": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "đọc to"
+  },
+  "v_g4_st_say_goodbye": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "chào tạm biệt"
+  },
+  "v_g4_st_sit_down": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "ngồi xuống"
+  },
+  "v_g4_st_skip": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "nhảy dây"
+  },
+  "v_g4_st_stand_up": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "đứng lên"
+  },
+  "v_g4_st_swim": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "bơi"
+  },
+  "v_g4_u10_bangkok": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "Băng Cốc"
+  },
+  "v_g4_u10_beach": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "bãi biển"
+  },
+  "v_g4_u10_campsite": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "địa điểm cắm trại"
+  },
+  "v_g4_u10_countryside": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "vùng quê"
+  },
+  "v_g4_u10_last": {
+   "vai": [
+    "thoigian"
+   ],
+   "nghia": "trước, lần trước"
+  },
+  "v_g4_u10_london": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "Luân Đôn"
+  },
+  "v_g4_u10_summer": {
+   "vai": [
+    "mua"
+   ],
+   "nghia": "mùa hè"
+  },
+  "v_g4_u10_sydney": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "Xít-ni"
+  },
+  "v_g4_u10_tokyo": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "Tô-ki-ô"
+  },
+  "v_g4_u10_weekend": {
+   "vai": [
+    "thoigian"
+   ],
+   "nghia": "cuối tuần"
+  },
+  "v_g4_u10_yesterday": {
+   "vai": [
+    "thoigian"
+   ],
+   "nghia": "hôm qua"
+  },
+  "v_g4_u10_zoo": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "vườn thú"
+  },
+  "v_g4_u11_at": {
+   "vai": [
+    "vitri"
+   ],
+   "nghia": "vào lúc"
+  },
+  "v_g4_u11_big": {
+   "vai": [
+    "tinhtu"
+   ],
+   "nghia": "to, lớn"
+  },
+  "v_g4_u11_busy": {
+   "vai": [
+    "tinhtu"
+   ],
+   "nghia": "bận rộn, nhộn nhịp"
+  },
+  "v_g4_u11_city": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "thành phố"
+  },
+  "v_g4_u11_in": {
+   "vai": [
+    "vitri"
+   ],
+   "nghia": "trong, ở (tên đường/phố)"
+  },
+  "v_g4_u11_live": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "sống, sinh sống"
+  },
+  "v_g4_u11_noisy": {
+   "vai": [
+    "tinhtu"
+   ],
+   "nghia": "ồn ào"
+  },
+  "v_g4_u11_quiet": {
+   "vai": [
+    "tinhtu"
+   ],
+   "nghia": "yên tĩnh"
+  },
+  "v_g4_u11_road": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "con đường, đường phố"
+  },
+  "v_g4_u11_street": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "phố, đường phố"
+  },
+  "v_g4_u11_village": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "ngôi làng"
+  },
+  "v_g4_u12_actor": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "diễn viên (nam)"
+  },
+  "v_g4_u12_doctor": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "bác sĩ"
+  },
+  "v_g4_u12_factory": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "nhà máy"
+  },
+  "v_g4_u12_farm": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "trang trại"
+  },
+  "v_g4_u12_farmer": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "nông dân"
+  },
+  "v_g4_u12_gardener": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "người làm vườn"
+  },
+  "v_g4_u12_hospital": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "bệnh viện"
+  },
+  "v_g4_u12_nurse": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "y tá, điều dưỡng viên"
+  },
+  "v_g4_u12_nursing_home": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "viện điều dưỡng"
+  },
+  "v_g4_u12_office_worker": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "nhân viên văn phòng"
+  },
+  "v_g4_u12_policeman": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "cảnh sát (nam)"
+  },
+  "v_g4_u12_pupil": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "học sinh"
+  },
+  "v_g4_u12_school": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "trường học"
+  },
+  "v_g4_u12_teacher": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "giáo viên"
+  },
+  "v_g4_u12_worker": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "công nhân"
+  },
+  "v_g4_u13_big": {
+   "vai": [
+    "tinhtu"
+   ],
+   "nghia": "to, lớn"
+  },
+  "v_g4_u13_eyes": {
+   "vai": [
+    "bophan"
+   ],
+   "nghia": "đôi mắt"
+  },
+  "v_g4_u13_face": {
+   "vai": [
+    "bophan"
+   ],
+   "nghia": "khuôn mặt"
+  },
+  "v_g4_u13_hair": {
+   "vai": [
+    "bophan"
+   ],
+   "nghia": "tóc"
+  },
+  "v_g4_u13_hand": {
+   "vai": [
+    "bophan"
+   ],
+   "nghia": "bàn tay"
+  },
+  "v_g4_u13_long": {
+   "vai": [
+    "tinhtu"
+   ],
+   "nghia": "dài"
+  },
+  "v_g4_u13_nose": {
+   "vai": [
+    "bophan"
+   ],
+   "nghia": "mũi"
+  },
+  "v_g4_u13_round": {
+   "vai": [
+    "tinhtu"
+   ],
+   "nghia": "tròn"
+  },
+  "v_g4_u13_short": {
+   "vai": [
+    "tinhtu"
+   ],
+   "nghia": "thấp, ngắn"
+  },
+  "v_g4_u13_slim": {
+   "vai": [
+    "tinhtu"
+   ],
+   "nghia": "mảnh mai"
+  },
+  "v_g4_u13_tall": {
+   "vai": [
+    "tinhtu"
+   ],
+   "nghia": "cao"
+  },
+  "v_g4_u14_at_noon": {
+   "vai": [
+    "thoigian"
+   ],
+   "nghia": "buổi trưa"
+  },
+  "v_g4_u14_clean_the_floor": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "lau sàn nhà"
+  },
+  "v_g4_u14_do_the_housework": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "làm việc nhà"
+  },
+  "v_g4_u14_help_with_the_cooking": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "giúp việc nấu ăn"
+  },
+  "v_g4_u14_in_the_afternoon": {
+   "vai": [
+    "thoigian"
+   ],
+   "nghia": "buổi chiều"
+  },
+  "v_g4_u14_in_the_evening": {
+   "vai": [
+    "thoigian"
+   ],
+   "nghia": "buổi tối"
+  },
+  "v_g4_u14_in_the_morning": {
+   "vai": [
+    "thoigian"
+   ],
+   "nghia": "buổi sáng"
+  },
+  "v_g4_u14_read_books": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "đọc sách"
+  },
+  "v_g4_u14_wash_the_clothes": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "giặt quần áo"
+  },
+  "v_g4_u14_wash_the_dishes": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "rửa bát đĩa"
+  },
+  "v_g4_u14_watch_tv": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "xem ti vi"
+  },
+  "v_g4_u15_cinema": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "rạp chiếu phim"
+  },
+  "v_g4_u15_cook_meals": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "nấu các bữa ăn"
+  },
+  "v_g4_u15_do_yoga": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "tập yoga"
+  },
+  "v_g4_u15_gym": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "phòng tập thể dục"
+  },
+  "v_g4_u15_play_tennis": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "chơi quần vợt"
+  },
+  "v_g4_u15_shopping_centre": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "trung tâm mua sắm"
+  },
+  "v_g4_u15_sports_centre": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "trung tâm thể thao"
+  },
+  "v_g4_u15_swimming_pool": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "bể bơi"
+  },
+  "v_g4_u15_watch_films": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "xem phim"
+  },
+  "v_g4_u15_watch_television": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "xem truyền hình"
+  },
+  "v_g4_u16_bakery": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "hiệu bánh mì"
+  },
+  "v_g4_u16_bookshop": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "hiệu sách"
+  },
+  "v_g4_u16_cloudy": {
+   "vai": [
+    "thoitiet"
+   ],
+   "nghia": "có mây, nhiều mây"
+  },
+  "v_g4_u16_food_stall": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "quầy hàng thực phẩm"
+  },
+  "v_g4_u16_rainy": {
+   "vai": [
+    "thoitiet"
+   ],
+   "nghia": "có mưa"
+  },
+  "v_g4_u16_sunny": {
+   "vai": [
+    "thoitiet"
+   ],
+   "nghia": "có nắng"
+  },
+  "v_g4_u16_supermarket": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "siêu thị"
+  },
+  "v_g4_u16_water_park": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "công viên nước"
+  },
+  "v_g4_u16_weather": {
+   "vai": [
+    "thoitiet"
+   ],
+   "nghia": "thời tiết"
+  },
+  "v_g4_u16_windy": {
+   "vai": [
+    "thoitiet"
+   ],
+   "nghia": "có gió"
+  },
+  "v_g4_u17_bookshop": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "hiệu sách"
+  },
+  "v_g4_u17_campsite": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "địa điểm cắm trại"
+  },
+  "v_g4_u17_get": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "đến (địa điểm)"
+  },
+  "v_g4_u17_go_straight": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "đi thẳng"
+  },
+  "v_g4_u17_left": {
+   "vai": [
+    "huong"
+   ],
+   "nghia": "bên trái"
+  },
+  "v_g4_u17_right": {
+   "vai": [
+    "huong"
+   ],
+   "nghia": "bên phải"
+  },
+  "v_g4_u17_road_sign": {
+   "vai": [
+    "dodac"
+   ],
+   "nghia": "biển chỉ đường"
+  },
+  "v_g4_u17_stop": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "dừng lại"
+  },
+  "v_g4_u17_turn": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "rẽ"
+  },
+  "v_g4_u17_turn_left": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "rẽ trái"
+  },
+  "v_g4_u17_turn_right": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "rẽ phải"
+  },
+  "v_g4_u17_turn_round": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "quay lại, đổi hướng ngược lại"
+  },
+  "v_g4_u18_bakery": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "hiệu bánh mì"
+  },
+  "v_g4_u18_behind": {
+   "vai": [
+    "vitri"
+   ],
+   "nghia": "đằng sau"
+  },
+  "v_g4_u18_between": {
+   "vai": [
+    "vitri"
+   ],
+   "nghia": "ở giữa"
+  },
+  "v_g4_u18_bookshop": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "hiệu sách"
+  },
+  "v_g4_u18_clothes_shop": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "cửa hàng quần áo"
+  },
+  "v_g4_u18_dong": {
+   "vai": [
+    "tien"
+   ],
+   "nghia": "đồng (đơn vị tiền Việt Nam)"
+  },
+  "v_g4_u18_gift_shop": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "cửa hàng quà tặng"
+  },
+  "v_g4_u18_near": {
+   "vai": [
+    "vitri"
+   ],
+   "nghia": "ở gần"
+  },
+  "v_g4_u18_opposite": {
+   "vai": [
+    "vitri"
+   ],
+   "nghia": "đối diện"
+  },
+  "v_g4_u18_pen": {
+   "vai": [
+    "dodac"
+   ],
+   "nghia": "bút"
+  },
+  "v_g4_u18_pet_shop": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "cửa hàng thú cưng"
+  },
+  "v_g4_u18_school_bag": {
+   "vai": [
+    "dodac"
+   ],
+   "nghia": "cặp sách"
+  },
+  "v_g4_u18_skirt": {
+   "vai": [
+    "quanao"
+   ],
+   "nghia": "váy"
+  },
+  "v_g4_u18_sports_shop": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "cửa hàng thể thao"
+  },
+  "v_g4_u18_thousand": {
+   "vai": [
+    "so"
+   ],
+   "nghia": "nghìn"
+  },
+  "v_g4_u18_tshirt": {
+   "vai": [
+    "quanao"
+   ],
+   "nghia": "áo thun"
+  },
+  "v_g4_u19_bird": {
+   "vai": [
+    "convat"
+   ],
+   "nghia": "con chim"
+  },
+  "v_g4_u19_crocodile": {
+   "vai": [
+    "convat"
+   ],
+   "nghia": "cá sấu"
+  },
+  "v_g4_u19_dance_beautifully": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "nhảy múa đẹp"
+  },
+  "v_g4_u19_giraffe": {
+   "vai": [
+    "convat"
+   ],
+   "nghia": "hươu cao cổ"
+  },
+  "v_g4_u19_hippo": {
+   "vai": [
+    "convat"
+   ],
+   "nghia": "hà mã"
+  },
+  "v_g4_u19_lion": {
+   "vai": [
+    "convat"
+   ],
+   "nghia": "sư tử"
+  },
+  "v_g4_u19_peacock": {
+   "vai": [
+    "convat"
+   ],
+   "nghia": "con công"
+  },
+  "v_g4_u19_roar_loudly": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "gầm vang"
+  },
+  "v_g4_u19_run_quickly": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "chạy nhanh"
+  },
+  "v_g4_u19_sing_merrily": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "hót vui vẻ"
+  },
+  "v_g4_u1_america": {
+   "vai": [
+    "quocgia"
+   ],
+   "nghia": "nước Hoa Kì"
+  },
+  "v_g4_u1_australia": {
+   "vai": [
+    "quocgia"
+   ],
+   "nghia": "nước Ô-xtrây-li-a"
+  },
+  "v_g4_u1_britain": {
+   "vai": [
+    "quocgia"
+   ],
+   "nghia": "nước Anh"
+  },
+  "v_g4_u1_japan": {
+   "vai": [
+    "quocgia"
+   ],
+   "nghia": "nước Nhật"
+  },
+  "v_g4_u1_malaysia": {
+   "vai": [
+    "quocgia"
+   ],
+   "nghia": "nước Ma-lay-xi-a"
+  },
+  "v_g4_u1_singapore": {
+   "vai": [
+    "quocgia"
+   ],
+   "nghia": "nước Xinh-ga-po"
+  },
+  "v_g4_u1_thailand": {
+   "vai": [
+    "quocgia"
+   ],
+   "nghia": "nước Thái Lan"
+  },
+  "v_g4_u1_vietnam": {
+   "vai": [
+    "quocgia"
+   ],
+   "nghia": "nước Việt Nam"
+  },
+  "v_g4_u20_build_a_campfire": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "đốt lửa trại"
+  },
+  "v_g4_u20_campsite": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "địa điểm cắm trại"
+  },
+  "v_g4_u20_dance_around_the_campfire": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "nhảy múa quanh lửa trại"
+  },
+  "v_g4_u20_email": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "gửi thư điện tử"
+  },
+  "v_g4_u20_play_card_games": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "chơi bài"
+  },
+  "v_g4_u20_play_tug_of_war": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "chơi kéo co"
+  },
+  "v_g4_u20_put_up_a_tent": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "dựng lều"
+  },
+  "v_g4_u20_sing_songs": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "hát"
+  },
+  "v_g4_u20_take_a_photo": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "chụp ảnh"
+  },
+  "v_g4_u20_tell_a_story": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "kể chuyện"
+  },
+  "v_g4_u20_tent": {
+   "vai": [
+    "dodac"
+   ],
+   "nghia": "lều (ở nơi cắm trại)"
+  },
+  "v_g4_u20_visit": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "thăm"
+  },
+  "v_g4_u2_at": {
+   "vai": [
+    "vitri"
+   ],
+   "nghia": "vào lúc"
+  },
+  "v_g4_u2_fifteen": {
+   "vai": [
+    "so"
+   ],
+   "nghia": "mười lăm"
+  },
+  "v_g4_u2_fortyfive": {
+   "vai": [
+    "so"
+   ],
+   "nghia": "bốn mươi lăm"
+  },
+  "v_g4_u2_get_up": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "thức dậy"
+  },
+  "v_g4_u2_go_to_bed": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "đi ngủ"
+  },
+  "v_g4_u2_go_to_school": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "đi học"
+  },
+  "v_g4_u2_have_breakfast": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "ăn sáng"
+  },
+  "v_g4_u2_oclock": {
+   "vai": [
+    "thoigian"
+   ],
+   "nghia": "giờ (giờ chẵn)"
+  },
+  "v_g4_u2_thirty": {
+   "vai": [
+    "so"
+   ],
+   "nghia": "ba mươi"
+  },
+  "v_g4_u3_do_housework": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "làm việc nhà"
+  },
+  "v_g4_u3_friday": {
+   "vai": [
+    "thu"
+   ],
+   "nghia": "thứ Sáu"
+  },
+  "v_g4_u3_listen_music": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "nghe nhạc"
+  },
+  "v_g4_u3_monday": {
+   "vai": [
+    "thu"
+   ],
+   "nghia": "thứ Hai"
+  },
+  "v_g4_u3_saturday": {
+   "vai": [
+    "thu"
+   ],
+   "nghia": "thứ Bảy"
+  },
+  "v_g4_u3_stay_home": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "ở nhà"
+  },
+  "v_g4_u3_study_school": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "học ở trường"
+  },
+  "v_g4_u3_sunday": {
+   "vai": [
+    "thu"
+   ],
+   "nghia": "Chủ Nhật"
+  },
+  "v_g4_u3_thursday": {
+   "vai": [
+    "thu"
+   ],
+   "nghia": "thứ Năm"
+  },
+  "v_g4_u3_today": {
+   "vai": [
+    "thoigian"
+   ],
+   "nghia": "hôm nay"
+  },
+  "v_g4_u3_tuesday": {
+   "vai": [
+    "thu"
+   ],
+   "nghia": "thứ Ba"
+  },
+  "v_g4_u3_wednesday": {
+   "vai": [
+    "thu"
+   ],
+   "nghia": "thứ Tư"
+  },
+  "v_g4_u4_april": {
+   "vai": [
+    "thang"
+   ],
+   "nghia": "tháng Tư"
+  },
+  "v_g4_u4_birthday": {
+   "vai": [
+    "sukien"
+   ],
+   "nghia": "ngày sinh"
+  },
+  "v_g4_u4_chips": {
+   "vai": [
+    "thucan"
+   ],
+   "nghia": "khoai tây rán"
+  },
+  "v_g4_u4_february": {
+   "vai": [
+    "thang"
+   ],
+   "nghia": "tháng Hai"
+  },
+  "v_g4_u4_grapes": {
+   "vai": [
+    "thucan"
+   ],
+   "nghia": "nho"
+  },
+  "v_g4_u4_jam": {
+   "vai": [
+    "thucan"
+   ],
+   "nghia": "mứt"
+  },
+  "v_g4_u4_january": {
+   "vai": [
+    "thang"
+   ],
+   "nghia": "tháng Giêng"
+  },
+  "v_g4_u4_juice": {
+   "vai": [
+    "douong"
+   ],
+   "nghia": "nước ép"
+  },
+  "v_g4_u4_lemonade": {
+   "vai": [
+    "douong"
+   ],
+   "nghia": "nước chanh"
+  },
+  "v_g4_u4_march": {
+   "vai": [
+    "thang"
+   ],
+   "nghia": "tháng Ba"
+  },
+  "v_g4_u4_may": {
+   "vai": [
+    "thang"
+   ],
+   "nghia": "tháng Năm"
+  },
+  "v_g4_u4_party": {
+   "vai": [
+    "sukien"
+   ],
+   "nghia": "buổi tiệc"
+  },
+  "v_g4_u4_water": {
+   "vai": [
+    "douong"
+   ],
+   "nghia": "nước"
+  },
+  "v_g4_u5_but": {
+   "vai": [
+    "dt"
+   ],
+   "nghia": "nhưng"
+  },
+  "v_g4_u5_can": {
+   "vai": [
+    "dt"
+   ],
+   "nghia": "có thể, biết (làm gì)"
+  },
+  "v_g4_u5_cook": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "nấu ăn"
+  },
+  "v_g4_u5_dance": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "nhảy múa"
+  },
+  "v_g4_u5_draw": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "vẽ"
+  },
+  "v_g4_u5_play_badminton": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "chơi cầu lông"
+  },
+  "v_g4_u5_play_guitar": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "chơi ghi ta"
+  },
+  "v_g4_u5_play_piano": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "chơi piano"
+  },
+  "v_g4_u5_ride_bike": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "đạp xe"
+  },
+  "v_g4_u5_ride_horse": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "cưỡi ngựa"
+  },
+  "v_g4_u5_roller_skate": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "trượt pa-tanh"
+  },
+  "v_g4_u5_sing": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "hát"
+  },
+  "v_g4_u5_swim": {
+   "vai": [
+    "viec"
+   ],
+   "nghia": "bơi"
+  },
+  "v_g4_u6_building": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "toà nhà"
+  },
+  "v_g4_u6_city": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "thành phố"
+  },
+  "v_g4_u6_computer_room": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "phòng máy tính"
+  },
+  "v_g4_u6_garden": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "vườn"
+  },
+  "v_g4_u6_mountains": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "vùng núi"
+  },
+  "v_g4_u6_playground": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "sân chơi"
+  },
+  "v_g4_u6_school_garden": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "vườn trường"
+  },
+  "v_g4_u6_town": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "thị trấn"
+  },
+  "v_g4_u6_village": {
+   "vai": [
+    "noichon"
+   ],
+   "nghia": "ngôi làng"
+  },
+  "v_g4_u7_art": {
+   "vai": [
+    "monhoc"
+   ],
+   "nghia": "môn Mĩ thuật"
+  },
+  "v_g4_u7_english": {
+   "vai": [
+    "monhoc"
+   ],
+   "nghia": "môn Tiếng Anh"
+  },
+  "v_g4_u7_history_geography": {
+   "vai": [
+    "monhoc"
+   ],
+   "nghia": "môn Lịch sử và Địa lí"
+  },
+  "v_g4_u7_maths": {
+   "vai": [
+    "monhoc"
+   ],
+   "nghia": "môn Toán"
+  },
+  "v_g4_u7_music": {
+   "vai": [
+    "monhoc"
+   ],
+   "nghia": "môn Âm nhạc"
+  },
+  "v_g4_u7_science": {
+   "vai": [
+    "monhoc"
+   ],
+   "nghia": "môn Khoa học"
+  },
+  "v_g4_u7_vietnamese": {
+   "vai": [
+    "monhoc"
+   ],
+   "nghia": "môn Tiếng Việt"
+  },
+  "v_g4_u8_because": {
+   "vai": [
+    "dt"
+   ],
+   "nghia": "bởi vì"
+  },
+  "v_g4_u8_english_teacher": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "giáo viên Tiếng Anh"
+  },
+  "v_g4_u8_favourite": {
+   "vai": [
+    "tinhtu"
+   ],
+   "nghia": "yêu thích"
+  },
+  "v_g4_u8_it": {
+   "vai": [
+    "monhoc"
+   ],
+   "nghia": "môn Tin học"
+  },
+  "v_g4_u8_like": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "thích"
+  },
+  "v_g4_u8_maths_teacher": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "giáo viên Toán"
+  },
+  "v_g4_u8_painter": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "hoạ sĩ"
+  },
+  "v_g4_u8_pe": {
+   "vai": [
+    "monhoc"
+   ],
+   "nghia": "môn Thể dục"
+  },
+  "v_g4_u8_singer": {
+   "vai": [
+    "nghe"
+   ],
+   "nghia": "ca sĩ"
+  },
+  "v_g4_u8_why": {
+   "vai": [
+    "hoi"
+   ],
+   "nghia": "tại sao"
+  },
+  "v_g4_u8_write": {
+   "vai": [
+    "dongtu"
+   ],
+   "nghia": "viết"
+  },
+  "v_g4_u9_august": {
+   "vai": [
+    "thang"
+   ],
+   "nghia": "tháng Tám"
+  },
+  "v_g4_u9_december": {
+   "vai": [
+    "thang"
+   ],
+   "nghia": "tháng Mười Hai"
+  },
+  "v_g4_u9_july": {
+   "vai": [
+    "thang"
+   ],
+   "nghia": "tháng Bảy"
+  },
+  "v_g4_u9_june": {
+   "vai": [
+    "thang"
+   ],
+   "nghia": "tháng Sáu"
+  },
+  "v_g4_u9_november": {
+   "vai": [
+    "thang"
+   ],
+   "nghia": "tháng Mười Một"
+  },
+  "v_g4_u9_october": {
+   "vai": [
+    "thang"
+   ],
+   "nghia": "tháng Mười"
+  },
+  "v_g4_u9_september": {
+   "vai": [
+    "thang"
+   ],
+   "nghia": "tháng Chín"
+  },
+  "v_g4_u9_sports_day": {
+   "vai": [
+    "sukien"
+   ],
+   "nghia": "ngày hội thể thao"
+  }
+ },
+ "hinh": {
+  "friend": "🧑‍🤝‍🧑"
+ },
+ "unit": {
+  "0": {
+   "ma": "u_g4_starter",
+   "topic": "Starter - Hello again / Classroom & Outdoor activities",
+   "theme": "Me and My Friends",
+   "trang": 7,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "1": {
+   "ma": "u_g4_1",
+   "topic": "My friends",
+   "theme": "Me and My Friends",
+   "trang": 10,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "2": {
+   "ma": "u_g4_2",
+   "topic": "Time and daily routines",
+   "theme": "Me and My Friends",
+   "trang": 16,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "3": {
+   "ma": "u_g4_3",
+   "topic": "My week",
+   "theme": "Me and My Friends",
+   "trang": 22,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "4": {
+   "ma": "u_g4_4",
+   "topic": "My birthday party",
+   "theme": "Me and My Friends",
+   "trang": 28,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "5": {
+   "ma": "u_g4_5",
+   "topic": "Things we can do",
+   "theme": "Me and My Friends",
+   "trang": 34,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "6": {
+   "ma": "u_g4_6",
+   "topic": "Our school facilities",
+   "theme": "Me and My School",
+   "trang": 44,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "7": {
+   "ma": "u_g4_7",
+   "topic": "Our timetables",
+   "theme": "Me and My School",
+   "trang": 50,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "8": {
+   "ma": "u_g4_8",
+   "topic": "My favourite subjects",
+   "theme": "Me and My School",
+   "trang": 56,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "9": {
+   "ma": "u_g4_9",
+   "topic": "Our sports day",
+   "theme": "Me and My School",
+   "trang": 62,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "10": {
+   "ma": "u_g4_10",
+   "topic": "Our summer holidays",
+   "theme": "Me and My School",
+   "trang": 68,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "11": {
+   "ma": "u_g4_11",
+   "topic": "My home",
+   "theme": "Me and My Family",
+   "trang": 6,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "12": {
+   "ma": "u_g4_12",
+   "topic": "Jobs",
+   "theme": "Me and My Family",
+   "trang": 12,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "13": {
+   "ma": "u_g4_13",
+   "topic": "Appearance",
+   "theme": "Me and My Family",
+   "trang": 18,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "14": {
+   "ma": "u_g4_14",
+   "topic": "Daily activities",
+   "theme": "Me and My Family",
+   "trang": 24,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "15": {
+   "ma": "u_g4_15",
+   "topic": "My family's weekends",
+   "theme": "Me and My Family",
+   "trang": 30,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "16": {
+   "ma": "u_g4_16",
+   "topic": "Weather",
+   "theme": "Me and the World Around",
+   "trang": 40,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "17": {
+   "ma": "u_g4_17",
+   "topic": "In the city",
+   "theme": "Me and the World Around",
+   "trang": 46,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "18": {
+   "ma": "u_g4_18",
+   "topic": "At the shopping centre",
+   "theme": "Me and the World Around",
+   "trang": 52,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "19": {
+   "ma": "u_g4_19",
+   "topic": "The animal world",
+   "theme": "Me and the World Around",
+   "trang": 58,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  },
+  "20": {
+   "ma": "u_g4_20",
+   "topic": "At summer camp",
+   "theme": "Me and the World Around",
+   "trang": 64,
+   "ten": null,
+   "ten_en": null,
+   "canh": null
+  }
+ },
+ "mau_cau": {
+  "sp_g4_review1": {
+   "cong_thuc": "Mixed review of Units 1-5",
+   "vi_du": "Review: countries, time, days, months, abilities.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_review2": {
+   "cong_thuc": "Mixed review of Units 6-10",
+   "vi_du": "Review: school facilities, timetables, favourite subjects, sports day, summer holidays.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_review3": {
+   "cong_thuc": "Mixed review of Units 11-15",
+   "vi_du": "Review: home, jobs, appearance, daily activities, weekends.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_review4": {
+   "cong_thuc": "Mixed review of Units 16-20",
+   "vi_du": "Review: weather, directions, shopping, animals, summer camp.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_st_1": {
+   "cong_thuc": "Hello. How are you? - I'm fine, thank you.",
+   "vi_du": "Hello. How are you? - I'm fine, thank you.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_st_2": {
+   "cong_thuc": "This is + [Name]. Nice to see you.",
+   "vi_du": "This is Mary. Nice to see you.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_st_3": {
+   "cong_thuc": "[Command] + please!",
+   "vi_du": "Come in, please! Sit down, please!",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_st_4": {
+   "cong_thuc": "What are they doing? - They're + [Verb-ing].",
+   "vi_du": "What are they doing? - They're swimming.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u10_1": {
+   "cong_thuc": "Were you + [Place] + last weekend? - Yes, I was. / No, I wasn't.",
+   "vi_du": "Were you in the countryside last weekend? - Yes, I was. / No, I wasn't.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u10_2": {
+   "cong_thuc": "Where were you last summer? - I was in + [Place/City].",
+   "vi_du": "Where were you last summer? - I was in Tokyo.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u11_1": {
+   "cong_thuc": "Where do you live? - I live in/at + [(so nha) + ten duong/pho].",
+   "vi_du": "Where do you live? - I live in Tran Hung Dao Street.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u11_2": {
+   "cong_thuc": "What's the + [place] + like? - It's + [adjective] (+ place).",
+   "vi_du": "What's the street like? - It's a busy street.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u12_1": {
+   "cong_thuc": "What does he/she do? - He's/She's + a/an + [job].",
+   "vi_du": "What does he / she do? - He's / She's a farmer.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u12_2": {
+   "cong_thuc": "Where does he/she work? - He/She works + at/on/in + [workplace].",
+   "vi_du": "Where does he / she work? - He / She works at a nursing home.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u13_1": {
+   "cong_thuc": "What does he/she look like? - He's/She's + [appearance adjective].",
+   "vi_du": "What does he / she look like? - He's / She's tall.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u13_2": {
+   "cong_thuc": "What does he/she look like? - He/She has + [body feature].",
+   "vi_du": "What does he / she look like? - He / She has a round face.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u14_1": {
+   "cong_thuc": "When do you + [activity]? - I + [activity] + [time].",
+   "vi_du": "When do you watch TV? - I watch TV in the evening.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u14_2": {
+   "cong_thuc": "What do you do + [time]? - I + [housework activity].",
+   "vi_du": "What do you do in the morning? - I clean the floor.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u15_1": {
+   "cong_thuc": "Where does he/she go on Saturdays? - He/She goes to the + [place].",
+   "vi_du": "Where does he / she go on Saturdays? - He / She goes to the sports centre.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u15_2": {
+   "cong_thuc": "What does he/she do on Sundays? - He/She + [activity-s].",
+   "vi_du": "What does he / she do on Sundays? - He / She plays tennis.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u16_1": {
+   "cong_thuc": "What was the weather like + [time]? - It was + [weather adjective].",
+   "vi_du": "What was the weather like last weekend? - It was sunny.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u16_2": {
+   "cong_thuc": "Do you want to go to the + [place]? - Great! Let's go. / Sorry, I can't.",
+   "vi_du": "Do you want to go to the water park? - Great! Let's go. / Sorry, I can't.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u17_1": {
+   "cong_thuc": "What does it say? - It says '[noi dung bien bao]'.",
+   "vi_du": "What does it say? - It says 'go'.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u17_2": {
+   "cong_thuc": "How can I get to the + [place]? - [chi duong].",
+   "vi_du": "How can I get to the bookshop? - Go straight and turn left.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u18_1": {
+   "cong_thuc": "Where's the + [shop]? - It's + [preposition] + [moc tham chieu].",
+   "vi_du": "Where's the bookshop? - It's near the bakery.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u18_2": {
+   "cong_thuc": "How much is the + [item]? - It's + [so] thousand dong.",
+   "vi_du": "How much is the T-shirt? - It's sixty thousand dong.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u19_1": {
+   "cong_thuc": "What are these animals? - They're + [animals].",
+   "vi_du": "What are these animals? - They're giraffes.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u19_2": {
+   "cong_thuc": "Why do you like + [animals]? - Because they + [dong tu + trang tu].",
+   "vi_du": "Why do you like peacocks? - Because they dance beautifully.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u1_1": {
+   "cong_thuc": "Where are you from? - I'm from + [Country].",
+   "vi_du": "Where are you from? - I'm from Viet Nam.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u1_2": {
+   "cong_thuc": "Where's he/she from? - He's/She's from + [Country].",
+   "vi_du": "Where's he / she from? - He's / She's from Japan.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u20_1": {
+   "cong_thuc": "What's he/she doing? - He's/She's + [V-ing].",
+   "vi_du": "What's he / she doing? - He's / She's building a campfire.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u20_2": {
+   "cong_thuc": "What are they doing? - They're + [V-ing].",
+   "vi_du": "What are they doing? - They're playing card games.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u2_1": {
+   "cong_thuc": "What time is it? - It's + [Time].",
+   "vi_du": "What time is it? - It's eight thirty.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u2_2": {
+   "cong_thuc": "What time do you + [Routine]? - I + [Routine] + at + [Time].",
+   "vi_du": "What time do you get up? - I get up at six o'clock.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u3_1": {
+   "cong_thuc": "What day is it today? - It's + [Day].",
+   "vi_du": "What day is it today? - It's Monday.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u3_2": {
+   "cong_thuc": "What do you do on + [Day]s? - I + [Activity].",
+   "vi_du": "What do you do on Mondays? - I study at school.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u4_1": {
+   "cong_thuc": "When's your birthday? - It's in + [Month].",
+   "vi_du": "When's your birthday? - It's in May.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u4_2": {
+   "cong_thuc": "What do you want to eat/drink? - I want some + [Food/Drink].",
+   "vi_du": "What do you want to eat / drink? - I want some jam / juice.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u5_1": {
+   "cong_thuc": "Can you + [Ability]? - Yes, I can. / No, I can't.",
+   "vi_du": "Can you ride a bike? - Yes, I can. / No, I can't.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u5_2": {
+   "cong_thuc": "Can he/she + [Ability]? - Yes, he/she can. / No, he/she can't, but he/she can + [Ability].",
+   "vi_du": "Can he / she swim? - Yes, he / she can. No, he / she can't, but he / she can cook.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u6_1": {
+   "cong_thuc": "Where's your school? - It's in the + [Location].",
+   "vi_du": "Where's your school? - It's in the city.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u6_2": {
+   "cong_thuc": "How many + [Facility] are there at your school? - There is / are + [Number].",
+   "vi_du": "How many buildings are there at your school? - There are three.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u7_1": {
+   "cong_thuc": "What subjects do you have today? - I have + [Subject(s)].",
+   "vi_du": "What subjects do you have today? - I have English and maths.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u7_2": {
+   "cong_thuc": "When do you have + [Subject]? - I have it on + [Day]s.",
+   "vi_du": "When do you have maths? - I have it on Mondays and Fridays.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u8_1": {
+   "cong_thuc": "What's your favourite subject? - It's + [Subject].",
+   "vi_du": "What's your favourite subject? - It's PE.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u8_2": {
+   "cong_thuc": "Why do you like + [Subject]? - Because I want to be + [Job].",
+   "vi_du": "Why do you like English? - Because I want to be an English teacher.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u9_1": {
+   "cong_thuc": "Is your sports day in + [Month]? - Yes, it is. / No, it isn't. It's in + [Month].",
+   "vi_du": "Is your sports day in May? - Yes, it is. / No, it isn't. It's in April.",
+   "dung_de": null,
+   "tinh_huong": null
+  },
+  "sp_g4_u9_2": {
+   "cong_thuc": "When's your sports day? - It's in + [Month].",
+   "vi_du": "When's your sports day? - It's in October.",
+   "dung_de": null,
+   "tinh_huong": null
+  }
+ },
+ "sua_slot": {},
+ "them": {},
+ "chuong": {},
+ "kich_ban_noi": {},
+ "bo_unit": {
+  "_vi_sao": "Bản đồ lớp 4 khai bốn bài ÔN TẬP là `unit` (lớp 1·2·3 khai riêng `node_kind: review`). Không loại thì thành 25 bài học thay vì 21, và bốn bài trong đó không có từ nào. Nội dung ôn tập đi đường khác: `sinh_ontap_tienganh.py --lop 4`.",
+  "_da_dinh": "Bản đầu tôi ĐOÁN mã theo số thứ tự (u_g4_6/12/18/24). Ba mã đầu có thật nhưng là BÀI HỌC — phép loại xoá mất Our school facilities · Jobs · At the shopping centre, mà vẫn giữ nguyên cả bốn bài ôn tập. Chỉ mã thứ tư không tồn tại nên mới có một dòng cảnh báo. TRA MÃ, đừng suy từ số. `chuan_tienganh` nay tự soi hai chiều.",
+  "ma": [
+   "u_g4_review1",
+   "u_g4_review2",
+   "u_g4_review3",
+   "u_g4_review4"
+  ]
+ }
+}
