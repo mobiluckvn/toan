@@ -155,14 +155,14 @@
    },
    {
     "id": "K5",
-    "text": "Mẫu câu: What does it say? - It says '[noi dung bien bao]'. — ví dụ: What does it say? - It says 'go'.",
+    "text": "Mẫu câu: What does it say? - It says + [Sign]. — ví dụ: What does it say? - It says stop.",
     "doanAm": [
      [
       "Con nghe mẫu câu rồi nhắc lại nhé.",
       "vi"
      ],
      [
-      "What does it say? - It says 'go'.",
+      "What does it say? - It says stop.",
       "en"
      ]
     ]
@@ -256,19 +256,18 @@
    }
   ],
   "canonicalExamples": [
-   "What does it say? - It says 'go'.",
-   "What does it say? - It says 'go straight'.",
-   "What does it say? - It says 'stop'.",
-   "What does it say? - It says 'turn left'.",
+   "What does it say? - It says stop.",
+   "What does it say? - It says go straight.",
+   "What does it say? - It says turn left.",
+   "What does it say? - It says turn right.",
    "How can I get to the bookshop? - Go straight and turn left.",
-   "How can I get to the campsite? - Go straight.",
-   "How can I get to the bookshop? - Get (to).",
-   "How can I get to the bookshop? - Stop."
+   "How can I get to the campsite? - Go straight and turn left.",
+   "How can I get to the bookshop? - Go straight and turn right."
   ],
   "mauCauDs": [
    {
-    "cau": "What does it say? - It says 'go'.",
-    "congThuc": "What does it say? - It says '[noi dung bien bao]'.",
+    "cau": "What does it say? - It says stop.",
+    "congThuc": "What does it say? - It says + [Sign].",
     "dungDe": "Đọc biển báo trên đường.",
     "tinhHuong": "Con và bố đi bộ, gặp một biển báo lạ.",
     "phan": [
@@ -292,7 +291,7 @@
    },
    {
     "cau": "How can I get to the bookshop? - Go straight and turn left.",
-    "congThuc": "How can I get to the + [place]? - [chi duong].",
+    "congThuc": "How can I get to the + [Place]? - Go straight and turn + [Direction].",
     "dungDe": "Hỏi đường và chỉ đường.",
     "tinhHuong": "Con lạc ở khu phố lạ, hỏi một bác đi đường.",
     "phan": [
@@ -306,12 +305,12 @@
       "thay": true
      },
      {
-      "chu": "? -",
-      "lam_gi": "lời chỉ đường"
+      "chu": "? - Go straight and turn",
+      "lam_gi": "chỉ đường: đi thẳng rồi rẽ"
      },
      {
-      "chu": "Go straight and turn left.",
-      "lam_gi": "CHỈ ĐƯỜNG — nối các bước bằng *and*",
+      "chu": "left",
+      "lam_gi": "HƯỚNG rẽ",
       "thay": true
      }
     ],
@@ -321,8 +320,8 @@
    }
   ],
   "mauCau": {
-   "cau": "What does it say? - It says 'go'.",
-   "congThuc": "What does it say? - It says '[noi dung bien bao]'.",
+   "cau": "What does it say? - It says stop.",
+   "congThuc": "What does it say? - It says + [Sign].",
    "dungDe": "Đọc biển báo trên đường.",
    "tinhHuong": "Con và bố đi bộ, gặp một biển báo lạ.",
    "phan": [
@@ -394,18 +393,18 @@
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "What does it say? - It says 'go'.",
+  "problem": "What does it say? - It says stop.",
   "steps": [
    {
-    "show": "Nghe cả câu: What does it say? - It says 'go'.",
+    "show": "Nghe cả câu: What does it say? - It says stop.",
     "phan": "giai"
    },
    {
-    "show": "Tách ra từng thẻ: What | does | it | say? | - | It | says | 'go'.",
+    "show": "Tách ra từng thẻ: What | does | it | say? | - | It | says | stop.",
     "phan": "giai"
    },
    {
-    "show": "Chữ cuối là “go straight” — đi thẳng. Đổi chữ ấy là được câu mới.",
+    "show": "Chữ cuối là “stop” — dừng lại. Đổi chữ ấy là được câu mới.",
     "phan": "giai"
    }
   ]
@@ -1306,30 +1305,7 @@
     {
      "id": "S1",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What does it say? - It says '___'.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "⬆️",
-     "anhVe": null,
-     "format": "chon",
-     "choices": [
-      "get (to)",
-      "left",
-      "go straight",
-      "right"
-     ],
-     "answerKey": {
-      "choice": "go straight"
-     },
-     "solutionNarrative": "What does it say? - It says 'go straight'.",
-     "hints": [
-      "Nhìn hình xem đó là con gì, cái gì.",
-      "Rồi nhớ lại từ tiếng Anh của nó."
-     ]
-    },
-    {
-     "id": "S2",
-     "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What does it say? - It says '___'.",
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What does it say? - It says ___.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
      "anh": "🛑",
      "anhVe": null,
@@ -1343,7 +1319,30 @@
      "answerKey": {
       "choice": "stop"
      },
-     "solutionNarrative": "What does it say? - It says 'stop'.",
+     "solutionNarrative": "What does it say? - It says stop.",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    },
+    {
+     "id": "S2",
+     "bac": 3,
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What does it say? - It says ___.",
+     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": "⬆️",
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "get (to)",
+      "left",
+      "go straight",
+      "right"
+     ],
+     "answerKey": {
+      "choice": "go straight"
+     },
+     "solutionNarrative": "What does it say? - It says go straight.",
      "hints": [
       "Nhìn hình xem đó là con gì, cái gì.",
       "Rồi nhớ lại từ tiếng Anh của nó."
@@ -1352,7 +1351,7 @@
     {
      "id": "S3",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What does it say? - It says '___'.",
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What does it say? - It says ___.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
      "anh": "↩️",
      "anhVe": null,
@@ -1366,7 +1365,7 @@
      "answerKey": {
       "choice": "turn left"
      },
-     "solutionNarrative": "What does it say? - It says 'turn left'.",
+     "solutionNarrative": "What does it say? - It says turn left.",
      "hints": [
       "Nhìn hình xem đó là con gì, cái gì.",
       "Rồi nhớ lại từ tiếng Anh của nó."
@@ -1375,21 +1374,21 @@
     {
      "id": "S4",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  How can I get to the bookshop? - ___ and turn left.",
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  What does it say? - It says ___.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "⬆️",
+     "anh": "↪️",
      "anhVe": null,
      "format": "chon",
      "choices": [
       "get (to)",
-      "left",
-      "Go straight",
-      "right"
+      "turn right",
+      "go straight",
+      "left"
      ],
      "answerKey": {
-      "choice": "Go straight"
+      "choice": "turn right"
      },
-     "solutionNarrative": "How can I get to the bookshop? - Go straight and turn left.",
+     "solutionNarrative": "What does it say? - It says turn right.",
      "hints": [
       "Nhìn hình xem đó là con gì, cái gì.",
       "Rồi nhớ lại từ tiếng Anh của nó."
@@ -1398,7 +1397,30 @@
     {
      "id": "S5",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  How can I get to the ___? - Go straight.",
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  How can I get to the bookshop? - Go straight and turn ___.",
+     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": "⬅️",
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "get (to)",
+      "go straight",
+      "right",
+      "left"
+     ],
+     "answerKey": {
+      "choice": "left"
+     },
+     "solutionNarrative": "How can I get to the bookshop? - Go straight and turn left.",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    },
+    {
+     "id": "S6",
+     "bac": 3,
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  How can I get to the ___? - Go straight and turn left.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
      "anh": "🏕️",
      "anhVe": null,
@@ -1412,30 +1434,7 @@
      "answerKey": {
       "choice": "campsite"
      },
-     "solutionNarrative": "How can I get to the campsite? - Go straight.",
-     "hints": [
-      "Nhìn hình xem đó là con gì, cái gì.",
-      "Rồi nhớ lại từ tiếng Anh của nó."
-     ]
-    },
-    {
-     "id": "S6",
-     "bac": 3,
-     "text": "Chọn từ điền vào chỗ trống:  How can I get to the bookshop? - ___.",
-     "am": "loi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": null,
-     "anhVe": null,
-     "format": "chon",
-     "choices": [
-      "go straight",
-      "left",
-      "right",
-      "Get (to)"
-     ],
-     "answerKey": {
-      "choice": "Get (to)"
-     },
-     "solutionNarrative": "How can I get to the bookshop? - Get (to).",
+     "solutionNarrative": "How can I get to the campsite? - Go straight and turn left.",
      "hints": [
       "Nhìn hình xem đó là con gì, cái gì.",
       "Rồi nhớ lại từ tiếng Anh của nó."
@@ -1444,21 +1443,21 @@
     {
      "id": "S7",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  How can I get to the bookshop? - ___.",
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  How can I get to the bookshop? - Go straight and turn ___.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": "🛑",
+     "anh": "➡️",
      "anhVe": null,
      "format": "chon",
      "choices": [
+      "right",
       "get (to)",
       "go straight",
-      "left",
-      "Stop"
+      "left"
      ],
      "answerKey": {
-      "choice": "Stop"
+      "choice": "right"
      },
-     "solutionNarrative": "How can I get to the bookshop? - Stop.",
+     "solutionNarrative": "How can I get to the bookshop? - Go straight and turn right.",
      "hints": [
       "Nhìn hình xem đó là con gì, cái gì.",
       "Rồi nhớ lại từ tiếng Anh của nó."
@@ -1898,7 +1897,7 @@
   ]
  },
  "parentNote": {
-  "onComplete": "Chỉ vào đồ trong nhà rồi nói mẫu câu bài này: “What does it say? - It says 'go'.” — cho con nhắc lại. Đổi chữ cuối để thành đồ khác.",
+  "onComplete": "Chỉ vào đồ trong nhà rồi nói mẫu câu bài này: “What does it say? - It says stop.” — cho con nhắc lại. Đổi chữ cuối để thành đồ khác.",
   "homeActivity": "Tìm trong nhà những thứ bắt đầu bằng âm ˈbookshop. Không cần đúng hết, quan trọng là con nghe ra âm ấy.",
   "watchFor": "NÊN: cho con NGHE trước rồi mới nhìn chữ. KHÔNG NÊN: bắt con đánh vần theo kiểu tiếng Việt — tiếng Anh viết một đằng đọc một nẻo, đánh vần sẽ hại."
  },
@@ -1934,7 +1933,7 @@
   "cau": [
    {
     "vai": "cau",
-    "cau": "What does it say? - It says 'go'.",
+    "cau": "What does it say? - It says stop.",
     "tep": "DL_TA4_B17_cau1.mp4"
    },
    {

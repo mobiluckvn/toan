@@ -113,8 +113,12 @@ CONG hai bên (run là ba gạch THẲNG sau lưng).
 
 ⚠ Vẽ xong thì phải chạy lại **cả dây chuyền từ tầng ②**: khai `_ve_tay` trong
 `lopN_bu.json` → `chuan_tienganh.py` → `sinh_bai_tienganh.py` (để `hinhTu[].ve`
-có tên hình) → tranh → **và dựng lại VIDEO của mọi unit dạy từ ấy**, vì thẻ từ
-trong video cũng đọc cùng nguồn hình.
+có tên hình) → tranh → **dựng lại VIDEO của mọi unit dạy từ ấy** → **và dựng
+lại ĐỀ ÔN TẬP** (`sinh_ontap_tienganh.py --lop N`).
+
+Đề ôn tập là chỗ dễ quên nhất: nó CHÉP câu từ bài học vào lúc dựng, nên đổi
+hình xong mà không dựng lại thì đề vẫn giữ emoji cũ. Tôi đã quên đúng chỗ ấy —
+cổng `tienganh_hinh_dung_tu` bắt được 6 chỗ *"đề dùng 💃, bài dùng dancing"*.
 
 ⚠ Đừng vẽ đè lên một từ khác: `singer` (U12, nghề nghiệp) dùng 🧑‍🎤. Phân biệt
 bằng khung hình — nghề là chân dung nửa người mặc đồng phục, hoạt động là người

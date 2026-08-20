@@ -5645,8 +5645,8 @@
    "mau_cau": [
     {
      "ma": "sp_g4_u17_1",
-     "vi_du": "What does it say? - It says 'go'.",
-     "cong_thuc": "What does it say? - It says '[noi dung bien bao]'.",
+     "vi_du": "What does it say? - It says stop.",
+     "cong_thuc": "What does it say? - It says + [Sign].",
      "thi": "present_simple",
      "kieu_cau": "wh_question",
      "o_thay": [
@@ -5676,7 +5676,7 @@
     {
      "ma": "sp_g4_u17_2",
      "vi_du": "How can I get to the bookshop? - Go straight and turn left.",
-     "cong_thuc": "How can I get to the + [place]? - [chi duong].",
+     "cong_thuc": "How can I get to the + [Place]? - Go straight and turn + [Direction].",
      "thi": "present_simple",
      "kieu_cau": "wh_question",
      "o_thay": [
@@ -5699,12 +5699,12 @@
        "thay": true
       },
       {
-       "chu": "? -",
-       "lam_gi": "lời chỉ đường"
+       "chu": "? - Go straight and turn",
+       "lam_gi": "chỉ đường: đi thẳng rồi rẽ"
       },
       {
-       "chu": "Go straight and turn left.",
-       "lam_gi": "CHỈ ĐƯỜNG — nối các bước bằng *and*",
+       "chu": "left",
+       "lam_gi": "HƯỚNG rẽ",
        "thay": true
       }
      ]
@@ -7093,12 +7093,10 @@
     ],
     "Time": [
      "six o'clock",
-     "seven o'clock",
-     "eight o'clock",
-     "nine o'clock"
+     "eight o'clock"
     ]
    },
-   "_ghi": "Ô [Time] khai bằng CỤM. Khai bằng vai `thoigian` thì bốc trúng chữ `o'clock` trần và ra 'I have breakfast at o'clock.' — đúng ngữ pháp, vô nghĩa. Hai ô [Routine] cùng tên nên luôn cùng một việc: hỏi gì đáp nấy."
+   "_ghi": "Ô [Time] khai bằng CỤM. Khai bằng vai `thoigian` thì bốc trúng chữ `o'clock` trần và ra 'I have breakfast at o'clock.' — đúng ngữ pháp, vô nghĩa. Hai ô [Routine] cùng tên nên luôn cùng một việc: hỏi gì đáp nấy. ⚠ Số trong ô giờ phải là số CÓ TRONG VÍ DỤ CỦA CHÍNH BÀI. `chu_biet` của `sinh_kichban_noi` (bản sao của `cauSachCuaBai` bên phongnoi.js) chỉ nhận chữ của bài ấy, KHÔNG nhận cả kho tích luỹ — nên 'seven o'clock' bị loại dù lớp 1 đã dạy `seven`. Ví dụ của bài có `six` và `eight`."
   },
   "sp_g4_u3_2": {
    "_cau": "What do you do on + [Day]s? - I + [Activity].",
@@ -7215,13 +7213,14 @@
    }
   },
   "sp_g4_u17_2": {
-   "_cau": "How can I get to the + [place]? - [chi duong].",
+   "_cau": "How can I get to the + [Place]? - Go straight and turn + [Direction].",
    "o": {
-    "place": [
+    "Place": [
      "noichon"
     ],
-    "chi duong": [
-     "dongtu"
+    "Direction": [
+     "left",
+     "right"
     ]
    }
   },
@@ -7276,27 +7275,33 @@
    "_cau": "Where do you live? - I live in + [Street].",
    "o": {
     "Street": [
-     "Tran Hung Dao Street",
-     "Le Loi Street",
-     "Nguyen Trai Street",
-     "Hai Ba Trung Street"
+     "Tran Hung Dao Street"
     ]
    },
-   "_ghi": "Tên đường là CỤM có sẵn chữ Street; khai đích danh, đừng dùng vai."
+   "_ghi": "Chỉ MỘT tên đường — đúng tên sách dùng. Tôi từng thêm Le Loi · Nguyen Trai · Hai Ba Trung cho đỡ đơn điệu, nhưng mỗi tên mang theo chữ mới mà bài không dạy, nên phòng nói loại sạch. Bịa tên đường không phải việc của bộ sinh; muốn nhiều câu thì lấy ở mẫu thứ hai của unit (What's the street like?)."
   },
   "sp_g4_u2_1": {
    "_cau": "What time is it? - It's + [Time].",
    "o": {
     "Time": [
      "six o'clock",
-     "seven o'clock",
      "eight thirty",
-     "nine fifteen",
-     "ten forty-five",
-     "eleven o'clock"
+     "eight o'clock",
+     "six thirty"
     ]
    },
-   "_ghi": "Cùng bệnh với sp_g4_u2_2: bản đồ khai ô [Time] bằng mấy chữ rời (o'clock · thirty · fifteen · forty-five), nên máy điền thẳng ra \"It's o'clock.\" và \"It's fifteen.\" Giờ là một CỤM: giờ + phút."
+   "_ghi": "Cùng bệnh với sp_g4_u2_2: bản đồ khai ô [Time] bằng mấy chữ rời (o'clock · thirty · fifteen · forty-five), nên máy điền thẳng ra \"It's o'clock.\" và \"It's fifteen.\" Giờ là một CỤM: giờ + phút. ⚠ Số trong ô giờ phải là số CÓ TRONG VÍ DỤ CỦA CHÍNH BÀI. `chu_biet` của `sinh_kichban_noi` (bản sao của `cauSachCuaBai` bên phongnoi.js) chỉ nhận chữ của bài ấy, KHÔNG nhận cả kho tích luỹ — nên 'seven o'clock' bị loại dù lớp 1 đã dạy `seven`. Ví dụ của bài có `six` và `eight`."
+  },
+  "sp_g4_u17_1": {
+   "_cau": "What does it say? - It says + [Sign].",
+   "o": {
+    "Sign": [
+     "stop",
+     "go straight",
+     "turn left",
+     "turn right"
+    ]
+   }
   }
  },
  "vai_ten": {
