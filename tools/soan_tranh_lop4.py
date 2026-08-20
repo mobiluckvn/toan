@@ -135,10 +135,9 @@ UU_TIEN = {
                  "box"]},
     10: {"vat": ["beach", "campsite", "zoo", "tent", "kite", "bike", "box"]},
     11: {"vat": ["house", "door", "window", "table", "chair", "bed", "lamp"]},
-    # ⚠ Bỏ doctor · nurse · gardener: bộ vẽ emoji không ghép được chuỗi ZWJ nên
-    # chúng ra khuôn mặt trơn / trùng hệt farmer. Xem `_khong_ve` trong lop4_bu.
-    12: {"vat": ["farmer", "policeman", "teacher", "worker", "actor",
-                 "singer", "painter"]},
+    # doctor · nurse · gardener nay có hình VẼ TAY (chân dung nửa người mặc
+    # đồng phục) nên đưa lại vào bức. Trước đó chúng ra khuôn mặt trơn.
+    12: {"vat": ["farmer", "doctor", "nurse", "teacher", "policeman", "worker", "gardener"]},
     13: {"vat": ["face", "eye", "nose", "hand", "ear", "mouth", "head"],
         "chinh": "face"},
     14: {"vat": ["bed", "teapot", "cup", "blanket", "lamp", "chair", "window"]},
@@ -474,7 +473,16 @@ def soan(b, chuan_tu, truoc, canh, canh_en, chuan_tu12=None, du_phong=None) -> d
         #     ✗ This is a sunny.   (tính từ)
         #     ✗ I can see an eyes. (danh từ số nhiều)
         # Cả hai đều đúng khuôn, đúng túi từ, không cổng nào bắt — chỉ đọc mới thấy.
+        # ⚠ NGOẠI LỆ CÓ TÊN, không phải nới luật.
+        # `basketball` · `volleyball` · `football` mang vai `trochoi`, và `trochoi`
+        # bị chặn vì "a badminton" sai hẳn. Nhưng BA QUẢ BÓNG thì đếm được và vẽ
+        # được — lớp 3 đã chốt đúng thế. Ghi tên từng từ ở đây; nới cả vai thì
+        # `badminton` · `chess` lọt theo.
+        NGOAI_LE = {"basketball", "volleyball", "football"}
+
         def dat_duoc_sau_a(t: str) -> bool:
+            if t in NGOAI_LE:
+                return True
             vai = set((chuan_tu.get(t) or (chuan_tu12 or {}).get(t) or {}).get("vai") or [])
             if vai & VAI_BO:
                 return False

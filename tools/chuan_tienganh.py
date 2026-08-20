@@ -208,8 +208,15 @@ def chuan(lop: int, bu: dict) -> dict:
 
     # Đánh số lại theo VỊ TRÍ sau khi đã loại: mã bài `DL:TA4.B00…B20` phải liền
     # mạch. Giữ `order` gốc thì số nhảy cóc qua chỗ bài ôn tập.
-    for i, u in enumerate(units):
-        u["_so_bai"] = i
+    #
+    # ⚠ CHỈ KHI CÓ LOẠI BÀI. Bản đầu tôi đánh số lại VÔ ĐIỀU KIỆN, và lớp 1 —
+    # vốn đánh số 1…16 từ đầu, không loại bài nào — lặng lẽ tụt xuống 0…15 ngay
+    # lần chạy lại kế tiếp. `DL_TA1_B16.json` nằm lại thành tệp mồ côi, và cổng
+    # đếm ra 17 bài cho quyển 16 bài. Nó nằm im như thế suốt cho tới hôm nay chỉ
+    # vì tôi không có việc gì phải chạy lại lớp 1.
+    if bo:
+        for i, u in enumerate(units):
+            u["_so_bai"] = i
 
     tu_bu = bu.get("tu", {})
     day_mau_cau = {k: v for k, v in (bu.get("mau_cau") or {}).items()

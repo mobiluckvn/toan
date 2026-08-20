@@ -26,11 +26,56 @@ import { join } from 'node:path';
    lớp 4 thì cổng đem ĐOẠN VĂN LỚP 4 so với TRANH LỚP 3 — cùng số unit nên nó khớp
    được, và báo "5 vật mà đoạn có 7 câu" ở cả 21 bài. Sai hoàn toàn, mà nghe rất
    giống một lỗi nội dung thật. Đây đúng họ "cổng chỉ soi một quyển". */
+/* ⚠ NGUỒN ĐỔI 20-08-2026: `canh_lopN.json` thay `tranh_lopN.json`. Bản cũ khai
+   theo KỆ — `nhom` là danh sách vật xếp lên ba thanh gỗ ngang. Bác bác bỏ cả 42
+   bức ấy: "Một bức tranh rất vớ vẩn." Bản mới khai theo CẢNH: `vat` gồm cả đồ
+   vẽ tay (`ve`) lẫn hình từ vựng (`tu`). */
 const khaiTranh = (lop) => {
   try {
     return JSON.parse(readFileSync(
-      new URL(`../../data/tienganh/tranh_lop${lop}.json`, import.meta.url), 'utf8'));
+      new URL(`../../data/tienganh/canh_lop${lop}.json`, import.meta.url), 'utf8'));
   } catch { return []; }
+};
+
+/* Bút vẽ cảnh nào VẼ RA thứ gì — để phép "đoạn nhắc vật nào thì tranh phải có
+   vật ấy" đọc được cả những thứ không phải hình từ vựng. Thiếu bảng này thì cổng
+   báo "tranh không có cái bàn" trong khi cảnh vẽ hẳn một cái bàn bằng `ve: ban`.
+   Khai TAY, và `soi_but_ve` dưới đây kêu lên nếu có bút vẽ chưa khai. */
+const TU_CUA_VE = {
+  /* NGƯỜI vẽ ra cả khuôn mặt: mắt · mũi · miệng · tai · tóc. Thiếu chúng thì
+     bức "Trước tấm gương" bị kêu là không có cái mũi nào, trong khi cả bức là
+     một khuôn mặt. */
+  nguoi: ['teacher', 'friend', 'girl', 'boy', 'mother', 'father', 'sister',
+          'brother', 'doctor', 'nurse', 'farmer', 'people', 'face', 'nose',
+          'eye', 'mouth', 'ear', 'hair', 'head', 'hand', 'name'],
+  ban: ['desk', 'table'], ghe: ['chair'], bang: ['board'],
+  cuaSo: ['window'], cua: ['door'], giuong: ['bed'], sofa: ['chair'],
+  giaSach: ['book', 'library', 'bookshop'], cay: ['tree', 'garden'],
+  may: ['cloud'], matTroi: ['sun', 'sunny'], nha: ['school', 'house', 'building'],
+  oto: ['car'], leu: ['tent'], luaTrai: ['campfire'], ho: ['lake'],
+  bienBao: ['sign', 'road'], tuKinh: ['bookshop', 'bakery', 'library', 'shop'],
+  guong: ['mirror'], dongHo: ['clock', "o'clock"], giaVe: ['picture', 'art'],
+  khungAnh: ['picture', 'photo'], bangGhim: ['picture', 'photo', 'board'],
+  bangLuoi: ['calendar', 'timetable', 'day', 'Monday', 'map'],
+  banDo: ['map'], anhNho: ['picture', 'photo', 'beach', 'countryside', 'city'],
+  bangMau: ['colour'], bangThoiTiet: ['weather', 'sunny', 'rainy', 'windy', 'cloudy', 'sun'], huyChuong: ['medal'], longChim: ['bird'],
+  hangRao: ['garden'], songSat: ['zoo'], zoo: ['zoo'],
+};
+
+/* Hình một VIỆC ĐANG LÀM vẽ luôn cả đồ nghề: `cycling` có sẵn chiếc xe đạp,
+   `reading` có quyển sách. Không khai thì cổng kêu "tranh không có cái xe đạp"
+   ngay giữa bức vẽ một bạn đang đạp xe. */
+/* PHÔNG NỀN vẽ ra gì. Cảnh "trại hè bên hồ" có mặt hồ nằm trong chính phông
+   `toi` chứ không phải một vật khai riêng — không có bảng này thì cổng kêu
+   "tranh không vẽ cái hồ" ngay giữa bức có mặt hồ phản chiếu ánh lửa. */
+const DO_CUA_NEN = {
+  toi: ['lake', 'river'], co: ['garden'], san: ['school', 'playground'],
+  pho: ['street', 'road', 'city'], lop: ['classroom'], phong: ['house', 'room'],
+};
+
+const DO_CUA_VIEC = {
+  cycling: ['bike'], reading: ['book'], writing: ['pen', 'book'],
+  cooking: ['pot'], skipping: ['rope'], singing: ['song'],
 };
 
 /* ══ CÂU NỐI — nói THÊM về vật của câu ngay trước ══ (thêm 20-08-2026)
@@ -452,34 +497,124 @@ for (const q of quyens) {
        tranh thì đọc được — và bản khai chính là thứ đẻ ra ảnh. */
     const khai = khaiTranh(lop).find((x) => x.unit === k.unit);
     if (khai) {
-      for (const n of khai.nhom || []) {
-        if (n.so > 1 && !(khai.doan || []).some((c) => /\b(two|three|four|five|six|seven|eight|nine|ten)\b/i.test(c))) {
-          tranhHong.push(`${k.id}: tranh vẽ ${n.so} ${n.tu} mà đoạn không nói số nào`);
+      /* Bộ chữ mà BỨC TRANH VẼ RA — hình từ vựng cộng thứ các bút vẽ cảnh dựng. */
+      const veLa = [];
+      const trongTranh = new Set();
+      for (const v of khai.vat || []) {
+        if (v.tu) chu(v.tu).forEach((w) => trongTranh.add(w));
+        if (v.ve) {
+          if (!(v.ve in TU_CUA_VE)) veLa.push(v.ve);
+          (TU_CUA_VE[v.ve] || []).forEach((x) => chu(x).forEach((w) => trongTranh.add(w)));
         }
       }
-      /* Và ngược chiều: đoạn nhắc tới vật nào thì tranh phải CÓ vật ấy — trừ CÂU
-         NỐI, thứ nói thêm về vật của câu ngay trước (xem `laCauNoi` đầu tệp). */
-      (khai.doan || []).forEach((c, i) => {
-        const co = (khai.nhom || []).some((n) => c.toLowerCase().includes(n.tu.toLowerCase()));
-        if (!co && !laCauNoi(khai, c, khai.doan[i - 1])) {
-          tranhHong.push(`${k.id}: đoạn tả “${c}” mà tranh không có vật ấy`);
+      for (const v of new Set(veLa)) {
+        tranhHong.push(`${k.id}: bút vẽ “${v}” chưa khai trong TU_CUA_VE — cổng mù chỗ ấy`);
+      }
+
+      /* ① ĐOẠN NHẮC VẬT NÀO THÌ TRANH PHẢI CÓ VẬT ẤY.
+         Đây là phép giữ cho đoạn văn và bức tranh không trôi khỏi nhau. Câu NỐI
+         (nói thêm về vật của câu trước) và câu tả NƠI CHỐN thì miễn. */
+      const NOI = new Set(['classroom', 'school', 'zoo', 'playground', 'house',
+        'bedroom', 'kitchen', 'bathroom', 'room', 'garden', 'street', 'city',
+        'centre', 'campsite', 'party', 'hospital', 'library', 'gym', 'home',
+        'beach', 'countryside', 'town', 'village']);
+      /* So chữ phải BỎ ĐUÔI SỐ NHIỀU: tranh khai `bike`, đoạn viết "two bikes". */
+      for (const v of khai.vat || []) {
+        (DO_CUA_VIEC[v.tu] || []).forEach((x) => trongTranh.add(x));
+      }
+      const kieuNen = typeof khai.nen === 'string' ? khai.nen : khai.nen?.kieu;
+      (DO_CUA_NEN[kieuNen] || []).forEach((x) => trongTranh.add(x));
+      /* ⚠ Bỏ đuôi số nhiều bằng /(ies|es|s)$/ thì "bikes" thành "bik" còn "bike"
+         vẫn là "bike" — hai bên không gặp nhau. Chỉ bỏ đúng chữ "s" cuối. */
+      const cot = (x) => (x.length > 3 ? x.replace(/s$/, '') : x);
+      const trongTranhCot = new Set([...trongTranh].map(cot));
+      const coNguoiTrenTranh = (khai.vat || []).some((v) => v.ve === 'nguoi'
+        || ['doctor', 'nurse', 'farmer', 'gardener', 'cooking', 'reading',
+            'writing', 'dancing', 'singing', 'cycling', 'skipping', 'walking',
+            'climbing', 'run'].includes(v.tu));
+      /* Câu nói về NGƯỜI — có tên riêng, hoặc chủ ngữ là người. Tranh có người thì
+         những câu ấy hợp lệ, dù chúng không nêu tên một đồ vật nào. Đây là chỗ
+         khác nhau giữa một bài TẢ CẢNH và một bảng kê đồ. */
+      const laCauNguoi = (c) => /(?:^|\s)(?:I'm|He's|She's|They're|He|She|They)\s/.test(c)
+        || /(?:This is|That's|There's)\s+[A-Z]/.test(c)
+        || /\b(?:Ms|Mr)\b/.test(c);
+      /* ⚠ ĐÚNG CHIỀU MỚI BẮT ĐƯỢC CÁI CẦN BẮT.
+         Bản đầu tôi hỏi "câu này có nêu vật nào của tranh không" — hỏi thế là đòi
+         MỌI câu phải trỏ vào một đồ vật, tức là dựng lại đúng cái kệ vừa dỡ đi.
+         Câu "My birthday is in May." không nêu vật nào, và nó hoàn toàn đúng.
+
+         Điều thật sự cần chặn là chiều kia: đoạn GỌI TÊN một thứ mà tranh KHÔNG
+         VẼ — bé đọc "I can see a bike" rồi tìm mãi không thấy cái xe đạp nào.
+         Nên chỉ soi những chữ CÓ HÌNH trong bộ từ vựng (tức là vật vẽ được). */
+      /* ⚠ "CÓ EMOJI" KHÔNG PHẢI LÀ "VẬT VẼ ĐƯỢC TRONG CẢNH".
+         `red` có 🟥, `two` có 2️⃣, `maths` có ➗, `birthday` có 🎂 — bốn thứ ấy đều
+         có hình, và không thứ nào là một đồ vật đứng trong phòng. Bản đầu tôi lọc
+         theo "có hình" và cổng đòi bức tiệc sinh nhật phải vẽ ra chữ “birthday”.
+         Bản chuẩn đã phân sẵn vai; chỉ những vai dưới đây mới là VẬT THỂ. */
+      const VAI_VAT = new Set(['dt', 'dodac', 'dodung', 'dochoi', 'convat',
+                               'thucan', 'douong', 'quanao', 'bophan']);
+      const veDuoc = new Set();
+      for (let l = 1; l <= lop; l += 1) {
+        const cn = JSON.parse(readFileSync(join(R, `data/tienganh/chuan_lop${l}.json`), 'utf8'));
+        for (const u of cn.unit) {
+          for (const x of u.tu) {
+            const vai = Array.isArray(x.vai) ? x.vai : [x.vai];
+            if (vai.some((v) => VAI_VAT.has(v))) veDuoc.add(String(x.tu).toLowerCase());
+          }
         }
-      });
-      /* ══ CÂU "She's …ing." THÌ TRÊN TRANH PHẢI CÓ NGƯỜI ══ (lộ ra 19-08-2026)
+      }
+      /* ⚠ CHỮ TRÙNG MẶT. `can` là CÁI LON (danh từ, có hình 🥫) và cũng là chữ nối
+         trong "I can see a book." — cổng đọc chữ `can` rồi đòi bức tranh phải vẽ
+         một cái lon. Đây là lần THỨ BA cái bẫy này lộ ra trong buổi: bảng từ màn
+         viết từng chú `can` là "cái lon", và trước đó `top` là con quay lẫn cái áo.
+         Chữ nào vừa là vật vừa là chữ nối thì KHÔNG soi. */
+      for (const w of ['can', 'see', 'like', 'play', 'watch', 'left', 'right',
+                       'have', 'want', 'draw', 'ride', 'point', 'look', 'pass',
+                       'wash', 'run', 'sail', 'lock', 'top', 'mop', 'square']) {
+        veDuoc.delete(w);
+      }
+      if (false) {
+        for (const u of []) {
+          for (const x of []) {
+          }
+        }
+      }
+      for (const c of khai.doan || []) {
+        for (const w of chu(c)) {
+          if (!veDuoc.has(w) && !veDuoc.has(cot(w))) continue;
+          if (trongTranhCot.has(cot(w)) || NOI.has(w) || NOI.has(cot(w))) continue;
+          if (coNguoiTrenTranh && TU_CUA_VE.nguoi.includes(w)) continue;
+          tranhHong.push(`${k.id}: đoạn nói “${w}” mà tranh không vẽ thứ ấy — “${c}”`);
+        }
+      }
+
+      /* ② ĐOẠN NÓI "two X" THÌ TRANH PHẢI VẼ ĐỦ NGẦN ẤY.
+         Bức đầu tiên của lớp 3 từng vẽ BA con diều mà đoạn viết "I can see a
+         kite." — bác bắt đúng chỗ ấy: "Nội dung phải đồng bộ với Tranh." */
+      const SO = { two: 2, three: 3, four: 4, five: 5, six: 6 };
+      for (const c of khai.doan || []) {
+        const m = /\b(two|three|four|five|six)\s+([a-z]+)\b/i.exec(c);
+        if (!m) continue;
+        const it = m[2].toLowerCase().replace(/s$/, '');
+        const dem = (khai.vat || []).filter((v) => {
+          const t = String(v.tu || '').toLowerCase();
+          return t === it || t === `${it}s` || (v.ve === 'nguoi' && it === 'friend');
+        }).length;
+        if (dem && dem < SO[m[1].toLowerCase()]) {
+          tranhHong.push(`${k.id}: đoạn nói “${m[1]} ${m[2]}” mà tranh chỉ vẽ ${dem}`);
+        }
+      }
+
+      /* ③ CÂU "She's …ing." THÌ TRÊN TRANH PHẢI CÓ NGƯỜI ══ (lộ ra 19-08-2026)
 
          Bức "Ở vườn thú" viết *"He's counting."* mà trên tranh là cái bàn phím số
          🔢; unit 18 viết *"She's reading."* mà tranh là quyển sách 📖. Cả hai đều
          qua được phép kiểm cũ, vì phép kiểm cũ chỉ hỏi "từ này CÓ hình không" —
          có, nhưng hình là ĐỒ VẬT. Bé nhìn quyển sách thì bé nói "a book"; không ai
-         nói được "She's reading" từ một quyển sách nằm trên kệ.
-
-         Đây là loại lỗi cổng xanh không bắt được nếu không hỏi đúng câu hỏi, và
-         chỉ lộ khi rút bức tranh ra nhìn — cùng họ với [[hình trong video phải
-         khớp lời đọc]]. */
+         nói được "She's reading" từ một quyển sách nằm trên kệ. */
       const hinhCua = Object.fromEntries(
         bais.flatMap((b) => (b.hinhTu || []).map((h) => [h.tu, h])));
-      /* Hình VẼ TAY thì không đoán được bằng mã emoji — hỏi thẳng cờ `nguoi` khai
-         trong hinh_ve.json, cùng nguồn với bộ soạn (`soan_tranh_lop3.la_nguoi`). */
+      const coNguoiVe = (khai.vat || []).some((v) => v.ve === 'nguoi');
       const coNguoi = (h) => {
         if (h?.ve) return !!hinhVe[h.ve]?.nguoi;
         return [...String(h?.hinh || '')].some((ch) => {
@@ -491,10 +626,30 @@ for (const q of quyens) {
         });
       };
       for (const c of khai.doan || []) {
-        const m = /^(?:She|He)'s (\w+ing)\.$/.exec(c.trim());
-        if (m && !coNguoi(hinhCua[m[1]])) {
-          tranhHong.push(`${k.id}: đoạn nói “${c}” mà hình của “${m[1]}” là đồ vật, không có người`);
+        const m = /^(?:She|He|They)'(?:s|re) (\w+ing)\b/.exec(String(c).trim());
+        if (!m) continue;
+        const veHinh = (khai.vat || []).some((v) => v.tu === m[1]);
+        if (!coNguoiVe && !(veHinh && coNguoi(hinhCua[m[1]]))) {
+          tranhHong.push(`${k.id}: đoạn nói “${c}” mà trên tranh không có người nào làm việc ấy`);
         }
+      }
+
+      /* ④ ĐOẠN KHÔNG ĐƯỢC LÀ MỘT BẢN LIỆT KÊ ══ (bác bác bỏ 42 bài, 20-08-2026)
+
+         "This is a friend. I can see a girl. That's a ball. There's a kite."
+         — bảy câu, bảy đồ vật rời, không câu nào nói về câu nào. Bác gọi đúng tên:
+         "Nội dung này không hề phù hợp là một bài đọc."
+
+         Phép "không quá 2 dòng cùng khuôn" ở trên bắt được đoạn lặp MỘT khuôn,
+         nhưng bản cũ lách qua bằng cách xoay vòng bốn khuôn. Nên thêm phép này:
+         đoạn phải có ÍT NHẤT MỘT câu không mở đầu bằng khuôn trỏ-vật. Câu ấy là
+         chỗ đoạn văn nói về NGƯỜI, VIỆC hay NƠI CHỐN — thứ làm nó thành một cảnh
+         chứ không phải một cái kệ. */
+      /* "I have English and maths today." không trỏ vào đồ vật nào — nó nói về
+         VIỆC HỌC. Để "I have" trong danh sách thì bức thời khoá biểu bị kêu oan. */
+      const TRO_VAT = /^(This is|That's|There's|There are|I can see)\b/i;
+      if ((khai.doan || []).length && (khai.doan || []).every((c) => TRO_VAT.test(c.trim()))) {
+        tranhHong.push(`${k.id}: cả đoạn chỉ trỏ vào đồ vật — đây là bản liệt kê, không phải bài tả cảnh`);
       }
     }
 
@@ -522,17 +677,17 @@ for (const q of quyens) {
       if (/\?/.test(d.cau)) tranhHong.push(`${k.id}: đoạn mô tả còn câu hỏi “${d.cau}”`);
     }
     if ((k.doan || []).length < 3) tranhHong.push(`${k.id}: đoạn mô tả quá ngắn`);
-    /* Mỗi vật trong tranh phải có ĐÚNG một câu tả nó, và ngược lại. Thừa câu thì bé
-       tìm không ra; thừa vật thì bé nhìn thấy thứ không ai tả. */
-    if (khai) {
-      const soVat = (khai.nhom || []).length;
-      // Đếm câu NÊU VẬT, không đếm câu nối — bức dạy màu có hai câu cho một vật.
-      const soCau = (k.doan || [])
-        .filter((d, i) => !laCauNoi(khai, d.cau, k.doan[i - 1]?.cau)).length;
-      if (soCau !== soVat) {
-        tranhHong.push(`${k.id}: ${soVat} vật mà đoạn có ${soCau} câu nêu vật`);
-      }
-    }
+    /* ⚠ BỎ 20-08-2026: "mỗi vật ĐÚNG MỘT câu tả nó, và ngược lại".
+       Luật ấy nghe rất hợp lý và nó CHÍNH LÀ thứ đẻ ra cái kệ. Ép một-đối-một thì
+       đoạn văn buộc phải là bảng liệt kê — thêm một câu nói về người hay về việc
+       là cổng kêu "thừa câu". Bác bác bỏ cả 42 bài vì đúng hậu quả ấy:
+
+           "This is a friend. I can see a girl. That's a ball. There's a kite."
+           — "Nội dung này không hề phù hợp là một bài đọc."
+
+       Thay bằng bốn phép ở khối trên: vật nhắc tới phải có trên tranh · số đếm
+       phải khớp · câu "…ing" phải có người · và đoạn KHÔNG được toàn câu trỏ vật.
+       Ba phép đầu giữ tranh và chữ dính nhau; phép thứ tư chặn đúng cái kệ. */
   }
   t(`${q} · bài tả tranh có đủ tranh và câu hỏi về tranh (${tranhHong.length})`,
     tranhHong.length === 0);

@@ -23,7 +23,7 @@ import {
   docLoiCham, soiLoiCham, chuLa, demCau, duocGui, DIEM_TOI_DA,
 } from '../src/mon/tienganh/lib/chamviet.js';
 import { readFileSync as _rf } from 'node:fs';
-const tranhKhai = (() => { try { return JSON.parse(_rf(new URL('../../data/tienganh/tranh_lop3.json', import.meta.url), 'utf8')); } catch { return []; } })();
+const tranhKhai = (() => { try { return JSON.parse(_rf(new URL('../../data/tienganh/canh_lop3.json', import.meta.url), 'utf8')); } catch { return []; } })();
 import { soiBaiViet, loiDanCham, TOI_DA_CHU_BAI_VIET } from '../functions/src/chamviet.js';
 
 const VON = [
@@ -282,8 +282,11 @@ test('gợi ý là CỤM ghép được, xếp theo chỗ trong đoạn', async 
       /* ⚠ Soi ĐỘNG, đừng ghim tên vật. Bản đầu viết /kite|yo-yo|kitten|bear/ — đúng
          cho bức tranh unit 0 và sai cho hai mươi bức còn lại. Bảng từ phải chứa MỌI
          vật của chính bức tranh ấy, và bản khai tranh nói sẵn vật nào. */
+      /* ⚠ NGUỒN ĐỔI 20-08-2026: bản khai CẢNH thay bản khai KỆ. Vật của cảnh nằm
+         ở `vat[].tu` — những mục khai `ve` là đồ vẽ tay (bàn · ghế · cửa sổ), không
+         phải từ vựng nên không đòi có trong bảng từ. */
       const khaiT = tranhKhai.find((x) => x.unit === k.unit);
-      for (const n of (khaiT?.nhom || [])) {
+      for (const n of (khaiT?.vat || []).filter((x) => x.tu)) {
         assert.ok((k.vonTu || []).some((v) => v.tu === n.tu),
           `${k.id}: bảng từ thiếu vật “${n.tu}” của tranh`);
       }

@@ -81,33 +81,25 @@ def cau_hoi_sau_doc(k: dict) -> list[dict]:
     là chỗ bé luyện đọc thật.
     """
     ra = []
-    for h in k.get("hoiDoc") or []:
-        # Mồi: khai riêng ở câu hỏi thì dùng; không thì lấy từ `sai` của bức tranh —
-        # những câu ĐÃ HỌC mà KHÔNG tả bức này. Phải khác khuôn ĐÁP ÁN, nếu không
-        # bé chọn đúng bằng hình dạng.
+    for h in k.get("hoi") or []:
         moi = list(h.get("moi") or [])
-        if not moi:
-            dd = _dang(h["dap"])
-            for x in k.get("sai") or []:
-                if _dang(x) != dd and x not in moi:
-                    moi.append(x)
-        # Câu ĐẾM và câu SỐ: mồi phải CÙNG khuôn, chỉ khác con số — việc của bé là
-        # đọc số chứ không phải phân biệt dáng câu.
-        if h["dap"].startswith("I can see ") and h["dap"].split()[-1].rstrip('.').isalpha() \
-                and h["en"].startswith("How many"):
-            moi = ["I can see two.", "I can see three.", "I can see four."]
         if len(moi) < 2:
-            continue
+            # Mồi nhử KHAI TAY ở bản khai, vì mồi phải SAI VỚI BỨC TRANH NÀY mà
+            # máy không biết bức tranh có gì. Bản trước để máy suy và đẻ ra câu
+            # hỏi hai đáp án đúng — thà kêu còn hơn im lặng bỏ câu.
+            raise SystemExit(f"✗ U{k['unit']:02d} “{h['hoi']}”: mồi nhử chỉ có "
+                             f"{len(moi)} — cần ít nhất 2")
+        if h["dap"] in moi:
+            raise SystemExit(f"✗ U{k['unit']:02d} “{h['hoi']}”: mồi nhử TRÙNG đáp án")
         ra.append({
             "id": f"T{len(ra) + 1}",
-            "loai": h.get("loai") or "chiTiet",
-            "text": h["en"],
-            # Dòng phụ tiếng Việt — chỗ bám cho bé chưa đọc nổi đề.
-            "phu": h.get("vi"),
+            "loai": "yChinh" if len(ra) == 0 else "chiTiet",
+            "text": h["hoi"],
+            "phu": h["vi"],
             "format": "chon",
             "choices": _tron(h["dap"], moi[:3]),
             "answerKey": {"choice": h["dap"]},
-            "solutionNarrative": h.get("giai") or f"“{h['dap']}”.",
+            "solutionNarrative": f"Nhìn trong tranh: “{h['dap']}”.",
         })
     return ra
 
@@ -147,6 +139,16 @@ def muc_doc(k: dict, lop: int) -> tuple[dict, list[dict]]:
     return muc, [{"id": ma_am("cau", x), "chu": x, "tieng": "en"} for x in k["doan"]]
 
 
+# Những chữ mà NGHĨA TỪ ĐIỂN sẽ đánh lừa bé khi chúng đứng làm chữ nối.
+# ⚠ "can" trong "I can see a board." từng được chú là "cái lon" — đúng nghĩa từ
+# vựng của `can` ở bài đồ uống, nhưng sai hẳn với chỗ nó đang đứng. Bảng từ màn
+# viết là thứ bé đọc để ghép câu, nên một nghĩa sai ở đây là dạy sai.
+KHONG_CHU = {"can", "see", "do", "does", "did", "have", "has", "is", "are",
+             "was", "were", "am", "be", "will", "would", "like", "there",
+             "that", "that's", "there's", "this", "it", "it's", "a", "an",
+             "the", "and", "to", "of", "s", "left", "right", "watch", "play"}
+
+
 def tu_trong_tranh(k: dict, lop: int) -> list[dict]:
     """Bảng từ cho màn viết — ĐỦ ĐỂ VIẾT LẠI CẢ ĐOẠN MÔ TẢ.
 
@@ -180,11 +182,13 @@ def tu_trong_tranh(k: dict, lop: int) -> list[dict]:
     def them(t, ng=""):
         if t and t.lower() not in da:
             da.add(t.lower())
-            ra.append({"tu": t, "nghia": ng or nghia.get(t, "")})
+            g = "" if t.lower() in KHONG_CHU else (ng or nghia.get(t, ""))
+            ra.append({"tu": t, "nghia": g})
 
-    # ① vật trong tranh
-    for n in k["nhom"]:
-        them(n["tu"])
+    # ① vật trong tranh — nay lấy từ `vat`, mục nào khai `tu` là một từ vựng thật
+    for n in k["vat"]:
+        if n.get("tu"):
+            them(n["tu"])
     # ② mọi chữ của đoạn mô tả, giữ nguyên dạng viết trong đoạn ("That's", "This")
     for c in k["doan"]:
         # Bỏ những chữ đã nằm trong một CỤM đã thêm ("teddy bear" → bỏ teddy, bear).
@@ -193,12 +197,11 @@ def tu_trong_tranh(k: dict, lop: int) -> list[dict]:
             con = re.sub(rf"\b{re.escape(t)}\b", " ", con, flags=re.I)
         for w in re.findall(r"[A-Za-z][A-Za-z']*", con):
             them(w)
-    # ③ số trên biển — tranh có mà đoạn không nhắc
-    if k.get("bienSo"):
-        so = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five",
-              6: "six", 7: "seven", 8: "eight", 9: "nine", 10: "ten"}
-        them("It's")
-        them(so.get(k["bienSo"]["so"], ""))
+    # ③ mọi chữ trong ĐÁP ÁN các câu hỏi — bé muốn viết thêm ý ấy thì phải có chữ.
+    #    Suy từ đáp án chứ không đoán: đoán là chỗ bản trước thiếu mất "That's".
+    for h in k.get("hoi") or []:
+        for w in re.findall(r"[A-Za-z][A-Za-z']*", h["dap"]):
+            them(w)
     return ra
 
 
@@ -259,13 +262,18 @@ def kich_ban_noi(k: dict, lop: int) -> dict:
         "en": "What can you see?",
         "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?",
     }]
-    for h in k.get("hoiGoiY") or []:
-        if not h.get("dap"):
-            continue          # câu mời chung đã là bước `taTranh` ở trên
-        buoc.append({
-            "loai": "goiY", "en": h["hoi"], "dapMau": h["dap"],
-            "vi": f"Con nhìn tranh rồi đáp nhé — {h.get('y') or 'con xem kỹ trong tranh'}.",
-        })
+    # Câu CÔ HỎI khi bé bí. Câu nào trùng với câu hỏi sau bài đọc thì mang theo
+    # ĐÁP MẪU; câu nào không thì để trống — phòng nói tự nhận mọi câu trong đoạn
+    # làm đáp đúng (`phongnoi.js`: `buoc.dapMau ? [buoc.dapMau] : [...moTa]`).
+    dap_cua = {h["hoi"]: h["dap"] for h in k.get("hoi") or []}
+    for g in k.get("goiY") or []:
+        if g["hoi"] == "What can you see?":
+            continue          # đã là bước `taTranh` mở đầu
+        b = {"loai": "goiY", "en": g["hoi"],
+             "vi": f"Con nhìn tranh rồi đáp nhé — {g['vi']}"}
+        if g["hoi"] in dap_cua:
+            b["dapMau"] = dap_cua[g["hoi"]]
+        buoc.append(b)
     # XÂU CHUỖI: cả đoạn thành MỘT lượt nói. Đây là đích của cả buổi.
     buoc.append({
         "loai": "caDoan",
@@ -285,7 +293,8 @@ def kich_ban_noi(k: dict, lop: int) -> dict:
         "tranh": f"{DUONG_TRANH}/{k['id'].replace(':', '_').replace('.', '_')}.png",
         "moTaTranh": list(k["doan"]),
         "dang": "tranh",
-        "tu": [n["tu"] for n in k["nhom"]],
+        "tu": [x["tu"] for x in tu_trong_tranh(k, lop)
+               if x["nghia"] and x["tu"].lower() not in KHONG_CHU][:10],
         "buoc": buoc,
         "tay": True,
     }
@@ -299,7 +308,11 @@ def main() -> int:
     q = QUYEN[a.lop]
     tm = GOC / f"web/public/content/{q}"
 
-    kho = json.loads((GOC / f"data/tienganh/tranh_lop{a.lop}.json").read_text("utf8"))
+    # ⚠ NGUỒN ĐỔI 20-08-2026: `canh_lopN.json` thay `tranh_lopN.json`. Bản cũ khai
+    # theo KỆ (`nhom` · `ke` · `bienSo`) nên đoạn văn buộc thành bảng liệt kê —
+    # bác bác bỏ cả 42 bài. Bản mới khai theo CẢNH và mang sẵn `moTa` · `hoi` ·
+    # `goiY` viết tay. Xem [[bai-ta-tranh-khong-hoi-thoai]].
+    kho = json.loads((GOC / f"data/tienganh/canh_lop{a.lop}.json").read_text("utf8"))
     # Tên CẢNH của các unit — mồi cho câu hỏi "bức tranh này vẽ ở đâu".
     # ⚠ Lấy `canh` của bản chuẩn, KHÔNG lấy tên unit: tên unit là "Khởi động" ·
     # "Chào hỏi" — không phải NƠI CHỐN nào cả, nên bé loại được mà chẳng cần nhìn
