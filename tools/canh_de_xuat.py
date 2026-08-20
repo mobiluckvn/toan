@@ -31,8 +31,12 @@ GOC = Path(__file__).resolve().parent.parent
 RA = GOC / "docs/canh_de_xuat.xlsx"
 
 
-def C(boi_canh, ai, do_vat, doan, ghi=""):
-    return {"boi_canh": boi_canh, "ai": ai, "do_vat": do_vat, "doan": doan, "ghi": ghi}
+def C(boi_canh, ai, do_vat, doan, ghi="", hoi="", goi_y="", dich=""):
+    """`hoi`  — câu hỏi sau khi ĐỌC (đáp án · mồi nhử).
+    `goi_y`  — câu CÔ HỎI ở phòng nói khi bé bí. Không phải câu bắt bé nhại.
+    `dich`   — đoạn bé phải nói được ở nhịp cuối. Trống thì lấy chính `doan`."""
+    return {"boi_canh": boi_canh, "ai": ai, "do_vat": do_vat, "doan": doan,
+            "ghi": ghi, "hoi": hoi, "goi_y": goi_y, "dich": dich or doan}
 
 
 # ══════════════════════════ LỚP 3 ══════════════════════════
@@ -294,6 +298,173 @@ L4 = {
 }
 
 
+# (unit) → (câu hỏi sau khi đọc, câu CÔ HỎI gợi ý ở phòng nói)
+H3 = {
+0: ("1. What number is it? → It's five.  (mồi: It's two. · It's four. · It's three.)\n"
+    "2. What can you see? → I can see five kites.  (mồi: I can see a dog. · a cat. · a duck.)",
+    "What number is it? · How many kites can you see? · What can you see?"),
+1: ("1. What's his name? → I'm Ben.  (mồi: I'm Minh. · I'm Nam. · I'm Bill.)\n"
+    "2. How are you? → Fine, thank you.  (mồi: I'm Ben. · Goodbye. · Hello.)",
+    "Who says hello? · What does Ben say? · How are you?"),
+2: ("1. What's your name? → My name's Mary.  (mồi: My name's Lucy. · Minh. · Ben.)\n"
+    "2. How old are you? → I'm eight years old.  (mồi: I'm six · seven · nine years old.)",
+    "What's her name? · How old is she?"),
+3: ("1. Who's this? → This is Ms Hoa.  (mồi: This is Mr Long. · Ms Mai. · Mr Nam.)\n"
+    "2. Is this Mr Long? → Yes, it is.  (mồi: No, it isn't.)",
+    "Who's this? · Is this Mr Long?"),
+4: ("1. What's this? → It's a nose.  (mồi: It's an eye. · a hand. · an ear.)\n"
+    "2. What's this? → It's an eye.  (mồi: It's a nose. · a mouth. · a face.)",
+    "What's this? · Touch your face! · What can you see?"),
+5: ("1. What's your hobby? → It's cooking.  (mồi: It's singing. · dancing. · running.)\n"
+    "2. What's she doing? → She's dancing.  (mồi: She's cooking. · singing. · running.)",
+    "What's your hobby? · What's she doing? · Do you like singing?"),
+6: ("1. Is this our classroom? → Yes, it is.  (mồi: No, it isn't.)\n"
+    "2. Where do they go? → Let's go to the library.  (mồi: to the gym · playground · classroom)",
+    "Is this our classroom? · Where's the library?"),
+7: ("1. May I come in? → Yes, you can.  (mồi: No, you can't.)\n"
+    "2. What does the teacher say? → Sit down, please!  (mồi: Come in, please! · Stand up, please! · Open your books, please!)",
+    "May I come in? · What does the teacher say?"),
+8: ("1. What do you have? → I have a pen.  (mồi: I have a ruler. · a book. · an eraser.)\n"
+    "2. Do you have a ruler? → Yes, I do.  (mồi: No, I don't.)",
+    "What do you have? · Do you have a ruler?"),
+9: ("1. What colour is it? → It's red.  (mồi: It's blue. · green. · yellow.)\n"
+    "2. What colour are they? → They're green.  (mồi: They're red. · blue. · black.)",
+    "What colour is it? · What colour are they?"),
+10: ("1. What do you do at break time? → I play chess.  (mồi: I play football. · badminton. · basketball.)\n"
+     "2. What does she do at break time? → She plays badminton.  (mồi: She plays football. · chess. · basketball.)",
+     "What do you do at break time? · What does she play?"),
+11: ("1. Who's this? → It's my sister.  (mồi: It's my brother. · mother. · father.)\n"
+     "2. How old is he? → He's twenty years old.  (mồi: He's ten · twelve · eleven years old.)",
+     "Who's this? · How old is he?"),
+12: ("1. What's her job? → She's a doctor.  (mồi: She's a nurse. · a farmer. · a teacher.)\n"
+     "2. Is he a doctor? → No, he isn't.  (mồi: Yes, he is.)",
+     "What's her job? · Is he a doctor? · What's his job?"),
+13: ("1. Where's your bedroom? → It's here.  (mồi: It's there.)\n"
+     "2. Where are the chairs? → They're in the living room.  (mồi: in the bedroom · kitchen · bathroom)",
+     "Where's your bedroom? · Where are the chairs?"),
+14: ("1. What's in the room? → There's a bed in the room.  (mồi: There's a desk · a chair · a lamp in the room.)\n"
+     "2. Is the door big? → The door is big.  (mồi: The door is small.)",
+     "What's in the room? · Is the door big?"),
+15: ("1. Would you like some bread? → Yes, please.  (mồi: No, thanks.)\n"
+     "2. What would you like to eat? → I'd like some rice, please.  (mồi: some bread · some fish · some meat, please)",
+     "Would you like some bread? · What would you like to eat?"),
+16: ("1. Do you have any dogs? → Yes, I do.  (mồi: No, I don't.)\n"
+     "2. How many dogs do you have? → I have some.  (mồi: I have one. · two. · three.)",
+     "Do you have any dogs? · How many dogs do you have? · What can you see?"),
+17: ("1. What does she have? → She has a kite.  (mồi: She has a car. · a ship. · a plane.)\n"
+     "2. What do they have? → They have toys.  (mồi: They have books. · balls. · kites.)",
+     "What does she have? · What do they have?"),
+18: ("1. What are you doing? → I'm singing.  (mồi: I'm reading. · writing. · dancing.)\n"
+     "2. What's he doing? → He's writing.  (mồi: He's reading. · singing. · dancing.)",
+     "What are you doing? · What's he doing?"),
+19: ("1. What's she doing? → She's skipping.  (mồi: She's cycling. · running. · walking.)\n"
+     "2. What's he doing? → He's running.  (mồi: He's cycling. · skipping. · walking.)",
+     "What's she doing? · What's he doing?"),
+20: ("1. What can you see? → I can see a tiger.  (mồi: I can see a dog. · a cat. · a duck.)\n"
+     "2. What's the tiger doing? → It's swinging.  (mồi: It's running. · walking. · swimming.)",
+     "What can you see? · What's the tiger doing?"),
+}
+
+H4 = {
+0: ("1. Who is this? → This is Mary.  (mồi: Ben. · Lucy. · Minh.)\n"
+    "2. What are they doing? → They're swimming.  (mồi: running. · dancing. · reading.)",
+    "How are you? · Who is this? · What are they doing?"),
+1: ("1. Where are you from? → I'm from Viet Nam.  (mồi: I'm from Japan. · Britain. · Australia.)\n"
+    "2. Where's she from? → She's from Japan.  (mồi: She's from Viet Nam. · America. · Thailand.)",
+    "Where are you from? · Where's she from?"),
+2: ("1. What time is it? → It's six o'clock.  (mồi: It's eight o'clock. · six thirty. · eight thirty.)\n"
+    "2. What time do you get up? → I get up at six o'clock.  (mồi: at eight o'clock · at six thirty · at eight thirty)",
+    "What time is it? · What time do you get up? · What time do you have breakfast?"),
+3: ("1. What day is it today? → It's Monday.  (mồi: It's Sunday. · Friday. · Tuesday.)\n"
+    "2. What do you do on Mondays? → I study at school.  (mồi: I listen to music. · do housework. · watch TV.)",
+    "What day is it today? · What do you do on Mondays?"),
+4: ("1. When's your birthday? → It's in May.  (mồi: It's in June. · April. · March.)\n"
+    "2. What do you want to eat? → I want some jam.  (mồi: some chips · some grapes · some bread)",
+    "When's your birthday? · What do you want to eat?"),
+5: ("1. Can you ride a bike? → Yes, I can.  (mồi: No, I can't.)\n"
+    "2. Can she swim? → No, she can't, but she can draw.  (mồi: Yes, she can.)",
+    "Can you ride a bike? · Can she swim? · What can he do?"),
+6: ("1. Where's your school? → It's in the city.  (mồi: It's in the town. · village. · countryside.)\n"
+    "2. How many buildings are there at your school? → There are three.  (mồi: There are two. · four. · five.)",
+    "Where's your school? · How many buildings are there?"),
+7: ("1. What subjects do you have today? → I have English and maths.  (mồi: art and music · science and art · maths and music)\n"
+    "2. When do you have maths? → I have it on Mondays.  (mồi: on Fridays · Tuesdays · Sundays)",
+    "What subjects do you have today? · When do you have maths?"),
+8: ("1. What's your favourite subject? → It's art.  (mồi: It's maths. · music. · science.)\n"
+    "2. Why do you like art? → Because I want to be a painter.  (mồi: a singer · a teacher · a doctor)",
+    "What's your favourite subject? · Why do you like art?"),
+9: ("1. When's your sports day? → It's in October.  (mồi: It's in May. · June. · July.)\n"
+    "2. Is your sports day in May? → No, it isn't.  (mồi: Yes, it is.)",
+    "When's your sports day? · Is your sports day in May?"),
+10: ("1. Where were you last summer? → I was in Tokyo.  (mồi: I was in London. · Sydney. · Bangkok.)\n"
+     "2. Were you in the countryside last weekend? → Yes, I was.  (mồi: No, I wasn't.)",
+     "Where were you last summer? · Were you at the beach?"),
+11: ("1. Where do you live? → I live in Tran Hung Dao Street.  (mồi: khác tên phố, cùng khuôn)\n"
+     "2. What's the street like? → It's a busy street.  (mồi: It's a quiet · noisy · big street.)",
+     "Where do you live? · What's the street like?"),
+12: ("1. What does she do? → She's a doctor.  (mồi: She's a nurse. · a teacher. · a farmer.)\n"
+     "2. Where does she work? → She works at a hospital.  (mồi: at a school · at a factory · on a farm)",
+     "What does she do? · Where does she work?"),
+13: ("1. What does he look like? → He's tall.  (mồi: He's short. · slim. · big.)\n"
+     "2. What does she look like? → She has long hair.  (mồi: She has short hair. · a round face. · big eyes.)",
+     "What does he look like? · What does she look like?"),
+14: ("1. What do you do in the morning? → I clean the floor.  (mồi: I wash the dishes. · wash the clothes. · cook meals.)\n"
+     "2. When do you watch TV? → I watch TV in the evening.  (mồi: in the morning · at noon · in the afternoon)",
+     "What do you do in the morning? · When do you watch TV?"),
+15: ("1. Where does he go on Saturdays? → He goes to the sports centre.  (mồi: to the cinema · gym · swimming pool)\n"
+     "2. What does she do on Sundays? → She does yoga.  (mồi: She plays tennis. · watches films. · cooks meals.)",
+     "Where does he go on Saturdays? · What does she do on Sundays?"),
+16: ("1. What was the weather like last weekend? → It was sunny.  (mồi: It was rainy. · windy. · cloudy.)\n"
+     "2. Do you want to go to the water park? → Great! Let's go.  (mồi: Sorry, I can't.)",
+     "What was the weather like? · Do you want to go to the water park?"),
+17: ("1. What does it say? → It says stop.  (mồi: It says go straight. · turn left. · turn right.)\n"
+     "2. How can I get to the bookshop? → Go straight and turn left.  (mồi: … and turn right.)",
+     "What does it say? · How can I get to the bookshop?"),
+18: ("1. Where's the bookshop? → It's near the bakery.  (mồi: It's opposite · behind · between the bakery.)\n"
+     "2. How much is the T-shirt? → It's sixty thousand dong.  (mồi: khác số, cùng khuôn)",
+     "Where's the bookshop? · How much is the T-shirt?"),
+19: ("1. What are these animals? → They're giraffes.  (mồi: They're lions. · hippos. · peacocks.)\n"
+     "2. Why do you like peacocks? → Because they dance beautifully.  (mồi: they roar loudly · run quickly · sing merrily)",
+     "What are these animals? · Why do you like peacocks?"),
+20: ("1. What's he doing? → He's building a campfire.  (mồi: He's putting up a tent. · taking a photo. · telling a story.)\n"
+     "2. What are they doing? → They're playing tug of war.  (mồi: They're playing card games. · singing songs. · dancing.)",
+     "What's he doing? · What are they doing?"),
+}
+
+
+# Cặp đáp mẫu của sách — KHÔNG áp luật "mồi cùng khuôn với đáp án", vì chính sách
+# dạy chúng thành cặp: Có/Không · nhận lời/từ chối.
+YES_NO = ("Yes,", "No,", "Great!", "Sorry,")
+
+
+def moi_du(hoi: str) -> str:
+    """Viết ĐỦ CÂU cho mồi nhử.
+
+    ⚠ Bác duyệt thì phải thấy câu bé sẽ nhìn thấy. Viết tắt kiểu
+    "(mồi: It's an eye. · a hand. · an ear.)" thì che mất đúng thứ cần soi: mồi có
+    CÙNG KHUÔN với đáp án không. Lớp 3 từng có 33 câu mà đáp án là lựa chọn DUY
+    NHẤT mang khuôn của nó — bé chọn đúng bằng mắt, không cần đọc.
+
+    Cặp Có/Không (Yes… / No…) thì KHÔNG áp luật cùng khuôn: đó là cặp đáp mẫu
+    hợp lệ của chính sách.
+    """
+    import re as _re
+
+    def sua(m):
+        dap, moi = m.group(1).strip(), [x.strip() for x in m.group(2).split("·")]
+        nd = dap.split()
+        ra = []
+        for x in moi:
+            nx = x.split()
+            if x.startswith(YES_NO) or x.startswith(("khác", "…")) or len(nx) >= len(nd):
+                ra.append(x)
+            else:
+                ra.append(" ".join(nd[:len(nd) - len(nx)] + nx))
+        return f"→ {dap}  (mồi: {' · '.join(ra)})"
+
+    return _re.sub(r"→ (.+?)\s+\(mồi: (.+?)\)", sua, hoi)
+
+
 def main() -> int:
     from openpyxl import Workbook
     from openpyxl.styles import Font, Alignment, PatternFill
@@ -303,13 +474,20 @@ def main() -> int:
     ws.title = "Bối cảnh đề xuất"
     dau = ["Quyển", "Bài", "Chủ đề bài", "SÁCH dạy mẫu câu gì",
            "BỐI CẢNH đề xuất", "Ai · đang làm gì", "Đồ vật trong tranh",
-           "ĐOẠN ĐỌC đề xuất", "Ghi chú", "Bác duyệt"]
+           "ĐOẠN ĐỌC đề xuất", "CÂU HỎI sau khi đọc",
+           "NÓI · câu CÔ HỎI khi bé bí", "NÓI · đoạn bé phải nói được",
+           "Ghi chú", "Bác duyệt"]
     ws.append(dau)
     for i, _ in enumerate(dau, 1):
         o = ws.cell(row=1, column=i)
         o.font = Font(bold=True, color="FFFFFF")
         o.fill = PatternFill("solid", fgColor="0B4EA8")
         o.alignment = Alignment(vertical="center", wrap_text=True)
+
+    for bang, hoi in ((L3, H3), (L4, H4)):
+        for so, k in bang.items():
+            if so in hoi:
+                k["hoi"], k["goi_y"] = moi_du(hoi[so][0]), hoi[so][1]
 
     for lop, bang in ((3, L3), (4, L4)):
         c = json.loads((GOC / f"data/tienganh/chuan_lop{lop}.json").read_text("utf8"))
@@ -319,16 +497,49 @@ def main() -> int:
         for so in sorted(bang):
             k = bang[so]
             ws.append([f"lớp {lop}", f"U{so:02d}", ten.get(so, ""), mau.get(so, ""),
-                       k["boi_canh"], k["ai"], k["do_vat"], k["doan"], k["ghi"], ""])
+                       k["boi_canh"], k["ai"], k["do_vat"], k["doan"],
+                       k["hoi"], k["goi_y"], k["dich"], k["ghi"], ""])
 
-    rong = {"A": 8, "B": 6, "C": 30, "D": 46, "E": 40, "F": 40, "G": 34, "H": 56,
-            "I": 40, "J": 12}
+    rong = {"A": 8, "B": 6, "C": 28, "D": 42, "E": 38, "F": 38, "G": 30, "H": 52,
+            "I": 62, "J": 44, "K": 52, "L": 38, "M": 12}
     for cot, w in rong.items():
         ws.column_dimensions[cot].width = w
     for r in ws.iter_rows(min_row=2):
         for o in r:
             o.alignment = Alignment(vertical="top", wrap_text=True)
     ws.freeze_panes = "A2"
+
+    w2 = wb.create_sheet("Phòng nói chạy thế nào")
+    for r in [
+        ["PHÒNG NÓI — BA NHỊP, GIỐNG NHAU Ở MỌI BÀI", ""],
+        ["", ""],
+        ["Bé thấy gì", "CHỈ bức tranh. Không thấy đoạn văn."],
+        ["Cô (AI) có gì", "Bản mô tả tranh bằng chữ — cột “đoạn bé phải nói được”."],
+        ["", ""],
+        ["Nhịp 1 · MỜI TẢ", "Cô: “Con nhìn bức tranh và tả cho cô nghe nhé.” "
+                            "Bé tự nói. Cô KHÔNG đọc đoạn ra."],
+        ["Nhịp 2 · GỢI Ý", "Bé bí thì cô HỎI — dùng đúng câu ở cột “câu CÔ HỎI khi bé bí”. "
+                           "Bé ĐÁP, không nhại lại câu hỏi. Đáp sai thì cô nhắc lại CÂU HỎI trước, "
+                           "rồi mới tới chỗ lệch."],
+        ["Nhịp 3 · CẢ ĐOẠN", "Cô xâu chuỗi mấy câu bé vừa nói, rồi mời bé nói LIỀN cả đoạn. "
+                             "Buổi chỉ xong khi bé nói được cả đoạn."],
+        ["", ""],
+        ["KHÔNG có gì khác", "Không bước chào, không bước từ mới, không mẫu câu, "
+                             "không thẻ “con thích cái nào nhất”, không bảng “con nói về”."],
+        ["Vì sao", "Bác chốt 19-08-2026: “Chỉ để một bức tranh sau đó yêu cầu học sinh mô tả "
+                   "bức tranh… Đừng làm những thứ khác ngoài mấy thứ đó ra.”"],
+        ["", ""],
+        ["⚠ Chỗ từng hỏng", "Phòng nói từng chấm điểm bé theo câu CÔ vừa nói, nên bé nhại lại "
+                             "câu hỏi “What can you see?” vẫn được 9/10. Nay mỗi lượt của cô mang "
+                             "theo danh sách câu ĐƯỢC TÍNH LÀ ĐÚNG."],
+    ]:
+        w2.append(r)
+    w2.column_dimensions["A"].width = 26
+    w2.column_dimensions["B"].width = 96
+    for row in w2.iter_rows():
+        for o in row:
+            o.alignment = Alignment(vertical="top", wrap_text=True)
+    w2["A1"].font = Font(bold=True, size=13)
 
     RA.parent.mkdir(parents=True, exist_ok=True)
     wb.save(RA)
