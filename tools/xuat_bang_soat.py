@@ -33,6 +33,7 @@ from pathlib import Path
 
 GOC = Path(__file__).resolve().parent.parent
 RA = GOC / "docs/bang_soat_ta_tranh.xlsx"
+QUYEN = {3: "ta3", 4: "ta4", 5: "ta5"}
 TRANH = GOC / "web/public/content/tienganh/tranh"
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -175,15 +176,15 @@ def main() -> int:
 
     vien = Border(*[Side(style="thin", color="C8D4E2")] * 4)
     dong = 1
-    for lop in (3, 4):
+    for lop in (3, 4, 5):
         canh = json.loads((GOC / f"data/tienganh/canh_lop{lop}.json").read_text("utf8"))
         cn = json.loads((GOC / f"data/tienganh/chuan_lop{lop}.json").read_text("utf8"))
         ten_unit = {u["so"]: u["canh"] for u in cn["unit"]}
         viet = {v["unit"]: v for v in json.loads(
-            (GOC / f"web/public/content/ta{lop}/vietbai.json").read_text("utf8"))
+            (GOC / f"web/public/content/{QUYEN[lop]}/vietbai.json").read_text("utf8"))
             if v.get("dang") == "tranh"}
         noi = {int(k["bai"].split(".B")[1]): k for k in json.loads(
-            (GOC / f"web/public/content/ta{lop}/kichban_noi.json").read_text("utf8"))
+            (GOC / f"web/public/content/{QUYEN[lop]}/kichban_noi.json").read_text("utf8"))
             if k.get("dang") == "tranh"}
 
         for k in canh:
@@ -208,7 +209,10 @@ def main() -> int:
 
             ws.append([f"lớp {lop}", f"U{u:02d}", ten_unit.get(u, ""), k["ten"],
                        "", k["moTa"], " ".join(k["doan"]), hoi, noi_txt, tu_txt,
-                       DOI.get((lop, u), "— giữ nguyên như bảng đã duyệt —"), ""])
+                       DOI.get((lop, u),
+                               "— viết mới cho lớp 5, bác chưa duyệt bản nháp nào —"
+                               if lop == 5 else "— giữ nguyên như bảng đã duyệt —"),
+                       ""])
 
             tep = TRANH / f"{k['id'].replace(':', '_').replace('.', '_')}.png"
             if tep.exists():
@@ -248,6 +252,7 @@ def main() -> int:
     n_doi = sum(1 for r in range(2, dong + 1)
                 if not str(ws.cell(row=r, column=11).value or "").startswith("—"))
     print(f"→ {RA.relative_to(GOC)}  ({dong - 1} bài · {n_doi} bài có sửa khi làm)")
+    print("   lớp 3: 21 · lớp 4: 21 · lớp 5: 20")
     return 0
 
 
