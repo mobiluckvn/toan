@@ -31,7 +31,8 @@ import { chamTot, chamCau, datNoi, loiKhen } from '../lib/chamnoi.js';
  * Máy không nghe được, không đọc được, hoặc mạng hỏng — cả ba đều nói THẲNG ra và
  * vẫn cho bé ở lại phòng nghe cô nói. Đây là chỗ luyện thêm, không phải cửa ải.
  */
-export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
+export default function PhongNoi({ bai, tienDo, tenBe = 'con',
+                                   soThich = null, onSoThich = null }) {
   /**
    * QUYỂN VÀ LỚP SUY TỪ CHÍNH BÀI, không nhận từ ngoài.
    *
@@ -153,6 +154,26 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
   const ket = loiKet(buoi);
   const hoiThich = cauHoiSoThich(von);
 
+  /**
+   * SỞ THÍCH NHỚ TỪ BUỔI TRƯỚC — nhưng CHỈ DÙNG NẾU TỪ ẤY CÒN TRONG VỐN.
+   *
+   * `dongHoSo()` nhét từ này thẳng vào lời dặn LLM ("The child told you they like
+   * …"). Vốn từ là hàng rào duy nhất giữ cô giáo máy không nói ra chữ bé chưa học
+   * — nên một từ đi vòng qua hàng rào ấy là tự mình chọc thủng tầng chống ảo giác,
+   * mà chọc từ phía trong thì `cauHopLe()` phía sau cũng không cứu được: nó bác câu
+   * có chữ lạ, thế là cô giáo cứ nói rồi cứ bị bác, buổi học đứng im.
+   *
+   * Sổ sống lâu hơn nội dung — bé đổi quyển, sách dồn unit, hay sổ cũ còn nằm trên
+   * máy sau một lần dựng lại — nên KHÔNG tin từ nhớ được. Soi lại, mỗi lần mở màn.
+   */
+  const thichNho = React.useMemo(() => {
+    const t = String(soThich?.tu || '');
+    if (!t) return null;
+    const co = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)].some((x) => x.tu === t);
+    return co ? t : null;
+  }, [soThich, von]);
+  const thichDung = thich || thichNho;
+
   useEffect(() => () => { phien.current?.huy(); thoiDoc(); }, []);
   /* Nhịp 30 giây chỉ để VẼ LẠI, không đụng gì tới dữ liệu — hết 20 phút mà màn
      hình không tự biết thì bé cứ nói tiếp, rồi đúng lượt sau mới bị cắt ngang. */
@@ -205,7 +226,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
     datLoi(null); datDangHoi(true);
     try {
       const tra = await hoiCoGiao({ von, lichSu: ds, tenBe, lop,
-        haDoKho: buoi.haDoKho, hoSo: { thich }, kichBan });
+        haDoKho: buoi.haDoKho, hoSo: { thich: thichDung }, kichBan });
       /* `buoc` — bước nào sinh ra lượt này. Không bày ra màn hình, nhưng
          `luotLuyen` cần: lượt bé đáp lời chào KHÔNG được tính là một lần luyện. */
       const luot = { vai: 'may', chu: tra.en || tra.vi, en: tra.en, vi: tra.vi,
@@ -233,7 +254,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
           ? 'Con đăng nhập rồi mới vào phòng này được nhé.'
           : 'Cô giáo máy chưa trả lời được. Con thử lại nhé.');
     } finally { datDangHoi(false); }
-  }, [von, tenBe, lop, bai, buoi.haDoKho, thich, kichBan, ma, mocEn]);
+  }, [von, tenBe, lop, bai, buoi.haDoKho, thichDung, kichBan, ma, mocEn]);
 
   /* Cô chào trước. Bé 6 tuổi mở ra thấy màn trắng thì không biết làm gì cả. */
   useEffect(() => {
@@ -452,14 +473,17 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con' }) {
           trống của mẫu câu. Bài tả tranh không có ô trống nào, và cũng không hỏi
           bé thích gì — nó hỏi bé NHÌN THẤY gì. Để lại là chen một việc lạ vào giữa,
           lại còn bày sẵn tên mấy vật trong tranh kèm hình. */}
-      {!laTranh && !thich && hoiThich && buoi.trangThai === 'dang' && (
+      {/* `thichDung` chứ không `thich`: nhớ được từ buổi trước thì ĐỪNG HỎI LẠI —
+          hỏi lại chính là cái làm phần nhớ thành vô nghĩa. */}
+      {!laTranh && !thichDung && hoiThich && buoi.trangThai === 'dang' && (
         <div className="rounded-xl2 border-2 border-gold bg-gold-pale p-4">
           <p className="text-lg font-bold text-navy">{hoiThich.hoi}</p>
           <p className="text-sm text-gold-dark">Con chọn một cái, rồi mình sẽ tập nói về nó.</p>
           <ul className="mt-2 flex flex-wrap gap-2">
             {hoiThich.chon.map((t) => (
               <li key={t.tu}>
-                <button type="button" onClick={() => datThich(t.tu)}
+                <button type="button"
+                  onClick={() => { datThich(t.tu); onSoThich?.(t.tu, bai?.unit ?? null); }}
                   aria-label={`Con thích ${t.nghia} (${t.tu})`}
                   className="flex w-[5rem] flex-col items-center gap-0.5 rounded-xl2 border-2
                     border-line bg-white p-2 transition hover:brightness-95

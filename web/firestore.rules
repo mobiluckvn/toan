@@ -132,17 +132,29 @@ service cloud.firestore {
 
     match /hocBaTA/{userId}/muc/{mucId} {
       allow read:  if canRead(userId);
-      /* Hai loại, và danh sách vẫn hẹp là cố ý — máy con không dựng được một hình
-         dạng thứ ba mà sổ phụ huynh không đọc nổi.
-           chuong  kỳ ôn tập chương
-           viet    bài viết ngắn, ĐIỂM DO AI CHẤM (bác chốt 18-08-2026)
+      /* Ba loại, và danh sách vẫn hẹp là cố ý — máy con không dựng được một hình
+         dạng thứ tư mà sổ phụ huynh không đọc nổi.
+           chuong   kỳ ôn tập chương
+           viet     bài viết ngắn, ĐIỂM DO AI CHẤM (bác chốt 18-08-2026)
+           soThich  từ bé thích nhất trong quyển — cô giáo máy lấy làm ngữ cảnh
 
          ⚠ `viet` chứa CHÍNH BÀI BÉ VIẾT và lời chấm — bố mẹ phải đọc được (bác
          chốt), nên vẫn nằm trong học bạ mà `canRead` cho cả giáo viên xem, đúng như
          mọi kết quả học khác. Khác hẳn `phongNoiTA`: chỗ ấy là tiếng nói riêng tư
-         của bé nên chỉ chính chủ đọc được. */
+         của bé nên chỉ chính chủ đọc được.
+
+         ⚠ `soThich` NẰM ĐÚNG CHỖ NÀY chứ không phải `phongNoiTA`, và đó là chủ ý:
+         nó chỉ chứa MỘT TỪ LẤY TỪ CHÍNH BÀI HỌC ('dolphin', 'football') — cùng
+         hạng với điểm số, không phải lời bé tự nói ra. Nếu sau này có ai muốn giữ
+         thêm thứ bé tự kể về mình thì thứ ấy thuộc `phongNoiTA`, đừng đắp vào đây.
+
+         ⚠ THÊM MỘT LOẠI Ở ĐÂY LÀ PHẢI SỬA BỐN CHỖ, không phải một: luật này ·
+         `duLieu.js` bên đọc · chỗ gọi `luuMucHocBa` ở `ManTiengAnh.jsx` · và phải
+         `deploy --only firestore:rules` TRƯỚC khi bản mới lên. Thiếu bước deploy
+         thì Firestore từ chối TRONG IM LẶNG. Cổng `hocba_khop_luat.test.mjs` soi
+         ba chỗ đầu; bước deploy thì không cổng nào canh được. */
       allow write: if isMine(userId)
-                   && request.resource.data.loai in ['chuong', 'viet'];
+                   && request.resource.data.loai in ['chuong', 'viet', 'soThich'];
     }
 
     /* ── PHÒNG LUYỆN NÓI: buổi nói chuyện của bé với cô giáo máy ──

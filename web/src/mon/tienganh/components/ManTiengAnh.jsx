@@ -9,7 +9,7 @@ import {
 } from '../lib/noiDung.js';
 import {
   ghiBai, ghiChang, ghiMoc, ghiChuong, khoaChuong, ghiDocHieu, khoaDocHieu,
-  ghiBaiViet, khoaBaiViet,
+  ghiBaiViet, khoaBaiViet, ghiSoThich, khoaSoThich,
 } from '../lib/progress.js';
 import { luuBai, luuMucHocBa } from '../lib/duLieu.js';
 import {
@@ -153,6 +153,26 @@ export default function ManTiengAnh({
     luuMucHocBa(learnerId, 'viet', k, { giaTri: sau.baiViet[k] });
   }, [tienDo, datTienDo, learnerId, ct.ma]);
 
+  /**
+   * BÉ CHỌN TỪ MÌNH THÍCH NHẤT — ghi hai nơi, đúng khuôn bài viết ở trên.
+   *
+   * Phòng nói xưa nay hỏi rồi dùng ngay trong phiên, nhưng không nhớ. Ghi lại thì
+   * cô giáo máy còn nhớ bé thích gì ở buổi sau — đó là cả điểm khác nhau giữa "có
+   * hỏi" và "có biết về bé".
+   *
+   * ⚠ GHI Ở ĐÂY chứ không ghi thẳng trong `PhongNoi.jsx`, và không phải chuyện gu
+   * kiến trúc: cổng `hocba_khop_luat.test.mjs` chỉ soi `luuMucHocBa` trong CHÍNH
+   * tệp này. Gọi ở chỗ khác thì hình dạng gói không ai canh, mà sai hình dạng gói
+   * thì máy chủ từ chối trong im lặng.
+   */
+  const xongSoThich = useCallback((tu, unit = null) => {
+    if (!tu) return;
+    const sau = ghiSoThich(tienDo, ct.ma, tu, unit);
+    datTienDo(sau);
+    const k = khoaSoThich(ct.ma);
+    luuMucHocBa(learnerId, 'soThich', k, { giaTri: sau.soThich[k] });
+  }, [tienDo, datTienDo, learnerId, ct.ma]);
+
   if (view.page === 'vietbai' && view.vietId) {
     const b = viets.find((x) => x.id === view.vietId);
     return (
@@ -189,6 +209,8 @@ export default function ManTiengAnh({
         /* Biệt danh của chính bé đi vào đoạn hội thoại — bé nghe tên mình trong
            một câu tiếng Anh. Đó là chỗ bài này khác mọi bài luyện phát âm khác. */
         tenBe={(hoSo?.displayName || '').trim().split(/\s+/).pop() || 'Bo'}
+        soThich={(tienDo.soThich || {})[khoaSoThich(ct.ma)] || null}
+        onSoThich={xongSoThich}
       />
     );
   }

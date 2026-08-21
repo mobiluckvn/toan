@@ -45,7 +45,8 @@ const maCauAm = (c) => maCua(c, 'en');
  * ở `lib/dandat.js` để cổng chạy bằng node soi được.
  */
 export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
-                                 onMoc, tenBe = 'Bo' }) {
+                                 onMoc, tenBe = 'Bo', soThich = null,
+                                 onSoThich = null }) {
   const [bai, datBai] = useState(null);
   const [loi, datLoi] = useState(null);
   const [tai, datTai] = useState(0);
@@ -142,7 +143,8 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
         <SatHach bai={bai} onXong={(kq) => onXongBai(kq, hangXom(id).sau)} />
       )}
       {k === 'phong' && (
-        <PhongNoi bai={bai} tienDo={tienDo} tenBe={tenBe} />
+        <PhongNoi bai={bai} tienDo={tienDo} tenBe={tenBe}
+                  soThich={soThich} onSoThich={onSoThich} />
       )}
     </Khung>
   );

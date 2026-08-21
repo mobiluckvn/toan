@@ -329,6 +329,8 @@ def chuan(lop: int, bu: dict) -> dict:
             "mau_cau": mau_cau_cua_unit(u, nut, canh, nguoc, day_mau_cau),
         })
 
+    # ── (xem `thang_tu_vung` ở dưới cho thang tiên quyết của TỪ VỰNG) ──
+
     # ── TÊN NHÓM NGHĨA ──
     # Hỏi NGƯỢC: đi từ vai ĐANG DÙNG THẬT rồi tìm tên, chứ không duyệt bảng tên rồi
     # tick. Duyệt bảng tên thì lớp sau khai thêm vai mới là bảng cũ vẫn "đủ" — đúng
@@ -347,7 +349,9 @@ def chuan(lop: int, bu: dict) -> dict:
             continue
         for e in es:
             if e["source"] in ids and e["target"] in ids:
-                thang.append({"can": e["target"], "truoc_khi": e["source"]})
+                thang.append({"can": e["target"], "truoc_khi": e["source"],
+                              "loai": "ban_do"})
+    thang += thang_tu_vung(ra_unit)
 
     return {
         "_doc": "Bản đồ tiếng Anh đã CHUẨN HOÁ — một hình dạng cho mọi lớp. "
@@ -367,6 +371,66 @@ def chuan(lop: int, bu: dict) -> dict:
         "vai_ten": vai_ten,
         "_thieu": thieu,
     }
+
+
+# Nhóm từ vựng CÓ THỨ TỰ THẬT — và chỉ những nhóm này.
+#
+# Bản đồ có 583 cạnh REQUIRES nhưng KHÔNG cạnh nào nối hai từ vựng: 0/680 nút từ
+# vựng lớp 1–5 mang `prerequisite_links`. Trong khi mục 2.2.2c của luận văn nêu
+# đích danh chuỗi số đếm làm ví dụ. Đây là chỗ bù cái thiếu ấy.
+#
+# ⚠ DANH SÁCH NÀY PHẢI HẸP, và hẹp là phần khó nhất của việc này. Cám dỗ là nối
+# mọi nhóm nghĩa cho "đủ" — nhưng `sothich`, `mau`, `convat`, `thucan` chỉ là TẬP
+# HỢP, không phải chuỗi: học `red` trước `blue` không giúp gì cho `blue`. Nối bừa
+# thì phép lan truyền chẩn đoán ở mục 2.3.3 đi ngược vào một cạnh vô nghĩa rồi
+# tuyên bố bé "hổng gốc ở màu đỏ" — sai mà nghe rất có lý, nên không ai cãi lại.
+#
+# `tanso` (always · often · sometimes · rarely · never) là ca sát nút nhất: nó CÓ
+# thứ tự — thứ tự về TẦN SUẤT. Nhưng thứ tự tần suất không phải thứ tự HỌC:
+# "often" không phải điều kiện để hiểu "sometimes", sách dạy cả sáu từ cùng lúc.
+# Nên KHÔNG nối. Ranh giới là: nhóm nào mà đọc lên phải theo đúng dãy (đếm một
+# hai ba, đọc tháng, đọc thứ) thì nối; nhóm nào chỉ xếp hạng được thì không.
+NHOM_CO_THU_TU = ("so", "thang", "thu")
+
+
+def thang_tu_vung(ra_unit: list[dict]) -> list[dict]:
+    """Thang tiên quyết giữa các TỪ trong một nhóm có thứ tự.
+
+    Trả hai loại cạnh, và CÓ NHÃN phân biệt — bên dùng phải chọn được:
+
+      trong_bai  hai từ liền nhau trong CÙNG một unit (ten → eleven cùng U11).
+                 Đây là thứ tự ĐỌC, không phải cửa ải. ⚠ Bên nào dùng nó để
+                 KHOÁ bài đều sai: sách dạy cả block trong một buổi, chặn bé ở
+                 "three" vì chưa thạo "two" là chặn giữa chính bài đang học.
+
+      noi_bai    bắc cầu giữa hai unit của cùng nhóm (ten ở U00 → eleven ở U11).
+                 Đây MỚI là ràng buộc tiên quyết thật, và là cạnh đáng cho lan
+                 truyền chẩn đoán đi ngược: bé sai "seventeen" thì đáng ngờ khối
+                 số đếm học từ unit trước.
+
+    Vì sao tách nhãn thay vì chỉ sinh `noi_bai` cho gọn: sinh mỗi `noi_bai` thì
+    khối số của một unit KHÔNG nối với nhau, phép duyệt ngược bước vào khối rồi
+    dừng ngay ở từ đầu tiên gặp được, không đi hết được khối. Còn gộp chung một
+    nhãn thì sớm muộn có người lấy cả hai đi khoá bài. Nên: sinh cả hai, gắn
+    nhãn, và ghi rõ ở đây cái nào dùng được vào việc gì.
+    """
+    ra = []
+    for vai in NHOM_CO_THU_TU:
+        # Giữ nguyên thứ tự unit và thứ tự từ TRONG unit — thứ tự ấy là dữ liệu,
+        # sách xếp `one two three` chứ không xếp theo bảng chữ cái.
+        khoi = []
+        for u in sorted(ra_unit, key=lambda x: x["so"]):
+            ds = [t["ma"] for t in u["tu"] if vai in (t.get("vai") or [])]
+            if ds:
+                khoi.append(ds)
+        for b in khoi:
+            for truoc, sau in zip(b, b[1:]):
+                ra.append({"can": truoc, "truoc_khi": sau,
+                           "loai": "trong_bai", "nhom": vai})
+        for b1, b2 in zip(khoi, khoi[1:]):
+            ra.append({"can": b1[-1], "truoc_khi": b2[0],
+                       "loai": "noi_bai", "nhom": vai})
+    return ra
 
 
 def main() -> int:

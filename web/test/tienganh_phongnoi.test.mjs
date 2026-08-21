@@ -1631,7 +1631,17 @@ test('bài tả tranh KHÔNG hỏi "con thích cái nào nhất"', () => {
      mấy vật trong tranh kèm hình — tức là cho sẵn đáp án lần nữa. */
   const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
     .replace(/\/\*[\s\S]*?\*\//g, '').replace(/\{\/\*[\s\S]*?\*\/\}/g, '');
-  assert.match(pn, /!laTranh && !thich && hoiThich/, 'bài tả tranh phải giấu thẻ sở thích');
+  /* ⚠ KHÔNG ghim cả biểu thức. Bản đầu viết `/!laTranh && !thich && hoiThich/` —
+     ghim đúng từng chữ, kể cả cái mà cổng này KHÔNG quan tâm. Nên khi sở thích
+     được cho nhớ qua buổi (`thich` → `thichDung`, xem `tienganh_sothich.test.mjs`)
+     thì cổng đỏ lên, trong khi điều nó canh — bài tả tranh giấu thẻ — vẫn nguyên.
+
+     Cổng ghim quá chặt thì mỗi lần sửa việc khác lại đỏ một lần, và cách người ta
+     dập nó nhanh nhất là nới toang ra; thế là mất luôn phép canh thật. Nên chỉ
+     ghim ĐÚNG hai đầu: `!laTranh` phải đứng trước, và `hoiThich` là thứ bị chặn.
+     Ở giữa để `!thich\w*` — cho `thich` lẫn `thichDung`, không cho bỏ trống. */
+  assert.match(pn, /!laTranh\s*&&\s*!thich\w*\s*&&\s*hoiThich/,
+    'bài tả tranh phải giấu thẻ sở thích');
   assert.match(pn, /Con thích cái nào nhất\?|cauHoiSoThich/, 'bài thường vẫn còn thẻ ấy');
 });
 

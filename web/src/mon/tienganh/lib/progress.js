@@ -18,7 +18,7 @@ const khoa = () => {
 };
 
 export const soRong = () => ({
-  micros: {}, chapters: {}, docHieu: {}, baiViet: {}, updatedAt: null,
+  micros: {}, chapters: {}, docHieu: {}, baiViet: {}, soThich: {}, updatedAt: null,
 });
 
 export function napTienDo(kho = globalThis.localStorage) {
@@ -234,6 +234,39 @@ export function ghiBaiViet(p, ma, so, { viet, cham }, phamVi = 'chuong') {
   };
 }
 
+/** Khoá sở thích — MỘT mục cho cả quyển, không phải mỗi unit một mục. */
+export const khoaSoThich = (ma) => `${ma}:ST`;
+
+/**
+ * BÉ THÍCH TỪ NÀO NHẤT — để cô giáo máy lấy đúng thứ ấy làm ngữ cảnh.
+ *
+ * Phòng nói xưa nay CÓ hỏi ("Con thích cái nào nhất?") và CÓ dùng — `dongHoSo()`
+ * đưa thẳng vào lời dặn LLM. Nhưng câu trả lời chỉ sống trong `useState` của một
+ * phiên: bé đóng màn là quên, mở lại là hỏi lại từ đầu. Đo theo mục 2.1.2 của
+ * luận văn thì chiều Động lực chỉ đạt một nửa vì đúng chỗ này.
+ *
+ * ── MỘT MỤC CHO CẢ QUYỂN, VÀ VÌ SAO KHÔNG PHẢI MỖI UNIT MỘT MỤC ──
+ * Mỗi unit một mục thì lại thành hỏi lại mỗi bài — không khác gì cũ. Vốn từ của
+ * phòng nói là vốn TÍCH LUỸ (`vonTu()` gom cả unit trước), nên từ bé chọn ở unit
+ * 3 vẫn nằm trong vốn khi bé học unit 12: nhớ một lần là dùng được cả quyển.
+ *
+ * ⚠ BÊN ĐỌC PHẢI SOI LẠI TỪ NÀY CÓ TRONG VỐN KHÔNG. Sổ sống lâu hơn nội dung:
+ * đổi sách, dồn unit, hay bé mang sổ quyển này sang quyển khác thì từ nhớ được có
+ * thể nằm NGOÀI vốn hiện tại — mà `dongHoSo()` nhét thẳng nó vào lời dặn LLM. Thế
+ * là chính tầng chống ảo giác từ vựng bị mình chọc thủng từ bên trong. Chỗ soi
+ * nằm ở `PhongNoi.jsx`, và cổng `tienganh_sothich.test.mjs` canh.
+ */
+export function ghiSoThich(p, ma, tu, unit = null) {
+  const k = khoaSoThich(ma);
+  return {
+    ...p,
+    soThich: {
+      ...(p.soThich || {}),
+      [k]: { tu: String(tu || ''), unit, at: new Date().toISOString() },
+    },
+  };
+}
+
 /** Gộp sổ tại máy với sổ trên máy chủ — bản nào MỚI HƠN thì thắng, từng bài một. */
 export function gopTienDo(a, b) {
   if (!b) return a;
@@ -257,5 +290,10 @@ export function gopTienDo(a, b) {
     const cu = baiViet[k];
     if (!cu || String(v.at || '') > String(cu.at || '')) baiViet[k] = v;
   }
-  return { ...a, micros, chapters, baiViet };
+  const soThich = { ...(a.soThich || {}) };
+  for (const [k, v] of Object.entries(b.soThich || {})) {
+    const cu = soThich[k];
+    if (!cu || String(v.at || '') > String(cu.at || '')) soThich[k] = v;
+  }
+  return { ...a, micros, chapters, baiViet, soThich };
 }

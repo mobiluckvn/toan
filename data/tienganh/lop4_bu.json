@@ -67,6 +67,7 @@
    "vai": [
     "viec"
    ],
+   "ing": "cycling",
    "nghia": "đạp xe"
   },
   "v_g4_st_friend": {
@@ -79,12 +80,14 @@
    "vai": [
     "viec"
    ],
+   "ing": "jumping",
    "nghia": "nhảy"
   },
   "v_g4_st_kick": {
    "vai": [
     "viec"
    ],
+   "ing": "kicking",
    "nghia": "đá (bóng)"
   },
   "v_g4_st_open_books": {
@@ -97,6 +100,7 @@
    "vai": [
     "viec"
    ],
+   "ing": "playing football",
    "nghia": "chơi bóng đá"
   },
   "v_g4_st_read_aloud": {
@@ -121,6 +125,7 @@
    "vai": [
     "viec"
    ],
+   "ing": "skipping",
    "nghia": "nhảy dây"
   },
   "v_g4_st_stand_up": {
@@ -133,6 +138,7 @@
    "vai": [
     "viec"
    ],
+   "ing": "swimming",
    "nghia": "bơi"
   },
   "v_g4_u10_bangkok": {
@@ -3014,6 +3020,17 @@
  },
  "sua_slot": {
   "_vi_sao": "Mẫu câu NHIỀU Ô mà không khai ở đây thì `sinh_cau` BỎ QUA CẢ MẪU, im lặng. Lớp 4 có 15 mẫu như thế — gấp đôi lớp 3. Ô khai bằng TÊN VAI.",
+  "_mot_o_cung_hong_duoc": "Mẫu MỘT Ô thì `sinh_cau` suy kho từ chính `o_thay` (cạnh HAS_SLOT của bản đồ) nên thường không phải khai. Nhưng `o_thay` RỖNG thì nó cũng lặng lẽ không sinh câu nào — không phải bỏ qua cả mẫu, mà là kho rỗng. Bắt được 21-08-2026 khi soi vì sao B00 chỉ có 1 câu bậc ráp trong khi có 4 mẫu câu: cả `sp_g4_st_4` lẫn `sp_g4_st_2` đều rơi vào đây. Nên hễ mẫu nào `o_thay` rỗng mà công thức CÓ ngoặc vuông thì phải khai ở đây.",
+  "sp_g4_st_4": {
+   "_cau": "What are they doing? - They're + [Verb-ing].",
+   "o": {
+    "Verb-ing": [
+     "viec"
+    ]
+   },
+   "_ghi": "Sáu từ vai `viec` của Starter (jump · kick · cycle · swim · skip · play football) nay đã khai `ing` trong phần `tu`, nên `dang_can()` trả đúng dạng -ing. Trước khi vá thì unit dạy câu \"They're swimming.\" mà không sinh nổi MỘT câu luyện nào cho nó — mẫu duy nhất còn sống ở bậc ráp là `sp_g4_st_3`.",
+   "_khong_va_st_2": "`sp_g4_st_2` (\"This is + [Name]. Nice to see you.\") CỐ Ý để nguyên, không khai. Lớp 4 không có từ nào vai `ten`: 34 từ `ten_rieng` của quyển là tên NƯỚC và tên THÁNG, khai vào là đẻ ra \"This is Japan. Nice to see you.\" Tên người (Ben · Mary · Mai) nằm ở vốn lớp 3, mà bộ sinh chỉ rút trong kho của chính quyển. Bé vẫn gặp câu này ở phần giảng, ví dụ mẫu, video và phòng nói — chỉ thiếu câu luyện tự sinh, và thiếu như thế còn hơn thay bừa."
+  },
   "sp_g4_u2_2": {
    "_cau": "What time do you + [Routine]? - I + [Routine] + at + [Time].",
    "o": {

@@ -110,7 +110,7 @@ async function docTienDo(uid) {
 
 async function docHocBa(uid) {
   const snap = await getDocs(collection(db, KHO.hocBa(uid)));
-  const chapters = {}, baiViet = {};
+  const chapters = {}, baiViet = {}, soThich = {};
   snap.forEach((d) => {
     const v = d.data();
     /* `|| {}` chứ KHÔNG `|| v`. Bản cũ đỡ lấy cả tài liệu khi thiếu `giaTri`, và
@@ -123,8 +123,12 @@ async function docHocBa(uid) {
        không thì ghi lên rồi bỏ đó — cổng `hocba_khop_luat.test.mjs` canh chuyện
        này, và nó canh vì đã xảy ra thật với chính `hocBaTA`. */
     else if (v.loai === 'viet' && v.khoa) baiViet[v.khoa] = v.giaTri || {};
+    /* `soThich` — từ bé thích nhất trong quyển, cô giáo máy lấy làm ngữ cảnh. Cùng
+       một luật với hai loại trên: luật CHO ghi loại nào thì bên đọc phải nhặt đúng
+       chừng ấy, không thừa không thiếu. */
+    else if (v.loai === 'soThich' && v.khoa) soThich[v.khoa] = v.giaTri || {};
   });
-  return { chapters, baiViet };
+  return { chapters, baiViet, soThich };
 }
 
 /**
@@ -132,12 +136,19 @@ async function docHocBa(uid) {
  * được bằng sổ tại máy, đó mới là nguồn chính.
  */
 export async function tienDoTuMay(uid) {
-  if (!dungDuoc(uid)) return { micros: {}, chapters: {}, baiViet: {} };
+  if (!dungDuoc(uid)) return { micros: {}, chapters: {}, baiViet: {}, soThich: {} };
   const [micros, hb] = await Promise.all([
     docTienDo(uid).catch((e) => { nuot(e); return {}; }),
-    docHocBa(uid).catch((e) => { nuot(e); return { chapters: {}, baiViet: {} }; }),
+    docHocBa(uid).catch((e) => {
+      nuot(e); return { chapters: {}, baiViet: {}, soThich: {} };
+    }),
   ]);
-  return { micros, chapters: hb.chapters || {}, baiViet: hb.baiViet || {} };
+  return {
+    micros,
+    chapters: hb.chapters || {},
+    baiViet: hb.baiViet || {},
+    soThich: hb.soThich || {},
+  };
 }
 
 /**

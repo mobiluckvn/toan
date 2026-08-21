@@ -107,14 +107,19 @@ R("2.1.2", "Chiều ĐỘNG LỰC (M): lồng ngữ cảnh theo SỞ THÍCH cá 
   "Phòng nói CÓ hỏi bé thích gì rồi truyền vào lời dặn LLM: `hoSo: { thich }` "
   "(`PhongNoi.jsx:208`) → `dongHoSo()` (`phongnoi.js:1213`) sinh câu 'The child told "
   "you they like …'. Bài tập cũng ưu tiên từ bé đã chọn (`phongnoi.js:263`).",
-  "Sở thích chỉ sống trong MỘT phiên: `useState(null)` (`PhongNoi.jsx:95`), không lưu "
-  "xuống sổ. Mở lại là hỏi lại từ đầu. Ba màn còn lại không dùng sở thích.",
+  "✅ ĐÃ VÁ 21-08 (Đợt 0) — sở thích nay sống qua buổi. Còn lại: ba màn kia (học · "
+  "đọc · viết) vẫn chưa dùng sở thích, nên chiều Động lực mới đủ ở PHÒNG NÓI.",
   OK,
-  "Việc nhỏ, làm được ngay, không phụ thuộc gì: (1) đổi `useState(null)` thành đọc "
-  "từ `hocBaTA/{uid}/hoSo.thich`; (2) khi bé chọn thì `luuMucHocBa(uid,'hoSo',...)`; "
-  "(3) truyền `hoSo` vào `loiDanCham()` của màn Viết và vào bộ chọn đề màn Đọc. "
-  "⚠ Giữ nhánh `laTranh` không hỏi sở thích — bác đã chốt 19-08.",
-  "—", D0, "nửa ngày"),
+  "Đã làm: `soThich` vào sổ tại máy + `hocBaTA` (`loai: soThich`), gộp theo luật "
+  "\'bản mới hơn thắng\', khoá theo QUYỂN chứ không theo unit — vốn phòng nói là vốn "
+  "tích luỹ nên nhớ một lần dùng được cả quyển. Nhớ được thì KHÔNG hỏi lại. "
+  "⚠ Chỗ suýt hỏng, nay có cổng canh: từ nhớ trong sổ đi THẲNG vào lời dặn LLM, mà "
+  "sổ sống lâu hơn nội dung — đổi quyển hay dồn unit là từ ấy rơi ra ngoài vốn, tức "
+  "là mình tự chọc thủng tầng chống ảo giác TỪ BÊN TRONG, và `cauHopLe()` phía sau "
+  "không cứu được (nó bác câu, cô giáo nói mãi không qua). Nên `PhongNoi` soi lại "
+  "từ ấy có trong `von` không, mỗi lần mở màn. Cổng `tienganh_sothich.test.mjs`, "
+  "đã đảo chiều thử 3 ca. CÒN LẠI: truyền sang màn Viết (`loiDanCham`).",
+  "—", D0, "xong phần phòng nói"),
 
 R("2.1.2", "Siêu vector trạng thái S = [C, T, P, M] làm ràng buộc cho LLM", CH,
   "Chỉ một mảnh của M (sở thích, một phiên) đi vào prompt.",
@@ -151,13 +156,18 @@ R("2.2.1", "Cạnh CẤU THÀNH: isPartOf / contains", DU,
 R("2.2.1", "Cạnh NGỮ NGHĨA: hasFormula / hasTargetSlot", DU,
   "`grammar_form` đủ 148/148 nút ngữ pháp lớp 1–5 (vai trò hasFormula). `HAS_SLOT` "
   "827 cạnh; `target_vocab_slots` có ở 98/148 nút.",
-  "50/148 nút ngữ pháp chưa khai ô đích.",
+  "⚠ CON SỐ 50/148 GÂY HIỂU LẦM, tôi đã soi kỹ lại. Ở tầng bản chuẩn thì `o_thay` "
+  "có ở 153/164 mẫu câu, vì `sua_slot` trong `lopN_bu.json` bù tay phần bản đồ "
+  "thiếu (lớp 4 có 20 mục, lớp 5 có 21). Trong 11 mẫu còn trống thì 3 mẫu ĐÚNG là "
+  "không có ô nào ('Goodbye.' · 'How are you? - Fine, thank you.') — trống là phải.",
   OK,
-  "Bù 50 nút còn thiếu. KHÔNG khai tay từ đầu: `cong_thuc` đã có dấu ngoặc vuông "
-  "`[Class]` · `[place]` — viết một hàm rút tên ô từ công thức rồi đối chiếu với "
-  "`vai` của từ trong unit, chỉ những chỗ máy không đoán được mới khai tay vào "
-  "`lopN_bu.json`. Bên lớp 5 đã bù tay 21 mẫu theo đúng lối này.",
-  "—", D0, "≈1 ngày"),
+  "✅ LÀM XONG PHẦN CÓ HẠI 21-08 (Đợt 0). Soi ngược từ hậu quả thay vì đếm nút: "
+  "chỉ 2/94 bài có bậc RÁP CÂU mỏng hơn số mẫu câu, và `DL:TA4.B00` là ca thật — "
+  "1 câu ráp cho 4 mẫu, vì `sp_g4_st_4` ('They\'re + [Verb-ing]') không sinh nổi "
+  "câu nào: 6 động từ của unit đều thiếu `ing`, mà `o_thay` cũng rỗng. Đã khai "
+  "`ing` cho cả 6 và thêm `sua_slot`; bậc ráp 1 → 5 câu, sinh thêm 4 clip tiếng. "
+  "`DL:TA1.B16` để nguyên — nó mỏng vì vốn từ chỉ có MỘT danh từ đếm được.",
+  "—", D0, "xong"),
 
 R("2.2.1", "Siêu dữ liệu nút TỪ VỰNG: id duy nhất · lexical_type · component_words", DU,
   "680/680 có `word` và `lexical_type`; 285/680 có `component_words` (đúng — chỉ CỤM "
@@ -166,19 +176,21 @@ R("2.2.1", "Siêu dữ liệu nút TỪ VỰNG: id duy nhất · lexical_type ·
   "không dịch.", XONG, "—", "—", DX, "—"),
 
 R("2.2.1", "Siêu dữ liệu nút NGỮ PHÁP: tense · sentence_type · formula", DU,
-  "⚠ SỬA SO VỚI BẢN TRƯỚC. Bản đầu tôi soi nhầm tầng và báo 0/148. Đúng là hai "
-  "trường ấy trống trên NÚT THÔ, nhưng ở tầng BẢN CHUẨN — thứ bộ sinh bài thật sự "
-  "dùng — thì có đủ: `thi` 163/164 và `kieu_cau` 163/164 mẫu câu cả 5 quyển "
+  "⚠ SỬA HAI LẦN. Bản đầu báo 0/148 vì tôi đọc khoá TẦNG NGOÀI của nút. Soi lại "
+  "21-08 thì hai trường ấy nằm LỒNG trong `grammar_metadata`, và đủ 148/148 nút ngữ "
+  "pháp lớp 1–5 — `chuan_tienganh.py:146` đọc thẳng `gm.get(\'tense\')`. Xuống tầng "
+  "bản chuẩn thì `thi` 163/164 và `kieu_cau` 163/164 "
   "(`chuan_lop5.json`: present_simple 25 · past_simple 7 · future_simple 4 · "
   "future_be_going_to 2 · conditional_would 2; wh_question 32 · yes_no_question 6). "
   "`formula` (grammar_form) đủ 148/148.",
-  "Một mẫu câu lớp 3 chưa khai. Và hai trường chưa được ghi NGƯỢC lên nút thô, nên "
-  "ai đọc thẳng `ban_do_tieng_anh.json` sẽ tưởng là thiếu.",
-  OK,
-  "Hai việc nhỏ: (1) tìm mẫu câu lớp 3 còn trống rồi khai vào `lop3_bu.json`; "
-  "(2) cho `chuan_tienganh.py` ghi ngược `thi`/`kieu_cau` lên nút đồ thị khi dựng, "
-  "để bản đồ tự nó cũng đủ. ⚠ KHÔNG sửa tay `ban_do_tieng_anh.json` — kho gốc.",
-  "—", D0, "≈2 giờ"),
+  "Không thiếu gì. Chỗ 163/164 là `sp_g3_starter_1` — mẫu SOẠN THÊM cho unit Starter "
+  "lớp 3, không có nút trong bản đồ nên không thừa hưởng `grammar_metadata`.",
+  XONG,
+  "✅ LÀM XONG 21-08 (Đợt 0). Khai `thi: present_simple` · `kieu_cau: wh_question` "
+  "vào `lop3_bu.json` — chép của `sp_g2_u13_1`, câu y hệt từng chữ ở lớp 2 U13, "
+  "không tự nghĩ ra. Nay đủ 164/164. Việc 'ghi ngược lên nút thô' ở bản trước thì "
+  "BỎ: nó dựa trên phép soi sai, và `ban_do_tieng_anh.json` là kho gốc cấm sửa.",
+  "—", D0, "xong"),
 
 R("2.2.1", "Duyệt đồ thị (DFS/BFS) để CHẨN ĐOÁN lúc chạy", CH,
   "Không mã nào trong `web/src/` đọc `ban_do_tieng_anh.json`. Đồ thị chỉ dùng LÚC "
@@ -209,15 +221,22 @@ R("2.2.1", "Đồ thị làm bộ truy xuất (Retriever) cho RAG", PH,
 # ═══════════════════ 2.2.2 Ràng buộc tiên quyết ══════════════════════════
 R("2.2.2", "Thuộc tính `prerequisite_links` trên nút", PH,
   "92 nút lớp 1–5 có `prerequisite_links`, trong đó 82/148 nút NGỮ PHÁP.",
-  "0/680 nút TỪ VỰNG có thuộc tính này — trong khi luận văn nêu đích danh chuỗi số "
-  "đếm `v_g2_u13_eleven` → `v_g1_u9_numbers` ở mục 2.2.2c.",
+  "✅ ĐÃ VÁ 21-08 (Đợt 0). Trên NÚT BẢN ĐỒ thì vẫn 0/680 — kho gốc cấm sửa — nhưng "
+  "thang tiên quyết ở tầng bản chuẩn nay có 58 cạnh TỪ VỰNG mới.",
   OK,
-  "Sinh MÁY chứ không khai tay 680 nút: từ vựng đã có `nhom_nghia` và `vai` "
-  "(`so_dem` · `mau` · `thang` · `thu`…). Với mỗi nhóm có THỨ TỰ TỰ NHIÊN, nối nút "
-  "sau ← nút trước theo thứ tự ấy. Đúng ví dụ luận văn nêu. Những nhóm không có thứ "
-  "tự (đồ vật · con vật) thì KHÔNG nối — nối bừa là đặt mìn cho lan truyền chẩn "
-  "đoán ở mục 2.3.3.",
-  "—", D0, "≈1 ngày"),
+  "Đã làm: `thang_tu_vung()` trong `chuan_tienganh.py` sinh MÁY từ `vai`, không khai "
+  "tay nút nào. Ra đúng khuôn luận văn nêu ở 2.2.2c: "
+  "`v_g3_ustarter_ten` → `v_g3_u11_eleven`, và `v_g4_u4_may` → `v_g4_u9_june`. "
+  "⚠ HAI CHỖ CỐ Ý HẸP. (1) Chỉ ba nhóm `so · thang · thu`. `tanso` (always · often "
+  "· sometimes) là ca sát nút: nó CÓ thứ tự — thứ tự TẦN SUẤT — nhưng đó không phải "
+  "thứ tự HỌC, sách dạy cả sáu từ cùng lúc. Nối bừa thì lan truyền chẩn đoán ở 2.3.3 "
+  "đi ngược vào một cạnh vô nghĩa rồi kết luận bé \'hổng gốc ở màu đỏ\': sai mà nghe "
+  "rất có lý. (2) Cạnh có NHÃN: `noi_bai` (bắc cầu giữa hai unit — cạnh tiên quyết "
+  "thật) tách khỏi `trong_bai` (thứ tự đọc trong cùng một bài). Ai lấy `trong_bai` "
+  "đi khoá bài là chặn bé giữa chính bài đang học. CÒN LẠI: cạnh XUYÊN QUYỂN cho từ "
+  "vựng (lớp 2 U13 eleven ↔ lớp 3 U11 eleven) — `chuan()` chạy từng quyển một nên "
+  "chưa với sang nhau được.",
+  "—", D0, "xong phần trong quyển"),
 
 R("2.2.2", "Cạnh REQUIRES có hướng trong đồ thị", DU,
   "583 cạnh `REQUIRES` toàn bản đồ; 195 cạnh chạm lớp 1–5.", "—", XONG, "—", "—", DX, "—"),
@@ -587,12 +606,19 @@ TK_THEM = [
 ]
 
 LO_TRINH = [
-    (D0, "Vá lặt vặt — không phụ thuộc gì, làm được ngay tuần này",
-     "Lưu sở thích xuống sổ · ghi ngược `thi`/`kieu_cau` lên nút · bù 50 ô đích · "
-     "nối cạnh tiên quyết cho chuỗi từ vựng có thứ tự · (nếu bác chọn) đổi θ · "
-     "(tuỳ) thêm 6 nút CEFR",
-     "≈3 ngày", "nhích lên, trong đó 4 mục lên hẳn ĐÁP ỨNG",
-     "Không đụng gì đang chạy. Riêng đổi θ thì ĐỤNG MÔN TOÁN — chạy lại "
+    (D0, "✅ ĐÃ CHẠY XONG 21-08-2026 — trừ hai chỗ chờ bác quyết",
+     "XONG: lưu sở thích xuống sổ (kèm cổng mới, đảo chiều thử 3 ca) · khai "
+     "`thi`/`kieu_cau` cho `sp_g3_starter_1` (nay 164/164) · vá `DL:TA4.B00` từ 1 "
+     "lên 5 câu bậc ráp, sinh thêm 4 clip tiếng · 58 cạnh tiên quyết từ vựng mới. "
+     "BỎ khỏi đợt: 'ghi ngược lên nút thô' (dựa trên phép soi sai của tôi) và '6 nút "
+     "CEFR' (kho gốc cấm sửa — để Đợt 3 xuất đồ thị con thì thêm). "
+     "CHỜ BÁC: đổi θ.",
+     "≈1 ngày", "nhích lên, trong đó 4 mục lên hẳn ĐÁP ỨNG",
+     "Đã dính hai lỗi trong lúc làm, cả hai đều do phép DIFF bắt chứ không phải cổng: "
+     "(1) khai `dang_ing` trong phần bù mà khoá thật là `ing` — dựng lại thấy không "
+     "đổi gì mới lộ; (2) `chuan_lop3/4.json` trong kho là bản dựng ĐỜI TRƯỚC, dựng "
+     "lại thì mọc thêm `dang_qk`/`dang_ngoi3` toàn null. Nên: `cp` rồi `diff`, và "
+     "lọc null ra trước khi đọc. Riêng đổi θ thì ĐỤNG MÔN TOÁN — chạy lại "
      "`bkt.test.mjs` và đối chiếu điểm thạo vài bé trước/sau."),
     (D1, "★ GHI LƯỢT LÀM — việc then chốt, mở khoá nhiều nhất",
      "Gắn `maNut` vào từng câu luyện rồi dựng lại 5 quyển · chép `sync.js` sang "
@@ -794,6 +820,19 @@ def main() -> int:
          "(`functions/index.js:169`). Nên Tiếng Anh ghi thẳng vào `attempts/` được, "
          "hàm nền BKT ăn ngay, không phải sửa một dòng nào ở phía đọc."),
         ("", ""),
+        ("ĐỢT 0 ĐÃ CHẠY XONG — 21-08-2026", ""),
+        ("", "Bốn việc: sở thích của bé nay sống qua buổi (kèm cổng canh chỗ nó có "
+             "thể chọc thủng tầng chống ảo giác từ bên trong) · mẫu câu Starter lớp 3 "
+             "khai đủ `thi`/`kieu_cau`, nay 164/164 · `DL:TA4.B00` từ 1 lên 5 câu bậc "
+             "ráp — unit dạy \"They\'re swimming.\" mà trước đó không sinh nổi một câu "
+             "luyện nào · 58 cạnh tiên quyết từ vựng đầu tiên, đúng khuôn ví dụ luận "
+             "văn nêu. 75/75 cổng xanh."),
+        ("Hai việc BỎ khỏi Đợt 0",
+         "\'Ghi ngược `thi`/`kieu_cau` lên nút thô\' — bỏ vì nó dựa trên phép soi sai "
+         "của tôi (xem mục dưới). \'Thêm 6 nút CEFR\' — bỏ khỏi đợt này vì "
+         "`ban_do_tieng_anh.json` là kho gốc cấm sửa; chỗ đúng để thêm là lúc xuất đồ "
+         "thị con ở Đợt 3."),
+        ("", ""),
         ("MỘT VIỆC ĐÁNG LÀM TRƯỚC NHẤT", ""),
         ("", "Đợt 1 — cho màn Tiếng Anh ghi `attempts` kèm mã nút. Một việc ấy mở "
              "khoá: chiều Nhận thức · chiều Thời gian · chiều Sư phạm · lưu vết "
@@ -823,9 +862,16 @@ def main() -> int:
         ("", ""),
         ("MỘT DÒNG BẢN TRƯỚC TÔI CHẤM SAI", ""),
         ("Mục 2.2.1 · tense · sentence_type",
-         "Bản đầu tôi báo 0/148 và xếp MỘT PHẦN. Sai vì soi nhầm tầng: hai trường ấy "
-         "trống trên nút thô, nhưng ở tầng bản chuẩn — thứ bộ sinh bài thật sự dùng — "
-         "có `thi` và `kieu_cau` đủ 163/164 mẫu câu. Nay xếp ĐÁP ỨNG."),
+         "Bản đầu tôi báo 0/148 và xếp MỘT PHẦN. Sai vì đọc khoá TẦNG NGOÀI của nút: "
+         "hai trường ấy nằm LỒNG trong `grammar_metadata` và có đủ 148/148 — "
+         "`chuan_tienganh.py:146` vẫn đọc chúng suốt. Nay xếp ĐÁP ỨNG, và cái tôi "
+         "định làm để \'vá\' (ghi ngược lên nút thô) hoá ra không có gì để vá."),
+        ("Mục 2.2.1 · target_vocab_slots",
+         "Bản đầu tôi báo 50/148 thiếu và định bù cả 50. Con số ấy gây hiểu lầm: "
+         "`sua_slot` trong `lopN_bu.json` đã bù tay phần bản đồ thiếu, nên ở tầng bản "
+         "chuẩn `o_thay` có ở 153/164 mẫu, và 3 trong 11 mẫu còn lại ĐÚNG là không có "
+         "ô nào (\'Goodbye.\'). Soi ngược từ HẬU QUẢ thay vì đếm nút thì chỉ 2/94 bài "
+         "bị mỏng thật — và đó mới là chỗ đáng sửa."),
         ("", ""),
         ("CHỖ TÔI CHƯA SOI", ""),
         ("", "Bảng này soi MÃ và DỮ LIỆU. Nó không đo được: bé học có tiến bộ thật "
