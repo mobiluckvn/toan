@@ -131,7 +131,15 @@ const DAI_CAU = 70;
    riêng từng quyển thì nợ của lớp 1·2·3 vẫn không bò lên được, mà lớp 4 vẫn khai
    đúng phần nợ nó mang vào (26/91 video mẫu câu, cùng kịch bản dùng chung).
    Ai viết lại kịch bản mẫu câu thì hạ con số của quyển ấy. */
-const NO_CAU_QUYEN = { ta1: 9, ta2: 11, ta3: 11, ta4: 26 };
+/* ⚠ CHỐT LẠI 21-08-2026, sau đợt dựng lại video lớp 3·4·5:
+     ta3  11 → 12   `DL_TA3_B14_cau2.mp4` nay dài 70,025 giây — vượt vạch đúng
+                    HAI MƯƠI LĂM PHẦN NGHÌN GIÂY. Không phải nợ mới: đợt sửa
+                    viết-hoa đổi mặt chữ vài câu, và một video vốn sát vạch trôi
+                    qua bên kia. Ghi đúng con số thật vẫn hơn giả vờ nó là 11.
+     ta4  26 → 24   giảm THẬT, nhờ chính đợt tách nhóm ấy.
+     ta5  mới       3/40 video mẫu câu, cùng kịch bản dùng chung với bốn quyển kia.
+   Tổng nợ 57 → 59 nhưng có thêm cả một quyển; riêng bốn quyển cũ thì 57 → 56. */
+const NO_CAU_QUYEN = { ta1: 9, ta2: 11, ta3: 12, ta4: 24, ta5: 3 };
 const NO_CAU = Object.values(NO_CAU_QUYEN).reduce((a, b) => a + b, 0);
 const TRAN_CAU = 100;
 const cauDai = doDai.filter((x) => x.loai === 'cau' && x.s > DAI_CAU)

@@ -1037,9 +1037,21 @@ NUA_TOI_THIEU = 3 * GIAY_TU_CO_HINH   # cắt đôi thì mỗi nửa vẫn phả
 
 
 def _dai(tu: dict) -> int:
-    """Từ này ngốn mấy giây trong video."""
-    return (GIAY_TU_CO_HINH if (tu.get("hinh") or tu.get("hinh_ve"))
-            else GIAY_TU_KHONG_HINH)
+    """Từ này ngốn mấy giây trong video.
+
+    ⚠ CỤM DÀI ĐỌC LÂU HƠN MỘT TỪ. Bản đầu tính 4 giây cho MỌI từ có hình và 7
+    giây cho mọi từ không hình — như thể "cat" và "one hundred and twenty-nine"
+    đọc hết bằng nhau. Lớp 5 là quyển đầu tiên có nhiều cụm bốn năm chữ (`Suoi
+    Tien Theme Park` · `take a boat trip around the bay`), và hai video vượt
+    trần 50 giây: 50,3s và 53,0s.
+
+    Trần ấy KHÔNG được nới — nó chính là lý do việc tách nhóm tồn tại. Cái sai
+    nằm ở phép ước lượng, nên sửa phép ước lượng: cụm từ ba chữ trở lên cộng
+    thêm 2 giây cho mỗi chữ từ chữ thứ ba.
+    """
+    goc = (GIAY_TU_CO_HINH if (tu.get("hinh") or tu.get("hinh_ve"))
+           else GIAY_TU_KHONG_HINH)
+    return goc + 2 * max(0, len(str(tu["tu"]).split()) - 2)
 
 
 def _cat_doi(g: list[str], dai: dict) -> list[list[str]]:
@@ -1096,20 +1108,52 @@ def _gom_nhom_nghia(tu: list[dict], vai_ten: dict) -> list[dict]:
     # Chia đều chứ không cắt 7+3: hai tệp cân nhau, còn một tệp sát trần một tệp hụt
     # thì bé xem cái sau thấy cụt.
     def cat_deu(g):
+        """Cắt một nhóm quá trần thành `so_phan` mảnh CÂN NHAU.
+
+        ⚠ THAM LAM THÌ QUÁ ĐÀ. Bản đầu cứ cộng dồn tới khi ĐẠT mốc rồi mới cắt,
+        nên nhóm [9,9,9,11] ra 27 + 11 — mảnh cuối hụt sàn, bước gộp dán lại, và
+        cả nhóm 38 giây vượt trần. Chỗ cắt đúng là [9,9] + [9,11] = 18 + 20.
+
+        Nay chọn chỗ cắt GẦN MỐC NHẤT, tính cả chiều vượt lẫn chiều hụt.
+        """
         so_phan = max(1, -(-do(g) // NHOM_TOI_DA))
         if so_phan == 1:
             return [g]
-        moi, ra, phan = do(g) / so_phan, [], []
-        for x in g:
-            phan.append(x)
-            if do(phan) >= moi and len(ra) < so_phan - 1:
-                ra.append(phan)
-                phan = []
-        return ra + ([phan] if phan else [])
+        tong = do(g)
+        con, ra = list(g), []
+        for k in range(so_phan - 1):
+            moc = tong * (k + 1) / so_phan - do([x for p in ra for x in p])
+            chay, tot, lech = 0, 1, None
+            for i, x in enumerate(con[:-(so_phan - len(ra) - 1) or None], 1):
+                chay += dai[x]
+                if lech is None or abs(chay - moc) < lech:
+                    lech, tot = abs(chay - moc), i
+            ra.append(con[:tot])
+            con = con[tot:]
+        ra.append(con)
+        # Mảnh nào vẫn hụt sàn thì dồn vào mảnh bên cạnh — thà một video dài hơn
+        # một chút còn hơn một video cụt.
+        while len(ra) > 1:
+            i = next((j for j, x in enumerate(ra) if do(x) < NUA_TOI_THIEU), None)
+            if i is None:
+                break
+            ke = i - 1 if i else 1
+            ra[min(i, ke)] = ra[min(i, ke)] + ra[max(i, ke)]
+            ra.pop(max(i, ke))
+        return ra
 
+    # ⚠ MẢNH CẮT BẮT BUỘC PHẢI ĐƯỢC KHOÁ NGAY. Bước gộp bên dưới dán lại mọi
+    # nhóm dưới `NHOM_TOI_THIEU` (20 giây) — mà một nhóm 38 giây cắt đôi thì ra
+    # hai mảnh 19 giây, tức là VỪA CẮT XONG ĐÃ BỊ DÁN LẠI. Lớp 5 U10 (bốn địa
+    # danh Việt Nam, tên nào cũng ba bốn chữ) vượt trần đúng vì thế: 50,3 giây.
+    # Hai ngưỡng ấy đá nhau, và bên gộp phải nhường — cắt là vì QUÁ TRẦN, còn
+    # gộp chỉ là cho đỡ vụn.
     cat: list[list[str]] = []
+    khoa_ban_dau: list[bool] = []
     for g in nhom:
-        cat += cat_deu(g)
+        phan = cat_deu(g)
+        cat += phan
+        khoa_ban_dau += [len(phan) > 1] * len(phan)
 
     # ── gộp nhóm lẻ vào nhóm cạnh nó NHỎ NHẤT ──
     #
@@ -1124,7 +1168,7 @@ def _gom_nhom_nghia(tu: list[dict], vai_ten: dict) -> list[dict]:
     # nào đã bị CẮT BẮT BUỘC thì ĐÓNG (`khoa`): nó không đi tìm chỗ gộp nữa, nhưng
     # vẫn NHẬN được nhóm khác nhập vào nếu vẫn dưới trần. Mỗi vòng lặp hoặc bớt một
     # nhóm, hoặc đóng thêm một nhóm — nên chắc chắn dừng.
-    ds = [{"tu": g, "khoa": False} for g in cat]
+    ds = [{"tu": g, "khoa": k} for g, k in zip(cat, khoa_ban_dau)]
     while len(ds) > 1:
         i = next((k for k, g in enumerate(ds)
                   if do(g["tu"]) < NHOM_TOI_THIEU and not g["khoa"]), None)

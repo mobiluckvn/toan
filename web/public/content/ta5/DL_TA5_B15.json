@@ -121,6 +121,16 @@
    },
    {
     "id": "K4",
+    "text": "Câu hôm nay dùng để: Nói mình đang đau ở đâu. Ví dụ: Con vào phòng y tế, cô y tá hỏi con bị làm sao.",
+    "doanAm": [
+     [
+      "Câu hôm nay dùng để nói mình đang đau ở đâu. Con vào phòng y tế, cô y tá hỏi con bị làm sao.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K5",
     "text": "Mẫu câu: What's the matter? - I have [health problem]. — ví dụ: What's the matter? - I have a headache.",
     "doanAm": [
      [
@@ -237,12 +247,33 @@
    "You should have a rest. - Thanks for your advice.",
    "You should take some medicine. - Thanks for your advice."
   ],
-  "mauCauDs": [],
+  "mauCauDs": [
+   {
+    "cau": "What's the matter? - I have a headache.",
+    "congThuc": "What's the matter? - I have [health problem].",
+    "dungDe": "Nói mình đang đau ở đâu.",
+    "tinhHuong": "Con vào phòng y tế, cô y tá hỏi con bị làm sao.",
+    "phan": [],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "You should go to the dentist. Go as soon as possible. - OK, I will. Thanks for your advice.",
+    "congThuc": "You should + [Verb]. - Thanks for your advice.",
+    "dungDe": "Khuyên người khác nên làm gì.",
+    "tinhHuong": "Bạn kêu đau răng, con khuyên bạn đi khám.",
+    "phan": [],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   }
+  ],
   "mauCau": {
    "cau": "What's the matter? - I have a headache.",
    "congThuc": "What's the matter? - I have [health problem].",
-   "dungDe": null,
-   "tinhHuong": null,
+   "dungDe": "Nói mình đang đau ở đâu.",
+   "tinhHuong": "Con vào phòng y tế, cô y tá hỏi con bị làm sao.",
    "phan": [],
    "khacVoi": null
   },
@@ -294,6 +325,14 @@
    },
    {
     "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S6",
     "kind": "trap",
     "teaches": [],
     "narration": "Nghe câu này: What the matter? - I have a headache. — câu này có một chỗ chưa đúng. Con nghe lại rồi tìm xem sai ở đâu nhé.",
@@ -1663,29 +1702,47 @@
   "tu": [
    {
     "ma": "tu_benh",
-    "ten": "Chỗ nào đau · Việc đang làm",
+    "ten": "Chỗ nào đau",
     "tu": [
      "headache",
      "sore throat",
      "stomach ache",
-     "toothache",
-     "drink warm water",
-     "go to the dentist"
+     "toothache"
     ],
     "tep": "DL_TA5_B15_tu_benh.mp4"
    },
    {
-    "ma": "tu_viec",
-    "ten": "Việc đang làm · Từ hay gặp",
+    "ma": "tu_viec1",
+    "ten": "Việc đang làm · phần 1",
+    "tu": [
+     "drink warm water",
+     "go to the dentist"
+    ],
+    "tep": "DL_TA5_B15_tu_viec1.mp4"
+   },
+   {
+    "ma": "tu_viec2",
+    "ten": "Việc đang làm · Từ hay gặp · phần 2",
     "tu": [
      "have a rest",
      "take some medicine",
      "matter"
     ],
-    "tep": "DL_TA5_B15_tu_viec.mp4"
+    "tep": "DL_TA5_B15_tu_viec2.mp4"
    }
   ],
-  "cau": []
+  "cau": [
+   {
+    "vai": "cau",
+    "cau": "What's the matter? - I have a headache.",
+    "tep": "DL_TA5_B15_cau1.mp4"
+   },
+   {
+    "vai": "cau",
+    "cau": "You should go to the dentist. Go as soon as possible. - OK, I will. Thanks for your advice.",
+    "tep": "DL_TA5_B15_cau2.mp4"
+   }
+  ]
  },
  "hinhTu": [
   {
