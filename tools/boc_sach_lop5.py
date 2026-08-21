@@ -266,6 +266,7 @@ VE_TAY = {
     "dwarf":            ("dwarf", "🧙", "MAGE — ông phù thuỷ, không phải chú lùn"),
     "writer":           ("writer", "✍️", "WRITING HAND — bàn tay, mà NGHỀ phải vẽ chân dung người"),
     "reporter":         ("reporter", "🎤", "MICROPHONE — cái micro, mà NGHỀ phải vẽ chân dung người"),
+    "swimmer":          ("swimmer", "🏊", "TRÙNG HỆT hình của `swim` — hai từ khác nhau phải hai hình"),
     "pink":             ("pink", "🩷", "U+1FA77 quá mới, nhiều phông chưa có — ô vuông màu vẽ tay cho chắc"),
 }
 
@@ -518,6 +519,20 @@ def main() -> int:
                     # sửa bộ bóc rồi chạy lại — và mục hỏng vẫn nằm đó đè lên
                     # mục đúng. Chạy lại không chữa được, phải xoá tay.
                     if k == "hinh":
+                        # ⚠ BẢNG `hinh` DO CHÍNH TỆP NÀY LÀM CHỦ (ba bảng HINH ·
+                        # VE_TAY · KHONG_VE khai ngay trên đầu), nên bản MỚI phải
+                        # thắng. Phép "giữ tất cả khoá cũ" chữa chuyện mất bản sửa
+                        # tay, nhưng ở đây nó giữ luôn bản cũ: tôi thêm `swimmer`
+                        # vào VE_TAY, chạy lại, và mục ấy KHÔNG xuất hiện — bảng cũ
+                        # đè lên. Chạy lại mà không đổi gì thì mới là hỏng.
+                        cu_ve = (v.get("_ve_tay") or {})
+                        cu_kv = (v.get("_khong_ve") or {})
+                        v = {k2: v2 for k2, v2 in v.items()
+                             if k2 not in ("_ve_tay", "_khong_ve")}
+                        khung[k]["_ve_tay"] = {**cu_ve, **khung[k]["_ve_tay"]}
+                        khung[k]["_khong_ve"] = {**cu_kv, **khung[k]["_khong_ve"]}
+                        v = {k2: v2 for k2, v2 in v.items()
+                             if k2 not in khung[k]}
                         v = {k2: (v2.get("emoji") if isinstance(v2, dict)
                                   and set(v2) == {"emoji"} else v2)
                              for k2, v2 in v.items()}

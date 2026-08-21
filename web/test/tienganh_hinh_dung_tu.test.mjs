@@ -172,7 +172,14 @@ test('5 · đáp án phải là từ bé ĐÃ ĐƯỢC DẠY', () => {
       new URL(`../../data/tienganh/chuan_lop${l}.json`, import.meta.url), 'utf8'));
     for (const u of c.unit) {
       for (const t of u.tu) {
-        for (const x of [t.tu, t.so_it, t.so_nhieu, t.dang_ing, t.nghia]) if (x) bo.add(x);
+        /* ⚠ LỚP 5 THÊM HAI DẠNG: quá khứ và ngôi ba số ít. Thiếu chúng thì
+           "swam" · "planted trees" · "listened to music" — đáp án đúng hẳn, sinh
+           ra từ chính công thức của sách — bị gọi là "cả quyển không dạy".
+           Đây là cổng THỨ BA dính cùng một chỗ trong buổi này; hai cổng kia là
+           `tienganh_bai` và `tienganh_dochieu`. Thêm dạng mới thì phải đi tìm
+           MỌI túi từ, đừng sửa chỗ nào gặp trước. */
+        for (const x of [t.tu, t.so_it, t.so_nhieu, t.dang_ing,
+                         t.dang_qk, t.dang_ngoi3, t.nghia]) if (x) bo.add(x);
       }
     }
     for (const nhom of Object.values(c.them || {})) {
@@ -304,7 +311,8 @@ test('8 · MỌI từ phải có trong bảng NGƯỜI ĐÃ SOÁT tận mắt', 
      `table` · `eleven`) tự "đã soát" ở quyển sau, trong khi hình của nó có thể
      khác hẳn — lớp 1 dùng 🐱 MẶT MÈO, lớp 3 dùng 🐈 CẢ CON. */
   const SO = { ta1: 'hinh_da_soat.md', ta2: 'hinh_da_soat_lop2.md',
-    ta3: 'hinh_da_soat_lop3.md', ta4: 'hinh_da_soat_lop4.md' };
+    ta3: 'hinh_da_soat_lop3.md', ta4: 'hinh_da_soat_lop4.md',
+    ta5: 'hinh_da_soat_lop5.md' };
   const daSoat = Object.fromEntries(QUYEN.map(({ q }) => {
     const bang = readFileSync(new URL(`../../docs/${SO[q]}`, import.meta.url), 'utf8');
     return [q, new Set([...bang.matchAll(/^\|\s*`([^`]+)`\s*\|/gm)].map((m) => m[1]))];
