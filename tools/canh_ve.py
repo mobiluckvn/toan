@@ -507,6 +507,23 @@ def anh_nho(d, x, y, w=180, h=130, canh="nha"):
         d.polygon([o(0.20, 0.48), o(0.80, 0.48), o(0.50, 0.18)], fill="#C0392B",
                   outline=INK)
         d.rectangle([*o(0.44, 0.66), *o(0.58, 0.90)], fill="#A9714B", outline=INK, width=2)
+    elif canh == "cau":                                 # ảnh chụp cây cầu
+        d.rectangle([*o(0.03, 0.06), *o(0.97, 0.58)], fill="#BFE3F7")
+        d.rectangle([*o(0.03, 0.58), *o(0.97, 0.94)], fill="#4E8FC4")
+        d.rectangle([*o(0.03, 0.52), *o(0.97, 0.60)], fill="#C0392B")
+        for a in (0.18, 0.5, 0.82):
+            d.pieslice([*o(a - 0.16, 0.30), *o(a + 0.16, 0.74)], 180, 360,
+                       outline="#C0392B", width=4)
+            net(d, [o(a, 0.30), o(a, 0.52)], "#C0392B", 3)
+        tron(d, *o(0.84, 0.18), w * 0.06, "#FFD84D", "#E09B18", 2)
+    elif canh == "ho":                                  # ảnh chụp mặt hồ
+        d.rectangle([*o(0.03, 0.06), *o(0.97, 0.46)], fill="#BFE3F7")
+        d.rectangle([*o(0.03, 0.46), *o(0.97, 0.94)], fill="#4E8FC4")
+        for i in range(3):
+            net(d, [o(0.14, 0.60 + i * 0.11), o(0.44, 0.60 + i * 0.11)], "#7FB0D8", 3)
+        for a in (0.12, 0.30, 0.72, 0.90):
+            d.rectangle([*o(a - 0.02, 0.34), *o(a + 0.02, 0.46)], fill="#7A4F33")
+            tron(d, *o(a, 0.30), w * 0.06, "#4E9A4E", INK, 2)
     elif canh == "cay":                                 # tranh vẽ cái cây
         d.rectangle([*o(0.03, 0.06), *o(0.97, 0.94)], fill="#EAF6FF")
         d.rectangle([*o(0.45, 0.60), *o(0.55, 0.92)], fill="#7A4F33", outline=INK, width=2)
@@ -523,9 +540,21 @@ def anh_nho(d, x, y, w=180, h=130, canh="nha"):
         raise SystemExit(f"✗ không có cảnh nhỏ “{canh}”")
 
 
+def mat_trang(d, x, y, r=62):
+    """Mặt trăng tròn. Cảnh Trung thu dùng `mat_troi` thì ra ban ngày — lệch hẳn
+    mô tả “trời tím sẫm có mặt trăng tròn vàng lớn”."""
+    tron(d, x, y, r, "#FFF3C4", "#E0C86A", 4)
+    for dx, dy, rr in ((-0.30, -0.20, 0.16), (0.24, 0.10, 0.20), (-0.05, 0.36, 0.12)):
+        tron(d, x + r * dx, y + r * dy, r * rr, "#EFE0A8", "#E0C86A", 2)
+
+
 def bang_thoi_tiet(d, x, y, w=420, h=200, khoanh=0):
-    """Bảng thời tiết bốn ô: nắng · nhiều mây · mưa · gió. `khoanh` là ô được
+    """Bảng thời tiết bốn ô: nắng · nhiều mây · mưa · TUYẾT. `khoanh` là ô được
     khoanh tròn đỏ — trạng thái của hôm nay.
+
+    ⚠ Ô thứ tư đổi từ GIÓ sang TUYẾT khi làm lớp 5: cảnh “ngày mùa đông” mô tả
+    ngoài cửa sổ đang rơi tuyết và ô tuyết được khoanh đỏ — mà bảng lại không có
+    ô nào là tuyết. Tranh lệch mô tả thì bé đối chiếu không ra.
 
     ⚠ Tính từ thời tiết KHÔNG vẽ thành vật rời được: `sunny` không phải một đồ
     vật đặt trên bàn. Nên unit thời tiết phải có bảng này, và bản đầu tôi dựng
@@ -552,11 +581,14 @@ def bang_thoi_tiet(d, x, y, w=420, h=200, khoanh=0):
                 for k in (-1, 0, 1):
                     net(d, [(cx + r * k * 0.7, cy + h * 0.10),
                             (cx + r * k * 0.7 - 4, cy + h * 0.22)], "#4E8FC4", 5)
-            if i == 3:                               # gió: ba vệt ngang
-                for k in range(3):
-                    net(d, [(cx - r * 1.1, cy + h * 0.10 + k * 12),
-                            (cx + r * (0.6 + 0.3 * k), cy + h * 0.10 + k * 12)],
-                        "#8FA3B8", 5)
+            if i == 3:                               # tuyết: ba bông sáu cánh
+                for k in (-1, 0, 1):
+                    bx, by = cx + r * k * 0.8, cy + h * 0.13 + abs(k) * 8
+                    for a in range(3):
+                        g = math.radians(a * 60)
+                        net(d, [(bx - math.cos(g) * 6, by - math.sin(g) * 6),
+                                (bx + math.cos(g) * 6, by + math.sin(g) * 6)],
+                            "#6C90BA", 3)
     d.ellipse([x - w / 2 + o * khoanh + 8, y + 8,
                x - w / 2 + o * (khoanh + 1) - 8, y + h - 8],
               outline="#C0392B", width=6)
@@ -686,4 +718,4 @@ VE = {"nguoi": nguoi, "cay": cay, "may": may, "matTroi": mat_troi,
       "dongHo": dong_ho, "giaVe": gia_ve, "luaTrai": lua_trai, "leu": leu,
       "hangRao": hang_rao, "songSat": song_sat, "nha": nha, "oto": oto,
       "tuKinh": tu_kinh, "longChim": long_chim, "banDo": ban_do,
-      "anhNho": anh_nho, "bangMau": bang_mau, "bangThoiTiet": bang_thoi_tiet, "huyChuong": huy_chuong, "bienBao": bien_bao, "guong": guong}
+      "anhNho": anh_nho, "bangMau": bang_mau, "bangThoiTiet": bang_thoi_tiet, "matTrang": mat_trang, "huyChuong": huy_chuong, "bienBao": bien_bao, "guong": guong}

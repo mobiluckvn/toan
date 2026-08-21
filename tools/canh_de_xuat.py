@@ -562,6 +562,249 @@ L4 = {
 }
 
 
+# ══════════════════════════════ LỚP 5 ══════════════════════════════
+# Vốn từ tích luỹ tới đây đã dày (646–857 chữ), nên đoạn tả được cảnh có
+# NGƯỜI ĐANG LÀM VIỆC chứ không chỉ đồ vật đứng yên. Nhưng phần lớn từ MỚI của
+# lớp 5 là tính từ, tần suất và cụm việc — không vẽ thành vật được. Nên vật
+# trong tranh chủ yếu mượn của bốn quyển trước; đó là điều đúng: bé đã học rồi.
+L5 = {
+1: C("Trong lớp, một bạn tự giới thiệu",
+     "Một phòng học nhìn thẳng. BÊN TRÁI: tấm bảng ghim treo tường, trên ghim một "
+     "bức tranh vẽ CON CÁ HEO màu xanh xám đang nhảy trên sóng biển. GIỮA: một bạn "
+     "gái khoảng mười tuổi, tóc dài buộc nơ hồng, áo sơ mi trắng, váy xanh, đứng "
+     "quay mặt ra lớp, một tay chỉ lên bức tranh cá heo, mặt tươi. TIỀN CẢNH BÊN "
+     "PHẢI: hai bộ bàn học gỗ, mỗi bàn một bạn ngồi quay lưng lại người xem, trên "
+     "bàn có quyển vở mở. HẬU CẢNH BÊN PHẢI: cửa sổ nhìn ra tán cây xanh.",
+     "This is my class. This is Mary. Mary is my friend. She's friendly. "
+     "I can see a dolphin.",
+     "1. What's your favourite animal? → It's a dolphin.  (mồi: It's a cat. · It's a dog. · It's a fox.)\n"
+     "2. What can you see? → I can see a dolphin.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
+     "Where are they? · What can you see? · What's your favourite animal?"),
+2: C("Trên con phố trước nhà",
+     "Một con phố nhỏ nhìn dọc theo vỉa hè, trời sáng. BÊN TRÁI: một ngôi nhà MỘT "
+     "TẦNG mái đỏ, tường vàng kem, cửa gỗ nâu, có khoảnh sân nhỏ trước cửa. BÊN "
+     "PHẢI: một TOÀ NHÀ CAO nhiều tầng, tường xám nhạt, các ô cửa sổ vuông xếp đều. "
+     "GIỮA, trên vỉa hè: hai bạn nhỏ đứng cạnh nhau, bạn trai áo trắng giơ tay chỉ "
+     "sang toà nhà cao, bạn gái váy tím nhìn theo. LÒNG ĐƯỜNG phía dưới: hai chiếc "
+     "ô tô, một đỏ một xanh, đang chạy.",
+     "This is my street. That's my house. There's a tall building. "
+     "I live in the house. I can see two cars.",
+     "1. What can you see? → I can see two cars.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)\n"
+     "2. How many cars can you see? → I can see two.  (mồi: I can see one. · I can see three. · I can see four.)",
+     "Where are they? · What can you see? · How many cars can you see?"),
+3: C("Trước tấm bản đồ thế giới",
+     "Một góc phòng học. HẬU CẢNH: tấm bản đồ thế giới lớn treo tường — các châu "
+     "lục màu xanh lá và nâu nhạt trên nền biển xanh dương, KHÔNG có chữ nào. "
+     "GIỮA TRANH: hai bạn nhỏ đứng trước bản đồ. BÊN TRÁI là bạn gái tóc nâu, áo "
+     "vàng, tay chỉ vào một điểm phía dưới bên phải bản đồ. BÊN PHẢI là bạn trai "
+     "tóc đen, áo xanh, đứng nhìn theo. TIỀN CẢNH: một cái bàn gỗ có hai chiếc cặp "
+     "sách đặt trên.",
+     "This is my class. This is Lucy. She's from Australia. This is Ben. "
+     "He's from Japan. Ben is my friend.",
+     "1. Where's she from? → She's from Australia.  (mồi: She's from Japan. · She's from America. · She's from Malaysia.)\n"
+     "2. Where's he from? → He's from Japan.  (mồi: He's from Australia. · He's from America. · He's from Malaysia.)",
+     "Where's she from? · Where's he from? · What can you see?"),
+4: C("Trong vườn buổi chiều",
+     "Một khu vườn nhỏ, nắng chiều vàng nhạt. BÊN TRÁI: một bạn gái tóc tết hai "
+     "bên, áo hồng, đang cầm bình tưới nghiêng vòi tưới xuống một luống hoa — mấy "
+     "bông hoa đỏ và vàng nở trên luống. BÊN PHẢI: một bạn trai áo xanh đang bước "
+     "đi trên lối sỏi, hai tay đánh nhẹ, mặt vui. GIỮA phía sau: một chiếc xe đạp "
+     "màu xanh dựng cạnh hàng rào gỗ thấp. HẬU CẢNH: bụi cây xanh và bầu trời.",
+     "This is our garden. She's watering the flowers. He's going for a walk. "
+     "I often go for a walk. I can see a bike.",
+     "1. What's she doing? → She's watering the flowers.  (mồi: She's playing the violin. · She's surfing the Internet. · She's going for a walk.)\n"
+     "2. What do you do at the weekend? → I often go for a walk.  (mồi: I always go for a walk. · I never go for a walk. · I sometimes go for a walk.)",
+     "Where are they? · What's she doing? · What do you do at the weekend?"),
+5: C("Ở góc nghề nghiệp của lớp",
+     "Một góc trưng bày trong lớp. HẬU CẢNH: tấm bảng ghim treo ba bức tranh trẻ em "
+     "vẽ — bức thứ nhất vẽ một NGƯỜI LÍNH CỨU HOẢ đội mũ đỏ đứng cạnh vòi nước, bức "
+     "thứ hai vẽ một NGƯỜI VIẾT SÁCH ngồi bên bàn có quyển sách mở, bức thứ ba vẽ "
+     "một NGƯỜI LÀM VƯỜN đội mũ rộng vành cầm bình tưới. GIỮA: một bạn trai áo vàng "
+     "đứng, tay chỉ lên bức tranh lính cứu hoả. TIỀN CẢNH: một cái bàn có quyển vở "
+     "mở và cây bút.",
+     "This is my class. That's a firefighter. I want to be a firefighter. "
+     "That's a writer. I can see a book.",
+     "1. What do you want to be? → I want to be a firefighter.  (mồi: I want to be a writer. · I want to be a reporter. · I want to be a gardener.)\n"
+     "2. What can you see? → I can see a book.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
+     "Where is he? · What do you want to be? · What can you see?"),
+6: C("Ở hành lang tầng hai",
+     "Hành lang một trường học nhìn dọc, sàn gạch xám, lan can bên phải nhìn xuống "
+     "sân. BÊN TRÁI có ba cánh cửa gỗ liền nhau, mỗi cửa một tấm biển hình chữ nhật "
+     "treo trên — cả ba biển ĐỂ TRỐNG, không chữ. Cửa gần nhất hé mở, nhìn thấy giá "
+     "sách bên trong. GIỮA HÀNH LANG: một bạn gái áo trắng đứng, tay chỉ vào cánh "
+     "cửa hé mở; một bạn trai áo đỏ đứng cạnh nhìn theo. CUỐI HÀNH LANG: một cầu "
+     "thang đi lên, tay vịn gỗ.",
+     "This is our school. That's our library. The library is on the first floor. "
+     "I like our library. I can see two books.",
+     "1. Where's the library? → It's on the first floor.  (mồi: It's on the second floor. · It's on the third floor. · It's on the ground floor.)\n"
+     "2. How many books can you see? → I can see two.  (mồi: I can see one. · I can see three. · I can see four.)",
+     "Where are they? · Where's the library? · How many books can you see?"),
+7: C("Trong lớp, giờ làm bài nhóm",
+     "Một lớp học đang giờ hoạt động nhóm. GIỮA: một cái bàn tròn thấp, ba bạn nhỏ "
+     "ngồi quanh — bạn bên trái áo vàng đang cầm quyển sách mở đọc, bạn giữa áo "
+     "xanh đang viết vào quyển vở, bạn bên phải áo đỏ đang xếp mấy quân cờ trên "
+     "bàn. HẬU CẢNH BÊN TRÁI: tấm bảng đen treo tường, mặt bảng ĐỂ TRỐNG. HẬU CẢNH "
+     "BÊN PHẢI: cửa sổ nhìn ra tán cây xanh.",
+     "This is my class. She's reading books. He's doing projects. "
+     "I like reading books. I can see a book.",
+     "1. What school activity does he like? → He likes doing projects.  (mồi: He likes reading books. · He likes playing games. · He likes solving maths problems.)\n"
+     "2. What can you see? → I can see a book.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
+     "Where are they? · What's she doing? · What can you see?"),
+8: C("Trên bàn học, đồ dùng để đâu",
+     "Cận cảnh một góc lớp học nhìn chếch từ trên. GIỮA: một cái bàn học gỗ sáng "
+     "màu. TRÊN MẶT BÀN, bày rõ ràng và tách rời nhau: một hộp bút vải xanh mở nắp "
+     "nằm bên trái, hai cây SÁP MÀU đỏ và xanh nằm chéo ở giữa, một cái Ê KE nhựa "
+     "trong nằm bên phải. DƯỚI GẦM BÀN: một chiếc cặp sách màu đỏ dựng sát chân "
+     "bàn. BÊN TRÁI MÉP TRANH: một bạn gái đứng, tay chỉ xuống mấy cây sáp màu.",
+     "This is my class. There's a desk. The crayons are on the desk. "
+     "I have a set square. I can see a bag.",
+     "1. Where are the crayons? → They're on the desk.  (mồi: They're above the desk. · They're beside the desk. · They're under the desk.)\n"
+     "2. What do you have? → I have a set square.  (mồi: I have a glue stick. · I have a pencil case. · I have a school bag.)",
+     "Where are they? · Where are the crayons? · What do you have?"),
+9: C("Ở sân chơi ngoài trời",
+     "Một sân chơi ngoài trời, nền cỏ xanh, trời nắng. BÊN TRÁI: hai bạn nhỏ ngồi "
+     "đối diện nhau hai bên một cái bàn thấp, trên bàn bày bàn cờ ô vuông đen "
+     "trắng, một bạn đang đưa tay đi một quân cờ. BÊN PHẢI: một bạn gái đứng cạnh "
+     "một BỂ CÁ hình chữ nhật đặt trên giá, trong bể có mấy con cá vàng bơi; bạn ấy "
+     "chống tay lên đầu gối cúi nhìn vào bể. HẬU CẢNH: hàng rào gỗ thấp và mấy bụi "
+     "cây xanh.",
+     "This is our playground. He's playing chess. She's watching the fish. "
+     "I sometimes play chess. I can see a fish.",
+     "1. What's he doing? → He's playing chess.  (mồi: He's playing games. · He's reading books. · He's doing projects.)\n"
+     "2. What can you see? → I can see a fish.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
+     "Where are they? · What's he doing? · What can you see?"),
+10: C("Chuyến đi của lớp, bên hồ",
+     "Một bờ hồ rộng, trời trong. HẬU CẢNH: mặt hồ xanh phẳng, xa xa là dãy đồi "
+     "thấp màu lam. GIỮA BỜ HỒ: ba bạn nhỏ đang đi bộ thành hàng dọc theo lối đi "
+     "lát đá quanh hồ, bạn đi đầu giơ tay chỉ về phía mặt hồ. BÊN TRÁI: một bạn "
+     "nhỏ đang quỳ một chân, hai tay đặt một cây con xuống hố đất nhỏ, cạnh đó là "
+     "cái xẻng nhỏ. BÊN PHẢI: một ghế đá xám dưới bóng cây.",
+     "This is a lake. We walked around the lake. He planted trees. "
+     "I like our school. I can see a lake.",
+     "1. What did you do? → We walked around the lake.  (mồi: We visited the old buildings. · We planted trees. · We played games.)\n"
+     "2. What can you see? → I can see a lake.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
+     "Where are they? · What did you do? · What can you see?"),
+11: C("Bên bàn ăn, cả nhà xem ảnh chuyến đi",
+     "Một phòng khách ấm cúng buổi tối. GIỮA: một cái bàn thấp, trên bàn đặt một "
+     "quyển an-bum ảnh mở, trong an-bum thấy hai tấm ảnh nhỏ — một tấm chụp mặt "
+     "biển có chiếc thuyền, một tấm chụp bãi cát có mấy vỏ sò. BÊN TRÁI: mẹ tóc "
+     "búi, áo hồng, ngồi trên ghế sofa xám, một tay chỉ vào tấm ảnh chiếc thuyền. "
+     "BÊN PHẢI: một bạn nhỏ ngồi trên sofa cạnh mẹ, nghiêng người nhìn vào an-bum. "
+     "HẬU CẢNH: một cây đèn đứng toả ánh vàng ấm.",
+     "This is my family. We collected seashells. We walked on the beach. "
+     "My mother is here. I can see a photo.",
+     "1. What did you do? → We collected seashells.  (mồi: We planted trees. · We played games. · We ate seafood.)\n"
+     "2. Who's this? → It's my mother.  (mồi: It's my sister. · It's my brother. · It's my father.)",
+     "Where are they? · What did your family do? · Who's this?"),
+12: C("Chợ hoa ngày Tết",
+     "Một góc chợ hoa ngày Tết, trời sáng. BÊN TRÁI: một sạp hoa bày những bó HOA "
+     "HỒNG đỏ cắm trong xô nước. GIỮA: một cành ĐÀO nở hoa hồng nhạt cắm trong chậu "
+     "gốm nâu, cao ngang đầu người. BÊN PHẢI: hai bạn nhỏ đứng cạnh nhau, bạn gái "
+     "áo dài đỏ hai tay ôm một bó hoa hồng, bạn trai áo vàng giơ tay chỉ lên cành "
+     "đào. HẬU CẢNH: dãy sạp hàng có mái vải đỏ, vài người lớn đi lại.",
+     "This is the flower festival. I'll buy roses. We'll buy roses. "
+     "We'll decorate the house. I can see a flower.",
+     "1. What will you do for Tet? → We'll decorate the house.  (mồi: We'll buy roses. · We'll make banh chung. · We'll do the shopping.)\n"
+     "2. What can you see? → I can see a flower.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
+     "Where are they? · What will you do for Tet? · What can you see?"),
+13: C("Sân trường ngày hội Trung thu",
+     "Sân trường buổi tối ngày hội Trung thu. HẬU CẢNH: bầu trời tím sẫm có MẶT "
+     "TRĂNG TRÒN vàng lớn treo cao. GIỮA SÂN: một cái bàn dài phủ khăn đỏ, trên bàn "
+     "bày một đĩa BÁNH TRUNG THU hình tròn và mấy cốc nước hoa quả. BÊN TRÁI: hai "
+     "bạn nhỏ đứng cạnh bàn, một bạn cầm chiếc đèn lồng ngôi sao đỏ giơ lên. BÊN "
+     "PHẢI: một bạn nhỏ đang nhảy múa, hai tay giơ cao. HẬU CẢNH: dây cờ giấy nhiều "
+     "màu căng ngang.",
+     "This is the Mid-Autumn Festival. We'll have a party. "
+     "We'll sing and dance. I can see a cake. I like the Mid-Autumn Festival.",
+     "1. What will you do at the Mid-Autumn Festival? → We'll have a party.  (mồi: We'll sing and dance. · We'll watch the fireworks show. · We'll buy roses.)\n"
+     "2. What can you see? → I can see a cake.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
+     "Where are they? · What will you do? · What can you see?"),
+14: C("Ở công viên buổi sáng sớm",
+     "Một công viên buổi sáng sớm, nắng nhạt, cỏ xanh còn ướt sương. BÊN TRÁI: một "
+     "bạn trai áo thể thao xanh đang chạy trên lối đi, người hơi ngả về trước. GIỮA: "
+     "một bạn gái đứng trên tấm thảm tập, hai tay giơ lên chắp trước ngực, một chân "
+     "co lên — dáng tập yoga. BÊN PHẢI: một cái bàn gỗ nhỏ, trên bàn có một cốc "
+     "NƯỚC HOA QUẢ màu cam và một đĩa rau xanh. HẬU CẢNH: bụi cây và mấy con chim "
+     "đậu trên hàng rào.",
+     "This is our park. He does morning exercise every day. She does yoga. "
+     "I drink fresh juice. I can see some juice.",
+     "1. How does he stay healthy? → He does morning exercise.  (mồi: He does yoga. · He eats healthy food. · He drinks fresh juice.)\n"
+     "2. What can you see? → I can see some juice.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
+     "Where are they? · How does he stay healthy? · How often does he do morning exercise?"),
+15: C("Ở phòng y tế của trường",
+     "Phòng y tế trường học, tường trắng sạch. BÊN TRÁI: một chiếc giường thấp phủ "
+     "ga trắng, một bạn nhỏ ngồi trên mép giường, một tay ôm lấy má, mặt nhăn — "
+     "dáng đau răng. GIỮA: một cô y tá mặc áo blouse trắng đứng cạnh giường, một "
+     "tay cầm cốc nước ấm đưa ra. BÊN PHẢI: một cái bàn nhỏ, trên bàn có hộp thuốc "
+     "và cái cốc. HẬU CẢNH: cửa sổ có rèm trắng, một tấm biển chữ thập đỏ treo "
+     "tường.",
+     "This is our school. He has a toothache. She's a nurse. "
+     "He should go to the dentist. I can see a cup.",
+     "1. What's the matter? → He has a toothache.  (mồi: He has a headache. · He has a sore throat. · He has a stomach ache.)\n"
+     "2. What should he do? → He should go to the dentist.  (mồi: He should go to the doctor. · He should go to the nurse. · He should have a rest.)",
+     "Where are they? · What's the matter? · What should he do?"),
+16: C("Bên cửa sổ lớp, ngày mùa đông",
+     "Một góc lớp học ngày mùa đông. BÊN PHẢI: cửa sổ lớn, nhìn ra ngoài thấy bầu "
+     "trời xám nhạt và mấy BÔNG TUYẾT trắng đang rơi, cành cây trơ lá. BÊN TRÁI: "
+     "một tấm bảng thời tiết treo tường, chia bốn ô vuông vẽ bốn hình — mặt trời, "
+     "đám mây, mây có mưa, bông tuyết; ô BÔNG TUYẾT được khoanh tròn màu đỏ. GIỮA: "
+     "một bạn gái mặc ÁO LEN dày màu tím đứng cạnh cửa sổ, hai tay ôm lấy vai vì "
+     "lạnh. TIỀN CẢNH: một bộ bàn học có quyển vở mở.",
+     "This is my class. It's winter. It's cold today. "
+     "I can see a window. I like winter.",
+     "1. How's the weather in Ha Noi in winter? → It's cold.  (mồi: It's hot. · It's cool. · It's warm.)\n"
+     "2. What do you usually wear in winter? → I wear a jumper.  (mồi: I wear a coat. · I wear a blouse. · I wear jeans.)",
+     "Where is she? · How's the weather? · What do you usually wear in winter?"),
+17: C("Ở góc đọc truyện",
+     "Một góc đọc sách trong thư viện trường. HẬU CẢNH: một giá sách gỗ thấp xếp "
+     "đầy sách nhiều màu. BÊN TRÁI, trên tường: một bức tranh vẽ CON RÙA và CON THỎ "
+     "đang chạy thi trên đường cỏ — con rùa nâu bò chậm phía trước, con thỏ trắng "
+     "ngồi ngủ dưới gốc cây. GIỮA: một bạn gái ngồi trên tấm thảm tròn, hai tay cầm "
+     "quyển sách mở, mắt nhìn xuống trang sách. BÊN PHẢI: một bạn trai ngồi khoanh "
+     "chân, tay chỉ lên bức tranh con rùa.",
+     "This is our library. That's a tortoise. That's a hare. "
+     "The tortoise ran fast. I can see a book.",
+     "1. Who are the main characters in the story? → They're the tortoise and the hare.  (mồi: They're the ant and the grasshopper. · They're the fox and the crow. · They're Snow White and seven dwarfs.)\n"
+     "2. What can you see? → I can see a book.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
+     "Where are they? · What can you see? · Who are the main characters?"),
+18: C("Ở bến xe buýt trước cổng trường",
+     "Một bến xe buýt trên vỉa hè trước cổng trường, trời sáng. BÊN PHẢI: một chiếc "
+     "XE BUÝT màu vàng đang đỗ, cửa mở, nhìn thấy mấy hàng ghế bên trong. GIỮA: hai "
+     "bạn nhỏ đeo cặp đứng chờ trên vỉa hè, bạn gái áo hồng giơ tay chỉ về phía xe "
+     "buýt. BÊN TRÁI: một chiếc XE ĐẠP màu xanh dựng cạnh cột đèn, và một bạn nhỏ "
+     "đang dắt xe. HẬU CẢNH: cổng trường sắt và dãy nhà học màu vàng.",
+     "This is our school gate. I go to school by bus. She goes to school by bike. "
+     "I can see a bus. I can see a bike.",
+     "1. How can I get to school? → You can get there by bus.  (mồi: You can get there by bike. · You can get there by taxi. · You can get there on foot.)\n"
+     "2. What can you see? → I can see a bus.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
+     "Where are they? · How do you go to school? · What can you see?"),
+19: C("Trước tấm ảnh cầu Rồng",
+     "Một góc lớp học. HẬU CẢNH: tấm bảng ghim lớn treo tường, trên ghim ba tấm ảnh "
+     "— ảnh thứ nhất chụp một CÂY CẦU dài bắc qua sông, thành cầu uốn cong; ảnh thứ "
+     "hai chụp một mặt HỒ phẳng có hàng cây quanh bờ; ảnh thứ ba chụp một TOÀ NHÀ "
+     "cổ mái ngói. GIỮA: một bạn trai áo xanh đứng, tay chỉ vào tấm ảnh cây cầu. "
+     "BÊN PHẢI: một bạn gái đứng nhìn theo, hai tay chắp sau lưng. TIỀN CẢNH: một "
+     "cái bàn học có quyển vở mở.",
+     "This is my class. That's Dragon Bridge. Dragon Bridge is beautiful. "
+     "I'd like to visit Dragon Bridge. I can see a lake.",
+     "1. What do you think of Dragon Bridge? → I think it's beautiful.  (mồi: I think it's exciting. · I think it's peaceful. · I think it's fantastic.)\n"
+     "2. What can you see? → I can see a lake.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
+     "Where are they? · What do you think of Dragon Bridge? · What can you see?"),
+20: C("Ở bãi biển mùa hè",
+     "Một bãi biển mùa hè, trời trong, nắng chói. HẬU CẢNH: mặt biển xanh có sóng "
+     "trắng lăn tăn, chân trời phía xa, MẶT TRỜI vàng treo cao bên phải. GIỮA BÃI "
+     "CÁT: một bạn gái đội mũ rộng vành đang cúi nhặt một VỎ SÒ, cạnh chân là mấy "
+     "vỏ sò rải rác. BÊN TRÁI: một chiếc LỀU vải màu cam dựng trên cát, cạnh lều có "
+     "một chiếc ba lô. BÊN PHẢI: một bạn trai đang bước đi trên mép nước, quần xắn "
+     "cao. HẬU CẢNH BÊN TRÁI: một chiếc thuyền nhỏ neo gần bờ.",
+     "This is the beach. We went camping last summer. She collected seashells. "
+     "He walked on the beach. I can see a tent.",
+     "1. What did your family do in Phu Quoc Island? → We went camping.  (mồi: We collected seashells. · We walked on the beach. · We ate seafood.)\n"
+     "2. What can you see? → I can see a tent.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
+     "Where are they? · What did you do last summer? · What can you see?"),
+}
+
+
 LUAT = [
     ["BỐN LUẬT — bác chốt 20-08-2026", ""],
     ["", ""],

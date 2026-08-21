@@ -1,2658 +1,1057 @@
 [
  {
   "bai": "DL:TA5.B01",
-  "ten": "Unit 1 · Về bản thân mình · All about me!",
-  "muc_tieu": "Asking and answering questions about personal information Asking and answering questions about someone's favourite things",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Trong lớp, một bạn tự giới thiệu",
+  "muc_tieu": "Tả được bức tranh “Trong lớp, một bạn tự giới thiệu” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: trong lớp, một bạn tự giới thiệu.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U01.png",
+  "moTaTranh": [
+   "This is my class.",
+   "This is Mary.",
+   "Mary is my friend.",
+   "She's friendly.",
+   "I can see a dolphin."
+  ],
+  "dang": "tranh",
   "tu": [
-   "city",
-   "class",
-   "countryside",
    "dolphin",
-   "pink",
-   "sandwich",
-   "table tennis"
+   "book",
+   "my",
+   "class",
+   "Mary",
+   "friend",
+   "friendly",
+   "I"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "city",
-    "tu": "city",
-    "vi": "Chỉ một chữ thôi: “city” — nghĩa là “thành phố”."
+    "loai": "goiY",
+    "en": "What's your favourite animal?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Con thích con vật nào nhất?",
+    "dapMau": "It's a dolphin."
    },
    {
-    "loai": "tu",
-    "en": "class",
-    "tu": "class",
-    "vi": "Chỉ một chữ thôi: “class” — nghĩa là “lớp học”."
-   },
-   {
-    "loai": "tu",
-    "en": "countryside",
-    "tu": "countryside",
-    "vi": "Chỉ một chữ thôi: “countryside” — nghĩa là “nông thôn”."
-   },
-   {
-    "loai": "tu",
-    "en": "dolphin",
-    "tu": "dolphin",
-    "vi": "Chỉ một chữ thôi: “dolphin” — nghĩa là “cá heo”."
-   },
-   {
-    "loai": "tu",
-    "en": "pink",
-    "tu": "pink",
-    "vi": "Chỉ một chữ thôi: “pink” — nghĩa là “màu hồng”."
-   },
-   {
-    "loai": "tu",
-    "en": "sandwich",
-    "tu": "sandwich",
-    "vi": "Chỉ một chữ thôi: “sandwich” — nghĩa là “bánh mì kẹp”."
-   },
-   {
-    "loai": "tu",
-    "en": "table tennis",
-    "tu": "table tennis",
-    "vi": "Chỉ một chữ thôi: “table tennis” — nghĩa là “môn bóng bàn”."
-   },
-   {
-    "loai": "mau",
-    "en": "Can you tell me about yourself? - I'm in Class 5C. I live in the countryside.",
-    "mauCau": "Can you tell me about yourself? - I'm in Class 5C. I live in the countryside.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I'm in Class 5C. I live in the countryside.",
-    "mauCau": "Can you tell me about yourself? - I'm in Class 5C. I live in the countryside.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I'm in Class 5A. I live in the countryside.",
-    "mauCau": "Can you tell me about yourself? - I'm in Class 5C. I live in the countryside.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I'm in Class 5C. I live in the city.",
-    "mauCau": "Can you tell me about yourself? - I'm in Class 5C. I live in the countryside.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I'm in Class 5B. I live in the countryside.",
-    "mauCau": "Can you tell me about yourself? - I'm in Class 5C. I live in the countryside.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "Can you tell me about yourself?",
-    "mauCau": "Can you tell me about yourself? - I'm in Class 5C. I live in the countryside.",
-    "dapMau": "I'm in Class 5C. I live in the countryside.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: I'm in [Class]. I live in the [place]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "Can you tell me about yourself?",
-    "mauCau": "Can you tell me about yourself? - I'm in Class 5C. I live in the countryside.",
-    "dapMau": "I'm in Class 5C. I live in the countryside.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “Can you tell me about yourself?” rồi nghe cô đáp nhé."
+    "loai": "caDoan",
+    "en": "This is my class. This is Mary. Mary is my friend. She's friendly. I can see a dolphin.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B02",
-  "ten": "Unit 2 · Nhà của chúng mình · Our homes",
-  "muc_tieu": "Asking and answering questions about where someone lives Asking and answering questions about someone's address",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Trên con phố trước nhà",
+  "muc_tieu": "Tả được bức tranh “Trên con phố trước nhà” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: trên con phố trước nhà.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U02.png",
+  "moTaTranh": [
+   "This is my street.",
+   "That's my house.",
+   "There's a tall building.",
+   "I live in the house.",
+   "I can see two cars."
+  ],
+  "dang": "tranh",
   "tu": [
-   "building",
-   "flat",
+   "my",
+   "street",
    "house",
-   "tower",
-   "fifteen",
-   "sixteen",
-   "twenty-three",
-   "thirty-eight",
-   "ninety-three",
-   "one hundred and sixteen"
+   "tall",
+   "building",
+   "I",
+   "live",
+   "in",
+   "two"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "building",
-    "tu": "building",
-    "vi": "Chỉ một chữ thôi: “building” — nghĩa là “toà nhà”."
+    "loai": "goiY",
+    "en": "How many cars can you see?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Con thấy mấy chiếc ô tô?",
+    "dapMau": "I can see two."
    },
    {
-    "loai": "tu",
-    "en": "flat",
-    "tu": "flat",
-    "vi": "Chỉ một chữ thôi: “flat” — nghĩa là “căn hộ”."
-   },
-   {
-    "loai": "tu",
-    "en": "house",
-    "tu": "house",
-    "vi": "Chỉ một chữ thôi: “house” — nghĩa là “căn nhà”."
-   },
-   {
-    "loai": "tu",
-    "en": "tower",
-    "tu": "tower",
-    "vi": "Chỉ một chữ thôi: “tower” — nghĩa là “toà tháp”."
-   },
-   {
-    "loai": "tu",
-    "en": "fifteen",
-    "tu": "fifteen",
-    "vi": "Chỉ một chữ thôi: “fifteen” — nghĩa là “mười lăm (15)”."
-   },
-   {
-    "loai": "tu",
-    "en": "sixteen",
-    "tu": "sixteen",
-    "vi": "Chỉ một chữ thôi: “sixteen” — nghĩa là “mười sáu (16)”."
-   },
-   {
-    "loai": "tu",
-    "en": "twenty-three",
-    "tu": "twenty-three",
-    "vi": "Chỉ một chữ thôi: “twenty-three” — nghĩa là “hai mươi ba (23)”."
-   },
-   {
-    "loai": "tu",
-    "en": "thirty-eight",
-    "tu": "thirty-eight",
-    "vi": "Chỉ một chữ thôi: “thirty-eight” — nghĩa là “ba mươi tám (38)”."
-   },
-   {
-    "loai": "tu",
-    "en": "ninety-three",
-    "tu": "ninety-three",
-    "vi": "Chỉ một chữ thôi: “ninety-three” — nghĩa là “chín mươi ba (93)”."
-   },
-   {
-    "loai": "tu",
-    "en": "one hundred and sixteen",
-    "tu": "one hundred and sixteen",
-    "vi": "Chỉ một chữ thôi: “one hundred and sixteen” — nghĩa là “một trăm mười sáu (116)”."
-   },
-   {
-    "loai": "mau",
-    "en": "Do you live in this/that building? - Yes, I do. / No, I don't.",
-    "mauCau": "Do you live in this/that building? - Yes, I do. / No, I don't.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "Yes, I do.",
-    "mauCau": "Do you live in this/that building? - Yes, I do. / No, I don't.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "No, I don't.",
-    "mauCau": "Do you live in this/that building? - Yes, I do. / No, I don't.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "Do you live in this/that building?",
-    "mauCau": "Do you live in this/that building? - Yes, I do. / No, I don't.",
-    "dapMau": "Yes, I do. / No, I don't.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: Yes, I do. / No, I don't."
-   },
-   {
-    "loai": "doiVai",
-    "en": "Do you live in this/that building?",
-    "mauCau": "Do you live in this/that building? - Yes, I do. / No, I don't.",
-    "dapMau": "Yes, I do. / No, I don't.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “Do you live in this/that building?” rồi nghe cô đáp nhé."
+    "loai": "caDoan",
+    "en": "This is my street. That's my house. There's a tall building. I live in the house. I can see two cars.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B03",
-  "ten": "Unit 3 · Bạn nước ngoài của mình · My foreign friends",
-  "muc_tieu": "Asking and answering questions about someone's nationality Asking and answering questions about someone's personality",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Trước tấm bản đồ thế giới",
+  "muc_tieu": "Tả được bức tranh “Trước tấm bản đồ thế giới” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: trước tấm bản đồ thế giới.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U03.png",
+  "moTaTranh": [
+   "This is my class.",
+   "This is Lucy.",
+   "She's from Australia.",
+   "This is Ben.",
+   "He's from Japan.",
+   "Ben is my friend."
+  ],
+  "dang": "tranh",
   "tu": [
-   "American",
-   "Australian",
-   "Japanese",
-   "Malaysian",
-   "active",
-   "clever",
-   "friendly",
-   "helpful"
+   "school bag",
+   "my",
+   "class",
+   "Lucy",
+   "Australia",
+   "Ben",
+   "Japan",
+   "friend"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where's she from?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Bạn ấy đến từ đâu?",
+    "dapMau": "She's from Australia."
    },
    {
-    "loai": "tu",
-    "en": "American",
-    "tu": "American",
-    "vi": "Chỉ một chữ thôi: “American” — nghĩa là “thuộc nước Mĩ”."
+    "loai": "goiY",
+    "en": "Where's he from?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Bạn ấy đến từ đâu?",
+    "dapMau": "He's from Japan."
    },
    {
-    "loai": "tu",
-    "en": "Australian",
-    "tu": "Australian",
-    "vi": "Chỉ một chữ thôi: “Australian” — nghĩa là “thuộc nước Úc”."
-   },
-   {
-    "loai": "tu",
-    "en": "Japanese",
-    "tu": "Japanese",
-    "vi": "Chỉ một chữ thôi: “Japanese” — nghĩa là “thuộc nước Nhật Bản”."
-   },
-   {
-    "loai": "tu",
-    "en": "Malaysian",
-    "tu": "Malaysian",
-    "vi": "Chỉ một chữ thôi: “Malaysian” — nghĩa là “thuộc nước Ma-lai-xi-a”."
-   },
-   {
-    "loai": "tu",
-    "en": "active",
-    "tu": "active",
-    "vi": "Chỉ một chữ thôi: “active” — nghĩa là “nhanh nhẹn, năng động”."
-   },
-   {
-    "loai": "tu",
-    "en": "clever",
-    "tu": "clever",
-    "vi": "Chỉ một chữ thôi: “clever” — nghĩa là “thông minh”."
-   },
-   {
-    "loai": "tu",
-    "en": "friendly",
-    "tu": "friendly",
-    "vi": "Chỉ một chữ thôi: “friendly” — nghĩa là “thân thiện”."
-   },
-   {
-    "loai": "tu",
-    "en": "helpful",
-    "tu": "helpful",
-    "vi": "Chỉ một chữ thôi: “helpful” — nghĩa là “hay giúp đỡ”."
-   },
-   {
-    "loai": "mau",
-    "en": "What nationality is he/she? - He's/She's Australian.",
-    "mauCau": "What nationality is he/she? - He's/She's Australian.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "He's/She's Australian.",
-    "mauCau": "What nationality is he/she? - He's/She's Australian.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "He's/She's American.",
-    "mauCau": "What nationality is he/she? - He's/She's Australian.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "He's/She's Japanese.",
-    "mauCau": "What nationality is he/she? - He's/She's Australian.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "He's/She's Malaysian.",
-    "mauCau": "What nationality is he/she? - He's/She's Australian.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "What nationality is he/she?",
-    "mauCau": "What nationality is he/she? - He's/She's Australian.",
-    "dapMau": "He's/She's Australian.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: He's/She's [nationality]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "What nationality is he/she?",
-    "mauCau": "What nationality is he/she? - He's/She's Australian.",
-    "dapMau": "He's/She's Australian.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “What nationality is he/she?” rồi nghe cô đáp nhé."
-   },
-   {
-    "loai": "thay",
-    "khung": "He's/She's [nationality].",
-    "o": "tu",
-    "en": "He's/She's {thich}.",
-    "mauCau": "What nationality is he/she? - He's/She's Australian.",
-    "mac_dinh": "American",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is my class. This is Lucy. She's from Australia. This is Ben. He's from Japan. Ben is my friend.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B04",
-  "ten": "Unit 4 · Lúc rảnh mình làm gì · Our free-time activities",
-  "muc_tieu": "Asking and answering questions about what someone likes doing in their free time Asking and answering questions about what someone does at the weekend",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Trong vườn buổi chiều",
+  "muc_tieu": "Tả được bức tranh “Trong vườn buổi chiều” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: trong vườn buổi chiều.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U04.png",
+  "moTaTranh": [
+   "This is our garden.",
+   "She's watering the flowers.",
+   "He's going for a walk.",
+   "I often go for a walk.",
+   "I can see a bike."
+  ],
+  "dang": "tranh",
   "tu": [
-   "go for a walk",
-   "play the violin",
-   "surf the Internet",
-   "water the flowers",
-   "always",
-   "often",
-   "sometimes",
-   "usually",
-   "rarely",
-   "never"
+   "bike",
+   "garden",
+   "walking",
+   "our",
+   "I",
+   "often"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "go for a walk",
-    "tu": "go for a walk",
-    "vi": "Chỉ một chữ thôi: “go for a walk” — nghĩa là “đi dạo bộ”."
+    "loai": "goiY",
+    "en": "What's she doing?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Bạn ấy đang làm gì?",
+    "dapMau": "She's watering the flowers."
    },
    {
-    "loai": "tu",
-    "en": "play the violin",
-    "tu": "play the violin",
-    "vi": "Chỉ một chữ thôi: “play the violin” — nghĩa là “chơi đàn vi-ô-lông”."
+    "loai": "goiY",
+    "en": "What do you do at the weekend?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Cuối tuần con làm gì?",
+    "dapMau": "I often go for a walk."
    },
    {
-    "loai": "tu",
-    "en": "surf the Internet",
-    "tu": "surf the Internet",
-    "vi": "Chỉ một chữ thôi: “surf the Internet” — nghĩa là “lướt mạng In-tơ-nét”."
-   },
-   {
-    "loai": "tu",
-    "en": "water the flowers",
-    "tu": "water the flowers",
-    "vi": "Chỉ một chữ thôi: “water the flowers” — nghĩa là “tưới hoa”."
-   },
-   {
-    "loai": "tu",
-    "en": "always",
-    "tu": "always",
-    "vi": "Chỉ một chữ thôi: “always” — nghĩa là “luôn luôn”."
-   },
-   {
-    "loai": "tu",
-    "en": "often",
-    "tu": "often",
-    "vi": "Chỉ một chữ thôi: “often” — nghĩa là “hay, thường”."
-   },
-   {
-    "loai": "tu",
-    "en": "sometimes",
-    "tu": "sometimes",
-    "vi": "Chỉ một chữ thôi: “sometimes” — nghĩa là “thỉnh thoảng”."
-   },
-   {
-    "loai": "tu",
-    "en": "usually",
-    "tu": "usually",
-    "vi": "Chỉ một chữ thôi: “usually” — nghĩa là “thường thường”."
-   },
-   {
-    "loai": "tu",
-    "en": "rarely",
-    "tu": "rarely",
-    "vi": "Chỉ một chữ thôi: “rarely” — nghĩa là “hiếm khi”."
-   },
-   {
-    "loai": "tu",
-    "en": "never",
-    "tu": "never",
-    "vi": "Chỉ một chữ thôi: “never” — nghĩa là “không bao giờ”."
-   },
-   {
-    "loai": "mau",
-    "en": "What do you like doing in your free time? - I like playing the violin.",
-    "mauCau": "What do you like doing in your free time? - I like playing the violin.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I like playing the violin.",
-    "mauCau": "What do you like doing in your free time? - I like playing the violin.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I like going for a walk.",
-    "mauCau": "What do you like doing in your free time? - I like playing the violin.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I like surfing the Internet.",
-    "mauCau": "What do you like doing in your free time? - I like playing the violin.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I like watering the flowers.",
-    "mauCau": "What do you like doing in your free time? - I like playing the violin.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "What do you like doing in your free time?",
-    "mauCau": "What do you like doing in your free time? - I like playing the violin.",
-    "dapMau": "I like playing the violin.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: I like [V-ing]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "What do you like doing in your free time?",
-    "mauCau": "What do you like doing in your free time? - I like playing the violin.",
-    "dapMau": "I like playing the violin.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “What do you like doing in your free time?” rồi nghe cô đáp nhé."
-   },
-   {
-    "loai": "thay",
-    "khung": "I like [V-ing].",
-    "o": "tu",
-    "en": "I like {thich}.",
-    "mauCau": "What do you like doing in your free time? - I like playing the violin.",
-    "mac_dinh": "go for a walk",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is our garden. She's watering the flowers. He's going for a walk. I often go for a walk. I can see a bike.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B05",
-  "ten": "Unit 5 · Nghề mình muốn làm · My future job",
-  "muc_tieu": "Asking and answering questions about what someone would like to be in the future Asking for and giving reasons why someone would like to be something in the future",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Ở góc nghề nghiệp của lớp",
+  "muc_tieu": "Tả được bức tranh “Ở góc nghề nghiệp của lớp” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: ở góc nghề nghiệp của lớp.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U05.png",
+  "moTaTranh": [
+   "This is my class.",
+   "That's a firefighter.",
+   "I want to be a firefighter.",
+   "That's a writer.",
+   "I can see a book."
+  ],
+  "dang": "tranh",
   "tu": [
    "firefighter",
-   "gardener",
-   "reporter",
    "writer",
-   "grow flowers",
-   "report the news",
-   "teach children",
-   "write stories"
+   "gardener",
+   "book",
+   "pen",
+   "my",
+   "class",
+   "I"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where is he?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "firefighter",
-    "tu": "firefighter",
-    "vi": "Chỉ một chữ thôi: “firefighter” — nghĩa là “lính cứu hoả”."
+    "loai": "goiY",
+    "en": "What do you want to be?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Lớn lên con muốn làm nghề gì?",
+    "dapMau": "I want to be a firefighter."
    },
    {
-    "loai": "tu",
-    "en": "gardener",
-    "tu": "gardener",
-    "vi": "Chỉ một chữ thôi: “gardener” — nghĩa là “người làm vườn”."
-   },
-   {
-    "loai": "tu",
-    "en": "reporter",
-    "tu": "reporter",
-    "vi": "Chỉ một chữ thôi: “reporter” — nghĩa là “phóng viên”."
-   },
-   {
-    "loai": "tu",
-    "en": "writer",
-    "tu": "writer",
-    "vi": "Chỉ một chữ thôi: “writer” — nghĩa là “nhà văn”."
-   },
-   {
-    "loai": "tu",
-    "en": "grow flowers",
-    "tu": "grow flowers",
-    "vi": "Chỉ một chữ thôi: “grow flowers” — nghĩa là “trồng hoa”."
-   },
-   {
-    "loai": "tu",
-    "en": "report the news",
-    "tu": "report the news",
-    "vi": "Chỉ một chữ thôi: “report the news” — nghĩa là “đưa tin”."
-   },
-   {
-    "loai": "tu",
-    "en": "teach children",
-    "tu": "teach children",
-    "vi": "Chỉ một chữ thôi: “teach children” — nghĩa là “dạy trẻ em”."
-   },
-   {
-    "loai": "tu",
-    "en": "write stories",
-    "tu": "write stories",
-    "vi": "Chỉ một chữ thôi: “write stories” — nghĩa là “viết truyện”."
-   },
-   {
-    "loai": "mau",
-    "en": "What would you like to be in the future? - I'd like to be a doctor.",
-    "mauCau": "What would you like to be in the future? - I'd like to be a doctor.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được.",
-    "bay": "Tiếng Việt nói vật ấy là xong — không có chữ nào như “a”. Tiếng Anh thì bắt buộc: “What would you like to be in the future? - I'd like to be a doctor.”. Thiếu “a” là câu sai."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I'd like to be a doctor.",
-    "mauCau": "What would you like to be in the future? - I'd like to be a doctor.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I'd like to be a firefighter.",
-    "mauCau": "What would you like to be in the future? - I'd like to be a doctor.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I'd like to be a gardener.",
-    "mauCau": "What would you like to be in the future? - I'd like to be a doctor.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I'd like to be a reporter.",
-    "mauCau": "What would you like to be in the future? - I'd like to be a doctor.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "What would you like to be in the future?",
-    "mauCau": "What would you like to be in the future? - I'd like to be a doctor.",
-    "dapMau": "I'd like to be a doctor.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: I'd like to be a [job]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "What would you like to be in the future?",
-    "mauCau": "What would you like to be in the future? - I'd like to be a doctor.",
-    "dapMau": "I'd like to be a doctor.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “What would you like to be in the future?” rồi nghe cô đáp nhé."
-   },
-   {
-    "loai": "thay",
-    "khung": "I'd like to be a [job].",
-    "o": "tu",
-    "en": "I'd like to be a {thich}.",
-    "mauCau": "What would you like to be in the future? - I'd like to be a doctor.",
-    "mac_dinh": "firefighter",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is my class. That's a firefighter. I want to be a firefighter. That's a writer. I can see a book.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B06",
-  "ten": "Unit 6 · Các phòng trong trường · Our school rooms",
-  "muc_tieu": "Asking and answering questions about the location of a room in a school Asking for and giving directions at school",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Ở hành lang tầng hai",
+  "muc_tieu": "Tả được bức tranh “Ở hành lang tầng hai” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: ở hành lang tầng hai.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U06.png",
+  "moTaTranh": [
+   "This is our school.",
+   "That's our library.",
+   "The library is on the first floor.",
+   "I like our library.",
+   "I can see two books."
+  ],
+  "dang": "tranh",
   "tu": [
-   "first floor",
-   "ground floor",
-   "second floor",
-   "third floor",
-   "go along",
-   "go downstairs",
-   "go past",
-   "go upstairs"
+   "book",
+   "our",
+   "school",
+   "library",
+   "on",
+   "I",
+   "two"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "first floor",
-    "tu": "first floor",
-    "vi": "Chỉ một chữ thôi: “first floor” — nghĩa là “tầng hai (tầng 1 kiểu Anh)”."
-   },
-   {
-    "loai": "tu",
-    "en": "ground floor",
-    "tu": "ground floor",
-    "vi": "Chỉ một chữ thôi: “ground floor” — nghĩa là “tầng trệt, tầng một”."
-   },
-   {
-    "loai": "tu",
-    "en": "second floor",
-    "tu": "second floor",
-    "vi": "Chỉ một chữ thôi: “second floor” — nghĩa là “tầng ba”."
-   },
-   {
-    "loai": "tu",
-    "en": "third floor",
-    "tu": "third floor",
-    "vi": "Chỉ một chữ thôi: “third floor” — nghĩa là “tầng bốn”."
-   },
-   {
-    "loai": "tu",
-    "en": "go along",
-    "tu": "go along",
-    "vi": "Chỉ một chữ thôi: “go along” — nghĩa là “đi dọc theo”."
-   },
-   {
-    "loai": "tu",
-    "en": "go downstairs",
-    "tu": "go downstairs",
-    "vi": "Chỉ một chữ thôi: “go downstairs” — nghĩa là “đi xuống cầu thang”."
-   },
-   {
-    "loai": "tu",
-    "en": "go past",
-    "tu": "go past",
-    "vi": "Chỉ một chữ thôi: “go past” — nghĩa là “đi qua”."
-   },
-   {
-    "loai": "tu",
-    "en": "go upstairs",
-    "tu": "go upstairs",
-    "vi": "Chỉ một chữ thôi: “go upstairs” — nghĩa là “đi lên cầu thang”."
-   },
-   {
-    "loai": "mau",
-    "en": "Where's the library? - It's on the second floor.",
-    "mauCau": "Where's the library? - It's on the second floor.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "It's on the second floor.",
-    "mauCau": "Where's the library? - It's on the second floor.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "It's on the first floor.",
-    "mauCau": "Where's the library? - It's on the second floor.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
+    "loai": "goiY",
     "en": "Where's the library?",
-    "mauCau": "Where's the library? - It's on the second floor.",
-    "dapMau": "It's on the second floor.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: It's on the [floor]."
+    "vi": "Con nhìn tranh rồi đáp nhé — Thư viện ở tầng nào?",
+    "dapMau": "It's on the first floor."
    },
    {
-    "loai": "doiVai",
-    "en": "Where's the library?",
-    "mauCau": "Where's the library? - It's on the second floor.",
-    "dapMau": "It's on the second floor.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “Where's the library?” rồi nghe cô đáp nhé."
+    "loai": "goiY",
+    "en": "How many books can you see?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Con thấy mấy quyển sách?",
+    "dapMau": "I can see two."
    },
    {
-    "loai": "thay",
-    "khung": "It's on the [floor].",
-    "o": "tu",
-    "en": "It's on the {thich}.",
-    "mauCau": "Where's the library? - It's on the second floor.",
-    "mac_dinh": "first floor",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is our school. That's our library. The library is on the first floor. I like our library. I can see two books.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B07",
-  "ten": "Unit 7 · Hoạt động ở trường mình thích · Our favourite school activities",
-  "muc_tieu": "Asking and answering questions about someone's favourite school activities Asking and answering questions about why someone likes a school activity",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Trong lớp, giờ làm bài nhóm",
+  "muc_tieu": "Tả được bức tranh “Trong lớp, giờ làm bài nhóm” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: trong lớp, giờ làm bài nhóm.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U07.png",
+  "moTaTranh": [
+   "This is my class.",
+   "She's reading books.",
+   "He's doing projects.",
+   "I like reading books.",
+   "I can see a book."
+  ],
+  "dang": "tranh",
   "tu": [
-   "do projects",
-   "play games",
-   "read books",
-   "solve maths problems",
-   "difficult",
-   "easy",
-   "fun",
-   "good for group work",
-   "useful",
-   "interesting"
+   "reading",
+   "writing",
+   "book",
+   "my",
+   "class",
+   "I"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "do projects",
-    "tu": "do projects",
-    "vi": "Chỉ một chữ thôi: “do projects” — nghĩa là “làm các bài tập dự án”."
+    "loai": "goiY",
+    "en": "What's she doing?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Bạn ấy đang làm gì?"
    },
    {
-    "loai": "tu",
-    "en": "play games",
-    "tu": "play games",
-    "vi": "Chỉ một chữ thôi: “play games” — nghĩa là “chơi trò chơi”."
-   },
-   {
-    "loai": "tu",
-    "en": "read books",
-    "tu": "read books",
-    "vi": "Chỉ một chữ thôi: “read books” — nghĩa là “đọc sách”."
-   },
-   {
-    "loai": "tu",
-    "en": "solve maths problems",
-    "tu": "solve maths problems",
-    "vi": "Chỉ một chữ thôi: “solve maths problems” — nghĩa là “giải các bài toán”."
-   },
-   {
-    "loai": "tu",
-    "en": "difficult",
-    "tu": "difficult",
-    "vi": "Chỉ một chữ thôi: “difficult” — nghĩa là “khó”."
-   },
-   {
-    "loai": "tu",
-    "en": "easy",
-    "tu": "easy",
-    "vi": "Chỉ một chữ thôi: “easy” — nghĩa là “dễ”."
-   },
-   {
-    "loai": "tu",
-    "en": "fun",
-    "tu": "fun",
-    "vi": "Chỉ một chữ thôi: “fun” — nghĩa là “sự vui thích”."
-   },
-   {
-    "loai": "tu",
-    "en": "good for group work",
-    "tu": "good for group work",
-    "vi": "Chỉ một chữ thôi: “good for group work” — nghĩa là “tốt, giúp ích cho hoạt động nhóm”."
-   },
-   {
-    "loai": "tu",
-    "en": "useful",
-    "tu": "useful",
-    "vi": "Chỉ một chữ thôi: “useful” — nghĩa là “có ích, hữu ích”."
-   },
-   {
-    "loai": "tu",
-    "en": "interesting",
-    "tu": "interesting",
-    "vi": "Chỉ một chữ thôi: “interesting” — nghĩa là “thú vị”."
-   },
-   {
-    "loai": "mau",
-    "en": "What school activity does he/she like? - He/She likes reading books.",
-    "mauCau": "What school activity does he/she like? - He/She likes reading books.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "He/She likes reading books.",
-    "mauCau": "What school activity does he/she like? - He/She likes reading books.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "He/She likes doing projects.",
-    "mauCau": "What school activity does he/she like? - He/She likes reading books.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "He/She likes playing games.",
-    "mauCau": "What school activity does he/she like? - He/She likes reading books.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "He/She likes solving maths problems.",
-    "mauCau": "What school activity does he/she like? - He/She likes reading books.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "What school activity does he/she like?",
-    "mauCau": "What school activity does he/she like? - He/She likes reading books.",
-    "dapMau": "He/She likes reading books.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: He/She likes [V-ing]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "What school activity does he/she like?",
-    "mauCau": "What school activity does he/she like? - He/She likes reading books.",
-    "dapMau": "He/She likes reading books.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “What school activity does he/she like?” rồi nghe cô đáp nhé."
-   },
-   {
-    "loai": "thay",
-    "khung": "He/She likes [V-ing].",
-    "o": "tu",
-    "en": "He/She likes {thich}.",
-    "mauCau": "What school activity does he/she like? - He/She likes reading books.",
-    "mac_dinh": "do projects",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is my class. She's reading books. He's doing projects. I like reading books. I can see a book.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B08",
-  "ten": "Unit 8 · Trong lớp mình · In our classroom",
-  "muc_tieu": "Asking and answering questions about the locations of school things Asking and answering questions about possession",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Trên bàn học, đồ dùng để đâu",
+  "muc_tieu": "Tả được bức tranh “Trên bàn học, đồ dùng để đâu” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: trên bàn học, đồ dùng để đâu.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U08.png",
+  "moTaTranh": [
+   "This is my class.",
+   "There's a desk.",
+   "The crayons are on the desk.",
+   "I have a set square.",
+   "I can see a bag."
+  ],
+  "dang": "tranh",
   "tu": [
-   "above",
-   "beside",
-   "in front of",
-   "under",
+   "pencil case",
    "crayon",
-   "glue stick",
-   "pencil sharpener",
-   "set square"
+   "set square",
+   "school bag",
+   "my",
+   "class",
+   "desk",
+   "on",
+   "I",
+   "bag"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "above",
-    "tu": "above",
-    "vi": "Chỉ một chữ thôi: “above” — nghĩa là “ở phía trên”."
+    "loai": "goiY",
+    "en": "Where are the crayons?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Mấy cây sáp màu để ở đâu?",
+    "dapMau": "They're on the desk."
    },
    {
-    "loai": "tu",
-    "en": "beside",
-    "tu": "beside",
-    "vi": "Chỉ một chữ thôi: “beside” — nghĩa là “bên cạnh”."
+    "loai": "goiY",
+    "en": "What do you have?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Con có gì?",
+    "dapMau": "I have a set square."
    },
    {
-    "loai": "tu",
-    "en": "in front of",
-    "tu": "in front of",
-    "vi": "Chỉ một chữ thôi: “in front of” — nghĩa là “ở phía trước”."
-   },
-   {
-    "loai": "tu",
-    "en": "under",
-    "tu": "under",
-    "vi": "Chỉ một chữ thôi: “under” — nghĩa là “ở phía dưới”."
-   },
-   {
-    "loai": "tu",
-    "en": "crayon",
-    "tu": "crayon",
-    "vi": "Chỉ một chữ thôi: “crayon” — nghĩa là “bút sáp màu”."
-   },
-   {
-    "loai": "tu",
-    "en": "glue stick",
-    "tu": "glue stick",
-    "vi": "Chỉ một chữ thôi: “glue stick” — nghĩa là “keo dán”."
-   },
-   {
-    "loai": "tu",
-    "en": "pencil sharpener",
-    "tu": "pencil sharpener",
-    "vi": "Chỉ một chữ thôi: “pencil sharpener” — nghĩa là “cái gọt bút chì”."
-   },
-   {
-    "loai": "tu",
-    "en": "set square",
-    "tu": "set square",
-    "vi": "Chỉ một chữ thôi: “set square” — nghĩa là “cái ê-ke”."
-   },
-   {
-    "loai": "mau",
-    "en": "Where are the maps? - They're beside the board.",
-    "mauCau": "Where are the maps? - They're beside the board.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "They're beside the board.",
-    "mauCau": "Where are the maps? - They're beside the board.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "They're beside the table.",
-    "mauCau": "Where are the maps? - They're beside the board.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "They're above the table.",
-    "mauCau": "Where are the maps? - They're beside the board.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "They're beside the desk.",
-    "mauCau": "Where are the maps? - They're beside the board.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "Where are the maps?",
-    "mauCau": "Where are the maps? - They're beside the board.",
-    "dapMau": "They're beside the board.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: They're [preposition] the [place]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "Where are the maps?",
-    "mauCau": "Where are the maps? - They're beside the board.",
-    "dapMau": "They're beside the board.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “Where are the maps?” rồi nghe cô đáp nhé."
+    "loai": "caDoan",
+    "en": "This is my class. There's a desk. The crayons are on the desk. I have a set square. I can see a bag.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B09",
-  "ten": "Unit 9 · Chơi ngoài trời · Our outdoor activities",
-  "muc_tieu": "Asking and answering questions about where someone was in the past Asking and answering questions about activities someone did in the past",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Ở sân chơi ngoài trời",
+  "muc_tieu": "Tả được bức tranh “Ở sân chơi ngoài trời” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: ở sân chơi ngoài trời.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U09.png",
+  "moTaTranh": [
+   "This is our playground.",
+   "He's playing chess.",
+   "She's watching the fish.",
+   "I sometimes play chess.",
+   "I can see a fish."
+  ],
+  "dang": "tranh",
   "tu": [
-   "aquarium",
-   "campsite",
-   "funfair",
-   "theatre",
-   "dance around the campfire",
-   "listen to music",
-   "play chess",
-   "watch the fish",
-   "cinema",
-   "bakery"
+   "fish",
+   "our",
+   "playground",
+   "chess",
+   "I",
+   "sometimes"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "aquarium",
-    "tu": "aquarium",
-    "vi": "Chỉ một chữ thôi: “aquarium” — nghĩa là “bể kính nuôi cá”."
+    "loai": "goiY",
+    "en": "What's he doing?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Bạn ấy đang làm gì?",
+    "dapMau": "He's playing chess."
    },
    {
-    "loai": "tu",
-    "en": "campsite",
-    "tu": "campsite",
-    "vi": "Chỉ một chữ thôi: “campsite” — nghĩa là “địa điểm cắm trại”."
-   },
-   {
-    "loai": "tu",
-    "en": "funfair",
-    "tu": "funfair",
-    "vi": "Chỉ một chữ thôi: “funfair” — nghĩa là “hội chợ giải trí”."
-   },
-   {
-    "loai": "tu",
-    "en": "theatre",
-    "tu": "theatre",
-    "vi": "Chỉ một chữ thôi: “theatre” — nghĩa là “nhà hát”."
-   },
-   {
-    "loai": "tu",
-    "en": "dance around the campfire",
-    "tu": "dance around the campfire",
-    "vi": "Chỉ một chữ thôi: “dance around the campfire” — nghĩa là “nhảy múa quanh lửa trại”."
-   },
-   {
-    "loai": "tu",
-    "en": "listen to music",
-    "tu": "listen to music",
-    "vi": "Chỉ một chữ thôi: “listen to music” — nghĩa là “nghe nhạc”."
-   },
-   {
-    "loai": "tu",
-    "en": "play chess",
-    "tu": "play chess",
-    "vi": "Chỉ một chữ thôi: “play chess” — nghĩa là “chơi cờ”."
-   },
-   {
-    "loai": "tu",
-    "en": "watch the fish",
-    "tu": "watch the fish",
-    "vi": "Chỉ một chữ thôi: “watch the fish” — nghĩa là “ngắm cá”."
-   },
-   {
-    "loai": "tu",
-    "en": "cinema",
-    "tu": "cinema",
-    "vi": "Chỉ một chữ thôi: “cinema” — nghĩa là “rạp chiếu phim”."
-   },
-   {
-    "loai": "tu",
-    "en": "bakery",
-    "tu": "bakery",
-    "vi": "Chỉ một chữ thôi: “bakery” — nghĩa là “tiệm bánh”."
-   },
-   {
-    "loai": "mau",
-    "en": "Were you at the campsite yesterday? - Yes, we were. / No, we weren't.",
-    "mauCau": "Were you at the campsite yesterday? - Yes, we were. / No, we weren't.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "Yes, we were.",
-    "mauCau": "Were you at the campsite yesterday? - Yes, we were. / No, we weren't.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "No, we weren't.",
-    "mauCau": "Were you at the campsite yesterday? - Yes, we were. / No, we weren't.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "Were you at the campsite yesterday?",
-    "mauCau": "Were you at the campsite yesterday? - Yes, we were. / No, we weren't.",
-    "dapMau": "Yes, we were. / No, we weren't.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: Yes, we were. / No, we weren't."
-   },
-   {
-    "loai": "doiVai",
-    "en": "Were you at the campsite yesterday?",
-    "mauCau": "Were you at the campsite yesterday? - Yes, we were. / No, we weren't.",
-    "dapMau": "Yes, we were. / No, we weren't.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “Were you at the campsite yesterday?” rồi nghe cô đáp nhé."
+    "loai": "caDoan",
+    "en": "This is our playground. He's playing chess. She's watching the fish. I sometimes play chess. I can see a fish.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B10",
-  "ten": "Unit 10 · Chuyến đi của lớp · Our school trip",
-  "muc_tieu": "Asking and answering questions about a school trip in the past Asking and answering questions about activities someone did on a school trip",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Chuyến đi của lớp, bên hồ",
+  "muc_tieu": "Tả được bức tranh “Chuyến đi của lớp, bên hồ” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: chuyến đi của lớp, bên hồ.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U10.png",
+  "moTaTranh": [
+   "This is a lake.",
+   "We walked around the lake.",
+   "He planted trees.",
+   "I like our school.",
+   "I can see a lake."
+  ],
+  "dang": "tranh",
   "tu": [
-   "Ba Na Hills",
-   "Bai Dinh Pagoda",
-   "Hoan Kiem Lake",
-   "Suoi Tien Theme Park",
-   "plant trees",
-   "play games",
-   "visit the old buildings",
-   "walk around the lake",
-   "November",
-   "December"
+   "lake",
+   "I",
+   "our",
+   "school"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "Ba Na Hills",
-    "tu": "Ba Na Hills",
-    "vi": "Chỉ một chữ thôi: “Ba Na Hills” — nghĩa là “Bà Nà Hills (Đà Nẵng)”."
+    "loai": "goiY",
+    "en": "What did you do?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Hôm ấy con đã làm gì?",
+    "dapMau": "We walked around the lake."
    },
    {
-    "loai": "tu",
-    "en": "Bai Dinh Pagoda",
-    "tu": "Bai Dinh Pagoda",
-    "vi": "Chỉ một chữ thôi: “Bai Dinh Pagoda” — nghĩa là “chùa Bái Đính”."
-   },
-   {
-    "loai": "tu",
-    "en": "Hoan Kiem Lake",
-    "tu": "Hoan Kiem Lake",
-    "vi": "Chỉ một chữ thôi: “Hoan Kiem Lake” — nghĩa là “hồ Hoàn Kiếm”."
-   },
-   {
-    "loai": "tu",
-    "en": "Suoi Tien Theme Park",
-    "tu": "Suoi Tien Theme Park",
-    "vi": "Chỉ một chữ thôi: “Suoi Tien Theme Park” — nghĩa là “công viên giải trí Suối Tiên”."
-   },
-   {
-    "loai": "tu",
-    "en": "plant trees",
-    "tu": "plant trees",
-    "vi": "Chỉ một chữ thôi: “plant trees” — nghĩa là “trồng cây”."
-   },
-   {
-    "loai": "tu",
-    "en": "play games",
-    "tu": "play games",
-    "vi": "Chỉ một chữ thôi: “play games” — nghĩa là “chơi trò chơi”."
-   },
-   {
-    "loai": "tu",
-    "en": "visit the old buildings",
-    "tu": "visit the old buildings",
-    "vi": "Chỉ một chữ thôi: “visit the old buildings” — nghĩa là “thăm các toà nhà cổ”."
-   },
-   {
-    "loai": "tu",
-    "en": "walk around the lake",
-    "tu": "walk around the lake",
-    "vi": "Chỉ một chữ thôi: “walk around the lake” — nghĩa là “đi dạo quanh hồ”."
-   },
-   {
-    "loai": "tu",
-    "en": "November",
-    "tu": "November",
-    "vi": "Chỉ một chữ thôi: “November” — nghĩa là “tháng Mười Một”."
-   },
-   {
-    "loai": "tu",
-    "en": "December",
-    "tu": "December",
-    "vi": "Chỉ một chữ thôi: “December” — nghĩa là “tháng Mười Hai”."
-   },
-   {
-    "loai": "mau",
-    "en": "Did they go to Ba Na Hills? - Yes, they did. / No, they didn't.",
-    "mauCau": "Did they go to Ba Na Hills? - Yes, they did. / No, they didn't.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "Yes, they did.",
-    "mauCau": "Did they go to Ba Na Hills? - Yes, they did. / No, they didn't.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "No, they didn't.",
-    "mauCau": "Did they go to Ba Na Hills? - Yes, they did. / No, they didn't.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "Did they go to Ba Na Hills?",
-    "mauCau": "Did they go to Ba Na Hills? - Yes, they did. / No, they didn't.",
-    "dapMau": "Yes, they did. / No, they didn't.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: Yes, they did. / No, they didn't."
-   },
-   {
-    "loai": "doiVai",
-    "en": "Did they go to Ba Na Hills?",
-    "mauCau": "Did they go to Ba Na Hills? - Yes, they did. / No, they didn't.",
-    "dapMau": "Yes, they did. / No, they didn't.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “Did they go to Ba Na Hills?” rồi nghe cô đáp nhé."
+    "loai": "caDoan",
+    "en": "This is a lake. We walked around the lake. He planted trees. I like our school. I can see a lake.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B11",
-  "ten": "Unit 11 · Thời gian bên gia đình · Family time",
-  "muc_tieu": "Asking and answering questions about whether someone did something in the past Asking and answering questions about activities someone did somewhere",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Bên bàn, cả nhà xem ảnh",
+  "muc_tieu": "Tả được bức tranh “Bên bàn, cả nhà xem ảnh” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: bên bàn, cả nhà xem ảnh.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U11.png",
+  "moTaTranh": [
+   "This is my family.",
+   "We collected seashells.",
+   "We walked on the beach.",
+   "My mother is here.",
+   "I can see a photo."
+  ],
+  "dang": "tranh",
   "tu": [
-   "buy souvenirs",
-   "collect seashells",
-   "eat seafood",
-   "see some interesting places",
-   "take a boat trip around the bay",
-   "walk on the beach",
-   "swim",
-   "take photos"
+   "my",
+   "on",
+   "beach",
+   "mother",
+   "here",
+   "I"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "buy souvenirs",
-    "tu": "buy souvenirs",
-    "vi": "Chỉ một chữ thôi: “buy souvenirs” — nghĩa là “mua đồ lưu niệm”."
+    "loai": "goiY",
+    "en": "What did your family do?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Cả nhà mình đã làm gì?"
    },
    {
-    "loai": "tu",
-    "en": "collect seashells",
-    "tu": "collect seashells",
-    "vi": "Chỉ một chữ thôi: “collect seashells” — nghĩa là “thu lượm, đi lấy vỏ sò”."
+    "loai": "goiY",
+    "en": "Who's this?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Đây là ai?",
+    "dapMau": "It's my mother."
    },
    {
-    "loai": "tu",
-    "en": "eat seafood",
-    "tu": "eat seafood",
-    "vi": "Chỉ một chữ thôi: “eat seafood” — nghĩa là “ăn hải sản”."
-   },
-   {
-    "loai": "tu",
-    "en": "see some interesting places",
-    "tu": "see some interesting places",
-    "vi": "Chỉ một chữ thôi: “see some interesting places” — nghĩa là “thăm vài nơi thú vị”."
-   },
-   {
-    "loai": "tu",
-    "en": "take a boat trip around the bay",
-    "tu": "take a boat trip around the bay",
-    "vi": "Chỉ một chữ thôi: “take a boat trip around the bay” — nghĩa là “đi du lịch bằng tàu thuỷ quanh vịnh”."
-   },
-   {
-    "loai": "tu",
-    "en": "walk on the beach",
-    "tu": "walk on the beach",
-    "vi": "Chỉ một chữ thôi: “walk on the beach” — nghĩa là “đi dạo trên bãi biển”."
-   },
-   {
-    "loai": "tu",
-    "en": "swim",
-    "tu": "swim",
-    "vi": "Chỉ một chữ thôi: “swim” — nghĩa là “bơi”."
-   },
-   {
-    "loai": "tu",
-    "en": "take photos",
-    "tu": "take photos",
-    "vi": "Chỉ một chữ thôi: “take photos” — nghĩa là “chụp ảnh”."
-   },
-   {
-    "loai": "mau",
-    "en": "Did you swim? - Yes, I did. I swam with my mother.",
-    "mauCau": "Did you swim? - Yes, I did. I swam with my mother.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "Yes, I did. I swam with my mother.",
-    "mauCau": "Did you swim? - Yes, I did. I swam with my mother.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "Yes, I did. I bought souvenirs.",
-    "mauCau": "Did you swim? - Yes, I did. I swam with my mother.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "Yes, I did. I collected seashells.",
-    "mauCau": "Did you swim? - Yes, I did. I swam with my mother.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "Did you swim?",
-    "mauCau": "Did you swim? - Yes, I did. I swam with my mother.",
-    "dapMau": "Yes, I did. I swam with my mother.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: Yes, I did. I + [past verb]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "Did you swim?",
-    "mauCau": "Did you swim? - Yes, I did. I swam with my mother.",
-    "dapMau": "Yes, I did. I swam with my mother.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “Did you swim?” rồi nghe cô đáp nhé."
-   },
-   {
-    "loai": "thay",
-    "khung": "Yes, I did. I + [past verb].",
-    "o": "tu",
-    "en": "Yes, I did. I {thich}.",
-    "mauCau": "Did you swim? - Yes, I did. I swam with my mother.",
-    "mac_dinh": "buy souvenirs",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is my family. We collected seashells. We walked on the beach. My mother is here. I can see a photo.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B12",
-  "ten": "Unit 12 · Tết của nhà mình · Our Tet holiday",
-  "muc_tieu": "Asking and answering questions about whether someone will do something for Tet Asking and answering questions about where someone will go at Tet",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Chợ hoa ngày Tết",
+  "muc_tieu": "Tả được bức tranh “Chợ hoa ngày Tết” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: chợ hoa ngày tết.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U12.png",
+  "moTaTranh": [
+   "This is the flower festival.",
+   "I'll buy roses.",
+   "We'll buy roses.",
+   "We'll decorate the house.",
+   "I can see a flower."
+  ],
+  "dang": "tranh",
   "tu": [
-   "buy roses",
-   "buy a branch of peach blossoms",
-   "decorate the house",
-   "do the shopping",
-   "make banh chung",
-   "make spring rolls",
-   "fireworks show",
    "flower festival",
-   "New Year party",
-   "grandparents' house"
+   "house",
+   "I"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "buy roses",
-    "tu": "buy roses",
-    "vi": "Chỉ một chữ thôi: “buy roses” — nghĩa là “mua hoa hồng”."
+    "loai": "goiY",
+    "en": "What will you do for Tet?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Tết này nhà con sẽ làm gì?",
+    "dapMau": "We'll decorate the house."
    },
    {
-    "loai": "tu",
-    "en": "buy a branch of peach blossoms",
-    "tu": "buy a branch of peach blossoms",
-    "vi": "Chỉ một chữ thôi: “buy a branch of peach blossoms” — nghĩa là “mua một cành hoa đào”."
-   },
-   {
-    "loai": "tu",
-    "en": "decorate the house",
-    "tu": "decorate the house",
-    "vi": "Chỉ một chữ thôi: “decorate the house” — nghĩa là “trang trí ngôi nhà”."
-   },
-   {
-    "loai": "tu",
-    "en": "do the shopping",
-    "tu": "do the shopping",
-    "vi": "Chỉ một chữ thôi: “do the shopping” — nghĩa là “đi mua sắm”."
-   },
-   {
-    "loai": "tu",
-    "en": "make banh chung",
-    "tu": "make banh chung",
-    "vi": "Chỉ một chữ thôi: “make banh chung” — nghĩa là “gói bánh chưng”."
-   },
-   {
-    "loai": "tu",
-    "en": "make spring rolls",
-    "tu": "make spring rolls",
-    "vi": "Chỉ một chữ thôi: “make spring rolls” — nghĩa là “làm nem rán”."
-   },
-   {
-    "loai": "tu",
-    "en": "fireworks show",
-    "tu": "fireworks show",
-    "vi": "Chỉ một chữ thôi: “fireworks show” — nghĩa là “buổi trình diễn pháo hoa”."
-   },
-   {
-    "loai": "tu",
-    "en": "flower festival",
-    "tu": "flower festival",
-    "vi": "Chỉ một chữ thôi: “flower festival” — nghĩa là “hội chợ hoa”."
-   },
-   {
-    "loai": "tu",
-    "en": "New Year party",
-    "tu": "New Year party",
-    "vi": "Chỉ một chữ thôi: “New Year party” — nghĩa là “tiệc mừng năm mới”."
-   },
-   {
-    "loai": "tu",
-    "en": "grandparents' house",
-    "tu": "grandparents' house",
-    "vi": "Chỉ một chữ thôi: “grandparents' house” — nghĩa là “nhà ông bà”."
-   },
-   {
-    "loai": "mau",
-    "en": "Will you buy a branch of peach blossoms for Tet? - Yes, I will. / No, I won't. I'll make spring rolls.",
-    "mauCau": "Will you buy a branch of peach blossoms for Tet? - Yes, I will. / No, I won't. I'll make spring rolls.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được.",
-    "bay": "Tiếng Việt nói vật ấy là xong — không có chữ nào như “a”. Tiếng Anh thì bắt buộc: “Will you buy a branch of peach blossoms for Tet? - Yes, I will. / No, I won't. I'll make spring rolls.”. Thiếu “a” là câu sai."
-   },
-   {
-    "loai": "noiCa",
-    "en": "Yes, I will.",
-    "mauCau": "Will you buy a branch of peach blossoms for Tet? - Yes, I will. / No, I won't. I'll make spring rolls.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "No, I won't. I'll make spring rolls.",
-    "mauCau": "Will you buy a branch of peach blossoms for Tet? - Yes, I will. / No, I won't. I'll make spring rolls.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "No, I won't. I'll buy roses.",
-    "mauCau": "Will you buy a branch of peach blossoms for Tet? - Yes, I will. / No, I won't. I'll make spring rolls.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "No, I won't. I'll decorate the house.",
-    "mauCau": "Will you buy a branch of peach blossoms for Tet? - Yes, I will. / No, I won't. I'll make spring rolls.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "Will you buy a branch of peach blossoms for Tet?",
-    "mauCau": "Will you buy a branch of peach blossoms for Tet? - Yes, I will. / No, I won't. I'll make spring rolls.",
-    "dapMau": "Yes, I will. / No, I won't. I'll make spring rolls.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: Yes, I will. / No, I won't. I'll + [Verb]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "Will you buy a branch of peach blossoms for Tet?",
-    "mauCau": "Will you buy a branch of peach blossoms for Tet? - Yes, I will. / No, I won't. I'll make spring rolls.",
-    "dapMau": "Yes, I will. / No, I won't. I'll make spring rolls.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “Will you buy a branch of peach blossoms for Tet?” rồi nghe cô đáp nhé."
-   },
-   {
-    "loai": "thay",
-    "khung": "Yes, I will. / No, I won't. I'll + [Verb].",
-    "o": "tu",
-    "en": "Yes, I will. / No, I won't. I'll {thich}.",
-    "mauCau": "Will you buy a branch of peach blossoms for Tet? - Yes, I will. / No, I won't. I'll make spring rolls.",
-    "mac_dinh": "buy roses",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is the flower festival. I'll buy roses. We'll buy roses. We'll decorate the house. I can see a flower.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B13",
-  "ten": "Unit 13 · Những ngày đặc biệt · Our special days",
-  "muc_tieu": "Asking and answering questions about what someone will do for special days Asking and answering questions about food and drinks at an event",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Sân trường ngày hội Trung thu",
+  "muc_tieu": "Tả được bức tranh “Sân trường ngày hội Trung thu” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: sân trường ngày hội trung thu.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U13.png",
+  "moTaTranh": [
+   "This is the Mid-Autumn Festival.",
+   "We'll have a party.",
+   "We'll sing and dance.",
+   "I can see a cake.",
+   "I like the Mid-Autumn Festival."
+  ],
+  "dang": "tranh",
   "tu": [
-   "Mid-Autumn Festival",
-   "Children's Day",
-   "Sports Day",
-   "Teachers' Day",
-   "apple juice",
-   "burger",
-   "milk tea",
-   "pizza"
+   "cake",
+   "juice",
+   "party",
+   "sing",
+   "dance",
+   "I"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "Mid-Autumn Festival",
-    "tu": "Mid-Autumn Festival",
-    "vi": "Chỉ một chữ thôi: “Mid-Autumn Festival” — nghĩa là “Tết Trung thu”."
+    "loai": "goiY",
+    "en": "What will you do?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Con sẽ làm gì?"
    },
    {
-    "loai": "tu",
-    "en": "Children's Day",
-    "tu": "Children's Day",
-    "vi": "Chỉ một chữ thôi: “Children's Day” — nghĩa là “ngày Thiếu nhi”."
-   },
-   {
-    "loai": "tu",
-    "en": "Sports Day",
-    "tu": "Sports Day",
-    "vi": "Chỉ một chữ thôi: “Sports Day” — nghĩa là “ngày Thể thao”."
-   },
-   {
-    "loai": "tu",
-    "en": "Teachers' Day",
-    "tu": "Teachers' Day",
-    "vi": "Chỉ một chữ thôi: “Teachers' Day” — nghĩa là “ngày Nhà giáo”."
-   },
-   {
-    "loai": "tu",
-    "en": "apple juice",
-    "tu": "apple juice",
-    "vi": "Chỉ một chữ thôi: “apple juice” — nghĩa là “nước ép táo”."
-   },
-   {
-    "loai": "tu",
-    "en": "burger",
-    "tu": "burger",
-    "vi": "Chỉ một chữ thôi: “burger” — nghĩa là “bánh mì kẹp thịt”."
-   },
-   {
-    "loai": "tu",
-    "en": "milk tea",
-    "tu": "milk tea",
-    "vi": "Chỉ một chữ thôi: “milk tea” — nghĩa là “trà sữa”."
-   },
-   {
-    "loai": "tu",
-    "en": "pizza",
-    "tu": "pizza",
-    "vi": "Chỉ một chữ thôi: “pizza” — nghĩa là “bánh pít-za”."
-   },
-   {
-    "loai": "mau",
-    "en": "What will you do on Children's Day? - We'll sing, dance and have a party.",
-    "mauCau": "What will you do on Children's Day? - We'll sing, dance and have a party.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "We'll sing, dance and have a party.",
-    "mauCau": "What will you do on Children's Day? - We'll sing, dance and have a party.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "We'll have a party.",
-    "mauCau": "What will you do on Children's Day? - We'll sing, dance and have a party.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "We'll sing and dance.",
-    "mauCau": "What will you do on Children's Day? - We'll sing, dance and have a party.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "We'll have a burger.",
-    "mauCau": "What will you do on Children's Day? - We'll sing, dance and have a party.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "What will you do on Children's Day?",
-    "mauCau": "What will you do on Children's Day? - We'll sing, dance and have a party.",
-    "dapMau": "We'll sing, dance and have a party.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: We'll + [Verb]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "What will you do on Children's Day?",
-    "mauCau": "What will you do on Children's Day? - We'll sing, dance and have a party.",
-    "dapMau": "We'll sing, dance and have a party.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “What will you do on Children's Day?” rồi nghe cô đáp nhé."
-   },
-   {
-    "loai": "thay",
-    "khung": "We'll + [Verb].",
-    "o": "tu",
-    "en": "We'll {thich}.",
-    "mauCau": "What will you do on Children's Day? - We'll sing, dance and have a party.",
-    "mac_dinh": "Mid-Autumn Festival",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is the Mid-Autumn Festival. We'll have a party. We'll sing and dance. I can see a cake. I like the Mid-Autumn Festival.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B14",
-  "ten": "Unit 14 · Giữ gìn sức khoẻ · Staying healthy",
-  "muc_tieu": "Asking and answering questions about a family member's lifestyle Asking and answering questions about the frequency of an activity",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Ở công viên buổi sáng sớm",
+  "muc_tieu": "Tả được bức tranh “Ở công viên buổi sáng sớm” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: ở công viên buổi sáng sớm.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U14.png",
+  "moTaTranh": [
+   "This is our park.",
+   "He does morning exercise every day.",
+   "She does yoga.",
+   "I drink fresh juice.",
+   "I can see some juice."
+  ],
+  "dang": "tranh",
   "tu": [
-   "do morning exercise",
-   "do yoga",
-   "drink fresh juice",
-   "eat healthy food",
-   "eat vegetables",
-   "play sports",
-   "every day",
-   "once a week",
-   "twice a week",
-   "three times a week",
-   "strong",
-   "swimmer"
+   "bird",
+   "run",
+   "juice",
+   "bean",
+   "our",
+   "I",
+   "some"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "do morning exercise",
-    "tu": "do morning exercise",
-    "vi": "Chỉ một chữ thôi: “do morning exercise” — nghĩa là “tập thể dục buổi sáng”."
-   },
-   {
-    "loai": "tu",
-    "en": "do yoga",
-    "tu": "do yoga",
-    "vi": "Chỉ một chữ thôi: “do yoga” — nghĩa là “tập yoga”."
-   },
-   {
-    "loai": "tu",
-    "en": "drink fresh juice",
-    "tu": "drink fresh juice",
-    "vi": "Chỉ một chữ thôi: “drink fresh juice” — nghĩa là “uống nước ép tươi”."
-   },
-   {
-    "loai": "tu",
-    "en": "eat healthy food",
-    "tu": "eat healthy food",
-    "vi": "Chỉ một chữ thôi: “eat healthy food” — nghĩa là “ăn thức ăn lành mạnh”."
-   },
-   {
-    "loai": "tu",
-    "en": "eat vegetables",
-    "tu": "eat vegetables",
-    "vi": "Chỉ một chữ thôi: “eat vegetables” — nghĩa là “ăn rau”."
-   },
-   {
-    "loai": "tu",
-    "en": "play sports",
-    "tu": "play sports",
-    "vi": "Chỉ một chữ thôi: “play sports” — nghĩa là “chơi thể thao”."
-   },
-   {
-    "loai": "tu",
-    "en": "every day",
-    "tu": "every day",
-    "vi": "Chỉ một chữ thôi: “every day” — nghĩa là “mỗi ngày”."
-   },
-   {
-    "loai": "tu",
-    "en": "once a week",
-    "tu": "once a week",
-    "vi": "Chỉ một chữ thôi: “once a week” — nghĩa là “một lần một tuần”."
-   },
-   {
-    "loai": "tu",
-    "en": "twice a week",
-    "tu": "twice a week",
-    "vi": "Chỉ một chữ thôi: “twice a week” — nghĩa là “hai lần một tuần”."
-   },
-   {
-    "loai": "tu",
-    "en": "three times a week",
-    "tu": "three times a week",
-    "vi": "Chỉ một chữ thôi: “three times a week” — nghĩa là “ba lần một tuần”."
-   },
-   {
-    "loai": "tu",
-    "en": "strong",
-    "tu": "strong",
-    "vi": "Chỉ một chữ thôi: “strong” — nghĩa là “khoẻ, giỏi”."
-   },
-   {
-    "loai": "tu",
-    "en": "swimmer",
-    "tu": "swimmer",
-    "vi": "Chỉ một chữ thôi: “swimmer” — nghĩa là “người bơi lội”."
-   },
-   {
-    "loai": "mau",
-    "en": "How does he stay healthy? - He does morning exercise every day.",
-    "mauCau": "How does he stay healthy? - He does morning exercise every day.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "He does morning exercise every day.",
-    "mauCau": "How does he stay healthy? - He does morning exercise every day.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "He / She does yoga.",
-    "mauCau": "How does he stay healthy? - He does morning exercise every day.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
+    "loai": "goiY",
     "en": "How does he stay healthy?",
-    "mauCau": "How does he stay healthy? - He does morning exercise every day.",
-    "dapMau": "He does morning exercise every day.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: He / She + [Verb-s]."
+    "vi": "Con nhìn tranh rồi đáp nhé — Bạn ấy giữ sức khoẻ bằng cách nào?",
+    "dapMau": "He does morning exercise."
    },
    {
-    "loai": "doiVai",
-    "en": "How does he stay healthy?",
-    "mauCau": "How does he stay healthy? - He does morning exercise every day.",
-    "dapMau": "He does morning exercise every day.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “How does he stay healthy?” rồi nghe cô đáp nhé."
+    "loai": "goiY",
+    "en": "How often does he do morning exercise?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Bạn ấy tập thể dục sáng mấy lần?"
    },
    {
-    "loai": "thay",
-    "khung": "He / She + [Verb-s].",
-    "o": "tu",
-    "en": "He / She {thich}.",
-    "mauCau": "How does he stay healthy? - He does morning exercise every day.",
-    "mac_dinh": "do morning exercise",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is our park. He does morning exercise every day. She does yoga. I drink fresh juice. I can see some juice.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B15",
-  "ten": "Unit 15 · Sức khoẻ của mình · Our health",
-  "muc_tieu": "Asking and answering questions about common health problems Giving health advice",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Ở phòng y tế của trường",
+  "muc_tieu": "Tả được bức tranh “Ở phòng y tế của trường” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: ở phòng y tế của trường.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U15.png",
+  "moTaTranh": [
+   "This is our school.",
+   "He has a toothache.",
+   "She's a nurse.",
+   "He should go to the dentist.",
+   "I can see a cup."
+  ],
+  "dang": "tranh",
   "tu": [
-   "headache",
-   "sore throat",
-   "stomach ache",
+   "nurse",
+   "cup",
    "toothache",
-   "drink warm water",
-   "go to the dentist",
-   "have a rest",
-   "take some medicine",
-   "matter"
+   "our",
+   "school",
+   "I"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "headache",
-    "tu": "headache",
-    "vi": "Chỉ một chữ thôi: “headache” — nghĩa là “đau đầu”."
-   },
-   {
-    "loai": "tu",
-    "en": "sore throat",
-    "tu": "sore throat",
-    "vi": "Chỉ một chữ thôi: “sore throat” — nghĩa là “đau họng”."
-   },
-   {
-    "loai": "tu",
-    "en": "stomach ache",
-    "tu": "stomach ache",
-    "vi": "Chỉ một chữ thôi: “stomach ache” — nghĩa là “đau bụng”."
-   },
-   {
-    "loai": "tu",
-    "en": "toothache",
-    "tu": "toothache",
-    "vi": "Chỉ một chữ thôi: “toothache” — nghĩa là “đau răng”."
-   },
-   {
-    "loai": "tu",
-    "en": "drink warm water",
-    "tu": "drink warm water",
-    "vi": "Chỉ một chữ thôi: “drink warm water” — nghĩa là “uống nước ấm”."
-   },
-   {
-    "loai": "tu",
-    "en": "go to the dentist",
-    "tu": "go to the dentist",
-    "vi": "Chỉ một chữ thôi: “go to the dentist” — nghĩa là “đi khám nha sĩ”."
-   },
-   {
-    "loai": "tu",
-    "en": "have a rest",
-    "tu": "have a rest",
-    "vi": "Chỉ một chữ thôi: “have a rest” — nghĩa là “nghỉ ngơi”."
-   },
-   {
-    "loai": "tu",
-    "en": "take some medicine",
-    "tu": "take some medicine",
-    "vi": "Chỉ một chữ thôi: “take some medicine” — nghĩa là “uống thuốc”."
-   },
-   {
-    "loai": "tu",
-    "en": "matter",
-    "tu": "matter",
-    "vi": "Chỉ một chữ thôi: “matter” — nghĩa là “vấn đề”."
-   },
-   {
-    "loai": "mau",
-    "en": "What's the matter? - I have a headache.",
-    "mauCau": "What's the matter? - I have a headache.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I have a headache.",
-    "mauCau": "What's the matter? - I have a headache.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I have sore throat.",
-    "mauCau": "What's the matter? - I have a headache.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I have stomach ache.",
-    "mauCau": "What's the matter? - I have a headache.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I have toothache.",
-    "mauCau": "What's the matter? - I have a headache.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
+    "loai": "goiY",
     "en": "What's the matter?",
-    "mauCau": "What's the matter? - I have a headache.",
-    "dapMau": "I have a headache.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: I have [health problem]."
+    "vi": "Con nhìn tranh rồi đáp nhé — Bạn ấy bị làm sao?",
+    "dapMau": "He has a toothache."
    },
    {
-    "loai": "doiVai",
-    "en": "What's the matter?",
-    "mauCau": "What's the matter? - I have a headache.",
-    "dapMau": "I have a headache.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “What's the matter?” rồi nghe cô đáp nhé."
+    "loai": "goiY",
+    "en": "What should he do?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Bạn ấy nên làm gì?",
+    "dapMau": "He should go to the dentist."
    },
    {
-    "loai": "thay",
-    "khung": "I have [health problem].",
-    "o": "tu",
-    "en": "I have {thich}.",
-    "mauCau": "What's the matter? - I have a headache.",
-    "mac_dinh": "headache",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is our school. He has a toothache. She's a nurse. He should go to the dentist. I can see a cup.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B16",
-  "ten": "Unit 16 · Mùa và thời tiết · Seasons and the weather",
-  "muc_tieu": "Asking and answering questions about the weather in different seasons Asking and answering questions about what people wear in different seasons",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Bên cửa sổ lớp, ngày mùa đông",
+  "muc_tieu": "Tả được bức tranh “Bên cửa sổ lớp, ngày mùa đông” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: bên cửa sổ lớp, ngày mùa đông.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U16.png",
+  "moTaTranh": [
+   "This is my class.",
+   "It's winter.",
+   "It's cold today.",
+   "I can see a window.",
+   "I like winter."
+  ],
+  "dang": "tranh",
   "tu": [
-   "autumn",
-   "spring",
-   "summer",
+   "notebook",
+   "my",
+   "class",
    "winter",
    "cold",
-   "cool",
-   "hot",
-   "warm",
-   "blouse",
-   "coat",
-   "jeans",
-   "jumper",
-   "trousers"
+   "today",
+   "I",
+   "window",
+   "jumper"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where is she?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "autumn",
-    "tu": "autumn",
-    "vi": "Chỉ một chữ thôi: “autumn” — nghĩa là “mùa thu”."
+    "loai": "goiY",
+    "en": "How's the weather?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Trời hôm nay thế nào?"
    },
    {
-    "loai": "tu",
-    "en": "spring",
-    "tu": "spring",
-    "vi": "Chỉ một chữ thôi: “spring” — nghĩa là “mùa xuân”."
+    "loai": "goiY",
+    "en": "What do you usually wear in winter?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Mùa đông con thường mặc gì?",
+    "dapMau": "I wear a jumper."
    },
    {
-    "loai": "tu",
-    "en": "summer",
-    "tu": "summer",
-    "vi": "Chỉ một chữ thôi: “summer” — nghĩa là “mùa hè”."
-   },
-   {
-    "loai": "tu",
-    "en": "winter",
-    "tu": "winter",
-    "vi": "Chỉ một chữ thôi: “winter” — nghĩa là “mùa đông”."
-   },
-   {
-    "loai": "tu",
-    "en": "cold",
-    "tu": "cold",
-    "vi": "Chỉ một chữ thôi: “cold” — nghĩa là “lạnh”."
-   },
-   {
-    "loai": "tu",
-    "en": "cool",
-    "tu": "cool",
-    "vi": "Chỉ một chữ thôi: “cool” — nghĩa là “mát”."
-   },
-   {
-    "loai": "tu",
-    "en": "hot",
-    "tu": "hot",
-    "vi": "Chỉ một chữ thôi: “hot” — nghĩa là “nóng”."
-   },
-   {
-    "loai": "tu",
-    "en": "warm",
-    "tu": "warm",
-    "vi": "Chỉ một chữ thôi: “warm” — nghĩa là “ấm áp”."
-   },
-   {
-    "loai": "tu",
-    "en": "blouse",
-    "tu": "blouse",
-    "vi": "Chỉ một chữ thôi: “blouse” — nghĩa là “áo cánh”."
-   },
-   {
-    "loai": "tu",
-    "en": "coat",
-    "tu": "coat",
-    "vi": "Chỉ một chữ thôi: “coat” — nghĩa là “áo khoác, áo choàng”."
-   },
-   {
-    "loai": "tu",
-    "en": "jeans",
-    "tu": "jeans",
-    "vi": "Chỉ một chữ thôi: “jeans” — nghĩa là “quần jeans”."
-   },
-   {
-    "loai": "tu",
-    "en": "jumper",
-    "tu": "jumper",
-    "vi": "Chỉ một chữ thôi: “jumper” — nghĩa là “áo len cao cổ”."
-   },
-   {
-    "loai": "tu",
-    "en": "trousers",
-    "tu": "trousers",
-    "vi": "Chỉ một chữ thôi: “trousers” — nghĩa là “quần dài”."
-   },
-   {
-    "loai": "mau",
-    "en": "How's the weather in Ha Noi in summer? - It's hot.",
-    "mauCau": "How's the weather in Ha Noi in summer? - It's hot.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "It's hot.",
-    "mauCau": "How's the weather in Ha Noi in summer? - It's hot.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "It's cold.",
-    "mauCau": "How's the weather in Ha Noi in summer? - It's hot.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "How's the weather in Ha Noi in summer?",
-    "mauCau": "How's the weather in Ha Noi in summer? - It's hot.",
-    "dapMau": "It's hot.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: It's [weather]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "How's the weather in Ha Noi in summer?",
-    "mauCau": "How's the weather in Ha Noi in summer? - It's hot.",
-    "dapMau": "It's hot.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “How's the weather in Ha Noi in summer?” rồi nghe cô đáp nhé."
-   },
-   {
-    "loai": "thay",
-    "khung": "It's [weather].",
-    "o": "tu",
-    "en": "It's {thich}.",
-    "mauCau": "How's the weather in Ha Noi in summer? - It's hot.",
-    "mac_dinh": "autumn",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is my class. It's winter. It's cold today. I can see a window. I like winter.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B17",
-  "ten": "Unit 17 · Truyện cho thiếu nhi · Stories for children",
-  "muc_tieu": "Asking and answering questions about the main characters in a story Asking and answering questions about how a character did something in a story",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Ở góc đọc truyện",
+  "muc_tieu": "Tả được bức tranh “Ở góc đọc truyện” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: ở góc đọc truyện.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U17.png",
+  "moTaTranh": [
+   "This is our library.",
+   "That's a tortoise.",
+   "That's a hare.",
+   "The tortoise ran fast.",
+   "I can see a book."
+  ],
+  "dang": "tranh",
   "tu": [
-   "ant",
-   "crow",
-   "dwarf",
-   "fox",
-   "grasshopper",
-   "hare",
-   "Snow White",
    "tortoise",
-   "cook well",
-   "run fast",
-   "sing beautifully",
-   "work hard"
+   "hare",
+   "reading",
+   "book",
+   "our",
+   "library",
+   "I"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "ant",
-    "tu": "ant",
-    "vi": "Chỉ một chữ thôi: “ant” — nghĩa là “con kiến”."
+    "loai": "goiY",
+    "en": "Who are the main characters?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Truyện ấy có những nhân vật nào?"
    },
    {
-    "loai": "tu",
-    "en": "crow",
-    "tu": "crow",
-    "vi": "Chỉ một chữ thôi: “crow” — nghĩa là “con quạ”."
-   },
-   {
-    "loai": "tu",
-    "en": "dwarf",
-    "tu": "dwarf",
-    "vi": "Chỉ một chữ thôi: “dwarf” — nghĩa là “chú lùn, người tí hon”."
-   },
-   {
-    "loai": "tu",
-    "en": "fox",
-    "tu": "fox",
-    "vi": "Chỉ một chữ thôi: “fox” — nghĩa là “con cáo”."
-   },
-   {
-    "loai": "tu",
-    "en": "grasshopper",
-    "tu": "grasshopper",
-    "vi": "Chỉ một chữ thôi: “grasshopper” — nghĩa là “con châu chấu”."
-   },
-   {
-    "loai": "tu",
-    "en": "hare",
-    "tu": "hare",
-    "vi": "Chỉ một chữ thôi: “hare” — nghĩa là “con thỏ rừng”."
-   },
-   {
-    "loai": "tu",
-    "en": "Snow White",
-    "tu": "Snow White",
-    "vi": "Chỉ một chữ thôi: “Snow White” — nghĩa là “Nàng Bạch Tuyết”."
-   },
-   {
-    "loai": "tu",
-    "en": "tortoise",
-    "tu": "tortoise",
-    "vi": "Chỉ một chữ thôi: “tortoise” — nghĩa là “con rùa”."
-   },
-   {
-    "loai": "tu",
-    "en": "cook well",
-    "tu": "cook well",
-    "vi": "Chỉ một chữ thôi: “cook well” — nghĩa là “nấu ăn giỏi”."
-   },
-   {
-    "loai": "tu",
-    "en": "run fast",
-    "tu": "run fast",
-    "vi": "Chỉ một chữ thôi: “run fast” — nghĩa là “chạy nhanh”."
-   },
-   {
-    "loai": "tu",
-    "en": "sing beautifully",
-    "tu": "sing beautifully",
-    "vi": "Chỉ một chữ thôi: “sing beautifully” — nghĩa là “hát hay”."
-   },
-   {
-    "loai": "tu",
-    "en": "work hard",
-    "tu": "work hard",
-    "vi": "Chỉ một chữ thôi: “work hard” — nghĩa là “làm việc chăm chỉ”."
-   },
-   {
-    "loai": "mau",
-    "en": "Who are the main characters in the story? - They're Snow White and seven dwarfs.",
-    "mauCau": "Who are the main characters in the story? - They're Snow White and seven dwarfs.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "They're Snow White and seven dwarfs.",
-    "mauCau": "Who are the main characters in the story? - They're Snow White and seven dwarfs.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "They're the ant and the grasshopper.",
-    "mauCau": "Who are the main characters in the story? - They're Snow White and seven dwarfs.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "They're the tortoise and the hare.",
-    "mauCau": "Who are the main characters in the story? - They're Snow White and seven dwarfs.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "They're the fox and the crow.",
-    "mauCau": "Who are the main characters in the story? - They're Snow White and seven dwarfs.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "Who are the main characters in the story?",
-    "mauCau": "Who are the main characters in the story? - They're Snow White and seven dwarfs.",
-    "dapMau": "They're Snow White and seven dwarfs.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: They're [characters]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "Who are the main characters in the story?",
-    "mauCau": "Who are the main characters in the story? - They're Snow White and seven dwarfs.",
-    "dapMau": "They're Snow White and seven dwarfs.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “Who are the main characters in the story?” rồi nghe cô đáp nhé."
-   },
-   {
-    "loai": "thay",
-    "khung": "They're [characters].",
-    "o": "tu",
-    "en": "They're {thich}.",
-    "mauCau": "Who are the main characters in the story? - They're Snow White and seven dwarfs.",
-    "mac_dinh": "ant",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is our library. That's a tortoise. That's a hare. The tortoise ran fast. I can see a book.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B18",
-  "ten": "Unit 18 · Đi lại bằng gì · Means of transport",
-  "muc_tieu": "Asking and answering questions about where someone wants to visit Asking and answering questions about a means of transport",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Ở bến xe buýt trước cổng trường",
+  "muc_tieu": "Tả được bức tranh “Ở bến xe buýt trước cổng trường” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: ở bến xe buýt trước cổng trường.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U18.png",
+  "moTaTranh": [
+   "This is our school gate.",
+   "I go to school by bus.",
+   "She goes to school by bike.",
+   "I can see a bus.",
+   "I can see a bike."
+  ],
+  "dang": "tranh",
   "tu": [
-   "Dragon Bridge",
-   "Ha Noi Opera House",
-   "Ho Chi Minh City Museum",
-   "Ngo Mon Square",
-   "by bicycle",
-   "by bus",
-   "by taxi",
-   "on foot"
+   "bus",
+   "school bag",
+   "bike",
+   "gate",
+   "our",
+   "school",
+   "I"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "Dragon Bridge",
-    "tu": "Dragon Bridge",
-    "vi": "Chỉ một chữ thôi: “Dragon Bridge” — nghĩa là “Cầu Rồng”."
+    "loai": "goiY",
+    "en": "How do you go to school?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Con đi học bằng gì?"
    },
    {
-    "loai": "tu",
-    "en": "Ha Noi Opera House",
-    "tu": "Ha Noi Opera House",
-    "vi": "Chỉ một chữ thôi: “Ha Noi Opera House” — nghĩa là “Nhà hát Lớn Hà Nội”."
-   },
-   {
-    "loai": "tu",
-    "en": "Ho Chi Minh City Museum",
-    "tu": "Ho Chi Minh City Museum",
-    "vi": "Chỉ một chữ thôi: “Ho Chi Minh City Museum” — nghĩa là “Bảo tàng Thành phố Hồ Chí Minh”."
-   },
-   {
-    "loai": "tu",
-    "en": "Ngo Mon Square",
-    "tu": "Ngo Mon Square",
-    "vi": "Chỉ một chữ thôi: “Ngo Mon Square” — nghĩa là “Quảng trường Ngọ Môn”."
-   },
-   {
-    "loai": "tu",
-    "en": "by bicycle",
-    "tu": "by bicycle",
-    "vi": "Chỉ một chữ thôi: “by bicycle” — nghĩa là “bằng xe đạp”."
-   },
-   {
-    "loai": "tu",
-    "en": "by bus",
-    "tu": "by bus",
-    "vi": "Chỉ một chữ thôi: “by bus” — nghĩa là “bằng xe buýt”."
-   },
-   {
-    "loai": "tu",
-    "en": "by taxi",
-    "tu": "by taxi",
-    "vi": "Chỉ một chữ thôi: “by taxi” — nghĩa là “bằng tắc xi”."
-   },
-   {
-    "loai": "tu",
-    "en": "on foot",
-    "tu": "on foot",
-    "vi": "Chỉ một chữ thôi: “on foot” — nghĩa là “đi bộ”."
-   },
-   {
-    "loai": "mau",
-    "en": "Where do you want to visit? - I want to visit Hoan Kiem Lake.",
-    "mauCau": "Where do you want to visit? - I want to visit Hoan Kiem Lake.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I want to visit Hoan Kiem Lake.",
-    "mauCau": "Where do you want to visit? - I want to visit Hoan Kiem Lake.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I want to visit Dragon Bridge.",
-    "mauCau": "Where do you want to visit? - I want to visit Hoan Kiem Lake.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I want to visit Ha Noi Opera House.",
-    "mauCau": "Where do you want to visit? - I want to visit Hoan Kiem Lake.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I want to visit Ho Chi Minh City Museum.",
-    "mauCau": "Where do you want to visit? - I want to visit Hoan Kiem Lake.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "Where do you want to visit?",
-    "mauCau": "Where do you want to visit? - I want to visit Hoan Kiem Lake.",
-    "dapMau": "I want to visit Hoan Kiem Lake.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: I want to visit [place]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "Where do you want to visit?",
-    "mauCau": "Where do you want to visit? - I want to visit Hoan Kiem Lake.",
-    "dapMau": "I want to visit Hoan Kiem Lake.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “Where do you want to visit?” rồi nghe cô đáp nhé."
-   },
-   {
-    "loai": "thay",
-    "khung": "I want to visit [place].",
-    "o": "tu",
-    "en": "I want to visit {thich}.",
-    "mauCau": "Where do you want to visit? - I want to visit Hoan Kiem Lake.",
-    "mac_dinh": "Dragon Bridge",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is our school gate. I go to school by bus. She goes to school by bike. I can see a bus. I can see a bike.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B19",
-  "ten": "Unit 19 · Những nơi đáng đến · Places of interest",
-  "muc_tieu": "Asking and answering questions about someone's opinion of a place Asking and answering questions about distance",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Trước tấm ảnh cầu Rồng",
+  "muc_tieu": "Tả được bức tranh “Trước tấm ảnh cầu Rồng” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: trước tấm ảnh cầu rồng.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U19.png",
+  "moTaTranh": [
+   "This is my class.",
+   "That's Dragon Bridge.",
+   "Dragon Bridge is beautiful.",
+   "I'd like to visit Dragon Bridge.",
+   "I can see a lake."
+  ],
+  "dang": "tranh",
   "tu": [
+   "notebook",
+   "my",
+   "class",
    "beautiful",
-   "exciting",
-   "fantastic",
-   "peaceful",
-   "kilometre",
-   "far",
-   "forty",
-   "hundred",
-   "twenty-nine",
-   "one hundred and twenty-nine"
+   "visit",
+   "I",
+   "lake"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "beautiful",
-    "tu": "beautiful",
-    "vi": "Chỉ một chữ thôi: “beautiful” — nghĩa là “đẹp”."
+    "loai": "goiY",
+    "en": "What do you think of Dragon Bridge?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Con thấy cầu Rồng thế nào?",
+    "dapMau": "I think it's beautiful."
    },
    {
-    "loai": "tu",
-    "en": "exciting",
-    "tu": "exciting",
-    "vi": "Chỉ một chữ thôi: “exciting” — nghĩa là “thú vị, hứng thú”."
-   },
-   {
-    "loai": "tu",
-    "en": "fantastic",
-    "tu": "fantastic",
-    "vi": "Chỉ một chữ thôi: “fantastic” — nghĩa là “tuyệt vời”."
-   },
-   {
-    "loai": "tu",
-    "en": "peaceful",
-    "tu": "peaceful",
-    "vi": "Chỉ một chữ thôi: “peaceful” — nghĩa là “yên bình”."
-   },
-   {
-    "loai": "tu",
-    "en": "kilometre",
-    "tu": "kilometre",
-    "vi": "Chỉ một chữ thôi: “kilometre” — nghĩa là “ki-lô-mét”."
-   },
-   {
-    "loai": "tu",
-    "en": "far",
-    "tu": "far",
-    "vi": "Chỉ một chữ thôi: “far” — nghĩa là “xa”."
-   },
-   {
-    "loai": "tu",
-    "en": "forty",
-    "tu": "forty",
-    "vi": "Chỉ một chữ thôi: “forty” — nghĩa là “bốn mươi (40)”."
-   },
-   {
-    "loai": "tu",
-    "en": "hundred",
-    "tu": "hundred",
-    "vi": "Chỉ một chữ thôi: “hundred” — nghĩa là “một trăm (100)”."
-   },
-   {
-    "loai": "tu",
-    "en": "twenty-nine",
-    "tu": "twenty-nine",
-    "vi": "Chỉ một chữ thôi: “twenty-nine” — nghĩa là “hai mươi chín (29)”."
-   },
-   {
-    "loai": "tu",
-    "en": "one hundred and twenty-nine",
-    "tu": "one hundred and twenty-nine",
-    "vi": "Chỉ một chữ thôi: “one hundred and twenty-nine” — nghĩa là “một trăm hai mươi chín (129)”."
-   },
-   {
-    "loai": "mau",
-    "en": "What do you think of Ban Gioc Waterfall? - I think it's beautiful.",
-    "mauCau": "What do you think of Ban Gioc Waterfall? - I think it's beautiful.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I think it's beautiful.",
-    "mauCau": "What do you think of Ban Gioc Waterfall? - I think it's beautiful.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I think it's exciting.",
-    "mauCau": "What do you think of Ban Gioc Waterfall? - I think it's beautiful.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "What do you think of Ban Gioc Waterfall?",
-    "mauCau": "What do you think of Ban Gioc Waterfall? - I think it's beautiful.",
-    "dapMau": "I think it's beautiful.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: I think it's [adjective]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "What do you think of Ban Gioc Waterfall?",
-    "mauCau": "What do you think of Ban Gioc Waterfall? - I think it's beautiful.",
-    "dapMau": "I think it's beautiful.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “What do you think of Ban Gioc Waterfall?” rồi nghe cô đáp nhé."
-   },
-   {
-    "loai": "thay",
-    "khung": "I think it's [adjective].",
-    "o": "tu",
-    "en": "I think it's {thich}.",
-    "mauCau": "What do you think of Ban Gioc Waterfall? - I think it's beautiful.",
-    "mac_dinh": "beautiful",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is my class. That's Dragon Bridge. Dragon Bridge is beautiful. I'd like to visit Dragon Bridge. I can see a lake.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  },
  {
   "bai": "DL:TA5.B20",
-  "ten": "Unit 20 · Kì nghỉ hè · Our summer holidays",
-  "muc_tieu": "Asking and answering questions about someone's summer holiday Asking and answering questions about what someone is going to do this summer",
-  "tinh_huong": "",
+  "ten": "Tả tranh · Ở bãi biển mùa hè",
+  "muc_tieu": "Tả được bức tranh “Ở bãi biển mùa hè” thành một đoạn",
+  "tinh_huong": "Con và cô cùng nhìn một bức tranh: ở bãi biển mùa hè.",
+  "tranh": "tienganh/tranh/TRANH_TA5_U20.png",
+  "moTaTranh": [
+   "This is the beach.",
+   "We went camping last summer.",
+   "She collected seashells.",
+   "He walked on the beach.",
+   "I can see a tent."
+  ],
+  "dang": "tranh",
   "tu": [
-   "Dam Sen Aquarium",
-   "Huong River",
-   "Phong Nha Cave",
-   "Phu Quoc Island",
-   "go camping",
-   "join a music club",
-   "practise swimming",
-   "visit an eco-farm"
+   "sea",
+   "school bag",
+   "ship",
+   "beach",
+   "last",
+   "summer",
+   "on",
+   "I",
+   "tent"
   ],
   "buoc": [
    {
-    "loai": "chao",
-    "en": "Hello!",
-    "vi": "Chào con! Hôm nay cô con mình tập nói thành câu nhé."
+    "loai": "taTranh",
+    "en": "What can you see?",
+    "vi": "Con nhìn bức tranh rồi tả cho cô nghe nhé. Con thấy gì trong tranh?"
    },
    {
-    "loai": "hoiThich"
+    "loai": "goiY",
+    "en": "Where are they?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Các bạn ấy đang ở đâu?"
    },
    {
-    "loai": "tu",
-    "en": "Dam Sen Aquarium",
-    "tu": "Dam Sen Aquarium",
-    "vi": "Chỉ một chữ thôi: “Dam Sen Aquarium” — nghĩa là “Thuỷ cung Đầm Sen”."
+    "loai": "goiY",
+    "en": "What did you do last summer?",
+    "vi": "Con nhìn tranh rồi đáp nhé — Hè năm ngoái con đã làm gì?"
    },
    {
-    "loai": "tu",
-    "en": "Huong River",
-    "tu": "Huong River",
-    "vi": "Chỉ một chữ thôi: “Huong River” — nghĩa là “Sông Hương”."
-   },
-   {
-    "loai": "tu",
-    "en": "Phong Nha Cave",
-    "tu": "Phong Nha Cave",
-    "vi": "Chỉ một chữ thôi: “Phong Nha Cave” — nghĩa là “Động Phong Nha”."
-   },
-   {
-    "loai": "tu",
-    "en": "Phu Quoc Island",
-    "tu": "Phu Quoc Island",
-    "vi": "Chỉ một chữ thôi: “Phu Quoc Island” — nghĩa là “Đảo Phú Quốc”."
-   },
-   {
-    "loai": "tu",
-    "en": "go camping",
-    "tu": "go camping",
-    "vi": "Chỉ một chữ thôi: “go camping” — nghĩa là “đi cắm trại”."
-   },
-   {
-    "loai": "tu",
-    "en": "join a music club",
-    "tu": "join a music club",
-    "vi": "Chỉ một chữ thôi: “join a music club” — nghĩa là “tham gia câu lạc bộ âm nhạc”."
-   },
-   {
-    "loai": "tu",
-    "en": "practise swimming",
-    "tu": "practise swimming",
-    "vi": "Chỉ một chữ thôi: “practise swimming” — nghĩa là “luyện tập bơi”."
-   },
-   {
-    "loai": "tu",
-    "en": "visit an eco-farm",
-    "tu": "visit an eco-farm",
-    "vi": "Chỉ một chữ thôi: “visit an eco-farm” — nghĩa là “thăm trang trại sinh thái”."
-   },
-   {
-    "loai": "mau",
-    "en": "Where are you going to visit this summer? - I'm going to visit My Khe Beach in Da Nang City.",
-    "mauCau": "Where are you going to visit this summer? - I'm going to visit My Khe Beach in Da Nang City.",
-    "vi": "Cô làm mẫu cả câu hỏi lẫn câu đáp. Con nghe, rồi nói theo cô cũng được."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I'm going to visit My Khe Beach in Da Nang City.",
-    "mauCau": "Where are you going to visit this summer? - I'm going to visit My Khe Beach in Da Nang City.",
-    "vi": "Con nói lại cả câu nhé, đừng nói mỗi một chữ."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I'm going to visit Dam Sen Aquarium.",
-    "mauCau": "Where are you going to visit this summer? - I'm going to visit My Khe Beach in Da Nang City.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I'm going to visit Huong River.",
-    "mauCau": "Where are you going to visit this summer? - I'm going to visit My Khe Beach in Da Nang City.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "noiCa",
-    "en": "I'm going to visit Phong Nha Cave.",
-    "mauCau": "Where are you going to visit this summer? - I'm going to visit My Khe Beach in Da Nang City.",
-    "vi": "Vẫn khuôn ấy, đổi chỗ thay được thôi. Con nói cả câu cho tròn nhé."
-   },
-   {
-    "loai": "hoiBe",
-    "en": "Where are you going to visit this summer?",
-    "mauCau": "Where are you going to visit this summer? - I'm going to visit My Khe Beach in Da Nang City.",
-    "dapMau": "I'm going to visit My Khe Beach in Da Nang City.",
-    "vi": "Cô hỏi thật đấy, con tự đáp nhé. Con đáp theo khuôn: I'm going to visit [place]."
-   },
-   {
-    "loai": "doiVai",
-    "en": "Where are you going to visit this summer?",
-    "mauCau": "Where are you going to visit this summer? - I'm going to visit My Khe Beach in Da Nang City.",
-    "dapMau": "I'm going to visit My Khe Beach in Da Nang City.",
-    "vi": "Đổi vai nào — lần này CON hỏi cô. Con nói câu hỏi này: “Where are you going to visit this summer?” rồi nghe cô đáp nhé."
-   },
-   {
-    "loai": "thay",
-    "khung": "I'm going to visit [place].",
-    "o": "tu",
-    "en": "I'm going to visit {thich}.",
-    "mauCau": "Where are you going to visit this summer? - I'm going to visit My Khe Beach in Da Nang City.",
-    "mac_dinh": "Dam Sen Aquarium",
-    "vi": "Nay con nói về thứ CON thích, không phải của cô nữa."
+    "loai": "caDoan",
+    "en": "This is the beach. We went camping last summer. She collected seashells. He walked on the beach. I can see a tent.",
+    "vi": "Giỏi lắm! Giờ con nói cả đoạn cho cô nghe nhé."
    },
    {
     "loai": "ket"
    }
-  ]
+  ],
+  "tay": true
  }
 ]

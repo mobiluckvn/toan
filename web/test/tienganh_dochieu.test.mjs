@@ -57,8 +57,9 @@ const TU_CUA_VE = {
   guong: ['mirror'], dongHo: ['clock', "o'clock"], giaVe: ['picture', 'art'],
   khungAnh: ['picture', 'photo'], bangGhim: ['picture', 'photo', 'board'],
   bangLuoi: ['calendar', 'timetable', 'day', 'Monday', 'map'],
-  banDo: ['map'], anhNho: ['picture', 'photo', 'beach', 'countryside', 'city'],
-  bangMau: ['colour'], bangThoiTiet: ['weather', 'sunny', 'rainy', 'windy', 'cloudy', 'sun'], huyChuong: ['medal'], longChim: ['bird'],
+  banDo: ['map'], anhNho: ['picture', 'photo', 'beach', 'countryside', 'city',
+           'lake', 'bridge', 'house', 'tree', 'sun'],
+  bangMau: ['colour'], matTrang: ['moon'], bangThoiTiet: ['weather', 'sunny', 'rainy', 'windy', 'cloudy', 'sun'], huyChuong: ['medal'], longChim: ['bird'],
   hangRao: ['garden'], songSat: ['zoo'], zoo: ['zoo'],
 };
 
@@ -159,7 +160,8 @@ for (const q of quyens) {
       const cn = JSON.parse(readFileSync(join(R, `data/tienganh/chuan_lop${l}.json`), 'utf8'));
       for (const u of cn.unit) {
         if (l === lop && (chuongCua[u.so] ?? 99) > den) continue;
-        for (const x of u.tu) [x.tu, x.so_it, x.so_nhieu, x.dang_ing].forEach(nap);
+        for (const x of u.tu) [x.tu, x.so_it, x.so_nhieu, x.dang_ing,
+                                x.dang_qk, x.dang_ngoi3].forEach(nap);
         for (const m of u.mau_cau) {
           nap(String(m.cong_thuc || '').replace(/\[[^\]]*\]/g, ' '));
           nap(m.vi_du);
