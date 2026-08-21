@@ -386,6 +386,32 @@ Phép "giữ tất cả khoá cũ" của bộ bóc chữa được chuyện mấ
 giữ luôn bản GHI HỎNG. Tôi thêm `swimmer` vào bảng vẽ tay, chạy lại, và mục ấy
 không xuất hiện. Bảng `hinh` do chính bộ bóc khai nên phải cho bản mới thắng.
 
+### Video cần LỜI DẪN TIẾNG VIỆT mà không tầng nào trước đó sinh ra
+Video là tầng cuối, và là tầng **duy nhất tự đẻ ra lời mới**: "Phần một: từ mới
+của bài." · "Con nghe từ này trong một câu nhé." · ba tốc độ đọc chậm.
+`sinh_bai` không biết những dòng ấy, nên `lopN_loi.json` không có chúng.
+
+Lớp 5 cần **128 dòng** như thế. Thiếu là bộ dựng dừng ngay ở video đầu tiên:
+
+```
+✗ DL_TA5_B01_tu.mp4: 3 cảnh câm — cảnh 0 (bia): thiếu clip loi_phần_một…
+```
+
+Kêu to, tốt. Đừng gõ tay danh sách — có sẵn hàm:
+
+```
+tools/tts/.venv/bin/python -c "
+import sys, json; sys.path.insert(0,'tools/video')
+from kich_ban import loi_thieu_ca_quyen
+print(json.dumps(loi_thieu_ca_quyen(5), ensure_ascii=False))" > /tmp/loi_video.json
+tools/tts/.venv/bin/python tools/tts/sinh_am.py --vao /tmp/loi_video.json \
+  --ra web/public/content/tienganh/audio --so web/public/content/tienganh/lop5_am.json
+```
+
+⚠ Mp3 có sẵn trong thư mục KHÔNG đủ: `dung_video` tra **sổ âm của quyển ấy**,
+mà sổ là riêng từng quyển. `loi_phần_một…` đã nằm trong thư mục từ lớp 1, và
+lớp 5 vẫn báo thiếu.
+
 ### Kỳ sát hạch của bài chỉ có MỘT từ vẽ được
 Câu SAI dựng bằng cách ghép tiếng của từ này với HÌNH của từ khác. Bài nào chỉ
 có một từ vẽ được thì không ghép lệch được → cả kỳ ra TOÀN đáp án "đúng", bé
