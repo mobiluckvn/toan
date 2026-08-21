@@ -675,10 +675,10 @@ B5 = {
      "tet": True, "dang": "cui", "huong": -1},
 ]),
 10: ("Chuyến đi của lớp, bên hồ", "Our school trip by the lake",
-     {"kieu": "co", "san": 452}, [
-    {"ve": "may", "x": 300, "y": 164, "rong": 180},
-    {"tu": "lake", "x": 720, "y": 366, "co": 320},
-    {"ve": "cay", "x": 1150, "y": 470, "cao": 250, "xa": 0.26},
+     {"kieu": "ho", "troi": 300, "san": 500}, [
+    {"ve": "may", "x": 260, "y": 168, "rong": 176},
+    {"ve": "cay", "x": 1150, "y": 508, "cao": 250, "xa": 0.26},
+    {"ve": "cay", "x": 90, "y": 504, "cao": 220, "xa": 0.30},
     {"ve": "nguoi", "x": 760, "y": 668, "cao": 232, "ao": DO, "quan": QUAN,
      "dang": "chi", "huong": 1},
     {"ve": "nguoi", "x": 900, "y": 672, "cao": 228, "ao": XANH, "quan": QUAN,

@@ -672,6 +672,24 @@ def nen_san(d, o):
             "#B05F41", 3)
 
 
+def nen_ho(d, o):
+    """Bờ hồ: trời, MẶT HỒ rộng ở giữa, bờ cỏ phía trước.
+
+    Hình `lake` vẽ tay chỉ to bằng một vật cầm tay — đặt nó giữa bãi cỏ thì ra
+    một vệt xanh khó đọc. Cảnh nào lấy cái hồ làm BỐI CẢNH thì hồ phải là nền.
+    """
+    troi = o.get("troi", 300)
+    bo = o.get("san", 470)
+    _dai(d, TRAN, troi, "#BFE3F7")
+    _dai(d, troi, bo, "#4E8FC4")
+    _dai(d, troi, troi + 10, "#3E7AAE")
+    for i in range(5):
+        net(d, [(120 + i * 230, troi + 40 + (i % 3) * 26),
+                (300 + i * 230, troi + 40 + (i % 3) * 26)], "#7FB0D8", 5)
+    _dai(d, bo, H, "#8CC96B")
+    _dai(d, bo, bo + 10, "#6FAE53")
+
+
 def nen_co(d, o):
     """Ngoài trời: trời và bãi cỏ."""
     dat = o.get("san", 520)
@@ -707,7 +725,7 @@ def nen_toi(d, o):
                 (250 + i * 190, dat + 26 + (i % 3) * 16)], "#6C90BA", 4)
 
 
-NEN = {"lop": nen_lop, "phong": nen_phong, "san": nen_san,
+NEN = {"lop": nen_lop, "phong": nen_phong, "san": nen_san, "ho": nen_ho,
        "co": nen_co, "pho": nen_pho, "toi": nen_toi}
 
 # Bảng tra cho bản khai: tên trong JSON → hàm vẽ.

@@ -1,11 +1,14 @@
-# LÀM MỘT QUYỂN TIẾNG ANH MỚI — sổ tay cho lớp 4
+# LÀM MỘT QUYỂN TIẾNG ANH MỚI — sổ tay
+
+*Viết khi làm lớp 4 (20-08-2026), bổ sung khi làm lớp 5 (21-08-2026).*
 
 Bác chốt 20-08-2026: *"Hãy lưu lại hết các rule để chúng ta bắt đầu sang lớp 4."*
 
 Tệp này là **danh sách việc**, không phải bài giảng. Mọi chỗ nêu đường dẫn đều đã
 mở ra kiểm ngày 20-08-2026, không chép từ trí nhớ.
 
-Ba quyển `ta1` · `ta2` · `ta3` đã xong trọn. Quyển thứ tư là `ta4`.
+Năm quyển `ta1` … `ta5`. Mỗi quyển mới lại lộ ra một chỗ dây chuyền chưa biết
+làm — mục 8 ghi lại những chỗ ấy.
 
 ---
 
@@ -239,12 +242,29 @@ Cắt theo **unit**, không theo chương. `chuan_lop3.json` khai `cat → cats`
 Nghề nghiệp vẽ **chân dung nửa người mặc đồng phục**; hoạt động vẽ **người đủ
 thân đang làm động tác**.
 
-### Bài tả tranh
-Tám luật đầy đủ ở `docs/lam_bai_tranh.md`. Ba luật hay quên nhất:
-* hoạt động chỉ vào tranh được khi hình **có NGƯỜI** (cờ `nguoi: true` trong
-  `hinh_ve.json` — một nguồn cho bộ soạn · màn hình · cổng);
-* **mỗi vật đúng một câu**, cắt vật và cắt câu CÙNG một chỗ;
-* mồi nhử phải **cùng khuôn với đáp án** — khác khuôn thì bé chọn đúng bằng mắt.
+### Bài tả tranh — BỐN LUẬT, bác chốt 20-08-2026
+1. **KHÔNG HỘI THOẠI.** Đoạn đọc chỉ có câu kể. Mẫu câu hỏi vẫn dạy, nhưng ở
+   CÂU HỎI SAU BÀI và ở phòng nói.
+2. **VỐN TÍCH LUỸ TỪ LỚP 1** tới đúng CHƯƠNG của bài ấy.
+3. **MỘT NƠI, MỘT LÚC** — nhiều nhất 2–3 người, đồ vật phải thuộc về chỗ ấy.
+4. **KHÔNG NHÂN BẢN** — mỗi cảnh viết tay ở `tools/soan_canh.py`; bộ vẽ
+   `tools/canh_ve.py` chỉ biết VẼ, không quyết cảnh nào có gì.
+
+Thứ tự làm: ① mô tả tranh chi tiết → ② đoạn đọc → ③ câu hỏi → ④ nói · viết.
+Đi từ bảng từ vựng ra tranh thì tranh thành cái kệ đựng từ.
+
+⚠ **LUẬT ĐÃ BỎ:** "mỗi vật ĐÚNG MỘT câu tả nó, và ngược lại". Nghe rất hợp lý,
+và chính nó ép đoạn văn thành bảng liệt kê — bác bác bỏ cả 42 bài vì hậu quả
+ấy. Nếu thấy ai định dựng lại luật ấy thì đừng.
+
+Hai luật vẫn giữ:
+* hoạt động chỉ vào tranh được khi hình **có NGƯỜI** (cờ `nguoi: true`);
+* mồi nhử phải **cùng dáng câu với đáp án** — khác dáng thì bé chọn bằng mắt.
+
+⚠ **SOI TRƯỚC KHI DỰNG.** Làm lớp 3·4 tôi viết đoạn theo trí nhớ rồi phải sửa
+20 chỗ SAU KHI đã có ảnh và tiếng. Lớp 5 dựng phép soi trước (vốn từ theo
+chương · lặp khuôn · đáp án lẻ loi · hội thoại · đoạn chỉ-liệt-kê) và nó bắt 12
+chỗ khi nội dung còn nằm trong một tệp.
 
 ### Phòng nói: bé ĐÁP, không nhại
 Cả phòng nói từng dựng trên giả định "bé nhại lại câu cô vừa nói", nên cô hỏi
@@ -306,3 +326,67 @@ KHÔNG chạy, mà `| tail` che mất mã thoát nên nhìn tưởng xong. Phả
 | Đề ôn tập | — | — | **5** |
 
 Cổng: **74 tệp · 0 FAIL**. Hình vẽ tay: **46 hình**, 10 mang cờ `nguoi`.
+
+
+---
+
+## 8 · LỚP 5 LỘ RA GÌ — đọc trước khi làm quyển thứ sáu
+
+### Dạng từ: mỗi quyển lại thêm một dạng
+`dang_can()` ban đầu chỉ biết `dang_ing` và `so_nhieu`. Lớp 5 cần thêm **ba**:
+
+| dạng | ô | ví dụ |
+|---|---|---|
+| `dang_qk` | `[past verb]` | swim → swam · buy souvenirs → bought souvenirs |
+| `dang_ngoi3` | `[Verb-s]` | do morning exercise → does morning exercise |
+| `dang_ing` (đã có) | `[V-ing]` **và** `[Verb-ing]` | go for a walk → going for a walk |
+
+⚠ **TÊN Ô MỖI QUYỂN VIẾT MỘT KIỂU.** Lớp 1 viết `[Verb-ing]`, lớp 5 viết
+`[V-ing]`. Bản đầu so chuỗi nên lớp 5 trượt hết và đẻ ra *"I like go for a
+walk."* Nay so bằng KHUÔN, và ô nào đòi một dạng chưa biết đọc thì **kêu lên**.
+
+⚠ **CÓ QUYỂN KHAI SẴN DẠNG TRONG TỪ VỰNG.** Lớp 4 U20 dạy `building a campfire`
+— đã là dạng -ing. Đòi bằng được `dang_ing` thì bài ấy MẤT MỘT BẬC. Luật: có
+khai thì dùng, không thì nhận nếu chữ đầu đã đúng dạng.
+
+### Thêm một dạng thì phải đi tìm MỌI túi từ
+Trong một buổi tôi sửa **ba** cổng cùng một chỗ: `tienganh_bai` ·
+`tienganh_dochieu` · `tienganh_hinh_dung_tu`, cộng bộ `sinh_kichban_noi`. Mỗi
+nơi dựng túi từ riêng, và nơi nào thiếu dạng mới thì gọi câu đúng là "chữ lạ"
+rồi **bỏ câu ấy đi**. Tìm bằng:
+
+```
+grep -rn "so_nhieu, x.dang_ing\|'so_nhieu'\|dang_ing" web/test tools --include=*.mjs --include=*.py
+```
+
+### Hai cơ chế mới ở `sua_slot`
+* **`cung_tu`** — các ô phải lấy CÙNG MỘT TỪ, mỗi ô tự chia dạng. Chiều ngược
+  của `khac_nhau`. Thiếu nó: *"Did you buy souvenirs? - Yes, I did. I swam."*
+* **mục khai kèm dạng** — `{"tu": "cook", "dang_qk": "cooked very well"}`, để
+  câu hỏi dùng động từ trần còn câu đáp dùng cụm quá khứ.
+
+### Ô khai bằng VAI chỉ chạy khi CHÍNH UNIT ẤY dạy vai đó
+`vai_biet()` dựng danh sách vai từ vốn từ của unit, không phải cả quyển. Khai
+`noichon` cho ô `[place]` của một unit không dạy nơi chốn nào → rơi sang nhánh
+"danh sách từ đích danh", kho rỗng, **cả mẫu bị bỏ im lặng**. U08 và U19 lớp 5
+mất trắng bậc 2 vì thế. Chỗ nào cần từ của unit trước thì khai bằng CỤM
+(`cum_khai` chỉ nhận mục NHIỀU CHỮ) hoặc qua nhóm `them` với vai riêng hẹp.
+
+### Công thức của sách để lọt ba thứ vào câu bé đọc
+`...` · `/` · `+`. Ba chỗ ở lớp 5. Và **phải sửa cả `vi_du`**, vì `sinh_cau`
+đặt câu ví dụ của sách ĐỨNG ĐẦU.
+
+### Mạo từ phải nằm trong mục khai
+Công thức "I wear [clothes]." không có ô cho `a`. Khai trần `jumper` thì ra
+*"I wear jumper."* Mà `jeans` số nhiều thì KHÔNG có `a`, đồ uống đi với `some`
+— máy không phân biệt được, phải khai tay từng mục.
+
+### Bảng nào TỆP LÀM CHỦ thì bản mới phải thắng
+Phép "giữ tất cả khoá cũ" của bộ bóc chữa được chuyện mất bản sửa tay, nhưng nó
+giữ luôn bản GHI HỎNG. Tôi thêm `swimmer` vào bảng vẽ tay, chạy lại, và mục ấy
+không xuất hiện. Bảng `hinh` do chính bộ bóc khai nên phải cho bản mới thắng.
+
+### Kỳ sát hạch của bài chỉ có MỘT từ vẽ được
+Câu SAI dựng bằng cách ghép tiếng của từ này với HÌNH của từ khác. Bài nào chỉ
+có một từ vẽ được thì không ghép lệch được → cả kỳ ra TOÀN đáp án "đúng", bé
+bấm "đúng" hết là trọn điểm mà không nghe câu nào. Nay chặn ở bộ sinh.

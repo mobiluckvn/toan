@@ -70,7 +70,7 @@ const TU_CUA_VE = {
    `toi` chứ không phải một vật khai riêng — không có bảng này thì cổng kêu
    "tranh không vẽ cái hồ" ngay giữa bức có mặt hồ phản chiếu ánh lửa. */
 const DO_CUA_NEN = {
-  toi: ['lake', 'river'], co: ['garden'], san: ['school', 'playground'],
+  toi: ['lake', 'river'], ho: ['lake', 'river'], co: ['garden'], san: ['school', 'playground'],
   pho: ['street', 'road', 'city'], lop: ['classroom'], phong: ['house', 'room'],
 };
 
