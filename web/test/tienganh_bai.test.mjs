@@ -27,7 +27,7 @@ let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
 const in5 = (xs) => xs.slice(0, 5).forEach((x) => console.log('     ', x));
 
-const quyens = ['ta1', 'ta2', 'ta3', 'ta4'].filter((q) => existsSync(join(R, 'web/public/content', q)));
+const quyens = ['ta1', 'ta2', 'ta3', 'ta4', 'ta5'].filter((q) => existsSync(join(R, 'web/public/content', q)));
 if (!quyens.length) {
   console.log('   ⏸ chưa sinh bài tiếng Anh nào');
   console.log('\n0 PASS · 0 FAIL');
@@ -74,20 +74,32 @@ for (const q of quyens) {
   const kho = new Set();
   const nap = (s) => String(s || '').toLowerCase().match(/[a-z']+/g)?.forEach((w) => kho.add(w));
   for (const u of chuan.unit) {
-    for (const x of u.tu) [x.tu, x.so_it, x.so_nhieu, x.dang_ing].forEach(nap);
+    for (const x of u.tu) [x.tu, x.so_it, x.so_nhieu, x.dang_ing, x.dang_qk].forEach(nap);
     for (const m of u.mau_cau) {
       nap(String(m.cong_thuc || '').replace(/\[[^\]]*\]/g, ' '));
       nap(m.vi_du);
     }
   }
-  for (const nhom of ['so_dem', 'mau', 'ten']) {
-    for (const m of (chuan.them?.[nhom]?.muc) || []) nap(typeof m === 'string' ? m : m.word);
+  /* ⚠ DUYỆT MỌI NHÓM `them`, ĐỪNG GHIM TÊN. Bản đầu liệt kê đúng ba nhóm lớp 1
+     có — `so_dem` · `mau` · `ten`. Lớp 5 khai thêm `chode` · `tenpho` · `lopso`
+     cho ba ô mà bảng từ vựng không phủ, và cả ba rơi ngoài túi: cổng kêu 20 chữ
+     lạ trong khi chúng đã được khai đàng hoàng. Chính `ung_vien()` bên bộ sinh
+     đã sửa đúng lỗi này từ lớp 2 — cổng thì chưa. */
+  for (const goi of Object.values(chuan.them || {})) {
+    if (!goi || typeof goi !== 'object') continue;
+    for (const m of goi.muc || []) nap(typeof m === 'string' ? m : m.word);
   }
 
   const chuLa = [], sai_dang = [];
   for (const b of bais) {
     for (const c of b.knowledgeCore.canonicalExamples) {
-      for (const w of c.toLowerCase().match(/[a-z']+/g) || []) {
+      for (let w of c.toLowerCase().match(/[a-z']+/g) || []) {
+        /* SỞ HỮU CÁCH: "Ben's" là `Ben` + 's, không phải một từ mới phải đi học.
+           Bỏ đuôi rồi mới tra — nhưng CHỈ khi phần gốc có trong túi, để "it's"
+           và "let's" (vốn đã nằm sẵn trong túi) không bị bóc nhầm thành "it". */
+        if (w.endsWith("'s") && kho.has(w.slice(0, -2)) && !kho.has(w)) {
+          w = w.slice(0, -2);
+        }
         if (!kho.has(w)) chuLa.push(`${b.id}: "${c}" — chữ lạ “${w}”`);
       }
       /* Câu tiếng Anh phải mở đầu bằng chữ HOA và đóng bằng dấu câu. "facePoint…"
@@ -273,7 +285,13 @@ for (const q of quyens) {
     "see", "go", "goes", "would", "'d", "'ve", "'ll", "will",
     // ⚠ Lớp 4 là quyển đầu tiên dạy thì QUÁ KHỨ ("Where were you last summer?
     // - I was in Tokyo."). Không có was/were thì cổng gọi câu ấy là thiếu động từ.
-    "was", "were", "wasn't", "weren't"]);
+    "was", "were", "wasn't", "weren't",
+    // ⚠ Lớp 5 thêm hai chữ mà bảng từ vựng KHÔNG khai, vì chúng nằm trong chính
+    // CÔNG THỨC chứ không phải trong kho từ: `should` (lời khuyên sức khoẻ,
+    // U15 — "You should take some medicine.") và `wear` (U16 — "I wear a
+    // jumper."). Không có chúng thì 12 câu đúng hẳn bị gọi là thiếu động từ.
+    "should", "shouldn't", "wear", "wears", "did", "didn't", "won't", "think",
+    "thinks", "get", "gets", "live", "lives", "tell", "wore"]);
   const dongTu = new Set(NEN);
   for (const u of chuan.unit) {
     for (const t of u.tu || []) {
@@ -286,17 +304,37 @@ for (const q of quyens) {
         const w = t.tu.toLowerCase();
         dongTu.add(w);
         dongTu.add(w.split(' ')[0]);
+        /* ⚠ LỚP 5 DẠY THÌ QUÁ KHỨ, và dạng quá khứ KHÔNG suy ra được từ dạng gốc
+           ("swim" → "swam", "buy" → "bought"). Không nhận `dang_qk` thì cổng gọi
+           "We played badminton." · "I bought souvenirs." là câu thiếu động từ —
+           24 câu đúng hẳn bị báo sai. */
+        if (t.dang_qk) {
+          dongTu.add(String(t.dang_qk).toLowerCase());
+          dongTu.add(String(t.dang_qk).toLowerCase().split(' ')[0]);
+        }
       }
     }
   }
-  const CHU_NGU = /^(I|You|We|They)\b\s+(\S+)/;
+  /* ⚠ TRẠNG TỪ TẦN SUẤT ĐỨNG GIỮA CHỦ NGỮ VÀ ĐỘNG TỪ — lớp 5 dạy hẳn một unit:
+     "I usually listen to music." · "I never go for a walk." Đó là chỗ ĐÚNG của
+     nó trong tiếng Anh. Phép cũ đọc chữ NGAY SAU chủ ngữ nên gọi cả unit 4 là
+     thiếu động từ. Nay bỏ qua trạng từ tần suất rồi mới hỏi động từ đâu. */
+  const TAN_SUAT = new Set();
+  for (const u of chuan.unit) {
+    for (const t of u.tu || []) {
+      if ((t.vai || []).includes('tanso')) TAN_SUAT.add(t.tu.toLowerCase());
+    }
+  }
+  const CHU_NGU = /^(I|You|We|They)\b\s+(.+)$/;
   const thieuDongTu = [];
   for (const b of bais) {
     for (const c of b.knowledgeCore.canonicalExamples || []) {
       for (const nua of String(c).split(' - ')) {
         const m = CHU_NGU.exec(nua.trim());
         if (!m) continue;
-        const w = m[2].toLowerCase().replace(/[.,!?]+$/, '');
+        let con = m[2].trim().split(/\s+/);
+        while (con.length > 1 && TAN_SUAT.has(con[0].toLowerCase())) con = con.slice(1);
+        const w = con[0].toLowerCase().replace(/[.,!?]+$/, '');
         if (!dongTu.has(w)) {
           thieuDongTu.push(`${b.id}: “${nua.trim()}” — sau “${m[1]}” là “${w}”`);
         }

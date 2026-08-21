@@ -248,6 +248,21 @@ def chu_biet(bai):
     biet = set()
     for v in k.get('vocabulary') or []:
         biet.update(chu_trong(v['tu']))
+        # ⚠ DẠNG BIẾN ĐỔI CŨNG LÀ CHỮ BÉ ĐỌC. Lớp 5 dạy thì quá khứ, và
+        # "bought" · "collected" không suy ra được từ "buy" · "collect" — túi chỉ
+        # có dạng gốc thì phòng nói gọi câu đúng là "chữ lạ" rồi BỎ câu ấy đi.
+        for d in ('so_nhieu', 'dang_ing', 'dang_qk', 'so_it'):
+            biet.update(chu_trong(v.get(d)))
+    # Nhóm `them` của bản chuẩn — tên phố, tên lớp, chỗ để đồ. Không nạp thì
+    # "Class 5A" thành chữ lạ "a", và "beside the table" mất chữ "table".
+    try:
+        cn = json.loads((GOC / f"data/tienganh/chuan_lop{LOP}.json").read_text('utf8'))
+        for goi in (cn.get('them') or {}).values():
+            if isinstance(goi, dict):
+                for m in goi.get('muc') or []:
+                    biet.update(chu_trong(m if isinstance(m, str) else m.get('word')))
+    except Exception:
+        pass
     for m in mau:
         biet.update(chu_trong(m.get('cau')))
         biet.update(chu_trong(m.get('congThuc')))

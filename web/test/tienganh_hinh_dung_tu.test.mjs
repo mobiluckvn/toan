@@ -40,7 +40,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
  * Nay danh sách quyển suy từ ĐĨA, và chốt "có tệp để mà soi" chứ không chốt một con
  * số — thêm quyển thứ tư là nó tự soi theo. Mỗi quyển một sổ soát riêng.
  */
-const QUYEN = ['ta1', 'ta2', 'ta3', 'ta4']
+const QUYEN = ['ta1', 'ta2', 'ta3', 'ta4', 'ta5']
   .map((q) => ({ q, url: new URL(`../public/content/${q}/`, import.meta.url) }))
   .map(({ q, url }) => ({
     q,

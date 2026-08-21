@@ -33,7 +33,7 @@ let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
 const in5 = (xs) => xs.slice(0, 5).forEach((x) => console.log('     ', x));
 
-const quyens = ['ta1', 'ta2', 'ta3', 'ta4'].filter((q) => existsSync(join(R, 'web/public/content', q)));
+const quyens = ['ta1', 'ta2', 'ta3', 'ta4', 'ta5'].filter((q) => existsSync(join(R, 'web/public/content', q)));
 if (!quyens.length || !existsSync(V)) {
   console.log('   ⏸ chưa có bài hoặc chưa có thư mục video');
   console.log('\n0 PASS · 0 FAIL');

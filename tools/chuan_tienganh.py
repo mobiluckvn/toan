@@ -282,6 +282,11 @@ def chuan(lop: int, bu: dict) -> dict:
                 "so_it": b.get("soit"),
                 "so_nhieu": b.get("sonhieu"),
                 "dang_ing": b.get("ing"),
+                # ⚠ DẠNG QUÁ KHỨ — lớp 5 là quyển đầu tiên cần. Bốn mẫu câu đòi ô
+                # `[past verb]`; thiếu khoá này thì `dang_can()` lùi về dạng gốc và
+                # đẻ ra "We visit the old buildings last summer." — sai ngữ pháp mà
+                # mọi chữ đều đã học nên không cổng nào bắt.
+                "dang_qk": b.get("dang_qk"),
                 "go_duoc": n["word"] not in (bu.get("khong_bat_go", {}).get("tu") or []),
                 "nhom_nghia": n.get("semantic_field"),
                 "ten_rieng": ten_rieng or None,

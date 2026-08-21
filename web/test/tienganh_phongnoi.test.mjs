@@ -718,7 +718,7 @@ test('đồng hồ 20 phút KHÔNG được vô hiệu khi ai đó dọn mã', (
  * soi một quyển thì "0 lỗi" chỉ có nghĩa là quyển ấy sạch, không có nghĩa là môn
  * này sạch — cùng họ với chuyện glob rỗng báo 0 lỗi đã ghi trong sổ.
  */
-const QUYEN = ['ta1', 'ta2', 'ta3', 'ta4'];
+const QUYEN = ['ta1', 'ta2', 'ta3', 'ta4', 'ta5'];
 /* ⚠ ĐẾM TỪ SỔ ĐĂNG KÝ, đừng gõ tay. Bảng gõ tay `{ta1:16, ta2:16, ta3:21}` thiếu
    `ta4` nên phép so ra "21 !== undefined" — nghe như thiếu kịch bản, thật ra là
    thiếu MỘT DÒNG TRONG CỔNG. Cùng họ "ghim cứng tên quyển". */

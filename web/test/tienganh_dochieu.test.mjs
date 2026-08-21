@@ -121,7 +121,7 @@ let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
 const in5 = (xs) => xs.slice(0, 5).forEach((x) => console.log('     ', x));
 
-const quyens = ['ta1', 'ta2', 'ta3', 'ta4']
+const quyens = ['ta1', 'ta2', 'ta3', 'ta4', 'ta5']
   .filter((q) => existsSync(join(R, 'web/public/content', q, 'dochieu.json')));
 if (!quyens.length) {
   console.log('   ⏸ chưa quyển nào có bài đọc hiểu');

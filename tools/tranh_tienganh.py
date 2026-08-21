@@ -55,7 +55,7 @@ sys.path.insert(0, str(GOC / "tools"))
 # Pillow/cairo. Cùng một nguồn cho cả hai bên, không chép đôi.
 from kho_cau_tienganh import hinh_cua_tu  # noqa: E402,F401
 
-QUYEN = {1: "ta1", 2: "ta2", 3: "ta3", 4: "ta4"}
+QUYEN = {1: "ta1", 2: "ta2", 3: "ta3", 4: "ta4", 5: "ta5"}
 
 
 def ve_vat(im: Image.Image, tu: str, hinh: dict, x: int, y: int, co: int) -> bool:

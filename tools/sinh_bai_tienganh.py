@@ -42,8 +42,8 @@ import sys
 from pathlib import Path
 
 GOC = Path(__file__).resolve().parent.parent
-QUYEN = {1: "ta1", 2: "ta2", 3: "ta3", 4: "ta4"}
-TIEN_TO = {1: "DL:TA1.", 2: "DL:TA2.", 3: "DL:TA3.", 4: "DL:TA4."}
+QUYEN = {1: "ta1", 2: "ta2", 3: "ta3", 4: "ta4", 5: "ta5"}
+TIEN_TO = {1: "DL:TA1.", 2: "DL:TA2.", 3: "DL:TA3.", 4: "DL:TA4.", 5: "DL:TA5."}
 
 # Gõ được thì gõ; dài hơn ngần này thì bậc 4 chuyển sang GHÉP THẺ CHỮ CÁI.
 # Bé 6 tuổi gõ ~10 ký tự/phút — từ 10 ký tự là bỏ cuộc chứ không phải làm sai.
@@ -117,8 +117,26 @@ def dien(cong_thuc: str, gan: dict) -> str:
     nào để đoán, và mẫu nhiều ô cũng chạy luôn.
     """
     s = cong_thuc.replace(" + ", " ")
+    # ⚠ VIẾT HOA LÀ CHUYỆN CỦA VỊ TRÍ, VÀ CỦA TỪNG LẦN XUẤT HIỆN.
+    #
+    # Bản cũ giữ MỘT cờ hoa cho mỗi ô, bật theo mặt chữ của từ neo trong câu SGK.
+    # Hai chỗ sai cùng lúc:
+    #   · "Snow White" viết hoa vì là TÊN RIÊNG, không phải vì đứng đầu câu — cờ
+    #     ấy áp cho mọi từ điền sau và ra "They're The ant and the grasshopper.";
+    #   · lớp 2 U5 có ô [Pronoun] xuất hiện HAI lần, một lần giữa câu một lần đầu
+    #     câu ("What's [Pronoun] doing? - [Pronoun] is doing a quiz.") — một cờ
+    #     thì hoặc hỏng chỗ này hoặc hỏng chỗ kia.
+    #
+    # Nên quyết ngay tại chỗ điền: ô nào NẰM ĐẦU MỘT CÂU thì viết hoa, còn lại
+    # giữ nguyên mặt chữ của từ (tên riêng tự giữ chữ hoa của chính nó).
     for o, w in gan.items():
-        s = s.replace(f"[{o}]", w)
+        dat = f"[{o}]"
+        while dat in s:
+            i = s.index(dat)
+            truoc = s[:i].rstrip()
+            dau_cau = (not truoc) or truoc[-1] in ".?!-:"
+            x = (w[:1].upper() + w[1:]) if (dau_cau and w) else w
+            s = s[:i] + x + s[i + len(dat):]
     return _chon_mao_tu(s)
 
 
@@ -152,6 +170,12 @@ def dang_can(o_ten: str, t: dict) -> str | None:
     ten = (o_ten or "").lower()
     if "verb-ing" in ten or "verb ing" in ten:
         return t.get("dang_ing")
+    # ⚠ QUÁ KHỨ — lớp 5 mới có. Bốn mẫu viết ô là `[past verb]`. Không bắt ở đây
+    # thì rơi xuống `return t["tu"]` cuối hàm, và bộ sinh lặng lẽ đẻ ra
+    # "We visit the old buildings last summer." Trả None khi thiếu dạng: bên gọi
+    # LOẠI TỪ ẤY KHỎI KHO chứ không điền bừa — xem [[bo-sinh-lui-ve-mac-dinh]].
+    if "past" in ten:
+        return t.get("dang_qk")
     if "plural" in ten:
         return t.get("so_nhieu") or (t["tu"] if "sonhieu" in (t.get("vai") or []) else None)
     return t["tu"]
@@ -249,9 +273,18 @@ def cum_khai(khai: list, da_co: list, ma_mau: str, o: str) -> list[dict]:
     co = {t["tu"] for t in da_co}
     ra = []
     for x in khai:
+        # ⚠ MỤC CỤM CÓ THỂ KHAI KÈM DẠNG. Lớp 5 U17 cần đúng chuyện này: câu hỏi
+        # dùng động từ TRẦN ("How did she cook?") còn câu đáp dùng CỤM QUÁ KHỨ
+        # ("She cooked very well."). Hai ô ấy phải là MỘT mục (để `cung_tu` nối
+        # được), nhưng hiện ra hai mặt chữ khác nhau — nên mục khai được là
+        # {"tu": "cook", "dang_qk": "cooked well"}.
+        dang = {}
+        if isinstance(x, dict):
+            dang = {k: v for k, v in x.items() if k != "tu"}
+            x = x["tu"]
         if x in co:
             continue
-        if " " not in x:
+        if " " not in x and not dang:
             print(f"  ⚠ {ma_mau}/[{o}]: khai “{x}” mà bài không dạy từ ấy — gõ nhầm?")
             continue
         # Dựng đủ mọi khoá một mục từ vẫn có, để `sinh_cau` khỏi phải biết mục này
@@ -259,8 +292,10 @@ def cum_khai(khai: list, da_co: list, ma_mau: str, o: str) -> list[dict]:
         ra.append({"ma": f"cum_{re.sub(r'[^a-z0-9]+', '_', x.lower())}",
                    "tu": x, "nghia": None, "ipa": None, "vai": [], "am_o": "dau",
                    "so_it": None, "so_nhieu": None, "dang_ing": None,
+                   "dang_qk": None,
                    "go_duoc": True, "nhom_nghia": None, "ten_rieng": None,
-                   "hinh": None, "khong_ve": None, "hinh_ve": None, "hinh_no": None})
+                   "hinh": None, "khong_ve": None, "hinh_ve": None,
+                   "hinh_no": None, **dang})
     return ra
 
 
@@ -299,10 +334,11 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
                 # Luật dứt khoát: MỌI mục đều là tên vai → hiểu là vai. Có bất kỳ
                 # mục nào không phải tên vai → hiểu là danh sách TỪ đích danh. Không
                 # trộn lẫn hai lối trong cùng một ô.
-                if all(x in VAI for x in khai[o]):
+                if all(isinstance(x, str) and x in VAI for x in khai[o]):
                     kho[o] = ung_vien(khai[o], tu, them)
                 else:
-                    kho[o] = [t for t in ung_vien_tat(tu, them) if t["tu"] in khai[o]]
+                    kho[o] = [t for t in ung_vien_tat(tu, them)
+                              if t["tu"] in [x for x in khai[o] if isinstance(x, str)]]
                     kho[o] += cum_khai(khai[o], kho[o], mc["ma"], o)
             else:
                 kho[o] = [t for t in tu if t["tu"] in mc["o_thay"]]
@@ -338,7 +374,17 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
             for t in hop:
                 for d in filter(None, {dang_can(o, t), t["tu"]}):
                     if d.lower() in goc.lower():
-                        found, hoa[o] = t, d[0].isupper() or (d[:1].upper() + d[1:]) in goc
+                        # ⚠ VIẾT HOA LÀ CHUYỆN CỦA VỊ TRÍ, không phải của từ neo.
+                        # Bản cũ bật cờ hoa khi CHỮ NEO viết hoa — mà "Snow White"
+                        # viết hoa vì nó là TÊN RIÊNG, không phải vì nó đứng đầu
+                        # câu. Cờ ấy rồi áp cho mọi từ điền sau, và ra
+                        #   ✗ "They're The ant and the grasshopper."
+                        # Nay chỉ bật khi chỗ ấy THẬT SỰ mở đầu một câu; tên riêng
+                        # tự giữ chữ hoa của chính nó.
+                        i = goc.lower().index(d.lower())
+                        truoc = goc[:i].rstrip()
+                        found = t
+                        hoa[o] = (not truoc) or truoc[-1] in ".?!-"
                         break
                 if found:
                     break
@@ -351,6 +397,11 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
             hoa.setdefault(o, False)
 
         def chu(o, t):
+            # Trả về ĐÚNG mặt chữ của từ; việc viết hoa đầu câu do `dien()` lo —
+            # nó biết ô đang đứng ở đâu trong công thức, còn ở đây thì không.
+            return dang_can(o, t) or t["tu"]
+
+        def _chu_cu(o, t):
             d = dang_can(o, t) or t["tu"]
             # ⚠ KHÔNG dùng `str.capitalize()` — nó HẠ chữ hoa ở phần sau:
             #     "Ms Hoa".capitalize()  →  "Ms hoa"
@@ -370,6 +421,21 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
         # làm đáp án thì U16 còn ĐÚNG 0 câu luyện. Ô `[Noun-plural]` ngay bên cạnh
         # thì neo vào "windows", có hình, và cho ra đúng câu đáng luyện:
         #     "How many ___ can you see? - I can see six."
+        # Nền của các ô cùng nhóm phải là MỘT từ — nếu không, câu SGK dựng ra đã
+        # sai ngay từ dòng đầu.
+        for g in [list(x) for x in ((sua_slot.get(mc["ma"]) or {}).get("cung_tu") or [])]:
+            co = [o for o in g if o in kho]
+            if len(co) < 2:
+                continue
+            chung = [t for t in kho[co[0]]
+                     if all(any(y["ma"] == t["ma"] for y in kho[x]) for x in co[1:])]
+            if not chung:
+                continue
+            dau = next((t for t in chung if any(nen[o]["ma"] == t["ma"] for o in co)),
+                       chung[0])
+            for o in co:
+                nen[o] = dau
+
         def dung_duoc(o):
             t = nen[o]
             return (neo_duoc[o] and not str(t.get("ma") or "").startswith("them_")
@@ -400,6 +466,34 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
         # `sua_slot`, và MÁY canh, chứ `_ghi` thì chỉ người đọc được.
         khac = bool((sua_slot.get(mc["ma"]) or {}).get("khac_nhau"))
 
+        # ── HAI Ô PHẢI LÀ CÙNG MỘT TỪ, Ở HAI DẠNG ── (lớp 5, 21-08-2026)
+        #
+        # `khac_nhau` lo chiều ngược: hai ô không được trùng. Lớp 5 cần chiều này.
+        #
+        #     Did you + [Verb]? - Yes, I did. I + [past verb].
+        #
+        # Hai ô KHÁC TÊN nên `sinh_cau` bốc độc lập, và ra:
+        #
+        #     ✗  Did you buy souvenirs? - Yes, I did. I swam.
+        #
+        # Hỏi một đằng đáp một nẻo. Không đổi tên ô cho giống nhau được: TÊN Ô
+        # chính là thứ quyết định DẠNG (`dang_can`), nên hai ô cùng tên `[Verb]`
+        # sẽ ra "Did you swam?".
+        #
+        # Nên khai `cung_tu` ở `sua_slot`: các nhóm ô phải lấy CÙNG MỘT TỪ, mỗi ô
+        # tự chia dạng của mình. Không cổng nào bắt được lỗi này — mọi chữ đều đã
+        # học, khuôn khớp công thức, câu đúng ngữ pháp; chỉ đọc lên mới thấy.
+        nhom_cung = [list(g) for g in
+                     ((sua_slot.get(mc["ma"]) or {}).get("cung_tu") or [])]
+        cung_cua = {o: g for g in nhom_cung for o in g}
+
+        def dong_bo(gan: dict, o: str, t: dict) -> dict:
+            """Đổi một ô thì đổi cả nhóm của nó sang cùng từ ấy."""
+            for x in cung_cua.get(o, [o]):
+                if any(y["ma"] == t["ma"] for y in kho.get(x, [])):
+                    gan[x] = chu(x, t)
+            return gan
+
         def hop_le(gan: dict) -> bool:
             if not khac:
                 return True
@@ -419,7 +513,7 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
                     continue
                 t = hang[o].pop(0)
                 gan = {x: chu(x, nen[x]) for x in os}
-                gan[o] = chu(o, t)
+                gan = dong_bo(gan, o, t)
                 if not hop_le(gan):
                     continue
                 c = dien(ct, gan)
@@ -847,6 +941,18 @@ def sat_hach(u: dict, cau: list, hinh_cua: dict) -> list:
                           "anhVe": h.get("ve"), "text": ""},
                          True, f"ĐÚNG — {c['cau']}"))
 
+    # ⚠ KHÔNG CÓ CÂU SAI THÌ CHỈ ĐƯỢC MỘT CÂU ĐÚNG/SAI.
+    #
+    # Câu SAI dựng bằng cách ghép tiếng đọc của từ này với HÌNH của từ khác — bài
+    # nào chỉ có MỘT từ vẽ được thì không ghép lệch được, `sai` rỗng, và cả kỳ ra
+    # toàn đáp án "đúng". Bé bấm "đúng" hết là trọn điểm mà không nghe câu nào.
+    # Lớp 5 có bốn bài như thế (từ vựng phần lớn là CỤM VIỆC, không vẽ được).
+    #
+    # Thà ít câu đúng/sai còn hơn một dãy đoán được: phần thiếu đã có câu NGHE →
+    # CHỌN NGHĨA bù ngay dưới, mà dạng ấy bốn lựa chọn nên không có nhịp để đoán.
+    if not sai:
+        dung = dung[:1]
+
     ra, k = [], 0
     while len(ra) < 5 and (dung or sai):
         kho, gt = (dung, True) if k % 2 == 0 else (sai, False)
@@ -1249,7 +1355,14 @@ def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
         "knowledgeCore": {
             "statements": K,
             "mantra": f"Nghe — hiểu — xếp — gõ. Bốn bước, cùng {len(tu)} từ ấy thôi.",
+            # ⚠ MANG THEO DẠNG BIẾN ĐỔI. Bài học là NGUỒN mà `sinh_kichban_noi`
+            # và các cổng dựng túi từ từ đó; thiếu `dang_qk` thì phòng nói gọi
+            # "I bought souvenirs." là chữ lạ rồi BỎ câu ấy — câu đúng hẳn, chỉ
+            # vì cái dạng quá khứ không đi cùng từ gốc sang tới đây.
             "vocabulary": [{"tu": t["tu"], "ipa": t["ipa"], "nghia": t["nghia"],
+                            "so_nhieu": t.get("so_nhieu"),
+                            "dang_ing": t.get("dang_ing"),
+                            "dang_qk": t.get("dang_qk"),
                             "am": am_id("tu", t["tu"]), "amO": t.get("am_o", "dau")}
                            for t in tu],
             "canonicalExamples": [c["cau"] for c in cau],
@@ -1361,7 +1474,7 @@ def loi_can_doc(bai: dict) -> list[dict]:
 
 def main() -> int:
     p = argparse.ArgumentParser()
-    p.add_argument("--lop", type=int, default=1, choices=[1, 2, 3, 4])
+    p.add_argument("--lop", type=int, default=1, choices=[1, 2, 3, 4, 5])
     p.add_argument("--unit", type=int)
     p.add_argument("--tat-ca", action="store_true")
     a = p.parse_args()
