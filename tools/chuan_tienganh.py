@@ -287,6 +287,8 @@ def chuan(lop: int, bu: dict) -> dict:
                 # đẻ ra "We visit the old buildings last summer." — sai ngữ pháp mà
                 # mọi chữ đều đã học nên không cổng nào bắt.
                 "dang_qk": b.get("dang_qk"),
+                # Ngôi thứ ba số ít — lớp 5 U14 ("He / She + [Verb-s].")
+                "dang_ngoi3": b.get("dang_ngoi3"),
                 "go_duoc": n["word"] not in (bu.get("khong_bat_go", {}).get("tu") or []),
                 "nhom_nghia": n.get("semantic_field"),
                 "ten_rieng": ten_rieng or None,

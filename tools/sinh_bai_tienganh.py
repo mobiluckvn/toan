@@ -168,16 +168,34 @@ def dang_can(o_ten: str, t: dict) -> str | None:
     chuyền — ba lớp không ai gọi giống ai.
     """
     ten = (o_ten or "").lower()
-    if "verb-ing" in ten or "verb ing" in ten:
-        return t.get("dang_ing")
-    # ⚠ QUÁ KHỨ — lớp 5 mới có. Bốn mẫu viết ô là `[past verb]`. Không bắt ở đây
-    # thì rơi xuống `return t["tu"]` cuối hàm, và bộ sinh lặng lẽ đẻ ra
-    # "We visit the old buildings last summer." Trả None khi thiếu dạng: bên gọi
-    # LOẠI TỪ ẤY KHỎI KHO chứ không điền bừa — xem [[bo-sinh-lui-ve-mac-dinh]].
+    # ⚠ TÊN Ô VIẾT MỖI QUYỂN MỘT KIỂU, và trượt là RƠI XUỐNG DẠNG GỐC, im lặng.
+    # Lớp 1 viết `[Verb-ing]`, lớp 5 viết `[V-ing]` — bản đầu chỉ so chuỗi
+    # "verb-ing" nên lớp 5 trượt hết và đẻ ra "I like go for a walk."
+    # Nay so bằng KHUÔN, và chỗ nào không nhận ra thì KÊU LÊN (xem cuối hàm).
+    if re.search(r"\bv(?:erb)?\s*[- ]?\s*ing\b", ten):
+        # ⚠ CÓ QUYỂN KHAI SẴN DẠNG -ING TRONG CHÍNH TỪ VỰNG. Lớp 4 U20 dạy
+        # "building a campfire" · "putting up a tent" — đã là dạng -ing rồi, nên
+        # KHÔNG có khoá `dang_ing` riêng. Đòi bằng được `dang_ing` thì cả hai mẫu
+        # của bài ấy mất sạch ứng viên và bài rơi mất một bậc — tôi vừa làm đúng
+        # thế với một quyển ĐANG CHẠY.
+        # Luật: có `dang_ing` thì dùng; không thì nhận nếu chữ đầu ĐÃ đuôi -ing.
+        if t.get("dang_ing"):
+            return t["dang_ing"]
+        dau = str(t["tu"]).split()[0] if t.get("tu") else ""
+        return t["tu"] if dau.endswith("ing") else None
     if "past" in ten:
         return t.get("dang_qk")
     if "plural" in ten:
         return t.get("so_nhieu") or (t["tu"] if "sonhieu" in (t.get("vai") or []) else None)
+    # NGÔI THỨ BA SỐ ÍT — lớp 5 U14 ("He / She + [Verb-s]"). Không có dạng này
+    # thì ra "He do morning exercise."
+    if re.search(r"\bv(?:erb)?\s*[- ]\s*s\b", ten):
+        return t.get("dang_ngoi3")
+    # Tên ô có đuôi lạ mà rơi xuống đây thì gần như chắc chắn là một DẠNG chưa ai
+    # dạy hàm này đọc. Kêu một tiếng còn hơn lặng lẽ trả dạng gốc.
+    if re.search(r"\b(v|verb)\s*-\s*\w+", ten):
+        print(f"  ⚠ ô “{o_ten}” đòi một DẠNG mà `dang_can` chưa biết đọc — "
+              f"đang tạm lấy dạng gốc “{t['tu']}”")
     return t["tu"]
 
 
@@ -668,8 +686,11 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
         standard.append({
             "id": f"S{n}",
             "bac": 3,
-            "text": ("Nhìn hình rồi chọn từ điền vào chỗ trống:  " if coHinh
-                     else "Chọn từ điền vào chỗ trống:  ")
+            # ⚠ MỘT dấu cách sau dấu hai chấm, không phải hai. Bản cũ để hai, và
+            # 126 câu của lớp 5 (cùng chừng ấy ở bốn quyển trước) mang một khoảng
+            # trắng thừa ngay giữa lời dẫn. Nhỏ, nhưng bé đọc thấy.
+            "text": ("Nhìn hình rồi chọn từ điền vào chỗ trống: " if coHinh
+                     else "Chọn từ điền vào chỗ trống: ")
                     + c["cau"].replace(dang, "___", 1),
             # Lời dẫn TIẾNG VIỆT dùng chung cho mọi câu điền — bé chưa đọc được
             # thì không có tiếng là không biết phải làm gì. Vẫn KHÔNG đọc câu

@@ -74,7 +74,7 @@ for (const q of quyens) {
   const kho = new Set();
   const nap = (s) => String(s || '').toLowerCase().match(/[a-z']+/g)?.forEach((w) => kho.add(w));
   for (const u of chuan.unit) {
-    for (const x of u.tu) [x.tu, x.so_it, x.so_nhieu, x.dang_ing, x.dang_qk].forEach(nap);
+    for (const x of u.tu) [x.tu, x.so_it, x.so_nhieu, x.dang_ing, x.dang_qk, x.dang_ngoi3].forEach(nap);
     for (const m of u.mau_cau) {
       nap(String(m.cong_thuc || '').replace(/\[[^\]]*\]/g, ' '));
       nap(m.vi_du);

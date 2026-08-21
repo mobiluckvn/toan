@@ -101,7 +101,8 @@
    "vai": [
     "viec"
    ],
-   "dang_qk": "played games"
+   "dang_qk": "played games",
+   "ing": "playing games"
   },
   "v_g5_u10_suoi_tien_theme_park": {
    "vai": [
@@ -261,27 +262,32 @@
   "v_g5_u14_do_morning_exercise": {
    "vai": [
     "viec"
-   ]
+   ],
+   "dang_ngoi3": "does morning exercise"
   },
   "v_g5_u14_do_yoga": {
    "vai": [
     "viec"
-   ]
+   ],
+   "dang_ngoi3": "does yoga"
   },
   "v_g5_u14_drink_fresh_juice": {
    "vai": [
     "viec"
-   ]
+   ],
+   "dang_ngoi3": "drinks fresh juice"
   },
   "v_g5_u14_eat_healthy_food": {
    "vai": [
     "viec"
-   ]
+   ],
+   "dang_ngoi3": "eats healthy food"
   },
   "v_g5_u14_eat_vegetables": {
    "vai": [
     "viec"
-   ]
+   ],
+   "dang_ngoi3": "eats vegetables"
   },
   "v_g5_u14_every_day": {
    "vai": [
@@ -296,7 +302,8 @@
   "v_g5_u14_play_sports": {
    "vai": [
     "viec"
-   ]
+   ],
+   "dang_ngoi3": "plays sports"
   },
   "v_g5_u14_strong": {
    "vai": [
@@ -769,7 +776,8 @@
   "v_g5_u4_go_for_a_walk": {
    "vai": [
     "viec"
-   ]
+   ],
+   "ing": "going for a walk"
   },
   "v_g5_u4_never": {
    "vai": [
@@ -784,7 +792,8 @@
   "v_g5_u4_play_the_violin": {
    "vai": [
     "viec"
-   ]
+   ],
+   "ing": "playing the violin"
   },
   "v_g5_u4_rarely": {
    "vai": [
@@ -799,7 +808,8 @@
   "v_g5_u4_surf_the_internet": {
    "vai": [
     "viec"
-   ]
+   ],
+   "ing": "surfing the Internet"
   },
   "v_g5_u4_usually": {
    "vai": [
@@ -809,7 +819,8 @@
   "v_g5_u4_water_the_flowers": {
    "vai": [
     "viec"
-   ]
+   ],
+   "ing": "watering the flowers"
   },
   "v_g5_u5_firefighter": {
    "vai": [
@@ -900,7 +911,8 @@
    "vai": [
     "viec"
    ],
-   "dang_qk": "did projects"
+   "dang_qk": "did projects",
+   "ing": "doing projects"
   },
   "v_g5_u7_easy": {
    "vai": [
@@ -926,19 +938,22 @@
    "vai": [
     "viec"
    ],
-   "dang_qk": "played games"
+   "dang_qk": "played games",
+   "ing": "playing games"
   },
   "v_g5_u7_read_books": {
    "vai": [
     "viec"
    ],
-   "dang_qk": "read books"
+   "dang_qk": "read books",
+   "ing": "reading books"
   },
   "v_g5_u7_solve_maths_problems": {
    "vai": [
     "viec"
    ],
-   "dang_qk": "solved maths problems"
+   "dang_qk": "solved maths problems",
+   "ing": "solving maths problems"
   },
   "v_g5_u7_useful": {
    "vai": [
@@ -1024,13 +1039,15 @@
    "vai": [
     "viec"
    ],
-   "dang_qk": "listened to music"
+   "dang_qk": "listened to music",
+   "ing": "listening to music"
   },
   "v_g5_u9_play_chess": {
    "vai": [
     "viec"
    ],
-   "dang_qk": "played chess"
+   "dang_qk": "played chess",
+   "ing": "playing chess"
   },
   "v_g5_u9_theatre": {
    "vai": [
@@ -1041,7 +1058,8 @@
    "vai": [
     "viec"
    ],
-   "dang_qk": "watched the fish"
+   "dang_qk": "watched the fish",
+   "ing": "watching the fish"
   }
  },
  "hinh": {
@@ -1703,11 +1721,10 @@
    "o": {
     "noun": [
      "convat",
-     "thucan",
-     "douong"
+     "thucan"
     ]
    },
-   "_ghi": "Hai ô CÙNG TÊN → `sinh_cau` điền giống nhau, và ở đây thế là ĐÚNG: hỏi con vật thì đáp con vật."
+   "_ghi": "Hai ô CÙNG TÊN → `sinh_cau` điền giống nhau, và ở đây thế là ĐÚNG: hỏi con vật thì đáp con vật.\n⚠ Chỉ khai vai mà CHÍNH U01 dạy. Khai thêm `douong` thì U01 không có đồ uống nào, `all(x in VAI)` trượt, và cả ô rơi sang nhánh “danh sách từ đích danh” — kho rỗng, mẫu bị bỏ im lặng."
   },
   "sp_g5_u2_2": {
    "_cau": "What's your address? - It's [number] + [street name].",
@@ -1826,7 +1843,9 @@
    "_cau": "What did your family do in [place]? - We + [past verb] ...",
    "o": {
     "place": [
-     "noichon"
+     "Ha Long Bay",
+     "Phu Quoc Island",
+     "Da Nang"
     ],
     "past verb": [
      "viec"
@@ -1851,10 +1870,13 @@
      "at the Mid-Autumn Festival"
     ],
     "Verb": [
-     "viec"
+     "sing and dance",
+     "have a party",
+     "watch the fireworks show",
+     "visit our grandparents"
     ]
    },
-   "_ghi": "Ô này phải khai bằng CỤM CÓ SẴN GIỚI TỪ: `on` đi với ngày, `at` đi với lễ hội. Khai trần tên ngày thì ra “What will you do Children's Day?”"
+   "_ghi": "U13 không dạy `viec` nào của riêng nó, nên ô [Verb] khai bằng CỤM. Mọi chữ trong cụm đều đã học ở bài trước."
   },
   "sp_g5_u14_2": {
    "_cau": "How often does he / she [Verb]? - [frequency].",
@@ -1871,7 +1893,9 @@
    "_cau": "How's the weather in [place] in [season]? - It's [weather].",
    "o": {
     "place": [
-     "noichon"
+     "Ha Noi",
+     "Da Nang",
+     "Ho Chi Minh City"
     ],
     "season": [
      "mua"
@@ -1879,7 +1903,8 @@
     "weather": [
      "thoitiet"
     ]
-   }
+   },
+   "_ghi": "Ô [place] khai bằng TÊN THÀNH PHỐ, không dùng vai `noichon`: U16 không dạy nơi chốn nào, nên khai vai thì kho rỗng và cả mẫu bị bỏ im lặng."
   },
   "sp_g5_u16_2": {
    "_cau": "What do you usually wear in [season]? - I wear [clothes].",
@@ -1888,9 +1913,14 @@
      "mua"
     ],
     "clothes": [
-     "quanao"
+     "a jumper",
+     "a coat",
+     "a blouse",
+     "jeans",
+     "trousers"
     ]
-   }
+   },
+   "_ghi": "⚠ Ô KHAI KÈM MẠO TỪ. Công thức là “I wear [clothes].” — không có ô nào cho `a`, nên mạo từ phải nằm sẵn trong mục khai. Khai trần `jumper` thì ra “I wear jumper.”, trong khi chính câu ví dụ của sách là “I wear a jumper.”\n`jeans` và `trousers` số nhiều nên KHÔNG có mạo từ — đó là lý do phải khai TAY từng mục chứ không thêm `a` bằng máy."
   },
   "sp_g5_u17_2": {
    "_cau": "How did he / she [Verb]? - He / She + [past verb].",
@@ -1971,8 +2001,8 @@
    "o": {
     "A": [
      "Ha Noi",
-     "Hue",
-     "Da Nang"
+     "Da Nang",
+     "Ho Chi Minh City"
     ],
     "B": [
      "Hoan Kiem Lake",
@@ -1997,6 +2027,18 @@
      "the fox and the crow"
     ]
    }
+  },
+  "sp_g5_u13_2": {
+   "_cau": "What food / drinks will you have at the party? - We'll have [food/drinks].",
+   "o": {
+    "food/drinks": [
+     "a burger",
+     "a pizza",
+     "some milk tea",
+     "some apple juice"
+    ]
+   },
+   "_ghi": "⚠ Ô KHAI KÈM MẠO TỪ — xem sp_g5_u16_2. Khai trần thì ra “We'll have burger.” Đồ ăn đếm được đi với `a`, đồ uống không đếm được đi với `some`; máy không phân biệt được nên khai tay."
   }
  },
  "them": {

@@ -161,6 +161,35 @@ SO_NHIEU = {
     "hare": "hares", "tortoise": "tortoises", "grasshopper": "grasshoppers",
 }
 
+# ── DẠNG -ING và NGÔI THỨ BA SỐ ÍT ──────────────────────────────────────────
+# Ba mẫu câu lớp 5 đòi hai dạng này:
+#   U04 · U07  "I like [V-ing]."          → going for a walk
+#   U14        "He / She + [Verb-s]."     → does morning exercise
+# Thiếu dạng thì `dang_can()` trả None và từ ấy bị LOẠI khỏi kho — thà mất một
+# ứng viên còn hơn đẻ ra "I like go for a walk." / "He do morning exercise."
+DANG_ING = {
+    "go for a walk": "going for a walk",
+    "play the violin": "playing the violin",
+    "surf the Internet": "surfing the Internet",
+    "water the flowers": "watering the flowers",
+    "do projects": "doing projects",
+    "play games": "playing games",
+    "read books": "reading books",
+    "solve maths problems": "solving maths problems",
+    "listen to music": "listening to music",
+    "play chess": "playing chess",
+    "watch the fish": "watching the fish",
+}
+
+DANG_NGOI3 = {
+    "do morning exercise": "does morning exercise",
+    "play sports": "plays sports",
+    "drink fresh juice": "drinks fresh juice",
+    "eat healthy food": "eats healthy food",
+    "do yoga": "does yoga",
+    "eat vegetables": "eats vegetables",
+}
+
 DANG_QK = {
     "plant trees": "planted trees",
     "play games": "played games",
@@ -373,6 +402,10 @@ def main() -> int:
             muc["dang_qk"] = DANG_QK[v["word"]]
         if v["word"] in SO_NHIEU:
             muc["sonhieu"] = SO_NHIEU[v["word"]]
+        if v["word"] in DANG_ING:
+            muc["ing"] = DANG_ING[v["word"]]
+        if v["word"] in DANG_NGOI3:
+            muc["dang_ngoi3"] = DANG_NGOI3[v["word"]]
         tu[v["id"]] = muc
 
     chua = [k for k, m in tu.items() if not m.get("vai")]
@@ -440,7 +473,8 @@ def main() -> int:
     print(f"  {len(hoc)} bài học · không có bài Review")
     print(f"  {len(tu)} từ  ({theo_tu} khai TAY đích danh, "
           f"{len(tu) - theo_tu} suy từ semantic_field, {len(chua)} chưa có vai)")
-    print(f"  {len(DANG_QK)} dạng quá khứ khai tay")
+    print(f"  dạng khai tay: {len(DANG_QK)} quá khứ · {len(DANG_ING)} -ing · "
+          f"{len(DANG_NGOI3)} ngôi ba số ít · {len(SO_NHIEU)} số nhiều")
     kv = {**KHONG_VE, **_viec_khong_ve(
         {v["word"]: (tu[v["id"]].get("vai") or []) for v in tv})}
     e_cu, v_cu, k_cu = _ke_thua()
