@@ -45,6 +45,34 @@ export function paramsFor(item = {}) {
 }
 
 /**
+ * NỬA ĐỜI CỦA TRÍ NHỚ — sau chừng này ngày không gặp lại, mức thạo rơi một nửa
+ * quãng đường về phía "không chắc".
+ *
+ * 14 ngày là con số đặt theo lịch ôn sẵn có (+1 · +3 · +7 ngày): bé theo đúng
+ * lịch thì gặp lại trước khi rơi đáng kể, bỏ hẳn hai tuần thì mới thấy tụt.
+ * ⚠ Đây là con số CHỌN, không phải đo được — chưa có dữ liệu học thật để hiệu
+ * chỉnh. Khi có rồi thì chỉnh ở đây, và ghi lại lý do như `DEFAULT_PARAMS`.
+ */
+export const NUA_DOI_NGAY = 14;
+
+/**
+ * Mức thạo tụt dần khi lâu không gặp lại (chiều Thời gian, mục 2.1.2 luận văn).
+ *
+ * ⚠ KÉO VỀ 0.5, KHÔNG KÉO VỀ 0. Bé quên thì thành "không chắc", chứ không thành
+ * "chưa từng biết" — kéo về 0 là bắt bé học lại từ đầu một thứ đã từng thạo, và
+ * với trẻ con thì đó là hình phạt cho việc nghỉ vài hôm.
+ *
+ * Và vì kéo về 0.5, một nút bé từng làm SAI nhiều (p thấp) sẽ NHÍCH LÊN theo thời
+ * gian. Nghe ngược đời nhưng đúng: lâu không kiểm thì hiểu biết hiện tại của hệ
+ * thống về bé nhạt đi theo cả hai chiều, chứ không phải bé giỏi lên.
+ */
+export function quenDan(p, soNgay, nuaDoi = NUA_DOI_NGAY) {
+  if (!Number.isFinite(p)) return DEFAULT_PARAMS.L0;
+  if (!Number.isFinite(soNgay) || soNgay <= 0) return p;
+  return clamp(0.5 + (p - 0.5) * 2 ** (-soNgay / nuaDoi));
+}
+
+/**
  * Cập nhật một bản ghi mastery từ một attempt.
  * doc: {p, nAttempts, nCorrect, lastSeen, saiLienTiep, pTruoc} | undefined
  *
@@ -61,12 +89,23 @@ export function paramsFor(item = {}) {
  * Mục 2.5.2 đòi lưu P(L) trước và sau mỗi lượt để tính ΔC. Giá trị `pTruoc` đã
  * nằm sẵn trong tay ở dòng `cur` — trước nay chỉ là không ai ghi nó ra.
  *
- * ⚠ TỆP NÀY DÙNG CHUNG VỚI MÔN TOÁN ĐANG CHẠY THẬT. Ba trường thêm vào đều là
- * trường MỚI, không đổi `p` · `mastered` · `nAttempts` · `nCorrect` — nên số cũ
- * của bé không xê dịch. Cổng `bkt.test.mjs` canh chính điều đó.
+ * ── QUÊN DẦN ──
+ * Trước khi cập nhật, `p` cũ được kéo về phía 0.5 theo số ngày kể từ `lastSeen`
+ * (xem `quenDan`). Đây là chiều Thời gian của mục 2.1.2, và cũng là thứ làm cho
+ * "đã thạo" không phải một cái nhãn dán vĩnh viễn.
+ *
+ * ⚠ TỆP NÀY DÙNG CHUNG VỚI MÔN TOÁN ĐANG CHẠY THẬT. Các trường thêm vào đều MỚI,
+ * và phép quên chỉ đổi `p` khi bé LÂU KHÔNG GẶP LẠI nút ấy — bé học đều thì
+ * `lastSeen` luôn gần nên `cur` bằng đúng `p` cũ, không xê dịch gì. Tài liệu đời
+ * cũ không có `lastSeen` thì KHÔNG phân rã. Cổng `bkt.test.mjs` canh cả ba điều.
  */
 export function applyAttempt(doc, attempt, now = Date.now) {
-  const cur = doc?.p ?? DEFAULT_PARAMS.L0;
+  const bayGio = now();
+  /* Bao lâu rồi bé không chạm nút này. `lastSeen` thiếu (tài liệu đời cũ) thì coi
+     như VỪA gặp — thà không phân rã còn hơn phân rã theo một mốc bịa ra. */
+  const cach = Number.isFinite(doc?.lastSeen)
+    ? Math.max(0, (bayGio - doc.lastSeen) / 86400000) : 0;
+  const cur = quenDan(doc?.p ?? DEFAULT_PARAMS.L0, cach);
   const dung = !!attempt.correct;
   const p = bktUpdate(cur, dung, paramsFor(attempt));
   const n = (doc?.nAttempts ?? 0) + 1;
@@ -105,6 +144,6 @@ export function applyAttempt(doc, attempt, now = Date.now) {
     /* H_req — số gợi ý trung bình mỗi lượt tại nút này. */
     goiTrungBinh: n ? +(goiTong / n).toFixed(2) : 0,
     lastMicroId: attempt.microId ?? doc?.lastMicroId ?? null,
-    lastSeen: now(),
+    lastSeen: bayGio,
   };
 }

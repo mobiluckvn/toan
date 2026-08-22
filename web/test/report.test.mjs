@@ -7,6 +7,7 @@ import { emptyProgress, recordMicro, recordChapter } from '../src/mon/toan/lib/p
 import { allMicroIds, chapterOf } from '../src/mon/toan/lib/noiDung.js';
 import {
   minutesStudied, phutHoc, topTraps, stuckItems, buildParentReport, reportHeadline, inRange,
+  duongCongHoc,
 } from '../functions/src/report.js';
 
 let pass = 0, fail = 0;
@@ -156,6 +157,61 @@ t('chưa học thì báo rõ', reportHeadline({ answered: 0, topTraps: [] }).inc
     rep.phutXem === 5 && rep.phutLam === 10);
   const repCu2 = buildParentReport({ learnerId: 'L1', attempts: motLuot, index, now });
   t('không có sổ giờ thì sổ vẫn chạy và khai là suy ra', repCu2.nguonGio === 'suyRa');
+}
+
+/* ── ĐƯỜNG CONG HỌC TẬP (mục 2.5.3) ────────────────────────────────────────
+   Hai phép canh quan trọng nhất là hai cái BẪY, không phải đường cong đẹp hay
+   xấu: (1) lượt cũ bị đánh nhầm số thứ tự, (2) điểm ít mẫu được vẽ lên. */
+{
+  const luot = (nut, ds, t0 = 0) =>
+    ds.map((ok, i) => ({ bktUnit: nut, correct: ok, ts: t0 + i }));
+
+  const day = [];
+  for (let n = 0; n < 5; n += 1) day.push(...luot(`v_${n}`, [false, false, true, true, true]));
+  const mastery = {};
+  for (let n = 0; n < 5; n += 1) mastery[`v_${n}`] = { nAttempts: 5 };
+
+  const r = duongCongHoc(day, mastery);
+  t('đường cong: tỉ lệ sai giảm dần theo số lần luyện',
+    r.duong.every((d, i, a) => i === 0 || d.tiLeSai <= a[i - 1].tiLeSai));
+  t('mỗi điểm mang theo cỡ mẫu', r.duong.every((d) => d.soMau > 0));
+
+  /* ⚠ BẪY 1 — nút bé đã học từ TRƯỚC kỳ này phải bị LOẠI. Sổ chỉ lấy 7 ngày, nên
+     lượt thứ 12 của nó sẽ bị đánh thành "lần thứ 1" và pha loãng điểm đầu tiên:
+     đường cong nói dối theo hướng ĐẸP LÊN. Nhận ra bằng `nAttempts` của hồ sơ
+     nút ≠ số lượt đếm được trong cửa sổ. */
+  const cuMoi = [...day, ...luot('v_cu', [true, true, true])];
+  const rLoc = duongCongHoc(cuMoi, { ...mastery, v_cu: { nAttempts: 20 } });
+  t('nút đã học từ trước kỳ bị loại khỏi đường cong', rLoc.soNutDaLoc === 1);
+  t('loại rồi thì điểm lần 1 không bị pha loãng',
+    rLoc.duong[0].tiLeSai === r.duong[0].tiLeSai);
+
+  const rKhongLoc = duongCongHoc(cuMoi, { ...mastery, v_cu: { nAttempts: 3 } });
+  t('đảo chiều: KHÔNG loại thì điểm lần 1 đẹp lên thật',
+    rKhongLoc.duong[0].tiLeSai < r.duong[0].tiLeSai);
+
+  /* Không có hồ sơ nút thì KHÔNG được đoán là đủ lịch sử. */
+  t('thiếu hồ sơ nút thì loại, không đoán bừa',
+    duongCongHoc(day, {}).soNut === 0 && duongCongHoc(day, {}).duong.length === 0);
+
+  /* ⚠ BẪY 2 — điểm ít mẫu phải BỎ HẲN. Đuôi đường cong luôn thưa; một điểm dựng
+     trên 2 mẫu nhảy 0% hay 100% tuỳ một câu, mà mắt người nhìn biểu đồ tin ngay. */
+  const thua = luot('v_x', [false, false, false, false, false, false, false, false, false, false]);
+  const rThua = duongCongHoc(thua, { v_x: { nAttempts: 10 } });
+  t('điểm dưới ngưỡng mẫu bị bỏ hẳn', rThua.duong.length === 0);
+  t('hạ ngưỡng xuống 1 thì mới hiện — chứng minh phép lọc có chạy',
+    duongCongHoc(thua, { v_x: { nAttempts: 10 } }, { toiThieuMau: 1 }).duong.length > 0);
+
+  /* Lượt không gắn nút nào thì bỏ, không ném lỗi. */
+  t('lượt thiếu bktUnit không làm hỏng phép tính',
+    duongCongHoc([{ correct: true, ts: 1 }, ...day], mastery).duong.length === r.duong.length);
+
+  /* Và sổ bố mẹ phải mang nó ra. */
+  const rep = buildParentReport({
+    learnerId: 'L1', attempts: day.map((a) => ({ ...a, ts: Date.now(), microId: 'DL:TA5.B01' })),
+    mastery, now: Date.now(),
+  });
+  t('sổ bố mẹ có mảng đường cong', Array.isArray(rep.duongCong?.duong));
 }
 
 console.log(`\n${pass} PASS · ${fail} FAIL`);

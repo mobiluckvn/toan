@@ -63,14 +63,27 @@ export const onAttempt = onDocumentCreated('attempts/{attemptId}', async (event)
   });
 });
 
-/** Học xong một micro → sinh thẻ ôn theo lịch +1 / +3 / +7 ngày của chính bài đó */
-export const onMicroDone = onDocumentWritten('progress/{learnerId}/micros/{microDoc}', async (event) => {
+/**
+ * Học xong một micro → sinh thẻ ôn theo lịch +1 / +3 / +7 ngày của chính bài đó.
+ *
+ * Thân hàm TRUNG TÍNH với môn: nó chỉ đọc `pass` và `microId`, không đụng tới ma
+ * trận dạng bài của Toán. Nên hai môn dùng chung được, chỉ khác đường trigger —
+ * `progress/` cho Toán, `progressTA/` cho Tiếng Anh. Hai collection tách nhau là
+ * chủ ý (xem `mon/tienganh/lib/duLieu.js`), nhưng việc sinh thẻ thì giống hệt.
+ *
+ * ⚠ CHƯA CÓ MÀN NÀO BÀY THẺ ÔN RA CHO BÉ — kể cả bên Toán. Soi cả kho ngày
+ * 22-08-2026: `reviewQueue` chỉ được GHI ở đây, không chỗ nào ĐỌC. Nghĩa là thẻ
+ * sinh ra rồi nằm đó, và lịch ngắt quãng mới xong nửa đường ống. Nối thêm Tiếng
+ * Anh vào là đúng, nhưng đừng ai đọc chỗ này thành "đã có ôn ngắt quãng".
+ */
+async function sinhTheOn(event) {
   const after = event.data?.after?.data();
   const before = event.data?.before?.data();
   if (!after?.pass || before?.pass) return;                     // chỉ khi VỪA đạt lần đầu
 
   const { learnerId } = event.params;
   const microId = after.microId;
+  if (!microId) return;
   const lessonSnap = await db.doc(`contentIndex/${microId.replace(/[:.]/g, '_')}`).get();
   const schedule = lessonSnap.exists ? lessonSnap.data().schedule : null;
 
@@ -84,7 +97,19 @@ export const onMicroDone = onDocumentWritten('progress/{learnerId}/micros/{micro
   for (const c of cards) batch.set(db.doc(`reviewQueue/${learnerId}/cards/${c.id}`), c, { merge: true });
   batch.set(db.doc(`users/${learnerId}`), { lastStudiedAt: FieldValue.serverTimestamp() }, { merge: true });
   await batch.commit();
-});
+}
+
+export const onMicroDone = onDocumentWritten(
+  'progress/{learnerId}/micros/{microDoc}', sinhTheOn,
+);
+
+/* Cùng một việc cho môn Tiếng Anh. Phải là HÀM RIÊNG chứ không gộp đường dẫn:
+   trigger của Firestore nhận đúng một mẫu đường dẫn. Mã thẻ nhúng `microId` mà
+   mã bài hai môn không bao giờ trùng (`DL:TA5.*` với `DL:KSN2.*`), nên hai bên
+   đổ chung vào `reviewQueue` được mà không đè nhau. */
+export const onMicroDoneTA = onDocumentWritten(
+  'progressTA/{learnerId}/micros/{microDoc}', sinhTheOn,
+);
 
 /**
  * SỔ HỌC — tổng hợp 21h mỗi đêm thành MỘT document cho mỗi tài khoản.

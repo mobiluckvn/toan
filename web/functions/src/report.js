@@ -144,7 +144,79 @@ export function buildParentReport({ learnerId, attempts, progress = {}, mastery 
     suggestion: tip?.homeActivity || '',
     watchFor: tip?.watchFor || '',
     focusMicro: focus || null,
+    /* Đường cong học tập — xem `duongCongHoc` cho hai cái bẫy đã tránh. */
+    duongCong: duongCongHoc(win, mastery),
   };
+}
+
+/**
+ * ĐƯỜNG CONG HỌC TẬP — tỉ lệ sai theo SỐ LẦN ĐÃ LUYỆN (mục 2.5.3 luận văn).
+ *
+ * Bố mẹ nhìn ra tiến bộ ở đây rõ hơn mọi con số phần trăm: lần đầu chạm một từ
+ * thì sai nhiều, tới lần thứ tư thì gần như không sai nữa. Một con số "đúng 78%"
+ * không nói được điều đó, vì nó trộn lần đầu với lần thứ mười vào cùng một rổ.
+ *
+ * ── ⚠ CÁI BẪY: "LẦN THỨ MẤY" TÍNH TỪ ĐÂU ──
+ * Sổ học chỉ lấy nhật ký 7 ngày gần nhất. Đánh số thứ tự trong chừng ấy thì lượt
+ * thứ 12 của một từ bé học từ tháng trước bị ghi thành "lần thứ 1" — và đường
+ * cong dựng trên đó nói dối theo hướng đẹp lên: lần 1 trông có tỉ lệ sai thấp
+ * bất thường, vì lẫn vào đó toàn những từ bé đã thạo từ lâu.
+ *
+ * Lối thoát KHÔNG phải là kéo dài cửa sổ (tốn, và bao nhiêu ngày cũng vẫn hụt).
+ * Hồ sơ nút đã giữ `nAttempts` — TỔNG SỐ lượt từ trước tới nay. Nút nào có số ấy
+ * ĐÚNG BẰNG số lượt đếm được trong cửa sổ thì cả lịch sử của nó nằm trọn ở đây,
+ * và chỉ những nút ấy mới được vào đường cong.
+ *
+ * Nghĩa là đường cong này nói về "những nút bé BẮT ĐẦU học trong kỳ" — hẹp hơn,
+ * nhưng đúng. Trả kèm `soNutDaLoc` để màn hình nói được điều đó thay vì giấu.
+ *
+ * ── ⚠ ĐIỂM CÓ ÍT MẪU THÌ ĐỪNG VẼ ──
+ * Đuôi đường cong luôn thưa: ít nút nào bị luyện tới lần thứ tám. Một điểm dựng
+ * trên 2 mẫu nhảy 0% hay 100% tuỳ một câu, mà mắt người nhìn biểu đồ thì tin
+ * ngay. Nên mỗi điểm mang theo `soMau`, và điểm dưới ngưỡng bị BỎ HẲN chứ không
+ * trả về kèm cờ — trả về là sớm muộn có chỗ vẽ nó lên.
+ */
+export function duongCongHoc(attempts, mastery = {}, {
+  toiThieuMau = 3, toiDaLan = 8,
+} = {}) {
+  /* Gom theo nút, giữ đúng thứ tự thời gian. `bktUnit` rỗng thì bỏ — lượt ấy
+     không gắn với nút nào nên không có "lần thứ mấy". */
+  const theoNut = new Map();
+  for (const a of attempts) {
+    if (!a?.bktUnit) continue;
+    if (!theoNut.has(a.bktUnit)) theoNut.set(a.bktUnit, []);
+    theoNut.get(a.bktUnit).push(a);
+  }
+
+  const tra = (u) => mastery[u] ?? mastery[encodeURIComponent(u)];
+  let daLoc = 0;
+  const diem = new Map();          // lần thứ n → { tong, sai }
+  for (const [nut, ds] of theoNut) {
+    const ho = tra(nut);
+    /* Không có hồ sơ nút thì KHÔNG đoán là đủ lịch sử — bỏ. Thiếu hồ sơ nghĩa là
+       hàm nền chưa chạy xong hoặc nút vừa mới có, cả hai đều chưa tin được. */
+    if (!ho || ho.nAttempts !== ds.length) { daLoc += 1; continue; }
+    ds.sort((x, y) => (x.ts ?? 0) - (y.ts ?? 0));
+    ds.forEach((a, i) => {
+      const lan = i + 1;
+      if (lan > toiDaLan) return;
+      const d = diem.get(lan) || { tong: 0, sai: 0 };
+      d.tong += 1;
+      if (!a.correct) d.sai += 1;
+      diem.set(lan, d);
+    });
+  }
+
+  const duong = [...diem.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .filter(([, d]) => d.tong >= toiThieuMau)
+    .map(([lan, d]) => ({
+      lan,
+      soMau: d.tong,
+      tiLeSai: Math.round((d.sai / d.tong) * 100),
+    }));
+
+  return { duong, soNut: theoNut.size - daLoc, soNutDaLoc: daLoc, toiThieuMau };
 }
 
 /** Câu văn ngắn cho bố mẹ đọc lướt */

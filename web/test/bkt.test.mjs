@@ -1,7 +1,7 @@
 /** Kiểm BKT & hàng đợi ôn tập trên dữ liệu thật — node test/bkt.test.mjs */
 import fs from 'fs';
 import {
-  bktUpdate, bktSequence, isMastered, applyAttempt, paramsFor,
+  bktUpdate, bktSequence, isMastered, applyAttempt, paramsFor, quenDan, NUA_DOI_NGAY,
   DEFAULT_PARAMS, MASTERY_THRESHOLD,
 } from '../functions/src/bkt.js';
 import {
@@ -128,6 +128,47 @@ const units = new Set(lessons.map((L) => L.skills?.bktUnit).filter(Boolean));
 t(`mọi micro có bktUnit: ${lessons.filter((L) => L.skills?.bktUnit).length}/168`,
   lessons.every((L) => L.skills?.bktUnit));
 console.log(`   số đơn vị kỹ năng khác nhau: ${units.size}`);
+
+/* ── QUÊN DẦN (chiều Thời gian, mục 2.1.2) ─────────────────────────────────── */
+{
+  const NGAY = 86400000;
+
+  t('vừa gặp thì không quên gì', quenDan(0.9, 0) === 0.9);
+  t(`sau ${NUA_DOI_NGAY} ngày thì rơi NỬA quãng đường về 0.5`,
+    Math.abs(quenDan(0.9, NUA_DOI_NGAY) - 0.7) < 0.005);
+
+  /* ⚠ KÉO VỀ 0.5, KHÔNG VỀ 0. Kéo về 0 là bắt bé học lại từ đầu một thứ đã từng
+     thạo — với trẻ con đó là hình phạt cho việc nghỉ vài hôm. */
+  t('quên rất lâu vẫn không rơi về 0', quenDan(0.9, 3650) > 0.45);
+  t('nút bé từng làm SAI thì NHÍCH LÊN phía 0.5, không tụt sâu thêm',
+    quenDan(0.1, 56) > 0.1 && quenDan(0.1, 56) < 0.5);
+
+  /* Điều tôi lo nhất: bé học ĐỀU mà điểm bị tụt oan. */
+  let deu; let t0 = 0;
+  for (let i = 0; i < 20; i += 1) { deu = applyAttempt(deu, { correct: true }, () => t0); t0 += NGAY; }
+  let lien;
+  for (let i = 0; i < 20; i += 1) lien = applyAttempt(lien, { correct: true }, () => 0);
+  t('học đều mỗi ngày thì mức thạo không bị phạt đáng kể',
+    Math.abs(deu.p - lien.p) < 0.02);
+  t('học đều 20 hôm thì vẫn đạt thạo', deu.mastered === true);
+
+  /* Nghỉ dài thì mới thấy tụt — và phải tụt THẬT, không thì phép quên vô nghĩa. */
+  const nghi = applyAttempt({ p: 0.95, nAttempts: 9, nCorrect: 9, lastSeen: 0 },
+    { correct: true }, () => 60 * NGAY);
+  t('nghỉ 60 ngày thì mức thạo TRƯỚC lượt mới tụt rõ', nghi.pTruoc < 0.62);
+
+  /* Tài liệu đời cũ không có `lastSeen` — KHÔNG phân rã theo một mốc bịa ra. */
+  const cu = applyAttempt({ p: 0.9, nAttempts: 5 }, { correct: true }, () => 999 * NGAY);
+  t('thiếu lastSeen thì không phân rã', Math.abs(cu.pTruoc - 0.9) < 1e-9);
+
+  /* Mốc tương lai (đồng hồ máy con sai) không được làm p nhảy lung tung. */
+  const tuongLai = applyAttempt({ p: 0.8, nAttempts: 3, lastSeen: 100 * NGAY },
+    { correct: true }, () => 0);
+  t('lastSeen ở tương lai thì coi như vừa gặp, không tính ngược',
+    Math.abs(tuongLai.pTruoc - 0.8) < 1e-9);
+
+  t('lastSeen được cập nhật thành mốc của lượt này', nghi.lastSeen === 60 * NGAY);
+}
 
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);

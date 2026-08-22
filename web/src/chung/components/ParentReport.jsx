@@ -40,6 +40,55 @@ const O = ({ nhan, gia, mau = 'text-navy' }) => (
   </div>
 );
 
+/**
+ * ĐƯỜNG CONG HỌC TẬP — thứ bố mẹ nhìn ra tiến bộ rõ hơn mọi con số phần trăm.
+ *
+ * "Đúng 78%" trộn lần đầu chạm một từ với lần thứ mười vào cùng một rổ. Đường
+ * cong tách chúng ra: lần đầu sai nhiều, tới lần thứ tư gần như không sai nữa —
+ * và ĐÓ mới là hình dạng của việc học.
+ *
+ * ── VẼ BẰNG THANH, KHÔNG BẰNG BIỂU ĐỒ ĐƯỜNG ──
+ * Thanh ngang đọc được ngay trên điện thoại, không cần thư viện vẽ, và không có
+ * trục toạ độ nào để hiểu nhầm. Bố mẹ cần thấy "cột sau thấp hơn cột trước", chứ
+ * không cần đọc số chính xác.
+ *
+ * ── ⚠ NÓI RA CHỖ SỐ LIỆU CÒN HẸP ──
+ * Đường cong chỉ tính những nút bé BẮT ĐẦU học trong kỳ (xem `duongCongHoc`).
+ * Giấu điều đó đi thì bố mẹ đọc thành "toàn bộ việc học của con" — nên câu chú
+ * dưới biểu đồ là bắt buộc, không phải trang trí.
+ */
+function DuongCong({ dc }) {
+  if (!dc?.duong?.length) return null;
+  const cao = Math.max(...dc.duong.map((d) => d.tiLeSai), 1);
+  return (
+    <div className="card mb-2 py-3.5">
+      <p className="text-[13px] font-extrabold text-navy">Càng luyện càng ít sai</p>
+      <div className="mt-2.5 flex flex-col gap-1.5">
+        {dc.duong.map((d) => (
+          <div key={d.lan} className="flex items-center gap-2">
+            <span className="w-[62px] shrink-0 text-[11.5px] text-mute">lần {d.lan}</span>
+            <div className="h-[14px] flex-1 overflow-hidden rounded-full bg-soft">
+              <div
+                className="h-full rounded-full bg-navy"
+                style={{ width: `${Math.round((d.tiLeSai / cao) * 100)}%` }}
+              />
+            </div>
+            <span className="w-[64px] shrink-0 text-right text-[11.5px] font-bold text-navy">
+              sai {d.tiLeSai}%
+            </span>
+          </div>
+        ))}
+      </div>
+      <p className="mt-2.5 text-[11.5px] leading-relaxed text-mute">
+        Tính trên {dc.soNut} phần kiến thức con <b>mới bắt đầu học</b> trong kỳ này.
+        {dc.soNutDaLoc > 0
+          && ` ${dc.soNutDaLoc} phần con đã học từ trước không tính vào đây, vì `
+            + 'không biết được con đã luyện bao nhiêu lần trước đó.'}
+      </p>
+    </div>
+  );
+}
+
 export default function ParentReport({ mon = [], tienDo = {}, learnerId, onExit, onVeNha }) {
   /* MỖI MÔN NỘP HỌC BẠ THEO MỘT KHUÔN. Sổ này không biết Toán chia chương thế nào,
      cũng không biết Tiếng Anh rồi sẽ chia ra sao — nó chỉ vẽ đúng khuôn ấy. Thêm môn
@@ -163,6 +212,8 @@ export default function ParentReport({ mon = [], tienDo = {}, learnerId, onExit,
             phần “phút học” chỉ tính trên các buổi học từ nay về sau.
           </p>
         )}
+
+        <DuongCong dc={r?.duongCong} />
 
         {/* ══ HAI TRỤC ══ */}
         <div className="mt-1 flex gap-2">
