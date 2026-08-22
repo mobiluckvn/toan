@@ -18,6 +18,7 @@ import { readFileSync } from 'node:fs';
 import {
   xepTheoZPD, nhomCua, mucThaoCua, nutChongChenh, NHOM, NGUONG_THAO, NGUONG_YEU,
 } from '../src/mon/tienganh/lib/zpd.js';
+import { TOI_THIEU_MAU } from '../src/mon/tienganh/lib/hoso.js';
 import { MASTERY_THRESHOLD } from '../functions/src/bkt.js';
 
 const doc = (p) => readFileSync(new URL(p, import.meta.url), 'utf8');
@@ -107,6 +108,74 @@ test('nút chông chênh nhất đứng trước', () => {
     'đã thạo và yếu hẳn đều không thuộc vùng học được');
 });
 
+/* ── CHIỀU SƯ PHẠM: định dạng làm khoá xếp PHỤ ─────────────────────────────── */
+
+const cauD = (id, maNut, format) => ({ id, maNut, format });
+/** hồ sơ định dạng: {format: tỉ lệ đúng}, tự bơm cho đủ mẫu */
+const hs = (o) => Object.fromEntries(Object.entries(o).map(([k, ti]) => [k, {
+  tong: TOI_THIEU_MAU * 4, dung: Math.round(TOI_THIEU_MAU * 4 * ti),
+}]));
+
+test('chỗ CHÔNG CHÊNH: định dạng bé MẠNH lên trước', () => {
+  /* Nội dung đã khó rồi; chồng thêm dạng câu bé cũng vật vã là bắt bé đánh nhau
+     với hai thứ cùng lúc, và khi sai thì không ai biết bé sai vì chưa hiểu bài
+     hay vì chưa quen cách hỏi. */
+  const ds = [cauD('yeu', 'v_a', 'go'), cauD('manh', 'v_b', 'chon')];
+  const m = mt({ v_a: 0.5, v_b: 0.5 });                     // cùng nhóm chông chênh
+  const r = xepTheoZPD(ds, m, hs({ chon: 0.9, go: 0.3 }));
+  assert.equal(r[0].id, 'manh');
+});
+
+test('chỗ ĐÃ THẠO: đảo chiều — định dạng bé YẾU lên trước', () => {
+  /* Nội dung an toàn nên đây là chỗ RẺ NHẤT để tập cách hỏi bé còn ngại. */
+  const ds = [cauD('manh', 'v_a', 'chon'), cauD('yeu', 'v_b', 'go')];
+  const m = mt({ v_a: 0.95, v_b: 0.95 });
+  const r = xepTheoZPD(ds, m, hs({ chon: 0.9, go: 0.3 }));
+  assert.equal(r[0].id, 'yeu');
+});
+
+test('⚠ ĐỊNH DẠNG CHỈ LÀ KHOÁ PHỤ — nhóm ZPD vẫn quyết trước', () => {
+  /* Cho định dạng thắng nhóm là đảo ngược cả mục đích của việc xếp.
+     ⚠ CHỌN CA CHO ĐÚNG. Bản đầu tôi so nhóm ĐÃ THẠO với nhóm CHÔNG CHÊNH — ca ấy
+     KHÔNG phân biệt được: nhóm đã thạo đảo chiều nên `d` của nó luôn ≥ 0, còn hai
+     nhóm kia luôn ≤ 0, hai dải không chồng nhau, đổi thứ tự khoá cũng ra kết quả
+     y hệt. Đảo chiều thử mới lộ ra là phép canh đang canh hụt.
+     Ca phân biệt được phải nằm giữa hai nhóm CÙNG dấu: chưa-biết (1) và yếu (2). */
+  const ds = [
+    cauD('yeu_hopDang', 'v_yeu', 'chon'),      // nhóm 2, định dạng rất mạnh
+    cauD('moi_khoDang', 'v_moi', 'go'),        // nhóm 1, định dạng yếu
+  ];
+  const m = mt({ v_yeu: 0.05 });               // v_moi không có số → chưa biết
+  const r = xepTheoZPD(ds, m, hs({ chon: 0.95, go: 0.2 }));
+  assert.equal(r[0].id, 'moi_khoDang',
+    'nhóm phải quyết trước: thứ bé CHƯA BIẾT đứng trên thứ bé YẾU HẲN, kể cả khi '
+    + 'thứ yếu hẳn kia rơi vào dạng câu bé làm tốt nhất');
+});
+
+test('hồ sơ CHƯA ĐỦ MẪU thì không xê dịch gì', () => {
+  const ds = [cauD('a', 'v_a', 'go'), cauD('b', 'v_b', 'chon')];
+  const m = mt({ v_a: 0.5, v_b: 0.5 });
+  const it = { chon: { dung: 2, tong: 2 }, go: { dung: 0, tong: 2 } };
+  assert.deepEqual(xepTheoZPD(ds, m, it).map((c) => c.id), ['a', 'b']);
+  /* Và MỘT dạng đủ mẫu cũng chưa đủ — mọi câu cùng hạng thì xếp lại chẳng đổi gì. */
+  const mot = hs({ chon: 0.9 });
+  assert.deepEqual(xepTheoZPD(ds, m, mot).map((c) => c.id), ['a', 'b']);
+});
+
+test('có hồ sơ định dạng mà CHƯA có mức thạo thì vẫn dùng được', () => {
+  const ds = [cauD('yeu', null, 'go'), cauD('manh', null, 'chon')];
+  const r = xepTheoZPD(ds, null, hs({ chon: 0.9, go: 0.3 }));
+  assert.equal(r[0].id, 'manh', 'chưa biết nội dung thì ít ra chọn được cách hỏi');
+});
+
+test('câu thiếu format không bị đẩy đi đâu vô cớ', () => {
+  const ds = [cauD('a', 'v_a', undefined), cauD('b', 'v_b', 'chon')];
+  const m = mt({ v_a: 0.5, v_b: 0.5 });
+  const r = xepTheoZPD(ds, m, hs({ chon: 0.9, go: 0.3 }));
+  assert.equal(r.length, 2);
+  assert.deepEqual([...r].map((c) => c.id).sort(), ['a', 'b']);
+});
+
 test('màn học có gọi phép xếp, và gọi TRONG useMemo', () => {
   /* ⚠ Không dùng useMemo thì thứ tự dựng lại mỗi lần màn vẽ. Bé đang làm câu thứ
      3, một lần vẽ lại là `i` vẫn bằng 3 nhưng pool đã khác — câu đang làm dở biến
@@ -120,4 +189,7 @@ test('màn học có gọi phép xếp, và gọi TRONG useMemo', () => {
 
   const man = chiMa(doc('../src/mon/tienganh/components/ManTiengAnh.jsx'));
   assert.match(man, /docMucThao\(/, 'không ai nạp mức thạo từ máy chủ');
+  assert.match(man, /hoSoDang=\{tienDo\.dinhDang/,
+    'bảng định dạng đo rồi mà bộ chọn câu không nhận — đo mà chưa dùng thì chưa là '
+    + 'thích ứng, đúng chỗ hụt của chiều Nhận thức sau Đợt 1');
 });

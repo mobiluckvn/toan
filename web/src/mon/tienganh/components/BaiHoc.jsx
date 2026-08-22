@@ -48,7 +48,8 @@ const maCauAm = (c) => maCua(c, 'en');
  */
 export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
                                  onMoc, tenBe = 'Bo', soThich = null,
-                                 onSoThich = null, onLuot = null, mucThao = null }) {
+                                 onSoThich = null, onLuot = null, mucThao = null,
+                                 hoSoDang = null }) {
   /* MỘT LẦN MỞ BÀI LÀ MỘT PHIÊN. Mã phiên đi vào mã từng bản ghi nhật ký, nên nó
      phải ĐỔI khi đổi bài và GIỮ NGUYÊN trong suốt bài — `useMemo` theo `id` cho
      đúng cả hai. Component này KHÔNG dựng lại khi đổi bài (chỗ gọi không đặt
@@ -141,7 +142,7 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
       {k === 'luyen' && (
         <LuyenTap key={id} bai={bai} onTiep={xong}
                   moc={mocDau?.luyen} onMoc={mocLuyen} onLuot={ghiLuot}
-                  mucThao={mucThao} />
+                  mucThao={mucThao} hoSoDang={hoSoDang} />
       )}
       {k === 'noi' && (
         <HoiThoai
@@ -637,7 +638,8 @@ const MUC = [
  * lượt nữa. Chỉ MỘT lượt: hai lượt rồi vẫn tắc thì cái bé cần là người lớn ngồi
  * cạnh, không phải vòng lặp thứ ba.
  */
-function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null }) {
+function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null,
+                    hoSoDang = null }) {
   /* ── VÀO LẠI ĐÚNG CHỖ BỎ DỞ ──
      `moc` là thứ đã ghi lần trước. KHÔNG tin nó mù quáng: sổ có thể là của bản bài
      cũ, mà chỉ số mức hay chỉ số câu nhảy ra ngoài mảng là màn trắng ngay. Nên kẹp
@@ -693,8 +695,8 @@ function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null }) {
      `useMemo` để thứ tự KHÔNG đổi giữa chừng khi màn vẽ lại — đổi giữa buổi thì
      `i` đang trỏ câu này bỗng trỏ câu khác, bé mất câu đang làm dở. */
   const goc = React.useMemo(
-    () => xepTheoZPD(bai.practice.pools[MUC[m].khoa] || [], mucThao),
-    [bai, m, mucThao],
+    () => xepTheoZPD(bai.practice.pools[MUC[m].khoa] || [], mucThao, hoSoDang),
+    [bai, m, mucThao, hoSoDang],
   );
   const pool = lamLai || goc;
   const cau = pool[i];

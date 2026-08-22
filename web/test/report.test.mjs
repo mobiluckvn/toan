@@ -7,7 +7,7 @@ import { emptyProgress, recordMicro, recordChapter } from '../src/mon/toan/lib/p
 import { allMicroIds, chapterOf } from '../src/mon/toan/lib/noiDung.js';
 import {
   minutesStudied, phutHoc, topTraps, stuckItems, buildParentReport, reportHeadline, inRange,
-  duongCongHoc,
+  duongCongHoc, metMoi, NGUONG_CHAM,
 } from '../functions/src/report.js';
 
 let pass = 0, fail = 0;
@@ -212,6 +212,74 @@ t('chưa học thì báo rõ', reportHeadline({ answered: 0, topTraps: [] }).inc
     mastery, now: Date.now(),
   });
   t('sổ bố mẹ có mảng đường cong', Array.isArray(rep.duongCong?.duong));
+}
+
+/* ── MỆT MỎI NHẬN THỨC (mục 2.1.2-T) ───────────────────────────────────────── */
+{
+  const L = (sid, mode, ms, ts) => ({ sessionId: sid, mode, ms, ts });
+
+  /* ⚠ CÁI BẪY LỚN NHẤT, và nó nghiêng MỘT CHIỀU.
+     Bài đi theo thang độ khó (khởi động → ráp câu → thử thách), nên câu cuối
+     phiên VỐN đã khó hơn câu đầu. So thẳng nửa đầu với nửa sau thì buổi nào cũng
+     ra "chậm dần", và bố mẹ đọc thành "con tôi chóng mệt" trong khi app đang tăng
+     độ khó đúng như thiết kế. Ca dưới đây: bé KHÔNG mệt chút nào. */
+  const bay = [];
+  /* ⚠ KHÔNG đặt tên biến đếm là `t` — `t()` là hàm chấm của chính cổng này, và
+     `let t` che mất nó. Node báo "t is not a function" ở dòng kế tiếp. */
+  let moc = 0;
+  for (let i = 0; i < 8; i += 1) bay.push(L('p1', 'chon', 2000, moc += 1));
+  for (let i = 0; i < 8; i += 1) bay.push(L('p1', 'the', 6000, moc += 1));
+  const rBay = metMoi(bay);
+  t('bẫy độ khó: bé không mệt thì KHÔNG báo mệt', rBay.metMoi === false);
+  t('bẫy độ khó: chênh lệch bằng 0 vì so trong cùng dạng câu', rBay.chamHon === 0);
+
+  /* Chứng minh phép ngây thơ THẬT SỰ sai trên chính bộ dữ liệu ấy — nếu không thì
+     phép canh trên chỉ là một con số vô nghĩa. */
+  const tb = (a) => a.reduce((s, x) => s + x.ms, 0) / a.length;
+  t('và phép so THẲNG nửa đầu/nửa sau thì sai thật',
+    (tb(bay.slice(8)) - tb(bay.slice(0, 8))) / tb(bay.slice(0, 8)) >= 2);
+
+  /* Ca thật: cùng một dạng câu, bé chậm dần. */
+  const that = [];
+  moc = 0;
+  for (let i = 0; i < 12; i += 1) that.push(L('p2', 'chon', 2000 + i * 300, moc += 1));
+  const rThat = metMoi(that);
+  t('bé chậm dần trong CÙNG dạng câu thì báo mệt', rThat.metMoi === true);
+  t('có đủ msDau/msCuoi để màn hình nói cụ thể',
+    rThat.msDau > 0 && rThat.msCuoi > rThat.msDau);
+  t('ngưỡng có tác dụng: chậm dưới ngưỡng thì KHÔNG báo mệt', (() => {
+    const nhe = [];
+    let k = 0;
+    for (let i = 0; i < 12; i += 1) nhe.push(L('p9', 'chon', 2000 + i * 20, k += 1));
+    const r = metMoi(nhe);
+    return r.duLieu && r.chamHon < NGUONG_CHAM && r.metMoi === false;
+  })());
+
+  /* Ít mẫu thì im, và nói rõ là im vì thiếu số liệu chứ không phải vì bé đều. */
+  t('ít mẫu thì duLieu=false, không phải metMoi=false suông',
+    metMoi([L('p3', 'chon', 1000, 1), L('p3', 'chon', 5000, 2)]).duLieu === false);
+
+  /* Lượt thiếu `ms` hoặc thiếu phiên thì bỏ, không ném. */
+  t('lượt hỏng không làm hỏng phép tính',
+    metMoi([...that, { mode: 'chon' }, { sessionId: 'x', ms: 1 }, null].filter(Boolean))
+      .metMoi === true);
+
+  /* ⚠ Số LẺ thì bỏ lượt GIỮA, không dồn nó vào nửa sau — dồn là tự tay nghiêng
+     kết quả về phía "mệt". */
+  t('số lẻ: hai nửa bằng nhau về cỡ mẫu', (() => {
+    const le = [];
+    let k = 0;
+    for (let i = 0; i < 11; i += 1) le.push(L('p4', 'chon', 2000, k += 1));
+    return metMoi(le).soMau % 2 === 0;
+  })());
+
+  /* Và sổ bố mẹ phải mang nó ra. */
+  const rep = buildParentReport({
+    learnerId: 'L1',
+    attempts: that.map((a, i) => ({ ...a, ts: Date.now() - (12 - i) * 1000, microId: 'DL:TA5.B01' })),
+    now: Date.now(),
+  });
+  t('sổ bố mẹ có mục mệt mỏi', typeof rep.metMoi?.duLieu === 'boolean');
 }
 
 console.log(`\n${pass} PASS · ${fail} FAIL`);

@@ -28,6 +28,8 @@
  * chúng theo P(L) là ném thang ấy đi.
  */
 
+import { tiLeDung, xepDinhDang } from './hoso.js';
+
 /** Ngưỡng thạo — giữ đúng con số của `functions/src/bkt.js` (bác chốt 0,85). */
 export const NGUONG_THAO = 0.85;
 
@@ -70,22 +72,59 @@ export const mucThaoCua = (mucThao, maNut) => {
 };
 
 /**
+ * CHIỀU SƯ PHẠM — khoá xếp PHỤ, dùng bảng "bé làm tốt dạng câu nào".
+ *
+ * Luật, và lý do của nó:
+ *
+ *   Ở chỗ bé CHÔNG CHÊNH hoặc YẾU → đưa định dạng bé MẠNH lên trước.
+ *   Nội dung đã khó rồi; chồng thêm một dạng câu bé cũng vật vã là bắt bé đánh
+ *   nhau với hai thứ cùng lúc, và khi sai thì không ai biết bé sai vì chưa hiểu
+ *   bài hay vì chưa quen cách hỏi. Tách hai cái khó ra.
+ *
+ *   Ở chỗ bé ĐÃ THẠO → đưa định dạng bé YẾU lên trước.
+ *   Nội dung an toàn nên đây là chỗ rẻ nhất để tập cách hỏi bé còn ngại. Sai ở
+ *   đây không tốn gì, mà quen dần thì lần sau gặp dạng ấy ở bài mới bé đỡ khớp.
+ *
+ *   Ở chỗ CHƯA BIẾT → giữ nguyên thứ tự người soạn. Không có lý do để thích dạng
+ *   nào hơn khi chính nội dung cũng mới tinh.
+ *
+ * ⚠ CHỈ LÀ KHOÁ PHỤ. Nhóm ZPD vẫn quyết trước — thứ bé đang chông chênh vẫn lên
+ * đầu dù nó rơi vào dạng câu bé yếu. Cho định dạng thắng nhóm là đảo ngược cả
+ * mục đích: buổi học sẽ mở bằng thứ bé đã thạo, chỉ vì nó hợp dạng câu.
+ */
+function hangDinhDang(format, hoSo, nhom) {
+  const ti = hoSo ? tiLeDung(hoSo, format) : null;
+  if (ti === null) return 0;               // chưa đủ mẫu → không xê dịch gì
+  /* Nhóm đã thạo thì đảo chiều: yếu lên trước. */
+  return nhom === NHOM.daThao ? ti : -ti;
+}
+
+/**
  * Xếp lại một pool câu theo ZPD. ỔN ĐỊNH trong từng nhóm — giữ nguyên thứ tự
- * người soạn đặt, chỉ đổi thứ tự giữa các nhóm.
+ * người soạn đặt, chỉ đổi thứ tự giữa các nhóm (và trong nhóm thì theo định dạng,
+ * nếu có hồ sơ đủ mẫu).
  *
  * Không có số liệu (chưa đăng nhập, mất mạng, hàm nền chưa chạy) thì trả về ĐÚNG
  * mảng cũ, không phải bản sao đã xáo — bé học y như trước, không có gì lạ xảy ra.
  */
-export function xepTheoZPD(cauDs, mucThao) {
+export function xepTheoZPD(cauDs, mucThao, hoSo = null) {
   const ds = Array.isArray(cauDs) ? cauDs : [];
-  if (!mucThao || !Object.keys(mucThao).length || ds.length < 2) return ds;
+  if (ds.length < 2) return ds;
 
-  const co = ds.some((c) => mucThaoCua(mucThao, c?.maNut) !== null);
-  if (!co) return ds;          // không nút nào có số → đừng động vào
+  const coThao = !!mucThao && Object.keys(mucThao).length
+    && ds.some((c) => mucThaoCua(mucThao, c?.maNut) !== null);
+  /* Hồ sơ định dạng chỉ đáng dùng khi có ÍT NHẤT HAI dạng đủ mẫu — một dạng thì
+     mọi câu cùng hạng, xếp lại chẳng đổi gì mà vẫn tốn một lần sắp. */
+  const coDang = !!hoSo && xepDinhDang(hoSo).length >= 2
+    && ds.some((c) => c?.format);
+  if (!coThao && !coDang) return ds;
 
   return ds
-    .map((c, i) => ({ c, i, n: nhomCua(mucThaoCua(mucThao, c?.maNut)) }))
-    .sort((a, b) => (a.n - b.n) || (a.i - b.i))
+    .map((c, i) => {
+      const n = coThao ? nhomCua(mucThaoCua(mucThao, c?.maNut)) : NHOM.chuaBiet;
+      return { c, i, n, d: coDang ? hangDinhDang(c?.format, hoSo, n) : 0 };
+    })
+    .sort((a, b) => (a.n - b.n) || (a.d - b.d) || (a.i - b.i))
     .map((x) => x.c);
 }
 

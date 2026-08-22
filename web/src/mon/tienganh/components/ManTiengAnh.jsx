@@ -310,6 +310,7 @@ export default function ManTiengAnh({
         soThich={(tienDo.soThich || {})[khoaSoThich(ct.ma)] || null}
         onSoThich={xongSoThich}
         mucThao={mucThao}
+        hoSoDang={tienDo.dinhDang || null}
       />
     );
   }

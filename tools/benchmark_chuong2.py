@@ -84,13 +84,14 @@ R("2.1.2", "Chiều NHẬN THỨC (C): đo mức tinh thông P(L) từng nút tr
   "học bị đẩy xuống cuối buổi.",
   "2.3.2-nối · 2.3.1-overlay", D2, "xong"),
 
-R("2.1.2", "Chiều THỜI GIAN (T): lặp lại ngắt quãng, đường cong quên, đo mệt mỏi nhận thức", PH,
-  "✅ HAI TRONG BA XONG Đợt 2 (22-08), ĐÃ DEPLOY. LẶP LẠI NGẮT QUÃNG nay chạy trọn "
+R("2.1.2", "Chiều THỜI GIAN (T): lặp lại ngắt quãng, đường cong quên, đo mệt mỏi nhận thức", DU,
+  "✅ ĐỦ CẢ BA (22-08). LẶP LẠI NGẮT QUÃNG chạy trọn "
   "đường ống: `onMicroDoneTA` sinh thẻ → thẻ mời trên trang chính → màn `OnLai` → "
   "hộp Leitner đẩy lên hoặc về 0. ĐƯỜNG CONG QUÊN: `quenDan()` trong `bkt.js`, nửa "
-  "đời 14 ngày.",
-  "❌ CÒN 'ĐO MỆT MỎI NHẬN THỨC'. Suy được từ `ms` (thời gian phản hồi dài dần trong "
-  "một phiên) — số liệu đã có sau Đợt 1, chưa ai tính.",
+  "đời 14 ngày. MỆT MỎI NHẬN THỨC: `metMoi()` trong `report.js`, hiện trong Sổ bố "
+  "mẹ thành một câu dùng được — con học chừng bao lâu thì nên nghỉ.",
+  "Đo xong nhưng CHƯA DÙNG để rút ngắn buổi học — mục này chỉ đòi ĐO, nên vẫn tính "
+  "là đạt; việc dùng thì để Đợt 4 cùng với hàm chính sách.",
   OK,
   "⚠ PHÁT HIỆN LÚC LÀM: bộ sinh thẻ ôn đã chạy từ lâu và luật cũng đã cho đọc "
   "`reviewQueue`, nhưng KHÔNG màn nào đọc thư mục ấy — kể cả môn TOÁN. Thẻ sinh ra "
@@ -98,24 +99,37 @@ R("2.1.2", "Chiều THỜI GIAN (T): lặp lại ngắt quãng, đường cong q
   "trigger cho Tiếng Anh mà không dựng màn thì chỉ là đạt trên giấy lần nữa. "
   "⚠ QUÊN thì kéo P(L) về 0.5, KHÔNG về 0: bé quên thì thành không-chắc, không "
   "thành chưa-từng-biết — kéo về 0 là phạt bé vì nghỉ vài hôm. "
-  "Còn lại: cộng `ms` theo thứ tự lượt trong một phiên rồi xem có dốc lên không.",
-  "2.3.2-quên", D2, "gần xong"),
+  "⚠ CÁI BẪY CỦA PHÉP ĐO MỆT MỎI, và nó nghiêng MỘT CHIỀU: bài đi theo thang độ "
+  "khó, nên câu cuối phiên VỐN đã khó hơn câu đầu. So thẳng nửa đầu với nửa sau thì "
+  "buổi nào cũng ra chậm-dần, và bố mẹ đọc thành con-tôi-chóng-mệt trong khi app "
+  "đang tăng độ khó đúng thiết kế. Nên chỉ so TRONG CÙNG MỘT ĐỊNH DẠNG. Cổng dựng "
+  "hẳn một bộ dữ liệu bé KHÔNG mệt rồi đòi kết quả 0%, và chứng minh phép ngây thơ "
+  "cho ra 200% trên chính bộ ấy. "
+  "⚠ Số lẻ thì bỏ lượt GIỮA, không dồn vào nửa sau — dồn là tự tay nghiêng về phía "
+  "mệt.",
+  "2.3.2-quên", D2, "xong"),
 
-R("2.1.2", "Chiều SƯ PHẠM (P): đo và thích ứng theo ĐỊNH DẠNG bài tập bé hợp nhất", PH,
-  "Có 6 định dạng (chọn · điền · xếp thẻ · ghép chữ · nghe-nhìn · nói) xoay theo BẬC, "
-  "nhưng xoay theo LUẬT CHUNG chứ không theo bé.",
-  "✅ ĐO thì XONG Đợt 2 (22-08), ĐÃ DEPLOY: `lib/hoso.js` cộng tỉ lệ đúng theo từng "
-  "`format`, hiện trong Góc bố mẹ ở trang chính. "
-  "❌ CHƯA THÍCH ỨNG: bộ chọn câu vẫn không đổi gì theo định dạng bé mạnh hay yếu.",
+R("2.1.2", "Chiều SƯ PHẠM (P): đo và thích ứng theo ĐỊNH DẠNG bài tập bé hợp nhất", DU,
+  "✅ ĐỦ CẢ ĐO LẪN THÍCH ỨNG (22-08). Trước đó: 6 định dạng xoay theo BẬC, tức theo "
+  "LUẬT CHUNG chứ không theo bé. ĐO: `lib/hoso.js` cộng tỉ lệ đúng theo từng "
+  "`format`, hiện trong Góc bố mẹ. THÍCH ỨNG: `hangDinhDang()` làm khoá xếp PHỤ "
+  "trong `xepTheoZPD` — chỗ bé chông chênh hay yếu thì đưa định dạng bé MẠNH lên "
+  "trước; chỗ đã thạo thì đảo chiều, đưa định dạng bé YẾU lên trước.",
+  "Chưa đổi TỈ LỆ các dạng câu trong bài, chỉ đổi thứ tự — đổi tỉ lệ thì phải sinh "
+  "lại nội dung, việc lớn hơn hẳn và chưa có gì đòi.",
   OK,
   "⚠ CHỖ NGUY NHẤT LÀ KẾT LUẬN SỚM, và nay có phép canh: bé làm 2 câu gõ chữ sai cả "
   "2 thì kết luận 'yếu dạng gõ chữ 0%' vừa sai vừa TỰ NUÔI CHÍNH NÓ — nhãn ấy dẫn "
   "tới cho bé ít câu gõ chữ đi, nên mẫu không lớn thêm, nên nhãn không bao giờ được "
   "sửa. Nguy hơn nữa vì đây là nhãn dán lên MỘT ĐỨA TRẺ, cho bố mẹ đọc. Nên dưới 8 "
   "lượt thì màn hình IM LẶNG, và khi nói thì hiện cả cỡ mẫu. "
-  "Còn lại: cho bộ chọn ưu tiên định dạng bé mạnh khi bé đang đuối, và định dạng bé "
-  "yếu khi bé đang tốt.",
-  "2.5.2-hành vi", D2, "xong phần đo"),
+  "⚠ LÝ DO CỦA HAI CHIỀU NGƯỢC NHAU: ở chỗ nội dung đã khó, chồng thêm dạng câu bé "
+  "cũng vật vã là bắt bé đánh nhau với hai thứ cùng lúc — và khi sai thì không ai "
+  "biết bé sai vì chưa hiểu bài hay vì chưa quen cách hỏi. Còn ở chỗ đã thạo thì "
+  "nội dung an toàn, nên đó là chỗ RẺ NHẤT để tập cách hỏi bé còn ngại. "
+  "⚠ CHỈ LÀ KHOÁ PHỤ: nhóm ZPD vẫn quyết trước. Cho định dạng thắng nhóm là buổi "
+  "học mở bằng thứ bé ĐÃ THẠO chỉ vì nó hợp dạng câu.",
+  "2.5.2-hành vi", D2, "xong"),
 
 R("2.1.2", "Chiều ĐỘNG LỰC (M): lồng ngữ cảnh theo SỞ THÍCH cá nhân", PH,
   "Phòng nói CÓ hỏi bé thích gì rồi truyền vào lời dặn LLM: `hoSo: { thich }` "
@@ -671,6 +685,7 @@ TK_THEM = [
     ("Trigger sinh thẻ ôn cho Tiếng Anh", "onMicroDoneTA (tạo mới 22-08)"),
     ("Nửa đời trí nhớ", "14 ngày, kéo P(L) về 0,5"),
     ("Ngưỡng nói được về một định dạng", "8 lượt — dưới đó màn hình im lặng"),
+    ("Ngưỡng báo mệt", "cuối buổi chậm hơn ≥25%, so trong CÙNG dạng câu"),
     ("`cefr` trong sổ đăng ký", "cả 5 quyển Tiếng Anh"),
 ]
 
@@ -705,10 +720,11 @@ LO_TRINH = [
     (D2, "✅ XONG và ĐÃ DEPLOY 22-08-2026",
      "XONG: đường cong học tập trong Sổ bố mẹ · `onMicroDoneTA` sinh thẻ ôn cho "
      "Tiếng Anh · phép quên (nửa đời 14 ngày) · MÀN ÔN LẠI cho bé · xếp câu theo "
-     "ZPD · hồ sơ bé (định dạng + CEFR mức bé). "
+     "ZPD · hồ sơ bé (định dạng + CEFR mức bé) · đo mệt mỏi nhận thức · cho bộ "
+     "chọn câu thật sự DÙNG bảng định dạng. "
      "LÀM THÊM ngoài kế hoạch: màn ôn lại — vì soi ra `reviewQueue` chưa màn nào "
      "ĐỌC, kể cả môn Toán.",
-     "≈2 ngày", "— chiều C xong; T và P mới xong phần ĐO",
+     "≈2,5 ngày", "— BỐN CHIỀU C·T·P·M nay đủ mặt, trừ M còn hẹp",
      "⚠ Sửa `bkt.js` là đụng môn Toán đang chạy thật — ba phép canh có đảo chiều. "
      "⚠ Khoá `hoSo` mới nên phải `deploy --only firestore:rules` TRƯỚC. "
      "⚠ HAI CỔNG CŨ CẤM NHẦM, và tôi sửa CỔNG chứ không nới mã: một cổng đòi đúng "
@@ -923,11 +939,14 @@ def main() -> int:
          "bắt được, vì mỗi cổng chỉ soi phần việc của mình: cổng lịch soi bộ sinh "
          "thẻ (đúng), cổng luật soi firestore.rules (đúng). Cái thiếu là một câu hỏi "
          "không tệp nào sở hữu: AI ĐỌC THỨ NÀY RA? Nên đã dựng màn ôn lại."),
-        ("Hai chỗ CỐ Ý chưa ghi là đạt",
-         "Chiều Thời gian và chiều Sư phạm mới xong phần ĐO. Mệt mỏi nhận thức chưa "
-         "tính, và bộ chọn câu chưa đổi gì theo định dạng bé mạnh/yếu. Đo mà chưa "
-         "dùng thì chưa gọi là thích ứng — cùng dạng với chỗ hụt của chiều Nhận thức "
-         "sau Đợt 1, nay đã gỡ."),
+        ("Hai nửa còn thiếu, nay đã làm nốt",
+         "MỆT MỎI NHẬN THỨC: so thời gian trả lời đầu buổi với cuối buổi — nhưng chỉ "
+         "so TRONG CÙNG MỘT DẠNG CÂU. So thẳng thì buổi nào cũng ra chậm-dần, vì bài "
+         "vốn khó dần lên, và bố mẹ sẽ đọc thành con-tôi-chóng-mệt. "
+         "THÍCH ỨNG THEO ĐỊNH DẠNG: chỗ bé chông chênh thì đưa dạng câu bé MẠNH lên "
+         "trước (đừng chồng hai cái khó lên nhau); chỗ đã thạo thì đảo chiều, lấy "
+         "dạng bé YẾU ra tập — nội dung an toàn nên đó là chỗ rẻ nhất. "
+         "Bốn chiều C·T·P·M nay đủ mặt."),
         ("", ""),
         ("ĐỢT 1 ĐÃ CHẠY XONG — 22-08-2026", ""),
         ("", "4226/4226 câu luyện mang mã nút đồ thị · `lib/suKien.js` đẩy `attempts` "
@@ -965,10 +984,9 @@ def main() -> int:
          "Xuất đồ thị con (1189 nút + 195 cạnh REQUIRES + 157 mối thang) ra "
          "`web/public/content/`, rồi lan truyền chẩn đoán ngược để tìm nút gốc rễ. "
          "Mở khoá 8 mục, và là chân đế cho phụ đạo ở Đợt 4."),
-        ("3 · Hai nửa còn thiếu của Đợt 2",
-         "Mệt mỏi nhận thức (cộng `ms` theo thứ tự lượt trong phiên, xem có dốc lên "
-         "không) và thích ứng theo định dạng (cho bộ chọn ưu tiên dạng bé mạnh khi "
-         "bé đang đuối). Cả hai đều nhỏ, và số liệu đã có sẵn."),
+        ("3 · Chiều ĐỘNG LỰC còn hẹp",
+         "Sở thích của bé mới dùng ở PHÒNG NÓI; ba màn kia (học · đọc · viết) chưa "
+         "đọc tới. Việc nhỏ: truyền `soThich` vào `loiDanCham()` của màn Viết."),
         ("", ""),
         ("HAI CHỖ CẦN BÁC QUYẾT, KHÔNG PHẢI CHỖ KỸ THUẬT", ""),
         ("1 · Máy chủ có lưu prompt không?",

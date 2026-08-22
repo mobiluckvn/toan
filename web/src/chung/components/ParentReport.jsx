@@ -89,6 +89,45 @@ function DuongCong({ dc }) {
   );
 }
 
+/**
+ * MỆT MỎI NHẬN THỨC — một câu dùng được cho bố mẹ.
+ *
+ * "Con học chừng bao lâu thì nên nghỉ" là câu bố mẹ hay hỏi nhất, mà xưa nay chỉ
+ * trả lời được bằng lời khuyên chung. Đây là con số của CHÍNH con họ.
+ *
+ * ── ⚠ NÓI CẢ KHI KHÔNG CÓ DẤU HIỆU MỆT ──
+ * Chỉ hiện khi "có mệt" thì cái không hiện bị đọc thành "chưa đo được", và bố mẹ
+ * không phân biệt nổi hai chuyện khác hẳn nhau: đo rồi thấy con vẫn đều, với chưa
+ * đủ số liệu để nói gì. Nên có số liệu là nói, dù nói "con vẫn đều".
+ */
+function MetMoi({ mm }) {
+  if (!mm?.duLieu) return null;
+  const pc = Math.round(mm.chamHon * 100);
+  return (
+    <div className="card mb-2 py-3.5">
+      <p className="text-[13px] font-extrabold text-navy">Con có chậm dần trong buổi học không</p>
+      {mm.metMoi ? (
+        <p className="mt-1 text-[14.5px] leading-relaxed">
+          Cuối buổi con trả lời chậm hơn đầu buổi khoảng <b>{pc}%</b>
+          {' '}({(mm.msDau / 1000).toFixed(1)}s → {(mm.msCuoi / 1000).toFixed(1)}s).
+          Cho con nghỉ giữa chừng một chút, hoặc chia làm hai buổi ngắn.
+        </p>
+      ) : (
+        <p className="mt-1 text-[14.5px] leading-relaxed">
+          Con giữ được nhịp đều từ đầu tới cuối buổi
+          {pc > 0 ? ` (cuối buổi chỉ chậm hơn ${pc}%)` : ''}. Độ dài buổi học hiện tại
+          đang vừa sức con.
+        </p>
+      )}
+      <p className="mt-2 text-[11.5px] leading-relaxed text-mute">
+        So trong CÙNG một dạng câu, trên {mm.soPhien} buổi học gần đây. So thẳng đầu
+        buổi với cuối buổi thì buổi nào cũng ra “chậm dần”, vì bài vốn khó dần lên —
+        con số ở đây đã trừ phần ấy đi.
+      </p>
+    </div>
+  );
+}
+
 export default function ParentReport({ mon = [], tienDo = {}, learnerId, onExit, onVeNha }) {
   /* MỖI MÔN NỘP HỌC BẠ THEO MỘT KHUÔN. Sổ này không biết Toán chia chương thế nào,
      cũng không biết Tiếng Anh rồi sẽ chia ra sao — nó chỉ vẽ đúng khuôn ấy. Thêm môn
@@ -214,6 +253,7 @@ export default function ParentReport({ mon = [], tienDo = {}, learnerId, onExit,
         )}
 
         <DuongCong dc={r?.duongCong} />
+        <MetMoi mm={r?.metMoi} />
 
         {/* ══ HAI TRỤC ══ */}
         <div className="mt-1 flex gap-2">

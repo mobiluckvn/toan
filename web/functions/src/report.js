@@ -146,6 +146,8 @@ export function buildParentReport({ learnerId, attempts, progress = {}, mastery 
     focusMicro: focus || null,
     /* Đường cong học tập — xem `duongCongHoc` cho hai cái bẫy đã tránh. */
     duongCong: duongCongHoc(win, mastery),
+    /* Mệt mỏi nhận thức — xem `metMoi` cho cái bẫy "phiên nào cũng ra mệt". */
+    metMoi: metMoi(win),
   };
 }
 
@@ -217,6 +219,88 @@ export function duongCongHoc(attempts, mastery = {}, {
     }));
 
   return { duong, soNut: theoNut.size - daLoc, soNutDaLoc: daLoc, toiThieuMau };
+}
+
+/**
+ * MỆT MỎI NHẬN THỨC — bé có chậm dần trong một buổi học không (mục 2.1.2-T).
+ *
+ * Tín hiệu là thời gian trả lời dài dần. Có nó thì nói được với bố mẹ một câu
+ * thật sự dùng được: "con học chừng 20 phút thì bắt đầu chậm lại, nên cho nghỉ
+ * giữa chừng" — cụ thể hơn mọi lời khuyên chung chung về thời lượng.
+ *
+ * ── ⚠ CÁI BẪY LÀM PHIÊN NÀO CŨNG RA "MỆT" ──
+ * Cách hiển nhiên là so nửa đầu phiên với nửa sau. Cách ấy SAI, và sai một chiều:
+ * bài học đi theo thang độ khó (khởi động → ráp câu → thử thách), nên câu cuối
+ * phiên VỐN ĐÃ khó hơn câu đầu. So thẳng thì mọi buổi học đều "có dấu hiệu mệt",
+ * và bố mẹ đọc thành "con tôi chóng mệt" trong khi thật ra app đang tăng độ khó
+ * đúng như thiết kế.
+ *
+ * Nên chỉ so TRONG CÙNG MỘT ĐỊNH DẠNG: câu chọn-đáp-án đầu phiên với câu
+ * chọn-đáp-án cuối phiên. Cùng loại việc, cùng cỡ khó — chênh lệch còn lại mới
+ * là của bé.
+ *
+ * ── ⚠ VÀ CHỈ NÓI KHI ĐỦ MẪU ──
+ * Một định dạng phải có ít nhất `TOI_THIEU_MOI_NUA` lượt ở MỖI nửa thì mới so.
+ * Dưới đó, chênh lệch chỉ là một câu bé mải nhìn ra ngoài cửa sổ.
+ */
+export const TOI_THIEU_MOI_NUA = 3;
+
+/** Chậm hơn bao nhiêu phần trăm thì đáng nói. Dưới ngưỡng là dao động thường. */
+export const NGUONG_CHAM = 0.25;
+
+export function metMoi(attempts, { toiThieu = TOI_THIEU_MOI_NUA } = {}) {
+  /* Chỉ dùng lượt ĐO ĐƯỢC thời gian và có đủ định danh phiên. */
+  const dung = (attempts || []).filter(
+    (a) => a?.sessionId && Number.isFinite(a.ms) && a.ms > 0 && Number.isFinite(a.ts),
+  );
+
+  const theoPhien = new Map();
+  for (const a of dung) {
+    if (!theoPhien.has(a.sessionId)) theoPhien.set(a.sessionId, []);
+    theoPhien.get(a.sessionId).push(a);
+  }
+
+  let dauTong = 0; let dauDem = 0;
+  let cuoiTong = 0; let cuoiDem = 0;
+  let soPhien = 0;
+
+  for (const ds of theoPhien.values()) {
+    ds.sort((x, y) => x.ts - y.ts);
+    /* Gom theo ĐỊNH DẠNG trong chính phiên ấy — đây là chỗ chặn cái bẫy trên. */
+    const theoDang = new Map();
+    for (const a of ds) {
+      const k = a.mode || a.format || '?';
+      if (!theoDang.has(k)) theoDang.set(k, []);
+      theoDang.get(k).push(a);
+    }
+    let phienCoDung = false;
+    for (const nhom of theoDang.values()) {
+      if (nhom.length < toiThieu * 2) continue;
+      const nua = Math.floor(nhom.length / 2);
+      for (const a of nhom.slice(0, nua)) { dauTong += a.ms; dauDem += 1; }
+      /* Lấy từ CUỐI ngược lại đúng `nua` lượt — số lẻ thì bỏ lượt GIỮA, không dồn
+         nó vào một bên. Dồn vào nửa sau là tự tay nghiêng kết quả về phía "mệt". */
+      for (const a of nhom.slice(nhom.length - nua)) { cuoiTong += a.ms; cuoiDem += 1; }
+      phienCoDung = true;
+    }
+    if (phienCoDung) soPhien += 1;
+  }
+
+  if (!dauDem || !cuoiDem) {
+    return { duLieu: false, soPhien, msDau: null, msCuoi: null, chamHon: null, metMoi: false };
+  }
+  const msDau = Math.round(dauTong / dauDem);
+  const msCuoi = Math.round(cuoiTong / cuoiDem);
+  const chamHon = (msCuoi - msDau) / msDau;
+  return {
+    duLieu: true,
+    soPhien,
+    soMau: dauDem + cuoiDem,
+    msDau,
+    msCuoi,
+    chamHon: Math.round(chamHon * 100) / 100,
+    metMoi: chamHon >= NGUONG_CHAM,
+  };
 }
 
 /** Câu văn ngắn cho bố mẹ đọc lướt */
