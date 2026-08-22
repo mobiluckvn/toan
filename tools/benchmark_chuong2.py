@@ -5,8 +5,8 @@
 
 Nguồn yêu cầu: `docs/Chuong2_Luan_van_Thac_sy_1_v3.docx`.
 Phạm vi soi:   MÔN TIẾNG ANH, lớp 1 → lớp 5.
-Cập nhật:      22-08-2026, sau khi chạy xong Đợt 0 và Đợt 1.
-               Đợt 0 đã deploy; ĐỢT 1 MỚI COMMIT, CHƯA DEPLOY (bác chốt).
+Cập nhật:      22-08-2026, sau khi chạy xong Đợt 0, Đợt 1 và Đợt 2.
+               Cả ba đợt ĐÃ DEPLOY. Còn Đợt 3 và Đợt 4.
 
 ── ĐỌC CỘT "BẰNG CHỨNG" TRƯỚC KHI TIN CỘT "TRẠNG THÁI" ──
 Mỗi dòng đều dẫn tệp và con số đếm được. Không dòng nào chấm điểm bằng cảm nhận.
@@ -67,42 +67,55 @@ DX = "—"
 
 B = [
 # ═══════════════════ 2.1.2 Mô hình thích ứng đa chiều ════════════════════
-R("2.1.2", "Chiều NHẬN THỨC (C): đo mức tinh thông P(L) từng nút tri thức, xác định ZPD", PH,
+R("2.1.2", "Chiều NHẬN THỨC (C): đo mức tinh thông P(L) từng nút tri thức, xác định ZPD", DU,
   "✅ NỬA ĐẦU XONG Đợt 1: P(L) nay có thật cho từng nút Tiếng Anh — `onAttempt` ghi "
   "`mastery/{uid}/units/{maNut}` với `p` · `pTruoc` · `saiLienTiep` · `msTrungBinh` "
   "· `goiTrungBinh`.",
-  "❌ NỬA SAU CHƯA: không mã nào ĐỌC P(L) ra để chọn câu. Bộ chọn vẫn đi tuần tự "
-  "theo bậc, nên có số mà chưa ai dùng — chưa có ZPD. Và ⚠ CHƯA DEPLOY.",
+  "✅ NỬA SAU XONG Đợt 2 (22-08), ĐÃ DEPLOY. `lib/zpd.js` đọc P(L) ra và xếp lại "
+  "pool câu; `BaiHoc` gọi trong `useMemo`.",
   OK,
-  "Còn lại là phần ĐỌC: lọc nút có 0.3 < P(L) < 0.85 rồi giao cho bộ chọn câu ưu "
-  "tiên. Việc của Đợt 2. ⚠ Đây là chỗ dễ tưởng đã xong: bảng ghi 'có P(L)' rất dễ "
-  "đọc thành 'đã thích ứng', trong khi ghi số mà không ai đọc thì bé vẫn học y hệt "
-  "như trước.",
-  "2.3.2-nối · 2.3.1-overlay", D2, "≈2 ngày (phần lọc ZPD)"),
+  "Bốn nhóm: chông chênh (0.3≤p<0.85) → chưa biết → yếu hẳn → đã thạo. "
+  "⚠ YẾU HẲN xếp SAU chông chênh, không phải trước — luyện thêm cùng kiểu câu ở chỗ "
+  "bé đang sai nhiều là bắt bé sai tiếp, mà mở đầu buổi bằng ba câu sai liền thì bé "
+  "nghỉ. Chỗ ấy cần bài PHỤ ĐẠO (Đợt 4). "
+  "⚠ KHÔNG bỏ câu nào, chỉ đổi thứ tự — thanh đếm câu và phép chấm đều dựa trên số "
+  "câu. Bỏ hẳn câu đã thạo là Mastery Skip của Đợt 4, cần ngưỡng riêng cao hơn. "
+  "⚠ Chưa-có-tin KHÔNG phải bé-rất-yếu: `p` thiếu mà coi là 0 thì cả nhóm bé chưa "
+  "học bị đẩy xuống cuối buổi.",
+  "2.3.2-nối · 2.3.1-overlay", D2, "xong"),
 
-R("2.1.2", "Chiều THỜI GIAN (T): lặp lại ngắt quãng, đường cong quên, đo mệt mỏi nhận thức", CH,
-  "Có bộ sinh thẻ ôn `onMicroDone` lịch +1/+3/+7 ngày (`index.js:43`), nhưng nó lắng "
-  "nghe `progress/{uid}/micros` của TOÁN. Tiếng Anh có 4 kỳ ôn/quyển nhưng là ĐỀ CỐ "
-  "ĐỊNH theo chương (`ta5/ontap.json`), không theo lịch quên của từng bé.",
-  "Không có `T_last` mức nút, không có hàm phân rã, không đo thời gian phản hồi.",
+R("2.1.2", "Chiều THỜI GIAN (T): lặp lại ngắt quãng, đường cong quên, đo mệt mỏi nhận thức", PH,
+  "✅ HAI TRONG BA XONG Đợt 2 (22-08), ĐÃ DEPLOY. LẶP LẠI NGẮT QUÃNG nay chạy trọn "
+  "đường ống: `onMicroDoneTA` sinh thẻ → thẻ mời trên trang chính → màn `OnLai` → "
+  "hộp Leitner đẩy lên hoặc về 0. ĐƯỜNG CONG QUÊN: `quenDan()` trong `bkt.js`, nửa "
+  "đời 14 ngày.",
+  "❌ CÒN 'ĐO MỆT MỎI NHẬN THỨC'. Suy được từ `ms` (thời gian phản hồi dài dần trong "
+  "một phiên) — số liệu đã có sau Đợt 1, chưa ai tính.",
   OK,
-  "Ba bước: (1) đổi `onDocumentWritten` của `onMicroDone` thành hai trigger, thêm "
-  "`progressTA/{learnerId}/micros` — hàm thân KHÔNG phải sửa, nó chỉ đọc `pass` và "
-  "`microId`; (2) thêm hàm phân rã vào `bkt.js`: trước khi cập nhật thì nhân P(L) "
-  "với hệ số theo số ngày kể từ `lastSeen` (`applyAttempt` đã lưu sẵn trường này); "
-  "(3) mệt mỏi nhận thức suy từ `ms` — thời gian phản hồi dài dần trong một phiên.",
-  "2.3.2-quên", D2, "≈2 ngày"),
+  "⚠ PHÁT HIỆN LÚC LÀM: bộ sinh thẻ ôn đã chạy từ lâu và luật cũng đã cho đọc "
+  "`reviewQueue`, nhưng KHÔNG màn nào đọc thư mục ấy — kể cả môn TOÁN. Thẻ sinh ra "
+  "rồi nằm đó, và lặp-lại-ngắt-quãng tồn tại trên giấy suốt thời gian dài. Nối thêm "
+  "trigger cho Tiếng Anh mà không dựng màn thì chỉ là đạt trên giấy lần nữa. "
+  "⚠ QUÊN thì kéo P(L) về 0.5, KHÔNG về 0: bé quên thì thành không-chắc, không "
+  "thành chưa-từng-biết — kéo về 0 là phạt bé vì nghỉ vài hôm. "
+  "Còn lại: cộng `ms` theo thứ tự lượt trong một phiên rồi xem có dốc lên không.",
+  "2.3.2-quên", D2, "gần xong"),
 
-R("2.1.2", "Chiều SƯ PHẠM (P): đo và thích ứng theo ĐỊNH DẠNG bài tập bé hợp nhất", CH,
+R("2.1.2", "Chiều SƯ PHẠM (P): đo và thích ứng theo ĐỊNH DẠNG bài tập bé hợp nhất", PH,
   "Có 6 định dạng (chọn · điền · xếp thẻ · ghép chữ · nghe-nhìn · nói) xoay theo BẬC, "
   "nhưng xoay theo LUẬT CHUNG chứ không theo bé.",
-  "Không có bản ghi 'bé này làm dạng nào tốt hơn'.",
+  "✅ ĐO thì XONG Đợt 2 (22-08), ĐÃ DEPLOY: `lib/hoso.js` cộng tỉ lệ đúng theo từng "
+  "`format`, hiện trong Góc bố mẹ ở trang chính. "
+  "❌ CHƯA THÍCH ỨNG: bộ chọn câu vẫn không đổi gì theo định dạng bé mạnh hay yếu.",
   OK,
-  "Rẻ bất ngờ vì `format` đã có sẵn trên từng câu. Đợt 1 ghi `format` vào bản ghi "
-  "lượt làm (một dòng), rồi cộng tỉ lệ đúng theo từng `format` vào "
-  "`hocBaTA/{uid}/hoSo`. Bộ chọn câu ưu tiên định dạng bé mạnh khi bé đang đuối, và "
-  "định dạng bé yếu khi bé đang tốt.",
-  "2.5.2-hành vi", D2, "≈1 ngày"),
+  "⚠ CHỖ NGUY NHẤT LÀ KẾT LUẬN SỚM, và nay có phép canh: bé làm 2 câu gõ chữ sai cả "
+  "2 thì kết luận 'yếu dạng gõ chữ 0%' vừa sai vừa TỰ NUÔI CHÍNH NÓ — nhãn ấy dẫn "
+  "tới cho bé ít câu gõ chữ đi, nên mẫu không lớn thêm, nên nhãn không bao giờ được "
+  "sửa. Nguy hơn nữa vì đây là nhãn dán lên MỘT ĐỨA TRẺ, cho bố mẹ đọc. Nên dưới 8 "
+  "lượt thì màn hình IM LẶNG, và khi nói thì hiện cả cỡ mẫu. "
+  "Còn lại: cho bộ chọn ưu tiên định dạng bé mạnh khi bé đang đuối, và định dạng bé "
+  "yếu khi bé đang tốt.",
+  "2.5.2-hành vi", D2, "xong phần đo"),
 
 R("2.1.2", "Chiều ĐỘNG LỰC (M): lồng ngữ cảnh theo SỞ THÍCH cá nhân", PH,
   "Phòng nói CÓ hỏi bé thích gì rồi truyền vào lời dặn LLM: `hoSo: { thich }` "
@@ -335,16 +348,22 @@ R("2.3.1", "`H_req` — số lần dùng trợ giúp", DU,
   "không phải 'đã XIN mấy lần'.",
   "2.5.2-hành vi", D1, "xong"),
 
-R("2.3.1", "Hồ sơ bé: CEFR hiện tại · sở thích · định dạng ưa thích", PH,
-  "CEFR khai mức QUYỂN (Pre-A1 / A1), không mức BÉ. Sở thích có nhưng chỉ sống trong "
-  "một phiên phòng nói.",
-  "Không hồ sơ bé nào lưu ba trường này.",
+R("2.3.1", "Hồ sơ bé: CEFR hiện tại · sở thích · định dạng ưa thích", DU,
+  "✅ ĐỦ BA TRƯỜNG, Đợt 0 + Đợt 2, ĐÃ DEPLOY. Sở thích: `loai: soThich` (Đợt 0). "
+  "Định dạng: `loai: hoSo`, bảng đúng/tổng theo từng `format` (Đợt 2). CEFR mức BÉ: "
+  "`cefrCuaBe()` suy từ quyển cao nhất bé đã xong HẾT bài — `cefr` nay khai trong "
+  "sổ đăng ký cho cả 5 quyển, chép từ `chuan_lopN.json` chứ không gõ tay.",
+  "Sở thích mới dùng ở PHÒNG NÓI; ba màn kia chưa đọc tới (xem mục 2.1.2-M).",
   OK,
-  "Dựng `hocBaTA/{uid}/hoSo` giữ ba trường. Sở thích làm ở Đợt 0; CEFR suy từ quyển "
-  "cao nhất bé đã đạt (đã có `cefr` từng quyển); định dạng ưa thích là kết quả Đợt "
-  "2. ⚠ Nhớ deploy `firestore.rules` cho khoá mới — nếu không Firestore từ chối "
-  "TRONG IM LẶNG, lỗi này đã dính thật một lần.",
-  "2.1.2-M · 2.1.2-P", D2, "nửa ngày"),
+  "⚠ ĐANG HỌC DỞ THÌ KHÔNG TÍNH CEFR. Bé mới xong 1/20 bài quyển A1 mà đã dán nhãn "
+  "A1 là nói quá về bé — mà nhãn ấy đi vào lời dặn LLM, tức cô giáo máy sẽ nói bằng "
+  "vốn từ bé chưa có. "
+  "⚠ Thứ tự CEFR lấy theo thứ tự SỔ ĐĂNG KÝ, không so chuỗi: so chuỗi thì chuỗi A1 "
+  "đứng TRƯỚC chuỗi Pre-A1 theo bảng chữ cái, tức là ngược hẳn với thang trình độ. "
+  "⚠ Gộp hai máy thì CỘNG bảng định dạng, không lấy bên mới hơn như mọi thứ khác "
+  "trong sổ — đây là phép đếm tích luỹ, lấy bản mới hơn là vứt đi 40 câu bé làm "
+  "trên máy kia.",
+  "2.1.2-M · 2.1.2-P", D2, "xong"),
 
 # ══════════════════════════ 2.3.2 BKT ════════════════════════════════════
 R("2.3.2", "Bốn tham số P(L₀) · P(T) · P(G) · P(S)", DU,
@@ -390,15 +409,22 @@ R("2.3.2", "BKT chạy cho môn TIẾNG ANH", DU,
   "là bị từ chối TRONG IM LẶNG, nhớ đủ sáu.",
   "2.3.1-overlay", D1, "≈2 ngày"),
 
-R("2.3.2", "Cơ chế QUÊN (forgetting) tích hợp vào BKT", CH,
-  "`applyAttempt()` lưu `lastSeen` nhưng không dùng nó để giảm P(L) theo thời gian.",
-  "Không có hàm phân rã.",
+R("2.3.2", "Cơ chế QUÊN (forgetting) tích hợp vào BKT", DU,
+  "✅ XONG Đợt 2 (22-08), ĐÃ DEPLOY. `quenDan(p, soNgay)` trong `bkt.js`, nửa đời 14 "
+  "ngày, chạy ngay trước mỗi lần cập nhật BKT.",
+  "Nửa đời 14 ngày là con số CHỌN theo lịch ôn sẵn có, chưa hiệu chỉnh bằng dữ liệu "
+  "học thật — khi có rồi thì chỉnh lại và ghi lý do như `DEFAULT_PARAMS`.",
   OK,
-  "Trong `bkt.js`, trước khi `bktUpdate`: `p = 0.5 + (p - 0.5) * exp(-λ * soNgay)` — "
-  "kéo về phía 0,5 chứ không về 0, vì bé quên thì thành 'không chắc', không thành "
-  "'chưa từng biết'. ⚠ Sửa `bkt.js` là ĐỤNG CẢ MÔN TOÁN đang chạy thật — chạy "
-  "`test/bkt.test.mjs` và đối chiếu điểm thạo của vài bé trước/sau.",
-  "2.3.2-nối", D2, "≈1 ngày"),
+  "⚠ KÉO VỀ 0,5, KHÔNG VỀ 0. Bé quên thì thành không-chắc, không thành "
+  "chưa-từng-biết — kéo về 0 là bắt bé học lại từ đầu một thứ đã từng thạo, tức "
+  "phạt bé vì nghỉ vài hôm. Hệ quả nghe ngược đời mà đúng: nút bé từng làm SAI "
+  "nhiều sẽ NHÍCH LÊN theo thời gian, vì hiểu biết của hệ thống về bé nhạt đi theo "
+  "CẢ HAI chiều. "
+  "⚠ Đụng môn Toán đang chạy thật, nên ba phép canh đều đảo chiều thử: bé học đều "
+  "mỗi ngày thì mức thạo KHÔNG bị phạt (lệch < 0,02); tài liệu đời cũ thiếu "
+  "`lastSeen` thì không phân rã theo mốc bịa ra; `lastSeen` ở tương lai (đồng hồ "
+  "máy con sai) thì coi như vừa gặp.",
+  "2.3.2-nối", D2, "xong"),
 
 # ═══════════════ 2.3.3 Lan truyền trên đồ thị ════════════════════════════
 R("2.3.3", "Lan truyền NGƯỢC kèm hệ số suy giảm α", CH, "Không có mã.", "Toàn bộ.",
@@ -600,16 +626,20 @@ R("2.5.3", "Tối ưu hoá prompt theo ΔC", CH,
   "hiện LỆCH ngoài ý muốn — ai đó sửa lời dặn mà quên tăng số phiên bản.",
   "2.5.3-ΔC", D4, "≈1 ngày"),
 
-R("2.5.3", "Đường cong học tập (tỉ lệ lỗi theo số lần luyện)", CH,
-  "Tìm `errorRate`/`duongCong` trong `web/src/` — không kết quả. Sổ bố mẹ hiện số bài "
-  "xong, không vẽ đường cong.",
-  "Toàn bộ.",
+R("2.5.3", "Đường cong học tập (tỉ lệ lỗi theo số lần luyện)", DU,
+  "✅ XONG Đợt 2 (22-08), ĐÃ DEPLOY. `duongCongHoc()` trong "
+  "`functions/src/report.js`, vẽ bằng thanh ngang trong Sổ bố mẹ.",
+  "Chỉ tính những nút bé BẮT ĐẦU học trong kỳ — xem lý do ở cột bên.",
   OK,
-  "MÓN DỄ NHẤT trong nhóm 2.5 và KHÔNG cần BKT: chỉ cần chuỗi sự kiện có `correct` + "
-  "số thứ tự lần luyện, tức là có ngay sau Đợt 1. Gom theo (nút, lần thứ n) rồi vẽ "
-  "tỉ lệ sai giảm dần. Đặt vào Sổ bố mẹ — đây là thứ bố mẹ nhìn ra tiến bộ rõ hơn "
-  "mọi con số phần trăm.",
-  "2.3.2-nối", D2, "≈1 ngày"),
+  "⚠ BẪY ĐÃ TRÁNH: sổ chỉ lấy nhật ký 7 ngày, nên lượt thứ 12 của một từ bé học từ "
+  "tháng trước bị ghi thành lần-thứ-1, và đường cong nói dối THEO HƯỚNG ĐẸP LÊN "
+  "(điểm đầu tiên lẫn toàn từ bé đã thạo). Lối thoát không phải kéo dài cửa sổ mà là "
+  "dùng `nAttempts` của hồ sơ nút: nút nào có tổng số lượt ĐÚNG BẰNG số đếm được "
+  "trong cửa sổ thì cả lịch sử nằm trọn ở đây. Màn hình nói thẳng điều đó. "
+  "⚠ Điểm dưới 3 mẫu bị BỎ HẲN, không trả kèm cờ: đuôi đường cong luôn thưa, một "
+  "điểm dựng trên 2 mẫu nhảy 0% hay 100% tuỳ một câu, mà mắt người nhìn biểu đồ thì "
+  "tin ngay.",
+  "2.3.2-nối", D2, "xong"),
 ]
 
 TK_THEM = [
@@ -619,7 +649,7 @@ TK_THEM = [
     ("Câu luyện tập · câu sát hạch", "3 752 · 470"),
     ("Bài tả tranh (đọc · viết · nói quanh 1 bức)", "62 bức, lớp 3·4·5"),
     ("Clip tiếng · video", "5 366 · 345"),
-    ("Cổng tự động", "79 tệp, tất cả xanh"),
+    ("Cổng tự động", "82 tệp, tất cả xanh"),
     ("", ""),
     ("Đồ thị tri thức", ""),
     ("Nút · cạnh (toàn bản đồ)", "3 989 · 7 602"),
@@ -635,7 +665,13 @@ TK_THEM = [
     ("Cạnh tiên quyết TỪ VỰNG", "58 (trước Đợt 0: 0)"),
     ("Trường mới trong hồ sơ mỗi nút",
      "p · pTruoc · saiLienTiep · msTrungBinh · goiTrungBinh · lastSeen"),
-    ("Đã deploy chưa", "Đợt 0 rồi (21-08) · Đợt 1 CHƯA (bác chốt 22-08)"),
+    ("Đã deploy chưa", "Đợt 0 · 1 · 2 đều rồi (21 và 22-08)"),
+    ("", ""),
+    ("Sau Đợt 2", ""),
+    ("Trigger sinh thẻ ôn cho Tiếng Anh", "onMicroDoneTA (tạo mới 22-08)"),
+    ("Nửa đời trí nhớ", "14 ngày, kéo P(L) về 0,5"),
+    ("Ngưỡng nói được về một định dạng", "8 lượt — dưới đó màn hình im lặng"),
+    ("`cefr` trong sổ đăng ký", "cả 5 quyển Tiếng Anh"),
 ]
 
 LO_TRINH = [
@@ -653,25 +689,33 @@ LO_TRINH = [
      "lại thì mọc thêm `dang_qk`/`dang_ngoi3` toàn null. Nên: `cp` rồi `diff`, và "
      "lọc null ra trước khi đọc. Riêng đổi θ thì ĐỤNG MÔN TOÁN — chạy lại "
      "`bkt.test.mjs` và đối chiếu điểm thạo vài bé trước/sau."),
-    (D1, "✅ ĐÃ CHẠY XONG 22-08-2026 — nhưng CHƯA DEPLOY",
+    (D1, "✅ XONG và ĐÃ DEPLOY 22-08-2026",
      "XONG: 4226/4226 câu mang `maNut` · `lib/suKien.js` đẩy `attempts` sau mỗi "
      "lượt · `ms` (RT_avg) và `hintsUsed` (H_req) đo rồi gộp vào hồ sơ nút · "
      "`saiLienTiep` và `pTruoc` trong `applyAttempt` · vân tay prompt. "
      "LÀM THÊM ngoài kế hoạch: vá 62 câu sát hạch bé không trả lời đúng được.",
      "≈1,5 ngày", "— BKT chạy được cho Tiếng Anh, lưu vết sự kiện đầy đủ",
-     "⚠ CHƯA DEPLOY — và lần deploy phải có CẢ `functions`, không chỉ hosting: "
-     "`bkt.js` · `onAttempt` · `vantay.js` đều đổi. Deploy mỗi hosting thì máy con "
-     "gửi `attempts` lên mà hàm nền vẫn là bản cũ, sổ thiếu trường mà không gì báo. "
+     "⚠ Deploy phải có CẢ `functions`, không chỉ hosting: `bkt.js` · `onAttempt` · "
+     "`vantay.js` đều đổi. Deploy mỗi hosting thì máy con gửi `attempts` lên mà hàm "
+     "nền vẫn là bản cũ, sổ thiếu trường mà không gì báo. "
      "⚠ Ba bẫy đã dính lúc làm: cổng `assert.match(ma, /choices/)` XANH GIẢ vì soi "
      "sự-có-mặt-của-chữ (nhánh chết vẫn qua); `dungSuKien` đánh số theo vị trí nên "
      "đẩy lẻ từng lượt là các lượt đè nhau; `sinh_am.py` dựng lại CẢ danh sách chứ "
      "không chỉ clip thiếu."),
-    (D2, "Mô hình người học — P(L), quên, hồ sơ bé",
-     "Lọc ZPD · nối `onMicroDone` sang `progressTA` · hàm phân rã theo ngày · hồ sơ "
-     "`hocBaTA/{uid}/hoSo` · ghi P(L) trước/sau · đường cong học tập cho Sổ bố mẹ",
-     "≈6 ngày", "— bốn chiều C·T·P·M đủ mặt",
-     "⚠ Sửa `bkt.js` là đụng môn Toán đang chạy thật. ⚠ Khoá Firestore mới thì phải "
-     "`deploy --only firestore:rules` TRƯỚC, không thì ghi bị từ chối im lặng."),
+    (D2, "✅ XONG và ĐÃ DEPLOY 22-08-2026",
+     "XONG: đường cong học tập trong Sổ bố mẹ · `onMicroDoneTA` sinh thẻ ôn cho "
+     "Tiếng Anh · phép quên (nửa đời 14 ngày) · MÀN ÔN LẠI cho bé · xếp câu theo "
+     "ZPD · hồ sơ bé (định dạng + CEFR mức bé). "
+     "LÀM THÊM ngoài kế hoạch: màn ôn lại — vì soi ra `reviewQueue` chưa màn nào "
+     "ĐỌC, kể cả môn Toán.",
+     "≈2 ngày", "— chiều C xong; T và P mới xong phần ĐO",
+     "⚠ Sửa `bkt.js` là đụng môn Toán đang chạy thật — ba phép canh có đảo chiều. "
+     "⚠ Khoá `hoSo` mới nên phải `deploy --only firestore:rules` TRƯỚC. "
+     "⚠ HAI CỔNG CŨ CẤM NHẦM, và tôi sửa CỔNG chứ không nới mã: một cổng đòi đúng "
+     "chữ `canRead` trong khi `reviewQueue` dùng `isMine || isAdmin` (CHẶT HƠN); "
+     "cổng kia cấm mọi lần nhắc `mastery/` trong khi tôi chỉ ĐỌC, mà luật "
+     "`allow write: if false` khiến ghi là không thể. Cổng đòi một CÁCH VIẾT thay "
+     "vì một TÍNH CHẤT thì sớm muộn ép người ta nới luật ra cho nó xanh."),
     (D3, "Đồ thị lúc chạy — chẩn đoán và truy xuất theo quan hệ",
      "Xuất `do_thi.json` (dưới 200 KB) · `lib/doThi.js` · lan truyền ngược α và xuôi "
      "β · đổi ruột Retriever · màn ma trận cho cô giáo",
@@ -742,11 +786,11 @@ def main() -> int:
         w2.append([d, lam, viec, cong, f"{n} mục {duoc}", canh])
     tong = sum(1 for x in B if x[5] in (OK, GAN, QUYET))
     w2.append([])
-    w2.append(["TỔNG · còn ≈25 ngày cho ba đợt cuối", f"{tong}/{len(B)} mục nâng được",
+    w2.append(["TỔNG · còn ≈19 ngày cho hai đợt cuối", f"{tong}/{len(B)} mục nâng được",
                f"Trong đó {sum(1 for x in B if x[5] == OK)} nâng lên hẳn ĐÁP ỨNG · "
                f"{sum(1 for x in B if x[5] == GAN)} nâng được phần lớn · "
                f"{sum(1 for x in B if x[5] == QUYET)} chờ bác quyết",
-               "Đã tiêu ≈2,5 ngày cho Đợt 0+1; còn ≈25 ngày",
+               "Đã tiêu ≈4,5 ngày cho Đợt 0+1+2; còn ≈19 ngày",
                f"{sum(1 for x in B if x[5] == XONG)} mục đã đạt sẵn · "
                f"{sum(1 for x in B if x[5] == KHONG)} mục sửa luận văn thay vì sửa mã",
                ""])
@@ -858,16 +902,32 @@ def main() -> int:
          "hàm nền BKT ăn ngay, không phải sửa một dòng nào ở phía đọc."),
         ("", ""),
         ("⚠ ĐỌC DÒNG NÀY TRƯỚC — 'ĐÁP ỨNG' Ở ĐÂY NGHĨA LÀ GÌ", ""),
-        ("", "Cột trạng thái nói về MÃ VÀ DỮ LIỆU trong kho, không nói về bản đang "
-             "chạy. Đợt 0 đã deploy 21-08. Đợt 1 thì ĐÃ COMMIT NHƯNG CHƯA DEPLOY "
-             "(bác chốt 22-08) — nghĩa là 12 dòng vừa chuyển sang ĐÁP ỨNG nhờ Đợt 1 "
-             "đều CHƯA có lượt học thật nào chạy qua. Mã xong, 79 cổng xanh, nhưng "
-             "cổng xanh không phải là bằng chứng đã chạy. Ô 'còn thiếu gì' của từng "
-             "dòng ghi rõ ⚠ CHƯA DEPLOY."),
+        ("", "Cột trạng thái nói về MÃ VÀ DỮ LIỆU trong kho. Tính tới 22-08-2026 thì "
+             "Đợt 0 · 1 · 2 đều ĐÃ DEPLOY, nên với những dòng ấy hai thứ trùng nhau. "
+             "Nhưng cổng xanh vẫn không phải bằng chứng bé học tốt hơn: 82 cổng soi "
+             "MÃ và DỮ LIỆU, không cổng nào ngồi cạnh một đứa trẻ."),
         ("", ""),
         ("ĐÃ XONG TỚI ĐÂU", ""),
-        ("", "Đợt 0 ✅ deploy 21-08 · Đợt 1 ✅ commit 22-08, chưa deploy · "
-             "Đợt 2 · 3 · 4 CHƯA BẮT ĐẦU. Còn khoảng 25 ngày công cho ba đợt cuối."),
+        ("", "Đợt 0 ✅ · Đợt 1 ✅ · Đợt 2 ✅ — cả ba đã deploy. Đợt 3 và Đợt 4 CHƯA BẮT "
+             "ĐẦU, còn khoảng 19 ngày công. Nay 31/54 mục đáp ứng (57%), từ 15 lúc "
+             "bắt đầu."),
+        ("", ""),
+        ("ĐỢT 2 ĐÃ CHẠY XONG — 22-08-2026", ""),
+        ("", "Đường cong học tập trong Sổ bố mẹ · thẻ ôn ngắt quãng cho Tiếng Anh · "
+             "phép quên (nửa đời 14 ngày) · MÀN ÔN LẠI cho bé · xếp câu theo ZPD · "
+             "hồ sơ bé (dạng câu con làm tốt nhất, và CEFR mức bé)."),
+        ("Việc ngoài kế hoạch, lần thứ hai",
+         "Định nối lịch ôn cho Tiếng Anh thì soi ra `reviewQueue` chỉ được GHI, "
+         "KHÔNG màn nào ĐỌC — kể cả môn Toán. Thẻ ôn sinh ra rồi nằm đó, và "
+         "lặp-lại-ngắt-quãng tồn tại trên giấy suốt thời gian dài. Không cổng nào "
+         "bắt được, vì mỗi cổng chỉ soi phần việc của mình: cổng lịch soi bộ sinh "
+         "thẻ (đúng), cổng luật soi firestore.rules (đúng). Cái thiếu là một câu hỏi "
+         "không tệp nào sở hữu: AI ĐỌC THỨ NÀY RA? Nên đã dựng màn ôn lại."),
+        ("Hai chỗ CỐ Ý chưa ghi là đạt",
+         "Chiều Thời gian và chiều Sư phạm mới xong phần ĐO. Mệt mỏi nhận thức chưa "
+         "tính, và bộ chọn câu chưa đổi gì theo định dạng bé mạnh/yếu. Đo mà chưa "
+         "dùng thì chưa gọi là thích ứng — cùng dạng với chỗ hụt của chiều Nhận thức "
+         "sau Đợt 1, nay đã gỡ."),
         ("", ""),
         ("ĐỢT 1 ĐÃ CHẠY XONG — 22-08-2026", ""),
         ("", "4226/4226 câu luyện mang mã nút đồ thị · `lib/suKien.js` đẩy `attempts` "
@@ -897,16 +957,18 @@ def main() -> int:
          "thị con ở Đợt 3."),
         ("", ""),
         ("VIỆC ĐÁNG LÀM TIẾP THEO", ""),
-        ("1 · Deploy Đợt 1",
-         "Kèm CẢ `functions`, không chỉ hosting. Chừng nào chưa deploy thì 9 bài kia "
-         "vẫn để bé làm hai lượt và nhận 0/5 cả hai lần — đây không phải tính năng "
-         "mới, mà là thứ đang hỏng."),
-        ("2 · Đợt 2 — ĐỌC P(L) ra mà dùng",
-         "Đợt 1 mới GHI được P(L). Chưa mã nào đọc nó ra để chọn câu, nên bé vẫn học "
-         "y hệt như trước. Đây là chỗ bảng dễ bị đọc quá lời nhất: 'có P(L)' rất dễ "
-         "hiểu thành 'đã thích ứng'. Đợt 2 làm phần đọc: lọc ZPD, nối `onMicroDone` "
-         "sang `progressTA` cho lịch ôn ngắt quãng, hệ số quên, và đường cong học "
-         "tập cho Sổ bố mẹ — mục cuối này làm được NGAY, chỉ cần chuỗi sự kiện đã có."),
+        ("1 · Xem bằng MẮT trước khi tin bảng",
+         "Ba đợt vừa rồi đổi đúng những thứ bé nhìn thấy: thứ tự câu trong bài, thẻ "
+         "mời ôn tập, buổi ôn, Góc bố mẹ. Cổng không thay được việc ngồi cạnh một "
+         "đứa trẻ mở app ra. Đây là việc đáng làm trước cả Đợt 3."),
+        ("2 · Đợt 3 — đồ thị lúc chạy",
+         "Xuất đồ thị con (1189 nút + 195 cạnh REQUIRES + 157 mối thang) ra "
+         "`web/public/content/`, rồi lan truyền chẩn đoán ngược để tìm nút gốc rễ. "
+         "Mở khoá 8 mục, và là chân đế cho phụ đạo ở Đợt 4."),
+        ("3 · Hai nửa còn thiếu của Đợt 2",
+         "Mệt mỏi nhận thức (cộng `ms` theo thứ tự lượt trong phiên, xem có dốc lên "
+         "không) và thích ứng theo định dạng (cho bộ chọn ưu tiên dạng bé mạnh khi "
+         "bé đang đuối). Cả hai đều nhỏ, và số liệu đã có sẵn."),
         ("", ""),
         ("HAI CHỖ CẦN BÁC QUYẾT, KHÔNG PHẢI CHỖ KỸ THUẬT", ""),
         ("1 · Máy chủ có lưu prompt không?",
@@ -994,7 +1056,7 @@ def main() -> int:
     dich = dn[XONG] + dn[OK] + dn[QUYET]
     print(f"  ── nay {dem[DU]}/{len(B)} ({dem[DU] / len(B) * 100:.0f}%) "
           f"→ đích {dich}/{len(B)} ({dich / len(B) * 100:.0f}%) sau khi chạy hết 5 đợt")
-    print("  ⚠ Đợt 1 mới COMMIT, chưa deploy — 12 dòng vừa xanh chưa chạy thật lần nào")
+    print("  ✓ Đợt 0 · 1 · 2 đều đã deploy (22-08). Còn Đợt 3 và Đợt 4.")
     return 0
 
 
