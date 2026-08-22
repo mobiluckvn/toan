@@ -5,8 +5,8 @@
 
 Nguồn yêu cầu: `docs/Chuong2_Luan_van_Thac_sy_1_v3.docx`.
 Phạm vi soi:   MÔN TIẾNG ANH, lớp 1 → lớp 5.
-Cập nhật:      22-08-2026, sau khi chạy xong Đợt 0, Đợt 1 và Đợt 2.
-               Cả ba đợt ĐÃ DEPLOY. Còn Đợt 3 và Đợt 4.
+Cập nhật:      22-08-2026, sau khi chạy xong Đợt 0 → Đợt 3.
+               Còn Đợt 4 (điều hướng và đo).
 
 ── ĐỌC CỘT "BẰNG CHỨNG" TRƯỚC KHI TIN CỘT "TRẠNG THÁI" ──
 Mỗi dòng đều dẫn tệp và con số đếm được. Không dòng nào chấm điểm bằng cảm nhận.
@@ -220,31 +220,43 @@ R("2.2.1", "Siêu dữ liệu nút NGỮ PHÁP: tense · sentence_type · formul
   "BỎ: nó dựa trên phép soi sai, và `ban_do_tieng_anh.json` là kho gốc cấm sửa.",
   "—", D0, "xong"),
 
-R("2.2.1", "Duyệt đồ thị (DFS/BFS) để CHẨN ĐOÁN lúc chạy", CH,
-  "Không mã nào trong `web/src/` đọc `ban_do_tieng_anh.json`. Đồ thị chỉ dùng LÚC "
-  "DỰNG (`tools/chuan_tienganh.py`); app đọc tệp bài phẳng đã sinh sẵn.",
-  "Lúc chạy không có đồ thị để duyệt.",
+R("2.2.1", "Duyệt đồ thị (DFS/BFS) để CHẨN ĐOÁN lúc chạy", DU,
+  "✅ XONG Đợt 3 (22-08). `tools/xuat_do_thi_con.py` → "
+  "`web/public/content/tienganh/do_thi.json` (95 KB · 1194 nút · 253 cạnh), và "
+  "`lib/doThi.js` với `truoc` · `sau` · `duyetNguoc` · `duyetXuoi` · `baiTienQuyet`.",
+  "Chỉ giữ QUAN HỆ, không giữ chữ nghĩa — bài học đã mang đủ.",
   OK,
-  "Xuất ĐỒ THỊ CON, không bê cả kho: viết `tools/xuat_do_thi_con.py` lấy 1 189 nút "
-  "lớp 1–5 + 195 cạnh REQUIRES + 157 mối `thang`, bỏ hết trường không cần (example, "
-  "ipa, nghĩa — bài học đã có rồi), ghi ra "
-  "`web/public/content/tienganh/do_thi.json`. Ước dưới 200 KB, nạp một lần rồi giữ "
-  "trong bộ nhớ. Thêm `lib/doThi.js` với `truoc(maNut)` · `sau(maNut)` · `duyetNguoc"
-  "(maNut, sau)`. Nhớ cổng canh: mọi mã nút trong tệp bài phải có mặt trong đồ thị.",
-  "—", D3, "≈2 ngày"),
+  "⚠ HAI LƯỚI ĐỠ, ĐỠ HAI THỨ KHÁC NHAU — và tôi từng nói quá về chúng. Trần độ sâu "
+  "(`sauToiDa`) là thứ giữ cho phép duyệt LUÔN DỪNG, kể cả gặp chu trình. `daTham` "
+  "thì KHÔNG phải để chống treo: gỡ nó ra rồi đo, máy không treo — cái hỏng là kết "
+  "quả (một nút trả về nhiều lần, số nhánh phình theo cấp số nhân). Chú thích đầu "
+  "tiên của tôi ghi 'vòng lặp không đáy', sai; đã sửa. Cảnh báo nói quá thì lần sau "
+  "người đọc trừ hao cả những cảnh báo đúng. "
+  "⚠ Giữ cả 5 nút NGOÀI lớp 1–5 mà cạnh chạm tới — bỏ đi thì cạnh trỏ vào hư không "
+  "và phép duyệt ngược dừng giữa chừng không báo gì.",
+  "—", D3, "xong"),
 
-R("2.2.1", "Đồ thị làm bộ truy xuất (Retriever) cho RAG", PH,
-  "Ràng buộc từ vựng cho LLM CÓ THẬT và chặt: `vonTu()` gom vốn tích luỹ tới đúng "
-  "unit (`phongnoi.js:148`), `loiDan()` ép 'CHỈ dùng từ trong danh sách' (`:177`).",
-  "Nguồn truy xuất là TỆP BÀI ĐÃ SINH, không phải đồ thị. Kết quả tương đương về "
-  "phạm vi từ vựng, nhưng không lấy được đồ thị con theo quan hệ.",
+R("2.2.1", "Đồ thị làm bộ truy xuất (Retriever) cho RAG", DU,
+  "✅ XONG Đợt 3 (22-08). Ràng buộc từ vựng vẫn chặt như cũ (`loiDan()` ép 'CHỈ dùng "
+  "từ trong danh sách'), nhưng NGUỒN nay có cả đồ thị: `vonTu()` nhận thêm `baiTQ` "
+  "— bài tiên quyết tra bằng "
+  "`baiTienQuyet()` trên đồ thị, `PhongNoi` tải về rồi trộn vào vốn.",
+  "GỘP hai nguồn chứ KHÔNG thay — xem lý do ở cột bên. Đó là khác biệt so với mô tả "
+  "trong luận văn, và là khác biệt CÓ SỐ ĐO đứng sau.",
   OK,
-  "Sau khi có `doThi.js`: đổi ruột `vonTu()` từ 'gom mọi unit số nhỏ hơn' sang "
-  "'duyệt ngược theo REQUIRES từ nút của bài này'. ⚠ ĐỔI RUỘT, GIỮ NGUYÊN HÌNH "
-  "DẠNG TRẢ VỀ — `cauHopLe()` và `loiVietHopLe()` đang ăn kết quả của nó, đổi hình "
-  "dạng là gãy cả tầng chống ảo giác. Chạy đối chiếu hai lối trên cả 94 unit trước "
-  "khi bỏ lối cũ: lối mới mà cho vốn HẸP hơn là cô giáo máy cụt từ.",
-  "2.2.1-duyệt", D3, "≈1 ngày"),
+  "⚠ ĐO TRƯỚC KHI ĐỔI, và số đo lật ngược thiết kế ban đầu. Kế hoạch cũ là ĐỔI RUỘT "
+  "`vonTu()` sang duyệt REQUIRES. Đối chiếu hai lối trên cả 94 bài: thay hẳn thì "
+  "87/94 bài vốn từ HẸP ĐI, nhiều bài về RỖNG — vì phần lớn từ vựng không có cạnh "
+  "tiên quyết nào, và đúng là không nên có (`book` chẳng cần `pen` trước). Cô giáo "
+  "máy sẽ cụt từ ở 87 bài để đổi lấy 40 bài đúng hơn. "
+  "Nên GỘP: giữ cửa sổ 'ba bài gần nhất' (bé VỪA học gì) và đắp thêm bài tiên quyết "
+  "(bài này DỰNG TRÊN gì). Đồ thị thêm được tiên quyết ở 40/94 bài, trong đó 2 bài "
+  "thêm được bài ở QUYỂN KHÁC — `DL:TA2.B02` cần `DL:TA1.B11`, đúng ca cross_grade "
+  "luận văn nêu, mà cửa sổ tuần tự không bao giờ với tới vì nó nới trong cùng quyển. "
+  "⚠ Cả hai nguồn đều lọc qua `datCu`: bài bé CHƯA ĐẠT thì không vào vốn, dù đồ thị "
+  "bảo là tiên quyết. Bỏ chốt ấy là cô giáo máy nói bằng từ bé chưa từng học. "
+  "⚠ Hình dạng trả về GIỮ NGUYÊN — cổng đọc từng khoá và đối chiếu.",
+  "2.2.1-duyệt", D3, "xong"),
 
 # ═══════════════════ 2.2.2 Ràng buộc tiên quyết ══════════════════════════
 R("2.2.2", "Thuộc tính `prerequisite_links` trên nút", PH,
@@ -274,24 +286,28 @@ R("2.2.2", "Ràng buộc XUYÊN LỚP (cross-grade dependencies)", DU,
   "Việt. Ví dụ thật: `sp_g5_u1_1` (lớp 5) → `sp_g4_self_intro` (lớp 4).",
   "—", XONG, "—", "—", DX, "—"),
 
-R("2.2.2", "Thang tiên quyết đi được vào tầng dữ liệu app dùng", PH,
-  "`chuan_lopN.json` có mảng `thang` (10 · 10 · 39 · 64 · 34 mối cho lớp 1→5), tổng "
-  "157 mối.",
-  "`chuan_lopN.json` nằm ở `data/`, KHÔNG được đẩy sang `web/public/`. App không đọc "
-  "`thang` ở bất kỳ đâu.",
-  OK,
-  "Đi kèm `do_thi.json` của Đợt 3 — `thang` gộp thẳng vào đó làm cạnh REQUIRES, "
-  "không cần tệp riêng.",
-  "2.2.1-duyệt", D3, "nửa ngày"),
+R("2.2.2", "Thang tiên quyết đi được vào tầng dữ liệu app dùng", DU,
+  "✅ XONG Đợt 3. `thang` (157 mối, sinh ở Đợt 0) gộp thẳng vào `do_thi.json` — 53 "
+  "cạnh `trong_bai` + 5 cạnh `noi_bai`, máy con chỉ phải đọc MỘT tệp.",
+  "⚠ CẠNH CÓ NHÃN, và bên dùng phải chọn: `CANH_THAT` chỉ gồm `ban_do` và "
+  "`noi_bai`. `trong_bai` (thứ tự đọc trong cùng một bài) BỊ LOẠI mặc định — ai lấy "
+  "nó đi khoá bài là chặn bé giữa chính bài đang học.",
+  OK, "Xong cùng lúc với việc xuất đồ thị con.", "2.2.1-duyệt", D3, "xong"),
 
-R("2.2.2", "Lan truyền chẩn đoán NGƯỢC để tìm nút gốc rễ", CH,
-  "Không có mã nào thực hiện.", "Toàn bộ cơ chế.",
+R("2.2.2", "Lan truyền chẩn đoán NGƯỢC để tìm nút gốc rễ", DU,
+  "✅ XONG Đợt 3. `nutGocRe()` trong `lib/lantruyen.js`.",
+  "Chưa có màn nào bày kết quả ra cho cô giáo — việc của Đợt 4, cùng với phụ đạo. "
+  "Cơ chế thì chạy được và có cổng.",
   OK,
-  "Sau khi có P(L) mức nút và `doThi.js`: hàm `goc(maNut, nguong)` duyệt ngược theo "
-  "REQUIRES, tại mỗi bước nhân độ ngờ với hệ số suy giảm α, dừng khi gặp nút có "
-  "P(L) thấp nhất trong chuỗi. ⚠ Nhớ chặn vòng lặp — 195 cạnh mà lỡ có chu trình là "
-  "treo máy bé. Cổng: dựng một bé giả sai đúng một nút gốc rồi kiểm hàm có tìm ra.",
-  "2.3.2-nối · 2.2.1-duyệt", D3, "≈2 ngày"),
+  "Độ ngờ = α^bước × (1 − P(L)). Cần CẢ HAI thành phần: α^bước vì càng xa chỗ sai "
+  "càng khó gọi là nguyên nhân; (1−P(L)) vì nút bé đã vững thì không phải thủ phạm, "
+  "dù nó là tiên quyết. "
+  "⚠ Nút bé ĐÃ THẠO bị LOẠI HẲN, không xếp hạng thấp — giữ lại là màn hình có thể "
+  "bày ra 'chỗ hổng gốc rễ' trỏ vào một thứ bé làm đúng mãi, và cô giáo đọc xong sẽ "
+  "không tin cái bảng ấy nữa. "
+  "⚠ Nút CHƯA CÓ SỐ thì coi P(L) = L0: rất đáng ngờ (tiên quyết bé chưa từng chạm "
+  "là lý do hay gặp nhất) nhưng KHÔNG tuyệt đối.",
+  "2.3.2-nối · 2.2.1-duyệt", D3, "xong"),
 
 # ═══════════════════ 2.3.1 Bản sao số người học ══════════════════════════
 R("2.3.1", "Mô hình che phủ (Overlay) trạng thái lên từng nút đồ thị", DU,
@@ -663,7 +679,7 @@ TK_THEM = [
     ("Câu luyện tập · câu sát hạch", "3 752 · 470"),
     ("Bài tả tranh (đọc · viết · nói quanh 1 bức)", "62 bức, lớp 3·4·5"),
     ("Clip tiếng · video", "5 366 · 345"),
-    ("Cổng tự động", "82 tệp, tất cả xanh"),
+    ("Cổng tự động", "83 tệp, tất cả xanh"),
     ("", ""),
     ("Đồ thị tri thức", ""),
     ("Nút · cạnh (toàn bản đồ)", "3 989 · 7 602"),
@@ -732,13 +748,17 @@ LO_TRINH = [
      "cổng kia cấm mọi lần nhắc `mastery/` trong khi tôi chỉ ĐỌC, mà luật "
      "`allow write: if false` khiến ghi là không thể. Cổng đòi một CÁCH VIẾT thay "
      "vì một TÍNH CHẤT thì sớm muộn ép người ta nới luật ra cho nó xanh."),
-    (D3, "Đồ thị lúc chạy — chẩn đoán và truy xuất theo quan hệ",
-     "Xuất `do_thi.json` (dưới 200 KB) · `lib/doThi.js` · lan truyền ngược α và xuôi "
-     "β · đổi ruột Retriever · màn ma trận cho cô giáo",
-     "≈7 ngày", "— RAG truy xuất đúng theo đồ thị, tìm được nút gốc rễ",
-     "⚠ Đổi ruột `vonTu()` phải GIỮ NGUYÊN hình dạng trả về — `cauHopLe()` đang ăn "
-     "kết quả của nó, đổi là gãy tầng chống ảo giác. Đối chiếu hai lối trên cả 94 "
-     "unit trước khi bỏ lối cũ. ⚠ Chặn chu trình khi duyệt."),
+    (D3, "✅ XONG 22-08-2026",
+     "XONG: `do_thi.json` (95 KB · 1194 nút · 253 cạnh) · `lib/doThi.js` · lan "
+     "truyền ngược α và xuôi β · ma trận trạng thái · Retriever nay tra cả đồ thị. "
+     "CÒN: màn bày ma trận cho cô giáo — dời sang Đợt 4 cùng với phụ đạo.",
+     "≈1 ngày", "— RAG truy xuất theo đồ thị, tìm được nút gốc rễ",
+     "⚠ SỐ ĐO LẬT NGƯỢC THIẾT KẾ. Kế hoạch là ĐỔI RUỘT `vonTu()` sang duyệt "
+     "REQUIRES. Đối chiếu trên cả 94 bài thì thay hẳn làm 87/94 bài vốn từ HẸP ĐI, "
+     "nhiều bài về rỗng — cô giáo máy cụt từ ở 87 bài để đổi lấy 40 bài đúng hơn. "
+     "Nên GỘP chứ không thay. Đây là chỗ đo trước khi làm đã cứu cả một tính năng. "
+     "⚠ `daTham` KHÔNG phải để chống treo (trần độ sâu lo việc ấy) — gỡ ra rồi đo "
+     "thì máy không treo, chỉ kết quả sai. Chú thích đầu của tôi nói quá, đã sửa."),
     (D4, "Điều hướng và đo — chính sách theo P(L), phụ đạo, A-R-A",
      "Đổi điều kiện `dandat.js` sang P(L) · ba nhánh chính sách · phụ đạo do LLM "
      "sinh có hậu kiểm · A-R-A · ΔC · gom vector S",
@@ -924,9 +944,20 @@ def main() -> int:
              "MÃ và DỮ LIỆU, không cổng nào ngồi cạnh một đứa trẻ."),
         ("", ""),
         ("ĐÃ XONG TỚI ĐÂU", ""),
-        ("", "Đợt 0 ✅ · Đợt 1 ✅ · Đợt 2 ✅ — cả ba đã deploy. Đợt 3 và Đợt 4 CHƯA BẮT "
-             "ĐẦU, còn khoảng 19 ngày công. Nay 31/54 mục đáp ứng (57%), từ 15 lúc "
-             "bắt đầu."),
+        ("", "Đợt 0 ✅ · 1 ✅ · 2 ✅ · 3 ✅. Còn Đợt 4 (điều hướng và đo), ≈12 ngày. "
+             "Nay 37/54 mục đáp ứng (69%), từ 15 lúc bắt đầu."),
+        ("", ""),
+        ("ĐỢT 3 ĐÃ CHẠY XONG — 22-08-2026", ""),
+        ("", "Đồ thị tri thức nay có mặt LÚC CHẠY: 95 KB, 1194 nút, 253 cạnh. Duyệt "
+             "ngược tìm nút gốc rễ, duyệt xuôi cộng hưởng, ma trận trạng thái, và "
+             "Retriever của RAG nay tra cả theo quan hệ đồ thị."),
+        ("Một số đo lật ngược thiết kế",
+         "Kế hoạch là ĐỔI RUỘT bộ truy xuất vốn từ sang duyệt REQUIRES. Đo trên cả "
+         "94 bài trước khi đổi: thay hẳn thì 87/94 bài vốn từ HẸP ĐI, nhiều bài về "
+         "RỖNG — vì phần lớn từ vựng không có cạnh tiên quyết nào, và đúng là không "
+         "nên có. Cô giáo máy sẽ cụt từ ở 87 bài để đổi lấy 40 bài đúng hơn. Nên GỘP "
+         "hai nguồn chứ không thay. Đây là chỗ 'đo trước khi làm' cứu cả một tính "
+         "năng — và là chỗ bảng này khác mô tả trong luận văn, có số đo đứng sau."),
         ("", ""),
         ("ĐỢT 2 ĐÃ CHẠY XONG — 22-08-2026", ""),
         ("", "Đường cong học tập trong Sổ bố mẹ · thẻ ôn ngắt quãng cho Tiếng Anh · "
@@ -980,10 +1011,10 @@ def main() -> int:
          "Ba đợt vừa rồi đổi đúng những thứ bé nhìn thấy: thứ tự câu trong bài, thẻ "
          "mời ôn tập, buổi ôn, Góc bố mẹ. Cổng không thay được việc ngồi cạnh một "
          "đứa trẻ mở app ra. Đây là việc đáng làm trước cả Đợt 3."),
-        ("2 · Đợt 3 — đồ thị lúc chạy",
-         "Xuất đồ thị con (1189 nút + 195 cạnh REQUIRES + 157 mối thang) ra "
-         "`web/public/content/`, rồi lan truyền chẩn đoán ngược để tìm nút gốc rễ. "
-         "Mở khoá 8 mục, và là chân đế cho phụ đạo ở Đợt 4."),
+        ("2 · Đợt 4 — điều hướng và đo",
+         "Đổi điều kiện `dandat.js` sang P(L) · ba nhánh chính sách · phụ đạo do LLM "
+         "sinh có hậu kiểm · A-R-A · ΔC · màn bày ma trận trạng thái cho cô giáo. "
+         "Đây là đợt cuối, và nặng nhất."),
         ("3 · Chiều ĐỘNG LỰC còn hẹp",
          "Sở thích của bé mới dùng ở PHÒNG NÓI; ba màn kia (học · đọc · viết) chưa "
          "đọc tới. Việc nhỏ: truyền `soThich` vào `loiDanCham()` của màn Viết."),
@@ -1074,7 +1105,7 @@ def main() -> int:
     dich = dn[XONG] + dn[OK] + dn[QUYET]
     print(f"  ── nay {dem[DU]}/{len(B)} ({dem[DU] / len(B) * 100:.0f}%) "
           f"→ đích {dich}/{len(B)} ({dich / len(B) * 100:.0f}%) sau khi chạy hết 5 đợt")
-    print("  ✓ Đợt 0 · 1 · 2 đều đã deploy (22-08). Còn Đợt 3 và Đợt 4.")
+    print("  ✓ Đợt 0 → 3 xong. Còn Đợt 4 (điều hướng và đo).")
     return 0
 
 

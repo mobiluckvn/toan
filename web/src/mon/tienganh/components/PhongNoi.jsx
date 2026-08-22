@@ -7,6 +7,7 @@ import {
   tinhBuoi, loiKet, cauHoiSoThich, PHUT_TOI_DA,
 } from '../lib/phongnoi.js';
 import { hoiCoGiao, luuBuoi } from '../lib/goiPhongNoi.js';
+import { napDoThi, baiTienQuyet } from '../lib/doThi.js';
 import { auth } from '../../../chung/lib/nenTang.js';
 import { doc as docLen, docDoan, docDuoc, coGiong, thoiDoc } from '../lib/doclen.js';
 import { batDauNghe, ngheDuoc, loiDocDuoc, xinMicroChiTiet, MICRO, TIENG } from '../lib/nghenoi.js';
@@ -76,9 +77,45 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
   }, [bai?.id, ma]);
 
   const datCu = useCallback((id) => !!tienDo?.micros?.[id]?.pass, [tienDo]);
+
+  /**
+   * BÀI TIÊN QUYẾT tra bằng ĐỒ THỊ — nguồn thứ hai cho phần ôn.
+   *
+   * Cửa sổ `baiCu` chỉ với tới ba bài liền trước TRONG CÙNG QUYỂN. Đồ thị với tới
+   * cả bài ở quyển khác: `DL:TA2.B02` cần `DL:TA1.B11`, và không cửa sổ tuần tự
+   * nào lấy được điều đó.
+   *
+   * ⚠ CHỈ TẢI BÀI BÉ ĐÃ ĐẠT. Lọc bằng `datCu` TRƯỚC khi tải, không phải sau: tải
+   * rồi mới lọc là tốn mạng cho bài không dùng, mà bé đang chờ cô giáo trả lời.
+   *
+   * ⚠ HỎNG THÌ IM. Không nạp được đồ thị hay không tải được bài tiên quyết thì
+   * `baiTQ` rỗng và phòng nói chạy y như trước — bé không được rộng vốn thêm,
+   * nhưng cũng không mất gì.
+   */
+  const [baiTQ, datBaiTQ] = useState([]);
+  useEffect(() => {
+    let song = true;
+    datBaiTQ([]);
+    if (!daDat || !bai?.id) return () => { song = false; };
+    (async () => {
+      try {
+        const dt = await napDoThi();
+        const nuts = [...new Set(
+          (bai.practice?.pools ? Object.values(bai.practice.pools).flat() : [])
+            .map((c) => c?.maNut).filter(Boolean),
+        )];
+        const ids = baiTienQuyet(dt, nuts, { boQua: bai.id }).filter(datCu);
+        if (!ids.length) return;
+        const ds = await Promise.all(ids.map((i) => napBai(i).catch(() => null)));
+        if (song) datBaiTQ(ds.filter(Boolean));
+      } catch { /* im — xem ghi chú trên */ }
+    })();
+    return () => { song = false; };
+  }, [bai?.id, daDat, datCu]);
+
   const von = React.useMemo(
-    () => vonTu({ baiNay: bai, baiCu, daDat, datCu }),
-    [bai, baiCu, daDat, datCu],
+    () => vonTu({ baiNay: bai, baiCu, baiTQ, daDat, datCu }),
+    [bai, baiCu, baiTQ, daDat, datCu],
   );
 
   /* Mỗi lần mở phòng của một unit là MỘT buổi. Mã buổi dựng một lần rồi giữ nguyên,

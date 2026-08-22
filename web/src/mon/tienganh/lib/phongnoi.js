@@ -142,20 +142,45 @@ export function vonCuaBai(bai) {
  *
  * @param baiNay   dữ liệu bài của unit đang mở
  * @param baiCu    [bài] các unit ĐỨNG TRƯỚC unit này, theo đúng thứ tự học
+ * @param baiTQ    [bài] các unit TIÊN QUYẾT tra từ đồ thị — xem ghi chú dưới
  * @param daDat    unit này bé đã đạt chưa
  * @param datCu    (id) => bé đã đạt unit ấy chưa
+ *
+ * ── HAI NGUỒN CHO PHẦN ÔN, VÀ CHÚNG TRẢ LỜI HAI CÂU KHÁC NHAU ──
+ *   `baiCu`  — bé VỪA học gì (gần thì còn nhớ, trộn vào là ôn đúng lúc);
+ *   `baiTQ`  — bài này DỰNG TRÊN gì (tra bằng cạnh REQUIRES của đồ thị).
+ *
+ * Đo trên cả 94 bài: cửa sổ tuần tự bỏ sót tiên quyết ở 40 bài, 2 trong số đó
+ * nằm ở QUYỂN KHÁC — cửa sổ "ba bài gần nhất" không bao giờ với tới, vì nó nới
+ * trong cùng quyển. Nhưng nếu THAY hẳn bằng đồ thị thì 87/94 bài vốn từ HẸP ĐI,
+ * nhiều bài về rỗng (phần lớn từ vựng không có cạnh tiên quyết nào — đúng, vì
+ * `book` chẳng cần `pen` trước). Nên GỘP.
+ *
+ * ⚠ CẢ HAI NGUỒN ĐỀU LỌC QUA `datCu`. Bài bé CHƯA ĐẠT thì vốn từ của nó không
+ * được vào — kể cả khi đồ thị bảo bài này cần nó. Bỏ chốt ấy là cô giáo máy nói
+ * bằng từ bé chưa từng học, tức là tự tay chọc thủng tầng chống ảo giác.
  */
-export function vonTu({ baiNay, baiCu = [], daDat = false, datCu = () => false } = {}) {
+export function vonTu({
+  baiNay, baiCu = [], baiTQ = [], daDat = false, datCu = () => false,
+} = {}) {
   const loi = vonCuaBai(baiNay);
   if (!daDat) return { loi, on: [], moRong: false };
 
   /* Lấy các unit gần nhất TRƯỚC unit này mà bé đã đạt — gần thì còn nhớ, và cũng
      là thứ bé vừa học xong nên trộn vào là ôn đúng lúc. */
-  const on = baiCu
+  const gan = baiCu
     .filter((b) => datCu(b?.id))
-    .slice(-UNIT_CU_TOI_DA)
-    .map(vonCuaBai);
+    .slice(-UNIT_CU_TOI_DA);
 
+  /* Rồi ĐẮP THÊM bài tiên quyết mà cửa sổ trên bỏ sót. Trùng thì bỏ — `on` là
+     danh sách để trộn vốn từ, một bài xuất hiện hai lần chẳng thêm được chữ nào
+     mà làm lời dặn dài ra vô ích. */
+  const daCo = new Set(gan.map((b) => b?.id));
+  const them = (baiTQ || []).filter(
+    (b) => b?.id && !daCo.has(b.id) && b.id !== baiNay?.id && datCu(b.id),
+  );
+
+  const on = [...gan, ...them].map(vonCuaBai);
   return { loi, on, moRong: on.length > 0 };
 }
 
