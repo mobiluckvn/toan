@@ -3,6 +3,7 @@ import BaiHoc from './BaiHoc.jsx';
 import OnTap from './OnTap.jsx';
 import DocHieu from './DocHieu.jsx';
 import VietBai from './VietBai.jsx';
+import OnLai from './OnLai.jsx';
 import NutNghe from './NutNghe.jsx';
 import {
   napBai, napSoAm, napOnTap, napDocHieu, napVietBai, chuongCua, quyenDau, timQuyen,
@@ -11,7 +12,8 @@ import {
   ghiBai, ghiChang, ghiMoc, ghiChuong, khoaChuong, ghiDocHieu, khoaDocHieu,
   ghiBaiViet, khoaBaiViet, ghiSoThich, khoaSoThich,
 } from '../lib/progress.js';
-import { luuBai, luuMucHocBa, luuSuKien } from '../lib/duLieu.js';
+import { luuBai, luuMucHocBa, luuSuKien, docTheOn, luuTheOn } from '../lib/duLieu.js';
+import { theDenHan, demDenHan, daySauKhiOn } from '../lib/onlai.js';
 import {
   trangThaiBai, baiNenHoc, moBai, moKyOnTap, conThieuChoOnTap,
 } from '../lib/dandat.js';
@@ -36,6 +38,9 @@ export default function ManTiengAnh({
   const [kyOn, datKyOn] = useState([]);
   const [docs, datDocs] = useState([]);
   const [viets, datViets] = useState([]);
+  /* Thẻ ôn tới hạn. Nạp một lần khi mở quyển; hỏng thì mảng rỗng và trang chính
+     đơn giản là không mọc thẻ mời — bé vẫn học bình thường. */
+  const [theOn, datTheOn] = useState([]);
 
   /* Nạp CHỈ MỤC 16 bài để vẽ trang chính. Mỗi tệp bài ~25 KB, 16 tệp là 400 KB —
      chấp nhận được cho một quyển, và đổi lại trang chính hiện đúng tên chương,
@@ -60,6 +65,12 @@ export default function ManTiengAnh({
     })();
     return () => { song = false; };
   }, [ct?.ma]);
+
+  useEffect(() => {
+    let song = true;
+    docTheOn(learnerId).then((ds) => { if (song) datTheOn(ds); });
+    return () => { song = false; };
+  }, [learnerId]);
 
   const xongBai = useCallback((id, kq, sau) => {
     datTienDo((p) => {
@@ -206,6 +217,20 @@ export default function ManTiengAnh({
     });
   }, [learnerId, ct.ma]);
 
+  /**
+   * XONG MỘT THẺ ÔN — đẩy hộp Leitner rồi hẹn ngày mới.
+   *
+   * Luật hộp ở `lib/onlai.js` (`daySauKhiOn`) — bản chép của
+   * `functions/src/schedule.js`, vì `functions/` là mã máy chủ và kéo nó vào gói
+   * trình duyệt là mang theo cả `firebase-admin`. Cổng `tienganh_onlai` so hai
+   * bên để chúng không trôi xa nhau.
+   */
+  const xongTheOn = useCallback((the, qua) => {
+    const sau = daySauKhiOn(the, qua);
+    datTheOn((ds) => ds.map((x) => (x.id === the.id ? sau : x)));
+    luuTheOn(learnerId, sau);
+  }, [learnerId]);
+
   const xongSoThich = useCallback((tu, unit = null) => {
     if (!tu) return;
     const sau = ghiSoThich(tienDo, ct.ma, tu, unit);
@@ -213,6 +238,17 @@ export default function ManTiengAnh({
     const k = khoaSoThich(ct.ma);
     luuMucHocBa(learnerId, 'soThich', k, { giaTri: sau.soThich[k] });
   }, [tienDo, datTienDo, learnerId, ct.ma]);
+
+  if (view.page === 'onlai') {
+    return (
+      <OnLai
+        the={theDenHan(theOn, { quyen: ct.ma })}
+        onXongThe={xongTheOn}
+        onLuot={ghiLuot}
+        onThoat={() => setView({ page: 'home' })}
+      />
+    );
+  }
 
   if (view.page === 'vietbai' && view.vietId) {
     const b = viets.find((x) => x.id === view.vietId);
@@ -268,6 +304,8 @@ export default function ManTiengAnh({
       onMoOnTap={(id) => setView({ page: 'ontap', kyId: id })}
       onMoDocHieu={(id) => setView({ page: 'dochieu', docId: id })}
       onMoVietBai={(id) => setView({ page: 'vietbai', vietId: id })}
+      soTheOn={demDenHan(theOn, { quyen: ct.ma })}
+      onMoOnLai={() => setView({ page: 'onlai' })}
       onVeKeSach={veKeSach}
     />
   );
@@ -278,6 +316,7 @@ export default function ManTiengAnh({
 function NhaQuyen({
   ct, bais, kyOn = [], docs = [], viets = [], tienDo,
   onMoBai, onMoOnTap, onMoDocHieu, onMoVietBai, onVeKeSach,
+  soTheOn = 0, onMoOnLai,
 }) {
   if (!bais) {
     return <div className="p-6 text-mute">Đang mở quyển…</div>;
@@ -329,6 +368,34 @@ function NhaQuyen({
              style={{ width: `${(xong / bais.length) * 100}%` }} />
         </div>
       </div>
+
+      {/* ── THẺ MỜI ÔN LẠI ──
+          Đứng TRÊN thẻ "bài tiếp theo", và đó là chủ ý: ôn cái sắp quên có giá
+          hơn học thêm cái mới, mà bé thì luôn chọn cái nào đứng trước.
+
+          ⚠ CHỈ HIỆN KHI CÓ THẺ TỚI HẠN. Hiện thường trực với con số 0 thì nó
+          thành một nút chết trên trang chính, và bé học được cách bỏ qua nó —
+          rồi bỏ qua luôn cả những hôm nó có số thật. */}
+      {soTheOn > 0 && (
+        <button type="button" onClick={onMoOnLai}
+          className="flex items-center gap-4 rounded-xl2 bg-gold-pale p-5 text-left
+            ring-2 ring-gold hover:brightness-105
+            focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+          <span className="text-4xl" aria-hidden="true">🔁</span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-sm font-semibold uppercase tracking-wider text-gold-dark">
+              Đến giờ ôn lại
+            </span>
+            <span className="block text-xl font-bold text-ink">
+              {soTheOn} phần con học hôm trước
+            </span>
+            <span className="block text-sm text-gold-dark">
+              Ôn nhanh vài câu để nhớ lâu hơn.
+            </span>
+          </span>
+          <span className="flex-none rounded-xl2 bg-gold px-4 py-2 font-bold text-gold-dark">Ôn</span>
+        </button>
+      )}
 
       {/* MỘT VIỆC ĐƯỢC GỢI Ý, to và đứng trên cùng — nhưng KHÔNG còn là việc duy
           nhất. Bé chưa đọc được 16 tên bài để tự chọn, nên app vẫn phải chỉ đường;

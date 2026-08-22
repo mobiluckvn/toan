@@ -32,6 +32,12 @@ import {
 export const KHO = {
   tienDo: (uid) => `progressTA/${uid}/micros`,
   hocBa: (uid) => `hocBaTA/${uid}/muc`,
+  /* ⚠ THẺ ÔN DÙNG CHUNG THƯ MỤC VỚI TOÁN, khác hẳn hai khoá trên.
+     Hai khoá trên phải tách vì hàm nền xử theo luật của Toán. Còn `reviewQueue`
+     thì hàm nền chỉ GHI vào, không đọc ra để tính gì — và mã thẻ nhúng `microId`
+     mà mã bài hai môn không bao giờ trùng (`DL:TA5.*` với `DL:KSN2.*`). Bên đọc
+     lọc theo tiền tố quyển (`theDenHan`), nên hai môn không thấy thẻ của nhau. */
+  theOn: (uid) => `reviewQueue/${uid}/cards`,
 };
 
 /* Mã bài có dấu ':' và '.', mà tên tài liệu Firestore thì không chứa '/' và nên
@@ -100,6 +106,45 @@ export async function luuSuKien({ uid, maPhien, microId, quyen, viec }) {
   }
   try { return await dayHangDoi(guiSuKien); }
   catch (e) { nuot(e); return { daGui: 0, conLai: ds.length, loi: true }; }
+}
+
+/* ─────────── THẺ ÔN NGẮT QUÃNG ─────────── */
+
+/**
+ * Đọc thẻ ôn của bé.
+ *
+ * Hỏng thì trả MẢNG RỖNG chứ không ném: trang chính chỉ mất thẻ mời ôn tập, bé
+ * vẫn học bình thường. Mất mạng không phải việc của bé.
+ */
+export async function docTheOn(uid) {
+  if (!dungDuoc(uid)) return [];
+  try {
+    const snap = await getDocs(collection(db, KHO.theOn(uid)));
+    const ra = [];
+    snap.forEach((d) => ra.push({ id: d.id, ...d.data() }));
+    return ra;
+  } catch (e) { nuot(e); return []; }
+}
+
+/**
+ * Ghi lại một thẻ sau khi bé ôn xong — hộp Leitner mới và ngày hẹn mới.
+ *
+ * ⚠ `merge: true`. Thẻ do HÀM NỀN tạo và giữ các trường máy con không biết
+ * (`kind` · `what` · `createdAt`); ghi đè cả tài liệu là xoá mất chúng, và lần
+ * sinh thẻ sau sẽ dựng lại từ đầu như thể bé chưa ôn lần nào.
+ */
+export async function luuTheOn(uid, the) {
+  if (!dungDuoc(uid) || !the?.id) return false;
+  try {
+    await setDoc(doc(db, KHO.theOn(uid), the.id), {
+      box: Number(the.box) || 0,
+      dueAt: Number(the.dueAt) || Date.now(),
+      lastResult: !!the.lastResult,
+      reviewedAt: Number(the.reviewedAt) || Date.now(),
+      soLanOn: Number(the.soLanOn) || 0,
+    }, { merge: true });
+    return true;
+  } catch (e) { nuot(e); return false; }
 }
 
 /* ─────────── GHI ─────────── */

@@ -54,11 +54,21 @@ const khoiCua = (c) => {
 /* ══ 2 · LUẬT PHẢI THẬT SỰ CHẶN NGƯỜI LẠ ══
    Viết luật mà quên `isMine` thì bé A ghi được vào sổ của bé B. Đây là chỗ đắt
    nhất để sai, nên soi từng khối. */
+/* ⚠ SOI TÍNH CHẤT, ĐỪNG ĐÒI ĐÚNG MỘT CHỮ.
+   Bản đầu đòi bằng được `allow read: if canRead(`. Nhưng `reviewQueue` viết
+   `isMine(userId) || isAdmin()` — CHẶT HƠN `canRead` (không cho giáo viên đọc),
+   thế mà cổng vẫn kêu "hở". Cổng đòi một cách viết thay vì đòi một tính chất thì
+   sớm muộn ép người ta NỚI luật ra cho cổng xanh — đúng chiều ngược lại với việc
+   nó sinh ra để làm.
+   Nay: quyền đọc phải gác bằng `canRead(` HOẶC `isMine(`. Cả hai đều chặn người
+   lạ; `if true` thì vẫn bị bắt ở dòng dưới. */
 const hong = [];
 for (const c of kho) {
   const than = khoiCua(c);
   if (!/allow write:\s*if\s+isMine\(/.test(than)) hong.push(`${c}: quyền ghi không gác bằng isMine()`);
-  if (!/allow read:\s*if\s+canRead\(/.test(than)) hong.push(`${c}: quyền đọc không gác bằng canRead()`);
+  if (!/allow read:\s*if\s+(canRead|isMine)\(/.test(than)) {
+    hong.push(`${c}: quyền đọc không gác bằng canRead() hay isMine()`);
+  }
   if (/allow (read|write)[^;]*:\s*if\s+true/.test(than)) hong.push(`${c}: có "if true" — mở toang`);
 }
 t(`luật của mỗi collection đều gác chính chủ (${hong.length} chỗ hở)`, hong.length === 0);
