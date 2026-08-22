@@ -16,6 +16,7 @@ import {
   noiDuoc, CHANG_KHONG_KHOA,
 } from '../lib/dandat.js';
 import { DAT as DAT_NOI } from '../lib/chamnoi.js';
+import { maPhienMoi } from '../lib/suKien.js';
 
 const maCauAm = (c) => maCua(c, 'en');
 
@@ -46,7 +47,15 @@ const maCauAm = (c) => maCua(c, 'en');
  */
 export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
                                  onMoc, tenBe = 'Bo', soThich = null,
-                                 onSoThich = null }) {
+                                 onSoThich = null, onLuot = null }) {
+  /* MỘT LẦN MỞ BÀI LÀ MỘT PHIÊN. Mã phiên đi vào mã từng bản ghi nhật ký, nên nó
+     phải ĐỔI khi đổi bài và GIỮ NGUYÊN trong suốt bài — `useMemo` theo `id` cho
+     đúng cả hai. Component này KHÔNG dựng lại khi đổi bài (chỗ gọi không đặt
+     `key`), nên để mã phiên trong `useRef` trần là hai bài dính chung một phiên. */
+  const maPhien = useMemo(() => maPhienMoi(), [id]);
+  const ghiLuot = useCallback((e, phase = 'practice') => {
+    onLuot?.({ ...e, phase, maPhien, microId: id });
+  }, [onLuot, maPhien, id]);
   const [bai, datBai] = useState(null);
   const [loi, datLoi] = useState(null);
   const [tai, datTai] = useState(0);
@@ -130,7 +139,7 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
       )}
       {k === 'luyen' && (
         <LuyenTap key={id} bai={bai} onTiep={xong}
-                  moc={mocDau?.luyen} onMoc={mocLuyen} />
+                  moc={mocDau?.luyen} onMoc={mocLuyen} onLuot={ghiLuot} />
       )}
       {k === 'noi' && (
         <HoiThoai
@@ -140,7 +149,8 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
         />
       )}
       {k === 'sat' && (
-        <SatHach bai={bai} onXong={(kq) => onXongBai(kq, hangXom(id).sau)} />
+        <SatHach bai={bai} onXong={(kq) => onXongBai(kq, hangXom(id).sau)}
+                 onLuot={(e) => ghiLuot(e, 'assess')} />
       )}
       {k === 'phong' && (
         <PhongNoi bai={bai} tienDo={tienDo} tenBe={tenBe}
@@ -625,7 +635,7 @@ const MUC = [
  * lượt nữa. Chỉ MỘT lượt: hai lượt rồi vẫn tắc thì cái bé cần là người lớn ngồi
  * cạnh, không phải vòng lặp thứ ba.
  */
-function LuyenTap({ bai, onTiep, moc, onMoc }) {
+function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null }) {
   /* ── VÀO LẠI ĐÚNG CHỖ BỎ DỞ ──
      `moc` là thứ đã ghi lần trước. KHÔNG tin nó mù quáng: sổ có thể là của bản bài
      cũ, mà chỉ số mức hay chỉ số câu nhảy ra ngoài mảng là màn trắng ngay. Nên kẹp
@@ -775,7 +785,7 @@ function LuyenTap({ bai, onTiep, moc, onMoc }) {
             (đáp án là chuỗi) sang câu XẾP THẺ (đáp án là mảng), lần vẽ đầu tiên
             gọi `''.map()` — cả bài trắng màn hình ngay giữa chừng. Đã vỡ thật ở
             đúng chỗ nối ★ sang ★★. */}
-        <CauHoi key={cau.id} cau={cau} onXong={xong} />
+        <CauHoi key={cau.id} cau={cau} onXong={xong} onLuot={onLuot} />
       </div>
     </section>
   );

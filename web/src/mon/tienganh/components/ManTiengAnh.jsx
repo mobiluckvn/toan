@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import BaiHoc from './BaiHoc.jsx';
 import OnTap from './OnTap.jsx';
 import DocHieu from './DocHieu.jsx';
@@ -11,7 +11,7 @@ import {
   ghiBai, ghiChang, ghiMoc, ghiChuong, khoaChuong, ghiDocHieu, khoaDocHieu,
   ghiBaiViet, khoaBaiViet, ghiSoThich, khoaSoThich,
 } from '../lib/progress.js';
-import { luuBai, luuMucHocBa } from '../lib/duLieu.js';
+import { luuBai, luuMucHocBa, luuSuKien } from '../lib/duLieu.js';
 import {
   trangThaiBai, baiNenHoc, moBai, moKyOnTap, conThieuChoOnTap,
 } from '../lib/dandat.js';
@@ -165,6 +165,47 @@ export default function ManTiengAnh({
    * tệp này. Gọi ở chỗ khác thì hình dạng gói không ai canh, mà sai hình dạng gói
    * thì máy chủ từ chối trong im lặng.
    */
+  /**
+   * NHẬT KÝ TỪNG LƯỢT TRẢ LỜI — gom cả phiên rồi dựng lại, không đẩy từng lượt.
+   *
+   * ⚠ VÌ SAO PHẢI GIỮ CẢ PHIÊN chứ không gửi mỗi lượt một lần: mã bản ghi nhúng
+   * SỐ THỨ TỰ của lượt trong phiên. Đẩy từng lượt một thì số thứ tự lúc nào cũng
+   * là 0, mọi lượt của cùng một câu đè lên nhau, và bé sai hai lần rồi mới đúng
+   * chỉ còn lại MỘT dòng — đúng thứ mà nhật ký thô sinh ra để giữ. Dựng lại từ cả
+   * phiên thì mã lượt cũ ra đúng mã cũ, `xepHang` ghi đè theo mã, nên gửi bao
+   * nhiêu lần cũng không sinh dòng trùng. Đây là lối bên Toán đã dùng.
+   */
+  const nhatKy = useRef({ maPhien: null, ds: [] });
+  const ghiLuot = useCallback((e) => {
+    if (!e?.maPhien || !e?.microId || !e?.cau?.id) return;
+    if (nhatKy.current.maPhien !== e.maPhien) {
+      nhatKy.current = { maPhien: e.maPhien, ds: [] };
+    }
+    nhatKy.current.ds.push({
+      itemId: e.cau.id,
+      maNut: e.cau.maNut || null,
+      maNutDs: e.cau.maNutDs || null,
+      ok: e.ok,
+      tries: e.lan,
+      hintsUsed: e.hintsUsed,
+      ms: e.ms,
+      phase: e.phase || 'practice',
+      answer: e.answer,
+      expected: e.expected,
+      mode: e.cau.format || null,
+      khiNao: Date.now(),
+    });
+    /* Không `await`: bé đang học, không đợi mạng. Hỏng thì bản ghi nằm lại hàng
+       đợi tại máy và `LOI_GHI` đếm — không nuốt im. */
+    luuSuKien({
+      uid: learnerId,
+      maPhien: e.maPhien,
+      microId: e.microId,
+      quyen: ct.ma,
+      viec: nhatKy.current.ds,
+    });
+  }, [learnerId, ct.ma]);
+
   const xongSoThich = useCallback((tu, unit = null) => {
     if (!tu) return;
     const sau = ghiSoThich(tienDo, ct.ma, tu, unit);

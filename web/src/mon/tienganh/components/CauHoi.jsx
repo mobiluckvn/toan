@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import NutNghe from './NutNghe.jsx';
 import HinhVe from './HinhVe.jsx';
 import { chamTiengAnh } from '../lib/cham.js';
@@ -28,8 +28,22 @@ import { duocBoQua, HIEN_GOI_Y } from '../lib/dandat.js';
  * lại và mời bé làm lại một lượt cuối mức. Bản trước không có cờ này, nên bỏ qua
  * xong là câu ấy MẤT HẲN — bé đi hết mức mà nửa số câu chưa từng làm được, và
  * không con số nào trên màn nói ra điều đó.
+ *
+ * ── `onLuot` — MỖI LƯỢT TRẢ LỜI MỘT TIẾNG, KHÔNG PHẢI MỖI CÂU MỘT TIẾNG ──
+ *
+ * `onXong` chỉ kêu khi bé LÀM XONG câu (đúng, hoặc bỏ qua). Nhật ký học thì cần
+ * biết cả những lần sai ở giữa: bé sai hai lần rồi mới đúng là ba dòng, và ba
+ * dòng ấy mới nói được "bé sai CÁI GÌ trước khi làm được".
+ *
+ * Mỗi lượt mang theo:
+ *   ms         thời gian làm RIÊNG lượt ấy (RT_avg của mục 2.3.1). Đo từ lúc câu
+ *              hiện ra, hoặc từ lúc bé bấm "Thử lại" — không phải từ lúc mở bài.
+ *   hintsUsed  bé đã THẤY mấy gợi ý (H_req). Bên Tiếng Anh gợi ý hiện TỰ ĐỘNG sau
+ *              `HIEN_GOI_Y` lần thử chứ không do bé xin, nên đây là "đã thấy",
+ *              không phải "đã xin" — nghĩa hơi khác Toán, chỗ nào đọc cũng nên biết.
+ *   answer     bé gõ/bấm gì. Trường quý nhất: hai bé sai hai kiểu cần hai cách giúp.
  */
-export default function CauHoi({ cau, onXong }) {
+export default function CauHoi({ cau, onXong, onLuot = null }) {
   /* Chỗ gọi PHẢI truyền `key={cau.id}` để component dựng lại mỗi câu — xem chú
      thích ở `BaiHoc.jsx`. `useEffect` dưới đây chỉ là lưới đỡ thứ hai: effect chạy
      SAU lần vẽ đầu, nên nếu chỉ dựa vào nó thì câu xếp thẻ vẽ lần đầu với `dap`
@@ -38,16 +52,45 @@ export default function CauHoi({ cau, onXong }) {
   const [kq, datKq] = useState(null);
   const [lan, datLan] = useState(0);
 
-  useEffect(() => { datDap(cau.the ? [] : ''); datKq(null); datLan(0); }, [cau.id]);
+  /* Mốc bấm giờ của LƯỢT hiện tại. `useRef` chứ không `useState`: đổi nó không
+     được vẽ lại màn, mà vẽ lại giữa lúc bé đang gõ là mất chữ. */
+  const mocLuot = useRef(Date.now());
+  useEffect(() => {
+    datDap(cau.the ? [] : ''); datKq(null); datLan(0);
+    mocLuot.current = Date.now();
+  }, [cau.id]);
 
   const nop = (v) => {
     const r = chamTiengAnh(cau, v);
+    /* ⚠ ĐO GIỜ TRƯỚC KHI ĐỔI STATE. Đặt sau `datKq` thì vẫn đúng ở React hiện
+       tại, nhưng nó buộc người đọc phải biết state đổi không đồng bộ mới tin
+       được — đo ngay tại đây thì không phải tin gì cả. */
+    const ms = Math.max(0, Date.now() - mocLuot.current);
     datKq(r);
     datLan((n) => n + 1);
+    /* Bé đã THẤY mấy gợi ý tính tới lượt này. Cùng phép tính với chỗ hiện gợi ý ở
+       dưới, nên hai chỗ không lệch nhau được. */
+    const dsGoi = cau.hints || [];
+    const daThay = lan >= HIEN_GOI_Y
+      ? Math.min(lan - HIEN_GOI_Y + 1, dsGoi.length) : 0;
+    onLuot?.({
+      cau,
+      ok: r.ok,
+      lan: lan + 1,
+      ms,
+      hintsUsed: daThay,
+      answer: v,
+      expected: cau.answerKey,
+    });
     if (r.ok) onXong({ dung: true, lan: lan + 1 });
   };
 
-  const thuLai = () => { datKq(null); datDap(cau.the ? [] : ''); };
+  const thuLai = () => {
+    datKq(null); datDap(cau.the ? [] : '');
+    /* Bấm "Thử lại" là bắt đầu một lượt MỚI — đặt lại đồng hồ. Không đặt lại thì
+       `ms` của lượt hai gồm cả thời gian bé ngồi đọc lời báo sai của lượt một. */
+    mocLuot.current = Date.now();
+  };
 
   return (
     <div className="flex flex-col gap-4">

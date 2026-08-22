@@ -21,9 +21,12 @@
  * deploy thì `LOI_GHI` dưới đây đếm số lần bị từ chối để còn biết mà lần ra.
  */
 import {
-  doc, getDoc, setDoc, collection, getDocs, serverTimestamp,
+  doc, getDoc, setDoc, collection, getDocs, serverTimestamp, writeBatch,
 } from 'firebase/firestore';
 import { db, hasFirebase } from '../../../chung/lib/nenTang.js';
+import {
+  KHO_SU_KIEN, dungSuKien, xepHang, dayHangDoi, laHocSinhThat,
+} from './suKien.js';
 
 /** Tên collection — gõ MỘT chỗ. Hậu tố TA để không bao giờ lẫn với Toán. */
 export const KHO = {
@@ -52,6 +55,52 @@ const nuot = (e) => {
 };
 
 const dungDuoc = (uid) => !!(hasFirebase && db && uid);
+
+/* ─────────── NHẬT KÝ TỪNG LƯỢT TRẢ LỜI ─────────── */
+
+/**
+ * ĐẨY NHẬT KÝ — gọi sau MỖI lượt bé trả lời, không đợi hết bài.
+ *
+ * Đợi màn kết bài mới gửi thì bé làm 8/10 câu rồi mẹ gọi ăn cơm là mất trắng —
+ * bên Toán đã tính ra tối đa 1141 câu trên toàn chương trình. Và cô giáo cũng
+ * phải đợi bé học xong mới thấy gì.
+ *
+ * ⚠ VÀO `attempts/` CHUNG VỚI TOÁN, và đó là chủ ý — khác hẳn `progressTA` phải
+ * tách. Lý do tách `progressTA` là hàm nền chạy trên mọi tài liệu của thư mục ấy
+ * rồi tính theo ma trận Toán. Còn `onAttempt` thì chỉ làm đúng một việc TRUNG
+ * TÍNH: đọc `bktUnit` rồi cập nhật mức thạo. Bảng cô giáo cũng đã đọc `attempts`
+ * không lọc theo môn. Nên đổ vào đây là hàm nền BKT ăn được ngay, không phải sửa
+ * một dòng nào phía đọc.
+ *
+ * Không ném lỗi ra ngoài: mất mạng thì bản ghi nằm lại hàng đợi, bé vẫn học tiếp.
+ */
+async function guiSuKien(ds) {
+  if (!db) throw new Error('chưa cấu hình Firebase');
+  const lo = writeBatch(db);
+  for (const r of ds) {
+    /* Đóng dấu máy chủ ĐÚNG LÚC GỬI. Bản ghi nằm chờ trong hàng đợi mấy ngày vì
+       mất mạng thì `ts` (giờ máy bé) vẫn giữ nguyên lúc bé làm bài — hai mốc phục
+       vụ hai việc khác nhau, và luật Firestore đòi `serverTs == request.time`. */
+    lo.set(doc(db, KHO_SU_KIEN, r.id), { ...r, serverTs: serverTimestamp() }, { merge: true });
+  }
+  await lo.commit();
+}
+
+export async function luuSuKien({ uid, maPhien, microId, quyen, viec }) {
+  if (!viec?.length) return { daGui: 0, conLai: 0 };
+  let ds;
+  try {
+    ds = dungSuKien({ learnerId: uid || 'local', maPhien, microId, quyen, viec });
+  } catch (e) { nuot(e); return { daGui: 0, conLai: 0, loi: true }; }
+  xepHang(ds);
+  /* Chưa đăng nhập thì CHỈ xếp hàng — đẩy lên với mã 'local' là luật từ chối, và
+     từ chối trong im lặng. Đăng nhập xong `sangTenHangDoi` sẽ sang tên rồi gửi. */
+  if (!laHocSinhThat(uid) || !hasFirebase || !db) {
+    return { daGui: 0, conLai: ds.length, chiTaiMay: true };
+  }
+  try { return await dayHangDoi(guiSuKien); }
+  catch (e) { nuot(e); return { daGui: 0, conLai: ds.length, loi: true }; }
+}
 
 /* ─────────── GHI ─────────── */
 

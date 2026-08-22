@@ -548,6 +548,40 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
     return sach
 
 
+# ── DẤU VẾT VỀ ĐỒ THỊ TRI THỨC ──
+#
+# Mỗi câu luyện mang theo mã nút của bản đồ (`v_g5_u1_city` · `sp_g5_u1_1`), để
+# hàm nền BKT chấm được mức NÚT chứ không chỉ mức BÀI. `chuan_lopN.json` giữ sẵn
+# mã ấy từ lâu (740/740 từ, 164/164 mẫu câu) — bộ sinh bài vẫn cầm nó trong tay
+# mà trước nay không ghi ra, nên sổ của bé chỉ biết "xong bài B04", không biết bé
+# vững từ nào.
+#
+# ⚠ MỘT NÚT CHÍNH, dù câu có chạm nhiều nút. Bản ghi `attempts` chỉ mang được một
+# `bktUnit`; ghi hai nút cho một lượt là MỘT câu trả lời đúng được tính công hai
+# lần, và mức thạo phồng lên theo cách không ai lần ra được. Nên:
+#     câu dựng từ MỘT TỪ    → nút chính là từ ấy;
+#     câu dựng từ MỘT MẪU   → nút chính là mẫu câu, còn từ điền vào ô chỉ là
+#                             phương tiện — bé sai ở đây là sai CẤU TRÚC.
+# `maNutDs` giữ đủ cả hai để sau này lan truyền chẩn đoán (mục 2.3.3) còn dùng,
+# nhưng KHÔNG chỗ nào được lấy nó ra cộng điểm.
+def nut(chinh, *them):
+    ds = []
+    for x in (chinh, *them):
+        if x and x not in ds:
+            ds.append(x)
+    return {"maNut": chinh, "maNutDs": ds} if chinh else {}
+
+
+def nut_tu(t):
+    """Nút của một câu dựng từ một TỪ."""
+    return nut(t.get("ma"))
+
+
+def nut_cau(c):
+    """Nút của một câu dựng từ một MẪU CÂU — mẫu là chính, từ điền là phụ."""
+    return nut((c.get("mc") or {}).get("ma"), (c.get("tu") or {}).get("ma"))
+
+
 def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, list, list]:
     """Trả về (warmup, standard, challenge, câu)."""
     tu = [t for t in u["tu"] if t.get("nghia")]
@@ -578,6 +612,7 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
         du_hinh = all(hinh_nut.get(x) or ve_nut.get(x) for x in chon_ds)
         warmup.append({
             "id": f"C{i}",
+            **nut_tu(t),
             "bac": 1,
             "text": "Nghe rồi bấm vào hình đúng." if du_hinh
                     else "Nghe rồi bấm vào từ đúng.",
@@ -601,6 +636,7 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
     for i, t in enumerate(tu, 1):
         warmup.append({
             "id": f"C{n + i}",
+            **nut_tu(t),
             "bac": 2,
             "text": f"“{t['tu']}” nghĩa là gì?",
             "am": am_id("tu", t["tu"]),
@@ -614,6 +650,7 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
     for i, t in enumerate(tu, 1):
         warmup.append({
             "id": f"C{n + i}",
+            **nut_tu(t),
             "bac": 2,
             "text": f"“{t['nghia']}” tiếng Anh là gì?",
             # Clip NGHĨA (tiếng Việt) — bé nghe nghĩa rồi chọn từ. KHÔNG dùng clip
@@ -633,6 +670,7 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
             continue
         standard.append({
             "id": f"S{i}",
+            **nut_cau(c),
             "bac": 3,
             "text": "Xếp các thẻ thành câu đúng.",
             "am": am_id("cau", c["cau"]),
@@ -685,6 +723,7 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
         n += 1
         standard.append({
             "id": f"S{n}",
+            **nut_cau(c),
             "bac": 3,
             # ⚠ MỘT dấu cách sau dấu hai chấm, không phải hai. Bản cũ để hai, và
             # 126 câu của lớp 5 (cùng chừng ấy ở bốn quyển trước) mang một khoảng
@@ -714,6 +753,7 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
         if t["go_duoc"] and len(t["tu"]) <= GO_TOI_DA:
             challenge.append({
                 "id": f"T{i}",
+                **nut_tu(t),
                 "bac": 4,
                 "text": f"Nghe rồi gõ lại từ này. ({t['nghia']})",
                 "am": am_id("tu", t["tu"]),
@@ -726,6 +766,7 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
             # Từ dài thì GHÉP THẺ CHỮ CÁI thay cho gõ — nấc 1 của bậc 4.
             challenge.append({
                 "id": f"T{i}",
+                **nut_tu(t),
                 "bac": 4,
                 "text": f"Ghép các chữ cái thành từ. ({t['nghia']})",
                 "am": am_id("tu", t["tu"]),
@@ -755,6 +796,7 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
         dem += 1
         challenge.append({
             "id": f"T{n + dem}",
+            **nut_cau(c),
             "bac": 4,
             "text": "Nghe rồi gõ lại cả câu.",
             "am": am_id("cau", go),
@@ -943,14 +985,14 @@ def sat_hach(u: dict, cau: list, hinh_cua: dict) -> list:
     for i, t in enumerate(co_hinh):
         h = anh(t)
         dung.append(({"am": am_id("tu", t["tu"]), "anh": h.get("hinh"),
-                      "anhVe": h.get("ve"), "text": ""},
+                      "anhVe": h.get("ve"), "text": "", **nut_tu(t)},
                      True, f"ĐÚNG — {t['tu']} là {t['nghia']}."))
         khac = co_hinh[(i + 1) % len(co_hinh)]
         if khac["tu"] == t["tu"]:
             continue            # unit chỉ có MỘT từ có hình → không ghép lệch được
         hk = anh(khac)
         sai.append(({"am": am_id("tu", t["tu"]), "anh": hk.get("hinh"),
-                     "anhVe": hk.get("ve"), "text": ""},
+                     "anhVe": hk.get("ve"), "text": "", **nut_tu(t)},
                     False, f"SAI — đó là {khac['tu']}. {t['tu']} là {t['nghia']}."))
 
     # Câu cuối dùng CẢ CÂU, nếu bài có: kiểm bé nghe được nguyên câu chứ không chỉ từ.
@@ -959,7 +1001,7 @@ def sat_hach(u: dict, cau: list, hinh_cua: dict) -> list:
         h = anh(c["tu"])
         if h.get("hinh") or h.get("ve"):
             dung.append(({"am": am_id("cau", c["cau"]), "anh": h.get("hinh"),
-                          "anhVe": h.get("ve"), "text": ""},
+                          "anhVe": h.get("ve"), "text": "", **nut_cau(c)},
                          True, f"ĐÚNG — {c['cau']}"))
 
     # ⚠ KHÔNG CÓ CÂU SAI THÌ CHỈ ĐƯỢC MỘT CÂU ĐÚNG/SAI.
@@ -997,6 +1039,7 @@ def sat_hach(u: dict, cau: list, hinh_cua: dict) -> list:
             break
         ra.append({
             "id": f"Q{len(ra) + 1}",
+            **nut_tu(t),
             "text": f"“{t['tu']}” nghĩa là gì?",
             "am": am_id("tu", t["tu"]),
             "format": "chon",
