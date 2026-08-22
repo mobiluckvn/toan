@@ -169,32 +169,34 @@ def tach_chu(s: str) -> list[str]:
 
 
 # Nghĩa cho những chữ ĐỨNG MỘT MÌNH thật, không phải mảnh vỡ của cụm nào.
-# Cụm thì đã giữ nguyên ở bước ①b — xem chú thích ở đó vì sao không chú nghĩa
-# cho mảnh vỡ.
+#
+# ⚠ BẢNG NÀY PHẢI NHỎ, VÀ NHỎ LÀ DẤU HIỆU TỐT. Bản đầu tôi khai 59 mục — chú
+# nghĩa cho từng mảnh vỡ của cụm. Khi bước ①b biết giữ nguyên cụm thì 35 mục
+# thành thừa: `collected` · `watering` · `break` · `tennis` … không còn đứng một
+# mình ở đâu nữa. Đã xoá hết 35 mục ấy.
+#
+# Xoá chứ không giữ "phòng khi cần": mục không ai dùng thì không ai kiểm, mà một
+# nghĩa SAI nằm đây thì không cổng nào bắt được — nó chỉ chờ một quyển sau vô
+# tình sinh ra đúng chữ ấy. Thiếu thì cổng `tienganh_bangtu_viet` đỏ ngay, và
+# đỏ ồn ào tốt hơn sai lặng lẽ.
+#
+# Đây cũng là chỗ DUY NHẤT nghĩa do tôi viết chứ không phải sách chú — nên là
+# chỗ bác đọc lại. Xem trang "Nghĩa tôi viết tay" trong `docs/soat_vontu.xlsx`.
 NGHIA_LE = {
+    # đại từ — `I` và `my` sách đã chú, bốn chữ này thì sót
     "he": "bạn ấy (nam)", "she": "bạn ấy (nữ)", "we": "chúng mình",
     "you": "bạn, con",
+    # chữ sách dùng trong MẪU CÂU nhưng không khai thành mục từ vựng
     "animal": "con vật", "subject": "môn học", "wear": "mặc",
     "want": "muốn", "think": "nghĩ", "should": "nên", "from": "từ",
-    "go": "đi", "goes": "đi", "going": "đang đi", "went": "đã đi",
-    "walk": "đi bộ", "walked": "đã đi bộ", "ran": "đã chạy",
-    "took": "đã chụp, đã lấy", "collected": "đã thu lượm",
-    "planted": "đã trồng", "works": "làm việc", "doing": "đang làm",
-    "playing": "đang chơi", "watching": "đang xem",
-    "watering": "tưới (cây, hoa)", "living": "sống",
-    "likes": "thích", "plays": "chơi",
-    "years": "năm", "day": "ngày", "time": "thời gian, giờ",
-    "morning": "buổi sáng", "evening": "buổi tối",
-    "photo": "tấm ảnh", "picture": "bức tranh", "park": "công viên",
-    "home": "nhà", "centre": "trung tâm", "dentist": "nha sĩ",
-    "campfire": "lửa trại", "sign": "biển báo", "study": "học",
-    "buy": "mua", "drink": "uống", "clean": "lau, dọn sạch",
-    "decorate": "trang trí", "fresh": "tươi", "fast": "nhanh",
-    "flower": "bông hoa", "yoga": "yoga", "tv": "ti vi",
-    "around": "quanh, xung quanh", "every": "mỗi", "up": "lên",
-    "at": "ở, tại", "by": "bằng, bởi", "for": "cho, để",
-    # Tên riêng tiếng Việt viết không dấu trong bài đọc — chú nghĩa ở đây chính là
-    # cho bé thấy MẶT CHỮ CÓ DẤU của cái tên em ấy vẫn đọc hằng ngày.
+    "at": "ở, tại", "by": "bằng, bởi",
+    # dạng chia đứng lẻ, gốc lại không có mục riêng
+    "goes": "đi", "likes": "thích", "works": "làm việc", "years": "năm",
+    # danh từ lẻ mà kho chỉ dạy trong cụm ("water park" · "take photos" …)
+    "flower": "bông hoa", "home": "nhà", "park": "công viên",
+    "photo": "tấm ảnh", "picture": "bức tranh", "tv": "ti vi",
+    # tên riêng tiếng Việt viết không dấu trong bài đọc — chú ở đây chính là cho
+    # bé thấy MẶT CHỮ CÓ DẤU của cái tên em ấy vẫn đọc hằng ngày
     "tran hung dao": "Trần Hưng Đạo (tên phố)",
 }
 
@@ -243,6 +245,27 @@ def khuon_cum(t: str) -> re.Pattern:
     dau_alt = "|".join(re.escape(x) for x in dang_chia(dau))
     duoi = (r"\s+" + r"\s+".join(re.escape(x) for x in con)) if con else ""
     return re.compile(rf"(?<![A-Za-z])({dau_alt}){duoi}(?![A-Za-z])", re.I)
+
+
+def cum_tu_vung(nghia: dict) -> list[tuple[str, str]]:
+    """Mọi CỤM tra được, dài trước ngắn sau — dùng chung với `tools/soat_vontu.py`.
+
+    Tách ra thành hàm riêng vì bộ soi cũng cần đúng danh sách này. Để mỗi bên tự
+    dựng lấy thì sớm muộn hai bên lệch nhau, và bộ soi báo "không truy được nguồn"
+    cho những ô hoàn toàn lành — đã xảy ra đúng một lần, 30 ô.
+    """
+    ra = []
+    for t, g in nghia.items():
+        if not g or not re.search(r"[ \-]", t):
+            continue
+        # "get (to)" — phần trong NGOẶC là tuỳ chọn: sách gộp "get to school" và
+        # "get there" vào một mục. Sinh cả hai khuôn, để cái nào khớp thì khớp.
+        bien = ({re.sub(r"\s*\([^)]*\)", "", t).strip(),
+                 t.replace("(", "").replace(")", "").strip()}
+                if "(" in t else {t})
+        ra += [(b, g) for b in bien if b]
+    ra.sort(key=lambda x: len(x[0]), reverse=True)
+    return ra
 
 
 def nghia_goc(t: str, nghia: dict) -> str:
@@ -316,16 +339,7 @@ def tu_trong_tranh(k: dict, lop: int) -> list[dict]:
     # không phải chọn nghĩa nào cả, và bé bấm một cái được đúng thứ sách dạy.
     #
     # Dài trước ngắn sau, để "table tennis" ăn trước "table".
-    cum = []
-    for t, g in nghia.items():
-        if not g or not re.search(r"[ \-]", t):
-            continue
-        # "get (to)" — phần trong NGOẶC là tuỳ chọn: sách gộp "get to school" và
-        # "get there" vào một mục. Sinh cả hai khuôn, để cái nào khớp thì khớp.
-        bien = {re.sub(r"\s*\([^)]*\)", "", t).strip(), t.replace("(", "").replace(")", "").strip()} \
-            if "(" in t else {t}
-        cum += [(b, g) for b in bien if b]
-    cum.sort(key=lambda x: len(x[0]), reverse=True)
+    cum = cum_tu_vung(nghia)
 
     for c in cau_ds:
         con = c
