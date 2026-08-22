@@ -17,6 +17,7 @@ import {
 } from '../lib/dandat.js';
 import { DAT as DAT_NOI } from '../lib/chamnoi.js';
 import { maPhienMoi } from '../lib/suKien.js';
+import { xepTheoZPD } from '../lib/zpd.js';
 
 const maCauAm = (c) => maCua(c, 'en');
 
@@ -47,7 +48,7 @@ const maCauAm = (c) => maCua(c, 'en');
  */
 export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
                                  onMoc, tenBe = 'Bo', soThich = null,
-                                 onSoThich = null, onLuot = null }) {
+                                 onSoThich = null, onLuot = null, mucThao = null }) {
   /* MỘT LẦN MỞ BÀI LÀ MỘT PHIÊN. Mã phiên đi vào mã từng bản ghi nhật ký, nên nó
      phải ĐỔI khi đổi bài và GIỮ NGUYÊN trong suốt bài — `useMemo` theo `id` cho
      đúng cả hai. Component này KHÔNG dựng lại khi đổi bài (chỗ gọi không đặt
@@ -139,7 +140,8 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
       )}
       {k === 'luyen' && (
         <LuyenTap key={id} bai={bai} onTiep={xong}
-                  moc={mocDau?.luyen} onMoc={mocLuyen} onLuot={ghiLuot} />
+                  moc={mocDau?.luyen} onMoc={mocLuyen} onLuot={ghiLuot}
+                  mucThao={mucThao} />
       )}
       {k === 'noi' && (
         <HoiThoai
@@ -635,7 +637,7 @@ const MUC = [
  * lượt nữa. Chỉ MỘT lượt: hai lượt rồi vẫn tắc thì cái bé cần là người lớn ngồi
  * cạnh, không phải vòng lặp thứ ba.
  */
-function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null }) {
+function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null }) {
   /* ── VÀO LẠI ĐÚNG CHỖ BỎ DỞ ──
      `moc` là thứ đã ghi lần trước. KHÔNG tin nó mù quáng: sổ có thể là của bản bài
      cũ, mà chỉ số mức hay chỉ số câu nhảy ra ngoài mảng là màn trắng ngay. Nên kẹp
@@ -684,7 +686,16 @@ function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null }) {
     onMoc?.({ m, xaM, i, dem, no, tt: ttCau, moiLamLai });
   }, [m, xaM, i, dem, no, ttCau, moiLamLai, lamLai, onMoc]);
 
-  const goc = bai.practice.pools[MUC[m].khoa] || [];
+  /* ── XẾP CÂU THEO ZPD ──
+     Chỗ bé đang chông chênh lên trước, chỗ đã thạo xuống cuối. KHÔNG bỏ câu nào
+     — chỉ đổi thứ tự, vì thanh đếm câu và phép chấm đều dựa trên số câu.
+     Xếp trong MỘT mức thôi: ba mức là thang độ khó do người soạn dựng.
+     `useMemo` để thứ tự KHÔNG đổi giữa chừng khi màn vẽ lại — đổi giữa buổi thì
+     `i` đang trỏ câu này bỗng trỏ câu khác, bé mất câu đang làm dở. */
+  const goc = React.useMemo(
+    () => xepTheoZPD(bai.practice.pools[MUC[m].khoa] || [], mucThao),
+    [bai, m, mucThao],
+  );
   const pool = lamLai || goc;
   const cau = pool[i];
 

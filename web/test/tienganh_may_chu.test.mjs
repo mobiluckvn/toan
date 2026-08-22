@@ -103,8 +103,42 @@ t(`không có catch rỗng nuốt lỗi (${nuotIm} chỗ)`, nuotIm === 0);
    GIẢI THÍCH vì sao không được dùng `progress/{uid}/micros` của Toán — cổng đỏ vì
    chính lời dặn đừng làm thế. */
 const maSach = ma.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
-const lanSan = [...maSach.matchAll(/`(progress|hocBa|attempts|mastery)\//g)].map((m) => m[1]);
+
+/* ⚠ ĐỌC KHÁC GHI, và bản đầu của cổng này không phân biệt được.
+   Nó cấm mọi lần nhắc tới `mastery/`, nên `docMucThao()` — chỉ ĐỌC mức thạo để
+   xếp câu theo ZPD — bị báo là lấn sân. Trong khi luật Firestore chốt
+   `allow write: if false` cho `mastery`: ghi vào đó là điều KHÔNG THỂ, kể cả cố
+   tình. Cấm đọc thì chẳng bảo vệ được gì, chỉ chặn đúng việc cần làm.
+
+   Nên nay: liệt kê từng chỗ dùng CÓ CHỦ Ý kèm lý do, và bắt mọi chỗ dùng KHÁC.
+   Danh sách phải HẸP và phải ghi lý do — nới nó bằng một luật chung (kiểu "cho
+   qua mọi lần đọc") là mất luôn phép canh, vì đọc sai collection cũng hỏng. */
+const CHO_PHEP = {
+  /* Đọc mức thạo do hàm nền BKT ghi. Luật cấm mọi lệnh ghi, nên chỉ có thể đọc. */
+  mastery: /getDocs\(collection\(db, `mastery\//,
+};
+/* ⚠ VÀ PHẢI KHÔNG CÓ LỆNH GHI NÀO nhắm vào collection được cho phép ĐỌC.
+   Bản đầu chỉ hỏi "có một lệnh đọc không" — thêm một `setDoc` vào `mastery` bên
+   cạnh thì cổng vẫn xanh, vì lệnh đọc kia vẫn còn đó. Đảo chiều thử mới lộ ra. */
+const VIET = /(setDoc|updateDoc|addDoc|deleteDoc|\.set)\s*\(\s*doc\s*\(\s*db\s*,\s*`?(progress|hocBa|mastery)\//g;
+const ghiLen = [...maSach.matchAll(VIET)].map((m) => m[2]);
+const lanSan = [
+  ...[...maSach.matchAll(/`(progress|hocBa|attempts|mastery)\//g)]
+    .map((m) => m[1])
+    .filter((k) => !(CHO_PHEP[k] && CHO_PHEP[k].test(maSach))),
+  ...ghiLen.map((k) => `${k} (có lệnh GHI)`),
+];
 t(`không ghi vào collection của Toán (${lanSan.join(', ') || 'không'})`, lanSan.length === 0);
+in5(lanSan.map((k) => `${k}/: dùng collection của Toán mà không có lý do đã khai`));
+
+/* ⚠ CHỖ MÙ CỦA CHÍNH PHÉP CANH TRÊN: nó chỉ thấy đường dẫn viết THẲNG bằng dấu
+   nháy ngược. Tiếng Anh ghi `attempts` qua hằng `KHO_SU_KIEN` nên lọt lưới — và
+   lọt là ĐÚNG (quyết định ở Đợt 1: `onAttempt` trung tính với môn, bảng cô giáo
+   đã đọc `attempts` không lọc môn). Nhưng phải nói ra, không thì lần sau có
+   người tưởng cổng đã soi hết. */
+t('ghi attempts qua hằng số, có chủ ý (Đợt 1)',
+  /KHO_SU_KIEN/.test(maSach) === /attempts/.test(readFileSync(
+    new URL('../src/mon/tienganh/lib/suKien.js', import.meta.url), 'utf8')));
 
 /* ══ 6 · BẢNG XẾP HẠNG CHỈ ĐƯỢC ĐỌC ══
    Tài liệu DUY NHẤT một bé đọc được về bé khác. Máy con ghi được vào đó là tự đặt

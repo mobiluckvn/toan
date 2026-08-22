@@ -137,6 +137,7 @@ service cloud.firestore {
            chuong   kỳ ôn tập chương
            viet     bài viết ngắn, ĐIỂM DO AI CHẤM (bác chốt 18-08-2026)
            soThich  từ bé thích nhất trong quyển — cô giáo máy lấy làm ngữ cảnh
+           hoSo     bé làm tốt dạng câu nào (chiều Sư phạm, mục 2.1.2-P)
 
          ⚠ `viet` chứa CHÍNH BÀI BÉ VIẾT và lời chấm — bố mẹ phải đọc được (bác
          chốt), nên vẫn nằm trong học bạ mà `canRead` cho cả giáo viên xem, đúng như
@@ -154,7 +155,7 @@ service cloud.firestore {
          thì Firestore từ chối TRONG IM LẶNG. Cổng `hocba_khop_luat.test.mjs` soi
          ba chỗ đầu; bước deploy thì không cổng nào canh được. */
       allow write: if isMine(userId)
-                   && request.resource.data.loai in ['chuong', 'viet', 'soThich'];
+                   && request.resource.data.loai in ['chuong', 'viet', 'soThich', 'hoSo'];
     }
 
     /* ── PHÒNG LUYỆN NÓI: buổi nói chuyện của bé với cô giáo máy ──

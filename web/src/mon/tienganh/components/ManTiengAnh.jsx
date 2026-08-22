@@ -10,10 +10,14 @@ import {
 } from '../lib/noiDung.js';
 import {
   ghiBai, ghiChang, ghiMoc, ghiChuong, khoaChuong, ghiDocHieu, khoaDocHieu,
-  ghiBaiViet, khoaBaiViet, ghiSoThich, khoaSoThich,
+  ghiBaiViet, khoaBaiViet, ghiSoThich, khoaSoThich, ghiDangCau,
 } from '../lib/progress.js';
-import { luuBai, luuMucHocBa, luuSuKien, docTheOn, luuTheOn } from '../lib/duLieu.js';
+import {
+  luuBai, luuMucHocBa, luuSuKien, docTheOn, luuTheOn, docMucThao,
+} from '../lib/duLieu.js';
 import { theDenHan, demDenHan, daySauKhiOn } from '../lib/onlai.js';
+import { manhNhat, yeuNhat } from '../lib/hoso.js';
+import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
 import {
   trangThaiBai, baiNenHoc, moBai, moKyOnTap, conThieuChoOnTap,
 } from '../lib/dandat.js';
@@ -41,6 +45,9 @@ export default function ManTiengAnh({
   /* Thẻ ôn tới hạn. Nạp một lần khi mở quyển; hỏng thì mảng rỗng và trang chính
      đơn giản là không mọc thẻ mời — bé vẫn học bình thường. */
   const [theOn, datTheOn] = useState([]);
+  /* Mức thạo từng nút, do hàm nền BKT ghi. Dùng để xếp câu theo ZPD — không có
+     thì bộ chọn giữ nguyên thứ tự cũ, bé học y như trước. */
+  const [mucThao, datMucThao] = useState({});
 
   /* Nạp CHỈ MỤC 16 bài để vẽ trang chính. Mỗi tệp bài ~25 KB, 16 tệp là 400 KB —
      chấp nhận được cho một quyển, và đổi lại trang chính hiện đúng tên chương,
@@ -69,6 +76,7 @@ export default function ManTiengAnh({
   useEffect(() => {
     let song = true;
     docTheOn(learnerId).then((ds) => { if (song) datTheOn(ds); });
+    docMucThao(learnerId).then((m) => { if (song) datMucThao(m); });
     return () => { song = false; };
   }, [learnerId]);
 
@@ -79,12 +87,18 @@ export default function ManTiengAnh({
          thường, sổ tại máy giữ đủ, và lần đăng nhập sau `napTuMay` + `gopTienDo`
          hoà lại. Ghi hỏng thì `LOI_GHI` trong duLieu.js đếm chứ không nuốt im. */
       luuBai(learnerId, id, sau2.micros[id]);
+      /* Đẩy hồ sơ bé lên CÙNG LÚC với kết quả bài — không đẩy sau mỗi câu: bảng
+         định dạng đổi từng lượt nhưng chẳng ai đọc nó giữa buổi, mà ghi mỗi câu
+         một lần là thêm một nhịp mạng cho việc không ai cần. */
+      luuMucHocBa(learnerId, 'hoSo', `${ct.ma}:HS`, {
+        giaTri: { dinhDang: sau2.dinhDang || {} },
+      });
       return sau2;
     });
     /* Đạt thì sang bài sau; chưa đạt thì về danh sách để bé chọn lại — KHÔNG đẩy
        bé đi tiếp khi chưa vững, vì bài sau dựng trên bài này. */
     setView(kq.pass && sau ? { page: 'bai', baiId: sau } : { page: 'home' });
-  }, [datTienDo, setView, learnerId]);
+  }, [datTienDo, setView, learnerId, ct.ma]);
 
   /* Bé đang học tới chặng nào thì nhớ, để lần sau vào lại đúng chỗ. Chỉ ghi tại
      máy, không đẩy máy chủ — xem `ghiChang` trong progress.js. */
@@ -206,6 +220,13 @@ export default function ManTiengAnh({
       mode: e.cau.format || null,
       khiNao: Date.now(),
     });
+    /* Chiều Sư phạm: cộng lượt này vào bảng "bé làm tốt dạng nào". Chỉ đếm lượt
+       ĐẦU của mỗi câu (`lan === 1`) — đếm cả lượt thử lại thì dạng nào cho phép
+       thử nhiều lần tự nhiên có tỉ lệ đúng thấp hơn, mà đó là tính chất của dạng
+       câu chứ không phải của bé. */
+    if (e.lan === 1 && e.cau?.format) {
+      datTienDo((p) => ghiDangCau(p, e.cau.format, e.ok));
+    }
     /* Không `await`: bé đang học, không đợi mạng. Hỏng thì bản ghi nằm lại hàng
        đợi tại máy và `LOI_GHI` đếm — không nuốt im. */
     luuSuKien({
@@ -215,7 +236,7 @@ export default function ManTiengAnh({
       quyen: ct.ma,
       viec: nhatKy.current.ds,
     });
-  }, [learnerId, ct.ma]);
+  }, [learnerId, ct.ma, datTienDo]);
 
   /**
    * XONG MỘT THẺ ÔN — đẩy hộp Leitner rồi hẹn ngày mới.
@@ -288,6 +309,7 @@ export default function ManTiengAnh({
         tenBe={(hoSo?.displayName || '').trim().split(/\s+/).pop() || 'Bo'}
         soThich={(tienDo.soThich || {})[khoaSoThich(ct.ma)] || null}
         onSoThich={xongSoThich}
+        mucThao={mucThao}
       />
     );
   }
@@ -308,6 +330,58 @@ export default function ManTiengAnh({
       onMoOnLai={() => setView({ page: 'onlai' })}
       onVeKeSach={veKeSach}
     />
+  );
+}
+
+/**
+ * HỒ SƠ BÉ — hai câu cho bố mẹ, giấu trong "Góc bố mẹ".
+ *
+ * Chiều Sư phạm (mục 2.1.2-P) và CEFR mức bé (mục 2.3.1). Đây là chỗ DUY NHẤT
+ * trên màn hình nói ra rằng hệ thống có biết gì về cách bé học.
+ *
+ * ── ⚠ IM LẶNG KHI CHƯA ĐỦ MẪU, ĐỪNG ĐOÁN ──
+ * `manhNhat`/`yeuNhat` trả `null` cho tới khi một định dạng đủ 8 lượt. Không có
+ * gì để nói thì không hiện dòng nào — thà trống còn hơn dán cho bé một cái nhãn
+ * dựng trên hai câu, vì nhãn ấy đi vào cách bố mẹ nhìn con.
+ *
+ * Và hiện CẢ CỠ MẪU. Bố mẹ đọc "làm tốt nhất dạng chọn đáp án" mà không biết nó
+ * dựng trên 9 câu hay 900 câu thì tin nó như nhau, mà hai con số ấy khác hẳn.
+ */
+function HoSoBe({ tienDo, ct }) {
+  const hs = tienDo?.dinhDang || {};
+  const manh = manhNhat(hs);
+  const yeu = yeuNhat(hs);
+  const cefr = ct?.cefr;
+  if (!manh && !cefr) return null;
+  const pc = (x) => `${Math.round(x.ti * 100)}%`;
+  return (
+    <GocBoMe ten="Góc bố mẹ · hệ thống biết gì về cách con học">
+      <div className="flex flex-col gap-2 text-sm">
+        {cefr && (
+          <MucBoMe nhan="Trình độ quyển này">
+            <p className="text-ink">{cefr} — khung tham chiếu châu Âu (CEFR)</p>
+          </MucBoMe>
+        )}
+        {manh && (
+          <MucBoMe nhan="Dạng câu con làm tốt nhất">
+            <p className="text-ink">
+              {manh.ten} — đúng {pc(manh)} <span className="text-mute">({manh.tong} câu)</span>
+            </p>
+          </MucBoMe>
+        )}
+        {yeu && (
+          <MucBoMe nhan="Dạng con còn chật vật">
+            <p className="text-ink">
+              {yeu.ten} — đúng {pc(yeu)} <span className="text-mute">({yeu.tong} câu)</span>
+            </p>
+          </MucBoMe>
+        )}
+        <p className="text-xs leading-relaxed text-mute">
+          Chỉ tính lượt trả lời ĐẦU của mỗi câu, và chỉ nói về dạng câu con đã làm
+          đủ nhiều. Dạng nào con mới gặp vài lần thì chưa đủ để kết luận gì.
+        </p>
+      </div>
+    </GocBoMe>
   );
 }
 
@@ -368,6 +442,8 @@ function NhaQuyen({
              style={{ width: `${(xong / bais.length) * 100}%` }} />
         </div>
       </div>
+
+      <HoSoBe tienDo={tienDo} ct={ct} />
 
       {/* ── THẺ MỜI ÔN LẠI ──
           Đứng TRÊN thẻ "bài tiếp theo", và đó là chủ ý: ôn cái sắp quên có giá

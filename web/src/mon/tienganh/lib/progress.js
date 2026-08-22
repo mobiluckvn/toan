@@ -10,6 +10,7 @@
  * "chỗ". Không tách thì em vừa đăng nhập đã thấy bài của anh.
  */
 import { choDangDung, CHO_DAU } from '../../../chung/lib/nguoiDung.js';
+import { ghiDinhDang } from './hoso.js';
 
 const KEY_GOC = 'ttd5.tienganh.v1';
 const khoa = () => {
@@ -18,7 +19,8 @@ const khoa = () => {
 };
 
 export const soRong = () => ({
-  micros: {}, chapters: {}, docHieu: {}, baiViet: {}, soThich: {}, updatedAt: null,
+  micros: {}, chapters: {}, docHieu: {}, baiViet: {}, soThich: {},
+  dinhDang: {}, updatedAt: null,
 });
 
 export function napTienDo(kho = globalThis.localStorage) {
@@ -267,6 +269,16 @@ export function ghiSoThich(p, ma, tu, unit = null) {
   };
 }
 
+/**
+ * BÉ LÀM TỐT DẠNG CÂU NÀO — chiều Sư phạm của mục 2.1.2.
+ *
+ * Cộng dồn theo `format` của câu. Luật cộng ở `lib/hoso.js` để cổng chạy được
+ * bằng node; ở đây chỉ là chỗ cất.
+ */
+export function ghiDangCau(p, format, dung) {
+  return { ...p, dinhDang: ghiDinhDang(p.dinhDang, format, dung) };
+}
+
 /** Gộp sổ tại máy với sổ trên máy chủ — bản nào MỚI HƠN thì thắng, từng bài một. */
 export function gopTienDo(a, b) {
   if (!b) return a;
@@ -295,5 +307,13 @@ export function gopTienDo(a, b) {
     const cu = soThich[k];
     if (!cu || String(v.at || '') > String(cu.at || '')) soThich[k] = v;
   }
-  return { ...a, micros, chapters, baiViet, soThich };
+  /* ⚠ ĐỊNH DẠNG thì CỘNG hai bên, KHÔNG lấy bên mới hơn như mọi thứ khác. Đây là
+     phép đếm tích luỹ: bé làm 40 câu trên máy bảng và 30 câu trên laptop thì hồ sơ
+     phải là 70, chứ lấy "bản mới hơn" là vứt đi 40 câu. */
+  const dinhDang = { ...(a.dinhDang || {}) };
+  for (const [k, v] of Object.entries(b.dinhDang || {})) {
+    const cu = dinhDang[k] || { dung: 0, tong: 0 };
+    dinhDang[k] = { dung: cu.dung + (v.dung || 0), tong: cu.tong + (v.tong || 0) };
+  }
+  return { ...a, micros, chapters, baiViet, soThich, dinhDang };
 }

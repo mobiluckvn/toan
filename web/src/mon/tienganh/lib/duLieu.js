@@ -108,6 +108,29 @@ export async function luuSuKien({ uid, maPhien, microId, quyen, viec }) {
   catch (e) { nuot(e); return { daGui: 0, conLai: ds.length, loi: true }; }
 }
 
+/* ─────────── MỨC THẠO TỪNG NÚT (BKT) ─────────── */
+
+/**
+ * Đọc mức thạo của bé, khoá theo MÃ NÚT đồ thị.
+ *
+ * `mastery/{uid}/units` do HÀM NỀN ghi (luật: `allow write: if false`), máy con
+ * chỉ đọc. Hỏng thì trả `{}` — bộ chọn câu sẽ giữ nguyên thứ tự cũ và bé học y
+ * như trước, không có gì lạ xảy ra.
+ *
+ * ⚠ Thư mục này dùng CHUNG với Toán, và không lọc theo môn ở đây: mã nút Tiếng
+ * Anh (`v_g5_*` · `sp_g5_*`) không bao giờ trùng mã micro của Toán, nên bên dùng
+ * cứ tra theo mã nút của chính câu mình đang xếp là đủ.
+ */
+export async function docMucThao(uid) {
+  if (!dungDuoc(uid)) return {};
+  try {
+    const snap = await getDocs(collection(db, `mastery/${uid}/units`));
+    const ra = {};
+    snap.forEach((d) => { ra[d.id] = d.data(); });
+    return ra;
+  } catch (e) { nuot(e); return {}; }
+}
+
 /* ─────────── THẺ ÔN NGẮT QUÃNG ─────────── */
 
 /**
@@ -205,6 +228,7 @@ async function docTienDo(uid) {
 async function docHocBa(uid) {
   const snap = await getDocs(collection(db, KHO.hocBa(uid)));
   const chapters = {}, baiViet = {}, soThich = {};
+  let dinhDang = {};
   snap.forEach((d) => {
     const v = d.data();
     /* `|| {}` chứ KHÔNG `|| v`. Bản cũ đỡ lấy cả tài liệu khi thiếu `giaTri`, và
@@ -221,8 +245,11 @@ async function docHocBa(uid) {
        một luật với hai loại trên: luật CHO ghi loại nào thì bên đọc phải nhặt đúng
        chừng ấy, không thừa không thiếu. */
     else if (v.loai === 'soThich' && v.khoa) soThich[v.khoa] = v.giaTri || {};
+    /* `hoSo` chỉ có MỘT mục cho cả môn — không khoá theo quyển: bé gõ chữ kém thì
+       kém ở mọi quyển, chia nhỏ ra chỉ làm mẫu bé đi và chẳng dạng nào đủ mẫu. */
+    else if (v.loai === 'hoSo') dinhDang = (v.giaTri || {}).dinhDang || {};
   });
-  return { chapters, baiViet, soThich };
+  return { chapters, baiViet, soThich, dinhDang };
 }
 
 /**
@@ -230,11 +257,11 @@ async function docHocBa(uid) {
  * được bằng sổ tại máy, đó mới là nguồn chính.
  */
 export async function tienDoTuMay(uid) {
-  if (!dungDuoc(uid)) return { micros: {}, chapters: {}, baiViet: {}, soThich: {} };
+  if (!dungDuoc(uid)) return { micros: {}, chapters: {}, baiViet: {}, soThich: {}, dinhDang: {} };
   const [micros, hb] = await Promise.all([
     docTienDo(uid).catch((e) => { nuot(e); return {}; }),
     docHocBa(uid).catch((e) => {
-      nuot(e); return { chapters: {}, baiViet: {}, soThich: {} };
+      nuot(e); return { chapters: {}, baiViet: {}, soThich: {}, dinhDang: {} };
     }),
   ]);
   return {
@@ -242,6 +269,7 @@ export async function tienDoTuMay(uid) {
     chapters: hb.chapters || {},
     baiViet: hb.baiViet || {},
     soThich: hb.soThich || {},
+    dinhDang: hb.dinhDang || {},
   };
 }
 
