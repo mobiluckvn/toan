@@ -17,6 +17,8 @@ import {
 } from '../lib/duLieu.js';
 import { theDenHan, demDenHan, daySauKhiOn } from '../lib/onlai.js';
 import { manhNhat, yeuNhat } from '../lib/hoso.js';
+import { napDoThi } from '../lib/doThi.js';
+import { maTranTrangThai } from '../lib/lantruyen.js';
 import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
 import {
   trangThaiBai, baiNenHoc, moBai, moKyOnTap, conThieuChoOnTap,
@@ -327,6 +329,7 @@ export default function ManTiengAnh({
       onMoOnTap={(id) => setView({ page: 'ontap', kyId: id })}
       onMoDocHieu={(id) => setView({ page: 'dochieu', docId: id })}
       onMoVietBai={(id) => setView({ page: 'vietbai', vietId: id })}
+      mucThao={mucThao}
       soTheOn={demDenHan(theOn, { quyen: ct.ma })}
       onMoOnLai={() => setView({ page: 'onlai' })}
       onVeKeSach={veKeSach}
@@ -386,12 +389,62 @@ function HoSoBe({ tienDo, ct }) {
   );
 }
 
+/**
+ * MA TRẬN TRẠNG THÁI — bé đang mắc ở đâu, và GỐC của chỗ mắc ấy là gì.
+ *
+ * Đợt 3 tính được `maTranTrangThai()` nhưng không màn nào bày ra — tính mà không
+ * ai xem thì cũng như chưa có, đúng cùng dạng với `reviewQueue` trước Đợt 2.
+ *
+ * ── ⚠ BÀY Ở ĐÂY CHỨ KHÔNG PHẢI Ở MÀN CÔ GIÁO, VÀ ĐÓ LÀ RÀNG BUỘC KIẾN TRÚC ──
+ * Màn cô giáo nằm ở `chung/`, mà `chung` KHÔNG được import `mon/` — cổng
+ * `ranh_gioi` chặn, và nó chặn vì hai môn dính nhau thì sửa môn này gãy môn kia.
+ * Phép tính ma trận thì nằm ở `mon/tienganh/lib/lantruyen.js`. Muốn đưa lên màn
+ * cô giáo thì phải nới giao ước ở `src/soMon.js` — việc riêng, không nhét vào đây.
+ *
+ * ── GIÁ TRỊ THẬT NẰM Ở CỘT "GỐC" ──
+ * "Con yếu mẫu câu unit 12" thì sổ nào cũng nói được. "Gốc là số đếm unit 2" mới
+ * là thứ đổi được cách dạy — và đó chính là chỗ lan truyền ngược của mục 2.3.3
+ * kiếm cơm.
+ */
+function MaTran({ mucThao }) {
+  const [dt, datDt] = useState(null);
+  useEffect(() => { let s = true; napDoThi().then((d) => s && datDt(d)); return () => { s = false; }; }, []);
+  const ds = React.useMemo(
+    () => (dt && mucThao ? maTranTrangThai(dt, mucThao, { toiDa: 5 }) : []),
+    [dt, mucThao],
+  );
+  if (!ds.length) return null;
+  return (
+    <GocBoMe ten="Góc bố mẹ · con đang mắc ở đâu">
+      <ul className="flex flex-col gap-2 text-sm">
+        {ds.map((x) => (
+          <li key={x.ma} className="rounded-xl2 bg-soft px-3 py-2">
+            <p className="font-semibold text-ink">
+              {x.ma} <span className="font-normal text-mute">— nắm {Math.round(x.p * 100)}%</span>
+            </p>
+            {x.goc && x.goc.ma !== x.ma && (
+              <p className="text-gold-dark">
+                Gốc đáng ngờ: <b>{x.goc.ma}</b>
+                {' '}<span className="text-mute">(cách {x.goc.buoc} bước, nắm {Math.round(x.goc.p * 100)}%)</span>
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+      <p className="mt-2 text-xs leading-relaxed text-mute">
+        Cột “gốc” là phần kiến thức mà phần trên DỰNG TRÊN. Con sai ở trên mà gốc
+        chưa vững thì luyện thêm phần trên không gỡ được — nên xem gốc trước.
+      </p>
+    </GocBoMe>
+  );
+}
+
 /* ─────────── trang chính của quyển ─────────── */
 
 function NhaQuyen({
   ct, bais, kyOn = [], docs = [], viets = [], tienDo,
   onMoBai, onMoOnTap, onMoDocHieu, onMoVietBai, onVeKeSach,
-  soTheOn = 0, onMoOnLai,
+  soTheOn = 0, onMoOnLai, mucThao = null,
 }) {
   if (!bais) {
     return <div className="p-6 text-mute">Đang mở quyển…</div>;
@@ -445,6 +498,7 @@ function NhaQuyen({
       </div>
 
       <HoSoBe tienDo={tienDo} ct={ct} />
+      <MaTran mucThao={mucThao} />
 
       {/* ── THẺ MỜI ÔN LẠI ──
           Đứng TRÊN thẻ "bài tiếp theo", và đó là chủ ý: ôn cái sắp quên có giá

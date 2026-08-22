@@ -157,7 +157,7 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
       )}
       {k === 'phong' && (
         <PhongNoi bai={bai} tienDo={tienDo} tenBe={tenBe}
-                  soThich={soThich} onSoThich={onSoThich} />
+                  soThich={soThich} onSoThich={onSoThich} mucThao={mucThao} />
       )}
     </Khung>
   );

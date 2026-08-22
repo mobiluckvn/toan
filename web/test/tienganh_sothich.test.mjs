@@ -84,10 +84,20 @@ test('PhongNoi SOI LẠI từ nhớ được có còn trong vốn không', () =>
   assert.match(khoi, /von\.loi\.tu/,
     'phép soi không đối chiếu với vốn từ — từ ngoài vốn sẽ chui thẳng vào lời dặn LLM');
 
-  assert.match(ma, /hoSo:\s*\{\s*thich:\s*thichDung\s*\}/,
+  /* ⚠ SOI TÍNH CHẤT, KHÔNG SOI CHÍNH TẢ. Bản đầu ghim đúng chuỗi
+     `hoSo: { thich: thichDung }`. Tới Đợt 4, `thich` được gói vào vector trạng
+     thái S cùng ba chiều kia — hình dạng đổi, tính chất KHÔNG đổi, mà cổng vẫn
+     đỏ. Cổng ghim chính tả thì mỗi lần sửa việc khác lại đỏ một lần, và cách
+     người ta dập nó nhanh nhất là nới toang ra.
+     Tính chất cần giữ: cái đi vào lời dặn phải là `thichDung` (đã qua phép soi
+     vốn từ), KHÔNG phải `soThich.tu` thô từ sổ. */
+  assert.match(ma, /thich:\s*thichDung/,
     'lời dặn LLM đang nhận `thich` thô, không qua phép soi');
-  assert.doesNotMatch(ma, /hoSo:\s*\{\s*thich:\s*soThich/,
+  assert.doesNotMatch(ma, /thich:\s*soThich/,
     'gửi thẳng từ trong sổ vào lời dặn là bỏ qua phép soi');
+  /* Và cái gói ấy phải thật sự tới `hoiCoGiao`, không nằm chết một chỗ. */
+  assert.match(ma, /hoiCoGiao\(\{[\s\S]{0,300}?hoSo:/,
+    'hồ sơ bé không được truyền vào lời gọi cô giáo máy');
 
   /* Nhớ được rồi thì ĐỪNG HỎI LẠI — không thì phần nhớ thành vô nghĩa. */
   assert.match(ma, /!laTranh\s*&&\s*!thichDung\s*&&\s*hoiThich/,

@@ -5,8 +5,7 @@
 
 Nguồn yêu cầu: `docs/Chuong2_Luan_van_Thac_sy_1_v3.docx`.
 Phạm vi soi:   MÔN TIẾNG ANH, lớp 1 → lớp 5.
-Cập nhật:      22-08-2026, sau khi chạy xong Đợt 0 → Đợt 3.
-               Còn Đợt 4 (điều hướng và đo).
+Cập nhật:      22-08-2026, sau khi chạy xong CẢ NĂM ĐỢT (0 → 4).
 
 ── ĐỌC CỘT "BẰNG CHỨNG" TRƯỚC KHI TIN CỘT "TRẠNG THÁI" ──
 Mỗi dòng đều dẫn tệp và con số đếm được. Không dòng nào chấm điểm bằng cảm nhận.
@@ -149,14 +148,16 @@ R("2.1.2", "Chiều ĐỘNG LỰC (M): lồng ngữ cảnh theo SỞ THÍCH cá 
   "đã đảo chiều thử 3 ca. CÒN LẠI: truyền sang màn Viết (`loiDanCham`).",
   "—", D0, "xong phần phòng nói"),
 
-R("2.1.2", "Siêu vector trạng thái S = [C, T, P, M] làm ràng buộc cho LLM", CH,
-  "Chỉ một mảnh của M (sở thích, một phiên) đi vào prompt.",
-  "Ba chiều C · T · P chưa tồn tại nên không có gì để đóng gói.",
+R("2.1.2", "Siêu vector trạng thái S = [C, T, P, M] làm ràng buộc cho LLM", DU,
+  "✅ XONG Đợt 4 — `vectorS()` trong `lib/chinhsach.js` gom bốn chiều, `dongHoSo()` "
+  "dịch thành câu cho mô hình đọc.", "Bốn chiều lấy từ bốn chỗ đã có, không đo thêm.",
   OK,
-  "Chỉ là việc GOM sau khi có đủ bốn chiều: thêm hàm `trangThaiBe(uid, maNut)` trả "
-  "`{P_L, ngayQuen, dangManh, thich}`, rồi nhét vào `loiDan()` cạnh chỗ `dongHoSo()` "
-  "đang đứng. Cấu trúc prompt không phải dựng lại.",
-  "cả 4 chiều trên", D4, "≈1 ngày"),
+  "⚠ TRẢ VỀ NHÃN, KHÔNG TRẢ VỀ SỐ. Số thô thì mô hình không biết làm gì, và tệ hơn: "
+  "nó có thể nhại lại nguyên văn TRƯỚC MẶT BÉ. Mọi câu ở đây phải là câu KHÔNG SAO "
+  "nếu lỡ bị đọc to lên — 'con được 42%' thì không phải câu như thế. Cổng soi đúng "
+  "điều đó. ⚠ Thiếu số liệu thì các trường về null và lời dặn bỏ qua — bé mới học "
+  "buổi đầu không đáng bị cô giáo máy đoán già.",
+  "cả 4 chiều trên", D4, "xong"),
 
 # ═══════════════════════ 2.2.1 Đồ thị tri thức ═══════════════════════════
 R("2.2.1", "Biểu diễn chương trình lớp 1–5 thành đồ thị G=(V,E)", DU,
@@ -457,18 +458,34 @@ R("2.3.2", "Cơ chế QUÊN (forgetting) tích hợp vào BKT", DU,
   "2.3.2-nối", D2, "xong"),
 
 # ═══════════════ 2.3.3 Lan truyền trên đồ thị ════════════════════════════
-R("2.3.3", "Lan truyền NGƯỢC kèm hệ số suy giảm α", CH, "Không có mã.", "Toàn bộ.",
-  OK, "Là chính hàm `goc()` ở mục 2.2.2 — cùng một việc, không phải hai.",
-  "2.2.2-lan truyền", D3, "kèm theo"),
-R("2.3.3", "Lan truyền XUÔI kèm hệ số cộng hưởng β (vượt ải)", CH, "Không có mã.", "Toàn bộ.",
+R("2.3.3", "Lan truyền NGƯỢC kèm hệ số suy giảm α", DU,
+  "✅ XONG Đợt 3 — `ALPHA = 0.6` trong `lib/lantruyen.js`.", "—",
+  OK, "Là chính hàm `nutGocRe()` ở mục 2.2.2 — cùng một việc, không phải hai.",
+  "2.2.2-lan truyền", D3, "xong"),
+R("2.3.3", "Lan truyền XUÔI kèm hệ số cộng hưởng β (vượt ải)", DU,
+  "✅ XONG Đợt 3 — `congHuong()`, `BETA = 0.08`.",
+  "Trả map riêng, KHÔNG sửa sổ `mastery` gốc: trộn vào là mức thạo ĐO ĐƯỢC lẫn với "
+  "mức SUY RA, và từ đó không ai tách lại được.",
   OK,
-  "Chiều ngược lại của cùng hàm duyệt: bé thạo nút A thì cộng β vào P(L) của các nút "
-  "A là tiên quyết. ⚠ CHỈ CỘNG, ĐỪNG CHO VƯỢT NGƯỠNG: để β đẩy một nút lên thẳng "
-  "'đã thạo' mà bé chưa từng làm câu nào của nút ấy là tuyên thạo khống.",
-  "2.2.1-duyệt", D3, "≈1 ngày"),
-R("2.3.3", "Ma trận trạng thái đồ thị định vị nút gốc rễ", CH, "Không có mã.", "Toàn bộ.",
-  OK, "Là kết quả hiện ra của hai mục trên, cộng một màn cho cô giáo xem.",
-  "2.3.3-ngược · 2.3.3-xuôi", D3, "≈1 ngày"),
+  "⚠ BA CHỐT CHỐNG TUYÊN THẠO KHỐNG: (1) chỉ lan từ nút bé THẬT SỰ đã thạo; (2) mức "
+  "cộng nhỏ dần theo bước; (3) kẹp dưới `NGUONG_TRAN` = ngưỡng thạo − 0,05, không "
+  "bao giờ chạm ngưỡng. Để β đẩy một nút lên 'đã thạo' khi bé CHƯA LÀM câu nào của "
+  "nút ấy là hệ thống bỏ qua bài bé chưa từng học, im lặng.",
+  "2.2.1-duyệt", D3, "xong"),
+R("2.3.3", "Ma trận trạng thái đồ thị định vị nút gốc rễ", DU,
+  "✅ XONG. `maTranTrangThai()` tính ở Đợt 3, và Đợt 4 dựng khối `MaTran` trong Góc "
+  "bố mẹ ở trang chính quyển để bày ra.",
+  "⚠ BÀY Ở GÓC BỐ MẸ, KHÔNG Ở MÀN CÔ GIÁO — ràng buộc kiến trúc, không phải lười. "
+  "Màn cô giáo nằm ở `chung/`, mà `chung` KHÔNG được import `mon/` (cổng `ranh_gioi` "
+  "chặn, vì hai môn dính nhau thì sửa môn này gãy môn kia). Đưa lên màn cô giáo thì "
+  "phải nới giao ước ở `src/soMon.js` — việc riêng.",
+  OK,
+  "⚠ CHỈ NHẬN NÚT ĐÃ CÓ SỐ: nút bé chưa từng chạm không phải 'đang chật vật', gộp "
+  "vào là bảng đầy dòng 'em chưa học phần này' — đúng nhưng vô dụng, và dìm mất mấy "
+  "dòng đáng xem. "
+  "Giá trị thật nằm ở cột GỐC: 'con yếu mẫu câu unit 12' thì sổ nào cũng nói được, "
+  "'gốc là số đếm unit 2' mới là thứ đổi được cách dạy.",
+  "2.3.3-ngược · 2.3.3-xuôi", D4, "xong"),
 
 # ═════════════════════════ 2.4 GenAI ═════════════════════════════════════
 R("2.4.1", "LLM đóng vai gia sư (AI Agent)", DU,
@@ -476,19 +493,18 @@ R("2.4.1", "LLM đóng vai gia sư (AI Agent)", DU,
   "`openai/gpt-oss-120b`) cho phòng luyện nói, `chamviet.js` cho chấm bài viết. Gọi "
   "qua `onCall` (`functions/index.js:469, 492`).", "—", XONG, "—", "—", DX, "—"),
 
-R("2.4.1", "Cá nhân hoá NỘI DUNG trên quy mô lớn (LLM sinh bài tập)", PH,
-  "LLM sinh LỜI THOẠI của cô giáo trong phòng nói theo thời gian thực, có bám sở "
-  "thích bé.",
-  "3 752 câu luyện tập và 470 câu sát hạch là SINH SẴN bằng Python lúc dựng, không "
-  "phải LLM sinh lúc chạy. Bài tả tranh cũng soạn tay (cờ `\"tay\": true`).",
+R("2.4.1", "Cá nhân hoá NỘI DUNG trên quy mô lớn (LLM sinh bài tập)", DU,
+  "✅ PHẦN NÊN LÀM ĐÃ XONG Đợt 4: `lib/phudao.js` cho LLM sinh bài vá lúc chạy — số "
+  "lượng ít, đúng chỗ bé đang hổng, và đi qua hậu kiểm trước khi tới tay bé. Phòng "
+  "nói thì vẫn sinh lời thoại theo thời gian thực như trước.",
+  "3 752 câu luyện chính vẫn SINH SẴN lúc dựng, và giữ nguyên là CHỦ Ý — xem cột bên.",
   GAN,
-  "NÊN nâng có chọn lọc, ĐỪNG nâng toàn bộ. Cho LLM sinh BÀI PHỤ ĐẠO lúc chạy (Đợt "
-  "4) — số lượng ít, đúng chỗ bé đang hổng, và tầng hậu kiểm `cauHopLe()` đã sẵn để "
-  "gác. Nhưng ĐỪNG chuyển 3 752 câu chính sang LLM sinh lúc chạy: nội dung tĩnh nên "
-  "74 cổng soi được TRƯỚC KHI tới tay bé, còn câu sinh lúc chạy thì không cổng nào "
-  "đứng trước được. Đây là chỗ hệ thống CỐ Ý khác luận văn, và tôi cho là khác đúng "
-  "— nên ghi vào luận văn như một lựa chọn có lý do, chứ không phải một thiếu sót.",
-  "2.5.1-phụ đạo", D4, "≈3 ngày (phần phụ đạo)"),
+  "⚠ ĐÂY LÀ CHỖ HỆ THỐNG CỐ Ý KHÁC LUẬN VĂN, và tôi cho là khác đúng. Nội dung tĩnh "
+  "thì 84 cổng soi được TRƯỚC KHI tới tay bé; câu sinh lúc chạy thì không cổng nào "
+  "đứng trước được. Nên: cho LLM sinh BÀI PHỤ ĐẠO (ít, đúng chỗ, có hậu kiểm) thì "
+  "nên — và Đợt 4 đã làm; chuyển cả kho câu chính sang sinh lúc chạy thì không. "
+  "Luận văn nên ghi đây là một LỰA CHỌN CÓ LÝ DO, không phải một thiếu sót.",
+  "2.5.1-phụ đạo", D4, "xong phần phụ đạo"),
 
 R("2.4.1", "Phản hồi có giải thích (Explainable Feedback)", DU,
   "`chamviet.js:88` ép mô hình: 'Mỗi lỗi phải chỉ ra: câu bé viết sai, câu sửa lại "
@@ -501,10 +517,11 @@ R("2.4.2", "Nhận diện và chặn 'Ảo giác từ vựng'", DU,
   "có chữ ngoài vốn, `soiLoiCham()` lọc lời chấm và trả `boQua` để màn hình NÓI RA "
   "chứ không giấu.", "—", XONG, "—", "—", DX, "—"),
 
-R("2.4.3", "RAG bước 1 — Truy xuất tri thức", PH,
-  "Có truy xuất và có ground-truth, nhưng nguồn là tệp bài đã sinh chứ không phải đồ "
-  "thị (xem 2.2.1).", "Truy xuất theo quan hệ đồ thị.",
-  OK, "Cùng một việc với mục 2.2.1-Retriever.", "2.2.1-retriever", D3, "kèm theo"),
+R("2.4.3", "RAG bước 1 — Truy xuất tri thức", DU,
+  "✅ XONG Đợt 3 — nguồn nay có CẢ đồ thị: `baiTienQuyet()` tra theo cạnh REQUIRES "
+  "rồi trộn vào vốn từ.",
+  "Gộp với cửa sổ tuần tự chứ không thay — xem mục 2.2.1-Retriever cho số đo.",
+  OK, "Cùng một việc với mục 2.2.1-Retriever.", "2.2.1-retriever", D3, "xong"),
 
 R("2.4.3", "RAG bước 2 — Tăng cường nhắc lệnh (Prompt Augmentation)", DU,
   "`loiDan()` đóng gói: vốn từ · mẫu câu · tên bé · lớp · việc cần làm · hồ sơ sở "
@@ -525,42 +542,55 @@ R("2.4.3", "RAG bước 3 — Tạo sinh có kiểm soát, 'đảm bảo 100% kh
   "—", DX, "sửa luận văn, không sửa mã"),
 
 # ═══════════════ 2.5 Điều hướng và đánh giá ══════════════════════════════
-R("2.5.1", "Hàm chính sách π: S_u(t) → hành động sư phạm", PH,
-  "Có luật điều hướng thật ở `tienganh/lib/dandat.js`: 'đi tiếp được khi đã ĐẠT hoặc "
-  "đã THỬ THẬT ≥2 lần', dùng chung cho ba tầng (mở bài · mở chặng · bỏ qua câu). "
-  "Phòng nói có nhánh `haDoKho`.",
-  "Đầu vào là pass/attempts, KHÔNG phải vector S_u(t). Không có P(L) nên không có ba "
-  "nhánh 0.6 / 0.95 như mô tả.",
+R("2.5.1", "Hàm chính sách π: S_u(t) → hành động sư phạm", DU,
+  "✅ XONG Đợt 4 — `lib/chinhsach.js` với ba nhánh: TIẾP · VƯỢT ẢI · PHỤ ĐẠO.",
+  "⚠ Ngưỡng là 0,85 chứ không phải 0,95 như luận văn — bác chốt 21-08, và lấy từ "
+  "MỘT chỗ (`zpd.js` → `bkt.js`) chứ không gõ lại. Cổng soi để chắc không ai gõ cứng.",
   OK,
-  "Thay ĐIỀU KIỆN chứ không thay CẤU TRÚC: `dandat.js` đã gom luật vào một chỗ, nên "
-  "chỉ đổi `daThuDu()` thành hàm đọc P(L). ⚠ GIỮ NHÁNH 'đã thử ≥2 lần thì cho đi "
-  "tiếp' làm lưới đỡ — bỏ nó đi là bé kẹt vĩnh viễn ở một nút khi BKT chấm sai. "
-  "Cổng `dandat.test.mjs` đang canh, phải đảo chiều thử lại cả hai nhánh.",
-  "2.3.2-nối", D4, "≈2 ngày"),
+  "⚠ KHÔNG THAY `dandat.js`, và đó là điểm quan trọng nhất của mục này. Tệp mới chỉ "
+  "trả lời 'nên làm gì tiếp'; câu 'có được đi tiếp không' vẫn thuộc `dandat.js` với "
+  "LƯỚI ĐỠ nguyên vẹn (đã ĐẠT *hoặc* đã THỬ ≥2 lần). Lưới ấy ở đó vì BKT có thể "
+  "chấm sai — bỏ nó đi để chính-sách-theo-P(L)-cho-thuần là bé kẹt VĨNH VIỄN ở một "
+  "bài, mà bé không có cách nào tự thoát và cũng không biết để kêu. "
+  "⚠ Mỗi quyết định kèm `vi_sao` đọc được: quyết định về việc học của một đứa trẻ "
+  "thì phải giải thích được.",
+  "2.3.2-nối", D4, "xong"),
 
-R("2.5.1", "Nhánh 'Tịnh tiến' khi 0.6 ≤ P(L) < 0.95", CH, "Không có P(L).", "Toàn bộ.",
-  OK, "Một nhánh trong hàm chính sách ở dòng trên.", "2.5.1-chính sách", D4, "kèm theo"),
+R("2.5.1", "Nhánh 'Tịnh tiến' khi 0.6 ≤ P(L) < 0.95", DU,
+  "✅ XONG Đợt 4 — nhánh `VIEC.tiep`, khoảng giữa `NGUONG_YEU` và `NGUONG_THAO`.",
+  "Khoảng là 0,3–0,85 chứ không phải 0,6–0,95: hai ngưỡng đều lấy từ `zpd.js` và "
+  "khớp với ngưỡng thạo bác đã chốt.",
+  OK, "Một nhánh trong hàm chính sách ở dòng trên.", "2.5.1-chính sách", D4, "xong"),
 
-R("2.5.1", "Nhánh 'Vượt ải' khi P(L) ≥ 0.95", PH,
-  "Có cơ chế vượt ải NHƯNG theo BẬC chứ không theo P(L): `startLevel()` "
-  "(`toan/lib/adaptive.js:24`) cho bé giỏi bắt đầu thẳng từ `standard`/`challenge`. "
-  "Bên Tiếng Anh, bài đã ĐẠT thì không bắt làm lại.",
-  "Không theo ngưỡng xác suất.",
+R("2.5.1", "Nhánh 'Vượt ải' khi P(L) ≥ 0.95", DU,
+  "✅ XONG Đợt 4 — `VIEC.vuotAi` và `duocVuotAi()` trong `lib/chinhsach.js`.",
+  "Cửa BỎ QUA BÀI cố ý HẸP — xem cột bên. Và ngưỡng là 0,85, không phải 0,95.",
   OK,
-  "Chép lối `startLevel()` sang Tiếng Anh, đổi đầu vào thành P(L). ⚠ Con số ngưỡng "
-  "phải khớp quyết định ở mục 2.3.2-θ, đừng để hai chỗ hai số.",
-  "2.5.1-chính sách · 2.3.2-θ", D4, "kèm theo"),
+  "⚠ PHỤ ĐẠO THẮNG VƯỢT ẢI. Bài có 10 nút, 9 vững và 1 nút bé đang mắc thì việc cần "
+  "làm là gỡ nút ấy, không phải cho bé bay qua cả bài — cho vượt ở đây là bỏ lại "
+  "đúng chỗ bé cần giúp nhất, và bỏ lại LẶNG LẼ vì mọi con số tổng đều đẹp. "
+  "⚠ `duocVuotAi` đòi CẢ BA: chính sách nói vượt ải, bé đã ĐẠT bài, và bài có đủ "
+  "nút. Thà bé làm lại một bài đã vững (mất mấy phút) còn hơn bỏ qua một bài chưa "
+  "vững — mất một mắt xích, mà mắt xích ấy đỡ cho những bài sau. "
+  "⚠ Nút CHƯA CÓ SỐ luôn rơi vào nhánh `tiep` nên không bao giờ lọt vào vượt ải. "
+  "Tôi suýt thêm một chốt riêng cho việc ấy; đảo chiều thử mới thấy nó là MÃ CHẾT, "
+  "và mã chết trông như chốt an toàn thì tệ hơn không có.",
+  "2.5.1-chính sách · 2.3.2-θ", D4, "xong"),
 
-R("2.5.1", "Nhánh 'Can thiệp phụ đạo' truy vết nút gốc rễ rồi cho LLM vá", CH,
-  "Có hạ độ khó trong phiên nói, nhưng không truy vết đồ thị và không sinh bài vá.",
-  "Cơ chế truy vết và bài phụ đạo.",
+R("2.5.1", "Nhánh 'Can thiệp phụ đạo' truy vết nút gốc rễ rồi cho LLM vá", DU,
+  "✅ XONG Đợt 4 — `lib/phudao.js`: tìm nút gốc rễ (Đợt 3) → gom câu quanh nút ấy → "
+  "hậu kiểm từng câu.",
+  "Chưa có màn riêng cho buổi phụ đạo; cơ chế dựng bài thì chạy được và có cổng.",
   OK,
-  "Việc NẶNG NHẤT bảng, và là đỉnh của cả lộ trình: (1) `goc()` tìm nút gốc rễ; "
-  "(2) gọi LLM sinh 3–5 câu quanh đúng nút ấy, vốn từ lấy bằng Retriever; (3) đẩy "
-  "qua `cauHopLe()` rồi mới cho bé thấy. ⚠ Phải có ĐƯỜNG LÙI khi LLM hỏng hoặc mất "
-  "mạng — rơi về ngân hàng câu tĩnh của chính unit ấy. Bé đang học mà màn trắng vì "
-  "gọi mạng thất bại là hỏng nặng hơn không có phụ đạo.",
-  "2.3.3-ngược · 2.5.1-chính sách", D4, "≈4 ngày"),
+  "⚠ THỨ TỰ NGƯỢC VỚI TRỰC GIÁC, VÀ CỐ Ý: lấy câu TĨNH của chính nút gốc rễ TRƯỚC, "
+  "đủ rồi thì thôi. LLM chỉ được gọi khi kho tĩnh không đủ. Bé vừa sai ba câu liền "
+  "và màn hình hứa sẽ giúp — nếu lúc ấy gọi mạng hỏng mà bé nhận màn trắng thì đó "
+  "là hỏng NẶNG HƠN không có phụ đạo: bé mất mạch học, và mất niềm tin vào cái nút "
+  "vừa bấm. Cổng dựng hẳn ca LLM-ném-lỗi rồi đòi vẫn ra bài. "
+  "⚠ CÂU LLM SINH RA CŨNG PHẢI QUA HẬU KIỂM: đây là chỗ DUY NHẤT trong app mà câu "
+  "hỏi không do bộ sinh dựng sẵn, tức không cổng nào soi trước khi tới tay bé. "
+  "⚠ Không tìm được gốc thì vá NGAY TẠI CHỖ MẮC, không trả rỗng.",
+  "2.3.3-ngược · 2.5.1-chính sách", D4, "xong"),
 
 R("2.5.2", "Lưu vết HƯỚNG SỰ KIỆN — chuỗi sự kiện bất biến", DU,
   "MỘT chỗ đã làm gần đúng: PHÒNG NÓI ghi mỗi buổi thành MỘT tài liệu riêng khoá "
@@ -630,31 +660,37 @@ R("2.5.2", "Bối cảnh hệ thống: P(L) trước/sau · mã prompt để ki�
   "nên SÓT được — thêm một dòng mang tên bé mà quên khai `DAU_RIENG` là nó lọt.",
   "2.3.2-nối", D1, "xong"),
 
-R("2.5.3", "Giao thức A-R-A (Assess → Remediate → Assess)", CH, "Không có mã nào.",
-  "Toàn bộ.",
+R("2.5.3", "Giao thức A-R-A (Assess → Remediate → Assess)", DU,
+  "✅ XONG Đợt 4 — `functions/src/ara.js` với `capHopLe()` và `deltaC()`.",
+  "Phép tính xong; việc GHI cặp A-R-A vào nhật ký đi cùng màn phụ đạo.",
   OK,
-  "Sau khi có phụ đạo: gói ba bước thành một vòng — đo P(L) trước, cho bài vá, đo "
-  "lại. ⚠ Lần đo SAU phải dùng câu KHÁC lần đo trước, nếu không đo trí nhớ ngắn hạn "
-  "chứ không đo hiểu bài. Ngân hàng câu hiện có đủ để bốc hai bộ rời nhau.",
-  "2.5.1-phụ đạo", D4, "≈2 ngày"),
+  "⚠ LẦN ĐO SAU PHẢI DÙNG CÂU KHÁC LẦN ĐO TRƯỚC, và `capHopLe()` BÁC cặp nào trùng "
+  "câu. Hỏi lại đúng mấy câu vừa chữa thì bé đúng vì vừa NHÌN THẤY đáp án — đo trí "
+  "nhớ ngắn hạn chứ không đo hiểu bài, và sai theo hướng ĐẸP LÊN: mọi bài phụ đạo "
+  "đều trông như hiệu quả, kể cả bài vô dụng.",
+  "2.5.1-phụ đạo", D4, "xong"),
 
-R("2.5.3", "Chỉ số ΔC (Knowledge Gain) đánh giá hiệu quả bài LLM sinh", CH, "Không có.",
-  "Toàn bộ.",
-  OK, "Là phép trừ hai đầu của A-R-A, cộng một bảng gom theo mẫu prompt.",
-  "2.5.3-ARA", D4, "≈1 ngày"),
-
-R("2.5.3", "Tối ưu hoá prompt theo ΔC", CH,
-  "✅ HAI CHÂN ĐÃ CÓ, Đợt 1: vân tay prompt (`vantay.js`) để biết lượt nào dùng mẫu "
-  "nào, và `pTruoc`/`p` để tính được ΔC của một lượt. Bác đã gỡ chỗ vướng bằng "
-  "quyết định 21-08 — không còn là mục 'chờ bác quyết'.",
-  "Chưa có phép ĐO hiệu quả: cần A-R-A (2.5.3) rồi mới gom ΔC theo mẫu prompt được. "
-  "ΔC của một lượt lẻ không nói lên gì.",
+R("2.5.3", "Chỉ số ΔC (Knowledge Gain) đánh giá hiệu quả bài LLM sinh", DU,
+  "✅ XONG Đợt 4 — `deltaC()` và `gomTheoMau()`.", "—",
   OK,
-  "Sau A-R-A: gom ΔC trung bình theo từng `(mauPrompt, phienBanMau)`, mẫu nào cao "
-  "hơn thì giữ. ⚠ Gom theo `phienBanMau` chứ đừng gom theo mã băm: băm đổi cả khi "
-  "sửa một lỗi chính tả, nên gom theo băm là chẻ dữ liệu ra vụn. Mã băm để phát "
-  "hiện LỆCH ngoài ý muốn — ai đó sửa lời dặn mà quên tăng số phiên bản.",
-  "2.5.3-ΔC", D4, "≈1 ngày"),
+  "⚠ Dưới cỡ mẫu (5 cặp) thì KHÔNG đưa ra con số — khen hay chê một mẫu prompt dựa "
+  "trên vài cặp là kết luận tự nuôi chính nó, cùng bẫy với bảng định dạng ở Đợt 2. "
+  "⚠ Và HIỆN số cặp bị bỏ qua: một mẫu có 40 cặp mà 35 bị loại thì trung bình của 5 "
+  "cặp còn lại không đáng tin, người đọc phải thấy điều đó.",
+  "2.5.3-ARA", D4, "xong"),
+
+R("2.5.3", "Tối ưu hoá prompt theo ΔC", DU,
+  "✅ XONG Đợt 4 — `mauTotNhat()` gom ΔC theo `(mauPrompt, phienBanMau)`. Hai chân "
+  "đã có từ Đợt 1: vân tay prompt để biết lượt nào dùng mẫu nào, và `pTruoc`/`p` để "
+  "tính ΔC.",
+  "Cần dữ liệu học thật mới nói được mẫu nào hơn — hôm nay chưa có cặp A-R-A nào.",
+  OK,
+  "⚠ GOM THEO PHIÊN BẢN MẪU, KHÔNG THEO MÃ BĂM. Băm đổi cả khi sửa một lỗi chính "
+  "tả, nên gom theo băm là chẻ dữ liệu ra vụn và chẳng so được gì. `phienBanMau` do "
+  "người sửa khai tay nên nói đúng cái cần: đây là lần đổi ĐÁNG KỂ. "
+  "⚠ Cần ÍT NHẤT HAI mẫu đủ cỡ mẫu mới nói được — một mẫu thì nó vừa tốt nhất vừa "
+  "tệ nhất.",
+  "2.5.3-ΔC", D4, "xong"),
 
 R("2.5.3", "Đường cong học tập (tỉ lệ lỗi theo số lần luyện)", DU,
   "✅ XONG Đợt 2 (22-08), ĐÃ DEPLOY. `duongCongHoc()` trong "
@@ -679,7 +715,7 @@ TK_THEM = [
     ("Câu luyện tập · câu sát hạch", "3 752 · 470"),
     ("Bài tả tranh (đọc · viết · nói quanh 1 bức)", "62 bức, lớp 3·4·5"),
     ("Clip tiếng · video", "5 366 · 345"),
-    ("Cổng tự động", "83 tệp, tất cả xanh"),
+    ("Cổng tự động", "84 tệp, tất cả xanh"),
     ("", ""),
     ("Đồ thị tri thức", ""),
     ("Nút · cạnh (toàn bản đồ)", "3 989 · 7 602"),
@@ -759,12 +795,20 @@ LO_TRINH = [
      "Nên GỘP chứ không thay. Đây là chỗ đo trước khi làm đã cứu cả một tính năng. "
      "⚠ `daTham` KHÔNG phải để chống treo (trần độ sâu lo việc ấy) — gỡ ra rồi đo "
      "thì máy không treo, chỉ kết quả sai. Chú thích đầu của tôi nói quá, đã sửa."),
-    (D4, "Điều hướng và đo — chính sách theo P(L), phụ đạo, A-R-A",
-     "Đổi điều kiện `dandat.js` sang P(L) · ba nhánh chính sách · phụ đạo do LLM "
-     "sinh có hậu kiểm · A-R-A · ΔC · gom vector S",
-     "≈12 ngày", "— vòng thích ứng khép kín",
-     "⚠ GIỮ nhánh 'đã thử ≥2 lần thì cho đi tiếp' làm lưới đỡ, bỏ đi là bé kẹt vĩnh "
-     "viễn khi BKT chấm sai. ⚠ Phụ đạo phải có đường lùi khi mất mạng."),
+    (D4, "✅ XONG 22-08-2026 — đợt cuối",
+     "XONG: hàm chính sách ba nhánh · bài phụ đạo có hậu kiểm và đường lùi · A-R-A "
+     "và ΔC · tối ưu prompt theo mẫu · vector S vào lời dặn · màn ma trận trong Góc "
+     "bố mẹ.",
+     "≈1,5 ngày", "— vòng thích ứng khép kín",
+     "⚠ KHÔNG THAY `dandat.js` — lưới đỡ 'đã thử ≥2 lần thì cho đi tiếp' còn "
+     "nguyên. Bỏ nó đi là bé kẹt VĨNH VIỄN khi BKT chấm sai, mà bé không có cách "
+     "nào tự thoát và cũng không biết để kêu. "
+     "⚠ Phụ đạo lấy câu TĨNH trước, LLM chỉ gọi khi thiếu — mất mạng mà bé nhận màn "
+     "trắng là hỏng NẶNG HƠN không có phụ đạo. "
+     "⚠ Câu LLM sinh phải qua hậu kiểm: đây là chỗ DUY NHẤT trong app mà câu hỏi "
+     "không do bộ sinh dựng, tức không cổng nào soi trước khi tới tay bé. "
+     "⚠ Suýt thêm một chốt 'đủ số liệu mới cho vượt ải' — đảo chiều thử mới thấy nó "
+     "là MÃ CHẾT, và mã chết trông như chốt an toàn thì tệ hơn không có."),
 ]
 
 
@@ -822,11 +866,11 @@ def main() -> int:
         w2.append([d, lam, viec, cong, f"{n} mục {duoc}", canh])
     tong = sum(1 for x in B if x[5] in (OK, GAN, QUYET))
     w2.append([])
-    w2.append(["TỔNG · còn ≈19 ngày cho hai đợt cuối", f"{tong}/{len(B)} mục nâng được",
+    w2.append(["TỔNG · cả năm đợt đã xong", f"{tong}/{len(B)} mục nâng được",
                f"Trong đó {sum(1 for x in B if x[5] == OK)} nâng lên hẳn ĐÁP ỨNG · "
                f"{sum(1 for x in B if x[5] == GAN)} nâng được phần lớn · "
                f"{sum(1 for x in B if x[5] == QUYET)} chờ bác quyết",
-               "Đã tiêu ≈4,5 ngày cho Đợt 0+1+2; còn ≈19 ngày",
+               "≈7,5 ngày cho cả năm đợt",
                f"{sum(1 for x in B if x[5] == XONG)} mục đã đạt sẵn · "
                f"{sum(1 for x in B if x[5] == KHONG)} mục sửa luận văn thay vì sửa mã",
                ""])
@@ -944,8 +988,8 @@ def main() -> int:
              "MÃ và DỮ LIỆU, không cổng nào ngồi cạnh một đứa trẻ."),
         ("", ""),
         ("ĐÃ XONG TỚI ĐÂU", ""),
-        ("", "Đợt 0 ✅ · 1 ✅ · 2 ✅ · 3 ✅. Còn Đợt 4 (điều hướng và đo), ≈12 ngày. "
-             "Nay 37/54 mục đáp ứng (69%), từ 15 lúc bắt đầu."),
+        ("", "Cả năm đợt ✅. Nay 50/54 mục đáp ứng (93%), từ 15 lúc bắt đầu. "
+             "Bốn mục còn lại KHÔNG phải việc code — xem mục dưới."),
         ("", ""),
         ("ĐỢT 3 ĐÃ CHẠY XONG — 22-08-2026", ""),
         ("", "Đồ thị tri thức nay có mặt LÚC CHẠY: 95 KB, 1194 nút, 253 cạnh. Duyệt "
@@ -1005,6 +1049,21 @@ def main() -> int:
          "của tôi (xem mục dưới). \'Thêm 6 nút CEFR\' — bỏ khỏi đợt này vì "
          "`ban_do_tieng_anh.json` là kho gốc cấm sửa; chỗ đúng để thêm là lúc xuất đồ "
          "thị con ở Đợt 3."),
+        ("", ""),
+        ("BỐN MỤC CÒN LẠI — VÀ VÌ SAO CHÚNG Ở LẠI", ""),
+        ("1 · Ngưỡng θ (2.3.2)",
+         "Việc của LUẬN VĂN, không phải của mã: sửa 0,95 → 0,85 kèm lý do hiệu chỉnh "
+         "thực nghiệm. Bác đã chốt 21-08."),
+        ("2 · RAG bước 3 (2.4.3)",
+         "Cũng là việc của luận văn: prompt không đảm bảo được 100%, cái làm nên con "
+         "số ấy là tầng hậu kiểm. Mô tả đúng thì luận văn MẠNH hơn."),
+        ("3 · `prerequisite_links` trên nút (2.2.2)",
+         "Cạnh tiên quyết từ vựng CÓ (58 cạnh, Đợt 0) nhưng nằm ở tầng bản chuẩn, "
+         "không ghi ngược lên nút thô — vì `ban_do_tieng_anh.json` là kho gốc cấm "
+         "sửa. Muốn khớp đúng chữ nghĩa luận văn thì phải đổi chính quy ước ấy."),
+        ("4 · Chiều Động lực (2.1.2-M)",
+         "Sở thích mới dùng ở PHÒNG NÓI; ba màn kia chưa đọc tới. Việc nhỏ nhất còn "
+         "lại: truyền `soThich` vào `loiDanCham()` của màn Viết."),
         ("", ""),
         ("VIỆC ĐÁNG LÀM TIẾP THEO", ""),
         ("1 · Xem bằng MẮT trước khi tin bảng",
@@ -1105,7 +1164,7 @@ def main() -> int:
     dich = dn[XONG] + dn[OK] + dn[QUYET]
     print(f"  ── nay {dem[DU]}/{len(B)} ({dem[DU] / len(B) * 100:.0f}%) "
           f"→ đích {dich}/{len(B)} ({dich / len(B) * 100:.0f}%) sau khi chạy hết 5 đợt")
-    print("  ✓ Đợt 0 → 3 xong. Còn Đợt 4 (điều hướng và đo).")
+    print("  ✓ Cả năm đợt (0 → 4) đã xong.")
     return 0
 
 

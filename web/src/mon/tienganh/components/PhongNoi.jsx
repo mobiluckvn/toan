@@ -8,6 +8,8 @@ import {
 } from '../lib/phongnoi.js';
 import { hoiCoGiao, luuBuoi } from '../lib/goiPhongNoi.js';
 import { napDoThi, baiTienQuyet } from '../lib/doThi.js';
+import { vectorS } from '../lib/chinhsach.js';
+import { manhNhat } from '../lib/hoso.js';
 import { auth } from '../../../chung/lib/nenTang.js';
 import { doc as docLen, docDoan, docDuoc, coGiong, thoiDoc } from '../lib/doclen.js';
 import { batDauNghe, ngheDuoc, loiDocDuoc, xinMicroChiTiet, MICRO, TIENG } from '../lib/nghenoi.js';
@@ -33,7 +35,8 @@ import { chamTot, chamCau, datNoi, loiKhen } from '../lib/chamnoi.js';
  * vẫn cho bé ở lại phòng nghe cô nói. Đây là chỗ luyện thêm, không phải cửa ải.
  */
 export default function PhongNoi({ bai, tienDo, tenBe = 'con',
-                                   soThich = null, onSoThich = null }) {
+                                   soThich = null, onSoThich = null,
+                                   mucThao = null }) {
   /**
    * QUYỂN VÀ LỚP SUY TỪ CHÍNH BÀI, không nhận từ ngoài.
    *
@@ -211,6 +214,31 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
   }, [soThich, von]);
   const thichDung = thich || thichNho;
 
+  /**
+   * VECTOR TRẠNG THÁI S = [C, T, P, M] — mảnh cuối của mục 2.1.2.
+   *
+   * Bốn chiều đã đo xong từ Đợt 1 tới Đợt 2 nhưng nằm rời ở bốn chỗ. Đây là chỗ
+   * gom lại rồi đưa vào lời dặn, để cô giáo máy biết mình đang nói với ai chứ
+   * không chỉ biết bé đang học unit nào.
+   *
+   * ⚠ Thiếu số liệu thì các trường về `null` và `dongHoSo()` bỏ qua chúng — phòng
+   * nói chạy y như trước. Bé mới học buổi đầu không đáng bị cô giáo máy đoán già.
+   */
+  const hoSoBe = React.useMemo(() => {
+    const nuts = [...new Set(
+      (bai?.practice?.pools ? Object.values(bai.practice.pools).flat() : [])
+        .map((c) => c?.maNut).filter(Boolean),
+    )];
+    const manh = manhNhat(tienDo?.dinhDang);
+    return {
+      thich: thichDung,
+      ...vectorS({
+        mucThao, maNutDs: nuts, thich: thichDung,
+        dinhDang: manh ? { dangManh: manh.ten } : null,
+      }),
+    };
+  }, [bai, mucThao, tienDo?.dinhDang, thichDung]);
+
   useEffect(() => () => { phien.current?.huy(); thoiDoc(); }, []);
   /* Nhịp 30 giây chỉ để VẼ LẠI, không đụng gì tới dữ liệu — hết 20 phút mà màn
      hình không tự biết thì bé cứ nói tiếp, rồi đúng lượt sau mới bị cắt ngang. */
@@ -263,7 +291,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
     datLoi(null); datDangHoi(true);
     try {
       const tra = await hoiCoGiao({ von, lichSu: ds, tenBe, lop,
-        haDoKho: buoi.haDoKho, hoSo: { thich: thichDung }, kichBan });
+        haDoKho: buoi.haDoKho, hoSo: hoSoBe, kichBan });
       /* `buoc` — bước nào sinh ra lượt này. Không bày ra màn hình, nhưng
          `luotLuyen` cần: lượt bé đáp lời chào KHÔNG được tính là một lần luyện. */
       const luot = { vai: 'may', chu: tra.en || tra.vi, en: tra.en, vi: tra.vi,
@@ -291,7 +319,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
           ? 'Con đăng nhập rồi mới vào phòng này được nhé.'
           : 'Cô giáo máy chưa trả lời được. Con thử lại nhé.');
     } finally { datDangHoi(false); }
-  }, [von, tenBe, lop, bai, buoi.haDoKho, thichDung, kichBan, ma, mocEn]);
+  }, [von, tenBe, lop, bai, buoi.haDoKho, hoSoBe, kichBan, ma, mocEn]);
 
   /* Cô chào trước. Bé 6 tuổi mở ra thấy màn trắng thì không biết làm gì cả. */
   useEffect(() => {
