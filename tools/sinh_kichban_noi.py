@@ -257,10 +257,22 @@ def chu_biet(bai):
     # "Class 5A" thành chữ lạ "a", và "beside the table" mất chữ "table".
     try:
         cn = json.loads((GOC / f"data/tienganh/chuan_lop{LOP}.json").read_text('utf8'))
-        for goi in (cn.get('them') or {}).values():
-            if isinstance(goi, dict):
-                for m in goi.get('muc') or []:
-                    biet.update(chu_trong(m if isinstance(m, str) else m.get('word')))
+        for ten, goi in (cn.get('them') or {}).items():
+            # ⚠ TRỪ NHÓM ĐẠI TỪ. Các nhóm `them` khác là DANH TỪ phụ trợ nằm sẵn
+            # trong câu sách ("Class 5A" · "the table"); đại từ thì khác hẳn — nó
+            # là thứ điền vào ô `[Pronoun]`, mà bên `phongnoi.js` ô ấy chỉ điền
+            # được bằng vốn của CHÍNH BÀI. Coi cả danh sách đại từ chung là "bé đã
+            # biết" thì bộ sinh đẻ ra câu mà app từ chối ngay sau đó.
+            #
+            # Đo trên cả 5 quyển: bỏ nhóm này chỉ rụng 4 nửa câu, và cả 4 đều bẩn —
+            # "She is doing a quiz." (chính chú thích trên đã nêu là câu phải lọc)
+            # và "Yes,he is./No,he isn't." (thiếu cả dấu cách). Không rụng câu lành
+            # nào, vì đại từ bài NÀO CÓ DẠY thì đã vào túi qua `vocabulary` và
+            # `mau_cau` rồi.
+            if ten == 'dai_tu' or not isinstance(goi, dict):
+                continue
+            for m in goi.get('muc') or []:
+                biet.update(chu_trong(m if isinstance(m, str) else m.get('word')))
     except Exception:
         pass
     for m in mau:
@@ -399,6 +411,23 @@ def kich_ban_cua(bai):
                     la = [w for w in chu_trong(y) if w not in biet]
                     if la:
                         BO_QUA.append(f"{bai['id']}: “{y}” (chữ lạ: {', '.join(la)})")
+                        continue
+                    # ⚠ CÔNG THỨC HAI Ô: chỉ nhận ĐÚNG câu mẫu của sách.
+                    #
+                    # `cauHopLe` bên `phongnoi.js` công nhận một câu bằng cách DỰNG
+                    # LẠI công thức đã điền, mà nó chỉ điền được MỘT ô. Công thức
+                    # hai ô thì không cách nào dựng lại → app từ chối, dù phép lọc
+                    # theo chữ ở trên đã cho qua.
+                    #
+                    # Và chỗ ấy app đúng: lớp 2 unit 11 dạy "They + are +
+                    # [Verb-ing] + [Noun]." với vốn từ chỉ có slide · ride · drive.
+                    # Sách điền máy cả hai ô rồi đẻ ra "They are sliding cars." ·
+                    # "They are riding cars." · "They are driving bikes." — ba câu
+                    # tiếng Anh KHÔNG AI NÓI. Phép lọc theo chữ không bắt được, vì
+                    # từng chữ một đều là chữ bé đã gặp.
+                    if len(re.findall(r'\[[^\]]+\]', khung_dap)) > 1:
+                        BO_QUA.append(f"{bai['id']}: “{y}” (công thức hai ô, "
+                                      f"app không dựng lại được)")
                         continue
                     da_co.add(y)
                     cau_noi.append(y)

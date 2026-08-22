@@ -43,7 +43,13 @@ export const CHU_TOI_DA = 300;
 
 /* ─────────── vốn từ ─────────── */
 
-const goiTu = (v) => ({ tu: v.tu, nghia: v.nghia, ipa: v.ipa });
+/* `so_nhieu`·`so_it`·`dang_ing`·`dang_qk` mang theo để ĐIỀN Ô CÔNG THỨC — xem chỗ
+   `dienDuoc` trong `cauHopLe`. Không mang thì ô `[Plural Noun]` chỉ điền được dạng
+   gốc, và câu của chính sách ("The cakes are on the table.") bị gạt. */
+const goiTu = (v) => ({
+  tu: v.tu, nghia: v.nghia, ipa: v.ipa,
+  so_nhieu: v.so_nhieu, so_it: v.so_it, dang_ing: v.dang_ing, dang_qk: v.dang_qk,
+});
 const goiCau = (m) => ({ cau: m.cau, congThuc: m.congThuc, dungDe: m.dungDe });
 
 const chuTrongCau = (s) => String(s || '').toLowerCase().match(/[a-z']+/g) || [];
@@ -707,7 +713,17 @@ export function cauHopLe(en, { von, tenBe = '', cauTruoc = '' } = {}) {
     for (const khung of [x.congThuc, ...x.congThuc.split(' - ')]) {
       const loai = loaiOTrong(khung);
       if (!loai) continue;
-      const dienDuoc = loai === 'ten' ? [tenBe, 'Bill', 'Mai'] : tu.map((t) => t.tu);
+      /* ⚠ Ô CÓ KIỂU thì DẠNG BIẾN ĐỔI cũng điền được.
+         Lớp 2 unit 12 dạy CẢ HAI mẫu: "The cake is on the table." và "The grapes
+         are on the table." — tức sách dạy hẳn lối số nhiều. Nhưng chỗ này chỉ điền
+         dạng gốc, nên "The cakes are on the table." bị gạt, dù nó là câu của chính
+         sách và đúng cái mẫu vừa dạy.
+         Không phải nới rào: dạng biến đổi lấy từ CHÍNH mục từ vựng bé đã học
+         (`so_nhieu` · `so_it` · `dang_ing` · `dang_qk`), không phải chữ mới. Từ nào
+         bài không dạy thì vẫn không có đường vào — "They are riding cars." vẫn bị
+         gạt vì `car` không nằm trong vốn của bài ấy. */
+      const dienDuoc = loai === 'ten' ? [tenBe, 'Bill', 'Mai']
+        : tu.flatMap((t) => [t.tu, t.so_nhieu, t.so_it, t.dang_ing, t.dang_qk]);
       for (const d of dienDuoc) {
         if (!d) continue;
         const thu = khung.replace(/\s*\+\s*/g, ' ').replace(/\[[^\]]+\]/, d);
