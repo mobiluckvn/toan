@@ -46,16 +46,38 @@ export function paramsFor(item = {}) {
 
 /**
  * Cập nhật một bản ghi mastery từ một attempt.
- * doc: {p, nAttempts, nCorrect, lastSeen} | undefined
+ * doc: {p, nAttempts, nCorrect, lastSeen, saiLienTiep, pTruoc} | undefined
+ *
+ * ── `saiLienTiep` — SỐ LẦN SAI LIÊN TIẾP TẠI NÚT NÀY ──
+ * Khác hẳn `nAttempts`, và khác hẳn `attempts` trong sổ tiến độ (đếm số lần làm
+ * CẢ BÀI). Đây là `struggle_count` của mục 2.3.1 luận văn: bé sai mấy lần LIỀN
+ * NHAU ở đúng nút này. Ba lần liền là dấu hiệu bé không tự thoát ra được — hai
+ * đại lượng kia không nói ra điều đó, vì bé sai 3 lần rồi đúng 10 lần thì
+ * `nCorrect/nAttempts` trông vẫn đẹp.
+ *
+ * Đúng MỘT lần là về 0. Cố ý: cái cần đo là "đang bí", không phải "từng bí".
+ *
+ * ── `pTruoc`/`p` — MỨC THẠO TRƯỚC VÀ SAU LƯỢT NÀY ──
+ * Mục 2.5.2 đòi lưu P(L) trước và sau mỗi lượt để tính ΔC. Giá trị `pTruoc` đã
+ * nằm sẵn trong tay ở dòng `cur` — trước nay chỉ là không ai ghi nó ra.
+ *
+ * ⚠ TỆP NÀY DÙNG CHUNG VỚI MÔN TOÁN ĐANG CHẠY THẬT. Ba trường thêm vào đều là
+ * trường MỚI, không đổi `p` · `mastered` · `nAttempts` · `nCorrect` — nên số cũ
+ * của bé không xê dịch. Cổng `bkt.test.mjs` canh chính điều đó.
  */
 export function applyAttempt(doc, attempt, now = Date.now) {
   const cur = doc?.p ?? DEFAULT_PARAMS.L0;
-  const p = bktUpdate(cur, !!attempt.correct, paramsFor(attempt));
+  const dung = !!attempt.correct;
+  const p = bktUpdate(cur, dung, paramsFor(attempt));
   return {
     p,
+    /* Mức thạo TRƯỚC lượt này. Lần đầu chạm nút thì là L0 — vẫn ghi ra, để phép
+       trừ `p - pTruoc` lúc nào cũng có nghĩa mà không phải xử lý trường hợp riêng. */
+    pTruoc: cur,
     mastered: isMastered(p),
     nAttempts: (doc?.nAttempts ?? 0) + 1,
-    nCorrect: (doc?.nCorrect ?? 0) + (attempt.correct ? 1 : 0),
+    nCorrect: (doc?.nCorrect ?? 0) + (dung ? 1 : 0),
+    saiLienTiep: dung ? 0 : (doc?.saiLienTiep ?? 0) + 1,
     lastMicroId: attempt.microId ?? doc?.lastMicroId ?? null,
     lastSeen: now(),
   };

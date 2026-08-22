@@ -1,3 +1,4 @@
+import { vanTay, locKhung } from './vantay.js';
 /**
  * PHÒNG LUYỆN NÓI — phần máy chủ. Chỉ có ĐÚNG một việc: chuyển lời lên Groq rồi
  * đem câu trả lời về.
@@ -140,6 +141,27 @@ export async function hoiMay(du, taoClient) {
       `Cô giáo máy không trả lời được (finish_reason: ${chon?.finish_reason || 'không rõ'}).`);
   }
   /* Trả về CHỮ TRẦN. Việc bóc JSON là của client (`lib/phongnoi.js` có cổng canh),
-     để đúng một chỗ biết hình dạng câu trả lời. */
-  return { chu, moHinh: MO_HINH };
+     để đúng một chỗ biết hình dạng câu trả lời.
+
+     ── VÂN TAY LỜI DẶN, và vì sao ở đây nó YẾU HƠN bên chấm viết ──
+     Bên `chamviet` máy chủ SỞ HỮU hàm dựng lời dặn, nên lấy được khung chính xác
+     bằng cách gọi lại hàm ấy với dữ liệu rỗng. Ở đây thì không: lời dặn do MÁY
+     CON dựng (`lib/phongnoi.js` → `loiDan()`) và gửi lên đã thành chữ. Máy chủ
+     chỉ còn cách LỌC THEO DẤU HIỆU — mà lọc theo dấu hiệu thì sót được: thêm một
+     dòng mới mang tên bé vào `loiDan()` mà quên khai vào `DAU_RIENG` là dòng ấy
+     lọt vào vân tay, và không có gì báo.
+
+     Chấp nhận, vì cái giá của chỗ sót này thấp: vân tay lọt một mẩu riêng thì
+     bảng so ΔC nhiễu thêm vài nhóm, chứ không lộ gì ra ngoài (băm một chiều) và
+     không đụng tới bé. Còn `phienBanMau` — thứ bảng so ĐANG THẬT SỰ gom theo —
+     thì do người sửa khai tay nên không sót được. Muốn chắc hơn thì đổi
+     `loiDan()` trả về kèm khung, và đó là việc của máy con. */
+  const loiDan = messages.find((m) => m.role === 'system')?.content || '';
+  return {
+    chu,
+    moHinh: MO_HINH,
+    ...vanTay('luyennoi', locKhung(loiDan), {
+      moHinh: MO_HINH, nhiet: 0.4, token: TOKEN_TRA_LOI,
+    }),
+  };
 }

@@ -25,7 +25,23 @@ setGlobalOptions({ region: 'asia-southeast1', maxInstances: 10 });
 initializeApp();
 const db = getFirestore();
 
-/** Mỗi lượt trả lời → cập nhật mức thạo của đơn vị kỹ năng tương ứng */
+/**
+ * Mỗi lượt trả lời → cập nhật mức thạo của đơn vị kỹ năng tương ứng.
+ *
+ * ── HÀM NÀY TRUNG TÍNH VỚI MÔN, VÀ ĐÓ LÀ LÝ DO TIẾNG ANH DÙNG CHUNG ĐƯỢC ──
+ * Nó chỉ làm đúng một việc: đọc `bktUnit` rồi chạy BKT. Không đụng tới ma trận
+ * dạng bài của Toán, không đoán hình dạng nội dung. Nên từ 22-08-2026 môn Tiếng
+ * Anh cũng ghi vào `attempts/`, với `bktUnit` là MÃ NÚT của đồ thị tri thức
+ * (`v_g5_u1_city` · `sp_g5_u1_1`) thay vì mã micro của Toán.
+ *
+ * Hai môn không đụng nhau vì mã nút không bao giờ trùng mã micro, và `mastery`
+ * khoá theo chính `bktUnit`. Khác hẳn `progress/{uid}/micros` — chỗ ấy PHẢI tách
+ * vì `onMicroDone` xử theo luật của Toán.
+ *
+ * ⚠ `mon` và `maNutDs` ghi kèm để sau này lan truyền chẩn đoán (mục 2.3.3) còn
+ * biết nút này thuộc môn nào và câu ấy chạm những nút nào. KHÔNG lấy `maNutDs` ra
+ * cộng điểm: một lượt chỉ được tính công đúng một nút.
+ */
 export const onAttempt = onDocumentCreated('attempts/{attemptId}', async (event) => {
   const a = event.data?.data();
   if (!a?.learnerId || !a?.bktUnit) return;
@@ -35,7 +51,15 @@ export const onAttempt = onDocumentCreated('attempts/{attemptId}', async (event)
   await db.runTransaction(async (tx) => {
     const snap = await tx.get(ref);
     const next = applyAttempt(snap.exists ? snap.data() : undefined, a, () => Date.now());
-    tx.set(ref, { ...next, unit: a.bktUnit, learnerId: a.learnerId }, { merge: true });
+    tx.set(ref, {
+      ...next,
+      unit: a.bktUnit,
+      learnerId: a.learnerId,
+      /* Môn nào — suy từ chính bản ghi, không đoán từ hình dạng mã nút. Bản ghi
+         Toán không có trường này, nên mặc định 'toan' giữ nguyên hành vi cũ. */
+      mon: a.mon || 'toan',
+      maNutDs: a.maNutDs ?? null,
+    }, { merge: true });
   });
 });
 

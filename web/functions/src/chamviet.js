@@ -26,6 +26,7 @@
 /** Cùng mô hình với phòng luyện nói. Đổi thì đổi ở `luyennoi.js` rồi sửa cả đây. */
 export { MO_HINH, NGHI_NGAN, LoiGoi } from './luyennoi.js';
 import { MO_HINH, NGHI_NGAN, LoiGoi } from './luyennoi.js';
+import { vanTay } from './vantay.js';
 
 /* Bé lớp 3 viết 2–3 câu. 600 ký tự đã rộng gấp mấy lần, mà vẫn chặn được một gói
    bất thường — khoá Groq là khoá của mình, ai gọi được là tiêu tiền của mình. */
@@ -113,6 +114,19 @@ export function loiDanCham({ de, viet, vonTu, mauCau, lop }) {
  * TRƯỚC khi viết, lời dặn dài (bảng vốn từ 200 mục) thì nó nghĩ lâu, và nghĩ hết
  * token là `content` rỗng — xem chú thích dài ở `luyennoi.js`.
  */
+/**
+ * KHUNG của lời dặn — dựng bằng CHÍNH `loiDanCham` với phần riêng để rỗng.
+ *
+ * Không lọc đoán bằng `locKhung`: ở đây ta SỞ HỮU hàm dựng lời dặn, nên gọi lại
+ * nó với dữ liệu rỗng là ra đúng phần khung, không sót không thừa. Sửa lời dặn
+ * thì khung tự đổi theo — không có bảng nào phải nhớ cập nhật.
+ *
+ * `lop` GIỮ LẠI trong khung, cố ý: lời dặn cho bé lớp 3 và lớp 5 là hai mẫu khác
+ * nhau thật (câu đầu ghi rõ lớp), nên gom chung khi so ΔC là gom nhầm.
+ */
+export const khungCham = (lop, coMauCau) =>
+  loiDanCham({ de: '', viet: '', vonTu: [], mauCau: coMauCau ? ['—'] : [], lop });
+
 export async function chamBaiViet(du, taoClient) {
   const goi = soiBaiViet(du);
   const client = taoClient();
@@ -131,6 +145,17 @@ export async function chamBaiViet(du, taoClient) {
       `Máy chấm không trả lời được (finish_reason: ${chon?.finish_reason || 'không rõ'}).`);
   }
   /* Trả CHỮ TRẦN. Việc bóc JSON và SOI lời chấm là của máy con
-     (`lib/chamviet.js`, có cổng canh) — đúng một chỗ biết hình dạng câu trả lời. */
-  return { chu, moHinh: MO_HINH };
+     (`lib/chamviet.js`, có cổng canh) — đúng một chỗ biết hình dạng câu trả lời.
+
+     Kèm VÂN TAY lời dặn: mã băm phần KHUNG, không phải cả prompt. Đủ để sau này
+     so "mẫu nào chấm giúp bé tiến bộ hơn" (ΔC, mục 2.5.3) mà không lưu một chữ
+     nào của bé — bác chốt đường này 21-08-2026. Máy chủ vẫn KHÔNG lưu gì: vân tay
+     trả về cho máy con, máy con ghi kèm bản ghi của chính bé. */
+  return {
+    chu,
+    moHinh: MO_HINH,
+    ...vanTay('chamviet', khungCham(goi.lop, goi.mauCau.length > 0), {
+      moHinh: MO_HINH, nhiet: 0.2, token: TOKEN_CHAM,
+    }),
+  };
 }
