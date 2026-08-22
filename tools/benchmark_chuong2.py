@@ -349,16 +349,18 @@ R("2.3.2", "Công thức cập nhật Bayes sau mỗi câu trả lời", DU,
 
 R("2.3.2", "Ngưỡng tinh thông θ", PH,
   "`MASTERY_THRESHOLD = 0.85` ở cả `bkt.js:14` và `toan/lib/adaptive.js:13`.",
-  "Luận văn viết θ = 0,95 (mục 2.5.1 và tài liệu [6]). Hệ thống chạy 0,85 — LỆCH so "
-  "với mô tả.",
-  QUYET,
-  "Không phải việc kỹ thuật — sửa số là 5 phút, chọn số mới khó. HAI ĐƯỜNG: "
-  "(a) sửa hệ thống về 0,95 → bé phải làm đúng nhiều hơn mới qua ải, hợp luận văn "
-  "nhưng có thể làm bé lớp 1 nản; (b) giữ 0,85 và sửa luận văn, ghi rõ đây là con số "
-  "HIỆU CHỈNH THEO THỰC NGHIỆM cho trẻ tiểu học Việt Nam — chính `bkt.js` đã ghi lý "
-  "do: bộ tham số cũ tuyên thạo chỉ sau 2 câu, quá dễ dãi. Tôi nghiêng về (b): con "
-  "số có lý do đo được thì mạnh hơn con số chép từ tài liệu.",
-  "—", D0, "5 phút mã · phần khó là quyết"),
+  "Luận văn viết θ = 0,95 (mục 2.5.1 và tài liệu [6]). Hệ thống chạy 0,85. "
+  "✅ BÁC ĐÃ CHỐT 21-08-2026: GIỮ 0,85, KHÔNG sửa mã.",
+  KHONG,
+  "KHÔNG sửa phần mềm — bác chốt giữ 0,85, và một dòng mã cũng không phải đổi. "
+  "Việc còn lại nằm ở LUẬN VĂN: sửa θ = 0,95 thành θ = 0,85 ở mục 2.5.1, và ghi rõ "
+  "đây là con số HIỆU CHỈNH THEO THỰC NGHIỆM cho trẻ tiểu học Việt Nam chứ không "
+  "phải chép từ tài liệu [6]. Lý do đã có sẵn trong `bkt.js`: bộ tham số theo tài "
+  "liệu tuyên bé đã thạo chỉ sau 2 câu đúng — quá dễ dãi với trẻ con, và đó là phép "
+  "đo trên chính hệ thống này. ⚠ Sửa số ở mã thì phải đổi CẢ HAI chỗ (`bkt.js:14` "
+  "và `toan/lib/adaptive.js:13`) và nó ĐỤNG MÔN TOÁN đang chạy thật — thêm một lý "
+  "do nữa để giữ nguyên.",
+  "—", DX, "sửa luận văn, không sửa mã"),
 
 R("2.3.2", "BKT chạy cho môn TIẾNG ANH", CH,
   "Hàm nền nghe `attempts/{attemptId}`; Tiếng Anh không ghi vào đó (đã grep cả thư "
@@ -846,11 +848,12 @@ def main() -> int:
          "ĐƯỜNG GIỮA: lưu VÂN TAY prompt (mã băm + phiên bản mẫu) thay vì nguyên "
          "văn — đủ để so 'mẫu nào dạy hiệu quả hơn' mà không lưu thêm chữ nào về bé. "
          "Tôi nghiêng về đường giữa này."),
-        ("2 · Ngưỡng tinh thông θ",
-         "Luận văn viết 0,95; hệ thống chạy 0,85 và con số ấy hiệu chỉnh bằng thực "
-         "nghiệm (`bkt.js` ghi rõ: tham số cũ tuyên thạo chỉ sau 2 câu — quá dễ dãi "
-         "với trẻ). Tôi nghiêng về giữ 0,85 và sửa luận văn kèm lý do: con số có "
-         "phép đo đứng sau thì mạnh hơn con số chép từ tài liệu."),
+        ("2 · Ngưỡng tinh thông θ — ✅ ĐÃ CHỐT",
+         "Bác chốt 21-08-2026: GIỮ 0,85. Không sửa một dòng mã nào. Việc còn lại nằm "
+         "ở luận văn — sửa mục 2.5.1 thành θ = 0,85 kèm lý do: con số hiệu chỉnh "
+         "theo thực nghiệm cho trẻ tiểu học Việt Nam, vì bộ tham số theo tài liệu "
+         "[6] tuyên bé đã thạo chỉ sau 2 câu đúng. Con số có phép đo đứng sau thì "
+         "mạnh hơn con số chép lại."),
         ("", ""),
         ("MỘT CHỖ LUẬN VĂN NÊN SỬA", ""),
         ("Mục 2.4.3 bước 3",
