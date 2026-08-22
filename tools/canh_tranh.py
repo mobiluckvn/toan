@@ -44,6 +44,19 @@ from kho_cau_tienganh import hinh_cua_tu  # noqa: E402
 import canh_ve  # noqa: E402
 from canh_ve import W, H, NEN, VE  # noqa: E402
 
+# ⚠ KHOÁ KHAI — mô tả thứ nét vẽ ĐÃ VẼ, không sai khiến nét vẽ làm gì thêm.
+#
+# `ao_la` là một ví dụ: bút `nguoi` vẽ một cái áo, nhưng nó chỉ biết MÀU, không
+# biết đó là áo len hay áo sơ mi. Cổng `tienganh_dochieu` vì thế báo đỏ khi đoạn
+# văn nói "jumper" — tranh CÓ vẽ, chỉ là không có gì trong bản khai nói tên nó.
+#
+# Khai ở đây thay vì nới cổng: cổng vẫn đỏ với mọi món quần áo CHƯA khai, nên
+# một đoạn nói "coat" mà tranh vẽ áo len thì vẫn bị bắt. Nới cổng thì mất hẳn
+# phép canh ấy — đúng cái bẫy [[cong-ghim-chinh-ta-thay-vi-tinh-chat]].
+#
+# Khoá khai KHÔNG được truyền xuống bút vẽ, nếu không `nguoi()` ném TypeError.
+KHAI = {"ao_la"}
+
 
 def ve_vat(im, d, k: dict, hinh: dict):
     """Một mục trong `vat`. Hai lối khai:
@@ -60,7 +73,7 @@ def ve_vat(im, d, k: dict, hinh: dict):
         ten = k["ve"]
         if ten not in VE:
             raise SystemExit(f"✗ không có bút vẽ “{ten}” — có {sorted(VE)}")
-        tham = {a: b for a, b in k.items() if a != "ve"}
+        tham = {a: b for a, b in k.items() if a != "ve" and a not in KHAI}
         VE[ten](d, **tham)
         return
 

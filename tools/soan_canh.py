@@ -754,10 +754,12 @@ B5 = {
      {"kieu": "lop", "san": 556}, [
     {"ve": "cuaSo", "x": 890, "y": 140, "w": 330, "h": 260, "ngoai": "#DDE6EE"},
     {"ve": "bangThoiTiet", "x": 280, "y": 148, "w": 420, "h": 200, "khoanh": 3},
-    {"tu": "jumper", "x": 640, "y": 420, "co": 0} if False else
     {"ve": "may", "x": 890, "y": 210, "rong": 130},
+    # ÁO LEN TÍM — bút `nguoi` vẽ áo nhưng chỉ biết MÀU, không biết tên món áo.
+    # `ao_la` khai tên ấy để cổng đối chiếu được với đoạn đọc ("I wear a jumper
+    # in winter."). Không vẽ thêm gì; xem `KHAI` trong `canh_tranh.py`.
     {"ve": "nguoi", "x": 640, "y": 560, "cao": 300, "ao": TIM, "vay_ao": QUAN,
-     "toc_dai": True, "dang": "dung"},
+     "toc_dai": True, "dang": "dung", "ao_la": "jumper"},
     {"ve": "ghe", "x": 1050, "y": 712, "cao": 126},
     {"ve": "nguoi", "x": 1050, "y": 712, "cao": 216, "ao": DO, "dang": "ngoi",
      "huong": -1},

@@ -195,7 +195,7 @@ L3 = {
      "quả cầu trắng bay giữa hai bạn. GIỮA phía sau: một ghế đá xám. HẬU CẢNH: dãy "
      "lớp học màu vàng, hai cây xanh, bầu trời xanh.",
      "This is our playground. I play football at break time. "
-     "That's my friend. I like my playground.",
+     "I can see a football. That's my friend. I like my playground.",
      "1. What do you do at break time? → I play football.  (mồi: I play badminton. · I play chess. · I play basketball.)\n"
      "2. What can you see? → I can see a football.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
      "Where are they? · What do you do at break time? · What can you see?"),
@@ -249,8 +249,8 @@ L3 = {
      "ấm trà sứ trắng bên phải. PHÍA SAU BÀN: mẹ tóc búi, tạp dề vàng, đang đưa "
      "đĩa bánh mì về phía trước. HAI BÊN BÀN: hai bạn nhỏ ngồi trên ghế gỗ, cùng "
      "nhìn vào đĩa bánh. HẬU CẢNH: tường bếp màu kem, một cái tủ nhỏ.",
-     "This is my mother. That's some bread. There's some rice. "
-     "I want some milk. I can see a table.",
+     "This is my mother. That's a table. There's some rice. "
+     "I want some milk. I can see some bread.",
      "1. What can you see? → I can see some bread.  (mồi: I can see some rice. · I can see some milk. · I can see some water.)\n"
      "2. What's this? → It's a table.  (mồi: It's a book. · It's a bag. · It's a pen.)",
      "What can you see? · Would you like some bread? · What's this?"),
@@ -260,7 +260,7 @@ L3 = {
      "con chó nhỏ màu nâu đang ngồi cạnh chân. GIỮA phía sau: một cái lồng chim "
      "treo trên giá, bên trong có một con chim xanh. HẬU CẢNH: hàng rào gỗ thấp, "
      "vài bụi cây xanh.",
-     "This is my cat. I have a cat. He has two dogs. I can see a bird. "
+     "This is my cat. I have a cat. He has two dogs. I can see a cat. "
      "I can see two dogs.",
      "1. How many dogs can you see? → I can see two.  (mồi: I can see one. · I can see three. · I can see four.)\n"
      "2. What can you see? → I can see a cat.  (mồi: I can see a dog. · I can see a bird. · I can see a duck.)",
@@ -272,7 +272,7 @@ L3 = {
      "chơi mở nắp, trong có một con quay gỗ và một chiếc tàu thuỷ nhựa. HẬU CẢNH: "
      "tường màu kem, một tấm thảm tròn màu vàng dưới sàn.",
      "This is our room. She has a kite. He has a car. "
-     "I can see a top. There's a ship. I like my kite.",
+     "I can see a top. There's a ship. I can see four.",
      "1. What can you see? → I can see a top.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)\n"
      "2. How many toys can you see? → I can see four.  (mồi: I can see one. · I can see two. · I can see three.)",
      "What can you see? · How many toys can you see?"),
@@ -531,8 +531,8 @@ L4 = {
      "— hiệu bánh. TIỀN CẢNH BÊN TRÁI: hai bạn nhỏ đứng, bạn gái giơ tay chỉ sang "
      "gian hiệu sách. TIỀN CẢNH BÊN PHẢI: một giá treo áo có một chiếc áo thun màu "
      "xanh và một tấm thẻ giá nhỏ (ĐỂ TRỐNG, không chữ).",
-     "This is the shopping centre. I can see a bookshop. There's a bakery. "
-     "The bookshop is near the bakery. That's a T-shirt.",
+     "This is the shopping centre. There's a bookshop. There's a bakery. "
+     "The bookshop is near the bakery. I can see a T-shirt.",
      "1. Where's the bookshop? → It's near the bakery.  (mồi: It's opposite the bakery. · It's behind the bakery. · It's between the bakery.)\n"
      "2. What can you see? → I can see a T-shirt.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
      "Where are they? · Where's the bookshop? · What can you see?"),
@@ -575,8 +575,8 @@ L5 = {
      "quay mặt ra lớp, một tay chỉ lên bức tranh cá heo, mặt tươi. TIỀN CẢNH BÊN "
      "PHẢI: hai bộ bàn học gỗ, mỗi bàn một bạn ngồi quay lưng lại người xem, trên "
      "bàn có quyển vở mở. HẬU CẢNH BÊN PHẢI: cửa sổ nhìn ra tán cây xanh.",
-     "This is my class. This is Mary. Mary is my friend. She's friendly. "
-     "I can see a dolphin.",
+     "This is my class. This is Mary. Mary is my friend. "
+     "My favourite animal is a dolphin. I can see a dolphin.",
      "1. What's your favourite animal? → It's a dolphin.  (mồi: It's a cat. · It's a dog. · It's a fox.)\n"
      "2. What can you see? → I can see a dolphin.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
      "Where are they? · What can you see? · What's your favourite animal?"),
@@ -645,7 +645,7 @@ L5 = {
      "xanh đang viết vào quyển vở, bạn bên phải áo đỏ đang xếp mấy quân cờ trên "
      "bàn. HẬU CẢNH BÊN TRÁI: tấm bảng đen treo tường, mặt bảng ĐỂ TRỐNG. HẬU CẢNH "
      "BÊN PHẢI: cửa sổ nhìn ra tán cây xanh.",
-     "This is my class. She's reading books. He's doing projects. "
+     "This is my class. She's reading books. He likes doing projects. "
      "I like reading books. I can see a book.",
      "1. What school activity does he like? → He likes doing projects.  (mồi: He likes reading books. · He likes playing games. · He likes solving maths problems.)\n"
      "2. What can you see? → I can see a book.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
@@ -691,8 +691,8 @@ L5 = {
      "búi, áo hồng, ngồi trên ghế sofa xám, một tay chỉ vào tấm ảnh chiếc thuyền. "
      "BÊN PHẢI: một bạn nhỏ ngồi trên sofa cạnh mẹ, nghiêng người nhìn vào an-bum. "
      "HẬU CẢNH: một cây đèn đứng toả ánh vàng ấm.",
-     "This is my family. We collected seashells. We walked on the beach. "
-     "My mother is here. I can see a photo.",
+     "This is my mother. We collected seashells. We walked on the beach. "
+     "We took photos. I can see a photo.",
      "1. What did you do? → We collected seashells.  (mồi: We planted trees. · We played games. · We ate seafood.)\n"
      "2. Who's this? → It's my mother.  (mồi: It's my sister. · It's my brother. · It's my father.)",
      "Where are they? · What did your family do? · Who's this?"),
@@ -751,7 +751,7 @@ L5 = {
      "một bạn gái mặc ÁO LEN dày màu tím đứng cạnh cửa sổ, hai tay ôm lấy vai vì "
      "lạnh. TIỀN CẢNH: một bộ bàn học có quyển vở mở.",
      "This is my class. It's winter. It's cold today. "
-     "I can see a window. I like winter.",
+     "I wear a jumper in winter. I like winter.",
      "1. How's the weather in Ha Noi in winter? → It's cold.  (mồi: It's hot. · It's cool. · It's warm.)\n"
      "2. What do you usually wear in winter? → I wear a jumper.  (mồi: I wear a coat. · I wear a blouse. · I wear jeans.)",
      "Where is she? · How's the weather? · What do you usually wear in winter?"),

@@ -504,6 +504,12 @@ for (const q of quyens) {
       const trongTranh = new Set();
       for (const v of khai.vat || []) {
         if (v.tu) chu(v.tu).forEach((w) => trongTranh.add(w));
+        /* ⚠ QUẦN ÁO CHỈ TÍNH KHI ĐƯỢC KHAI TÊN.
+           Bút `nguoi` vẽ một cái áo nhưng chỉ nhận MÀU — nó không phân biệt được
+           áo len với áo sơ mi. Nếu cứ thấy có người là cho qua mọi từ quần áo,
+           thì đoạn nói "coat" mà tranh vẽ áo len cũng lọt, và phép canh này mất
+           sạch răng. Nên phải khai `ao_la` ở bản khai bố cục thì mới tính. */
+        if (v.ao_la) chu(v.ao_la).forEach((w) => trongTranh.add(w));
         if (v.ve) {
           if (!(v.ve in TU_CUA_VE)) veLa.push(v.ve);
           (TU_CUA_VE[v.ve] || []).forEach((x) => chu(x).forEach((w) => trongTranh.add(w)));
@@ -574,12 +580,6 @@ for (const q of quyens) {
                        'have', 'want', 'draw', 'ride', 'point', 'look', 'pass',
                        'wash', 'run', 'sail', 'lock', 'top', 'mop', 'square']) {
         veDuoc.delete(w);
-      }
-      if (false) {
-        for (const u of []) {
-          for (const x of []) {
-          }
-        }
       }
       for (const c of khai.doan || []) {
         for (const w of chu(c)) {
