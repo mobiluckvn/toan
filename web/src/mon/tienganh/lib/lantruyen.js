@@ -19,7 +19,7 @@
  * tuyên thạo khống — và tuyên khống thì hệ thống bỏ qua bài bé chưa từng học, im
  * lặng. Đây là lỗi nguy nhất của cả mục này, nên `NGUONG_TRAN` chặn cứng.
  */
-import { duyetNguoc, duyetXuoi } from './doThi.js';
+import { duyetNguoc, duyetXuoi, nhanNut } from './doThi.js';
 import { NGUONG_THAO, mucThaoCua } from './zpd.js';
 
 /** Mỗi bước lùi thì độ ngờ còn lại bấy nhiêu. */
@@ -105,9 +105,22 @@ export function congHuong(dt, mucThao, { sauToiDa = 2, beta = BETA } = {}) {
  */
 export function maTranTrangThai(dt, mucThao, { nguong = 0.5, toiDa = 10 } = {}) {
   return Object.keys(mucThao || {})
-    .map((ma) => ({ ma, p: mucThaoCua(mucThao, ma) }))
+    /* ⚠ GIẢI MÃ KHOÁ. Tên tài liệu `mastery` là `encodeURIComponent(bktUnit)`, nên
+       khoá thô có thể là `CHUONG%3A1%40G3`. Bày thẳng ra là bố mẹ đọc một chuỗi mã
+       hoá URL — đã xảy ra thật ngày 22-08. */
+    .map((k) => { try { return decodeURIComponent(k); } catch { return k; } })
+    /* ⚠ CHỈ NHẬN NÚT CÓ TRONG ĐỒ THỊ TIẾNG ANH. `mastery/{uid}/units` dùng CHUNG
+       với môn Toán (chủ ý — xem `duLieu.js`), nên không lọc thì mã của Toán
+       (`CHUONG:1@G3`) lọt thẳng vào bảng của Tiếng Anh. Đúng lỗi bác bắt được
+       22-08. Lọc theo đồ thị vừa chặn được điều đó vừa đúng về nguyên tắc: nút
+       không có trong đồ thị thì cũng chẳng lan truyền chẩn đoán được. */
+    .filter((ma) => !!dt?.nut?.[ma])
+    .map((ma) => ({ ma, p: mucThaoCua(mucThao, ma), nhan: nhanNut(dt, ma) }))
     .filter((x) => x.p !== null && x.p < nguong)
     .sort((a, b) => a.p - b.p)
     .slice(0, toiDa)
-    .map((x) => ({ ...x, goc: nutGocRe(dt, mucThao, x.ma, { toiDa: 1 })[0] || null }));
+    .map((x) => {
+      const g = nutGocRe(dt, mucThao, x.ma, { toiDa: 1 })[0] || null;
+      return { ...x, goc: g ? { ...g, nhan: nhanNut(dt, g.ma) } : null };
+    });
 }

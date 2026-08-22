@@ -131,6 +131,14 @@ export const lopNut = (dt, ma) => {
   return Number.isFinite(g) ? g : null;
 };
 
+/**
+ * Nhãn ĐỌC ĐƯỢC của một nút — "city — thành phố" chứ không phải `v_g5_u1_city`.
+ *
+ * Không có nhãn thì trả về `null`, và bên gọi PHẢI xử lý: bày mã máy ra cho bố mẹ
+ * đọc là đúng thứ đã xảy ra ngày 22-08 (Góc bố mẹ hiện `CHUONG%3A1%40G3`).
+ */
+export const nhanNut = (dt, ma) => dt?.nut?.[ma]?.n || null;
+
 /** Bài nào DẠY nút này. Đây là cầu từ "mã nút" sang thứ dạy được cho bé. */
 export const baiCuaNut = (dt, ma) => dt?.nut?.[ma]?.b || null;
 

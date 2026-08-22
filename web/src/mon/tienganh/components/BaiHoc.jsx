@@ -9,7 +9,7 @@ import NutNoi from './NutNoi.jsx';
 import HoiThoai from './HoiThoai.jsx';
 import Video from '../../../chung/components/Video.jsx';
 import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
-import { napBai, napSoAm, hangXom, hinhCuaTu, dsVideoTu } from '../lib/noiDung.js';
+import { napBai, napSoAm, hangXom, hinhCuaTu, dsVideoTu, quyenCua } from '../lib/noiDung.js';
 import { maCua } from './NutNghe.jsx';
 import {
   changCua, NHAN_CHANG, trangThaiChang, THU_TOI_THIEU, viecChangTu, viecChangCau,
@@ -71,7 +71,11 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
     datBai(null); datLoi(null); datTai(0); datXa(0); datMocDau(null);
     (async () => {
       try {
-        await napSoAm();
+        /* ⚠ PHẢI TRUYỀN QUYỂN. Gọi trần thì mặc định `ta1`, và nó chạy song song
+           với lời gọi của `ManTiengAnh` — lời nào xong sau thì thắng, nên bé học
+           lớp 3·4·5 có thể nhận sổ âm của lớp 1 và MẤT HẾT nút nghe. Xem ghi chú
+           dài ở `napSoAm`. */
+        await napSoAm(quyenCua(id));
         const d = await napBai(id);
         if (!song) return;
         datBai(d);

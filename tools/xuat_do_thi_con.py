@@ -61,12 +61,38 @@ def main() -> int:
             for m in (i.get("maNutDs") or []):
                 bai_cua.setdefault(m, b["id"])
 
+    # ── NHÃN ĐỌC ĐƯỢC ──
+    #
+    # ⚠ Ngoại lệ CÓ CHỦ Ý của luật "cắt hết chữ nghĩa" ở đầu tệp. Luật ấy nhắm vào
+    # việc chép lại NỘI DUNG BÀI (ví dụ, IPA, nghĩa dài) — chép là nhân đôi dữ
+    # liệu rồi hai bản lệch nhau. Còn đây là một nhãn NGẮN để gọi tên cái nút.
+    #
+    # Không có nó thì màn hình bày ra `v_g5_u1_city` cho bố mẹ đọc — và đúng thế
+    # đã xảy ra ngày 22-08: Góc bố mẹ hiện `CHUONG%3A1%40G3`. Một mã máy, lại còn
+    # mã hoá URL. Nguồn nhãn là `chuan_lopN.json`, tức cùng một nguồn với mọi thứ
+    # khác, nên không có bản thứ hai để mà lệch.
+    nhan = {}
+    for l in LOP:
+        f = GOC / f"data/tienganh/chuan_lop{l}.json"
+        if not f.exists():
+            continue
+        for u in json.loads(f.read_text("utf8"))["unit"]:
+            for t in u["tu"]:
+                if t.get("ma") and t.get("tu"):
+                    nhan[t["ma"]] = (f'{t["tu"]} — {t["nghia"]}' if t.get("nghia")
+                                     else t["tu"])
+            for m in u["mau_cau"]:
+                if m.get("ma") and m.get("cong_thuc"):
+                    nhan[m["ma"]] = m["cong_thuc"]
+
     ra_nut = {}
     for i in sorted(giu):
         n = nut[i]
         m = {"t": n.get("type") or "?"}
         if bai_cua.get(i):
             m["b"] = bai_cua[i]
+        if nhan.get(i):
+            m["n"] = nhan[i]
         g = n.get("grade")
         if g is not None:
             m["g"] = g
@@ -123,6 +149,7 @@ def main() -> int:
     print(f"→ {RA.relative_to(GOC)}  ({kb:.0f} KB)")
     print(f"   {len(ra_nut)} nút ({len(giu - trong)} ngoài lớp 1–5) · {len(ra_canh)} cạnh")
     print(f"   nút biết thuộc bài nào: {sum(1 for m in ra_nut.values() if m.get('b'))}")
+    print(f"   nút có nhãn đọc được:   {sum(1 for m in ra_nut.values() if m.get('n'))}")
     print(f"   cạnh theo loại: {dict(lo)}")
     print(f"   xuyên lớp: {sum(1 for c in ra_canh if c.get('xuyen_lop'))}")
     if kb > 250:

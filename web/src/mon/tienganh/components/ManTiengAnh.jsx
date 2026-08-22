@@ -420,11 +420,12 @@ function MaTran({ mucThao }) {
         {ds.map((x) => (
           <li key={x.ma} className="rounded-xl2 bg-soft px-3 py-2">
             <p className="font-semibold text-ink">
-              {x.ma} <span className="font-normal text-mute">— nắm {Math.round(x.p * 100)}%</span>
+              {x.nhan || x.ma}
+              {' '}<span className="font-normal text-mute">— nắm {Math.round(x.p * 100)}%</span>
             </p>
             {x.goc && x.goc.ma !== x.ma && (
               <p className="text-gold-dark">
-                Gốc đáng ngờ: <b>{x.goc.ma}</b>
+                Gốc đáng ngờ: <b>{x.goc.nhan || x.goc.ma}</b>
                 {' '}<span className="text-mute">(cách {x.goc.buoc} bước, nắm {Math.round(x.goc.p * 100)}%)</span>
               </p>
             )}

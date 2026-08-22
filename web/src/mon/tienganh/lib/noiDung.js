@@ -57,9 +57,36 @@ const SO_AM_RONG = { clip: {}, thuMuc: '' };
  * ra. Cổng cũng không thấy: dữ liệu đủ, 333 clip nằm đúng chỗ, chỉ là không ai gọi.
  *
  * Nhớ một kết quả RỖNG không tiết kiệm được gì đáng kể, mà mất thì mất cả môn.
+ *
+ * ── ⚠ NHỚ THEO TỪNG QUYỂN, VÀ CHẶN CUỘC ĐUA (sửa 22-08-2026) ──
+ * Bản cũ nhớ vào MỘT biến chung cho mọi quyển, và `BaiHoc.jsx` gọi `napSoAm()`
+ * KHÔNG THAM SỐ — mặc định `ta1`. Hai lời gọi chạy song song khi bé mở một bài:
+ * `ManTiengAnh` gọi với quyển thật, `BaiHoc` gọi với ta1. Cả hai cùng thấy `soAm`
+ * còn rỗng nên cùng tải, và LỜI GỌI NÀO XONG SAU thì thắng.
+ *
+ * Thua cuộc đua thì sổ âm trong bộ nhớ là của lớp 1, mọi mã clip của lớp 3·4·5
+ * tra ra null, và `NutNghe` TỰ ẨN. Bé mất nút "Nghe cô đọc" ở chặng Từ mới và
+ * Mẫu câu — tức là mất phần NGHE TRƯỚC KHI NÓI, đúng thứ chặng ấy sinh ra để làm.
+ * Màn hình vẫn đủ chữ nên nhìn lướt không ra; bác bắt được ngày 22-08.
+ *
+ * Lỗi này có từ `0b65a94c` (lúc dựng quyển Tiếng Anh đầu tiên), không phải mới —
+ * nhưng nó là CUỘC ĐUA nên lúc lộ lúc không, tuỳ máy và tuỳ mạng.
+ *
+ * Nay: nhớ theo `ma`, và giữ lời hứa đang bay để hai lời gọi cùng quyển dùng
+ * chung một lần tải.
  */
+const khoAm = new Map();
+const dangNapAm = new Map();
+
 export async function napSoAm(ma = 'ta1') {
-  if (soAm) return soAm;
+  if (khoAm.has(ma)) { soAm = khoAm.get(ma); return soAm; }
+  if (dangNapAm.has(ma)) return dangNapAm.get(ma);
+  const chay = napSoAmThat(ma);
+  dangNapAm.set(ma, chay);
+  try { return await chay; } finally { dangNapAm.delete(ma); }
+}
+
+async function napSoAmThat(ma) {
   const ct = chuongTrinh(ma);
   const duong = (ct.am || {}).so;
   if (!duong) return SO_AM_RONG;          // chưa có sổ đăng ký → THỬ LẠI lần sau
@@ -70,6 +97,7 @@ export async function napSoAm(ma = 'ta1') {
     const clip = Object.fromEntries((d.clip || []).map((c) => [c.id, c]));
     if (!Object.keys(clip).length) return SO_AM_RONG;
     soAm = { thuMuc: (ct.am || {}).thuMuc || 'tienganh/audio', clip };
+    khoAm.set(ma, soAm);
   } catch {
     /* Mất sổ âm thì bài VẪN học được, chỉ là không có tiếng. Với lớp 1 đó là mất
        một nửa, nhưng thà mất một nửa còn hơn màn hình trắng — và lần sau còn thử lại. */
