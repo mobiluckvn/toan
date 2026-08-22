@@ -45,6 +45,54 @@ t('đếm đủ số lượt và số đúng', doc.nAttempts === 3 && doc.nCorre
 t('ghi nhớ micro gần nhất', doc.lastMicroId === 'DL:KSN5Q1.B49.M1');
 t('cờ mastered khớp ngưỡng', doc.mastered === isMastered(doc.p));
 
+/* ── BỐN TRƯỜNG THÊM CHO MÔ HÌNH NGƯỜI HỌC (mục 2.3.1 · 2.5.2 luận văn) ──
+   Thêm 22-08-2026. Tệp này DÙNG CHUNG với môn Toán đang chạy thật, nên phép canh
+   đầu tiên phải là: bốn số cũ KHÔNG xê dịch. */
+{
+  const chuoi = [
+    { correct: true,  ms: 1200, hintsUsed: 0 },
+    { correct: false, ms: 3400, hintsUsed: 1 },
+    { correct: false,           hintsUsed: 2 },   // thiếu ms: bản ghi đời cũ
+    { correct: true,  ms: 800,  hintsUsed: 0 },
+  ];
+  let d;
+  for (const a of chuoi) d = applyAttempt(d, { ...a, microId: 'm' }, () => 1);
+
+  t('số cũ không đổi khi thêm trường mới', d.nAttempts === 4 && d.nCorrect === 2);
+
+  /* struggle_count — sai LIÊN TIẾP, đúng một lần là về 0. Khác hẳn `nAttempts`:
+     bé sai 3 lần rồi đúng 10 lần thì tỉ lệ đúng trông vẫn đẹp, mà lúc sai liền
+     3 lần mới là lúc bé không tự thoát ra được. */
+  t('saiLienTiep về 0 sau một câu đúng', d.saiLienTiep === 0);
+  let e; for (const ok of [true, false, false]) e = applyAttempt(e, { correct: ok }, () => 1);
+  t('saiLienTiep đếm được chuỗi sai', e.saiLienTiep === 2);
+
+  /* P(L) trước/sau — để tính ΔC ở mục 2.5.3. */
+  let f = applyAttempt(undefined, { correct: true }, () => 1);
+  t('pTruoc lượt đầu là L0', Math.abs(f.pTruoc - DEFAULT_PARAMS.L0) < 1e-9);
+  const g = applyAttempt(f, { correct: true }, () => 1);
+  t('pTruoc lượt sau bằng p lượt trước', Math.abs(g.pTruoc - f.p) < 1e-9);
+
+  /* ⚠ RT_avg: lượt THIẾU `ms` phải nằm NGOÀI mẫu, không được coi là 0. Coi là 0
+     thì mỗi dòng thiếu kéo trung bình xuống, và "bé trả lời nhanh dần" thành một
+     kết luận do lỗi ghi sinh ra. */
+  t('RT_avg bỏ lượt thiếu ms ra khỏi mẫu',
+    d.msDem === 3 && d.msTrungBinh === Math.round((1200 + 3400 + 800) / 3));
+  t('RT_avg KHÔNG coi lượt thiếu ms là 0',
+    d.msTrungBinh !== Math.round((1200 + 3400 + 0 + 800) / 4));
+  t('chưa đo được lượt nào thì RT_avg là null, không phải 0',
+    applyAttempt(undefined, { correct: true }, () => 1).msTrungBinh === null);
+
+  /* H_req — số gợi ý trung bình mỗi lượt tại nút này. */
+  t('H_req cộng dồn đúng', d.goiTong === 3 && d.goiTrungBinh === 0.75);
+
+  /* Cộng bằng TỔNG chứ không nhân trung bình cũ với n — phép sau trôi số dần, mà
+     tài liệu này sống suốt đời học của bé. Thử bằng một dãy dài. */
+  let h; let tong = 0;
+  for (let i = 0; i < 500; i += 1) { tong += 100 + i; h = applyAttempt(h, { correct: true, ms: 100 + i }, () => 1); }
+  t('cộng dồn 500 lượt không trôi số', h.msTrungBinh === Math.round(tong / 500));
+}
+
 /* ── lịch ôn: đọc được từ dữ liệu thật ── */
 t('đọc "+3 ngày: câu generator P1"', parseSchedule('+3 ngày: câu generator P1')?.days === 3);
 t('dòng không hợp lệ → null', parseSchedule('ôn khi rảnh') === null);

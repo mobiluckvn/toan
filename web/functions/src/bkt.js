@@ -69,15 +69,41 @@ export function applyAttempt(doc, attempt, now = Date.now) {
   const cur = doc?.p ?? DEFAULT_PARAMS.L0;
   const dung = !!attempt.correct;
   const p = bktUpdate(cur, dung, paramsFor(attempt));
+  const n = (doc?.nAttempts ?? 0) + 1;
+
+  /* ── RT_avg và H_req — GỘP DẦN, không giữ cả dãy ──
+     Mục 2.3.1 khai hai trường này ngay trong hồ sơ người học. Số thô từng lượt
+     thì `attempts` đã có, nhưng bắt mọi chỗ đọc phải quét cả nghìn dòng rồi tự
+     cộng là vừa chậm vừa dễ mỗi nơi cộng một kiểu.
+
+     Cộng dồn bằng TỔNG chứ không nhân trung bình cũ với n: `(cũ*(n-1)+mới)/n`
+     trôi số dần sau vài trăm lượt, mà tài liệu này sống suốt đời học của bé.
+
+     ⚠ `ms` có thể thiếu (bản ghi đời cũ, hoặc màn chưa bấm giờ). Thiếu thì KHÔNG
+     tính vào mẫu — chứ không coi là 0. Coi là 0 thì mỗi dòng thiếu kéo trung bình
+     xuống, và "bé trả lời nhanh dần" thành một kết luận do lỗi ghi sinh ra. */
+  const coMs = Number.isFinite(attempt.ms);
+  const msTong = (doc?.msTong ?? 0) + (coMs ? attempt.ms : 0);
+  const msDem = (doc?.msDem ?? 0) + (coMs ? 1 : 0);
+  const goiTong = (doc?.goiTong ?? 0) + (Number(attempt.hintsUsed) || 0);
+
   return {
     p,
     /* Mức thạo TRƯỚC lượt này. Lần đầu chạm nút thì là L0 — vẫn ghi ra, để phép
        trừ `p - pTruoc` lúc nào cũng có nghĩa mà không phải xử lý trường hợp riêng. */
     pTruoc: cur,
     mastered: isMastered(p),
-    nAttempts: (doc?.nAttempts ?? 0) + 1,
+    nAttempts: n,
     nCorrect: (doc?.nCorrect ?? 0) + (dung ? 1 : 0),
     saiLienTiep: dung ? 0 : (doc?.saiLienTiep ?? 0) + 1,
+    msTong,
+    msDem,
+    /* RT_avg. `null` khi chưa có lượt nào đo được — thà nói "chưa có số liệu" còn
+       hơn hiện một con số 0 cho bố mẹ tin theo. */
+    msTrungBinh: msDem ? Math.round(msTong / msDem) : null,
+    goiTong,
+    /* H_req — số gợi ý trung bình mỗi lượt tại nút này. */
+    goiTrungBinh: n ? +(goiTong / n).toFixed(2) : 0,
     lastMicroId: attempt.microId ?? doc?.lastMicroId ?? null,
     lastSeen: now(),
   };
