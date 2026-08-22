@@ -5,13 +5,13 @@
 
 ── ⚠ HAI LỖI NẶNG HƠN CHUYỆN THIẾU NGHĨA, TÌM RA KHI SOI ──
 
-1. NGHĨA CHỈ NẰM Ở `title=`. `VietBai.jsx` dòng 166 bày nghĩa bằng thuộc tính
-   `title` của thẻ nút — tức là TOOLTIP, chỉ hiện khi rê chuột. Trên máy tính
-   bảng và điện thoại, thứ bé thật sự dùng, KHÔNG BAO GIỜ hiện. Nghĩa là 2075 ô
-   ĐÃ CÓ nghĩa cũng vô hình y như 606 ô không có. Vá 105 chữ mà không vá chỗ này
-   thì không một đứa trẻ nào đọc được thêm một chữ nào.
+1. NGHĨA CHỈ NẰM Ở `title=` — ĐÃ SỬA. `VietBai.jsx` từng bày nghĩa bằng thuộc
+   tính `title` của thẻ nút, tức TOOLTIP, chỉ hiện khi rê chuột. Trên máy tính
+   bảng và điện thoại, thứ bé thật sự dùng, KHÔNG BAO GIỜ hiện — nên 2075 ô ĐÃ
+   CÓ nghĩa cũng vô hình y như 606 ô không có. Nay nghĩa vẽ thành chữ nhỏ ngay
+   dưới từ, và cổng `tienganh_bangtu_viet` canh chỗ ấy.
 
-2. GẠCH NỐI BỊ CẮT. Bộ tách chữ dùng `[A-Za-z][A-Za-z']*`, không biết gạch nối.
+2. GẠCH NỐI BỊ CẮT — ĐÃ SỬA. Bộ tách chữ từng dùng `[A-Za-z][A-Za-z']*`.
    Nên `T-shirt` đẻ thêm hai ô rác `T` và `shirt` (bài ta4 U18 có ĐỦ CẢ BA ô),
    `Mid-Autumn Festival` thành ba ô rời mà không có ô gạch nối nào để bé ghép
    lại, `twenty-nine` rụng mất nửa sau. Đây là lỗi làm bé KHÔNG viết đúng được,
@@ -207,16 +207,17 @@ def main() -> int:
     w2.append([
         "Nghĩa tiếng Việt chỉ là tooltip",
         "web/src/mon/tienganh/components/VietBai.jsx:166 — title={v.nghia}",
-        "Trên máy tính bảng và điện thoại, tooltip KHÔNG BAO GIỜ hiện. "
-        "Bé không đọc được nghĩa của BẤT KỲ ô nào, kể cả 2075 ô đã có nghĩa.",
+        "ĐÃ SỬA — nay nghĩa vẽ thành chữ nhỏ dưới từ. Trước đó tooltip KHÔNG "
+        "BAO GIỜ hiện trên máy tính bảng, nên bé không đọc được nghĩa của BẤT "
+        "KỲ ô nào, kể cả 2075 ô đã có nghĩa.",
         f"{co_nghia_o}/{tong_o} ô có nghĩa, và `nghia` chỉ xuất hiện đúng MỘT "
         "lần trong toàn bộ mã màn Viết — ở thuộc tính title.",
     ])
     w2.append([
         "Gạch nối bị cắt thành ô rời",
         "tools/sinh_bai_tranh.py — re.findall(r\"[A-Za-z][A-Za-z']*\", …)",
-        "Bé không ghép lại được: không có ô gạch nối nào. "
-        "Bài ta4 U18 còn hiện ĐỦ CẢ BA ô “T-shirt” · “T” · “shirt”.",
+        "ĐÃ SỬA. Trước đó bé không ghép lại được vì không có ô gạch nối nào, "
+        "và bài ta4 U18 hiện ĐỦ CẢ BA ô “T-shirt” · “T” · “shirt”.",
         "ta4 VIET:TA4.U18 (T-shirt) · ta5 VIET:TA5.U13 (Mid-Autumn Festival) · "
         "ta5 VIET:TA5.C4 (twenty-nine)",
     ])
@@ -244,8 +245,9 @@ def main() -> int:
         w3.append([k, dem[k], cach.get(k, "")])
     w3.append(["TỔNG", sum(dem.values()), ""])
     w3.append([])
-    w3.append(["⚠ Vá hết 105 chữ mà không sửa chỗ `title=` thì bé vẫn không "
-               "đọc được thêm một chữ nghĩa nào.", "", ""])
+    w3.append(["Bảng trống là ĐÚNG: 105 chữ đã xử xong, và cổng "
+               "`web/test/tienganh_bangtu_viet.test.mjs` canh cả bốn chỗ.",
+               "", ""])
     for c, r in zip("ABC", (38, 10, 70)):
         w3.column_dimensions[c].width = r
     for r in w3.iter_rows(min_row=1):
@@ -263,7 +265,8 @@ def main() -> int:
         print(f"   ⚠ {len(thieu_de)} chữ cần nghĩa mà CHƯA đề nghị: "
               + ", ".join(thieu_de))
         return 1
-    print(f"   {co_nghia_o}/{tong_o} ô có nghĩa — nhưng nghĩa chỉ nằm ở title=")
+    print(f"   {co_nghia_o}/{tong_o} ô có nghĩa; {tong_o - co_nghia_o} ô còn lại "
+          "là CHỮ NỐI trong KHONG_CHU — cố ý không chú nghĩa")
     return 0
 
 

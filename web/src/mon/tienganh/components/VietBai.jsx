@@ -160,13 +160,24 @@ export default function VietBai({ bai, onXong, onThoat }) {
             ? 'Từ trong tranh — bấm để thêm vào bài'
             : (goiY.length ? 'Từ để thay vào chỗ trống' : 'Từ con đã học — bấm để thêm vào bài')}
         </h2>
+        {/* ⚠ NGHĨA TIẾNG VIỆT PHẢI HIỆN RA, KHÔNG ĐƯỢC NẰM TRONG `title`.
+            Bản cũ bày nghĩa bằng `title={v.nghia}` — tức TOOLTIP, chỉ hiện khi rê
+            chuột. Bé học trên máy tính bảng và điện thoại thì không bao giờ thấy,
+            nên 2167 ô ĐÃ CÓ nghĩa cũng vô hình y hệt ô không có. Suốt thời gian
+            ấy dữ liệu vẫn đầy đủ và không cổng nào đỏ: chỗ hỏng nằm giữa dữ liệu
+            và mắt đứa trẻ, không tệp nào sở hữu chỗ ấy.
+            Bày theo đúng khuôn màn Nói: chữ trên, nghĩa nhỏ bên dưới. */}
         <div className="flex flex-wrap gap-2">
           {vonTu.map((v) => (
             <button key={v.tu} type="button" onClick={() => themTu(v.tu)}
-              title={v.nghia}
-              className="rounded-xl2 border-2 border-line bg-white px-3 py-1.5 text-ink
+              aria-label={v.nghia ? `${v.tu} — ${v.nghia}` : v.tu}
+              className="flex flex-col items-start rounded-xl2 border-2 border-line bg-white
+                px-3 py-1.5 text-left text-ink
                 hover:border-navy focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
-              {v.tu}
+              <span>{v.tu}</span>
+              {v.nghia && (
+                <span className="text-[0.7rem] leading-tight text-mute">{v.nghia}</span>
+              )}
             </button>
           ))}
         </div>

@@ -146,7 +146,116 @@ def muc_doc(k: dict, lop: int) -> tuple[dict, list[dict]]:
 KHONG_CHU = {"can", "see", "do", "does", "did", "have", "has", "is", "are",
              "was", "were", "am", "be", "will", "would", "like", "there",
              "that", "that's", "there's", "this", "it", "it's", "a", "an",
-             "the", "and", "to", "of", "s", "left", "right", "watch", "play"}
+             "the", "and", "to", "of", "s", "left", "right", "watch", "play",
+             # Chữ RÚT GỌN — cùng loại với `it's` · `that's` · `there's` đã có ở
+             # trên, chỉ là sót. Chú nghĩa cho chúng còn tệ hơn để trống: `He's`
+             # là "bạn ấy LÀ" trong "He's my friend" nhưng là "bạn ấy ĐANG" trong
+             # "He's reading books" — một dòng nghĩa không nói được cả hai.
+             "he's", "she's", "they're", "i'm", "i'd", "i'll", "we'll"}
+
+# ⚠ TÁCH CHỮ PHẢI GIỮ GẠCH NỐI.
+#
+# Bản cũ dùng `[A-Za-z][A-Za-z']*`, không biết gạch nối. Hậu quả bé gánh:
+#   · `T-shirt` đẻ thêm hai ô rác — bài ta4 U18 hiện ĐỦ CẢ BA ô T-shirt · T · shirt;
+#   · `Mid-Autumn Festival` thành ba ô rời, mà KHÔNG có ô gạch nối nào để ghép lại,
+#     nên bé không có cách nào viết đúng tên ngày hội ấy;
+#   · `twenty-nine` rụng mất nửa sau.
+# Đây là lỗi làm bé viết SAI, nặng hơn hẳn việc thiếu một dòng nghĩa.
+TACH_CHU = re.compile(r"[A-Za-z][A-Za-z'\-]*")
+
+
+def tach_chu(s: str) -> list[str]:
+    return [w for w in (x.strip("-") for x in TACH_CHU.findall(s)) if w]
+
+
+# Nghĩa cho những chữ ĐỨNG MỘT MÌNH thật, không phải mảnh vỡ của cụm nào.
+# Cụm thì đã giữ nguyên ở bước ①b — xem chú thích ở đó vì sao không chú nghĩa
+# cho mảnh vỡ.
+NGHIA_LE = {
+    "he": "bạn ấy (nam)", "she": "bạn ấy (nữ)", "we": "chúng mình",
+    "you": "bạn, con",
+    "animal": "con vật", "subject": "môn học", "wear": "mặc",
+    "want": "muốn", "think": "nghĩ", "should": "nên", "from": "từ",
+    "go": "đi", "goes": "đi", "going": "đang đi", "went": "đã đi",
+    "walk": "đi bộ", "walked": "đã đi bộ", "ran": "đã chạy",
+    "took": "đã chụp, đã lấy", "collected": "đã thu lượm",
+    "planted": "đã trồng", "works": "làm việc", "doing": "đang làm",
+    "playing": "đang chơi", "watching": "đang xem",
+    "watering": "tưới (cây, hoa)", "living": "sống",
+    "likes": "thích", "plays": "chơi",
+    "years": "năm", "day": "ngày", "time": "thời gian, giờ",
+    "morning": "buổi sáng", "evening": "buổi tối",
+    "photo": "tấm ảnh", "picture": "bức tranh", "park": "công viên",
+    "home": "nhà", "centre": "trung tâm", "dentist": "nha sĩ",
+    "campfire": "lửa trại", "sign": "biển báo", "study": "học",
+    "buy": "mua", "drink": "uống", "clean": "lau, dọn sạch",
+    "decorate": "trang trí", "fresh": "tươi", "fast": "nhanh",
+    "flower": "bông hoa", "yoga": "yoga", "tv": "ti vi",
+    "around": "quanh, xung quanh", "every": "mỗi", "up": "lên",
+    "at": "ở, tại", "by": "bằng, bởi", "for": "cho, để",
+    # Tên riêng tiếng Việt viết không dấu trong bài đọc — chú nghĩa ở đây chính là
+    # cho bé thấy MẶT CHỮ CÓ DẤU của cái tên em ấy vẫn đọc hằng ngày.
+    "tran hung dao": "Trần Hưng Đạo (tên phố)",
+}
+
+# Dạng SỐ NHIỀU suy được bằng máy: tiếng Việt không đánh dấu số nhiều nên nghĩa
+# của `books` đúng bằng nghĩa của `book`.
+# ⚠ CHỈ danh từ số nhiều. KHÔNG suy cho `-ing` · `-ed` · động từ chia `-s`: ở đó
+# nghĩa CHUYỂN, và gốc có khi lại là danh từ — `water` là "nước", suy ra thì
+# `watering` thành "nước" thay vì "tưới". Những dạng ấy khai tay ở `NGHIA_LE`.
+KHONG_SUY_SO_NHIEU = {"likes", "plays", "goes", "works", "does", "has", "is",
+                      "was", "years", "sports"}
+
+
+# Dạng chia của ĐỘNG TỪ ĐỨNG ĐẦU CỤM.
+#
+# Sách dạy cụm ở thể gốc — "collect seashells" · "take photos" · "go camping".
+# Đoạn văn thì kể chuyện đã xảy ra: "We collected seashells." Hai bên không nhận
+# ra nhau thì cụm bị xé, và đó đúng là 8 trong 9 ô còn sót sau bước ①b.
+BAT_QUY_DONG_TU = {
+    "go": ["goes", "going", "went", "gone"],
+    "take": ["takes", "taking", "took", "taken"],
+    "do": ["does", "doing", "did", "done"],
+    "run": ["runs", "running", "ran"],
+    "buy": ["buys", "buying", "bought"],
+    "eat": ["eats", "eating", "ate", "eaten"],
+    "see": ["sees", "seeing", "saw", "seen"],
+    "swim": ["swims", "swimming", "swam"],
+    "have": ["has", "having", "had"],
+}
+
+
+def dang_chia(w: str) -> list[str]:
+    """Mọi dạng chia có thể của một động từ. Dạng nào không có thật thì cũng
+    chỉ là một nhánh regex không bao giờ khớp — không hại gì."""
+    ds = {w, w + "s", w + "ing", w + "ed"}
+    if w.endswith("e"):
+        ds |= {w[:-1] + "ing", w + "d"}
+    if w.endswith("y"):
+        ds |= {w[:-1] + "ies", w[:-1] + "ied"}
+    ds |= set(BAT_QUY_DONG_TU.get(w, ()))
+    return sorted(ds, key=len, reverse=True)
+
+
+def khuon_cum(t: str) -> re.Pattern:
+    """Khuôn bắt một cụm, cho phép chữ ĐẦU chia thể."""
+    dau, *con = t.split(" ")
+    dau_alt = "|".join(re.escape(x) for x in dang_chia(dau))
+    duoi = (r"\s+" + r"\s+".join(re.escape(x) for x in con)) if con else ""
+    return re.compile(rf"(?<![A-Za-z])({dau_alt}){duoi}(?![A-Za-z])", re.I)
+
+
+def nghia_goc(t: str, nghia: dict) -> str:
+    """Nghĩa suy từ dạng SỐ ÍT, nếu có. Không có thì trả chuỗi rỗng."""
+    w = t.lower()
+    if w in KHONG_SUY_SO_NHIEU or not w.endswith("s"):
+        return ""
+    for goc in (t[:-1], t[:-2] if w.endswith("es") else None):
+        if goc and nghia.get(goc):
+            return nghia[goc]
+        if goc and nghia.get(goc.lower()):
+            return nghia[goc.lower()]
+    return ""
 
 
 def tu_trong_tranh(k: dict, lop: int) -> list[dict]:
@@ -182,25 +291,84 @@ def tu_trong_tranh(k: dict, lop: int) -> list[dict]:
     def them(t, ng=""):
         if t and t.lower() not in da:
             da.add(t.lower())
-            g = "" if t.lower() in KHONG_CHU else (ng or nghia.get(t, ""))
+            g = "" if t.lower() in KHONG_CHU else (
+                ng or nghia.get(t) or NGHIA_LE.get(t.lower()) or nghia_goc(t, nghia))
             ra.append({"tu": t, "nghia": g})
+
+    cau_ds = list(k["doan"]) + [h["dap"] for h in (k.get("hoi") or [])]
 
     # ① vật trong tranh — nay lấy từ `vat`, mục nào khai `tu` là một từ vựng thật
     for n in k["vat"]:
         if n.get("tu"):
             them(n["tu"])
+
+    # ①b CỤM TỪ VỰNG NHIỀU CHỮ — thêm NGUYÊN CỤM, không để bị xé ra.
+    #
+    # ⚠ Đây là chỗ đẻ ra 48 trong 105 ô "không có nghĩa". Kho từ vựng dạy rất
+    # nhiều CỤM ("break time" · "table tennis" · "set square" · "collect
+    # seashells"), mà bảng nghĩa tra bằng NGUYÊN VĂN khoá. Xé cụm ra thì chữ lẻ
+    # không khớp khoá nào → ô trống nghĩa.
+    #
+    # Và tệ hơn hẳn chuyện trống nghĩa: chữ lẻ ĐỔI NGHĨA khi rời cụm. "table
+    # tennis" là BÓNG BÀN, `tennis` một mình là quần vợt; "set square" là cái
+    # ê-ke, `set` một mình thì không; "first floor" kiểu Anh là TẦNG HAI. Có lúc
+    # tôi định chú nghĩa cho từng chữ lẻ — làm thế là dạy sai. Giữ nguyên cụm thì
+    # không phải chọn nghĩa nào cả, và bé bấm một cái được đúng thứ sách dạy.
+    #
+    # Dài trước ngắn sau, để "table tennis" ăn trước "table".
+    cum = []
+    for t, g in nghia.items():
+        if not g or not re.search(r"[ \-]", t):
+            continue
+        # "get (to)" — phần trong NGOẶC là tuỳ chọn: sách gộp "get to school" và
+        # "get there" vào một mục. Sinh cả hai khuôn, để cái nào khớp thì khớp.
+        bien = {re.sub(r"\s*\([^)]*\)", "", t).strip(), t.replace("(", "").replace(")", "").strip()} \
+            if "(" in t else {t}
+        cum += [(b, g) for b in bien if b]
+    cum.sort(key=lambda x: len(x[0]), reverse=True)
+
+    for c in cau_ds:
+        con = c
+        for t, g in cum:
+            kh = khuon_cum(t)
+            m = kh.search(con)
+            if not m:
+                continue
+            # Ô mang ĐÚNG chữ trong đoạn ("collected seashells"), nhưng nghĩa lấy
+            # của cụm gốc — tiếng Việt không đổi dạng theo thì, nên nghĩa vẫn
+            # đúng, mà bé bấm một cái là ra đúng chữ bài đọc vừa cho đọc.
+            them(m.group(0), g)
+            # ⚠ XOÁ KHỎI CÂU rồi mới xét cụm ngắn hơn. Không xoá thì "get up" và
+            # "get" cùng khớp một chỗ và đẻ ra hai ô cho một chữ.
+            con = kh.sub(" ", con)
+
     # ② mọi chữ của đoạn mô tả, giữ nguyên dạng viết trong đoạn ("That's", "This")
-    for c in k["doan"]:
+    # ③ và mọi chữ trong ĐÁP ÁN câu hỏi — bé muốn viết thêm ý ấy thì phải có chữ.
+    #    Suy từ đáp án chứ không đoán: đoán là chỗ bản trước thiếu mất "That's".
+    for c in cau_ds:
         # Bỏ những chữ đã nằm trong một CỤM đã thêm ("teddy bear" → bỏ teddy, bear).
         con = c
-        for t in list(da):
-            con = re.sub(rf"\b{re.escape(t)}\b", " ", con, flags=re.I)
-        for w in re.findall(r"[A-Za-z][A-Za-z']*", con):
-            them(w)
-    # ③ mọi chữ trong ĐÁP ÁN các câu hỏi — bé muốn viết thêm ý ấy thì phải có chữ.
-    #    Suy từ đáp án chứ không đoán: đoán là chỗ bản trước thiếu mất "That's".
-    for h in k.get("hoi") or []:
-        for w in re.findall(r"[A-Za-z][A-Za-z']*", h["dap"]):
+        for t in sorted(da, key=len, reverse=True):
+            con = re.sub(rf"(?<![A-Za-z]){re.escape(t)}(?![A-Za-z])", " ", con,
+                         flags=re.I)
+
+        # ②b TÊN RIÊNG NHIỀU CHỮ — dãy chữ hoa liền nhau, KHÔNG tính chữ mở câu.
+        #
+        # "I live in Tran Hung Dao Street." từng thành bốn ô rời `Tran` · `Hung`
+        # · `Dao` · `Street`, và ba ô đầu là ba ô cuối cùng còn trống nghĩa trong
+        # cả năm quyển. Chúng không phải tên ba người — chúng là một cái tên phố
+        # bị xé làm ba. Kho từ vựng không dạy tên phố nên khớp-cụm không với tới.
+        #
+        # ⚠ Phải bỏ chữ MỞ CÂU: "Mary is my friend." thì `Mary` viết hoa chỉ vì
+        # đứng đầu câu. Nên chỉ nhận dãy từ hai chữ hoa trở lên và không bắt đầu
+        # ở vị trí 0.
+        for m in re.finditer(r"[A-Z][A-Za-z'\-]*(?:\s+[A-Z][A-Za-z'\-]*)+", con):
+            if m.start() == 0:
+                continue
+            them(m.group(0))
+            con = con[:m.start()] + " " * len(m.group(0)) + con[m.end():]
+
+        for w in tach_chu(con):
             them(w)
     return ra
 
