@@ -2,7 +2,7 @@
 
 **Soát ngày 18-08-2026, 56 từ.** Quyển này chưa từng được soi hình: cổng
 `tienganh_hinh_dung_tu.test.mjs` mở đúng thư mục `ta1`. Soát nhân lúc soát lớp 3.
-12
+
 ## Ai soát, và soát bằng gì
 
 Soát bởi **Claude (phiên 18-08)**, bằng **tên Unicode chính thức** của emoji đặt cạnh
