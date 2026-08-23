@@ -310,6 +310,53 @@ def main() -> int:
         w5.append([k, v])
     don(w5)
 
+    # ── ⑥ SAU BUỔI THỬ ────────────────────────────────────────────────────────
+    #
+    # ⚠ KHÔNG SỬA PHẦN QUAN SÁT Ở CÁC TRANG TRÊN. Chúng là ghi chép của một buổi
+    # đăng nhập có thật lúc 07h32 ngày 23-08-2026; sửa lại cho khớp hiện trạng thì
+    # nó thôi không còn là biên bản, mà thành một bản tự khai. Những gì vá SAU buổi
+    # ấy ghi riêng ở đây, kèm ngày.
+    w6 = wb.create_sheet("Sau buổi thử")
+    bang(w6, ["Quan sát trong buổi", "Đã vá gì · ngày", "Kiểm lại thế nào"], (44, 52, 44))
+    for a, b, c in [
+        ("Góc bố mẹ chỉ có mỗi dòng “A1 — khung tham chiếu châu Âu (CEFR)”, "
+         "tức NHÃN của quyển học liệu chứ không phải mức của bé (mục 26).",
+         "23-08: thêm `lib/cefr.js` + thẻ “con đang ở đâu trên thang năng lực” — "
+         "tính tỉ lệ nút đạt P(L) ≥ 0,85 trên tổng nút từng khối lớp. "
+         "⚠ Rà lại còn thấy `cefrCuaBe()` trong `lib/hoso.js` KHÔNG MÀN NÀO GỌI — "
+         "mã chết từ lúc viết, nên trước 23-08 tiêu chí này thực sự chưa đạt.",
+         "Mở Góc bố mẹ sau khi làm vài bài: phải thấy phân số thật (ví dụ "
+         "5/871 · 1%) chứ không phải một chữ bậc trần. Số nhỏ mấy tuần đầu là "
+         "ĐÚNG, không phải lỗi."),
+        ("Bài viết được AI chấm và tầng hậu kiểm chặn được câu vi phạm vốn từ, "
+         "nhưng bản ghi lượt KHÔNG mang vân tay của lời nhắc đã sinh ra nó.",
+         "23-08: nối `mauPrompt` · `phienBanMau` · `vanTayPrompt` vào bản ghi. "
+         "Chỗ vân tay bị rơi là `goiChamViet.js` — nó chỉ lấy phần `cham` của "
+         "phản hồi. Mã sinh vân tay vẫn chạy đúng suốt thời gian ấy.",
+         "Nộp một bài viết rồi soi bản ghi `attempts` mới nhất: phải có đủ ba "
+         "trường. Cổng `tienganh_vao_engine.test.mjs` khoá chỗ nối này."),
+        ("Bé mở bài rồi thoát giữa chừng thì không để lại dấu vết nào.",
+         "23-08: học bạ loại `phien` (mã bài · chặng · số lượt · số giây), mỗi "
+         "lần bỏ dở một bản ghi. ⚠ `phien` là `loai` mới nên phải deploy luật "
+         "Firestore TRƯỚC — thiếu bước ấy Firestore từ chối ghi TRONG IM LẶNG.",
+         "Vào một bài rồi bấm thoát: phải sinh một mục `phien`. "
+         "⚠ CẬN DƯỚI — đóng thẳng tab thì KHÔNG ghi được, đó là giới hạn thật "
+         "chứ không phải lỗi cần sửa."),
+        ("Báo cáo riêng của bé hiện “Xong 0/20 bài · 0%” dù bé vừa học Tiếng Anh.",
+         "23-08: `dungSoHoc` đọc thêm `progressTA` và `hocBaTA` loại `gio`, gộp "
+         "với số của môn Toán.",
+         "Học vài bài Tiếng Anh rồi mở báo cáo riêng: hai cột “xong mấy bài” và "
+         "“số phút” phải nhúc nhích."),
+        ("Không quan sát được — buổi thử bị P2 chặn ở chặng Từ mới (đòi micro).",
+         "23-08: thêm nút “Con chưa nói được — cho con đi tiếp nhé”. Vá cùng đợt "
+         "P1/P2.",
+         "⚠ CHƯA ĐI THỬ LẠI TRÊN BẢN CHẠY. Phần dưới ngưỡng P2 trong biên bản "
+         "này vẫn là CHƯA KIỂM ĐƯỢC, không phải ĐÃ ĐẠT. Muốn kết luận thì phải "
+         "đăng nhập lại một buổi nữa."),
+    ]:
+        w6.append([a, b, c])
+    don(w6)
+
     RA.parent.mkdir(parents=True, exist_ok=True)
     wb.save(RA)
     print(f"→ {RA.relative_to(GOC)}")

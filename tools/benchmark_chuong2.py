@@ -87,10 +87,16 @@ R("2.1.2", "Chiều THỜI GIAN (T): lặp lại ngắt quãng, đường cong q
   "✅ ĐỦ CẢ BA (22-08). LẶP LẠI NGẮT QUÃNG chạy trọn "
   "đường ống: `onMicroDoneTA` sinh thẻ → thẻ mời trên trang chính → màn `OnLai` → "
   "hộp Leitner đẩy lên hoặc về 0. ĐƯỜNG CONG QUÊN: `quenDan()` trong `bkt.js`, nửa "
-  "đời 14 ngày. MỆT MỎI NHẬN THỨC: `metMoi()` trong `report.js`, hiện trong Sổ bố "
+  "đời 14 ngày. MỆT MỎI NHẬN THỨC nay có HAI tín hiệu ĐỘC LẬP: (1) `metMoi()` "
+  "trong `report.js` so thời gian phản hồi nửa đầu với nửa cuối CÙNG MỘT PHIÊN, "
+  "cùng một định dạng, chậm hơn 25% thì báo; (2) sự kiện BỎ DỞ — học bạ loại "
+  "`phien`, vá 23-08. Cả hai hiện trong Sổ bố "
   "mẹ thành một câu dùng được — con học chừng bao lâu thì nên nghỉ.",
   "Đo xong nhưng CHƯA DÙNG để rút ngắn buổi học — mục này chỉ đòi ĐO, nên vẫn tính "
-  "là đạt; việc dùng thì để Đợt 4 cùng với hàm chính sách.",
+  "là đạt; việc dùng thì để Đợt 4 cùng với hàm chính sách. "
+  "⚠ Tín hiệu BỎ DỞ là CẬN DƯỚI: chỉ ghi được khi bé rời màn qua thao tác trong "
+  "ứng dụng, đóng thẳng tab thì React không kịp chạy hàm dọn. Dùng làm chỉ báo xu "
+  "hướng, đừng dùng làm phép đếm đầy đủ.",
   OK,
   "⚠ PHÁT HIỆN LÚC LÀM: bộ sinh thẻ ôn đã chạy từ lâu và luật cũng đã cho đọc "
   "`reviewQueue`, nhưng KHÔNG màn nào đọc thư mục ấy — kể cả môn TOÁN. Thẻ sinh ra "
@@ -315,7 +321,7 @@ R("2.3.1", "Mô hình che phủ (Overlay) trạng thái lên từng nút đồ t
   "Sổ của bé khoá theo MÃ BÀI (`DL:TA5.B01`), không theo mã nút (`v_g5_u1_dolphin`). "
   "`progressTA/{uid}/micros` lưu: pass · score · total · bac · attempts · at "
   "(`duLieu.js:67`).",
-  "⚠ CHƯA DEPLOY.",
+  "✅ ĐÃ DEPLOY 23-08-2026 (luật Firestore → hàm nền → giao diện).",
   OK,
   "✅ XONG Đợt 1 (22-08): 4226/4226 câu mang `maNut` (3430 nút từ vựng · 796 nút "
   "mẫu câu); lớp phủ là `mastery/{uid}/units/{maNut}` do `onAttempt` tự ghi. Sổ cũ "
@@ -333,13 +339,13 @@ R("2.3.1", "Mô hình che phủ (Overlay) trạng thái lên từng nút đồ t
 R("2.3.1", "`p_learned` — xác suất nắm vững từng nút", DU,
   "✅ XONG Đợt 1. `applyAttempt()` ghi `p` cho từng nút, và `pTruoc` giữ mức thạo "
   "TRƯỚC lượt ấy nên ΔC của mục 2.5.3 tính được.",
-  "⚠ CHƯA DEPLOY.",
+  "✅ ĐÃ DEPLOY 23-08-2026 (luật Firestore → hàm nền → giao diện).",
   OK, "Quà kèm của Đợt 1 — không phải viết gì thêm.", "2.3.1-overlay", D1, "xong"),
 
 R("2.3.1", "`struggle_count` — đếm số lần sai LIÊN TIẾP tại một nút", DU,
   "✅ XONG Đợt 1. `saiLienTiep` trong `applyAttempt` — đúng MỘT lần là về 0, vì cái "
   "cần đo là ĐANG BÍ chứ không phải TỪNG BÍ.",
-  "⚠ CHƯA DEPLOY.",
+  "✅ ĐÃ DEPLOY 23-08-2026 (luật Firestore → hàm nền → giao diện).",
   OK,
   "Khác hẳn `nAttempts`, và khác hẳn `attempts` của sổ tiến độ (đếm số lần làm CẢ "
   "BÀI): bé sai 3 lần rồi đúng 10 lần thì tỉ lệ đúng trông vẫn đẹp, mà lúc sai 3 "
@@ -348,14 +354,14 @@ R("2.3.1", "`struggle_count` — đếm số lần sai LIÊN TIẾP tại một 
 R("2.3.1", "`last_interacted` — dấu thời gian lần gần nhất", DU,
   "✅ XONG Đợt 1. `lastSeen` mức NÚT trong `mastery`, và `ts` mili-giây từng lượt "
   "trong `attempts`.",
-  "⚠ CHƯA DEPLOY.",
+  "✅ ĐÃ DEPLOY 23-08-2026 (luật Firestore → hàm nền → giao diện).",
   OK, "Quà kèm của Đợt 1.", "2.3.1-overlay", D1, "xong"),
 
 R("2.3.1", "`RT_avg` — thời gian phản hồi trung bình", DU,
   "✅ XONG Đợt 1. `CauHoi.jsx` bấm giờ từng LƯỢT (đặt lại khi bé bấm Thử lại, để "
   "lượt hai không gồm thời gian bé ngồi đọc lời báo sai), `applyAttempt` gộp thành "
   "`msTrungBinh` ngay trong hồ sơ nút.",
-  "⚠ CHƯA DEPLOY.",
+  "✅ ĐÃ DEPLOY 23-08-2026 (luật Firestore → hàm nền → giao diện).",
   OK,
   "⚠ HAI CHỖ DỄ RA SỐ SAI, đã có cổng canh (`bkt.test.mjs`, đảo chiều thử cả hai): "
   "(1) lượt THIẾU `ms` phải nằm NGOÀI mẫu — coi là 0 thì mỗi dòng thiếu kéo trung "
@@ -370,7 +376,7 @@ R("2.3.1", "`H_req` — số lần dùng trợ giúp", DU,
   "`HocSinhChiTiet.jsx:349`, nguồn `PracticeItem.jsx:47` → `sync.js:115`). Bên TIẾNG "
   "ANH gợi ý CÓ HIỆN cho bé (`CauHoi.jsx:270`, sau `HIEN_GOI_Y` lần thử) nhưng "
   "KHÔNG ĐẾM.",
-  "⚠ CHƯA DEPLOY.",
+  "✅ ĐÃ DEPLOY 23-08-2026 (luật Firestore → hàm nền → giao diện).",
   OK,
   "✅ XONG Đợt 1. `hintsUsed` từng lượt ở `CauHoi.jsx`, gộp thành `goiTrungBinh` "
   "trong hồ sơ nút. Dùng ĐÚNG tên trường của Toán nên màn cô giáo hiện được ngay. "
@@ -382,13 +388,29 @@ R("2.3.1", "`H_req` — số lần dùng trợ giúp", DU,
 R("2.3.1", "Hồ sơ bé: CEFR hiện tại · sở thích · định dạng ưa thích", DU,
   "✅ ĐỦ BA TRƯỜNG, Đợt 0 + Đợt 2, ĐÃ DEPLOY. Sở thích: `loai: soThich` (Đợt 0). "
   "Định dạng: `loai: hoSo`, bảng đúng/tổng theo từng `format` (Đợt 2). CEFR mức BÉ: "
-  "`cefrCuaBe()` suy từ quyển cao nhất bé đã xong HẾT bài — `cefr` nay khai trong "
-  "sổ đăng ký cho cả 5 quyển, chép từ `chuan_lopN.json` chứ không gõ tay.",
-  "Sở thích mới dùng ở PHÒNG NÓI; ba màn kia chưa đọc tới (xem mục 2.1.2-M).",
+  "`bacCefr()` trong `lib/cefr.js` (vá 23-08) — tính tỉ lệ nút đạt P(L) ≥ 0,85 trên "
+  "tổng nút của từng khối lớp, rồi bắc cầu sang bậc theo mục tiêu Chương trình GDPT "
+  "2018. Bày ở Góc bố mẹ thành thẻ “con đang ở đâu trên thang năng lực”.",
+  "Sở thích mới dùng ở PHÒNG NÓI; ba màn kia chưa đọc tới (xem mục 2.1.2-M). "
+  "⚠ SỬA LẠI SO VỚI BẢN 22-08: bản trước ghi `cefrCuaBe()` là phần hiện thực của "
+  "tiêu chí này. Rà lại 23-08 thì KHÔNG MÀN NÀO GỌI hàm ấy — nó là mã chết từ lúc "
+  "viết, đúng kiểu 'chỗ nối' đã dính nhiều lần trong repo này (hàm đúng, chưa bao "
+  "giờ nối). Thứ bày ra màn hình trước 23-08 chỉ là `ct.cefr`, tức NHÃN CỦA QUYỂN "
+  "học liệu, không phải mức của bé. Nên tiêu chí này trước 23-08 KHÔNG đạt; nay "
+  "đạt nhờ `bacCefr()`. "
+  "⚠ Trên Góc bố mẹ hiện có HAI con số CEFR cạnh nhau và chúng KHÁC NGHĨA: dòng "
+  "“Trình độ quyển này: A1” là nhãn học liệu, thẻ “con đang ở đâu” là mức của bé. "
+  "Nhãn dòng trên đã ghi rõ “quyển này” nên không mâu thuẫn — nhưng đổi chữ ấy thì "
+  "hai con số lập tức đọc thành mâu thuẫn.",
   OK,
   "⚠ ĐANG HỌC DỞ THÌ KHÔNG TÍNH CEFR. Bé mới xong 1/20 bài quyển A1 mà đã dán nhãn "
   "A1 là nói quá về bé — mà nhãn ấy đi vào lời dặn LLM, tức cô giáo máy sẽ nói bằng "
-  "vốn từ bé chưa có. "
+  "vốn từ bé chưa có. `bacCefr()` giữ đúng nguyên tắc ấy bằng ngưỡng phủ 60%: chưa "
+  "đủ thì trả `null` và màn hình báo tỉ lệ thật chứ không quy ra bậc. "
+  "⚠ ĐÂY KHÔNG PHẢI PHÉP ĐO THEO CHUẨN CEFR. CEFR định nghĩa bậc bằng mô tả LÀM "
+  "ĐƯỢC GÌ, không bằng số đơn vị kiến thức đã nắm — nhịp 'khối lớp nào ứng bậc "
+  "nào' là quy ước của Chương trình GDPT 2018, không phải kết quả đo của phần mềm. "
+  "Luận văn phải nói rõ chỗ này, xem `docs/sua_chuong2.docx` mục A-2.3.1. "
   "⚠ Thứ tự CEFR lấy theo thứ tự SỔ ĐĂNG KÝ, không so chuỗi: so chuỗi thì chuỗi A1 "
   "đứng TRƯỚC chuỗi Pre-A1 theo bảng chữ cái, tức là ngược hẳn với thang trình độ. "
   "⚠ Gộp hai máy thì CỘNG bảng định dạng, không lấy bên mới hơn như mọi thứ khác "
@@ -425,7 +447,7 @@ R("2.3.2", "BKT chạy cho môn TIẾNG ANH", DU,
   "✅ XONG Đợt 1 (22-08). `mon/tienganh/lib/suKien.js` dựng bản ghi rồi đẩy vào "
   "`attempts/` chung; `CauHoi.jsx` gọi sau MỖI lượt trả lời. `bktUnit` là mã nút "
   "đồ thị. Cổng `tienganh_sukien` (14 phép) đối chiếu thẳng với `firestore.rules`.",
-  "⚠ CHƯA DEPLOY (22-08) — mã xong, cổng xanh, nhưng chưa lượt học nào chạy qua "
+  "✅ ĐÃ DEPLOY 23-08-2026. ⚠ Trước đó mã xong, cổng xanh, nhưng chưa lượt học nào chạy qua "
   "đường này trên bản thật.",
   OK,
   "★ VIỆC THEN CHỐT — mở khoá nhiều dòng đỏ nhất trong bảng. Và RẺ hơn tưởng nhờ "
@@ -613,7 +635,7 @@ R("2.5.2", "Lưu vết HƯỚNG SỰ KIỆN — chuỗi sự kiện bất biến
 R("2.5.2", "Dữ liệu định danh & thời gian (mili-giây)", DU,
   "Phòng nói CÓ mã phiên thật (`maBuoi` làm tên tài liệu) kèm `at` (ISO) và "
   "`serverTs`. Ba màn kia chỉ có `at` mức bài.",
-  "⚠ CHƯA DEPLOY.",
+  "✅ ĐÃ DEPLOY 23-08-2026 (luật Firestore → hàm nền → giao diện).",
   OK,
   "✅ XONG Đợt 1. Mỗi lượt có `sessionId` (một lần mở bài là một phiên), `ts` "
   "mili-giây RIÊNG từng lượt, và `serverTs` do máy chủ đóng dấu lúc gửi. ⚠ Hai mốc "
@@ -626,7 +648,7 @@ R("2.5.2", "Dữ liệu nhận thức: Node_ID · đúng/sai · câu trả lời
   "Hai màn có lưu nguyên văn bé làm: BÀI VIẾT giữ `viet: String(viet)` "
   "(`progress.js:224`), PHÒNG NÓI giữ trọn hội thoại từng lượt. Đủ để đọc ra bé sai "
   "chỗ nào.",
-  "⚠ CHƯA DEPLOY. Và `revealed` (bé chịu thua, xem đáp án) chưa ghi thẳng — suy "
+  "✅ ĐÃ DEPLOY 23-08-2026. Còn `revealed` (bé chịu thua, xem đáp án) chưa ghi thẳng — suy "
   "được từ 'lượt cuối sai rồi không có lượt nào nữa', nhưng suy không chắc bằng ghi.",
   OK,
   "✅ XONG Đợt 1 phần chính. Mỗi lượt mang `bktUnit` (mã NÚT), `correct`, `answer` "
@@ -637,7 +659,7 @@ R("2.5.2", "Dữ liệu nhận thức: Node_ID · đúng/sai · câu trả lời
 
 R("2.5.2", "Dữ liệu hành vi: thời gian phản hồi · số lần trợ giúp", DU,
   "✅ XONG Đợt 1 — `ms` và `hintsUsed` trên từng lượt, gộp vào hồ sơ nút.",
-  "⚠ CHƯA DEPLOY.",
+  "✅ ĐÃ DEPLOY 23-08-2026 (luật Firestore → hàm nền → giao diện).",
   OK, "Cùng một lần sửa `CauHoi.jsx` với hai mục 2.3.1-RT và 2.3.1-H_req.",
   "—", D1, "xong"),
 
@@ -646,7 +668,11 @@ R("2.5.2", "Bối cảnh hệ thống: P(L) trước/sau · mã prompt để ki�
   "Mã prompt: `functions/src/vantay.js` — bác chốt đường VÂN TAY ngày 21-08, nên "
   "giao ước 'máy chủ KHÔNG lưu gì' vẫn nguyên: vân tay trả về cho máy con, máy con "
   "ghi kèm bản ghi của chính bé.",
-  "⚠ CHƯA DEPLOY.",
+  "✅ ĐÃ DEPLOY 23-08. ⚠ SỬA LẠI SO VỚI BẢN 22-08: bản trước ghi 'máy con ghi kèm "
+  "bản ghi', nhưng rà lại thì vân tay BỊ RƠI ở `goiChamViet.js` — nó chỉ lấy phần "
+  "`cham` của phản hồi và bỏ ba trường vân tay. Tức tiêu chí này trước 23-08 KHÔNG "
+  "đạt dù mã sinh vân tay vẫn chạy đúng. Nay `mauPrompt` · `phienBanMau` · "
+  "`vanTayPrompt` có thật trong bản ghi (`suKien.js`).",
   OK,
   "Vân tay băm phần KHUNG của lời dặn, không băm cả prompt. "
   "⚠ BĂM CẢ PROMPT LÀ HỎNG CẢ HAI ĐẦU: prompt có tên bé, vốn từ, cả lịch sử hội "
@@ -683,7 +709,10 @@ R("2.5.3", "Tối ưu hoá prompt theo ΔC", DU,
   "✅ XONG Đợt 4 — `mauTotNhat()` gom ΔC theo `(mauPrompt, phienBanMau)`. Hai chân "
   "đã có từ Đợt 1: vân tay prompt để biết lượt nào dùng mẫu nào, và `pTruoc`/`p` để "
   "tính ΔC.",
-  "Cần dữ liệu học thật mới nói được mẫu nào hơn — hôm nay chưa có cặp A-R-A nào.",
+  "Cần dữ liệu học thật mới nói được mẫu nào hơn — hôm nay chưa có cặp A-R-A nào. "
+  "⚠ Trước 23-08 thì KHÔNG THỂ có, vì vân tay chưa vào bản ghi (rơi ở "
+  "`goiChamViet.js`); nay đường ống đã thông nên số liệu sẽ tích lại theo thời "
+  "gian dùng thật.",
   OK,
   "⚠ GOM THEO PHIÊN BẢN MẪU, KHÔNG THEO MÃ BĂM. Băm đổi cả khi sửa một lỗi chính "
   "tả, nên gom theo băm là chẻ dữ liệu ra vụn và chẳng so được gì. `phienBanMau` do "
@@ -920,8 +949,8 @@ def main() -> int:
                f"{(dn[XONG] + dn[OK] + dn[QUYET]) / len(B) * 100:.0f}%",
                "Số mục sẽ ở trạng thái ĐÁP ỨNG sau khi chạy hết 5 đợt. "
                f"Nay đã đạt {dem[DU]}/{len(B)} ({dem[DU] / len(B) * 100:.0f}%) — "
-               "nhưng xem lại dòng đầu sheet 'Đọc trước': phần của Đợt 1 mới xong "
-               "MÃ, chưa deploy."])
+               "Toàn bộ mã của cả năm đợt ĐÃ deploy ngày 23-08-2026 "
+               "(luật Firestore → hàm nền → giao diện, đúng thứ tự)."])
     w3.cell(row=w3.max_row, column=1).font = Font(bold=True)
 
     w3.append([]); w3.append(["THEO TỪNG MỤC CỦA CHƯƠNG 2", "", "", ""])
@@ -955,7 +984,15 @@ def main() -> int:
         ("", ""),
         ("Nguồn yêu cầu", "docs/Chuong2_Luan_van_Thac_sy_1_v3.docx"),
         ("Phạm vi soi", "Môn Tiếng Anh, lớp 1 → lớp 5. Dữ liệu và mã ở commit "
-                        "e60772c1 (đã deploy)."),
+                        "17a9d1b7 (đã deploy 23-08-2026: luật Firestore → hàm nền "
+                        "→ giao diện)."),
+        ("⚠ Bản này sửa gì so với 22-08",
+         "Hai dòng bản trước ghi ĐÁP ỨNG mà rà lại thấy chưa: (1) hàm `cefrCuaBe()` "
+         "hiện thực tiêu chí 'CEFR của bé' nhưng KHÔNG MÀN NÀO GỌI — mã chết từ lúc "
+         "viết; (2) vân tay prompt bị rơi ở `goiChamViet.js` nên không vào bản ghi. "
+         "Cả hai đã vá 23-08. Bài học chung: mã đúng ở từng tệp KHÔNG có nghĩa là "
+         "chỗ NỐI giữa chúng có ai canh — đây là dạng lỗi hay gặp nhất trong repo "
+         "này, và cả hai lần đều do cổng mới bắt ra chứ không phải do đọc lại mã."),
         ("Cách soi", "Mở tệp mã và dữ liệu ra đếm, không suy từ trí nhớ. Mỗi dòng "
                      "trong sheet Đối chiếu đều dẫn tệp và con số."),
         ("", ""),

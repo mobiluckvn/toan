@@ -162,26 +162,34 @@ MUC = [
      "quả là `phuDao`, không phải `vuotAi`. Xem `docs/ma_tran_du_lieu.xlsx` cảnh "
      "4 và 4b."),
 
-    ("C", "2.1.2", "Chiều Thời gian — có dữ liệu bỏ dở, nhưng là CẬN DƯỚI",
-     "Luận văn nêu chiều Thời gian bao gồm đo mệt mỏi nhận thức. Trước "
-     "23-08-2026 hệ thống không ghi bất kỳ sự kiện thoát nào, nên phần này "
-     "hoàn toàn không có dữ liệu nền.",
-     "“Chiều Thời gian được hiện thực bằng ba thành phần: đường cong quên (hàm "
-     "mũ, nửa đời 14 ngày), lịch lặp lại ngắt quãng, và sự kiện bỏ dở. Mỗi lần "
-     "người học rời màn bài học khi chưa hoàn thành, hệ thống ghi một mục học bạ "
-     "riêng gồm mã bài, chặng đang dở, số lượt đã làm và số giây đã ở trong bài "
-     "— mỗi lần một bản ghi chứ không gộp, vì chính số LẦN bỏ dở cùng một bài "
-     "mới là tín hiệu.\n"
-     "  ⚠ Phải nêu giới hạn: sự kiện chỉ ghi được khi người học rời màn qua thao "
-     "tác trong ứng dụng. Đóng thẳng trình duyệt thì không ghi được. Do đó con "
-     "số thu được là CẬN DƯỚI của số lần bỏ dở thật, và luận văn nên dùng nó như "
-     "một chỉ báo xu hướng chứ không phải một phép đếm đầy đủ.”",
-     "ĐÃ HIỆN THỰC 23-08-2026. `BaiHoc.jsx` phát sự kiện lúc gỡ màn, "
-     "`ManTiengAnh.jsx` ghi thành mục học bạ loại `phien`; loại này đã được thêm "
-     "vào danh sách trắng của `firestore.rules` và deploy — thiếu bước ấy thì "
-     "Firestore từ chối GHI TRONG IM LẶNG, một cái bẫy đã dính trước đây. Việc "
-     "nêu rõ giới hạn “cận dưới” là điểm cộng về tính trung thực, và tránh được "
-     "câu phản biện “sao số lần bỏ dở lại thấp bất thường”."),
+    ("C", "2.1.2", "Chiều Thời gian — mệt mỏi đo bằng HAI tín hiệu, nêu rõ giới hạn từng cái",
+     "Luận văn nêu chiều Thời gian bao gồm đo mệt mỏi nhận thức, nhưng không nói "
+     "đo bằng cách nào. Người phản biện sẽ hỏi ngay: mệt mỏi là trạng thái bên "
+     "trong, phần mềm suy ra từ dấu hiệu quan sát được nào?",
+     "“Chiều Thời gian được hiện thực bằng bốn thành phần: đường cong quên (hàm "
+     "mũ, nửa đời 14 ngày), lịch lặp lại ngắt quãng, và HAI tín hiệu độc lập cho "
+     "mệt mỏi nhận thức.\n"
+     "  Tín hiệu thứ nhất — CHẬM DẦN TRONG PHIÊN: hệ thống so thời gian phản hồi "
+     "trung bình nửa đầu với nửa cuối của cùng một phiên học, tách riêng theo "
+     "từng định dạng câu hỏi, và chỉ kết luận khi mỗi nửa có tối thiểu 3 lượt. "
+     "Chậm hơn 25% thì báo là có dấu hiệu mệt.\n"
+     "  Tín hiệu thứ hai — BỎ DỞ: mỗi lần người học rời màn bài học khi chưa hoàn "
+     "thành, hệ thống ghi một bản ghi gồm mã bài, chặng đang dở, số lượt đã làm "
+     "và số giây đã ở trong bài; mỗi lần một bản ghi chứ không gộp, vì chính số "
+     "LẦN bỏ dở cùng một bài mới là tín hiệu.\n"
+     "  Hai tín hiệu hiện được ĐO và báo cho phụ huynh, chưa dùng để tự động rút "
+     "ngắn buổi học.”",
+     "Tín hiệu 1: `web/functions/src/report.js` — hàm `metMoi()`, hằng số "
+     "`TOI_THIEU_MOI_NUA = 3` và `NGUONG_CHAM = 0,25`; hiện ở `ParentReport.jsx`. "
+     "Việc tách theo ĐỊNH DẠNG là chi tiết đáng viết vào luận văn: không tách thì "
+     "phiên nào cũng ra 'mệt', vì các màn cuối buổi vốn có dạng câu tốn thời gian "
+     "hơn — chậm hơn vì ĐỔI VIỆC chứ không phải vì mệt. Tín hiệu 2 vá 23-08-2026 "
+     "(`BaiHoc.jsx` → học bạ loại `phien`).\n"
+     "  ⚠ PHẢI NÊU GIỚI HẠN CỦA TÍN HIỆU 2: chỉ ghi được khi người học rời màn qua "
+     "thao tác trong ứng dụng; đóng thẳng trình duyệt thì không ghi được. Con số "
+     "thu được là CẬN DƯỚI của số lần bỏ dở thật — dùng làm chỉ báo xu hướng, "
+     "không phải phép đếm đầy đủ. Nêu ra là điểm cộng về tính trung thực, và "
+     "tránh câu phản biện “sao số lần bỏ dở lại thấp bất thường”."),
 
     ("C", "2.1.2", "Chiều Nhận thức — nên nói rõ giới hạn của điểm PHÁT ÂM",
      "Luận văn xếp năng lực nói vào chiều Nhận thức cùng các kỹ năng khác, không "
@@ -206,15 +214,21 @@ CON_NO = [
      "chữ, chỉ nói thêm rằng vân tay băm KHUNG chứ không lưu nội dung nhắc."),
     ("Ghi sự kiện rời màn / bỏ dở", "ĐÃ XONG 23-08-2026",
      "Mục học bạ loại `phien` (mã bài · chặng · số lượt · số giây), mỗi lần bỏ dở "
-     "một bản ghi. Giữ được phần “đo mệt mỏi nhận thức” trong luận văn, VỚI ĐIỀU "
-     "KIỆN nêu rõ đây là cận dưới — đóng thẳng trình duyệt thì không ghi được."),
+     "một bản ghi. Đây là tín hiệu THỨ HAI cho mệt mỏi nhận thức — tín hiệu thứ "
+     "nhất (`metMoi()` so thời gian phản hồi nửa đầu với nửa cuối phiên) đã có "
+     "sẵn từ trước. Nêu rõ giới hạn cận dưới: đóng thẳng trình duyệt thì không "
+     "ghi được."),
     ("Báo cáo riêng của bé đọc thêm `progressTA` và `hocBaTA`", "ĐÃ XONG 23-08-2026",
      "`dungSoHoc` nay gộp số bài xong và số phút học của cả hai môn. Trước đó hai "
      "cột ấy bỏ sót toàn bộ môn Tiếng Anh."),
     ("Quy đổi P(L) sang thang CEFR", "ĐÃ XONG 23-08-2026",
      "`lib/cefr.js` + thẻ “con đang ở đâu trên thang năng lực” ở Góc bố mẹ. "
      "⚠ Đây là quy ước bắc cầu, KHÔNG phải phép đo theo chuẩn CEFR — mục A-2.3.1 "
-     "đã viết sẵn câu phải đưa vào luận văn để nói đúng điều đó."),
+     "đã viết sẵn câu phải đưa vào luận văn để nói đúng điều đó. "
+     "⚠ Rà lại 23-08 còn thấy hàm `cefrCuaBe()` trong `lib/hoso.js` suy bậc từ "
+     "quyển bé đã học xong — hàm ĐÚNG nhưng KHÔNG MÀN NÀO GỌI, tức mã chết từ lúc "
+     "viết. Nên trước 23-08 tiêu chí “CEFR của bé” thực ra chưa đạt, dù bảng đối "
+     "chiếu bản 22-08 có ghi là đạt."),
 ]
 
 
@@ -233,7 +247,14 @@ def main() -> int:
     p.add_run("23-08-2026\n")
     p.add_run("Căn cứ: ").bold = True
     p.add_run("đối chiếu 54 tiêu chí của Chương 2 với mã nguồn và dữ liệu đang "
-              "chạy, cộng một buổi đăng nhập kiểm chứng trên bản chạy thật.")
+              "chạy, cộng một buổi đăng nhập kiểm chứng trên bản chạy thật.\n")
+    p.add_run("Sửa lần 2 — 23-08-2026 (chiều): ").bold = True
+    p.add_run("bốn việc phần mềm ở phụ lục đã làm xong và deploy, nên ba mục "
+              "A-2.3.1, B-2.5.2 và C-2.1.2 được viết lại. Rà lại còn phát hiện "
+              "HAI chỗ bảng đối chiếu bản 22-08 ghi ĐẠT mà thực ra chưa: hàm "
+              "`cefrCuaBe()` không màn nào gọi, và vân tay prompt bị rơi ở "
+              "`goiChamViet.js`. Cả hai nay đã vá; bảng "
+              "`docs/benchmark_chuong2.xlsx` đã ghi rõ chỗ sửa lại.")
 
     d.add_heading("Cách đọc tài liệu này", level=1)
     for x in [
@@ -308,7 +329,10 @@ def main() -> int:
         ("docs/soat_giam_sat.xlsx", "16 hành động của người học, hành động nào có "
          "dữ liệu giám sát, hành động nào chưa."),
         ("docs/kiem_chung_ban_chay.xlsx", "Biên bản buổi đăng nhập kiểm chứng trên "
-         "bản chạy thật, kèm ảnh chụp màn hình."),
+         "bản chạy thật (07h32 ngày 23-08-2026), kèm ảnh chụp màn hình. ⚠ Phần "
+         "quan sát GIỮ NGUYÊN, không sửa cho khớp hiện trạng — sửa thì nó thôi "
+         "không còn là biên bản. Những gì vá SAU buổi ấy ghi riêng ở trang “Sau "
+         "buổi thử”, và trang ấy nói rõ phần nào VẪN CHƯA đi thử lại."),
     ]:
         q = d.add_paragraph(style="List Bullet")
         q.add_run(ten).bold = True
