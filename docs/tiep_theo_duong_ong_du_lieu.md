@@ -105,6 +105,13 @@ node tools/soi_ban_ghi_tienganh.mjs     # phien · vân tay · mastery
    nay ESLint bắt được ngay (`react-hooks/rules-of-hooks`).
 5. **`sessionId` của Toán nên mang cả `learnerId`.** Hôm nay phải suy chủ thật
    bằng ba nhân chứng gián tiếp; nhúng thẳng mã bé vào là khỏi phải suy.
+6. **Hỏi bác: hai tệp sao lưu có chuyển ra ngoài kho không?**
+   `sao_luu_don_ban_ghi.json` và `sao_luu_don_ban_ghi_2.json` vẫn nằm trong thư
+   mục kho (đã gitignore). Chúng chứa **dữ liệu học thật của các bé** — bài viết,
+   câu trả lời, mã tài khoản — nên cùng loại rủi ro với khoá quản trị đã chuyển
+   ra tối 23-08. Chưa chuyển vì chúng là **đường lùi** của 130 bản ghi đã xoá:
+   đổi chỗ thì phải sửa cả đường dẫn ghi ở mục 1. Đã hỏi bác tối 23-08, chưa có
+   trả lời.
 
 ---
 
