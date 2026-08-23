@@ -62,11 +62,28 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
   const moLuc = useRef(Date.now());
   const daXong = useRef(false);
   const soLuot = useRef(0);
+  /* Chặng bé đang đứng lúc bỏ đi. Ô nhớ khai Ở ĐÂY còn GIÁ TRỊ gán mãi dưới kia
+     (sau khi `bai` đã về) — khai hook ở dưới là lỗi 310, xem khối cảnh báo dưới. */
+  const changCuoi = useRef(null);
   useEffect(() => {
     moLuc.current = Date.now();
     daXong.current = false;
     soLuot.current = 0;
   }, [id]);
+  /* Rời màn mà chưa xong bài → ghi một bản ghi PHIÊN. */
+  useEffect(() => () => {
+    if (daXong.current) return;
+    onRoiMan?.({
+      maPhien,
+      microId: id,
+      chang: changCuoi.current,
+      soLuot: soLuot.current,
+      giay: Math.round((Date.now() - moLuc.current) / 1000),
+    });
+    /* `maPhien` cố ý không có trong dãy phụ thuộc: nó suy từ `id` (useMemo ngay
+       dưới), thêm vào chỉ làm dãy dài ra chứ không đổi lúc nào effect chạy. */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id, onRoiMan]);
   /* MỘT LẦN MỞ BÀI LÀ MỘT PHIÊN. Mã phiên đi vào mã từng bản ghi nhật ký, nên nó
      phải ĐỔI khi đổi bài và GIỮ NGUYÊN trong suốt bài — `useMemo` theo `id` cho
      đúng cả hai. Component này KHÔNG dựng lại khi đổi bài (chỗ gọi không đặt
@@ -148,20 +165,9 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
 
   const k = CHANG[tai];
 
-  /* Rời màn mà chưa xong bài → ghi một bản ghi PHIÊN. `tai` nằm trong closure của
-     lần vẽ cuối, đúng chặng bé đang đứng lúc bỏ đi. */
-  const changCuoi = useRef(k);
+  /* Gán TRẦN, không phải hook — chạy mỗi lần vẽ nên `changCuoi` luôn giữ đúng chặng
+     bé đang đứng. Ô nhớ đã khai tít trên đầu hàm cùng `moLuc`/`daXong`/`soLuot`. */
   changCuoi.current = k;
-  useEffect(() => () => {
-    if (daXong.current) return;
-    onRoiMan?.({
-      maPhien,
-      microId: id,
-      chang: changCuoi.current,
-      soLuot: soLuot.current,
-      giay: Math.round((Date.now() - moLuc.current) / 1000),
-    });
-  }, [id, maPhien, onRoiMan]);
 
   return (
     <Khung onThoat={onThoat} ten={bai.title}>
@@ -593,6 +599,8 @@ function ManCau({ bai, onTiep, moc, onMoc, onLuot = null }) {
   const [hong, datHong] = useState(false);
   const [soNoi, datSoNoi] = useState(() => ({ ...(moc?.soNoi || {}) }));
   const [micHong, datMicHong] = useState(false);
+  /* Câu nào bé đã bấm NGHE. Chỉ dùng để mở đường lui tự khai — xem chú ở dưới. */
+  const [daNgheCau, datDaNgheCau] = useState(() => new Set());
   const mcDs = bai.knowledgeCore.mauCauDs || [];
   const mc = mcDs[i] || bai.knowledgeCore.mauCau;
   const bay = bai.knowledgeCore.misconceptions?.[0];
@@ -661,9 +669,32 @@ function ManCau({ bai, onTiep, moc, onMoc, onLuot = null }) {
           maAm={maCauAm(cauNay)}
           noiBat
           nhan="Nghe cô đọc, rồi con nói cả câu"
+          onNghe={() => datDaNgheCau((s) => new Set(s).add(cauNay))}
           onXong={(k) => ghiNoi(cauNay, k)}
           onHong={() => datMicHong(true)}
         />
+      )}
+
+      {/* ── ĐƯỜNG LUI TỰ KHAI — Y HỆT CHẶNG TỪ MỚI, VÀ ĐÓ LÀ ĐIỂM CHÍNH ──
+          Bản vá 23-08 chỉ mở lối này ở chặng Từ mới, nên đi thử bản chạy lại đứng
+          đúng ở ĐÂY: qua được chặng 1 rồi tắc chặng 2, mà bốn chặng sau khoá theo
+          chặng 2. Vá một nửa một hàng rào thì hàng rào vẫn kín.
+
+          Nên hễ chặng nào ĐÒI NÓI thì chặng ấy phải có lối tự khai. Cổng
+          `tienganh_vao_engine` nay đếm số chặng đòi nói và đòi đủ chừng ấy lối. */}
+      {daNgheCau.has(cauNay) && !micHong && (
+        <button type="button" onClick={() => datMicHong(true)}
+          className="self-start rounded-xl2 px-2 py-1 text-sm text-mute underline
+            hover:text-navy focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+          Con chưa nói được — cho con đi tiếp nhé
+        </button>
+      )}
+
+      {micHong && (
+        <p className="rounded-xl2 bg-gold-pale p-2 text-sm text-gold-dark">
+          Máy chưa nghe được nên phần nói để lúc khác — con cứ bấm 🔈 nghe rồi
+          đọc theo, xong bấm “Mẫu sau” nhé.
+        </p>
       )}
 
       {ds.length > 1 && (

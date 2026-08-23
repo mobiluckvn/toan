@@ -37,6 +37,17 @@ export function tienDoQuyen(tienDo, ctHoacMa) {
   };
 }
 
+/**
+ * Số bài suy từ MÃ BÀI: `DL:TA3.B07` → 7, `DL:TA1.B00` → 0.
+ *
+ * Trả `null` khi mã không đúng khuôn — để chỗ vẽ bỏ qua mục ấy, chứ đừng ghép
+ * một số bịa vào câu tiếng Việt cho bố mẹ đọc.
+ */
+export function soBaiTuMa(ma) {
+  const m = /\.B(\d+)$/.exec(String(ma || ''));
+  return m ? Number(m[1]) : null;
+}
+
 /** Học bạ một quyển — đúng khuôn `HocBaMon` mà bốn màn tổng cùng đọc. */
 export function hocBaQuyen(tienDo, ct) {
   const ds = ct.bai || [];
@@ -56,9 +67,25 @@ export function hocBaQuyen(tienDo, ct) {
     daBatDau: ds.some((id) => m[id]),
     chuong: [],
     /* Bài bé làm rồi mà CHƯA đạt — đúng chỗ bố mẹ cần nhìn, không phải danh sách
-       bài chưa mở. */
+       bài chưa mở.
+       ⚠ TÊN TRƯỜNG PHẢI ĐÚNG KHUÔN `soMon.js`, KHÔNG ĐƯỢC TỰ ĐẶT. Bản đầu nộp
+       `{ma, best, tong}` trong khi màn dùng chung `ParentReport.jsx` đọc `so` ·
+       `ten` · `chuong` · `lan` · `dung` — nên Sổ bố mẹ hiện thẳng chữ "Cần cố
+       gắng: Bài undefined" lên bản chạy thật. Lỗi này không cổng nào bắt vì hai
+       bên đều đúng một mình; khuôn phần tử trước đây chưa ai ghi ra.
+       `so` suy từ chính mã bài (`DL:TA3.B07` → 7) chứ không đếm vị trí trong sổ
+       đăng ký: đếm vị trí thì thêm hay bớt một bài là mọi số nhảy một nấc. */
     canCoGang: ds.filter((id) => m[id] && !m[id].pass).slice(0, 5)
-      .map((id) => ({ ma: id, best: m[id].best || 0, tong: m[id].total || 0 })),
+      .map((id) => ({
+        id,
+        so: soBaiTuMa(id),
+        ten: '',
+        micro: 1,
+        chuong: null,
+        lan: m[id].attempts || 0,
+        dung: m[id].score || 0,
+        tong: m[id].total || 0,
+      })),
   };
 }
 

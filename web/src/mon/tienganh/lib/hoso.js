@@ -75,24 +75,21 @@ export const yeuNhat = (hs) => {
   return ds.length >= 2 ? ds[ds.length - 1] : null;
 };
 
-/**
- * CEFR CỦA BÉ — suy từ quyển cao nhất bé đã học xong, không khai tay.
+/* ── ĐÃ BỎ `cefrCuaBe()` NGÀY 23-08-2026 ──────────────────────────────────────
  *
- * `dsQuyen` là danh sách `{ ma, cefr, bai: [...] }` của sổ đăng ký. Một quyển
- * tính là xong khi bé đạt HẾT bài của nó.
+ * Hàm ấy suy bậc CEFR từ quyển cao nhất bé đã học XONG HẾT bài. Nó đúng về lô-gic
+ * và có cổng riêng, nhưng KHÔNG MÀN NÀO GỌI kể từ lúc viết — bảng đối chiếu Chương
+ * 2 lại lấy nó làm bằng chứng cho tiêu chí "CEFR của bé", nên suốt mấy tuần tiêu
+ * chí ấy được ghi là ĐÁP ỨNG trong khi màn hình chỉ bày `ct.cefr`, tức nhãn của
+ * QUYỂN học liệu.
  *
- * ⚠ ĐANG HỌC DỞ THÌ KHÔNG TÍNH. Bé mới xong 3/20 bài của quyển A1 mà đã dán nhãn
- * A1 là nói quá về bé — và nhãn ấy đi vào lời dặn LLM, tức là cô giáo máy sẽ nói
- * với bé bằng vốn từ bé chưa có.
+ * Nay phép quy đổi thật nằm ở `lib/cefr.js` — `bacCefr()` tính từ P(L) trên đồ
+ * thị. Giữ lại hàm cũ là để hai con số CEFR khác nghĩa cùng tồn tại, mà cái không
+ * ai gọi thì không ai phát hiện được lúc nó lệch.
+ *
+ * ⚠ Nếu sau này cần lại lối "suy từ quyển đã xong": nó nằm trong lịch sử git,
+ * commit a2f50032 trở về trước. Đừng viết lại từ đầu — bản cũ có hai cái bẫy đã
+ * xử: thứ tự bậc phải lấy theo SỔ ĐĂNG KÝ chứ không so chuỗi ('A1' < 'Pre-A1'
+ * theo bảng chữ cái, tức ngược hẳn thang trình độ), và quyển khai rỗng bài thì
+ * không được tính là đã xong.
  */
-export function cefrCuaBe(tienDo, dsQuyen) {
-  const xong = (dsQuyen || []).filter((q) => {
-    const bai = q?.bai || [];
-    return bai.length > 0 && bai.every((id) => tienDo?.micros?.[id]?.pass);
-  });
-  if (!xong.length) return null;
-  /* Quyển sau trong sổ đăng ký là quyển cao hơn — thứ tự ấy do `thuTu` của sổ
-     quyết, không phải do so chuỗi 'Pre-A1' với 'A1' (so chuỗi thì 'A1' < 'Pre-A1'
-     theo bảng chữ cái, tức là ngược hẳn). */
-  return xong[xong.length - 1]?.cefr || null;
-}

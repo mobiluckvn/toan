@@ -350,12 +350,91 @@ def main() -> int:
         ("Không quan sát được — buổi thử bị P2 chặn ở chặng Từ mới (đòi micro).",
          "23-08: thêm nút “Con chưa nói được — cho con đi tiếp nhé”. Vá cùng đợt "
          "P1/P2.",
-         "⚠ CHƯA ĐI THỬ LẠI TRÊN BẢN CHẠY. Phần dưới ngưỡng P2 trong biên bản "
-         "này vẫn là CHƯA KIỂM ĐƯỢC, không phải ĐÃ ĐẠT. Muốn kết luận thì phải "
-         "đăng nhập lại một buổi nữa."),
+         "✅ ĐÃ ĐI THỬ LẠI chiều 23-08 — xem trang 'Buổi thử lần 2'. Hoá ra P2 "
+         "mới vá được MỘT NỬA: chặng Mẫu câu cũng đòi nói mà chưa có lối lui. "
+         "Vá nốt trong buổi ấy, rồi đi trọn tới chặng Luyện tập và sinh được "
+         "bản ghi BKT thật."),
     ]:
         w6.append([a, b, c])
     don(w6)
+
+    # ── ⑦ BUỔI THỬ LẦN 2 (chiều 23-08-2026) ───────────────────────────────────
+    #
+    # Buổi sáng bị chặn ở chặng Từ mới nên chỉ kiểm được 4/54 mục. Buổi này đi
+    # trọn: đăng nhập bé MỚI (đường "thêm bé nữa vào máy này", không đá phiên cũ)
+    # → Tiếng Anh lớp 3 → Unit 0 → cả bốn chặng → bài Viết → Sổ bố mẹ.
+    w7 = wb.create_sheet("Buổi thử lần 2")
+    bang(w7, ["Việc kiểm", "Thấy gì trên bản chạy", "Kết luận"], (34, 62, 40))
+    for a, b, c in [
+        ("Đăng nhập bằng OTP sau khi deploy lại hàm nền",
+         "Hộp thư dùng-một-lần nhận mã 6 số trong ~8 giây; vào thẳng màn đặt tên "
+         "và chọn lớp. Đường 'Thêm bé nữa vào máy này' giữ nguyên bé cũ.",
+         "ĐẠT. `requestOtp`/`verifyOtp` chạy đúng sau khi deploy."),
+        ("⛔ MÀN HỌC TRẮNG BỐC",
+         "Bấm vào bài học ra màn trắng. Console: React #310 tại `useRef`. "
+         "Nguyên nhân: hook `changCuoi` của bản vá 'bỏ dở' đặt SAU hai lệnh "
+         "`return` sớm — chính tệp ấy đã có sẵn khối chú thích cảnh báo cái bẫy "
+         "này, đặt ngay bên trên chỗ vi phạm.",
+         "LỖI DO BẢN VÁ SÁNG NAY, đã lên bản chạy. Vá và deploy lại trong buổi. "
+         "Nay có cổng `hook_truoc_return.test.mjs` soi 57 tệp .jsx."),
+        ("⛔ P2 MỚI VÁ ĐƯỢC MỘT NỬA",
+         "Chặng Từ mới qua được bằng nút 'Con chưa nói được'. Nhưng chặng MẪU CÂU "
+         "cũng đòi nói mà KHÔNG có nút ấy — 'Vào luyện tập' vẫn khoá.",
+         "Vá một nửa hàng rào thì hàng rào vẫn kín. Đã thêm lối lui cho chặng 2; "
+         "cổng nay ĐẾM số chặng đòi nói và đòi đủ chừng ấy lối lui."),
+        ("Video không tải được trong trình duyệt tự động",
+         "`readyState 0`, không có lỗi, buffered 0. Nhưng `curl` lấy tệp trên máy "
+         "chủ ra 200 và đủ dung lượng (855 323 byte, khớp bản tại máy).",
+         "KHÔNG PHẢI LỖI ỨNG DỤNG — giới hạn của môi trường tự động. Đi tiếp bằng "
+         "chính đường lui video-hỏng mà ứng dụng đã có sẵn (đã phát sự kiện "
+         "`error` cho thẻ video). ⚠ Đây là thao tác MÔ PHỎNG, không phải bé thật."),
+        ("⭐ BKT chạy trọn trên bản thật",
+         "Làm ~9 lượt ở chặng Luyện tập (sai · sai · đúng…). Sau ~15 giây, Góc bố "
+         "mẹ hiện 'one — một (1) — nắm 9%'. Ảnh: 06_bkt_va_cefr_ban_chay.jpg",
+         "ĐẠT — và đây là LẦN ĐẦU cả dây chuyền lượt→attempts→onAttempt→mastery→"
+         "máy con được nhìn thấy chạy trên bản thật. Buổi sáng chưa sinh nổi một "
+         "bản ghi nào."),
+        ("Sai 2 lần thì hệ thống tự đưa gợi ý",
+         "Sau lượt sai thứ hai hiện '💡 Nghe lại xem từ này bắt đầu bằng âm nào.'",
+         "ĐẠT — nâng đỡ theo số lần sai, mục 2.3.2."),
+        ("⭐ Thẻ quy đổi CEFR",
+         "'Con mới bắt đầu — chưa đủ dữ liệu để nói một bậc năng lực.' kèm "
+         "Làm quen 0/187 · 0% và Bậc 1—A1 0/871 · 0%, cùng dòng chú 'đây KHÔNG "
+         "phải điểm thi'. Hai mẫu số khớp đúng con số tính offline.",
+         "ĐẠT. Và thẻ chỉ hiện được khi `mastery` đã về máy con — tức nó cũng là "
+         "bằng chứng gián tiếp cho cả dây chuyền."),
+        ("Nhãn CEFR cũ có gây hiểu lầm không",
+         "Dòng cũ nay ghi rõ 'TRÌNH ĐỘ QUYỂN NÀY — Pre-A1'.",
+         "ĐẠT. Hai con số CEFR đứng cạnh nhau nhưng nhãn tách bạch: một là của "
+         "QUYỂN, một là của BÉ."),
+        ("Bài viết chấm bằng AI",
+         "8/10, chỉ đúng lỗi thiếu mạo từ ('I can see teacher' → 'the teacher') "
+         "kèm giải thích. Và lại hiện 'Cô có 1 câu gợi ý dùng từ con chưa học, "
+         "nên cô giấu đi rồi.' Ảnh: 07_ai_cham_viet_lan2.jpg",
+         "ĐẠT — tầng hậu kiểm chống ảo giác bắt được LẦN THỨ HAI, ở một bé khác "
+         "và một bài khác. Không phải chuyện may."),
+        ("⛔ Sổ bố mẹ hiện 'Cần cố gắng: Bài undefined'",
+         "Tab Tiếng Anh của Sổ học hiện thẳng chữ `undefined` cho bố mẹ đọc. "
+         "Ảnh trước khi vá: 08_so_bo_me_bai_undefined.jpg",
+         "LỖI CŨ, không phải do bản vá hôm nay. Khuôn phần tử `canCoGang` chưa "
+         "bao giờ được ghi ra: Toán nộp `{id,so,ten,…}`, Tiếng Anh đoán thành "
+         "`{ma,best,tong}`. Đã vá cả ba chỗ (bên nộp · bên đọc · giao ước ở "
+         "`soMon.js`) + cổng `khuon_hocba.test.mjs`. Sau vá: 'Cần cố gắng: Bài 0' "
+         "— ảnh 09_so_bo_me_da_va.jpg"),
+        ("Bản ghi bỏ dở (`phien`) có bị luật từ chối không",
+         "Chạy một vòng sạch (vào bài → trả lời → bấm '← Về') với console đang "
+         "theo dõi: KHÔNG một dòng nào, không có `permission-denied`.",
+         "⚠ BẰNG CHỨNG GIÁN TIẾP. Ghi bị luật từ chối thì Firestore in lỗi quyền "
+         "ra console — không có lỗi tức là không bị từ chối. Nhưng KHÔNG đọc được "
+         "thẳng tài liệu `phien` bằng quyền của bé, nên chưa xác nhận được NỘI "
+         "DUNG bản ghi. Muốn chắc thì phải soi bằng khoá quản trị."),
+        ("Tiến độ có bền qua tải lại trang không",
+         "Tải lại toàn trang: vẫn vào đúng chặng Luyện tập, 'Đúng 2/33' giữ "
+         "nguyên, kệ sách hiện 'đang học dở'.",
+         "ĐẠT — số đọc về từ máy chủ, không phải từ bộ nhớ tại máy."),
+    ]:
+        w7.append([a, b, c])
+    don(w7)
 
     RA.parent.mkdir(parents=True, exist_ok=True)
     wb.save(RA)

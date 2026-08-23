@@ -338,12 +338,23 @@ export default function ParentReport({ mon = [], tienDo = {}, learnerId, onExit,
               )}
 
               {/* Ngoài phần gập mở: luôn hiện mấy bài cần cố gắng nhất của quyển */}
-              {h.canCoGang.length > 0 && !bung && (
-                <p className="mt-2 text-[12.5px] text-mute">
-                  Cần cố gắng: {h.canCoGang.slice(0, 3).map((b) => `Bài ${b.so}`).join(' · ')}
-                  {h.canCoGang.length > 3 && ` và ${h.canCoGang.length - 3} bài nữa`}
-                </p>
-              )}
+              {/* ⚠ LỌC BÀI KHÔNG CÓ SỐ TRƯỚC KHI GHÉP CHUỖI.
+                  Màn này dùng chung cho mọi môn, mà khuôn phần tử `canCoGang`
+                  trước đây không ghi ở đâu cả — môn Tiếng Anh nộp `{ma, best}` và
+                  dòng dưới ghép thẳng ra "Cần cố gắng: Bài undefined" trên bản
+                  chạy thật. Nay môn ấy đã nộp đúng khuôn, nhưng chốt ở đây thì
+                  môn thứ ba khai lệch cũng không đẩy được chữ `undefined` ra cho
+                  bố mẹ đọc: thiếu số thì BỎ QUA mục, không bịa. */}
+              {(() => {
+                const coSo = h.canCoGang.filter((b) => Number.isFinite(b.so));
+                if (!coSo.length || bung) return null;
+                return (
+                  <p className="mt-2 text-[12.5px] text-mute">
+                    Cần cố gắng: {coSo.slice(0, 3).map((b) => `Bài ${b.so}`).join(' · ')}
+                    {coSo.length > 3 && ` và ${coSo.length - 3} bài nữa`}
+                  </p>
+                );
+              })()}
             </section>
           );
         })}

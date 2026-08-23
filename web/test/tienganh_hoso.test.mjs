@@ -12,7 +12,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
-  ghiDinhDang, tiLeDung, xepDinhDang, manhNhat, yeuNhat, cefrCuaBe,
+  ghiDinhDang, tiLeDung, xepDinhDang, manhNhat, yeuNhat,
   tenDinhDang, TOI_THIEU_MAU,
 } from '../src/mon/tienganh/lib/hoso.js';
 import { soRong, ghiDangCau, gopTienDo } from '../src/mon/tienganh/lib/progress.js';
@@ -82,35 +82,10 @@ test('định dạng lạ thì hiện chính mã, đừng giấu', () => {
   assert.equal(tenDinhDang(null), '—');
 });
 
-/* ── CEFR mức bé ──────────────────────────────────────────────────────────── */
-
-const Q = [
-  { ma: 'ta1', cefr: 'Pre-A1', bai: ['a1', 'a2'] },
-  { ma: 'ta4', cefr: 'A1', bai: ['b1', 'b2'] },
-];
-const xong = (...ids) => ({ micros: Object.fromEntries(ids.map((i) => [i, { pass: true }])) });
-
-test('CEFR suy từ quyển CAO NHẤT đã xong hết bài', () => {
-  assert.equal(cefrCuaBe(xong('a1', 'a2'), Q), 'Pre-A1');
-  assert.equal(cefrCuaBe(xong('a1', 'a2', 'b1', 'b2'), Q), 'A1');
-});
-
-test('⚠ ĐANG HỌC DỞ THÌ KHÔNG TÍNH', () => {
-  assert.equal(cefrCuaBe(xong('b1'), Q), null,
-    'dán nhãn A1 cho bé mới xong 1/2 bài là nói quá về bé — mà nhãn ấy đi vào lời '
-    + 'dặn LLM, tức cô giáo máy sẽ nói bằng vốn từ bé chưa có');
-  assert.equal(cefrCuaBe({ micros: {} }, Q), null);
-  assert.equal(cefrCuaBe(null, Q), null);
-  assert.equal(cefrCuaBe(xong('a1', 'a2'), []), null);
-  /* Quyển khai rỗng bài thì không tính là "đã xong". */
-  assert.equal(cefrCuaBe(xong('a1'), [{ ma: 'x', cefr: 'A2', bai: [] }]), null);
-});
-
-test('thứ tự CEFR lấy theo SỔ ĐĂNG KÝ, không so chuỗi', () => {
-  /* So chuỗi thì 'A1' < 'Pre-A1' theo bảng chữ cái — ngược hẳn. */
-  assert.ok('A1' < 'Pre-A1');
-  assert.equal(cefrCuaBe(xong('a1', 'a2', 'b1', 'b2'), Q), 'A1');
-});
+/* ── CEFR mức bé: ĐÃ CHUYỂN CHỖ ───────────────────────────────────────────────
+ * `cefrCuaBe()` bị bỏ ngày 23-08-2026 (mã chết, xem chú ở `hoso.js`). Phép quy
+ * đổi CEFR nay ở `lib/cefr.js`, cổng riêng là `test/cefr_quy_doi.test.mjs`.
+ */
 
 /* ── nối vào sổ ───────────────────────────────────────────────────────────── */
 

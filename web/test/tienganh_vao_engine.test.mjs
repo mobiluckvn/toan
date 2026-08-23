@@ -185,6 +185,25 @@ test('⚠ CHẶNG TỪ MỚI có đường lui TỰ KHAI, không bắt hỏng mi
     'chỗ gọi <LuyenTu> không truyền `daNgheTu` — nút lui không bao giờ hiện');
 });
 
+test('⚠ MỌI chặng đòi nói đều phải có đường lui, không chỉ chặng đầu', () => {
+  const ma = chiMa(doc('../src/mon/tienganh/components/BaiHoc.jsx'));
+  /* ── VÌ SAO ĐẾM, KHÔNG PHẢI KIỂM SỰ CÓ MẶT ──
+     Bản vá P2 ngày 23-08 mở đường lui ở chặng TỪ MỚI, cổng trên xanh, và bản vá
+     được coi là xong. Đi thử bản chạy chiều hôm ấy thì tắc ở chặng MẪU CÂU: nó
+     cũng đòi nói, cũng không có lối lui, và bốn chặng sau khoá theo nó. Hàng rào
+     vá một nửa vẫn là hàng rào kín.
+
+     Nên phép này không hỏi "có nút lui không" mà hỏi "ĐỦ chưa": mỗi ô nói nổi bật
+     (`<NutNoi … noiBat`) là một chặng bắt bé mở miệng, và mỗi cái phải có một lối
+     lui đi kèm. Thêm chặng nói thứ ba mà quên lối lui thì cổng đỏ ngay. */
+  const soOnoi = (ma.match(/<NutNoi/g) || []).length;
+  const soLoiLui = (ma.match(/Con chưa nói được — cho con đi tiếp nhé/g) || []).length;
+  assert.ok(soOnoi > 0, 'không tìm thấy ô nói nào — phép kiểm này rỗng, xem lại');
+  assert.equal(soLoiLui, soOnoi,
+    `${soOnoi} chặng đòi bé nói nhưng chỉ ${soLoiLui} chặng có đường lui. Chặng nào `
+    + 'thiếu thì bé không có micro sẽ tắc ở đó, và MỌI chặng sau khoá theo.');
+});
+
 test('micro hỏng thì ô việc vẫn tính là xong', async () => {
   /* Luật ở `dandat.js`, đã có từ trước — phép này giữ cho nó không bị gỡ, vì
      đường lui tự khai ở trên chỉ có nghĩa khi luật này còn. */

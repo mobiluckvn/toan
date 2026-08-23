@@ -34,6 +34,16 @@
  * `HocBaMon` là hình dạng CỐ ĐỊNH, môn nào cũng phải nộp đúng khuôn:
  *   { quyen: [{ma, ten, tongBai, datBai, phanTram, tongChuong, masterChuong,
  *               huyHieu, daBatDau, chuong: [...], canCoGang: [...]}],
+ *
+ * ⚠ KHUÔN PHẦN TỬ `canCoGang` — GHI RA VÌ ĐÃ TỪNG VỠ:
+ *     {id, so, ten, micro, chuong, lan, dung, tong}
+ *   `so` là SỐ BÀI và phải là số hữu hạn; `ten` là tên bài; `chuong` là số chương
+ *   để màn tổng lọc theo chương; `lan`·`dung`·`tong` là số lần làm và điểm.
+ *   Dòng khuôn ở trên trước đây chỉ ghi `canCoGang: [...]` mà không nói bên trong
+ *   có gì. Toán nộp một đằng, Tiếng Anh đoán một nẻo (`{ma, best, tong}`), và Sổ
+ *   bố mẹ hiện thẳng "Cần cố gắng: Bài undefined" lên bản chạy thật — không cổng
+ *   nào bắt, vì mỗi bên đọc riêng đều đúng. Cổng `khuon_hocba.test.mjs` nay soi
+ *   đúng khuôn này cho MỌI môn.
  *     chuDe: {mang, dem, tong} | null,
  *     trinhDo: {quyen, tongBaiDat, tongChuongMaster, bacChuDe, soChuDeDoDuoc} }
  */

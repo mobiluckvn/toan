@@ -225,10 +225,9 @@ CON_NO = [
      "`lib/cefr.js` + thẻ “con đang ở đâu trên thang năng lực” ở Góc bố mẹ. "
      "⚠ Đây là quy ước bắc cầu, KHÔNG phải phép đo theo chuẩn CEFR — mục A-2.3.1 "
      "đã viết sẵn câu phải đưa vào luận văn để nói đúng điều đó. "
-     "⚠ Rà lại 23-08 còn thấy hàm `cefrCuaBe()` trong `lib/hoso.js` suy bậc từ "
-     "quyển bé đã học xong — hàm ĐÚNG nhưng KHÔNG MÀN NÀO GỌI, tức mã chết từ lúc "
-     "viết. Nên trước 23-08 tiêu chí “CEFR của bé” thực ra chưa đạt, dù bảng đối "
-     "chiếu bản 22-08 có ghi là đạt."),
+     "⚠ Hàm cũ `cefrCuaBe()` (suy bậc từ quyển đã học xong) KHÔNG màn nào gọi — "
+     "mã chết từ lúc viết — nên đã XOÁ ngày 23-08 theo ý bác; lý do và hai cái "
+     "bẫy của nó ghi lại trong chú thích tại `lib/hoso.js`."),
 ]
 
 
