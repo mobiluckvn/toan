@@ -303,13 +303,20 @@ export function sangTenHangDoi(uid, kho = globalThis.localStorage) {
   const q = docHangDoi(kho);
   let doi = 0;
   const ra = new Map();
+  let boLai = 0;
   for (const r of q) {
     if (r.learnerId === uid) { ra.set(r.id, r); continue; }
+    /* ⚠ CHỈ NHẬN BẢN GHI CHƯA CÓ CHỦ. Bản cũ sang tên MỌI bản ghi lạ, kể cả của
+       một bé CÓ THẬT khác — ghép với lỗi hàng đợi nghẽn thì bài của bé A chui vào
+       học bạ của bé B khi B đăng nhập vào cùng một chỗ. Đo được trên máy chủ
+       23-08-2026: 7 phiên, 130/398 bản ghi mang tên sai chủ. Xem chú thích dài ở
+       `mon/toan/lib/sync.js` — cùng một lỗi, cùng một ngày. */
+    if (laHocSinhThat(r.learnerId)) { boLai += 1; continue; }
     const seq = String(r.id).split('_').pop();
     const moi = { ...r, learnerId: uid, id: maSuKien(uid, r.sessionId, r.microId, r.itemId, seq) };
     ra.set(moi.id, moi);
     doi += 1;
   }
   ghiHangDoi([...ra.values()], kho);
-  return { doi };
+  return { doi, boLai };
 }

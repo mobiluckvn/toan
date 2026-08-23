@@ -245,10 +245,6 @@ export function enqueue(records, storage = globalThis.localStorage) {
   return writeQueue([...map.values()], storage);
 }
 
-/**
- * Đẩy hàng đợi lên máy chủ. writer(records) phải trả về Promise.
- * Thất bại (mất mạng) → GIỮ NGUYÊN hàng đợi để lần sau gửi lại.
- */
 /** Mã lỗi Firestore trả khi luật từ chối — phân biệt với mất mạng (`unavailable`). */
 const LOI_TU_CHOI = 'permission-denied';
 
@@ -302,28 +298,44 @@ export async function flushQueue(writer, storage = globalThis.localStorage, batc
 }
 
 /**
- * Đăng nhập xong thì SANG TÊN toàn bộ hàng đợi cho tài khoản thật.
+ * Đăng nhập xong thì NHẬN VỀ những bản ghi học thử — và CHỈ những bản ghi ấy.
  *
  * Con học thử trước khi đăng nhập, mọi bản ghi mang mã tạm 'local'. Đẩy nguyên lên là
  * luật bảo mật từ chối (`isMine('local')` sai), mà từ chối thì im lặng — công học của
  * con bay sạch. Phải viết lại cả learnerId lẫn id (id có nhúng learnerId bên trong).
  *
- * Ghi đè theo id mới nên chạy lại nhiều lần cũng không sinh bản trùng.
+ * ── ⚠ TUYỆT ĐỐI KHÔNG NHẬN BẢN GHI CỦA MỘT BÉ THẬT KHÁC ──
+ * Bản cũ viết `if (r.learnerId === uid) giữ; else sang tên` — tức nó sang tên MỌI
+ * bản ghi lạ, kể cả bản ghi của một bé CÓ THẬT khác. Ghép với lỗi hàng đợi nghẽn
+ * (xem `DA_GUI_GOC`), cảnh sau đã xảy ra THẬT và đo được trên máy chủ 23-08-2026:
+ *
+ *   bé A học trên một chỗ → đúng 1 lượt lên được, phần còn lại kẹt trong hàng đợi;
+ *   ít ngày sau bé B đăng nhập vào CHÍNH chỗ ấy → hàm này sang tên cả xấp của A
+ *   thành của B → bài của A được ghi vào học bạ của B.
+ *
+ * Đo được 7 phiên như thế, 130/398 bản ghi mang tên sai chủ. Hỏng cả hai đầu: B
+ * được cộng công không phải của mình, A mất trắng buổi học — và mô hình người học
+ * của cả hai đều sai.
+ *
+ * Nên nay chỉ nhận bản ghi CHƯA CÓ CHỦ (`local`). Bản ghi của bé thật khác thì bỏ
+ * khỏi hàng đợi và ĐẾM vào `boLai`: chúng không gửi lên được (luật đòi `isMine`),
+ * mà giữ lại thì chặn đường cả lô. Bỏ trong im lặng mới là điều không được làm.
  */
 export function reassignQueue(uid, storage = globalThis.localStorage) {
-  if (!isCloudLearner(uid)) return { moved: 0 };
+  if (!isCloudLearner(uid)) return { moved: 0, boLai: 0 };
   const q = readQueue(storage);
-  let moved = 0;
+  let moved = 0; let boLai = 0;
   const out = new Map();
   for (const r of q) {
     if (r.learnerId === uid) { out.set(r.id, r); continue; }
+    if (isCloudLearner(r.learnerId)) { boLai += 1; continue; }   // của bé THẬT khác
     const seq = String(r.id).split('_').pop();
     const next = { ...r, learnerId: uid, id: attemptId(uid, r.sessionId, r.microId, r.itemId, seq) };
     out.set(next.id, next);
     moved++;
   }
   writeQueue([...out.values()], storage);
-  return { moved };
+  return { moved, boLai };
 }
 
 /** Phiên học: một id cho cả lượt học một micro */

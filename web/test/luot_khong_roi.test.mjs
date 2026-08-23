@@ -248,5 +248,58 @@ const motLuot = async (nhatKy, may, kho, e) => {
   ok(readQueue(kho2).length === 0, 'TOÁN: hàng đợi sạch');
 }
 
+/* ── 6. ĐĂNG NHẬP KHÔNG ĐƯỢC "THỪA KẾ" BÀI CỦA BÉ KHÁC ──────────────────────
+ *
+ * Lỗi đo được trên máy chủ 23-08-2026: 7 phiên, 130/398 bản ghi mang tên sai chủ.
+ * Cảnh thật: bé A học trên một chỗ, đúng 1 lượt lên được, phần còn lại kẹt hàng
+ * đợi; ít ngày sau bé B đăng nhập vào CHÍNH chỗ ấy, hàm sang tên viết lại cả xấp
+ * của A thành của B. B được cộng công không phải của mình, A mất trắng buổi học,
+ * và mô hình người học của cả hai đều sai.
+ *
+ * Bản cũ hỏng vì nó hỏi "có phải của tôi không" rồi sang tên mọi thứ CÒN LẠI.
+ * Câu hỏi đúng là "đã có chủ chưa".
+ */
+{
+  const { sangTenHangDoi } = await import('../src/mon/tienganh/lib/suKien.js');
+  const { reassignQueue, buildAttempts } = await import('../src/mon/toan/lib/sync.js');
+
+  /* Tiếng Anh */
+  const kho = khoMoi();
+  const cuaA = dungSuKien({
+    learnerId: 'be_A_that', maPhien: 'pA', microId: 'DL:TA3.B00',
+    viec: [{ itemId: 'C1', ok: true, khiNao: 1 }, { itemId: 'C2', ok: true, khiNao: 2 }],
+  });
+  const hocThu = dungSuKien({
+    learnerId: 'local', maPhien: 'pL', microId: 'DL:TA3.B01',
+    viec: [{ itemId: 'C1', ok: true, khiNao: 3 }],
+  });
+  kho.setItem('ttd5.queueTA.v1', JSON.stringify([...cuaA, ...hocThu]));
+  const r = sangTenHangDoi('be_B_that', kho);
+  const conLai = docHangDoi(kho);
+  ok(r.doi === 1, 'TA: chỉ nhận 1 bản ghi học thử (`local`)', `doi=${r.doi}`);
+  ok(r.boLai === 2, 'TA: bỏ lại 2 bản ghi của bé thật khác, và ĐẾM ra', `boLai=${r.boLai}`);
+  ok(!conLai.some((x) => x.learnerId === 'be_B_that' && x.sessionId === 'pA'),
+    'TA: KHÔNG bản ghi nào của bé A bị dán tên bé B',
+    'đây chính là chỗ 130 bản ghi đã sang tên nhầm');
+  ok(conLai.every((x) => x.learnerId === 'be_B_that'),
+    'TA: mọi bản ghi còn lại trong hàng đợi đều là của bé B');
+
+  /* Toán — cùng phép, vì cùng một lỗi và cùng một ngày */
+  const kho2 = khoMoi();
+  const tA = buildAttempts({
+    learnerId: 'be_A_that', sessionId: 'sA', microId: 'DL:KSN2.B02', bktUnit: 'u1',
+    dangBai: null, events: [{ itemId: 'C1', phase: 'practice', ok: true, khiNao: 1 }],
+  });
+  const tL = buildAttempts({
+    learnerId: 'local', sessionId: 'sL', microId: 'DL:KSN2.B03', bktUnit: 'u1',
+    dangBai: null, events: [{ itemId: 'C1', phase: 'practice', ok: true, khiNao: 2 }],
+  });
+  kho2.setItem('ttd5.queue.v1', JSON.stringify([...tA, ...tL]));
+  const r2 = reassignQueue('be_B_that', kho2);
+  ok(r2.moved === 1 && r2.boLai === 1,
+    'TOÁN: nhận 1 bản học thử, bỏ lại 1 bản của bé thật khác',
+    `moved=${r2.moved} boLai=${r2.boLai}`);
+}
+
 console.log(`${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);
