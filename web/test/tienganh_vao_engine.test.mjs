@@ -128,6 +128,15 @@ test('⚠ CHẶNG TỪ MỚI có đường lui TỰ KHAI, không bắt hỏng mi
   /* Và nút ấy phải đứng SAU phần nghe: bỏ luôn cả nghe thì chặng này không dạy gì. */
   assert.match(ma, /daNgheTu && !micHong/,
     'đường lui phải chờ bé NGHE xong mới hiện — phần nghe là thứ chặng này dạy');
+  /* ⚠ VÀ CHỖ GỌI PHẢI TRUYỀN CỜ ẤY XUỐNG.
+     Bản đầu của cổng này chỉ soi bên trong `LuyenTu`, nên nó XANH trong khi chỗ
+     dựng `<LuyenTu>` không truyền `daNgheTu` — cờ mặc định `false`, nút không bao
+     giờ hiện, tính năng chết mà cổng vẫn xanh. Đúng họ lỗi CHỖ NỐI của P1: mỗi
+     tệp một mình đều đúng. Bắt được khi đi thử bản chạy, không phải khi đọc mã. */
+  const goi = ma.match(/<LuyenTu[\s\S]{0,600}?\/>/);
+  assert.ok(goi, 'không tìm thấy chỗ dựng <LuyenTu>');
+  assert.match(goi[0], /daNgheTu=\{/,
+    'chỗ gọi <LuyenTu> không truyền `daNgheTu` — nút lui không bao giờ hiện');
 });
 
 test('micro hỏng thì ô việc vẫn tính là xong', async () => {

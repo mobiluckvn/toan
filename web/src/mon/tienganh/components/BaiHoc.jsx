@@ -368,6 +368,7 @@ function ManTu({ bai, onTiep, onNoi, moc, onMoc }) {
       <LuyenTu
         bai={bai} ds={dsTuCoHinh} i={iTu} onDoi={datITu}
         soNoi={soNoi} micHong={micHong}
+        daNgheTu={daNghe.has(dsTuCoHinh[iTu]?.tu)}
         onNoi={ghiNoi} onMicHong={() => datMicHong(true)}
         onNghe={(t) => datDaNghe((s) => (s.has(t) ? s : new Set(s).add(t)))}
       />
