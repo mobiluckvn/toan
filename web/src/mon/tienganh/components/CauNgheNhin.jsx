@@ -41,11 +41,25 @@ import HinhVe from './HinhVe.jsx';
  * lối trong CÙNG một kỳ 5 câu (3 câu một lượt, 2 câu thử mãi) thì con số cuối
  * cùng không còn nghĩa gì.
  */
-export default function CauNgheNhin({ cau, onXong }) {
+export default function CauNgheNhin({ cau, onXong, onLuot = null }) {
   const k = cau.answerKey || {};
+  /* ── PHÁT LƯỢT CHO ENGINE ──
+     Cùng khuôn `CauHoi`: đo giờ TRƯỚC khi đổi state, và luôn `lan: 1` vì màn này
+     cố ý một-lượt-không-thử-lại (xem chú thích trên). Thiếu chỗ phát này thì kỳ
+     sát hạch — thứ đo được nhất trong cả quyển — không vào engine, đúng lỗ thủng
+     P1 tìm ra khi đi thử bản chạy 23-08. */
+  const moc = React.useRef(Date.now());
+  React.useEffect(() => { moc.current = Date.now(); }, [cau.id]);
+  const bao = (ok, v, mong) => {
+    onLuot?.({
+      cau, ok, lan: 1, ms: Math.max(0, Date.now() - moc.current),
+      hintsUsed: 0, answer: v, expected: mong,
+    });
+  };
+
   /* Câu nghe-chọn: khoá là `choice`, và có `choices` để bày ra. */
   if (cau.choices?.length) {
-    const tra = (v) => onXong?.({ dung: v === k.choice });
+    const tra = (v) => { bao(v === k.choice, v, k); onXong?.({ dung: v === k.choice }); };
     return (
       <div className="flex flex-col gap-4">
         <div className="flex flex-col items-center gap-3">
@@ -66,7 +80,7 @@ export default function CauNgheNhin({ cau, onXong }) {
     );
   }
 
-  const tra = (v) => onXong?.({ dung: v === k.value });
+  const tra = (v) => { bao(v === k.value, v, k); onXong?.({ dung: v === k.value }); };
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col items-center gap-3">

@@ -29,7 +29,17 @@ import { nhoCham } from '../lib/goiChamViet.js';
  * Không có nút "đi tiếp" nào ở đây, và điểm thấp cũng không chặn gì. Viết là việc
  * khó nhất; gắn cửa vào nó là bé né luôn cả bài.
  */
-export default function VietBai({ bai, onXong, onThoat }) {
+/* ── NGƯỠNG "ĐẠT" CỦA MỘT BÀI VIẾT ──
+   Bài viết KHÔNG có đúng/sai sạch sẽ như câu trắc nghiệm, mà engine BKT thì chỉ
+   nhận `ok` là true/false. Nên phải chọn một ngưỡng, và chọn ở ĐÂY, một chỗ, có
+   tên — chứ đừng rải số 7 vào giữa dòng gọi.
+
+   7/10 vì `chamViet` chấm trên thang 10 và coi 1–2 lỗi nhỏ là bài khá; lấy 9 thì
+   gần như bài nào cũng thành "chưa đạt" và mức thạo tụt oan, lấy 5 thì bài sai
+   nửa cũng tính công. Đây là con số CHỌN, không phải đo ra — đổi thì đổi ở đây. */
+export const DIEM_DAT = 7;
+
+export default function VietBai({ bai, onXong, onThoat, onLuot = null }) {
   const [viet, datViet] = useState('');
   const [dangCham, datDangCham] = useState(false);
   const [kq, datKq] = useState(null);
@@ -61,6 +71,25 @@ export default function VietBai({ bai, onXong, onThoat }) {
          chấm là đóng máy, và lúc ấy công viết cả bài mất trắng. Cùng cái bẫy "thoát
          ở màn kết phải ghi" đã sập một lần. */
       onXong?.({ viet, cham: r.cham });
+      /* ── ĐƯA BÀI VIẾT VÀO ENGINE ──
+         Bác chốt 23-08: phần viết phải vào engine, không chỉ nằm trong học bạ cho
+         bố mẹ đọc. Một bài viết = MỘT lượt, trên nút của chính bài ấy (`maNut` do
+         `tools/nut_tri_thuc.py` gán).
+         ⚠ `ms` KHÔNG đo được thật ở đây: bé gõ bài trong bao lâu thì màn này không
+         biết, và lấy giờ gọi máy chấm làm thời gian phản hồi là bịa một con số cho
+         chiều Thời gian. Để `null` — thiếu thì thấy được, bịa thì không. */
+      onLuot?.({
+        cau: { id: bai.id, maNut: bai.maNut, maNutDs: bai.maNutDs, format: 'viet' },
+        ok: Number(r?.cham?.diem ?? 0) >= DIEM_DAT,
+        lan: 1,
+        ms: null,
+        hintsUsed: 0,
+        answer: viet,
+        expected: null,
+        phase: 'worked',
+        maPhien: `viet-${bai.id}-${Date.now()}`,
+        microId: bai.id,
+      });
     } catch (e) {
       /* Nói ĐÚNG chỗ hỏng. "Thử lại nhé" cho mọi thứ thì bé bấm mãi trong khi lỗi
          nằm ở chỗ chẳng ai xem — cùng lý do với phòng luyện nói. */

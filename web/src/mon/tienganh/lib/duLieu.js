@@ -227,7 +227,7 @@ async function docTienDo(uid) {
 
 async function docHocBa(uid) {
   const snap = await getDocs(collection(db, KHO.hocBa(uid)));
-  const chapters = {}, baiViet = {}, soThich = {};
+  const chapters = {}, baiViet = {}, docHieu = {}, soThich = {};
   let dinhDang = {};
   snap.forEach((d) => {
     const v = d.data();
@@ -241,6 +241,9 @@ async function docHocBa(uid) {
        không thì ghi lên rồi bỏ đó — cổng `hocba_khop_luat.test.mjs` canh chuyện
        này, và nó canh vì đã xảy ra thật với chính `hocBaTA`. */
     else if (v.loai === 'viet' && v.khoa) baiViet[v.khoa] = v.giaTri || {};
+    /* `doc` — bài đọc hiểu. Bác chốt 23-08-2026 cho lên máy chủ; trước đó CỐ Ý chỉ
+       giữ tại máy. Cùng một luật: luật CHO ghi thì bên đọc phải nhặt. */
+    else if (v.loai === 'doc' && v.khoa) docHieu[v.khoa] = v.giaTri || {};
     /* `soThich` — từ bé thích nhất trong quyển, cô giáo máy lấy làm ngữ cảnh. Cùng
        một luật với hai loại trên: luật CHO ghi loại nào thì bên đọc phải nhặt đúng
        chừng ấy, không thừa không thiếu. */
@@ -249,7 +252,7 @@ async function docHocBa(uid) {
        kém ở mọi quyển, chia nhỏ ra chỉ làm mẫu bé đi và chẳng dạng nào đủ mẫu. */
     else if (v.loai === 'hoSo') dinhDang = (v.giaTri || {}).dinhDang || {};
   });
-  return { chapters, baiViet, soThich, dinhDang };
+  return { chapters, baiViet, docHieu, soThich, dinhDang };
 }
 
 /**
@@ -257,7 +260,9 @@ async function docHocBa(uid) {
  * được bằng sổ tại máy, đó mới là nguồn chính.
  */
 export async function tienDoTuMay(uid) {
-  if (!dungDuoc(uid)) return { micros: {}, chapters: {}, baiViet: {}, soThich: {}, dinhDang: {} };
+  if (!dungDuoc(uid)) {
+    return { micros: {}, chapters: {}, baiViet: {}, docHieu: {}, soThich: {}, dinhDang: {} };
+  }
   const [micros, hb] = await Promise.all([
     docTienDo(uid).catch((e) => { nuot(e); return {}; }),
     docHocBa(uid).catch((e) => {

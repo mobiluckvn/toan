@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { CONTENT, dongDau } from '../../../chung/lib/soQuyen.js';
 import CauHoi from './CauHoi.jsx';
 import NutNghe, { NutNgheDoan } from './NutNghe.jsx';
@@ -29,8 +29,17 @@ import NutNghe, { NutNgheDoan } from './NutNghe.jsx';
  * thêm một `loai` thì phải sửa `firestore.rules` · bên gửi · bên đọc rồi deploy
  * rules — xem chú ở `progress.js`.
  */
-export default function DocHieu({ bai, onXong, onThoat }) {
+export default function DocHieu({ bai, onXong, onThoat, onLuot = null }) {
   const ds = bai?.cau || [];
+  /* ── PHÁT LƯỢT LÊN ENGINE ──
+     Bọc thêm `maPhien` · `microId` · `phase` y như `BaiHoc` làm, vì `ghiLuot` bên
+     `ManTiengAnh` đòi đủ ba thứ ấy mới nhận. Thiếu chỗ này thì bé làm xong mà
+     không nút nào được ghi công — lỗ thủng P1, tìm ra khi đi thử bản chạy 23-08:
+     làm hết đọc hiểu + viết + ôn tập mà Góc bố mẹ vẫn trống trơn. */
+  const maPhien = useMemo(
+    () => `doc-${bai?.id || "?"}-${Date.now()}`, [bai?.id]);
+  const luot = (e) => onLuot?.({
+    ...e, phase: 'check', maPhien, microId: bai?.id });
   const [i, datI] = useState(0);
   const [dung, datDung] = useState(0);
   const [het, datHet] = useState(false);
@@ -130,7 +139,7 @@ export default function DocHieu({ bai, onXong, onThoat }) {
       <div className="rounded-xl2 border-2 border-line bg-white p-5">
         {/* `key` buộc dựng lại mỗi câu — không có nó thì đáp án câu trước còn nằm
             trong ô, đúng cái bẫy đã vỡ một lần ở kỳ ôn tập. */}
-        <CauHoi key={q.id} cau={q} onXong={tra} />
+        <CauHoi key={q.id} cau={q} onXong={tra} onLuot={luot} />
       </div>
     </Khung>
   );

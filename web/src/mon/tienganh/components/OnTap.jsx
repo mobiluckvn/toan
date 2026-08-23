@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import CauHoi from './CauHoi.jsx';
 import CauNgheNhin from './CauNgheNhin.jsx';
 
@@ -22,8 +22,18 @@ import CauNgheNhin from './CauNgheNhin.jsx';
  * nghe → bấm hình đúng · nghe → nhìn hình → đúng/sai. Dùng lại đúng hai component
  * của màn học, không dựng bản riêng: một câu hỏi thì chỉ được có một cách chấm.
  */
-export default function OnTap({ ky, onXong, onThoat }) {
+export default function OnTap({ ky, onXong, onThoat, onLuot = null }) {
   const ds = ky?.cau || [];
+  /* ── PHÁT LƯỢT LÊN ENGINE ──
+     Bọc thêm `maPhien` · `microId` · `phase` y như `BaiHoc` làm, vì `ghiLuot` bên
+     `ManTiengAnh` đòi đủ ba thứ ấy mới nhận. Thiếu chỗ này thì bé làm xong mà
+     không nút nào được ghi công — lỗ thủng P1, tìm ra khi đi thử bản chạy 23-08:
+     làm hết đọc hiểu + viết + ôn tập mà Góc bố mẹ vẫn trống trơn. */
+  const maPhien = useMemo(
+    () => `on-${ky?.id || "?"}-${Date.now()}`, [ky?.id]);
+  /* Kỳ ôn tập là ĐO, không phải luyện → `phase: 'assess'`. */
+  const luot = (e) => onLuot?.({
+    ...e, phase: 'assess', maPhien, microId: ky?.id });
   const [i, datI] = useState(0);
   const [dung, datDung] = useState(0);
   const [het, datHet] = useState(false);
@@ -90,11 +100,11 @@ export default function OnTap({ ky, onXong, onThoat }) {
             chỗ chuyển từ câu BẤM CHỌN sang câu ĐÚNG/SAI là trắng màn hình — đã vỡ
             thật một lần ở đúng kiểu chuyển dạng câu này. */}
         {q.nhinNghe
-          ? <CauNgheNhin key={q.id} cau={q} onXong={tra} />
+          ? <CauNgheNhin key={q.id} cau={q} onXong={tra} onLuot={luot} />
           /* Trong kỳ ôn tập KHÔNG hiện lời chữa: `CauHoi` chỉ báo lên khi bé bấm
              tiếp, nên ở đây bé vẫn thấy đúng/sai của từng câu. Chấp nhận: bé lớp 1
              mà làm 10 câu liền không biết mình thế nào thì rất dễ bỏ giữa chừng. */
-          : <CauHoi key={q.id} cau={q} onXong={tra} />}
+          : <CauHoi key={q.id} cau={q} onXong={tra} onLuot={luot} />}
       </div>
       <p className="text-sm text-mute">Từ bài: {q.tenBai}</p>
     </Khung>

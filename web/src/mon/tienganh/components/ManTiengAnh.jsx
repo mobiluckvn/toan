@@ -154,15 +154,26 @@ export default function ManTiengAnh({
     setView({ page: 'home' });
   }, [tienDo, datTienDo, setView, learnerId, ct.ma]);
 
-  /* XONG MỘT BÀI ĐỌC HIỂU — chỉ ghi sổ TẠI MÁY, không đẩy máy chủ. Lý do ở
-     `ghiDocHieu`: `hocBaTA` chỉ nhận `loai: 'chuong'`, thêm loại mới là phải sửa
-     luật Firestore và deploy nó, mà bác chốt bài đọc hiểu không cần vào sổ. */
+  /**
+   * XONG MỘT BÀI ĐỌC HIỂU — ghi HAI NƠI, đúng khuôn bài viết.
+   *
+   * ⚠ ĐỔI CHỦ Ý, 23-08-2026. Trước đây bài đọc chỉ ghi sổ TẠI MÁY, vì "bác chốt
+   * bài đọc hiểu không cần vào sổ". Nay bác chốt ngược lại: phần đọc và phần viết
+   * đều phải lên máy chủ và vào engine. Nên `hocBaTA` có thêm loại `doc`.
+   *
+   * ⚠ THÊM MỘT LOẠI LÀ SỬA BỐN CHỖ (xem chú thích trong `firestore.rules`): luật ·
+   * `duLieu.js` bên đọc · chỗ gọi này · và phải `deploy --only firestore:rules`
+   * TRƯỚC khi bản mới lên. Thiếu bước deploy thì Firestore từ chối TRONG IM LẶNG.
+   */
   const xongDocHieu = useCallback((bai, kq) => {
     const unit = bai.phamVi === 'unit';
-    datTienDo((p) => ghiDocHieu(p, ct.ma, unit ? bai.unit : bai.chapter, kq,
-      unit ? 'unit' : 'chuong'));
+    const so = unit ? bai.unit : bai.chapter;
+    const sau = ghiDocHieu(tienDo, ct.ma, so, kq, unit ? 'unit' : 'chuong');
+    datTienDo(sau);
+    const k = khoaDocHieu(ct.ma, so, unit ? 'unit' : 'chuong');
+    luuMucHocBa(learnerId, 'doc', k, { giaTri: sau.docHieu?.[k] ?? null });
     setView({ page: 'home' });
-  }, [datTienDo, setView, ct.ma]);
+  }, [tienDo, datTienDo, setView, learnerId, ct.ma]);
 
   /**
    * XONG MỘT BÀI VIẾT — ghi hai nơi, đúng khuôn kỳ ôn tập.
@@ -276,7 +287,7 @@ export default function ManTiengAnh({
   if (view.page === 'vietbai' && view.vietId) {
     const b = viets.find((x) => x.id === view.vietId);
     return (
-      <VietBai bai={b} onThoat={() => setView({ page: 'home' })}
+      <VietBai bai={b} onLuot={ghiLuot} onThoat={() => setView({ page: 'home' })}
                onXong={(kq) => xongVietBai(b, kq)} />
     );
   }
@@ -284,7 +295,7 @@ export default function ManTiengAnh({
   if (view.page === 'dochieu' && view.docId) {
     const b = docs.find((x) => x.id === view.docId);
     return (
-      <DocHieu bai={b} onThoat={() => setView({ page: 'home' })}
+      <DocHieu bai={b} onLuot={ghiLuot} onThoat={() => setView({ page: 'home' })}
                onXong={(kq) => xongDocHieu(b, kq)} />
     );
   }
@@ -292,7 +303,7 @@ export default function ManTiengAnh({
   if (view.page === 'ontap' && view.kyId) {
     const ky = kyOn.find((k) => k.id === view.kyId);
     return (
-      <OnTap ky={ky} onThoat={() => setView({ page: 'home' })}
+      <OnTap ky={ky} onLuot={ghiLuot} onThoat={() => setView({ page: 'home' })}
              onXong={(kq) => xongOnTap(ky, kq)} />
     );
   }
@@ -306,6 +317,16 @@ export default function ManTiengAnh({
         onXongBai={(kq, sau) => xongBai(view.baiId, kq, sau)}
         onChang={(c) => nhoChang(view.baiId, c)}
         onMoc={(chang, m) => nhoMoc(view.baiId, chang, m)}
+        /* ⚠ CHỖ NÀY TRỐNG SUỐT TỪ ĐỢT 1 TỚI 23-08-2026.
+           `BaiHoc` có sẵn `onLuot` và nối sẵn cho cả chặng Luyện tập lẫn Sát hạch,
+           4226 câu cũng đã được gắn `maNut` từ Đợt 1 — nhưng chỗ DỰNG nó ở đây
+           không truyền hàm xuống, nên `onLuot` luôn là null và KHÔNG MỘT LƯỢT NÀO
+           của bài học đi tới `attempts`. Cả đường BKT dựng ở Đợt 1 nằm im.
+           Màn duy nhất từng nuôi engine là `OnLai`, mà thẻ ôn chỉ sinh ra SAU khi
+           xong bài — nên gần như không bao giờ tới lượt.
+           Không cổng nào bắt được: mỗi tệp một mình đều đúng, chỗ hỏng nằm ở CHỖ
+           NỐI. Nay `tienganh_vao_engine.test.mjs` soi đúng chỗ nối này. */
+        onLuot={ghiLuot}
         /* Biệt danh của chính bé đi vào đoạn hội thoại — bé nghe tên mình trong
            một câu tiếng Anh. Đó là chỗ bài này khác mọi bài luyện phát âm khác. */
         tenBe={(hoSo?.displayName || '').trim().split(/\s+/).pop() || 'Bo'}

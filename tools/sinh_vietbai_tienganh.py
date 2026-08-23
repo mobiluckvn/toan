@@ -43,6 +43,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from kho_cau_tienganh import cau_tich_luy, kho_chu  # noqa: E402
 
 GOC = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(GOC / "tools"))
+from nut_tri_thuc import kho_nut, nut_cua_bai_viet  # noqa: E402
+
+KHO_NUT = [{}]
 QUYEN = {1: "ta1", 2: "ta2", 3: "ta3", 4: "ta4", 5: "ta5"}
 
 # Bé lớp 3 viết 2–3 câu là một bài. Đòi nhiều hơn thì bé chép lại mẫu cho xong.
@@ -304,6 +308,9 @@ def dung(lop: int) -> list[dict]:
             "goiY": _goi_y(cau_tich_luy(lop, b["so"], kho_chu(lop, b["so"]), {b["so"]}),
                            tens, NHOM_GIUA_UNIT),
             "vonTu": _von_dung_duoc(von),
+            # MÃ NÚT — xem `tools/nut_tri_thuc.py`. Thiếu thì bài
+            # viết của bé không vào được engine.
+            **nut_cua_bai_viet(_von_dung_duoc(von), KHO_NUT[0]),
         })
 
     # ══ MỖI CHƯƠNG MỘT ĐỀ — viết tổng hợp cả bốn unit ══
@@ -335,6 +342,9 @@ def dung(lop: int) -> list[dict]:
             # Vốn từ DỒN từ chương 1 tới đây: bé viết về mình thì vẫn cần "I'm" của
             # chương 1 ở bài chương 4. Cắt theo đúng chương là cắt mất cả câu chào.
             "vonTu": _von_dung_duoc(von),
+            # MÃ NÚT — xem `tools/nut_tri_thuc.py`. Thiếu thì bài
+            # viết của bé không vào được engine.
+            **nut_cua_bai_viet(_von_dung_duoc(von), KHO_NUT[0]),
         })
     return ra
 
@@ -343,6 +353,7 @@ def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--lop", type=int, default=3, choices=[1, 2, 3, 4, 5])
     a = p.parse_args()
+    KHO_NUT[0] = kho_nut(a.lop)
     ds = dung(a.lop)
     ra = GOC / f"web/public/content/{QUYEN[a.lop]}/vietbai.json"
     ra.write_text(json.dumps(ds, ensure_ascii=False, indent=1), "utf8")

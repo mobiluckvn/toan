@@ -45,7 +45,16 @@ const db = getFirestore();
 export const onAttempt = onDocumentCreated('attempts/{attemptId}', async (event) => {
   const a = event.data?.data();
   if (!a?.learnerId || !a?.bktUnit) return;
-  if (a.phase !== 'practice' && a.phase !== 'assess') return;   // chỉ tính lượt làm bài thật
+  /* ── PHA NÀO ĐƯỢC TÍNH VÀO BKT ──
+     `practice`·`assess` là hai pha của bài học. Từ 23-08-2026 thêm hai pha nữa,
+     vì bác chốt phần ĐỌC và phần VIẾT cũng phải vào engine:
+         check   một câu đọc hiểu — bé phải hiểu đoạn mới trả lời được;
+         worked  một bài viết đã được AI chấm (ngưỡng đạt ở `VietBai.DIEM_DAT`).
+     Vẫn LOẠI `intro`·`sample`·`teach` của Toán: ở đó máy đang LÀM MẪU, bé chưa
+     tự trả lời, tính vào mức thạo là ghi công cho người khác.
+     ⚠ `check` và `worked` chỉ môn Tiếng Anh phát — đã dò cả `mon/toan`, bên ấy
+     dùng intro·sample·teach·practice·assess. Nên nới ở đây không đụng gì Toán. */
+  if (!['practice', 'assess', 'check', 'worked'].includes(a.phase)) return;
 
   const ref = db.doc(`mastery/${a.learnerId}/units/${encodeURIComponent(a.bktUnit)}`);
   await db.runTransaction(async (tx) => {

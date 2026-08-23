@@ -60,8 +60,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from kho_cau_tienganh import cau_tich_luy  # noqa: E402
+from nut_tri_thuc import kho_nut, nut_cua_cau  # noqa: E402
 
 GOC = Path(__file__).resolve().parent.parent
+
+# Kho nút của quyển đang dựng — nạp một lần ở `main`, vì nó đọc cả
+# `chuan_lop1..N.json` và không đổi trong suốt một lượt chạy.
+KHO_NUT = [{}]
 QUYEN = {1: "ta1", 2: "ta2", 3: "ta3", 4: "ta4", 5: "ta5"}
 
 # ── ĐOẠN NGẮN Ở ĐẦU QUYỂN, DÀI DẦN VỀ CUỐI ── (bác chốt 19-08-2026)
@@ -595,6 +600,11 @@ def _cau_hoi(dung_ten: str, khac_ten: list[str], doan: list[str],
         ra.append(c)
     for i, c in enumerate(ra, 1):
         c["id"] = f"D{i}"
+        # ── MÃ NÚT TRI THỨC — không có thì lượt trả lời của bé biến mất khỏi
+        #    engine. Luật gán ở `tools/nut_tri_thuc.py`, dùng chung với bộ sinh
+        #    bài tranh để hai bên không trôi khỏi nhau.
+        c.update(nut_cua_cau((c.get("answerKey") or {}).get("choice"),
+                             c.get("text"), " ".join(doan), KHO_NUT[0]))
     return ra
 
 
@@ -705,6 +715,7 @@ def main() -> int:
     p.add_argument("--thieu", help="ghi ra tệp những dòng chưa có clip")
     a = p.parse_args()
 
+    KHO_NUT[0] = kho_nut(a.lop)
     ds, loi = dung(a.lop)
     ra = GOC / f"web/public/content/{QUYEN[a.lop]}/dochieu.json"
     ra.write_text(json.dumps(ds, ensure_ascii=False, indent=1), "utf8")

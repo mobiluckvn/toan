@@ -414,7 +414,8 @@ function ManTu({ bai, onTiep, onNoi, moc, onMoc }) {
  * Hai micro cùng bật thì máy nghe lẫn, và bé cũng không biết đang được hỏi từ
  * nào. Màn một từ một lượt làm điều ấy thành hiển nhiên, không phải canh nữa.
  */
-function LuyenTu({ bai, ds, i, onDoi, soNoi, micHong, onNoi, onNghe, onMicHong }) {
+function LuyenTu({ bai, ds, i, onDoi, soNoi, micHong, daNgheTu = false,
+                   onNoi, onNghe, onMicHong }) {
   /* Các từ KHÁC của bài — để bộ chấm bắt được việc bé đọc "dog" thành "duck".
      Hai từ ấy cùng một unit, nhầm sang nhau mà vẫn điểm cao thì bài nói vô nghĩa. */
   const cungBai = useMemo(() => ds.map((x) => x.tu), [ds]);
@@ -469,6 +470,24 @@ function LuyenTu({ bai, ds, i, onDoi, soNoi, micHong, onNoi, onNghe, onMicHong }
         onXong={(k) => onNoi?.(v.tu, k)}
         onHong={onMicHong}
       />
+
+      {/* ── ĐƯỜNG LUI TỰ KHAI, KHÔNG PHẢI CHỜ HỎNG ──
+          `micHong` xưa nay CHỈ bật khi micro hỏng THẬT — tức bé phải bấm nói rồi
+          thất bại mới được đi tiếp. Nhưng bé KHÔNG CÓ micro, bé không được phép
+          dùng micro, bé đang ở chỗ đông người, hay bé ngọng chưa dám nói, thì
+          không có cái hỏng nào để mà bắt: chặng Từ mới khoá luôn, và ba chặng sau
+          khoá theo. Đi thử bản chạy 23-08 đứng đúng ở đây — không tới được Luyện
+          tập nên không sinh nổi một bản ghi BKT nào (lỗ thủng P2).
+
+          Nên mở một lối TỰ KHAI. Chỉ hiện SAU KHI bé đã bấm nghe: phần nghe mới là
+          thứ chặng này thật sự dạy, bỏ cả nghe thì không còn gì để bỏ. */}
+      {daNgheTu && !micHong && (
+        <button type="button" onClick={onMicHong}
+          className="self-start rounded-xl2 px-2 py-1 text-sm text-mute underline
+            hover:text-navy focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+          Con chưa nói được — cho con đi tiếp nhé
+        </button>
+      )}
 
       {/* Đi lại giữa các từ. Nút "từ sau" nhảy tới từ CHƯA NÓI gần nhất, để bé
           không phải tự dò xem còn thiếu từ nào. */}

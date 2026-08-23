@@ -34,9 +34,16 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
 
 GOC = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(GOC / "tools"))
+from nut_tri_thuc import (kho_nut, nut_cua_bai_viet,  # noqa: E402
+                          nut_cua_cau)
+
+# Kho nút của quyển đang dựng — nạp một lần ở `main`.
+KHO_NUT = [{}]
 QUYEN = {1: "ta1", 2: "ta2", 3: "ta3", 4: "ta4", 5: "ta5"}
 DUONG_TRANH = "tienganh/tranh"
 
@@ -100,6 +107,10 @@ def cau_hoi_sau_doc(k: dict) -> list[dict]:
             "choices": _tron(h["dap"], moi[:3]),
             "answerKey": {"choice": h["dap"]},
             "solutionNarrative": f"Nhìn trong tranh: “{h['dap']}”.",
+            # MÃ NÚT — thiếu nó thì lượt trả lời không vào engine được. Luật gán
+            # dùng chung ở `tools/nut_tri_thuc.py`.
+            **nut_cua_cau(h["dap"], h["hoi"], " ".join(k.get("doan") or []),
+                          KHO_NUT[0]),
         })
     return ra
 
@@ -409,6 +420,9 @@ def muc_viet(k: dict, lop: int, von: list[dict]) -> dict:
         "mauCau": [],
         "goiY": [],
         "vonTu": von,
+        # MÃ NÚT cho bài viết — bé viết được đoạn tả tranh là chạm tới cả vốn từ
+        # của bức tranh ấy. Nút chính là ô chữ ĐẦU TIÊN tra ra được.
+        **nut_cua_bai_viet(von, KHO_NUT[0]),
         # Máy chấm đối chiếu với đây — bé viết được ý nào CÓ THẬT trong tranh thì
         # tính ý ấy. Không bày ra màn hình.
         "yTrongTranh": list(k["doan"]),
@@ -487,6 +501,7 @@ def main() -> int:
     p.add_argument("--lop", type=int, default=3)
     p.add_argument("--thieu", help="ghi ra tệp những dòng chưa có clip")
     a = p.parse_args()
+    KHO_NUT[0] = kho_nut(a.lop)
     q = QUYEN[a.lop]
     tm = GOC / f"web/public/content/{q}"
 
