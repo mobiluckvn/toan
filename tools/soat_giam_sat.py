@@ -84,10 +84,13 @@ HANH_DONG = [
      "việc không ai chấm."),
     ("Chọn từ mình thích nhất", "PhongNoi", "—", "`hocBaTA` loai `soThich`",
      "Chiều Động lực (M) của mục 2.1.2 — cô giáo máy lấy làm ngữ cảnh buổi sau."),
-    ("Bỏ dở giữa chừng", "mọi màn", KHONG, "không ghi gì",
-     "Bé mở bài rồi thoát, hoặc sai ba lần rồi bỏ — không dấu vết nào. Chiều Thời "
-     "gian (T) của luận văn có nhắc 'đo mệt mỏi nhận thức'; muốn đo thì phải có "
-     "sự kiện RỜI MÀN, nay chưa có."),
+    ("Bỏ dở giữa chừng", "BaiHoc → ManTiengAnh", DU, "`hocBaTA` loai `phien`",
+     "Vá 23-08. Rời màn khi chưa xong thì ghi một mục gồm mã bài · chặng đang dở "
+     "· số lượt đã làm · số giây trong bài. MỖI LẦN MỘT BẢN GHI, không gộp theo "
+     "bài — chính số LẦN bỏ dở cùng một bài mới là tín hiệu, gộp lại là mất nó. "
+     "⚠ CẬN DƯỚI: chỉ bắt được lúc rời màn qua thao tác trong ứng dụng; đóng "
+     "thẳng tab thì React không kịp chạy hàm dọn. Dùng làm chỉ báo xu hướng, "
+     "đừng dùng làm phép đếm đầy đủ."),
 ]
 
 # ── ② TRƯỜNG DỮ LIỆU vs MỤC 2.5.2 / 2.3.1 CỦA LUẬN VĂN ───────────────────────
@@ -107,8 +110,10 @@ TRUONG = [
     ("P(L) trước / sau", "2.5.2 · bối cảnh hệ thống", "`pTruoc` và `p` trong `mastery/`",
      DU, "MÃ · `bkt.js` ghi cả hai, nên `ΔC = p - pTruoc` lúc nào cũng tính được."),
     ("Mã prompt để kiểm toán", "2.5.2 · bối cảnh hệ thống", "`vantay.js` — băm KHUNG lời dặn",
-     "MỘT PHẦN", "MÃ · vân tay đi kèm KẾT QUẢ trả về cho máy con, KHÔNG nằm trong "
-     "`attempts`. Muốn kiểm toán 'câu này sinh bởi prompt nào' thì phải nối thêm."),
+     DU, "MÃ · vá 23-08. Ba trường `mauPrompt` · `phienBanMau` · `vanTayPrompt` "
+     "nay nằm trong chính bản ghi lượt (`suKien.js`). ⚠ Băm KHUNG lời dặn chứ "
+     "KHÔNG lưu nội dung nhắc — `attempts` là kho DÙNG CHUNG, nhét nội dung riêng "
+     "tư vào đó là mở một lỗ khác."),
     ("Mốc thời gian mili-giây", "2.5.2 · định danh & thời gian", "`ts` + `serverTs`", DU,
      "MÃ · mốc RIÊNG từng lượt, không dùng chung một mốc cho cả loạt."),
     ("Chuỗi sự kiện BẤT BIẾN", "2.5.2 · lưu vết hướng sự kiện", "`attempts` immutable",
@@ -121,8 +126,12 @@ TRUONG = [
      "CHẠY · Góc bố mẹ hiện 'DẠNG CÂU CON LÀM TỐT NHẤT — chọn đáp án, đúng 50% "
      "(8 câu)' sau khi bé làm 3 bài đọc."),
     ("Hồ sơ: sở thích", "2.3.1 · hồ sơ bé", "`hocBaTA` loai `soThich`", DU, "MÃ"),
-    ("Hồ sơ: CEFR", "2.3.1 · hồ sơ bé", "suy từ quyển đang học", DU,
-     "CHẠY · Góc bố mẹ hiện 'A1 — khung tham chiếu châu Âu (CEFR)'."),
+    ("Hồ sơ: CEFR", "2.3.1 · hồ sơ bé", "`lib/cefr.js` — suy từ P(L) toàn đồ thị",
+     "MỘT PHẦN", "MÃ · vá 23-08. Trước đây chỉ là NHÃN của quyển; nay tính tỉ lệ "
+     "phủ vốn từng khối lớp (1 062 nút học được) rồi bắc cầu sang bậc theo mục "
+     "tiêu Chương trình GDPT 2018. Để 'MỘT PHẦN' chứ không phải 'ĐỦ' là có chủ ý: "
+     "CEFR định nghĩa bậc bằng mô tả LÀM ĐƯỢC GÌ, không bằng số đơn vị kiến thức "
+     "— nên đây là quy ước bắc cầu, không phải phép đo theo chuẩn."),
     ("Điểm phát âm từng từ", "2.1.2 · chiều Nhận thức (kỹ năng NÓI)",
      "`attempts` mode `noiTu`·`noiCau`·`phongNoi`", DU,
      "MÃ · vá 23-08. ⚠ ĐỌC CON SỐ NÀY CÓ DÈ CHỪNG: máy con chấm bằng bộ nhận "
@@ -275,22 +284,31 @@ def main() -> int:
     bang(w5, ["Câu hỏi của bác", "Trả lời"], (40, 92))
     for k, v in [
         ("Số liệu đã lưu hết chưa?",
-         "CHƯA HẾT, nhưng nay gần đủ. 9/16 hành động vào được engine — nhưng trước 23-08 con "
-         "số ấy là 1/16 (chỉ màn ôn thẻ, mà thẻ gần như không bao giờ tới hạn). "
+         "CHƯA HẾT, nhưng nay gần đủ. 10/16 hành động nay CÓ dữ liệu giám sát; "
+         "trước 23-08 con số ấy là 1/16 (chỉ màn ôn thẻ, mà thẻ gần như không bao "
+         "giờ tới hạn). ⚠ 'Có dữ liệu' KHÔNG đồng nghĩa 'vào engine': 9 hành động "
+         "ghi thành lượt trong `attempts` nên BKT cập nhật P(L); riêng hành động "
+         "thứ 10 — BỎ DỞ — ghi vào học bạ và KHÔNG đụng tới P(L), vì bỏ dở không "
+         "phải một câu trả lời đúng hay sai. Gộp hai con số ấy làm một là nói quá "
+         "về engine. "
          "Cả BA phần NÓI nay đã vào (bác chốt 23-08): nói từ · nói câu · phòng "
          "luyện nói. Ba việc CỐ Ý không đưa vào: xem video từ mới · nghe từ · xem "
          "video mẫu câu — bác chốt không cần, và đúng: xem/nghe không phải một "
-         "lượt trả lời, không có đúng/sai để BKT cập nhật. Còn thiếu duy nhất: "
-         "sự kiện BỎ DỞ."),
+         "lượt trả lời, không có đúng/sai để BKT cập nhật. Sự kiện BỎ DỞ đã vá "
+         "23-08 và là chỗ trống cuối cùng được lấp."),
         ("Chỗ nào ĐÁP ỨNG đề tài?",
          "9/10 trường mà mục 2.5.2 và 2.3.1 đòi đã có thật trong `attempts` và "
          "`mastery/`: Node_ID · đúng/sai · câu trả lời thô · RT · H_req · P(L) "
          "trước/sau · mốc mili-giây · chuỗi bất biến · struggle_count."),
         ("Chỗ nào CHƯA đáp ứng?",
-         "① Mã prompt chưa nằm trong `attempts` (vân tay có, nhưng đi kèm kết quả "
-         "trả về chứ không lưu cùng lượt) → chưa kiểm toán được 'câu này do prompt "
-         "nào sinh'. ② Báo cáo RIÊNG của bé bỏ sót tiến độ và số phút của Tiếng "
-         "Anh. ③ Không có sự kiện BỎ DỞ nên chiều Thời gian chưa đo được mệt mỏi."),
+         "Cả ba chỗ nêu ở bản soát trước đã vá xong ngày 23-08-2026: ① vân tay "
+         "prompt nay nằm trong `attempts`; ② báo cáo riêng của bé đã gộp cả Tiếng "
+         "Anh; ③ đã có sự kiện BỎ DỞ. Còn lại HAI chỗ chưa trọn, và cả hai là "
+         "giới hạn về BẢN CHẤT chứ không phải việc chưa làm: (a) sự kiện bỏ dở "
+         "chỉ là CẬN DƯỚI — đóng thẳng tab thì không ghi được; (b) quy đổi CEFR "
+         "là quy ước bắc cầu theo Chương trình GDPT 2018, không phải phép đo "
+         "theo chuẩn CEFR. Luận văn phải nói rõ hai giới hạn này chứ không được "
+         "để người đọc hiểu thành phép đo đầy đủ."),
         ("Chỗ nào KHÔNG THỂ đáp ứng TRỌN VẸN?",
          "Điểm phát âm nay ĐÃ vào engine theo ý bác, nhưng phải đọc có dè chừng: "
          "máy con chấm bằng bộ nhận dạng giọng nói của TRÌNH DUYỆT, nên con số "
@@ -318,7 +336,8 @@ def main() -> int:
     wb.save(RA)
     n_du = sum(1 for h in HANH_DONG if h[2] == DU)
     print(f"→ {RA.relative_to(GOC)}")
-    print(f"   {len(HANH_DONG)} hành động · {n_du} vào được engine")
+    print(f"   {len(HANH_DONG)} hành động · {n_du} CÓ dữ liệu giám sát "
+          f"(trong đó {n_du - 1} vào engine; bỏ dở chỉ vào học bạ)")
     print(f"   {len(TRUONG)} trường đối chiếu · {len(ADAPTIVE)} cơ chế adaptive")
     return 0
 

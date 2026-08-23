@@ -121,6 +121,14 @@ export function dungSuKien({
     answer: e.answer === undefined ? null : goiDapAn(e.answer),
     expected: e.expected === undefined ? null : goiDapAn(e.expected),
     mode: e.mode || null,
+    /* ── VÂN TAY LỜI DẶN (mục 2.5.2 · "mã prompt để kiểm toán") ──
+       Chỉ có ở lượt do MÔ HÌNH tham gia (bài viết, phòng nói); lượt trắc nghiệm
+       thì `null`. Băm KHUNG lời dặn chứ không băm cả prompt — không lưu một chữ
+       nào của bé. Nhờ trường này mới so được "mẫu prompt nào giúp bé tiến bộ hơn"
+       (ΔC, mục 2.5.3). */
+    mauPrompt: e.mauPrompt || null,
+    phienBanMau: e.phienBanMau ?? null,
+    vanTayPrompt: e.vanTayPrompt || null,
     v: PHIEN_BAN_BAN_GHI,
     /* Mốc RIÊNG từng lượt (màn hình đóng ngay lúc bé bấm). Dùng chung một mốc cho
        cả loạt thì mọi phép đo thời gian ra 0 — lỗi bên Toán đã dính. */

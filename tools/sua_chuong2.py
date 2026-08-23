@@ -47,79 +47,51 @@ MUC = [
      "⚠ Nếu giữ θ=0,95 trong luận văn thì con số ấy KHÔNG khớp với hệ thống đang "
      "chạy, và người phản biện đối chiếu mã sẽ thấy ngay."),
 
-    ("A", "2.3.1", "Hồ sơ bé — “CEFR hiện tại” không phải một phép ĐO",
+    ("A", "2.3.1", "Hồ sơ bé — “CEFR hiện tại” đo PHỦ VỐN, không phải đo năng lực",
      "Luận văn xếp “CEFR hiện tại của người học” vào nhóm thuộc tính hồ sơ được "
      "hệ thống theo dõi, đặt cạnh `p_learned`, `RT_avg` — tức đọc như một đại "
-     "lượng đo được từ hành vi.",
-     "“Mức CEFR trong hệ thống là NHÃN CỦA HỌC LIỆU, không phải kết quả đo năng "
-     "lực người học: mỗi quyển được gắn sẵn một mức (Pre-A1 cho lớp 1–3, A1 cho "
-     "lớp 4–5) và giao diện hiển thị mức của quyển bé đang học. Việc quy đổi năng "
-     "lực đo được (P(L) trên đồ thị) sang thang CEFR chưa được thực hiện và nằm "
-     "ngoài phạm vi luận văn.”",
-     "`web/public/content/chuong_trinh.json`: ta1·ta2·ta3 = Pre-A1, ta4·ta5 = A1. "
-     "Mã hiển thị: `ManTiengAnh.jsx` — `const cefr = ct?.cefr`, tức lấy thẳng "
-     "thuộc tính của QUYỂN, không đụng tới dữ liệu của bé. Viết đúng như trên thì "
-     "luận văn tránh được một câu hỏi phản biện rất dễ bị hỏi."),
+     "lượng đo được từ hành vi. Trước 23-08-2026 điều này KHÔNG đúng: mức CEFR "
+     "chỉ là nhãn gắn sẵn cho từng quyển học liệu.",
+     "“Mức CEFR của người học được suy ra từ mô hình năng lực theo một quy ước "
+     "bắc cầu hai nhịp. Nhịp thứ nhất do hệ thống đo: với mỗi khối lớp, tính tỉ "
+     "lệ số nút tri thức mà người học đã đạt P(L) ≥ 0,85 trên tổng số nút của "
+     "khối. Nhịp thứ hai lấy nguyên mục tiêu đã ấn định trong Chương trình GDPT "
+     "2018 môn Tiếng Anh: khối lớp 1–2 là chương trình làm quen (dưới Bậc 1), "
+     "khối lớp 3–5 nhắm Bậc 1 tương đương A1. Hệ thống công nhận một bậc khi tỉ "
+     "lệ phủ của khối tương ứng đạt 60% và khối ấy có tối thiểu 30 nút; chưa đạt "
+     "thì hệ thống báo đúng tỉ lệ phủ hiện có chứ không quy ra bậc.\n"
+     "  ⚠ Cần nêu rõ trong luận văn: đây KHÔNG phải phép đo theo chuẩn CEFR. "
+     "CEFR định nghĩa bậc bằng mô tả năng lực làm được (can-do descriptors), "
+     "không định nghĩa bằng số đơn vị kiến thức đã nắm. Nhịp thứ hai là quy ước "
+     "của chương trình quốc gia, không phải kết quả đo của hệ thống.”",
+     "ĐÃ HIỆN THỰC 23-08-2026: `web/src/mon/tienganh/lib/cefr.js`. Mẫu số lấy "
+     "1 062 nút học được trên tổng 1 194 nút của đồ thị lúc chạy — 132 nút chứa "
+     "(course · theme · unit · review · fun_time) bị loại vì chúng là ngăn xếp tổ "
+     "chức, không phải thứ người học nắm hay không nắm. Phân bố: khối lớp 1–2 có "
+     "187 nút, khối lớp 3–5 có 871 nút, khối bắc cầu lớp 6 chỉ 4 nút nên luôn "
+     "mang cờ “không đáng tin” và không bao giờ được lấy làm kết luận. Ba lựa "
+     "chọn có thể tranh luận và cần bảo vệ được khi phản biện: ngưỡng phủ 60%, "
+     "ngưỡng đáng tin 30 nút, và việc lấy mẫu số là TOÀN khối chứ không phải số "
+     "nút người học đã chạm — lấy mẫu số là “đã chạm” thì một người học đúng 5 "
+     "nút và nắm cả 5 sẽ ra 100%, tức phép đo thưởng cho việc học ít. Cổng "
+     "`web/test/cefr_quy_doi.test.mjs` (19 phép) khoá đúng bốn chỗ này và đã "
+     "được thử ngược: phá từng hàng rào thì cổng đỏ đúng chỗ."),
 
-    ("A", "2.2.2", "`prerequisite_links` có thật, nhưng THƯA — cần nói rõ tỉ lệ",
-     "Luận văn mô tả `prerequisite_links` như một thuộc tính của nút, đọc như thể "
-     "mọi nút đều mang nó.",
-     "“Ràng buộc tiên quyết được biểu diễn bằng HAI cơ chế bổ sung nhau: (a) thuộc "
-     "tính `prerequisite_links` trên nút — hiện có ở 231/3 989 nút (5,8%); và (b) "
-     "cạnh có hướng REQUIRES trong đồ thị — 583 cạnh. Cơ chế (b) là nguồn chính "
-     "khi hệ thống chạy; (a) đóng vai trò bổ trợ cho những nút đã được chú giải "
-     "thủ công.”",
-     "Đếm trực tiếp trên `data/ban_do_tieng_anh.json`: 3 989 nút · 7 602 cạnh, "
-     "trong đó 583 cạnh REQUIRES; 231 nút có `prerequisite_links`. Nói rõ con số "
-     "thì phần mô tả đồ thị của luận văn trở nên kiểm chứng được."),
-
-    ("A", "2.5.3", "Lịch lặp lại ngắt quãng: +1/+3/+7 → thực tế có NĂM bậc",
-     "Luận văn mô tả lịch ôn theo ba mốc +1 / +3 / +7 ngày.",
-     "“Lịch ôn dùng mô hình hộp Leitner năm bậc với giãn cách 1 – 3 – 7 – 14 – 30 "
-     "ngày. Trả lời đúng đẩy thẻ lên bậc kế tiếp; trả lời sai đưa thẻ về bậc đầu.”",
-     "`web/src/mon/tienganh/lib/onlai.js` — `BOX_NGAY = [1, 3, 7, 14, 30]`. Chuỗi "
-     "chạy thật: đúng·đúng·đúng → bậc 3 (hẹn 14 ngày); một câu SAI → về bậc 0 "
-     "(hẹn 1 ngày). Xem `docs/ma_tran_du_lieu.xlsx`, cảnh 6."),
-
-    # ══ NHÓM B · LUẬN VĂN MÔ TẢ MỘT CÁCH, HỆ THỐNG LÀM CÁCH KHÁC TỐT HƠN ══
-    ("B", "2.4.3", "RAG bước 3 — “prompt đảm bảo 100% không dùng từ lạ”",
-     "Luận văn viết rằng bước Tạo sinh có kiểm soát dùng nhắc lệnh (prompt) để "
-     "“đảm bảo 100%” mô hình không dùng từ ngoài vốn đã học.",
-     "“Bước Tạo sinh có kiểm soát gồm HAI TẦNG, và con số 100% đến từ tầng thứ "
-     "hai chứ không từ nhắc lệnh:\n"
-     "  • Tầng 1 — ràng buộc trong nhắc lệnh: liệt kê vốn từ được phép và cấm dùng "
-     "từ ngoài danh sách. Tầng này làm giảm mạnh tỉ lệ vi phạm nhưng KHÔNG bảo "
-     "đảm tuyệt đối, vì mô hình ngôn ngữ là hệ sinh xác suất.\n"
-     "  • Tầng 2 — hậu kiểm bắt buộc: mọi câu mô hình sinh ra đều bị đối chiếu lại "
-     "với túi từ của chính bài học; câu chứa từ ngoài túi bị LOẠI BỎ trước khi "
-     "hiển thị. Chính tầng này bảo đảm người học không bao giờ nhìn thấy từ lạ.”",
-     "⚠ ĐÂY LÀ MỤC QUAN TRỌNG NHẤT CỦA TÀI LIỆU. Viết như luận văn hiện tại là "
-     "một khẳng định KHÔNG THỂ ĐÚNG về mặt kỹ thuật, và người phản biện biết về "
-     "LLM sẽ hỏi ngay. Viết lại thành hai tầng thì luận văn MẠNH HƠN: nó cho thấy "
-     "tác giả hiểu giới hạn của prompt và đã thiết kế hàng rào thứ hai.\n\n"
-     "BẰNG CHỨNG CHẠY THẬT (đăng nhập production 23-08-2026, tài khoản thử): sau "
-     "khi chấm một bài viết, màn hình hiện đúng dòng “Cô có 1 câu gợi ý dùng từ "
-     "con chưa học, nên cô giấu đi rồi.” Tức mô hình ĐÃ sinh ra một câu vi phạm, "
-     "và tầng hậu kiểm ĐÃ chặn nó lại. Ảnh chụp: "
-     "`docs/anh_kiem_chung/01_ai_cham_bai_viet.jpg`. Mã: `loiVietHopLe()` và "
-     "`cauHopLe()` trong `web/src/mon/tienganh/lib/phongnoi.js`."),
-
-    ("B", "2.5.2", "“Mã prompt để kiểm toán” — có vân tay, nhưng KHÔNG lưu cùng lượt",
+    ("B", "2.5.2", "“Mã prompt để kiểm toán” — nay đã lưu cùng lượt, giữ nguyên mô tả",
      "Luận văn liệt kê “mã prompt” trong nhóm Bối cảnh hệ thống của bản ghi sự "
-     "kiện, đọc như thể mỗi bản ghi đều mang mã prompt đã sinh ra nó.",
-     "Chọn MỘT trong hai hướng:\n"
-     "  (i) Sửa mô tả cho khớp hiện trạng: “Hệ thống sinh vân tay của KHUNG nhắc "
-     "lệnh (mẫu prompt + phiên bản + tham số) và trả kèm mỗi lời chấm của mô "
-     "hình. Vân tay này hiện đi cùng kết quả trả về, chưa được ghi vào bản ghi sự "
-     "kiện; việc nối vân tay vào từng lượt để truy vết đầy đủ là hướng phát triển "
-     "tiếp theo.”\n"
-     "  (ii) Hoặc giữ nguyên mô tả trong luận văn và yêu cầu bổ sung phần mềm — "
-     "công việc nhỏ: thêm một trường `vanTay` vào bản ghi `attempts`.",
-     "`web/functions/src/vantay.js` có hàm `vanTay(mau, khung, them)` băm KHUNG "
-     "lời dặn (không băm cả prompt, để không lưu nội dung riêng tư). Hai chỗ gọi: "
-     "`chamviet.js:157` và `luyennoi.js:163` — cả hai đều SPREAD kết quả vân tay "
-     "vào phản hồi trả về máy con, không ghi vào `attempts`. Nên hiện chưa trả "
-     "lời được câu “câu này do prompt nào sinh ra”."),
+     "kiện, đọc như thể mỗi bản ghi đều mang mã prompt đã sinh ra nó. Trước "
+     "23-08-2026 mô tả này đi trước hiện trạng: vân tay có sinh ra nhưng chỉ "
+     "nằm trong phản hồi trả về máy con, không vào bản ghi.",
+     "GIỮ NGUYÊN mô tả trong luận văn, và nói thêm cho chính xác: “Bản ghi sự "
+     "kiện mang vân tay của KHUNG lời nhắc — gồm mã mẫu, số phiên bản và mã băm "
+     "của khung — chứ không lưu nội dung lời nhắc đã sinh. Chủ ý này để truy vết "
+     "được “câu chấm này do mẫu nhắc nào sinh ra” mà không lưu dữ liệu riêng tư "
+     "của người học vào bản ghi dùng chung.”",
+     "ĐÃ HIỆN THỰC 23-08-2026. Ba trường `mauPrompt` · `phienBanMau` · "
+     "`vanTayPrompt` đi từ `web/functions/src/vantay.js` qua phản hồi của "
+     "`chamViet`/`luyenNoi`, được `goiChamViet.js` giữ lại (trước đây bị rơi ở "
+     "đúng chỗ này), rồi vào bản ghi tại `web/src/mon/tienganh/lib/suKien.js`. "
+     "Nay trả lời được câu “câu này do prompt nào sinh ra”."),
 
     ("B", "2.2.1", "Đồ thị làm bộ truy xuất — cần phân biệt bản ĐẦY ĐỦ và bản LÚC CHẠY",
      "Luận văn mô tả đồ thị tri thức đóng vai trò bộ truy xuất (Retriever) cho "
@@ -190,16 +162,26 @@ MUC = [
      "quả là `phuDao`, không phải `vuotAi`. Xem `docs/ma_tran_du_lieu.xlsx` cảnh "
      "4 và 4b."),
 
-    ("C", "2.1.2", "Chiều Thời gian — “đo mệt mỏi nhận thức” chưa có dữ liệu nền",
-     "Luận văn nêu chiều Thời gian bao gồm đo mệt mỏi nhận thức.",
-     "“Chiều Thời gian hiện được hiện thực bằng hai thành phần: đường cong quên "
-     "(hàm mũ, nửa đời 14 ngày) và lịch lặp lại ngắt quãng. Thành phần đo mệt mỏi "
-     "nhận thức chưa được hiện thực: hệ thống hiện không ghi sự kiện rời màn hay "
-     "bỏ dở, nên chưa có dữ liệu nền để suy ra trạng thái mệt. Đây là hướng phát "
-     "triển tiếp theo.”",
-     "Đã rà toàn bộ màn hình môn Tiếng Anh: không màn nào phát sự kiện thoát. Xem "
-     "`docs/soat_giam_sat.xlsx`, trang “Hành động → dữ liệu”, dòng “Bỏ dở giữa "
-     "chừng”. Nhận là chưa có thì đúng hơn nhiều so với để người đọc tưởng đã có."),
+    ("C", "2.1.2", "Chiều Thời gian — có dữ liệu bỏ dở, nhưng là CẬN DƯỚI",
+     "Luận văn nêu chiều Thời gian bao gồm đo mệt mỏi nhận thức. Trước "
+     "23-08-2026 hệ thống không ghi bất kỳ sự kiện thoát nào, nên phần này "
+     "hoàn toàn không có dữ liệu nền.",
+     "“Chiều Thời gian được hiện thực bằng ba thành phần: đường cong quên (hàm "
+     "mũ, nửa đời 14 ngày), lịch lặp lại ngắt quãng, và sự kiện bỏ dở. Mỗi lần "
+     "người học rời màn bài học khi chưa hoàn thành, hệ thống ghi một mục học bạ "
+     "riêng gồm mã bài, chặng đang dở, số lượt đã làm và số giây đã ở trong bài "
+     "— mỗi lần một bản ghi chứ không gộp, vì chính số LẦN bỏ dở cùng một bài "
+     "mới là tín hiệu.\n"
+     "  ⚠ Phải nêu giới hạn: sự kiện chỉ ghi được khi người học rời màn qua thao "
+     "tác trong ứng dụng. Đóng thẳng trình duyệt thì không ghi được. Do đó con "
+     "số thu được là CẬN DƯỚI của số lần bỏ dở thật, và luận văn nên dùng nó như "
+     "một chỉ báo xu hướng chứ không phải một phép đếm đầy đủ.”",
+     "ĐÃ HIỆN THỰC 23-08-2026. `BaiHoc.jsx` phát sự kiện lúc gỡ màn, "
+     "`ManTiengAnh.jsx` ghi thành mục học bạ loại `phien`; loại này đã được thêm "
+     "vào danh sách trắng của `firestore.rules` và deploy — thiếu bước ấy thì "
+     "Firestore từ chối GHI TRONG IM LẶNG, một cái bẫy đã dính trước đây. Việc "
+     "nêu rõ giới hạn “cận dưới” là điểm cộng về tính trung thực, và tránh được "
+     "câu phản biện “sao số lần bỏ dở lại thấp bất thường”."),
 
     ("C", "2.1.2", "Chiều Nhận thức — nên nói rõ giới hạn của điểm PHÁT ÂM",
      "Luận văn xếp năng lực nói vào chiều Nhận thức cùng các kỹ năng khác, không "
@@ -218,17 +200,21 @@ MUC = [
 
 # Việc phần mềm còn nợ — để bác biết mục nào KHÔNG phải sửa luận văn
 CON_NO = [
-    ("Nối vân tay prompt vào `attempts`", "nhỏ",
-     "Thêm một trường vào bản ghi sự kiện. Xong thì mục 2.5.2 đáp ứng đúng như "
-     "luận văn mô tả, không phải sửa chữ."),
-    ("Ghi sự kiện rời màn / bỏ dở", "vừa",
-     "Cần thiết nếu muốn giữ phần “đo mệt mỏi nhận thức” trong luận văn."),
-    ("Báo cáo riêng của bé đọc thêm `progressTA` và `hocBaTA`", "nhỏ",
-     "Hiện `dungSoHoc` chỉ đọc dữ liệu môn Toán, nên hai cột “xong bao nhiêu bài” "
-     "và “số phút học” bỏ sót toàn bộ môn Tiếng Anh."),
-    ("Quy đổi P(L) sang thang CEFR", "lớn",
-     "Nếu muốn giữ CEFR như một phép ĐO trong luận văn thì phải làm phần này; "
-     "nếu không thì sửa chữ theo mục A-2.3.1."),
+    ("Nối vân tay prompt vào `attempts`", "ĐÃ XONG 23-08-2026",
+     "Ba trường `mauPrompt` · `phienBanMau` · `vanTayPrompt` nay đi vào mỗi bản "
+     "ghi sự kiện. Mục 2.5.2 đáp ứng đúng như luận văn mô tả — không phải sửa "
+     "chữ, chỉ nói thêm rằng vân tay băm KHUNG chứ không lưu nội dung nhắc."),
+    ("Ghi sự kiện rời màn / bỏ dở", "ĐÃ XONG 23-08-2026",
+     "Mục học bạ loại `phien` (mã bài · chặng · số lượt · số giây), mỗi lần bỏ dở "
+     "một bản ghi. Giữ được phần “đo mệt mỏi nhận thức” trong luận văn, VỚI ĐIỀU "
+     "KIỆN nêu rõ đây là cận dưới — đóng thẳng trình duyệt thì không ghi được."),
+    ("Báo cáo riêng của bé đọc thêm `progressTA` và `hocBaTA`", "ĐÃ XONG 23-08-2026",
+     "`dungSoHoc` nay gộp số bài xong và số phút học của cả hai môn. Trước đó hai "
+     "cột ấy bỏ sót toàn bộ môn Tiếng Anh."),
+    ("Quy đổi P(L) sang thang CEFR", "ĐÃ XONG 23-08-2026",
+     "`lib/cefr.js` + thẻ “con đang ở đâu trên thang năng lực” ở Góc bố mẹ. "
+     "⚠ Đây là quy ước bắc cầu, KHÔNG phải phép đo theo chuẩn CEFR — mục A-2.3.1 "
+     "đã viết sẵn câu phải đưa vào luận văn để nói đúng điều đó."),
 ]
 
 
@@ -294,13 +280,17 @@ def main() -> int:
                 q.add_run(doan)
 
     d.add_page_break()
-    d.add_heading("PHỤ LỤC — VIỆC CỦA PHẦN MỀM, KHÔNG PHẢI CỦA LUẬN VĂN", level=1)
+    d.add_heading("PHỤ LỤC — VIỆC CỦA PHẦN MỀM (ĐÃ XONG 23-08-2026)", level=1)
     d.add_paragraph(
-        "Bốn việc dưới đây nếu làm xong thì mục tương ứng của luận văn đáp ứng "
-        "đúng như đang mô tả, không phải sửa chữ.")
+        "Bốn việc dưới đây ĐÃ LÀM XONG ngày 23-08-2026 và đã lên bản chạy thật "
+        "(luật Firestore → hàm nền → giao diện, đúng thứ tự). Mục tương ứng của "
+        "luận văn nay đáp ứng đúng như đang mô tả — nhưng ba trong bốn mục vẫn "
+        "cần NÓI RÕ GIỚI HẠN, xem lại các mục A-2.3.1, B-2.5.2 và C-2.1.2 ở "
+        "trên. Làm xong phần mềm không có nghĩa là câu chữ trong luận văn tự "
+        "đúng theo.")
     b = d.add_table(rows=1, cols=3)
     b.style = "Light Grid Accent 1"
-    for i, h in enumerate(["Việc", "Công sức", "Sửa xong thì được gì"]):
+    for i, h in enumerate(["Việc", "Tình trạng", "Xong rồi thì được gì"]):
         b.rows[0].cells[i].text = h
         b.rows[0].cells[i].paragraphs[0].runs[0].bold = True
     for viec, cong, duoc in CON_NO:
@@ -312,7 +302,7 @@ def main() -> int:
     for ten, mo in [
         ("docs/benchmark_chuong2.xlsx", "Đối chiếu đủ 54 tiêu chí của Chương 2 với "
          "hệ thống: đáp ứng / một phần / không thể, kèm lộ trình."),
-        ("docs/ma_tran_du_lieu.xlsx", "Ma trận 34 trường dữ liệu (ghi gì · ở đâu · "
+        ("docs/ma_tran_du_lieu.xlsx", "Ma trận 36 trường dữ liệu (ghi gì · ở đâu · "
          "tần suất · ai đọc), và trang “Engine chạy thật” — đầu ra của chính mã "
          "engine, không phải sơ đồ."),
         ("docs/soat_giam_sat.xlsx", "16 hành động của người học, hành động nào có "

@@ -19,6 +19,7 @@ import { theDenHan, demDenHan, daySauKhiOn } from '../lib/onlai.js';
 import { manhNhat, yeuNhat } from '../lib/hoso.js';
 import { napDoThi } from '../lib/doThi.js';
 import { maTranTrangThai } from '../lib/lantruyen.js';
+import { bacCefr, cauMoTa } from '../lib/cefr.js';
 import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
 import {
   trangThaiBai, baiNenHoc, moBai, moKyOnTap, conThieuChoOnTap,
@@ -165,6 +166,28 @@ export default function ManTiengAnh({
    * `duLieu.js` bên đọc · chỗ gọi này · và phải `deploy --only firestore:rules`
    * TRƯỚC khi bản mới lên. Thiếu bước deploy thì Firestore từ chối TRONG IM LẶNG.
    */
+  /**
+   * BÉ RỜI MÀN BÀI HỌC KHI CHƯA XONG (mục 2.1.2 · chiều Thời gian).
+   *
+   * Ghi thành một mục học bạ `phien`. KHÔNG gộp theo bài mà mỗi lần một bản ghi:
+   * cùng một bài bé bỏ dở BA LẦN thì chính con số ba ấy là tín hiệu, gộp lại là
+   * mất nó. Khoá mang `maPhien` nên hai lần bỏ dở không đè lên nhau.
+   *
+   * ⚠ Chỉ bắt được lúc rời màn TỬ TẾ. Đóng thẳng tab thì React không kịp chạy hàm
+   * dọn — nên con số này là CẬN DƯỚI của số lần bỏ dở thật.
+   */
+  const roiManGiuaChung = useCallback((e) => {
+    if (!e?.maPhien) return;
+    luuMucHocBa(learnerId, 'phien', `${ct.ma}:${e.maPhien}`, {
+      giaTri: {
+        microId: e.microId || null,
+        chang: e.chang || null,
+        soLuot: Number(e.soLuot) || 0,
+        giay: Number(e.giay) || 0,
+      },
+    });
+  }, [learnerId, ct.ma]);
+
   const xongDocHieu = useCallback((bai, kq) => {
     const unit = bai.phamVi === 'unit';
     const so = unit ? bai.unit : bai.chapter;
@@ -231,6 +254,9 @@ export default function ManTiengAnh({
       answer: e.answer,
       expected: e.expected,
       mode: e.cau.format || null,
+      mauPrompt: e.mauPrompt || null,
+      phienBanMau: e.phienBanMau ?? null,
+      vanTayPrompt: e.vanTayPrompt || null,
       khiNao: Date.now(),
     });
     /* Chiều Sư phạm: cộng lượt này vào bảng "bé làm tốt dạng nào". Chỉ đếm lượt
@@ -327,6 +353,7 @@ export default function ManTiengAnh({
            Không cổng nào bắt được: mỗi tệp một mình đều đúng, chỗ hỏng nằm ở CHỖ
            NỐI. Nay `tienganh_vao_engine.test.mjs` soi đúng chỗ nối này. */
         onLuot={ghiLuot}
+        onRoiMan={roiManGiuaChung}
         /* Biệt danh của chính bé đi vào đoạn hội thoại — bé nghe tên mình trong
            một câu tiếng Anh. Đó là chỗ bài này khác mọi bài luyện phát âm khác. */
         tenBe={(hoSo?.displayName || '').trim().split(/\s+/).pop() || 'Bo'}
@@ -427,6 +454,50 @@ function HoSoBe({ tienDo, ct }) {
  * là thứ đổi được cách dạy — và đó chính là chỗ lan truyền ngược của mục 2.3.3
  * kiếm cơm.
  */
+/**
+ * BẬC NĂNG LỰC — quy đổi P(L) sang thang CEFR (mục 2.4 của luận văn).
+ *
+ * ── VÌ SAO CHỖ NÀY DÀI DÒNG HƠN MỘT CON SỐ ──
+ * Người lớn đọc "A1" xong là dừng. Mà phép quy đổi chỉ đo được PHỦ VỐN của khối
+ * lớp, còn nhịp "khối lớp ấy là bậc mấy" thì lấy nguyên của Chương trình GDPT
+ * 2018 chứ phần mềm không đo. Bày mỗi chữ "A1" là để người ta hiểu thành một
+ * kết quả sát hạch — thứ mà ở đây không có. Nên màn này luôn bày ĐỦ BA thứ: câu
+ * diễn giải, phân số thật, và dòng chú ở cuối.
+ *
+ * ⚠ KHÔNG làm tròn lên và KHÔNG giấu khi số còn nhỏ. Mấy tuần đầu con số 1–2% là
+ * số ĐÚNG; giấu nó đi thì lần đầu người ta thấy sẽ là lúc đã tưởng bở.
+ */
+function BacCefr({ mucThao }) {
+  const [dt, datDt] = useState(null);
+  useEffect(() => { let s = true; napDoThi().then((d) => s && datDt(d)); return () => { s = false; }; }, []);
+  const kq = React.useMemo(() => (dt ? bacCefr(dt, mucThao || {}) : null), [dt, mucThao]);
+  /* Chưa có lượt nào thì im hẳn — một thẻ "0%" ngay buổi đầu chỉ làm nản. */
+  if (!kq || !kq.coSo) return null;
+  return (
+    <GocBoMe ten="Góc bố mẹ · con đang ở đâu trên thang năng lực">
+      <p className="text-sm font-semibold text-ink">{cauMoTa(kq)}</p>
+      <ul className="mt-2 flex flex-col gap-1.5 text-sm">
+        {kq.banDo.filter((b) => b.dangTin).map((b) => (
+          <li key={b.ma} className="flex items-center gap-3">
+            <span className="w-40 shrink-0 text-mute">{b.ten} <i className="not-italic text-xs">({b.moTa})</i></span>
+            <span className="h-2 flex-1 overflow-hidden rounded-full bg-line">
+              <i className="block h-full bg-teal" style={{ width: `${Math.min(100, b.phu * 100)}%` }} />
+            </span>
+            <b className="w-24 shrink-0 text-right font-mono text-xs text-ink">
+              {b.vung}/{b.tong} · {Math.round(b.phu * 100)}%
+            </b>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-2 text-xs leading-relaxed text-mute">
+        Đây KHÔNG phải điểm thi. Phần mềm đo được là con đã vững bao nhiêu phần vốn
+        kiến thức của mỗi khối lớp; còn “khối lớp ấy ứng với bậc CEFR nào” là mục
+        tiêu do Chương trình GDPT 2018 ấn định, không phải phần mềm chấm.
+      </p>
+    </GocBoMe>
+  );
+}
+
 function MaTran({ mucThao }) {
   const [dt, datDt] = useState(null);
   useEffect(() => { let s = true; napDoThi().then((d) => s && datDt(d)); return () => { s = false; }; }, []);
@@ -521,6 +592,7 @@ function NhaQuyen({
 
       <HoSoBe tienDo={tienDo} ct={ct} />
       <MaTran mucThao={mucThao} />
+      <BacCefr mucThao={mucThao} />
 
       {/* ── THẺ MỜI ÔN LẠI ──
           Đứng TRÊN thẻ "bài tiếp theo", và đó là chủ ý: ôn cái sắp quên có giá

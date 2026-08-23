@@ -49,13 +49,31 @@ const maCauAm = (c) => maCua(c, 'en');
 export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
                                  onMoc, tenBe = 'Bo', soThich = null,
                                  onSoThich = null, onLuot = null, mucThao = null,
-                                 hoSoDang = null }) {
+                                 hoSoDang = null, onRoiMan = null }) {
+  /* ── SỰ KIỆN RỜI MÀN GIỮA CHỪNG (mục 2.1.2 · chiều Thời gian) ──
+     Luận văn đòi đo "mệt mỏi nhận thức", nhưng muốn suy ra trạng thái mệt thì
+     phải biết bé BỎ DỞ ở đâu — mà xưa nay bé mở bài rồi thoát KHÔNG để lại dấu
+     vết nào. Từ `attempts` chỉ thấy những câu bé CÓ trả lời; bé mở bài, xem nửa
+     video rồi tắt thì không ai biết.
+
+     ⚠ CHỈ BẮT ĐƯỢC LÚC RỜI MÀN TỬ TẾ (bấm "Về", hoặc chuyển bài). Đóng thẳng tab
+     hay sập máy thì React không kịp chạy hàm dọn — nên con số này là CẬN DƯỚI của
+     số lần bỏ dở thật, và chỗ nào đọc nó cũng phải biết điều đó. */
+  const moLuc = useRef(Date.now());
+  const daXong = useRef(false);
+  const soLuot = useRef(0);
+  useEffect(() => {
+    moLuc.current = Date.now();
+    daXong.current = false;
+    soLuot.current = 0;
+  }, [id]);
   /* MỘT LẦN MỞ BÀI LÀ MỘT PHIÊN. Mã phiên đi vào mã từng bản ghi nhật ký, nên nó
      phải ĐỔI khi đổi bài và GIỮ NGUYÊN trong suốt bài — `useMemo` theo `id` cho
      đúng cả hai. Component này KHÔNG dựng lại khi đổi bài (chỗ gọi không đặt
      `key`), nên để mã phiên trong `useRef` trần là hai bài dính chung một phiên. */
   const maPhien = useMemo(() => maPhienMoi(), [id]);
   const ghiLuot = useCallback((e, phase = 'practice') => {
+    soLuot.current += 1;
     onLuot?.({ ...e, phase, maPhien, microId: id });
   }, [onLuot, maPhien, id]);
   const [bai, datBai] = useState(null);
@@ -129,6 +147,22 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
   const nhay = (i) => { if (i <= xa || CHANG_KHONG_KHOA.has(CHANG[i])) datTai(i); };
 
   const k = CHANG[tai];
+
+  /* Rời màn mà chưa xong bài → ghi một bản ghi PHIÊN. `tai` nằm trong closure của
+     lần vẽ cuối, đúng chặng bé đang đứng lúc bỏ đi. */
+  const changCuoi = useRef(k);
+  changCuoi.current = k;
+  useEffect(() => () => {
+    if (daXong.current) return;
+    onRoiMan?.({
+      maPhien,
+      microId: id,
+      chang: changCuoi.current,
+      soLuot: soLuot.current,
+      giay: Math.round((Date.now() - moLuc.current) / 1000),
+    });
+  }, [id, maPhien, onRoiMan]);
+
   return (
     <Khung onThoat={onThoat} ten={bai.title}>
       <ThanhChang ten={tenChang} ds={CHANG} tai={tai} xa={xa} onChon={nhay} />
@@ -156,7 +190,8 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
         />
       )}
       {k === 'sat' && (
-        <SatHach bai={bai} onXong={(kq) => onXongBai(kq, hangXom(id).sau)}
+        <SatHach bai={bai}
+                 onXong={(kq) => { daXong.current = true; onXongBai(kq, hangXom(id).sau); }}
                  onLuot={(e) => ghiLuot(e, 'assess')} />
       )}
       {k === 'phong' && (

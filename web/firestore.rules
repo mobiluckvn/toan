@@ -138,6 +138,11 @@ service cloud.firestore {
            viet     bài viết ngắn, ĐIỂM DO AI CHẤM (bác chốt 18-08-2026)
            doc      bài đọc hiểu (bác chốt 23-08-2026 — trước đó CỐ Ý chỉ giữ tại
                     máy; nay phần đọc phải lên máy chủ và vào engine như phần viết)
+           phien    một lần MỞ BÀI RỒI RỜI ĐI KHI CHƯA XONG — chặng nào, mấy lượt,
+                    bao nhiêu giây. Chiều Thời gian của mục 2.1.2 đòi đo mệt mỏi
+                    nhận thức, mà `attempts` chỉ thấy câu bé CÓ trả lời; bé mở bài
+                    rồi tắt thì không dấu vết nào. ⚠ Chỉ bắt được lúc rời màn tử
+                    tế — đóng thẳng tab thì không kịp ghi, nên đây là CẬN DƯỚI
            soThich  từ bé thích nhất trong quyển — cô giáo máy lấy làm ngữ cảnh
            hoSo     bé làm tốt dạng câu nào (chiều Sư phạm, mục 2.1.2-P)
 
@@ -157,7 +162,8 @@ service cloud.firestore {
          thì Firestore từ chối TRONG IM LẶNG. Cổng `hocba_khop_luat.test.mjs` soi
          ba chỗ đầu; bước deploy thì không cổng nào canh được. */
       allow write: if isMine(userId)
-                   && request.resource.data.loai in ['chuong', 'viet', 'doc', 'soThich', 'hoSo'];
+                   && request.resource.data.loai in ['chuong', 'viet', 'doc', 'phien',
+                                                    'soThich', 'hoSo'];
     }
 
     /* ── PHÒNG LUYỆN NÓI: buổi nói chuyện của bé với cô giáo máy ──

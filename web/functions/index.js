@@ -135,24 +135,36 @@ export const onMicroDoneTA = onDocumentWritten(
  */
 async function dungSoHoc(learnerId, index, soNgay = 7) {
   const since = new Date(Date.now() - soNgay * 86400000);
-  const [attSnap, progSnap, mastSnap, gioSnap] = await Promise.all([
+  const [attSnap, progSnap, progTASnap, mastSnap, gioSnap, gioTASnap] = await Promise.all([
     db.collection('attempts').where('learnerId', '==', learnerId).where('serverTs', '>=', since).get(),
     db.collection(`progress/${learnerId}/micros`).get(),
+    /* ⚠ PHẢI ĐỌC CẢ HAI MÔN. `progress/` của Toán, `progressTA/` của Tiếng Anh —
+       tách nhau là chủ ý. Nhưng báo cáo RIÊNG của bé xưa nay chỉ đọc `progress/`,
+       nên hai cột "xong bao nhiêu bài" và "số phút học" BỎ SÓT TOÀN BỘ Tiếng Anh,
+       trong khi bảng cô giáo đã gộp cả hai từ lâu (`docDuLieuChung`). Hai màn nói
+       hai con số khác nhau về cùng một đứa trẻ. Nối nốt 23-08-2026. */
+    db.collection(`progressTA/${learnerId}/micros`).get(),
     db.collection(`mastery/${learnerId}/units`).get(),
     /* SỔ GIỜ THEO NGÀY — số phút ĐO THẬT, kể cả lúc con xem giảng. Lọc bằng `loai`
        chứ không bằng mã tài liệu: `hocBa` còn chứa kỳ sát hạch, bậc chủ đề và vòng
        đấu, ba thứ ấy không có trường giây. */
     db.collection(`hocBa/${learnerId}/muc`).where('loai', '==', 'gio').get(),
+    /* Sổ giờ của Tiếng Anh — cùng lý do trên. */
+    db.collection(`hocBaTA/${learnerId}/muc`).where('loai', '==', 'gio').get(),
   ]);
   const attempts = attSnap.docs.map((d) => {
     const a = d.data();
     const sv = a.serverTs?.toMillis ? a.serverTs.toMillis() : a.serverTs;
     return { ...a, serverTs: sv, ts: sv ?? a.ts };
   });
-  const progress = {}; progSnap.forEach((d) => { progress[d.id] = d.data(); });
+  /* Gộp hai môn vào MỘT sổ. Mã bài không bao giờ trùng nhau giữa hai môn
+     (`DL:TA5.*` với `DL:KSN2.*`), nên gộp thẳng theo khoá là an toàn. */
+  const progress = {};
+  progSnap.forEach((d) => { progress[d.id] = d.data(); });
+  progTASnap.forEach((d) => { progress[d.id] = d.data(); });
   const mastery = {}; mastSnap.forEach((d) => { mastery[d.id] = d.data(); });
 
-  const soGio = gioSnap.docs.map((d) => d.data());
+  const soGio = [...gioSnap.docs, ...gioTASnap.docs].map((d) => d.data());
   const report = buildParentReport({ learnerId, attempts, progress, mastery, soGio, index, days: soNgay });
   await db.doc(`report/${learnerId}`).set(report, { merge: true });
   return report;

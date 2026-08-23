@@ -68,6 +68,14 @@ export async function hoiCoGiao({
   const messages = [{ role: 'system', content: dan }, ...goiGui(lichSu)];
   const { data } = await httpsCallable(fns, 'luyenNoi')({ messages });
   const tra = docTraLoi(data?.chu);
+  /* Vân tay lời dặn đi kèm ra ngoài — cùng lý do với `goiChamViet.js`: mục 2.5.2
+     đòi mỗi bản ghi biết nó do mẫu prompt nào sinh ra. `luyennoi.js` sinh sẵn từ
+     21-08, chỉ là chưa ai chuyền tiếp. */
+  if (tra) {
+    tra.mauPrompt = data?.mauPrompt || null;
+    tra.phienBanMau = data?.phienBanMau ?? null;
+    tra.vanTayPrompt = data?.vanTayPrompt || null;
+  }
 
   /* SOI LẠI CÂU TIẾNG ANH. Dặn dò không đủ: đã bảo rõ ô trống của `Bye, + [Name].`
      là chỗ của tên người, mô hình vẫn sinh ra "Bye, bike." Bé 6 tuổi đang tập nhại

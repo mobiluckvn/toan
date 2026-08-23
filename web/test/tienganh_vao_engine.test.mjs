@@ -199,9 +199,16 @@ test('micro hỏng thì ô việc vẫn tính là xong', async () => {
 
 test('⚠ SỐ ĐO KHÔNG ĐƯỢC BỊA: bài viết để `ms` rỗng chứ không lấy giờ gọi máy chấm', () => {
   const ma = chiMa(doc('../src/mon/tienganh/components/VietBai.jsx'));
-  const m = ma.match(/onLuot\?\.\(\{[\s\S]{0,400}?\}\);/);
-  assert.ok(m, 'VietBai không phát onLuot');
-  assert.match(m[0], /ms:\s*null/,
+  /* ⚠ KHÔNG cắt khối bằng NGÂN SÁCH KÝ TỰ. Bản đầu dùng `[\s\S]{0,400}?` và nó
+     đỏ ngay hôm thêm ba trường vân tay prompt — mã vẫn đúng y nguyên, chỉ là khối
+     dài thêm 60 ký tự. Cổng kiểu ấy phạt người ta vì viết thêm trường, và cách gỡ
+     nhanh nhất là nới con số cho cổng xanh — tức là cổng dạy hỏng. Cắt theo dấu
+     đóng thật thì khối dài bao nhiêu cũng đúng. */
+  const i = ma.indexOf('onLuot?.({');
+  assert.ok(i >= 0, 'VietBai không phát onLuot');
+  const j = ma.indexOf('});', i);
+  assert.ok(j > i, 'khối onLuot của VietBai không có dấu đóng');
+  assert.match(ma.slice(i, j), /ms:\s*null/,
     'màn Viết không biết bé gõ bài trong bao lâu; điền một con số vào `ms` là bịa '
     + 'dữ liệu cho chiều Thời gian');
 });

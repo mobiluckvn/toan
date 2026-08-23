@@ -192,6 +192,54 @@ const so = (x) => (x == null ? '—' : (typeof x === 'number' ? x.toFixed(3) : S
   ]);
 }
 
+/* ══ CẢNH 9 · QUY ĐỔI P(L) → BẬC NĂNG LỰC ═════════════════════════════════
+   Chạy `bacCefr()` thật trên đồ thị thật, với BA hồ sơ giả để bày ra điều dễ
+   hiểu lầm nhất: con số này đo PHỦ VỐN, nên nó không thưởng cho việc học ít. */
+{
+  const { bacCefr, cauMoTa, PHU_DAT } = await import(
+    '../web/src/mon/tienganh/lib/cefr.js');
+  const { readFileSync } = await import('node:fs');
+  /* ⚠ ĐỒ THỊ THẬT, không phải đồ thị dựng tay như cảnh 4. Cảnh 4 chỉ cần vài nút
+     để bày cơ chế lan truyền; cảnh này thì CON SỐ mới là thứ phải đúng, nên phải
+     đọc đúng tệp mà máy con nạp về. */
+  const DT = JSON.parse(readFileSync(
+    new URL('../web/public/content/tienganh/do_thi.json', import.meta.url), 'utf8'));
+  const nutTheoLop = (lops, t = null) => Object.entries(DT.nut).filter(
+    ([, n]) => lops.includes(n.g) && (t ? n.t === t : true));
+
+  const ho = (ds) => Object.fromEntries(ds.map(([ma]) => [ma, { p: 0.95 }]));
+  const nutA1 = nutTheoLop([3, 4, 5]).filter(
+    ([, n]) => !['course', 'theme', 'unit', 'review', 'fun_time'].includes(n.t));
+
+  const bo = [
+    ['bé mới học, nắm 5 nút', ho(nutA1.slice(0, 5))],
+    ['bé học được 1/4 vốn lớp 3–5', ho(nutA1.slice(0, Math.round(nutA1.length * 0.25)))],
+    ['bé nắm 62% vốn lớp 3–5', ho(nutA1.slice(0, Math.ceil(nutA1.length * 0.62)))],
+  ];
+  canh('9 · QUY ĐỔI P(L) → BẬC CEFR (đo phủ vốn, không phải điểm thi)',
+    bo.map(([ten, so]) => {
+      const k = bacCefr(DT, so);
+      const a1 = k.banDo.find((b) => b.ma === 'A1');
+      return {
+        'hồ sơ': ten,
+        'vững / tổng (lớp 3–5)': `${a1.vung}/${a1.tong}`,
+        'phủ vốn': `${Math.round(a1.phu * 100)}%`,
+        'bậc công nhận': k.mucDat ? k.mucDat.ten : '— chưa đủ căn cứ',
+        'câu bày cho bố mẹ': cauMoTa(k),
+      };
+    }));
+  canh('9b · VÌ SAO MẪU SỐ LÀ TOÀN KHỐI', [
+    { 'điều': 'ngưỡng phủ để công nhận một bậc', 'giá trị': `${PHU_DAT * 100}%` },
+    { 'điều': 'tổng nút HỌC ĐƯỢC trong đồ thị lúc chạy',
+      'giá trị': bacCefr(DT, {}).tongNut },
+    { 'điều': 'nút CHỨA bị loại khỏi mẫu số (course·theme·unit·review·fun_time)',
+      'giá trị': Object.values(DT.nut).filter(
+        (n) => ['course', 'theme', 'unit', 'review', 'fun_time'].includes(n.t)).length },
+    { 'điều': 'nếu lấy mẫu số là "nút đã chạm" thì hồ sơ 5 nút ra',
+      'giá trị': '100% — tức phép đo thưởng cho việc HỌC ÍT' },
+  ]);
+}
+
 /* ══ HẰNG SỐ ĐANG DÙNG THẬT ════════════════════════════════════════════════ */
 canh('0 · HẰNG SỐ ENGINE (đọc thẳng từ mã đang chạy)', [
   { ten: 'P(L₀) — mức thạo ban đầu', giaTri: DEFAULT_PARAMS.L0 },

@@ -228,6 +228,7 @@ async function docTienDo(uid) {
 async function docHocBa(uid) {
   const snap = await getDocs(collection(db, KHO.hocBa(uid)));
   const chapters = {}, baiViet = {}, docHieu = {}, soThich = {};
+  const phien = [];
   let dinhDang = {};
   snap.forEach((d) => {
     const v = d.data();
@@ -244,6 +245,9 @@ async function docHocBa(uid) {
     /* `doc` — bài đọc hiểu. Bác chốt 23-08-2026 cho lên máy chủ; trước đó CỐ Ý chỉ
        giữ tại máy. Cùng một luật: luật CHO ghi thì bên đọc phải nhặt. */
     else if (v.loai === 'doc' && v.khoa) docHieu[v.khoa] = v.giaTri || {};
+    /* `phien` — lần mở bài rồi bỏ dở. KHÔNG khoá theo bài mà là một DANH SÁCH:
+       cùng một bài bé có thể bỏ dở nhiều lần, và chính số lần ấy mới là tín hiệu. */
+    else if (v.loai === 'phien') phien.push(v.giaTri || {});
     /* `soThich` — từ bé thích nhất trong quyển, cô giáo máy lấy làm ngữ cảnh. Cùng
        một luật với hai loại trên: luật CHO ghi loại nào thì bên đọc phải nhặt đúng
        chừng ấy, không thừa không thiếu. */
@@ -252,7 +256,7 @@ async function docHocBa(uid) {
        kém ở mọi quyển, chia nhỏ ra chỉ làm mẫu bé đi và chẳng dạng nào đủ mẫu. */
     else if (v.loai === 'hoSo') dinhDang = (v.giaTri || {}).dinhDang || {};
   });
-  return { chapters, baiViet, docHieu, soThich, dinhDang };
+  return { chapters, baiViet, docHieu, phien, soThich, dinhDang };
 }
 
 /**
@@ -261,7 +265,10 @@ async function docHocBa(uid) {
  */
 export async function tienDoTuMay(uid) {
   if (!dungDuoc(uid)) {
-    return { micros: {}, chapters: {}, baiViet: {}, docHieu: {}, soThich: {}, dinhDang: {} };
+    return {
+      micros: {}, chapters: {}, baiViet: {}, docHieu: {},
+      phien: [], soThich: {}, dinhDang: {},
+    };
   }
   const [micros, hb] = await Promise.all([
     docTienDo(uid).catch((e) => { nuot(e); return {}; }),

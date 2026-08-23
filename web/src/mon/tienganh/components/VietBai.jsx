@@ -87,6 +87,11 @@ export default function VietBai({ bai, onXong, onThoat, onLuot = null }) {
         answer: viet,
         expected: null,
         phase: 'worked',
+        /* Vân tay của lời dặn đã chấm bài này — đi cùng lượt để sau còn so
+           "mẫu prompt nào giúp bé tiến bộ hơn" (ΔC, mục 2.5.3). */
+        mauPrompt: r?.mauPrompt || null,
+        phienBanMau: r?.phienBanMau ?? null,
+        vanTayPrompt: r?.vanTayPrompt || null,
         maPhien: `viet-${bai.id}-${Date.now()}`,
         microId: bai.id,
       });

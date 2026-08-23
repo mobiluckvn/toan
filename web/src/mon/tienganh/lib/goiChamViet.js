@@ -41,7 +41,19 @@ export async function nhoCham({ de, viet, vonTu, mauCau, lop = 3 }) {
     LOI_CHU_LA.so += boQua.length;
     LOI_CHU_LA.ganNhat = boQua[0];
   }
-  return { cham, boQua, moHinh: data?.moHinh || null };
+  /* VÂN TAY LỜI DẶN đi kèm ra ngoài. `chamviet.js` đã sinh nó từ 21-08 với đúng ý
+     này — chú thích ở đó ghi "vân tay trả về cho máy con, máy con ghi kèm bản ghi
+     của chính bé" — nhưng không ai chuyền tiếp nên nó rơi ngay tại dòng này. Nối
+     nốt 23-08: thiếu nó thì không trả lời được câu "lời chấm này do mẫu prompt nào
+     sinh ra", tức mục 2.5.2 của luận văn hụt một trường. */
+  return {
+    cham,
+    boQua,
+    moHinh: data?.moHinh || null,
+    mauPrompt: data?.mauPrompt || null,
+    phienBanMau: data?.phienBanMau ?? null,
+    vanTayPrompt: data?.vanTayPrompt || null,
+  };
 }
 
 /**
