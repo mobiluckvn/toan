@@ -26,3 +26,13 @@ web/functions/.env.*
 .env
 firestore-debug.log
 ui-debug.log
+
+# ── KHOÁ QUẢN TRỊ — TUYỆT ĐỐI KHÔNG COMMIT ──────────────────────────────────
+# Khoá dịch vụ mở được TOÀN BỘ dữ liệu dự án: học bạ, bài viết, tài khoản.
+# Lọt lên GitHub thì đổi khoá cũng không lấy lại được cái đã lộ.
+# ⚠ Kho này hay được commit bằng `git add -A`, nên chặn ở đây là chặn duy nhất.
+khoa-dich-vu.json
+*-khoa-dich-vu.json
+serviceAccount*.json
+*service-account*.json
+*firebase-adminsdk*.json

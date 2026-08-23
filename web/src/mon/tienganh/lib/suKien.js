@@ -47,6 +47,59 @@ const qkey = () => {
 };
 
 /**
+ * SỔ "ĐÃ LÊN MÁY CHỦ RỒI" — và vì sao thiếu nó thì MẤT SẠCH TỪ LƯỢT THỨ HAI.
+ *
+ * ── LỖI ĐÃ XẢY RA THẬT, TÌM RA 23-08-2026 BẰNG KHOÁ QUẢN TRỊ ──
+ * Mỗi lượt bé trả lời, màn hình dựng LẠI nhật ký của cả phiên rồi gửi đi — chủ ý
+ * là "gửi lại bao nhiêu lần cũng không sinh dòng trùng, vì mã lượt dựng lại ra
+ * đúng mã cũ". Chủ ý ấy đúng với `progressTA`, nhưng SAI với `attempts`:
+ *
+ *     firestore.rules:  allow update, delete: if false;
+ *
+ * `attempts` là nhật ký BẤT BIẾN. Ghi đè một bản ghi đã có KHÔNG phải là ghi đè
+ * vô hại — nó là `update`, và luật cấm. Mà `writeBatch` của Firestore là NGUYÊN
+ * KHỐI: một lệnh trong lô bị từ chối thì cả lô rơi.
+ *
+ * Hệ quả dây chuyền:
+ *   lượt 1 → lô [r0]           → 200, r0 lên máy chủ, hàng đợi rỗng
+ *   lượt 2 → lô [r0, r1]       → 403 (vì r0 đã có) → cả lô rơi, hàng đợi giữ nguyên
+ *   lượt 3 → lô [r0, r1, r2]   → 403 … và mãi mãi như thế
+ *
+ * Tức MỖI PHIÊN CHỈ CÓ ĐÚNG MỘT LƯỢT lên tới máy chủ, phần còn lại nằm chết
+ * trong localStorage. Soi máy chủ thật: cả dự án có 2 bản ghi `attempts` cho hai
+ * buổi học, mỗi buổi ~10 lượt. Engine BKT bị bỏ đói mà mọi cổng vẫn xanh, vì
+ * không cổng nào gửi ĐẾN LƯỢT THỨ HAI.
+ *
+ * ⚠ ĐỪNG "SỬA" BẰNG CÁCH NỚI LUẬT cho `attempts` ghi đè được. Tính bất biến của
+ *    nhật ký là thứ mục 2.5.2 của luận văn dựa vào, và là thứ bảo vệ điểm của bé
+ *    khỏi bị sửa. Chỗ sai nằm ở máy con gửi thừa, không ở luật.
+ */
+const DA_GUI_GOC = 'ttd5.daGuiTA.v1';
+const dgkey = () => {
+  const cho = choDangDung();
+  return cho === CHO_DAU ? DA_GUI_GOC : `${DA_GUI_GOC}.${cho}`;
+};
+
+/** Giữ tối đa bằng này mã. Vượt thì bỏ mã CŨ NHẤT — chúng thuộc phiên đã đóng. */
+export const DA_GUI_TOI_DA = 3000;
+
+export function docDaGui(kho = globalThis.localStorage) {
+  try { return new Set(JSON.parse(kho?.getItem(dgkey()) || '[]')); } catch { return new Set(); }
+}
+
+export function themDaGui(ids, kho = globalThis.localStorage) {
+  if (!ids?.length) return docDaGui(kho);
+  /* Mảng chứ không Set khi lưu: cần giữ THỨ TỰ để còn biết mã nào cũ nhất. */
+  let ds;
+  try { ds = JSON.parse(kho?.getItem(dgkey()) || '[]'); } catch { ds = []; }
+  const co = new Set(ds);
+  for (const id of ids) if (!co.has(id)) { ds.push(id); co.add(id); }
+  if (ds.length > DA_GUI_TOI_DA) ds = ds.slice(ds.length - DA_GUI_TOI_DA);
+  try { kho?.setItem(dgkey(), JSON.stringify(ds)); } catch { /* chế độ riêng tư */ }
+  return new Set(ds);
+}
+
+/**
  * PHIÊN BẢN BẢN GHI. Nhật ký bất biến nên dòng ghi bằng luật cũ nằm lẫn mãi mãi.
  *   v = 2  cùng luật với Toán: `ms` đo riêng từng câu, `ts` riêng từng lượt.
  * Bắt đầu thẳng từ 2 chứ không từ 1: Tiếng Anh chưa từng ghi dòng nào, nên không
@@ -146,36 +199,95 @@ export function ghiHangDoi(ds, kho = globalThis.localStorage) {
   return ds;
 }
 
-/** Xếp vào hàng đợi — trùng mã thì ghi đè, không nhân bản. */
+/**
+ * Xếp vào hàng đợi — trùng mã thì ghi đè, không nhân bản.
+ *
+ * ⚠ VÀ BỎ HẲN mã nào ĐÃ lên máy chủ. `attempts` cấm ghi đè, `writeBatch` là
+ * nguyên khối, nên một mã cũ lọt vào lô là cả lô rơi — xem khối chú thích dài ở
+ * `DA_GUI_GOC` phía trên. Lọc ở ĐÂY chứ không ở chỗ gửi: chỗ gửi lọc thì mã cũ
+ * vẫn nằm lại hàng đợi và phình mãi.
+ */
 export function xepHang(ds, kho = globalThis.localStorage) {
+  const daGui = docDaGui(kho);
   const q = docHangDoi(kho);
-  const m = new Map(q.map((r) => [r.id, r]));
-  for (const r of ds) m.set(r.id, r);
+  const m = new Map(q.filter((r) => !daGui.has(r.id)).map((r) => [r.id, r]));
+  for (const r of ds) if (!daGui.has(r.id)) m.set(r.id, r);
   return ghiHangDoi([...m.values()], kho);
 }
 
+/** Mã lỗi Firestore trả khi luật từ chối — phân biệt với mất mạng (`unavailable`). */
+const LOI_TU_CHOI = 'permission-denied';
+
 /**
- * Đẩy hàng đợi lên máy chủ. Hỏng (mất mạng) thì GIỮ NGUYÊN phần chưa gửi.
+ * Đẩy hàng đợi lên máy chủ. Mất mạng thì GIỮ NGUYÊN phần chưa gửi.
  *
  * ⚠ Không bao giờ ném lỗi ra ngoài: bé đang học, mất mạng không phải việc của bé.
+ *
+ * ── VÀ PHẢI TỰ GỠ ĐỘC CHO HÀNG ĐỢI CŨ ──
+ * Sổ "đã gửi" chặn được việc xếp lại bản ghi đã lên, nhưng CHỈ TỪ NAY. Máy nào
+ * đang mang sẵn một hàng đợi nhiễm độc — có bản ghi đã nằm trên máy chủ — thì lô
+ * nào cũng chết, mãi mãi, và cả hàng đợi ấy thành mồ chôn. Đo trên máy thật
+ * 23-08-2026: hai bé, 12 và 14 bản ghi kẹt cứng như thế.
+ *
+ * Nên lô hỏng thì THỬ LẠI TỪNG BẢN GHI MỘT:
+ *   · gửi lẻ được   → tốt, ghi vào sổ đã gửi;
+ *   · lẻ cũng bị TỪ CHỐI (`permission-denied`) → với một kho BẤT BIẾN, nghĩa gần
+ *     như chắc chắn là "bản ghi này đã có trên máy chủ rồi". Bỏ nó ra khỏi hàng
+ *     đợi để những bản ghi sau còn đường đi;
+ *   · lẻ hỏng vì lý do KHÁC (mất mạng) → GIỮ LẠI, lần sau gửi tiếp.
+ *
+ * ⚠ Phân biệt bằng MÃ LỖI chứ không bằng "cứ hỏng là bỏ". Mất mạng mà bỏ hết thì
+ *    mất trắng công học của bé — đúng thứ cả cơ chế hàng đợi này sinh ra để tránh.
+ *
+ * ⚠ Và ĐẾM số bản ghi bị bỏ, trả về trong `boQua`. Bỏ trong im lặng thì lần sau có
+ *    một lỗi khác cũng cho ra `permission-denied` là dữ liệu bay mà không ai biết.
  */
 export async function dayHangDoi(guiDi, kho = globalThis.localStorage, moLo = 200) {
   const q = docHangDoi(kho);
   if (!q.length) return { daGui: 0, conLai: 0 };
-  let daGui = 0;
-  try {
-    for (let i = 0; i < q.length; i += moLo) {
-      const mo = q.slice(i, i + moLo);
+  let daGui = 0; let boQua = 0;
+  /* Mã đã XONG VIỆC — gửi được hoặc xác định là đã có trên máy chủ. Phần còn lại
+     của hàng đợi = mọi thứ không nằm trong tập này; tính theo tập thì không phụ
+     thuộc vào việc dừng ở đâu, khỏi sai lệch chỉ số. */
+  const xong = new Set();
+  let matMang = false;
+
+  for (let i = 0; i < q.length && !matMang; i += moLo) {
+    const mo = q.slice(i, i + moLo);
+    try {
       await guiDi(mo);
+      mo.forEach((r) => xong.add(r.id));
+      /* Ghi vào sổ "đã gửi" NGAY sau mỗi lô, không đợi hết vòng: lô sau hỏng thì
+         lô trước vẫn phải được nhớ là đã lên, kẻo lần đẩy kế tiếp lại kèm nó vào
+         và làm rơi cả lô mới. */
+      themDaGui(mo.map((r) => r.id), kho);
       daGui += mo.length;
+    } catch {
+      for (const r of mo) {
+        try {
+          await guiDi([r]);
+          themDaGui([r.id], kho);
+          xong.add(r.id);
+          daGui += 1;
+        } catch (e) {
+          if (e?.code === LOI_TU_CHOI) {
+            /* Đã có trên máy chủ (kho bất biến) — coi như xong, đừng chặn đường
+               những bản ghi phía sau. */
+            themDaGui([r.id], kho);
+            xong.add(r.id);
+            boQua += 1;
+          } else {
+            matMang = true;
+            break;
+          }
+        }
+      }
     }
-  } catch {
-    const con = q.slice(daGui);
-    ghiHangDoi(con, kho);
-    return { daGui, conLai: con.length, loi: true };
   }
-  ghiHangDoi([], kho);
-  return { daGui, conLai: 0 };
+
+  const con = matMang ? q.filter((r) => !xong.has(r.id)) : [];
+  ghiHangDoi(con, kho);
+  return { daGui, boQua, conLai: con.length, ...(matMang ? { loi: true } : {}) };
 }
 
 /**

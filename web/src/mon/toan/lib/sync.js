@@ -185,6 +185,46 @@ const qkey = () => {
   return cho === CHO_DAU ? QKEY_GOC : `${QKEY_GOC}.${cho}`;
 };
 
+/**
+ * SỔ "ĐÃ LÊN MÁY CHỦ RỒI" — cùng một cái bẫy với môn Tiếng Anh, xem chú thích dài
+ * ở `mon/tienganh/lib/suKien.js`. Tóm tắt:
+ *
+ *   `attempts` là nhật ký BẤT BIẾN (`allow update, delete: if false`), mà mỗi lượt
+ *   màn hình lại dựng LẠI bản ghi của cả phiên rồi gửi. Bản ghi nào đã lên máy chủ
+ *   thì lệnh gửi lại là `update` → bị từ chối; `writeBatch` nguyên khối nên CẢ LÔ
+ *   rơi. Hễ một lượt lọt sớm là mọi lượt sau của phiên ấy mất vĩnh viễn.
+ *
+ * ── VÌ SAO MÔN TOÁN CHƯA MẤT DỮ LIỆU, VÀ VÌ SAO VẪN PHẢI VÁ ──
+ * Soi máy chủ 23-08-2026: 43/43 phiên Toán còn đủ lượt. Nhưng soi kỹ hơn thì MỌI
+ * bản ghi của một phiên mang ĐÚNG MỘT dấu `serverTs` — tức cả phiên lên bằng một
+ * lô duy nhất, và những lần đẩy giữa chừng đều đã hỏng sẵn. Toán sống được nhờ
+ * MAY: chưa lần nào có lô nào lọt sớm. Đổi nhịp mạng, đổi thời điểm đăng nhập, hay
+ * một lần đẩy lọt là mất cả phiên — mà mất thì không có gì kêu.
+ */
+const DA_GUI_GOC = 'ttd5.daGui.v1';
+const dgkey = () => {
+  const cho = choDangDung();
+  return cho === CHO_DAU ? DA_GUI_GOC : `${DA_GUI_GOC}.${cho}`;
+};
+
+/** Giữ tối đa bằng này mã; vượt thì bỏ mã CŨ NHẤT (thuộc phiên đã đóng). */
+export const DA_GUI_TOI_DA = 3000;
+
+export function readSent(storage = globalThis.localStorage) {
+  try { return new Set(JSON.parse(storage?.getItem(dgkey()) || '[]')); } catch { return new Set(); }
+}
+
+export function markSent(ids, storage = globalThis.localStorage) {
+  if (!ids?.length) return readSent(storage);
+  let ds;
+  try { ds = JSON.parse(storage?.getItem(dgkey()) || '[]'); } catch { ds = []; }
+  const co = new Set(ds);
+  for (const id of ids) if (!co.has(id)) { ds.push(id); co.add(id); }
+  if (ds.length > DA_GUI_TOI_DA) ds = ds.slice(ds.length - DA_GUI_TOI_DA);
+  try { storage?.setItem(dgkey(), JSON.stringify(ds)); } catch { /* bỏ qua */ }
+  return new Set(ds);
+}
+
 export function readQueue(storage = globalThis.localStorage) {
   try { return JSON.parse(storage?.getItem(qkey()) || '[]'); } catch { return []; }
 }
@@ -196,9 +236,12 @@ export function writeQueue(items, storage = globalThis.localStorage) {
 
 /** Đưa các bản ghi vào hàng đợi — trùng id thì ghi đè, không nhân bản */
 export function enqueue(records, storage = globalThis.localStorage) {
+  /* ⚠ BỎ HẲN mã đã lên máy chủ — xem `DA_GUI_GOC` ở trên. Lọc ở đây chứ không ở
+     chỗ gửi: chỗ gửi lọc thì mã cũ vẫn nằm lại hàng đợi và phình mãi. */
+  const daGui = readSent(storage);
   const q = readQueue(storage);
-  const map = new Map(q.map((r) => [r.id, r]));
-  for (const r of records) map.set(r.id, r);
+  const map = new Map(q.filter((r) => !daGui.has(r.id)).map((r) => [r.id, r]));
+  for (const r of records) if (!daGui.has(r.id)) map.set(r.id, r);
   return writeQueue([...map.values()], storage);
 }
 
@@ -206,23 +249,56 @@ export function enqueue(records, storage = globalThis.localStorage) {
  * Đẩy hàng đợi lên máy chủ. writer(records) phải trả về Promise.
  * Thất bại (mất mạng) → GIỮ NGUYÊN hàng đợi để lần sau gửi lại.
  */
+/** Mã lỗi Firestore trả khi luật từ chối — phân biệt với mất mạng (`unavailable`). */
+const LOI_TU_CHOI = 'permission-denied';
+
+/**
+ * Đẩy hàng đợi lên máy chủ. writer(records) phải trả về Promise.
+ * Mất mạng → GIỮ NGUYÊN hàng đợi để lần sau gửi lại.
+ *
+ * ── LÔ HỎNG THÌ THỬ LẺ, ĐỂ GỠ ĐỘC CHO HÀNG ĐỢI CŨ ──
+ * Xem chú thích dài ở `mon/tienganh/lib/suKien.js`. Tóm tắt: `attempts` bất biến,
+ * nên một bản ghi đã lên máy chủ mà còn nằm trong hàng đợi sẽ làm CẢ LÔ bị từ
+ * chối, mãi mãi. Thử lẻ thì tách được bản ghi hỏng ra khỏi những bản ghi lành.
+ *
+ * ⚠ Phân biệt "luật từ chối" với "mất mạng" bằng MÃ LỖI. Cứ hỏng là bỏ thì mất
+ *    mạng đồng nghĩa mất trắng công học của con.
+ */
 export async function flushQueue(writer, storage = globalThis.localStorage, batchSize = 200) {
   const q = readQueue(storage);
   if (q.length === 0) return { sent: 0, left: 0 };
-  let sent = 0;
-  try {
-    for (let i = 0; i < q.length; i += batchSize) {
-      const chunk = q.slice(i, i + batchSize);
+  let sent = 0; let skipped = 0;
+  const xong = new Set();
+  let matMang = false;
+
+  for (let i = 0; i < q.length && !matMang; i += batchSize) {
+    const chunk = q.slice(i, i + batchSize);
+    try {
       await writer(chunk);
+      chunk.forEach((r) => xong.add(r.id));
+      markSent(chunk.map((r) => r.id), storage);
       sent += chunk.length;
+    } catch {
+      for (const r of chunk) {
+        try {
+          await writer([r]);
+          markSent([r.id], storage);
+          xong.add(r.id);
+          sent += 1;
+        } catch (e) {
+          if (e?.code === LOI_TU_CHOI) {
+            markSent([r.id], storage);
+            xong.add(r.id);
+            skipped += 1;
+          } else { matMang = true; break; }
+        }
+      }
     }
-  } catch {
-    const left = q.slice(sent);
-    writeQueue(left, storage);
-    return { sent, left: left.length, error: true };
   }
-  writeQueue([], storage);
-  return { sent, left: 0 };
+
+  const left = matMang ? q.filter((r) => !xong.has(r.id)) : [];
+  writeQueue(left, storage);
+  return { sent, skipped, left: left.length, ...(matMang ? { error: true } : {}) };
 }
 
 /**

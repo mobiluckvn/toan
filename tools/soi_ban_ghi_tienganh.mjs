@@ -23,32 +23,71 @@
  * ⚠ VÀ NÓ IN RA DỮ LIỆU HỌC CỦA MỘT BÉ CÓ THẬT. Chạy trên máy bác thì được;
  *    đừng dán nguyên đầu ra vào tài liệu nộp — cắt lấy phần cần rồi bỏ `uid`.
  */
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 
 /* Mượn `firebase-admin` của `web/functions` — cùng lý do đã ghi ở
    `xoa_log_tienganh.mjs`: hai bản thì sớm muộn lệch phiên bản. */
 const doi = createRequire(new URL('../web/functions/package.json', import.meta.url));
-const { initializeApp, cert, applicationDefault } = doi('firebase-admin/app');
+const { initializeApp, cert } = doi('firebase-admin/app');
 const { getFirestore } = doi('firebase-admin/firestore');
 
 const KHOA = process.env.GOOGLE_APPLICATION_CREDENTIALS;
+const CACH_LAY = '  Firebase Console → ⚙ Project settings → Service accounts →\n'
+  + '  "Generate new private key", lưu thành ~/khoa-dich-vu.json rồi:\n'
+  + '      export GOOGLE_APPLICATION_CREDENTIALS=~/khoa-dich-vu.json';
+
+/**
+ * ⚠ KIỂM TỆP, KHÔNG CHỈ KIỂM BIẾN MÔI TRƯỜNG.
+ *
+ * Bản đầu chỉ hỏi `if (!KHOA)`. Đặt biến trỏ vào một tệp KHÔNG CÓ thì nó lọt qua,
+ * `cert()` ném, khối `catch` lặng lẽ lui về `applicationDefault()`, và cái ném ra
+ * là một trang stack của `firebase-admin` — người dùng đọc xong không biết mình
+ * thiếu gì. Chính bác đã dính đúng thế lúc 23-08.
+ *
+ * Và `catch` lui về mặc định là một cái bẫy riêng: nó biến "khoá bác chỉ định bị
+ * hỏng" thành "im lặng dùng khoá khác", tức có thể soi nhầm dự án. Nay hỏng thì
+ * NÓI RA và dừng, chỉ lui về mặc định khi bác CỐ Ý không đặt biến.
+ */
 if (!KHOA) {
+  console.error(`✗ chưa đặt biến GOOGLE_APPLICATION_CREDENTIALS.\n${CACH_LAY}`);
+  process.exit(1);
+}
+if (!existsSync(KHOA)) {
   console.error(
-    '✗ chưa có khoá quản trị.\n'
-    + '  Firebase Console → Project settings → Service accounts →\n'
-    + '  "Generate new private key", lưu thành ~/khoa-dich-vu.json rồi:\n'
-    + '      export GOOGLE_APPLICATION_CREDENTIALS=~/khoa-dich-vu.json',
+    `✗ biến GOOGLE_APPLICATION_CREDENTIALS trỏ vào một tệp KHÔNG CÓ THẬT:\n`
+    + `      ${KHOA}\n\n`
+    + '  Biến đã đặt rồi, chỉ thiếu tệp khoá. Tải về:\n'
+    + `${CACH_LAY}\n\n`
+    + '  ⚠ Tệp khoá này mở được toàn bộ dữ liệu dự án — để ngoài thư mục kho mã\n'
+    + '     (đừng lưu trong repo, kẻo commit nhầm) và đừng gửi cho ai.',
   );
   process.exit(1);
 }
 
-initializeApp({
-  credential: (() => {
-    try { return cert(JSON.parse(readFileSync(KHOA, 'utf8'))); }
-    catch { return applicationDefault(); }
-  })(),
-});
+let chungThuc;
+try {
+  chungThuc = cert(JSON.parse(readFileSync(KHOA, 'utf8')));
+} catch (e) {
+  console.error(
+    `✗ đọc được tệp ${KHOA} nhưng nó không phải khoá dịch vụ hợp lệ:\n`
+    + `      ${e.message}\n\n`
+    + '  Tệp đúng là JSON có các trường `type: "service_account"`, `project_id`,\n'
+    + '  `private_key`, `client_email`. Nếu bác tải nhầm tệp cấu hình web thì\n'
+    + '  tải lại theo đường trên.\n\n'
+    + '  ⚠ CỐ Ý DỪNG Ở ĐÂY, không tự lui về khoá mặc định của máy: lui về thì có\n'
+    + '     thể soi nhầm sang dự án khác mà không ai biết.',
+  );
+  process.exit(1);
+}
+
+initializeApp({ credential: chungThuc });
+/* Nói rõ đang soi dự án nào TRƯỚC khi in số — soi nhầm dự án mà không biết là
+   cách nhanh nhất để kết luận sai. */
+try {
+  const duAn = JSON.parse(readFileSync(KHOA, 'utf8')).project_id;
+  console.log(`  (khoá quản trị của dự án: ${duAn})`);
+} catch { /* đã kiểm ở trên, tới đây thì chắc chắn đọc được */ }
 const db = getFirestore();
 
 const uidChon = process.argv.find((x) => !x.startsWith('-') && x.length > 20
@@ -130,8 +169,11 @@ console.log(`\n══ Bé: ${uid}${uidChon ? '' : '  (bé có mục học bạ m
   if (q.empty) {
     console.log('⚠ bé này chưa có bản ghi `attempts` nào của Tiếng Anh.\n');
   } else {
-    const coAI = q.docs.filter((d) => ['viet', 'phongNoi'].includes(d.get('cau')?.format)
-      || d.get('mode') === 'phongNoi' || d.get('phase') === 'worked');
+    /* ⚠ TÊN TRƯỜNG LẤY TỪ BẢN GHI THẬT, không đoán theo hình dạng sự kiện phía
+       máy con: `dungSuKien` đổi tên khi dựng (`ok` → `correct`, `cau.format` →
+       `mode`). Bản đầu của tệp này đoán sai và in ra một cột `undefined`. */
+    const coAI = q.docs.filter((d) => ['viet', 'phongNoi'].includes(d.get('mode'))
+      || d.get('phase') === 'worked');
     console.log(`  tổng lượt Tiếng Anh: ${q.size} · trong đó lượt CÓ AI CHẤM: ${coAI.length}`);
     if (!coAI.length) {
       console.log('ℹ chưa có lượt nào do AI chấm → chưa kiểm được vân tay.\n'
@@ -139,7 +181,7 @@ console.log(`\n══ Bé: ${uid}${uidChon ? '' : '  (bé có mục học bạ m
     } else {
       console.table(coAI.slice(0, 8).map((d) => ({
         id: d.id.slice(-28),
-        dinhDang: d.get('cau')?.format ?? d.get('mode') ?? '—',
+        dinhDang: d.get('mode') ?? '—',
         mauPrompt: d.get('mauPrompt') ?? '(THIẾU)',
         phienBanMau: d.get('phienBanMau') ?? '(THIẾU)',
         vanTay: String(d.get('vanTayPrompt') ?? '(THIẾU)').slice(0, 16),
