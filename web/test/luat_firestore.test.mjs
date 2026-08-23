@@ -25,9 +25,22 @@ import { readFileSync, existsSync } from 'node:fs';
    đổi bằng biến môi trường thay vì ghim cứng:
        FS_EMU=127.0.0.1:8099 node test/luat_firestore.test.mjs
    `npm run gia-lap` bật bộ giả lập ở đúng cổng ấy. */
-const HOST = process.env.FS_EMU || '127.0.0.1:8080';
+/* ⚠ ĐỌC CỔNG TỪ CHÍNH `firebase.gialap.json`, ĐỪNG GHIM SỐ.
+   Bản cũ ghim 8080 trong khi `npm run gia-lap` bật bộ giả lập ở 8099 — nên cổng
+   này TỰ BỎ QUA kể cả khi bộ giả lập đang chạy ngon lành, và đã bỏ qua như thế
+   suốt. Đúng cái điều tệp này tự cảnh báo ở đầu: cổng im lặng là cổng không ai
+   biết đã ngừng canh. Nay hỏi đúng tệp cấu hình mà lệnh bật dùng. */
+const cauHinh = (() => {
+  const d = new URL('../firebase.gialap.json', import.meta.url).pathname;
+  try { return JSON.parse(readFileSync(d, 'utf8'))?.emulators?.firestore?.port; }
+  catch { return null; }
+})();
+const HOST = process.env.FS_EMU || `127.0.0.1:${cauHinh || 8080}`;
 const envTep = new URL('../.env.local', import.meta.url).pathname;
+/* Mã dự án cũng phải khớp lệnh bật (`--project ky-su-nhi-thu-luat`): bộ giả lập
+   chạy `--single_project_mode`, hỏi sai mã dự án là 404 mọi đường. */
 const DU_AN = process.env.DU_AN
+  || (cauHinh ? 'ky-su-nhi-thu-luat' : null)
   || (existsSync(envTep)
     ? (readFileSync(envTep, 'utf8').match(/VITE_FB_PROJECT_ID=(.+)/) || [])[1]?.trim()
     : null)
@@ -142,6 +155,55 @@ m = await ghi(BE_A, `hocBaTA/${BE_A}/muc/loai_la`, { loai: V.s('dau'), khoa: V.s
 t('loại ngoài danh sách thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
 m = await ghi(BE_A, `hocBaTA/${BE_B}/muc/chuong__ta1_C1`, mucHopLe, BE_A);
 t('bé A KHÔNG ghi được học bạ bé B', m === 403, `HTTP ${m}`);
+
+/* ── BẢN GHI BỎ DỞ (`loai: 'phien'`, vá 23-08-2026) ───────────────────────────
+   `phien` là loại MỚI. Luật Firestore từ chối `loai` lạ TRONG IM LẶNG — máy con
+   không thấy lỗi, bé không thấy gì, dữ liệu chỉ đơn giản là không có. Buổi đi thử
+   bản chạy chỉ chứng minh được điều phủ định (console không có `permission-denied`),
+   mà "không bị từ chối" khác hẳn "ghi được đúng nội dung".
+
+   Gói dưới đây khớp ĐÚNG cái `roiManGiuaChung` trong `ManTiengAnh.jsx` gửi:
+       luuMucHocBa(learnerId, 'phien', `${ct.ma}:${e.maPhien}`,
+                   { giaTri: { microId, chang, soLuot, giay } })
+   Chép sai một trường là cổng lại thử cái luật cho phép chứ không phải cái app
+   gửi — đúng vết xe của `loai:'ontap'` ghi ở đầu khối này. */
+const mucPhien = {
+  loai: V.s('phien'), khoa: V.s('ta3:p-abc123'), at: V.s('2026-08-23'),
+  giaTri: V.m({
+    microId: V.s('DL:TA3.B00'), chang: V.s('tu'),
+    soLuot: V.n(4), giay: V.n(37),
+  }),
+};
+m = await ghi(BE_A, `hocBaTA/${BE_A}/muc/phien__ta3_p-abc123`, mucPhien);
+t('chính chủ ghi được bản ghi BỎ DỞ (loai `phien`)', m === 200,
+  `HTTP ${m} — 403 nghĩa là luật chưa cho \`phien\`, và bản ghi bỏ dở đang RƠI IM LẶNG`);
+
+m = await ghi(BE_A, `hocBaTA/${BE_B}/muc/phien__ta3_p-abc123`, mucPhien, BE_A);
+t('bé A KHÔNG ghi được bản ghi bỏ dở vào sổ bé B', m === 403, `HTTP ${m}`);
+
+/* Hai lần bỏ dở CÙNG một bài phải nằm ở hai tài liệu — khoá mang mã phiên nên
+   không đè nhau. Đây là điều kiện để đếm được "bỏ dở bài này mấy lần". */
+m = await ghi(BE_A, `hocBaTA/${BE_A}/muc/phien__ta3_p-def456`, {
+  ...mucPhien, khoa: V.s('ta3:p-def456'),
+});
+t('lần bỏ dở thứ hai cùng bài ghi được vào tài liệu RIÊNG', m === 200, `HTTP ${m}`);
+
+/* Vòng khứ hồi: đọc lại và soi đúng bốn trường mà phép đo mệt mỏi cần. Ghi 200
+   chưa chứng minh gì — bản cũ của `hocBaTA` cũng từng "ghi được" một hình dạng mà
+   bên đọc không nhặt nổi. */
+{
+  const r = await fetch(`${goc}/hocBaTA/${BE_A}/muc/phien__ta3_p-abc123`, {
+    headers: { Authorization: `Bearer ${token(BE_A)}` },
+  });
+  const d = r.ok ? await r.json() : null;
+  const gt = d?.fields?.giaTri?.mapValue?.fields;
+  t('đọc lại thấy loai `phien`', d?.fields?.loai?.stringValue === 'phien');
+  t('đọc lại thấy microId — biết bỏ dở BÀI NÀO', gt?.microId?.stringValue === 'DL:TA3.B00');
+  t('đọc lại thấy chang — biết bỏ dở Ở ĐÂU trong bài', gt?.chang?.stringValue === 'tu');
+  t('đọc lại thấy soLuot', Number(gt?.soLuot?.integerValue ?? gt?.soLuot?.doubleValue) === 4);
+  t('đọc lại thấy giay — chiều Thời gian cần đúng con số này',
+    Number(gt?.giay?.integerValue ?? gt?.giay?.doubleValue) === 37);
+}
 
 /* ── VÒNG KHỨ HỒI: ghi lên rồi ĐỌC LẠI ──
    Ghi được 200 chưa chứng minh gì cả — bản cũ cũng "ghi được" một hình dạng mà
