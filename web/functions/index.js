@@ -52,8 +52,17 @@ export const onAttempt = onDocumentCreated('attempts/{attemptId}', async (event)
          worked  một bài viết đã được AI chấm (ngưỡng đạt ở `VietBai.DIEM_DAT`).
      Vẫn LOẠI `intro`·`sample`·`teach` của Toán: ở đó máy đang LÀM MẪU, bé chưa
      tự trả lời, tính vào mức thạo là ghi công cho người khác.
-     ⚠ `check` và `worked` chỉ môn Tiếng Anh phát — đã dò cả `mon/toan`, bên ấy
-     dùng intro·sample·teach·practice·assess. Nên nới ở đây không đụng gì Toán. */
+
+     ⚠ SỬA LẠI 23-08-2026 (chiều). Dòng này trước ghi "`check` và `worked` chỉ môn
+     Tiếng Anh phát — nới ở đây không đụng gì Toán". SAI. Soi máy chủ bằng khoá
+     quản trị thấy 49 lượt TOÁN mang hai pha ấy, và `LessonPlayer.jsx` nói rõ
+     chúng là gì: `check` là câu chốt nhanh, `worked` là câu xen giữa ví dụ mẫu —
+     CẢ HAI đều do bé tự trả lời, cộng lại 31% số câu bé thực làm.
+
+     Nên việc nới vẫn ĐÚNG, và đúng cho cả hai môn: nó lấy lại gần một phần ba số
+     câu mà BKT trước đây bỏ trắng. Nhưng nó CÓ đụng tới mô hình người học của
+     Toán — đừng đọc dòng cũ rồi tưởng không. Cổng `pha_vao_bkt.test.mjs` nay soi
+     hai môn phát ra pha nào, để không ai thu hẹp lại vì tin một lời ghi sai. */
   if (!['practice', 'assess', 'check', 'worked'].includes(a.phase)) return;
 
   const ref = db.doc(`mastery/${a.learnerId}/units/${encodeURIComponent(a.bktUnit)}`);
