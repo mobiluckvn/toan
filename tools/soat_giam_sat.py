@@ -284,6 +284,15 @@ def main() -> int:
     bang(w5, ["Câu hỏi của bác", "Trả lời"], (40, 92))
     for k, v in [
         ("Số liệu đã lưu hết chưa?",
+         "⚠ ĐỌC CÂU NÀY TRƯỚC MỌI CON SỐ DƯỚI: tới TỐI 23-08-2026 đường ống mới "
+         "thật sự thông. Trước đó mỗi phiên học chỉ có bản ghi ĐẦU TIÊN lên được "
+         "máy chủ — `attempts` cấm ghi đè, mà máy con mỗi lượt lại gửi lại cả "
+         "phiên, còn `writeBatch` thì nguyên khối nên một bản ghi trùng làm rơi "
+         "cả lô. Nghĩa là mọi dòng 'ĐỦ' trong bảng này đúng về MÃ, nhưng dữ liệu "
+         "thu được trước mốc ấy thì thiếu gần hết. Đo bằng khoá quản trị: cả dự "
+         "án có 2 bản ghi Tiếng Anh cho hai buổi ~10 lượt; vá xong đo lại cùng "
+         "thao tác ra 18. Và 130/398 bản ghi nằm sai học bạ vì hàm nhận lại hàng "
+         "đợi sang tên nhầm — đã dọn, `attempts` 398 → 268.\n"
          "CHƯA HẾT, nhưng nay gần đủ. 10/16 hành động nay CÓ dữ liệu giám sát; "
          "trước 23-08 con số ấy là 1/16 (chỉ màn ôn thẻ, mà thẻ gần như không bao "
          "giờ tới hạn). ⚠ 'Có dữ liệu' KHÔNG đồng nghĩa 'vào engine': 9 hành động "

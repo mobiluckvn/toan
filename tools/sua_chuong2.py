@@ -47,6 +47,49 @@ MUC = [
      "⚠ Nếu giữ θ=0,95 trong luận văn thì con số ấy KHÔNG khớp với hệ thống đang "
      "chạy, và người phản biện đối chiếu mã sẽ thấy ngay."),
 
+    ("A", "2.5.2", "⚠ DỮ LIỆU THU ĐƯỢC TRƯỚC 23-08-2026 KHÔNG DÙNG ĐỂ PHÂN TÍCH ĐƯỢC",
+     "Luận văn mô tả một đường ống ghi nhận đầy đủ: mỗi lượt trả lời một bản ghi "
+     "bất biến, và mô hình người học dựng trên chuỗi bản ghi ấy. Nếu chương thực "
+     "nghiệm có trích số liệu đã thu, thì con số ấy cần được xem lại.",
+     "Thêm một đoạn vào phần mô tả dữ liệu, đại ý:\n"
+     "  “Trong giai đoạn thử nghiệm, đường ống ghi nhận có hai khiếm khuyết đã "
+     "được phát hiện và khắc phục ngày 23-08-2026. Thứ nhất, do tương tác giữa "
+     "quy tắc bất biến của kho sự kiện và cơ chế gửi theo lô, mỗi phiên học chỉ "
+     "có bản ghi ĐẦU TIÊN lên được máy chủ. Thứ hai, cơ chế nhận lại dữ liệu học "
+     "thử khi đăng nhập đã gán nhầm bản ghi của người học này sang người học "
+     "khác. Toàn bộ dữ liệu đã được rà và làm sạch: 130 bản ghi sai chủ được gỡ "
+     "bỏ, mô hình người học được dựng lại từ nguồn gốc. Vì vậy số liệu dùng cho "
+     "phân tích được lấy từ sau mốc này.”",
+     "Đo bằng khoá quản trị 23-08-2026. (a) Kho `attempts` chỉ có 2 bản ghi môn "
+     "Tiếng Anh cho hai buổi học khoảng mười lượt mỗi buổi — vì `attempts` khai "
+     "`allow update, delete: if false` mà máy con mỗi lượt lại gửi lại cả phiên, "
+     "còn `writeBatch` thì nguyên khối nên một bản ghi trùng làm rơi cả lô. Vá "
+     "xong đo lại cùng một thao tác: 2 → 18. (b) 7 mã phiên bị hai người học "
+     "cùng mang — chuyện không thể tự nhiên, vì mã phiên chỉ sinh ở một lần mở "
+     "bài của một người. 130/398 bản ghi nằm sai học bạ. Đã xoá và dựng lại: "
+     "`attempts` 398 → 268, `mastery` 32 mục, khớp tuyệt đối với nguồn (32/32).\n"
+     "  ⚠ ĐÂY LÀ ĐIỂM CỘNG NẾU VIẾT RA, VÀ LÀ ĐIỂM TRỪ NẾU IM. Người phản biện "
+     "đối chiếu số liệu hai thời điểm sẽ thấy chênh; nói trước thì đó là bằng "
+     "chứng của một quy trình kiểm soát dữ liệu có thật."),
+
+    ("A", "2.3.2", "BKT bỏ trắng 31% số câu người học thực làm",
+     "Luận văn mô tả BKT cập nhật mức tinh thông sau mỗi lượt trả lời của người "
+     "học.",
+     "Nêu rõ những pha nào được tính và những pha nào bị loại, kèm lý do:\n"
+     "  “Mức tinh thông chỉ cập nhật từ những lượt người học TỰ trả lời: luyện "
+     "tập, sát hạch, câu chốt nhanh và câu xen giữa ví dụ mẫu. Các bước hệ thống "
+     "đang trình bày lời giải (giới thiệu, làm mẫu, giảng) không được tính, vì ở "
+     "đó người học chưa đưa ra câu trả lời nào của mình.”",
+     "Trước 23-08-2026, hàm nền chỉ nhận hai pha `practice` và `assess`, nên "
+     "`check` (câu chốt nhanh) và `worked` (câu xen giữa ví dụ) bị bỏ trắng — "
+     "theo ghi chú trong `LessonPlayer.jsx` là 513/1654 câu, tức 31% số câu "
+     "người học thực làm. Đã nới danh sách và dựng lại mô hình trên toàn bộ dữ "
+     "liệu còn lại.\n"
+     "  ⚠ Một chú thích trong mã từng khẳng định hai pha ấy “chỉ môn Tiếng Anh "
+     "phát”. Sai — đo trên máy chủ có 49 lượt môn Toán mang chúng. Cổng "
+     "`pha_vao_bkt.test.mjs` nay đọc thẳng từ mã nguồn xem mỗi môn phát ra pha "
+     "nào, để không ai thu hẹp lại vì tin một lời ghi sai."),
+
     ("A", "2.3.1", "Hồ sơ bé — “CEFR hiện tại” đo PHỦ VỐN, không phải đo năng lực",
      "Luận văn xếp “CEFR hiện tại của người học” vào nhóm thuộc tính hồ sơ được "
      "hệ thống theo dõi, đặt cạnh `p_learned`, `RT_avg` — tức đọc như một đại "
@@ -90,8 +133,11 @@ MUC = [
      "ĐÃ HIỆN THỰC 23-08-2026. Ba trường `mauPrompt` · `phienBanMau` · "
      "`vanTayPrompt` đi từ `web/functions/src/vantay.js` qua phản hồi của "
      "`chamViet`/`luyenNoi`, được `goiChamViet.js` giữ lại (trước đây bị rơi ở "
-     "đúng chỗ này), rồi vào bản ghi tại `web/src/mon/tienganh/lib/suKien.js`. "
-     "Nay trả lời được câu “câu này do prompt nào sinh ra”."),
+     "đúng chỗ này), rồi vào bản ghi tại `web/src/mon/tienganh/lib/suKien.js`.\n"
+     "  ✅ ĐÃ SOI THẤY TRÊN MÁY CHỦ 23-08-2026 bằng khoá quản trị: lượt bài viết "
+     "mang `mauPrompt=chamviet` · `phienBanMau=1` · `vanTayPrompt=1c85246bffac`. "
+     "Nay trả lời được câu “câu này do prompt nào sinh ra” bằng dữ liệu, không "
+     "phải bằng mã nguồn."),
 
     ("B", "2.2.1", "Đồ thị làm bộ truy xuất — cần phân biệt bản ĐẦY ĐỦ và bản LÚC CHẠY",
      "Luận văn mô tả đồ thị tri thức đóng vai trò bộ truy xuất (Retriever) cho "
@@ -185,6 +231,11 @@ MUC = [
      "phiên nào cũng ra 'mệt', vì các màn cuối buổi vốn có dạng câu tốn thời gian "
      "hơn — chậm hơn vì ĐỔI VIỆC chứ không phải vì mệt. Tín hiệu 2 vá 23-08-2026 "
      "(`BaiHoc.jsx` → học bạ loại `phien`).\n"
+     "  ✅ ĐÃ SOI THẤY TRÊN MÁY CHỦ 23-08-2026: 5 bản ghi loại `phien`, đủ bốn "
+     "trường `microId`·`chang`·`soLuot`·`giay`, và CÙNG MỘT BÀI bị bỏ dở 5 lần "
+     "được đếm riêng từng lần (169 giây · 31 giây · 21 giây · 5 giây …) — đúng "
+     "thiết kế, vì chính số LẦN mới là tín hiệu. Luật Firestore cũng đã thử "
+     "thật trên bộ giả lập: 9 phép, kể cả chiều bị từ chối.\n"
      "  ⚠ PHẢI NÊU GIỚI HẠN CỦA TÍN HIỆU 2: chỉ ghi được khi người học rời màn qua "
      "thao tác trong ứng dụng; đóng thẳng trình duyệt thì không ghi được. Con số "
      "thu được là CẬN DƯỚI của số lần bỏ dở thật — dùng làm chỉ báo xu hướng, "
@@ -253,7 +304,14 @@ def main() -> int:
               "HAI chỗ bảng đối chiếu bản 22-08 ghi ĐẠT mà thực ra chưa: hàm "
               "`cefrCuaBe()` không màn nào gọi, và vân tay prompt bị rơi ở "
               "`goiChamViet.js`. Cả hai nay đã vá; bảng "
-              "`docs/benchmark_chuong2.xlsx` đã ghi rõ chỗ sửa lại.")
+              "`docs/benchmark_chuong2.xlsx` đã ghi rõ chỗ sửa lại.\n")
+    p.add_run("Sửa lần 3 — 23-08-2026 (tối): ").bold = True
+    p.add_run("soi Firestore bằng khoá quản trị và phát hiện hai lỗi ĐƯỜNG ỐNG "
+              "DỮ LIỆU, nặng hơn mọi mục trước: mỗi phiên học chỉ có bản ghi đầu "
+              "tiên lên được máy chủ, và 130/398 bản ghi nằm sai học bạ. Cả hai "
+              "đã vá, dữ liệu đã dọn và mô hình người học đã dựng lại. Xem hai "
+              "mục MỚI ở đầu nhóm A — chúng ảnh hưởng thẳng tới phần số liệu của "
+              "luận văn, không chỉ tới câu chữ.")
 
     d.add_heading("Cách đọc tài liệu này", level=1)
     for x in [

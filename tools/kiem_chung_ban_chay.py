@@ -436,6 +436,66 @@ def main() -> int:
         w7.append([a, b, c])
     don(w7)
 
+    # ── ⑧ SOI BẰNG KHOÁ QUẢN TRỊ (tối 23-08-2026) ─────────────────────────────
+    #
+    # Hai buổi đi thử chỉ nhìn được thứ ứng dụng BÀY RA. Buổi này mở thẳng
+    # Firestore bằng khoá dịch vụ, và đó là chỗ những lỗi nặng nhất lộ ra.
+    w8 = wb.create_sheet("Soi máy chủ")
+    bang(w8, ["Câu hỏi", "Đo được gì", "Kết luận"], (34, 60, 46))
+    for a, b, c in [
+        ("Bản ghi bỏ dở (`phien`) có thật không, nội dung ra sao?",
+         "5 bản ghi, đủ bốn trường microId·chang·soLuot·giay. CÙNG MỘT BÀI bị bỏ "
+         "dở 5 lần và đếm RIÊNG từng lần: 356s · 21s · 5s · 169s · 31s.",
+         "ĐẠT — đúng thiết kế, vì chính số LẦN mới là tín hiệu. Luật cũng đã thử "
+         "thật trên bộ giả lập: 9 phép, kể cả chiều bị từ chối và vòng khứ hồi."),
+        ("Vân tay prompt có trong `attempts` không?",
+         "Lượt bài viết mang `mauPrompt=chamviet` · `phienBanMau=1` · "
+         "`vanTayPrompt=1c85246bffac`.",
+         "ĐẠT — mục 2.5.2 nay trả lời được bằng DỮ LIỆU, không phải bằng mã nguồn."),
+        ("⛔ Vì sao chỉ có 1 bản ghi cho ~10 lượt?",
+         "Cả dự án có ĐÚNG 2 bản ghi `attempts` môn Tiếng Anh cho hai buổi học. "
+         "Dựng lại trên bộ giả lập bằng chính SDK web: lô [A] mới → OK; lô [A] "
+         "lần hai → permission-denied; lô [A đã có, B mới] → CẢ LÔ rơi, B không "
+         "lên; lô [C] mới → OK.",
+         "LỖI NẶNG NHẤT CỦA CẢ NGÀY. `attempts` bất biến + máy con gửi lại cả "
+         "phiên mỗi lượt + `writeBatch` nguyên khối ⇒ mỗi phiên chỉ lượt ĐẦU lên "
+         "được. Engine BKT bị bỏ đói mà 90 cổng LÚC ẤY vẫn xanh, vì không phép nào gửi "
+         "tới LƯỢT THỨ HAI. Vá hai tầng (sổ 'đã gửi' + thử lẻ khi lô hỏng); đo "
+         "lại cùng thao tác: 2 → 18."),
+        ("Vá một tầng có đủ không?",
+         "Deploy bản chỉ-có-tầng-①, đi thử lại: ra ĐÚNG 0 bản ghi mới. Đọc "
+         "localStorage: hai bé còn 12 và 14 bản ghi kẹt cứng.",
+         "KHÔNG. Tầng ① chỉ chặn từ nay; máy đang mang hàng đợi nhiễm độc thì kẹt "
+         "vĩnh viễn. Phải có tầng ② tự gỡ độc. Bài học: 'đã vá' không phải 'đã "
+         "chạy' — phải đo lại trên bản thật sau mỗi lần deploy."),
+        ("⛔ Toán có mất bản ghi không?",
+         "48/48 phiên không lỗ, không mất đầu. NHƯNG mọi bản ghi của một phiên "
+         "mang ĐÚNG MỘT dấu serverTs — cả phiên lên bằng một lô.",
+         "KHÔNG mất, nhưng sống nhờ MAY: các lần đẩy giữa chừng của Toán cũng đã "
+         "hỏng sẵn, chỉ chưa lô nào lọt sớm. Đã vá cả hai tầng cho Toán."),
+        ("⛔ 7 mã phiên bị HAI bé cùng mang",
+         "Mã phiên chỉ sinh ở một lần mở bài của một bé. Cả 7 cùng một hình: bé A "
+         "1 lượt lên ngay + CÓ sổ tiến độ; bé B 16–30 lượt lên sau vài ngày + "
+         "KHÔNG có sổ tiến độ.",
+         "130/398 bản ghi nằm SAI HỌC BẠ. Hàm nhận lại hàng đợi lúc đăng nhập hỏi "
+         "'có phải của tôi không' rồi sang tên MỌI thứ còn lại — kể cả của một bé "
+         "có thật khác. Đã vá (chỉ nhận bản `local`) và đã dọn."),
+        ("Dọn xong có sạch không?",
+         "attempts 398 → 268 · mastery 32 mục. 0 phiên hai chủ · 0 lỗ trong dãy "
+         "số thứ tự (48/48 nhóm bé·phiên·bài) · 32/32 mục mastery khớp ĐÚNG số "
+         "lượt · 0 nút thiếu mastery.",
+         "SẠCH. Sao lưu đầy đủ giữ lại (125 + 5 bản ghi, và mastery trước khi "
+         "dựng) — vẫn TRẢ VỀ ĐÚNG CHỦ được nếu sau này đổi ý."),
+        ("Còn chỗ nào chưa kiểm được?",
+         "Số phút học và bảng cô giáo là bản TỔNG HỢP, dựng lại lúc 21 giờ mỗi "
+         "đêm — buổi soi này chưa qua mốc ấy.",
+         "⚠ Số liệu lấy cho luận văn phải lấy SAU mốc dựng lại, và nên ghi rõ kho "
+         "đã được dọn ngày 23-08 kèm lý do: người phản biện đối chiếu số cũ với "
+         "số mới sẽ thấy chênh."),
+    ]:
+        w8.append([a, b, c])
+    don(w8)
+
     RA.parent.mkdir(parents=True, exist_ok=True)
     wb.save(RA)
     print(f"→ {RA.relative_to(GOC)}")

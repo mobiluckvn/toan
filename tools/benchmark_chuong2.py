@@ -447,8 +447,14 @@ R("2.3.2", "BKT chạy cho môn TIẾNG ANH", DU,
   "✅ XONG Đợt 1 (22-08). `mon/tienganh/lib/suKien.js` dựng bản ghi rồi đẩy vào "
   "`attempts/` chung; `CauHoi.jsx` gọi sau MỖI lượt trả lời. `bktUnit` là mã nút "
   "đồ thị. Cổng `tienganh_sukien` (14 phép) đối chiếu thẳng với `firestore.rules`.",
-  "✅ ĐÃ DEPLOY 23-08-2026. ⚠ Trước đó mã xong, cổng xanh, nhưng chưa lượt học nào chạy qua "
-  "đường này trên bản thật.",
+  "✅ ĐÃ DEPLOY 23-08-2026, và ĐÃ CHẠY THẬT: soi máy chủ bằng khoá quản trị thấy "
+  "P(L) sinh ra từ chính những lượt đi thử, kèm `pTruoc` và `saiLienTiep`.\n"
+  "⚠ NHƯNG TỚI TỐI 23-08 ĐƯỜNG ỐNG MỚI THÔNG THẬT. Trước đó mỗi phiên chỉ có bản "
+  "ghi ĐẦU TIÊN lên được máy chủ: `attempts` cấm ghi đè, mà máy con mỗi lượt lại "
+  "gửi lại cả phiên, còn `writeBatch` thì nguyên khối nên một bản ghi trùng làm "
+  "rơi cả lô. Cả dự án chỉ có 2 bản ghi Tiếng Anh cho hai buổi ~10 lượt. Vá xong "
+  "đo lại cùng thao tác: 2 → 18. Không cổng nào bắt được vì không phép nào gửi "
+  "tới LƯỢT THỨ HAI — nay có `luot_khong_roi.test.mjs` (29 phép).",
   OK,
   "★ VIỆC THEN CHỐT — mở khoá nhiều dòng đỏ nhất trong bảng. Và RẺ hơn tưởng nhờ "
   "phát hiện: bảng cô giáo ĐÃ đọc `attempts` KHÔNG lọc theo môn "
@@ -643,6 +649,37 @@ R("2.5.2", "Dữ liệu định danh & thời gian (mili-giây)", DU,
   "đợi mấy ngày vì mất mạng), `serverTs` là lúc GỬI. Mọi thống kê cô giáo nhìn phải "
   "quy về mốc máy chủ — máy tính bảng đặt sai ngày thì chuỗi ngày học nhảy loạn.",
   "2.3.2-nối", D1, "xong"),
+
+R("ngoài CT2", "BKT tính đủ MỌI pha người học tự trả lời", DU,
+  "✅ Nới danh sách pha 23-08-2026: `practice`·`assess`·`check`·`worked`. Trước đó "
+  "chỉ hai pha đầu, nên `check` (câu chốt nhanh) và `worked` (câu xen giữa ví dụ "
+  "mẫu) bị bỏ trắng — 513/1654 câu, tức 31% số câu người học THỰC LÀM, theo ghi "
+  "chú trong `LessonPlayer.jsx`.",
+  "Vẫn LOẠI `intro`·`sample`·`teach` có chủ ý: ở đó máy đang làm mẫu, bé chưa tự "
+  "trả lời.",
+  OK,
+  "⚠ MỘT LỜI GHI SAI ĐÃ SỬA: chú thích kèm bản vá khẳng định hai pha ấy 'chỉ môn "
+  "Tiếng Anh phát, không đụng gì Toán'. Soi máy chủ: 49 lượt TOÁN mang chúng. "
+  "Việc nới vẫn đúng và đúng cho cả hai môn, nhưng nó CÓ đổi mô hình người học "
+  "của Toán. Cổng `pha_vao_bkt.test.mjs` nay đọc thẳng mã nguồn hai môn xem phát "
+  "ra pha nào, rồi đòi mỗi pha hoặc nằm trong danh sách trắng, hoặc được khai là "
+  "loại-có-chủ-ý — thu hẹp lại là đỏ.",
+  "2.3.2-BKT", D1, "xong"),
+
+R("ngoài CT2", "Bản ghi thuộc ĐÚNG người học", DU,
+  "✅ Vá 23-08-2026. Hàm nhận lại hàng đợi lúc đăng nhập nay CHỈ nhận bản ghi chưa "
+  "có chủ (`local`); bản ghi của một người học thật khác thì bỏ ra và đếm.",
+  "130 bản ghi cũ đã nằm sai học bạ — đã xoá và dựng lại mô hình. Còn bản sao lưu "
+  "đầy đủ nếu cần trả về đúng chủ.",
+  OK,
+  "⚠ TIÊU CHÍ NÀY KHÔNG CÓ TRONG CHƯƠNG 2, VÀ ĐÓ MỚI LÀ VẤN ĐỀ. Luận văn mặc "
+  "nhiên coi mỗi bản ghi thuộc đúng người sinh ra nó. Đo 23-08: 7 mã phiên bị HAI "
+  "người học cùng mang — mã phiên chỉ sinh ở một lần mở bài của một người nên "
+  "chuyện đó không thể tự nhiên. Nguyên nhân: hàm nhận lại hàng đợi hỏi 'có phải "
+  "của tôi không' rồi sang tên MỌI thứ còn lại. Ghép với lỗi hàng đợi nghẽn thì "
+  "bài của bé A chui vào học bạ bé B khi B đăng nhập cùng một chỗ. Dấu hiệu soi "
+  "được: một `sessionId` bị hai `learnerId` cùng mang — `tools/soi_ban_ghi_sai_chu.mjs`.",
+  "2.5.2-chu", D1, "xong"),
 
 R("2.5.2", "Dữ liệu nhận thức: Node_ID · đúng/sai · câu trả lời THÔ", DU,
   "Hai màn có lưu nguyên văn bé làm: BÀI VIẾT giữ `viet: String(viet)` "
@@ -1021,11 +1058,16 @@ def main() -> int:
         ("⚠ ĐỌC DÒNG NÀY TRƯỚC — 'ĐÁP ỨNG' Ở ĐÂY NGHĨA LÀ GÌ", ""),
         ("", "Cột trạng thái nói về MÃ VÀ DỮ LIỆU trong kho. Tính tới 22-08-2026 thì "
              "Đợt 0 · 1 · 2 đều ĐÃ DEPLOY, nên với những dòng ấy hai thứ trùng nhau. "
-             "Nhưng cổng xanh vẫn không phải bằng chứng bé học tốt hơn: 82 cổng soi "
+             "Nhưng cổng xanh vẫn không phải bằng chứng bé học tốt hơn: 92 cổng soi "
              "MÃ và DỮ LIỆU, không cổng nào ngồi cạnh một đứa trẻ."),
         ("", ""),
         ("ĐÃ XONG TỚI ĐÂU", ""),
-        ("", "Cả năm đợt ✅. Nay 50/54 mục đáp ứng (93%), từ 15 lúc bắt đầu. "
+        ("", f"Cả năm đợt ✅. Trong {len([x for x in B if x[0] != 'ngoài CT2'])} tiêu chí "
+             f"của Chương 2, nay {len([x for x in B if x[0] != 'ngoài CT2' and x[2] == DU])} "
+             "đáp ứng, từ 15 lúc bắt đầu. "
+             "⚠ Bảng nay có 2 dòng KHÔNG phải tiêu chí của Chương 2 — cột “Mục” "
+             "ghi 'ngoài CT2'. Chúng là thứ đối chiếu làm lộ ra mà chương chưa "
+             "nói tới; đếm chung vào tỉ lệ đáp ứng Chương 2 là sai mẫu số. "
              "Bốn mục còn lại KHÔNG phải việc code — xem mục dưới."),
         ("", ""),
         ("ĐỢT 3 ĐÃ CHẠY XONG — 22-08-2026", ""),
@@ -1191,7 +1233,9 @@ def main() -> int:
 
     RA.parent.mkdir(parents=True, exist_ok=True)
     wb.save(RA)
-    print(f"→ {RA.relative_to(GOC)}  ({len(B)} tiêu chí)")
+    n_ct2 = len([x for x in B if x[0] != "ngoài CT2"])
+    print(f"→ {RA.relative_to(GOC)}  ({n_ct2} tiêu chí Chương 2 "
+          f"+ {len(B) - n_ct2} phát hiện ngoài chương)")
     print("  ── trạng thái nay ──")
     for k in (DU, PH, CH, KO):
         print(f"     {k:24s} {dem[k]:2d}  ({dem[k] / len(B) * 100:3.0f}%)")

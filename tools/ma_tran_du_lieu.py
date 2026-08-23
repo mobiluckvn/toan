@@ -130,6 +130,9 @@ MA_TRAN = [
     ("CHỈ Ở MÁY", "hàng đợi `ttd5.queueTA.v1`", "lượt chưa đẩy được lên mạng",
      "localStorage", "máy con", "khi mạng hỏng — đẩy lại ở phiên sau",
      "không ai đọc, chỉ để không mất bản ghi"),
+    ("CHỈ Ở MÁY", "sổ đã gửi `ttd5.daGuiTA.v1`", "mã những lượt ĐÃ lên máy chủ",
+     "localStorage", "máy con", "sau mỗi lô gửi thành công",
+     "chặn việc gửi lại bản ghi đã có — mới từ 23-08, xem nhịp ghi ở trang sau"),
 ]
 
 # ── ② NHỊP GHI — vì sao gom lô ─────────────────────────────────────────────
@@ -137,12 +140,17 @@ NHIP = [
     ("Bé bấm một đáp án", "NGAY LẬP TỨC, tại máy",
      "`onLuot` → `ghiLuot` đẩy vào nhật ký trong bộ nhớ (`nhatKy.current.ds`). "
      "Chưa đụng mạng."),
-    ("Bé làm xong một câu / rời màn", "gửi CẢ PHIÊN lên `attempts`",
-     "⚠ CỐ Ý GOM LÔ, không đẩy từng lượt. Mã bản ghi nhúng SỐ THỨ TỰ của lượt "
-     "trong phiên; đẩy lẻ thì số thứ tự lúc nào cũng là 0, mọi lượt của cùng một "
-     "câu ĐÈ LÊN NHAU, và bé sai hai lần rồi mới đúng chỉ còn lại MỘT dòng — mất "
-     "đúng thứ nhật ký sinh ra để giữ. Dựng lại từ cả phiên thì mã lượt cũ ra "
-     "đúng mã cũ, ghi đè theo mã, nên gửi bao nhiêu lần cũng không sinh dòng trùng."),
+    ("Bé làm xong một câu / rời màn", "gửi phần CHƯA GỬI lên `attempts`",
+     "Mã bản ghi nhúng SỐ THỨ TỰ của lượt trong phiên, nên phải dựng lại từ CẢ "
+     "nhật ký mới đánh số đúng — đẩy lẻ thì số thứ tự lúc nào cũng là 0 và mọi "
+     "lượt của cùng một câu đè lên nhau.\n"
+     "⚠ NHƯNG CHỈ GỬI PHẦN CHƯA LÊN. Bản trước gửi lại CẢ PHIÊN mỗi lượt, tin "
+     "rằng 'mã cũ dựng lại ra đúng mã cũ nên ghi đè vô hại'. SAI: `attempts` là "
+     "nhật ký BẤT BIẾN (`allow update: if false`), ghi đè là `update` và bị từ "
+     "chối; mà `writeBatch` nguyên khối nên CẢ LÔ rơi. Hệ quả: mỗi phiên chỉ "
+     "ĐÚNG MỘT lượt lên tới máy chủ, phần còn lại chết trong localStorage. Đo "
+     "23-08-2026 bằng khoá quản trị: cả dự án có 2 bản ghi Tiếng Anh cho hai "
+     "buổi ~10 lượt. Nay có sổ 'đã gửi' + thử lẻ khi lô hỏng; đo lại: 2 → 18."),
     ("Mỗi bản ghi `attempts` mới", "HÀM NỀN chạy trong ~1–3 giây",
      "`onAttempt` (Firestore trigger) đọc `bktUnit`, chạy BKT trong một giao dịch, "
      "ghi `mastery/{uid}/units/{nút}`. Bé không phải chờ."),
