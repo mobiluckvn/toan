@@ -49,7 +49,7 @@ const { applyAttempt } = await import('../web/functions/src/bkt.js');
 const THAT = process.argv.includes('--that');
 const KHOA = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 if (!KHOA || !existsSync(KHOA)) {
-  console.error('✗ thiếu khoá quản trị. export GOOGLE_APPLICATION_CREDENTIALS=…/khoa-dich-vu.json');
+  console.error('✗ thiếu khoá quản trị.\n  export GOOGLE_APPLICATION_CREDENTIALS=~/khoa-dich-vu.json\n  ⚠ Khoá để NGOÀI thư mục kho — nó mở được toàn bộ dữ liệu dự án.');
   process.exit(1);
 }
 initializeApp({ credential: cert(JSON.parse(readFileSync(KHOA, 'utf8'))) });

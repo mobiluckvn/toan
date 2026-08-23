@@ -110,9 +110,12 @@ node tools/soi_ban_ghi_tienganh.mjs     # phien · vân tay · mastery
 
 ## 4 · Những cái bẫy đã trả giá để biết — ĐỪNG DẪM LẠI
 
-- **Khoá quản trị** đang ở `repo/khoa-dich-vu.json`, đã chặn trong `.gitignore`.
-  Kho này hay commit bằng `git add -A` nên chỗ chặn ấy là chỗ chặn **duy nhất**.
-  Nên chuyển ra ngoài thư mục kho.
+- **Khoá quản trị nằm ở `~/khoa-dich-vu.json`** (ngoài kho, quyền `600`). Đã
+  chuyển ra tối 23-08; chưa lần nào bị commit. Luật chặn trong `.gitignore` vẫn
+  giữ để lỡ có bản khác rơi vào kho thì còn một lớp nữa — kho này hay commit bằng
+  `git add -A`. **Đừng để khoá trong thư mục kho lần nữa.**
+
+      export GOOGLE_APPLICATION_CREDENTIALS=~/khoa-dich-vu.json
 - **Đừng nới luật cho `attempts` ghi đè được** để "sửa" lỗi ①. Tính bất biến là
   thứ mục 2.5.2 luận văn dựa vào. Chỗ sai ở máy con gửi thừa, không ở luật.
 - **Đừng dùng độ trễ `serverTs − ts` làm tiêu chí một mình.** Trung vị cả kho là
