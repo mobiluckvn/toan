@@ -86,8 +86,36 @@ for (const [s, ds] of theoPhien) {
     }
     soi.push({ be: b, r, coTienDo });
   }
-  const chuThat = soi.filter((x) => x.coTienDo);
-  const khongChu = soi.filter((x) => !x.coTienDo);
+  /* ── NHÂN CHỨNG THỨ HAI: GIỜ BẤM SO VỚI GIỜ SINH MÃ PHIÊN ──
+     Sổ tiến độ chỉ được ghi khi bé NỘP bài. Bé bỏ dở sau vài câu thì không có sổ
+     tiến độ, và nhân chứng thứ nhất im lặng — đúng cảnh phiên `smslukqqe8m4a`.
+
+     Nhưng còn một dấu vết nữa, và nó cứng hơn: mã phiên nhúng GIỜ SINH
+     (`newSessionId` = 's' + Date.now().toString(36) + ngẫu nhiên), còn mỗi bản
+     ghi mang `ts` là lúc bé BẤM. Bản ghi bị sang tên vẫn giữ nguyên `ts` gốc —
+     tức giờ bấm của bé A. Nên bé nào có `serverTs` cách `ts` hàng ngày TRONG KHI
+     bé kia lên ngay tức thì, thì bé lên muộn ấy đang giữ bản ghi làm ra ở phiên
+     của người khác: không ai trả lời được câu hỏi trong một phiên mở trên máy
+     người khác từ mấy ngày trước.
+
+     ⚠ CHỈ dùng làm nhân chứng KHI phiên có đúng một bé "lên ngay". Độ trễ tự nó
+     KHÔNG phải bằng chứng — trung vị cả kho là 25 giờ vì lỗi hàng đợi nghẽn. Cái
+     nói lên chuyện là SỰ TƯƠNG PHẢN trong cùng một phiên. */
+  const NGAY_TUC_THI = 0.5;   // giờ
+  for (const x of soi) {
+    const ts = x.r.map((d) => d.get('ts')).filter(Boolean);
+    const sv = x.r.map((d) => d.get('serverTs')?.toMillis?.()).filter(Boolean);
+    x.tre = (ts.length && sv.length) ? (Math.min(...sv) - Math.min(...ts)) / 3600000 : null;
+  }
+  const lenNgay = soi.filter((x) => x.tre != null && x.tre < NGAY_TUC_THI);
+  const lenMuon = soi.filter((x) => x.tre != null && x.tre >= NGAY_TUC_THI);
+
+  const chuThat = soi.filter((x) => x.coTienDo).length
+    ? soi.filter((x) => x.coTienDo)
+    : (lenNgay.length === 1 && lenMuon.length ? lenNgay : []);
+  const khongChu = soi.filter((x) => x.coTienDo).length
+    ? soi.filter((x) => !x.coTienDo)
+    : (lenNgay.length === 1 && lenMuon.length ? lenMuon : []);
   /* ⚠ CHỈ XOÁ KHI HÌNH DẠNG ĐÚNG NHƯ ĐÃ MÔ TẢ: đúng một bé có sổ tiến độ, và
      (các) bé kia thì không. Lệch khuôn thì BỎ QUA và báo — thà sót còn hơn xoá
      nhầm bài của một bé có thật. */
@@ -98,8 +126,8 @@ for (const [s, ds] of theoPhien) {
   for (const x of khongChu) x.r.forEach((d) => xoa.push(d));
   bang.push({
     phien: s.slice(0, 16),
-    chuThat: `${chuThat[0].be.slice(0, 8)}… (${chuThat[0].r.length} lượt, có sổ tiến độ)`,
-    xoaCua: khongChu.map((x) => `${x.be.slice(0, 8)}… (${x.r.length} lượt)`).join(' · '),
+    chuThat: `${chuThat[0].be.slice(0, 8)}… (${chuThat[0].r.length} lượt, ${chuThat[0].coTienDo ? 'có sổ tiến độ' : `lên ngay ${chuThat[0].tre?.toFixed(1)}h`})`,
+    xoaCua: khongChu.map((x) => `${x.be.slice(0, 8)}… (${x.r.length} lượt${x.coTienDo ? '' : `, trễ ${x.tre?.toFixed(1)}h`})`).join(' · '),
     luc: iso(Math.min(...ds.map((d) => d.get('ts')).filter(Boolean))),
   });
 }
@@ -119,7 +147,15 @@ const luu = {
   banGhiXoa: xoa.map((d) => ({ id: d.id, data: d.data() })),
   masteryTruocKhiDung: masteryTruoc,
 };
-const tepLuu = new URL('../sao_luu_don_ban_ghi.json', import.meta.url).pathname;
+/* ⚠ KHÔNG BAO GIỜ ĐÈ BẢN SAO LƯU CŨ. Chạy lần hai mà ghi đè lên tệp lần một là
+   mất luôn đường lùi của lần một — mà lần một mới là lần xoá nhiều. Thấy tệp đã
+   có thì đánh số tiếp. */
+const tepLuu = (() => {
+  const goc = new URL('../sao_luu_don_ban_ghi', import.meta.url).pathname;
+  if (!existsSync(`${goc}.json`)) return `${goc}.json`;
+  for (let i = 2; i < 100; i += 1) if (!existsSync(`${goc}_${i}.json`)) return `${goc}_${i}.json`;
+  throw new Error('quá nhiều bản sao lưu — dọn bớt đi đã');
+})();
 if (THAT) {
   writeFileSync(tepLuu, JSON.stringify(luu, (k, v) => (v?.toDate ? v.toDate().toISOString() : v), 1));
   console.log(`── ② Đã sao lưu ${xoa.length} bản ghi + ${masteryTruoc.length} mục mastery`);
