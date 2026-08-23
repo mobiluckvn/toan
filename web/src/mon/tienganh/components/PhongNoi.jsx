@@ -34,9 +34,26 @@ import { chamTot, chamCau, datNoi, loiKhen } from '../lib/chamnoi.js';
  * Máy không nghe được, không đọc được, hoặc mạng hỏng — cả ba đều nói THẲNG ra và
  * vẫn cho bé ở lại phòng nghe cô nói. Đây là chỗ luyện thêm, không phải cửa ải.
  */
+/** Nút tri thức của một câu đang luyện — mẫu câu trước, từ vựng sau. */
+function nutCuaCau(bai, cau) {
+  const k = bai?.knowledgeCore || {};
+  const c = String(cau || '').toLowerCase();
+  if (!c) return null;
+  const mau = (k.mauCauDs || []).find(
+    (m) => m.ma && String(m.cau || '').toLowerCase() === c,
+  );
+  if (mau) return mau.ma;
+  /* Dài trước ngắn sau — "table tennis" thắng "table", cụm mới là thứ sách dạy. */
+  const tu = [...(k.vocabulary || [])]
+    .filter((v) => v.ma && v.tu)
+    .sort((a, b) => b.tu.length - a.tu.length)
+    .find((v) => new RegExp(`(?<![a-z])${v.tu.toLowerCase()}(?![a-z])`).test(c));
+  return tu?.ma || null;
+}
+
 export default function PhongNoi({ bai, tienDo, tenBe = 'con',
                                    soThich = null, onSoThich = null,
-                                   mucThao = null }) {
+                                   mucThao = null, onLuot = null }) {
   /**
    * QUYỂN VÀ LỚP SUY TỪ CHÍNH BÀI, không nhận từ ngoài.
    *
@@ -298,6 +315,37 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
                      buoc: tra.buoc, can: tra.can };
       const sau = [...ds, luot];
       datLichSu(sau);
+      /* ── LƯỢT NÓI Ở PHÒNG LUYỆN VÀO ENGINE (bác chốt 23-08-2026) ──
+         Trước bản này cả buổi nói được lưu vào `phongNoiTA` (bé nói gì, cô sửa gì)
+         nhưng KHÔNG sinh `attempts` — nên kỹ năng NÓI là kỹ năng duy nhất nằm
+         ngoài BKT, dù nó có điểm từng lượt hẳn hoi.
+
+         ⚠ CHỈ GHI KHI CHẤM ĐƯỢC. `kq` là `null` ở những bước không có câu mẫu để
+         so (bé chào, bé kể tự do). Ghi lượt không điểm là ghi một lượt SAI cho
+         một việc không ai chấm — mức thạo tụt vì một câu bé nói đúng.
+
+         Nút suy từ CHÍNH CÂU vừa chấm (`kq.mau`): tìm mẫu câu của bài có câu ấy,
+         không có thì tìm từ vựng xuất hiện trong câu. Không ra nút nào thì `bktUnit`
+         rỗng và hàm nền bỏ qua — thà thế còn hơn gán bừa vào một nút không liên
+         quan, đúng bài học của `nut_tri_thuc.py`. */
+      if (kq && kq.diem != null) {
+        onLuot?.({
+          cau: {
+            id: `phongnoi:${bai?.id || '?'}:${sau.length}`,
+            maNut: nutCuaCau(bai, kq.mau),
+            format: 'phongNoi',
+          },
+          ok: datNoi(kq.diem),
+          lan: 1,
+          ms: null,
+          hintsUsed: 0,
+          answer: r.noiGi ?? null,
+          expected: kq.mau ?? null,
+          phase: 'practice',
+          maPhien: maBuoi.current,
+          microId: bai?.id || null,
+        });
+      }
       /* Client giữ ngữ cảnh và tự đẩy lên máy chủ — bác chốt như thế; server không
          lưu gì. KHÔNG chờ: mất mạng thì bé vẫn nói chuyện bình thường. */
       luuBuoi(auth?.currentUser?.uid, {

@@ -94,6 +94,52 @@ test('⚠ BỐN MÀN đều phát lượt lên engine', () => {
   }
 });
 
+test('⚠ PHẦN NÓI phải vào engine (bác chốt 23-08)', () => {
+  /* Nói từ · nói câu · phòng luyện nói — ba chỗ có chấm điểm hẳn hoi mà trước
+     23-08 điểm ấy chỉ nằm ở máy. Kỹ năng NÓI khi ấy là kỹ năng DUY NHẤT ngoài BKT. */
+  const bh = chiMa(doc('../src/mon/tienganh/components/BaiHoc.jsx'));
+  for (const [dang, vi] of [['noiTu', 'nói từ · chặng 1'], ['noiCau', 'nói câu · chặng 2']]) {
+    assert.match(bh, new RegExp(`format: '${dang}'`),
+      `${vi} không phát lượt — điểm phát âm không lên máy chủ`);
+  }
+  /* ⚠ CHỐT QUAN TRỌNG NHẤT: chỉ ghi khi máy NGHE RA CHỮ. Bé bấm nút rồi ngồi im
+     là CHƯA NÓI; ghi thành một lượt sai thì mức thạo tụt vì việc bé chưa làm. */
+  assert.match(bh, /if \(kq\?\.coTieng\) \{[\s\S]{0,400}?format: 'noiTu'/,
+    'lượt nói ở chặng 1 phải nằm TRONG nhánh `coTieng` — không thì im lặng bị '
+    + 'tính là nói sai');
+  assert.match(bh, /if \(!kq\?\.coTieng\) return;[\s\S]{0,400}?format: 'noiCau'/,
+    'lượt nói ở chặng 2 phải sau chốt `coTieng`');
+
+  const pn = chiMa(doc('../src/mon/tienganh/components/PhongNoi.jsx'));
+  assert.match(pn, /format: 'phongNoi'/, 'phòng luyện nói không phát lượt');
+  assert.match(pn, /if \(kq && kq\.diem != null\)/,
+    'phòng luyện nói phải BỎ QUA lượt không chấm được — ghi lượt không điểm là '
+    + 'ghi một lượt sai cho việc không ai chấm');
+  /* Và nút phải TRA RA, không được lấy từ một biến không tồn tại. */
+  assert.match(pn, /function nutCuaCau\(/,
+    'phòng luyện nói không có phép tra nút — `maNut` sẽ rỗng và hàm nền bỏ qua');
+});
+
+test('DỮ LIỆU: từ vựng và mẫu câu trong bài dựng đều mang mã nút', () => {
+  /* Không có `ma` thì màn nói không biết ghi công cho nút nào. Trước 23-08 bản
+     dựng KHÔNG chép mã sang, dù `chuan_lopN.json` có sẵn từ lâu. */
+  let tu = 0; let tuCo = 0; let mau = 0; let mauCo = 0;
+  for (const q of QUYEN) {
+    let ds = [];
+    try { ds = readdirSync(new URL(`../public/content/${q}/`, import.meta.url)); }
+    catch { continue; }
+    for (const f of ds) {
+      if (!/^DL_TA\d_B\d+\.json$/.test(f)) continue;
+      const k = JSON.parse(doc(`../public/content/${q}/${f}`)).knowledgeCore || {};
+      for (const v of k.vocabulary || []) { tu += 1; if (v.ma) tuCo += 1; }
+      for (const m of k.mauCauDs || []) { mau += 1; if (m.ma) mauCo += 1; }
+    }
+  }
+  assert.ok(tu > 500 && mau > 100, `đếm hụt: ${tu} từ · ${mau} mẫu câu`);
+  assert.equal(tuCo, tu, `${tu - tuCo}/${tu} từ vựng KHÔNG có mã nút`);
+  assert.equal(mauCo, mau, `${mau - mauCo}/${mau} mẫu câu KHÔNG có mã nút`);
+});
+
 test('⚠ CHỖ NỐI: ManTiengAnh phải truyền ghiLuot cho CẢ BỐN màn', () => {
   const ma = chiMa(doc('../src/mon/tienganh/components/ManTiengAnh.jsx'));
   for (const the of ['BaiHoc', 'DocHieu', 'VietBai', 'OnTap']) {

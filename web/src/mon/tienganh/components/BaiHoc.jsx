@@ -137,11 +137,11 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
           thì mốc của bài cũ dính sang bài mới. */}
       {k === 'tu' && (
         <ManTu key={id} bai={bai} onTiep={xong} onNoi={onNoi}
-               moc={mocDau?.tu} onMoc={mocTu} />
+               moc={mocDau?.tu} onMoc={mocTu} onLuot={ghiLuot} />
       )}
       {k === 'cau' && (
         <ManCau key={id} bai={bai} onTiep={xong}
-                moc={mocDau?.cau} onMoc={mocCau} />
+                moc={mocDau?.cau} onMoc={mocCau} onLuot={ghiLuot} />
       )}
       {k === 'luyen' && (
         <LuyenTap key={id} bai={bai} onTiep={xong}
@@ -161,7 +161,8 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
       )}
       {k === 'phong' && (
         <PhongNoi bai={bai} tienDo={tienDo} tenBe={tenBe}
-                  soThich={soThich} onSoThich={onSoThich} mucThao={mucThao} />
+                  soThich={soThich} onSoThich={onSoThich} mucThao={mucThao}
+                  onLuot={ghiLuot} />
       )}
     </Khung>
   );
@@ -257,7 +258,7 @@ const NutTiep = ({ onClick, chu = 'Tiếp tục', tat = false, viSao }) => (
  * từng từ cũng là nghe đủ chừng ấy từ. Video hỏng thì mở ngay và nói rõ — không
  * để bé kẹt vì tệp không tải được.
  */
-function ManTu({ bai, onTiep, onNoi, moc, onMoc }) {
+function ManTu({ bai, onTiep, onNoi, moc, onMoc, onLuot = null }) {
   const dsVideo = useMemo(() => dsVideoTu(bai), [bai]);
   /* Nghe bốn từ rồi bị gọi đi ăn cơm — vào lại mà thanh VIỆC CỦA CON trắng trơn
      thì công vừa bỏ ra không để lại dấu, và đó đúng là lúc bé bỏ cuộc.
@@ -316,8 +317,32 @@ function ManTu({ bai, onTiep, onNoi, moc, onMoc }) {
 
   /* `lan` chỉ cộng khi máy NGHE RA CHỮ. Bé bấm nút rồi ngồi im thì không tính —
      nếu tính thì bấm hai cái trong im lặng là "đã thử thật 2 lần" và qua luôn. */
+  /* ── LƯỢT NÓI VÀO ENGINE (bác chốt 23-08-2026) ──
+     Trước bản này, phần NÓI là kỹ năng duy nhất nằm ngoài BKT: có chấm điểm từng
+     lượt, nhưng điểm ấy chỉ nằm trong `moc.soNoi` tại máy và `luuBai` cố ý không
+     đẩy `moc` lên. Nên "con phát âm thế nào" không có bằng chứng nào trên máy chủ.
+
+     ⚠ CHỈ GHI KHI MÁY NGHE RA CHỮ (`coTieng`). Bé bấm nút rồi ngồi im thì đó là
+     CHƯA NÓI, không phải nói sai — ghi thành một lượt sai là mức thạo tụt vì một
+     việc bé chưa từng làm. Cùng chốt mà `ghiNoi` đã dùng cho `soNoi`.
+
+     ⚠ `phase: 'practice'` chứ không đặt pha mới: luật Firestore chỉ nhận bốn pha,
+     thêm pha thứ năm là phải sửa luật rồi deploy trước. Phân biệt "nói" với các
+     dạng khác bằng `mode` — đó đúng là việc của trường ấy, và bảng cô giáo lọc
+     theo `mode` được ngay. */
   const ghiNoi = useCallback((tu, kq) => {
     if (kq?.coTieng) {
+      const nut = (bai.knowledgeCore.vocabulary || []).find((x) => x.tu === tu);
+      onLuot?.({
+        cau: { id: `noi:${tu}`, maNut: nut?.ma || null, format: 'noiTu' },
+        ok: (kq.diem ?? 0) >= DAT_NOI,
+        lan: kq.lan ?? 1,
+        ms: null,
+        hintsUsed: 0,
+        answer: kq.nghe ?? null,
+        expected: tu,
+        phase: 'practice',
+      });
       datSoNoi((s) => {
         const cu = s[tu] || { caoNhat: null, lan: 0 };
         return {
@@ -526,7 +551,7 @@ function LuyenTu({ bai, ds, i, onDoi, soNoi, micHong, daNgheTu = false,
  * một rồi qua thì đúng nửa bài bị bỏ — mà đó là nửa bé sẽ gặp lại ngay ở luyện
  * tập và sát hạch.
  */
-function ManCau({ bai, onTiep, moc, onMoc }) {
+function ManCau({ bai, onTiep, moc, onMoc, onLuot = null }) {
   const ds = bai.video?.cau || [];
   const [i, datI] = useState(() => Math.max(0, Number(moc?.i) || 0));
   const [daXem, datDaXem] = useState(() => new Set(moc?.daXem || []));
@@ -551,7 +576,19 @@ function ManCau({ bai, onTiep, moc, onMoc }) {
   });
 
   const ghiNoi = useCallback((cau, kq) => {
+    /* Cùng luật với chặng 1 — xem chú thích ở `LuyenTu`. Nút ở đây là MẪU CÂU
+       (`sp_*`): bé nói cả câu thì cái được kiểm là cấu trúc, không phải một từ. */
     if (!kq?.coTieng) return;
+    onLuot?.({
+      cau: { id: `noi:${cau}`, maNut: (ds[i] && mcDs[i]?.ma) || null, format: 'noiCau' },
+      ok: (kq.diem ?? 0) >= DAT_NOI,
+      lan: kq.lan ?? 1,
+      ms: null,
+      hintsUsed: 0,
+      answer: kq.nghe ?? null,
+      expected: cau,
+      phase: 'practice',
+    });
     datSoNoi((s) => {
       const cu = s[cau] || { caoNhat: null, lan: 0 };
       return { ...s, [cau]: { caoNhat: Math.max(cu.caoNhat ?? 0, kq.diem ?? 0), lan: cu.lan + 1 } };

@@ -34,22 +34,26 @@ DU, THIEU, KHONG, COYS = "ĐỦ", "⚠ THIẾU", "✗ KHÔNG CÓ", "cố ý khô
 # ── ① MỌI HÀNH ĐỘNG CỦA BÉ ───────────────────────────────────────────────────
 # (hành động, màn, có attempts?, ghi ở đâu nữa, nhận xét)
 HANH_DONG = [
-    ("Xem video từ mới", "BaiHoc · chặng 1", KHONG,
+    ("Xem video từ mới", "BaiHoc · chặng 1", COYS,
      "`moc.daXem` — CHỈ Ở MÁY",
-     "`luuBai` không đẩy `moc` lên máy chủ. CỐ Ý: đổi máy thì bé vào lại từ đầu "
-     "chặng, mất mấy phút chứ không mất bài. Nhưng nghĩa là 'con đã xem giảng "
-     "chưa' KHÔNG có bằng chứng trên máy chủ."),
-    ("Nghe một từ mới", "BaiHoc · chặng 1", KHONG,
-     "`moc.daNghe` — CHỈ Ở MÁY", "Cùng lý do trên."),
-    ("Nói một từ (micro)", "BaiHoc · chặng 1", KHONG,
-     "`moc.soNoi` — CHỈ Ở MÁY",
-     "⚠ Đây là phần LUYỆN PHÁT ÂM, có chấm điểm từng lượt, mà điểm ấy không lên "
-     "máy chủ. Chiều Nhận thức của kỹ năng NÓI vì thế trống."),
+     "BÁC CHỐT 23-08: không cần đưa vào engine. Xem giảng không phải một lượt "
+     "trả lời, không có đúng/sai để BKT cập nhật. Giữ ở máy là đủ."),
+    ("Nghe một từ mới", "BaiHoc · chặng 1", COYS,
+     "`moc.daNghe` — CHỈ Ở MÁY", "BÁC CHỐT 23-08: không cần. Cùng lý do trên."),
+    ("Nói một từ (micro)", "BaiHoc · chặng 1", DU,
+     "`attempts` mode `noiTu` + `moc.soNoi` ở máy",
+     "Bác chốt 23-08 đưa vào engine. Nút là chính từ ấy (`v_*`) — bản dựng nay "
+     "chép `ma` sang, trước đó không có. ⚠ CHỈ ghi khi máy NGHE RA CHỮ: bé bấm "
+     "nút rồi ngồi im là CHƯA NÓI, ghi thành lượt sai thì mức thạo tụt oan."),
     ("Khai 'con chưa nói được'", "BaiHoc · chặng 1", KHONG, "chỉ là state trong màn",
      "Thêm 23-08 để bé không có micro vẫn đi tiếp được (lỗ thủng P2). Việc bé "
      "PHẢI dùng đường lui này là một tín hiệu đáng ghi mà nay chưa ghi."),
-    ("Xem video mẫu câu", "BaiHoc · chặng 2", KHONG, "`moc.daXem` — CHỈ Ở MÁY", ""),
-    ("Nói cả câu (micro)", "BaiHoc · chặng 2", KHONG, "`moc.soNoi` — CHỈ Ở MÁY", ""),
+    ("Xem video mẫu câu", "BaiHoc · chặng 2", COYS, "`moc.daXem` — CHỈ Ở MÁY",
+     "BÁC CHỐT 23-08: không cần."),
+    ("Nói cả câu (micro)", "BaiHoc · chặng 2", DU,
+     "`attempts` mode `noiCau` + `moc.soNoi` ở máy",
+     "Nút là MẪU CÂU (`sp_*`), không phải từ: bé nói cả câu thì thứ được kiểm là "
+     "cấu trúc. Cùng chốt `coTieng`."),
     ("Trả lời câu LUYỆN TẬP", "BaiHoc · chặng 3", DU,
      "`attempts` (phase `practice`) → BKT → `mastery/`",
      "⚠ CHỖ NỐI NÀY MỚI CÓ TỪ 23-08. Trước đó `<BaiHoc>` không được truyền "
@@ -72,11 +76,12 @@ HANH_DONG = [
      "`attempts` + `reviewQueue/{uid}/cards`",
      "Màn DUY NHẤT nuôi engine trước ngày 23-08 — nhưng thẻ chỉ sinh sau khi xong "
      "bài, nên gần như không bao giờ tới lượt."),
-    ("Nói chuyện ở PHÒNG LUYỆN NÓI", "PhongNoi", KHONG,
-     "`phongNoiTA/{uid}/buoi` — có bản ghi buổi",
-     "⚠ KHOẢNG TRỐNG CÒN LẠI. Cả buổi nói được lưu (bé nói gì, cô sửa gì), nhưng "
-     "KHÔNG phát `onLuot` nên không sinh `attempts`: kỹ năng NÓI hoàn toàn nằm "
-     "ngoài BKT. Đây là kỹ năng duy nhất còn ngoài engine."),
+    ("Nói chuyện ở PHÒNG LUYỆN NÓI", "PhongNoi", DU,
+     "`attempts` mode `phongNoi` + `phongNoiTA/{uid}/buoi`",
+     "Bác chốt 23-08. Nút SUY TỪ CHÍNH CÂU vừa chấm (mẫu câu trước, từ vựng sau) "
+     "chứ không gán bừa. ⚠ CHỈ ghi lượt CHẤM ĐƯỢC: ở bước bé chào hay kể tự do "
+     "thì không có câu mẫu để so, ghi lượt không điểm là ghi một lượt sai cho "
+     "việc không ai chấm."),
     ("Chọn từ mình thích nhất", "PhongNoi", "—", "`hocBaTA` loai `soThich`",
      "Chiều Động lực (M) của mục 2.1.2 — cô giáo máy lấy làm ngữ cảnh buổi sau."),
     ("Bỏ dở giữa chừng", "mọi màn", KHONG, "không ghi gì",
@@ -118,8 +123,11 @@ TRUONG = [
     ("Hồ sơ: sở thích", "2.3.1 · hồ sơ bé", "`hocBaTA` loai `soThich`", DU, "MÃ"),
     ("Hồ sơ: CEFR", "2.3.1 · hồ sơ bé", "suy từ quyển đang học", DU,
      "CHẠY · Góc bố mẹ hiện 'A1 — khung tham chiếu châu Âu (CEFR)'."),
-    ("Điểm phát âm từng từ", "2.1.2 · chiều Nhận thức (kỹ năng NÓI)", "chỉ ở máy",
-     COYS, "MÃ · `moc.soNoi` không nằm trong danh sách trường `luuBai` đẩy lên."),
+    ("Điểm phát âm từng từ", "2.1.2 · chiều Nhận thức (kỹ năng NÓI)",
+     "`attempts` mode `noiTu`·`noiCau`·`phongNoi`", DU,
+     "MÃ · vá 23-08. ⚠ ĐỌC CON SỐ NÀY CÓ DÈ CHỪNG: máy con chấm bằng bộ nhận "
+     "dạng giọng nói của TRÌNH DUYỆT, nên điểm phụ thuộc micro và tiếng ồn "
+     "phòng học. `mode` tách riêng ba dạng nói để lọc ra được khi cần."),
     ("Sự kiện RỜI MÀN / bỏ dở", "2.1.2 · chiều Thời gian (mệt mỏi)", "không có", KHONG,
      "MÃ · không màn nào phát sự kiện thoát."),
 ]
@@ -267,11 +275,13 @@ def main() -> int:
     bang(w5, ["Câu hỏi của bác", "Trả lời"], (40, 92))
     for k, v in [
         ("Số liệu đã lưu hết chưa?",
-         "CHƯA HẾT. 6/16 hành động của bé vào được engine — nhưng trước 23-08 con "
+         "CHƯA HẾT, nhưng nay gần đủ. 9/16 hành động vào được engine — nhưng trước 23-08 con "
          "số ấy là 1/16 (chỉ màn ôn thẻ, mà thẻ gần như không bao giờ tới hạn). "
-         "Còn thiếu ba nhóm: (a) mọi thao tác trong chặng Từ mới và Mẫu câu — xem "
-         "video, nghe, NÓI — chỉ ghi ở máy; (b) phòng luyện nói có lưu buổi nhưng "
-         "không sinh `attempts`; (c) không có sự kiện bỏ dở."),
+         "Cả BA phần NÓI nay đã vào (bác chốt 23-08): nói từ · nói câu · phòng "
+         "luyện nói. Ba việc CỐ Ý không đưa vào: xem video từ mới · nghe từ · xem "
+         "video mẫu câu — bác chốt không cần, và đúng: xem/nghe không phải một "
+         "lượt trả lời, không có đúng/sai để BKT cập nhật. Còn thiếu duy nhất: "
+         "sự kiện BỎ DỞ."),
         ("Chỗ nào ĐÁP ỨNG đề tài?",
          "9/10 trường mà mục 2.5.2 và 2.3.1 đòi đã có thật trong `attempts` và "
          "`mastery/`: Node_ID · đúng/sai · câu trả lời thô · RT · H_req · P(L) "
@@ -279,13 +289,15 @@ def main() -> int:
         ("Chỗ nào CHƯA đáp ứng?",
          "① Mã prompt chưa nằm trong `attempts` (vân tay có, nhưng đi kèm kết quả "
          "trả về chứ không lưu cùng lượt) → chưa kiểm toán được 'câu này do prompt "
-         "nào sinh'. ② Kỹ năng NÓI hoàn toàn ngoài BKT. ③ Báo cáo riêng của bé bỏ "
-         "sót tiến độ và số phút của Tiếng Anh."),
-        ("Chỗ nào KHÔNG THỂ đáp ứng?",
-         "Điểm phát âm từng từ: máy con chấm bằng bộ nhận dạng giọng nói của "
-         "trình duyệt, kết quả phụ thuộc micro và tiếng ồn phòng học. Đẩy con số "
-         "ấy vào mức thạo là đưa nhiễu của thiết bị vào hồ sơ học tập. Muốn đo "
-         "thật thì cần chấm phát âm phía máy chủ — một hệ khác hẳn."),
+         "nào sinh'. ② Báo cáo RIÊNG của bé bỏ sót tiến độ và số phút của Tiếng "
+         "Anh. ③ Không có sự kiện BỎ DỞ nên chiều Thời gian chưa đo được mệt mỏi."),
+        ("Chỗ nào KHÔNG THỂ đáp ứng TRỌN VẸN?",
+         "Điểm phát âm nay ĐÃ vào engine theo ý bác, nhưng phải đọc có dè chừng: "
+         "máy con chấm bằng bộ nhận dạng giọng nói của TRÌNH DUYỆT, nên con số "
+         "phụ thuộc micro và tiếng ồn phòng học — cùng một bé, hai cái máy, hai "
+         "kết quả. Muốn đo thật thì phải chấm phát âm phía máy chủ, một hệ khác "
+         "hẳn. Vì thế `mode` tách riêng `noiTu`·`noiCau`·`phongNoi`: khi nào cần "
+         "một con số sạch thì lọc ba dạng ấy ra được, không phải bóc lại từ đầu."),
         ("Adaptive thể hiện thế nào?",
          "6 cơ chế THẤY TẬN MẮT trên bản chạy (xem trang 'Chứng cứ ADAPTIVE'): "
          "khoá chặng tuần tự · phản hồi hình thành · gợi ý phân tầng · đường lui "

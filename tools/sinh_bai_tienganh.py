@@ -1299,7 +1299,9 @@ def _ten_video(u: dict, ma_bai: str, vai_ten: dict, tu: list[dict]) -> dict:
 def _tach_mau(m: dict) -> list[dict]:
     """Một mẫu câu → một hoặc hai mục (hỏi / đáp)."""
     def goi(d, nhan, cau_goc):
-        return {"cau": d["cau"], "congThuc": m.get("cong_thuc"),
+        # `ma` — mã nút của MẪU CÂU (`sp_*`). Chặng 2 dạy nói CẢ CÂU, lượt nói ấy
+        # phải ghi công đúng vào nút mẫu câu.
+        return {"cau": d["cau"], "ma": m.get("ma"), "congThuc": m.get("cong_thuc"),
                 "dungDe": d.get("dung_de"), "tinhHuong": d.get("tinh_huong"),
                 "phan": d.get("phan") or [], "khacVoi": d.get("khac_voi"),
                 "vai": nhan, "capVoi": cau_goc}
@@ -1308,7 +1310,8 @@ def _tach_mau(m: dict) -> list[dict]:
                 goi(m["dap"], "dap", m["hoi"]["cau"])]
     if not m.get("dung_de"):
         return []
-    return [{"cau": m.get("vi_du"), "congThuc": m.get("cong_thuc"),
+    return [{"cau": m.get("vi_du"), "ma": m.get("ma"),
+             "congThuc": m.get("cong_thuc"),
              "dungDe": m.get("dung_de"), "tinhHuong": m.get("tinh_huong"),
              "phan": m.get("phan") or [], "khacVoi": m.get("khac_voi"),
              "vai": "cau", "capVoi": None}]
@@ -1467,7 +1470,12 @@ def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
             # và các cổng dựng túi từ từ đó; thiếu `dang_qk` thì phòng nói gọi
             # "I bought souvenirs." là chữ lạ rồi BỎ câu ấy — câu đúng hẳn, chỉ
             # vì cái dạng quá khứ không đi cùng từ gốc sang tới đây.
-            "vocabulary": [{"tu": t["tu"], "ipa": t["ipa"], "nghia": t["nghia"],
+            # ⚠ `ma` — MÃ NÚT TRI THỨC, thêm 23-08-2026.
+            # Bác chốt phần NÓI phải vào engine. Muốn ghi công một lượt nói thì
+            # màn phải biết từ ấy là nút nào — `chuan_lopN.json` có mã từ lâu,
+            # chỉ là bản dựng không chép sang.
+            "vocabulary": [{"tu": t["tu"], "ma": t.get("ma"),
+                            "ipa": t["ipa"], "nghia": t["nghia"],
                             "so_nhieu": t.get("so_nhieu"),
                             "dang_ing": t.get("dang_ing"),
                             "dang_qk": t.get("dang_qk"),
