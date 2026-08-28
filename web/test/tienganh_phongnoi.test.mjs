@@ -18,7 +18,7 @@ import {
   UNIT_CU_TOI_DA, LUOT_GUI_TOI_DA, CHU_TOI_DA,
   vonCuaBai, vonTu, moiTuDuocDung, moiCauDuocDung, SO_DEM,
   loiDan, catNguCanh, goiGui, docTraLoi, tuTrongCau, LOI_LOP_HOC,
-  viecTiepTheo, cauHopLe, cauThayThe, loaiOTrong, tachTheoTieng,
+  viecTiepTheo, cauHopLe, soiCau, cauThayThe, loaiOTrong, tachTheoTieng,
   tinhBuoi, loiKet, tuLoiKetHopLe, cauHoiSoThich, PHUT_TOI_DA, DAT_LIEN_DE_XONG,
   loiVietHopLe, XUNG_HO_CAM,
   buocTiepTheo, dienBuoc, dongBuoc, xenKe, buocSua, luotBeCuoi, luotLuyen, SUA_TOI_DA,
@@ -297,6 +297,78 @@ test('câu KHÔNG hợp lệ bị chặn — kể cả khi nghe rất xuôi tai'
   assert.ok(!ok('Do you like chips?'), 'từ ngoài vốn của bé');
   assert.ok(!ok('I have a ball.'), 'mẫu câu bài này chưa dạy');
   assert.ok(!ok(''), 'câu rỗng');
+});
+
+/**
+ * Ô TRỐNG CHƯA ĐIỀN — lỗ hổng tìm ra 26-08 bằng `tools/do_an_toan_noi_dung.mjs`.
+ *
+ * Ba bài (TA4.B09 · TA4.B18 · TA5.B01 · TA5.B11) có công thức HAI ô. Phép điền chỉ
+ * thay ô ĐẦU — cả trong `soiCau` lẫn ở chỗ mô hình bắt chước — nên ô sau còn nguyên
+ * `[Month B]`. Mà `gonCau` bóc sạch dấu ngoặc trước khi so, nên chuỗi ấy khớp với
+ * chính nó và ĐƯỢC NHẬN: cô giáo máy đọc cho bé nghe "It's in month B."
+ *
+ * Chốt mới bác thẳng mọi câu còn dấu ngoặc vuông. An toàn tuyệt đối vì câu tiếng
+ * Anh cho trẻ sáu tuổi không bao giờ có dấu ngoặc — và không cần biết ô ấy đáng lẽ
+ * nhận gì, thứ mà chính bài học cũng không khai.
+ */
+test('ô trống CHƯA ĐIỀN bị bác — dù chuỗi khớp sau khi bóc dấu ngoặc', () => {
+  const von = vonTu({ baiNay: B01, baiCu: [], daDat: false });
+  const soi = (s, cauTruoc = '') => soiCau(s, { von, tenBe: 'Bo', cauTruoc });
+
+  assert.equal(soi("Hi, I'm [Name].").bac, 'oTrong', 'ô tên còn nguyên dấu ngoặc');
+  assert.equal(soi("It's in [Month B].").bac, 'oTrong', 'ô thứ hai của công thức hai ô');
+  assert.equal(soi('I like [Noun].').bac, 'oTrong');
+  /* Bác vì Ô TRỐNG, không phải vì ngoài vốn — hai lý do khác loại nhau, gộp lại là
+     mất đúng thông tin cần để lần ra chỗ hỏng. */
+  assert.notEqual(soi("Hi, I'm [Name].").bac, 'ngoaiVon');
+  /* Và chốt mới KHÔNG được đụng tới câu hợp lệ. */
+  assert.equal(soi("Hi, I'm Bo.").ok, true, 'câu đã điền đủ vẫn qua');
+});
+
+test('soiCau nói ra ĐƯỜNG công nhận — điều kiện của phép thử đảo chiều (KB3)', () => {
+  const von = vonTu({ baiNay: B01, baiCu: [], daDat: false });
+  const soi = (s) => soiCau(s, { von, tenBe: 'Bo' });
+  assert.equal(soi('ball').duong, 'tu');
+  assert.equal(soi('Good job!').duong, 'nghiThuc');
+  assert.equal(soi("Hi, I'm Bo.").duong, 'congThuc');
+  /* Tắt một đường thì câu đi qua đường ấy phải rơi — nếu không thì đường ấy là mã
+     chết và mọi con số "đóng góp của từng đường" đều vô nghĩa. */
+  assert.equal(soiCau('Good job!', { von, tenBe: 'Bo', tat: new Set(['nghiThuc']) }).ok, false);
+  assert.equal(soiCau('ball', { von, tenBe: 'Bo', tat: new Set(['tu']) }).ok, false);
+  /* Còn `cauHopLe` thì vẫn là vỏ boolean cũ, không đổi một li. */
+  assert.equal(cauHopLe('ball', { von, tenBe: 'Bo' }), true);
+  assert.equal(cauHopLe('automobile', { von, tenBe: 'Bo' }), false);
+});
+
+/**
+ * DẠNG BIẾN ĐỔI CỦA MỘT TỪ RỜI — vá 26-08.
+ *
+ * Đường `congThuc` nhận `so_nhieu · so_it · dang_ing · dang_qk` từ lâu, đường `tu`
+ * thì không. Nên "playing the violin" bị bác trong khi lớp 5 unit 4 dạy hẳn mục từ
+ * `play the violin` với `dang_ing` đúng bằng chuỗi ấy. Đo lúc nối phụ đạo: 12/129
+ * ca có nút gốc rễ khác nút mắc bị bác SẠCH câu chỉ vì một phương án nhiễu dùng
+ * dạng -ing. Hai đường của cùng một hàng rào mà lệch luật là chỗ không ai đi tìm.
+ */
+test('dạng biến đổi của từ ĐÃ HỌC được nhận ở đường `tu`', () => {
+  const b = {
+    id: 'X1',
+    title: 'Unit X',
+    knowledgeCore: {
+      vocabulary: [{ tu: 'play the violin', nghia: 'chơi vi-ô-lông', dang_ing: 'playing the violin' },
+        { tu: 'read books', nghia: 'đọc sách', dang_ing: 'reading books', dang_qk: 'read books' }],
+      mauCauDs: [], canonicalExamples: [],
+    },
+    practice: { pools: {} },
+  };
+  const von = vonTu({ baiNay: b, baiCu: [], daDat: false });
+  const soi = (s) => soiCau(s, { von, tenBe: 'Bo' });
+  assert.equal(soi('play the violin').ok, true, 'dạng gốc');
+  assert.equal(soi('playing the violin').duong, 'tu', 'dạng -ing của CHÍNH mục từ ấy');
+  assert.equal(soi('reading books').duong, 'tu');
+  /* ⚠ VÀ KHÔNG ĐƯỢC NỚI THÊM GÌ. Dạng biến đổi lấy từ mục từ vựng bé đã học; từ
+     nào bài không dạy thì vẫn không có đường vào, kể cả khi nó rất giống. */
+  assert.equal(soi('playing the piano').ok, false, 'từ bài KHÔNG dạy');
+  assert.equal(soi('writing books').ok, false);
 });
 
 test('ô trống biết mình thuộc loại nào', () => {

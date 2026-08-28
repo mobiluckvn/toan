@@ -676,32 +676,85 @@ const nuaCua = (s) => {
 
 const gonCau = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9' ]/g, '').replace(/\s+/g, ' ').trim();
 
-export function cauHopLe(en, { von, tenBe = '', cauTruoc = '' } = {}) {
+/**
+ * NĂM ĐƯỜNG CÔNG NHẬN — tên dùng chung với Thuật toán 3.12 của luận văn.
+ *
+ * Khai thành hằng để bộ đo an toàn nội dung (`tools/do_an_toan_noi_dung.mjs`,
+ * kịch bản KB3) gọi tên được từng đường: đo tỷ lệ bác bỏ RIÊNG theo đường, và
+ * chạy được phép thử ĐẢO CHIỀU — tắt từng đường rồi xem tỷ lệ bác có tăng đúng ở
+ * nhóm câu tương ứng không. Không có tên thì không đo riêng được, mà không đo
+ * riêng thì "mỗi đường đều có tác dụng" chỉ là một lời nói.
+ */
+export const DUONG_CONG_NHAN = ['tu', 'nghiThuc', 'nuaMauCau', 'cauSach', 'congThuc'];
+
+/** Lý do BÁC một câu — bốn lý do này khác loại nhau, đừng gộp khi báo cáo. */
+export const LY_DO_BAC = ['rong', 'lap', 'oTrong', 'ngoaiVon'];
+
+/**
+ * SOI MỘT CÂU, VÀ NÓI RA NÓ ĐI QUA ĐƯỜNG NÀO.
+ *
+ * Trả `{ ok, duong, bac }`:
+ *   ok     câu có được đưa cho bé không
+ *   duong  tên đường công nhận đã nhận nó (null khi bị bác)
+ *   bac    lý do bác (null khi được nhận)
+ *
+ * `tat` là tập tên đường bị TẮT — chỉ dùng cho phép thử đảo chiều của KB3. Lúc
+ * chạy thật không ai truyền tham số này, nên hành vi không đổi một li.
+ *
+ * ⚠ Đây là thân hàm thật; `cauHopLe` bên dưới chỉ là vỏ boolean giữ nguyên API cũ
+ * cho bốn chỗ gọi hiện có. Đừng nhân đôi lô-gic sang đó.
+ */
+export function soiCau(en, { von, tenBe = '', cauTruoc = '', tat = null } = {}) {
+  const bo = (x) => !!tat && (tat.has ? tat.has(x) : tat.includes(x));
   const c = gonCau(en);
-  if (!c) return false;
+  if (!c) return { ok: false, duong: null, bac: 'rong' };
   /* Lặp Y HỆT lượt trước thì dù đúng ngữ pháp vẫn hỏng — đó chính là cái bác bắt:
      "nó cứ nói đi nói lại". Đã thấy thật hai lượt liền cùng ra "Hi, I'm Bo." */
-  if (cauTruoc && gonCau(cauTruoc) === c) return false;
+  if (cauTruoc && gonCau(cauTruoc) === c) return { ok: false, duong: null, bac: 'lap' };
+
+  /* ⚠ Ô TRỐNG CHƯA ĐIỀN — bác thẳng, tìm ra 26-08 bằng `tools/do_an_toan_noi_dung.mjs`.
+     Ba bài có công thức HAI ô (`Is your sports day in + [Month A]? - … It's in +
+     [Month B].`). Phép điền ở dưới — cả ở đây lẫn ở chỗ mô hình bắt chước — chỉ
+     thay ô ĐẦU, nên ô sau còn nguyên. Mà `gonCau` bóc sạch dấu ngoặc trước khi so,
+     nên hai bên khớp nhau và câu ĐƯỢC NHẬN. Bé nghe cô đọc "It's in month B."
+     Câu tiếng Anh cho trẻ sáu tuổi không bao giờ có dấu ngoặc vuông, nên phép kiểm
+     này an toàn tuyệt đối và không cần biết ô ấy đáng lẽ nhận gì.
+     ⚠ Phải đặt TRƯỚC năm đường công nhận: đường `nuaMauCau` và `congThuc` đều
+     dựng chuỗi so sánh bằng `gonCau`, tức là cả hai đều mù với dấu ngoặc. */
+  if (/[[\]]/.test(String(en))) return { ok: false, duong: null, bac: 'oTrong' };
 
   const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
   const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
+  const nhan = (duong) => ({ ok: true, duong, bac: null });
 
-  if (tu.some((t) => gonCau(t.tu) === c)) return true;
-  if (LOI_LOP_HOC.some((x) => gonCau(x) === c)) return true;
+  /* ⚠ MỘT TỪ RỜI, KỂ CẢ DẠNG BIẾN ĐỔI CỦA NÓ.
+     Đường `congThuc` đã nhận `so_nhieu · so_it · dang_ing · dang_qk` từ lâu, nhưng
+     đường này thì không — nên "playing the violin" bị bác trong khi bài lớp 5 unit
+     4 dạy hẳn mục từ `play the violin` với `dang_ing: "playing the violin"`. Lệch
+     nhau giữa hai đường của cùng một hàng rào là chỗ không ai ngờ để mà đi tìm.
+     Đo được 26-08 lúc nối phụ đạo: 12 trên 129 ca có nút gốc rễ khác nút mắc bị
+     bác SẠCH câu chỉ vì một phương án nhiễu dùng dạng -ing.
+     KHÔNG phải nới rào: các dạng ấy lấy từ CHÍNH mục từ vựng bé đã học, đúng lập
+     luận đã ghi ở đường `congThuc` bên dưới. Từ nào bài không dạy thì vẫn không có
+     đường vào. */
+  if (!bo('tu') && tu.some((t) => [t.tu, t.so_nhieu, t.so_it, t.dang_ing, t.dang_qk]
+    .some((x) => x && gonCau(x) === c))) return nhan('tu');
+  if (!bo('nghiThuc') && LOI_LOP_HOC.some((x) => gonCau(x) === c)) return nhan('nghiThuc');
   /* Cả cặp, VÀ từng nửa của cặp. Mẫu `How are you? - Fine, thank you.` không có ô
      trống nào và cũng không nằm trong `canonicalExamples`, nên nửa đáp của nó
      không có đường nào khác để được công nhận — mà đó chính là câu bé phải nói ở
      bước `noiCa`. Cổng bắt được ở lớp 3 unit 1. */
-  if (cau.some((x) => nuaCua(x.cau).some((n) => gonCau(n) === c))) return true;
+  if (!bo('nuaMauCau')
+      && cau.some((x) => nuaCua(x.cau).some((n) => gonCau(n) === c))) return nhan('nuaMauCau');
   /* Câu sẵn của sách — đã lọc theo từ ở `cauSachCuaBai`. Mở chỗ này ăn hai đường:
      ba bài công thức hai ô nay có câu để luyện, và cô giáo máy bớt nhàm vì có
      nhiều câu đúng để chọn thay vì đúng một mẫu. */
   const sach = [...(von.loi.cauSach || []), ...von.on.flatMap((x) => x.cauSach || [])];
-  if (sach.some((x) => gonCau(x) === c)) return true;
+  if (!bo('cauSach') && sach.some((x) => gonCau(x) === c)) return nhan('cauSach');
 
   /* Công thức đã điền: dựng mọi cách điền HỢP LỆ rồi so. Số cách rất nhỏ (số mẫu
      câu × số từ), nên cứ dựng hết còn hơn đoán bằng biểu thức chính quy. */
-  for (const x of cau) {
+  for (const x of (bo('congThuc') ? [] : cau)) {
     if (!x.congThuc) continue;
     /* ── NỬA CỦA MỘT CẶP HỎI–ĐÁP CŨNG LÀ CÔNG THỨC ──
        Từ 18-08 phòng nói dạy theo lối đối đáp: cô hỏi nửa trước, bé đáp nửa sau.
@@ -727,12 +780,18 @@ export function cauHopLe(en, { von, tenBe = '', cauTruoc = '' } = {}) {
       for (const d of dienDuoc) {
         if (!d) continue;
         const thu = khung.replace(/\s*\+\s*/g, ' ').replace(/\[[^\]]+\]/, d);
-        if (gonCau(thu) === c) return true;
+        if (gonCau(thu) === c) return nhan('congThuc');
       }
     }
   }
-  return false;
+  return { ok: false, duong: null, bac: 'ngoaiVon' };
 }
+
+/**
+ * Vỏ boolean — bốn chỗ gọi hiện có (`goiPhongNoi.js`, `phudao.js`) dùng cái này.
+ * Giữ nguyên chữ ký cũ để không phải sửa chỗ gọi nào.
+ */
+export const cauHopLe = (en, opt = {}) => soiCau(en, opt).ok;
 
 /**
  * Câu dựng sẵn cho việc của lượt này — dùng khi câu của cô không qua được phép soi.
