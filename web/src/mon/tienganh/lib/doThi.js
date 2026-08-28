@@ -7,7 +7,8 @@
  * có đồ thị nào để duyệt — nên hai mục của luận văn đứng im: 2.2.1 (duyệt để chẩn
  * đoán) và 2.3.3 (lan truyền).
  *
- * `tools/xuat_do_thi_con.py` cắt xuống còn 1194 nút · 253 cạnh, 80 KB. Nó CHỈ giữ
+ * `tools/xuat_do_thi_con.py` cắt xuống còn 1194 nút · 253 cạnh, 127 KB trên đĩa
+ * (≈21 KB khi truyền, nén gzip — con số Bảng 3.3 của luận văn dẫn). Nó CHỈ giữ
  * QUAN HỆ — không nhãn, không ví dụ, không nghĩa tiếng Việt. Bài học đã mang đủ
  * chữ nghĩa rồi; chép lại vào đây là nhân đôi dữ liệu, mà nhân đôi thì sớm muộn
  * hai bản lệch nhau và không ai biết bản nào đúng.
@@ -32,7 +33,7 @@ import { CONTENT, dongDau } from '../../../chung/lib/soQuyen.js';
 /** Loại cạnh dùng được cho việc GÁC và CHẨN ĐOÁN. */
 export const CANH_THAT = new Set(['ban_do', 'noi_bai']);
 
-/* Nạp MỘT LẦN cho cả phiên. Đồ thị không đổi giữa chừng, và 80 KB thì không đáng
+/* Nạp MỘT LẦN cho cả phiên. Đồ thị không đổi giữa chừng, và ≈21 KB truyền thì không đáng
    tải lại mỗi lần mở bài. Hỏng thì trả đồ thị RỖNG chứ không ném: mọi phép dưới
    đây tự trả rỗng, bên gọi lùi về lối cũ, bé học bình thường. */
 const RONG = { nut: {}, canh: [] };
