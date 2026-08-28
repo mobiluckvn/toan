@@ -18,7 +18,10 @@ import { readFileSync } from 'node:fs';
 import {
   VIEC, viecTiepCuaNut, viecTiepCuaBai, duocVuotAi, vectorS, SAI_LIEN_TIEP_MAC,
 } from '../src/mon/tienganh/lib/chinhsach.js';
-import { cauTinhCuaNut, dungPhuDao, SO_CAU_PHU_DAO } from '../src/mon/tienganh/lib/phudao.js';
+import {
+  cauTinhCuaNut, dungPhuDao, SO_CAU_PHU_DAO, enCuaCau, cauHoiHopLe,
+} from '../src/mon/tienganh/lib/phudao.js';
+import { vonTu } from '../src/mon/tienganh/lib/phongnoi.js';
 import { capHopLe, deltaC, gomTheoMau, mauTotNhat, TOI_THIEU_CAP } from '../functions/src/ara.js';
 import { NGUONG_THAO, NGUONG_YEU } from '../src/mon/tienganh/lib/zpd.js';
 import { MASTERY_THRESHOLD } from '../functions/src/bkt.js';
@@ -182,6 +185,46 @@ test('kho tĩnh đủ thì KHÔNG gọi LLM', async () => {
     goiLLM: async () => { goi += 1; return []; },
   });
   assert.equal(goi, 0, 'gọi mạng khi không cần là bắt bé chờ vô cớ');
+});
+
+/**
+ * ⚠ HẬU KIỂM CỦA PHỤ ĐẠO NHẬN **ĐỐI TƯỢNG CÂU HỎI**, KHÔNG PHẢI CHUỖI.
+ *
+ * Chú thích cũ của `dungPhuDao` ghi "chỗ gọi thật PHẢI truyền `cauHopLe`", nhưng
+ * `cauHopLe(en, opt)` nhận một CHUỖI. Truyền thẳng nó vào thì nó đem một object đi
+ * chuẩn hoá, ra chuỗi vô nghĩa, và BÁC SẠCH mọi câu — bài phụ đạo luôn rỗng, mà
+ * rỗng thì trông y hệt "kho tĩnh không có gì". Tìm ra 26-08 lúc nối vào màn học.
+ */
+test('vỏ hậu kiểm cho CÂU HỎI: lấy đúng chuỗi tiếng Anh bé phải đọc', () => {
+  assert.deepEqual(enCuaCau({ choices: ['ball', 'bike'] }), ['ball', 'bike']);
+  /* Thẻ CHỮ ghép bằng dấu cách; thẻ CHỮ CÁI (có ô trống làm thẻ) ghép liền. */
+  assert.deepEqual(enCuaCau({ the: ['I', 'like', 'fish.'] }), ['I like fish.']);
+  assert.deepEqual(enCuaCau({ the: ['b', 'a', 'l', 'l'] }), ['ball']);
+  assert.deepEqual(enCuaCau({ the: ['b', 'r', 'e', 'a', 'k', ' ', 't', 'i', 'm', 'e'] }),
+    ['break time']);
+  /* KHÔNG lấy lời dẫn và gợi ý — chúng là tiếng Việt, soi bằng vốn từ tiếng Anh
+     thì bác nhầm gần hết. */
+  assert.deepEqual(enCuaCau({ text: 'Nghe rồi bấm hình đúng.', hints: ['Từ này dài 4 chữ.'] }), []);
+});
+
+test('vỏ hậu kiểm bác câu có từ NGOÀI VỐN, nhận câu trong vốn', () => {
+  const b = {
+    id: 'X1',
+    title: 'Unit X',
+    knowledgeCore: {
+      vocabulary: [{ tu: 'ball', nghia: 'quả bóng' }, { tu: 'bike', nghia: 'xe đạp' }],
+      mauCauDs: [], canonicalExamples: [],
+    },
+    practice: { pools: {} },
+  };
+  const von = vonTu({ baiNay: b, baiCu: [], daDat: false });
+  assert.equal(cauHoiHopLe({ choices: ['ball', 'bike'] }, { von }), true);
+  assert.equal(cauHoiHopLe({ choices: ['ball', 'automobile'] }, { von }), false,
+    'một phương án ngoài vốn là cả câu bị bác');
+  /* Câu không bày chuỗi tiếng Anh nào (nghe rồi chọn hình) thì không có gì để bác. */
+  assert.equal(cauHoiHopLe({ text: 'Nghe rồi bấm hình.' }, { von }), true);
+  /* Không có vốn thì không soi được — cho qua, chứ đừng bác sạch. */
+  assert.equal(cauHoiHopLe({ choices: ['automobile'] }, {}), true);
 });
 
 test('bài phụ đạo NGẮN — đây là chỗ gỡ, không phải bài học mới', async () => {

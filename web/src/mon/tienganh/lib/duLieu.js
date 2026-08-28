@@ -229,6 +229,7 @@ async function docHocBa(uid) {
   const snap = await getDocs(collection(db, KHO.hocBa(uid)));
   const chapters = {}, baiViet = {}, docHieu = {}, soThich = {};
   const phien = [];
+  const phudao = [];
   let dinhDang = {};
   snap.forEach((d) => {
     const v = d.data();
@@ -255,8 +256,19 @@ async function docHocBa(uid) {
     /* `hoSo` chỉ có MỘT mục cho cả môn — không khoá theo quyển: bé gõ chữ kém thì
        kém ở mọi quyển, chia nhỏ ra chỉ làm mẫu bé đi và chẳng dạng nào đủ mẫu. */
     else if (v.loai === 'hoSo') dinhDang = (v.giaTri || {}).dinhDang || {};
+    /* `phudao` — KHUNG của một lần can thiệp phụ đạo (giao thức A-R-A, mục 3.6.3).
+       Là DANH SÁCH chứ không khoá theo bài, cùng lý do với `phien`: một bài có thể
+       kích hoạt phụ đạo nhiều lần ở những nút khác nhau, và mỗi lần là một phép đo
+       riêng. Khoá theo bài thì lần sau ghi đè lần trước, mất đúng thứ cần đếm.
+
+       ⚠ Mục này KHÔNG chứa mức tinh thông trước/sau. Máy con chỉ có bản `mastery`
+       nạp lúc mở bài, mà hàm nền cập nhật sau một quãng trễ — ghi con số cũ vào thì
+       ΔC sai theo hướng không ai lần ra. Nó chỉ giữ KHUNG (nút mắc · nút gốc rễ ·
+       câu đã hỏi trước · câu của bài phụ đạo · hai mốc thời gian); hai lần đo thì
+       dựng lại từ nhật ký `attempts` bằng `tools/danh_gia_mo_hinh.mjs`. */
+    else if (v.loai === 'phudao') phudao.push(v.giaTri || {});
   });
-  return { chapters, baiViet, docHieu, phien, soThich, dinhDang };
+  return { chapters, baiViet, docHieu, phien, phudao, soThich, dinhDang };
 }
 
 /**
@@ -267,13 +279,13 @@ export async function tienDoTuMay(uid) {
   if (!dungDuoc(uid)) {
     return {
       micros: {}, chapters: {}, baiViet: {}, docHieu: {},
-      phien: [], soThich: {}, dinhDang: {},
+      phien: [], phudao: [], soThich: {}, dinhDang: {},
     };
   }
   const [micros, hb] = await Promise.all([
     docTienDo(uid).catch((e) => { nuot(e); return {}; }),
     docHocBa(uid).catch((e) => {
-      nuot(e); return { chapters: {}, baiViet: {}, soThich: {}, dinhDang: {} };
+      nuot(e); return { chapters: {}, baiViet: {}, phudao: [], soThich: {}, dinhDang: {} };
     }),
   ]);
   return {

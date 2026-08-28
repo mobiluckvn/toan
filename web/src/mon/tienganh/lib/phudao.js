@@ -27,6 +27,7 @@
  */
 import { nutGocRe } from './lantruyen.js';
 import { baiCuaNut } from './doThi.js';
+import { soiCau as soiMotCau } from './phongnoi.js';
 
 /** Bài phụ đạo dài bao nhiêu câu. Ngắn — đây là chỗ gỡ, không phải bài học mới. */
 export const SO_CAU_PHU_DAO = 4;
@@ -58,12 +59,58 @@ export function cauTinhCuaNut(baiDs, maNut, { soCau = SO_CAU_PHU_DAO } = {}) {
 }
 
 /**
+ * MỌI CHUỖI TIẾNG ANH MÀ MỘT CÂU HỎI BÀY RA CHO BÉ.
+ *
+ * Chỉ lấy phần bé PHẢI ĐỌC hoặc PHẢI NÓI:
+ *   · `choices`  — các phương án của câu bấm chọn, mỗi phương án một từ/cụm;
+ *   · `the`      — dãy thẻ, ghép lại thành câu (thẻ chữ cái thì ghép ra một từ).
+ * KHÔNG lấy `text` (lời dẫn tiếng Việt) và `hints` (gợi ý tiếng Việt), cũng không
+ * lấy `solutionNarrative` — chuỗi ấy trộn tiếng Anh với nghĩa tiếng Việt trong một
+ * dòng, soi nó bằng vốn từ tiếng Anh thì bác nhầm gần hết.
+ */
+export function enCuaCau(cau) {
+  const ra = [];
+  for (const c of (cau?.choices || [])) if (typeof c === 'string') ra.push(c);
+  if (Array.isArray(cau?.the) && cau.the.length) {
+    /* ⚠ THẺ CHỮ CÁI GHÉP LIỀN, THẺ TỪ GHÉP BẰNG DẤU CÁCH.
+       Bậc "Gõ lại" phát thẻ từng CHỮ CÁI (`['b','a','l','l']` → "ball", và khoảng
+       trắng cũng là một thẻ: `['b','r','e','a','k',' ','t','i','m','e']`). Bậc
+       "Ráp câu" phát thẻ từng TỪ (`['I','like','fish.']` → "I like fish.").
+       Phân biệt theo ĐỘ DÀI thẻ, không theo "có thẻ khoảng trắng không": bản đầu
+       dùng dấu hiệu ấy nên `['b','a','l','l']` — thẻ chữ cái của một từ KHÔNG có
+       khoảng trắng — ghép ra "b a l l" rồi bị hậu kiểm bác oan. Cổng bắt được ngay
+       lượt chạy đầu tiên. */
+    const laChuCai = cau.the.every((x) => String(x).length <= 1);
+    ra.push(cau.the.join(laChuCai ? '' : ' '));
+  }
+  return ra.filter((x) => String(x || '').trim());
+}
+
+/**
+ * HẬU KIỂM MỘT CÂU HỎI — vỏ nối `soiCau` (nhận CHUỖI) với `dungPhuDao` (đưa CÂU).
+ *
+ * ⚠ VÌ SAO PHẢI CÓ VỎ NÀY. Chú thích cũ của `dungPhuDao` ghi "chỗ gọi thật PHẢI
+ * truyền `cauHopLe`", nhưng `cauHopLe(en, opt)` nhận một CHUỖI còn `soiCau` ở đây
+ * được gọi với cả ĐỐI TƯỢNG câu hỏi. Truyền thẳng `cauHopLe` vào thì nó đem một
+ * object đi chuẩn hoá, ra chuỗi vô nghĩa, và BÁC SẠCH mọi câu — bài phụ đạo luôn
+ * rỗng. Hỏng lặng lẽ, vì "không có câu nào" trông y hệt "kho tĩnh không có gì".
+ * Tìm ra 26-08 lúc nối phụ đạo vào màn học.
+ *
+ * Trả `true` khi MỌI chuỗi tiếng Anh của câu đều hợp lệ. Câu không bày chuỗi tiếng
+ * Anh nào (ví dụ câu nghe rồi chọn hình) thì không có gì để bác — cho qua.
+ */
+export function cauHoiHopLe(cau, { von, tenBe = '' } = {}) {
+  if (!von) return true;                     // không có vốn thì không soi được
+  return enCuaCau(cau).every((en) => soiMotCau(en, { von, tenBe }).ok);
+}
+
+/**
  * Dựng một bài phụ đạo.
  *
  * @param goiLLM  async ({maNut, von, soCau}) => [câu] — KHÔNG bắt buộc. Thiếu, hay
  *                ném lỗi, hay trả rỗng: phụ đạo vẫn ra bài bằng phần tĩnh.
- * @param soiCau  (câu) => bool — hậu kiểm. MẶC ĐỊNH LÀ NHẬN HẾT chỉ khi chỗ gọi
- *                cố tình không truyền; chỗ gọi thật PHẢI truyền `cauHopLe`.
+ * @param soiCau  (câu) => bool — hậu kiểm, nhận ĐỐI TƯỢNG CÂU HỎI. Chỗ gọi thật
+ *                truyền `cauHoiHopLe` (xem vỏ ngay trên), KHÔNG phải `cauHopLe`.
  *
  * Trả `{ nutGoc, cau, nguon, luiVe }`:
  *   nguon  'tinh' | 'llm' | 'tron'

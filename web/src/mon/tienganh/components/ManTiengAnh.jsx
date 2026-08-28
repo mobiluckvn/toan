@@ -188,6 +188,40 @@ export default function ManTiengAnh({
     });
   }, [learnerId, ct.ma]);
 
+  /**
+   * XONG MỘT LẦN CAN THIỆP PHỤ ĐẠO — ghi KHUNG A-R-A vào học bạ (mục 3.6.3).
+   *
+   * ⚠ MỖI LẦN MỘT BẢN GHI RIÊNG, khoá nhúng mốc thời gian. Cùng một bài có thể
+   * kích hoạt phụ đạo nhiều lần ở những nút khác nhau, và mỗi lần là một phép đo
+   * A-R-A riêng — khoá theo bài thì lần sau ghi đè lần trước, mất đúng thứ cần đếm.
+   * Cùng lý do với mục `phien` ở `roiManGiuaChung` ngay trên.
+   *
+   * ⚠ GHI CẢ LẦN BÉ BẤM "ĐỂ SAU" (`lam: false`). Chỉ ghi lần bé làm thì tỷ lệ nhận
+   * lời mời không đo được, mà đó lại là con số cần biết trước tiên: nếu phần lớn
+   * trẻ bấm "để sau" thì cả cơ chế phụ đạo không tới được ai, và mọi ΔC đo trên
+   * phần còn lại đều là mẫu tự chọn.
+   */
+  const xongPhuDao = useCallback((e) => {
+    if (!e?.microId || !e?.maNutMac) return;
+    luuMucHocBa(learnerId, 'phudao', `${ct.ma}:${e.microId}:${e.tsBatDau || Date.now()}`, {
+      giaTri: {
+        microId: e.microId,
+        maNutMac: e.maNutMac,
+        nutGoc: e.nutGoc || null,
+        lam: !!e.lam,
+        viSao: e.viSao || null,
+        soCau: Number(e.soCau) || 0,
+        dung: Number(e.dung) || 0,
+        itemTruoc: e.itemTruoc || [],
+        itemPhuDao: e.itemPhuDao || [],
+        nguon: e.nguon || null,
+        luiVe: !!e.luiVe,
+        tsBatDau: e.tsBatDau || null,
+        tsKetThuc: e.tsKetThuc || null,
+      },
+    });
+  }, [learnerId, ct.ma]);
+
   const xongDocHieu = useCallback((bai, kq) => {
     const unit = bai.phamVi === 'unit';
     const so = unit ? bai.unit : bai.chapter;
@@ -354,6 +388,7 @@ export default function ManTiengAnh({
            NỐI. Nay `tienganh_vao_engine.test.mjs` soi đúng chỗ nối này. */
         onLuot={ghiLuot}
         onRoiMan={roiManGiuaChung}
+        onPhuDao={xongPhuDao}
         /* Biệt danh của chính bé đi vào đoạn hội thoại — bé nghe tên mình trong
            một câu tiếng Anh. Đó là chỗ bài này khác mọi bài luyện phát âm khác. */
         tenBe={(hoSo?.displayName || '').trim().split(/\s+/).pop() || 'Bo'}

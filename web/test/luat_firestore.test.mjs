@@ -205,6 +205,40 @@ t('lần bỏ dở thứ hai cùng bài ghi được vào tài liệu RIÊNG', m
     Number(gt?.giay?.integerValue ?? gt?.giay?.doubleValue) === 37);
 }
 
+/* ── KHUNG A-R-A: một lần can thiệp PHỤ ĐẠO (loai `phudao`, thêm 26-08) ──
+   Gói dưới đây khớp ĐÚNG cái `xongPhuDao` trong `ManTiengAnh.jsx` gửi. Cùng lý do
+   với khối `phien` ngay trên: cổng phải thử cái APP GỬI, không phải cái luật cho.
+
+   ⚠ Khoá nhúng MỐC THỜI GIAN chứ không phải mã bài, vì một bài có thể kích hoạt
+   phụ đạo nhiều lần ở những nút khác nhau — khoá theo bài thì lần sau đè lần
+   trước, mất đúng thứ giao thức A-R-A cần đếm. */
+const mucPhuDao = {
+  loai: V.s('phudao'), khoa: V.s('ta5:DL:TA5.B08:1756000000000'), at: V.s('2026-08-26'),
+  giaTri: V.m({
+    microId: V.s('DL:TA5.B08'), maNutMac: V.s('sp_g5_u8_1'),
+    nutGoc: V.s('sp_g5_u6_1'), lam: V.b(true), soCau: V.n(4), dung: V.n(3),
+  }),
+};
+m = await ghi(BE_A, `hocBaTA/${BE_A}/muc/phudao__ta5_b08_1756000000000`, mucPhuDao);
+t('chính chủ ghi được KHUNG A-R-A (loai `phudao`)', m === 200,
+  `HTTP ${m} — 403 nghĩa là chưa deploy luật mới, và mỗi lần phụ đạo đang RƠI IM LẶNG`);
+
+m = await ghi(BE_A, `hocBaTA/${BE_B}/muc/phudao__ta5_b08_1756000000000`, mucPhuDao, BE_A);
+t('bé A KHÔNG ghi được khung A-R-A vào sổ bé B', m === 403, `HTTP ${m}`);
+
+{
+  const r = await fetch(`${goc}/hocBaTA/${BE_A}/muc/phudao__ta5_b08_1756000000000`, {
+    headers: { Authorization: `Bearer ${token(BE_A)}` },
+  });
+  const d = r.ok ? await r.json() : null;
+  const gt = d?.fields?.giaTri?.mapValue?.fields;
+  /* Hai mã nút này là CẢ GIÁ TRỊ của bản ghi: `maNutMac` là chỗ lỗi lộ ra,
+     `nutGoc` là chỗ lan truyền ngược chỉ ra. Thiếu một trong hai thì không đối
+     chiếu được với chẩn đoán của giáo viên ở kịch bản KB8. */
+  t('đọc lại thấy maNutMac — chỗ lỗi LỘ RA', gt?.maNutMac?.stringValue === 'sp_g5_u8_1');
+  t('đọc lại thấy nutGoc — chỗ lan truyền ngược chỉ ra', gt?.nutGoc?.stringValue === 'sp_g5_u6_1');
+}
+
 /* ── VÒNG KHỨ HỒI: ghi lên rồi ĐỌC LẠI ──
    Ghi được 200 chưa chứng minh gì cả — bản cũ cũng "ghi được" một hình dạng mà
    `docHocBa` không nhặt nổi, nên máy chủ có tài liệu mà bé vẫn mất huy hiệu. Đọc

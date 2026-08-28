@@ -145,6 +145,13 @@ service cloud.firestore {
                     tế — đóng thẳng tab thì không kịp ghi, nên đây là CẬN DƯỚI
            soThich  từ bé thích nhất trong quyển — cô giáo máy lấy làm ngữ cảnh
            hoSo     bé làm tốt dạng câu nào (chiều Sư phạm, mục 2.1.2-P)
+           phudao   KHUNG một lần can thiệp phụ đạo (giao thức A-R-A, mục 3.6.3):
+                    nút mắc · nút gốc rễ · câu đã hỏi TRƯỚC · câu của bài phụ đạo ·
+                    hai mốc thời gian. ⚠ KHÔNG chứa mức tinh thông trước/sau — máy
+                    con chỉ có bản `mastery` nạp lúc mở bài, mà hàm nền cập nhật sau
+                    một quãng trễ, nên con số ấy là con số CŨ và ghi vào thì ΔC sai
+                    theo hướng không ai lần ra. Hai lần đo dựng lại được từ chính
+                    `attempts` — thứ gì suy được từ nhật ký thì đừng chép thêm bản
 
          ⚠ `viet` chứa CHÍNH BÀI BÉ VIẾT và lời chấm — bố mẹ phải đọc được (bác
          chốt), nên vẫn nằm trong học bạ mà `canRead` cho cả giáo viên xem, đúng như
@@ -163,7 +170,7 @@ service cloud.firestore {
          ba chỗ đầu; bước deploy thì không cổng nào canh được. */
       allow write: if isMine(userId)
                    && request.resource.data.loai in ['chuong', 'viet', 'doc', 'phien',
-                                                    'soThich', 'hoSo'];
+                                                    'soThich', 'hoSo', 'phudao'];
     }
 
     /* ── PHÒNG LUYỆN NÓI: buổi nói chuyện của bé với cô giáo máy ──

@@ -6,11 +6,13 @@
  *   VƯỢT ẢI  bé đã vững hẳn phần này — cho đi nhanh hơn, đừng bắt luyện lại.
  *   PHỤ ĐẠO  bé đang mắc, và mắc theo kiểu luyện thêm cùng loại câu không gỡ được.
  *
- * ── ⚠ NGƯỠNG VƯỢT ẢI LÀ 0,85 CHỨ KHÔNG PHẢI 0,95 ──
- * Luận văn viết 0,95. Hệ thống chạy 0,85, và bác chốt giữ 0,85 ngày 21-08 vì con
- * số ấy hiệu chỉnh bằng thực nghiệm (`bkt.js` ghi lý do: bộ tham số theo tài liệu
- * tuyên bé thạo chỉ sau 2 câu). Lấy ngưỡng từ MỘT chỗ — `zpd.js` → `bkt.js` — chứ
- * không gõ lại số ở đây: hai nơi hai số là hai hệ thống khác nhau đội một tên.
+ * ── ⚠ NGƯỠNG VƯỢT ẢI LẤY TỪ MỘT CHỖ DUY NHẤT ──
+ * θ = 0,85, hiệu chỉnh bằng thực nghiệm (`bkt.js` ghi lý do: bộ tham số mặc định
+ * theo tài liệu tuyên bé thạo chỉ sau 2 câu, quá dễ dãi với trẻ). Bác chốt con số
+ * này 21-08; bản luận văn hiện hành ghi đúng 0,85 ở cả mục 2.3.2.d lẫn Bảng 3.18.
+ * Lấy ngưỡng từ MỘT chỗ — `zpd.js` → `bkt.js` — chứ không gõ lại số ở đây: hai nơi
+ * hai số là hai hệ thống khác nhau đội một tên.
+ * (Bản nháp luận văn cũ từng ghi 0,95; chú thích cảnh báo chỗ lệch ấy gỡ 26-08.)
  *
  * ── ⚠ LƯỚI ĐỠ PHẢI CÒN NGUYÊN ──
  * `dandat.js` xưa nay cho bé đi tiếp khi đã ĐẠT *hoặc* đã THỬ THẬT ≥2 lần. Nhánh

@@ -18,6 +18,9 @@ import {
 import { DAT as DAT_NOI } from '../lib/chamnoi.js';
 import { maPhienMoi } from '../lib/suKien.js';
 import { xepTheoZPD } from '../lib/zpd.js';
+import PhuDao from './PhuDao.jsx';
+import { viecTiepCuaNut, VIEC } from '../lib/chinhsach.js';
+import { mucThaoCua } from '../lib/zpd.js';
 
 const maCauAm = (c) => maCua(c, 'en');
 
@@ -49,7 +52,7 @@ const maCauAm = (c) => maCua(c, 'en');
 export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
                                  onMoc, tenBe = 'Bo', soThich = null,
                                  onSoThich = null, onLuot = null, mucThao = null,
-                                 hoSoDang = null, onRoiMan = null }) {
+                                 hoSoDang = null, onRoiMan = null, onPhuDao = null }) {
   /* ── SỰ KIỆN RỜI MÀN GIỮA CHỪNG (mục 2.1.2 · chiều Thời gian) ──
      Luận văn đòi đo "mệt mỏi nhận thức", nhưng muốn suy ra trạng thái mệt thì
      phải biết bé BỎ DỞ ở đâu — mà xưa nay bé mở bài rồi thoát KHÔNG để lại dấu
@@ -186,7 +189,8 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
       {k === 'luyen' && (
         <LuyenTap key={id} bai={bai} onTiep={xong}
                   moc={mocDau?.luyen} onMoc={mocLuyen} onLuot={ghiLuot}
-                  mucThao={mucThao} hoSoDang={hoSoDang} />
+                  mucThao={mucThao} hoSoDang={hoSoDang}
+                  tienDo={tienDo} tenBe={tenBe} onPhuDao={onPhuDao} />
       )}
       {k === 'noi' && (
         <HoiThoai
@@ -746,6 +750,22 @@ function ManCau({ bai, onTiep, moc, onMoc, onLuot = null }) {
 
 /* ─────────── chặng 3 · luyện tập ─────────── */
 
+/**
+ * MỘT LẦN PHỤ ĐẠO CHO MỖI LẦN MỞ BÀI — và con số 1 là có căn cứ.
+ *
+ * `viecTiepCuaNut` trả PHỤ ĐẠO ở HAI điều kiện: sai ba lần liên tiếp, HOẶC mức
+ * tinh thông tụt dưới ngưỡng yếu (Thuật toán 3.9 dòng 1 và dòng 4). Điều kiện thứ
+ * hai đúng ngay từ câu sai ĐẦU TIÊN ở một nút bé còn yếu — nên một bài mười nút có
+ * thể mời tới mười lần nếu không chặn. Với bé đang chật vật thì mười lời mời "mình
+ * gỡ chỗ này nhé" không phải mười lần giúp, mà là mười lần bị nhắc rằng mình sai.
+ *
+ * Chọn 1 chứ không phải 2: bài phụ đạo là chỗ gỡ GIỮA mạch học, và mạch học của bé
+ * sáu tuổi không chịu được hai lần rẽ ngang trong một bài. Bé mắc ở nhiều nút thì
+ * lần mở bài sau sẽ gỡ nút tiếp theo — `daMoi` đặt lại theo từng lần mở bài, vì
+ * `LuyenTap` mang `key={id}` nên đổi bài là dựng lại từ đầu.
+ */
+const PHU_DAO_MOI_BAI = 1;
+
 const MUC = [
   { khoa: 'warmup', sao: '★', ten: 'Nghe và hiểu' },
   { khoa: 'standard', sao: '★★', ten: 'Ráp câu' },
@@ -766,7 +786,7 @@ const MUC = [
  * cạnh, không phải vòng lặp thứ ba.
  */
 function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null,
-                    hoSoDang = null }) {
+                    hoSoDang = null, tienDo = null, tenBe = 'Bo', onPhuDao = null }) {
   /* ── VÀO LẠI ĐÚNG CHỖ BỎ DỞ ──
      `moc` là thứ đã ghi lần trước. KHÔNG tin nó mù quáng: sổ có thể là của bản bài
      cũ, mà chỉ số mức hay chỉ số câu nhảy ra ngoài mảng là màn trắng ngay. Nên kẹp
@@ -803,6 +823,56 @@ function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null,
 
   const [ttCau, datTtCau] = useState(dau.tt); // trạng thái từng chấm của mức này
 
+  /* ══════════ NHÁNH PHỤ ĐẠO CỦA HÀM CHÍNH SÁCH (mục 2.5.1 · 3.4.7) ══════════
+   *
+   * ── VÌ SAO ĐẾM TẠI MÁY CHỨ KHÔNG ĐỌC `mastery.saiLienTiep` ──
+   * `mastery` do hàm nền ghi, mà hàm nền chạy SAU khi bản ghi lên tới máy chủ —
+   * mục 3.1.3 nói thẳng là giữa bước 3 và bước 4 có độ trễ. Đọc con số ấy thì lúc
+   * bé sai câu thứ ba, hệ thống còn đang thấy số 0 hoặc 1. Nên chuỗi sai liên tiếp
+   * — thứ mục 3.4.7 gọi là "tín hiệu tức thời" — phải đếm ngay tại đây.
+   *
+   * ── ĐẾM THEO LƯỢT, KHÔNG THEO CÂU ──
+   * Bảng 3.12 định nghĩa `S_c` là số lần sai LIÊN TIẾP, và `applyAttempt` đặt lại
+   * về 0 ngay khi có một lượt đúng. Đếm theo câu thì một câu bé sai bốn lần rồi
+   * đúng chỉ tính là một — mất đúng tín hiệu cần đo.
+   */
+  const demSai = useRef(new Map());        // maNut → số lần sai liên tiếp
+  const cauDaLam = useRef(new Map());      // maNut → [mã câu đã trả lời]
+  const choPhuDao = useRef(null);          // nút đang chờ mời, xét lúc xong câu
+  const daMoi = useRef(new Set());         // nút đã mời rồi trong bài này
+  const [moiPhuDao, datMoiPhuDao] = useState(null);
+  const mocPhuDao = useRef(0);
+
+  /**
+   * ⚠ MỖI NÚT CHỈ MỜI MỘT LẦN TRONG MỘT BÀI.
+   *
+   * Không có chốt này thì bé sai ba câu, làm phụ đạo, quay lại sai tiếp ba câu, và
+   * bị mời lần nữa — thành một vòng không lối ra đúng lúc bé đang nản nhất. Ràng
+   * buộc R2 cấm chính hình dạng ấy. Sai tiếp sau khi đã gỡ một lần thì thứ bé cần
+   * là người lớn ngồi cạnh, không phải vòng phụ đạo thứ hai.
+   */
+  const ghiLuotLuyen = useCallback((e) => {
+    onLuot?.(e);
+    const nut = e?.cau?.maNut;
+    if (!nut) return;
+    const ds = cauDaLam.current.get(nut) || [];
+    if (e?.cau?.id && !ds.includes(e.cau.id)) cauDaLam.current.set(nut, [...ds, e.cau.id]);
+    if (e.ok) { demSai.current.set(nut, 0); return; }
+    const n = (demSai.current.get(nut) || 0) + 1;
+    demSai.current.set(nut, n);
+
+    /* ⚠ HỎI CHÍNH HÀM CHÍNH SÁCH, đừng so tay với hằng số.
+       `viecTiepCuaNut` là Thuật toán 3.9 — nó xét chuỗi sai liên tiếp TRƯỚC mức
+       tinh thông, và còn bắt cả nhánh "p tụt dưới ngưỡng yếu" mà một phép so
+       `n >= 3` gõ tay ở đây sẽ bỏ sót. Gõ lại luật ở màn hình là dựng một bản thứ
+       hai của cùng một chính sách, rồi hai bản trôi xa nhau mà không gì báo. */
+    const viec = viecTiepCuaNut({ p: mucThaoCua(mucThao, nut), saiLienTiep: n });
+    if (viec.viec === VIEC.phuDao && !daMoi.current.has(nut) && !choPhuDao.current
+        && daMoi.current.size < PHU_DAO_MOI_BAI) {
+      choPhuDao.current = nut;
+    }
+  }, [onLuot, mucThao]);
+
   /* Ghi mốc sau MỖI lần đổi chỗ. Gọi dày thế này chỉ an toàn vì `ghiMoc` trả nguyên
      khối cũ khi không có gì đổi — xem chú thích dài ở `lib/progress.js`.
 
@@ -838,12 +908,69 @@ function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null,
     datTtCau((t) => { const s = [...t]; s[i] = kq.boQua ? 'no' : (kq.dung ? 'dung' : 'sai'); return s; });
     if (kq.boQua) datNo((n) => (n.includes(cau.id) ? n : [...n, cau.id]));
 
-    if (i + 1 < pool.length) { datI(i + 1); return; }
+    /* ⚠ MỜI PHỤ ĐẠO KHI CÂU HIỆN TẠI ĐÃ XONG, không phải ngay lúc chạm ngưỡng.
+       Chạm ngưỡng là lúc bé vừa sai lần thứ ba và màn hình đang bày đáp án cùng nút
+       "để lại sau". Đổi màn ngay lúc ấy là giật mất câu đang dở khỏi tay bé. */
+    const cho = choPhuDao.current;
+    choPhuDao.current = null;
+    if (cho) { daMoi.current.add(cho); mocPhuDao.current = Date.now(); }
+
+    if (i + 1 < pool.length) { datI(i + 1); if (cho) datMoiPhuDao(cho); return; }
     /* Hết lượt. Còn câu nợ mà chưa làm lại lượt nào thì mời làm lại. */
-    if (!lamLai && no.length + (kq.boQua ? 1 : 0) > 0) { datMoiLamLai(true); return; }
-    if (m + 1 < MUC.length) { sangMuc(m + 1); return; }
+    if (!lamLai && no.length + (kq.boQua ? 1 : 0) > 0) {
+      datMoiLamLai(true); if (cho) datMoiPhuDao(cho); return;
+    }
+    if (m + 1 < MUC.length) { sangMuc(m + 1); if (cho) datMoiPhuDao(cho); return; }
+    /* Hết cả chặng thì đi tiếp — KHÔNG giữ bé lại để phụ đạo. Phụ đạo là chỗ gỡ
+       giữa mạch học, không phải một cửa ải cắm ở lối ra. */
     onTiep();
   };
+
+  /**
+   * XONG MỘT LƯỢT PHỤ ĐẠO — trả bé về đúng chỗ cũ, và ghi lại KHUNG A-R-A.
+   *
+   * ⚠ KHÔNG ghi mức tinh thông trước/sau vào đây. Máy con chỉ có bản `mucThao` nạp
+   * lúc mở bài, mà hàm nền thì cập nhật sau một quãng trễ (mục 3.1.3) — con số đọc
+   * được lúc này là con số CŨ, ghi vào là ΔC sai theo hướng không ai lần ra.
+   *
+   * Thay vào đó ghi KHUNG: nút mắc · nút gốc rễ · các câu đã hỏi TRƯỚC · các câu
+   * của bài phụ đạo · hai mốc thời gian. Mức tinh thông ở hai lần đo thì dựng lại
+   * được từ chính nhật ký `attempts` bằng phép chạy lại của
+   * `tools/danh_gia_mo_hinh.mjs`. Đó là cả lý do kho lưu vết là bất biến: thứ gì
+   * suy được từ nhật ký thì đừng chép thêm một bản (mục 3.2.4).
+   */
+  const xongPhuDao = (r) => {
+    onPhuDao?.({
+      microId: bai.id,
+      maNutMac: moiPhuDao,
+      nutGoc: r?.nutGoc || null,
+      lam: !!r?.lam,
+      viSao: r?.viSao || null,
+      soCau: r?.soCau ?? 0,
+      dung: r?.dung ?? 0,
+      itemTruoc: cauDaLam.current.get(moiPhuDao) || [],
+      itemPhuDao: r?.itemIds || [],
+      nguon: r?.nguon || null,
+      luiVe: !!r?.luiVe,
+      tsBatDau: mocPhuDao.current || null,
+      tsKetThuc: Date.now(),
+    });
+    /* Đặt lại bộ đếm của nút ấy: bé vừa được gỡ, chuỗi sai cũ không còn là tín hiệu
+       về trạng thái HIỆN TẠI nữa — đúng lý do `applyAttempt` đặt lại về 0 khi có
+       một lượt đúng. */
+    demSai.current.set(moiPhuDao, 0);
+    datMoiPhuDao(null);
+  };
+
+  /* ⚠ PHỤ ĐẠO XÉT TRƯỚC MỌI NHÁNH KHÁC — cùng thứ tự với Thuật toán 3.9 dòng 9,
+     nơi nhánh phụ đạo thắng nhánh vượt ải. Bé đang mắc thì việc cần làm là gỡ, chứ
+     không phải mời làm lại mấy câu nợ hay đẩy sang mức sau. */
+  if (moiPhuDao) {
+    return (
+      <PhuDao baiNay={bai} maNutMac={moiPhuDao} mucThao={mucThao} tienDo={tienDo}
+              tenBe={tenBe} onLuot={onLuot} onXong={xongPhuDao} />
+    );
+  }
 
   if (!cau && !moiLamLai) return <NutTiep onClick={onTiep} chu="Vào sát hạch" />;
 
@@ -925,7 +1052,7 @@ function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null,
             (đáp án là chuỗi) sang câu XẾP THẺ (đáp án là mảng), lần vẽ đầu tiên
             gọi `''.map()` — cả bài trắng màn hình ngay giữa chừng. Đã vỡ thật ở
             đúng chỗ nối ★ sang ★★. */}
-        <CauHoi key={cau.id} cau={cau} onXong={xong} onLuot={onLuot} />
+        <CauHoi key={cau.id} cau={cau} onXong={xong} onLuot={ghiLuotLuyen} />
       </div>
     </section>
   );
