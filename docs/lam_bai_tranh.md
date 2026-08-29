@@ -35,7 +35,9 @@ Vẽ một lần, dùng ba chỗ. Bé gặp lại cùng một cảnh ba lần v�
 
 ⚠ **Bước ③ phải chạy SAU `sinh_dochieu_tienganh.py` và `sinh_vietbai_tienganh.py`.**
 Nó CHÈN mục tranh đè lên mục cũ của cùng unit; chạy trước thì bị hai bộ sinh kia
-ghi đè lại, và không có gì báo.
+ghi đè lại, và không có gì báo. Từ 29-08-2026 luật này áp cho **cả bài ôn tập
+chương** (`DOC:TAn.Ck` · `VIET:TAn.Ck`) chứ không riêng bài unit — hai bộ sinh cũ
+vẫn dựng mục chương theo khuôn HỘI THOẠI, và chạy sau là mất sạch bức ôn.
 
 ---
 
@@ -150,6 +152,57 @@ khác nhau ở cỡ chữ 32/26.
   thì đáp án thành lựa chọn DUY NHẤT mang khuôn của nó — bé chọn đúng bằng mắt,
   không cần đọc. Cổng bắt được 33 chỗ đúng kiểu ấy trong một lượt.
 
+### ⚠ MỘT CÂU HỎI, ĐÚNG MỘT ĐÁP ÁN ĐÚNG — bác bắt 29-08-2026
+
+*"Yêu cầu câu trả lời trong các bài đọc phải đảm bảo chỉ có 01 đáp án đúng thôi
+nhé. Các câu nào 02 đáp án đúng thì cần viết lại cho nó sai đi nhé."*
+
+Rà lại cả ba quyển thì ra **19 câu hỏi có từ hai đáp án đúng trở lên**. Không câu
+nào sai chính tả, sai túi từ hay sai khuôn — cổng xanh hết. Chúng hỏng theo đúng
+**bốn kiểu**, và cả bốn đều chỉ lộ ra khi ĐỌC ĐOẠN VÀ NHÌN TRANH cùng lúc:
+
+| | Kiểu hỏng | Ví dụ |
+|---|---|---|
+| ① | **Mồi là một vật CÓ THẬT trên tranh.** `What's this?` không trỏ vào đâu cả, nên vật nào trong tranh cũng là đáp án đúng | L3 U00 đáp `It's a desk.` mà mồi là `It's a book.` · `It's a bag.` — tranh có cả ba |
+| ② | **Mồi là câu ĐOẠN ĐỌC ĐÃ KHẲNG ĐỊNH, cùng chủ ngữ.** | L4 U13 đoạn nói cả `He's tall.` lẫn `He's short.` (hai bạn khác nhau) rồi lấy nhau làm mồi |
+| ③ | **Câu hỏi gộp nhiều người thành một.** `What did your FAMILY do?` thì việc của chị và của anh cũng là việc của cả nhà | L5 U20 đáp `We went camping.` · mồi `We collected seashells.` (đoạn: *She* collected seashells) |
+| ④ | **Đáp án SAI với tranh**, tức là KHÔNG có đáp án đúng nào | L3 U09 hỏi màu cây bút, đáp `It's blue.` — hình 🖊️ màu ĐEN |
+
+Nên bốn luật, xếp theo thứ tự ưu tiên khi sửa:
+
+1. **Mồi phải SAI với BỨC TRANH ĐANG CHẠY, không phải với `moTa`.** `moTa` là lời
+   dặn cho hoạ sĩ; bức vẽ ra là do `canh_ve.py` dựng, và hai bên lệch nhau thật —
+   `moTa` của L3 U04 tả *"thấy rõ hai mắt, cái mũi, cái miệng, hai tai"* trong khi
+   bút `nguoi` chỉ vẽ TÓC · HAI MẮT · MIỆNG. **Mở tệp PNG ra nhìn**, đừng đọc mô tả.
+2. **Chốt bằng dòng phụ tiếng Việt khi câu tiếng Anh không chốt được.** Cú pháp
+   khai: dấu `|` TRƯỚC mũi tên trong cột câu hỏi —
+   `"1. What's she doing? | Bạn mặc váy tím đang làm gì? → She's dancing. (mồi: …)"`.
+   Chốt bằng thứ **nhìn thấy được** (màu áo · chỗ đứng · góc ảnh), đừng chốt bằng
+   chính đáp án (*"bạn đang múa làm gì?"*) và đừng chốt bằng thứ bút vẽ không vẽ ra
+   (*"người đang tập yoga"* — `DANG` không có dáng yoga).
+3. **Chốt thôi CHƯA ĐỦ nếu nét vẽ không phân biệt được.** Bút `nguoi` vẽ MỌI khuôn
+   mặt là một hình tròn với hai chấm mắt to, nên `She has a round face.` và
+   `She has big eyes.` đúng với mọi bạn trong tranh — chốt kiểu gì cũng không làm
+   chúng sai được. Bức ảnh lớp (L4 U13) chỉ phân biệt được **TÓC** và **CHIỀU CAO**;
+   mồi phải nằm trong hai thứ ấy.
+4. **Câu Có/Không chỉ có HAI lựa chọn, và thế là đủ.** Khuôn `Is this …? - Yes, it
+   is. / No, it isn't.` của sách chỉ có ngần ấy đáp; độn thêm lựa chọn thứ ba là
+   bịa một câu sách không dạy. `sinh_bai_tranh.py` nhận 1 mồi khi đáp án mở đầu
+   bằng `Yes,`/`No,`, và bắt mồi cũng phải là câu Có/Không.
+
+**Hai phép soi tự động** — chạy trước khi tin là đã sửa xong (chúng KHÔNG nằm
+trong cổng, vì cả hai đều báo cả những chỗ đúng và cần người đọc lại):
+
+```
+① mồi trùng vật trên tranh   so `hoi[].moi` với bộ chữ suy từ `vat` của chính cảnh ấy
+② mồi trùng vị ngữ của đoạn  bỏ chủ ngữ hai bên rồi so — bắt đúng kiểu ② và ③ ở trên
+```
+
+Phép ② mạnh hơn hẳn phép ①: nó bắt được `He's short.` (chữ `short` không có trong
+tranh nên phép ① mù) và cả `We collected seashells.` Cả hai đều báo cả **chỗ
+đúng** — mồi khác chủ ngữ (`She's cooking.` cho câu hỏi về bạn trai) là hợp lệ —
+nên đọc từng dòng, đừng sửa hàng loạt.
+
 ---
 
 ## PHÒNG NÓI — ba nhịp, không hơn
@@ -197,6 +250,45 @@ Cách chữa cũng là một luật: **gom về một hàm dựng "tranh + đo�
 gọi. Rải ra từng nhánh là để ngỏ chỗ cho các nhánh lệch nhau.
 
 ---
+
+## BÀI ÔN TẬP CHƯƠNG — 29-08-2026
+
+Bác bắt: *"review bài đọc và bài viết của các bài ôn luyện Unit phải đúng chuẩn
+như bài đọc và viết của các bài nhỏ bên trong nhé. Hiện tại là sai hết rồi."*
+
+Đúng, và sai theo đúng MỘT cách: đợt 19→20-08 dựng lại bài UNIT thành bài tả
+tranh, còn bài CHƯƠNG thì `sinh_bai_tranh.py` không đụng tới. Chúng ở lại bản của
+`sinh_dochieu_tienganh.py`, nên trong cùng một quyển có hai giống bài khác hẳn:
+
+| | bài unit | bài chương (bản cũ) |
+|---|---|---|
+| Tranh | có | **không** |
+| Đoạn đọc | văn tả tranh | hội thoại GHÉP từ câu bốn unit |
+| Câu hỏi | tiếng Anh + dòng phụ Việt | **tiếng Việt** |
+| Hỏi gì | *What can you see?* | *"Câu nào CÓ trong bài đọc?"* — **dò chữ**, không cần hiểu |
+
+Nay mỗi chương một **bức tranh ôn**, khai ở `L3C`/`B3C` · `L4C`/`B4C` ·
+`L5C`/`B5C`. Khuôn y hệt bài unit, chỉ dài hơn một nhịp: **7–8 dòng** (bài unit
+5–6) và **4 câu hỏi** (bài unit 2), `need` = 3.
+
+* `phamVi: "chuong"` trong bản khai → `sinh_bai_tranh.py` đặt mã `DOC:TAn.Ck`,
+  tiêu đề *"ĐỌC · ÔN TẬP k · …"*, và **không dựng phòng nói** (bài ôn không có
+  bài học `DL:` nào để gắn; gắn bừa vào unit cuối chương là ĐÈ MẤT kịch bản của
+  chính unit ấy).
+* `unit` của bản khai = **unit CUỐI chương** — nó không phải số bài, nó là mốc
+  dừng của túi từ và của `hinh_cua_tu()`.
+  ⚠ Mốc ấy TRÙNG với một bức unit thật. Chỗ nào tra bản khai bằng `unit` là chỗ
+  ấy lấy nhầm bức: `tienganh_dochieu.test.mjs` từng tra thế, và với bài chương
+  (không có khoá `unit`) thì `.find` không khớp gì cả nên **mọi phép soi tranh
+  lặng lẽ bỏ qua** — cổng vẫn xanh, chỉ là không còn canh gì. Nay tra bằng TÊN
+  TỆP TRANH, một-đối-một.
+* **Chỉ dùng khuôn ĐÃ HỌC TỚI HẾT CHƯƠNG ẤY.** Chương 1 lớp 3 chưa có
+  `What's this?` (unit 4) và chưa có `Who's this?` (unit 11). Túi từ cũng thế, và
+  chỗ vấp nhiều nhất là **SỐ NHIỀU**: `desks` · `friends` · `trees` · `rulers` ·
+  `crayons` chỉ có mặt ở đúng chương dạy chúng, nên câu đếm phải chọn thứ mà túi
+  từ tới đó ĐÃ có (`windows` · `bikes` · `boxes` có từ lớp 1).
+* Bức ôn phải **KHÁC bộ đạo cụ** của bốn bức unit trong chính chương ấy, nếu
+  không bài ôn nhìn y hệt bài vừa học xong.
 
 ## LÀM CHO LỚP KHÁC
 

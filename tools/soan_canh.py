@@ -27,7 +27,7 @@ from pathlib import Path
 
 GOC = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(GOC / "tools"))
-from canh_de_xuat import L3, L4, L5  # noqa: E402
+from canh_de_xuat import L3, L3C, L4, L4C, L5, L5C  # noqa: E402
 
 XANH, DO, VANG, LUC, TIM, TRANG = ("#3D8BD4", "#E4574C", "#F9B233",
                                    "#1FCBAB", "#7E57C2", "#FFFFFF")
@@ -153,9 +153,14 @@ B3 = {
     {"ve": "nguoi", "x": 640, "y": 640, "cao": 262, "ao": TRANG, "vay_ao": XANH,
      "tet": True, "dang": "gio", "huong": 1},
     {"ve": "ban", "x": 640, "y": 716, "w": 900, "cao": 176},
-    {"tu": "ball", "x": 300, "y": 500, "co": 108},
-    {"tu": "pen", "x": 640, "y": 502, "co": 96},
-    {"tu": "book", "x": 970, "y": 500, "co": 100},
+    # ⚠ BỨC DẠY MÀU CHỈ ĐƯỢC BÀY HÌNH MỘT MÀU, GỌI TÊN KHÔNG CÃI ĐƯỢC.
+    # Bản trước bày `ball` · `pen` · `book` rồi hỏi màu chúng — mà hình thật là
+    # quả bóng NỬA ĐỎ NỬA VÀNG, cây bút 🖊️ ĐEN, quyển sách 📖 XANH-TRẮNG. Đáp án
+    # "It's blue." cho cây bút sai hẳn với thứ bé đang nhìn. Xem luật `MAU_CUA`
+    # trong docs/lam_bai_tranh.md — táo 🍎 đỏ, lá 🍃 xanh lá, thùng 📦 nâu.
+    {"tu": "apple", "x": 300, "y": 500, "co": 108},
+    {"tu": "leaf", "x": 640, "y": 502, "co": 104},
+    {"tu": "box", "x": 970, "y": 500, "co": 104},
 ]),
 10: ("Ở sân chơi giờ ra chơi", "At break time", {"kieu": "san", "san": 512}, [
     {"ve": "may", "x": 240, "y": 166, "rong": 176},
@@ -192,6 +197,10 @@ B3 = {
 12: ("Ngày hội nghề nghiệp", "Careers day", {"kieu": "san", "san": 520}, [
     {"ve": "may", "x": 300, "y": 164, "rong": 180},
     {"ve": "nha", "x": 1090, "y": 520, "rong": 300, "cao": 216, "xa": 0.34},
+    # ⚠ Đoạn đọc kết bằng "I can see a garden." mà bức không có lấy một cái cây —
+    # cổng bỏ qua vì `garden` nằm trong bộ NƠI CHỐN được miễn. Thêm cây vào đây
+    # rẻ hơn sửa câu, và đúng hơn: sân trường thì có cây.
+    {"ve": "cay", "x": 110, "y": 524, "cao": 250, "xa": 0.28},
     {"ve": "tuKinh", "x": 330, "y": 620, "w": 330, "cao": 300},
     {"ve": "tuKinh", "x": 790, "y": 620, "w": 330, "cao": 300, "mau": "#EBD3A0"},
     {"tu": "doctor", "x": 330, "y": 494, "co": 150},
@@ -287,6 +296,81 @@ B3 = {
      "tet": True, "dang": "dung"},
     {"ve": "nguoi", "x": 950, "y": 712, "cao": 276, "ao": XANH, "vay_ao": QUAN,
      "toc_dai": True, "dang": "dung"},
+]),
+}
+
+# ══════════════════ BỐ CỤC 5 BỨC ÔN TẬP CHƯƠNG — LỚP 3 ══════════════════
+#
+# Khai theo CHƯƠNG (1–5), không theo unit. Mỗi bức gom lại thứ cả chương đã
+# học, và phải KHÁC bộ đạo cụ của bốn bức unit trong chính chương ấy — nếu
+# không thì bài ôn nhìn y hệt bài vừa học xong, bé lướt qua không nhìn.
+# Xem cảnh báo cuối docs/lam_bai_tranh.md: "nhiều bức dùng chung một bộ đạo cụ
+# nên nhìn na ná nhau".
+B3C = {
+1: ("Ngày đầu năm học", "The first day of school", {"kieu": "lop", "san": 556}, [
+    # HAI cửa sổ — câu hỏi 4 đếm chúng. Đổi số cửa sổ ở đây là phải đổi đáp án
+    # trong `canh_de_xuat.L3C[1]`; không có cổng nào canh hai bên khớp nhau.
+    {"ve": "cuaSo", "x": 70, "y": 150, "w": 220, "h": 170},
+    {"ve": "cuaSo", "x": 340, "y": 150, "w": 220, "h": 170},
+    {"ve": "bang", "x": 690, "y": 140, "w": 340, "h": 210},
+    # ⚠ Cô giáo đứng BÊN PHẢI tấm bảng, không đứng đè lên. Bản đầu để x=1030
+    # trong khi bảng chạy tới 1190 — vẽ sau nên cô nằm chồng lên mặt bảng, cánh
+    # tay chỉ cắt ngang giữa bảng đen.
+    {"ve": "nguoi", "x": 1140, "y": 592, "cao": 256, "ao": XANH, "vay_ao": QUAN,
+     "toc_dai": True, "dang": "chi", "huong": -1},
+    {"ve": "ghe", "x": 300, "y": 664, "cao": 112},
+    {"ve": "nguoi", "x": 300, "y": 664, "cao": 196, "ao": TRANG, "dang": "ngoi",
+     "huong": 1},
+    {"ve": "ban", "x": 300, "y": 664, "w": 214, "cao": 122},
+    # Quyển vở lệch sang mép bàn: đặt đúng giữa thì nó che kín mặt bạn nhỏ.
+    {"tu": "book", "x": 372, "y": 528, "co": 52},
+    {"ve": "ghe", "x": 680, "y": 716, "cao": 130},
+    {"ve": "nguoi", "x": 680, "y": 716, "cao": 234, "ao": "#F49AC1", "vay_ao": TIM,
+     "tet": True, "dang": "ngoi", "huong": 1},
+    {"ve": "ban", "x": 680, "y": 716, "w": 252, "cao": 140},
+    {"tu": "bag", "x": 900, "y": 664, "co": 86},
+]),
+2: ("Ở sân trường, giờ hoạt động", "At the school yard", {"kieu": "san", "san": 528}, [
+    {"ve": "may", "x": 300, "y": 160, "rong": 176},
+    {"ve": "may", "x": 980, "y": 190, "rong": 150},
+    {"ve": "nha", "x": 1040, "y": 528, "rong": 320, "cao": 240, "xa": 0.30},
+    {"ve": "cay", "x": 180, "y": 532, "cao": 300, "xa": 0.14},
+    {"tu": "singing", "x": 560, "y": 596, "co": 230},
+    {"ve": "nguoi", "x": 810, "y": 706, "cao": 250, "ao": TRANG, "quan": QUAN,
+     "dang": "dung", "huong": -1},
+]),
+3: ("Ở nhà, hai chị em soạn cặp", "At home", {"kieu": "phong", "san": 552}, [
+    {"ve": "khungAnh", "x": 320, "y": 168, "w": 210, "h": 156},
+    {"ve": "sofa", "x": 980, "y": 690, "w": 300, "cao": 160},
+    {"ve": "nguoi", "x": 980, "y": 690, "cao": 250, "ao": "#F49AC1", "vay_ao": DO,
+     "toc_dai": True, "dang": "ngoi", "huong": -1},
+    {"ve": "nguoi", "x": 250, "y": 704, "cao": 246, "ao": VANG, "vay_ao": TIM,
+     "tet": True, "dang": "dung", "huong": 1},
+    {"ve": "ban", "x": 540, "y": 700, "w": 300, "cao": 140},
+    {"tu": "pen", "x": 450, "y": 528, "co": 84},
+    {"tu": "box", "x": 630, "y": 522, "co": 100},
+    {"tu": "football", "x": 540, "y": 656, "co": 86},
+]),
+4: ("Trong bếp, mẹ dọn bữa sáng", "In the kitchen", {"kieu": "phong", "san": 548}, [
+    {"ve": "cuaSo", "x": 90, "y": 150, "w": 230, "h": 175},
+    {"ve": "cua", "x": 1040, "y": 220, "w": 200, "h": 328, "mo": True},
+    {"ve": "nguoi", "x": 610, "y": 604, "cao": 262, "ao": TRANG, "vay_ao": QUAN,
+     "toc_dai": True, "dang": "dung", "huong": 1},
+    {"ve": "ban", "x": 610, "y": 704, "w": 330, "cao": 150},
+    {"tu": "bread", "x": 730, "y": 508, "co": 88},
+    {"ve": "ghe", "x": 330, "y": 704, "cao": 158, "huong": 1},
+    {"ve": "ban", "x": 150, "y": 690, "w": 190, "cao": 128},
+    {"tu": "lamp", "x": 150, "y": 542, "co": 78},
+]),
+5: ("Cả lớp đi vườn thú", "Our class trip to the zoo", {"kieu": "co", "san": 486}, [
+    {"ve": "may", "x": 260, "y": 164, "rong": 170},
+    {"ve": "cay", "x": 1160, "y": 494, "cao": 296, "xa": 0.22},
+    {"tu": "elephant", "x": 420, "y": 428, "co": 200},
+    {"tu": "tiger", "x": 810, "y": 434, "co": 180},
+    {"ve": "songSat", "x": 220, "y": 178, "w": 800, "h": 364, "buoc": 66},
+    {"tu": "monkey", "x": 940, "y": 214, "co": 130},
+    {"tu": "walking", "x": 150, "y": 604, "co": 246},
+    {"tu": "kite", "x": 350, "y": 626, "co": 112},
 ]),
 }
 
@@ -545,6 +629,64 @@ B4 = {
      "dang": "gio", "huong": -1},
 ]),
 }
+
+
+# ══════════════════ BỐ CỤC 4 BỨC ÔN TẬP CHƯƠNG — LỚP 4 ══════════════════
+B4C = {
+1: ("Sáng thứ Hai ở lớp", "Monday morning in class", {"kieu": "lop", "san": 552}, [
+    {"ve": "cuaSo", "x": 70, "y": 150, "w": 230, "h": 175},
+    # ⚠ Kim đồng hồ chỉ BẢY GIỜ — đáp án câu 2 đọc thẳng từ đây. Đổi giờ ở đây
+    # mà quên đổi đoạn đọc là bức tranh nói một đằng, bài đọc nói một nẻo.
+    {"ve": "dongHo", "x": 640, "y": 216, "r": 64, "gio": 7, "phut": 0},
+    {"ve": "bangLuoi", "x": 880, "y": 152, "w": 320, "h": 150, "cot": 5,
+     "hang": 1, "to": 0},
+    {"ve": "ghe", "x": 360, "y": 700, "cao": 126},
+    {"ve": "nguoi", "x": 360, "y": 700, "cao": 220, "ao": TRANG, "dang": "ngoi",
+     "huong": 1},
+    {"ve": "ban", "x": 360, "y": 700, "w": 240, "cao": 140},
+    {"tu": "book", "x": 440, "y": 548, "co": 54},
+    {"ve": "nguoi", "x": 900, "y": 706, "cao": 254, "ao": XANH, "quan": QUAN,
+     "dang": "vay", "huong": -1},
+]),
+2: ("Trước dãy nhà học của trường", "In front of the school buildings",
+    {"kieu": "san", "san": 520}, [
+    {"ve": "may", "x": 300, "y": 160, "rong": 176},
+    # HAI dãy nhà — câu 2 đếm chúng.
+    {"ve": "nha", "x": 400, "y": 520, "rong": 300, "cao": 230, "xa": 0.30},
+    {"ve": "nha", "x": 760, "y": 520, "rong": 280, "cao": 212, "xa": 0.30},
+    {"ve": "cay", "x": 1140, "y": 524, "cao": 290, "xa": 0.18},
+    {"ve": "giaVe", "x": 250, "y": 710, "cao": 260},
+    {"ve": "nguoi", "x": 560, "y": 712, "cao": 254, "ao": VANG, "vay_ao": TIM,
+     "tet": True, "dang": "chi", "huong": -1},
+    {"ve": "nguoi", "x": 820, "y": 710, "cao": 248, "ao": XANH, "quan": QUAN,
+     "dang": "dung", "huong": -1},
+]),
+3: ("Buổi tối ở nhà mình", "At home in the evening", {"kieu": "phong", "san": 548}, [
+    {"ve": "cuaSo", "x": 80, "y": 150, "w": 240, "h": 180},
+    # Bố CAO hơn mẹ — đoạn đọc có câu "My father is tall.", nên chênh lệch chiều
+    # cao phải NHÌN THẤY ĐƯỢC, không chỉ nằm trong chữ.
+    {"ve": "nguoi", "x": 400, "y": 706, "cao": 252, "ao": TRANG, "vay_ao": QUAN,
+     "toc_dai": True, "dang": "dung", "huong": 1},
+    {"ve": "nguoi", "x": 1010, "y": 706, "cao": 318, "ao": XANH, "quan": QUAN,
+     "dang": "dung", "huong": -1},
+    {"ve": "ghe", "x": 830, "y": 708, "cao": 140, "huong": -1},
+    {"ve": "ban", "x": 700, "y": 704, "w": 300, "cao": 152},
+    {"tu": "lamp", "x": 700, "y": 508, "co": 80},
+]),
+4: ("Ở trại hè bên hồ", "At summer camp by the lake", {"kieu": "ho", "san": 470}, [
+    {"ve": "matTroi", "x": 1140, "y": 172, "r": 56},
+    {"ve": "cay", "x": 1160, "y": 540, "cao": 280, "xa": 0.30},
+    {"ve": "leu", "x": 220, "y": 640, "rong": 300, "cao": 240},
+    {"ve": "luaTrai", "x": 600, "y": 690, "cao": 170},
+    {"ve": "nguoi", "x": 450, "y": 700, "cao": 248, "ao": DO, "quan": QUAN,
+     "dang": "cui", "huong": 1},
+    {"ve": "nguoi", "x": 860, "y": 702, "cao": 246, "ao": VANG, "vay_ao": TIM,
+     "tet": True, "dang": "gio", "huong": -1},
+    {"ve": "nguoi", "x": 1030, "y": 700, "cao": 242, "ao": LUC, "quan": QUAN,
+     "dang": "gio", "huong": -1},
+]),
+}
+
 
 
 # ══════════════════════════════ LỚP 5 ══════════════════════════════
@@ -819,6 +961,57 @@ B5 = {
 }
 
 
+
+# ══════════════════ BỐ CỤC 4 BỨC ÔN TẬP CHƯƠNG — LỚP 5 ══════════════════
+B5C = {
+1: ("Trước nhà mình, buổi chiều", "In front of my house", {"kieu": "co", "san": 500}, [
+    {"ve": "may", "x": 300, "y": 160, "rong": 172},
+    {"ve": "nha", "x": 300, "y": 500, "rong": 320, "cao": 260, "xa": 0.22},
+    {"ve": "cay", "x": 1120, "y": 506, "cao": 300, "xa": 0.18},
+    {"ve": "nguoi", "x": 620, "y": 706, "cao": 254, "ao": "#F49AC1", "vay_ao": DO,
+     "toc_dai": True, "dang": "dung", "huong": 1},
+    {"ve": "nguoi", "x": 790, "y": 704, "cao": 250, "ao": XANH, "quan": QUAN,
+     "dang": "dung", "huong": -1},
+    {"tu": "bike", "x": 130, "y": 660, "co": 150},
+]),
+2: ("Trong lớp, giờ làm dự án", "Project time in class", {"kieu": "lop", "san": 486}, [
+    {"ve": "cuaSo", "x": 980, "y": 140, "w": 250, "h": 196},
+    {"ve": "giaSach", "x": 700, "y": 470, "w": 200, "cao": 190},
+    {"ve": "ban", "x": 700, "y": 700, "w": 860, "cao": 220},
+    # HAI cây sáp màu — câu 4 đếm chúng.
+    # ⚠ Đặt sáp màu LỆCH KHỎI giá sách. Bản đầu để x=560 · 690 nên cây thứ hai
+    # nằm chồng lên mặt trước giá sách (x 600–800) — nhìn ra thành cây sáp lơ
+    # lửng giữa không trung chứ không phải nằm trên bàn.
+    {"tu": "crayon", "x": 420, "y": 456, "co": 104},
+    {"tu": "crayon", "x": 545, "y": 456, "co": 104},
+    {"tu": "book", "x": 880, "y": 452, "co": 96},
+    {"ve": "nguoi", "x": 180, "y": 706, "cao": 300, "ao": VANG, "vay_ao": TIM,
+     "tet": True, "dang": "chi", "huong": 1},
+    {"ve": "ghe", "x": 1140, "y": 708, "cao": 130, "huong": -1},
+    {"ve": "nguoi", "x": 1140, "y": 708, "cao": 226, "ao": XANH, "dang": "ngoi",
+     "huong": -1},
+]),
+3: ("Ở nhà, những ngày giáp Tết", "At home before Tet", {"kieu": "phong", "san": 548}, [
+    {"ve": "khungAnh", "x": 980, "y": 168, "w": 220, "h": 160},
+    {"ve": "sofa", "x": 1000, "y": 700, "w": 300, "cao": 160},
+    {"ve": "nguoi", "x": 300, "y": 706, "cao": 268, "ao": LUC, "vay_ao": TIM,
+     "toc_dai": True, "dang": "gio", "huong": 1},
+    {"ve": "ban", "x": 640, "y": 704, "w": 280, "cao": 150},
+    {"tu": "juice", "x": 640, "y": 506, "co": 84},
+]),
+4: ("Trong thành phố một sáng mùa hè", "A summer morning in the city",
+    {"kieu": "pho", "he": 512, "duong": 606}, [
+    {"ve": "matTroi", "x": 180, "y": 180, "r": 58},
+    {"ve": "nha", "x": 420, "y": 512, "rong": 320, "cao": 270, "xa": 0.26},
+    {"ve": "nha", "x": 800, "y": 512, "rong": 290, "cao": 240, "xa": 0.30},
+    {"tu": "bus", "x": 1050, "y": 604, "co": 250},
+    {"ve": "nguoi", "x": 640, "y": 600, "cao": 246, "ao": LUC, "quan": QUAN,
+     "dang": "dung", "huong": 1, "ao_la": "T-shirt"},
+    {"tu": "bike", "x": 200, "y": 570, "co": 150},
+]),
+}
+
+
 # ══════════════════ LỜI VIỆT CHO CÂU HỎI ══════════════════
 # Dòng phụ tiếng Việt dưới câu hỏi tiếng Anh — chỗ bám cho bé chưa đọc nổi đề.
 # Bốn lựa chọn thì THUẦN tiếng Anh: đó mới là chỗ bé luyện đọc thật.
@@ -840,6 +1033,7 @@ HOI_VI = {
  "Where are you?": "Con đang ở đâu?",
  "Where is he?": "Bạn ấy đang ở đâu?",
  "How many bags can you see?": "Con thấy mấy cái cặp?",
+ "How many windows can you see?": "Con thấy mấy cái cửa sổ?",
  "How many desks can you see?": "Con thấy mấy cái bàn?",
  "How many friends can you see?": "Con thấy mấy người bạn?",
  "How many people can you see?": "Con thấy mấy người?",
@@ -858,6 +1052,8 @@ HOI_VI = {
  "Can you ride a bike?": "Con đi xe đạp được không?",
  "What colour is the ball?": "Quả bóng màu gì?",
  "What colour is the pen?": "Cây bút màu gì?",
+ "What colour is the apple?": "Quả táo (apple) màu gì?",
+ "What colour is the leaf?": "Chiếc lá (leaf) màu gì?",
  "What day is it today?": "Hôm nay là thứ mấy?",
  "What do you do at break time?": "Giờ ra chơi con làm gì?",
  "What do you do in the morning?": "Buổi sáng con làm gì?",
@@ -945,6 +1141,23 @@ def _hoi(k: dict) -> list[dict]:
     Mồi nhử khai TAY ở bảng chứ không sinh bằng máy: mồi phải SAI với bức tranh
     này, mà máy không biết bức tranh có gì. Đoán ở đây là đẻ ra câu hỏi hai đáp
     án đúng — lỗi đã dính một lần ở bản trước.
+
+    ── DÒNG PHỤ CHỐT ĐANG HỎI AI, HỎI CÁI NÀO ──
+    Thêm 29-08-2026. `HOI_VI` tra theo CÂU TIẾNG ANH, nên một bức có hai câu hỏi
+    cùng chữ ("What's this?" hai lần, "What's she doing?" hai lần) thì cả hai
+    mang đúng một dòng phụ — và bé không có cách nào biết cô đang hỏi cái nào.
+    Đó chính là lỗi "hai đáp án đúng" nhìn từ phía bé: bức U05 vẽ một bạn đang
+    NẤU và một bạn đang MÚA, hỏi trống không "What's she doing?" thì đáp nào
+    cũng đúng.
+
+    Cách chốt là dòng phụ tiếng Việt — đúng lối đã dùng cho câu hỏi màu ("quả
+    táo (apple) màu gì?"): câu tiếng Anh giữ nguyên si câu của sách, chỗ chốt
+    nằm ở dòng bám. Khai bằng dấu `|` TRƯỚC mũi tên:
+
+        "1. What's she doing? | Bạn mặc váy tím đang làm gì? → She's dancing. (mồi: …)"
+
+    ⚠ Chốt bằng thứ NHÌN THẤY ĐƯỢC TRÊN TRANH (màu áo, chỗ đứng), đừng chốt
+    bằng chính đáp án ("bạn đang múa làm gì?") — thế là cho sẵn đáp án.
     """
     ra = []
     for dong in k["hoi"].split("\n"):
@@ -953,8 +1166,11 @@ def _hoi(k: dict) -> list[dict]:
             continue
         dong = dong.split(". ", 1)[1] if dong[0].isdigit() else dong
         cau, phan = dong.split(" → ", 1)
+        cau, _, chot = cau.partition("|")
         dap, moi = phan.split("(mồi:", 1)
-        ra.append({"hoi": cau.strip(), "vi": _vi(cau.strip()), "dap": dap.strip(),
+        ra.append({"hoi": cau.strip(),
+                   "vi": chot.strip() or _vi(cau.strip()),
+                   "dap": dap.strip(),
                    "moi": [m.strip() for m in moi.rstrip(")").split("·")
                            if m.strip() and not m.strip().startswith("cùng khuôn")]})
     return ra
@@ -988,10 +1204,52 @@ def soan(lop: int, van: dict, bo: dict) -> list[dict]:
     return ra
 
 
+def soan_chuong(lop: int, van: dict, bo: dict) -> list[dict]:
+    """Cảnh của BÀI ÔN TẬP CHƯƠNG — cùng khuôn với cảnh unit, khác ba chỗ.
+
+    1. `phamVi: "chuong"` — `sinh_bai_tranh.py` đọc cờ này để đặt mã
+       `DOC:TAn.Ck` / `VIET:TAn.Ck` thay vì `…Ukk`, và để KHÔNG dựng kịch bản
+       nói (bài ôn không có bài học `DL:` nào để gắn vào).
+    2. `unit` = unit CUỐI của chương. Nó không phải số bài, nó là chỗ dừng của
+       túi từ: `hinh_cua_tu(lop, unit)` và cổng đều tra hình theo mốc ấy, nên
+       bài ôn chương 3 được dùng hình tới hết unit 11.
+    3. Không có bức nào cho lớp 4·5 — `van` rỗng thì hàm trả về danh sách rỗng,
+       và mọi thứ dưới xuôi vẫn chạy như cũ.
+
+    ⚠ `unit` TRÙNG với một bức unit thật (chương 3 kết ở unit 11, mà U11 cũng
+    có bức riêng). Chỗ nào tra khai tranh bằng `unit` là chỗ ấy lấy nhầm bức —
+    đã vá `web/test/tienganh_dochieu.test.mjs` để tra bằng TÊN TỆP TRANH.
+    """
+    cn = json.loads((GOC / f"data/tienganh/chuan_lop{lop}.json").read_text("utf8"))
+    ra = []
+    for c in sorted(van):
+        if c not in bo:
+            raise SystemExit(f"✗ lớp {lop} chương {c}: có nội dung mà CHƯA CÓ BỐ CỤC")
+        ten, ten_en, nen, vat = bo[c]
+        k = van[c]
+        ra.append({
+            "id": f"TRANH:TA{lop}.C{c}",
+            "unit": max(cn["chuong"][str(c)]["unit"]),
+            "chuong": c,
+            "phamVi": "chuong",
+            "ten": ten, "ten_en": ten_en,
+            "moTa": k["mo_ta"],
+            "nen": nen, "vat": vat,
+            "doan": [x.strip().rstrip(".") + "."
+                     for x in k["doan"].split(". ") if x.strip(". ")],
+            "hoi": _hoi(k),
+            "goiY": [{"hoi": g.strip(), "vi": _vi(g.strip())}
+                     for g in k["goi_y"].split("·")],
+        })
+    return ra
+
+
 def main() -> int:
     tong = 0
-    for lop, van, bo in ((3, L3, B3), (4, L4, B4), (5, L5, B5)):
-        ds = soan(lop, van, bo)
+    for lop, van, bo, vanC, boC in ((3, L3, B3, L3C, B3C),
+                                    (4, L4, B4, L4C, B4C),
+                                    (5, L5, B5, L5C, B5C)):
+        ds = soan(lop, van, bo) + soan_chuong(lop, vanC, boC)
         tep = GOC / f"data/tienganh/canh_lop{lop}.json"
         tep.write_text(json.dumps(ds, ensure_ascii=False, indent=1), "utf8")
         print(f"→ {tep.relative_to(GOC)}  ({len(ds)} cảnh)")

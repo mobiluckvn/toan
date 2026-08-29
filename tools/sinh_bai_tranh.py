@@ -90,12 +90,19 @@ def cau_hoi_sau_doc(k: dict) -> list[dict]:
     ra = []
     for h in k.get("hoi") or []:
         moi = list(h.get("moi") or [])
-        if len(moi) < 2:
+        # CÂU CÓ / KHÔNG chỉ có HAI lựa chọn, và đó là đủ: khuôn `Is this …? -
+        # Yes, it is. / No, it isn't.` của sách chỉ có ngần ấy đáp. Độn thêm
+        # lựa chọn thứ ba là bịa một câu sách không dạy.
+        co_khong = bool(re.match(r"^(Yes|No),", h["dap"]))
+        if len(moi) < (1 if co_khong else 2):
             # Mồi nhử KHAI TAY ở bản khai, vì mồi phải SAI VỚI BỨC TRANH NÀY mà
             # máy không biết bức tranh có gì. Bản trước để máy suy và đẻ ra câu
             # hỏi hai đáp án đúng — thà kêu còn hơn im lặng bỏ câu.
             raise SystemExit(f"✗ U{k['unit']:02d} “{h['hoi']}”: mồi nhử chỉ có "
-                             f"{len(moi)} — cần ít nhất 2")
+                             f"{len(moi)} — cần ít nhất {1 if co_khong else 2}")
+        if co_khong and not all(re.match(r"^(Yes|No),", m) for m in moi):
+            raise SystemExit(f"✗ U{k['unit']:02d} “{h['hoi']}”: đáp là Có/Không "
+                             f"mà mồi nhử không phải — {moi}")
         if h["dap"] in moi:
             raise SystemExit(f"✗ U{k['unit']:02d} “{h['hoi']}”: mồi nhử TRÙNG đáp án")
         ra.append({
@@ -115,6 +122,42 @@ def cau_hoi_sau_doc(k: dict) -> list[dict]:
     return ra
 
 
+def ma_va_ten(k: dict, lop: int, dau: str, viec: str) -> dict:
+    """Mã bài · phạm vi · tiêu đề — chung cho màn ĐỌC và màn VIẾT.
+
+    Một bản khai cảnh phục vụ HAI phạm vi:
+
+        phamVi 'unit'    DOC:TA3.U07   "ĐỌC · UNIT 7 · Ở CỬA LỚP · …"
+        phamVi 'chuong'  DOC:TA3.C2    "ĐỌC · ÔN TẬP 2 · Ở SÂN TRƯỜNG … "
+
+    ⚠ Bài chương KHÔNG mang khoá `unit`. Bản khai của nó có (bằng unit cuối
+    chương, để tra hình), nhưng mục bài thì không được: `ManTiengAnh.jsx` lọc
+    danh sách unit bằng `d.phamVi === 'unit' && d.unit === b.so`, còn
+    `progress.js` đặt khoá học bạ `ta3:DU7` cho bài unit và `ta3:D2` cho bài
+    chương — hai phạm vi phải tách nhau ở đây thì mới tách được ở đó.
+
+    ⚠ Tiêu đề bài chương gọi là "ÔN TẬP n" chứ không phải "CHƯƠNG n": màn hình
+    xếp nó cạnh đề ôn tập `DCR:TA3.Cn` vốn đã mang chữ ấy, và bé thấy hai tên
+    khác nhau cho cùng một chỗ thì tưởng là hai chương khác nhau.
+    """
+    if k.get("phamVi") == "chuong":
+        return {
+            "id": f"{dau}:TA{lop}.C{k['chuong']}",
+            "chapter": k["chuong"], "phamVi": "chuong",
+            "name": (f"{viec} · ÔN TẬP {k['chuong']} · {k['ten'].upper()}"
+                     + (f" · {k['ten_en'].upper()}" if k.get("ten_en") else "")),
+        }
+    return {
+        "id": f"{dau}:TA{lop}.U{k['unit']:02d}",
+        "unit": k["unit"], "chapter": k.get("chuong", 1), "phamVi": "unit",
+        # SONG NGỮ — bác chốt 19-08: "Tiêu đề của bài đọc thì cũng cần là song ngữ."
+        # Tên tiếng Anh nằm sẵn ở `ten_en` của bản khai; thiếu thì chỉ có tiếng Việt,
+        # chứ không tự dịch — dịch bừa là đẻ ra một cái tên không có trong sách.
+        "name": (f"{viec} · UNIT {k['unit']} · {k['ten'].upper()}"
+                 + (f" · {k['ten_en'].upper()}" if k.get("ten_en") else "")),
+    }
+
+
 def muc_doc(k: dict, lop: int) -> tuple[dict, list[dict]]:
     """Mục ĐỌC — một ĐOẠN mô tả tranh, KHÔNG câu hỏi.
 
@@ -132,14 +175,8 @@ def muc_doc(k: dict, lop: int) -> tuple[dict, list[dict]]:
     và nút "con đọc xong rồi".
     """
     muc = {
-        "id": f"DOC:TA{lop}.U{k['unit']:02d}",
-        "unit": k["unit"], "chapter": k.get("chuong", 1),
-        "phamVi": "unit", "loai": "dochieu", "dang": "tranh",
-        # SONG NGỮ — bác chốt 19-08: "Tiêu đề của bài đọc thì cũng cần là song ngữ."
-        # Tên tiếng Anh nằm sẵn ở `ten_en` của bản khai; thiếu thì chỉ có tiếng Việt,
-        # chứ không tự dịch — dịch bừa là đẻ ra một cái tên không có trong sách.
-        "name": (f"ĐỌC · UNIT {k['unit']} · {k['ten'].upper()}"
-                 + (f" · {k['ten_en'].upper()}" if k.get('ten_en') else '')),
+        **ma_va_ten(k, lop, "DOC", "ĐỌC"),
+        "loai": "dochieu", "dang": "tranh",
         "tranh": f"{DUONG_TRANH}/{k['id'].replace(':', '_').replace('.', '_')}.png",
         "tranhTen": k["ten"] + (f" · {k['ten_en']}" if k.get("ten_en") else ""),
         "doan": [{"cau": x, "am": ma_am("cau", x)} for x in k["doan"]],
@@ -204,6 +241,10 @@ NGHIA_LE = {
     # dạng chia đứng lẻ, gốc lại không có mục riêng
     "goes": "đi", "likes": "thích", "works": "làm việc", "years": "năm",
     # danh từ lẻ mà kho chỉ dạy trong cụm ("water park" · "take photos" …)
+    # ⚠ `clock` thêm 29-08-2026: kho khai `clocks` (lớp 1 unit 9, SỐ NHIỀU) và
+    # `o'clock` (lớp 4 unit 2) — không có mục nào cho SỐ ÍT. Nên bức ôn chương 1
+    # lớp 4 tả "I can see a clock." ra một ô chữ không có nghĩa.
+    "clock": "cái đồng hồ",
     "flower": "bông hoa", "home": "nhà", "park": "công viên",
     "photo": "tấm ảnh", "picture": "bức tranh", "tv": "ti vi",
     # tên riêng tiếng Việt viết không dấu trong bài đọc — chú ở đây chính là cho
@@ -325,11 +366,23 @@ def tu_trong_tranh(k: dict, lop: int) -> list[dict]:
     def them(t, ng=""):
         if t and t.lower() not in da:
             da.add(t.lower())
+            # ⚠ TRA NGHĨA PHẢI BỎ QUA CHỮ HOA ĐẦU CÂU. Kho từ vựng khai `my`,
+            # còn đoạn viết `My hair is black.` — hai chuỗi khác nhau nên
+            # `nghia.get("My")` trượt, và bé nhận một ô chữ không có nghĩa.
+            # Trước nay không lộ ra chỉ vì bức nào cũng tình cờ có một câu chứa
+            # `my` viết thường ĐỨNG TRƯỚC, nên ô hoa bị `da` gạt đi.
             g = "" if t.lower() in KHONG_CHU else (
-                ng or nghia.get(t) or NGHIA_LE.get(t.lower()) or nghia_goc(t, nghia))
+                ng or nghia.get(t) or nghia.get(t.lower())
+                or NGHIA_LE.get(t.lower()) or nghia_goc(t, nghia))
             ra.append({"tu": t, "nghia": g})
 
-    cau_ds = list(k["doan"]) + [h["dap"] for h in (k.get("hoi") or [])]
+    # ⚠ BỎ ĐÁP ÁN CÓ/KHÔNG. Lý do gom chữ của đáp án vào bảng là "bé muốn viết
+    # thêm ý ấy thì phải có chữ" — mà không ai TẢ TRANH bằng câu "Yes, it is."
+    # Gom vào thì bảng từ mọc thêm bốn ô rác (`Yes` · `No` · `it` · `isn't`), và
+    # tệ hơn: ô `it` đứng riêng làm phép xoá trùng ở dưới cắn vào giữa chữ
+    # `It's` và đẻ ra một ô tên là `s`.
+    cau_ds = list(k["doan"]) + [h["dap"] for h in (k.get("hoi") or [])
+                                if not re.match(r"^(Yes|No),", h["dap"])]
 
     # ① vật trong tranh — nay lấy từ `vat`, mục nào khai `tu` là một từ vựng thật
     for n in k["vat"]:
@@ -373,8 +426,12 @@ def tu_trong_tranh(k: dict, lop: int) -> list[dict]:
     for c in cau_ds:
         # Bỏ những chữ đã nằm trong một CỤM đã thêm ("teddy bear" → bỏ teddy, bear).
         con = c
+        # ⚠ DẤU LƯỢC CŨNG LÀ MỘT PHẦN CỦA CHỮ. Chặn sau là `(?![A-Za-z])` thì
+        # ô `it` đã có sẽ khớp vào ba chữ đầu của `It's` — câu còn lại `'s`, và
+        # `tach_chu` nhặt được một ô tên là `s`. Cùng họ với lỗi `T-shirt` bị xé
+        # làm ba: chỗ nào cắt chữ mà không biết dấu nối thì chỗ ấy đẻ ô rác.
         for t in sorted(da, key=len, reverse=True):
-            con = re.sub(rf"(?<![A-Za-z]){re.escape(t)}(?![A-Za-z])", " ", con,
+            con = re.sub(rf"(?<![A-Za-z']){re.escape(t)}(?![A-Za-z'])", " ", con,
                          flags=re.I)
 
         # ②b TÊN RIÊNG NHIỀU CHỮ — dãy chữ hoa liền nhau, KHÔNG tính chữ mở câu.
@@ -408,11 +465,8 @@ def muc_viet(k: dict, lop: int, von: list[dict]) -> dict:
     được cho một CÂU.
     """
     return {
-        "id": f"VIET:TA{lop}.U{k['unit']:02d}",
-        "unit": k["unit"], "chapter": k.get("chuong", 1),
-        "phamVi": "unit", "loai": "vietbai", "dang": "tranh",
-        "name": (f"VIẾT · UNIT {k['unit']} · {k['ten'].upper()}"
-                 + (f" · {k['ten_en'].upper()}" if k.get('ten_en') else '')),
+        **ma_va_ten(k, lop, "VIET", "VIẾT"),
+        "loai": "vietbai", "dang": "tranh",
         "tranh": f"{DUONG_TRANH}/{k['id'].replace(':', '_').replace('.', '_')}.png",
         "tranhTen": k["ten"] + (f" · {k['ten_en']}" if k.get("ten_en") else ""),
         "de": "Con nhìn bức tranh rồi viết một đoạn tả bức tranh nhé.",
@@ -535,6 +589,16 @@ def main() -> int:
 
         mv = muc_viet(k, a.lop, tu_trong_tranh(k, a.lop))
         viets = [x for x in viets if x["id"] != mv["id"]] + [mv]
+
+        # ⚠ BÀI ÔN TẬP CHƯƠNG KHÔNG CÓ PHÒNG NÓI, và đó là chủ ý.
+        # Kịch bản nói gắn vào một BÀI HỌC (`bai: DL:TA3.Bnn`) — bài ôn chương
+        # không có bài học nào để gắn, nên gắn bừa vào unit cuối chương thì nó
+        # ĐÈ MẤT kịch bản của chính unit ấy. Bác mới chỉ hỏi phần đọc và phần
+        # viết; phòng nói của bài ôn là việc riêng, làm sau.
+        if k.get("phamVi") == "chuong":
+            print(f"  ôn tập chương {k['chuong']}: đoạn {len(muc['doan'])} câu "
+                  f"· {len(muc['cau'])} câu hỏi (không dựng phòng nói)")
+            continue
 
         kb = kich_ban_noi(k, a.lop)
         kbs = [x for x in kbs if x["bai"] != kb["bai"]] + [kb]

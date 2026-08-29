@@ -37,6 +37,20 @@ const khaiTranh = (lop) => {
   } catch { return []; }
 };
 
+/* Tra bản khai của một bài — BẰNG TÊN TỆP TRANH, không bằng số unit.
+   ⚠ Bản đầu tra `khai.unit === bai.unit`, và nó hỏng hai đường khi lớp 3 có
+   thêm 5 bức ÔN TẬP CHƯƠNG (29-08-2026):
+     · bài chương không mang khoá `unit` → `undefined === undefined` không khớp
+       bức nào, nên MỌI phép soi tranh ở dưới lặng lẽ bỏ qua nó. Cổng vẫn xanh,
+       chỉ là không còn canh gì — đúng họ [[nguong-phan-tram-che-lo-thung]];
+     · bản khai của bức ôn chương 3 lại MANG `unit: 11` (mốc tra hình), trùng
+       với bức U11 thật → `.find` trả về bức nào đứng trước.
+   Tên tệp tranh thì suy thẳng từ `khai.id`, một-đối-một, không trùng được. */
+const khaiCuaBai = (lop, bai) => {
+  const ten = (x) => `${x.id.replace(/:/g, '_').replace(/\./g, '_')}.png`;
+  return khaiTranh(lop).find((x) => String(bai.tranh || '').endsWith(ten(x)));
+};
+
 /* Bút vẽ cảnh nào VẼ RA thứ gì — để phép "đoạn nhắc vật nào thì tranh phải có
    vật ấy" đọc được cả những thứ không phải hình từ vựng. Thiếu bảng này thì cổng
    báo "tranh không có cái bàn" trong khi cảnh vẽ hẳn một cái bàn bằng `ve: ban`.
@@ -380,7 +394,7 @@ for (const q of quyens) {
   const lap = [];
   for (const k of ds) {
     const dem = new Map();
-    const khaiK = k.dang === 'tranh' ? khaiTranh(lop).find((x) => x.unit === k.unit) : null;
+    const khaiK = k.dang === 'tranh' ? khaiCuaBai(lop, k) : null;
     (k.doan || []).forEach((d, i) => {
       if (laCauNoi(khaiK, d.cau, k.doan[i - 1]?.cau)) return;
       const kh = `${(d.cau.split(' ')[0] || '').toLowerCase()}|${d.cau.split(' ').length}`;
@@ -497,7 +511,7 @@ for (const q of quyens) {
        Phép đo: mỗi vật khai `so > 1` thì đoạn phải có một câu nói được số ấy; chưa
        có khuôn thì tranh không được vẽ nhiều. Máy không nhìn ảnh, nhưng bản khai
        tranh thì đọc được — và bản khai chính là thứ đẻ ra ảnh. */
-    const khai = khaiTranh(lop).find((x) => x.unit === k.unit);
+    const khai = khaiCuaBai(lop, k);
     if (khai) {
       /* Bộ chữ mà BỨC TRANH VẼ RA — hình từ vựng cộng thứ các bút vẽ cảnh dựng. */
       const veLa = [];
@@ -575,10 +589,15 @@ for (const q of quyens) {
          trong "I can see a book." — cổng đọc chữ `can` rồi đòi bức tranh phải vẽ
          một cái lon. Đây là lần THỨ BA cái bẫy này lộ ra trong buổi: bảng từ màn
          viết từng chú `can` là "cái lon", và trước đó `top` là con quay lẫn cái áo.
-         Chữ nào vừa là vật vừa là chữ nối thì KHÔNG soi. */
+         Chữ nào vừa là vật vừa là chữ nối thì KHÔNG soi.
+         ⚠ Thêm `water` 29-08-2026: nó là ĐỒ UỐNG 💧 (lớp 3 unit 15) và cũng là
+         ĐỘNG TỪ trong "I often water the flowers." (lớp 5 unit 4) — cổng đọc
+         chữ `water` rồi đòi bức "Trước nhà mình" phải vẽ một cốc nước, giữa một
+         bức tả vườn hoa. Đúng họ `can` · `top` · `square` ở trên. */
       for (const w of ['can', 'see', 'like', 'play', 'watch', 'left', 'right',
                        'have', 'want', 'draw', 'ride', 'point', 'look', 'pass',
-                       'wash', 'run', 'sail', 'lock', 'top', 'mop', 'square']) {
+                       'wash', 'run', 'sail', 'lock', 'top', 'mop', 'square',
+                       'water']) {
         veDuoc.delete(w);
       }
       for (const c of khai.doan || []) {
