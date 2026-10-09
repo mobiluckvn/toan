@@ -62,14 +62,30 @@ const khoiCua = (c) => {
    nó sinh ra để làm.
    Nay: quyền đọc phải gác bằng `canRead(` HOẶC `isMine(`. Cả hai đều chặn người
    lạ; `if true` thì vẫn bị bắt ở dòng dưới. */
+/* ⚠ VÀ CHÍNH CỔNG NÀY VỪA DÍNH LẠI CÁI BẪY KHỐI TRÊN VỪA NÓI.
+   Bản trước đòi đúng chuỗi `allow write: if isMine(`. Tới việc V5, khối `hocBaTA`
+   tách thành `allow create, delete` và một `allow update` riêng (bố mẹ xác nhận
+   điểm máy chấm) — cả hai đều gác bằng `isMine(`, tính chất không đổi một li, mà
+   cổng vẫn đỏ. Ba tệp cổng trong cùng một buổi đều mang sẵn lời cảnh báo này rồi
+   dính ở dòng ngay dưới; xem `cong-ghim-chinh-ta-thay-vi-tinh-chat`.
+
+   Nay soi TÍNH CHẤT, và CHẶT HƠN bản cũ: liệt kê MỌI luật cho ghi (write · create ·
+   update · delete, viết rời hay viết gộp) rồi đòi TỪNG luật phải gác bằng
+   `isMine(`. Bản cũ chỉ soi đúng một `allow write`, nên thêm một `allow update`
+   không gác gì là nó đi lọt — đúng chỗ tôi vừa suýt làm. */
+const GHI = /allow\s+((?:write|create|update|delete)(?:\s*,\s*(?:write|create|update|delete))*)\s*:\s*if([^;]*);/g;
 const hong = [];
 for (const c of kho) {
   const than = khoiCua(c);
-  if (!/allow write:\s*if\s+isMine\(/.test(than)) hong.push(`${c}: quyền ghi không gác bằng isMine()`);
+  const luatGhi = [...than.matchAll(GHI)];
+  if (!luatGhi.length) hong.push(`${c}: không có luật nào cho ghi`);
+  for (const [, ten, dieu] of luatGhi) {
+    if (!/isMine\(/.test(dieu)) hong.push(`${c}: "allow ${ten}" không gác bằng isMine()`);
+  }
   if (!/allow read:\s*if\s+(canRead|isMine)\(/.test(than)) {
     hong.push(`${c}: quyền đọc không gác bằng canRead() hay isMine()`);
   }
-  if (/allow (read|write)[^;]*:\s*if\s+true/.test(than)) hong.push(`${c}: có "if true" — mở toang`);
+  if (/allow [\w\s,]+:\s*if\s+true/.test(than)) hong.push(`${c}: có "if true" — mở toang`);
 }
 t(`luật của mỗi collection đều gác chính chủ (${hong.length} chỗ hở)`, hong.length === 0);
 in5(hong);

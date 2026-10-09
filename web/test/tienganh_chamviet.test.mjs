@@ -30,6 +30,7 @@ import {
   SUA_LAI_TOI_DA, TOKEN_TIM_LOI, TOKEN_SUA, TOKEN_BO_ME, LOI_SUA_LAI,
 } from '../functions/src/chamviet.js';
 import { PHIEN_BAN_MAU, locKhung } from '../functions/src/vantay.js';
+import { diemHienThi } from '../src/mon/tienganh/lib/hocba.js';
 
 const VON = [
   { tu: 'hello', nghia: 'xin chào' },
@@ -190,13 +191,25 @@ test('mọi chỗ hiện điểm đều nói rõ MÁY CHẤM', () => {
      trong sổ học bạ sẽ được đọc thành điểm của cô giáo, và bố mẹ không có cách nào
      tự phát hiện. Ba chỗ con số ấy lộ ra: màn lời chấm, thẻ trên trang chính, và
      gói ghi vào sổ. */
-  const man = readFileSync(new URL('../src/mon/tienganh/components/VietBai.jsx',
-    import.meta.url), 'utf8');
-  assert.match(man, /Máy chấm \(AI\)/, 'màn lời chấm phải nói rõ ai chấm');
-
-  const trang = readFileSync(new URL('../src/mon/tienganh/components/ManTiengAnh.jsx',
-    import.meta.url), 'utf8');
-  assert.match(trang, /điểm \(máy chấm\)/, 'thẻ trên trang chính phải nói rõ ai chấm');
+  /* ⚠ SOI TÍNH CHẤT, ĐỪNG GHIM CHUỖI. Bản đầu đòi đúng chữ `Máy chấm (AI)` ở
+     `VietBai.jsx` và `điểm (máy chấm)` ở `ManTiengAnh.jsx`. Tới việc V5 cả hai nhãn
+     do `diemHienThi` sinh (vì có thêm trạng thái "bố mẹ đã xác nhận"), nên cổng đỏ.
+     Và nó đỏ CÓ ÍCH: nó chỉ ra rằng nhãn mới của ca "đã xác nhận" không còn một chữ
+     nào nói con số do MÁY chấm — tức mất đúng thứ phép canh này sinh ra để giữ. Vá
+     bằng `nhanDay`, và nay soi TÍNH CHẤT ở hai tầng:
+       1. mọi nhãn `diemHienThi` sinh ra đều nói điểm từ đâu;
+       2. hai màn đều dùng nhãn ấy, không tự viết chữ. */
+  for (const m of [{ diem: 8 }, { diem: 8, trangThai: 'xacNhan' },
+                   { diem: 8, trangThai: 'xacNhan', diemNguoi: 6 }]) {
+    const { nhanDay } = diemHienThi(m);
+    assert.match(nhanDay, /Máy chấm \(AI\)/,
+      `nhãn không nói điểm do MÁY chấm: ${JSON.stringify(nhanDay)}`);
+  }
+  for (const [p, ten] of [['../src/mon/tienganh/components/VietBai.jsx', 'màn lời chấm'],
+                          ['../src/mon/tienganh/components/ManTiengAnh.jsx', 'thẻ trang chính']]) {
+    const ma = readFileSync(new URL(p, import.meta.url), 'utf8');
+    assert.match(ma, /hien\.nhanDay/, `${ten} không dùng nhãn đầy đủ của diemHienThi`);
+  }
 
   const so = readFileSync(new URL('../src/mon/tienganh/lib/progress.js',
     import.meta.url), 'utf8');

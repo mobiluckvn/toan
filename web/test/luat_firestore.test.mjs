@@ -156,6 +156,104 @@ t('loại ngoài danh sách thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
 m = await ghi(BE_A, `hocBaTA/${BE_B}/muc/chuong__ta1_C1`, mucHopLe, BE_A);
 t('bé A KHÔNG ghi được học bạ bé B', m === 403, `HTTP ${m}`);
 
+/* ══ BỐ MẸ XÁC NHẬN ĐIỂM MÁY CHẤM — CHỈ BA TRƯỜNG (việc V5) ══
+   Điểm bài viết do mô hình chấm nên nó là điểm TẠM. Bố mẹ đồng ý hoặc sửa, và đó
+   là lệnh UPDATE. Chốt thật nằm ở `affectedKeys().hasOnly`, không ở lời dặn: không
+   có nó thì một lệnh "xác nhận điểm" sửa được luôn `cham` và `viet` — tức sửa được
+   LỜI CHẤM và BÀI BÉ VIẾT, hai thứ là bằng chứng để biết máy chấm đúng hay sai.
+   Và máy chủ không tin máy con ở chỗ này: mã máy con thì ai cũng sửa được. */
+const mucViet = (them = {}) => ({
+  loai: V.s('viet'), khoa: V.s('ta3:VU1'), at: V.s('2026-10-09'),
+  giaTri: V.m({
+    viet: V.s('My school is big.'), diem: V.n(8), best: V.n(8),
+    khen: V.s('Con dùng đúng từ school.'), soLoi: V.n(1),
+    choBoMe: V.s('Con làm tốt.'), nguon: V.s('ai'),
+    trangThai: V.s('tam'), at: V.s('2026-10-09'), ...them,
+  }),
+});
+const DUONG_VIET = `hocBaTA/${BE_A}/muc/viet__ta3_VU1`;
+
+m = await ghi(BE_A, DUONG_VIET, mucViet());
+t('ghi mới mục bài viết (trangThai tam)', m === 200, `HTTP ${m}`);
+
+/* Đồng ý: đổi đúng ba trường. */
+m = await ghi(BE_A, DUONG_VIET, mucViet({
+  trangThai: V.s('xacNhan'), diemNguoi: V.s(''), xacNhanLuc: V.s('2026-10-09T10:00:00Z'),
+}));
+t('bố mẹ XÁC NHẬN được — chỉ ba trường đổi', m === 200, `HTTP ${m}`);
+
+/* Sửa điểm: vẫn đúng ba trường ấy. */
+m = await ghi(BE_A, DUONG_VIET, mucViet({
+  trangThai: V.s('xacNhan'), diemNguoi: V.n(7), xacNhanLuc: V.s('2026-10-09T10:01:00Z'),
+}));
+t('bố mẹ SỬA ĐIỂM được', m === 200, `HTTP ${m}`);
+
+/* ⚠ Và đây là phép canh đáng giá nhất của cả khối: sửa LỜI CHẤM thì bị từ chối. */
+m = await ghi(BE_A, DUONG_VIET, mucViet({
+  trangThai: V.s('xacNhan'), diemNguoi: V.n(7), xacNhanLuc: V.s('2026-10-09T10:02:00Z'),
+  khen: V.s('Lời khen bị sửa tay.'),
+}));
+t('sửa LỜI CHẤM thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+
+m = await ghi(BE_A, DUONG_VIET, mucViet({
+  trangThai: V.s('xacNhan'), diemNguoi: V.n(7), xacNhanLuc: V.s('2026-10-09T10:03:00Z'),
+  viet: V.s('Bai cua be bi sua tay.'),
+}));
+t('sửa BÀI BÉ VIẾT thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+
+/* `diem` — điểm máy chấm — cũng là bằng chứng, không được đè. */
+m = await ghi(BE_A, DUONG_VIET, mucViet({
+  trangThai: V.s('xacNhan'), diemNguoi: V.n(7), xacNhanLuc: V.s('2026-10-09T10:04:00Z'),
+  diem: V.n(10),
+}));
+t('đè ĐIỂM MÁY CHẤM thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+
+/* Trạng thái lạ thì từ chối — hai giá trị, không có giá trị thứ ba. */
+m = await ghi(BE_A, DUONG_VIET, mucViet({
+  trangThai: V.s('coGiaoDaXem'), diemNguoi: V.s(''), xacNhanLuc: V.s('2026-10-09T10:05:00Z'),
+}));
+t('trạng thái ngoài hai giá trị thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+
+/* ══ GHI LẠI MỘT MỤC ĐÃ CÓ — chỗ luật V5 vừa làm vỡ một lần ══
+   `luuMucHocBa` dùng `setDoc(merge:true)`, nên ghi lần hai là lệnh UPDATE. Bé làm
+   lại kỳ ôn tập, bỏ dở lần thứ hai, viết lại bài — tất cả đều ghi lại.
+   ⚠ Phép canh này phải chạy SAU một lệnh ghi cùng đường dẫn, nếu không nó chỉ thử
+   `create` và xanh vô nghĩa — đúng cách luật V5 đã lọt lần đầu. */
+m = await ghi(BE_A, `hocBaTA/${BE_A}/muc/chuong__ta1_C1`, mucHopLe);
+t('GHI LẠI mục đã có (loai chuong) vẫn được', m === 200, `HTTP ${m}`);
+m = await ghi(BE_A, DUONG_VIET, mucViet({ diem: V.n(9), khen: V.s('Lời chấm MỚI.') }));
+t('bé viết LẠI thì ghi đè cả lời chấm được (trangThai về tam)', m === 200, `HTTP ${m}`);
+/* Nhưng không được VỪA xác nhận VỪA sửa lời chấm — đó mới là chốt của V5. */
+m = await ghi(BE_A, DUONG_VIET, mucViet({
+  trangThai: V.s('xacNhan'), diemNguoi: V.n(7), xacNhanLuc: V.s('2026-10-09T11:00:00Z'),
+  khen: V.s('Vừa xác nhận vừa sửa lời chấm.'),
+}));
+t('vừa xác nhận vừa sửa lời chấm thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+/* Và không đổi được `loai` của một mục đã có. */
+m = await ghi(BE_A, DUONG_VIET, { loai: V.s('chuong'), khoa: V.s('ta3:VU1'),
+  at: V.s('2026-10-09'), giaTri: V.m({ dat: V.b(true) }) });
+t('đổi `loai` của mục đã có thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+
+/* ⚠ MỤC `viet` CŨ (ghi trước V5) KHÔNG CÓ `trangThai` — và bé viết lại một bài cũ
+   là ghi lại đúng mục ấy. Đòi trường luôn có thì mọi bài viết cũ hoá thành không
+   ghi lại được, im lặng. */
+m = await ghi(BE_A, `hocBaTA/${BE_A}/muc/viet__ta3_VU9`, {
+  loai: V.s('viet'), khoa: V.s('ta3:VU9'), at: V.s('2026-09-01'),
+  giaTri: V.m({ viet: V.s('Old essay.'), diem: V.n(7), nguon: V.s('ai') }),
+});
+t('mục bài viết CŨ (chưa có trangThai) vẫn ghi được', m === 200, `HTTP ${m}`);
+m = await ghi(BE_A, `hocBaTA/${BE_A}/muc/viet__ta3_VU9`, {
+  loai: V.s('viet'), khoa: V.s('ta3:VU9'), at: V.s('2026-10-09'),
+  giaTri: V.m({ viet: V.s('Old essay, written again.'), diem: V.n(8), nguon: V.s('ai') }),
+});
+t('và GHI LẠI mục cũ ấy cũng được', m === 200, `HTTP ${m}`);
+
+/* Và bé B vẫn không chạm được vào học bạ bé A. */
+m = await ghi(BE_A, `hocBaTA/${BE_B}/muc/viet__ta3_VU1`, mucViet({
+  trangThai: V.s('xacNhan'), diemNguoi: V.n(10), xacNhanLuc: V.s('2026-10-09T10:06:00Z'),
+}), BE_A);
+t('bé A KHÔNG xác nhận được điểm của bé B', m === 403, `HTTP ${m}`);
+
 /* ── BẢN GHI BỎ DỞ (`loai: 'phien'`, vá 23-08-2026) ───────────────────────────
    `phien` là loại MỚI. Luật Firestore từ chối `loai` lạ TRONG IM LẶNG — máy con
    không thấy lỗi, bé không thấy gì, dữ liệu chỉ đơn giản là không có. Buổi đi thử

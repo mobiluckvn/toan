@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
 import { Tranh } from './DocHieu.jsx';
 import { duocGui, DIEM_TOI_DA } from '../lib/chamviet.js';
+import { diemHienThi } from '../lib/hocba.js';
 import { nhoCham } from '../lib/goiChamViet.js';
 
 /**
@@ -233,19 +234,25 @@ export default function VietBai({ bai, onXong, onThoat, onLuot = null }) {
 }
 
 /** Lời chấm — điểm, khen, sửa từng lỗi, gợi ý. Và NÓI RÕ là máy chấm. */
-function LoiCham({ kq, viet }) {
+function LoiCham({ kq, viet, muc = null }) {
   const { cham, boQua } = kq;
+  /* MỘT nguồn cho con số và cái nhãn đi kèm — xem `diemHienThi` (việc V5). `muc` là
+     bản đã nằm trong sổ; chưa có (vừa chấm xong, chưa kịp ghi) thì dựng tạm từ
+     chính lời chấm, và nó sẽ ra nhãn "chờ bố mẹ" — đúng trạng thái lúc ấy. */
+  const hien = diemHienThi(muc || { diem: cham?.diem ?? null });
   return (
     <section className="flex flex-col gap-4 rounded-xl2 border-2 border-teal bg-teal-pale p-4">
       <div className="flex items-baseline gap-3">
         <p className="text-4xl font-bold text-teal-dark">
-          {cham.diem ?? '—'}<span className="text-2xl">/{DIEM_TOI_DA}</span>
+          {hien.diem ?? '—'}<span className="text-2xl">/{DIEM_TOI_DA}</span>
         </p>
         {/* ⚠ DÒNG NÀY KHÔNG ĐƯỢC BỎ. Bác chốt: có điểm thì phải nói rõ ai chấm.
             Con số không nhãn sẽ được đọc thành điểm của cô giáo, và đó là hiểu nhầm
-            bố mẹ không có cách nào tự phát hiện. */}
+            bố mẹ không có cách nào tự phát hiện.
+            Từ V5 nhãn do `diemHienThi` sinh — ba chỗ con số này lộ ra từng mỗi chỗ
+            tự viết một dòng chữ khác nhau. */}
         <p className="text-sm text-teal-dark">
-          Máy chấm (AI), không phải điểm của cô giáo
+          {`${hien.nhanDay}, không phải điểm của cô giáo`}
         </p>
       </div>
 
@@ -296,8 +303,8 @@ function LoiCham({ kq, viet }) {
 
       <GocBoMe ten="Góc bố mẹ · bài viết và lời chấm">
         <MucBoMe nhan="Con viết">{viet}</MucBoMe>
-        <MucBoMe nhan="Máy chấm">
-          {`${cham.diem ?? '—'}/${DIEM_TOI_DA} · ${cham.loi.length} lỗi`}
+        <MucBoMe nhan="Điểm">
+          {`${hien.diem ?? '—'}/${DIEM_TOI_DA} · ${hien.nhanDay} · ${cham.loi.length} lỗi`}
         </MucBoMe>
         {!!cham.choBoMe && <MucBoMe nhan="Lời cho bố mẹ">{cham.choBoMe}</MucBoMe>}
         <MucBoMe nhan="Ai chấm">

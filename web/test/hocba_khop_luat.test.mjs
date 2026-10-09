@@ -43,7 +43,13 @@ const LUAT = chiMa(doc('../firestore.rules'));
 function loaiChoPhep(ten) {
   const i = LUAT.indexOf(`match /${ten}/{userId}/muc/{mucId}`);
   assert.notEqual(i, -1, `firestore.rules không có khối cho ${ten}`);
-  const khoi = LUAT.slice(i, LUAT.indexOf('}', LUAT.indexOf('allow write', i)));
+  /* ⚠ Tên luật đổi được: khối Tiếng Anh từ V5 dùng `allow create, delete` (và một
+     `allow update` riêng cho việc bố mẹ xác nhận điểm) thay vì một `allow write`
+     gộp. Tìm theo tên luật cụ thể là cổng đỏ vì hình dạng rules đổi, dù tính chất
+     — "rules CHỐT một danh sách loai, và màn hình với bên đọc phải khớp" — không
+     đổi. Nên tìm chính DANH SÁCH, trong khối `match` ấy. */
+  const het = LUAT.indexOf('match /', i + 10);
+  const khoi = LUAT.slice(i, het === -1 ? undefined : het);
   const m = khoi.match(/data\.loai in \[([^\]]+)\]/);
   assert.ok(m, `khối ${ten} không chốt danh sách loai — ai cũng ghi được hình dạng lạ`);
   return m[1].split(',').map((s) => s.trim().replace(/^'|'$/g, ''));

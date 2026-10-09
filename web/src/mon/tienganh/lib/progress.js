@@ -12,6 +12,8 @@
 import { choDangDung, CHO_DAU } from '../../../chung/lib/nguoiDung.js';
 import { ghiDinhDang } from './hoso.js';
 
+import { TRANG_THAI_DIEM } from './hocba.js';
+
 const KEY_GOC = 'ttd5.tienganh.v1';
 const khoa = () => {
   const cho = choDangDung();
@@ -236,6 +238,15 @@ export function ghiBaiViet(p, ma, so, { viet, cham }, phamVi = 'chuong') {
         soLoi: (cham?.loi || []).length,
         choBoMe: cham?.choBoMe || '',
         nguon: 'ai',
+        /* ⚠ ĐIỂM MÁY CHẤM LÀ ĐIỂM TẠM cho tới khi người lớn xem (việc V5). `nguon:
+           'ai'` nói ĐIỂM TỪ ĐÂU; `trangThai` nói ĐÃ CÓ AI XEM CHƯA — hai câu hỏi
+           khác nhau, và câu thứ hai là câu bố mẹ cần. Xem `TRANG_THAI_DIEM` ở
+           `lib/hocba.js`.
+           Bé viết LẠI thì về `tam` một lần nữa: lời chấm mới thì lần xác nhận cũ
+           không còn nói về bài này. */
+        trangThai: TRANG_THAI_DIEM.tam,
+        diemNguoi: null,
+        xacNhanLuc: null,
         at: new Date().toISOString(),
       },
     },

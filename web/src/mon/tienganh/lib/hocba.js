@@ -96,3 +96,114 @@ export const hocBaTu = (tienDo) => ({
   chuDe: null,
   trinhDo: null,
 });
+
+/* ═══════════ ĐIỂM MÁY CHẤM Ở TRẠNG THÁI "TẠM" (việc V5, mẫu Human-in-the-loop) ═══════════ */
+
+/**
+ * ── VÌ SAO CẦN ──
+ * Điểm bài viết do mô hình chấm. Màn hình đã nói rõ "máy chấm (AI), không phải điểm
+ * của cô giáo" từ lâu — nhưng đó chỉ là một dòng chữ. Con số thì vẫn nằm trong sổ
+ * học bạ y như mọi điểm khác, và sổ học bạ là thứ bố mẹ đọc để biết con đang ở đâu.
+ *
+ * Nên thêm một trạng thái: điểm máy chấm là ĐIỂM TẠM cho tới khi người lớn xem. Bố
+ * mẹ đồng ý thì nó thành điểm đã xác nhận; thấy máy chấm sai thì sửa. Cả hai đường
+ * đều một chạm, và cả hai đều để lại dấu — không có đường nào lặng lẽ đổi điểm.
+ *
+ * ── BA ĐIỀU KHÔNG ĐƯỢC PHÁ ──
+ *  1. `attempts` VẪN BẤT BIẾN. Việc này không sửa một bản ghi nào đã có; nó chỉ
+ *     thêm trường vào mục học bạ.
+ *  2. KHÔNG CÓ NÚT NÀO CHO BÉ. Xác nhận điểm của chính mình thì không còn là xác
+ *     nhận. Mấy nút này chỉ nằm trong Góc bố mẹ.
+ *  3. BKT KHÔNG ĐỔI — xem ghi chú ở `diemHienThi`.
+ */
+export const TRANG_THAI_DIEM = { tam: 'tam', xacNhan: 'xacNhan' };
+
+/**
+ * Đổi sang số, mà `null` thì VẪN LÀ `null`.
+ *
+ * ⚠ `Number(null)` LÀ 0, VÀ `Number.isFinite(0)` LÀ TRUE. Viết
+ * `Number.isFinite(Number(x)) ? Number(x) : null` là `null` hoá thành số 0 — và lỗi
+ * ấy tôi viết ra HAI LẦN trong cùng tệp này trong cùng một buổi:
+ *   · `diemHienThi`   → `diemNguoi: null` ("bố mẹ ĐỒNG Ý") thành "bố mẹ sửa: 0",
+ *                        tức bấm Đồng ý là điểm bé tụt về 0;
+ *   · `baiChoXacNhan` → bài CHƯA CHẤM (`diem: null`) lọt vào danh sách chờ xác nhận.
+ * Nên nó phải là MỘT hàm, không phải một dòng viết lại mỗi chỗ. Hỏi `== null` TRƯỚC,
+ * rồi mới đổi sang số.
+ */
+const soHoacNull = (x) => (x === null || x === undefined || x === ''
+  ? null : (Number.isFinite(Number(x)) ? Number(x) : null));
+
+/**
+ * Bố mẹ xác nhận (hoặc sửa) điểm một bài viết. TRẢ BẢN MỚI.
+ *
+ * @param diemNguoi  `null` nghĩa là ĐỒNG Ý với điểm máy chấm. Có số nghĩa là sửa.
+ * @param luc        mốc thời gian, tiêm vào để cổng chạy tiền định.
+ *
+ * ⚠ KHÔNG SỬA TẠI CHỖ. Mục này nằm trong sổ tiến độ, mà sổ ấy đi vào `useMemo` của
+ * React — sửa tại chỗ thì màn hình không thấy nó đổi, và bố mẹ bấm nút mà không
+ * thấy gì xảy ra. Cùng lý do với `ghiLuot` của bảng trạng thái.
+ *
+ * ⚠ VÀ KHÔNG ĐỤNG `diem`. Con số máy chấm giữ nguyên ở đó, kể cả khi bố mẹ sửa:
+ * `diemNguoi` nằm cạnh nó, không đè lên. Đè lên thì mất bằng chứng máy chấm bao
+ * nhiêu, và câu hỏi "máy chấm có hay sai không" hết đường trả lời.
+ */
+export function xacNhanDiem(muc, { diemNguoi = null, luc = Date.now() } = {}) {
+  if (!muc) return muc;
+  const d = diemNguoi === null || diemNguoi === undefined ? null : Number(diemNguoi);
+  return {
+    ...muc,
+    trangThai: TRANG_THAI_DIEM.xacNhan,
+    diemNguoi: Number.isFinite(d) ? d : null,
+    xacNhanLuc: new Date(luc).toISOString(),
+  };
+}
+
+/**
+ * ĐIỂM ĐỂ HIỆN RA, KÈM NHÃN NGUỒN — và nhãn là phần quan trọng hơn con số.
+ *
+ * Mọi chỗ hiện điểm bài viết phải đi qua hàm này. Không phải chuyện gu kiến trúc:
+ * con số không nhãn sẽ được đọc thành điểm của cô giáo, và đó là hiểu nhầm bố mẹ
+ * KHÔNG có cách nào tự phát hiện. Ba chỗ con số ấy lộ ra (thẻ bài · màn lời chấm ·
+ * Góc bố mẹ) đã từng mỗi chỗ tự viết một dòng chữ khác nhau.
+ *
+ * ⚠ BKT ĐỌC `diem`, KHÔNG ĐỌC HÀM NÀY — và đó là quyết định, không phải sơ sót.
+ * `onAttempt` pha `worked` nhận bản ghi viết ngay khi máy chấm xong. Bắt nó chờ bố
+ * mẹ xác nhận thì engine đứng lại ở mọi bài viết của mọi bé chưa có người lớn ngồi
+ * cạnh — tức phần thích ứng tắt hẳn vì một việc của người lớn. Nên: ENGINE cứ chạy
+ * bằng điểm máy chấm, còn MÀN HÌNH thì nói rõ điểm ấy đã được ai xem. Hai việc
+ * khác nhau, và chỉ một trong hai cần người.
+ */
+export function diemHienThi(muc) {
+  if (!muc) return { diem: null, nhan: '', nhanDay: '', choXacNhan: false };
+  const may = soHoacNull(muc.diem);
+  const nguoi = soHoacNull(muc.diemNguoi);
+  /* Mục cũ trong sổ không có `trangThai` — sổ sống lâu hơn mã. Coi là `tam`: nói
+     "chờ bố mẹ" về một bài bố mẹ đã xem thì chỉ hơi sai, còn nói "đã xác nhận" về
+     một bài chưa ai xem thì sai hẳn về phía nguy hiểm. */
+  const tt = muc.trangThai || TRANG_THAI_DIEM.tam;
+  /* ⚠ HAI NHÃN, VÀ CẢ HAI ĐỀU CẦN.
+     `nhan` — ba giá trị ngắn của §7, dùng ở chỗ hẹp và là thứ cổng canh.
+     `nhanDay` — nhãn ĐẦY ĐỦ, và nó LUÔN nói điểm từ đâu ra. Màn hình dùng cái này.
+     Vì sao phải có: `nhan` của ca "đã xác nhận" là "bố mẹ đã xác nhận" — đúng, mà
+     không còn một chữ nào nói con số ấy do MÁY chấm. Thẻ bài viết hiện "8/10 điểm ·
+     bố mẹ đã xác nhận" thì vẫn đọc được thành điểm của cô giáo, đúng hiểu nhầm mà
+     bác bắt sửa từ đầu và bố mẹ không có cách nào tự phát hiện. Cổng cũ ghim chuỗi
+     "Máy chấm (AI)" nên nó đỏ lên và chỉ ra đúng chỗ mất mát này. */
+  if (tt !== TRANG_THAI_DIEM.xacNhan) {
+    return { diem: may, nhan: 'máy chấm – chờ bố mẹ', choXacNhan: true,
+             nhanDay: 'Máy chấm (AI) – chờ bố mẹ xem' };
+  }
+  if (nguoi !== null && nguoi !== may) {
+    return { diem: nguoi, nhan: `bố mẹ sửa: ${nguoi}`, choXacNhan: false, diemMay: may,
+             nhanDay: `Bố mẹ sửa thành ${nguoi} – Máy chấm (AI) cho ${may}` };
+  }
+  return { diem: may, nhan: 'bố mẹ đã xác nhận', choXacNhan: false,
+           nhanDay: 'Máy chấm (AI) – bố mẹ đã xác nhận' };
+}
+
+/** Những bài viết đang CHỜ bố mẹ xem — danh sách cho Góc bố mẹ. */
+export function baiChoXacNhan(tienDo) {
+  return Object.entries(tienDo?.baiViet || {})
+    .filter(([, m]) => soHoacNull(m?.diem) !== null && diemHienThi(m).choXacNhan)
+    .map(([khoa, m]) => ({ khoa, muc: m, ...diemHienThi(m) }));
+}

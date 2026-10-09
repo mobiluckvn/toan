@@ -26,6 +26,7 @@ service cloud.firestore {
     /* Ai được XEM kết quả học của một tài khoản: chính chủ, giáo viên, admin */
     function canRead(id) { return isMine(id) || isTeacher() || isAdmin(); }
 
+
     /* ── Hồ sơ người dùng ── */
     match /users/{userId} {
       allow read: if canRead(userId);
@@ -130,6 +131,22 @@ service cloud.firestore {
                    && request.resource.data.score is number;
     }
 
+
+    /* Trạng thái điểm chỉ có HAI giá trị (việc V5, `TRANG_THAI_DIEM`). Chốt ở luật
+       chứ không chỉ ở máy con: một giá trị thứ ba lọt vào sổ thì `diemHienThi` coi
+       nó là `tam` — an toàn, nhưng sổ mang một hình dạng không ai khai.
+       ⚠ PHẢI CHO MỤC CŨ ĐI QUA. Mục `viet` ghi trước V5 không có trường này, và bé
+       viết lại một bài cũ là ghi lại đúng mục ấy. Đòi trường luôn có thì mọi bài
+       viết cũ hoá thành không ghi lại được — im lặng. */
+    function trangThaiDiemHopLe(du) {
+      /* ⚠ `du.giaTri.trangThai` TRÊN MỤC CŨ LÀ MỘT LỖI, KHÔNG PHẢI `null`.
+         Đọc một khoá không có trong map thì rules NÉM LỖI, và lỗi làm cả điều kiện
+         thành `false` — tức TỪ CHỐI. Nên mọi bài viết cũ hoá thành không ghi lại
+         được, im lặng. Phép `!('trangThai' in …) ||` cũng không cứu được vì nhánh
+         sau vẫn bị phân tích. Dùng `get` có mặc định: đúng một cách an toàn. */
+      return du.loai != 'viet'
+             || du.giaTri.get('trangThai', 'tam') in ['tam', 'xacNhan'];
+    }
     match /hocBaTA/{userId}/muc/{mucId} {
       allow read:  if canRead(userId);
       /* Ba loại, và danh sách vẫn hẹp là cố ý — máy con không dựng được một hình
@@ -173,10 +190,61 @@ service cloud.firestore {
          `deploy --only firestore:rules` TRƯỚC khi bản mới lên. Thiếu bước deploy
          thì Firestore từ chối TRONG IM LẶNG. Cổng `hocba_khop_luat.test.mjs` soi
          ba chỗ đầu; bước deploy thì không cổng nào canh được. */
-      allow write: if isMine(userId)
-                   && request.resource.data.loai in ['chuong', 'viet', 'doc', 'phien',
-                                                    'soThich', 'hoSo', 'hoSoAI',
-                                                    'phudao'];
+      /* ⚠ DANH SÁCH NÀY LÀ NGUỒN DUY NHẤT, và cổng `hocba_khop_luat.test.mjs` đọc
+         thẳng từ đây chứ không chép sang. Đừng gói nó vào một hàm `function` của
+         rules: cổng tìm danh sách NGAY TRONG khối `match`, và gói đi là nó không
+         tìm được nữa — tôi vừa thử và nó đỏ. */
+      allow create, delete: if isMine(userId)
+                            && request.resource.data.loai in ['chuong', 'viet', 'doc',
+                                                              'phien', 'soThich',
+                                                              'hoSo', 'hoSoAI',
+                                                              'phudao']
+                            && trangThaiDiemHopLe(request.resource.data);
+
+      /* ── BỐ MẸ XÁC NHẬN ĐIỂM MÁY CHẤM (việc V5) ──
+         Điểm bài viết do mô hình chấm, nên nó là ĐIỂM TẠM cho tới khi người lớn
+         xem. Bố mẹ đồng ý hoặc sửa — và đó là lệnh UPDATE, khác hẳn lệnh ghi mới.
+
+         ⚠ CHỈ BA TRƯỜNG. `affectedKeys().hasOnly` là chốt thật, không phải lời dặn:
+         không có nó thì một lệnh "xác nhận điểm" sửa được luôn `cham` và `viet` —
+         tức sửa được LỜI CHẤM và BÀI BÉ VIẾT. Hai thứ ấy là bằng chứng: bố mẹ phải
+         đọc được máy chấm đã nói gì để biết nó đúng hay sai, mà sửa được thì câu
+         "máy chấm có hay sai không" hết đường trả lời.
+
+         Và máy chủ không tin máy con ở chỗ này: luật phải tự chặn, vì mã máy con
+         thì ai cũng đọc và sửa được.
+
+         ⚠ `giaTri` là một map, nên `affectedKeys()` ở tầng ngoài chỉ thấy đúng
+         `giaTri` đổi. Phải soi vào TRONG nó. */
+      /* ⚠ GHI LẠI MỘT MỤC ĐÃ CÓ LÀ CHUYỆN THƯỜNG, ĐỪNG CHẶN.
+         `luuMucHocBa` dùng `setDoc(..., {merge:true})`, nên ghi lần hai cùng một
+         bài là lệnh UPDATE. Bé làm lại kỳ ôn tập, bỏ dở bài lần thứ hai, viết lại
+         bài viết — tất cả đều ghi lại. Bản đầu của luật này chỉ cho update khi
+         `loai == 'viet'` và đúng ba trường đổi, nên MỌI lần ghi lại của MỌI loại
+         khác bị từ chối — và từ chối trong im lặng, vì `luuMucHocBa` không chờ kết
+         quả. Cổng `luat_firestore` lần chạy ĐẦU vẫn xanh (kho trống nên mọi lệnh là
+         `create`); chỉ lần chạy THỨ HAI mới lộ.
+
+         Nên chốt đúng một điều, và là điều V5 cần: KHÔNG được vừa đánh dấu "bố mẹ
+         đã xác nhận" vừa sửa lời chấm trong cùng một lệnh. Ngoài ca ấy thì update
+         như cũ.
+
+         `loai` KHÔNG đổi được khi update — nhờ thế khỏi phải nhắc lại danh sách
+         loại ở đây, và danh sách vẫn chỉ có MỘT bản (luật `create` trên).
+
+         ⚠ NÓI THẲNG GIỚI HẠN: luật này không ngăn được chính chủ ghi một mục `tam`
+         với lời chấm tự bịa rồi xác nhận nó. Không ngăn được, và trước V5 cũng thế —
+         học bạ là sổ của chính bé. Bằng chứng bất biến là `attempts`, chỗ không ai
+         sửa được kể cả admin. Điều V5 thêm được: một điểm ĐÃ XÁC NHẬN thì không thể
+         bị sửa lời chấm trong cùng cái lệnh xác nhận ấy. */
+      allow update: if isMine(userId)
+                    && request.resource.data.loai == resource.data.loai
+                    && trangThaiDiemHopLe(request.resource.data)
+                    && (resource.data.loai != 'viet'
+                        || request.resource.data.giaTri.get('trangThai', 'tam') != 'xacNhan'
+                        || request.resource.data.giaTri.diff(resource.data.giaTri)
+                             .affectedKeys()
+                             .hasOnly(['trangThai', 'diemNguoi', 'xacNhanLuc']));
     }
 
     /* ── PHÒNG LUYỆN NÓI: buổi nói chuyện của bé với cô giáo máy ──

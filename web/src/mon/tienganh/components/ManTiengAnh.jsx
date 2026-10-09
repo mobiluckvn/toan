@@ -20,6 +20,7 @@ import {
 import { demDenHan, daySauKhiOn } from '../lib/onlai.js';
 import { dungBang } from '../lib/bangtrangthai.js';
 import { manhNhat, yeuNhat } from '../lib/hoso.js';
+import { diemHienThi, xacNhanDiem, baiChoXacNhan } from '../lib/hocba.js';
 import { xoaHoSoAI } from '../lib/hosoai.js';
 import { napDoThi } from '../lib/doThi.js';
 import { maTranTrangThai } from '../lib/lantruyen.js';
@@ -126,6 +127,27 @@ export default function ManTiengAnh({
          `luuTienDo` ở đây, hai chỗ cùng ghi là hai chỗ cùng có thể lệch. */
       luuMucHocBa(learnerId, 'hoSoAI', 'TA:HSAI', { giaTri: hs || null });
       return { ...p, hoSoAI: hs };
+    });
+  }, [datTienDo, learnerId]);
+
+  /**
+   * BỐ MẸ XÁC NHẬN (hoặc sửa) ĐIỂM MỘT BÀI VIẾT — việc V5.
+   *
+   * ⚠ KHÔNG có đường nào cho BÉ gọi hàm này. Xác nhận điểm của chính mình thì không
+   * còn là xác nhận; hai cái nút chỉ nằm trong Góc bố mẹ, sau cổng người lớn.
+   *
+   * Đẩy lên `hocBaTA` bằng ĐÚNG hình dạng cũ (`giaTri` là cả mục): luật Firestore
+   * chỉ cho đổi ba trường, nên gửi cả mục mà chỉ ba trường ấy khác là an toàn — và
+   * nếu ai đó sửa mã để đổi `cham` thì máy chủ TỪ CHỐI, chứ không phải tin vào máy
+   * con. Xem `firestore.rules`.
+   */
+  const xongXacNhan = useCallback((khoa, diemNguoi) => {
+    datTienDo((p) => {
+      const cu2 = (p.baiViet || {})[khoa];
+      if (!cu2) return p;
+      const moi2 = xacNhanDiem(cu2, { diemNguoi });
+      luuMucHocBa(learnerId, 'viet', khoa, { giaTri: moi2 });
+      return { ...p, baiViet: { ...(p.baiViet || {}), [khoa]: moi2 } };
     });
   }, [datTienDo, learnerId]);
 
@@ -447,6 +469,7 @@ export default function ManTiengAnh({
       soTheOn={demDenHan(theOn, { quyen: ct.ma })}
       onMoOnLai={() => setView({ page: 'onlai' })}
       onXoaHoSoAI={() => xongHoSoAI(xoaHoSoAI())}
+      onXacNhanDiem={xongXacNhan}
       onVeKeSach={veKeSach}
     />
   );
@@ -540,15 +563,88 @@ function TriNhoCuaCo({ hoSoAI, onXoa }) {
   );
 }
 
-function HoSoBe({ tienDo, ct, onXoaHoSoAI = null }) {
+/**
+ * ĐIỂM BÀI VIẾT CHỜ BỐ MẸ XEM — và hai cái nút (việc V5, mẫu Human-in-the-loop).
+ *
+ * ── VÌ SAO Ở ĐÂY ──
+ * Điểm do mô hình chấm. Màn hình đã nói "máy chấm (AI)" từ lâu, nhưng đó chỉ là một
+ * dòng chữ — con số vẫn nằm trong sổ y như mọi điểm khác. Nay nó là ĐIỂM TẠM cho
+ * tới khi người lớn xem, và chỗ xem là đây: sau cổng Góc bố mẹ.
+ *
+ * ⚠ KHÔNG CÓ NÚT NÀO CHO BÉ. Xác nhận điểm của chính mình thì không còn là xác nhận.
+ *
+ * ⚠ SỬA ĐIỂM BẰNG MỘT CHẠM. Hộp gõ số thì bố mẹ phải gõ rồi bấm, mà sửa điểm là
+ * việc làm một lần cho mỗi bài — ba chạm cho một việc như thế là đủ để không ai làm.
+ * Nên: một hàng số 0–10, bấm là xong.
+ */
+function ChoXacNhan({ tienDo, onXacNhan }) {
+  const [moSua, datMoSua] = useState(null);
+  const ds = baiChoXacNhan(tienDo);
+  if (!onXacNhan || !ds.length) return null;
+  return (
+    <MucBoMe nhan={`Điểm máy chấm chờ bố mẹ xem (${ds.length})`}>
+      <div className="flex flex-col gap-3">
+        {ds.map(({ khoa, muc, diem }) => (
+          <div key={khoa} className="rounded-lg border border-line bg-white/70 p-2.5">
+            <p className="text-ink">
+              <span className="font-semibold">{diem}/10</span>
+              <span className="text-mute"> · máy chấm</span>
+            </p>
+            {!!muc.viet && <p className="mt-0.5 text-xs text-mute">Con viết: {muc.viet}</p>}
+            {!!muc.choBoMe && <p className="mt-0.5 text-xs text-mute">{muc.choBoMe}</p>}
+            {moSua === khoa ? (
+              <div className="mt-2 flex flex-wrap items-center gap-1">
+                <span className="mr-1 text-xs text-mute">Điểm đúng là:</span>
+                {Array.from({ length: 11 }, (_, n) => (
+                  <button key={n} type="button"
+                    onClick={() => { datMoSua(null); onXacNhan(khoa, n); }}
+                    className="h-7 w-7 rounded-md border border-line text-xs font-semibold
+                      text-navy hover:bg-soft
+                      focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+                    {n}
+                  </button>
+                ))}
+                <button type="button" onClick={() => datMoSua(null)}
+                  className="ml-1 text-xs text-mute underline">thôi</button>
+              </div>
+            ) : (
+              <div className="mt-2 flex gap-2">
+                <button type="button" onClick={() => onXacNhan(khoa, null)}
+                  className="rounded-lg bg-navy px-3 py-1.5 text-xs font-semibold text-white
+                    focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+                  Đồng ý
+                </button>
+                <button type="button" onClick={() => datMoSua(khoa)}
+                  className="rounded-lg border border-line px-3 py-1.5 text-xs font-semibold
+                    text-mute hover:text-navy
+                    focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+                  Sửa điểm
+                </button>
+              </div>
+            )}
+          </div>
+        ))}
+        <p className="text-xs leading-relaxed text-mute">
+          Điểm này do máy chấm. Bố mẹ đồng ý thì nó thành điểm đã xác nhận; thấy máy
+          chấm sai thì sửa — điểm máy chấm vẫn được giữ lại bên cạnh để còn đối chiếu.
+          Phần gợi ý bài tiếp theo cho con thì không chờ bước này.
+        </p>
+      </div>
+    </MucBoMe>
+  );
+}
+
+function HoSoBe({ tienDo, ct, onXoaHoSoAI = null, onXacNhanDiem = null }) {
   const hs = tienDo?.dinhDang || {};
   const manh = manhNhat(hs);
   const yeu = yeuNhat(hs);
   const cefr = ct?.cefr;
   const ai = tienDo?.hoSoAI || null;
-  /* Có trí nhớ thì PHẢI hiện khối này, kể cả khi chưa đủ mẫu để nói về dạng câu:
-     bố mẹ có quyền biết hệ thống đang giữ gì về con, và có quyền xoá. */
-  if (!manh && !cefr && !ai) return null;
+  const cho = baiChoXacNhan(tienDo);
+  /* Có trí nhớ, hoặc có bài chờ xác nhận, thì PHẢI hiện khối này — kể cả khi chưa
+     đủ mẫu để nói về dạng câu: bố mẹ có quyền biết hệ thống đang giữ gì về con, và
+     có quyền xem lại điểm máy chấm. */
+  if (!manh && !cefr && !ai && !cho.length) return null;
   const pc = (x) => `${Math.round(x.ti * 100)}%`;
   return (
     <GocBoMe ten="Góc bố mẹ · hệ thống biết gì về cách con học">
@@ -576,6 +672,7 @@ function HoSoBe({ tienDo, ct, onXoaHoSoAI = null }) {
           Chỉ tính lượt trả lời ĐẦU của mỗi câu, và chỉ nói về dạng câu con đã làm
           đủ nhiều. Dạng nào con mới gặp vài lần thì chưa đủ để kết luận gì.
         </p>
+        <ChoXacNhan tienDo={tienDo} onXacNhan={onXacNhanDiem} />
         <TriNhoCuaCo hoSoAI={ai} onXoa={onXoaHoSoAI} />
       </div>
     </GocBoMe>
@@ -683,6 +780,7 @@ function NhaQuyen({
   ct, bais, kyOn = [], docs = [], viets = [], tienDo,
   onMoBai, onMoOnTap, onMoDocHieu, onMoVietBai, onVeKeSach,
   soTheOn = 0, onMoOnLai, mucThao = null, onXoaHoSoAI = null,
+  onXacNhanDiem = null,
 }) {
   if (!bais) {
     return <div className="p-6 text-mute">Đang mở quyển…</div>;
@@ -735,7 +833,8 @@ function NhaQuyen({
         </div>
       </div>
 
-      <HoSoBe tienDo={tienDo} ct={ct} onXoaHoSoAI={onXoaHoSoAI} />
+      <HoSoBe tienDo={tienDo} ct={ct} onXoaHoSoAI={onXoaHoSoAI}
+              onXacNhanDiem={onXacNhanDiem} />
       <MaTran mucThao={mucThao} />
       <BacCefr mucThao={mucThao} />
 
@@ -972,6 +1071,8 @@ function TheDocHieu({ bai, mo, conThieu, xong, onMo }) {
    màn lời chấm, và đây là chỗ thứ hai con số ấy lộ ra. */
 function TheVietBai({ bai, mo, conThieu, xong, onMo }) {
   const daViet = Number.isFinite(xong?.diem);
+  /* MỘT nguồn cho con số và nhãn — xem `diemHienThi` (việc V5). */
+  const hien = diemHienThi(xong);
   return (
     <button type="button" disabled={!mo && !daViet} onClick={() => onMo(bai.id)}
       className={`flex items-center gap-3 rounded-xl2 border-2 border-dashed p-4 text-left
@@ -983,7 +1084,7 @@ function TheVietBai({ bai, mo, conThieu, xong, onMo }) {
       <span className="min-w-0 flex-1">
         <span className="block font-bold text-ink">{bai.name}</span>
         <span className="block text-sm text-mute">
-          {daViet ? `Con đã viết · ${xong.diem}/10 điểm (máy chấm)`
+          {daViet ? `Con đã viết · ${hien.diem}/10 điểm · ${hien.nhanDay}`
             : mo ? `Viết ${bai.toiThieu}–3 câu, cô giáo máy chấm cho con`
             : conThieu === 1 ? 'Còn 1 bài nữa trong chương này là mở'
             : `Còn ${conThieu} bài nữa trong chương này là mở`}
