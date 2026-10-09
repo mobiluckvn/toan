@@ -318,7 +318,11 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
          lại trong bản ghi buổi để còn đo vòng ấy có ăn hay không. */
       const luot = { vai: 'may', chu: tra.en || tra.vi, en: tra.en, vi: tra.vi,
                      buoc: tra.buoc, can: tra.can,
-                     lanSua: tra.lanSua ?? null, lanSuaViet: tra.lanSuaViet ?? null };
+                     lanSua: tra.lanSua ?? null, lanSuaViet: tra.lanSuaViet ?? null,
+                     /* `nhan` — lượt này cô trả lời theo nhánh nào (việc V2). Ghi
+                        vào bản ghi buổi để đếm được PHÂN PHỐI nhãn: nhánh nào
+                        không bao giờ chạy thì lời dặn của nó chưa ai đọc. */
+                     nhan: tra.nhan ?? null, doTin: tra.doTin ?? null };
       const sau = [...ds, luot];
       datLichSu(sau);
       /* ── LƯỢT NÓI Ở PHÒNG LUYỆN VÀO ENGINE (bác chốt 23-08-2026) ──

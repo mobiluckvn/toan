@@ -34,7 +34,10 @@ import { createHash } from 'node:crypto';
  * sửa lời dặn mà quên tăng số).
  */
 export const PHIEN_BAN_MAU = {
-  luyennoi: 1,
+  /* 2 từ 09-10-2026 (việc V2): luật 7 · 8 · 8b rời khối chung sang `loidan_nhan.js`
+     thành chín nhánh theo nhãn, luật 8c giữ lại và mang số 7, hai luật cuối lùi số.
+     Đổi đáng kể, nên bảng so ΔC không được gom chung với lượt của mẫu 1. */
+  luyennoi: 2,
   chamviet: 1,
 };
 
@@ -78,6 +81,16 @@ export function vanTay(mau, khung, them = {}) {
 export const DAU_RIENG = [
   /vốn từ/i, /bảng từ/i, /mẫu câu bé/i, /bé viết/i, /bé nói/i,
   /the child/i, /tên bé/i, /^-\s/,
+  /* ── DÒNG MANG CHỮ BÉ VỪA NÓI, từ việc V2 ──
+     `loidan_nhan.js` mở đầu MỌI dòng mang dữ liệu của bé bằng đúng chữ `CHILD:`
+     (hằng `DAU_DONG_RIENG` bên ấy). Một dấu hiệu khai sẵn và duy nhất thì chắc hơn
+     đi đoán theo lời văn: thêm một nhãn mới mà quên khai cụm từ của nó vào đây là
+     chữ của bé lọt vào vân tay, và không có gì báo — chính chỗ sót mà `luyennoi.js`
+     đã nói trước là sẽ sót.
+     Ba mẫu dưới là lưới đỡ thứ hai, cho trường hợp ai đó viết dòng riêng mà quên
+     tiền tố. Cổng `tienganh_nhanluot.test.mjs` soi TÍNH CHẤT (đem từng giá trị của
+     `chiTiet` đi tìm trong phần khung còn lại), không soi chính tả mấy mẫu này. */
+  /^\s*CHILD:/i, /she said/i, /she asked/i, /left out:/i,
 ];
 
 export function locKhung(loiDan) {

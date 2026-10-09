@@ -1496,9 +1496,34 @@ test('lời dặn nói rõ CÔ PHẢI DẠY GÌ, không chỉ liệt kê điều
   const s = loiDan({ von: vonB09(), tenBe: 'An', lop: 1 });
   assert.match(s, /WHOLE SENTENCES/);
   assert.match(s, /TEACH/); assert.match(s, /SPEAK/); assert.match(s, /FIX/);
-  assert.match(s, /CORRECT HER/i, 'phải dặn cả việc sửa lỗi');
-  assert.match(s, /One fix per turn/i, 'sáu tuổi không ôm nổi ba lỗi một lúc');
   assert.match(s, /Do not reuse your own Vietnamese wording/i);
+
+  /* ── VIỆC SỬA LỖI: nay nằm Ở HAI CHỖ, không còn ở khối chung ── (việc V2)
+     Luật 8b cũ ("CORRECT HER" · "One fix per turn") đã rời khối chung sang
+     `loidan_nhan.js`, vì nó chỉ nói về MỘT tình huống: bé vừa nói sai. Để chung thì
+     lượt nào mô hình cũng đọc nó và phải tự đoán có đang áp dụng hay không.
+
+     ⚠ Chuyển chỗ thì phép canh phải chuyển theo, chứ KHÔNG được nới. Đòi hỏi của
+     bác không đổi một chữ ("dạy học sinh nói rồi hướng dẫn học sinh sửa"), nên dưới
+     đây soi đủ CẢ HAI đường tới được lượt sửa — rộng hơn bản cũ, vì bản cũ chỉ soi
+     khối chung và chưa bao giờ soi nhánh kịch bản. */
+  for (const nhan of ['thieuTu', 'saiThuTu', 'nhamTu']) {
+    const d = loiDan({ von: vonB09(), tenBe: 'An', lop: 1, nhan,
+                       chiTiet: { beNoi: 'im bo', dich: 'Hi.', thieu: ['hi'], nham: 'duck' } });
+    assert.match(d, /\bONLY\b|\bONE\b|\bone\b/,
+      `nhãn ${nhan}: không dặn "mỗi lượt sửa MỘT thứ" — sáu tuổi không ôm nổi ba lỗi`);
+    assert.match(d, /Do not move on|try the target|say the target/i,
+      `nhãn ${nhan}: không dặn phải Ở LẠI câu ấy — bỏ qua chỗ sai là đúng cái bác bắt`);
+  }
+  /* Nhánh CÓ kịch bản không ghép dòng nhãn (xem `NHAN_TRONG_KICH_BAN`); ở đấy việc
+     sửa do bước `sua` của `dongBuoc` gánh. */
+  const bSua = buocSua([{ vai: 'may', en: 'Hi.', buoc: 'mau' },
+                        { vai: 'be', chu: 'x', diem: 4, mau: 'Hi.', thieu: ['hi'] }]);
+  assert.equal(bSua?.loai, 'sua');
+  const dSua = dongBuoc(bSua, { tenBe: 'An' }, { chu: 'x', diem: 4, thieu: ['hi'] });
+  assert.match(dSua, /CORRECTION turn/i, 'nhánh kịch bản mất hẳn lời dặn sửa lỗi');
+  assert.match(dSua, /Name the one thing that went wrong/i);
+  assert.match(dSua, /Do not move on/i);
 });
 
 test('lời dặn mang BỐI CẢNH của chính unit ấy', () => {

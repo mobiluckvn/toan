@@ -25,6 +25,13 @@
  * dặn cho máy. Không `fetch`, không Firebase. Nhờ thế cổng chạy được bằng `node`
  * và soi được đúng cái dễ sai nhất — vốn từ bị nới ra lúc nào không biết.
  */
+/* ⚠ Tệp này xưa nay KHÔNG import gì — luật thuần, chạy được bằng `node` trần. Hai
+   import dưới giữ nguyên tính ấy: `nhanluot` và `loidan_nhan` cũng thuần, cũng
+   không biết tới mạng, và không tệp nào trong ba tệp gọi ngược lại tệp kia (đã
+   kiểm: không có vòng). Lời dặn theo nhãn phải nằm trong `loiDan` chứ không ghép
+   ở chỗ gọi, vì chỗ ghép mới là chỗ quyết định nó đứng TRƯỚC hay SAU `dongViec`. */
+import { NHAN_GIU_VIEC } from './nhanluot.js';
+import { dongTheoNhan } from './loidan_nhan.js';
 
 /** Nhiều nhất bao nhiêu unit CŨ được trộn vào. Đủ để ôn, không đủ để loãng. */
 export const UNIT_CU_TOI_DA = 3;
@@ -262,10 +269,67 @@ export const KIEU_VIEC = {
  * Cố tình không dùng ngẫu nhiên: chạy hai lần ra hai kiểu thì không cổng nào canh
  * được, mà đây đúng là chỗ vừa hỏng.
  */
-export function viecTiepTheo({ von, lichSu = [], haDoKho = false, hoSo = null } = {}) {
+/**
+ * GIỮ NGUYÊN CÂU BÉ ĐANG TẬP — và có trần, vì giữ mãi là một cái bẫy.
+ *
+ * Câu đích lấy từ `luotBe.mau`: `PhongNoi.jsx` giữ lại ngay trong lượt của bé đúng
+ * câu đã dùng để chấm, nên đây là câu BÉ ĐANG CỐ NÓI, không phải câu cô vừa nói.
+ * Hai thứ ấy khác nhau ở bài tả tranh và ở mọi bước hỏi–đáp: cô hỏi "What can you
+ * see?" mà bé phải đáp.
+ *
+ * ⚠ TRẦN DÙNG LẠI `SUA_TOI_DA`, không đặt số mới. Nhánh kịch bản đã đi qua đúng
+ * cái bẫy này rồi và `buocSua` đã ghi lại: bé đuối thì kịch bản đứng yên, lượt sửa
+ * chen lên trước, và cả hai mươi phút chỉ còn một câu — "mười lượt liền đều là
+ * Hello!". Sửa hai lần là đủ cho một chỗ khó; lần thứ ba thì cái bé cần là một
+ * việc DỄ HƠN (`haDoKho`), nên tới đó nhường đường cho vòng luyện.
+ */
+function viecGiuLai(von, lichSu, tu, datNguong) {
+  const be = luotBeCuoi(lichSu);
+  const dich = be?.mau;
+  if (!dich) return null;
+
+  /* Đếm lượt trượt LIÊN TIẾP trên CÙNG câu ấy — cùng phép đếm với `buocSua`, cố ý
+     giống, vì hai chỗ đang trả lời đúng một câu hỏi. */
+  const ds = luotLuyen(lichSu);
+  let lien = 0;
+  for (let i = ds.length - 1; i >= 0; i -= 1) {
+    if (ds[i].mau !== dich || ds[i].diem >= datNguong) break;
+    lien += 1;
+  }
+  if (lien > SUA_TOI_DA) return null;
+
+  /* Từ mục tiêu suy từ CHÍNH câu ấy — `tuTrongCau` đã biết cách bỏ chữ đứng sau
+     chủ ngữ (đó là động từ, không phải danh từ của bài). Không ra từ nào thì lấy
+     từ đầu bài, vì `cauThayThe` cần một `tu` để còn dựng được đường lui. */
+  const coTu = tuTrongCau(dich, von);
+  return {
+    tu: coTu[0] || tu[0],
+    kieu: KIEU_VIEC.mau,
+    /* Không đi tra xem câu này thuộc mẫu nào: lời dặn theo nhãn đòi cô đọc lại
+       ĐÚNG câu ấy, không đòi điền lại khuôn. Dựng một `mau` chỉ có `cau` là vừa
+       đủ cho `dongViec`, và không có `congThuc` thì không ai điền bừa vào. */
+    mau: { cau: dich, congThuc: null, dungDe: 'câu bé đang tập' },
+    daNhac: lien,
+    theoSoThich: false,
+    giuViec: true,
+  };
+}
+
+export function viecTiepTheo({
+  von, lichSu = [], haDoKho = false, hoSo = null, nhan = null, datNguong = 6,
+} = {}) {
   const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
   const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
   if (!tu.length) return null;
+
+  /* ── VIỆC CHỈ TIẾN KHI BÉ NÓI ĐÚNG ── (việc V2)
+     Bé vừa sót chữ, đảo thứ tự, nói tiếng Việt, hỏi lại hay im lặng thì việc của
+     lượt này là ĐÚNG CÂU ẤY, không phải một câu mới. Trước bản này việc xoay vòng
+     theo SỐ LƯỢT, bất kể bé vừa làm gì — nên câu bé chưa nói được trôi qua sau
+     đúng một lượt, và cô đi dạy câu khác. Xem `NHAN_GIU_VIEC`. */
+  const giu = nhan && NHAN_GIU_VIEC.has(nhan)
+    ? viecGiuLai(von, lichSu, tu, datNguong) : null;
+  if (giu) return giu;
 
   const cuaCo = lichSu.filter((x) => x.vai === 'may');
   const dem = new Map(tu.map((t) => [t.tu, 0]));
@@ -322,8 +386,31 @@ function dongViec(v, tenBe) {
   if (kieu === KIEU_VIEC.mau && mau) {
     /* ĐÚNG NGUYÊN VĂN. Để nó tự thay tên ở lượt này thì lượt `mau` và lượt `thay`
        ra cùng một câu — đã thấy thật: hai lượt liền đều "Hi, I'm Bo." */
-    return `THIS TURN: say exactly this sentence, word for word: "${mau.cau}"`
+    const dong = `THIS TURN: say exactly this sentence, word for word: "${mau.cau}"`
       + ' — do not substitute anything.';
+    if (!v.giuViec) return dong;
+    /* ══ PHẢI GỠ LUẬT 4 RA, KHÔNG THÌ CẢ V2 VÔ NGHĨA ══
+       Đo thật 09-10 với Groq, 27 lượt: bé sai thì KHÔNG LẦN NÀO (0/9) cô nhắc lại
+       đúng câu bé đang tập. Cô đổi chữ trong ô — bé cần nghe lại "It's my brother."
+       thì cô nói "It's my sister."
+
+       Vì lời dặn đang tự chọi nhau. Luật 4 nằm trong khối HARD RULES ("breaking any
+       of these makes the lesson useless") và viết thẳng: NEVER say the same English
+       sentence you said in your previous turn — Vary the word in the slot. Hai dòng
+       dưới nó (dòng theo nhãn, và chính dòng này) thì đòi đọc lại NGUYÊN câu ấy.
+       Mô hình chọn bên được gọi là "hard rule", và nó chọn đúng theo lời ta dặn.
+
+       Luật 4 vẫn đúng ở lượt thường — nó sinh ra để chữa "cô cứ nói đi nói lại".
+       Nhưng lượt SỬA thì lặp lại chính là việc cần làm. Nên gỡ ra ĐÚNG lượt ấy,
+       bằng đúng cách `dongBuoc` đã làm cho bước `sua` từ 18-08: nói thẳng ra rằng
+       dòng này thắng luật kia. Không nói thì mô hình không có cách nào biết. */
+    /* ⚠ KHÔNG mở đầu bằng `THIS TURN:` nữa. Lượt giữ việc đã có một dòng
+       `THIS TURN:` của nhãn ở ngay trên; hai dòng cùng mở đầu như thế là hai lệnh
+       ngang hàng, và mô hình không có cách nào biết dòng nào mới là việc. */
+    return `${dong.replace(/^THIS TURN: /, 'SAME TASK AS LAST TURN: ')}`
+      + '\n  She has NOT said it right yet, so SAY IT AGAIN, unchanged.'
+      + '\n  This overrides HARD RULE 4 ("never repeat yourself"): repeating is the'
+      + '\n  whole job this turn. Do not vary the word in the slot.';
   }
   if (kieu === KIEU_VIEC.thay && mau) {
     const khung = mau.congThuc || mau.cau;
@@ -340,7 +427,10 @@ function dongViec(v, tenBe) {
 
 /* Mặc định là "con", KHÔNG phải "bạn nhỏ". Bản cũ để "bạn nhỏ" nên chính lời dặn
    gieo chữ "bạn" vào rồi trách mô hình dùng nó — xem `XUNG_HO_CAM`. */
-export function loiDan({ von, tenBe = 'con', lop = 1, viec = null, hoSo = null, unit = null }) {
+export function loiDan({
+  von, tenBe = 'con', lop = 1, viec = null, hoSo = null, unit = null,
+  nhan = null, chiTiet = null,
+}) {
   const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
   const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
   const bangTu = tu.map((t) => `${t.tu} (${t.nghia})`).join(', ');
@@ -385,31 +475,41 @@ export function loiDan({ von, tenBe = 'con', lop = 1, viec = null, hoSo = null, 
     '5. Do not greet more than once in a conversation. Greet only on your first turn.',
     '6. Always add ONE short Vietnamese line explaining what you just said and what',
     '   the child should do. Write it for a six-year-old, not for an adult.',
-    '7. If the child says something off-topic, gently steer back to the words above.',
-    '   Never discuss anything other than practising these words.',
-    '8. If the child repeated correctly, put the praise in the VIETNAMESE line and',
-    '   still do this turn\'s task in English — praise is not a turn of its own.',
-    /* Bác chốt 18-08: "dạy học sinh nói rồi hướng dẫn học sinh sửa". Luật 8 cũ chỉ
-       nói tới lúc bé nói ĐÚNG; lúc bé nói SAI thì không luật nào bảo phải làm gì,
-       nên mô hình khen chung chung rồi đi tiếp. Chỗ hỏng thì nằm lại đó. */
-    '8b. When she gets it wrong, CORRECT HER — that is the whole point of the room.',
-    '   Say the one thing that was already right, name the ONE thing to fix (a missing',
-    '   word, a swapped word order), and ask her to say it again. One fix per turn:',
-    '   a six-year-old cannot hold three corrections at once.',
-    '   Never say "sai rồi" on its own, and never let a wrong sentence pass in silence.',
-    '8c. Do not reuse your own Vietnamese wording from an earlier turn. Saying',
+    /* ── LUẬT 7 · 8 · 8b CŨ ĐÃ CHUYỂN SANG `loidan_nhan.js` ── (việc V2)
+       Ba luật ấy đều nói về MỘT tình huống riêng: bé nói lạc đề (7), bé nói đúng
+       (8), bé nói sai (8b). Để chung ở đây thì lượt nào mô hình cũng đọc cả ba,
+       rồi tự đoán cái nào đang áp dụng — và nó đoán theo thứ chiếm nhiều chữ
+       nhất. Nay mỗi cái thành nội dung của đúng nhánh cần nó, ghép vào bằng
+       `dongTheoNhan` ở dưới. KHÔNG để lại bản thứ hai ở đây: lặp hai nơi thì sửa
+       một bên là hai bên nói khác nhau, và mô hình nghe bên dài hơn.
+
+       ⚠ LUẬT 8c THÌ GIỮ, dù §7 kể nó trong danh sách phải gỡ. Nó KHÔNG nói về
+       lượt vừa rồi của bé mà nói về lịch sử của CHÍNH CÔ ("đừng dùng lại lời Việt
+       cũ"), nên nó áp dụng ở cả chín nhãn. Gỡ khỏi đây mà không nhãn nào gánh thì
+       mất hẳn một luật đã chữa được một lời bác bắt ("feel like a machine"); còn
+       chép vào cả chín nhãn thì đúng là cái lặp vừa nói ở trên. Nên nó ở lại khối
+       chung, mang số 7. */
+    '7. Do not reuse your own Vietnamese wording from an earlier turn. Saying',
     '   "Con nghe rồi nói lại nhé" every single turn is exactly what makes a lesson',
     '   feel like a machine. Talk to her about THIS sentence.',
     /* Hai luật dưới đây bác chốt 14-08, và cả hai đều CÓ CHỐT SOI LẠI ở
        `loiVietHopLe` — dặn dò một mình chưa bao giờ đủ trong phòng này. */
-    '9. Vietnamese pronouns are FIXED: call yourself "cô", call the child "con".',
+    '8. Vietnamese pronouns are FIXED: call yourself "cô", call the child "con".',
     `   Never "bạn", "em", "tớ", "cậu" — you are her teacher, not her classmate.`,
     '   ("mình" meaning "we/us together" is fine: "hôm nay mình tập nói nhé".)',
-    '10. When you quote English inside the Vietnamese line, quote it EXACTLY as it',
+    '9. When you quote English inside the Vietnamese line, quote it EXACTLY as it',
     '   appears above or as the child actually said it. Never reshape a word to fit',
     '   your sentence. Quoting a word the child never said teaches her a wrong word,',
     '   and it will be read aloud in the wrong voice.',
     '',
+    /* ── VIỆC CỦA ĐÚNG LƯỢT NÀY, THEO NHÃN ── (việc V2)
+       Đứng SAU khối luật và TRƯỚC `dongViec` là có ý: luật là thứ không đổi, nhãn
+       nói tình huống, `dongViec` nói câu cụ thể. Đọc xuôi từ chung tới riêng thì
+       dòng sau bao giờ cũng thắng dòng trước — mà dòng sau mới là dòng của lượt
+       này.
+       ⚠ Dòng nào mang chữ của bé thì mở đầu bằng `CHILD:` và bị `locKhung` bỏ
+       khỏi vân tay — giao ước ghi ở đầu `loidan_nhan.js`. */
+    nhan ? dongTheoNhan(nhan, chiTiet || {}) : '',
     dongViec(viec, tenBe),
     dongHoSo(hoSo, tenBe),
     '',

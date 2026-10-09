@@ -16,6 +16,7 @@ import {
   loiDanTranh, canNoi,
   soiCau, loiNhacSua, loiNhacSuaViet, SUA_CO_TOI_DA,
 } from './phongnoi.js';
+import { nhanLuot, NHAN_TRONG_KICH_BAN } from './nhanluot.js';
 
 /** Collection riêng của Tiếng Anh — hậu tố TA để không bao giờ lẫn với Toán. */
 export const KHO_PHONG_NOI = (uid) => `phongNoiTA/${uid}/buoi`;
@@ -77,12 +78,17 @@ export async function hoiCoGiao({
      được việc mới vào. */
   /* CÓ KỊCH BẢN thì câu tiếng Anh lấy thẳng từ đó, mô hình chỉ viết lời tiếng Việt.
      Không có (bài chưa sinh kịch bản) thì rơi về cách cũ — máy con tự chọn việc. */
-  const buoc = kichBan ? buocTiepTheo({ kichBan, lichSu, hoSo, haDoKho }) : null;
-  const viec = buoc ? null : viecTiepTheo({ von, lichSu, haDoKho, hoSo });
   /* Lượt vừa rồi của bé — kèm ĐIỂM và những chữ bé bỏ sót. `goiGui` cắt sạch mấy
      thứ ấy khi gửi lịch sử (nó chỉ gửi vai + chữ), nên nếu không đi đường này thì
      mô hình không có cách nào biết bé nói được mấy điểm. Xem `dongBuoc`. */
   const luotBe = luotBeCuoi(lichSu);
+  /* ── NHÃN CHO LƯỢT VỪA RỒI CỦA BÉ ── (việc V2, mẫu Routing)
+     Thuần code, không tốn một lời gọi nào: nhãn suy ra từ chính con số `chamCau`
+     đã tính. Nó lái HAI thứ — việc của lượt này (`viecTiepTheo`) và lời dặn
+     (`loiDan`) — nên phải tính TRƯỚC cả hai. */
+  const { nhan, doTin, chiTiet } = nhanLuot(luotBe, { von });
+  const buoc = kichBan ? buocTiepTheo({ kichBan, lichSu, hoSo, haDoKho }) : null;
+  const viec = buoc ? null : viecTiepTheo({ von, lichSu, haDoKho, hoSo, nhan });
   const unit = kichBan
     ? { ten: kichBan.ten,
         muc_tieu: kichBan.muc_tieu,
@@ -99,11 +105,15 @@ export async function hoiCoGiao({
      thêm mấy dòng về tranh vào đấy thì mô hình vẫn đọc ra "dạy bé nói theo mẫu",
      vì chín phần mười lời dặn nói thế. */
   const laTranh = kichBan?.dang === 'tranh';
+  /* CÓ KỊCH BẢN thì chỉ ghép BA nhãn mà kịch bản không có chỗ nào nói tới — xem
+     `NHAN_TRONG_KICH_BAN`. Ghép cả chín vào là `dongBuoc` và dòng nhãn cùng ra
+     lệnh về một câu, và mô hình nghe cái nào thì không ai đoán được. */
+  const nhanKB = NHAN_TRONG_KICH_BAN.has(nhan) ? nhan : null;
   const dan = laTranh
     ? loiDanTranh({ tenBe, lop, kichBan, buoc, luotBe })
     : (buoc
-      ? `${loiDan({ von, tenBe, lop, viec: null, hoSo, unit })}\n${dongBuoc(buoc, { tenBe, thich: hoSo?.thich }, luotBe)}`
-      : loiDan({ von, tenBe, lop, viec, hoSo, unit }));
+      ? `${loiDan({ von, tenBe, lop, viec: null, hoSo, unit, nhan: nhanKB, chiTiet })}\n${dongBuoc(buoc, { tenBe, thich: hoSo?.thich }, luotBe)}`
+      : loiDan({ von, tenBe, lop, viec, hoSo, unit, nhan, chiTiet }));
   const messages = [{ role: 'system', content: dan }, ...goiGui(lichSu)];
   const { data } = await goi(messages);
   const tra = docTraLoi(data?.chu);
@@ -114,13 +124,39 @@ export async function hoiCoGiao({
     tra.mauPrompt = data?.mauPrompt || null;
     tra.phienBanMau = data?.phienBanMau ?? null;
     tra.vanTayPrompt = data?.vanTayPrompt || null;
+    /* Gắn vào `tra` chứ không thêm vào từng câu `return`: hàm này có BỐN đường ra
+       (hai ở nhánh kịch bản, hai ở nhánh thường) và cả bốn đều `...tra`. Thêm tay
+       vào từng đường thì sớm muộn sót một đường, mà đường sót chính là đường ít ai
+       đi qua — tức nhãn mất ở đúng chỗ khó lần ra nhất.
+       ⚠ KHÔNG gắn `chiTiet`: trong đó có chữ bé vừa nói, và `tra` thì đi thẳng vào
+       `lichSu` rồi lên `phongNoiTA`. Lời bé nói đã được lưu một lần ở lượt của
+       chính bé; lưu thêm một bản trong lượt của cô là nhân đôi vô cớ. */
+    tra.nhan = nhan;
+    tra.doTin = doTin;
   }
 
   /* SOI LẠI CÂU TIẾNG ANH. Dặn dò không đủ: đã bảo rõ ô trống của `Bye, + [Name].`
      là chỗ của tên người, mô hình vẫn sinh ra "Bye, bike." Bé 6 tuổi đang tập nhại
      thì một câu sai là dạy sai. Không hợp lệ thì thay bằng câu máy con tự dựng —
      luôn đúng, vì nó ghép từ chính dữ liệu bài. */
-  const cauTruoc = [...lichSu].reverse().find((x) => x.vai === 'may')?.en || '';
+  const cauTruocThat = [...lichSu].reverse().find((x) => x.vai === 'may')?.en || '';
+  /* ══ LƯỢT GIỮ VIỆC THÌ TẮT LUẬT CHỐNG LẶP ══
+     Đo thật 09-10 với Groq: bé sai thì KHÔNG LẦN NÀO cô nhắc lại đúng câu bé đang
+     tập, kể cả sau khi lời dặn đã nói thẳng "SAY IT AGAIN, unchanged". Chỗ hỏng
+     không ở lời dặn mà ở ĐÂY.
+
+     `soiCau` bác câu trùng lượt trước với lý do `lap` — luật ấy đúng và sinh ra để
+     chữa "nó cứ nói đi nói lại". Nhưng ở lượt GIỮ VIỆC thì lặp lại CHÍNH LÀ việc
+     cần làm, nên mô hình trả về câu đúng và bị chốt soi gạt. Rồi vòng gọi lại của
+     V1 đọc `bac === 'lap'` và nhắc nó "Say a DIFFERENT sentence — change the word
+     in the slot", tức ĐẨY nó đi sai. Ba tầng đều làm đúng phận mình và cộng lại
+     thành hỏng: cô không bao giờ đọc lại được câu bé cần.
+
+     Nhánh kịch bản không gặp chuyện này vì nó bỏ qua `cauHopLe` khi đã biết câu
+     đúng. Nhánh thường nay làm điều tương đương: không có "lượt trước" để so.
+     ⚠ Chỉ TẮT ĐÚNG MỘT LUẬT. Bốn đường công nhận vốn từ vẫn soi như cũ — câu vẫn
+     phải nằm trong vốn của bài. */
+  const cauTruoc = viec?.giuViec ? '' : cauTruocThat;
 
   /* CÓ KỊCH BẢN: câu đúng đã biết trước, nên không cần đoán — sai thì ép về đúng
      câu ấy. Đây là chỗ chữ "đảm bảo hơn" của bác thành thật: mô hình có chệch thì
@@ -133,7 +169,7 @@ export async function hoiCoGiao({
        ý bỏ qua `cauHopLe` (câu đã biết trước, soi làm gì) — cộng lại thành đúng MỘT
        lượt mỗi buổi mà câu của mô hình không ai soi. Đúng lượt thứ hai, lượt bé
        vừa mới vào phòng. Không gì kêu: câu ấy thường vẫn đúng. */
-    if (!dung && !cauHopLe(tra.en, { von, tenBe, cauTruoc })) {
+    if (!dung && !cauHopLe(tra.en, { von, tenBe, cauTruoc: cauTruocThat })) {
       /* Lui về một lời lớp học cố định. Không dùng `cauThayThe`: nó cần một `viec`,
          mà nhánh kịch bản thì không có `viec` nào — gọi vào là nhận `null` rồi lại
          thả câu hỏng đi tiếp, tức là chốt soi có mà như không. */
@@ -310,6 +346,7 @@ export async function luuBuoi(uid, { maBuoi, quyen, baiId, tenBai, lichSu }) {
       luot: lichSu.map((x) => ({
         vai: x.vai, chu: x.chu, en: x.en || null, vi: x.vi || null,
         lanSua: x.lanSua ?? null, lanSuaViet: x.lanSuaViet ?? null,
+        nhan: x.nhan ?? null, doTin: x.doTin ?? null,
       })),
       soLuot: lichSu.length,
       at: new Date().toISOString(),

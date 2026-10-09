@@ -18,6 +18,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { vanTay, locKhung, PHIEN_BAN_MAU } from '../functions/src/vantay.js';
 import { khungCham, loiDanCham } from '../functions/src/chamviet.js';
+import { dongTheoNhan } from '../src/mon/tienganh/lib/loidan_nhan.js';
+import { NHAN } from '../src/mon/tienganh/lib/nhanluot.js';
 
 const beA = {
   de: 'Viết 3 câu về trường của em.',
@@ -125,4 +127,39 @@ test('mọi mẫu đều phải khai số phiên bản', () => {
     assert.equal(typeof PHIEN_BAN_MAU[m], 'number',
       `mẫu '${m}' chưa khai phiên bản — bảng so ΔC gom theo số này`);
   }
+});
+
+/**
+ * DÒNG LỜI DẶN THEO NHÃN (việc V2) MANG CHỮ BÉ VỪA NÓI.
+ *
+ * Phòng luyện nói là chỗ vân tay YẾU NHẤT: lời dặn do MÁY CON dựng rồi gửi lên đã
+ * thành chữ, nên máy chủ chỉ còn cách lọc theo dấu hiệu (`locKhung`) — và
+ * `luyennoi.js` đã nói trước là lọc theo dấu hiệu thì sót được. V2 thêm hẳn chín
+ * dòng mới mang chữ của bé, tức thêm chín chỗ có thể sót.
+ *
+ * Nên giao ước thành một dấu DUY NHẤT và khai sẵn: mọi dòng mang dữ liệu của bé
+ * mở đầu bằng `CHILD:` (xem `loidan_nhan.js`). Phép canh dưới đây dựng hai bé khác
+ * hẳn nhau rồi đòi khung BẰNG NHAU — cùng cách đã dùng cho bên chấm viết.
+ */
+test('lời dặn theo nhãn: hai bé khác nhau → CÙNG một khung', () => {
+  const beA = { beNoi: 'con noi im bo', dich: "Hi, I'm Bo.", thieu: ['hi'], nham: 'duck' };
+  const beB = { beNoi: 'con noi la mi', dich: 'My name is Mai.', thieu: ['name'], nham: 'cat' };
+  for (const nhan of Object.keys(NHAN)) {
+    assert.equal(
+      locKhung(dongTheoNhan(nhan, beA)), locKhung(dongTheoNhan(nhan, beB)),
+      `nhãn ${nhan}: vân tay đổi theo bé → vừa không nhóm lại được để so mẫu, vừa thành mã theo dõi`,
+    );
+  }
+});
+
+test('nhưng TÊN NHÃN thì phải còn trong khung', () => {
+  /* Lọc sạch cả tên nhãn thì chín nhánh ra cùng một vân tay, và bảng so ΔC (V8)
+     không trả lời được câu "nhánh nào dạy tốt hơn" — tức mất đúng cái nó sinh ra
+     để đo. Đây là nửa còn lại của phép canh trên: một nửa đòi BỎ, nửa này đòi GIỮ. */
+  const k = locKhung(dongTheoNhan(NHAN.thieuTu, { beNoi: 'x', dich: 'y', thieu: ['z'] }));
+  assert.match(k, /TURN TYPE: thieuTu/);
+  assert.notEqual(
+    locKhung(dongTheoNhan(NHAN.thieuTu, {})), locKhung(dongTheoNhan(NHAN.dung, {})),
+    'hai nhãn khác nhau phải ra hai khung khác nhau',
+  );
 });
