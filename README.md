@@ -1,6 +1,6 @@
 # Kỹ Sư Nhí — Trang học tập thích ứng cho tiểu học
 
-**MOBILUCK / code247.ai** · **hai môn · chín quyển · 462 bài · 713 video · 2 764 phép kiểm**
+**MOBILUCK / code247.ai** · **hai môn · chín quyển · 462 bài · 713 video · 2 874 phép kiểm**
 
 | Môn | Quyển | Bài | Lối học |
 |---|---|---|---|
@@ -21,7 +21,7 @@ Có mức thạo BKT, ôn tập ngắt quãng, phụ đạo theo nút gốc rễ
 cd web
 npm install
 npm run dev      # http://localhost:5173  — học được ngay, chưa cần Firebase
-npm test         # 102 tệp · 2 764 phép kiểm, chạy trên dữ liệu thật của cả chín quyển
+npm test         # 103 tệp · 2 874 phép kiểm, chạy trên dữ liệu thật của cả chín quyển
 npm run test:luat   # luật Firestore — cần bộ giả lập, xem docs/DEPLOY.md
 ```
 
@@ -49,13 +49,15 @@ web/                  Ứng dụng học (React + Vite + Tailwind)
   src/mon/tienganh/   MÔN TIẾNG ANH — khép kín, 5 quyển
     lib/              phongnoi · nhanluot · loidan_nhan · hosoai · bangtrangthai
                       kehoach · baihoc · chandoan · phudao · goiPhuDao
-                      chamviet · chamnoi · goiPhanXu · dandat · zpd · lantruyen · onlai
+                      chamviet · chamnoi · goiPhanXu · hoico · dandat · zpd
+                      lantruyen · onlai
     components/       phòng luyện nói · bài học · đọc hiểu · viết ngắn · ôn lại · phụ đạo
   public/content/     462 bài · 884 hình · 713 video · kỳ sát hạch · chỉ mục  (deploy lên CDN)
   functions/          Cloud Functions: đăng nhập OTP · BKT · ôn tập · sổ học & bảng cô đêm
                       luyennoi · chamviet · phudao · phanxu · chula · vantay
-                      (phần gọi mô hình — bốn chỗ, không hơn)
-  test/               102 tệp · 2 764 phép kiểm (node thuần, không cần trình duyệt)
+                      tool_phongnoi (nhánh ReAct, đang tắt)
+                      (phần gọi mô hình — bốn chỗ đang chạy, không hơn)
+  test/               103 tệp · 2 874 phép kiểm (node thuần, không cần trình duyệt)
                       + 61 phép canh luật Firestore (cần bộ giả lập)
   firestore.rules     luật bảo mật — nhật ký học BẤT BIẾN
 
@@ -82,6 +84,10 @@ Mọi câu tiếng Anh mô hình sinh ra đều phải qua phép soi vốn từ 
 thì qua thêm hai tầng nữa (xem [Tiếng Anh: cô giáo máy](#tiếng-anh-cô-giáo-máy-và-mười-lớp-chốt-chặn)).
 Không có khoá thì bốn chỗ ấy báo lỗi tử tế — phụ đạo tự lùi về kho tĩnh, phân xử thì giữ
 nguyên điểm và không nói gì với bé — và mọi phần còn lại học bình thường.
+
+Có một chỗ **thứ năm đã viết xong nhưng đang TẮT**: nhánh cho cô giáo máy *tra* trước khi
+đáp lúc bé hỏi lại (mẫu ReAct). Tắt vì đo ra nó không hơn đường cũ chỗ nào — xem
+[Chỗ máy đã biết rồi thì đừng cho nó tra lại](#chỗ-máy-đã-biết-rồi-thì-đừng-cho-nó-tra-lại).
 
 **2 · Lõi tách khỏi giao diện để kiểm định được.**
 Toàn bộ luật (dựng dòng chảy bài học, chấm bài, mở khoá, BKT, lịch ôn, sổ phụ huynh, và cả luật
@@ -402,11 +408,55 @@ prompt: để so hai mẫu thì chỉ cần một mã băm của **phần khung*
 dấu `<<RIENG … RIENG>>` và bị bỏ sạch trước khi băm — hai bé khác nhau học cùng unit cho ra
 **cùng một** vân tay, và đó vừa là điều làm phép so có nghĩa vừa là điều làm nó không lần ra ai.
 
-### Chín chỗ hỏng chỉ lộ ra khi gọi mô hình THẬT
+### Chỗ máy đã biết rồi thì đừng cho nó tra lại
 
-102 tệp cổng xanh, build xanh, và cả chín vẫn ở đó — vì chúng là lỗi **giữa các tầng** (không
+Việc V11 của bản rà là mẫu **ReAct**: lúc bé hỏi lại ("cô ơi *drawing* nghĩa là gì ạ?"), cho
+cô giáo máy bốn tool để *tra* trước khi đáp — tra nghĩa một chữ, xem mẫu câu của bài, xem bé
+đã chắc chữ nào, xin phát lại một chữ. Tool chạy trên gói dữ liệu máy con gửi kèm, nên máy chủ
+vẫn không đọc Firestore và vẫn không lưu gì.
+
+**Mã đã xong và đủ cổng — 110 phép kiểm, trần 3 bước, bắt lặp, có đường lùi. Nhưng nó đang
+TẮT.** Lý do là bốn con số đo bằng Groq thật trên 25 lượt (`node tools/do_hoi_co.mjs`):
+
+| Bé hỏi | đường cũ | nhánh tra |
+|---|---|---|
+| nghĩa một chữ **trong** bài | 10/10 | 10/10 |
+| một chữ **ngoài** bài (đúng = **không** dạy chữ ấy) | 10/10 | 10/10 |
+| chữ ấy **đọc thế nào** — chính tiêu chí nghiệm thu của bản rà | — | **0/5** |
+| tool được gọi | — | **4/25 lượt** |
+
+Ba điều rút ra, và điều thứ ba là về chính bản thiết kế:
+
+**1 · Giả thuyết dựng ra nhánh này sai.** Lý lẽ ban đầu: "từ lớp 3 bảng vốn trong lời dặn dài
+hàng trăm chữ, nên việc *tìm trong bảng* thành việc mô hình làm theo cảm giác". Đếm ra thì bảng
+vốn một bài lớp 3–5 chỉ **7–13 chữ**. Mô hình không cần tool để tìm một chữ trong mười ba.
+
+**2 · Hàng rào vốn từ đã giữ được mà không cần tool.** Chỗ tưởng là lỗ hổng — bé hỏi
+*elephant*, cô dịch luôn, tức dạy một chữ ngoài vốn — hoá ra lời dặn của nhãn `hoiLai` một mình
+chặn đủ: 10/10 lượt cô hẹn "mình học sau nhé" và không dịch.
+
+**3 · Một trong bốn tool trùng với kênh đã có sẵn.** Bé hỏi "đọc thế nào" thì mô hình đặt chính
+chữ ấy vào câu tiếng Anh — mà phòng nói **vốn đọc to câu tiếng Anh ở mọi lượt**. "Phát chữ ấy
+cho bé nghe" là hành vi mặc định, không phải một khả năng phải xin; nên `nghe_lai` không được
+gọi vì nó không có việc gì làm. Tiêu chí "kèm clip" thật ra đã đạt — chỉ là đạt bằng đường cũ.
+
+Bật nó lên là thêm một callable, một chặng mạng, một mặt hỏng — để đổi lấy con số không. Giữ mã
+lại thì rẻ: ngày nào có quyển bảng vốn vài trăm chữ, hay cần tra thứ mà lời dặn **không** mang
+sẵn (lịch ôn, bài trước đó), thì chỗ cắm đã có và đã được canh. Số phải xem trước khi bật là
+`LOI_HOI_CO.buoc / LOI_HOI_CO.goi`; quanh 0 thì vẫn nên để tắt.
+
+### Mười chỗ hỏng chỉ lộ ra khi gọi mô hình THẬT
+
+103 tệp cổng xanh, build xanh, và cả mười vẫn ở đó — vì chúng là lỗi **giữa các tầng** (không
 tầng nào sai một mình), lỗi **chất lượng** (mỗi câu đều hợp lệ, cả bộ thì không), hoặc lỗi
 trong **chính phép đo** của tôi.
+
+Ba trong mười cùng MỘT họ, và họ ấy đáng gọi tên: **hai dòng trong lời dặn ra lệnh trái nhau,
+mà dòng nằm trong khối `HARD RULES` thì thắng.** Đã dính ở V1 (luật chống lặp đè lời nhắc "đọc
+lại nguyên câu"), ở V7 (bước kế hoạch và lệnh đọc nguyên văn nói hai từ khác nhau), rồi ở V11 —
+lần này là tôi tự chuốc, vì bản vá đầu của tôi lại là một dòng đặt **dưới** khối ấy. Muốn một
+dòng ở dưới thắng một luật ở trên thì phải **nói thẳng ra** là nó thắng, hoặc đừng đặt nó ở
+dưới.
 
 - **Lời dặn tự chọi nhau.** Luật 4 nằm trong khối `HARD RULES` ("breaking any of these makes
   the lesson useless") và viết thẳng *"NEVER say the same English sentence — vary the word in
@@ -441,6 +491,13 @@ trong **chính phép đo** của tôi.
   `at` nghe giống `that` hơn `it` — mô hình đúng, nhãn của tôi sai. Một bộ méo sáu luật máy móc
   không phải bộ nhận dạng giọng nói. Đã bỏ hẳn phép đo ấy và ghi vì sao ngay trong
   `tools/do_phan_xu.mjs`, để không ai (kể cả tôi) tin lại nó.
+- **Mô hình trả lời qua một cái cửa mình không mở.** Bật `tools` cho nhánh ReAct thì 19/20
+  lượt chết với Groq 400 — *attempted to call tool 'json' which was not in request.tools*. Nó
+  không gọi tool nào của ta; nó thấy lời dặn đòi "trả lời dạng JSON" **và** thấy có `tools`,
+  nên nó đi trả lời qua kênh tool, bằng một tool nó **tự đặt tên** là `json`. Mà phần
+  `failed_generation` cho thấy ruột bên trong đúng hình dạng mình cần. Chữa bằng cách khai
+  đúng cái tool nó đang đòi — và bản vá ấy còn **rẻ hơn** bản trước: trả lời ngay ở lượt một,
+  không cần lượt chốt. Bài học: mô hình đang nói cho ta biết nó muốn giao diện nào.
 - **Cùng một lượt nói ra hai điểm khác nhau giữa hai lần chạy** — và chỗ này **chưa chữa**.
   Hai phiếu dùng nhiệt 0,2/0,5 nên *chiều* phán không bao giờ tự chọi (0 lần lệch trên 22 lượt
   đảo vai), nhưng *có phán hay không* thì dao động: 6/11 cặp nhất trí ở lần chạy thứ nhất,
@@ -466,9 +523,11 @@ lên ngày nào mục từ có trường từ loại, để nhắc quay lại.
 
 ### Chưa làm (ghi rõ, không giấu)
 
-- **Hai việc của GĐ 3** trong `docs/REVIEW_18_MAU_AI_AGENT_TIENG_ANH.md`, chưa dựng: nhánh
-  "hỏi lại" cho lớp 3+ với 4 tool và trần 3 bước (V11), và việc cuối (V12). GĐ 1 và GĐ 2 —
-  mười việc V1→V10 — đã xong, mỗi việc một commit kèm số đo bằng mô hình thật.
+- **Việc cuối của bản rà (V12): xưởng sinh nội dung offline** — điều phối theo unit, bốn
+  worker, ba giám khảo chạy song song, vòng tranh luận, rồi danh sách chờ người duyệt. Chỉ
+  Python, không đụng vào app. Chưa dựng.
+  Mười một việc V1→V11 đã xong, mỗi việc một commit kèm số đo bằng mô hình thật — trong đó
+  **V11 xong mã nhưng để TẮT**, vì đo ra nó không hơn đường cũ (xem mục trên).
 - **Phần bỏ phiếu chưa đạt "Định nghĩa XONG" của bản thiết kế**, và không đạt được bằng code.
   Nó đòi *khớp tăng ≥10 điểm % ở vùng 5–7 trên 50 mẫu chấm tay* — tức phải có người nghe 50
   lượt nói thật của trẻ rồi chấm. Chưa có bộ ấy, nên hai điều đo được thay cho nó là: phán

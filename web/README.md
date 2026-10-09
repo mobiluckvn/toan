@@ -37,7 +37,7 @@ src/lib/adaptive.js        chính sách phiên học (có test)
 functions/src/report.js    dựng sổ phụ huynh (có test)
 src/components/ParentReport.jsx  màn Sổ học của con
 public/content/       168 bài học + 672 hình + 14 kỳ sát hạch  → deploy thẳng lên Hosting/CDN
-test/                 102 tệp · 2 764 phép kiểm — lõi hai môn, soi 100% câu hỏi & mục tiêu, mở khoá & nhớ chỗ dở, offline & sang tên hàng đợi, BKT/ôn tập, sổ học, bảng giáo viên, đăng nhập OTP, và 35 tệp riêng cho Tiếng Anh (cô giáo máy, kế hoạch buổi, trí nhớ, phụ đạo, phân xử lượt nói mơ hồ, vốn từ, vân tay prompt, luật Firestore)
+test/                 103 tệp · 2 874 phép kiểm — lõi hai môn, soi 100% câu hỏi & mục tiêu, mở khoá & nhớ chỗ dở, offline & sang tên hàng đợi, BKT/ôn tập, sổ học, bảng giáo viên, đăng nhập OTP, và 36 tệp riêng cho Tiếng Anh (cô giáo máy, kế hoạch buổi, trí nhớ, phụ đạo, phân xử lượt nói mơ hồ, nhánh tra của cô, vốn từ, vân tay prompt, luật Firestore)
 ```
 
 ## Vì sao không cần backend
