@@ -24,7 +24,12 @@ import {
 } from '../src/mon/tienganh/lib/chamviet.js';
 import { readFileSync as _rf } from 'node:fs';
 const tranhKhai = (() => { try { return JSON.parse(_rf(new URL('../../data/tienganh/canh_lop3.json', import.meta.url), 'utf8')); } catch { return []; } })();
-import { soiBaiViet, loiDanCham, TOI_DA_CHU_BAI_VIET } from '../functions/src/chamviet.js';
+import {
+  soiBaiViet, loiDanCham, TOI_DA_CHU_BAI_VIET,
+  loiDanTimLoi, loiDanSua, loiDanBoMe, chamBaiViet, khungCham,
+  SUA_LAI_TOI_DA, TOKEN_TIM_LOI, TOKEN_SUA, TOKEN_BO_ME, LOI_SUA_LAI,
+} from '../functions/src/chamviet.js';
+import { PHIEN_BAN_MAU, locKhung } from '../functions/src/vantay.js';
 
 const VON = [
   { tu: 'hello', nghia: 'xin chào' },
@@ -357,4 +362,190 @@ test('màn bài viết NÓI RÕ đó là gợi ý, và bé được tự gõ th�
   assert.match(s, /Gợi ý — bấm để thêm vào bài/);
   assert.match(s, /tự gõ thêm câu của riêng con/);
   assert.match(s, /bai\?\.goiY/, 'màn phải đọc gợi ý theo nhóm từ đề bài');
+});
+
+/* ═══════════ CHUỖI BA MẮT XÍCH (việc V4) ═══════════ */
+
+const GOI = {
+  de: 'Viết 3 câu về trường của em.',
+  viet: 'My school is big. I like my school.',
+  vonTu: [{ tu: 'school', nghia: 'trường' }, { tu: 'big', nghia: 'to' },
+          { tu: 'like', nghia: 'thích' }, { tu: 'my', nghia: 'của tôi' },
+          { tu: 'is', nghia: 'là' }, { tu: 'i', nghia: 'tôi' }],
+  mauCau: ['My school is + [Adjective].'],
+  lop: 3,
+};
+
+/** Client giả trả lần lượt theo danh sách, và CHỤP LẠI từng lời dặn gửi lên. */
+function mayGia(ds) {
+  const daGoi = [];
+  const f = () => ({ chat: { completions: { create: async (o) => {
+    daGoi.push(o);
+    const x = ds[Math.min(daGoi.length - 1, ds.length - 1)];
+    return { choices: [{ message: { content: typeof x === 'string' ? x : JSON.stringify(x) } }] };
+  } } } });
+  f.daGoi = daGoi;
+  return f;
+}
+
+const CHAM_SACH = { diem: 8, khen: 'Con dùng đúng từ "school".',
+  loi: [{ cau: 'x', sua: 'My school is big.', viSao: 'thiếu is' }], goiY: 'Viết thêm nhé' };
+const CHAM_LA = { ...CHAM_SACH,
+  loi: [{ cau: 'x', sua: 'My school is delicious.', viSao: 'thiếu is' }] };
+
+/**
+ * ⚠ CHỮ "KHÔNG SỬA" LÀ CHỐT CỦA MẮT XÍCH 1.
+ * Cho nó sửa luôn thì nó sửa bằng từ hay nhất nó biết, và từ hay nhất thường là từ
+ * bé chưa học — đúng chỗ hỏng mà cả việc V4 sinh ra để chữa.
+ */
+test('mắt xích 1 CẤM sửa, cấm khen, cấm gợi ý', () => {
+  const d = loiDanTimLoi(GOI);
+  assert.match(d, /KHÔNG SỬA/);
+  assert.match(d, /KHÔNG KHEN/);
+  assert.match(d, /CHỈ LIỆT KÊ LỖI/);
+  assert.match(d, /NGUYÊN VĂN/, 'phải đòi trích đúng câu bé viết');
+  /* Và khung JSON của nó KHÔNG được có trường `sua` — có là mời nó sửa. */
+  assert.ok(!/"sua"/.test(d), 'khung JSON mắt xích 1 vẫn có trường `sua`');
+  assert.match(d, /chinhTa \| thieuTu \| thuTu \| mauCau \| khac/, 'thiếu danh sách loại lỗi');
+});
+
+test('mắt xích 2 nhận danh sách lỗi, và dòng CẤM chỉ mọc khi có chữ lạ', () => {
+  const co = loiDanSua(GOI, [{ cau: 'My school big.', loai: 'thieuTu', ghiChu: 'thiếu is' }]);
+  assert.match(co, /DANH SÁCH LỖI ĐÃ TÌM ĐƯỢC/);
+  assert.match(co, /My school big\./);
+  assert.match(co, /đừng thêm lỗi mới/, 'không chốt thì nó tự tìm thêm lỗi, lệch với mắt xích 1');
+  assert.ok(!/LẦN TRƯỚC/.test(co), 'dòng cấm mọc ra khi chưa có chữ lạ nào');
+
+  const cam = loiDanSua(GOI, [], ['delicious', 'wonderful']);
+  assert.match(cam, /LẦN TRƯỚC/);
+  assert.match(cam, /delicious, wonderful/, 'phải GỌI TÊN chữ cấm, không nhắc chung chung');
+  /* ⚠ Và phải CHO PHÉP bỏ trống câu sửa: ép nó sửa bằng mọi giá là ép nó bịa thêm
+     một chữ khác. `soiLoiCham` của máy con vẫn còn đó. */
+  assert.match(cam, /"sua": ""/, 'không cho bỏ trống thì nó bịa chữ khác');
+
+  /* Không có lỗi nào thì phải NÓI RA, đừng để danh sách rỗng im lặng. */
+  assert.match(loiDanSua(GOI, []), /KHÔNG CÓ LỖI NÀO/);
+});
+
+test('mắt xích 3 KHÔNG mang bài viết của bé', () => {
+  /* Bố mẹ cần hai câu suy từ LỜI CHẤM. Đưa thêm một bản bài viết là thêm một chỗ
+     chữ của bé đi qua, mà chẳng để làm gì. */
+  const d = loiDanBoMe(GOI, CHAM_SACH);
+  assert.ok(!d.includes(GOI.viet), 'bài viết của bé lọt vào mắt xích 3');
+  assert.ok(!d.includes(GOI.de), 'đề bài lọt vào mắt xích 3');
+  assert.match(d, /ĐÚNG HAI câu/);
+  assert.match(d, /không nhắc điểm số/);
+});
+
+test('chạy đủ chuỗi: 1 → 2 → 3, mỗi mắt xích một trần token', async () => {
+  const gia = mayGia([{ loi: [{ cau: 'x', loai: 'thieuTu', ghiChu: 'thiếu is' }] },
+                      CHAM_SACH, { choBoMe: 'Con làm tốt.' }]);
+  const r = await chamBaiViet(GOI, gia);
+  assert.equal(gia.daGoi.length, 3, 'không chạy đủ ba mắt xích');
+  assert.deepEqual(gia.daGoi.map((x) => x.max_tokens), [TOKEN_TIM_LOI, TOKEN_SUA, TOKEN_BO_ME]);
+  assert.ok(TOKEN_TIM_LOI + TOKEN_SUA + TOKEN_BO_ME <= 1300, 'tổng token vượt trần §7');
+  /* Nhiệt độ TĂNG dần: tìm lỗi là việc máy móc nhất, lời cho bố mẹ cần chữ mềm hơn. */
+  assert.deepEqual(gia.daGoi.map((x) => x.temperature), [0.1, 0.2, 0.3]);
+  assert.equal(r.lanSuaLai, 0);
+  const c = JSON.parse(r.chu);
+  /* Lời chấm phải đủ NĂM trường — "Định nghĩa XONG" của §7. */
+  for (const k of ['diem', 'khen', 'loi', 'goiY', 'choBoMe']) {
+    assert.ok(k in c, `lời chấm thiếu trường "${k}"`);
+  }
+  /* Danh sách lỗi của mắt xích 1 phải THẬT SỰ tới mắt xích 2. */
+  assert.match(gia.daGoi[1].messages[0].content, /thiếu is/);
+});
+
+test('chữ lạ → xin lại mắt xích 2, kèm đúng chữ cấm', async () => {
+  const truoc = { ...LOI_SUA_LAI };
+  const gia = mayGia([{ loi: [] }, CHAM_LA, CHAM_SACH, { choBoMe: 'ổn' }]);
+  const r = await chamBaiViet(GOI, gia);
+  assert.equal(r.lanSuaLai, 1);
+  assert.deepEqual(r.chuLaConLai, [], 'xin lại ăn thì không còn chữ lạ nào');
+  assert.equal(JSON.parse(r.chu).loi[0].sua, 'My school is big.');
+  /* Lượt xin lại phải mang dòng cấm, và gọi tên đúng chữ vừa dùng. */
+  assert.match(gia.daGoi[2].messages[0].content, /LẦN TRƯỚC/);
+  assert.match(gia.daGoi[2].messages[0].content, /delicious/);
+  assert.equal(LOI_SUA_LAI.so - truoc.so, 1);
+  assert.equal(LOI_SUA_LAI.thanh - truoc.thanh, 1);
+});
+
+test('trượt đủ vòng → trả về kèm chữ lạ, máy con boQua như cũ', async () => {
+  const gia = mayGia([{ loi: [] }, CHAM_LA]);   // lần nào cũng "delicious"
+  const r = await chamBaiViet(GOI, gia);
+  /* 1 (tìm lỗi) + 1 (sửa) + SUA_LAI_TOI_DA (xin lại) = 4; mắt xích 3 vẫn chạy. */
+  assert.equal(r.lanSuaLai, SUA_LAI_TOI_DA);
+  assert.ok(r.chuLaConLai.includes('delicious'),
+    'hết vòng mà vẫn trượt thì phải NÓI RA chữ nào còn sót');
+  /* ⚠ VÀ VẪN TRẢ LỜI CHẤM. `soiLoiCham` ở máy con là hàng rào CUỐI — nó bỏ đúng
+     mục hỏng và giữ lại điểm với lời khen. Vứt cả lời chấm là bé mất phần nó xứng
+     đáng được nghe. */
+  assert.ok(JSON.parse(r.chu).diem, 'vứt cả lời chấm vì một chữ');
+  assert.ok(JSON.parse(r.chu).khen);
+});
+
+test('chữ CẤM dồn qua các vòng, không quên vòng trước', async () => {
+  /* Bỏ chữ A rồi dùng chữ B, vòng sau quay về A — đã thấy ở vòng gọi lại phòng nói. */
+  const la2 = { ...CHAM_SACH, loi: [{ cau: 'x', sua: 'My school is wonderful.', viSao: 'x' }] };
+  const gia = mayGia([{ loi: [] }, CHAM_LA, la2, CHAM_SACH, { choBoMe: 'ổn' }]);
+  await chamBaiViet(GOI, gia);
+  const dan3 = gia.daGoi[3].messages[0].content;
+  assert.match(dan3, /delicious/, 'quên chữ cấm của vòng trước');
+  assert.match(dan3, /wonderful/);
+});
+
+test('mắt xích 1 hỏng thì vẫn chấm được, chỉ kém hơn', async () => {
+  /* Dừng cả lời chấm vì mắt xích tìm lỗi trượt là bé mất hết. Mắt xích 2 tự tìm
+     lỗi được như bản trước V4. */
+  let n = 0;
+  const gia = () => ({ chat: { completions: { create: async () => {
+    n += 1;
+    if (n === 1) return { choices: [{ finish_reason: 'length', message: { content: '' } }] };
+    return { choices: [{ message: { content: JSON.stringify(n === 2 ? CHAM_SACH : { choBoMe: 'ổn' }) } }] };
+  } } } });
+  const r = await chamBaiViet(GOI, gia);
+  assert.ok(JSON.parse(r.chu).diem, 'mắt xích 1 trượt là mất cả lời chấm');
+});
+
+test('mắt xích 3 hỏng thì KHÔNG làm hỏng lời chấm', async () => {
+  let n = 0;
+  const gia = () => ({ chat: { completions: { create: async () => {
+    n += 1;
+    if (n === 3) throw Object.assign(new Error('400'), { status: 400 });
+    return { choices: [{ message: { content: JSON.stringify(n === 1 ? { loi: [] } : CHAM_SACH) } }] };
+  } } } });
+  const r = await chamBaiViet(GOI, gia);
+  const c = JSON.parse(r.chu);
+  assert.ok(c.diem && c.khen, 'mất cả lời chấm vì hai câu tiếng Việt cho người lớn');
+  assert.ok(!c.choBoMe, 'phần phụ mất thì để trống, đừng bịa');
+});
+
+test('khung vân tay = BA khung ghép lại, và phiên bản mẫu đã tăng', () => {
+  /* Dựng khung từ một mắt xích thôi thì hai mắt xích kia sửa bao nhiêu cũng không
+     làm vân tay đổi — bảng so ΔC gom lẫn hai mẫu khác nhau mà không ai thấy. */
+  const k = khungCham(3, true);
+  assert.match(k, /CHỈ LIỆT KÊ LỖI/, 'khung thiếu mắt xích 1');
+  assert.match(k, /LUẬT CHẤM/, 'khung thiếu mắt xích 2');
+  assert.match(k, /cho BỐ MẸ/, 'khung thiếu mắt xích 3');
+  /* Và khung KHÔNG chứa một chữ nào của bé. */
+  for (const x of [GOI.de, GOI.viet, 'school', 'trường']) {
+    assert.ok(!k.includes(x), `khung lọt dữ liệu của bé: ${x}`);
+  }
+  assert.ok(PHIEN_BAN_MAU.chamviet >= 2, 'lời dặn tách thành ba mà phiên bản vẫn là 1');
+  /* Lớp khác thì khung khác — câu đầu ghi rõ lớp. */
+  assert.notEqual(khungCham(3, true), khungCham(5, true));
+});
+
+test('máy chủ vẫn KHÔNG lưu gì, kể cả sau khi thêm chuỗi', () => {
+  const bo = (x) => x.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
+  const src = bo(readFileSync(new URL('../functions/src/chamviet.js', import.meta.url), 'utf8'));
+  assert.ok(!/firestore|getFirestore|db\./i.test(src), 'máy chủ đụng tới Firestore');
+  assert.ok(!/console\.(log|info|warn)/.test(src), 'máy chủ ghi nội dung ra log');
+});
+
+test('máy con đọc lanSuaLai, và GIỮ soiLoiCham làm hàng rào cuối', () => {
+  const g = readFileSync(new URL('../src/mon/tienganh/lib/goiChamViet.js', import.meta.url), 'utf8');
+  assert.match(g, /lanSuaLai: data\?\.lanSuaLai/, 'máy con không đọc lanSuaLai');
+  assert.match(g, /soiLoiCham\(/,
+    'bỏ soiLoiCham vì máy chủ đã soi — mất hàng rào cuối, mà hai tầng là CỐ Ý');
 });

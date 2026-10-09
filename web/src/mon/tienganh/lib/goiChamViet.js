@@ -49,6 +49,12 @@ export async function nhoCham({ de, viet, vonTu, mauCau, lop = 3 }) {
   return {
     cham,
     boQua,
+    /* Số lần máy chủ phải XIN LẠI mắt xích 2 vì nó dùng chữ ngoài vốn (việc V4), và
+       chữ lạ còn sót sau khi hết vòng. Đếm được thì mới biết chuỗi ba mắt xích có
+       thật sự dẹp được chữ lạ hay chỉ đẩy nó xuống một tầng — xem `LOI_CHU_LA` dưới
+       và `LOI_SUA_LAI` ở `functions/src/chamviet.js`. */
+    lanSuaLai: data?.lanSuaLai ?? 0,
+    chuLaConLai: data?.chuLaConLai || [],
     moHinh: data?.moHinh || null,
     mauPrompt: data?.mauPrompt || null,
     phienBanMau: data?.phienBanMau ?? null,

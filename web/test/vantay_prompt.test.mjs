@@ -17,7 +17,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { vanTay, locKhung, PHIEN_BAN_MAU, KHOI_RIENG } from '../functions/src/vantay.js';
-import { khungCham, loiDanCham } from '../functions/src/chamviet.js';
+import {
+  khungCham, loiDanCham, loiDanTimLoi, loiDanSua, loiDanBoMe,
+} from '../functions/src/chamviet.js';
 import { dongTheoNhan } from '../src/mon/tienganh/lib/loidan_nhan.js';
 import { NHAN } from '../src/mon/tienganh/lib/nhanluot.js';
 
@@ -63,12 +65,32 @@ test('khung KHÔNG chứa một chữ nào của bé', () => {
 });
 
 test('khung dựng lại từ CHÍNH hàm lời dặn, nên sửa lời dặn là khung tự đổi', () => {
-  /* Không có bảng nào phải nhớ cập nhật — đây là điểm khác `locKhung`. */
-  const that = loiDanCham({ ...beA });
+  /* Không có bảng nào phải nhớ cập nhật — đây là điểm khác `locKhung`.
+     ⚠ SOI TÍNH CHẤT, ĐỪNG SOI ĐỘ DÀI. Bản đầu dùng `that.length > khung.length` làm
+     đại diện cho "khung = lời dặn trừ phần của bé". Tới việc V4, lời dặn tách thành
+     CHUỖI BA mắt xích và khung là ba khung ghép lại — nên khung dài hơn MỘT lời dặn,
+     và phép so độ dài đỏ dù tính chất không đổi một li. Xem
+     `cong-ghim-chinh-ta-thay-vi-tinh-chat`.
+     Tính chất thật, và nay soi được chặt hơn: khung phải đúng bằng những gì CHÍNH
+     mấy hàm dựng lời dặn trả về khi dữ liệu của bé để RỖNG. */
   const khung = khungCham(beA.lop, true);
-  assert.match(that, /LUẬT CHẤM/);
-  assert.match(khung, /LUẬT CHẤM/);
-  assert.ok(that.length > khung.length, 'lời dặn thật phải dài hơn khung');
+  const rong = { de: '', viet: '', vonTu: [], mauCau: ['—'], lop: beA.lop };
+  for (const [ten, mau] of [
+    ['mắt xích 1 · tìm lỗi', loiDanTimLoi(rong)],
+    ['mắt xích 2 · sửa', loiDanSua(rong, [])],
+    ['mắt xích 3 · lời cho bố mẹ', loiDanBoMe({ lop: beA.lop }, null)],
+  ]) {
+    assert.ok(khung.includes(mau),
+      `khung KHÔNG dựng từ ${ten} — sửa mắt xích ấy thì vân tay không đổi, `
+      + 'và bảng so ΔC gom lẫn hai mẫu khác nhau');
+  }
+  /* Và khung phải NGẮN hơn cả chuỗi thật — phần của bé đã bị bỏ ra. */
+  const thatCaChuoi = loiDanTimLoi(beA).length + loiDanSua(beA, []).length
+    + loiDanBoMe({ lop: beA.lop }, null).length;
+  assert.ok(thatCaChuoi > khung.length, 'khung không bỏ được phần nào của bé');
+  /* Lời dặn MỘT LƯỢT của bản trước V4 vẫn phải dựng được — bảng so ΔC đã gom lượt
+     của mẫu 1 theo khung ấy, xoá đi là mất phần đã gom. */
+  assert.match(loiDanCham({ ...beA }), /LUẬT CHẤM/);
 });
 
 test('có mẫu câu hay không là hai khung khác nhau', () => {

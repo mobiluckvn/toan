@@ -38,7 +38,9 @@ export const PHIEN_BAN_MAU = {
      thành chín nhánh theo nhãn, luật 8c giữ lại và mang số 7, hai luật cuối lùi số.
      Đổi đáng kể, nên bảng so ΔC không được gom chung với lượt của mẫu 1. */
   luyennoi: 2,
-  chamviet: 1,
+  /* 2 từ 09-10-2026 (việc V4): một lời dặn tách thành CHUỖI BA mắt xích (tìm lỗi ·
+     sửa · lời cho bố mẹ), và khung vân tay nay là ba khung ghép lại. Đổi đáng kể. */
+  chamviet: 2,
 };
 
 /** Băm ngắn — 12 ký tự hex là đủ tách vài chục mẫu, và ngắn thì đọc log dễ. */
