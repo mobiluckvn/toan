@@ -4,8 +4,9 @@ import { Tranh } from './DocHieu.jsx';
 import { hinhCuaTu, napBai, maBaiTruoc, napKichBanNoi, kichBanCua } from '../lib/noiDung.js';
 import {
   vonTu, tuTrongCau, tachTheoTieng, UNIT_CU_TOI_DA,
-  tinhBuoi, loiKet, cauHoiSoThich, PHUT_TOI_DA,
+  tinhBuoi, loiKet, cauHoiSoThich, PHUT_TOI_DA, luotLuyen,
 } from '../lib/phongnoi.js';
+import { capNhatTuBuoi, donHoSo } from '../lib/hosoai.js';
 import { hoiCoGiao, luuBuoi } from '../lib/goiPhongNoi.js';
 import { napDoThi, baiTienQuyet } from '../lib/doThi.js';
 import { vectorS } from '../lib/chinhsach.js';
@@ -53,7 +54,8 @@ function nutCuaCau(bai, cau) {
 
 export default function PhongNoi({ bai, tienDo, tenBe = 'con',
                                    soThich = null, onSoThich = null,
-                                   mucThao = null, onLuot = null }) {
+                                   mucThao = null, onLuot = null,
+                                   onHoSoAI = null }) {
   /**
    * QUYỂN VÀ LỚP SUY TỪ CHÍNH BÀI, không nhận từ ngoài.
    *
@@ -249,12 +251,39 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
     const manh = manhNhat(tienDo?.dinhDang);
     return {
       thich: thichDung,
+      /* TRÍ NHỚ QUA NHIỀU BUỔI (việc V3). Nó nằm trong SỔ TIẾN ĐỘ, không theo bài —
+         `dongHoSo` đọc nó qua `hoSo.ai`. Buổi đầu thì `null`, và `dongHoSoAI` tự
+         trả chuỗi rỗng, nên lời dặn không có khối rỗng nào. */
+      ai: tienDo?.hoSoAI || null,
       ...vectorS({
         mucThao, maNutDs: nuts, thich: thichDung,
         dinhDang: manh ? { dangManh: manh.ten } : null,
       }),
     };
-  }, [bai, mucThao, tienDo?.dinhDang, thichDung]);
+  }, [bai, mucThao, tienDo?.dinhDang, tienDo?.hoSoAI, thichDung]);
+
+  /**
+   * CUỐI BUỔI THÌ GHI LẠI TRÍ NHỚ — việc V3.
+   *
+   * ⚠ GHI MỘT LẦN MỖI BUỔI, canh bằng `daGhiHoSo`. `buoi.trangThai` được tính lại
+   * mỗi nhịp 30 giây và mỗi lượt, nên không chốt thì `buoiThu` tăng vài lần cho
+   * đúng một buổi — rồi bài học hết hạn sớm hơn hẳn, mà chẳng ai lần ra vì con số
+   * vẫn trông hợp lý.
+   *
+   * KHÔNG gọi mô hình ở đây: mọi thứ suy từ con số `chamCau` đã tính. Phần bài học
+   * do mô hình viết là việc của Reflexion (V8).
+   */
+  const daGhiHoSo = useRef(false);
+  useEffect(() => {
+    if (buoi.trangThai === 'dang' || daGhiHoSo.current || !onHoSoAI) return;
+    if (!luotLuyen(lichSu).length) return;   // mở ra rồi thoát ngay thì không có gì nhớ
+    daGhiHoSo.current = true;
+    const moi = donHoSo(
+      capNhatTuBuoi(tienDo?.hoSoAI, { lichSu, hoSo: hoSoBe, bayGio: Date.now() }),
+      { mucThao, buoiHienTai: (tienDo?.hoSoAI?.buoiThu || 0) + 1 },
+    );
+    onHoSoAI(moi);
+  }, [buoi.trangThai, lichSu, onHoSoAI, tienDo?.hoSoAI, hoSoBe, mucThao]);
 
   useEffect(() => () => { phien.current?.huy(); thoiDoc(); }, []);
   /* Nhịp 30 giây chỉ để VẼ LẠI, không đụng gì tới dữ liệu — hết 20 phút mà màn

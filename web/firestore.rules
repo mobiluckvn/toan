@@ -145,6 +145,11 @@ service cloud.firestore {
                     tế — đóng thẳng tab thì không kịp ghi, nên đây là CẬN DƯỚI
            soThich  từ bé thích nhất trong quyển — cô giáo máy lấy làm ngữ cảnh
            hoSo     bé làm tốt dạng câu nào (chiều Sư phạm, mục 2.1.2-P)
+           hoSoAI   TRÍ NHỚ của cô giáo máy về bé, giữ qua nhiều buổi (việc V3,
+                    `lib/hosoai.js`). MỘT mục cho cả môn. ⚠ Chỉ dữ liệu HỌC: không
+                    một chữ nào bé tự nói ra, không nhận xét về bé, không điểm —
+                    luật ghi ở đầu `hosoai.js`, và bố mẹ xoá sạch được bất cứ lúc
+                    nào từ Góc bố mẹ
            phudao   KHUNG một lần can thiệp phụ đạo (giao thức A-R-A, mục 3.6.3):
                     nút mắc · nút gốc rễ · câu đã hỏi TRƯỚC · câu của bài phụ đạo ·
                     hai mốc thời gian. ⚠ KHÔNG chứa mức tinh thông trước/sau — máy
@@ -170,7 +175,8 @@ service cloud.firestore {
          ba chỗ đầu; bước deploy thì không cổng nào canh được. */
       allow write: if isMine(userId)
                    && request.resource.data.loai in ['chuong', 'viet', 'doc', 'phien',
-                                                    'soThich', 'hoSo', 'phudao'];
+                                                    'soThich', 'hoSo', 'hoSoAI',
+                                                    'phudao'];
     }
 
     /* ── PHÒNG LUYỆN NÓI: buổi nói chuyện của bé với cô giáo máy ──

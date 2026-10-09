@@ -32,6 +32,18 @@
    ở chỗ gọi, vì chỗ ghép mới là chỗ quyết định nó đứng TRƯỚC hay SAU `dongViec`. */
 import { NHAN_GIU_VIEC } from './nhanluot.js';
 import { dongTheoNhan } from './loidan_nhan.js';
+import { dongHoSoAI } from './hosoai.js';
+
+/**
+ * DẤU BỌC KHỐI RIÊNG của bé trong lời dặn.
+ *
+ * ⚠ Hai chuỗi này là GIAO ƯỚC với `locKhung` ở `functions/src/vantay.js`. Đổi ở
+ * đây mà không đổi ở đấy thì chữ của bé lọt vào vân tay prompt, và không gì báo —
+ * đúng chỗ sót mà `luyennoi.js` đã nói trước là sẽ sót. Cổng `vantay_prompt` soi
+ * bằng cách dựng hai bé khác hẳn nhau rồi đòi khung bằng nhau.
+ */
+export const DAU_KHOI_RIENG = '<<RIENG';
+export const CUOI_KHOI_RIENG = 'RIENG>>';
 
 /** Nhiều nhất bao nhiêu unit CŨ được trộn vào. Đủ để ôn, không đủ để loãng. */
 export const UNIT_CU_TOI_DA = 3;
@@ -543,7 +555,13 @@ export function loiDan({
     .join('; ');
 
   return [
-    `You are a warm, patient English tutor for a ${lop === 1 ? 'six-year-old' : `grade ${lop}`} Vietnamese child named ${tenBe}.`,
+    /* ⚠ KHÔNG ĐẶT TÊN BÉ Ở DÒNG NÀY. Dòng đầu là KHUNG — nó đi vào vân tay prompt
+       (`locKhung` không có cách nào nhận ra "named Lan" là dữ liệu riêng mà không
+       ghim vào chính tả). Tên bé đã nằm trong khối `<<RIENG` ở dưới, nơi `locKhung`
+       bỏ sạch. Đo được 09-10 lúc làm V3: hai bé cùng unit ra HAI vân tay khác nhau,
+       tức bảng so ΔC không gom lại được, và vân tay thành mã theo dõi từng bé —
+       đúng hai chỗ hỏng mà `vantay.js` sinh ra để tránh. */
+    `You are a warm, patient English tutor for a ${lop === 1 ? 'six-year-old' : `grade ${lop}`} Vietnamese child.`,
     /* ── VIỆC CỦA CÔ, NÓI NGAY DÒNG ĐẦU ── (bác chốt 18-08)
        "AI đóng vai trò là Cô giáo dạy học sinh nói được các câu giao tiếp hoàn
        chỉnh chứ không như máy như giờ." Lời dặn cũ mở bằng "a warm, patient English
@@ -1682,9 +1700,13 @@ function dongUnit(u) {
 
 /** Lời dặn thêm về bé — chỉ những gì app đã có, không hỏi thêm gì. */
 function dongHoSo(hoSo, tenBe) {
-  if (!hoSo) return '';
+  /* ⚠ KHÔNG lui sớm khi `hoSo` rỗng. Từ 09-10 tên bé CHỈ còn ở khối này (dòng đầu
+     lời dặn đã bỏ nó ra, xem ghi chú trên), nên lui sớm là cô giáo máy không biết
+     bé tên gì — và mọi ô `[Name]` nhận "con". Bé chưa có hồ sơ nào là chuyện
+     thường: buổi đầu tiên. */
   const d = [];
   if (tenBe) d.push(`The child's name is ${tenBe} — use it in [Name] slots.`);
+  if (!hoSo) return d.length ? `${DAU_KHOI_RIENG}\nABOUT THE CHILD: ${d.join(' ')}\n${CUOI_KHOI_RIENG}` : '';
   if (hoSo.thich) {
     d.push(`The child told you they like "${hoSo.thich}".`
       + ' Prefer that word when a pattern needs a thing — it makes the sentence about them.');
@@ -1720,7 +1742,20 @@ function dongHoSo(hoSo, tenBe) {
     d.push('She slows down towards the end of a session — keep this one brisk.');
   }
 
-  return d.length ? `ABOUT THE CHILD: ${d.join(' ')}` : '';
+  /* ── TRÍ NHỚ QUA NHIỀU BUỔI ── (việc V3, `lib/hosoai.js`)
+     Mấy dòng trên nói về buổi NÀY; khối này nói về những buổi TRƯỚC. Giữ nguyên
+     quy ước của khối trên: không số, và câu nào cũng phải KHÔNG SAO nếu lỡ bị đọc
+     to lên — `dongHoSoAI` tự chặn chữ số ở đúng một chỗ trước khi trả về. */
+  const nho = dongHoSoAI(hoSo.ai, tenBe);
+
+  const than = [d.length ? `ABOUT THE CHILD: ${d.join(' ')}` : '', nho]
+    .filter(Boolean).join('\n');
+  if (!than) return '';
+  /* ⚠ BỌC CẢ KHỐI TRONG DẤU RIÊNG. Mọi chữ của bé trong lời dặn nằm giữa hai dấu
+     này, và `locKhung` ở `functions/src/vantay.js` bỏ SẠCH phần giữa — nên vân tay
+     prompt không bao giờ đổi theo bé. Dấu khối chắc hơn dấu từng dòng: thêm một
+     dòng mới vào khối thì nó tự động được che, không phải khai thêm mẫu nào. */
+  return `${DAU_KHOI_RIENG}\n${than}\n${CUOI_KHOI_RIENG}`;
 }
 
 /* ─────────── kịch bản viết sẵn cho từng bài ─────────── */

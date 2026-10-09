@@ -17,6 +17,7 @@ import {
 } from '../lib/duLieu.js';
 import { theDenHan, demDenHan, daySauKhiOn } from '../lib/onlai.js';
 import { manhNhat, yeuNhat } from '../lib/hoso.js';
+import { xoaHoSoAI } from '../lib/hosoai.js';
 import { napDoThi } from '../lib/doThi.js';
 import { maTranTrangThai } from '../lib/lantruyen.js';
 import { bacCefr, cauMoTa } from '../lib/cefr.js';
@@ -102,6 +103,28 @@ export default function ManTiengAnh({
        bé đi tiếp khi chưa vững, vì bài sau dựng trên bài này. */
     setView(kq.pass && sau ? { page: 'bai', baiId: sau } : { page: 'home' });
   }, [datTienDo, setView, learnerId, ct.ma]);
+
+  /**
+   * TRÍ NHỚ CỦA CÔ GIÁO MÁY — ghi cuối mỗi buổi luyện nói (việc V3).
+   *
+   * Một hồ sơ cho CẢ MÔN, không theo quyển: nó nói về BÉ, không về quyển. Lên máy
+   * chủ qua `hocBaTA` loại `hoSoAI` — cùng chỗ với `soThich` và `hoSo`, hai thứ
+   * cùng hạng (hồ sơ của một bé), chứ KHÔNG qua `progressTA`: mỗi tài liệu ở đấy là
+   * một BÀI và luật đòi `pass is bool`.
+   *
+   * ⚠ THÊM MỘT LOẠI VÀO `hocBaTA` LÀ PHẢI SỬA BỐN CHỖ (ghi ở `firestore.rules`):
+   * luật · `duLieu.js` bên đọc · chỗ gọi này · và `deploy --only firestore:rules`
+   * TRƯỚC khi bản mới lên. Thiếu bước deploy thì Firestore từ chối TRONG IM LẶNG.
+   * Cổng `hocba_khop_luat.test.mjs` soi ba chỗ đầu.
+   */
+  const xongHoSoAI = useCallback((hs) => {
+    datTienDo((p) => {
+      /* Sổ tại máy do `App.jsx` tự lưu mỗi khi `tienDo` đổi — không gọi
+         `luuTienDo` ở đây, hai chỗ cùng ghi là hai chỗ cùng có thể lệch. */
+      luuMucHocBa(learnerId, 'hoSoAI', 'TA:HSAI', { giaTri: hs || null });
+      return { ...p, hoSoAI: hs };
+    });
+  }, [datTienDo, learnerId]);
 
   /* Bé đang học tới chặng nào thì nhớ, để lần sau vào lại đúng chỗ. Chỉ ghi tại
      máy, không đẩy máy chủ — xem `ghiChang` trong progress.js. */
@@ -396,6 +419,7 @@ export default function ManTiengAnh({
         onSoThich={xongSoThich}
         mucThao={mucThao}
         hoSoDang={tienDo.dinhDang || null}
+        onHoSoAI={xongHoSoAI}
       />
     );
   }
@@ -415,6 +439,7 @@ export default function ManTiengAnh({
       mucThao={mucThao}
       soTheOn={demDenHan(theOn, { quyen: ct.ma })}
       onMoOnLai={() => setView({ page: 'onlai' })}
+      onXoaHoSoAI={() => xongHoSoAI(xoaHoSoAI())}
       onVeKeSach={veKeSach}
     />
   );
@@ -434,12 +459,89 @@ export default function ManTiengAnh({
  * Và hiện CẢ CỠ MẪU. Bố mẹ đọc "làm tốt nhất dạng chọn đáp án" mà không biết nó
  * dựng trên 9 câu hay 900 câu thì tin nó như nhau, mà hai con số ấy khác hẳn.
  */
-function HoSoBe({ tienDo, ct }) {
+/**
+ * CÔ GIÁO MÁY ĐANG NHỚ GÌ VỀ CON — và nút xoá sạch (việc V3).
+ *
+ * ── VÌ SAO PHẢI HIỆN RA ──
+ * Trí nhớ này đi vào lời dặn mỗi lượt, tức nó lái cách cô nói với con. Giữ một thứ
+ * như thế mà bố mẹ không xem được thì nó là một cái hồ sơ, không phải một quyển sổ
+ * của cô. Nên: hiện BẰNG TIẾNG VIỆT (bản trong lời dặn là tiếng Anh, bố mẹ không
+ * phải đọc nó), hiện ĐỦ, và xoá được bằng một lần bấm.
+ *
+ * ⚠ KHÔNG dùng `window.confirm`: hộp thoại của trình duyệt chặn mọi thứ khác, và
+ * trên máy tính bảng nó hiện ra ở chỗ không ai ngờ. Hỏi lại bằng chính hai cái nút.
+ */
+function TriNhoCuaCo({ hoSoAI, onXoa }) {
+  const [hoiLai, datHoiLai] = useState(false);
+  if (!hoSoAI || !(hoSoAI.buoiThu > 0)) return null;
+  const muc = [
+    ['Con đã nói được những câu này', hoSoAI.cauDungGanNhat],
+    ['Con thích', hoSoAI.soThich],
+    ['Chữ nhỏ con hay bỏ quên', (hoSoAI.loiLap || []).map((x) => x?.chu || x)],
+    ['Hai chữ con hay lẫn', (hoSoAI.tuNham || []).map((x) => x?.chu || x)],
+    ['Cô ghi lại từ buổi trước', (hoSoAI.baiHoc || []).map((x) => x?.chu || x)],
+  ].filter(([, ds]) => (ds || []).length);
+
+  return (
+    <MucBoMe nhan="Cô giáo máy đang nhớ gì về con">
+      <div className="flex flex-col gap-2">
+        {muc.length ? muc.map(([nhan, ds]) => (
+          <p key={nhan} className="text-ink">
+            <span className="text-mute">{nhan}: </span>
+            {ds.join(' · ')}
+          </p>
+        )) : <p className="text-mute">Chưa có gì — cô mới gặp con.</p>}
+        <p className="text-xs leading-relaxed text-mute">
+          Cô chỉ nhớ những thứ về việc HỌC: câu con đã nói được, chữ con hay bỏ
+          quên, thứ con thích. Cô không giữ lời con nói, không giữ điểm, và không
+          nhận xét gì về con. Mỗi mục tự mất sau vài buổi.
+        </p>
+        {onXoa && !hoiLai && (
+          <button
+            type="button"
+            onClick={() => datHoiLai(true)}
+            className="self-start rounded-lg border border-line px-3 py-1.5 text-xs
+              font-semibold text-mute hover:text-navy
+              focus:outline-none focus-visible:ring-4 focus-visible:ring-gold"
+          >
+            Xoá trí nhớ của cô
+          </button>
+        )}
+        {onXoa && hoiLai && (
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-mute">Xoá hết, không lấy lại được?</span>
+            <button
+              type="button"
+              onClick={() => { datHoiLai(false); onXoa(); }}
+              className="rounded-lg bg-navy px-3 py-1.5 text-xs font-semibold text-white
+                focus:outline-none focus-visible:ring-4 focus-visible:ring-gold"
+            >
+              Xoá
+            </button>
+            <button
+              type="button"
+              onClick={() => datHoiLai(false)}
+              className="rounded-lg border border-line px-3 py-1.5 text-xs font-semibold text-mute
+                focus:outline-none focus-visible:ring-4 focus-visible:ring-gold"
+            >
+              Thôi
+            </button>
+          </div>
+        )}
+      </div>
+    </MucBoMe>
+  );
+}
+
+function HoSoBe({ tienDo, ct, onXoaHoSoAI = null }) {
   const hs = tienDo?.dinhDang || {};
   const manh = manhNhat(hs);
   const yeu = yeuNhat(hs);
   const cefr = ct?.cefr;
-  if (!manh && !cefr) return null;
+  const ai = tienDo?.hoSoAI || null;
+  /* Có trí nhớ thì PHẢI hiện khối này, kể cả khi chưa đủ mẫu để nói về dạng câu:
+     bố mẹ có quyền biết hệ thống đang giữ gì về con, và có quyền xoá. */
+  if (!manh && !cefr && !ai) return null;
   const pc = (x) => `${Math.round(x.ti * 100)}%`;
   return (
     <GocBoMe ten="Góc bố mẹ · hệ thống biết gì về cách con học">
@@ -467,6 +569,7 @@ function HoSoBe({ tienDo, ct }) {
           Chỉ tính lượt trả lời ĐẦU của mỗi câu, và chỉ nói về dạng câu con đã làm
           đủ nhiều. Dạng nào con mới gặp vài lần thì chưa đủ để kết luận gì.
         </p>
+        <TriNhoCuaCo hoSoAI={ai} onXoa={onXoaHoSoAI} />
       </div>
     </GocBoMe>
   );
@@ -572,7 +675,7 @@ function MaTran({ mucThao }) {
 function NhaQuyen({
   ct, bais, kyOn = [], docs = [], viets = [], tienDo,
   onMoBai, onMoOnTap, onMoDocHieu, onMoVietBai, onVeKeSach,
-  soTheOn = 0, onMoOnLai, mucThao = null,
+  soTheOn = 0, onMoOnLai, mucThao = null, onXoaHoSoAI = null,
 }) {
   if (!bais) {
     return <div className="p-6 text-mute">Đang mở quyển…</div>;
@@ -625,7 +728,7 @@ function NhaQuyen({
         </div>
       </div>
 
-      <HoSoBe tienDo={tienDo} ct={ct} />
+      <HoSoBe tienDo={tienDo} ct={ct} onXoaHoSoAI={onXoaHoSoAI} />
       <MaTran mucThao={mucThao} />
       <BacCefr mucThao={mucThao} />
 

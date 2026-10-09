@@ -231,6 +231,8 @@ async function docHocBa(uid) {
   const phien = [];
   const phudao = [];
   let dinhDang = {};
+  /* MỘT mục cho cả môn, không khoá theo quyển — xem nhánh `hoSoAI` dưới. */
+  let hoSoAI = null;
   snap.forEach((d) => {
     const v = d.data();
     /* `|| {}` chứ KHÔNG `|| v`. Bản cũ đỡ lấy cả tài liệu khi thiếu `giaTri`, và
@@ -256,6 +258,11 @@ async function docHocBa(uid) {
     /* `hoSo` chỉ có MỘT mục cho cả môn — không khoá theo quyển: bé gõ chữ kém thì
        kém ở mọi quyển, chia nhỏ ra chỉ làm mẫu bé đi và chẳng dạng nào đủ mẫu. */
     else if (v.loai === 'hoSo') dinhDang = (v.giaTri || {}).dinhDang || {};
+    /* `hoSoAI` — trí nhớ của cô giáo máy, MỘT mục cho cả môn (việc V3). Cùng một
+       luật với mấy loại trên: luật CHO ghi loại nào thì bên đọc phải nhặt đúng
+       chừng ấy, không thừa không thiếu — `hocba_khop_luat.test.mjs` canh, và nó
+       canh vì đã xảy ra thật với chính `hocBaTA`. */
+    else if (v.loai === 'hoSoAI') hoSoAI = v.giaTri || null;
     /* `phudao` — KHUNG của một lần can thiệp phụ đạo (giao thức A-R-A, mục 3.6.3).
        Là DANH SÁCH chứ không khoá theo bài, cùng lý do với `phien`: một bài có thể
        kích hoạt phụ đạo nhiều lần ở những nút khác nhau, và mỗi lần là một phép đo
@@ -268,7 +275,7 @@ async function docHocBa(uid) {
        dựng lại từ nhật ký `attempts` bằng `tools/danh_gia_mo_hinh.mjs`. */
     else if (v.loai === 'phudao') phudao.push(v.giaTri || {});
   });
-  return { chapters, baiViet, docHieu, phien, phudao, soThich, dinhDang };
+  return { chapters, baiViet, docHieu, phien, phudao, soThich, dinhDang, hoSoAI };
 }
 
 /**
@@ -279,13 +286,14 @@ export async function tienDoTuMay(uid) {
   if (!dungDuoc(uid)) {
     return {
       micros: {}, chapters: {}, baiViet: {}, docHieu: {},
-      phien: [], phudao: [], soThich: {}, dinhDang: {},
+      phien: [], phudao: [], soThich: {}, dinhDang: {}, hoSoAI: null,
     };
   }
   const [micros, hb] = await Promise.all([
     docTienDo(uid).catch((e) => { nuot(e); return {}; }),
     docHocBa(uid).catch((e) => {
-      nuot(e); return { chapters: {}, baiViet: {}, phudao: [], soThich: {}, dinhDang: {} };
+      nuot(e);
+      return { chapters: {}, baiViet: {}, phudao: [], soThich: {}, dinhDang: {}, hoSoAI: null };
     }),
   ]);
   return {
@@ -294,6 +302,10 @@ export async function tienDoTuMay(uid) {
     baiViet: hb.baiViet || {},
     soThich: hb.soThich || {},
     dinhDang: hb.dinhDang || {},
+    /* ⚠ PHẢI CHUYỀN LÊN TẬN ĐÂY. Đọc được ở `docHocBa` mà quên dòng này thì trí nhớ
+       của cô nằm trên máy chủ mà không bao giờ về tới sổ — bé đổi máy là cô quên
+       sạch, và không gì báo. Cùng chỗ sót đã xảy ra thật với `baiViet`. */
+    hoSoAI: hb.hoSoAI || null,
   };
 }
 

@@ -16,7 +16,7 @@
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { vanTay, locKhung, PHIEN_BAN_MAU } from '../functions/src/vantay.js';
+import { vanTay, locKhung, PHIEN_BAN_MAU, KHOI_RIENG } from '../functions/src/vantay.js';
 import { khungCham, loiDanCham } from '../functions/src/chamviet.js';
 import { dongTheoNhan } from '../src/mon/tienganh/lib/loidan_nhan.js';
 import { NHAN } from '../src/mon/tienganh/lib/nhanluot.js';
@@ -162,4 +162,29 @@ test('nhưng TÊN NHÃN thì phải còn trong khung', () => {
     locKhung(dongTheoNhan(NHAN.thieuTu, {})), locKhung(dongTheoNhan(NHAN.dung, {})),
     'hai nhãn khác nhau phải ra hai khung khác nhau',
   );
+});
+
+/**
+ * KHỐI BỌC DẤU — cách nên dùng cho mọi khối riêng thêm vào sau này (việc V3).
+ *
+ * Lọc theo DÒNG (`DAU_RIENG`) thì mỗi dòng mới phải khai một mẫu, và quên khai là
+ * chữ của bé lọt vào vân tay mà không gì báo — chính chỗ sót `luyennoi.js` đã nói
+ * trước là sẽ sót. Khối thì khai MỘT lần: mọi thứ giữa hai dấu bị bỏ, kể cả dòng
+ * thêm vào sau này.
+ */
+test('locKhung bỏ SẠCH mọi thứ giữa hai dấu khối', () => {
+  const dan = ['DÒNG KHUNG 1', KHOI_RIENG.mo,
+    'ABOUT THE CHILD: tên bé là Quynhanh',
+    'một dòng thêm vào sau này mà không ai khai mẫu',
+    'MỘT DÒNG NGHE NHƯ KHUNG NHƯNG NẰM TRONG KHỐI',
+    KHOI_RIENG.dong, 'DÒNG KHUNG 2'].join('\n');
+  assert.equal(locKhung(dan), 'DÒNG KHUNG 1\nDÒNG KHUNG 2');
+});
+
+test('khối chưa đóng thì bỏ tới hết — thà mất khung còn hơn lọt chữ của bé', () => {
+  /* Hỏng theo hướng nào thì cũng phải hỏng về phía AN TOÀN. Dấu đóng bị mất (sửa
+     tay lỗi, chuỗi bị cắt) mà vẫn trả về phần sau là trả về đúng phần riêng tư. */
+  const dan = ['KHUNG', KHOI_RIENG.mo, 'tên bé là Quynhanh', 'còn nữa'].join('\n');
+  assert.equal(locKhung(dan), 'KHUNG');
+  assert.ok(!locKhung(dan).includes('Quynhanh'));
 });

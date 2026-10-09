@@ -20,7 +20,13 @@ const khoa = () => {
 
 export const soRong = () => ({
   micros: {}, chapters: {}, docHieu: {}, baiViet: {}, soThich: {},
-  dinhDang: {}, updatedAt: null,
+  dinhDang: {},
+  /* MỘT hồ sơ cho cả môn, KHÔNG theo bài — trí nhớ của cô giáo máy về bé (việc V3,
+     `lib/hosoai.js`). Không khoá theo quyển vì nó nói về BÉ, không về quyển: bé hay
+     sót chữ "a" thì sót ở mọi quyển, chia nhỏ ra chỉ làm mỗi mảnh không đủ dấu
+     vết. Cùng lý do với `dinhDang`. */
+  hoSoAI: null,
+  updatedAt: null,
 });
 
 export function napTienDo(kho = globalThis.localStorage) {
@@ -315,5 +321,11 @@ export function gopTienDo(a, b) {
     const cu = dinhDang[k] || { dung: 0, tong: 0 };
     dinhDang[k] = { dung: cu.dung + (v.dung || 0), tong: cu.tong + (v.tong || 0) };
   }
-  return { ...a, micros, chapters, baiViet, soThich, dinhDang };
+  /* ⚠ HỒ SƠ AI gộp theo `capNhatLuc`, KHÔNG gộp hai bên như `dinhDang`. Nó là một
+     BẢN CHỤP của cả trí nhớ, không phải phép đếm tích luỹ: trộn hai bản là ra một
+     hồ sơ chưa từng tồn tại, với bài học của bản này và hạn dùng của bản kia. Lấy
+     bản mới hơn thì cùng lắm mất một buổi, mà hình dạng thì luôn đúng. */
+  const hoSoAI = (b.hoSoAI?.capNhatLuc || 0) > (a.hoSoAI?.capNhatLuc || 0)
+    ? b.hoSoAI : (a.hoSoAI || b.hoSoAI || null);
+  return { ...a, micros, chapters, baiViet, soThich, dinhDang, hoSoAI };
 }

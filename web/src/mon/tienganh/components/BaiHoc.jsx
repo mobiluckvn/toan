@@ -52,6 +52,7 @@ const maCauAm = (c) => maCua(c, 'en');
 export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
                                  onMoc, tenBe = 'Bo', soThich = null,
                                  onSoThich = null, onLuot = null, mucThao = null,
+                                 onHoSoAI = null,
                                  hoSoDang = null, onRoiMan = null, onPhuDao = null }) {
   /* ── SỰ KIỆN RỜI MÀN GIỮA CHỪNG (mục 2.1.2 · chiều Thời gian) ──
      Luận văn đòi đo "mệt mỏi nhận thức", nhưng muốn suy ra trạng thái mệt thì
@@ -207,7 +208,7 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
       {k === 'phong' && (
         <PhongNoi bai={bai} tienDo={tienDo} tenBe={tenBe}
                   soThich={soThich} onSoThich={onSoThich} mucThao={mucThao}
-                  onLuot={ghiLuot} />
+                  onLuot={ghiLuot} onHoSoAI={onHoSoAI} />
       )}
     </Khung>
   );

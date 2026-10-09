@@ -119,9 +119,24 @@ test('CHỈ đếm lượt ĐẦU của mỗi câu', () => {
 });
 
 test('màn hình IM LẶNG khi chưa có gì để nói', () => {
+  /* ⚠ SOI TÍNH CHẤT, ĐỪNG GHIM CHÍNH TẢ DÒNG ĐIỀU KIỆN.
+     Bản đầu của cổng này đòi đúng chuỗi `if (!manh && !cefr) return null;`. Tới
+     09-10, V3 thêm một lý do thứ BA để hiện khối (bé đã có trí nhớ của cô, và bố mẹ
+     phải xem/xoá được) — điều kiện thành `!manh && !cefr && !ai`, và cổng đỏ lên
+     dù NGUYÊN TẮC không bị phá một li. Ghim chính tả thì nó ép người ta chọn giữa
+     "lùi một thay đổi đúng" và "nới cổng" — xem `cong-ghim-chinh-ta-thay-vi-tinh-chat`.
+     Nên soi đúng ba tính chất, và soi CHẶT HƠN bản cũ: bản cũ chưa bao giờ soi hai
+     chốt riêng của từng mục. */
   const ma = chiMa(doc('../src/mon/tienganh/components/ManTiengAnh.jsx'));
-  assert.match(ma, /if \(!manh && !cefr\) return null;/,
+
+  /* 1. Không có gì để nói thì trả `null` — không dựng một khối rỗng. */
+  assert.match(ma, /if \([^)]*!manh && !cefr[^)]*\) return null;/,
     'thà trống còn hơn dán cho bé một cái nhãn dựng trên hai câu');
+  /* 2. Và MỖI mục có chốt RIÊNG: `manhNhat`/`yeuNhat` trả `null` tới khi đủ 8 lượt,
+        nên thiếu chốt ở đây là hiện "đúng NaN%" cho một dạng bé chưa gặp. */
+  assert.match(ma, /\{manh && \(/, 'mục "dạng con làm tốt" thiếu chốt riêng');
+  assert.match(ma, /\{yeu && \(/, 'mục "dạng con chật vật" thiếu chốt riêng');
+  /* 3. Hiện CỠ MẪU. */
   assert.match(ma, /\{manh\.tong\} câu|\{yeu\.tong\} câu/,
     'phải hiện CỠ MẪU: "làm tốt nhất dạng chọn đáp án" dựng trên 9 câu hay 900 câu '
     + 'thì bố mẹ tin như nhau, mà hai con số ấy khác hẳn');
