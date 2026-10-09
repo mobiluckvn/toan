@@ -21,6 +21,7 @@ import { normalizeEmail, buildUserDoc } from './src/user.js';
 import { hoiMay, LoiGoi } from './src/luyennoi.js';
 import { chamBaiViet } from './src/chamviet.js';
 import { sinhPhuDao } from './src/phudao.js';
+import { phanXu } from './src/phanxu.js';
 
 setGlobalOptions({ region: 'asia-southeast1', maxInstances: 10 });
 initializeApp();
@@ -596,6 +597,39 @@ export const sinhCauPhuDao = onCall(
       /* ⚠ KHÔNG ném lỗi nặng lên máy con: phụ đạo CÓ ĐƯỜNG LÙI TĨNH. Máy con bắt
          lỗi này rồi vẫn ra bài bằng phần tĩnh — xem `dungPhuDao`. */
       throw new HttpsError('unavailable', 'Chưa soạn được bài ôn. Con thử lại nhé.');
+    }
+  },
+);
+
+/**
+ * PHÂN XỬ LƯỢT NÓI MƠ HỒ — hai phiếu song song (việc V10).
+ *
+ * Máy con chỉ gọi tới đây khi `moHoCanBoPhieu` đúng: điểm nằm trong [5, 7] và có
+ * một từ cùng unit ở gần. Ngoài vùng ấy thì không ai gọi — con số chốt nằm ở
+ * `lib/chamnoi.js` và có cổng canh.
+ *
+ * ⚠ KHÔNG ném lỗi nặng lên máy con. Phân xử là phần THÊM: mất nó thì bé vẫn có
+ * nguyên điểm của bộ chấm chuỗi, đúng như trước V10. Nên mọi trục trặc trả về mức
+ * điều chỉnh 0 — máy con giữ điểm cũ và KHÔNG báo gì cho bé (§7 chốt thế). Báo lỗi
+ * ở đây là bắt bé đọc một dòng đỏ về một việc bé không biết là có.
+ */
+export const phanXuNoi = onCall(
+  { secrets: [GROQ_API_KEY], region: 'asia-southeast1' },
+  async (req) => {
+    if (!req.auth) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
+    const khoa = GROQ_API_KEY.value();
+    /* Chưa có khoá thì GIỮ ĐIỂM, không ném: khác hẳn `chamViet` và `luyenNoi`, nơi
+       thiếu khoá là mất hẳn một việc nên phải nói to. Ở đây thiếu khoá chỉ là mất
+       phần chỉnh ±1, mà người lớn đã có ba hàm kia kêu rồi. */
+    if (!khoa) return { gan: 'khac', dieuChinh: 0, nhatTri: false, thieuKhoa: true };
+    try {
+      const { Groq } = await import('groq-sdk');
+      return await phanXu(req.data, () => new Groq({ apiKey: khoa }));
+    } catch (e) {
+      /* Gói sai vẫn phải nói ra — đó là lỗi của máy con, và nó không bao giờ xảy ra
+         trên bản chạy đúng. Che nó đi là che một lỗi lập trình. */
+      if (e instanceof LoiGoi) throw new HttpsError('invalid-argument', e.message);
+      return { gan: 'khac', dieuChinh: 0, nhatTri: false, hong: true };
     }
   },
 );

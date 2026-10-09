@@ -18,7 +18,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { vanTay, locKhung, PHIEN_BAN_MAU, KHOI_RIENG } from '../functions/src/vantay.js';
 import {
-  khungCham, loiDanCham, loiDanTimLoi, loiDanSua, loiDanBoMe,
+  khungCham, loiDanCham, loiDanTimLoi, loiDanTimKhen, loiDanSua, loiDanBoMe,
 } from '../functions/src/chamviet.js';
 import { dongTheoNhan } from '../src/mon/tienganh/lib/loidan_nhan.js';
 import { NHAN } from '../src/mon/tienganh/lib/nhanluot.js';
@@ -75,19 +75,37 @@ test('khung dựng lại từ CHÍNH hàm lời dặn, nên sửa lời dặn l�
      mấy hàm dựng lời dặn trả về khi dữ liệu của bé để RỖNG. */
   const khung = khungCham(beA.lop, true);
   const rong = { de: '', viet: '', vonTu: [], mauCau: ['—'], lop: beA.lop };
-  for (const [ten, mau] of [
-    ['mắt xích 1 · tìm lỗi', loiDanTimLoi(rong)],
-    ['mắt xích 2 · sửa', loiDanSua(rong, [])],
-    ['mắt xích 3 · lời cho bố mẹ', loiDanBoMe({ lop: beA.lop }, null)],
-  ]) {
+  const matXich = [
+    ['mắt xích 1 · tìm lỗi', loiDanTimLoi(rong), loiDanTimLoi(beA)],
+    ['mắt xích 1b · tìm khen', loiDanTimKhen(rong), loiDanTimKhen(beA)],
+    ['mắt xích 2 · sửa, chưa có danh sách khen',
+      loiDanSua(rong, [], [], []), loiDanSua(beA, [], [], [])],
+    ['mắt xích 2 · sửa, đã có danh sách khen',
+      loiDanSua(rong, [], [], [{ cau: '—', vi: '—' }]),
+      loiDanSua(beA, [], [], [{ cau: '—', vi: '—' }])],
+    ['mắt xích 3 · lời cho bố mẹ',
+      loiDanBoMe({ lop: beA.lop }, null), loiDanBoMe({ lop: beA.lop }, null)],
+  ];
+  for (const [ten, mau] of matXich) {
     assert.ok(khung.includes(mau),
       `khung KHÔNG dựng từ ${ten} — sửa mắt xích ấy thì vân tay không đổi, `
       + 'và bảng so ΔC gom lẫn hai mẫu khác nhau');
   }
-  /* Và khung phải NGẮN hơn cả chuỗi thật — phần của bé đã bị bỏ ra. */
-  const thatCaChuoi = loiDanTimLoi(beA).length + loiDanSua(beA, []).length
-    + loiDanBoMe({ lop: beA.lop }, null).length;
-  assert.ok(thatCaChuoi > khung.length, 'khung không bỏ được phần nào của bé');
+
+  /* ⚠ VÀ ĐÂY LẠI LÀ CÁI BẪY KHỐI CHÚ THÍCH TRÊN VỪA DẶN. Bản trước V10 so
+     `tổng độ dài chuỗi thật > độ dài khung`. Tới V10 chuỗi mọc thêm một mắt xích và
+     khung thành NĂM khung ghép lại, nên tổng của BA lời dặn thật lại ngắn hơn khung
+     — cổng đỏ, mà tính chất không đổi một li. Lần thứ hai cùng một phép so độ dài
+     làm người ta tưởng có lỗi.
+     Tính chất thật là TỪNG MẮT XÍCH: với cùng một mắt xích, bản có dữ liệu của bé
+     phải dài hơn bản để rỗng. Soi thế thì chuỗi mọc thêm bao nhiêu mắt xích cũng
+     không làm cổng này đỏ oan, và nó lại chặt hơn — nó bắt được cả trường hợp chỉ
+     MỘT mắt xích quên bỏ phần của bé ra. */
+  for (const [ten, mau, that] of matXich) {
+    if (that === mau) continue;    // mắt xích 3 vốn không nhận dữ liệu của bé
+    assert.ok(that.length > mau.length,
+      `${ten}: khung không bỏ được phần nào của bé`);
+  }
   /* Lời dặn MỘT LƯỢT của bản trước V4 vẫn phải dựng được — bảng so ΔC đã gom lượt
      của mẫu 1 theo khung ấy, xoá đi là mất phần đã gom. */
   assert.match(loiDanCham({ ...beA }), /LUẬT CHẤM/);

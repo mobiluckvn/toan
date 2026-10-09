@@ -38,11 +38,17 @@ export const PHIEN_BAN_MAU = {
      thành chín nhánh theo nhãn, luật 8c giữ lại và mang số 7, hai luật cuối lùi số.
      Đổi đáng kể, nên bảng so ΔC không được gom chung với lượt của mẫu 1. */
   luyennoi: 2,
-  /* 2 từ 09-10-2026 (việc V4): một lời dặn tách thành CHUỖI BA mắt xích (tìm lỗi ·
-     sửa · lời cho bố mẹ), và khung vân tay nay là ba khung ghép lại. Đổi đáng kể. */
-  chamviet: 2,
+  /* 3 từ 09-10-2026 (việc V10): mắt xích 1 tách thành HAI lượt song song (tìm lỗi
+     ∥ tìm khen), và luật 1 của mắt xích 2 có thêm một nhánh khi đã có danh sách
+     khen. Khung nay là NĂM khung ghép lại. Đổi đáng kể.
+     2 từ 09-10-2026 (việc V4): một lời dặn tách thành CHUỖI BA mắt xích (tìm lỗi ·
+     sửa · lời cho bố mẹ), và khung vân tay nay là ba khung ghép lại. */
+  chamviet: 3,
   /* 1 từ 09-10-2026 (việc V9): mẫu sinh câu phụ đạo, bản đầu. */
   phudao: 1,
+  /* 1 từ 09-10-2026 (việc V10): mẫu phân xử lượt nói mơ hồ, bản đầu. Khung là CẢ
+     CẶP hai chiều A/B — xem `khungPhanXu`. */
+  phanxu: 1,
 };
 
 /** Băm ngắn — 12 ký tự hex là đủ tách vài chục mẫu, và ngắn thì đọc log dễ. */

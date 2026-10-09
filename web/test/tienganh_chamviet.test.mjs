@@ -28,6 +28,7 @@ import {
   soiBaiViet, loiDanCham, TOI_DA_CHU_BAI_VIET,
   loiDanTimLoi, loiDanSua, loiDanBoMe, chamBaiViet, khungCham,
   SUA_LAI_TOI_DA, TOKEN_TIM_LOI, TOKEN_SUA, TOKEN_BO_ME, LOI_SUA_LAI,
+  loiDanTimKhen, TOKEN_TIM_KHEN,
 } from '../functions/src/chamviet.js';
 import { PHIEN_BAN_MAU, locKhung } from '../functions/src/vantay.js';
 import { diemHienThi } from '../src/mon/tienganh/lib/hocba.js';
@@ -389,15 +390,37 @@ const GOI = {
   lop: 3,
 };
 
-/** Client giả trả lần lượt theo danh sách, và CHỤP LẠI từng lời dặn gửi lên. */
-function mayGia(ds) {
+/**
+ * Client giả trả lần lượt theo danh sách, và CHỤP LẠI từng lời dặn gửi lên.
+ *
+ * ⚠ MẮT XÍCH TÌM KHEN ĂN RIÊNG, KHÔNG TIÊU MỘT MỤC CỦA `ds`.
+ * Từ V10 mắt xích 1 và 1b chạy SONG SONG, nên "lượt gọi thứ n" không còn là một
+ * mốc đáng tin: hai lượt ấy xuất phát cùng lúc, và thứ tự chúng về phụ thuộc cách
+ * `Promise.all` xếp hàng. Phát theo số thứ tự thì mỗi lần đổi thứ tự trong
+ * `Promise.all` là cả tệp cổng này lệch một nấc mà chẳng ai hiểu vì sao.
+ *
+ * Nên lượt TÌM KHEN được nhận ra bằng chính lời dặn của nó và trả lời riêng. Mọi
+ * lượt khác tiêu `ds` theo đúng thứ tự cũ — nhờ thế mọi `ds` của các phép thử viết
+ * từ thời V4 vẫn đúng nguyên văn, không phải chèn thêm một mục vào giữa.
+ */
+function mayGia(ds, khen = { khen: [] }) {
   const daGoi = [];
+  let i = 0;
   const f = () => ({ chat: { completions: { create: async (o) => {
     daGoi.push(o);
-    const x = ds[Math.min(daGoi.length - 1, ds.length - 1)];
+    const dan = o.messages[0].content;
+    if (/CHỈ TÌM CHỖ BÉ LÀM ĐƯỢC/.test(dan)) {
+      return { choices: [{ message: { content: JSON.stringify(khen) } }] };
+    }
+    const x = ds[Math.min(i, ds.length - 1)];
+    i += 1;
     return { choices: [{ message: { content: typeof x === 'string' ? x : JSON.stringify(x) } }] };
   } } } });
   f.daGoi = daGoi;
+  /* Lọc ra mấy lượt KHÔNG phải tìm khen — mấy phép thử cũ đếm theo chuỗi tuần tự,
+     và chuỗi ấy vẫn còn y nguyên bên dưới lượt song song. */
+  f.chuoi = () => daGoi.filter((o) => !/CHỈ TÌM CHỖ BÉ LÀM ĐƯỢC/.test(o.messages[0].content));
+  f.khenDaGoi = () => daGoi.filter((o) => /CHỈ TÌM CHỖ BÉ LÀM ĐƯỢC/.test(o.messages[0].content));
   return f;
 }
 
@@ -450,15 +473,20 @@ test('mắt xích 3 KHÔNG mang bài viết của bé', () => {
   assert.match(d, /không nhắc điểm số/);
 });
 
-test('chạy đủ chuỗi: 1 → 2 → 3, mỗi mắt xích một trần token', async () => {
+test('chạy đủ chuỗi: (1 ∥ 1b) → 2 → 3, mỗi mắt xích một trần token', async () => {
   const gia = mayGia([{ loi: [{ cau: 'x', loai: 'thieuTu', ghiChu: 'thiếu is' }] },
                       CHAM_SACH, { choBoMe: 'Con làm tốt.' }]);
   const r = await chamBaiViet(GOI, gia);
-  assert.equal(gia.daGoi.length, 3, 'không chạy đủ ba mắt xích');
-  assert.deepEqual(gia.daGoi.map((x) => x.max_tokens), [TOKEN_TIM_LOI, TOKEN_SUA, TOKEN_BO_ME]);
-  assert.ok(TOKEN_TIM_LOI + TOKEN_SUA + TOKEN_BO_ME <= 1300, 'tổng token vượt trần §7');
+  assert.equal(gia.daGoi.length, 4, 'không chạy đủ bốn mắt xích');
+  /* Mắt xích 1b phải THẬT SỰ được gọi — việc V10 chỉ có nghĩa nếu nó chạy. */
+  assert.equal(gia.khenDaGoi().length, 1, 'mắt xích tìm khen không được gọi');
+  assert.equal(gia.khenDaGoi()[0].max_tokens, TOKEN_TIM_KHEN);
+  assert.deepEqual(gia.chuoi().map((x) => x.max_tokens),
+    [TOKEN_TIM_LOI, TOKEN_SUA, TOKEN_BO_ME]);
+  assert.ok(TOKEN_TIM_LOI + TOKEN_TIM_KHEN + TOKEN_SUA + TOKEN_BO_ME <= 1700,
+    'tổng token vượt trần');
   /* Nhiệt độ TĂNG dần: tìm lỗi là việc máy móc nhất, lời cho bố mẹ cần chữ mềm hơn. */
-  assert.deepEqual(gia.daGoi.map((x) => x.temperature), [0.1, 0.2, 0.3]);
+  assert.deepEqual(gia.chuoi().map((x) => x.temperature), [0.1, 0.2, 0.3]);
   assert.equal(r.lanSuaLai, 0);
   const c = JSON.parse(r.chu);
   /* Lời chấm phải đủ NĂM trường — "Định nghĩa XONG" của §7. */
@@ -466,7 +494,46 @@ test('chạy đủ chuỗi: 1 → 2 → 3, mỗi mắt xích một trần token'
     assert.ok(k in c, `lời chấm thiếu trường "${k}"`);
   }
   /* Danh sách lỗi của mắt xích 1 phải THẬT SỰ tới mắt xích 2. */
-  assert.match(gia.daGoi[1].messages[0].content, /thiếu is/);
+  assert.match(gia.chuoi()[1].messages[0].content, /thiếu is/);
+});
+
+/**
+ * ── HAI LƯỢT ĐẦU PHẢI THẬT SỰ CHẠY SONG SONG (việc V10) ──
+ *
+ * Đây là chốt dễ mất nhất của cả việc: viết `await` trước lượt thứ nhất rồi mới gọi
+ * lượt thứ hai thì mọi phép thử khác ở trên VẪN XANH — cùng số lượt gọi, cùng trần
+ * token, cùng kết quả. Chỉ có bé là chờ gấp đôi, và không gì kêu.
+ *
+ * Soi bằng cách giữ lượt thứ nhất lại: nếu chúng nối tiếp nhau thì lượt thứ hai chưa
+ * được gọi lúc lượt thứ nhất còn đang treo.
+ */
+test('mắt xích 1 và 1b chạy SONG SONG, không nối tiếp', async () => {
+  let moKhoa;
+  const cho = new Promise((x) => { moKhoa = x; });
+  const daVao = [];
+  const gia = () => ({ chat: { completions: { create: async (o) => {
+    const dan = o.messages[0].content;
+    daVao.push(/CHỈ TÌM CHỖ BÉ LÀM ĐƯỢC/.test(dan) ? 'khen'
+      : /CHỈ LIỆT KÊ LỖI/.test(dan) ? 'loi' : 'khac');
+    if (/CHỈ LIỆT KÊ LỖI/.test(dan)) await cho;    // giữ lượt tìm lỗi lại
+    const x = /CHỈ LIỆT KÊ LỖI/.test(dan) ? { loi: [] }
+      : /CHỈ TÌM CHỖ BÉ LÀM ĐƯỢC/.test(dan) ? { khen: [] }
+        : /cho BỐ MẸ/.test(dan) ? { choBoMe: 'ổn' } : CHAM_SACH;
+    return { choices: [{ message: { content: JSON.stringify(x) } }] };
+  } } } });
+
+  const dangChay = chamBaiViet(GOI, gia);
+  /* Nhường cho vòng lặp sự kiện chạy hết những gì chạy được. Nếu hai lượt song song
+     thì lượt tìm khen ĐÃ vào, dù lượt tìm lỗi còn treo. */
+  for (let i = 0; i < 10; i += 1) await Promise.resolve();
+  assert.ok(daVao.includes('khen'),
+    'mắt xích tìm khen chưa được gọi khi mắt xích tìm lỗi còn treo — hai lượt đang '
+    + 'NỐI TIẾP, và bé phải chờ gấp đôi');
+  assert.ok(!daVao.includes('khac'),
+    'mắt xích 2 đã chạy trước khi mắt xích 1 xong — nó cần danh sách lỗi');
+  moKhoa();
+  const r = await dangChay;
+  assert.ok(JSON.parse(r.chu).diem);
 });
 
 test('chữ lạ → xin lại mắt xích 2, kèm đúng chữ cấm', async () => {
@@ -477,8 +544,8 @@ test('chữ lạ → xin lại mắt xích 2, kèm đúng chữ cấm', async ()
   assert.deepEqual(r.chuLaConLai, [], 'xin lại ăn thì không còn chữ lạ nào');
   assert.equal(JSON.parse(r.chu).loi[0].sua, 'My school is big.');
   /* Lượt xin lại phải mang dòng cấm, và gọi tên đúng chữ vừa dùng. */
-  assert.match(gia.daGoi[2].messages[0].content, /LẦN TRƯỚC/);
-  assert.match(gia.daGoi[2].messages[0].content, /delicious/);
+  assert.match(gia.chuoi()[2].messages[0].content, /LẦN TRƯỚC/);
+  assert.match(gia.chuoi()[2].messages[0].content, /delicious/);
   assert.equal(LOI_SUA_LAI.so - truoc.so, 1);
   assert.equal(LOI_SUA_LAI.thanh - truoc.thanh, 1);
 });
@@ -502,7 +569,7 @@ test('chữ CẤM dồn qua các vòng, không quên vòng trước', async () =
   const la2 = { ...CHAM_SACH, loi: [{ cau: 'x', sua: 'My school is wonderful.', viSao: 'x' }] };
   const gia = mayGia([{ loi: [] }, CHAM_LA, la2, CHAM_SACH, { choBoMe: 'ổn' }]);
   await chamBaiViet(GOI, gia);
-  const dan3 = gia.daGoi[3].messages[0].content;
+  const dan3 = gia.chuoi()[3].messages[0].content;
   assert.match(dan3, /delicious/, 'quên chữ cấm của vòng trước');
   assert.match(dan3, /wonderful/);
 });
@@ -510,22 +577,53 @@ test('chữ CẤM dồn qua các vòng, không quên vòng trước', async () =
 test('mắt xích 1 hỏng thì vẫn chấm được, chỉ kém hơn', async () => {
   /* Dừng cả lời chấm vì mắt xích tìm lỗi trượt là bé mất hết. Mắt xích 2 tự tìm
      lỗi được như bản trước V4. */
-  let n = 0;
-  const gia = () => ({ chat: { completions: { create: async () => {
-    n += 1;
-    if (n === 1) return { choices: [{ finish_reason: 'length', message: { content: '' } }] };
-    return { choices: [{ message: { content: JSON.stringify(n === 2 ? CHAM_SACH : { choBoMe: 'ổn' }) } }] };
+  /* ⚠ Phát theo NỘI DUNG lời dặn, không theo số đếm lượt gọi: từ V10 mắt xích 1 và
+     1b song song, nên "lượt thứ nhất" không còn chỉ đúng một mắt xích. */
+  const gia = () => ({ chat: { completions: { create: async (o) => {
+    const dan = o.messages[0].content;
+    if (/CHỈ LIỆT KÊ LỖI/.test(dan)) {
+      return { choices: [{ finish_reason: 'length', message: { content: '' } }] };
+    }
+    if (/CHỈ TÌM CHỖ BÉ LÀM ĐƯỢC/.test(dan)) {
+      return { choices: [{ message: { content: JSON.stringify({ khen: [] }) } }] };
+    }
+    const x = /cho BỐ MẸ/.test(dan) ? { choBoMe: 'ổn' } : CHAM_SACH;
+    return { choices: [{ message: { content: JSON.stringify(x) } }] };
   } } } });
   const r = await chamBaiViet(GOI, gia);
   assert.ok(JSON.parse(r.chu).diem, 'mắt xích 1 trượt là mất cả lời chấm');
 });
 
+/**
+ * Và chiều ngược: MẮT XÍCH 1b hỏng thì cũng không được làm hỏng lời chấm.
+ *
+ * Đây là nửa còn lại của chốt "mỗi nhánh tự đỡ lấy". `Promise.all` hỏng một nhánh
+ * là hỏng cả cặp, nên nếu ai gỡ hai khối `try` trong lòng hai nhánh ấy ra thì một
+ * lượt tìm khen trượt sẽ cuốn theo cả lời chấm — mà lời khen là phần PHỤ.
+ */
+test('mắt xích 1b hỏng thì vẫn chấm được, chỉ không có danh sách khen', async () => {
+  const gia = () => ({ chat: { completions: { create: async (o) => {
+    const dan = o.messages[0].content;
+    if (/CHỈ TÌM CHỖ BÉ LÀM ĐƯỢC/.test(dan)) throw new Error('mô hình hỏng');
+    if (/CHỈ LIỆT KÊ LỖI/.test(dan)) {
+      return { choices: [{ message: { content: JSON.stringify({ loi: [] }) } }] };
+    }
+    const x = /cho BỐ MẸ/.test(dan) ? { choBoMe: 'ổn' } : CHAM_SACH;
+    return { choices: [{ message: { content: JSON.stringify(x) } }] };
+  } } } });
+  const r = await chamBaiViet(GOI, gia);
+  const c = JSON.parse(r.chu);
+  assert.ok(c.diem && c.khen, 'mắt xích tìm khen trượt là mất cả lời chấm');
+  assert.equal(r.soKhen, 0, 'không có danh sách khen thì phải đếm ra 0');
+});
+
 test('mắt xích 3 hỏng thì KHÔNG làm hỏng lời chấm', async () => {
-  let n = 0;
-  const gia = () => ({ chat: { completions: { create: async () => {
-    n += 1;
-    if (n === 3) throw Object.assign(new Error('400'), { status: 400 });
-    return { choices: [{ message: { content: JSON.stringify(n === 1 ? { loi: [] } : CHAM_SACH) } }] };
+  const gia = () => ({ chat: { completions: { create: async (o) => {
+    const dan = o.messages[0].content;
+    if (/cho BỐ MẸ/.test(dan)) throw Object.assign(new Error('400'), { status: 400 });
+    const x = /CHỈ LIỆT KÊ LỖI/.test(dan) ? { loi: [] }
+      : /CHỈ TÌM CHỖ BÉ LÀM ĐƯỢC/.test(dan) ? { khen: [] } : CHAM_SACH;
+    return { choices: [{ message: { content: JSON.stringify(x) } }] };
   } } } });
   const r = await chamBaiViet(GOI, gia);
   const c = JSON.parse(r.chu);
@@ -533,11 +631,12 @@ test('mắt xích 3 hỏng thì KHÔNG làm hỏng lời chấm', async () => {
   assert.ok(!c.choBoMe, 'phần phụ mất thì để trống, đừng bịa');
 });
 
-test('khung vân tay = BA khung ghép lại, và phiên bản mẫu đã tăng', () => {
+test('khung vân tay = NĂM khung ghép lại, và phiên bản mẫu đã tăng', () => {
   /* Dựng khung từ một mắt xích thôi thì hai mắt xích kia sửa bao nhiêu cũng không
      làm vân tay đổi — bảng so ΔC gom lẫn hai mẫu khác nhau mà không ai thấy. */
   const k = khungCham(3, true);
   assert.match(k, /CHỈ LIỆT KÊ LỖI/, 'khung thiếu mắt xích 1');
+  assert.match(k, /CHỈ TÌM CHỖ BÉ LÀM ĐƯỢC/, 'khung thiếu mắt xích 1b');
   assert.match(k, /LUẬT CHẤM/, 'khung thiếu mắt xích 2');
   assert.match(k, /cho BỐ MẸ/, 'khung thiếu mắt xích 3');
   /* Và khung KHÔNG chứa một chữ nào của bé. */

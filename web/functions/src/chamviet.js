@@ -131,6 +131,46 @@ export function loiDanTimLoi({ de, viet, vonTu, mauCau, lop }) {
 }
 
 /**
+ * MẮT XÍCH 1b — CHỈ LIỆT KÊ CHỖ BÉ LÀM ĐƯỢC. Chạy SONG SONG với mắt xích 1.
+ *
+ * ── VÌ SAO TÁCH KHỎI MẮT XÍCH 1, VÀ VÌ SAO KHÔNG GỘP VÀO MẮT XÍCH 2 ──
+ * Trước V10, lời khen do mắt xích 2 viết — cùng một lượt với việc sửa lỗi. Lượt ấy
+ * vừa đọc một danh sách lỗi xong, nên lời khen nó viết ra hay là lời khen về chính
+ * cái bài vừa bị liệt ra năm lỗi: "con viết được ba câu rồi" — đúng mà rỗng, vì nó
+ * chưa đi tìm chỗ nào đáng khen, nó chỉ cần điền vào trường "khen".
+ *
+ * Tách ra thành một lượt RIÊNG, lượt ấy chỉ có đúng một việc: đọc bài bé và tìm chỗ
+ * làm được. Nó không thấy danh sách lỗi, nên không bị cái danh sách ấy lái.
+ *
+ * Và vì hai việc KHÔNG phụ thuộc nhau, chúng chạy song song — thêm một lượt gọi mà
+ * gần như không thêm giây chờ nào. Đó là chỗ mẫu #3 cắm vào.
+ *
+ * ⚠ CẤM SỬA, Y NHƯ MẮT XÍCH 1. Cho nó viết câu đúng thì nó lại viết bằng từ hay
+ * nhất nó biết — cùng một cửa cho chữ ngoài vốn mà cả V4 sinh ra để đóng.
+ */
+export function loiDanTimKhen({ de, viet, vonTu, mauCau, lop }) {
+  return [
+    ...dauChung({ de, vonTu, mauCau, lop }),
+    'VIỆC CỦA BẠN LÚC NÀY: CHỈ TÌM CHỖ BÉ LÀM ĐƯỢC. KHÔNG SỬA, KHÔNG CHẤM ĐIỂM,',
+    'KHÔNG NÓI LỖI.',
+    'Mỗi chỗ một mục, và chỉ gồm hai thứ:',
+    '- "cau": câu bé viết, NGUYÊN VĂN, không chữa một chữ nào;',
+    '- "vi": nhiều nhất 15 chữ tiếng Việt, nói rõ CÁI GÌ trong câu ấy đúng',
+    '  (dùng đúng từ nào, đúng mẫu câu nào, đúng ý nào của đề).',
+    'Chỉ khen cái NHÌN THẤY ĐƯỢC trong bài. Không khen tính cách, không khen',
+    'chung chung kiểu "viết tốt".',
+    'Bài không có chỗ nào đáng khen thì trả "khen": [] — thà trống còn hơn khen',
+    'một câu sai.',
+    '',
+    'TRẢ LỜI ĐÚNG MỘT KHỐI JSON, không thêm chữ nào ngoài khối:',
+    '{"khen": [{"cau":"…","vi":"…"}]}',
+    '',
+    'BÀI VIẾT CỦA BÉ:',
+    viet,
+  ].join('\n');
+}
+
+/**
  * MẮT XÍCH 2 — SỬA, KHEN, GỢI Ý. Nhận sẵn danh sách lỗi của mắt xích 1.
  *
  * @param loiDs      mảng lỗi mắt xích 1 tìm ra
@@ -138,17 +178,32 @@ export function loiDanTimLoi({ de, viet, vonTu, mauCau, lop }) {
  *                   mọc thêm một dòng cấm đúng mấy chữ ấy — đây là chỗ mẫu
  *                   Evaluator–Optimizer cắm vào.
  */
-export function loiDanSua({ de, viet, vonTu, mauCau, lop }, loiDs = [], tuLaTruoc = []) {
+export function loiDanSua(
+  { de, viet, vonTu, mauCau, lop }, loiDs = [], tuLaTruoc = [], khenDs = [],
+) {
   const ds = (loiDs || []).map((l, i) => `${i + 1}. "${l?.cau ?? ''}"`
     + ` — ${l?.loai || 'khac'}${l?.ghiChu ? `: ${l.ghiChu}` : ''}`);
+  /* Danh sách khen của mắt xích 1b, ĐÃ qua `gopKhen` ở phía gọi. */
+  const kds = (khenDs || []).map((k, i) => `${i + 1}. "${k?.cau ?? ''}" — ${k?.vi ?? ''}`);
   return [
     ...dauChung({ de, vonTu, mauCau, lop }),
     ...(ds.length
       ? ['DANH SÁCH LỖI ĐÃ TÌM ĐƯỢC — chấm theo đúng danh sách này, đừng thêm lỗi mới:', ...ds, '']
       : ['KHÔNG CÓ LỖI NÀO ĐƯỢC TÌM RA trong bài này.', '']),
+    /* ── CHỖ ĐÁNG KHEN, do một lượt RIÊNG tìm ra (việc V10) ──
+       Đưa vào đây để lời khen dựa trên một phép đọc bài THẬT, chứ không phải điền
+       vào trường "khen" sau khi vừa đọc năm lỗi. Danh sách rỗng thì không dựng dòng
+       nào: nói "không có gì đáng khen" là mời nó bịa ra một câu khen cho đủ. */
+    ...(kds.length
+      ? ['CHỖ BÉ LÀM ĐƯỢC — ĐÃ TÌM RA SẴN, lời khen phải lấy từ đúng danh sách này:',
+        ...kds, '']
+      : []),
     'LUẬT CHẤM — theo đủ, không bỏ điều nào:',
-    '1. Khen CỤ THỂ: nói rõ bé làm được gì (câu nào đúng, dùng đúng từ nào).',
-    '   Không khen chung chung kiểu "giỏi lắm".',
+    ...(kds.length
+      ? ['1. Trường "khen" viết lại danh sách trên thành một hai câu cho bé nghe.',
+        '   KHÔNG thêm chỗ đáng khen nào ngoài danh sách ấy.']
+      : ['1. Khen CỤ THỂ: nói rõ bé làm được gì (câu nào đúng, dùng đúng từ nào).',
+        '   Không khen chung chung kiểu "giỏi lắm".']),
     '2. Với MỖI lỗi trên, viết "sua" (câu đúng, TIẾNG ANH) và "viSao"',
     '   (tiếng Việt, nhiều nhất 20 chữ, cho bé tám tuổi hiểu).',
     '3. Câu sửa và câu gợi ý CHỈ ĐƯỢC dùng từ trong bảng vốn từ ở trên.',
@@ -252,15 +307,23 @@ export function loiDanCham({ de, viet, vonTu, mauCau, lop }) {
  * `lop` GIỮ LẠI trong khung, cố ý: lời dặn cho bé lớp 3 và lớp 5 là hai mẫu khác
  * nhau thật (câu đầu ghi rõ lớp), nên gom chung khi so ΔC là gom nhầm.
  */
-export const khungCham = (lop, coMauCau) => [
-  /* ⚠ KHUNG = BA KHUNG GHÉP LẠI (từ V4). Lời dặn nay là một CHUỖI ba mắt xích, nên
-     khung của nó phải là khung của cả ba — dựng từ một mắt xích thôi thì hai mắt
-     xích kia sửa bao nhiêu cũng không làm vân tay đổi, và bảng so ΔC gom lẫn hai
-     mẫu khác nhau mà không ai thấy. */
-  loiDanTimLoi({ de: '', viet: '', vonTu: [], mauCau: coMauCau ? ['—'] : [], lop }),
-  loiDanSua({ de: '', viet: '', vonTu: [], mauCau: coMauCau ? ['—'] : [], lop }, []),
-  loiDanBoMe({ lop }, null),
-].join('\n');
+export const khungCham = (lop, coMauCau) => {
+  const rong = { de: '', viet: '', vonTu: [], mauCau: coMauCau ? ['—'] : [], lop };
+  return [
+    /* ⚠ KHUNG = MỌI MẮT XÍCH GHÉP LẠI (từ V4, nay BỐN từ V10). Lời dặn là một chuỗi,
+       nên khung của nó phải là khung của cả chuỗi — dựng từ một mắt xích thôi thì
+       mấy mắt xích kia sửa bao nhiêu cũng không làm vân tay đổi, và bảng so ΔC gom
+       lẫn hai mẫu khác nhau mà không ai thấy. */
+    loiDanTimLoi(rong),
+    loiDanTimKhen(rong),
+    /* ⚠ Dựng mắt xích 2 với danh sách khen RỖNG lẫn CÓ: từ V10 nó có hai nhánh luật
+       1 khác nhau, và khung chỉ dựng một nhánh thì nửa lời dặn kia nằm ngoài vân
+       tay. Một mục "—" là đủ để nhánh "có khen" mọc ra. */
+    loiDanSua(rong, [], [], []),
+    loiDanSua(rong, [], [], [{ cau: '—', vi: '—' }]),
+    loiDanBoMe({ lop }, null),
+  ].join('\n');
+};
 
 /** Nhiều nhất bao nhiêu lần xin lại mắt xích 2 khi nó dùng chữ ngoài vốn. */
 export const SUA_LAI_TOI_DA = 2;
@@ -273,11 +336,78 @@ export const SUA_LAI_TOI_DA = 2;
  * nay là ba lượt, nhưng mỗi lượt lại nhẹ hơn hẳn.
  */
 export const TOKEN_TIM_LOI = 400;
+export const TOKEN_TIM_KHEN = 300;   // chỉ liệt kê, ngắn hơn mắt xích tìm lỗi
 export const TOKEN_SUA = 700;
 export const TOKEN_BO_ME = 200;
 
+/**
+ * Nhiều nhất bao nhiêu chỗ khen được đưa sang mắt xích 2, và mỗi chỗ dài bao nhiêu.
+ *
+ * Ba là đủ: bé tám tuổi nghe quá ba điều một lúc thì không giữ được điều nào, và
+ * lời khen dài thì phần phải sửa bị đẩy xuống dưới chỗ bé còn đọc.
+ */
+export const KHEN_TOI_DA = 3;
+export const KHEN_TOI_DA_CHU = 80;
+
 /** Đếm số lần phải xin lại mắt xích 2. Máy chủ không ghi gì — chỉ đếm. */
 export const LOI_SUA_LAI = { so: 0, thanh: 0, ganNhat: null };
+
+/**
+ * GỘP "LỖI ∥ KHEN" BẰNG MÃ — không để mô hình tự hoà giải hai danh sách (việc V10).
+ *
+ * Hai lượt chạy song song nên chúng KHÔNG thấy nhau. Thế là tốt cho việc đọc bài,
+ * nhưng nó để lại đúng hai chỗ hỏng mà chỉ mã mới bịt được:
+ *
+ * ── 1 · KHEN MỘT CÂU BÉ KHÔNG HỀ VIẾT ──
+ * Lượt tìm khen được dặn "nguyên văn", nhưng cái nó hay làm là khen câu bé ĐÁNG LẼ
+ * viết: bé viết "I have two cat", nó khen "I have two cats". Khen một câu đúng mà
+ * bé không viết là dạy sai và khen oan cùng lúc. Nên mỗi câu khen phải TÌM THẤY
+ * ĐƯỢC trong bài viết của bé; không thấy thì bỏ mục ấy.
+ *
+ * Đây là phép soi mà mô hình không làm thay được, vì nó cần đối chiếu với bản gốc
+ * mà chính nó vừa diễn giải.
+ *
+ * ── 2 · CÙNG MỘT CÂU VỪA ĐƯỢC KHEN VỪA BỊ LIỆT LỖI ──
+ * Chuyện này xảy ra thật, và nó là hệ quả của việc chạy song song: lượt khen thấy
+ * "I have two cat" dùng đúng từ `cat` và đúng mẫu `I have…`, còn lượt tìm lỗi thấy
+ * nó thiếu `s`. Cả hai đều đúng. Nhưng nói với bé "câu này con viết đúng lắm" rồi
+ * ba dòng sau "câu này sai, phải sửa thành…" thì bé không biết tin dòng nào.
+ *
+ * LỖI THẮNG. Bé còn phải sửa câu ấy, nên câu ấy không được nằm trong phần khen —
+ * phần khen còn những câu khác, và nếu không còn câu nào thì thà không khen câu nào
+ * hơn là khen đúng câu đang sai.
+ */
+const xepPhang = (x) => String(x ?? '')
+  .toLowerCase()
+  .replace(/[^a-z0-9\s']/g, ' ')
+  .replace(/\s+/g, ' ')
+  .trim();
+
+export function gopKhen(loiDs, khenDs, viet) {
+  const baiPhang = xepPhang(viet);
+  /* Câu đã bị liệt lỗi — so bằng bản xếp phẳng, vì mắt xích 1 và 1b trích cùng một
+     câu ra có thể lệch nhau dấu phẩy hoặc chữ hoa. */
+  const coLoi = new Set((loiDs || []).map((l) => xepPhang(l?.cau)).filter(Boolean));
+  const daCo = new Set();
+  const ra = [];
+  for (const k of khenDs || []) {
+    const cau = String(k?.cau ?? '').trim();
+    const vi = String(k?.vi ?? '').trim();
+    if (!cau || !vi) continue;
+    const phang = xepPhang(cau);
+    if (!phang) continue;
+    /* ⚠ `includes` trên bản xếp phẳng, KHÔNG so bằng nhau: mắt xích 1b hay trích
+       một câu trong bài nhiều câu, và nó cắt chỗ nào là chuyện của nó. Soi bằng
+       phép so bằng là bỏ gần hết mục đúng. */
+    if (!baiPhang.includes(phang)) continue;
+    if (coLoi.has(phang)) continue;
+    if (daCo.has(phang)) continue;
+    daCo.add(phang);
+    ra.push({ cau, vi: vi.slice(0, KHEN_TOI_DA_CHU) });
+    if (ra.length >= KHEN_TOI_DA) break;
+  }
+  return ra;
+}
 
 /* Một lượt gọi Groq. Gom về một chỗ để ba mắt xích không lệch nhau mấy nút vặn. */
 async function goiMot(client, dan, { nhiet, token }) {
@@ -330,16 +460,44 @@ export async function chamBaiViet(du, taoClient) {
   const client = taoClient();
   const kho = { vonTu: goi.vonTu, mauCau: goi.mauCau };
 
-  /* ── MẮT XÍCH 1 ── Trượt thì vẫn đi tiếp với danh sách lỗi RỖNG: mắt xích 2 tự
-     tìm lỗi được như bản cũ, chỉ là kém hơn. Dừng cả lời chấm thì bé mất hết. */
-  let loiDs = [];
-  try {
-    const b1 = bocJSON(await goiMot(client, loiDanTimLoi(goi),
-      { nhiet: 0.1, token: TOKEN_TIM_LOI }));
-    if (Array.isArray(b1?.loi)) loiDs = b1.loi;
-  } catch (e) {
-    if (e instanceof LoiGoi && e.ma !== 'tra-loi-rong') throw e;
-  }
+  /* ── MẮT XÍCH 1 ∥ 1b — HAI LƯỢT SONG SONG (việc V10) ──
+     Tìm lỗi và tìm chỗ đáng khen là hai việc KHÔNG phụ thuộc nhau, nên chúng chạy
+     cùng lúc: cả cặp tốn đúng quãng chờ của lượt chậm hơn, không phải tổng hai.
+     Quãng chờ ở đây là lúc bé đã bấm "nhờ cô chấm" và đang ngồi nhìn màn hình.
+
+     ⚠ MỖI NHÁNH TỰ ĐỠ LẤY, KHÔNG DÙNG `Promise.all` TRỰC TIẾP TRÊN LỜI GỌI.
+     `Promise.all` hỏng một nhánh là hỏng cả cặp — mà ở đây hỏng một nhánh phải đi
+     tiếp được: mất danh sách lỗi thì mắt xích 2 tự tìm lỗi như bản trước V4; mất
+     danh sách khen thì nó tự khen như bản trước V10. Dừng cả lời chấm vì một trong
+     hai lượt phụ trượt thì bé mất hết. Nên mỗi nhánh bắt lỗi NGAY TRONG nhánh và
+     trả về mảng rỗng. */
+  const [loiDs, khenTho] = await Promise.all([
+    (async () => {
+      try {
+        const b1 = bocJSON(await goiMot(client, loiDanTimLoi(goi),
+          { nhiet: 0.1, token: TOKEN_TIM_LOI }));
+        return Array.isArray(b1?.loi) ? b1.loi : [];
+      } catch (e) {
+        /* Gói sai thì vẫn phải ném ra ngoài — đó là lỗi của máy con, không phải
+           trục trặc của mô hình, và che nó đi là che một lỗi lập trình. */
+        if (e instanceof LoiGoi && e.ma !== 'tra-loi-rong') throw e;
+        return [];
+      }
+    })(),
+    (async () => {
+      try {
+        const b = bocJSON(await goiMot(client, loiDanTimKhen(goi),
+          { nhiet: 0.2, token: TOKEN_TIM_KHEN }));
+        return Array.isArray(b?.khen) ? b.khen : [];
+      } catch (e) {
+        if (e instanceof LoiGoi && e.ma !== 'tra-loi-rong') throw e;
+        return [];
+      }
+    })(),
+  ]);
+
+  /* Gộp BẰNG MÃ, không để mô hình tự hoà giải — xem `gopKhen`. */
+  const khenDs = gopKhen(loiDs, khenTho, goi.viet);
 
   /* ── MẮT XÍCH 2, VÀ VÒNG XIN LẠI ── */
   let cham = null;
@@ -347,7 +505,7 @@ export async function chamBaiViet(du, taoClient) {
   let lanSuaLai = 0;
   let tuLa = [];
   for (let i = 0; i <= SUA_LAI_TOI_DA; i += 1) {
-    chuTho = await goiMot(client, loiDanSua(goi, loiDs, tuLa),
+    chuTho = await goiMot(client, loiDanSua(goi, loiDs, tuLa, khenDs),
       { nhiet: 0.2, token: TOKEN_SUA });
     cham = bocJSON(chuTho);
     const laMoi = chuLaTrongCham(cham, kho);
@@ -385,6 +543,10 @@ export async function chamBaiViet(du, taoClient) {
        `hocBaTA` để còn đếm trên bản thật. */
     lanSuaLai,
     chuLaConLai: tuLa,
+    /* Số chỗ đáng khen CÒN LẠI sau phép gộp. Đo được thì mới biết mắt xích 1b có
+       đáng một lượt gọi hay không — xem `tools/doc_delta_c.mjs`. */
+    soKhen: khenDs.length,
+    soKhenBo: khenTho.length - khenDs.length,
     ...vanTay('chamviet', khungCham(goi.lop, goi.mauCau.length > 0), {
       moHinh: MO_HINH, nhiet: 0.2, token: TOKEN_SUA,
     }),

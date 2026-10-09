@@ -1,12 +1,15 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import NutNghe from './NutNghe.jsx';
 import { batDauNghe, ngheDuoc, loiDocDuoc, xinMicroChiTiet, MICRO } from '../lib/nghenoi.js';
-import { chamTu, chamCau, chamTot, loiKhen, datNoi } from '../lib/chamnoi.js';
+import {
+  chamTu, chamCau, chamTot, loiKhen, datNoi, moHoCanBoPhieu, apDungPhieu, bacCua,
+} from '../lib/chamnoi.js';
+import { nhoPhanXu } from '../lib/goiPhanXu.js';
 
 /**
  * NÓI THEO — bé nghe mẫu, bấm nút, đọc lại; máy chấm trên thang 10.
  *
- * ── BỐN LUẬT CHO BÉ 6 TUỔI ──
+ * ── NĂM LUẬT CHO BÉ 6 TUỔI ──
  *
  * 1. NGHE TRƯỚC, NÓI SAU. Nút nghe luôn nằm cạnh nút nói, và bé bấm nghe lại bao
  *    nhiêu lần cũng được. Bắt nói khi chưa nghe đủ là bắt đoán.
@@ -28,6 +31,17 @@ import { chamTu, chamCau, chamTot, loiKhen, datNoi } from '../lib/chamnoi.js';
  *
  * `no-speech` KHÔNG gọi `onHong`: máy vẫn tốt, bé chỉ chưa nói. Lẫn hai thứ này
  * là bé im lặng ba lần rồi được đi tiếp — mở toang đúng cái cổng vừa dựng.
+ *
+ * ── 5. CHỖ MÁY KHÔNG CHẮC THÌ HỎI THÊM MỘT Ý (việc V10) ──
+ * Bộ chấm đo độ giống chuỗi. Khi từ đích và một từ cùng unit đều gần với cái máy
+ * nghe được, nó vẫn phải chọn một — và chọn bằng một con số lẻ sau dấu phẩy, đúng
+ * quanh ngưỡng đạt 6. Ở riêng vùng ấy (`moHoCanBoPhieu`), lượt nói được đem hỏi hai
+ * phiếu mô hình, và chỉ nhất trí 2/2 mới nhích điểm ±1.
+ *
+ * ⚠ ĐIỂM CHỈ HIỆN RA MỘT LẦN, SAU KHI ĐÃ CHỈNH. Hiện 6 rồi vài giây sau đổi thành 5
+ * là thứ tệ hơn cả việc chấm sai: bé thấy điểm của mình bị lấy đi trước mắt. Nên
+ * nút giữ nguyên trạng thái "Đang chấm…" tới lúc có kết quả, và `goiPhanXu` có trần
+ * giờ để trạng thái ấy không treo.
  */
 export default function NutNoi({
   cau, loai = 'tu', maAm, doiThu = [], onXong, onHong, onNghe, noiBat = false,
@@ -63,9 +77,28 @@ export default function NutNoi({
       const { chu, phuongAn } = await p.xong;
       datTrangThai('dangCham');
       const ds = phuongAn?.length ? phuongAn : [chu];
-      const k = loai === 'cau'
+      const tho = loai === 'cau'
         ? chamTot(chamCau, cau, ds)
         : chamTot(chamTu, cau, ds, { doiThu });
+
+      /* ── VÙNG MƠ HỒ: HỎI THÊM HAI PHIẾU — luật 5 ──
+         Chỉ chạy cho bài TỪ: `chamCau` không có đối thủ nào để cạnh tranh, nên
+         `moHoCanBoPhieu` tự nó đã trả về false — nhưng nói rõ ra đây để người đọc
+         sau không phải lần lại hai tệp mới biết câu không bỏ phiếu.
+         `nhoPhanXu` KHÔNG BAO GIỜ NÉM: mất mạng là `dieuChinh: 0`. */
+      let k = tho;
+      if (loai !== 'cau' && moHoCanBoPhieu(tho)) {
+        const { dieuChinh, gan } = await nhoPhanXu({
+          nghe: tho.nghe, dich: tho.dich, canhTranh: tho.doiThuGan.tu,
+        });
+        const diemMoi = apDungPhieu(tho.diem, dieuChinh);
+        if (diemMoi !== tho.diem) {
+          /* Dựng lại `bac` cho khớp điểm mới — `loiKhen` chọn câu nói theo `bac`,
+             nên để `bac` cũ lại là điểm 5 mà cô vẫn nói câu của bậc "tốt". */
+          k = { ...tho, diem: diemMoi, bac: bacCua(diemMoi), phieu: gan, daChinh: true };
+        }
+      }
+
       const truoc = caoNhat;
       datKq(k);
       datKhen(loiKhen(k, truoc));

@@ -152,7 +152,15 @@ function dayChung(a, b) {
 
 /* ─────────────────────────── CHẤM ─────────────────────────── */
 
-const BAC = (d) => (d >= 9 ? 'xuatSac' : d >= 7 ? 'tot' : d >= 5 ? 'kha' : d >= 3 ? 'gan' : 'chuaRo');
+/**
+ * Điểm → BẬC. `loiKhen` chọn câu cô nói theo bậc, không theo điểm.
+ *
+ * ⚠ XUẤT RA từ V10: phần bỏ phiếu chỉnh điểm ±1 nên phải dựng lại bậc cho khớp.
+ * Để bậc cũ lại thì điểm hiện 5 mà cô vẫn nói câu của bậc "tốt" — hai con số trên
+ * cùng một thẻ nói hai điều khác nhau, và bé tin cái nào cũng sai.
+ */
+export const bacCua = (d) => (d >= 9 ? 'xuatSac' : d >= 7 ? 'tot' : d >= 5 ? 'kha' : d >= 3 ? 'gan' : 'chuaRo');
+const BAC = bacCua;
 
 /** Làm tròn về thang 10, không bao giờ âm, không bao giờ quá 10. */
 const thang10 = (x) => Math.max(0, Math.min(10, Math.round(x * 10)));
@@ -201,7 +209,21 @@ export function chamTu(dich, nghe, { doiThu = [] } = {}) {
       { dich: d, nghe: tuTot, nhamThanh, doGiong: tot });
   }
 
-  return ket(thang10(tot), null, { dich: d, nghe: tuTot, doGiong: tot });
+  /* ── TỪ CẠNH TRANH GẦN NHẤT — báo ra KỂ CẢ KHI NÓ KHÔNG THẮNG (việc V10) ──
+     Nhánh `nhamTu` trên chỉ nổ khi từ bên cạnh thắng HẲN, và lúc ấy điểm bị ép trần
+     3. Nên `nhamThanh` không bao giờ có mặt ở vùng điểm giữa — mà vùng giữa mới
+     đúng là chỗ máy KHÔNG BIẾT bé nói từ nào: `dog` 0.62 với `duck` 0.58 thì hai
+     chữ ấy thực chất ngang nhau, và bộ chấm đang chọn một trong hai bằng một con số
+     lẻ sau dấu phẩy.
+     Trước V10 chỗ ấy câm: bé được chấm theo từ đích, không ai hỏi lại. Nay nó được
+     báo ra để phần bỏ phiếu còn biết có cái gì mơ hồ mà xử. Báo ra KHÔNG phải là
+     trừ điểm — điểm trả về không đổi một ly. */
+  return ket(thang10(tot), null, {
+    dich: d, nghe: tuTot, doGiong: tot,
+    doiThuGan: nhamThanh && tot - gNham <= GAN_NHAU
+      ? { tu: nhamThanh, doGiong: gNham }
+      : null,
+  });
 }
 
 /**
@@ -314,3 +336,62 @@ export function chamTot(cham, dich, phuongAn, opt) {
 /** Đạt hay chưa — ngưỡng thấp có chủ ý, vì đây là lần ĐẦU bé nói tiếng Anh. */
 export const DAT = 6;
 export const datNoi = (diem) => diem >= DAT;
+
+/* ═══════════════════ VÙNG MƠ HỒ, VÀ AI ĐƯỢC XỬ (việc V10) ═══════════════════ */
+
+/**
+ * Hai chữ coi là NGANG NHAU khi độ giống của chúng cách nhau không quá chừng này.
+ *
+ * ⚠ Con số này quyết định phần bỏ phiếu có chạy hay không, nên nó phải là hằng xuất
+ * ra và có cổng canh. Nới rộng là gọi mô hình cho cả những lượt máy đã biết rõ (tốn
+ * lượt gọi, chậm cho bé); thu hẹp là phần bỏ phiếu lại câm như trước V10.
+ */
+export const GAN_NHAU = 0.15;
+
+/**
+ * VÙNG MƠ HỒ — chỉ ở trong khoảng này mới được nhờ mô hình phân xử.
+ *
+ * Dưới 5: máy nghe chẳng ra gì giống từ nào, phân xử cũng chỉ là đoán. Trên 7: máy
+ * đã nghe rõ, hỏi thêm là mời một ý kiến thứ hai vào chỗ không cần.
+ *
+ * ⚠ VÀ NÓ CHỨA ĐÚNG NGƯỠNG `DAT` (6) Ở GIỮA. Đó là chủ ý, không phải tình cờ:
+ * phiếu chỉ đổi điểm ±1 trong [5, 7], nên chỗ duy nhất nó đổi được kết cục là
+ * quanh 6 — đúng chỗ bộ chấm đang phải quyết "đạt / chưa đạt" bằng một con số lẻ.
+ * Ngoài khoảng ấy, phiếu không được phép lật gì cả.
+ */
+export const VUNG_MO_HO = [5, 7];
+export const vungMoHo = (d) => Number.isFinite(d) && d >= VUNG_MO_HO[0] && d <= VUNG_MO_HO[1];
+
+/**
+ * Lượt này có đáng nhờ mô hình phân xử không?
+ *
+ * Ba điều phải đủ cả: điểm trong vùng mơ hồ · có một từ cạnh tranh ở gần · và máy
+ * có nghe được tiếng. Thiếu một là giữ nguyên điểm và KHÔNG gọi mạng.
+ */
+export function moHoCanBoPhieu(kq) {
+  if (!kq || kq.lyDo === 'khongNghe' || kq.lyDo === 'nhamTu') return false;
+  if (!kq.doiThuGan?.tu) return false;
+  return vungMoHo(kq.diem);
+}
+
+/**
+ * Áp phiếu vào điểm. Thuần, không mạng — nên cổng canh được mọi ca biên.
+ *
+ * ⚠ KẸP LẠI TRONG `VUNG_MO_HO`. Phiếu là bằng chứng YẾU: hai lượt gọi cùng một mô
+ * hình, cùng một lời dặn. Cho nó kéo điểm xuống 2 hay lên 9 là để một phép đoán
+ * quyết cả bài. Trong [5, 7] thì nó chỉ nhích đúng một bậc — đủ lật "đạt / chưa",
+ * không đủ để thành lời phán.
+ *
+ * ⚠ `Number(null) === 0` VÀ `Number.isFinite(0) === true`. Cái bẫy này đã cắn hai
+ * lần ở `hocba.js` (xem `soHoacNull`): điểm chưa có mà đi qua phép kẹp thì ra 0, và
+ * 0 trông như một điểm thật. Nên chặn `null`/`undefined` TRƯỚC khi đổi sang số.
+ */
+export function apDungPhieu(diem, dieuChinh) {
+  if (diem == null) return diem;
+  const d = Number(diem);
+  if (!vungMoHo(d)) return d;
+  const b = dieuChinh == null ? 0 : Number(dieuChinh);
+  if (!Number.isFinite(b) || b === 0) return d;
+  const moi = d + Math.sign(b);
+  return Math.max(VUNG_MO_HO[0], Math.min(VUNG_MO_HO[1], moi));
+}
