@@ -793,6 +793,166 @@ export function soiCau(en, { von, tenBe = '', cauTruoc = '', tat = null } = {}) 
  */
 export const cauHopLe = (en, opt = {}) => soiCau(en, opt).ok;
 
+/* ─────────── gọi lại cô giáo khi câu bị bác ─────────── */
+
+/**
+ * BÁC MỘT CÂU RỒI THÔI LÀ BỎ MẤT CÔ GIÁO — NÊN XIN LẠI, NHIỀU NHẤT HAI LẦN.
+ *
+ * ── VÌ SAO ──
+ * `soiCau` bác xong thì `cauThayThe` dựng một câu LUÔN ĐÚNG từ dữ liệu bài. An
+ * toàn, nhưng đó là câu của MÁY CON: nó không biết bé vừa nói gì, không khen được,
+ * không sửa được, và lượt nào bị bác cũng ra đúng một khuôn. Thử với mô hình giả
+ * "lặp 40%" thì 40% số lượt rơi về đấy — tức gần nửa buổi bé nói chuyện với một
+ * cái máy điền chỗ trống, dù mô hình chỉ cần được NHẮC một câu là sửa được ngay.
+ *
+ * Nên thêm một nấc ở giữa: nói cho mô hình biết nó sai CHỖ NÀO rồi xin câu khác.
+ * Lý do bác đã có tên sẵn (`LY_DO_BAC`), mỗi tên một lời nhắc riêng — nhắc chung
+ * chung ("câu này không dùng được") thì nó sửa đoán, và thường sửa sang lỗi khác.
+ *
+ * ⚠ KHÔNG BỎ `cauThayThe`. Nó vẫn là đường lùi CUỐI: hết vòng mà vẫn trượt thì bé
+ * phải nghe một câu đúng, chứ không nghe câu sai và cũng không nghe sự im lặng.
+ *
+ * Trần là HẰNG export, không phải con số viết thẳng trong vòng lặp: mỗi vòng là
+ * một lời gọi mạng nữa, mà bé sáu tuổi đang ngồi đợi cô trả lời. Cổng canh hằng.
+ */
+export const SUA_CO_TOI_DA = 2;
+
+/** Trần ký tự MỘT lời nhắc sửa. Nhắc dài thì nó lấn chỗ của lịch sử nói chuyện. */
+export const NHAC_SUA_TOI_DA_CHU = 300;
+
+/* Cắt cho vừa trần mà vẫn nhìn ra là đã bị cắt. Dùng `...` chứ không dùng dấu ba
+   chấm liền: lời nhắc sửa là tiếng Anh thuần, và cổng soi đúng chỗ ấy. */
+const catChu = (s, n) => (String(s || '').length > n
+  ? `${String(s).slice(0, n - 3).trim()}...` : String(s || ''));
+
+/* Mọi chữ tiếng Anh BÀI CÓ DẠY — để chỉ đúng tên chữ lạ trong câu vừa bị bác.
+   ⚠ Không gộp với túi `cho` của `loiVietHopLe`, dù hai túi trông giống nhau: túi
+   bên ấy còn nhận NGHĨA tiếng Việt và CHỮ BÉ VỪA NÓI, hai thứ không phải là "từ
+   cô được dùng". Gộp lại là lời nhắc sửa lặng lẽ nới rào vốn từ. */
+const chuDaHoc = (von, tenBe = '') => new Set([
+  ...[...von.loi.tu, ...von.on.flatMap((x) => x.tu)]
+    .flatMap((t) => [t.tu, t.so_nhieu, t.so_it, t.dang_ing, t.dang_qk]),
+  ...[...von.loi.cau, ...von.on.flatMap((x) => x.cau)]
+    .flatMap((c) => [c.cau, c.congThuc]),
+  ...(von.loi.cauSach || []), ...von.on.flatMap((x) => x.cauSach || []),
+  /* `Bill` · `Mai` nằm đây vì chính `soiCau` điền hai tên ấy vào ô `[Name]` — hai
+     bên phải cùng một danh sách, lệch nhau thì lời nhắc gọi tên một chữ mà phép
+     soi lại chấp nhận, và mô hình bị nhắc sai. */
+  ...LOI_LOP_HOC, tenBe, 'Bill', 'Mai',
+].filter(Boolean)
+  /* Bóc TÊN Ô TRỐNG trước khi tách chữ: để nguyên `Hi, I'm + [Name].` thì "name"
+     thành một từ được phép, và "What is your name?" đi lọt mà không ai thấy. */
+  .flatMap((x) => chuTrongCau(String(x).replace(/\[[^\]]*\]/g, ' '))));
+
+/**
+ * Những chữ trong câu mà bài KHÔNG dạy — thứ phải đọc tên ra trong lời nhắc sửa.
+ *
+ * ⚠ KHÔNG dùng `tuTrongCau` được, dù nghe thì đúng là nó: hàm ấy trả về các MỤC TỪ
+ * của bài CÓ MẶT trong câu, tức trả lời câu hỏi ngược lại, và nó bỏ qua sạch mọi
+ * chữ ngoài vốn — đúng những chữ ta đang cần gọi tên.
+ */
+const tuLaTrongCau = (en, von, tenBe = '') => {
+  const cho = chuDaHoc(von, tenBe);
+  const ra = [];
+  for (const w of chuTrongCau(en)) if (!cho.has(w) && !ra.includes(w)) ra.push(w);
+  return ra;
+};
+
+/**
+ * MỘT LƯỢT `user` NGẮN, BẰNG TIẾNG ANH, NÓI ĐÚNG CHỖ SAI.
+ *
+ * Bốn lý do bác của `soiCau` là bốn lỗi KHÁC LOẠI nhau, nên bốn lời nhắc khác
+ * nhau — bản nháp ở §9 mục B1–B5 của `docs/REVIEW_18_MAU_AI_AGENT_TIENG_ANH.md`.
+ *
+ * Tiếng Anh thuần và không dấu tiếng Việt: lời nhắc này là lời nói VỚI MÔ HÌNH,
+ * không phải lời cho bé đọc, và trộn hai thứ tiếng vào một lượt thì mô hình hay
+ * trả lời lẫn theo.
+ *
+ * Vai `user`, không phải `system` thứ hai — `soiGoi` bác thẳng gói có lời dặn nằm
+ * ở vị trí khác 0 (xem `functions/src/luyennoi.js`).
+ */
+export function loiNhacSua(bac, { von = null, cauTruoc = '', en = '', tenBe = '' } = {}) {
+  if (bac === 'rong') {
+    return 'Your reply had no English sentence. Reply as JSON {"en": "...", "vi": "..."}'
+      + ' with ONE English sentence using only the allowed words.';
+  }
+  if (bac === 'lap') {
+    return `You repeated your previous sentence: "${catChu(cauTruoc, 120)}".`
+      + ' Say a DIFFERENT sentence for the same task - change the word in the slot.'
+      + ' Reply as JSON.';
+  }
+  if (bac === 'oTrong') {
+    return 'Your sentence still contains an unfilled slot like [Name] or [Month].'
+      + " Fill every slot with an allowed word or the child's name. Reply as JSON.";
+  }
+  if (bac === 'ngoaiVon') {
+    const la = von ? tuLaTrongCau(en, von, tenBe) : [];
+    /* ⚠ `ngoaiVon` KHÔNG LUÔN LUÔN LÀ "CÓ CHỮ LẠ". Đó là lý do bác CUỐI của
+       `soiCau` — câu không đi qua được đường công nhận nào. Một câu chỉ gồm từ bé
+       đã học vẫn rơi vào đây nếu nó không phải MẪU CÂU nào của bài ("Book ball
+       bike."). Nhắc nó "có chữ lạ" lúc ấy là nhắc sai chỗ, và mô hình sẽ đi đổi
+       từ — thứ vốn đã đúng — rồi trượt tiếp đúng một kiểu. */
+    if (!la.length) {
+      return 'Your sentence is not one of the taught sentence patterns.'
+        + ' Use a PATTERN from your instructions, or say just ONE word from the'
+        + ' word list. Rewrite for the same task. Reply as JSON.';
+    }
+    const dau = `Your sentence used words that are NOT allowed: ${catChu(la.join(', '), 60)}.`
+      + ' Use ONLY words from the WORD LIST in your instructions';
+    const duoi = '. Rewrite the sentence for the same task. Reply as JSON.';
+    /* ⚠ "for example" là chữ BẮT BUỘC, không phải cho đẹp. Bảng vốn ĐẦY ĐỦ đã nằm
+       trong lời dặn; ở đây chỉ còn chỗ cho vài từ làm mốc. Liệt kê cụt mà viết
+       "chỉ được dùng mấy từ này" là tự tay thu vốn của bé xuống còn đúng số từ
+       vừa lọt trần 300 ký tự — mô hình tuân lệnh răm rắp, và buổi học nghèo đi. */
+    let vd = '';
+    for (const t of (von ? von.loi.tu : [])) {
+      const thu = vd ? `${vd}, ${t.tu}` : t.tu;
+      if (dau.length + ` (for example: ${thu})`.length + duoi.length
+          > NHAC_SUA_TOI_DA_CHU) break;
+      vd = thu;
+    }
+    return `${dau}${vd ? ` (for example: ${vd})` : ''}${duoi}`;
+  }
+  /* Lý do lạ — vẫn phải XIN LẠI, chứ không im lặng rơi thẳng về câu máy con dựng.
+     `LY_DO_BAC` mà dài ra một tên nữa thì chỗ này đỡ, không phải chỗ này hỏng. */
+  return 'Your sentence could not be used. Reply as JSON with ONE English sentence'
+    + ' using only the allowed words.';
+}
+
+/**
+ * NHẮC SỬA LỜI TIẾNG VIỆT — giữ nguyên câu tiếng Anh, viết lại đúng một dòng.
+ *
+ * @param kq  chính `loiVietHopLe(...)` trả về; `kq.vi` là LÝ DO hỏng.
+ *
+ * Khác `loiNhacSua` ở chỗ lời nhắc này CÓ tiếng Việt, và phải có: lỗi hay gặp nhất
+ * là cô gọi bé bằng "bạn", mà nói điều ấy bằng tiếng Anh thì mô hình không biết
+ * phải thay bằng chữ nào. Nên đưa thẳng hai chữ "cô" và "con" vào lời nhắc.
+ *
+ * Chỉ dùng cho MỘT vòng (xem `loiVietGoiLai`): câu tiếng Anh đã đúng rồi nên đây
+ * chỉ còn là chuyện diễn đạt, mà lời viết sẵn của bước thì luôn có đó.
+ */
+export function loiNhacSuaViet(kq, { en = '', von = null } = {}) {
+  /* ⚠ TRẦN PHẢI SUY RA, đừng cắt mỗi mẩu một con số đoán sẵn. Bản đầu cắt `en` ở
+     80 và lý do ở 110, cộng với phần chữ cố định là 320 — vượt trần mà không có
+     chỗ nào kêu, vì chốt duy nhất lúc ấy chỉ canh cái đuôi thêm vào. Cổng
+     `tienganh_phongnoi.test.mjs` bắt được ngay bằng một lý do dài 500 ký tự. */
+  const dau = `Keep the English sentence exactly: "${catChu(en, 70)}".`
+    + ' Rewrite ONLY the Vietnamese line: ';
+  const duoi = '. Call yourself "cô" and the child "con". Reply as JSON.';
+  const lyDo = catChu(kq?.vi || 'lời Việt không dùng được',
+    Math.max(20, NHAC_SUA_TOI_DA_CHU - dau.length - duoi.length));
+  let s = `${dau}${lyDo}${duoi}`;
+  /* Lý do hỏng thường gặp thứ hai là NHẮC LẠI MỘT CHỮ BÀI KHÔNG DẠY, nên đưa luôn
+     mấy từ của bài vào làm mốc trích dẫn — nhưng chỉ khi còn chỗ trong trần. */
+  const tu = (von ? von.loi.tu : []).map((t) => t.tu).filter(Boolean);
+  if (tu.length) {
+    const them = ` Quote English words only from: ${tu.join(', ')}.`;
+    if (s.length + them.length <= NHAC_SUA_TOI_DA_CHU) s += them;
+  }
+  return s;
+}
+
+
 /**
  * Câu dựng sẵn cho việc của lượt này — dùng khi câu của cô không qua được phép soi.
  * Luôn đúng, vì nó ghép từ chính dữ liệu bài chứ không sinh ra từ đâu cả.

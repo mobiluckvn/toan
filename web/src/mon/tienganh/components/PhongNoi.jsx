@@ -310,9 +310,15 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
       const tra = await hoiCoGiao({ von, lichSu: ds, tenBe, lop,
         haDoKho: buoi.haDoKho, hoSo: hoSoBe, kichBan });
       /* `buoc` — bước nào sinh ra lượt này. Không bày ra màn hình, nhưng
-         `luotLuyen` cần: lượt bé đáp lời chào KHÔNG được tính là một lần luyện. */
+         `luotLuyen` cần: lượt bé đáp lời chào KHÔNG được tính là một lần luyện.
+
+         `lanSua` — số lần phải XIN LẠI câu của cô ở lượt này (vòng gọi lại V1).
+         ⚠ Đây là một CON SỐ, không phải mấy lượt bị bác: lượt bị bác không được
+         vào `lichSu`. Bé không bao giờ thấy cô "nói nhầm" rồi tự sửa — nó chỉ còn
+         lại trong bản ghi buổi để còn đo vòng ấy có ăn hay không. */
       const luot = { vai: 'may', chu: tra.en || tra.vi, en: tra.en, vi: tra.vi,
-                     buoc: tra.buoc, can: tra.can };
+                     buoc: tra.buoc, can: tra.can,
+                     lanSua: tra.lanSua ?? null, lanSuaViet: tra.lanSuaViet ?? null };
       const sau = [...ds, luot];
       datLichSu(sau);
       /* ── LƯỢT NÓI Ở PHÒNG LUYỆN VÀO ENGINE (bác chốt 23-08-2026) ──

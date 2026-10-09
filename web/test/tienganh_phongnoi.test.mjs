@@ -22,6 +22,7 @@ import {
   tinhBuoi, loiKet, tuLoiKetHopLe, cauHoiSoThich, PHUT_TOI_DA, DAT_LIEN_DE_XONG,
   loiVietHopLe, XUNG_HO_CAM,
   buocTiepTheo, dienBuoc, dongBuoc, xenKe, buocSua, luotBeCuoi, luotLuyen, SUA_TOI_DA,
+  LY_DO_BAC, loiNhacSua, loiNhacSuaViet, SUA_CO_TOI_DA, NHAC_SUA_TOI_DA_CHU,
 } from '../src/mon/tienganh/lib/phongnoi.js';
 
 const bai = (id, tu, cau, hinh = []) => ({
@@ -369,6 +370,90 @@ test('dạng biến đổi của từ ĐÃ HỌC được nhận ở đường `
      nào bài không dạy thì vẫn không có đường vào, kể cả khi nó rất giống. */
   assert.equal(soi('playing the piano').ok, false, 'từ bài KHÔNG dạy');
   assert.equal(soi('writing books').ok, false);
+});
+
+/* ═══════════ LỜI NHẮC SỬA ═══════════ */
+
+/**
+ * Bác một câu rồi im là bỏ mất cô giáo; nên phải NÓI RA chỗ sai. Bốn lý do bác của
+ * `soiCau` là bốn lỗi khác loại nhau, nên bốn lời nhắc khác nhau — nhắc chung
+ * chung ("câu này không dùng được") thì mô hình sửa đoán, và thường sửa sang lỗi
+ * khác. Bản nháp lời nhắc ở §9 mục B1–B5 của bản rà 09-10.
+ */
+test('loiNhacSua: mỗi lý do bác một lời nhắc RIÊNG, đúng chỗ sai', () => {
+  const von = vonTu({ baiNay: B01, baiCu: [], daDat: false });
+  const ctx = { von, cauTruoc: "Hi, I'm Bo.", tenBe: 'Lan' };
+
+  assert.match(loiNhacSua('rong', ctx), /no English sentence/);
+  assert.match(loiNhacSua('lap', ctx), /repeated your previous sentence/);
+  assert.match(loiNhacSua('lap', ctx), /Hi, I'm Bo\./, 'phải trích đúng câu đã lặp');
+  assert.match(loiNhacSua('oTrong', ctx), /unfilled slot/);
+  /* Chữ LẠ phải được gọi tên. "Nói chung là sai" thì mô hình đi đổi chữ khác. */
+  const nv = loiNhacSua('ngoaiVon', { ...ctx, en: 'I want chips.' });
+  assert.match(nv, /NOT allowed/);
+  assert.match(nv, /chips/);
+  /* ⚠ Và phải ghi "for example": bảng vốn đầy đủ nằm trong lời dặn, ở đây chỉ còn
+     chỗ cho vài từ. Liệt kê cụt mà viết "chỉ dùng mấy từ này" là tự tay thu vốn
+     của bé xuống còn đúng số từ vừa lọt trần 300 ký tự. */
+  assert.match(nv, /for example/);
+});
+
+/**
+ * ⚠ `ngoaiVon` KHÔNG LUÔN LUÔN LÀ "CÓ CHỮ LẠ". Đó là lý do bác CUỐI của `soiCau` —
+ * câu không đi qua được đường công nhận nào. Một câu chỉ gồm từ bé đã học vẫn rơi
+ * vào đấy nếu nó chẳng phải mẫu câu nào của bài. Nhắc nó "có chữ lạ" lúc ấy là
+ * nhắc sai chỗ, và mô hình sẽ đi đổi từ — thứ vốn đã đúng.
+ */
+test('loiNhacSua: câu toàn từ ĐÃ HỌC mà sai mẫu thì nhắc về MẪU CÂU', () => {
+  const von = vonTu({ baiNay: B01, baiCu: [], daDat: false });
+  const en = 'Book ball bike.';
+  assert.equal(soiCau(en, { von, tenBe: 'Lan' }).bac, 'ngoaiVon');
+  const s = loiNhacSua('ngoaiVon', { von, en, tenBe: 'Lan' });
+  assert.match(s, /not one of the taught sentence patterns/);
+  assert.ok(!/NOT allowed/.test(s), 'không được vu cho nó dùng chữ lạ');
+});
+
+test('loiNhacSua: TIẾNG ANH THUẦN, dưới trần, và không lý do nào bị bỏ sót', () => {
+  const von = vonTu({ baiNay: B01, baiCu: [], daDat: false });
+  /* Lời nhắc là lời nói VỚI MÔ HÌNH, không phải lời cho bé đọc. Trộn hai thứ tiếng
+     vào một lượt thì mô hình hay trả lời lẫn theo. */
+  const coDauViet = /[ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩịòóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ]/i;
+  for (const bac of [...LY_DO_BAC, 'mot-ly-do-chua-co']) {
+    const s = loiNhacSua(bac, {
+      von, cauTruoc: 'x'.repeat(400), en: 'I want chips and automobiles.', tenBe: 'Lan',
+    });
+    assert.ok(s.trim(), `lý do "${bac}" không có lời nhắc nào`);
+    assert.ok(s.length <= NHAC_SUA_TOI_DA_CHU,
+      `lý do "${bac}": lời nhắc ${s.length} ký tự, quá trần ${NHAC_SUA_TOI_DA_CHU}`);
+    assert.ok(!coDauViet.test(s), `lý do "${bac}": lời nhắc có dấu tiếng Việt`);
+    /* Mô hình phải biết trả về khuôn nào — thiếu dòng này nó trả chữ trần, và
+       `docTraLoi` lại phải đi đoán dòng nào là tiếng Anh. */
+    assert.match(s, /JSON/);
+  }
+});
+
+test('loiNhacSuaViet: giữ câu tiếng Anh, chỉ viết lại một dòng', () => {
+  const von = vonTu({ baiNay: B01, baiCu: [], daDat: false });
+  const kq = loiVietHopLe('Bạn nói lại đi.', { von });
+  assert.equal(kq.ok, false);
+  const s = loiNhacSuaViet(kq, { en: "Hi, I'm Lan.", von });
+  assert.match(s, /Keep the English sentence exactly/);
+  assert.match(s, /Hi, I'm Lan\./);
+  assert.match(s, /Rewrite ONLY the Vietnamese line/);
+  /* Lỗi hay gặp nhất là cô gọi bé bằng "bạn" — nói điều ấy bằng tiếng Anh thì mô
+     hình không biết phải thay bằng chữ nào. Nên đưa thẳng hai chữ vào lời nhắc. */
+  assert.match(s, /"cô"/);
+  assert.match(s, /"con"/);
+  assert.ok(s.length <= NHAC_SUA_TOI_DA_CHU, `${s.length} ký tự, quá trần`);
+
+  /* Lý do dài bất thường vẫn phải lọt trần — mô hình có thể nhắc lại cả một câu. */
+  const dai = loiNhacSuaViet({ ok: false, vi: 'x'.repeat(500) }, { en: 'y'.repeat(500), von });
+  assert.ok(dai.length <= NHAC_SUA_TOI_DA_CHU, `${dai.length} ký tự, quá trần`);
+});
+
+test('SUA_CO_TOI_DA là một con số nhỏ — mỗi vòng là một lần bé ngồi đợi', () => {
+  assert.ok(Number.isInteger(SUA_CO_TOI_DA) && SUA_CO_TOI_DA >= 1 && SUA_CO_TOI_DA <= 3,
+    `SUA_CO_TOI_DA = ${SUA_CO_TOI_DA} — nới quá thì bé đợi cô cả chục giây`);
 });
 
 test('ô trống biết mình thuộc loại nào', () => {

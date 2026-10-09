@@ -14,25 +14,64 @@ import {
   loiDan, goiGui, docTraLoi, viecTiepTheo, cauHopLe, cauThayThe,
   buocTiepTheo, dienBuoc, dongBuoc, loiVietHopLe, luotBeCuoi,
   loiDanTranh, canNoi,
+  soiCau, loiNhacSua, loiNhacSuaViet, SUA_CO_TOI_DA,
 } from './phongnoi.js';
 
 /** Collection riêng của Tiếng Anh — hậu tố TA để không bao giờ lẫn với Toán. */
 export const KHO_PHONG_NOI = (uid) => `phongNoiTA/${uid}/buoi`;
 
 /**
- * Hỏi cô giáo máy một lượt.
+ * MỘT lời gọi lên callable `luyenNoi` — TÁCH RA để tiêm được hàm giả trong cổng.
  *
- * @return {{en, vi, thoJSON}} — đã bóc sẵn để màn hình đọc hai thứ tiếng riêng.
- * @throws lỗi có `.code` của Firebase để màn hình nói đúng chỗ hỏng.
+ * Vòng gọi lại của V1 chỉ đo được bằng cách đếm SỐ LẦN gọi mạng, mà `httpsCallable`
+ * viết thẳng trong thân hàm thì không có chỗ nào đếm được. §0 luật 7 của bản rà
+ * 09-10 nói rõ: tiêm hàm mạng qua tham số, không mock module — nên phần mạng gom
+ * về đúng một hàm, và `hoiCoGiao` nhận nó qua `{ goi }`.
+ *
+ * Chốt "chưa nối được mạng" nằm luôn ở đây, không nằm đầu `hoiCoGiao`: tiêm hàm
+ * giả thì không có Firebase nào cả, mà cổng vẫn phải chạy được bằng `node`.
  */
-export async function hoiCoGiao({
-  von, lichSu, tenBe, lop, haDoKho = false, hoSo = null, kichBan = null,
-}) {
+async function goiMay(messages) {
   if (!hasFirebase || !fns) {
     const e = new Error('Máy chưa nối được lên mạng.');
     e.code = 'functions/unavailable';
     throw e;
   }
+  return httpsCallable(fns, 'luyenNoi')({ messages });
+}
+
+/**
+ * Đếm vòng gọi lại. `so` = số lần phải xin lại, `thanh` = số lần xin lại ĂN.
+ *
+ * Tỉ số `thanh/so` là thứ DUY NHẤT nói được vòng này có tác dụng hay chỉ tốn thêm
+ * một lời gọi mạng. Không hiện ra màn hình — bé đang học thì không việc gì phải
+ * thấy — nhưng cũng không nuốt im, đúng lối `LOI_LUU` và `LOI_LOI_VIET`.
+ */
+export const LOI_SUA_CO = { so: 0, thanh: 0, ganNhat: null };
+
+/** Trần ký tự khi trả CÂU BỊ BÁC lại cho mô hình xem. */
+export const TRA_LAI_TOI_DA_CHU = 600;
+
+/* Lượt bị bác phải quay lại gói dưới vai `assistant`: mô hình cần thấy CHÍNH câu
+   nó vừa nói mới hiểu "câu ấy" trong lời nhắc là câu nào. Cắt ngắn trước khi gửi —
+   `soiGoi` chặn lượt dài quá `TOI_DA_CHU_MOT_LUOT`, và một câu đã bị bác thì không
+   đáng tốn thêm chỗ. Vẫn là JSON đúng khuôn mô hình được dặn trả. */
+const laiNoi = (tra) => JSON.stringify({
+  en: String(tra?.en || '').slice(0, TRA_LAI_TOI_DA_CHU),
+  vi: String(tra?.vi || '').slice(0, TRA_LAI_TOI_DA_CHU),
+});
+
+/**
+ * Hỏi cô giáo máy một lượt.
+ *
+ * @param goi  hàm gọi mạng — mặc định `goiMay`; cổng tiêm hàm giả vào đây.
+ * @return {{en, vi, thoJSON, lanSua}} — đã bóc sẵn để màn hình đọc hai thứ tiếng
+ *         riêng; `lanSua` là số lần phải xin lại câu tiếng Anh ở lượt này.
+ * @throws lỗi có `.code` của Firebase để màn hình nói đúng chỗ hỏng.
+ */
+export async function hoiCoGiao({
+  von, lichSu, tenBe, lop, haDoKho = false, hoSo = null, kichBan = null,
+}, { goi = goiMay } = {}) {
   /* Việc của lượt này do MÁY CON quyết rồi ghép vào lời dặn — xem `viecTiepTheo`.
      Lời dặn dựng lại mỗi lượt (chứ không giữ nguyên từ đầu buổi) chính là chỗ cắm
      được việc mới vào. */
@@ -66,7 +105,7 @@ export async function hoiCoGiao({
       ? `${loiDan({ von, tenBe, lop, viec: null, hoSo, unit })}\n${dongBuoc(buoc, { tenBe, thich: hoSo?.thich }, luotBe)}`
       : loiDan({ von, tenBe, lop, viec, hoSo, unit }));
   const messages = [{ role: 'system', content: dan }, ...goiGui(lichSu)];
-  const { data } = await httpsCallable(fns, 'luyenNoi')({ messages });
+  const { data } = await goi(messages);
   const tra = docTraLoi(data?.chu);
   /* Vân tay lời dặn đi kèm ra ngoài — cùng lý do với `goiChamViet.js`: mục 2.5.2
      đòi mỗi bản ghi biết nó do mẫu prompt nào sinh ra. `luyennoi.js` sinh sẵn từ
@@ -105,6 +144,14 @@ export async function hoiCoGiao({
         daThay: true };
     }
     const en = dung && tra.en !== dung ? dung : tra.en;
+    /* ⚠ TÍNH `vi` TRƯỚC KHI DỰNG OBJECT, không viết `vi: await ...` trong object.
+       `{ ...tra, vi: await f(tra) }` sao chép `tra` XONG rồi mới chờ — nên mấy
+       trường `f` gắn thêm vào `tra` (`lanSuaViet`) bị object này bỏ lại phía sau.
+       `beNoi` đi kèm để lời SỬA được phép trích lại đúng chữ bé vừa nói — không có
+       nó thì lượt sửa nào cũng bị gạt rồi lui về câu chung chung. */
+    const vi = await loiVietGoiLai({
+      goi, messages, tra, von, cauDich: en, lui: buoc.vi, beNoi: luotBe?.chu,
+    });
     return { ...tra,
       en,
       /* Câu bé CẦN nói ở lượt tới — KHÔNG phải câu cô vừa nói. Với bài tả tranh, cô
@@ -115,20 +162,102 @@ export async function hoiCoGiao({
          `luotLuyen` biết lượt đáp lời chào không phải một lần luyện — thiếu nó thì
          buổi kết sớm một nấc và bước làm mẫu bị nhảy cóc. */
       buoc: buoc.loai,
-      /* `beNoi` đi kèm để lời SỬA được phép trích lại đúng chữ bé vừa nói — không
-         có nó thì lượt sửa nào cũng bị gạt rồi lui về câu chung chung. */
-      vi: loiVietSach(tra.vi, { von, cauDich: en, lui: buoc.vi, beNoi: luotBe?.chu }),
+      vi,
       daThay: en !== tra.en };
   }
 
-  if (!cauHopLe(tra.en, { von, tenBe, cauTruoc })) {
+  /* ── VÒNG GỌI LẠI (mẫu Evaluator–Optimizer, việc V1 của bản rà 09-10) ──
+     Bác một câu rồi rơi thẳng về `cauThayThe` là bỏ mất cô giáo đúng lượt bé cần
+     cô nhất — xem lập luận dài ở `SUA_CO_TOI_DA` trong `phongnoi.js`. Nên nói cho
+     mô hình biết nó sai CHỖ NÀO (`xet.bac` có tên hẳn hoi) rồi xin lại câu khác.
+
+     ⚠ `cauTruoc` KHÔNG đổi giữa các vòng. Câu bị bác không vào `lichSu` hiển thị,
+     nên "lượt trước" của luật chống lặp vẫn là lượt cô đã nói THẬT với bé. Lấy câu
+     vừa bị bác làm `cauTruoc` thì vòng hai bác nó vì "lặp" — bác chính cái câu mà
+     vòng một vừa bác vì lý do khác, và lời nhắc chỉ đúng chỗ sai mới nhất.
+
+     Gói gửi lên dài nhất: 1 lời dặn + 12 lượt lịch sử + 2×2 (vòng câu Anh) + 2
+     (vòng lời Việt) = 19 ≤ `TOI_DA_LUOT` 24 của `luyennoi.js`. Luật máy chủ không
+     phải đổi một chữ. */
+  let xet = soiCau(tra.en, { von, tenBe, cauTruoc });
+  let lanSua = 0;
+  while (!xet.ok && lanSua < SUA_CO_TOI_DA) {
+    messages.push({ role: 'assistant', content: laiNoi(tra) });
+    messages.push({ role: 'user',
+      content: loiNhacSua(xet.bac, { von, cauTruoc, en: tra.en, tenBe }) });
+    lanSua += 1;
+    LOI_SUA_CO.so += 1;
+    LOI_SUA_CO.ganNhat = xet.bac;
+    const { data: lai } = await goi(messages);
+    const moi = docTraLoi(lai?.chu);
+    /* Ghi ĐÈ lên `tra`, không dựng object mới: `mauPrompt` · `phienBanMau` ·
+       `vanTayPrompt` phải giữ nguyên, vì lời dặn (thứ vân tay ấy mô tả) không đổi
+       một chữ giữa các vòng — chỉ có lượt `user` nhắc sửa là mới. */
+    tra.en = moi.en;
+    tra.vi = moi.vi;
+    tra.thoJSON = moi.thoJSON;
+    xet = soiCau(tra.en, { von, tenBe, cauTruoc });
+    if (xet.ok) LOI_SUA_CO.thanh += 1;
+  }
+  if (lanSua && import.meta.env?.DEV) {
+    // eslint-disable-next-line no-console
+    console.info('[tienganh] xin lại câu của cô', lanSua, 'lần —',
+      xet.ok ? `đã qua (${xet.duong})` : `vẫn trượt (${xet.bac}), lui về câu máy dựng`);
+  }
+
+  if (!xet.ok) {
     const thay = cauThayThe(viec, tenBe, cauTruoc);
     /* Thay thì thay CẢ CẶP. Giữ lời tiếng Việt cũ là để nó tả một câu đã bị bỏ —
        đã thấy thật: cô nói "Hi, I'm Bill." mà lời Việt vẫn là "Chào tạm biệt bike".
        Bé nghe hai thứ ngược nhau còn rối hơn là nghe câu sai. */
-    if (thay) return { ...tra, en: thay.en, vi: thay.vi, buoc: null, daThay: true };
+    if (thay) {
+      return { ...tra, en: thay.en, vi: thay.vi, buoc: null, lanSua, daThay: true };
+    }
   }
-  return { ...tra, buoc: null, vi: loiVietSach(tra.vi, { von, cauDich: tra.en, beNoi: luotBe?.chu }) };
+  const vi = await loiVietGoiLai({
+    goi, messages, tra, von, cauDich: tra.en, beNoi: luotBe?.chu,
+  });
+  return { ...tra, buoc: null, lanSua, vi };
+}
+
+/**
+ * LỜI TIẾNG VIỆT: XIN LẠI MỘT LẦN TRƯỚC KHI LUI.
+ *
+ * `loiVietSach` lui ngay về lời viết sẵn của bước — an toàn, nhưng lời viết sẵn
+ * chung chung, và nó lui đúng lượt cần lời cụ thể nhất: lượt cô SỬA cho bé. Hai lý
+ * do hỏng hay gặp (gọi bé bằng "bạn"; nhắc lại một chữ bài không dạy) đều là lỗi
+ * DIỄN ĐẠT, nói ra là mô hình sửa được.
+ *
+ * ⚠ ĐÚNG MỘT VÒNG, không phải `SUA_CO_TOI_DA` vòng. Câu tiếng Anh — thứ bé sẽ nhại
+ * — đã đúng rồi; cái còn lại chỉ là một dòng cô giảng, mà bé thì đang ngồi đợi.
+ *
+ * Mất mạng giữa buổi thì LUI, không làm hỏng cả lượt: câu tiếng Anh đã có trong
+ * tay, không có lý gì để bé mất luôn nó vì một lời giảng không xin lại được.
+ */
+export async function loiVietGoiLai({
+  goi, messages, tra, von, cauDich = '', lui = '', beNoi = '',
+}) {
+  const kq = loiVietHopLe(tra.vi, { von, cauDich, beNoi });
+  if (kq.ok) return tra.vi;
+  LOI_SUA_CO.so += 1;
+  LOI_SUA_CO.ganNhat = `vi: ${kq.vi}`;
+  try {
+    messages.push({ role: 'assistant', content: laiNoi(tra) });
+    messages.push({ role: 'user',
+      content: loiNhacSuaViet(kq, { en: cauDich || tra.en, von }) });
+    const { data } = await goi(messages);
+    const moi = docTraLoi(data?.chu);
+    if (loiVietHopLe(moi.vi, { von, cauDich, beNoi }).ok) {
+      LOI_SUA_CO.thanh += 1;
+      tra.lanSuaViet = 1;
+      return moi.vi;
+    }
+  } catch (e) {
+    LOI_SUA_CO.ganNhat = `vi-goi-lai-hong: ${String(e?.code || e?.message || e)}`;
+  }
+  /* Vẫn hỏng thì đi đúng đường cũ — `loiVietSach` đếm `LOI_LOI_VIET` như xưa, nên
+     con số "số lần phải lui" không đổi nghĩa vì có thêm vòng này. */
+  return loiVietSach(tra.vi, { von, cauDich, lui, beNoi });
 }
 
 /**
@@ -177,7 +306,11 @@ export async function luuBuoi(uid, { maBuoi, quyen, baiId, tenBai, lichSu }) {
   try {
     await setDoc(doc(db, KHO_PHONG_NOI(uid), maBuoi), {
       quyen, baiId, tenBai,
-      luot: lichSu.map((x) => ({ vai: x.vai, chu: x.chu, en: x.en || null, vi: x.vi || null })),
+      /* `lanSua` đi theo bản ghi buổi, không theo màn hình — xem `PhongNoi.jsx`. */
+      luot: lichSu.map((x) => ({
+        vai: x.vai, chu: x.chu, en: x.en || null, vi: x.vi || null,
+        lanSua: x.lanSua ?? null, lanSuaViet: x.lanSuaViet ?? null,
+      })),
       soLuot: lichSu.length,
       at: new Date().toISOString(),
       serverTs: serverTimestamp(),
