@@ -1,6 +1,6 @@
 # Kỹ Sư Nhí — Trang học tập thích ứng cho tiểu học
 
-**MOBILUCK / code247.ai** · **hai môn · chín quyển · 462 bài · 713 video · 2 637 phép kiểm**
+**MOBILUCK / code247.ai** · **hai môn · chín quyển · 462 bài · 713 video · 2 764 phép kiểm**
 
 | Môn | Quyển | Bài | Lối học |
 |---|---|---|---|
@@ -11,7 +11,7 @@ Có mức thạo BKT, ôn tập ngắt quãng, phụ đạo theo nút gốc rễ
 
 > Trang này mở đầu bằng phần **Toán lớp 5** vì đó là quyển dựng trước nhất và được ghi chép
 > dày nhất. Phần **Tiếng Anh** — nơi có cô giáo máy và toàn bộ phần gọi mô hình ngôn ngữ —
-> nằm ở mục [Tiếng Anh: cô giáo máy](#tiếng-anh-cô-giáo-máy-và-chín-lớp-chốt-chặn) phía dưới.
+> nằm ở mục [Tiếng Anh: cô giáo máy](#tiếng-anh-cô-giáo-máy-và-mười-lớp-chốt-chặn) phía dưới.
 
 ---
 
@@ -21,7 +21,7 @@ Có mức thạo BKT, ôn tập ngắt quãng, phụ đạo theo nút gốc rễ
 cd web
 npm install
 npm run dev      # http://localhost:5173  — học được ngay, chưa cần Firebase
-npm test         # 101 tệp · 2 637 phép kiểm, chạy trên dữ liệu thật của cả chín quyển
+npm test         # 102 tệp · 2 764 phép kiểm, chạy trên dữ liệu thật của cả chín quyển
 npm run test:luat   # luật Firestore — cần bộ giả lập, xem docs/DEPLOY.md
 ```
 
@@ -49,12 +49,13 @@ web/                  Ứng dụng học (React + Vite + Tailwind)
   src/mon/tienganh/   MÔN TIẾNG ANH — khép kín, 5 quyển
     lib/              phongnoi · nhanluot · loidan_nhan · hosoai · bangtrangthai
                       kehoach · baihoc · chandoan · phudao · goiPhuDao
-                      chamviet · chamnoi · dandat · zpd · lantruyen · onlai
+                      chamviet · chamnoi · goiPhanXu · dandat · zpd · lantruyen · onlai
     components/       phòng luyện nói · bài học · đọc hiểu · viết ngắn · ôn lại · phụ đạo
   public/content/     462 bài · 884 hình · 713 video · kỳ sát hạch · chỉ mục  (deploy lên CDN)
   functions/          Cloud Functions: đăng nhập OTP · BKT · ôn tập · sổ học & bảng cô đêm
-                      luyennoi · chamviet · phudao · chula · vantay (phần gọi mô hình)
-  test/               101 tệp · 2 637 phép kiểm (node thuần, không cần trình duyệt)
+                      luyennoi · chamviet · phudao · phanxu · chula · vantay
+                      (phần gọi mô hình — bốn chỗ, không hơn)
+  test/               102 tệp · 2 764 phép kiểm (node thuần, không cần trình duyệt)
                       + 61 phép canh luật Firestore (cần bộ giả lập)
   firestore.rules     luật bảo mật — nhật ký học BẤT BIẾN
 
@@ -67,18 +68,20 @@ docs/                 Sổ tay thực thi · kế hoạch thi công · thiết k
 
 ## Kiến trúc — ba điều đáng chú ý
 
-**1 · Nội dung là file tĩnh. Mô hình ngôn ngữ chỉ vào ĐÚNG ba chỗ.**
+**1 · Nội dung là file tĩnh. Mô hình ngôn ngữ chỉ vào ĐÚNG bốn chỗ.**
 Bài học (JSON), hình (PNG) và video sinh sẵn từ trước, đẩy lên Hosting/CDN — app chỉ `fetch`.
 → không phí API, mở offline được sau lần tải đầu, không rủi ro model đổi hành vi giữa chừng.
 
-Ba chỗ ngoại lệ, cả ba thuộc môn Tiếng Anh: **phòng luyện nói** (cô giáo máy đáp lời bé),
-**chấm bài viết ngắn**, và **soạn câu phụ đạo** — hai cái đầu là *đối thoại*, thứ không sinh
-sẵn được; cái thứ ba chỉ chạy khi kho 4.226 câu tĩnh không có đủ câu quanh nút bé đang mắc.
+Bốn chỗ ngoại lệ, cả bốn thuộc môn Tiếng Anh: **phòng luyện nói** (cô giáo máy đáp lời bé),
+**chấm bài viết ngắn**, **soạn câu phụ đạo**, và **phân xử một lượt nói mơ hồ**. Hai cái đầu là
+*đối thoại*, thứ không sinh sẵn được. Cái thứ ba chỉ chạy khi kho 4.226 câu tĩnh không có đủ
+câu quanh nút bé đang mắc. Cái thứ tư chỉ chạy ở 0,6% lượt nói — đúng mấy lượt mà phép đo độ
+giống chuỗi đang tung đồng xu giữa hai chữ cùng bài.
 
 Mọi câu tiếng Anh mô hình sinh ra đều phải qua phép soi vốn từ trước khi tới bé, và **câu hỏi**
-thì qua thêm hai tầng nữa (xem [Tiếng Anh: cô giáo máy](#tiếng-anh-cô-giáo-máy-và-chín-lớp-chốt-chặn)).
-Không có khoá thì ba chỗ ấy báo lỗi tử tế — phụ đạo còn tự lùi về kho tĩnh — và mọi phần còn
-lại học bình thường.
+thì qua thêm hai tầng nữa (xem [Tiếng Anh: cô giáo máy](#tiếng-anh-cô-giáo-máy-và-mười-lớp-chốt-chặn)).
+Không có khoá thì bốn chỗ ấy báo lỗi tử tế — phụ đạo tự lùi về kho tĩnh, phân xử thì giữ
+nguyên điểm và không nói gì với bé — và mọi phần còn lại học bình thường.
 
 **2 · Lõi tách khỏi giao diện để kiểm định được.**
 Toàn bộ luật (dựng dòng chảy bài học, chấm bài, mở khoá, BKT, lịch ôn, sổ phụ huynh, và cả luật
@@ -316,11 +319,11 @@ lần cũng không sinh dòng trùng.
 
 ---
 
-## Tiếng Anh: cô giáo máy, và chín lớp chốt chặn
+## Tiếng Anh: cô giáo máy, và mười lớp chốt chặn
 
-Năm quyển (lớp 1→5, 94 bài, 345 video). Khác Toán ở một điểm: **ba** chỗ gọi mô hình ngôn
+Năm quyển (lớp 1→5, 94 bài, 345 video). Khác Toán ở một điểm: **bốn** chỗ gọi mô hình ngôn
 ngữ lúc chạy (Groq · `openai/gpt-oss-120b`, qua Cloud Functions) — **luyện nói**, **chấm bài
-viết**, và **soạn câu phụ đạo** khi kho tĩnh không đủ.
+viết**, **soạn câu phụ đạo** khi kho tĩnh không đủ, và **phân xử** một lượt nói mơ hồ.
 
 **Máy chủ KHÔNG lưu gì.** Mọi lời gọi đi qua callable có chốt cửa; ngữ cảnh do máy con giữ và
 tự đẩy lên Firestore theo luật. Lý do thực tế: đây là tiếng nói của trẻ con — chỗ nào không
@@ -339,10 +342,11 @@ câu cô giáo nói, và mỗi tầng dưới đây là một lớp chốt.
 | **một nhãn cho mỗi lượt của bé** | 9 nhãn thuần code → 9 lời dặn ngắn thay cho một lời dặn mười điều | 100% lượt có nhãn; bé sai → cô nhắc đúng câu ấy **0/9 → 5/7** |
 | **trí nhớ qua nhiều buổi** | câu bé đã nói được · chữ hay sót · thứ bé thích; có HẠN, có trần, bố mẹ xoá được | buổi 2 mang theo mục của buổi 1 |
 | **một bảng trạng thái** | sáu nguồn về bé gom một chỗ cho cả bốn màn | `vectorS(` chỉ còn được gọi ở một tệp |
-| **chấm viết 3 mắt xích** | tìm lỗi (cấm sửa) → sửa → soi chữ lạ → xin lại → lời cho bố mẹ | mục bị bỏ vì chữ lạ: **7 → 0** (5 bài thật) |
+| **chấm viết 4 mắt xích, hai lượt đầu SONG SONG** | (tìm lỗi ∥ tìm khen) → gộp bằng mã → sửa → soi chữ lạ → xin lại → lời cho bố mẹ | mục bị bỏ vì chữ lạ: **7 → 0** (5 bài thật) |
 | **kế hoạch buổi** | 5–7 việc lập đầu buổi bằng CODE, bày ra cho bé thấy và nghe | 50 buổi mô phỏng: **100%** xong kế hoạch; Groq thật: 5/5 việc, 2 buổi |
 | **bài học cuối buổi** | một lượt gọi để cô ngẫm lại, rồi ghi vào trí nhớ | buổi 2 mang bài học của buổi 1; 0 bài bị soi bác |
 | **phụ đạo: hai vòng tĩnh rồi mới tới mô hình** | nút gốc rễ #1 → #2 → (hết câu) mô hình, 1 lời gọi | 9/11 câu mô hình soạn qua cả hai tầng hậu kiểm |
+| **lượt nói mơ hồ: hai phiếu, đảo vai** | điểm 5–7 + có chữ cùng bài ở gần → 2 phiếu song song, nhất trí 2/2 mới nhích ±1 | 22 lượt đảo vai, **0 lần tự chọi mình**; gỡ đúng ca bộ chấm chuỗi sai hẳn |
 
 ⚠ **Cỡ mẫu của mấy con số ấy nhỏ, nói thẳng.** Chúng đo bằng mô hình THẬT, nhưng trên vài chục
 lượt và vài bài — không phải vài trăm. Chúng đủ để nói "hướng này đúng", chưa đủ để nói "còn
@@ -367,6 +371,26 @@ gợi ý lộ đáp án. Nên: `soiCauAI` soi sáu luật của một câu hỏi
 "phương án nhiễu có thật là cái sai trẻ hay mắc hay chỉ là một chữ bừa" — không kiểm
 được bằng code, và đó chính là lý do hàng đợi tồn tại.
 
+**Lời khen phải do một lượt ĐI TÌM nó viết ra.** Trước đây lời khen nằm cùng lượt với
+việc sửa lỗi — tức mô hình vừa đọc một danh sách năm lỗi xong rồi mới điền vào trường
+"khen". Lời khen ấy đúng mà rỗng, vì nó chưa hề đi tìm chỗ nào đáng khen. Nay đó là một
+lượt RIÊNG, không thấy danh sách lỗi, chạy **song song** nên không thêm giây chờ nào cho
+bé. Rồi hai danh sách gộp lại **bằng mã**, không để mô hình tự hoà giải — vì chạy song song
+mở ra đúng hai chỗ hỏng mà chỉ mã bịt được: nó **khen câu bé không hề viết** (bé viết
+*"I have two cat"*, nó khen *"I have two cats"* — câu nó tự sửa rồi khen bản đã sửa), và
+**cùng một câu vừa được khen vừa bị liệt lỗi**. Chỗ sau thì lỗi thắng: nói "câu này con
+viết đúng lắm" rồi ba dòng sau "câu này sai, phải sửa thành…" là bé không biết tin dòng nào.
+
+**Chỗ máy không chắc thì hỏi thêm một ý — và hỏi sao cho câu trả lời không phải tiếng vang
+của câu hỏi.** Bộ chấm nói đo độ giống chuỗi. Khi từ bé phải đọc và một từ cùng bài đều gần
+với cái máy nghe được — `car` 0,67 với `cat` 0,67 — nó vẫn phải chọn một, bằng một con số lẻ
+sau dấu phẩy, và vùng ấy chứa đúng ngưỡng đạt 6. Nên ở riêng vùng 5–7, lượt nói được đem hỏi
+hai phiếu. Hai phiếu khác nhau **hai** đường: nhiệt khác nhau, và **thứ tự hai chữ đảo
+ngược**. Và lời dặn **không nói chữ nào là chữ đang hỏi** — hai chữ vào dưới tên A và B, chỉ
+mã mới biết chữ nào là chữ nào; nói ra là mời mô hình lấy lòng, và "hai phiếu nhất trí" thành
+tiếng vang của chính lời dặn. Chỉ nhất trí 2/2 mới nhích ±1, kẹp lại trong 5–7; 1–1 · một
+phiếu hỏng · mất mạng · quá 4 giây đều **giữ điểm và không nói gì với bé**.
+
 **Điểm máy chấm là điểm TẠM.** Bố mẹ đồng ý hoặc sửa, một chạm, trong Góc bố mẹ — không có nút
 nào cho bé tự xác nhận điểm của mình. Điểm máy chấm được giữ lại bên cạnh điểm bố mẹ sửa, nên
 câu "máy chấm có hay sai không" luôn trả lời được. Luật Firestore chốt: khi đánh dấu *đã xác
@@ -378,10 +402,11 @@ prompt: để so hai mẫu thì chỉ cần một mã băm của **phần khung*
 dấu `<<RIENG … RIENG>>` và bị bỏ sạch trước khi băm — hai bé khác nhau học cùng unit cho ra
 **cùng một** vân tay, và đó vừa là điều làm phép so có nghĩa vừa là điều làm nó không lần ra ai.
 
-### Bảy chỗ hỏng chỉ lộ ra khi gọi mô hình THẬT
+### Chín chỗ hỏng chỉ lộ ra khi gọi mô hình THẬT
 
-101 tệp cổng xanh, build xanh, và cả bảy vẫn ở đó — vì chúng là lỗi **giữa các tầng** (không
-tầng nào sai một mình) hoặc lỗi **chất lượng** (mỗi câu đều hợp lệ, cả bộ thì không).
+102 tệp cổng xanh, build xanh, và cả chín vẫn ở đó — vì chúng là lỗi **giữa các tầng** (không
+tầng nào sai một mình), lỗi **chất lượng** (mỗi câu đều hợp lệ, cả bộ thì không), hoặc lỗi
+trong **chính phép đo** của tôi.
 
 - **Lời dặn tự chọi nhau.** Luật 4 nằm trong khối `HARD RULES` ("breaking any of these makes
   the lesson useless") và viết thẳng *"NEVER say the same English sentence — vary the word in
@@ -410,6 +435,17 @@ tầng nào sai một mình) hoặc lỗi **chất lượng** (mỗi câu đều
 - **Bốn câu y hệt nhau.** Cùng bộ phương án, cùng đáp án, chỉ khác lời dẫn. **Từng câu** một
   thì cả bốn đều hợp lệ; cả bộ thì là một câu hỏi lặp bốn lần. Soi từng câu không bao giờ thấy
   được chuyện này — phải có một phép soi CẢ BỘ.
+- **Phép đo của tôi tự gán nhãn sai, rồi cho ra một con số rất thuyết phục.** Bộ đo phần bỏ
+  phiếu gán "đáp án đúng" theo *chữ nào bị bộ méo của tôi làm méo*, và kết luận mô hình **chỉnh
+  sai 23%**. Con số ấy vô nghĩa: tôi méo `it` thành `at` rồi bắt mô hình trả lời `it`, nhưng
+  `at` nghe giống `that` hơn `it` — mô hình đúng, nhãn của tôi sai. Một bộ méo sáu luật máy móc
+  không phải bộ nhận dạng giọng nói. Đã bỏ hẳn phép đo ấy và ghi vì sao ngay trong
+  `tools/do_phan_xu.mjs`, để không ai (kể cả tôi) tin lại nó.
+- **Cùng một lượt nói ra hai điểm khác nhau giữa hai lần chạy** — và chỗ này **chưa chữa**.
+  Hai phiếu dùng nhiệt 0,2/0,5 nên *chiều* phán không bao giờ tự chọi (0 lần lệch trên 22 lượt
+  đảo vai), nhưng *có phán hay không* thì dao động: 6/11 cặp nhất trí ở lần chạy thứ nhất,
+  3/11 ở lần thứ hai. Giới hạn thiệt hại là ±1 trong 5–7 — đó chính là vì sao bản thiết kế
+  kẹp nó lại, và vì sao phép kẹp ấy là một hàm thuần có cổng canh riêng.
 
 ### Ô trống có KIỂU — và lỗi ấy nằm ở ba chỗ
 
@@ -430,13 +466,22 @@ lên ngày nào mục từ có trường từ loại, để nhắc quay lại.
 
 ### Chưa làm (ghi rõ, không giấu)
 
-- **Chấm viết "lỗi ∥ khen" · chấm nói mơ hồ bỏ phiếu** — việc cuối của GĐ 2 trong
-  `docs/REVIEW_18_MAU_AI_AGENT_TIENG_ANH.md`, chưa dựng.
+- **Hai việc của GĐ 3** trong `docs/REVIEW_18_MAU_AI_AGENT_TIENG_ANH.md`, chưa dựng: nhánh
+  "hỏi lại" cho lớp 3+ với 4 tool và trần 3 bước (V11), và việc cuối (V12). GĐ 1 và GĐ 2 —
+  mười việc V1→V10 — đã xong, mỗi việc một commit kèm số đo bằng mô hình thật.
+- **Phần bỏ phiếu chưa đạt "Định nghĩa XONG" của bản thiết kế**, và không đạt được bằng code.
+  Nó đòi *khớp tăng ≥10 điểm % ở vùng 5–7 trên 50 mẫu chấm tay* — tức phải có người nghe 50
+  lượt nói thật của trẻ rồi chấm. Chưa có bộ ấy, nên hai điều đo được thay cho nó là: phán
+  quyết **không bao giờ tự chọi khi đảo vai** (0/22), và nó **gỡ đúng** ca mà bộ chấm chuỗi sai
+  hẳn (`blothel` → `brother`, trong khi `mother` giống hơn: 0,71 so với 0,57). Chạy lại bằng
+  `node tools/do_phan_xu.mjs`.
 - **Hàng đợi duyệt chỉ ĐẦY lên, chưa có đường ra.** Câu do mô hình soạn nằm chờ người lớn
   (`choDuyetTA`), nhưng script ghép câu đã duyệt vào kho tĩnh thì chưa dựng — đó là việc của
   dây chuyền nội dung.
-- **Nhãn `nhamTu` chưa có nguồn trên bản chạy**: phòng nói chấm bằng `chamCau`, mà chỉ `chamTu`
-  tính `nhamThanh`. Nhãn phân loại đúng khi nạp tay (đã thử thật), nhưng chưa ai nạp.
+- **Nhãn `nhamTu` vẫn chưa có nguồn ở PHÒNG NÓI**: phòng nói chấm cả câu bằng `chamCau`, mà
+  chỉ `chamTu` mới có từ cạnh tranh để so. V10 đã mở nguồn cho bài **từ** (`doiThuGan`, dùng
+  cho phần bỏ phiếu), nhưng bài **câu** thì vẫn không có đối thủ nào — và đó là chỗ phòng nói
+  đang dùng. Nhãn phân loại đúng khi nạp tay (đã thử thật), nhưng chưa ai nạp.
 - **Lời dặn cho dùng chữ chức năng mà `chuLa` thì không** — luật 1 ghi *"plus the bare function
   words"*, còn chốt soi gạt `there` · `on` · `the`. Vá nó là **nới** hàng rào vốn từ, nên để
   quyết chứ không tự làm.
