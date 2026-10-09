@@ -6,12 +6,12 @@ import {
   vonTu, tuTrongCau, tachTheoTieng, UNIT_CU_TOI_DA,
   tinhBuoi, loiKet, cauHoiSoThich, PHUT_TOI_DA, luotLuyen,
 } from '../lib/phongnoi.js';
-import { capNhatTuBuoi, donHoSo } from '../lib/hosoai.js';
+import { capNhatTuBuoi, donHoSo, themBaiHoc } from '../lib/hosoai.js';
 import {
   lapKeHoach, capNhatSauLuot, xongKeHoach, loiGioiThieu, oThanhViec, conThieu as khConThieu,
 } from '../lib/kehoach.js';
 import ThanhViec from './ThanhViec.jsx';
-import { hoiCoGiao, luuBuoi } from '../lib/goiPhongNoi.js';
+import { hoiCoGiao, luuBuoi, tomTatBuoi } from '../lib/goiPhongNoi.js';
 import { napDoThi, baiTienQuyet } from '../lib/doThi.js';
 import { dungBang, datKeHoach } from '../lib/bangtrangthai.js';
 import { manhNhat } from '../lib/hoso.js';
@@ -304,12 +304,34 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
     if (buoi.trangThai === 'dang' || daGhiHoSo.current || !onHoSoAI) return;
     if (!luotLuyen(lichSu).length) return;   // mở ra rồi thoát ngay thì không có gì nhớ
     daGhiHoSo.current = true;
-    const moi = donHoSo(
+    const buoiThu = (tienDo?.hoSoAI?.buoiThu || 0) + 1;
+    const may = donHoSo(
       capNhatTuBuoi(tienDo?.hoSoAI, { lichSu, hoSo: hoSoBe, bayGio: Date.now() }),
-      { mucThao, buoiHienTai: (tienDo?.hoSoAI?.buoiThu || 0) + 1 },
+      { mucThao, buoiHienTai: buoiThu },
     );
-    onHoSoAI(moi);
-  }, [buoi.trangThai, lichSu, onHoSoAI, tienDo?.hoSoAI, hoSoBe, mucThao]);
+    /* Ghi phần SUY ĐƯỢC BẰNG CODE ngay — nó không cần mạng, nên không có lý gì để
+       nó phải đợi một lời gọi. */
+    onHoSoAI(may);
+
+    /**
+     * ── BÀI HỌC CUỐI BUỔI (việc V8, mẫu Reflexion) ──
+     * Một lượt gọi mô hình để ngẫm lại cả buổi, rồi ghi vào trí nhớ của cô.
+     *
+     * ⚠ KHÔNG `await`: buổi đã kết, bé đang xem màn kết, và một lời gọi mạng nữa
+     * không được phép giữ màn hình lại. Hỏng thì bỏ qua — `LOI_TOM_TAT` đếm.
+     *
+     * ⚠ Cộng dồn lên `may`, KHÔNG lên `tienDo?.hoSoAI` cũ: giữa hai lệnh ghi có một
+     * quãng chờ mạng, và đọc lại bản cũ là xoá mất phần `capNhatTuBuoi` vừa ghi.
+     */
+    tomTatBuoi({ von, lichSu, tenBe, lop })
+      .then(({ baiHoc }) => {
+        if (!baiHoc.length) return;
+        let sau = may;
+        for (const b of baiHoc) sau = themBaiHoc(sau, { ...b, buoi: buoiThu });
+        onHoSoAI(donHoSo(sau, { mucThao, buoiHienTai: buoiThu }));
+      })
+      .catch(() => { /* đã đếm trong `tomTatBuoi` */ });
+  }, [buoi.trangThai, lichSu, onHoSoAI, tienDo?.hoSoAI, hoSoBe, mucThao, von, tenBe, lop]);
 
   useEffect(() => () => { phien.current?.huy(); thoiDoc(); }, []);
   /* Nhịp 30 giây chỉ để VẼ LẠI, không đụng gì tới dữ liệu — hết 20 phút mà màn

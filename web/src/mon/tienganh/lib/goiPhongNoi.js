@@ -14,10 +14,11 @@ import {
   loiDan, goiGui, docTraLoi, viecTiepTheo, cauHopLe, cauThayThe,
   buocTiepTheo, dienBuoc, dongBuoc, loiVietHopLe, luotBeCuoi,
   loiDanTranh, canNoi,
-  soiCau, loiNhacSua, loiNhacSuaViet, SUA_CO_TOI_DA,
+  soiCau, loiNhacSua, loiNhacSuaViet, SUA_CO_TOI_DA, luotLuyen,
 } from './phongnoi.js';
 import { nhanLuot, NHAN_TRONG_KICH_BAN } from './nhanluot.js';
 import { buocHienTai, dongBuocKeHoach } from './kehoach.js';
+import { loiDanTomTat, docTomTat, soiGoiTomTat } from './baihoc.js';
 
 /** Collection riêng của Tiếng Anh — hậu tố TA để không bao giờ lẫn với Toán. */
 export const KHO_PHONG_NOI = (uid) => `phongNoiTA/${uid}/buoi`;
@@ -345,6 +346,65 @@ export function loiVietSach(vi, { von, cauDich = '', lui = '', beNoi = '' } = {}
  * và không có con số thì chẳng ai biết để mà sửa lời dặn.
  */
 export const LOI_LOI_VIET = { so: 0, ganNhat: null };
+
+/**
+ * Đếm số lần lượt tóm tắt cuối buổi KHÔNG lấy được bài học nào.
+ *
+ * Tách `hong` (mạng · máy chủ) khỏi `bac` (soi bác sạch): hai con số ấy đòi hai cách
+ * chữa khác nhau — một cái là hạ tầng, một cái là lời dặn. Gộp lại thì nhìn con số
+ * không biết phải sửa gì.
+ */
+export const LOI_TOM_TAT = { goi: 0, hong: 0, bac: 0, ganNhat: null };
+
+/**
+ * TÓM TẮT CUỐI BUỔI — một lượt gọi, và chỉ một (mẫu Reflexion, việc V8).
+ *
+ * ── DÙNG LẠI CALLABLE `luyenNoi`, KHÔNG THÊM CALLABLE MỚI ──
+ * §7 cho hai cách. Chọn cách này vì gói gửi lên có HÌNH DẠNG Y HỆT một lượt nói
+ * chuyện: một `system` + lịch sử. `soiGoi` chốt cửa đúng như cũ, và máy chủ không
+ * phải đổi một dòng nào — thêm một callable là thêm một chỗ phải khai secret, khai
+ * region, và deploy. Lời dặn khác thì `locKhung` ra vân tay khác, nên bảng so ΔC
+ * vẫn tách được hai mẫu.
+ *
+ * ── KHÔNG CHỜ, VÀ KHÔNG NUỐT IM ──
+ * Chỗ gọi không `await` cái này: buổi đã kết, bé đang xem màn kết, và một lời gọi
+ * mạng nữa không được phép giữ màn hình lại. Hỏng thì bỏ qua — nhưng `LOI_TOM_TAT`
+ * đếm, vì "không có bài học nào" mà không ai biết thì cả việc V8 thành vô dụng mà
+ * vẫn trông như đang chạy.
+ *
+ * @return {{baiHoc, khen, boQua}} — ĐÃ SOI. Chỗ gọi chỉ việc `themBaiHoc`.
+ */
+export async function tomTatBuoi({ von, lichSu, tenBe, lop }, { goi = goiMay } = {}) {
+  LOI_TOM_TAT.goi += 1;
+  const rong = { baiHoc: [], khen: '', boQua: [] };
+  /* Buổi quá ngắn thì không có gì để ngẫm — đừng tốn một lời gọi. Hai lượt luyện là
+     sàn: một lượt thì không có cái gì "lặp lại", mà bài học phải là cái LẶP LẠI. */
+  if (luotLuyen(lichSu || []).length < 2) return rong;
+  const messages = [
+    { role: 'system', content: loiDanTomTat({ von, tenBe, lop }) },
+    ...goiGui(lichSu),
+  ];
+  let tt = null;
+  try {
+    const { data } = await goi(messages);
+    tt = docTomTat(data?.chu);
+  } catch (e) {
+    LOI_TOM_TAT.hong += 1;
+    LOI_TOM_TAT.ganNhat = String(e?.code || e?.message || e);
+    return rong;
+  }
+  if (!tt) {
+    LOI_TOM_TAT.hong += 1;
+    LOI_TOM_TAT.ganNhat = 'không đọc được JSON';
+    return rong;
+  }
+  const kq = soiGoiTomTat(tt, { von });
+  if (!kq.baiHoc.length && kq.boQua.length) {
+    LOI_TOM_TAT.bac += 1;
+    LOI_TOM_TAT.ganNhat = kq.boQua[0]?.vi || 'bị soi bác';
+  }
+  return kq;
+}
 
 /**
  * Lưu buổi nói chuyện lên máy chủ — CLIENT làm, không phải server.
