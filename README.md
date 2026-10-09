@@ -23,13 +23,15 @@ npm install
 npm run dev      # http://localhost:5173  — học được ngay, chưa cần Firebase
 npm test         # 103 tệp · 2 874 phép kiểm, chạy trên dữ liệu thật của cả chín quyển
 npm run test:luat   # luật Firestore — cần bộ giả lập, xem docs/DEPLOY.md
+cd .. && python3 tools/xuong/test_schema.py   # 66 phép kiểm xưởng nội dung, không cần mạng
 ```
 
 ⚠ Chạy `npm run build` TRƯỚC `npm test`: một tệp cổng soi chính bản dựng (dấu phiên bản
 nội dung), nên chạy sai thứ tự là nó đỏ mà chẳng có gì sai.
 
 ⚠ Phần Tiếng Anh gọi mô hình ngôn ngữ qua Cloud Functions. Không có khoá thì phòng luyện
-nói và phần chấm bài viết báo lỗi tử tế; **mọi phần còn lại học bình thường**.
+nói và phần chấm bài viết báo lỗi tử tế; **mọi phần còn lại học bình thường**. Xưởng sinh nội
+dung (`tools/xuong/`) cũng cần khoá, nhưng nó là công cụ offline — app không gọi tới nó.
 
 Chưa cấu hình Firebase thì app **vẫn học bình thường**: tiến độ lưu tại máy, dữ liệu nằm trong hàng đợi
 chờ đồng bộ. Nối Firebase sau (xem `docs/DEPLOY.md`) là toàn bộ lịch sử được đẩy lên, không mất gì.
@@ -59,8 +61,11 @@ web/                  Ứng dụng học (React + Vite + Tailwind)
                       (phần gọi mô hình — bốn chỗ đang chạy, không hơn)
   test/               103 tệp · 2 874 phép kiểm (node thuần, không cần trình duyệt)
                       + 61 phép canh luật Firestore (cần bộ giả lập)
+                      + 66 phép kiểm xưởng sinh nội dung (python, không cần mạng)
   firestore.rules     luật bảo mật — nhật ký học BẤT BIẾN
 
+tools/                Dây chuyền nội dung (python) — KHÔNG app nào gọi tới
+  xuong/              Xưởng sinh nội dung Tiếng Anh: 4 worker · 3 giám khảo · chờ người duyệt
 figforge/             Bộ sinh hình: 25 nguyên mẫu + 672 figureSpec
 data/                 km_v1_38 (đồ thị tri thức) · 168 DL json · 14 DCR · manifest hình
 docs/                 Sổ tay thực thi · kế hoạch thi công · thiết kế VideoForge · bộ luật CodeGen
@@ -88,6 +93,11 @@ nguyên điểm và không nói gì với bé — và mọi phần còn lại h�
 Có một chỗ **thứ năm đã viết xong nhưng đang TẮT**: nhánh cho cô giáo máy *tra* trước khi
 đáp lúc bé hỏi lại (mẫu ReAct). Tắt vì đo ra nó không hơn đường cũ chỗ nào — xem
 [Chỗ máy đã biết rồi thì đừng cho nó tra lại](#chỗ-máy-đã-biết-rồi-thì-đừng-cho-nó-tra-lại).
+
+Và có một chỗ thứ sáu **không tính vào bốn chỗ trên, vì nó ở ngoài app**: xưởng sinh nội dung
+(`tools/xuong/`). Nó là một lệnh dòng lệnh, chạy khi không ai học, và mọi thứ nó đẻ ra dừng lại
+ở một danh sách chờ **người** duyệt — nên nó không phá trụ "nội dung là file tĩnh", nó là cái
+làm ra file tĩnh. Xem [Một xưởng cho nội dung](#một-xưởng-cho-nội-dung-và-ba-chốt-giữ-nó-ở-ngoài).
 
 **2 · Lõi tách khỏi giao diện để kiểm định được.**
 Toàn bộ luật (dựng dòng chảy bài học, chấm bài, mở khoá, BKT, lịch ôn, sổ phụ huynh, và cả luật
@@ -408,6 +418,41 @@ prompt: để so hai mẫu thì chỉ cần một mã băm của **phần khung*
 dấu `<<RIENG … RIENG>>` và bị bỏ sạch trước khi băm — hai bé khác nhau học cùng unit cho ra
 **cùng một** vân tay, và đó vừa là điều làm phép so có nghĩa vừa là điều làm nó không lần ra ai.
 
+### Một xưởng cho nội dung — và ba chốt giữ nó ở ngoài
+
+Việc V12 dựng `tools/xuong/`: bốn worker soạn nháp cho **một unit** (từ mới · mẫu câu · kịch
+bản nói · bài đọc), hai tầng soi bằng **code**, rồi ba giám khảo bỏ phiếu song song, phiếu 2–1
+thì tranh luận hai vòng, và mọi thứ dừng ở `duyet.md` — một danh sách để người đọc.
+
+Đây là chỗ **duy nhất** trong kho mà Python gọi mô hình ngôn ngữ, và là chỗ duy nhất một mô
+hình soạn ra thứ **có thể** đi vào nội dung thật. Nên ba chốt, cả ba có cổng canh:
+
+| Chốt | Vì sao | Ở đâu |
+|---|---|---|
+| chỉ ghi vào `data/tienganh/xuong/` | câu sai ở phòng nói thì bé nghe một lần rồi thôi; câu sai trong `public/content/` thì **mọi** bé học nó, **mọi** lần | `chung.soi_duong_ra` — soi đường dẫn **đã giải**, nên `../../../web/public/content` cũng bị bác |
+| không tệp nào trong `web/` nhắc tới xưởng | đó là cách duy nhất giữ được "không bao giờ chạy lúc bé học" | `test_schema.py` khối D |
+| khuôn + hàng rào vốn từ chạy **trước** giám khảo | hai tầng ấy là code: miễn phí và tuyệt đối. Giám khảo tốn ba lượt gọi và bỏ phiếu theo cảm giác | `nen_worker.chay` |
+
+**Đo thật, lớp 4 unit 3 — 16 giây, 49 lượt gọi:** 5/13 mục ba giám khảo đều thuận, 3/13 còn
+bàn, **5/13 bị loại**. Năm mục bị loại đều bị loại **đúng**, và lý do thì chính xác: *"i is at
+home today — nhiều câu sai ngữ pháp, từ viết thường"* · *"I read music at park không tự nhiên"*
+· *"thiếu mạo từ a trong play a game"* · *"homework không thuộc chủ đề Me and My Friends"*.
+
+**Và đó là bằng chứng cho tầng giám khảo — ngược hẳn kết quả V11 ngay dưới.** Hàng rào bằng code
+trả lời được "chữ này bé học chưa" một cách tuyệt đối, nhưng nó **không** trả lời được "đây có
+phải tiếng Anh không". Túi vốn một unit chỉ 45 chữ và không có từ chức năng, nên mô hình xếp chữ
+thành câu không ai nói mà vẫn qua hàng rào sạch. Chỉ giám khảo bắt được loại ấy.
+
+⚠ **"Ba giám khảo đều thuận" không phải một phép duyệt** — đó là ba lượt gọi cùng một mô hình
+với ba lời dặn. Nó là một phép **sàng** để người đọc ít hơn, và `duyet.md` nói thẳng điều đó ở
+đầu trang.
+
+⚠ **Và "qua 83 cổng" không có nghĩa "chạy bộ sinh là xong".** Đắp thật 4 từ vào một unit lớp 4
+rồi chạy cổng: **sáu tệp cổng đỏ**, cả sáu đỏ đúng chỗ phải đỏ — thiếu clip đọc, thiếu nút trong
+đồ thị, thiếu hình **và chưa ai soát tận mắt**, thiếu video. Một mục mẫu câu thì nhẹ; một **từ
+mới** là năm bước, và bước cuối là mắt người. Bảng ấy nằm trong chính `duyet.md`, vì bản đầu tôi
+viết chỉ dặn "chạy bộ sinh rồi `npm test`" — mà thế là sai.
+
 ### Chỗ máy đã biết rồi thì đừng cho nó tra lại
 
 Việc V11 của bản rà là mẫu **ReAct**: lúc bé hỏi lại ("cô ơi *drawing* nghĩa là gì ạ?"), cho
@@ -445,9 +490,9 @@ lại thì rẻ: ngày nào có quyển bảng vốn vài trăm chữ, hay cần
 sẵn (lịch ôn, bài trước đó), thì chỗ cắm đã có và đã được canh. Số phải xem trước khi bật là
 `LOI_HOI_CO.buoc / LOI_HOI_CO.goi`; quanh 0 thì vẫn nên để tắt.
 
-### Mười chỗ hỏng chỉ lộ ra khi gọi mô hình THẬT
+### Mười một chỗ hỏng chỉ lộ ra khi gọi mô hình THẬT
 
-103 tệp cổng xanh, build xanh, và cả mười vẫn ở đó — vì chúng là lỗi **giữa các tầng** (không
+103 tệp cổng xanh, build xanh, và cả mười một vẫn ở đó — vì chúng là lỗi **giữa các tầng** (không
 tầng nào sai một mình), lỗi **chất lượng** (mỗi câu đều hợp lệ, cả bộ thì không), hoặc lỗi
 trong **chính phép đo** của tôi.
 
@@ -498,6 +543,12 @@ dưới.
   `failed_generation` cho thấy ruột bên trong đúng hình dạng mình cần. Chữa bằng cách khai
   đúng cái tool nó đang đòi — và bản vá ấy còn **rẻ hơn** bản trước: trả lời ngay ở lượt một,
   không cần lượt chốt. Bài học: mô hình đang nói cho ta biết nó muốn giao diện nào.
+- **Cloudflare chặn `User-Agent` của `urllib`, và nó trông y như khoá sai.** Xưởng là tệp
+  Python đầu tiên trong kho gọi mô hình, và **mọi** lượt gọi của nó trả `403 error code: 1010`
+  — không thân lỗi, không lời giải thích. Cùng khoá ấy `curl` chạy ngon, và SDK JavaScript bên
+  `functions/` cũng chạy ngon (SDK tự đặt `User-Agent` của nó). Mất một lúc mới lần ra, vì mọi
+  dấu hiệu đều chỉ về phía cái khoá. Đây là cái giá của việc dùng `urllib` thay cho một thư
+  viện HTTP — và nó đáng ghi lại hơn là đáng đổi sang `requests`.
 - **Cùng một lượt nói ra hai điểm khác nhau giữa hai lần chạy** — và chỗ này **chưa chữa**.
   Hai phiếu dùng nhiệt 0,2/0,5 nên *chiều* phán không bao giờ tự chọi (0 lần lệch trên 22 lượt
   đảo vai), nhưng *có phán hay không* thì dao động: 6/11 cặp nhất trí ở lần chạy thứ nhất,
@@ -523,11 +574,18 @@ lên ngày nào mục từ có trường từ loại, để nhắc quay lại.
 
 ### Chưa làm (ghi rõ, không giấu)
 
-- **Việc cuối của bản rà (V12): xưởng sinh nội dung offline** — điều phối theo unit, bốn
-  worker, ba giám khảo chạy song song, vòng tranh luận, rồi danh sách chờ người duyệt. Chỉ
-  Python, không đụng vào app. Chưa dựng.
-  Mười một việc V1→V11 đã xong, mỗi việc một commit kèm số đo bằng mô hình thật — trong đó
-  **V11 xong mã nhưng để TẮT**, vì đo ra nó không hơn đường cũ (xem mục trên).
+- **Cả mười hai việc V1→V12 của bản rà đã xong**, mỗi việc một commit kèm số đo bằng mô hình
+  thật. Hai việc có kết cục khác "xong và bật": **V11** xong mã nhưng để **TẮT** (đo ra không
+  hơn đường cũ), và **V12** là công cụ offline nên nó không bật/tắt — nó chạy khi người chạy.
+  Không còn việc nào trong `docs/REVIEW_18_MAU_AI_AGENT_TIENG_ANH.md` chưa dựng.
+- **Xưởng chưa qua một đợt dùng thật.** Một lượt chạy một unit đã đo (5/13 mục qua sàng), nhưng
+  chưa có unit nào được rót vào nội dung thật qua đường ấy — vì rót một **từ mới** còn phải
+  chạy bốn dây chuyền nữa (âm · hình · đồ thị · video) và một bước soát bằng mắt. Tiêu chí
+  *"bác duyệt dưới 10% bác bỏ"* của bản rà vì thế chưa đo được: chưa có đợt duyệt nào.
+- **Vòng tranh luận của xưởng chạy một model, không phải hai.** Bản rà đòi hai, để hai phía
+  không sai giống nhau. Khoá hiện tại thấy 12 model nhưng mọi model văn bản khác đều `blocked
+  at the organization level`. Đặt `GROQ_MODEL_PHU` là có hai model thật; tới lúc ấy `duyet.md`
+  tự thôi in dòng cảnh báo.
 - **Phần bỏ phiếu chưa đạt "Định nghĩa XONG" của bản thiết kế**, và không đạt được bằng code.
   Nó đòi *khớp tăng ≥10 điểm % ở vùng 5–7 trên 50 mẫu chấm tay* — tức phải có người nghe 50
   lượt nói thật của trẻ rồi chấm. Chưa có bộ ấy, nên hai điều đo được thay cho nó là: phán
