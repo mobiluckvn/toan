@@ -18,7 +18,7 @@ import { buildTeacherBoard } from './src/teacherboard.js';
 import { buildBangXepHang } from './src/bangxephang.js';
 import { makeCode, canSend, nextRecord, verify, otpEmail } from './src/otp.js';
 import { normalizeEmail, buildUserDoc } from './src/user.js';
-import { hoiMay, LoiGoi } from './src/luyennoi.js';
+import { hoiMay, hoiMayCoTool, LoiGoi } from './src/luyennoi.js';
 import { chamBaiViet } from './src/chamviet.js';
 import { sinhPhuDao } from './src/phudao.js';
 import { phanXu } from './src/phanxu.js';
@@ -630,6 +630,43 @@ export const phanXuNoi = onCall(
          trên bản chạy đúng. Che nó đi là che một lỗi lập trình. */
       if (e instanceof LoiGoi) throw new HttpsError('invalid-argument', e.message);
       return { gan: 'khac', dieuChinh: 0, nhatTri: false, hong: true };
+    }
+  },
+);
+
+/**
+ * PHÒNG NÓI, NHÁNH ReAct — cô được TRA trước khi đáp (việc V11).
+ *
+ * Máy con chỉ rẽ vào đây khi nhãn lượt là `hoiLai` và bé từ lớp 3 (`lib/hoico.js`,
+ * có cổng canh). Cùng khoá Groq, cùng luật cửa với `luyenNoi`.
+ *
+ * ⚠ KHÔNG ĐỌC FIRESTORE, VÀ KHÔNG LƯU GÌ. Bốn tool chạy trên đúng gói `kho` máy con
+ * gửi lên rồi gói ấy biến mất cùng lời gọi — xem `src/tool_phongnoi.js`. Một tool
+ * biết tự đi tìm dữ liệu là một tool cần quyền đọc, mà quyền đọc là chỗ dữ liệu của
+ * bé bắt đầu rò.
+ *
+ * Lỗi nặng vẫn ném lên như `luyenNoi`: máy con bắt rồi LÙI về nhánh cũ, nên bé
+ * không mất lượt. Nuốt lỗi ở đây thì máy con không biết để lùi.
+ */
+export const luyenNoiTool = onCall(
+  { secrets: [GROQ_API_KEY], region: 'asia-southeast1' },
+  async (req) => {
+    if (!req.auth) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
+    const khoa = GROQ_API_KEY.value();
+    if (!khoa) {
+      throw new HttpsError('failed-precondition',
+        'Máy chủ chưa có khoá Groq. Đặt bằng: firebase functions:secrets:set GROQ_API_KEY');
+    }
+    try {
+      const { Groq } = await import('groq-sdk');
+      return await hoiMayCoTool(req.data, () => new Groq({ apiKey: khoa }));
+    } catch (e) {
+      if (e instanceof LoiGoi) throw new HttpsError('invalid-argument', e.message);
+      if (e?.status === 401 || e?.status === 403) {
+        throw new HttpsError('permission-denied',
+          'Khoá Groq không dùng được. Người lớn kiểm tra lại GROQ_API_KEY giúp con nhé.');
+      }
+      throw new HttpsError('unavailable', 'Cô giáo chưa trả lời được. Con thử lại nhé.');
     }
   },
 );

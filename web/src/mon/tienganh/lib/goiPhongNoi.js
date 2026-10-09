@@ -17,6 +17,7 @@ import {
   soiCau, loiNhacSua, loiNhacSuaViet, SUA_CO_TOI_DA, luotLuyen,
 } from './phongnoi.js';
 import { nhanLuot, NHAN_TRONG_KICH_BAN } from './nhanluot.js';
+import { canHoiCo, dungKho } from './hoico.js';
 import { buocHienTai, dongBuocKeHoach } from './kehoach.js';
 import { loiDanTomTat, docTomTat, soiGoiTomTat } from './baihoc.js';
 
@@ -44,6 +45,22 @@ async function goiMay(messages) {
 }
 
 /**
+ * MỘT lời gọi lên callable `luyenNoiTool` — nhánh ReAct của việc V11.
+ *
+ * Tách riêng khỏi `goiMay` chứ không thêm một tham số: hai callable khác nhau, hai
+ * chốt cửa khác nhau, và quan trọng hơn — cổng phải đếm được RIÊNG số lần đi nhánh
+ * tra. Gộp vào một hàm thì "đã gọi mấy lần" không còn nói được nhánh nào đã chạy.
+ */
+async function goiMayCoTool(messages, kho) {
+  if (!hasFirebase || !fns) {
+    const e = new Error('Máy chưa nối được lên mạng.');
+    e.code = 'functions/unavailable';
+    throw e;
+  }
+  return httpsCallable(fns, 'luyenNoiTool')({ messages, kho });
+}
+
+/**
  * Đếm vòng gọi lại. `so` = số lần phải xin lại, `thanh` = số lần xin lại ĂN.
  *
  * Tỉ số `thanh/so` là thứ DUY NHẤT nói được vòng này có tác dụng hay chỉ tốn thêm
@@ -51,6 +68,16 @@ async function goiMay(messages) {
  * thấy — nhưng cũng không nuốt im, đúng lối `LOI_LUU` và `LOI_LOI_VIET`.
  */
 export const LOI_SUA_CO = { so: 0, thanh: 0, ganNhat: null };
+
+/**
+ * Đếm nhánh tra (việc V11). `goi` = số lượt rẽ vào, `buoc` = tổng số bước tool đã
+ * chạy, `hong` = số lần phải lùi về nhánh cũ.
+ *
+ * Tỉ số `buoc/goi` là thứ nói được mô hình có THẬT SỰ tra hay chỉ trả lời ngay: nếu
+ * nó quanh 0 thì cả nhánh này chỉ tốn thêm một callable mà không ai dùng tool, và
+ * lúc ấy việc đúng là bỏ nhánh đi chứ không phải dặn thêm.
+ */
+export const LOI_HOI_CO = { goi: 0, buoc: 0, hong: 0, ganNhat: null };
 
 /** Trần ký tự khi trả CÂU BỊ BÁC lại cho mô hình xem. */
 export const TRA_LAI_TOI_DA_CHU = 600;
@@ -78,7 +105,7 @@ export async function hoiCoGiao({
      cổng hiện có truyền nó, và `bang.hoSo` giữ đúng hình dạng cũ nên hai đường ra
      cùng một chỗ. */
   bang = null,
-}, { goi = goiMay } = {}) {
+}, { goi = goiMay, goiTool = goiMayCoTool } = {}) {
   const hs = bang?.hoSo || hoSo;
   /* Việc của lượt này do MÁY CON quyết rồi ghép vào lời dặn — xem `viecTiepTheo`.
      Lời dặn dựng lại mỗi lượt (chứ không giữ nguyên từ đầu buổi) chính là chỗ cắm
@@ -131,7 +158,36 @@ export async function hoiCoGiao({
       : loiDan({ von, tenBe, lop, viec, hoSo: hs, unit, nhan, chiTiet, bang,
                  dongKeHoach: dongKH }));
   const messages = [{ role: 'system', content: dan }, ...goiGui(lichSu)];
-  const { data } = await goi(messages);
+
+  /* ── BÉ HỎI LẠI VÀ TỪ LỚP 3: CHO CÔ ĐI TRA TRƯỚC KHI ĐÁP (việc V11) ──
+     Luật rẽ ở `hoico.js`, thuần và có cổng. Nhánh này gửi thêm gói `kho` để bốn
+     tool chạy được trên dữ liệu bài — máy chủ không có dữ liệu riêng.
+
+     ⚠ HỎNG THÌ LÙI VỀ NHÁNH CŨ, KHÔNG ĐỂ BÉ MẤT LƯỢT. Nhánh tra là đường THÊM: nó
+     tốn một lượt gọi nữa và dùng một callable mới, nên nó có nhiều chỗ hỏng hơn —
+     chưa deploy hàm mới, mô hình không chịu gọi tool, Groq bác gói có `tools`. Lùi
+     về `goi(messages)` thì bé vẫn được trả lời bằng bảng vốn trong lời dặn, đúng
+     như trước V11. */
+  const traLoiBangTool = canHoiCo({ nhan, lop, laTranh });
+  let data;
+  let buocTool = null;
+  if (traLoiBangTool) {
+    try {
+      const r = await goiTool(messages, dungKho({
+        von, mucThao: bang?.mucThao || null, doThi: bang?.doThi || null,
+      }));
+      data = r?.data;
+      buocTool = data?.buocTool || null;
+      LOI_HOI_CO.goi += 1;
+      LOI_HOI_CO.buoc += buocTool?.length || 0;
+      LOI_HOI_CO.ganNhat = data?.lyDoDung || null;
+    } catch (e) {
+      LOI_HOI_CO.hong += 1;
+      LOI_HOI_CO.ganNhat = e?.code || e?.message || 'khong-ro';
+      data = null;
+    }
+  }
+  if (!data) ({ data } = await goi(messages));
   const tra = docTraLoi(data?.chu);
   /* Vân tay lời dặn đi kèm ra ngoài — cùng lý do với `goiChamViet.js`: mục 2.5.2
      đòi mỗi bản ghi biết nó do mẫu prompt nào sinh ra. `luyennoi.js` sinh sẵn từ
@@ -156,6 +212,10 @@ export async function hoiCoGiao({
     /* Lượt này thuộc bước kế hoạch thứ mấy — màn hình giữ lại để `capNhatSauLuot`
        biết đang chấm bước nào, và để bản ghi buổi đếm được bước nào hay mắc. */
     tra.buocKeHoach = buocKH?.i ?? null;
+    /* Danh sách bước tra của nhánh ReAct. Màn hình đọc nó để biết có phải phát
+       clip hay không (`tuCanPhat`), và bản ghi buổi đếm được nhánh ấy chạy mấy lần.
+       ⚠ Không mang chữ nào của bé — tham số tool là chữ tiếng Anh của bài. */
+    tra.buocTool = buocTool;
   }
 
   /* SOI LẠI CÂU TIẾNG ANH. Dặn dò không đủ: đã bảo rõ ô trống của `Bye, + [Name].`

@@ -1,4 +1,7 @@
 import { vanTay, locKhung } from './vantay.js';
+import {
+  TOOLS_GUI, TEN_TRA_LOI, BUOC_TOI_DA, chayTool, chuKyTool, soiKho, LOI_TOOL,
+} from './tool_phongnoi.js';
 /**
  * PHÒNG LUYỆN NÓI — phần máy chủ. Chỉ có ĐÚNG một việc: chuyển lời lên Groq rồi
  * đem câu trả lời về.
@@ -230,6 +233,199 @@ export async function hoiMay(du, taoClient) {
          lẫn với lượt thường thì cũng sai: bỏ `response_format` là đổi cách sinh,
          mà "thứ gì đổi thì kết quả đổi, nên phải tính" — đúng lời `vantay.js`. */
       ...(noiKhuon ? { khuon: 'long' } : {}),
+    }),
+  };
+}
+
+/* ═════════════ NHÁNH ReAct CHO LƯỢT BÉ HỎI LẠI (việc V11) ═════════════ */
+
+/**
+ * HỎI MÁY, CHO PHÉP NÓ TRA TRƯỚC KHI TRẢ LỜI.
+ *
+ * Chỉ máy con mới rẽ vào đây, và chỉ khi nhãn lượt là `hoiLai` và bé từ lớp 3 —
+ * luật rẽ nằm ở `lib/hoico.js`, có cổng canh. Lớp 1–2 đi nhánh cũ: ở tuổi ấy câu
+ * hỏi của bé gần như luôn là một chữ trong bài, mà một chữ thì lời dặn đủ sức.
+ *
+ * ── BA CHỐT, VÀ CẢ BA ĐỀU LÀ CHỐT CHỐNG VÒNG LẶP ──
+ * Vòng ReAct hỏng theo đúng một kiểu: mô hình gọi tool, đọc kết quả, rồi gọi lại
+ * chính tool ấy. Nó không "treo" — nó cứ chạy, tốn lượt gọi, và bé ngồi nhìn.
+ *
+ *   1. TRẦN BƯỚC `BUOC_TOI_DA` — cứng, không bàn.
+ *   2. BẮT LẶP: cùng tool + cùng tham số lần thứ hai là dừng NGAY, không đợi hết
+ *      trần. Lặp một lần đã là bằng chứng nó không dùng được kết quả vừa nhận.
+ *   3. LƯỢT CHỐT KHÔNG CÓ TOOL: dừng vì bất cứ lý do gì thì lượt cuối gọi lại với
+ *      `tools` BỎ HẲN. Còn để `tools` trong gói là mời nó gọi tiếp, và lúc ấy ta
+ *      phải bỏ câu trả lời — tức tốn một lượt mà không được gì.
+ *
+ * ── VÌ SAO LƯỢT CHỐT MỚI ĐÒI JSON ──
+ * `response_format: json_object` và `tools` chung một gói là chỗ Groq hay bác, và
+ * ta đã dính một lần đúng kiểu ấy (xem `LOI_KHUON_JSON`). Nên mấy lượt tra để
+ * TRỐNG khuôn, và chỉ lượt chốt mới ép JSON — lượt chốt là lượt duy nhất mà máy
+ * con phải bóc ra `{en, vi}`.
+ *
+ * Nếu mô hình tự ý trả lời ngay mà KHÔNG gọi tool nào, và câu ấy đã có dạng JSON,
+ * thì nhận luôn — đừng gọi thêm một lượt chốt cho vui.
+ *
+ * ── TRẢ VỀ ──
+ * Chữ TRẦN như `hoiMay`, cộng `buocTool` — danh sách bước đã chạy. Máy con cần nó
+ * để biết có phải phát clip hay không (`nghe_lai`), và để đếm được trên bản thật.
+ * ⚠ `buocTool` KHÔNG mang chữ nào của bé: tham số tool là chữ TIẾNG ANH của bài,
+ * còn câu hỏi của bé nằm trong lời dặn và không đi ra theo đường này.
+ */
+export async function hoiMayCoTool(du, taoClient) {
+  const goc = soiGoi(du);
+  const nem = (ma, loi) => { throw new LoiGoi(ma, loi); };
+  const kho = soiKho(du?.kho, nem);
+  const client = taoClient();
+  LOI_TOOL.goi += 1;
+
+  const messages = [...goc];
+  /* ── TÁCH HAI KÊNH, VÀ PHẢI NÓI THẲNG RA ──
+     Đo thật với Groq: 10/10 lượt chết với 400 `tool_use_failed` —
+     *attempted to call tool 'json' which was not in request.tools*. Mô hình KHÔNG
+     gọi tool nào của ta; nó thấy lời dặn (`loiDan`) đòi "trả lời dạng JSON
+     {en, vi}" và thấy gói có `tools`, nên nó đi trả lời QUA kênh tool, bằng một
+     tool nó tự đặt tên là `json`. Groq bác, và bé mất lượt.
+
+     Đây đúng họ với chỗ hỏng của V1–V2 (`loi-dan-tu-choi-nhau`): một dòng ở dưới
+     không tự thắng được một luật ở trên, phải NÓI THẲNG là nó thắng. Nên lượt tra
+     có một dòng riêng, nói rõ ba điều: chưa trả lời bé, ĐỪNG dùng JSON lượt này,
+     và không cần tra thì nói đúng một chữ. Lượt chốt (bỏ `tools`) mới đòi JSON. */
+  messages.push({
+    role: 'user',
+    content: 'TOOLS ARE AVAILABLE THIS TURN. You may first look things up with '
+      + 'tra_tu / mau_cau_cua_unit / muc_thao / nghe_lai. When you are ready, give '
+      + `your reply by calling ${TEN_TRA_LOI} with {en, vi} — that call IS your `
+      + 'answer, so do not also write it as plain text.',
+  });
+  const buocTool = [];
+  const daGoi = new Set();
+  let lyDoDung = 'tu-tra-loi';
+  let chu = '';
+
+  for (let i = 0; i < BUOC_TOI_DA; i += 1) {
+    const kq = await client.chat.completions.create({
+      model: MO_HINH,
+      messages,
+      temperature: 0.4,
+      max_tokens: TOKEN_TRA_LOI,
+      reasoning_effort: NGHI_NGAN,
+      tools: TOOLS_GUI,
+      tool_choice: 'auto',
+    });
+    const tin = kq?.choices?.[0]?.message;
+    const goiTool = tin?.tool_calls || [];
+
+    /* ── CÂU TRẢ LỜI ĐI QUA KÊNH TOOL ──
+       Xem `TOOL_TRA_LOI`. Dựng lại đúng khối JSON mà máy con vẫn bóc (`docTraLoi`),
+       nên không tầng nào phía dưới phải biết là nó đã đi đường khác. */
+    const traLoi = goiTool.find((g) => g?.function?.name === TEN_TRA_LOI);
+    if (traLoi) {
+      let a = {};
+      try { a = JSON.parse(traLoi.function?.arguments || '{}'); } catch { a = {}; }
+      if (a?.en || a?.vi) {
+        return ketQua(JSON.stringify({ en: String(a.en ?? ''), vi: String(a.vi ?? '') }),
+          goc, { buocTool, lyDoDung: buocTool.length ? 'tra-roi-tra-loi' : 'tra-loi-ngay' });
+      }
+      /* Gọi `tra_loi_be` mà rỗng ruột: đừng trả một bong bóng trắng cho bé — xuống
+         lượt chốt, nơi khuôn JSON bị ép và lỗi rỗng có chốt riêng. */
+      lyDoDung = 'tra-loi-rong-o-tool';
+      break;
+    }
+
+    if (!goiTool.length) {
+      /* Không gọi tool nữa. `READY` là đường mong đợi; nhưng nó cũng có thể trả
+         thẳng một khối JSON dù vừa bị dặn đừng — nhận luôn thì đỡ một lượt gọi.
+         ⚠ KHÔNG nhận một câu trần làm câu trả lời: máy con `docTraLoi` cần
+         `{en, vi}`, mà một câu trần thì không có lời tiếng Việt lẫn câu tiếng Anh
+         tách ra được — nó sẽ thành một bong bóng nửa vời cho bé. */
+      chu = tin?.content || '';
+      if (/\{[\s\S]*\}/.test(chu)) {
+        return ketQua(chu, goc, { buocTool, lyDoDung: i === 0 ? 'tra-loi-ngay' : 'tu-tra-loi' });
+      }
+      lyDoDung = /^\s*READY\b/i.test(chu) ? 'khong-can-tra' : 'tra-loi-khong-phai-json';
+      break;
+    }
+
+    /* ⚠ GIỮ NGUYÊN lượt `assistant` kèm `tool_calls` TRƯỚC khi đẩy kết quả vào.
+       Bỏ nó thì gói gửi lên có `role: 'tool'` mà không có lời gọi nào đi trước, và
+       Groq bác cả gói — hỏng ở lượt thứ hai, tức chỉ hỏng khi mô hình THẬT SỰ gọi
+       tool, tức không lộ ra ở phép thử nào chỉ có một bước. */
+    messages.push({ role: 'assistant', content: tin.content || '', tool_calls: goiTool });
+
+    let coLap = false;
+    for (const g of goiTool) {
+      const ten = g?.function?.name || '';
+      /* Kênh trả lời đã xử ở trên; đừng cho nó đi qua `chayTool`. */
+      if (ten === TEN_TRA_LOI) continue;
+      let args = {};
+      try { args = JSON.parse(g?.function?.arguments || '{}'); } catch { args = {}; }
+      const ky = chuKyTool(ten, args);
+      const ra = chayTool(ten, args, kho);
+      buocTool.push({ ten, args, ra });
+      messages.push({ role: 'tool', tool_call_id: g?.id || `t${buocTool.length}`, content: ra });
+      if (daGoi.has(ky)) coLap = true;
+      daGoi.add(ky);
+    }
+
+    if (coLap) {
+      LOI_TOOL.lap += 1;
+      LOI_TOOL.ganNhat = buocTool[buocTool.length - 1]?.ten || null;
+      lyDoDung = 'lap';
+      break;
+    }
+    if (i === BUOC_TOI_DA - 1) {
+      LOI_TOOL.hetBuoc += 1;
+      lyDoDung = 'het-buoc';
+    }
+  }
+
+  /* ── LƯỢT CHỐT: KHÔNG TOOL, ÉP JSON ── */
+  messages.push({
+    role: 'user',
+    content: 'Now answer the child. Do not call any more tools. Use what you looked up. '
+      + 'Reply as JSON {"en": …, "vi": …} with ONE English sentence using only the allowed words.',
+  });
+  let kq;
+  try {
+    kq = await goiGroq(client, messages, true);
+  } catch (e) {
+    if (!laLoiKhuon(e)) throw e;
+    LOI_NOI_KHUON.so += 1;
+    LOI_NOI_KHUON.ganNhat = e?.error?.error?.code || e?.error?.code || 'khong-ro';
+    kq = await goiGroq(client, messages, false);
+    LOI_NOI_KHUON.thanh += 1;
+  }
+  const chon = kq?.choices?.[0];
+  chu = chon?.message?.content || '';
+  if (!chu.trim()) {
+    throw new LoiGoi('tra-loi-rong',
+      `Cô giáo máy không trả lời được (finish_reason: ${chon?.finish_reason || 'không rõ'}).`);
+  }
+  return ketQua(chu, goc, { buocTool, lyDoDung });
+}
+
+/**
+ * Gói kết quả nhánh ReAct — dựng ở MỘT chỗ vì `hoiMayCoTool` có hai đường ra.
+ *
+ * ⚠ Vân tay tính từ LỜI DẶN GỐC, không từ `messages` đã mọc thêm mấy lượt tool.
+ * Vân tay là để so MẪU lời dặn; gom cả kết quả tool vào thì mỗi lượt một vân tay
+ * (kết quả tool khác nhau theo chữ bé hỏi) — vừa vô dụng cho phép so, vừa thành
+ * một mã theo dõi được từng lượt. Đúng lý lẽ ở đầu `vantay.js`.
+ *
+ * Và `nhanhTool: true` vào vân tay: cùng một lời dặn mà đi nhánh ReAct thì cách
+ * sinh khác hẳn, nên "thứ gì đổi thì kết quả đổi, nên phải tính".
+ */
+function ketQua(chu, goc, { buocTool, lyDoDung }) {
+  const loiDan = goc.find((m) => m.role === 'system')?.content || '';
+  return {
+    chu,
+    moHinh: MO_HINH,
+    noiKhuon: false,
+    buocTool,
+    lyDoDung,
+    ...vanTay('luyennoi', locKhung(loiDan), {
+      moHinh: MO_HINH, nhiet: 0.4, token: TOKEN_TRA_LOI, nhanhTool: true,
     }),
   };
 }

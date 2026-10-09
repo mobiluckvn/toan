@@ -17,6 +17,7 @@ import { dungBang, datKeHoach } from '../lib/bangtrangthai.js';
 import { manhNhat } from '../lib/hoso.js';
 import { auth } from '../../../chung/lib/nenTang.js';
 import { doc as docLen, docDoan, docDuoc, coGiong, thoiDoc } from '../lib/doclen.js';
+import { tuCanPhat } from '../lib/hoico.js';
 import { batDauNghe, ngheDuoc, loiDocDuoc, xinMicroChiTiet, MICRO, TIENG } from '../lib/nghenoi.js';
 import { chamTot, chamCau, datNoi, loiKhen } from '../lib/chamnoi.js';
 
@@ -446,6 +447,14 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
          thứ tiếng — trong đó thường có lẫn chính từ bé đang học. */
       (async () => {
         thoiDoc();
+        /* ── CÔ XIN PHÁT LẠI MỘT CHỮ (việc V11) ──
+           Bé hỏi "cô ơi chữ này đọc sao?" thì cô gọi tool `nghe_lai`, và tool ấy
+           KHÔNG phát gì — nó thuần. Việc phát là ở đây.
+           ⚠ ĐỌC CHỮ ẤY TRƯỚC câu của cô, chậm hơn một nhịp. Đọc sau thì nó dính
+           vào đuôi lời giải thích và bé nghe thành một câu dài; mà bé vừa hỏi
+           đúng chữ ấy, nên chữ ấy phải là thứ bé nghe đầu tiên. */
+        const xinPhat = tuCanPhat(tra.buocTool);
+        if (xinPhat) await docLen(xinPhat, 'en-GB', { nhanh: 0.75 });
         if (tra.en) await docLen(tra.en, 'en-GB', { nhanh: 0.9 });
         await docDoan(tachTheoTieng(tra.vi, von, mocEn));
       })();
