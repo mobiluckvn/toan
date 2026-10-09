@@ -21,6 +21,7 @@ import {
   viecTiepTheo, cauHopLe, soiCau, cauThayThe, loaiOTrong, tachTheoTieng,
   tinhBuoi, loiKet, tuLoiKetHopLe, cauHoiSoThich, PHUT_TOI_DA, DAT_LIEN_DE_XONG,
   loiVietHopLe, XUNG_HO_CAM,
+  laTuSo, dienDuocVaoO, dienHetO,
   buocTiepTheo, dienBuoc, dongBuoc, xenKe, buocSua, luotBeCuoi, luotLuyen, SUA_TOI_DA,
   LY_DO_BAC, loiNhacSua, loiNhacSuaViet, SUA_CO_TOI_DA, NHAC_SUA_TOI_DA_CHU,
 } from '../src/mon/tienganh/lib/phongnoi.js';
@@ -460,6 +461,174 @@ test('ô trống biết mình thuộc loại nào', () => {
   assert.equal(loaiOTrong("Hi, I'm + [Name]."), 'ten');
   assert.equal(loaiOTrong('I like + [Noun].'), 'tu');
   assert.equal(loaiOTrong('không có ô trống'), null);
+  /* ── BỐN LOẠI Ô NỮA, vá 09-10-2026 ── */
+  assert.equal(loaiOTrong("He's + [Number]."), 'so');
+  assert.equal(loaiOTrong('How old is she? - She\'s + [Age].'), 'so');
+  assert.equal(loaiOTrong("He's + [Verb-ing]."), 'ing');
+  assert.equal(loaiOTrong("They're + [V-ing]."), 'ing');
+  assert.equal(loaiOTrong('I + [past verb] + yesterday.'), 'qk');
+  assert.equal(loaiOTrong('How many + [Noun-plural]?'), 'nhieu');
+  assert.equal(loaiOTrong('The + [Plural Noun] + are here.'), 'nhieu');
+});
+
+/**
+ * ══ Ô TRỐNG NHẬN BỪA MỌI TỪ CỦA BÀI — vá 09-10-2026 ══
+ *
+ * Bản cũ chỉ biết hai loại ô: tên người, và "ô nhận từ bất kỳ". Đo thật qua Groq,
+ * cô giáo máy nói ra những câu này và cả hai đi qua `soiCau` SẠCH:
+ *
+ *   "Do you live in this sixteen? - Yes, I do."    ô `[place]` nhận một CON SỐ
+ *   "He's truck."                                   ô `[Number]` nhận một danh từ
+ *
+ * Đúng họ với "Bye, bike." bác bắt 14-08 — lần ấy chỉ vá riêng ô tên, và mọi ô còn
+ * lại hở y nguyên cho tới nay.
+ */
+test('ô kiểu SỐ chỉ nhận con số, và ô thường thì TRỪ con số ra', () => {
+  const b = bai('X', ['truck', 'bus'], [["He's six.", "He's + [Number]."]]);
+  b.knowledgeCore.vocabulary.push({ tu: 'six', nghia: 'sáu (6)' });
+  const von = vonTu({ baiNay: b });
+  assert.equal(soiCau("He's six.", { von, tenBe: 'Bo' }).ok, true, 'câu của chính sách');
+  assert.equal(soiCau("He's truck.", { von, tenBe: 'Bo' }).ok, false,
+    'ô [Number] nhận một danh từ — đúng câu cô giáo máy đã nói ra thật');
+
+  /* Chiều ngược: con số không được điền vào ô thường. */
+  const c = bai('Y', ['tower'], [['Do you live in this tower?', 'Do you live in this + [place]?']]);
+  c.knowledgeCore.vocabulary.push({ tu: 'sixteen', nghia: 'mười sáu (16)' });
+  const v2 = vonTu({ baiNay: c });
+  assert.equal(soiCau('Do you live in this tower?', { von: v2, tenBe: 'Bo' }).ok, true);
+  assert.equal(soiCau('Do you live in this sixteen?', { von: v2, tenBe: 'Bo' }).ok, false,
+    'con số điền vào ô [place] — đúng câu đã đo được trên bản thật');
+});
+
+test('CON SỐ nhận ra từ lời chú của sách, không từ một danh sách gõ tay', () => {
+  /* Lời chú của sách luôn kèm chữ số: "mười một (11)" · "hai mươi (20)". Gõ tay một
+     danh sách thì quyển sau thêm số mới là nó lọt, mà không gì kêu. */
+  assert.equal(laTuSo({ tu: 'eleven', nghia: 'mười một (11)' }), true);
+  assert.equal(laTuSo({ tu: 'twenty', nghia: 'hai mươi (20)' }), true);
+  assert.equal(laTuSo({ tu: 'two', nghia: 'hai' }), true, 'SO_DEM vẫn là lưới thứ hai');
+  assert.equal(laTuSo({ tu: 'brother', nghia: 'anh, em trai' }), false);
+  assert.equal(laTuSo({ tu: 'sure', nghia: 'chắc chắn' }), false);
+});
+
+test('ô DẠNG BIẾN ĐỔI nhận cả mục từ ĐÃ Ở dạng ấy sẵn', () => {
+  /* ⚠ Lớp 4 unit 20 dạy hẳn mục từ `putting up a tent` với `dang_ing: null` — vì
+     chính đầu mục đã là dạng -ing. Chỉ nhận `dang_ing` thì SÁU câu của chính sách
+     bị bác. Đã đo bằng cách so bản mới với bản cũ trên 711 câu sách. */
+  const t = [{ tu: 'putting up a tent', nghia: 'dựng lều', dang_ing: null },
+             { tu: 'read', nghia: 'đọc', dang_ing: 'reading', dang_qk: 'read' }];
+  assert.ok(dienDuocVaoO('ing', t).includes('putting up a tent'));
+  assert.ok(dienDuocVaoO('ing', t).includes('reading'));
+  assert.ok(!dienDuocVaoO('ing', t).includes('read'), 'dạng gốc KHÔNG điền vào ô -ing');
+});
+
+/**
+ * ══ ĐƯỜNG LUI CUỐI TỰ SINH RA CÂU HỎNG — vá 09-10-2026 ══
+ *
+ * `cauThayThe` chú thích là "LUÔN ĐÚNG, vì nó ghép từ chính dữ liệu bài". Đo thật
+ * trên cả bốn quyển, 846 lượt: 80 câu KHÔNG hợp lệ, hỏng theo kiểu tệ nhất — còn
+ * nguyên dấu ngoặc, và bé nghe cô đọc to cả dấu ngoặc:
+ *
+ *   "It's a bell [Noun]."        "How many clocks? - [Number]."
+ *
+ * Vì phép điền cũ thay ĐÚNG MỘT ô. `soiCau` bác nó (luật `oTrong`), nhưng
+ * `hoiCoGiao` lấy câu của `cauThayThe` rồi TRẢ THẲNG — nó tin lời chú trên.
+ *
+ * Cổng cũ `câu thay thế LUÔN hợp lệ` chỉ thử B01 — một bài MỘT ô — nên chưa bao giờ
+ * đi qua chỗ hỏng. Nay thử trên DỮ LIỆU THẬT của cả bốn quyển.
+ */
+test('câu thay thế LUÔN hợp lệ — trên dữ liệu THẬT của cả bốn quyển', () => {
+  let thu = 0;
+  for (const ma of QUYEN) {
+    for (const k of kbCua(ma)) {
+      const b = baiTrong(ma, k.bai);
+      const von = vonTu({ baiNay: b, baiCu: [], daDat: false });
+      for (let n = 0; n < 9; n += 1) {
+        const v = viecTiepTheo({ von, lichSu: Array.from({ length: n }, () => ({ vai: 'may', en: 'x' })) });
+        if (!v) continue;
+        const t = cauThayThe(v, 'Bo');
+        thu += 1;
+        assert.ok(t && t.en && t.vi, `${ma}/${b.id} lượt ${n}: không dựng được câu thay thế`);
+        assert.ok(!/[[\]]/.test(t.en),
+          `${ma}/${b.id} lượt ${n}: câu thay thế còn dấu ngoặc — bé sẽ nghe đọc to: "${t.en}"`);
+        assert.ok(cauHopLe(t.en, { von, tenBe: 'Bo' }),
+          `${ma}/${b.id} lượt ${n}: câu thay thế "${t.en}" lại KHÔNG hợp lệ`);
+      }
+    }
+  }
+  assert.ok(thu > 500, `chỉ thử được ${thu} lượt — có phải vòng lặp hỏng?`);
+});
+
+/**
+ * ⚠ CHỖ HỎNG THỨ BA của cùng một lỗi, và là chỗ chỉ lộ ra LÚC CHẠY.
+ *
+ * Bé thích "bus" thì ô `[Number]` của mẫu tuổi nhận "bus" → "He's bus." Nhìn tệp
+ * kịch bản thì sạch, vì `{thich}` chỉ được điền lúc chạy, theo sở thích TỪNG BÉ.
+ * (Hai chỗ kia: `soiCau` và bộ sinh kịch bản `tools/sinh_kichban_noi.py`.)
+ */
+test('thứ bé THÍCH chỉ điền vào ô thường, không điền vào ô có kiểu', () => {
+  const b = { loai: 'thay', khung: "He's + [Number].", en: "He's {thich}.", mac_dinh: 'sixteen' };
+  assert.equal(dienBuoc(b, { thich: 'bus' }), "He's sixteen.",
+    'ô kiểu SỐ phải dùng mac_dinh, không dùng thứ bé thích');
+  const c = { loai: 'thay', khung: 'I like + [Noun].', en: 'I like {thich}.', mac_dinh: 'milk' };
+  assert.equal(dienBuoc(c, { thich: 'fish' }), 'I like fish.',
+    'ô thường thì VẪN phải nói về thứ bé thích — đừng vá rộng quá');
+  assert.equal(dienBuoc(c, {}), 'I like milk.');
+});
+
+/**
+ * Cổng này soi DỮ LIỆU ĐÃ PHÁT HÀNH, không soi mã: bốn câu dưới đây từng nằm thật
+ * trong `kichban_noi.json` và bé nghe chúng suốt buổi.
+ *   ta1/B11  "She's bus."  "He's bus."     ta2/B12  "The grape are on the table."
+ *   ta2/B14  "He's/She's brother."
+ * Bộ sinh Python đã vá; cổng này giữ cho chúng đừng bò lại vào sau một lần sinh lại.
+ */
+test('kịch bản đã phát hành KHÔNG còn câu nào sai kiểu ô', () => {
+  const xau = [];
+  for (const k of MOI_KB) {
+    if (k.dang === 'tranh') continue;
+    const von = vonCua(k);
+    for (const b of k.buoc) {
+      if (!b.en) continue;
+      /* Thử CẢ HAI đường điền: mặc định, và theo sở thích của bé. */
+      for (const thich of ['', ...(k.tu || []).slice(0, 4)]) {
+        const en = dienBuoc(b, { tenBe: 'Bo', thich });
+        if (!cauHopLe(en, { von, tenBe: 'Bo' })) xau.push(`${k.ma}/${k.bai} [${b.loai}] "${en}"`);
+      }
+    }
+  }
+  assert.deepEqual(xau, [], `câu sai trong kịch bản đã phát hành:\n  ${xau.join('\n  ')}`);
+});
+
+test('ĐIỀN HẾT ô, hoặc chịu — không bao giờ để sót một ô', () => {
+  const t = [{ tu: 'bell', nghia: 'cái chuông' }];
+  assert.equal(dienHetO('It\'s a + [Noun].', t), "It's a bell.");
+  /* Khung hai ô mà chỉ có một từ thì phải CHỊU, chứ không điền cùng chữ vào cả hai:
+     "It's a bell bell." · "Can you village a village?" — 62 câu như thế. */
+  assert.equal(dienHetO('How many + [Noun]? - [Number].', t), null,
+    'không có số để điền ô thứ hai thì phải trả null');
+});
+
+/**
+ * ⚠ KHÔNG PHẢI CHỖ NÀO CŨNG VÁ ĐƯỢC, và nói thẳng ra đây.
+ *
+ * `"Who's this? - It's my sure."` VẪN đi qua, vì ta3 unit 11 có dạy từ `sure`, và
+ * mục từ vựng KHÔNG có trường từ loại (740 mục: tu · ma · ipa · nghia · so_nhieu ·
+ * dang_ing · dang_qk · am · amO). Đoán "bố là người, chắc chắn thì không" từ lời
+ * chú tiếng Việt là dựng một cổng ghim vào CHÍNH TẢ của lời chú — đúng cái bẫy đã
+ * dính bốn lần ở kho này.
+ *
+ * Việc còn lại là việc của DỮ LIỆU: thêm trường từ loại vào mục từ vựng. Phép canh
+ * này ĐÒI nó vẫn đi qua, để ngày nào có trường ấy thì cổng đỏ lên và nhắc người sửa
+ * quay lại đây — chứ không nằm im như một chỗ đã quên.
+ */
+test('chỗ CHƯA vá được: ô kiểu loại từ mà dữ liệu không nói được', () => {
+  const b = bai('Z', ['brother', 'sure'], [["It's my brother.", "It's my + [Family member]."]]);
+  const von = vonTu({ baiNay: b });
+  assert.equal(soiCau("It's my brother.", { von, tenBe: 'Bo' }).ok, true);
+  assert.equal(soiCau("It's my sure.", { von, tenBe: 'Bo' }).ok, true,
+    'nếu câu này ĐÃ bị bác thì dữ liệu đã có từ loại — quay lại loaiOTrong và khai thêm');
+  assert.ok(!('tuLoai' in (b.knowledgeCore.vocabulary[0] || {})),
+    'mục từ vựng nay CÓ trường từ loại — đã đến lúc vá ô kiểu loại từ');
 });
 
 test('câu thay thế LUÔN hợp lệ — đó là cả lý do nó tồn tại', () => {

@@ -15,6 +15,7 @@ import { readFileSync } from 'node:fs';
 import {
   MO_HINH, TOI_DA_LUOT, TOI_DA_CHU_MOT_LUOT, TOI_DA_CHU_CA_GOI,
   NGHI_NGAN, TOKEN_TRA_LOI, TOI_DA_CHU_LOI_DAN, soiGoi, hoiMay, LoiGoi,
+  laLoiKhuon, LOI_NOI_KHUON, LOI_KHUON_JSON,
 } from '../functions/src/luyennoi.js';
 
 let pass = 0, fail = 0;
@@ -90,6 +91,65 @@ console.log('\n── gọi Groq ──');
   try { await hoiMay({ messages: loi(2) }, rong('length')); } catch (e) { batDuoc = e; }
   t('Groq trả RỖNG thì ném lỗi nói rõ', batDuoc instanceof LoiGoi && batDuoc.ma === 'tra-loi-rong');
   t('và nói kèm finish_reason để còn lần ra', /length/.test(batDuoc?.message || ''));
+}
+
+console.log('\n── Groq bác vì KHUÔN thì nới đúng một lần ──');
+{
+  /* ⚠ ĐO THẬT 09-10: buổi dài tới lượt 6+ thì Groq trả 400 và bé thấy "Cô giáo máy
+     chưa trả lời được" — ta5/B11 chết LIỀN NĂM LƯỢT. Mô hình trả chữ trần, và
+     `response_format` nghiêm ngặt làm Groq bác ngay trên máy chủ nó, nên
+     `docTraLoi` — cái hàm viết RA để đỡ đúng ca ấy — không bao giờ nhận được chữ.
+     Kiểm riêng: 10/10 lần hỏng ở lời gọi THỨ NHẤT của lượt, tức lỗi có sẵn, không
+     phải do vòng gọi lại của V1. */
+  const loi400 = (ma) => Object.assign(new Error(`400 {"error":{"code":"${ma}"}}`),
+    { status: 400, error: { error: { code: ma } } });
+
+  t('nhận ra lỗi KHUÔN', LOI_KHUON_JSON.every((ma) => laLoiKhuon(loi400(ma))));
+  /* Khoá sai và mạng hỏng KHÔNG được nới khuôn: nới chỉ tốn thêm một lời gọi rồi
+     hỏng y hệt, mà khoá sai thì người lớn phải đi sửa chứ không phải thử lại. */
+  t('nhưng KHÔNG nhận lầm khoá sai',
+    !laLoiKhuon(Object.assign(new Error('401'), { status: 401 })));
+  t('và không nhận lầm 400 vì lý do khác',
+    !laLoiKhuon(Object.assign(new Error('400 too many turns'), { status: 400 })));
+
+  const truoc = { ...LOI_NOI_KHUON };
+  let goiDa = [];
+  const bacRoiQua = (ma) => () => ({ chat: { completions: { create: async (o) => {
+    goiDa.push(o);
+    if (goiDa.length === 1) throw loi400(ma);
+    return { choices: [{ message: { content: 'Here you go: {"en":"Hi.","vi":"Chào con."}' } }] };
+  } } } });
+
+  const kq = await hoiMay({ messages: loi(2) }, bacRoiQua('json_validate_failed'));
+  t('gọi lại ĐÚNG một lần nữa', goiDa.length === 2);
+  t('lần đầu vẫn đòi JSON nghiêm ngặt', goiDa[0].response_format?.type === 'json_object');
+  /* Nới khuôn = BỎ `response_format`, không phải đổi sang khuôn khác: Groq chỉ có
+     một kiểu, và chính nó là chỗ bác. */
+  t('lần nới khuôn thì BỎ response_format', goiDa[1].response_format === undefined);
+  t('mọi nút vặn khác giữ nguyên',
+    goiDa[1].model === MO_HINH && goiDa[1].max_tokens === TOKEN_TRA_LOI
+    && goiDa[1].reasoning_effort === NGHI_NGAN && goiDa[1].temperature === goiDa[0].temperature);
+  t('chữ trần CÓ LỜI DẪN vẫn về được tới máy con', /\{"en":"Hi\."/.test(kq.chu));
+  t('lượt nới khuôn đi ra kèm dấu', kq.noiKhuon === true);
+  t('và được đếm', LOI_NOI_KHUON.so - truoc.so === 1 && LOI_NOI_KHUON.thanh - truoc.thanh === 1);
+  /* Lượt nới khuôn phải có vân tay RIÊNG: bỏ `response_format` là đổi cách sinh,
+     nên gom lẫn với lượt thường thì bảng so ΔC trộn hai thứ khác nhau. */
+  let binh = null;
+  const ok = () => ({ chat: { completions: { create: async () => ({ choices: [{ message: { content: '{"en":"Hi.","vi":"x"}' } }] }) } } });
+  binh = await hoiMay({ messages: loi(2) }, ok);
+  t('vân tay lượt nới khuôn KHÁC lượt thường', kq.vanTayPrompt !== binh.vanTayPrompt);
+  t('lượt thường không mang dấu nới khuôn', binh.noiKhuon === false);
+
+  /* Nới rồi vẫn hỏng thì ĐỪNG thử nữa: thử mãi chỉ làm bé ngồi đợi lâu hơn trước
+     khi thấy cùng một dòng lỗi. */
+  goiDa = [];
+  const bacMai = () => ({ chat: { completions: { create: async (o) => {
+    goiDa.push(o); throw loi400('output_parse_failed');
+  } } } });
+  let batDuoc = null;
+  try { await hoiMay({ messages: loi(2) }, bacMai); } catch (e) { batDuoc = e; }
+  t('nới một lần rồi thôi', goiDa.length === 2);
+  t('và lỗi cuối vẫn ném ra nguyên', batDuoc?.status === 400);
 }
 
 console.log('\n── máy chủ KHÔNG lưu gì ──');

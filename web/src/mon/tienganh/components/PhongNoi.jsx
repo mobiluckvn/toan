@@ -322,7 +322,8 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
                      /* `nhan` — lượt này cô trả lời theo nhánh nào (việc V2). Ghi
                         vào bản ghi buổi để đếm được PHÂN PHỐI nhãn: nhánh nào
                         không bao giờ chạy thì lời dặn của nó chưa ai đọc. */
-                     nhan: tra.nhan ?? null, doTin: tra.doTin ?? null };
+                     nhan: tra.nhan ?? null, doTin: tra.doTin ?? null,
+                     noiKhuon: tra.noiKhuon || null };
       const sau = [...ds, luot];
       datLichSu(sau);
       /* ── LƯỢT NÓI Ở PHÒNG LUYỆN VÀO ENGINE (bác chốt 23-08-2026) ──

@@ -370,10 +370,108 @@ export function viecTiepTheo({
  * và tệ hơn là dạy bé một câu sai. Ô trống có LOẠI: chỗ của tên người thì phải là
  * tên người, chỗ của danh từ mới nhận từ vựng của bài.
  */
+/**
+ * ⚠ BA LOẠI Ô NỮA, SUY THẲNG TỪ DỮ LIỆU — vá 09-10-2026.
+ *
+ * Bản cũ chỉ biết hai loại: ô tên người, và "ô nhận từ bất kỳ". Nên mọi ô khác
+ * nhận MỌI từ của bài, và đo thật qua Groq thì nó đẻ ra những câu như:
+ *
+ *   "Do you live in this sixteen? - Yes, I do."   ô `[place]` nhận một CON SỐ
+ *   "Who's this? - It's my sure."                 ô `[Family member]` nhận `sure`
+ *
+ * Cả hai đi qua `soiCau` SẠCH, vì `sixteen` và `sure` đều là từ bài có dạy. Đúng
+ * họ với "Bye, bike." bác bắt 14-08 — lần ấy chỉ vá riêng ô tên, và mười một tháng
+ * sau mọi ô còn lại vẫn hở y nguyên.
+ *
+ * ── CHỈ KHAI LOẠI NÀO DỮ LIỆU TỰ NÓI ĐƯỢC ──
+ * Mục từ vựng KHÔNG có trường từ loại (740 mục: `tu` · `ma` · `ipa` · `nghia` ·
+ * `so_nhieu` · `dang_ing` · `dang_qk` · `am` · `amO`). Nên bốn loại dưới đây là
+ * hết những gì suy được mà KHÔNG phải đoán:
+ *
+ *   ten     tên người        — như cũ
+ *   so      con số           — `nghia` của mục từ có chữ số ("mười một (11)"), hoặc
+ *                              nằm trong `SO_DEM`. 28/740 mục, 12 ô trong dữ liệu.
+ *   ing·qk·nhieu  dạng biến đổi — ô tự khai nó muốn dạng nào, và dạng ấy nằm NGAY
+ *                              trong mục từ (`dang_ing` · `dang_qk` · `so_nhieu`).
+ *                              27 ô trong dữ liệu.
+ *
+ * `[Family member]` · `[place]` · `[Food]` thì dữ liệu KHÔNG nói được. Đoán từ lời
+ * chú tiếng Việt ("bố" là người, "chắc chắn" thì không) là dựng một cổng ghim vào
+ * CHÍNH TẢ của lời chú — đúng cái bẫy đã dính bốn lần ở kho này. Việc còn lại là
+ * việc của DỮ LIỆU: thêm một trường từ loại vào mục từ vựng. Nói thẳng ra đây để
+ * không ai tưởng chỗ này đã kín.
+ */
 export function loaiOTrong(congThuc) {
   const m = String(congThuc || '').match(/\[([^\]]+)\]/);
   if (!m) return null;
-  return /name|tên/i.test(m[1]) ? 'ten' : 'tu';
+  const o = m[1].toLowerCase();
+  if (/name|tên/i.test(o)) return 'ten';
+  /* Đặt TRƯỚC `so`: `[Number of things]` hiếm, mà `[Noun-plural]` thì không. */
+  if (/plural|số nhiều/.test(o)) return 'nhieu';
+  if (/-ing|^v-?ing|\bing\b/.test(o)) return 'ing';
+  if (/past|\bqk\b|\bv2\b/.test(o)) return 'qk';
+  if (/number|age|tuổi|\bsố\b/.test(o)) return 'so';
+  return 'tu';
+}
+
+/* Đầu mục đã ở dạng -ing sẵn — tiếng ĐẦU của nó kết thúc bằng "ing". Soi tiếng đầu
+   chứ không soi cả chuỗi: `playing tug of war` có "ing" ở tiếng đầu, còn
+   `go upstairs` thì không có ở đâu cả. */
+const laDangIng = (x) => /ing$/i.test(String(x || '').trim().split(/\s+/)[0] || '');
+
+/**
+ * ĐIỀN HẾT MỌI Ô của một khung, mỗi ô theo ĐÚNG loại của nó. Thiếu một ô → `null`.
+ *
+ * ⚠ VÌ SAO PHẢI CÓ: `cauThayThe` chú thích là "LUÔN ĐÚNG, vì nó ghép từ chính dữ
+ * liệu bài". Đo thật trên cả bốn quyển, 846 lượt: 80 câu thay thế KHÔNG hợp lệ, và
+ * hỏng theo kiểu tệ nhất — còn nguyên dấu ngoặc:
+ *
+ *   "It's a bell [Noun]."          "How many clocks? - [Number]."
+ *
+ * Vì phép điền cũ dùng `replace(/\[[^\]]+\]/, d)` — thay ĐÚNG MỘT ô, ô thứ hai còn
+ * nguyên. `soiCau` bác nó (luật `oTrong`, thêm 26-08), nhưng `hoiCoGiao` lấy câu
+ * của `cauThayThe` rồi TRẢ THẲNG, không soi lại — vì nó tin lời chú trên. Thế là bé
+ * nghe cô đọc to cả dấu ngoặc vuông.
+ *
+ * Thiếu filler cho một ô thì trả `null` chứ KHÔNG điền bừa: `cauThayThe` còn hai
+ * đường lui luôn an toàn (chính từ mục tiêu, và câu ví dụ của sách).
+ */
+export function dienHetO(khung, tu, tenBe = '') {
+  let ra = String(khung || '').replace(/\s*\+\s*/g, ' ');
+  for (let i = 0; i < 6 && /\[[^\]]+\]/.test(ra); i += 1) {
+    const o = ra.match(/\[[^\]]+\]/)[0];
+    const d = dienDuocVaoO(loaiOTrong(o), tu, tenBe).find(Boolean);
+    if (!d) return null;
+    ra = ra.replace(o, d);
+  }
+  return /\[|\]/.test(ra) ? null : ra;
+}
+
+/** Mục từ này là một CON SỐ. Suy từ lời chú của sách, không từ một danh sách tay. */
+export const laTuSo = (t) => SO_DEM.includes(String(t?.tu || '').toLowerCase())
+  || /\(\s*\d+\s*\)|^\s*\d+\s*$/.test(String(t?.nghia || ''));
+
+/**
+ * NHỮNG GÌ ĐIỀN ĐƯỢC VÀO MỘT Ô.
+ *
+ * Tách ra khỏi `soiCau` để `cauThayThe` và cổng dùng CÙNG một luật — hai bản của
+ * cùng một luật là chỗ sửa một bên rồi hai bên nhận khác nhau.
+ */
+export function dienDuocVaoO(loai, tu, tenBe = '') {
+  if (loai === 'ten') return [tenBe, 'Bill', 'Mai'];
+  /* ⚠ MỤC TỪ CÓ THỂ ĐÃ LÀ DẠNG ẤY SẴN, và lúc ấy trường dẫn xuất để `null`.
+     Lớp 4 unit 20 dạy hẳn mục từ `putting up a tent` · `telling a story` với
+     `dang_ing: null` — vì chính đầu mục đã là dạng -ing. Chỉ nhận `dang_ing` thì
+     sáu câu của CHÍNH SÁCH bị bác. Đã đo: so bản mới với bản cũ trên 711 câu sách,
+     đúng sáu câu ấy là lỗi mới, và đây là chỗ sinh ra chúng. */
+  if (loai === 'ing') return tu.flatMap((t) => [t.dang_ing, laDangIng(t.tu) ? t.tu : null]);
+  if (loai === 'qk') return tu.flatMap((t) => [t.dang_qk, t.dang_qk ? null : t.tu]);
+  if (loai === 'nhieu') return tu.flatMap((t) => [t.so_nhieu, t.so_nhieu ? null : t.tu]);
+  if (loai === 'so') return tu.filter(laTuSo).map((t) => t.tu);
+  /* ⚠ Ô THƯỜNG THÌ TRỪ CON SỐ RA. Đó là chỗ "this sixteen" lọt qua: `sixteen` là
+     từ bài có dạy, nên nó điền được vào mọi ô. Con số đã có ô riêng của nó. */
+  return tu.filter((t) => !laTuSo(t))
+    .flatMap((t) => [t.tu, t.so_nhieu, t.so_it, t.dang_ing, t.dang_qk]);
 }
 
 /** Lời dặn riêng cho lượt này, ghép vào cuối lời dặn chung. */
@@ -875,8 +973,7 @@ export function soiCau(en, { von, tenBe = '', cauTruoc = '', tat = null } = {}) 
          (`so_nhieu` · `so_it` · `dang_ing` · `dang_qk`), không phải chữ mới. Từ nào
          bài không dạy thì vẫn không có đường vào — "They are riding cars." vẫn bị
          gạt vì `car` không nằm trong vốn của bài ấy. */
-      const dienDuoc = loai === 'ten' ? [tenBe, 'Bill', 'Mai']
-        : tu.flatMap((t) => [t.tu, t.so_nhieu, t.so_it, t.dang_ing, t.dang_qk]);
+      const dienDuoc = dienDuocVaoO(loai, tu, tenBe);
       for (const d of dienDuoc) {
         if (!d) continue;
         const thu = khung.replace(/\s*\+\s*/g, ' ').replace(/\[[^\]]+\]/, d);
@@ -1061,9 +1158,19 @@ export function cauThayThe(viec, tenBe = 'con', cauTruoc = '') {
   if (!viec) return null;
   const { tu, kieu, mau } = viec;
 
-  const dienVao = (m, d) => (m.congThuc
-    ? m.congThuc.replace(/\s*\+\s*/g, ' ').replace(/\[[^\]]+\]/, d)
-    : m.cau);
+  /* Điền HẾT ô, mỗi ô theo loại của nó — xem `dienHetO`. Không điền nổi thì trả
+     `null`, và mấy đường lui dưới gánh.
+     ⚠ CHỈ NHẬN KHUNG MỘT Ô. Khung hai ô thì ta chỉ có đúng MỘT từ mục tiêu để
+     điền, nên cả hai ô nhận cùng chữ ấy: "It's a bell bell." · "Can you village a
+     village?" — 62 câu như thế trên bốn quyển. Và `soiCau` cũng không soi nổi khung
+     hai ô (nó chỉ điền ô đầu rồi bác phần còn lại), nên câu dựng ra không có đường
+     nào được công nhận. Gặp khung hai ô thì nhường cho hai đường lui dưới: chính từ
+     mục tiêu, và câu ví dụ của sách — cả hai luôn hợp lệ. */
+  const dienVao = (m, dsTu) => {
+    if (!m.congThuc) return m.cau;
+    if ((m.congThuc.match(/\[[^\]]+\]/g) || []).length !== 1) return null;
+    return dienHetO(m.congThuc, dsTu, tenBe);
+  };
 
   /* Xếp sẵn mấy phương án, rồi lấy phương án ĐẦU TIÊN khác câu lượt trước.
      Bản đầu chỉ dựng đúng một câu — mà nếu chính nó trùng câu trước thì luật chống
@@ -1075,9 +1182,13 @@ export function cauThayThe(viec, tenBe = 'con', cauTruoc = '') {
   } else if (kieu === KIEU_VIEC.mau) {
     chon.push({ en: mau.cau, vi: 'Con nghe rồi nói lại cả câu này nhé.' });
   } else {
-    const loai = loaiOTrong(mau.congThuc);
-    const dien = loai === 'ten' ? tenBe : tu.tu;
-    chon.push({ en: dienVao(mau, dien), vi: `Cùng một mẫu câu, nay thay bằng “${dien}”. Con nói lại nhé.` });
+    /* ⚠ ĐIỀN THEO ĐÚNG LUẬT CỦA Ô, dùng chung `dienDuocVaoO` với `soiCau`. Bản cũ
+       nhét `tu.tu` vào mọi ô không phải ô tên — nên ô `[Verb-ing]` nhận dạng gốc và
+       ô `[Number]` nhận một danh từ, tức đường lui cuối tự sinh ra câu hỏng. */
+    const en = dienVao(mau, [tu]);
+    if (en) {
+      chon.push({ en, vi: `Cùng một mẫu câu, nay điền từ của bài vào. Con nói lại nhé.` });
+    }
   }
   /* Đường lui luôn có: chính TỪ mục tiêu, và câu ví dụ. Một trong hai bao giờ cũng
      khác câu lượt trước, vì một cái là từ rời còn một cái là cả câu. */
@@ -1665,9 +1776,19 @@ const BUOC_DE = new Set(['tu', 'goiY']);
 /** Điền {ten} và {thich} vào câu của bước. Thiếu thì dùng `mac_dinh` đã ghi sẵn. */
 export function dienBuoc(buoc, { tenBe = '', thich = '' } = {}) {
   if (!buoc?.en) return '';
+  /* ⚠ THỨ BÉ THÍCH CHỈ ĐIỀN ĐƯỢC VÀO Ô THƯỜNG — vá 09-10-2026.
+     Bé thích "bus" thì ô `[Number]` của mẫu tuổi nhận "bus": "He's bus." Chỗ hỏng
+     thứ BA của cùng một lỗi (hai chỗ kia: `soiCau` và bộ sinh kịch bản Python), và
+     là chỗ duy nhất chỉ lộ ra lúc CHẠY, vì nó phụ thuộc vào sở thích của từng bé —
+     nhìn tệp JSON thì kịch bản trông sạch.
+     Ô có kiểu thì dùng `mac_dinh`: bộ sinh nay tính nó theo đúng loại ô. Mất một
+     chút "nói về thứ con thích" ở mấy mẫu ấy, nhưng câu thì không bao giờ sai —
+     và một câu sai thì bé nhại theo. */
+  const loai = loaiOTrong(buoc.khung);
+  const duocThich = !loai || loai === 'tu';
   return buoc.en
     .replace(/\{ten\}/g, tenBe || buoc.mac_dinh || 'con')
-    .replace(/\{thich\}/g, thich || buoc.mac_dinh || '');
+    .replace(/\{thich\}/g, (duocThich && thich) || buoc.mac_dinh || '');
 }
 
 export function buocTiepTheo({

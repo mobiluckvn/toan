@@ -133,6 +133,10 @@ export async function hoiCoGiao({
        chính bé; lưu thêm một bản trong lượt của cô là nhân đôi vô cớ. */
     tra.nhan = nhan;
     tra.doTin = doTin;
+    /* Lượt mà máy chủ phải NỚI KHUÔN JSON mới lấy được câu trả lời. Đếm được thì
+       mới biết lỗi 400 của buổi dài đã hết hẳn hay chỉ bị đẩy xuống một tầng —
+       xem `LOI_NOI_KHUON` ở `functions/src/luyennoi.js`. */
+    tra.noiKhuon = data?.noiKhuon === true;
   }
 
   /* SOI LẠI CÂU TIẾNG ANH. Dặn dò không đủ: đã bảo rõ ô trống của `Bye, + [Name].`
@@ -346,7 +350,7 @@ export async function luuBuoi(uid, { maBuoi, quyen, baiId, tenBai, lichSu }) {
       luot: lichSu.map((x) => ({
         vai: x.vai, chu: x.chu, en: x.en || null, vi: x.vi || null,
         lanSua: x.lanSua ?? null, lanSuaViet: x.lanSuaViet ?? null,
-        nhan: x.nhan ?? null, doTin: x.doTin ?? null,
+        nhan: x.nhan ?? null, doTin: x.doTin ?? null, noiKhuon: x.noiKhuon ?? null,
       })),
       soLuot: lichSu.length,
       at: new Date().toISOString(),

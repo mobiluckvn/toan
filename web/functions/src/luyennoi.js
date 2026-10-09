@@ -119,17 +119,78 @@ export function soiGoi(du) {
 export const NGHI_NGAN = 'low';
 export const TOKEN_TRA_LOI = 800;
 
+/**
+ * ══ HAI NÚT VẶN TRÊN CHƯA ĐỦ — ĐO THẬT 09-10-2026 ══
+ *
+ * Khối chú thích trên nói đúng chỗ hỏng nhưng chưa nói hết đường hỏng. Chạy thật
+ * 54 lượt qua Groq: buổi dài tới lượt 6 trở đi vẫn 400, và quyển ta5/B11 chết LIỀN
+ * NĂM LƯỢT (l6→l10) — bé chỉ thấy "Cô giáo máy chưa trả lời được". Đã kiểm riêng
+ * để chắc không phải do vòng gọi lại của V1: 10/10 lần hỏng nằm ở lời gọi THỨ NHẤT
+ * của lượt, tức gói y như bản trước V1.
+ *
+ * Hai hình dạng, và chúng khác nhau:
+ *   `failed_generation: ""`            — đúng ca khối trên nói: tiêu hết token vào
+ *                                        phần nghĩ. Nới token chỉ đẩy nó xa ra.
+ *   `failed_generation: "Yes, I did…"`  — mô hình trả CHỮ TRẦN, hoặc kèm lời dẫn
+ *                                        quanh khối JSON.
+ *
+ * Hình dạng thứ hai mới là chỗ đau, vì máy con ĐÃ CÓ SẴN đường đỡ nó: `docTraLoi`
+ * ở `lib/phongnoi.js` viết rõ "mô hình được dặn trả JSON, nhưng KHÔNG được tin là
+ * nó luôn làm đúng — trả về chữ trần thì vẫn phải dùng được, đừng để màn trắng", và
+ * nó bóc được khối `{…}` nằm giữa lời dẫn. Nhưng `response_format` nghiêm ngặt làm
+ * Groq bác NGAY TRÊN MÁY CHỦ NÓ, nên chữ ấy không bao giờ về tới. Đường đỡ có thật,
+ * có chú thích tử tế, và chết câm. Chốt `tra-loi-rong` dưới đây cũng thế.
+ *
+ * ── VÌ SAO KHÔNG BỎ HẲN `response_format` ──
+ * Thử 3 lần không có nó: cả 3 đều về được chữ dùng được, NHƯNG 2/3 câu rồi bị
+ * `soiCau` bác (mô hình gộp cả câu hỏi lẫn câu đáp vào `en`). Bỏ hẳn là đổi một
+ * lỗi 400 cứng thành một lần bị soi bác ở MỌI lượt — đắt hơn hẳn.
+ *
+ * Nên giữ đường nghiêm ngặt làm đường chính, và chỉ NỚI KHUÔN ĐÚNG MỘT LẦN khi
+ * Groq bác vì khuôn. Lượt thường không đổi một li; lượt đáng lẽ chết thì nay có
+ * cơ hội thứ hai, và `docTraLoi` cuối cùng được làm việc nó sinh ra để làm.
+ */
+export const LOI_KHUON_JSON = ['json_validate_failed', 'output_parse_failed'];
+
+/** Đếm số lần phải nới khuôn. Không log (máy chủ không ghi gì) — chỉ đếm. */
+export const LOI_NOI_KHUON = { so: 0, thanh: 0, ganNhat: null };
+
+/** Lỗi này có phải "Groq bác vì KHUÔN" không — chứ không phải khoá sai hay mạng. */
+export function laLoiKhuon(e) {
+  if (e?.status !== 400) return false;
+  const ma = e?.error?.error?.code || e?.error?.code || '';
+  const loi = String(e?.message || '');
+  return LOI_KHUON_JSON.some((x) => ma === x || loi.includes(x));
+}
+
+const goiGroq = (client, messages, nghiemNgat) => client.chat.completions.create({
+  model: MO_HINH,
+  messages,
+  temperature: 0.4,
+  max_tokens: TOKEN_TRA_LOI,
+  reasoning_effort: NGHI_NGAN,
+  /* Nới khuôn = BỎ `response_format`, không phải đổi sang khuôn lỏng hơn: Groq chỉ
+     có một kiểu, và chính nó là chỗ bác. */
+  ...(nghiemNgat ? { response_format: { type: 'json_object' } } : {}),
+});
+
 export async function hoiMay(du, taoClient) {
   const messages = soiGoi(du);
   const client = taoClient();
-  const kq = await client.chat.completions.create({
-    model: MO_HINH,
-    messages,
-    temperature: 0.4,
-    max_tokens: TOKEN_TRA_LOI,
-    reasoning_effort: NGHI_NGAN,
-    response_format: { type: 'json_object' },
-  });
+  let noiKhuon = false;
+  let kq;
+  try {
+    kq = await goiGroq(client, messages, true);
+  } catch (e) {
+    if (!laLoiKhuon(e)) throw e;
+    /* ⚠ ĐÚNG MỘT LẦN. Nới khuôn rồi vẫn hỏng thì đó không còn là chuyện khuôn, và
+       thử mãi chỉ làm bé ngồi đợi lâu hơn trước khi thấy cùng một dòng lỗi. */
+    noiKhuon = true;
+    LOI_NOI_KHUON.so += 1;
+    LOI_NOI_KHUON.ganNhat = e?.error?.error?.code || e?.error?.code || 'khong-ro';
+    kq = await goiGroq(client, messages, false);
+    LOI_NOI_KHUON.thanh += 1;
+  }
   const chon = kq?.choices?.[0];
   const chu = chon?.message?.content || '';
 
@@ -160,8 +221,15 @@ export async function hoiMay(du, taoClient) {
   return {
     chu,
     moHinh: MO_HINH,
+    /* Lượt phải nới khuôn đi ra kèm dấu, để máy con còn đếm được trên bản thật. */
+    noiKhuon,
     ...vanTay('luyennoi', locKhung(loiDan), {
       moHinh: MO_HINH, nhiet: 0.4, token: TOKEN_TRA_LOI,
+      /* ⚠ CHỈ THÊM KHOÁ NÀY Ở LƯỢT NỚI KHUÔN. Thêm ở mọi lượt là mọi vân tay cũ
+         đổi hết, và bảng so ΔG mất sạch phần đã gom được. Còn gom lượt nới khuôn
+         lẫn với lượt thường thì cũng sai: bỏ `response_format` là đổi cách sinh,
+         mà "thứ gì đổi thì kết quả đổi, nên phải tính" — đúng lời `vantay.js`. */
+      ...(noiKhuon ? { khuon: 'long' } : {}),
     }),
   };
 }

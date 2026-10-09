@@ -117,15 +117,63 @@ def so_o_trong(cong_thuc):
 
 
 def o_trong(cong_thuc):
-    """Ô trống của công thức nhận TÊN người hay nhận TỪ VỰNG.
+    """Ô trống của công thức nhận LOẠI gì.
 
     `Bye, + [Name].` mà điền từ vựng vào là ra "Bye, book." — vô nghĩa, và với bé
     đang tập nhại thì đó là dạy sai. Đã sinh ra thật khi thả cho mô hình tự điền.
+
+    ⚠ HAI LOẠI LÀ KHÔNG ĐỦ — vá 09-10-2026. Bản cũ gộp mọi ô không-phải-tên thành
+    "ô nhận từ bất kỳ", nên bước THAY nhét từ vựng đầu bài vào ô kiểu khác. BỐN câu
+    đã lên dữ liệu phát hành như thế, và bé nghe chúng suốt buổi:
+
+        ta1/B11  "She's bus."   "He's bus."         ô `[Number]` (tuổi) nhận danh từ
+        ta2/B12  "The grape are on the table."       ô `[Noun-plural]` nhận dạng gốc
+        ta2/B14  "He's/She's brother."                ô `[Number]` nhận từ gia đình
+
+    Phải khớp từng chữ với `loaiOTrong` ở `web/src/mon/tienganh/lib/phongnoi.js`.
+    Không có cổng so hai bản mã (một bên Python, một bên JS), nhưng CÓ cổng so KẾT
+    QUẢ — `tienganh_phongnoi.test.mjs` soi mọi câu của mọi kịch bản bằng luật JS, nên
+    lệch nhau một chữ là nó đỏ. Soi kết quả thì chắc hơn soi hai bản mã.
     """
     m = re.search(r'\[([^\]]+)\]', cong_thuc or '')
     if not m:
         return None
-    return 'ten' if re.search(r'name|tên', m.group(1), re.I) else 'tu'
+    o = m.group(1).lower()
+    if re.search(r'name|tên', o):
+        return 'ten'
+    if re.search(r'plural|số nhiều', o):
+        return 'nhieu'
+    if re.search(r'-ing|^v-?ing|\bing\b', o):
+        return 'ing'
+    if re.search(r'past|\bqk\b|\bv2\b', o):
+        return 'qk'
+    if re.search(r'number|age|tuổi|\bsố\b', o):
+        return 'so'
+    return 'tu'
+
+
+def la_tu_so(t):
+    """Mục từ này là một CON SỐ — suy từ lời chú của sách ("mười một (11)")."""
+    return bool(re.search(r'\(\s*\d+\s*\)|^\s*\d+\s*$', t.get('nghia') or ''))
+
+
+def dien_duoc_vao_o(loai, tu):
+    """Những giá trị điền được vào một ô, theo ĐÚNG loại của nó.
+
+    Khớp với `dienDuocVaoO` bên JS. Mục từ có thể ĐÃ ở dạng ấy sẵn và trường dẫn
+    xuất để `null` — lớp 4 unit 20 dạy hẳn `putting up a tent` với `dang_ing: null`.
+    """
+    if loai == 'ing':
+        return [t.get('dang_ing') or (t['tu'] if re.search(
+            r'ing$', t['tu'].split()[0], re.I) else None) for t in tu]
+    if loai == 'qk':
+        return [t.get('dang_qk') or t['tu'] for t in tu]
+    if loai == 'nhieu':
+        return [t.get('so_nhieu') or t['tu'] for t in tu]
+    if loai == 'so':
+        return [t['tu'] for t in tu if la_tu_so(t)]
+    # Ô thường thì TRỪ con số ra — đó là chỗ "this sixteen" lọt qua bên JS.
+    return [t['tu'] for t in tu if not la_tu_so(t)]
 
 
 def ten_trong_vi_du(cong_thuc, cau):
@@ -487,9 +535,17 @@ def kich_ban_cua(bai):
                          'mac_dinh': ten_trong_vi_du(khung_dap, dap) or 'Bill',
                          'vi': 'Cùng khuôn ấy, nhưng nay là con nói về CHÍNH CON.'})
         elif tu:
+            # Giá trị mặc định phải ĐÚNG LOẠI Ô, không phải "từ đầu bài". Không có
+            # giá trị nào đúng loại thì BỎ bước THAY — y như cách đã làm với công
+            # thức hai ô ở trên: `mau` và `noiCa` vẫn còn, bé vẫn được nói cả câu.
+            dien_duoc = [x for x in dien_duoc_vao_o(loai_o, tu) if x]
+            if not dien_duoc:
+                BO_QUA.append(f"{bai['id']} · ô [{loai_o}] của “{khung_dap}” "
+                              'không có từ nào của bài điền được — bỏ bước THAY')
+                continue
             buoc.append({'loai': 'thay', 'khung': khung_dap, 'o': 'tu',
                          'en': dien(khung_dap, '{thich}'), 'mauCau': m['cau'],
-                         'mac_dinh': tu[0]['tu'],
+                         'mac_dinh': dien_duoc[0],
                          'vi': 'Nay con nói về thứ CON thích, không phải của cô nữa.'})
 
     buoc.append({'loai': 'ket'})
