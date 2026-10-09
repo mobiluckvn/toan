@@ -1,9 +1,17 @@
-# Toán Tư Duy lớp 5 · Quyển 1 — Trang học tập thích ứng
+# Kỹ Sư Nhí — Trang học tập thích ứng cho tiểu học
 
-**MOBILUCK / code247.ai** · Kỹ Sư Nhí lớp 5 · 168 micro · 672 hình · 1.141 câu hỏi · 14 kỳ sát hạch
+**MOBILUCK / code247.ai** · **hai môn · chín quyển · 462 bài · 713 video · 2 634 phép kiểm**
 
-Trang web cho học sinh lớp 5 tự học trọn Quý 1: **giảng nguyên tắc → xem bài mẫu → tự luyện → sát hạch lấy huy hiệu**,
-có mức thạo BKT, ôn tập ngắt quãng và sổ theo dõi cho bố mẹ.
+| Môn | Quyển | Bài | Lối học |
+|---|---|---|---|
+| Toán Tư Duy | lớp 2 · 3 · 4 · 5 (+ Mùa giải lớp 5) | 71 · 34 · 95 · 168 | giảng nguyên tắc → xem bài mẫu → tự luyện → sát hạch lấy huy hiệu |
+| Tiếng Anh | lớp 1 · 2 · 3 · 4 · 5 | 16 · 16 · 21 · 21 · 20 | từ mới → mẫu câu → luyện nói với cô giáo máy → đọc hiểu → viết ngắn |
+
+Có mức thạo BKT, ôn tập ngắt quãng, phụ đạo theo nút gốc rễ, và sổ theo dõi cho bố mẹ.
+
+> Trang này mở đầu bằng phần **Toán lớp 5** vì đó là quyển dựng trước nhất và được ghi chép
+> dày nhất. Phần **Tiếng Anh** — nơi có cô giáo máy và toàn bộ phần gọi mô hình ngôn ngữ —
+> nằm ở mục [Tiếng Anh: cô giáo máy](#tiếng-anh-cô-giáo-máy-và-sáu-lớp-chốt-chặn) phía dưới.
 
 ---
 
@@ -13,8 +21,15 @@ có mức thạo BKT, ôn tập ngắt quãng và sổ theo dõi cho bố mẹ.
 cd web
 npm install
 npm run dev      # http://localhost:5173  — học được ngay, chưa cần Firebase
-npm test         # 339 phép kiểm chạy trên dữ liệu thật của 168 micro
+npm test         # 98 tệp · 2 634 phép kiểm, chạy trên dữ liệu thật của cả chín quyển
+npm run test:luat   # luật Firestore — cần bộ giả lập, xem docs/DEPLOY.md
 ```
+
+⚠ Chạy `npm run build` TRƯỚC `npm test`: một tệp cổng soi chính bản dựng (dấu phiên bản
+nội dung), nên chạy sai thứ tự là nó đỏ mà chẳng có gì sai.
+
+⚠ Phần Tiếng Anh gọi mô hình ngôn ngữ qua Cloud Functions. Không có khoá thì phòng luyện
+nói và phần chấm bài viết báo lỗi tử tế; **mọi phần còn lại học bình thường**.
 
 Chưa cấu hình Firebase thì app **vẫn học bình thường**: tiến độ lưu tại máy, dữ liệu nằm trong hàng đợi
 chờ đồng bộ. Nối Firebase sau (xem `docs/DEPLOY.md`) là toàn bộ lịch sử được đẩy lên, không mất gì.
@@ -31,10 +46,14 @@ web/                  Ứng dụng học (React + Vite + Tailwind)
   src/mon/toan/       MÔN TOÁN — khép kín, không tệp nào của môn khác đụng vào
     lib/              flow · progress · hocba · adaptive · dau · noiDung · duLieu · sync
     components/       phòng học · màn chủ đề · Mùa giải · trang chính của quyển
-  src/mon/tienganh/   MÔN TIẾNG ANH — khung riêng, chưa có nội dung
-  public/content/     168 bài học · 672 hình · 14 kỳ sát hạch · chỉ mục  (deploy thẳng lên CDN)
+  src/mon/tienganh/   MÔN TIẾNG ANH — khép kín, 5 quyển
+    lib/              phongnoi · nhanluot · loidan_nhan · hosoai · bangtrangthai
+                      chamviet · chamnoi · dandat · zpd · lantruyen · onlai · phudao
+    components/       phòng luyện nói · bài học · đọc hiểu · viết ngắn · ôn lại · phụ đạo
+  public/content/     462 bài · 884 hình · 713 video · kỳ sát hạch · chỉ mục  (deploy lên CDN)
   functions/          Cloud Functions: đăng nhập OTP · BKT · ôn tập · sổ học & bảng cô đêm
-  test/               339 phép kiểm (node thuần, không cần trình duyệt)
+                      luyennoi · chamviet · chula · vantay (phần gọi mô hình ngôn ngữ)
+  test/               98 tệp · 2 634 phép kiểm (node thuần, không cần trình duyệt)
   firestore.rules     luật bảo mật — nhật ký học BẤT BIẾN
 
 figforge/             Bộ sinh hình: 25 nguyên mẫu + 672 figureSpec
@@ -46,14 +65,24 @@ docs/                 Sổ tay thực thi · kế hoạch thi công · thiết k
 
 ## Kiến trúc — ba điều đáng chú ý
 
-**1 · Nội dung là file tĩnh, không có API model lúc chạy.**
-Bài học (JSON) và hình (PNG) sinh sẵn từ trước, đẩy lên Hosting/CDN. App chỉ `fetch`.
+**1 · Nội dung là file tĩnh. Mô hình ngôn ngữ chỉ vào ĐÚNG hai chỗ.**
+Bài học (JSON), hình (PNG) và video sinh sẵn từ trước, đẩy lên Hosting/CDN — app chỉ `fetch`.
 → không phí API, mở offline được sau lần tải đầu, không rủi ro model đổi hành vi giữa chừng.
 
+Hai chỗ ngoại lệ, cả hai thuộc môn Tiếng Anh và cả hai là **đối thoại**, thứ không sinh sẵn
+được: **phòng luyện nói** (cô giáo máy đáp lời bé) và **chấm bài viết ngắn**. Mọi câu tiếng Anh
+mô hình sinh ra đều phải qua phép soi vốn từ trước khi tới bé — xem
+[Tiếng Anh: cô giáo máy](#tiếng-anh-cô-giáo-máy-và-sáu-lớp-chốt-chặn). Không có khoá thì hai
+chỗ ấy báo lỗi tử tế; mọi phần còn lại học bình thường.
+
 **2 · Lõi tách khỏi giao diện để kiểm định được.**
-Toàn bộ luật (dựng dòng chảy bài học, chấm bài, mở khoá, BKT, lịch ôn, sổ phụ huynh) nằm trong
-module JS thuần, chạy test bằng `node` trên **dữ liệu thật của cả 168 micro** — kể cả mô phỏng
-học trọn bài và mô phỏng đứt mạng giữa chừng.
+Toàn bộ luật (dựng dòng chảy bài học, chấm bài, mở khoá, BKT, lịch ôn, sổ phụ huynh, và cả luật
+của cô giáo máy) nằm trong module JS thuần, chạy test bằng `node` trên **dữ liệu thật của cả
+462 bài** — kể cả mô phỏng học trọn bài và mô phỏng đứt mạng giữa chừng.
+
+Phần gọi mô hình cũng kiểm được bằng `node`: hàm mạng **tiêm qua tham số**, không mock module.
+Nhờ thế cổng đếm được số lần gọi, soi được gói gửi lên, và thử được ca "mô hình trả lời sai hai
+lần liền" — không cần khoá, không cần mạng.
 
 **3 · Cổng `mustPass` là trục sư phạm.**
 Sai câu bẫy thì **không mở bài sau**, dù đúng 2/3 câu còn lại. Bẫy mới là thứ mỗi bài dạy,
@@ -62,6 +91,23 @@ nên nó được ưu tiên hơn điểm số ở mọi tầng: luật đạt, l
 ---
 
 ## Tình trạng hoàn thành
+
+### Chín quyển
+
+| Quyển | Bài | Video | Ghi chú |
+|---|---|---|---|
+| Toán lớp 2 | 71 | 71 | xong trọn |
+| Toán lớp 3 | 34 | 34 | xong trọn |
+| Toán lớp 4 | 95 | 95 | xong trọn |
+| Toán lớp 5 · Quyển 1 | 168 | 168 | xong trọn — quyển được ghi chép dày nhất, cả phần dưới nói về nó |
+| Mùa giải lớp 5 | 26 | — | vòng đấu, không có bài giảng riêng |
+| Tiếng Anh lớp 1 | 16 | 37 | xong trọn |
+| Tiếng Anh lớp 2 | 16 | 34 | xong trọn |
+| Tiếng Anh lớp 3 | 21 | 88 | xong trọn — thêm đọc hiểu · bài viết chấm AI |
+| Tiếng Anh lớp 4 | 21 | 94 | xong trọn |
+| Tiếng Anh lớp 5 | 20 | 92 | xong trọn — quyển đầu có THÌ QUÁ KHỨ |
+
+### Bốn phần của quyển Toán lớp 5 (bản dựng gốc)
 
 | Phần | Nội dung | Trạng thái |
 |---|---|---|
@@ -265,11 +311,110 @@ lần cũng không sinh dòng trùng.
 
 ---
 
+## Tiếng Anh: cô giáo máy, và sáu lớp chốt chặn
+
+Năm quyển (lớp 1→5, 94 bài, 345 video). Khác Toán ở một điểm: phần **luyện nói** và **chấm
+bài viết** gọi mô hình ngôn ngữ lúc chạy (Groq · `openai/gpt-oss-120b`, qua Cloud Functions).
+
+**Máy chủ KHÔNG lưu gì.** Mọi lời gọi đi qua callable có chốt cửa; ngữ cảnh do máy con giữ và
+tự đẩy lên Firestore theo luật. Lý do thực tế: đây là tiếng nói của trẻ con — chỗ nào không
+lưu thì chỗ ấy không bao giờ rò.
+
+### Vì sao không thả cho mô hình nói
+
+Bé sáu tuổi đang tập **nhại**, nên một câu sai là dạy sai. Đã sinh ra thật khi thả tự do:
+`"Bye, bike."` — đúng ngữ pháp, nghe xuôi, vô nghĩa. Nên đảo từ TIN sang SOI: máy con tự soi
+câu cô giáo nói, và mỗi tầng dưới đây là một lớp chốt.
+
+| Lớp | Việc | Đo được |
+|---|---|---|
+| `soiCau` · 5 đường công nhận | câu cô nói phải nằm trong vốn từ của bài | tắt một đường thì nhóm câu tương ứng rơi — có phép thử đảo chiều |
+| **xin lại khi bị bác** | nói cho mô hình biết sai CHỖ NÀO rồi gọi lại, trần 2 lần | phải lui về câu máy dựng: **20,4% → 3,7%** (54 lượt thật) |
+| **một nhãn cho mỗi lượt của bé** | 9 nhãn thuần code → 9 lời dặn ngắn thay cho một lời dặn mười điều | 100% lượt có nhãn; bé sai → cô nhắc đúng câu ấy **0/9 → 5/7** |
+| **trí nhớ qua nhiều buổi** | câu bé đã nói được · chữ hay sót · thứ bé thích; có HẠN, có trần, bố mẹ xoá được | buổi 2 mang theo mục của buổi 1 |
+| **một bảng trạng thái** | sáu nguồn về bé gom một chỗ cho cả bốn màn | `vectorS(` chỉ còn được gọi ở một tệp |
+| **chấm viết 3 mắt xích** | tìm lỗi (cấm sửa) → sửa → soi chữ lạ → xin lại → lời cho bố mẹ | mục bị bỏ vì chữ lạ: **7 → 0** (5 bài thật) |
+
+⚠ **Cỡ mẫu của mấy con số ấy nhỏ, nói thẳng.** Chúng đo bằng mô hình THẬT, nhưng trên vài chục
+lượt và vài bài — không phải vài trăm. Chúng đủ để nói "hướng này đúng", chưa đủ để nói "còn
+đúng ở mọi quyển". Mỗi tầng đều có bộ đếm (`LOI_SUA_CO` · `LOI_CHU_LA` · `LOI_SUA_LAI` ·
+`LOI_NOI_KHUON`) để đo lại trên bản chạy thật, và đó mới là con số đáng tin.
+
+Một tầng CHƯA chứng minh được bằng lượt thật: đường **nới khuôn JSON** (khi Groq bác vì khuôn).
+Lỗi ấy ngẫu nhiên, và lần đo lại 30 lượt thì nó không tái hiện — nên đường vá hiện chỉ có cổng
+đơn vị chứng minh. Ghi ra đây để đừng ai tưởng nó đã được việc trên bản thật.
+
+**Điểm máy chấm là điểm TẠM.** Bố mẹ đồng ý hoặc sửa, một chạm, trong Góc bố mẹ — không có nút
+nào cho bé tự xác nhận điểm của mình. Điểm máy chấm được giữ lại bên cạnh điểm bố mẹ sửa, nên
+câu "máy chấm có hay sai không" luôn trả lời được. Luật Firestore chốt: khi đánh dấu *đã xác
+nhận* thì **chỉ ba trường** được đổi — không sửa kèm lời chấm hay bài bé viết.
+
+**Vân tay prompt, không lưu prompt.** Mục 2.5.2 của luận văn cần biết "lượt này dùng mẫu prompt
+nào", mà giao ước là không lưu gì của bé. Hai điều ấy chỉ chọi nhau nếu tưởng phải lưu cả
+prompt: để so hai mẫu thì chỉ cần một mã băm của **phần khung**. Phần riêng của bé nằm giữa hai
+dấu `<<RIENG … RIENG>>` và bị bỏ sạch trước khi băm — hai bé khác nhau học cùng unit cho ra
+**cùng một** vân tay, và đó vừa là điều làm phép so có nghĩa vừa là điều làm nó không lần ra ai.
+
+### Ba chỗ hỏng chỉ lộ ra khi gọi mô hình THẬT
+
+98 tệp cổng xanh, build xanh, và cả ba vẫn ở đó — vì chúng là lỗi **giữa các tầng**, không
+tầng nào sai một mình.
+
+- **Lời dặn tự chọi nhau.** Luật 4 nằm trong khối `HARD RULES` ("breaking any of these makes
+  the lesson useless") và viết thẳng *"NEVER say the same English sentence — vary the word in
+  the slot"*; dòng dặn riêng của lượt sửa thì đòi đọc lại NGUYÊN câu ấy. Mô hình chọn bên được
+  **ta** gọi là hard rule — đúng theo lời ta dặn. Muốn một dòng ở dưới thắng một luật ở trên
+  thì phải **nói thẳng ra** là nó thắng.
+- **Chốt soi gạt chính câu đúng.** `soiCau` bác câu trùng lượt trước (`lap`), rồi vòng xin lại
+  đọc lý do ấy và nhắc mô hình *"say a DIFFERENT sentence"* — tức **đẩy** nó đi sai. Ba tầng
+  đều làm đúng phận mình và cộng lại thành hỏng. Dấu hiệu nhận ra: bộ đếm xin-lại cao bất
+  thường (11 trên 27 lượt; vá xong còn 3).
+- **Đường lui không bao giờ chạy.** `response_format: json_object` nghiêm ngặt làm Groq bác
+  ngay trên máy chủ nó, nên `docTraLoi` — hàm viết RA để đỡ chữ trần, có chú thích tử tế —
+  không bao giờ nhận được chữ ấy. Buổi dài tới lượt 6+ thì bé chỉ thấy dòng đỏ; một quyển chết
+  liền **năm lượt**. Nay nới khuôn đúng một lần khi Groq bác *vì khuôn*.
+
+### Ô trống có KIỂU — và lỗi ấy nằm ở ba chỗ
+
+`loaiOTrong` xưa chỉ biết hai loại (tên người · từ bất kỳ), nên mọi ô khác nhận MỌI từ của bài:
+`"Do you live in this sixteen?"` · `"He's truck."` đi qua `soiCau` sạch. Nay khai thêm bốn loại,
+và **chỉ khai loại nào dữ liệu tự nói được** (`so` suy từ lời chú có chữ số; `ing`·`qk`·`nhieu`
+suy từ chính trường dẫn xuất của mục từ).
+
+Đo trên toàn bộ dữ liệu thật: **câu sách bị gạt oan 0** · **câu sai nay bị chặn 293** (10,2%).
+
+Cùng một lỗi, ba chỗ — sửa một chỗ là nó vẫn ra: `soiCau` · bộ sinh kịch bản Python (4 câu đã
+lên dữ liệu phát hành) · `dienBuoc` (chỗ chỉ lộ ra lúc chạy, vì nó điền theo sở thích TỪNG BÉ).
+
+**Chỗ chưa vá, nói thẳng:** `"It's my sure."` VẪN đi qua, vì bài có dạy từ `sure` và mục từ
+vựng **không có trường từ loại** (740 mục). Đoán từ lời chú tiếng Việt là dựng một cổng ghim
+vào chính tả — việc còn lại là việc của DỮ LIỆU. Có một cổng *đòi* câu ấy vẫn đi qua, và nó đỏ
+lên ngày nào mục từ có trường từ loại, để nhắc quay lại.
+
+### Chưa làm (ghi rõ, không giấu)
+
+- **Kế hoạch buổi · bài học cuối buổi · phụ đạo bằng lời · chấm nói bỏ phiếu** — GĐ 2 của
+  `docs/REVIEW_18_MAU_AI_AGENT_TIENG_ANH.md`, chưa dựng.
+- **Nhãn `nhamTu` chưa có nguồn trên bản chạy**: phòng nói chấm bằng `chamCau`, mà chỉ `chamTu`
+  tính `nhamThanh`. Nhãn phân loại đúng khi nạp tay (đã thử thật), nhưng chưa ai nạp.
+- **Lời dặn cho dùng chữ chức năng mà `chuLa` thì không** — luật 1 ghi *"plus the bare function
+  words"*, còn chốt soi gạt `there` · `on` · `the`. Vá nó là **nới** hàng rào vốn từ, nên để
+  quyết chứ không tự làm.
+- **Chưa deploy `firestore.rules`.** Hai việc cần nó (trí nhớ của cô, và bố mẹ xác nhận điểm).
+  Thiếu bước này thì Firestore từ chối **trong im lặng**: sổ tại máy vẫn đúng, bé đổi máy là
+  mất, và không gì báo.
+
+      cd web && firebase deploy --only firestore:rules
+
+---
+
 ## Tài liệu
 
 * `docs/DEPLOY.md` — dựng Firebase và đưa lên mạng, từng bước
 * `docs/CHECKLIST.md` — checklist nghiệm thu trước khi cho con dùng thật
 * `docs/so_tay_thuc_thi.md` — sổ tay thực thi toàn dự án
+* `docs/REVIEW_18_MAU_AI_AGENT_TIENG_ANH.md` — rà 18 mẫu kiến trúc AI agent cho môn Tiếng
+  Anh: chẩn đoán, 12 việc (V1–V12), ca kiểm, và bản nháp lời dặn
 * `web/README.md` — chi tiết kỹ thuật ứng dụng
 
 ---
