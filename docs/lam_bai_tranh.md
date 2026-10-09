@@ -205,6 +205,37 @@ nên đọc từng dòng, đừng sửa hàng loạt.
 
 ---
 
+### ⚠ ĐỢT HAI, CŨNG 29-08-2026 — LỖI NẰM Ở CÂU HỎI, KHÔNG Ở MỒI
+
+Bác bắt lại: *"review bài luyện đọc ở tất cả lớp 3,4,5 đảm bảo câu trả lời của
+các bài đọc ấy chỉ có 01 câu là đúng thôi."* Rà lại trọn **176 câu / 75 bài** —
+lần này đọc đoạn, đọc câu hỏi VÀ mở từng tệp PNG — ra thêm **19 câu**. Đợt trước
+chỉ soi MỒI nên mù hẳn với ba họ dưới đây; nay có
+`python3 tools/soat_hoi_chot.py` soi phía CÂU HỎI.
+
+| | Họ hỏng | Ví dụ | Bắt bằng |
+|---|---|---|---|
+| ⑤ | **Câu hỏi lệch ĐẠI TỪ với đáp án** — câu tiếng Anh không có đáp án đúng nào | L5 C3 `How does HE stay healthy?` → `SHE does yoga.` | soat_hoi_chot ① |
+| ⑥ | **Câu hỏi lệch MỐC THỜI GIAN với đáp án** | L4 C3 `…in the MORNING?` → `I wash the dishes.` (đoạn: *in the evening*) · L5 C4 `…wear in WINTER?` → `I wear a T-shirt.` | soat_hoi_chot ② |
+| ⑦ | **Dòng phụ không chốt ĐANG HỎI AI** giữa bức có nhiều nhân vật | L5 U11 `Who's this?` — mẹ ngồi cạnh một bạn nhỏ, `It's my sister.` cũng đúng | soat_hoi_chot ③ |
+| ⑧ | **Mồi BAO trùm đáp án** hoặc gần đồng nghĩa | L5 U09 đáp `He's playing chess.` mồi `He's playing games.` · L4 U11 `busy` ↔ `noisy` · L4 U15 `sports centre` ↔ `gym` | mắt người |
+| ⑨ | **Mồi đúng với MỌI nhân vật** vì nét vẽ không phân biệt | L4 U13 `He's slim.` — bút `nguoi` vẽ ai cũng một thân bo tròn | mắt người |
+
+**Bài học đắt nhất của đợt này: dòng phụ tiếng Việt chốt được ĐANG HỎI AI, nhưng
+KHÔNG chữa được nghĩa của câu tiếng Anh.** Họ ⑥ vốn được ghi lại như một *chủ ý*
+("mượn đề bài của unit rồi để dòng phụ lái sang mốc khác, đó là chỗ bé phải đọc
+đoạn"). Sai — bé đang học đọc **tiếng Anh**; đọc câu tiếng Anh ấy thì đáp án
+đúng lại nằm ở mồi. Nay câu hỏi phải khớp đáp án; dòng phụ chỉ được **thu hẹp**
+câu hỏi, không được đổi nghĩa nó.
+
+Và một họ nữa của bút vẽ: **hình từ vựng chỉ việc (`reading` · `writing` ·
+`cycling` · `skipping` · `walking` · `run`) đều là BÓNG NGƯỜI ĐEN như nhau.**
+L3 U18 hỏi `What's she doing?` giữa một bức có hai bóng như thế — bé không có
+cách nào biết bóng nào là `she`. Bức nào dùng chúng thì dòng phụ **buộc phải**
+chốt bằng chỗ đứng, và mồi không được lấy việc của bóng kia.
+
+---
+
 ## PHÒNG NÓI — ba nhịp, không hơn
 
 ```

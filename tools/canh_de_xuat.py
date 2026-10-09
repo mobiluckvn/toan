@@ -120,7 +120,7 @@ L3 = {
      "This is Ms Hoa. Ms Hoa is my teacher. That's Minh. Minh is my friend. "
      "I can see a garden. I can see a bag.",
      "1. What can you see? → I can see a garden.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)\n"
-     "2. What's this? → It's a bag.  (mồi: It's a book. · It's a pen. · It's a desk.)",
+     "2. What's this? | Cái để dưới đất, màu đỏ, là cái gì? → It's a bag.  (mồi: It's a book. · It's a pen. · It's a desk.)",
      "What can you see? · What's this?"),
 4: C("Trước tấm gương trong lớp",
      "Cận cảnh nửa người một bạn gái khoảng tám tuổi đứng trước tấm gương chữ nhật "
@@ -251,7 +251,9 @@ L3 = {
      "HẬU CẢNH: dãy lớp học màu vàng, bầu trời xanh.",
      "This is a doctor. She's a doctor. That's a farmer. He's a farmer. "
      "I can see a garden.",
-     "1. What's her job? → She's a doctor.  (mồi: She's a nurse. · She's a farmer. · She's a teacher.)\n"
+     # Bức có HAI người làm nghề, mà hình vẽ không cho biết ai là nam ai là nữ
+     # — không chốt thì `She's a farmer.` cũng là đáp án đúng.
+     "1. What's her job? | Người ở gian BÊN TRÁI làm nghề gì? → She's a doctor.  (mồi: She's a nurse. · She's a farmer. · She's a teacher.)\n"
      "2. What can you see? → I can see a garden.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
      "What's her job? · Is he a farmer? · What can you see?"),
 13: C("Nhìn vào trong ngôi nhà, thấy các phòng",
@@ -334,9 +336,14 @@ L3 = {
      "sổ lớn nhìn ra cây xanh.",
      "This is my room. She's reading. He's writing. "
      "I can see a book. I can see a pen.",
-     "1. What's she doing? → She's reading.  (mồi: She's writing. · She's singing. · She's dancing.)\n"
-     "2. What's he doing? → He's writing.  (mồi: He's reading. · He's singing. · He's dancing.)",
-     "What's she doing? · What's he doing? · What can you see?"),
+     "1. What's she doing? | Bạn NGỒI TRÊN GHẾ SOFA đang làm gì? → She's reading.  (mồi: She's cooking. · She's singing. · She's dancing.)\n"
+     "2. What's he doing? | Bạn ĐỨNG BÊN BÀN đang làm gì? → He's writing.  (mồi: He's cooking. · He's singing. · He's dancing.)",
+     "What's she doing? · What's he doing? · What can you see?",
+     "⚠ 29-08-2026, đợt hai. Hai lỗi cùng một chỗ. (a) Bút vẽ hình `reading` và "
+     "`writing` đều là BÓNG NGƯỜI ĐEN như nhau — bé không có cách nào biết ai là "
+     "`she`, ai là `he`, nên dòng phụ phải chốt bằng CHỖ NGỒI. (b) Mồi cũ lấy "
+     "đúng việc của người kia (`She's writing.`) mà việc ấy CÓ THẬT trên tranh — "
+     "hai đáp án đúng. Mồi nay là việc tranh không vẽ."),
 19: C("Ở sân chơi buổi chiều",
      "Một sân chơi ngoài trời, nền cỏ xanh, nắng chiều vàng nhạt. BÊN TRÁI: một bạn "
      "gái tóc tết đang đạp một chiếc xe đạp màu xanh, người hơi nghiêng về trước. "
@@ -345,9 +352,12 @@ L3 = {
      "trời chiều có vài đám mây.",
      "This is our playground. She's cycling. He's skipping. "
      "I can see a bike. There's a garden.",
-     "1. What's she doing? → She's cycling.  (mồi: She's skipping. · She's running. · She's walking.)\n"
-     "2. What's he doing? → He's skipping.  (mồi: He's cycling. · He's running. · He's walking.)",
-     "What's she doing? · What's he doing? · What can you see?"),
+     "1. What's she doing? | Bạn ở BÊN TRÁI đang làm gì? → She's cycling.  (mồi: She's swimming. · She's running. · She's walking.)\n"
+     "2. What's he doing? | Bạn ở BÊN PHẢI đang làm gì? → He's skipping.  (mồi: He's swimming. · He's running. · He's walking.)",
+     "What's she doing? · What's he doing? · What can you see?",
+     "⚠ 29-08-2026, đợt hai — cùng họ với U18: hai bóng người giống hệt nhau nên "
+     "dòng phụ chốt bằng BÊN TRÁI · BÊN PHẢI, và mồi không còn lấy việc của "
+     "người kia (`She's skipping.` đúng với bức tranh)."),
 20: C("Trong vườn thú, trước chuồng hổ",
      "Trong vườn thú. GIỮA TRANH: một chuồng lớn có song sắt dọc màu xám. TRONG "
      "CHUỒNG BÊN TRÁI: một con hổ vàng vằn đen đứng bốn chân, quay mặt ra ngoài. "
@@ -498,7 +508,7 @@ L4 = {
      "ba lô đặt trên.",
      "This is my friend. I'm from Viet Nam. She's from Japan. "
      "I can see a bag. There's a table.",
-     "1. Where's she from? → She's from Japan.  (mồi: She's from Britain. · She's from America. · She's from Thailand.)\n"
+     "1. Where's she from? | Bạn gái ĐỨNG BÊN PHẢI đến từ đâu? → She's from Japan.  (mồi: She's from Britain. · She's from America. · She's from Thailand.)\n"
      "2. What can you see? → I can see a bag.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
      "Where are you from? · Where's she from? · What can you see?",
      "⚠ Cờ quốc gia emoji VẼ RA RỖNG (phông không có). Cảnh dùng BẢN ĐỒ, không cờ."),
@@ -544,8 +554,8 @@ L4 = {
      "CẢNH: tường màu kem, một tấm bảng ghim treo.",
      "This is my friend. He can ride a bike. She can draw. "
      "I can see a bike. I can see a picture.",
-     "1. What can he do? → He can ride a bike.  (mồi: He can ride a horse. · He can play the piano. · He can play the guitar.)\n"
-     "2. What can she do? → She can draw.  (mồi: She can swim. · She can cook. · She can sing.)",
+     "1. What can he do? | Bạn ở BÊN TRÁI tranh làm được gì? → He can ride a bike.  (mồi: He can ride a horse. · He can play the piano. · He can play the guitar.)\n"
+     "2. What can she do? | Bạn gái ở BÊN PHẢI tranh làm được gì? → She can draw.  (mồi: She can swim. · She can cook. · She can sing.)",
      "What can he do? · What can she do? · Can you ride a bike?"),
 6: C("Nhìn toàn cảnh sân trường",
      "Toàn cảnh một trường tiểu học nhìn từ trên cao chếch xuống. GIỮA: sân trường "
@@ -612,7 +622,9 @@ L4 = {
      "đi bộ — phố đông. HẬU CẢNH: hàng cây và các toà nhà.",
      "This is my street. I live in Tran Hung Dao Street. My street is busy. "
      "I can see two cars. I can see a house.",
-     "1. What's the street like? → It's a busy street.  (mồi: It's a quiet street. · It's a noisy street. · It's a big street.)\n"
+     # `noisy` gần như đồng nghĩa với `busy` ở đây — phố đông xe thì cũng ồn,
+     # nên mồi ấy là đáp án đúng thứ hai. Đổi sang một tính từ đối lập hẳn.
+     "1. What's the street like? → It's a busy street.  (mồi: It's a quiet street. · It's a small street. · It's a long street.)\n"
      "2. What can you see? → I can see two cars.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
      "Where do you live? · What's the street like? · What can you see?"),
 12: C("Ở bệnh viện, nơi mẹ bạn nhỏ làm việc",
@@ -635,8 +647,12 @@ L4 = {
      "xem, tay chỉ lên bạn cao nhất trong ảnh; cô giáo áo xanh đứng cạnh nhìn theo.",
      "This is my friend. He's tall. She has long hair. He's short. "
      "She has a round face. That's my classroom.",
-     "1. What does he look like? | Bạn trai ĐỨNG ĐẦU HÀNG bên trái trong ảnh trông thế nào? → He's tall.  (mồi: He's short. · He's slim. · He's big.)\n"
-     "2. What does she look like? | Bạn gái mặc VÁY ĐỎ trong ảnh trông thế nào? → She has long hair.  (mồi: She has short hair. · She's tall. · She's short.)",
+     # ⚠ 29-08-2026, đợt hai: `He's slim.` và `He's big.` ĐÚNG với mọi người
+     # trong bức — bút `nguoi` vẽ ai cũng một thân bo tròn như nhau, không có
+     # gầy với béo. Bức ảnh lớp chỉ phân biệt được TÓC và CHIỀU CAO, nên mồi
+     # phải nằm trong hai thứ ấy (hoặc là thứ bút KHÔNG vẽ: cái mũi).
+     "1. What does he look like? | Bạn trai ĐỨNG ĐẦU HÀNG bên trái trong ảnh trông thế nào? → He's tall.  (mồi: He's short. · He has long hair. · He has a big nose.)\n"
+     "2. What does she look like? | Bạn gái mặc VÁY ĐỎ trong ảnh trông thế nào? → She has long hair.  (mồi: She has short hair. · She's short. · She has a big nose.)",
      "Who is this? · What does he look like? · What does she look like?",
      "Bức cũ vẽ mắt-mũi-mồm-tay RỜI. Nay là NGƯỜI trong ảnh để tả.\n"
      "⚠ 29-08-2026, HAI câu đều hai đáp án đúng. Trong ảnh có BỐN bạn, và chính "
@@ -666,7 +682,8 @@ L4 = {
      "đèn. HẬU CẢNH: bầu trời sáng, vài đám mây.",
      "This is my father. He goes to the sports centre on Saturdays. "
      "He plays tennis on Sundays. I can see a bike. I can see a ball.",
-     "1. Where does he go on Saturdays? → He goes to the sports centre.  (mồi: He goes to the cinema. · He goes to the gym. · He goes to the swimming pool.)\n"
+     # `gym` là chính chỗ ấy nói cách khác — bỏ, thay bằng một nơi khác hẳn.
+     "1. Where does he go on Saturdays? → He goes to the sports centre.  (mồi: He goes to the cinema. · He goes to the library. · He goes to the swimming pool.)\n"
      "2. What does he do on Sundays? → He plays tennis.  (mồi: He plays badminton. · He does yoga. · He plays the guitar.)",
      "Who is this? · Where does he go on Saturdays? · What does he do on Sundays?"),
 16: C("Bên cửa sổ lớp học, cạnh bảng thời tiết",
@@ -726,7 +743,7 @@ L4 = {
      "phản chiếu ánh lửa, vài cây thông.",
      "This is our campsite. He's building a campfire. "
      "They're singing songs. I can see a tent. There's a lake.",
-     "1. What's he doing? → He's building a campfire.  (mồi: He's telling a story. · He's taking a photo. · He's playing card games.)\n"
+     "1. What's he doing? | Bạn trai áo đỏ đang làm gì? → He's building a campfire.  (mồi: He's telling a story. · He's taking a photo. · He's playing card games.)\n"
      "2. What can you see? → I can see a tent.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
      "Where are they? · What's he doing? · What are they doing?"),
 }
@@ -778,12 +795,14 @@ L4C = {
      "1. What can you see? → I can see a table.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)\n"
      "2. What does she do? | Mẹ bạn nhỏ làm nghề gì? → She's a nurse.  (mồi: She's a doctor. · She's a teacher. · She's a farmer.)\n"
      "3. Where does she work? | Mẹ làm việc ở đâu? → She works at a hospital.  (mồi: She works at a school. · She works at a factory. · She works at a nursing home.)\n"
-     "4. What do you do in the morning? | Buổi TỐI bạn nhỏ làm việc gì? → I wash the dishes.  (mồi: I clean the floor. · I wash the clothes. · I cook meals.)",
+     "4. What do you do in the evening? | Buổi TỐI bạn nhỏ làm việc gì? → I wash the dishes.  (mồi: I clean the floor. · I wash the clothes. · I cook meals.)",
      "What can you see? · What does she do? · Where does she work?",
      "Ôn chương 3: nhà mình · nghề của mẹ · trông bố thế nào · việc mỗi ngày.\n"
-     "⚠ Câu 4 mượn ĐỀ BÀI của khuôn `What do you do in the morning?` (unit 14) "
-     "nhưng dòng phụ chốt vào BUỔI TỐI — đó là chỗ bé phải đọc đoạn mới trả lời "
-     "được, chứ đoán theo đề thì ra `in the morning`."),
+     "⚠ 29-08-2026, đợt hai. Câu 4 vốn mượn nguyên ĐỀ BÀI `What do you do in the "
+     "morning?` (unit 14) rồi để dòng phụ tiếng Việt lái sang BUỔI TỐI. Sai: bé "
+     "đang học đọc TIẾNG ANH, mà đọc câu tiếng Anh ấy thì đoạn KHÔNG có đáp án "
+     "nào đúng — đoạn chỉ nói `I wash the dishes in the evening.` Dòng phụ chốt "
+     "ĐANG HỎI AI · CÁI NÀO, nó không được phép chữa lại nghĩa câu hỏi."),
 4: C("Ở trại hè bên hồ",
      "Một khu trại hè bên hồ, chiều muộn. BÊN TRÁI: một chiếc lều vải màu xanh "
      "dựng trên cỏ. GIỮA: một đống lửa trại đang cháy, một bạn trai áo đỏ cúi "
@@ -841,8 +860,8 @@ L5 = {
      "sách đặt trên.",
      "This is my class. This is Lucy. She's from Australia. This is Ben. "
      "He's from Japan. Ben is my friend.",
-     "1. Where's she from? → She's from Australia.  (mồi: She's from Japan. · She's from America. · She's from Malaysia.)\n"
-     "2. Where's he from? → He's from Japan.  (mồi: He's from Australia. · He's from America. · He's from Malaysia.)",
+     "1. Where's she from? | Bạn gái áo VÀNG bên trái đến từ đâu? → She's from Australia.  (mồi: She's from Japan. · She's from America. · She's from Malaysia.)\n"
+     "2. Where's he from? | Bạn trai áo XANH bên phải đến từ đâu? → He's from Japan.  (mồi: He's from Australia. · He's from America. · He's from Malaysia.)",
      "Where's she from? · Where's he from? · What can you see?"),
 4: C("Trong vườn buổi chiều",
      "Một khu vườn nhỏ, nắng chiều vàng nhạt. BÊN TRÁI: một bạn gái tóc tết hai "
@@ -852,7 +871,9 @@ L5 = {
      "màu xanh dựng cạnh hàng rào gỗ thấp. HẬU CẢNH: bụi cây xanh và bầu trời.",
      "This is our garden. She's watering the flowers. He's going for a walk. "
      "I often go for a walk. I can see a bike.",
-     "1. What's she doing? → She's watering the flowers.  (mồi: She's playing the violin. · She's surfing the Internet. · She's going for a walk.)\n"
+     # Bức có một bạn gái tết tóc và một BÓNG NGƯỜI đang đi bộ (hình `walking`,
+     # không rõ nam nữ) — không chốt thì `She's going for a walk.` cũng đúng.
+     "1. What's she doing? | Bạn gái TẾT TÓC đang làm gì? → She's watering the flowers.  (mồi: She's playing the violin. · She's surfing the Internet. · She's going for a walk.)\n"
      "2. What do you do at the weekend? → I often go for a walk.  (mồi: I always go for a walk. · I never go for a walk. · I sometimes go for a walk.)",
      "Where are they? · What's she doing? · What do you do at the weekend?"),
 5: C("Ở góc nghề nghiệp của lớp",
@@ -887,7 +908,9 @@ L5 = {
      "BÊN PHẢI: cửa sổ nhìn ra tán cây xanh.",
      "This is my class. She's reading books. He likes doing projects. "
      "I like reading books. I can see a book.",
-     "1. What school activity does he like? → He likes doing projects.  (mồi: He likes reading books. · He likes playing games. · He likes solving maths problems.)\n"
+     # Bức CÓ một bạn đang đọc sách, nên `He likes reading books.` là đáp án
+     # đúng thứ hai với bé nhìn tranh; và không chốt thì `he` là ai cũng được.
+     "1. What school activity does he like? | Bạn áo ĐỎ ngồi bên phải thích hoạt động nào ở trường? → He likes doing projects.  (mồi: He likes singing songs. · He likes playing games. · He likes solving maths problems.)\n"
      "2. What can you see? → I can see a book.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
      "Where are they? · What's she doing? · What can you see?"),
 8: C("Trên bàn học, đồ dùng để đâu",
@@ -910,7 +933,9 @@ L5 = {
      "cây xanh.",
      "This is our playground. He's playing chess. She's watching the fish. "
      "I sometimes play chess. I can see a fish.",
-     "1. What's he doing? → He's playing chess.  (mồi: He's playing games. · He's reading books. · He's doing projects.)\n"
+     # `He's playing games.` BAO luôn cả `playing chess` — chơi cờ cũng là chơi
+     # trò chơi, nên nó là đáp án đúng thứ hai. Thay bằng việc tranh không vẽ.
+     "1. What's he doing? | Bạn NGỒI ở cái bàn bên trái đang làm gì? → He's playing chess.  (mồi: He's singing songs. · He's reading books. · He's doing projects.)\n"
      "2. What can you see? → I can see a fish.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
      "Where are they? · What's he doing? · What can you see?"),
 10: C("Chuyến đi của lớp, bên hồ",
@@ -921,7 +946,10 @@ L5 = {
      "cái xẻng nhỏ. BÊN PHẢI: một ghế đá xám dưới bóng cây.",
      "This is a lake. We walked around the lake. He planted trees. "
      "I like our school. I can see a lake.",
-     "1. What did you do? → We walked around the lake.  (mồi: We visited the old buildings. · We planted trees. · We played games.)\n"
+     # `What did you do?` hỏi việc của CẢ NHÓM, mà đoạn nói `He planted trees.`
+     # — một bạn trong nhóm trồng cây thì `We planted trees.` cũng đúng. Đây
+     # đúng kiểu ③ bác bắt ở L5 U20. Thay bằng việc không ai làm.
+     "1. What did you do? → We walked around the lake.  (mồi: We visited the old buildings. · We visited the zoo. · We played games.)\n"
      "2. What can you see? → I can see a lake.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
      "Where are they? · What did you do? · What can you see?"),
 11: C("Bên bàn ăn, cả nhà xem ảnh chuyến đi",
@@ -934,7 +962,9 @@ L5 = {
      "This is my mother. We collected seashells. We walked on the beach. "
      "We took photos. I can see a photo.",
      "1. What did you do? → We collected seashells.  (mồi: We planted trees. · We played games. · We ate seafood.)\n"
-     "2. Who's this? → It's my mother.  (mồi: It's my sister. · It's my brother. · It's my father.)",
+     # Bức có HAI người ngồi trên sofa — mẹ và một bạn nhỏ tóc tết. Hỏi trống
+     # không thì `It's my sister.` cũng đúng; chốt vào NGƯỜI LỚN.
+     "2. Who's this? | Người LỚN ngồi trên ghế sofa là ai? → It's my mother.  (mồi: It's my sister. · It's my brother. · It's my father.)",
      "Where are they? · What did your family do? · Who's this?"),
 12: C("Chợ hoa ngày Tết",
      "Một góc chợ hoa ngày Tết, trời sáng. BÊN TRÁI: một sạp hoa bày những bó HOA "
@@ -968,7 +998,9 @@ L5 = {
      "đậu trên hàng rào.",
      "This is our park. He does morning exercise every day. She does yoga. "
      "I drink fresh juice. I can see some juice.",
-     "1. How does he stay healthy? → He does morning exercise.  (mồi: He does yoga. · He eats healthy food. · He drinks fresh juice.)\n"
+     # Trong bức chỉ có MỘT bóng người đang chạy và MỘT bạn gái giơ tay; không
+     # chốt thì bé tưởng đang hỏi bạn gái và `He does yoga.` thành đáp án đúng.
+     "1. How does he stay healthy? | Bạn ở BÊN TRÁI tranh giữ sức khoẻ bằng cách nào? → He does morning exercise.  (mồi: He does yoga. · He eats healthy food. · He drinks fresh juice.)\n"
      "2. What can you see? → I can see some juice.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)",
      "Where are they? · How does he stay healthy? · How often does he do morning exercise?"),
 15: C("Ở phòng y tế của trường",
@@ -980,8 +1012,10 @@ L5 = {
      "tường.",
      "This is our school. He has a toothache. She's a nurse. "
      "He should go to the dentist. I can see a cup.",
-     "1. What's the matter? → He has a toothache.  (mồi: He has a headache. · He has a sore throat. · He has a stomach ache.)\n"
-     "2. What should he do? → He should go to the dentist.  (mồi: He should go to the doctor. · He should go to the nurse. · He should have a rest.)",
+     "1. What's the matter? | Bạn trai NGỒI TRÊN GIƯỜNG bị làm sao? → He has a toothache.  (mồi: He has a headache. · He has a sore throat. · He has a stomach ache.)\n"
+     # `He should go to the nurse.` — cô y tá ĐANG ĐỨNG NGAY ĐÓ và bé đang ngồi
+     # trong phòng y tế, nên mồi ấy đúng với bức tranh. Thay bằng việc khác hẳn.
+     "2. What should he do? | Bạn trai NGỒI TRÊN GIƯỜNG nên làm gì? → He should go to the dentist.  (mồi: He should go to the doctor. · He should eat vegetables. · He should have a rest.)",
      "Where are they? · What's the matter? · What should he do?"),
 16: C("Bên cửa sổ lớp, ngày mùa đông",
      "Một góc lớp học ngày mùa đông. BÊN PHẢI: cửa sổ lớn, nhìn ra ngoài thấy bầu "
@@ -993,7 +1027,9 @@ L5 = {
      "This is my class. It's winter. It's cold today. "
      "I wear a jumper in winter. I like winter.",
      "1. How's the weather in Ha Noi in winter? → It's cold.  (mồi: It's hot. · It's cool. · It's warm.)\n"
-     "2. What do you usually wear in winter? → I wear a jumper.  (mồi: I wear a coat. · I wear a blouse. · I wear jeans.)",
+     # `I wear a coat.` cũng đúng với mùa đông ngoài đời — bé không sai khi
+     # chọn nó. Mồi phải là món mặc vào mùa đông thì KHÔNG ai mặc.
+     "2. What do you usually wear in winter? → I wear a jumper.  (mồi: I wear a T-shirt. · I wear a blouse. · I wear shorts.)",
      "Where is she? · How's the weather? · What do you usually wear in winter?"),
 17: C("Ở góc đọc truyện",
      "Một góc đọc sách trong thư viện trường. HẬU CẢNH: một giá sách gỗ thấp xếp "
@@ -1086,10 +1122,14 @@ L5C = {
      "I can see some juice. I like my house.",
      "1. What can you see? → I can see some juice.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)\n"
      "2. What will you do for Tet? | Tết này nhà bạn nhỏ sẽ làm gì? → We'll decorate the house.  (mồi: We'll buy roses. · We'll do the shopping. · We'll make spring rolls.)\n"
-     "3. How does he stay healthy? | Mẹ bạn nhỏ giữ sức khoẻ bằng cách nào? → She does yoga.  (mồi: She does morning exercise. · She eats healthy food. · She eats vegetables.)\n"
+     "3. How does she stay healthy? | Mẹ bạn nhỏ giữ sức khoẻ bằng cách nào? → She does yoga.  (mồi: She does morning exercise. · She eats healthy food. · She eats vegetables.)\n"
      "4. Who's this? | Người lớn duy nhất trong tranh là ai? → It's my mother.  (mồi: It's my sister. · It's my brother. · It's my father.)",
      "What can you see? · Who's this? · What will you do for Tet?",
      "Ôn chương 3: gia đình · Tết · giữ sức khoẻ.\n"
+     "⚠ 29-08-2026, đợt hai: câu 3 vốn hỏi `How does HE stay healthy?` mà đáp lại "
+     "là `She does yoga.` — câu tiếng Anh ấy KHÔNG có đáp án đúng nào. Dòng phụ "
+     "tiếng Việt chốt đúng người rồi, nhưng dòng phụ không chữa được ĐẠI TỪ sai "
+     "trong câu tiếng Anh.\n"
      "⚠ Dòng phụ KHÔNG chốt bằng \"người đang tập yoga\": bút `nguoi` chỉ có dáng "
      "`gio` (hai tay giơ lên), nhìn ra reo mừng chứ không ra tập yoga — chốt bằng "
      "một thứ bé không đọc được trên tranh thì chốt hoá ra đánh đố.\n"
@@ -1106,9 +1146,13 @@ L5C = {
      "1. What can you see? → I can see a bus.  (mồi: I can see a dog. · I can see a cat. · I can see a duck.)\n"
      "2. How's the weather? | Trời hôm nay thế nào? → It's hot.  (mồi: It's cold. · It's cool. · It's warm.)\n"
      "3. How can I get to school? | Bạn nhỏ KỂ CHUYỆN đi học bằng gì? → You can get there by bus.  (mồi: You can get there by taxi. · You can get there on foot. · You can get there by train.)\n"
-     "4. What do you usually wear in winter? | Mùa HÈ bạn nhỏ thường mặc gì? → I wear a T-shirt.  (mồi: I wear a coat. · I wear a jumper. · I wear jeans.)",
+     "4. What do you usually wear in summer? | Mùa HÈ bạn nhỏ thường mặc gì? → I wear a T-shirt.  (mồi: I wear a coat. · I wear a jumper. · I wear jeans.)",
      "What can you see? · How's the weather? · How can I get to school?",
      "Ôn chương 4: mùa và thời tiết · quần áo theo mùa · đi lại bằng gì.\n"
+     "⚠ 29-08-2026, đợt hai: câu 4 vốn hỏi `in winter` mà đáp là `I wear a "
+     "T-shirt.` — đọc câu tiếng Anh thì đáp án ấy SAI, còn ba mồi kia mới đúng. "
+     "Cùng lỗi với L4 C3 câu 4: dòng phụ tiếng Việt bị dùng để lái nghĩa câu "
+     "hỏi thay vì chỉ chốt đang hỏi ai.\n"
      "⚠ Câu 3 KHÔNG được để mồi `by bicycle`/`by bike`: tranh vẽ CẢ xe buýt LẪN "
      "xe đạp, và đoạn nói cả hai — đúng lỗi vừa vá ở bức U18."),
 }
