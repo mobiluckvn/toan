@@ -27,7 +27,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import CauHoi from './CauHoi.jsx';
 import { napDoThi, baiCuaNut, baiTienQuyet, nhanNut } from '../lib/doThi.js';
 import { napBai, maBaiTruoc } from '../lib/noiDung.js';
-import { nutGocRe } from '../lib/lantruyen.js';
+import { dungBang } from '../lib/bangtrangthai.js';
 import { dungPhuDao, cauHoiHopLe, SO_CAU_PHU_DAO } from '../lib/phudao.js';
 import { vonTu, UNIT_CU_TOI_DA } from '../lib/phongnoi.js';
 
@@ -48,7 +48,9 @@ function useBaiPhuDao({ baiNay, maNutMac, mucThao, tienDo, tenBe }) {
         /* Tính nút gốc rễ TRƯỚC, để biết phải tải bài nào. `dungPhuDao` sẽ tính
            lại đúng con số ấy (hàm thuần, cùng đầu vào cho cùng đầu ra) — chấp nhận
            tính hai lần, đổi lấy việc không phải sửa chữ ký của Thuật toán 3.10. */
-        const goc = nutGocRe(dt, mucThao, maNutMac, { toiDa: 1 })[0]?.ma || maNutMac;
+        /* Qua BẢNG TRẠNG THÁI (việc V6) — một nguồn sự thật về bé cho cả bốn
+           màn, thay vì mỗi màn tự gọi một hàm riêng. */
+        const goc = dungBang({ doThi: dt, mucThao, maNutMac }).nutGocRe;
         const maBaiGoc = baiCuaNut(dt, goc);
 
         /* ⚠ VỐN TỪ PHẢI GỒM CẢ BÀI CỦA NÚT GỐC RỄ.

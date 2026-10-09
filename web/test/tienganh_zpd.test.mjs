@@ -180,12 +180,21 @@ test('màn học có gọi phép xếp, và gọi TRONG useMemo', () => {
   /* ⚠ Không dùng useMemo thì thứ tự dựng lại mỗi lần màn vẽ. Bé đang làm câu thứ
      3, một lần vẽ lại là `i` vẫn bằng 3 nhưng pool đã khác — câu đang làm dở biến
      mất và một câu khác nhảy vào chỗ đó. Không có gì đỏ, chỉ bé thấy lạ. */
+  /* ⚠ SOI TÍNH CHẤT, ĐỪNG GHIM CHÍNH TẢ. Bản đầu đòi đúng chuỗi
+     `xepTheoZPD(bai.practice.pools`. Tới việc V6 phép xếp đi qua BẢNG TRẠNG THÁI
+     (`dungBang({cauDs}).nhomZPD`) — hình dạng đổi, hai tính chất cần giữ thì KHÔNG
+     đổi. Ghim chính tả thì mỗi lần sửa việc khác lại đỏ một lần, và cách người ta
+     dập nó nhanh nhất là nới toang ra. Xem `cong-ghim-chinh-ta-thay-vi-tinh-chat`.
+     Hai tính chất: (1) màn học CÓ dùng phép xếp theo ZPD; (2) nó nằm trong
+     `useMemo`, vì thứ tự đổi giữa buổi thì bé mất câu đang làm dở. */
   const ma = chiMa(doc('../src/mon/tienganh/components/BaiHoc.jsx'));
-  assert.match(ma, /xepTheoZPD/, 'màn học không dùng phép xếp — P(L) ghi ra rồi bỏ đó');
-  const i = ma.indexOf('xepTheoZPD(bai.practice.pools');
-  assert.notEqual(i, -1);
-  assert.match(ma.slice(Math.max(0, i - 200), i), /useMemo/,
+  const i = ma.search(/xepTheoZPD\(|\.nhomZPD\b/);
+  assert.notEqual(i, -1, 'màn học không dùng phép xếp — P(L) ghi ra rồi bỏ đó');
+  assert.match(ma.slice(Math.max(0, i - 400), i), /useMemo/,
     'phép xếp không nằm trong useMemo — thứ tự đổi giữa buổi thì bé mất câu đang làm dở');
+  /* Và phải xếp CHÍNH kho câu của mục đang học, không xếp một danh sách khác. */
+  assert.match(ma.slice(Math.max(0, i - 400), i + 200), /bai\.practice\.pools/,
+    'không thấy kho câu của mục đang học đi vào phép xếp');
 
   const man = chiMa(doc('../src/mon/tienganh/components/ManTiengAnh.jsx'));
   assert.match(man, /docMucThao\(/, 'không ai nạp mức thạo từ máy chủ');

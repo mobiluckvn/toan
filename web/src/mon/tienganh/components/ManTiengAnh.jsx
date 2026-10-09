@@ -15,7 +15,10 @@ import {
 import {
   luuBai, luuMucHocBa, luuSuKien, docTheOn, luuTheOn, docMucThao,
 } from '../lib/duLieu.js';
-import { theDenHan, demDenHan, daySauKhiOn } from '../lib/onlai.js';
+/* `theDenHan` nay đi qua `dungBang` (việc V6); `demDenHan` thì không — xem ghi chú
+   ở chỗ gọi. */
+import { demDenHan, daySauKhiOn } from '../lib/onlai.js';
+import { dungBang } from '../lib/bangtrangthai.js';
 import { manhNhat, yeuNhat } from '../lib/hoso.js';
 import { xoaHoSoAI } from '../lib/hosoai.js';
 import { napDoThi } from '../lib/doThi.js';
@@ -359,7 +362,11 @@ export default function ManTiengAnh({
   if (view.page === 'onlai') {
     return (
       <OnLai
-        the={theDenHan(theOn, { quyen: ct.ma })}
+        /* Qua BẢNG TRẠNG THÁI (việc V6). `demDenHan` ở dưới thì KHÔNG đi qua
+           bảng: nó chỉ ĐẾM để hiện con số trên thẻ mời, không phải trạng thái
+           dùng để quyết định gì — đưa nó vào bảng là dựng cả một bảng cho một
+           phép đếm. */
+        the={dungBang({ cards: theOn, quyen: ct.ma }).theDenHan || []}
         onXongThe={xongTheOn}
         onLuot={ghiLuot}
         onThoat={() => setView({ page: 'home' })}

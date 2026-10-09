@@ -72,7 +72,12 @@ const laiNoi = (tra) => JSON.stringify({
  */
 export async function hoiCoGiao({
   von, lichSu, tenBe, lop, haDoKho = false, hoSo = null, kichBan = null,
+  /* BẢNG TRẠNG THÁI (việc V6) — đường chính từ nay. `hoSo` rời vẫn nhận, vì mọi
+     cổng hiện có truyền nó, và `bang.hoSo` giữ đúng hình dạng cũ nên hai đường ra
+     cùng một chỗ. */
+  bang = null,
 }, { goi = goiMay } = {}) {
+  const hs = bang?.hoSo || hoSo;
   /* Việc của lượt này do MÁY CON quyết rồi ghép vào lời dặn — xem `viecTiepTheo`.
      Lời dặn dựng lại mỗi lượt (chứ không giữ nguyên từ đầu buổi) chính là chỗ cắm
      được việc mới vào. */
@@ -87,8 +92,8 @@ export async function hoiCoGiao({
      đã tính. Nó lái HAI thứ — việc của lượt này (`viecTiepTheo`) và lời dặn
      (`loiDan`) — nên phải tính TRƯỚC cả hai. */
   const { nhan, doTin, chiTiet } = nhanLuot(luotBe, { von });
-  const buoc = kichBan ? buocTiepTheo({ kichBan, lichSu, hoSo, haDoKho }) : null;
-  const viec = buoc ? null : viecTiepTheo({ von, lichSu, haDoKho, hoSo, nhan });
+  const buoc = kichBan ? buocTiepTheo({ kichBan, lichSu, hoSo: hs, haDoKho }) : null;
+  const viec = buoc ? null : viecTiepTheo({ von, lichSu, haDoKho, hoSo: hs, nhan });
   const unit = kichBan
     ? { ten: kichBan.ten,
         muc_tieu: kichBan.muc_tieu,
@@ -112,8 +117,8 @@ export async function hoiCoGiao({
   const dan = laTranh
     ? loiDanTranh({ tenBe, lop, kichBan, buoc, luotBe })
     : (buoc
-      ? `${loiDan({ von, tenBe, lop, viec: null, hoSo, unit, nhan: nhanKB, chiTiet })}\n${dongBuoc(buoc, { tenBe, thich: hoSo?.thich }, luotBe)}`
-      : loiDan({ von, tenBe, lop, viec, hoSo, unit, nhan, chiTiet }));
+      ? `${loiDan({ von, tenBe, lop, viec: null, hoSo: hs, unit, nhan: nhanKB, chiTiet, bang })}\n${dongBuoc(buoc, { tenBe, thich: hs?.thich }, luotBe)}`
+      : loiDan({ von, tenBe, lop, viec, hoSo: hs, unit, nhan, chiTiet, bang }));
   const messages = [{ role: 'system', content: dan }, ...goiGui(lichSu)];
   const { data } = await goi(messages);
   const tra = docTraLoi(data?.chu);
@@ -166,7 +171,7 @@ export async function hoiCoGiao({
      câu ấy. Đây là chỗ chữ "đảm bảo hơn" của bác thành thật: mô hình có chệch thì
      bé vẫn nghe đúng câu của bài. */
   if (buoc) {
-    const dung = dienBuoc(buoc, { tenBe, thich: hoSo?.thich });
+    const dung = dienBuoc(buoc, { tenBe, thich: hs?.thich });
     /* ⚠ BƯỚC KHÔNG CÓ CÂU VIẾT SẴN VẪN PHẢI SOI.
        `hoiThich` không mang câu tiếng Anh nào — thẻ chọn hình do máy con tự vẽ. Nên
        `dung` rỗng, và dòng dưới cho `tra.en` đi thẳng. Mà nhánh có kịch bản thì cố

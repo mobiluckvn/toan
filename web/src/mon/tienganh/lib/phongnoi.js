@@ -32,18 +32,20 @@
    ở chỗ gọi, vì chỗ ghép mới là chỗ quyết định nó đứng TRƯỚC hay SAU `dongViec`. */
 import { NHAN_GIU_VIEC } from './nhanluot.js';
 import { dongTheoNhan } from './loidan_nhan.js';
-import { dongHoSoAI } from './hosoai.js';
+/* Khối "ABOUT THE CHILD" nay do BẢNG TRẠNG THÁI dựng — một chỗ duy nhất, xem
+   `lib/bangtrangthai.js`. Trước V6 nó nằm ở `dongHoSo` trong tệp này và
+   `dongHoSoAI` ở `hosoai.js`: hai hàm, hai tệp, cùng một khối. */
+import { dungBang, tomTatChoLoiDan } from './bangtrangthai.js';
 
 /**
- * DẤU BỌC KHỐI RIÊNG của bé trong lời dặn.
+ * DẤU BỌC KHỐI RIÊNG của bé trong lời dặn — tái xuất từ `bangtrangthai.js`.
  *
  * ⚠ Hai chuỗi này là GIAO ƯỚC với `locKhung` ở `functions/src/vantay.js`. Đổi ở
- * đây mà không đổi ở đấy thì chữ của bé lọt vào vân tay prompt, và không gì báo —
+ * đấy mà không đổi ở đây thì chữ của bé lọt vào vân tay prompt, và không gì báo —
  * đúng chỗ sót mà `luyennoi.js` đã nói trước là sẽ sót. Cổng `vantay_prompt` soi
  * bằng cách dựng hai bé khác hẳn nhau rồi đòi khung bằng nhau.
  */
-export const DAU_KHOI_RIENG = '<<RIENG';
-export const CUOI_KHOI_RIENG = 'RIENG>>';
+export { DAU_KHOI_RIENG, CUOI_KHOI_RIENG } from './bangtrangthai.js';
 
 /** Nhiều nhất bao nhiêu unit CŨ được trộn vào. Đủ để ôn, không đủ để loãng. */
 export const UNIT_CU_TOI_DA = 3;
@@ -539,7 +541,7 @@ function dongViec(v, tenBe) {
    gieo chữ "bạn" vào rồi trách mô hình dùng nó — xem `XUNG_HO_CAM`. */
 export function loiDan({
   von, tenBe = 'con', lop = 1, viec = null, hoSo = null, unit = null,
-  nhan = null, chiTiet = null,
+  nhan = null, chiTiet = null, bang = null,
 }) {
   const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
   const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
@@ -627,7 +629,11 @@ export function loiDan({
        khỏi vân tay — giao ước ghi ở đầu `loidan_nhan.js`. */
     nhan ? dongTheoNhan(nhan, chiTiet || {}) : '',
     dongViec(viec, tenBe),
-    dongHoSo(hoSo, tenBe),
+    /* ⚠ `bang` LÀ ĐƯỜNG CHÍNH, `hoSo` chỉ là đường tương thích. Mọi chỗ gọi cũ
+       truyền `hoSo` rời, và chúng vẫn phải chạy đúng — nên dựng một bảng tối giản
+       quanh nó. Bỏ đường ấy thì phải sửa cùng lúc bốn màn, mà sửa bốn chỗ trong
+       một bản là bốn chỗ có thể sai. */
+    tomTatChoLoiDan(bang || dungBang({ hoSo }), tenBe),
     '',
     'Reply as JSON only: {"en": "<the English sentence>", "vi": "<the Vietnamese line>"}',
   ].filter((x) => x !== null).join('\n');

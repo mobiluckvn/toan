@@ -17,7 +17,7 @@ import {
 } from '../lib/dandat.js';
 import { DAT as DAT_NOI } from '../lib/chamnoi.js';
 import { maPhienMoi } from '../lib/suKien.js';
-import { xepTheoZPD } from '../lib/zpd.js';
+import { dungBang } from '../lib/bangtrangthai.js';
 import PhuDao from './PhuDao.jsx';
 import { viecTiepCuaNut, VIEC } from '../lib/chinhsach.js';
 import { mucThaoCua } from '../lib/zpd.js';
@@ -893,7 +893,12 @@ function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null,
      `useMemo` để thứ tự KHÔNG đổi giữa chừng khi màn vẽ lại — đổi giữa buổi thì
      `i` đang trỏ câu này bỗng trỏ câu khác, bé mất câu đang làm dở. */
   const goc = React.useMemo(
-    () => xepTheoZPD(bai.practice.pools[MUC[m].khoa] || [], mucThao, hoSoDang),
+    /* Qua BẢNG TRẠNG THÁI (việc V6), không gọi `xepTheoZPD` trực tiếp: một nguồn
+       sự thật về bé cho cả bốn màn. `dungBang` thuần và rẻ, nên gọi nó để lấy
+       đúng một trường là chuyện không tốn gì. */
+    () => dungBang({
+      cauDs: bai.practice.pools[MUC[m].khoa] || [], mucThao, dinhDang: hoSoDang,
+    }).nhomZPD || [],
     [bai, m, mucThao, hoSoDang],
   );
   const pool = lamLai || goc;

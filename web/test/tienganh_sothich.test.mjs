@@ -95,9 +95,17 @@ test('PhongNoi SOI LẠI từ nhớ được có còn trong vốn không', () =>
     'lời dặn LLM đang nhận `thich` thô, không qua phép soi');
   assert.doesNotMatch(ma, /thich:\s*soThich/,
     'gửi thẳng từ trong sổ vào lời dặn là bỏ qua phép soi');
-  /* Và cái gói ấy phải thật sự tới `hoiCoGiao`, không nằm chết một chỗ. */
-  assert.match(ma, /hoiCoGiao\(\{[\s\S]{0,300}?hoSo:/,
+  /* Và cái gói ấy phải thật sự tới `hoiCoGiao`, không nằm chết một chỗ.
+     ⚠ Lại đúng cái bẫy mà khối chú thích trên vừa nói: bản trước đòi chuỗi
+     `hoiCoGiao({… hoSo:`. Tới việc V6 trạng thái bé đi qua BẢNG (`bang`), và
+     `bang.hoSo` giữ đúng hình dạng cũ — tính chất không đổi. Nên soi: có MỘT gói
+     trạng thái đi vào lời gọi, và `thichDung` thật sự nằm trong gói ấy. */
+  assert.match(ma, /hoiCoGiao\(\{[\s\S]{0,300}?(hoSo|bang)[,:]/,
     'hồ sơ bé không được truyền vào lời gọi cô giáo máy');
+  const j = ma.search(/thich:\s*thichDung/);
+  assert.notEqual(j, -1);
+  assert.match(ma.slice(Math.max(0, j - 300), j), /dungBang\(\{|hoiCoGiao\(\{|hoSo/,
+    '`thichDung` không nằm trong gói trạng thái nào — nó sẽ không tới lời dặn');
 
   /* Nhớ được rồi thì ĐỪNG HỎI LẠI — không thì phần nhớ thành vô nghĩa. */
   assert.match(ma, /!laTranh\s*&&\s*!thichDung\s*&&\s*hoiThich/,

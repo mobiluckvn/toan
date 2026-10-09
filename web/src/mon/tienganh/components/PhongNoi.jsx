@@ -9,7 +9,7 @@ import {
 import { capNhatTuBuoi, donHoSo } from '../lib/hosoai.js';
 import { hoiCoGiao, luuBuoi } from '../lib/goiPhongNoi.js';
 import { napDoThi, baiTienQuyet } from '../lib/doThi.js';
-import { vectorS } from '../lib/chinhsach.js';
+import { dungBang } from '../lib/bangtrangthai.js';
 import { manhNhat } from '../lib/hoso.js';
 import { auth } from '../../../chung/lib/nenTang.js';
 import { doc as docLen, docDoan, docDuoc, coGiong, thoiDoc } from '../lib/doclen.js';
@@ -243,24 +243,24 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
    * ⚠ Thiếu số liệu thì các trường về `null` và `dongHoSo()` bỏ qua chúng — phòng
    * nói chạy y như trước. Bé mới học buổi đầu không đáng bị cô giáo máy đoán già.
    */
-  const hoSoBe = React.useMemo(() => {
-    const nuts = [...new Set(
-      (bai?.practice?.pools ? Object.values(bai.practice.pools).flat() : [])
-        .map((c) => c?.maNut).filter(Boolean),
-    )];
+  /**
+   * BẢNG TRẠNG THÁI — một nguồn sự thật về bé (việc V6, mẫu Blackboard).
+   *
+   * Trước V6 màn này tự gom `vectorS` + `hoSoAI` + danh sách nút, còn ba màn khác
+   * tự gom ba thứ khác. Mỗi màn gom một kiểu thì không màn nào thấy đủ, và kế
+   * hoạch buổi (V7) thì cần CẢ SÁU trong một lượt. Nay `dungBang` gom một chỗ.
+   *
+   * `bang.hoSo` giữ đúng hình dạng `hoSo` cũ, nên `hoiCoGiao` và `loiDan` không
+   * phải đổi chữ ký — xem đường tương thích trong `bangtrangthai.js`.
+   */
+  const bang = React.useMemo(() => {
     const manh = manhNhat(tienDo?.dinhDang);
-    return {
-      thich: thichDung,
-      /* TRÍ NHỚ QUA NHIỀU BUỔI (việc V3). Nó nằm trong SỔ TIẾN ĐỘ, không theo bài —
-         `dongHoSo` đọc nó qua `hoSo.ai`. Buổi đầu thì `null`, và `dongHoSoAI` tự
-         trả chuỗi rỗng, nên lời dặn không có khối rỗng nào. */
-      ai: tienDo?.hoSoAI || null,
-      ...vectorS({
-        mucThao, maNutDs: nuts, thich: thichDung,
-        dinhDang: manh ? { dangManh: manh.ten } : null,
-      }),
-    };
-  }, [bai, mucThao, tienDo?.dinhDang, tienDo?.hoSoAI, thichDung]);
+    return dungBang({
+      bai, mucThao, tienDo, quyen: ma, thich: thichDung,
+      dinhDang: manh ? { dangManh: manh.ten } : null,
+    });
+  }, [bai, mucThao, tienDo, ma, thichDung]);
+  const hoSoBe = bang.hoSo;
 
   /**
    * CUỐI BUỔI THÌ GHI LẠI TRÍ NHỚ — việc V3.
@@ -337,7 +337,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
     datLoi(null); datDangHoi(true);
     try {
       const tra = await hoiCoGiao({ von, lichSu: ds, tenBe, lop,
-        haDoKho: buoi.haDoKho, hoSo: hoSoBe, kichBan });
+        haDoKho: buoi.haDoKho, bang, kichBan });
       /* `buoc` — bước nào sinh ra lượt này. Không bày ra màn hình, nhưng
          `luotLuyen` cần: lượt bé đáp lời chào KHÔNG được tính là một lần luyện.
 
@@ -410,7 +410,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
           ? 'Con đăng nhập rồi mới vào phòng này được nhé.'
           : 'Cô giáo máy chưa trả lời được. Con thử lại nhé.');
     } finally { datDangHoi(false); }
-  }, [von, tenBe, lop, bai, buoi.haDoKho, hoSoBe, kichBan, ma, mocEn]);
+  }, [von, tenBe, lop, bai, buoi.haDoKho, bang, kichBan, ma, mocEn]);
 
   /* Cô chào trước. Bé 6 tuổi mở ra thấy màn trắng thì không biết làm gì cả. */
   useEffect(() => {
