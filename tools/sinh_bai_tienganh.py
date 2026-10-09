@@ -1588,11 +1588,99 @@ def loi_can_doc(bai: dict) -> list[dict]:
     return ra
 
 
+def dap_xuong(u: dict, chon: dict) -> dict:
+    """Đắp phần bác ĐÃ CHỌN từ xưởng vào một unit, NGAY TRONG BỘ NHỚ.
+
+    ── BA CHỐT, VÀ CẢ BA ĐỀU CÓ LÝ DO ──
+
+    1 · KHÔNG SỬA `data/tienganh/chuan_lop{N}.json` TRÊN ĐĨA. Bản chuẩn là bản sinh
+        ra từ bản đồ chương trình (`chuan_tienganh.py`); sửa tay vào đó thì lần dựng
+        lại sau đè mất — đúng cái bẫy `ban-dung-lai-de-mat-ban-sua-tay` đã dính bốn
+        lần. Muốn vào bản chuẩn thì phải đi qua bản đồ, và đó là việc khác.
+
+    2 · ĐỌC TỆP BÁC ĐƯA, KHÔNG ĐỌC `lop{N}_u{NN}.json` CỦA XƯỞNG. Tệp của xưởng có
+        cả `con_ban` và `bi_loai`; đọc nó thì mọi thứ xưởng đẻ ra đều vào bài, và
+        hàng đợi duyệt thành vô nghĩa. Tệp này là tệp BÁC tự gõ ra sau khi đọc
+        `duyet.md` — nên chính hành động tạo tệp là hành động duyệt.
+
+    3 · KHÔNG ĐÈ MỤC ĐÃ CÓ. Trùng mã hay trùng chữ thì BỎ mục mới đi, chứ đừng thay
+        mục của sách bằng mục mô hình soạn.
+    """
+    them = {"tu": 0, "mau_cau": 0}
+    da_tu = {str(t.get("tu", "")).lower() for t in (u.get("tu") or [])}
+    for t in chon.get("tu") or []:
+        chu = str(t.get("tu", "")).strip()
+        if not chu or chu.lower() in da_tu:
+            continue
+        # Mã nút: cùng khuôn mã của bản chuẩn, thêm dấu `x` để còn lần ra mục nào
+        # do xưởng soạn — `nguon` của câu AI bên app cũng theo lẽ ấy.
+        # ⚠ ĐẮP ĐỦ MỌI TRƯỜNG `chuan_tienganh.py` SUY RA, VÀ ĐẮP CHO AN TOÀN.
+        # Đã hỏng thật: thiếu `go_duoc` thì `cau_hoi()` vỡ với `KeyError` ngay giữa
+        # lượt dựng. Mục của xưởng chỉ có phần một người gõ tay được (`tu` · `nghia`
+        # · `vai` · dạng biến đổi); mấy trường còn lại là thứ bản chuẩn TÍNH RA từ
+        # bản đồ chương trình, và xưởng không có bản đồ nào để tính.
+        # Giá trị mặc định chọn theo hướng DÈ DẶT, không theo hướng tiện:
+        #   go_duoc  False — ô gõ chữ đòi bé tự nhớ chính tả; một từ chưa ai soi
+        #                    thì đừng bắt bé gõ nó. Mở sau được, siết lại thì khó.
+        #   hinh     None  — không có hình thật thì để trống, đừng trỏ bừa; cổng
+        #                    `soat_hinh_tienganh.py` soi chỗ này.
+        #   ten_rieng theo chữ hoa đầu, vì đó là thứ suy được chắc chắn.
+        t = {
+            "ma": t.get("ma") or f"v_x_{chu.lower().replace(' ', '_')}",
+            "tu": chu,
+            "nghia": t.get("nghia"),
+            "ipa": t.get("ipa"),
+            "vai": t.get("vai") or ["dt"],
+            "am_o": t.get("am_o") or "dau",
+            "so_it": t.get("so_it"),
+            "so_nhieu": t.get("so_nhieu"),
+            "dang_ing": t.get("dang_ing"),
+            "dang_qk": t.get("dang_qk"),
+            "dang_ngoi3": t.get("dang_ngoi3"),
+            "go_duoc": bool(t.get("go_duoc", False)),
+            "nhom_nghia": t.get("nhom_nghia"),
+            "ten_rieng": bool(t.get("ten_rieng", chu[:1].isupper())),
+            "hinh": t.get("hinh"),
+            "khong_ve": t.get("khong_ve") or "do xưởng soạn — chưa có hình, chờ vẽ",
+            "hinh_ve": t.get("hinh_ve"),
+            "hinh_no": t.get("hinh_no"),
+        }
+        u.setdefault("tu", []).append(t)
+        da_tu.add(chu.lower())
+        them["tu"] += 1
+    da_mau = {str(m.get("cong_thuc", "")).lower() for m in (u.get("mau_cau") or [])}
+    for m in chon.get("mau_cau") or []:
+        ct = str(m.get("cong_thuc", "")).strip()
+        if not ct or ct.lower() in da_mau:
+            continue
+        # Mẫu câu cũng phải đủ trường bản chuẩn có — cùng lý do như trên.
+        m = {
+            "ma": m.get("ma") or f"sp_x_{len(da_mau) + 1}",
+            "vi_du": m.get("vi_du") or m.get("cau") or "",
+            "cong_thuc": ct,
+            "dung_de": m.get("dung_de") or "",
+            "thi": m.get("thi") or "present_simple",
+            "kieu_cau": m.get("kieu_cau") or "statement",
+            "o_thay": m.get("o_thay") or [],
+            "phan": m.get("phan") or [],
+            "tinh_huong": m.get("tinh_huong") or "",
+            "khac_voi": m.get("khac_voi") or [],
+        }
+        u.setdefault("mau_cau", []).append(m)
+        da_mau.add(ct.lower())
+        them["mau_cau"] += 1
+    return them
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--lop", type=int, default=1, choices=[1, 2, 3, 4, 5])
     p.add_argument("--unit", type=int)
     p.add_argument("--tat-ca", action="store_true")
+    p.add_argument("--xuong", default=None,
+                   help="tệp JSON bác ĐÃ CHỌN từ xưởng (tools/xuong) — "
+                        'hình dạng {"tu": [...], "mau_cau": [...]}; đắp vào unit '
+                        "trước khi dựng, KHÔNG sửa bản chuẩn trên đĩa")
     a = p.parse_args()
 
     chuan = json.loads((GOC / f"data/tienganh/chuan_lop{a.lop}.json").read_text("utf8"))
@@ -1610,6 +1698,15 @@ def main() -> int:
     # nguồn là bản đồ + `data/tienganh/lopN_bu.json` + chính tệp này. Đẻ thêm một
     # bản trung gian ở `data/ta1/` chỉ tạo ra một nơi nữa phải đồng bộ tay, mà
     # "ba nơi phải đồng bộ" đã là cái bẫy quen thuộc của kho này rồi.
+    # ── ĐẮP THÊM PHẦN BÁC ĐÃ CHỌN TỪ XƯỞNG (việc V12) ──
+    if a.xuong:
+        if a.unit is None:
+            p.error("--xuong phải đi cùng --unit N (đắp cho đúng một unit)")
+        if len(units) != 1:
+            p.error("--xuong chỉ đắp cho MỘT unit")
+        n = dap_xuong(units[0], json.loads(Path(a.xuong).read_text("utf8")))
+        print(f"  đắp từ xưởng: +{n['tu']} từ · +{n['mau_cau']} mẫu câu", file=sys.stderr)
+
     tm = GOC / f"web/public/content/{QUYEN[a.lop]}"
     tm.mkdir(parents=True, exist_ok=True)
     tat = chuan["unit"]
