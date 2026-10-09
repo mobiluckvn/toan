@@ -93,9 +93,33 @@ export const DAU_RIENG = [
   /^\s*CHILD:/i, /she said/i, /she asked/i, /left out:/i,
 ];
 
+/**
+ * ⚠ KHỐI BỌC DẤU — chắc hơn lọc theo dòng, và là cách nên dùng cho khối mới.
+ *
+ * Lọc theo dòng thì mỗi dòng mới phải khai một mẫu vào `DAU_RIENG`, và quên khai là
+ * chữ của bé lọt vào vân tay mà không gì báo. Khối thì khai MỘT lần: mọi thứ giữa
+ * hai dấu bị bỏ, kể cả dòng thêm vào sau này.
+ *
+ * Giao ước với `DAU_KHOI_RIENG` · `CUOI_KHOI_RIENG` ở
+ * `web/src/mon/tienganh/lib/bangtrangthai.js` (từ V6; trước đó ở `phongnoi.js`, nay
+ * tệp ấy chỉ tái xuất) — đổi một bên là phải đổi bên kia. Máy chủ và máy con không
+ * import chéo được (cổng `ranh_gioi.test.mjs` chặn), nên hai hằng này là CHÉP, và
+ * cổng `tienganh_bangtrangthai.test.mjs` so hai bản — đúng lối `lib/onlai.js` ↔
+ * `functions/src/schedule.js`.
+ */
+export const KHOI_RIENG = { mo: '<<RIENG', dong: 'RIENG>>' };
+
 export function locKhung(loiDan) {
-  return String(loiDan || '')
-    .split('\n')
-    .filter((d) => d.trim() && !DAU_RIENG.some((r) => r.test(d)))
-    .join('\n');
+  const ds = String(loiDan || '').split('\n');
+  const giu = [];
+  let trongKhoi = false;
+  for (const d of ds) {
+    if (d.includes(KHOI_RIENG.mo)) { trongKhoi = true; continue; }
+    if (d.includes(KHOI_RIENG.dong)) { trongKhoi = false; continue; }
+    if (trongKhoi) continue;
+    if (!d.trim()) continue;
+    if (DAU_RIENG.some((r) => r.test(d))) continue;
+    giu.push(d);
+  }
+  return giu.join('\n');
 }
