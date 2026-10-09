@@ -7,9 +7,13 @@ import {
   tinhBuoi, loiKet, cauHoiSoThich, PHUT_TOI_DA, luotLuyen,
 } from '../lib/phongnoi.js';
 import { capNhatTuBuoi, donHoSo } from '../lib/hosoai.js';
+import {
+  lapKeHoach, capNhatSauLuot, xongKeHoach, loiGioiThieu, oThanhViec, conThieu as khConThieu,
+} from '../lib/kehoach.js';
+import ThanhViec from './ThanhViec.jsx';
 import { hoiCoGiao, luuBuoi } from '../lib/goiPhongNoi.js';
 import { napDoThi, baiTienQuyet } from '../lib/doThi.js';
-import { dungBang } from '../lib/bangtrangthai.js';
+import { dungBang, datKeHoach } from '../lib/bangtrangthai.js';
 import { manhNhat } from '../lib/hoso.js';
 import { auth } from '../../../chung/lib/nenTang.js';
 import { doc as docLen, docDoan, docDuoc, coGiong, thoiDoc } from '../lib/doclen.js';
@@ -209,7 +213,10 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
   const canNoiGi = luotCoCuoi?.can?.length ? luotCoCuoi.can
     : (luotCoCuoi?.en ? [luotCoCuoi.en] : []);
   const buoi = tinhBuoi({ lichSu, batDau: batDau.current, bayGio: Date.now(),
-                         dichCaDoan: kichBan?.dang === 'tranh' });
+                         dichCaDoan: kichBan?.dang === 'tranh',
+                         /* Đích thứ ba của buổi (việc V7): làm hết việc hôm nay. */
+                         xongKeHoach: xongKeHoach(keHoach),
+                         keHoachConViec: khConThieu(keHoach) > 0 });
   const ket = loiKet(buoi);
   const hoiThich = cauHoiSoThich(von);
 
@@ -253,13 +260,32 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
    * `bang.hoSo` giữ đúng hình dạng `hoSo` cũ, nên `hoiCoGiao` và `loiDan` không
    * phải đổi chữ ký — xem đường tương thích trong `bangtrangthai.js`.
    */
-  const bang = React.useMemo(() => {
+  const bangGoc = React.useMemo(() => {
     const manh = manhNhat(tienDo?.dinhDang);
     return dungBang({
       bai, mucThao, tienDo, quyen: ma, thich: thichDung,
       dinhDang: manh ? { dangManh: manh.ten } : null,
     });
   }, [bai, mucThao, tienDo, ma, thichDung]);
+
+  /**
+   * KẾ HOẠCH BUỔI — lập MỘT LẦN đầu buổi, rồi chỉ cập nhật (việc V7).
+   *
+   * ⚠ KHÔNG dựng trong `useMemo`: `capNhatSauLuot` trả bản mới sau mỗi lượt, mà
+   * `useMemo` thì dựng LẠI từ đầu mỗi khi `bang` đổi — tức mọi tiến độ của kế hoạch
+   * bị xoá sau đúng một lượt, và thanh bước không bao giờ nhích. Nên nó là `state`,
+   * và `useEffect` chỉ lập khi CHƯA có.
+   *
+   * ⚠ Bài có kịch bản thì KHÔNG lập kế hoạch: kịch bản đã là kế hoạch của bài ấy,
+   * và hai cái cùng xếp thứ tự thì chúng chọi nhau.
+   */
+  const [keHoach, datKeHoachState] = useState(null);
+  useEffect(() => {
+    if (keHoach || kichBan || !von?.loi?.tu?.length) return;
+    datKeHoachState(lapKeHoach(bangGoc, { von }));
+  }, [keHoach, kichBan, von, bangGoc]);
+
+  const bang = React.useMemo(() => datKeHoach(bangGoc, keHoach), [bangGoc, keHoach]);
   const hoSoBe = bang.hoSo;
 
   /**
@@ -419,9 +445,31 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
        "ball" thay vì "Hello!". Nhìn màn hình mới thấy. Nạp hỏng cũng đặt cờ này,
        để bé không phải đứng chờ một tệp không bao giờ về. */
     if (daChao.current || !bai || !kbXong) return;
+    /* ── ĐỢI KẾ HOẠCH rồi mới chào ── (việc V7)
+       Chào trước khi có kế hoạch thì lượt ĐẦU TIÊN — lượt định ra cả buổi — không
+       có bước nào để đi theo, và nó rơi về vòng xoay cũ. Đúng cùng một lỗi thứ tự
+       mà khối chú thích trên vừa kể với kịch bản, nên ghi lại kẻo lặp lần thứ ba.
+       Bài CÓ kịch bản thì không chờ: nhánh ấy cố ý không lập kế hoạch. */
+    if (!kichBan && !keHoach) return;
     daChao.current = true;
     guiLuot([{ vai: 'be', chu: 'Chào cô, con muốn tập nói.' }]);
-  }, [bai, kbXong, guiLuot, lanBuoi]);
+  }, [bai, kbXong, guiLuot, lanBuoi, kichBan, keHoach]);
+
+  /**
+   * ĐỌC LỜI GIỚI THIỆU KẾ HOẠCH — một lần, đầu buổi (việc V7).
+   *
+   * Bé sáu tuổi chưa đọc được thanh bước, nên thanh ấy một mình chưa đủ: phải NÓI
+   * ra "hôm nay mình làm mấy việc". Đọc bằng giọng Việt, và `loiGioiThieu` cố ý
+   * không nhắc tên từ tiếng Anh nào — một câu lẫn hai thứ tiếng thì máy đọc ra một
+   * thứ tiếng không phải tiếng nào (xem `tachTheoTieng`).
+   */
+  const daDocKeHoach = useRef(false);
+  useEffect(() => {
+    if (daDocKeHoach.current || !keHoach?.buoc?.length || laTranh) return;
+    daDocKeHoach.current = true;
+    const loi = loiGioiThieu(keHoach);
+    if (loi) docDoan([{ chu: loi, tieng: 'vi' }]).catch(() => {});
+  }, [keHoach, laTranh]);
 
   /**
    * GHI ÂM MỘT LẦN — chỉ lo cái micro, không biết gì về cuộc trò chuyện.
@@ -487,7 +535,17 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
     /* Lượt này vừa KẾT THÚC buổi thì đừng hỏi cô nữa: bé đã xong, mà gọi thêm
        một lượt là hoặc cô nói chen vào sau lời khen, hoặc mạng trục trặc và bé
        thấy dòng lỗi đỏ ngay dưới câu "con giỏi lắm". Đã thấy thật lúc đi thử. */
-    const sauKhiNoi = tinhBuoi({ lichSu: sau, batDau: batDau.current, bayGio: Date.now() });
+    /* ── CẬP NHẬT KẾ HOẠCH SAU LƯỢT CỦA BÉ ── (việc V7)
+       Đặt ở ĐÂY, không đặt trong `guiLuot`: `guiLuot` chạy khi CÔ trả lời, còn kế
+       hoạch phải nhích theo việc BÉ làm được. Đặt sai chỗ thì bước xong ngay khi cô
+       nói, bất kể bé nói được hay không. */
+    const nhanLuotNay = luotCoCuoi?.nhan || null;
+    datKeHoachState((kh) => (kh
+      ? capNhatSauLuot(kh, { nhan: nhanLuotNay, diem: kq?.diem ?? null, bang })
+      : kh));
+    const sauKhiNoi = tinhBuoi({ lichSu: sau, batDau: batDau.current, bayGio: Date.now(),
+                                 xongKeHoach: xongKeHoach(keHoach),
+                                 keHoachConViec: khConThieu(keHoach) > 0 });
     if (sauKhiNoi.trangThai !== 'dang') { datLoi(null); return; }
     guiLuot(sau);
   }, [ghiAm, lichSu, canNoiGi, luotCoCuoi, guiLuot]);
@@ -550,6 +608,14 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
     maBuoi.current = `${String(bai?.id).replace(/[:.]/g, '_')}__${Date.now()}`;
     daChao.current = false;
     daDocKet.current = false;
+    /* ⚠ XOÁ KẾ HOẠCH CŨ, KHÔNG THÌ BUỔI MỚI KẾT NGAY KHI VỪA MỞ (việc V7).
+       Kế hoạch cũ đã xong hết, mà từ V7 `xongKeHoach` là một ĐÍCH của buổi — nên
+       `tinhBuoi` của lượt đầu tiên thấy "xong" và màn kết hiện ra trước khi bé nói
+       câu nào. Cổng `có đường NÓI LẠI TỪ ĐẦU` bắt được chỗ này.
+       Đặt `null` thì `useEffect` lập kế hoạch MỚI — buổi sau có việc mới, không
+       phải diễn lại việc cũ. */
+    datKeHoachState(null);
+    daDocKeHoach.current = false;
     /* Cờ `daChao` là ref nên đổi nó KHÔNG làm effect chào chạy lại. Phải có một
        con số trong deps thì React mới ngó tới — thiếu dòng này là bấm nút xong
        màn hình trắng trơn, không ai chào cả. */
@@ -571,6 +637,21 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
             còn {Math.ceil(buoi.phutConLai)} phút
           </span>
         </p>
+      )}
+      {/* ── THANH BƯỚC CỦA BUỔI ── (việc V7)
+          Dùng lại CHÍNH `ThanhViec.jsx` của màn bài học, không dựng thanh thứ hai:
+          một ô một việc, xong thì ✓, chưa xong thì nét đứt — bé đã biết cách đọc nó
+          rồi. Hai cái thanh gần giống nhau thì bé phải học hai cách đọc cho cùng
+          một ý. Bài tả tranh không có thanh này (kịch bản đã là kế hoạch của nó). */}
+      {!laTranh && keHoach?.buoc?.length > 0 && (
+        <ThanhViec
+          ten={`Hôm nay mình làm ${keHoach.buoc.length} việc`}
+          viec={oThanhViec(keHoach)}
+          conThieu={khConThieu(keHoach)}
+          loiRieng={khConThieu(keHoach) === 0
+            ? 'Xong hết việc hôm nay rồi — giỏi lắm!'
+            : `Còn ${khConThieu(keHoach)} việc nữa.`}
+        />
       )}
       {laTranh ? null : (
       <div className="rounded-xl2 border-2 border-line bg-white p-3">

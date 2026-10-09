@@ -26,6 +26,11 @@ import { TT_VIEC } from '../lib/dandat.js';
  */
 export default function ThanhViec({
   viec = [], conThieu = 0, mo = false, vuongMicro = false, dangO = null, onChon,
+  /* Hai chỗ đổi được tiêu đề và dòng mô tả — thêm cho việc V7 (thanh KẾ HOẠCH
+     BUỔI ở phòng luyện nói). Cùng một thanh, cùng một cách đọc: một ô một việc,
+     xong thì ✓, chưa xong thì nét đứt. Dựng một thanh thứ hai gần giống thì bé
+     phải học hai cách đọc cho cùng một ý. */
+  ten = 'Việc của con', loiRieng = null,
 }) {
   if (!viec.length) return null;
 
@@ -33,17 +38,17 @@ export default function ThanhViec({
      mọi từ nhưng chưa xem video thì nút ĐÃ MỞ trong khi vẫn còn một ô trắng. Nói
      "Còn 1 việc nữa" lúc ấy là thanh cãi nhau với cái nút ngay bên dưới — bé 6
      tuổi gặp hai tín hiệu ngược nhau thì tin cái nào cũng sai. */
-  const loi = conThieu === 0 ? 'Xong hết rồi — giỏi lắm!'
+  const loi = loiRieng || (conThieu === 0 ? 'Xong hết rồi — giỏi lắm!'
     : mo ? 'Con đi tiếp được rồi. Ô nào còn trắng thì làm thêm cũng hay.'
-      : `Còn ${conThieu} việc nữa.`;
+      : `Còn ${conThieu} việc nữa.`);
 
   return (
     <section
-      aria-label="Việc của con trong phần này"
+      aria-label={`${ten} trong phần này`}
       className="flex flex-col gap-2 rounded-xl2 border-2 border-line bg-white p-3"
     >
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <h3 className="text-sm font-bold uppercase tracking-wide text-navy">Việc của con</h3>
+        <h3 className="text-sm font-bold uppercase tracking-wide text-navy">{ten}</h3>
         {/* Dòng này cho bố mẹ và cho máy đọc màn hình. Bé đọc thanh ô bên dưới. */}
         <p className="text-sm text-mute">{loi}</p>
       </div>

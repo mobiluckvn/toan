@@ -861,7 +861,22 @@ test('có đường NÓI LẠI TỪ ĐẦU — màn kết không phải ngõ c�
   /* `daChao` là ref nên đổi nó KHÔNG làm effect chào chạy lại — thiếu con số này
      trong deps là bấm nút xong màn hình trắng trơn, không ai chào cả. */
   assert.match(than, /datLanBuoi\(/, 'phải có con số trong deps để effect chào chạy lại');
-  assert.match(pn, /\[bai, kbXong, guiLuot, lanBuoi\]/, 'effect chào phải ngó tới lanBuoi');
+  /* ⚠ SOI TÍNH CHẤT, ĐỪNG GHIM CẢ MẢNG DEPS. Bản đầu đòi đúng chuỗi
+     `[bai, kbXong, guiLuot, lanBuoi]`; việc V7 thêm hai phụ thuộc nữa vào chính
+     effect ấy và cổng đỏ dù tính chất — "effect chào phải ngó tới `lanBuoi`" —
+     không đổi. Nên tìm mảng deps của effect chào rồi đòi `lanBuoi` CÓ TRONG đó. */
+  const iChao = pn.indexOf('daChao.current = true');
+  assert.notEqual(iChao, -1);
+  const deps = pn.slice(iChao).match(/\}, \[([^\]]*)\]\);/)?.[1] || '';
+  assert.match(deps, /\blanBuoi\b/, 'effect chào phải ngó tới lanBuoi');
+
+  /* ⚠ VÀ PHẢI XOÁ KẾ HOẠCH CŨ (việc V7). Kế hoạch cũ đã xong hết, mà `xongKeHoach`
+     nay là một ĐÍCH của buổi — nên lượt đầu của buổi MỚI thấy "xong" và màn kết
+     hiện ra trước khi bé nói câu nào. Đúng chỗ phép canh này vừa bắt được. */
+  assert.match(than, /datKeHoachState\(null\)/,
+    'nói lại từ đầu mà không xoá kế hoạch cũ — buổi mới kết ngay khi vừa mở');
+  assert.match(than, /daDocKeHoach\.current = false/,
+    'không đọc lại lời giới thiệu kế hoạch cho buổi mới');
 });
 
 test('lặp Y HỆT lượt trước là KHÔNG hợp lệ, dù câu ấy đúng', () => {

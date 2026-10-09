@@ -110,6 +110,16 @@ export function ghiLuot(bang, luot = null, nhan = null) {
   return { ...(bang || dungBang()), luotGanNhat: luot || null, nhanGanNhat: nhan || null };
 }
 
+/**
+ * Đặt (hoặc cập nhật) KẾ HOẠCH BUỔI vào bảng — TRẢ BẢN MỚI (việc V7).
+ *
+ * Bảng khai sẵn trường `keHoach` từ V6 đúng để chỗ này không phải đổi hình dạng
+ * bảng. Và cùng một lý do bất biến như `ghiLuot`: bảng đi vào `useMemo` của React.
+ */
+export function datKeHoach(bang, keHoach = null) {
+  return { ...(bang || dungBang()), keHoach: keHoach || null };
+}
+
 /* ─────────── tóm tắt cho lời dặn ─────────── */
 
 /**

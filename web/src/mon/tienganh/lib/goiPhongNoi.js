@@ -17,6 +17,7 @@ import {
   soiCau, loiNhacSua, loiNhacSuaViet, SUA_CO_TOI_DA,
 } from './phongnoi.js';
 import { nhanLuot, NHAN_TRONG_KICH_BAN } from './nhanluot.js';
+import { buocHienTai, dongBuocKeHoach } from './kehoach.js';
 
 /** Collection riêng của Tiếng Anh — hậu tố TA để không bao giờ lẫn với Toán. */
 export const KHO_PHONG_NOI = (uid) => `phongNoiTA/${uid}/buoi`;
@@ -93,7 +94,15 @@ export async function hoiCoGiao({
      (`loiDan`) — nên phải tính TRƯỚC cả hai. */
   const { nhan, doTin, chiTiet } = nhanLuot(luotBe, { von });
   const buoc = kichBan ? buocTiepTheo({ kichBan, lichSu, hoSo: hs, haDoKho }) : null;
-  const viec = buoc ? null : viecTiepTheo({ von, lichSu, haDoKho, hoSo: hs, nhan });
+  /* ── KẾ HOẠCH BUỔI (việc V7) ──
+     Kịch bản của bài vẫn ĐI TRƯỚC: nó biết trước câu đúng, còn kế hoạch chỉ xếp
+     thứ tự. Kế hoạch áp cho phần luyện TỰ DO, tức nhánh không kịch bản.
+     ⚠ Bước kế hoạch KHÔNG đổi khi bé đang đuối: `viecGiuLai` bên trong
+     `viecTiepTheo` vẫn thắng, vì bé vừa sai thì việc của lượt là sửa đúng câu ấy. */
+  const buocKH = buoc ? null : buocHienTai(bang?.keHoach);
+  const viec = buoc ? null
+    : viecTiepTheo({ von, lichSu, haDoKho, hoSo: hs, nhan, buocKH });
+  const dongKH = buoc ? '' : dongBuocKeHoach(bang?.keHoach);
   const unit = kichBan
     ? { ten: kichBan.ten,
         muc_tieu: kichBan.muc_tieu,
@@ -118,7 +127,8 @@ export async function hoiCoGiao({
     ? loiDanTranh({ tenBe, lop, kichBan, buoc, luotBe })
     : (buoc
       ? `${loiDan({ von, tenBe, lop, viec: null, hoSo: hs, unit, nhan: nhanKB, chiTiet, bang })}\n${dongBuoc(buoc, { tenBe, thich: hs?.thich }, luotBe)}`
-      : loiDan({ von, tenBe, lop, viec, hoSo: hs, unit, nhan, chiTiet, bang }));
+      : loiDan({ von, tenBe, lop, viec, hoSo: hs, unit, nhan, chiTiet, bang,
+                 dongKeHoach: dongKH }));
   const messages = [{ role: 'system', content: dan }, ...goiGui(lichSu)];
   const { data } = await goi(messages);
   const tra = docTraLoi(data?.chu);
@@ -142,6 +152,9 @@ export async function hoiCoGiao({
        mới biết lỗi 400 của buổi dài đã hết hẳn hay chỉ bị đẩy xuống một tầng —
        xem `LOI_NOI_KHUON` ở `functions/src/luyennoi.js`. */
     tra.noiKhuon = data?.noiKhuon === true;
+    /* Lượt này thuộc bước kế hoạch thứ mấy — màn hình giữ lại để `capNhatSauLuot`
+       biết đang chấm bước nào, và để bản ghi buổi đếm được bước nào hay mắc. */
+    tra.buocKeHoach = buocKH?.i ?? null;
   }
 
   /* SOI LẠI CÂU TIẾNG ANH. Dặn dò không đủ: đã bảo rõ ô trống của `Bye, + [Name].`
