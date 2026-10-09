@@ -416,6 +416,56 @@ console.log('\n── phòng luyện nói ──');
   t('sai kiểu dữ liệu thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
 }
 
+console.log('\n── hàng đợi DUYỆT câu do mô hình soạn (việc V9) ──');
+{
+  /* Luật thứ bảy của một câu hỏi — "phương án nhiễu có thật là cái sai trẻ hay mắc
+     hay chỉ là một chữ bừa" — KHÔNG kiểm được bằng code. Nên câu phải chờ người
+     lớn, và luật phải cho bé GHI mà không cho bé ĐỌC: để bé đọc thì đây thành một
+     kho câu chưa ai kiểm mà bé lấy ra làm được. */
+  const mucCho = (them = {}) => ({
+    learnerId: V.s(BE_A), maNut: V.s('v_g1_u10_mango'), nguon: V.s('ai'),
+    trangThai: V.s('cho'), at: V.s('2026-10-09'),
+    cau: V.m({ id: V.s('pd_ai_1'), text: V.s('Chọn từ đúng') }), ...them,
+  });
+  /* ⚠ MÃ TÀI LIỆU MỚI MỖI LẦN CHẠY. Bộ giả lập giữ dữ liệu giữa hai lần `npm run
+     test:luat`, nên một mã cố định mang theo TRẠNG THÁI của lần trước: lần đầu cô
+     giáo duyệt nó, lần sau bé không ghi lại được nữa — và phép canh đỏ vì rác cũ,
+     không vì luật sai. Tự mình dính đúng chỗ ấy một lần.
+     Chuỗi create → update(cho) → cô duyệt → bé bị chặn nằm TRỌN trong một lần
+     chạy, nên nó vẫn soi được cả `create` lẫn `update` mà không cần kho bẩn. */
+  const D = `choDuyetTA/BE_A__pd_ai_${Date.now()}`;
+
+  let m2 = await ghi(BE_A, D, mucCho());
+  t('bé GHI được câu chờ duyệt', m2 === 200, `HTTP ${m2}`);
+  m2 = await doc(D, BE_A);
+  t('nhưng bé KHÔNG ĐỌC được hàng đợi duyệt', m2 === 403, `HTTP ${m2}`);
+  m2 = await doc(D, BE_B, 'teacher');
+  t('cô giáo đọc được', m2 === 200, `HTTP ${m2}`);
+
+  m2 = await ghi(BE_A, 'choDuyetTA/gia_tinh', mucCho({ nguon: V.s('tinh') }));
+  t('câu KHÔNG phải của mô hình thì BỊ TỪ CHỐI', m2 === 403, `HTTP ${m2}`);
+  m2 = await ghi(BE_A, 'choDuyetTA/gia_duyet', mucCho({ trangThai: V.s('duyet') }));
+  t('bé tự đánh dấu ĐÃ DUYỆT thì BỊ TỪ CHỐI', m2 === 403, `HTTP ${m2}`);
+  m2 = await ghi(BE_A, 'choDuyetTA/gia_be_khac', mucCho({ learnerId: V.s(BE_B) }));
+  t('bé A không ghi được câu đứng tên bé B', m2 === 403, `HTTP ${m2}`);
+
+  /* ⚠ GHI LẠI KHI CHƯA AI DUYỆT. Mã tài liệu tiền định, nên bé làm lại phụ đạo ở
+     CÙNG nút là một lệnh UPDATE. Phép canh này phải chạy SAU một lệnh ghi cùng
+     đường dẫn, nếu không nó chỉ thử `create` và xanh vô nghĩa. */
+  m2 = await ghi(BE_A, D, mucCho({ cau: V.m({ id: V.s('pd_ai_1'), text: V.s('Câu MỚI của buổi sau') }) }));
+  t('bé GHI LẠI được khi câu còn chờ duyệt', m2 === 200, `HTTP ${m2}`);
+
+  /* Cô giáo duyệt — đổi trạng thái. Bé thì không. */
+  m2 = await ghi(BE_B, D, mucCho({ trangThai: V.s('duyet') }), BE_B, 'teacher');
+  t('cô giáo DUYỆT được', m2 === 200, `HTTP ${m2}`);
+  m2 = await ghi(BE_A, D, mucCho({ trangThai: V.s('duyet') }));
+  t('bé KHÔNG duyệt được câu của chính mình', m2 === 403, `HTTP ${m2}`);
+  /* ⚠ Và ĐÃ DUYỆT RỒI thì bé cũng không ghi đè được — không thì bé ghi đè một câu
+     cô vừa bỏ, rồi nó quay lại hàng đợi như mới. */
+  m2 = await ghi(BE_A, D, mucCho());
+  t('câu ĐÃ DUYỆT thì bé không ghi đè được', m2 === 403, `HTTP ${m2}`);
+}
+
 console.log('\n── chốt chặn chung ──');
 m = await ghi(BE_A, `linhTinhTA/${BE_A}/x/y`, { a: V.s('b') });
 t('collection chưa khai luật thì BỊ CHẶN', m === 403, `HTTP ${m}`);

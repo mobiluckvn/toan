@@ -20,6 +20,7 @@ import { makeCode, canSend, nextRecord, verify, otpEmail } from './src/otp.js';
 import { normalizeEmail, buildUserDoc } from './src/user.js';
 import { hoiMay, LoiGoi } from './src/luyennoi.js';
 import { chamBaiViet } from './src/chamviet.js';
+import { sinhPhuDao } from './src/phudao.js';
 
 setGlobalOptions({ region: 'asia-southeast1', maxInstances: 10 });
 initializeApp();
@@ -564,6 +565,37 @@ export const chamViet = onCall(
           'Khoá Groq không dùng được. Người lớn kiểm tra lại GROQ_API_KEY giúp con nhé.');
       }
       throw new HttpsError('unavailable', 'Chưa chấm được bài. Con thử lại nhé.');
+    }
+  },
+);
+
+/**
+ * SOẠN CÂU PHỤ ĐẠO — đường CUỐI của phụ đạo (việc V9).
+ *
+ * `dungPhuDao` đi hai vòng kho TĨNH trước (nút gốc rễ #1, rồi #2) rồi mới gọi tới
+ * đây. Cùng một khoá Groq, cùng luật cửa với `luyenNoi` và `chamViet`.
+ */
+export const sinhCauPhuDao = onCall(
+  { secrets: [GROQ_API_KEY], region: 'asia-southeast1' },
+  async (req) => {
+    if (!req.auth) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
+    const khoa = GROQ_API_KEY.value();
+    if (!khoa) {
+      throw new HttpsError('failed-precondition',
+        'Máy chủ chưa có khoá Groq. Đặt bằng: firebase functions:secrets:set GROQ_API_KEY');
+    }
+    try {
+      const { Groq } = await import('groq-sdk');
+      return await sinhPhuDao(req.data, () => new Groq({ apiKey: khoa }));
+    } catch (e) {
+      if (e instanceof LoiGoi) throw new HttpsError('invalid-argument', e.message);
+      if (e?.status === 401 || e?.status === 403) {
+        throw new HttpsError('permission-denied',
+          'Khoá Groq không dùng được. Người lớn kiểm tra lại GROQ_API_KEY giúp con nhé.');
+      }
+      /* ⚠ KHÔNG ném lỗi nặng lên máy con: phụ đạo CÓ ĐƯỜNG LÙI TĨNH. Máy con bắt
+         lỗi này rồi vẫn ra bài bằng phần tĩnh — xem `dungPhuDao`. */
+      throw new HttpsError('unavailable', 'Chưa soạn được bài ôn. Con thử lại nhé.');
     }
   },
 );

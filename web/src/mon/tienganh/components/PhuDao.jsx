@@ -28,15 +28,19 @@ import CauHoi from './CauHoi.jsx';
 import { napDoThi, baiCuaNut, baiTienQuyet, nhanNut } from '../lib/doThi.js';
 import { napBai, maBaiTruoc } from '../lib/noiDung.js';
 import { dungBang } from '../lib/bangtrangthai.js';
-import { dungPhuDao, cauHoiHopLe, SO_CAU_PHU_DAO } from '../lib/phudao.js';
-import { vonTu, UNIT_CU_TOI_DA } from '../lib/phongnoi.js';
+import { dungPhuDao, cauHoiHopLe, soiCauAI, SO_CAU_PHU_DAO } from '../lib/phudao.js';
+import { nhoSinh } from '../lib/goiPhuDao.js';
+import { luuCauChoDuyet } from '../lib/duLieu.js';
+import { auth } from '../../../chung/lib/nenTang.js';
+import { vonTu, UNIT_CU_TOI_DA, tachTheoTieng } from '../lib/phongnoi.js';
+import { docDoan, thoiDoc } from '../lib/doclen.js';
 
 /**
  * Dựng bài phụ đạo cho một nút bé đang mắc.
  *
  * Trả `{ trangThai, bai, loi }` — `trangThai` là 'dangDung' | 'xong' | 'khongCo'.
  */
-function useBaiPhuDao({ baiNay, maNutMac, mucThao, tienDo, tenBe }) {
+function useBaiPhuDao({ baiNay, maNutMac, mucThao, tienDo, tenBe, nhan = null, lop = 1 }) {
   const [kq, datKq] = useState({ trangThai: 'dangDung', bai: null });
 
   useEffect(() => {
@@ -93,14 +97,37 @@ function useBaiPhuDao({ baiNay, maNutMac, mucThao, tienDo, tenBe }) {
              câu của chính nút gốc rễ mới là thứ ta đi tìm. */
           baiDs: [baiGoc, baiNay].filter(Boolean),
           von,
-          goiLLM: null,          // xem khối chú thích ở cuối tệp
-          soiCau: (c) => cauHoiHopLe(c, { von, tenBe }),
+          nhan,
+          /* ── ĐƯỜNG CUỐI: NHỜ MÔ HÌNH SOẠN CÂU (việc V9) ──
+             `dungPhuDao` chỉ gọi tới đây khi HAI vòng kho tĩnh không đủ câu, và nó
+             bắt mọi lỗi — mất mạng, chưa có khoá, mô hình trả rác thì phụ đạo vẫn
+             ra bài bằng phần tĩnh đã có. Xem khối chú thích ở cuối tệp. */
+          goiLLM: ({ maNut, von: v, soCau }) => nhoSinh({ maNut, nhan: nhanNut(dt, maNut),
+            von: v, soCau, lop }),
+          /* HAI tầng hậu kiểm, và chúng soi hai thứ khác nhau:
+             `cauHoiHopLe` — câu có dùng chữ bé đã học không (vốn từ);
+             `soiCauAI`    — câu có phải là một CÂU HỎI dùng được không (hai đáp án
+                             đúng, đáp án ngoài danh sách, gợi ý lộ đáp án…).
+             Thiếu tầng thứ hai thì câu "hai đáp án đúng" đi lọt — đúng chỗ khối chú
+             thích cuối tệp đã cảnh báo trước khi cắm mô hình. */
+          soiCau: (c) => cauHoiHopLe(c, { von, tenBe })
+            && (c.nguon !== 'ai' || soiCauAI(c).ok),
           soCau: SO_CAU_PHU_DAO,
         });
         if (!song) return;
 
+        /* Câu do mô hình soạn đi vào HÀNG ĐỢI DUYỆT — người lớn xem rồi mới được
+           ghép vào kho tĩnh. Không chờ: bé đang đợi bài, và mất mạng thì chỉ là câu
+           ấy không lên được hàng đợi. */
+        for (const c of (r.choDuyet || [])) {
+          luuCauChoDuyet(auth?.currentUser?.uid, r.nutGoc, c);
+        }
+
         datKq(r.cau.length
-          ? { trangThai: 'xong', bai: { ...r, nhanGoc: nhanNut(dt, r.nutGoc) } }
+          /* `von` đi kèm để `tachTheoTieng` tách được mẩu tiếng Anh trong câu chẩn
+             đoán lúc đọc to — nhãn nút từ vựng là `mango, quả xoài`, và đọc cả câu
+             bằng giọng Việt thì chữ Anh ra một thứ tiếng không phải tiếng nào. */
+          ? { trangThai: 'xong', bai: { ...r, von, nhanGoc: nhanNut(dt, r.nutGoc) } }
           : { trangThai: 'khongCo', bai: null });
       } catch {
         /* Hỏng thì coi như không có bài — bé được mời đi tiếp, không thấy lỗi nào. */
@@ -127,11 +154,33 @@ function useBaiPhuDao({ baiNay, maNutMac, mucThao, tienDo, tenBe }) {
  */
 export default function PhuDao({
   baiNay, maNutMac, mucThao, tienDo, tenBe = 'Bo', onLuot = null, onXong,
+  nhan = null, lop = 1,
 }) {
-  const { trangThai, bai } = useBaiPhuDao({ baiNay, maNutMac, mucThao, tienDo, tenBe });
+  const { trangThai, bai } = useBaiPhuDao({
+    baiNay, maNutMac, mucThao, tienDo, tenBe, nhan, lop,
+  });
   const [i, datI] = useState(0);
   const [dung, datDung] = useState(0);
   const [batDau, datBatDau] = useState(false);
+
+  /**
+   * ĐỌC CÂU CHẨN ĐOÁN — một lần, lúc màn mời hiện ra (việc V9).
+   *
+   * Bé sáu tuổi chưa đọc được chữ, nên một dòng chữ một mình chưa đủ. Đọc bằng
+   * `tachTheoTieng`: câu chẩn đoán có thể mang một mẩu tiếng Anh (nhãn nút từ vựng
+   * là `mango, quả xoài`), và đọc cả câu bằng giọng Việt thì chữ Anh ra một thứ
+   * tiếng không phải tiếng nào — đúng luật "mỗi dòng một thứ tiếng" bác bắt 13-08.
+   */
+  const daDocChanDoan = useRef(false);
+  useEffect(() => {
+    if (daDocChanDoan.current || batDau || !bai?.chanDoan) return;
+    daDocChanDoan.current = true;
+    (async () => {
+      thoiDoc();
+      const von = bai.von || { loi: { tu: [], cau: [], cauSach: [] }, on: [] };
+      await docDoan(tachTheoTieng(bai.chanDoan, von));
+    })().catch(() => {});
+  }, [bai, batDau]);
 
   /* Không dựng được bài thì đi tiếp NGAY, đừng bắt bé bấm một nút chỉ để nghe báo
      là không có gì. Gọi trong effect chứ không giữa lúc vẽ.
@@ -165,6 +214,13 @@ export default function PhuDao({
           <p className="mt-2 text-2xl font-bold text-ink">Mình gỡ chỗ này cùng nhau nhé</p>
           {/* Nhãn ĐỌC ĐƯỢC, không bao giờ là mã máy. Bày `v_g3_u10_break_time` ra
               cho bé (hay cho bố mẹ ngồi cạnh) là đúng lỗi đã xảy ra ngày 22-08. */}
+          {/* ── CÂU CHẨN ĐOÁN (việc V9) ──
+              Hệ thống BIẾT vì sao nó lùi về đây: nó vừa tính ra nút nào bé mắc và
+              nút nào là gốc. Không nói ra thì cả tầng lan truyền ngược — thứ đắt
+              nhất của môn này — nhìn từ phía bé chỉ là một bài tập ngẫu nhiên. */}
+          {!!bai.chanDoan && (
+            <p className="mt-1 font-semibold text-gold-dark">{bai.chanDoan}</p>
+          )}
           <p className="text-gold-dark">
             {bai.nhanGoc
               ? <>Cô thấy con chưa chắc phần <b>{bai.nhanGoc}</b>. Làm {ds.length} câu
@@ -240,7 +296,25 @@ export default function PhuDao({
   );
 }
 
-/* ── ⚠ VÌ SAO `goiLLM` ĐANG LÀ `null` ──────────────────────────────────────────
+/* ── ĐƯỜNG MÔ HÌNH: ĐÃ CẮM 09-10-2026 (việc V9) ────────────────────────────────
+ *
+ * Khối dưới đây là bản chú thích CŨ, giữ lại vì lập luận của nó vẫn đúng và chính
+ * nó định ra điều kiện để được cắm. Nay điều kiện ấy đã làm xong:
+ *
+ *   · `soiCauAI` (ở `lib/phudao.js`) soi SÁU luật của một câu hỏi mà vốn từ không
+ *     nói được: hai phương án trùng nhau (→ hai đáp án đúng), đáp án ngoài danh
+ *     sách, gợi ý lộ đáp án, một phương án, lời dẫn rỗng, lời dẫn có số;
+ *   · luật thứ bảy — "phương án nhiễu có thật là cái sai trẻ hay mắc hay chỉ là
+ *     một chữ bừa" — KHÔNG kiểm được bằng code, nên câu phải qua HÀNG ĐỢI DUYỆT
+ *     (`choDuyetTA`): bé ghi được, chỉ người lớn đọc và duyệt được;
+ *   · và đường tĩnh vẫn đi TRƯỚC, hai vòng (nút gốc rễ #1, rồi #2). Mô hình chỉ
+ *     được gọi khi cả hai vòng không đủ câu, đúng một lời gọi mỗi lần phụ đạo.
+ *
+ * ⚠ Con số "tỷ lệ dùng phương án dự phòng" (Bảng 3.29) từ nay MỚI có nghĩa: trước
+ * 09-10 nó luôn bằng 0 vì không có lời gọi nào để mà lùi. `LOI_SINH` ở
+ * `lib/goiPhuDao.js` đếm.
+ *
+ * ── Bản chú thích cũ, để lại nguyên văn ──
  *
  * Bảng 3.23 khai bài phụ đạo là MỘT TRONG BA vị trí được gọi mô hình lúc chạy.
  * Chỗ nối ấy để sẵn ở đây (`goiLLM`), nhưng chưa cắm, và đây là lý do:

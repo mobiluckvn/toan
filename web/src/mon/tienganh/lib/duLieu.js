@@ -197,6 +197,33 @@ export async function luuBai(uid, id, m) {
   } catch (e) { nuot(e); return false; }
 }
 
+/**
+ * ĐẨY CÂU DO MÔ HÌNH SOẠN LÊN HÀNG ĐỢI DUYỆT (việc V9).
+ *
+ * ⚠ Câu này là câu DUY NHẤT trong app không đi qua bộ sinh và 83 cổng. Máy con đã
+ * hậu kiểm vốn từ, nhưng hậu kiểm chỉ biết "câu dùng chữ bé đã học" — nó không biết
+ * câu ấy có DẠY ĐÚNG không. Nên nó nằm chờ người lớn xem, và luật Firestore cho bé
+ * GHI mà không cho bé ĐỌC: để bé đọc thì đây thành một kho câu chưa ai kiểm.
+ *
+ * KHÔNG chờ ở chỗ gọi: bé đang làm bài, mất mạng thì bài vẫn chạy — chỉ là câu ấy
+ * không lên được hàng đợi. `LOI_GHI` đếm như mọi đường ghi khác.
+ */
+export async function luuCauChoDuyet(uid, maNut, cau) {
+  if (!dungDuoc(uid) || !maNut || !cau?.id) return false;
+  try {
+    await setDoc(doc(db, 'choDuyetTA', maTep(`${uid}__${cau.id}`)), {
+      learnerId: uid,
+      maNut,
+      nguon: 'ai',
+      trangThai: 'cho',
+      cau,
+      at: new Date().toISOString(),
+      serverTs: serverTimestamp(),
+    }, { merge: true });
+    return true;
+  } catch (e) { nuot(e); return false; }
+}
+
 /** Lưu một mục học bạ (kỳ ôn tập chương). */
 export async function luuMucHocBa(uid, loai, khoa, du) {
   if (!dungDuoc(uid)) return false;

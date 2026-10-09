@@ -265,6 +265,50 @@ service cloud.firestore {
                    && request.resource.data.luot is list;
     }
 
+    /* ══ CÂU DO MÔ HÌNH SOẠN — CHỜ NGƯỜI LỚN DUYỆT (việc V9) ══
+
+       Phụ đạo lấy câu từ kho TĨNH trước (hai vòng). Hết câu tĩnh thì nhờ mô hình
+       soạn — và câu ấy là câu DUY NHẤT trong app không đi qua bộ sinh và 83 cổng.
+       Máy con đã hậu kiểm từng câu bằng `cauHoiHopLe` (vốn từ của bài), nhưng hậu
+       kiểm chỉ biết "câu này dùng chữ bé đã học"; nó không biết câu ấy có DẠY ĐÚNG
+       không. Nên câu phải nằm ở đây chờ người lớn xem, rồi mới được ghép vào kho
+       tĩnh bằng một bước thủ công.
+
+       ⚠ BÉ GHI ĐƯỢC NHƯNG KHÔNG ĐỌC ĐƯỢC. Đây là hàng đợi DUYỆT, không phải sổ của
+       bé: để bé đọc thì nó thành một kho câu chưa ai kiểm mà bé lấy ra làm được.
+       Và `allow update` để người lớn đánh dấu đã duyệt — bé không có đường ấy.
+
+       ⚠ `maNut` là một mã nút, có thể mang dấu `:` và `.` — đường dẫn phải là tài
+       liệu PHẲNG dưới một collection, không phải `choDuyetTA/{maNut}/cau/{id}`:
+       Firestore cấm `/` trong mã tài liệu và mã nút của Toán có chứa nó. */
+    match /choDuyetTA/{cauId} {
+      allow read:   if isTeacher() || isAdmin();
+      allow create: if isMine(request.resource.data.learnerId)
+                    && request.resource.data.nguon == 'ai'
+                    && request.resource.data.maNut is string
+                    && request.resource.data.trangThai == 'cho';
+      /* ⚠ BÉ PHẢI GHI LẠI ĐƯỢC KHI CÂU CHƯA AI DUYỆT.
+         Mã tài liệu là `{uid}__{mã câu}`, mà mã câu dựng tiền định từ mã nút
+         (`pd_ai_<nút>_1`). Nên bé làm lại phụ đạo ở CÙNG nút là một lệnh UPDATE,
+         không phải CREATE — và luật chỉ-cho-cô-giáo-update sẽ từ chối TRONG IM
+         LẶNG (`luuCauChoDuyet` không chờ kết quả): câu mới của buổi sau không bao
+         giờ lên tới hàng đợi.
+         Cổng `luat_firestore` lần chạy ĐẦU vẫn xanh (kho trống nên mọi lệnh là
+         `create`); chỉ lần chạy THỨ HAI mới lộ — đúng cùng chỗ đã dính ở việc V5.
+
+         Nên: bé ghi lại được KHI câu còn `cho`, và chỉ được giữ nó ở `cho`. Ai đã
+         duyệt rồi thì chỉ người lớn đụng được — không thì bé ghi đè một câu cô vừa
+         bỏ, rồi nó quay lại hàng đợi như mới. */
+      allow update: if ((isTeacher() || isAdmin())
+                        && request.resource.data.trangThai in ['cho', 'duyet', 'bo'])
+                    || (isMine(resource.data.learnerId)
+                        && resource.data.trangThai == 'cho'
+                        && request.resource.data.trangThai == 'cho'
+                        && request.resource.data.learnerId == resource.data.learnerId
+                        && request.resource.data.nguon == 'ai');
+      allow delete: if isAdmin();
+    }
+
     /* ── Hàng đợi ôn tập: việc riêng của từng bạn, cô không cần ── */
     match /reviewQueue/{userId}/cards/{cardId} {
       allow read:  if isMine(userId) || isAdmin();

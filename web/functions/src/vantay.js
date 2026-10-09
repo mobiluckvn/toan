@@ -41,6 +41,8 @@ export const PHIEN_BAN_MAU = {
   /* 2 từ 09-10-2026 (việc V4): một lời dặn tách thành CHUỖI BA mắt xích (tìm lỗi ·
      sửa · lời cho bố mẹ), và khung vân tay nay là ba khung ghép lại. Đổi đáng kể. */
   chamviet: 2,
+  /* 1 từ 09-10-2026 (việc V9): mẫu sinh câu phụ đạo, bản đầu. */
+  phudao: 1,
 };
 
 /** Băm ngắn — 12 ký tự hex là đủ tách vài chục mẫu, và ngắn thì đọc log dễ. */
