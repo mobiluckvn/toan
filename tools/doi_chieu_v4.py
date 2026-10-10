@@ -413,15 +413,17 @@ trang(
     ["Mã", "Việc chưa làm", "Thuộc mục", "Vì sao chưa", "Hệ quả hiện nay", "Loại"],
     [
         "▌ CHƯA LÀM VÌ CÒN THIẾU ĐIỀU KIỆN — không phải nợ kỹ thuật",
-        ["C-01", "Hàm nền HỌC ngưỡng (EM · hồi quy bán rã · quét lưới)", "3.8.3",
-         "Phần ĐO đã xong và đã chạy trên dữ liệu thật. Phần ĐỀ XUẤT chỉ có nghĩa khi đủ cỡ mẫu Ở PHẠM VI HẸP: "
-         "toàn hệ đã đủ (3.212 > NG21 = 200), nhưng mon=tienganh mới 137 lượt và khoiLop còn 0 (trường mới có từ 10-10).",
-         "Ngưỡng vẫn là bộ mặc định v1. Chuyên gia sửa tay được, chỉ chưa có đề xuất máy học.",
-         "CHƯA"],
-        ["C-02", "Màn duyệt đề xuất ngưỡng", "3.8.4",
-         "Phụ thuộc C-01: bảng nguong_de_xuat đã có luật và đã có phép canh luật, nhưng CHƯA AI GHI vào. "
-         "Dựng màn duyệt bây giờ là dựng một màn không có gì để duyệt.",
-         "Không có.", "CHƯA"],
+        ["C-01", "Hàm nền HỌC ngưỡng — ĐÃ XONG 10-10", "3.8.3",
+         "Bốn cách học của mục 3.8.3 đều có: EM (kiểm tra chéo chia theo NGƯỜI HỌC) · hồi quy bán rã · "
+         "quét lưới · phân vị. EM tìm lại được bộ tham số đã sinh ra dữ liệu tới ba chữ số.",
+         "Bộ đề xuất đầu tiên trên 3.213 lượt thật: 11 dòng, 2 có giá trị. Bốn tham số BKT KHÔNG được đề "
+         "xuất — EM cho AUC giữ lại 0,682 so với 0,735 của bộ đang hành, tức bộ HIỆU CHỈNH TAY đang thắng "
+         "máy học trên dữ liệu giữ lại. Đáng ghi vào luận văn.", "XONG"],
+        ["C-02", "Màn duyệt đề xuất ngưỡng — ĐÃ XONG 10-10", "3.8.4",
+         "`DuyetDeXuat.jsx`, vào từ màn ngưỡng. Hiện CẢ những ngưỡng máy đã xét mà không đề xuất — phần ấy "
+         "đáng đọc ngang phần kia: nó cho biết máy đã thử và không tìm được gì tốt hơn.",
+         "Duyệt KHÔNG phải phát hành: luật chỉ cho đổi `trangThai`; giá trị chỉ có hiệu lực sau khi phát "
+         "hành một phiên bản ở màn ngưỡng. Hai bước trả lời hai câu khác nhau.", "XONG"],
         ["C-03", "Sáu kịch bản thực nghiệm KB1–KB6", "3.9",
          "KB1 cần bộ sinh người học mô phỏng + quét lưới (phụ thuộc C-01). KB6 cần 5–10 học sinh thật trong 4 tuần "
          "— là việc TỔ CHỨC, không phải việc mã.",
@@ -665,10 +667,10 @@ trang(
         ["3", "Cập nhật ba chỗ số liệu trong luận văn (C-11 · C-12 · C-14)",
          "Rẻ, và nâng độ tin cậy: hiện luận văn đang tự đánh giá THẤP HƠN thực tế ở hai chỗ.",
          "Thầy chốt C-13", "nhỏ"],
-        ["4", "KB1 — bộ sinh người học mô phỏng + quét lưới (C-01)",
-         "Mở khoá cả C-02 (màn duyệt đề xuất) lẫn KB2. Và nay rẻ hơn luận văn tưởng: phép tính đã chạy lại "
-         "được trên nhật ký với bộ ngưỡng khác, nên phần khó nhất đã xong.",
-         "không", "lớn"],
+        ["4", "KB1 trên NGƯỜI HỌC MÔ PHỎNG",
+         "Hàm học ngưỡng đã chạy trên dữ liệu thật (C-01 xong). Phần còn thiếu của KB1 là bộ sinh 1.000 "
+         "người học mô phỏng — cần nó thì NG06 và NG07 mới đủ cỡ mẫu để thành đề xuất.",
+         "không", "vừa"],
         ["5", "Nối lan truyền XUÔI vào chỗ tính vectơ trạng thái (C-07)",
          "Luận văn tự khai là giới hạn. Có mã, có cổng.", "không", "vừa"],
         
