@@ -507,23 +507,30 @@ m = await ghi(CG, 'nguong/NG99', { ma: V.s('NG99'), giaTri: { doubleValue: 1 } }
               CG, 'chuyengia');
 t('thiếu canDuoi/canTren/phienBan thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
 
+/* ⚠ MÃ TÀI LIỆU PHẢI KHÁC NHAU MỖI LẦN CHẠY. `nguong_lich_su` là bảng CHỈ-THÊM, nên
+   một mã ghim cứng làm lần chạy thứ hai trên cùng bộ giả lập tự đỏ: phép "chuyên gia
+   THÊM được dòng lịch sử" biến thành phép "sửa lại dòng cũ", và luật từ chối — đúng
+   như luật phải làm. Cổng đỏ vì chính thứ nó đang canh hoạt động đúng là một cổng
+   dẫn người sửa đi sai hướng, nên mỗi lần chạy dùng một hậu tố riêng. */
+const LAN = `${Date.now()}_${Math.floor(Math.random() * 1e6)}`;
+
 const lichSuHopLe = (nguoi = CG, lyDo = 'tỷ lệ công nhận sớm 18%') => ({
   ma: V.s('NG07'), giaTriMoi: { doubleValue: 0.88 }, phienBan: V.n(2),
   nguoiSua: V.s(nguoi), thoiDiem: V.s('2026-10-10T00:00:00Z'), lyDo: V.s(lyDo),
 });
 
-m = await ghi(CG, 'nguong_lich_su/ls1', lichSuHopLe(), CG, 'chuyengia');
+m = await ghi(CG, `nguong_lich_su/ls1_${LAN}`, lichSuHopLe(), CG, 'chuyengia');
 t('chuyên gia THÊM được dòng lịch sử', m === 200, `HTTP ${m}`);
-m = await ghi(CG, 'nguong_lich_su/ls1', lichSuHopLe(CG, 'sửa lại'), CG, 'chuyengia');
+m = await ghi(CG, `nguong_lich_su/ls1_${LAN}`, lichSuHopLe(CG, 'sửa lại'), CG, 'chuyengia');
 t('nhưng SỬA lại dòng ấy thì BỊ TỪ CHỐI — lịch sử chỉ thêm', m === 403, `HTTP ${m}`);
-m = await ghi(CG, 'nguong_lich_su/ls2', lichSuHopLe(CG, ''), CG, 'chuyengia');
+m = await ghi(CG, `nguong_lich_su/ls2_${LAN}`, lichSuHopLe(CG, ''), CG, 'chuyengia');
 t('thiếu LÝ DO thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
-m = await ghi(CG, 'nguong_lich_su/ls3', lichSuHopLe(BE_A), CG, 'chuyengia');
+m = await ghi(CG, `nguong_lich_su/ls3_${LAN}`, lichSuHopLe(BE_A), CG, 'chuyengia');
 t('khai nguoiSua là người KHÁC thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
-m = await doc('nguong_lich_su/ls1', BE_A);
+m = await doc(`nguong_lich_su/ls1_${LAN}`, BE_A);
 t('bé KHÔNG đọc được lịch sử ngưỡng', m === 403, `HTTP ${m}`);
 
-m = await ghi(CG, 'nguong_de_xuat/dx1',
+m = await ghi(CG, `nguong_de_xuat/dx1_${LAN}`,
               { ma: V.s('NG07'), giaTriDeXuat: { doubleValue: 0.88 }, trangThai: V.s('cho') },
               CG, 'chuyengia');
 t('KHÔNG AI tạo được đề xuất từ máy con — chỉ hàm nền', m === 403, `HTTP ${m}`);

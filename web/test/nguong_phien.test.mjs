@@ -255,3 +255,90 @@ test('hai môn khai CÙNG một phiên bản bản ghi, và bản ghi mang khoiL
   assert.equal(d.khoiLop, '3', 'bản ghi phải KHAI khối lớp cho hàm nền dùng');
   n.datNguCanh({});
 });
+
+test('dạng câu: nấc đọc từ `mode`, và nút vẫn hẹp hơn nó', async () => {
+  const n = await import('../functions/src/nguong.js');
+  const b = await import('../functions/src/bkt.js');
+
+  assert.equal(b.nguCanhLuot({ mode: 'chon' }).dangCau, 'chon');
+  assert.equal(b.nguCanhLuot({}).dangCau, undefined, 'lượt không khai mode → không có nấc');
+
+  n.datBoNguong({
+    phienBan: 79, macDinh: { ...n.MAC_DINH },
+    theoPhamVi: {
+      toanHe: { NG04: 0.30 },
+      /* Đúng lý do nấc này tồn tại: đoán trúng câu bốn lựa chọn ~0,25, gõ lại chữ
+         thì gần 0. Một con số chung là sai cho cả hai. */
+      dangCau: { chon: { NG04: 0.25 }, go: { NG04: 0.02 } },
+      nut: { 'v_kho': { NG04: 0.40 } },
+    },
+  });
+
+  assert.equal(b.paramsFor({ mode: 'chon' }).guess, 0.25);
+  assert.equal(b.paramsFor({ mode: 'go' }).guess, 0.02);
+  assert.equal(b.paramsFor({ mode: 'noi' }).guess, 0.30, 'dạng chưa cấu hình → bộ chung');
+  assert.equal(b.paramsFor({ mode: 'chon', bktUnit: 'v_kho' }).guess, 0.40,
+    'nút đứng TRƯỚC dạng câu trên thang phạm vi');
+
+  n.datBoNguong(null);
+});
+
+test('hai môn không được dùng trùng một mã dạng câu', async () => {
+  /* `dangCau` là MỘT không gian khoá dùng chung cho cả hai môn. Hiện hai môn dùng
+     hai bộ từ rời nhau nên không ô ngưỡng nào mang hai nghĩa — nhưng đó là may, chứ
+     không phải thiết kế. Đổi tên `chondapan` của Toán thành `chon` là từ đó chuyên
+     gia sửa ngưỡng cho câu trắc nghiệm Tiếng Anh thì câu trắc nghiệm Toán đổi theo,
+     và chẳng gì kêu. Cổng này kêu.
+
+     ⚠ KHÔNG CHÉP DANH SÁCH MÃ VÀO ĐÂY. Bản đầu tôi viết regex ghim đúng năm chữ của
+     Toán — tức ghim CHÍNH TẢ chứ không ghim tính chất, cái bẫy kho này đã dính bốn
+     lần: thêm dạng câu mới mà quên sửa cổng thì cổng vẫn xanh, và nó xanh về một
+     thứ không còn đúng. Bản thứ hai tôi tự bịa vỏ câu để gọi `answerMode` — cũng
+     hỏng, vì vỏ bịa không đúng hình dạng thật nên bốn trong năm nhánh rơi hết về
+     `so` mà cổng vẫn xanh.
+
+     Nên cổng này đo trên NỘI DUNG THẬT đang chạy: quét `public/content`, chạy
+     `answerMode` lên từng câu, và lấy đúng những mã thực sự xuất hiện. Thêm dạng
+     câu mới vào sách là cổng thấy ngay, không phải nhớ sửa chỗ nào. */
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const { answerMode } = await import('../src/mon/toan/lib/flow.js');
+  const { TEN_DINH_DANG } = await import('../src/mon/tienganh/lib/hoso.js');
+
+  const goc = new URL('../public/content', import.meta.url).pathname;
+  const tep = [];
+  (function di(d) {
+    for (const f of fs.readdirSync(d, { withFileTypes: true })) {
+      const q = path.join(d, f.name);
+      if (f.isDirectory()) di(q); else if (f.name.endsWith('.json')) tep.push(q);
+    }
+  }(goc));
+
+  const dangToan = new Map();
+  for (const t of tep) {
+    let d; try { d = JSON.parse(fs.readFileSync(t, 'utf8')); } catch { continue; }
+    const hang = [d];
+    while (hang.length) {
+      const x = hang.pop();
+      if (Array.isArray(x)) { hang.push(...x); continue; }
+      if (!x || typeof x !== 'object') continue;
+      if (x.answerKey || x.format) {
+        const m = answerMode(x);
+        dangToan.set(m, (dangToan.get(m) || 0) + 1);
+      }
+      for (const v of Object.values(x)) if (v && typeof v === 'object') hang.push(v);
+    }
+  }
+
+  /* Năm nhánh của `answerMode` đều có câu thật. Hụt một nhánh nghĩa là phép so
+     trùng dưới đây đang soi thiếu một mã — phải kêu ở đây, không được im rồi báo
+     "không trùng". */
+  assert.equal(dangToan.size, 5,
+    `đọc hụt dạng câu Toán: ${[...dangToan.keys()].join(' · ')}`);
+
+  const dangTA = new Set(Object.keys(TEN_DINH_DANG));
+  assert.ok(dangTA.size >= 5, `đọc hụt dạng câu Tiếng Anh: ${[...dangTA]}`);
+
+  const trung = [...dangTA].filter((x) => dangToan.has(x));
+  assert.deepEqual(trung, [], `hai môn trùng mã dạng câu: ${trung.join(', ')}`);
+});

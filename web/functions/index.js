@@ -13,6 +13,7 @@ import { getFirestore, FieldValue } from 'firebase-admin/firestore';
 import { getAuth } from 'firebase-admin/auth';
 import { applyAttempt } from './src/bkt.js';
 import { layBoNguong } from './src/napNguong.js';
+import { docLuotTuMoc } from './src/docLuot.js';
 import { buildReviewCards } from './src/schedule.js';
 import { buildParentReport } from './src/report.js';
 import { buildTeacherBoard } from './src/teacherboard.js';
@@ -709,3 +710,120 @@ export const luyenNoi = onCall(
     }
   },
 );
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   THỐNG KÊ NGƯỠNG — Bảng 3.22, mục 3.8.5
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * Chạy HẰNG TUẦN, đọc nhật ký lượt và ghi chỉ số theo dõi vào `thong_ke_nguong`.
+ *
+ * Mỗi chỉ số trả lời một câu: ngưỡng này đang quá cao hay quá thấp. Phép tính nằm
+ * trọn ở `src/thongke.js` (thuần toán, cổng `thongke_nguong.test.mjs` canh); ở đây
+ * chỉ có việc đọc, gom theo phạm vi, và ghi.
+ *
+ * ── ⚠ CỬA SỔ 90 NGÀY, KHÔNG PHẢI CẢ NHẬT KÝ ──
+ * Nhật ký là bất biến nên nó chỉ dài ra mãi. Đọc hết thì một ngày nào đó hàm chạm
+ * trần 540 giây và từ đó KHÔNG CÓ chỉ số nào nữa — hỏng vào đúng lúc dữ liệu nhiều
+ * nhất, tức đúng lúc chỉ số bắt đầu đáng tin. Cửa sổ cũng hợp với cách đọc: chuyên
+ * gia cần biết ngưỡng đang hợp với trẻ BÂY GIỜ, không phải trung bình của hai năm.
+ *
+ * ── ⚠ GHI THEO TUẦN, KHÔNG ĐÈ LÊN BẢN TRƯỚC ──
+ * Mã tài liệu mang mốc tuần, vì cả công dụng của bảng này là NHÌN THEO THỜI GIAN:
+ * "đổi θ tuần trước thì tỉ lệ công nhận sớm tuần này ra sao". Đè lên một dòng duy
+ * nhất là bỏ mất đúng thứ cần so.
+ */
+export const thongKeNguongTuan = onSchedule(
+  { schedule: '0 3 * * 1', timeZone: 'Asia/Ho_Chi_Minh', timeoutSeconds: 540, memory: '1GiB' },
+  async () => { await dungThongKeNguong(); },
+);
+
+/** Chuyên gia bấm "tính lại" — không phải chờ tới thứ Hai mới thấy tác động. */
+export const tinhLaiThongKeNguong = onCall(
+  { region: 'asia-southeast1', timeoutSeconds: 540, memory: '1GiB' },
+  async (req) => {
+    const uid = req.auth?.uid;
+    if (!uid) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
+    const u = await db.doc(`users/${uid}`).get();
+    const vai = u.data()?.role;
+    if (vai !== 'chuyengia' && vai !== 'admin') {
+      throw new HttpsError('permission-denied', 'Chỉ chuyên gia tính lại được.');
+    }
+    return await dungThongKeNguong();
+  },
+);
+
+const CUA_SO_NGAY = 90;
+
+async function dungThongKeNguong(bayGio = Date.now()) {
+  const { tinhThongKe } = await import('./src/thongke.js');
+  const bo = await layBoNguong(db);
+  const tu = bayGio - CUA_SO_NGAY * 86400000;
+
+  /* Chỉ nhặt những trường phép tính dùng tới. Nhật ký mang cả câu trả lời của bé;
+     giữ nguyên cả tài liệu trong bộ nhớ là vừa tốn vừa không có lý do. */
+  /* Phép phân trang nằm ở `src/docLuot.js` — tách ra vì đúng mươi dòng ấy đã sai
+     ba lần, và cổng `docluot.test.mjs` nay canh chúng bằng một kho giả. Ở đây chỉ
+     còn việc nói cho nó biết cách hỏi Firestore.
+
+     ⚠ `orderBy('ts').orderBy('__name__')` — sắp theo ĐÚNG cặp mà con trỏ dùng.
+     Thiếu `__name__` thì thứ tự giữa các tài liệu cùng `ts` không xác định, và con
+     trỏ có thể nhảy qua hoặc lặp lại. Không phải khai chỉ mục ghép: `ts` là một
+     trường, `__name__` luôn là khoá phụ sẵn có. */
+  const layTrang = async (sau, soLuong) => {
+    let q = db.collection('attempts')
+      .where('ts', '>=', tu).orderBy('ts').orderBy('__name__').limit(soLuong);
+    if (sau) q = q.startAfter(sau.ts, sau.id);
+    const snap = await q.get();
+    return snap.docs.map((d) => {
+      const v = d.data();
+      /* ⚠ Lượt thiếu nút hay thiếu bé vẫn PHẢI trả về (gắn cờ `boQua`), rồi mới
+         lọc ở dưới. Loại ngay tại đây thì một trang đầy 500 tài liệu hỏng trả về 0
+         mục và vòng lặp tưởng đã hết nhật ký — mất sạch phần sau. */
+      if (!v?.learnerId || !v?.bktUnit) return { id: d.id, ts: v?.ts ?? 0, boQua: true };
+      return {
+        id: d.id,
+        learnerId: v.learnerId, bktUnit: v.bktUnit, correct: !!v.correct,
+        ts: v.ts ?? 0, mon: v.mon ?? null, khoiLop: v.khoiLop ?? null,
+        mode: v.mode ?? null, ms: Number.isFinite(v.ms) ? v.ms : null,
+      };
+    });
+  };
+  const luots = (await docLuotTuMoc(layTrang)).filter((a) => !a.boQua);
+
+  /* Ba mức phạm vi. Hẹp hơn nữa (nút, dạng câu) thì cỡ mẫu vụn ra và mỗi dòng nói
+     về vài chục lượt — tính thì vẫn tính được, nhưng ghi hàng nghìn dòng mà dòng
+     nào cũng "chưa đủ mẫu" là làm bảng không đọc được. Khi dữ liệu nhiều lên thì
+     mở thêm mức ở đây. */
+  const nhom = [{ phamVi: 'toanHe', khoa: null, ds: luots }];
+  const theo = (truong, phamVi) => {
+    const m = new Map();
+    for (const a of luots) {
+      const k = a[truong];
+      if (k == null || k === '') continue;
+      if (!m.has(k)) m.set(k, []);
+      m.get(k).push(a);
+    }
+    for (const [k, ds] of m) nhom.push({ phamVi, khoa: String(k), ds });
+  };
+  theo('mon', 'mon');
+  theo('khoiLop', 'khoiLop');
+
+  /* Mốc TUẦN theo chuẩn ISO — cùng một tuần thì cùng một mã, chạy lại không đẻ dòng mới. */
+  const d = new Date(bayGio);
+  const t = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  t.setUTCDate(t.getUTCDate() + 4 - (t.getUTCDay() || 7));
+  const nam = t.getUTCFullYear();
+  const tuan = Math.ceil((((t - Date.UTC(nam, 0, 1)) / 86400000) + 1) / 7);
+  const mocTuan = `${nam}-W${String(tuan).padStart(2, '0')}`;
+
+  let ghi = 0;
+  for (const n of nhom) {
+    const chiSo = tinhThongKe(n.ds, bo, { phamVi: n.phamVi, khoa: n.khoa, bayGio });
+    const ma = `${mocTuan}__${n.phamVi}__${n.khoa ?? 'all'}`;
+    await db.doc(`thong_ke_nguong/${ma}`).set({ ...chiSo, mocTuan, cuaSoNgay: CUA_SO_NGAY }, { merge: false });
+    ghi++;
+  }
+  console.log(`thống kê ngưỡng ${mocTuan}: ${luots.length} lượt → ${ghi} dòng`);
+  return { mocTuan, soLuot: luots.length, soDong: ghi };
+}

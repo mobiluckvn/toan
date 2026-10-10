@@ -161,10 +161,19 @@ console.log('\n── máy chủ KHÔNG lưu gì ──');
   t('không giữ trạng thái giữa hai lượt gọi',
     !/^(let|var)\s/m.test(src.replace(/^\s*let\s+tong[\s\S]*?$/m, '')));
 
-  /* Chỗ NỐI DÂY ở index.js mới là chỗ dễ lỡ tay thêm một dòng ghi. */
+  /* Chỗ NỐI DÂY ở index.js mới là chỗ dễ lỡ tay thêm một dòng ghi.
+
+     ⚠ CẮT ĐÚNG THÂN HÀM, ĐỪNG CẮT TỚI HẾT TỆP. Bản cũ cắt từ `export const luyenNoi`
+     tới cuối tệp — tức ngầm giả định hàm ấy nằm CUỐI. Thêm bất kỳ hàm nền nào sau
+     nó là cổng đỏ vì một lý do không liên quan gì tới phòng luyện nói, và người sửa
+     bị dẫn đi sai hướng (đã xảy ra thật khi thêm hàm thống kê ngưỡng). Nay dừng ở
+     `export` kế tiếp, nên cổng soi đúng cái nó định soi. */
   const idx = bo(readFileSync(new URL('../functions/index.js', import.meta.url), 'utf8'));
-  const than = idx.slice(idx.indexOf('export const luyenNoi'));
+  const dau = idx.indexOf('export const luyenNoi');
+  const ke = idx.slice(dau + 1).search(/^export (const|function) /m);
+  const than = ke < 0 ? idx.slice(dau) : idx.slice(dau, dau + 1 + ke);
   t('chỗ nối dây cũng không ghi Firestore', !/db\.(doc|collection)/.test(than));
+  t('và lát cắt ấy đúng là thân hàm luyenNoi', /onCall/.test(than) && than.length < 4000);
   t('phải đăng nhập mới gọi được', /req\.auth/.test(than));
   t('thiếu khoá thì NÓI RÕ, không im lặng', /functions:secrets:set GROQ_API_KEY/.test(than));
   /* Khoá SAI khác hẳn Groq HỎNG: khoá sai thì người lớn phải đi sửa, Groq hỏng thì

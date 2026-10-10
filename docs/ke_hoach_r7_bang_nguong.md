@@ -571,3 +571,139 @@ thật** (NG21 đòi 200 lượt mỗi phạm vi) · màn duyệt đề xuất �
 Và một việc nhỏ còn bỏ ngỏ: nấc `dangCau` của thang phạm vi **chưa có đường vào** —
 bản ghi lượt không mang trường dạng câu, nên muốn dùng nấc ấy thì phải khai thêm, y
 như vừa làm với `khoiLop`.
+
+---
+
+## 12 · DẠNG CÂU · THỐNG KÊ · ĐÃ LÊN BẢN THẬT — 10-10-2026
+
+### R7 đã lên bản chạy
+
+Ba đợt rưỡi trước mới nằm trên nhánh. Nay **đã deploy cả ba phần**: `firestore.rules`
+(bốn bảng + vai trò chuyên gia) · functions · hosting. Đo trên `ky-su-nhi.web.app`:
+
+```
+bộ ngưỡng                 phienBan 1 · θ 0,85 · NG09 3
+tệp ngưỡng                /content/nguong.json?v=6b3f7101585a   ← dấu phiên bản còn nguyên
+mở Tiếng Anh lớp 3        { mon: 'tienganh', khoiLop: '3' }
+console                   sạch, không lỗi
+```
+
+> Dấu `?v=` là thứ gánh cho `immutable, max-age=604800`. Thiếu nó thì một ngưỡng
+> chuyên gia vừa sửa phải chờ 7 ngày mới tới được máy của trẻ.
+
+### Nấc `dangCau` — không phải thêm trường nào
+
+Nấc cuối còn thiếu của thang phạm vi. Hoá ra **đã nằm sẵn trong bản ghi**, ở trường
+`mode` (Đợt 1 đã ghi nó để cộng hồ sơ định dạng). Nên lần này không đổi bản ghi,
+không lên phiên bản, chỉ đọc đúng chỗ.
+
+Đây là nấc đáng giá nhất cho **NG04 — xác suất đoán trúng**: câu bốn lựa chọn đoán
+trúng ~0,25, câu gõ lại chữ thì gần 0. Một con số chung là sai cho cả hai.
+
+⚠ **Hai môn dùng hai bộ từ khác nhau cho cùng trường ấy** — Tiếng Anh `chon · the ·
+go · tf · nghenhin · noi`, Toán `so · bieuthuc · dungsai · chondapan · tuluan` —
+nhưng `dangCau` là MỘT không gian khoá dùng chung. Chúng không trùng chữ nào, và đó
+là **may, không phải thiết kế**: đổi tên `chondapan` thành `chon` là từ đó sửa ngưỡng
+cho trắc nghiệm Tiếng Anh thì trắc nghiệm Toán đổi theo, câm. Cổng mới ghim điều đó.
+
+> **Cổng ấy tôi viết hỏng hai lần trước khi đúng.** Bản đầu ghim regex đúng năm chữ
+> của Toán — tức ghim CHÍNH TẢ, cái bẫy kho này đã dính bốn lần. Bản hai tự bịa vỏ
+> câu để gọi `answerMode`, nhưng vỏ bịa sai hình dạng nên bốn trong năm nhánh rơi hết
+> về `so` mà cổng vẫn xanh. Bản ba quét **nội dung thật** (10.103 câu) và lấy đúng
+> những mã thực sự xuất hiện — thêm dạng câu mới vào sách là cổng thấy ngay.
+
+### Chức năng thống kê ngưỡng (Bảng 3.22, mục 3.8.5)
+
+`functions/src/thongke.js` — **thuần toán, không đụng Firestore**. Vào: mảng lượt.
+Ra: chỉ số. Vì thuần nên chạy lại được trên nhật ký thật với một bộ ngưỡng KHÁC, và
+đó đúng là bước "chạy thử lại" mà mục 3.8.3 đòi.
+
+| Ngưỡng | Chỉ số | Đọc thế nào |
+|---|---|---|
+| NG07 θ | (a) tỉ lệ công nhận sớm · (b) số câu tới khi công nhận | (a) cao → tăng θ; (b) cao mà (a) thấp → đang luyện thừa, giảm θ |
+| NG08 θ_yếu | tỉ lệ nút rơi xuống rồi TỰ lên lại | cao → bật phụ đạo không cần thiết |
+| NG09 | P(đúng ở lượt kế) sau k = 1…4 lần sai | vẫn tự làm đúng → đang ngắt mạch bé quá sớm |
+| NG01–NG05 | AUC · RMSE · sai lệch hiệu chuẩn, theo từng phạm vi | kém ở một phạm vi → học tham số riêng cho nó |
+| NG06 h | sai lệch ở lượt đầu sau nghỉ, chia theo Δt | lạc quan sau nghỉ dài → giảm h |
+| NG16–NG18 | tỉ lệ gắn nhãn theo dạng câu | một nhóm bất thường → ngưỡng chưa hợp nhóm ấy |
+
+Ba chốt đáng nói:
+
+- **Dựng lại mức thạo từ nhật ký, KHÔNG đọc `mastery`.** Kho ấy chỉ có trạng thái
+  hiện tại theo bộ ngưỡng đang hành; muốn biết "với θ = 0,80 thì sao" thì phải chạy
+  lại cả chuỗi. Cổng ghim rằng đổi θ thì chỉ số đổi theo (0,80→3 câu · 0,85→4 ·
+  0,90→4 · 0,95→5 — đúng **Bảng 3.21**, nay tái tạo được từ cả hai đường).
+- **Cỡ mẫu NG21 chặn ĐỀ XUẤT, không chặn THỐNG KÊ.** Giấu số vì "chưa đủ mẫu" thì
+  chuyên gia không bao giờ biết dữ liệu đang tới đâu.
+- **Hạn chế đi xuống tận tài liệu**, không nằm trong chú thích: `chuaTruPhuDao` (NG08
+  đếm cả những lần bé lên lại NHỜ phụ đạo — nhật ký lượt không ghi điều đó) và
+  `thieuBac` (Bảng 3.22 đòi gom theo (dạng câu, bậc), nhật ký chưa mang bậc).
+
+### Phép đọc nhật ký — mươi dòng, sai ba lần
+
+`functions/src/docLuot.js`. Tách khỏi `index.js` vì cả ba lần sai đều là loại mà
+`node --check`, bản dựng và 105 cổng đều không thấy:
+
+1. Dùng `eachDoc` (sắp theo `__name__`) với phép lọc `ts >= …`. Firestore đòi trường
+   bất đẳng thức đứng ĐẦU thứ tự sắp → câu truy vấn ném **lúc chạy**, trong một hàm
+   nền hằng tuần, tức nằm im trong nhật ký máy chủ.
+2. Lọc trùng bằng `(bé, nút, ts)`. Cả loạt lượt gửi lên cùng lúc mang đúng một mốc →
+   **nuốt lượt thật**, im lặng, chỉ làm các con số nhỏ đi.
+3. Phân trang theo riêng `ts`, nhích mốc khi cả trang cùng một mốc. Quá 500 lượt
+   chung một mốc là mất phần dư — **chính cổng mới viết bắt được**: 700 lượt chung
+   một mốc thì đọc ra 500.
+
+Nay phân trang bằng **con trỏ `(ts, mã tài liệu)`**, đúng cặp Firestore sắp theo khi
+`orderBy('ts').orderBy('__name__')`. Cặp ấy duy nhất nên không còn trường hợp riêng
+nào, và không cần lọc trùng. Đo trên bộ giả lập: 1200/1200 lượt, trong đó 700 chung
+một mốc, kèm một tài liệu hỏng xen giữa.
+
+### Hai cổng tự đỏ vì lý do không liên quan — đã sửa
+
+- `luyennoi.test.mjs` cắt `index.js` từ `export const luyenNoi` tới **hết tệp**, tức
+  ngầm giả định hàm ấy nằm cuối. Thêm bất kỳ hàm nền nào sau nó là cổng đỏ vì một lý
+  do chẳng liên quan gì tới phòng luyện nói. Nay dừng ở `export` kế tiếp.
+- `luat_firestore.test.mjs` ghim mã tài liệu `ls1`, mà `nguong_lich_su` là bảng
+  **chỉ-thêm** — nên lần chạy THỨ HAI trên cùng bộ giả lập tự đỏ, và đỏ vì chính thứ
+  nó đang canh hoạt động đúng. Nay mỗi lần chạy một hậu tố riêng; chạy hai lần liền
+  đều 76 PASS.
+
+### Màn hình
+
+`BangNguong.jsx` thêm khối **"Dữ liệu tuần này nói gì về các ngưỡng"**, đặt TRƯỚC 21
+ô nhập — cùng lẽ với bảng nhịp tinh thông: để dưới thì người ta sửa xong mới thấy căn
+cứ. Mỗi chỉ số hiện thành **câu**, không thành số trần (Bảng 3.22 có hẳn cột "cách
+đọc" — một con số không kèm cách đọc thì chuyên gia phải tự đoán nên tăng hay giảm).
+
+Ba trạng thái phân biệt rõ, vì chúng dẫn tới ba hành động khác nhau: **đang nạp** ·
+**đã nạp và chưa có số liệu** · **đọc hỏng**.
+
+`docThongKe.js` chỉ ĐỌC kết quả đã tính. Tính lại ở máy con thì phải cho nó quyền đọc
+lượt của mọi bé — một cửa dữ liệu rộng hơn hẳn việc hiện vài con số.
+
+### Hàm nền
+
+| | |
+|---|---|
+| `thongKeNguongTuan` | 03:00 thứ Hai, cửa sổ **90 ngày** |
+| `tinhLaiThongKeNguong` | chuyên gia bấm "tính lại", không phải chờ tới thứ Hai |
+
+Cửa sổ 90 ngày chứ không phải cả nhật ký: nhật ký bất biến nên chỉ dài ra mãi, đọc
+hết thì một ngày hàm chạm trần 540 giây và từ đó **không có chỉ số nào nữa** — hỏng
+đúng lúc dữ liệu nhiều nhất. Mã tài liệu mang **mốc tuần ISO** (đã thử 6 mốc, gồm hai
+mốc bắc cầu năm) nên nhìn được theo thời gian, không đè lên một dòng duy nhất.
+
+**107 tệp cổng · 0 đỏ** (thêm `thongke_nguong` 12 phép và `docluot` 8 phép).
+
+### CHƯA làm, và vì sao
+
+- **Hàm nền HỌC ngưỡng** (EM cho NG01–NG05 · hồi quy bán rã cho NG06 · quét lưới cho
+  NG07–NG12) và **màn duyệt đề xuất**. Thống kê là phần ĐO; học ngưỡng là phần ĐỀ
+  XUẤT, và nó chỉ có nghĩa khi `duMauDeHoc` thành `true` trên dữ liệu thật — hiện
+  chưa ai học đủ 200 lượt mỗi phạm vi. Dựng bộ máy đề xuất bây giờ là dựng một cái
+  máy chưa có gì để chạy, và không có cách nào biết nó chạy đúng hay sai.
+- **Lần chạy thật đầu tiên của `thongKeNguongTuan`** là 03:00 thứ Hai tới. Phép đọc
+  và phép tính đã thử trên bộ giả lập với 1200 lượt; phần chưa thử trên dữ liệu thật
+  là lượt ghi xuống `thong_ke_nguong`.
+- Nấc `bac` và `loaiNut` của thang phạm vi vẫn chưa có đường vào — bản ghi lượt không
+  mang hai trường ấy.

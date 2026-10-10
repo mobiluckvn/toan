@@ -1,10 +1,11 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { logout } from '../lib/taiKhoan.js';
 import {
   MAC_DINH, KHOANG, boNguong, layNguong, soiNguong,
   nhipTinhThong, NHIP_CHO_PHEP, PHIEN_BAN,
 } from '../lib/nguong.js';
 import { phatHanhNguong } from '../lib/ghiNguong.js';
+import { docThongKeNguong, gomTheoPhamVi, docHieu } from '../lib/docThongKe.js';
 
 /**
  * MÀN HÌNH QUẢN LÝ NGƯỠNG — R7, mục 3.8.4.
@@ -62,6 +63,20 @@ export default function BangNguong({ onExit }) {
   const [lyDo, datLyDo] = useState('');
   const [dangGui, datDangGui] = useState(false);
   const [bao, datBao] = useState(null);
+  /* Chỉ số theo dõi (Bảng 3.22). `null` = đang nạp, `[]` = đã nạp và chưa có gì —
+     hai trạng thái phải phân biệt được, vì chúng nói hai chuyện khác nhau. */
+  const [tk, datTk] = useState(null);
+  const [loiTk, datLoiTk] = useState(null);
+
+  useEffect(() => {
+    let song = true;
+    docThongKeNguong().then(({ dong, loi }) => {
+      if (!song) return;
+      datTk(gomTheoPhamVi(dong));
+      datLoiTk(loi);
+    });
+    return () => { song = false; };
+  }, []);
 
   const bo = useMemo(() => ({ phienBan: dangHanh.phienBan, macDinh: gt, theoPhamVi: {} }), [gt, dangHanh]);
   const loi = useMemo(() => soiNguong(bo), [bo]);
@@ -125,6 +140,56 @@ export default function BangNguong({ onExit }) {
           {loi.map((x, i) => <li key={`${x.ma}-${i}`}><b>{x.ma}</b> — {x.vi}</li>)}
         </ul>
       )}
+
+      {/* ── CHỈ SỐ THEO DÕI (Bảng 3.22, mục 3.8.5) ──
+          Đặt TRƯỚC danh sách ngưỡng, cùng một lẽ với bảng nhịp tinh thông ở trên:
+          chuyên gia nên sửa theo số liệu, không theo cảm tính. Để nó dưới 21 ô nhập
+          thì người ta sửa xong mới nhìn thấy căn cứ. */}
+      <section className="rounded-xl2 border border-line p-3">
+        <h2 className="mb-2 font-bold text-ink">Dữ liệu tuần này nói gì về các ngưỡng</h2>
+        {loiTk && (
+          <p className="text-sm text-gold-dark">
+            Chưa đọc được thống kê ({loiTk}). Đây KHÁC với &ldquo;chưa có số liệu&rdquo; — người lớn
+            kiểm tra giúp, đừng sửa ngưỡng theo một bảng trống.
+          </p>
+        )}
+        {!loiTk && tk === null && <p className="text-sm text-mute">Đang đọc…</p>}
+        {!loiTk && tk !== null && !tk.length && (
+          <p className="text-sm text-mute">
+            Chưa có số liệu. Hàm nền tính mỗi sáng thứ Hai, và chỉ có số khi đã đủ lượt học thật —
+            tới lúc ấy thì cứ giữ giá trị mặc định, đừng đoán.
+          </p>
+        )}
+        {!loiTk && !!tk?.length && (
+          <ul className="flex flex-col gap-3">
+            {tk.map((pv) => {
+              const moi = pv.tuan[0];
+              const cach = docHieu(moi);
+              return (
+                <li key={`${pv.phamVi}:${pv.khoa}`} className="rounded-xl2 bg-paper p-3">
+                  <p className="text-sm font-bold text-ink">
+                    {pv.phamVi === 'toanHe' ? 'Toàn hệ thống' : `${pv.phamVi} · ${pv.khoa}`}
+                    <span className="ml-2 font-normal text-mute">
+                      {moi.mocTuan} · {moi.coMau} lượt · {moi.soChuoi} chuỗi
+                      {moi.duMauDeHoc ? '' : ' · chưa đủ mẫu để học ngưỡng'}
+                    </span>
+                  </p>
+                  {!cach.length && (
+                    <p className="mt-1 text-sm text-mute">Chưa đủ mẫu để nói gì chắc chắn.</p>
+                  )}
+                  <ul className="mt-1 flex flex-col gap-1">
+                    {cach.map((c) => (
+                      <li key={c.ma} className={`text-sm ${c.muc === 'canXem' ? 'text-gold-dark' : 'text-mute'}`}>
+                        <b className="text-ink">{c.ma}</b> · {c.chu}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </section>
 
       {NHOM.map(([khoa, ten, ds]) => (
         <section key={khoa} className="rounded-xl2 border border-line p-3">

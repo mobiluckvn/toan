@@ -54,6 +54,21 @@ export function nguCanhLuot(a = {}) {
   const nc = {};
   if (a.mon) nc.mon = String(a.mon);
   if (a.khoiLop != null && a.khoiLop !== '') nc.khoiLop = String(a.khoiLop);
+  /* ── DẠNG CÂU — đã nằm sẵn trong bản ghi, ở trường `mode` ──
+     Không phải thêm trường mới và không phải lên phiên bản bản ghi: `mode` đã mang
+     đúng thứ này từ Đợt 1 (`hoso.js` cộng hồ sơ định dạng từ chính nó).
+
+     Nấc này là nấc đáng giá nhất cho NG04 (xác suất ĐOÁN TRÚNG): câu bốn lựa chọn
+     đoán trúng ~0,25, câu gõ lại chữ thì gần 0 — một con số chung cho cả hai là sai
+     cho cả hai. Chuyên gia nay đặt được hai số khác nhau mà không nhờ ai viết mã.
+
+     ⚠ HAI MÔN DÙNG HAI BỘ TỪ KHÁC NHAU cho cùng trường này: Tiếng Anh `chon · the ·
+     go · tf · nghenhin · noi`, Toán `so · bieuthuc · dungsai · chondapan · tuluan`.
+     Chúng không trùng chữ nào, nên một khoá `dangCau` hiện không thể mang hai nghĩa.
+     Đó là may, không phải thiết kế — nên cổng `nguong_phien` ghim điều đó lại: đổi
+     tên `chondapan` của Toán thành `chon` là hai môn dùng chung một ô ngưỡng, và
+     chẳng gì kêu. */
+  if (a.mode) nc.dangCau = String(a.mode);
   if (a.bktUnit) nc.nut = String(a.bktUnit);
   return nc;
 }
