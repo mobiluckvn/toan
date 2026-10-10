@@ -86,16 +86,57 @@ def tu_ipa(t: dict) -> str:
 
 
 def moi_nhu(dung: dict, ho: list[dict], n: int = 3, khoa: str = "tu") -> list[str]:
-    """n mồi nhử LẤY TỪ CÙNG UNIT — xem luật 2 ở đầu tệp."""
-    ra = [x[khoa] for x in ho if x["ma"] != dung["ma"] and x.get(khoa)]
-    return ra[:n]
+    """n mồi nhử LẤY TỪ CÙNG UNIT — xem luật 2 ở đầu tệp.
+
+    ── ⚠ MỒI PHẢI KHÁC NHAU, VÀ KHÁC ĐÁP ÁN — THEO MẶT CHỮ BÉ NHÌN THẤY ──
+    Bản đầu lọc theo MÃ TỪ (`x["ma"] != dung["ma"]`), và mã thì bao giờ cũng khác
+    nhau. Nhưng cái bé nhìn thấy là `nghia`, mà một unit có thể có hai từ cùng
+    nghĩa: TA3 U1 có `hello`/`hi` đều là "xin chào", `bye`/`goodbye` đều là "chào
+    tạm biệt". Thành ra 18 câu lên bản thật với hai ô giống hệt nhau, và câu
+    “hello” nghĩa là gì? có HAI ô cùng ghi "xin chào" — bé bấm ô nào cũng thấy mình
+    vừa chọn giữa hai thứ y hệt. Không cổng nào bắt được, vì xét theo mã thì mọi
+    thứ vẫn hợp lệ.
+
+    Nên lọc theo chính CHUỖI sẽ hiện ra, và bỏ luôn mồi trùng đáp án. Lọc TRƯỚC khi
+    cắt `n` chứ không phải sau: cắt trước rồi mới lọc thì câu bị mất ô, còn lọc
+    trước thì vẫn đủ ba mồi khi unit còn từ khác.
+    """
+    dap = str(dung.get(khoa) or "").strip()
+    ra: list[str] = []
+    thay = {dap.casefold()} if dap else set()
+    for x in ho:
+        if x["ma"] == dung["ma"]:
+            continue
+        v = str(x.get(khoa) or "").strip()
+        if not v or v.casefold() in thay:
+            continue
+        thay.add(v.casefold())
+        ra.append(v)
+        if len(ra) >= n:
+            break
+    return ra
 
 
 def tron(dung: str, moi: list[str]) -> list[str]:
     """Xếp đáp án vào giữa đám mồi. KHÔNG dùng random: chạy hai lần phải ra hai tệp
-    giống hệt nhau, nếu không thì `git diff` đầy nhiễu và không ai soát nổi."""
-    ds = list(moi)
-    ds.insert(min(len(ds), (len(dung) + len(ds)) % (len(ds) + 1)), dung)
+    giống hệt nhau, nếu không thì `git diff` đầy nhiễu và không ai soát nổi.
+
+    ⚠ LƯỚI ĐỠ CUỐI: lọc trùng lần nữa ngay tại đây. `moi_nhu` đã lọc, nhưng có chỗ
+    gọi truyền đáp án KHÁC với `t[khoa]` (dòng dựng câu điền ô trống truyền `dap`),
+    nên mồi hợp lệ với `moi_nhu` vẫn có thể trùng đáp án thật. Đây là chỗ DUY NHẤT
+    mọi câu trắc nghiệm đều đi qua, nên chốt cuối đặt ở đây là chốt rẻ nhất.
+    """
+    dap = str(dung).strip()
+    sach: list[str] = []
+    thay = {dap.casefold()}
+    for x in moi:
+        v = str(x).strip()
+        if not v or v.casefold() in thay:
+            continue
+        thay.add(v.casefold())
+        sach.append(v)
+    ds = list(sach)
+    ds.insert(min(len(ds), (len(dap) + len(ds)) % (len(ds) + 1)), dap)
     return ds
 
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { napNguong } from './chung/lib/napNguong.js';
+import LuoiDoLoi from './chung/components/LuoiDoLoi.jsx';
 import './index.css';
 
 /**
@@ -18,8 +19,12 @@ import './index.css';
 const batDau = async () => {
   await napNguong();
   const { default: App } = await import('./App.jsx');
+  /* ⚠ LƯỚI ĐỠ BỌC NGOÀI CÙNG. Một `ReferenceError` ở bất kỳ màn nào cũng làm React
+     gỡ TOÀN BỘ cây — không bọc thì bé thấy trang trắng, không chữ nào, không nút
+     nào. Đã xảy ra hai lần trên bản thật (hook sau `return` sớm; biến dùng trước khi
+     khai ở Phòng luyện nói), cả hai lần cổng và bản dựng đều xanh. */
   createRoot(document.getElementById('root')).render(
-    <React.StrictMode><App /></React.StrictMode>,
+    <React.StrictMode><LuoiDoLoi><App /></LuoiDoLoi></React.StrictMode>,
   );
 };
 batDau();
