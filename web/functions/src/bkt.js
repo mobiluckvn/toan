@@ -1,3 +1,4 @@
+import { layNguong, BO_MAC_DINH } from './nguong.js';
 /**
  * BKT — Bayesian Knowledge Tracing (thuần toán, không phụ thuộc Firebase).
  *
@@ -10,8 +11,13 @@
 /* Hiệu chỉnh bằng thực nghiệm (xem test/bkt.test.mjs):
    cần ~4 câu đúng liên tiếp mới đạt thạo, và MỘT câu sai sau đó kéo tụt dưới ngưỡng.
    Tham số cũ (L0 .25 · guess .20) tuyên thạo chỉ sau 2 câu — quá dễ dãi với trẻ. */
-export const DEFAULT_PARAMS = { L0: 0.10, T: 0.08, slip: 0.10, guess: 0.30 };
-export const MASTERY_THRESHOLD = 0.85;
+export const DEFAULT_PARAMS = {
+  L0: layNguong(BO_MAC_DINH, 'NG01'),
+  T: layNguong(BO_MAC_DINH, 'NG02'),
+  slip: layNguong(BO_MAC_DINH, 'NG03'),
+  guess: layNguong(BO_MAC_DINH, 'NG04'),
+};
+export const MASTERY_THRESHOLD = layNguong(BO_MAC_DINH, 'NG07');
 
 /** Một lần trả lời → cập nhật xác suất thạo */
 export function bktUpdate(p, correct, params = DEFAULT_PARAMS) {
@@ -38,9 +44,12 @@ export const isMastered = (p, th = MASTERY_THRESHOLD) => p >= th;
  * Câu BẮT BUỘC ĐÚNG (bẫy) đáng tin hơn câu thường: trả lời đúng nhờ đoán khó hơn.
  * → giảm guess, tăng trọng số. Sai câu bẫy thì kéo mức thạo xuống mạnh hơn.
  */
+/** NG05 · bộ tham số RIÊNG của câu bẫy — khó đoán hơn nên kết quả đáng tin hơn. */
+export const BAY_PARAMS = layNguong(BO_MAC_DINH, 'NG05');
+
 export function paramsFor(item = {}) {
   return item.mustPass
-    ? { ...DEFAULT_PARAMS, guess: 0.15, slip: 0.06 }
+    ? { ...DEFAULT_PARAMS, ...BAY_PARAMS }
     : DEFAULT_PARAMS;
 }
 
@@ -53,7 +62,7 @@ export function paramsFor(item = {}) {
  * ⚠ Đây là con số CHỌN, không phải đo được — chưa có dữ liệu học thật để hiệu
  * chỉnh. Khi có rồi thì chỉnh ở đây, và ghi lại lý do như `DEFAULT_PARAMS`.
  */
-export const NUA_DOI_NGAY = 14;
+export const NUA_DOI_NGAY = layNguong(BO_MAC_DINH, 'NG06');
 
 /**
  * Mức thạo tụt dần khi lâu không gặp lại (chiều Thời gian, mục 2.1.2 luận văn).

@@ -1,3 +1,4 @@
+import { layNguong, BO_MAC_DINH } from './nguong.js';
 /**
  * SỔ PHỤ HUYNH — tổng hợp từ nhật ký thô thành MỘT document.
  * Bố mẹ mở app đọc 1 lần, thay vì quét hàng nghìn attempts.
@@ -92,7 +93,12 @@ export function topTraps(attempts, index = {}, n = 3) {
 }
 
 /** Câu làm lâu mà vẫn sai — dấu hiệu con đang bế tắc chứ không phải ẩu */
-export function stuckItems(attempts, msThreshold = 45000, n = 3) {
+/** NG16 · H3 — làm lâu hơn ngần này mà vẫn sai thì coi là bế tắc (mili-giây). */
+/* ⚠ Danh mục ghi NG16 bằng GIÂY (Bảng 3.19), mã ở đây đo bằng MILI-GIÂY. Đổi
+   đơn vị ngay tại chỗ đọc, đừng để hai đơn vị cùng tên trôi nổi hai nơi. */
+export const MS_BE_TAC = layNguong(BO_MAC_DINH, 'NG16') * 1000;
+
+export function stuckItems(attempts, msThreshold = MS_BE_TAC, n = 3) {
   return attempts
     .filter((a) => DU_TIN_CAY(a) && !a.correct && (a.ms ?? 0) >= msThreshold)
     .sort((x, y) => (y.ms ?? 0) - (x.ms ?? 0))
@@ -243,10 +249,10 @@ export function duongCongHoc(attempts, mastery = {}, {
  * Một định dạng phải có ít nhất `TOI_THIEU_MOI_NUA` lượt ở MỖI nửa thì mới so.
  * Dưới đó, chênh lệch chỉ là một câu bé mải nhìn ra ngoài cửa sổ.
  */
-export const TOI_THIEU_MOI_NUA = 3;
+export const TOI_THIEU_MOI_NUA = layNguong(BO_MAC_DINH, 'NG17').toiThieuMoiNua;
 
 /** Chậm hơn bao nhiêu phần trăm thì đáng nói. Dưới ngưỡng là dao động thường. */
-export const NGUONG_CHAM = 0.25;
+export const NGUONG_CHAM = layNguong(BO_MAC_DINH, 'NG17').ti;
 
 export function metMoi(attempts, { toiThieu = TOI_THIEU_MOI_NUA } = {}) {
   /* Chỉ dùng lượt ĐO ĐƯỢC thời gian và có đủ định danh phiên. */

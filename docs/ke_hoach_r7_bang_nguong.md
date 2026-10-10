@@ -161,12 +161,104 @@ thật mà hiện chưa đủ.
 
 ---
 
-## 7 · BỐN CÂU CẦN CHỐT TRƯỚC KHI CODE
+## 7 · BỐN CÂU ĐÃ CHỐT — 10-10-2026
 
-1. **Phạm vi áp dụng** — làm ngay ở đợt 1 (phải sửa chữ ký hàm xuyên suốt), hay đợt 1
-   chỉ `toàn hệ thống` rồi mở sau?
-2. **Môn Toán** có dùng chung bộ ngưỡng không? Bảng 3.19 chưa có cột "môn", mà
-   `adaptive.js` đang giữ θ riêng.
-3. **Máy chủ đọc ngưỡng kiểu gì** — đọc Firestore mỗi lượt (luôn mới, chậm hơn), hay
-   gói kèm lúc deploy (nhanh, nhưng chuyên gia sửa xong phải deploy lại)?
-4. **Vai trò chuyên gia** — thêm vai trò thứ tư, hay dùng luôn `admin`?
+| | Câu hỏi | Bác chốt | Hệ quả cho mã |
+|---|---|---|---|
+| ① | Đợt 1 có làm luôn "phạm vi áp dụng"? | **Toàn hệ thống trước** | Đợt 1 KHÔNG đụng chữ ký hàm. `layNguong` nhận `ngữ cảnh` ngay từ đầu nhưng mới dùng nấc `toanHe`; mở nấc hẹp ở đợt sau mà không phải sửa lại chỗ gọi |
+| ② | Môn Toán dùng chung bộ ngưỡng? | **Chung, thêm phạm vi `mon`** | `layNguong` phải nằm ở `src/chung/lib/` — `ranh_gioi` luật 1 cấm Toán import của Tiếng Anh, luật 3 cho `mon/**` import `chung/**`. Thang phạm vi thành `nút → dạng câu → loại nút → khối lớp → môn → toàn hệ thống`. Gỡ luôn θ nhân ba |
+| ③ | Máy chủ đọc ngưỡng kiểu gì? | **Đọc Firestore, có nhớ tạm** | Chuyên gia sửa là có hiệu lực ngay, không phải deploy — đúng tinh thần R7. Hàm nền giữ bộ ngưỡng trong bộ nhớ, hết hạn thì đọc lại |
+| ④ | Vai trò chuyên gia? | **Thêm vai trò thứ tư** | `firestore.rules` thêm `isChuyenGia()`; `admin` không vô tình sửa được ngưỡng |
+
+### Hệ quả về chỗ đặt tệp
+
+Vì ② và vì `functions/` lên Cloud Functions với `package.json` riêng (không import
+được `src/`), `layNguong` phải có **HAI BẢN CHÉP**, đúng lối `chula.js` ↔
+`chamviet.js` đã dùng:
+
+```
+data/nguong.json                  ← bản gốc, 21 mục, người sửa đọc cái này
+web/src/chung/lib/nguong.js       ← bản máy con (cả Toán lẫn Tiếng Anh import được)
+web/functions/src/nguong.js       ← bản máy chủ
+web/test/nguong_hai_ban.test.mjs  ← cổng SO HAI BẢN, bắt buộc
+```
+
+
+---
+
+## 8 · ĐỢT 1 — ĐÃ LÀM XONG · 10-10-2026
+
+**Nguyên tắc của đợt này: không đổi một ly hành vi.** 103 cổng cũ chính là phép kiểm
+cho điều đó — không sửa một phép kiểm nào của chúng.
+
+### Bước 1 · Đặt tên cho 6 chỗ chưa có tên
+
+| NG | Trước | Sau |
+|---|---|---|
+| NG05 | object vô danh giữa `paramsFor()` | `BAY_PARAMS` |
+| NG10 | `sauToiDa = 4` trong chữ ký | `SAU_TOI_DA` |
+| NG11 | `toiDa = 3` trong chữ ký | `NUT_GOC_TOI_DA` |
+| NG13 | `ngayCoiLaQuen = 14` trong chữ ký | `NGAY_COI_LA_QUEN` |
+| NG15 | `toiThieuNut = 3` trong chữ ký | `NUT_TOI_THIEU_VUOT_AI` |
+| NG16 | `msThreshold = 45000` trong chữ ký | `MS_BE_TAC` |
+
+Giá trị mặc định của chữ ký nay trỏ vào hằng, nên **chỗ gọi ghi đè vẫn ghi đè được**
+(`lantruyen.js` gọi `nutGocRe(..., { toiDa: 1 })` — cố ý, giữ nguyên).
+
+### Bước 2 · `data/nguong.json` — bản gốc
+
+21 mục, mỗi mục có `ma · ten · nhom · giaTri · donVi · canDuoi · canTren ·
+phamViChoPhep · nguon · canCu · oDau`. Trường **`oDau`** là thứ giữ cho danh mục
+không trôi khỏi mã — cổng bắt buộc mọi mục phải khai.
+
+⚠ Hai mục `NG20` · `NG21` ghi `oDau: "CHƯA CÓ TRONG MÃ — đợt 4"`, đúng sự thật.
+
+⚠ Tên năm nhóm là **tạm đặt**: mục 3.8.1 nói 21 ngưỡng "chia thành năm nhóm" mà
+Bảng 3.19 không có cột nhóm nào. Cần khớp lại với bản in.
+
+### Bước 3 · `layNguong` — hai bản chép
+
+```
+web/src/chung/lib/nguong.js       ← máy con, ở `chung/` để CẢ HAI MÔN import được
+web/functions/src/nguong.js       ← máy chủ, thân giống hệt từng ký tự
+```
+
+Có: `THANG_PHAM_VI` (`nút → dạng câu → bậc → loại nút → khối lớp → môn → toàn hệ`) ·
+`MAC_DINH` · `KHOANG` · `layNguong(bo, ma, nguCanh)` thuần · `soiNguong(bo)` trả
+**danh sách** chỗ sai (không ném, để chuyên gia thấy hết một lượt) · `PHIEN_BAN`.
+
+`layNguong` **đã nhận `nguCanh` ngay từ đợt 1** dù mới dùng nấc `toanHe` — mở nấc hẹp
+ở đợt sau là thêm DỮ LIỆU, không phải sửa lại chỗ gọi.
+
+### Bước 4 · Nối 19 hằng vào `layNguong`
+
+11 chỗ ở máy con (gồm `mon/toan/lib/adaptive.js` — **θ nay dùng chung, hết nhân ba**),
+8 chỗ ở máy chủ. Tên xuất giữ nguyên hết, nên không chỗ gọi nào phải sửa.
+
+⚠ `NG16` trong danh mục đo bằng **giây**, mã đo bằng **mili-giây** — đổi đơn vị ngay
+tại chỗ đọc (`MS_BE_TAC = layNguong(...) * 1000`), không để hai đơn vị cùng tên trôi
+nổi hai nơi.
+
+### Bước 5 · Cổng `nguong_hai_ban.test.mjs` — 12 phép kiểm
+
+So **ba bản** (`data/nguong.json` ↔ máy con ↔ máy chủ) và canh **cơ chế**, không canh
+con số: thang phạm vi lấy đúng nấc hẹp nhất · hỏi mã không có thì NÉM · bộ mặc định
+phải sạch · khoảng hợp lệ bắt được · θ_yếu ≤ θ − 0,20 · P(S), P(G) < 0,5 kể cả câu bẫy
+· `soiNguong` trả hết chỗ sai một lượt.
+
+> ⚠ **Cổng KHÔNG đọc bộ ngưỡng đang hành.** Nếu đọc thì chuyên gia đổi θ là cổng vẫn
+> xanh trong khi hành vi đã khác — xem mục 5.
+
+### Hai chỗ tự vấp, ghi lại kẻo lặp
+
+1. Sinh bản máy chủ bằng cách cắt chú thích rồi `lstrip` — **mất một ký tự xuống
+   dòng**, hai thân lệch nhau đúng 1 byte. Cổng bắt được ngay. Cắt thì cắt bằng
+   `slice(indexOf('…') + 2)`, đừng cắt thêm gì.
+2. Viết dấu đóng khối chú thích **vào trong** một khối chú thích → nó tự đóng khối,
+   tệp cổng lỗi cú pháp. Và phép so ban đầu dùng `split` theo dấu ấy nên chỉ so được
+   một mẩu giữa hai dấu — cổng xanh mà chẳng so gì.
+
+### Đợt 1 KHÔNG làm
+
+Tải bộ ngưỡng từ Firestore · `nguongVer` trên bản ghi lượt · bốn bảng · vai trò
+chuyên gia · màn hình quản lý · hàm học. Tất cả ở đợt 2–4.

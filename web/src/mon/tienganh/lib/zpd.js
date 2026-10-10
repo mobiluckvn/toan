@@ -1,3 +1,4 @@
+import { layNguong, BO_MAC_DINH } from '../../../chung/lib/nguong.js';
 /**
  * VÙNG PHÁT TRIỂN GẦN (ZPD) — xếp câu theo chỗ bé đang chông chênh.
  *
@@ -31,10 +32,10 @@
 import { tiLeDung, xepDinhDang } from './hoso.js';
 
 /** Ngưỡng thạo — giữ đúng con số của `functions/src/bkt.js` (bác chốt 0,85). */
-export const NGUONG_THAO = 0.85;
+export const NGUONG_THAO = layNguong(BO_MAC_DINH, 'NG07');
 
 /** Dưới mức này thì luyện thêm cùng kiểu câu không giúp gì — cần phụ đạo. */
-export const NGUONG_YEU = 0.3;
+export const NGUONG_YEU = layNguong(BO_MAC_DINH, 'NG08');
 
 export const NHOM = {
   chongChenh: 0,

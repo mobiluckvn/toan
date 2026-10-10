@@ -1,3 +1,4 @@
+import { layNguong, BO_MAC_DINH } from '../../../chung/lib/nguong.js';
 /**
  * HỒ SƠ BÉ — ba thứ hệ thống biết về bé, ngoài "đã xong bài nào".
  *
@@ -20,7 +21,7 @@
  */
 
 /** Dưới chừng này lượt thì chưa nói được gì về một định dạng. */
-export const TOI_THIEU_MAU = 8;
+export const TOI_THIEU_MAU = layNguong(BO_MAC_DINH, 'NG18');
 
 /** Tên đọc được cho bố mẹ. Định dạng lạ thì hiện chính mã, đừng giấu. */
 export const TEN_DINH_DANG = {

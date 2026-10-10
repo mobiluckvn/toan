@@ -1,3 +1,4 @@
+import { layNguong, BO_MAC_DINH } from './nguong.js';
 /**
  * A-R-A và ΔC — bài phụ đạo có thật sự giúp được không (mục 2.5.3).
  *
@@ -19,7 +20,7 @@
  */
 
 /** Cỡ mẫu tối thiểu để nói một mẫu prompt tốt hơn mẫu khác. */
-export const TOI_THIEU_CAP = 5;
+export const TOI_THIEU_CAP = layNguong(BO_MAC_DINH, 'NG19');
 
 /**
  * Một cặp A-R-A hợp lệ chưa?

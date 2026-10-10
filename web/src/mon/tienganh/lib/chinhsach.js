@@ -1,3 +1,4 @@
+import { layNguong, BO_MAC_DINH } from '../../../chung/lib/nguong.js';
 /**
  * HÀM CHÍNH SÁCH π — từ trạng thái của bé sang việc nên làm tiếp (mục 2.5.1).
  *
@@ -39,7 +40,7 @@ export const VIEC = {
  * đạo ở đó thì bé bị ngắt mạch liên tục. Ba lần liền thì bé không tự thoát ra
  * được bằng cách thử lại nữa.
  */
-export const SAI_LIEN_TIEP_MAC = 3;
+export const SAI_LIEN_TIEP_MAC = layNguong(BO_MAC_DINH, 'NG09');
 
 /**
  * Việc nên làm tiếp cho MỘT nút.
@@ -123,7 +124,11 @@ export function viecTiepCuaBai(mucThao, maNutDs = []) {
  * false — thà bé làm lại một bài đã vững (mất mấy phút) còn hơn bỏ qua một bài bé
  * chưa vững (mất cả một mắt xích, và mắt xích ấy đỡ cho những bài sau).
  */
-export function duocVuotAi(mucThao, maNutDs, daDat, { toiThieuNut = 3 } = {}) {
+/** NG15 · bài phải có ít nhất ngần này nút thì "vượt ải" mới có nghĩa. */
+export const NUT_TOI_THIEU_VUOT_AI = layNguong(BO_MAC_DINH, 'NG15');
+
+export function duocVuotAi(mucThao, maNutDs, daDat,
+                           { toiThieuNut = NUT_TOI_THIEU_VUOT_AI } = {}) {
   if (!daDat) return false;
   const ds = [...new Set((maNutDs || []).filter(Boolean))];
   if (ds.length < toiThieuNut) return false;
@@ -145,8 +150,12 @@ export function duocVuotAi(mucThao, maNutDs, daDat, { toiThieuNut = 3 } = {}) {
  * mô hình không biết làm gì — tệ hơn, nó có thể nhại lại nguyên văn trước mặt bé.
  * Nhãn thì dịch được thành câu người, và câu người thì đọc to lên cũng không sao.
  */
+/** NG13 · nghỉ quá ngần này ngày thì coi là có nguy cơ quên. */
+export const NGAY_COI_LA_QUEN = layNguong(BO_MAC_DINH, 'NG13');
+
 export function vectorS({ mucThao, maNutDs = [], dinhDang = null, thich = null,
-                          bayGio = Date.now(), ngayCoiLaQuen = 14 } = {}) {
+                          bayGio = Date.now(),
+                          ngayCoiLaQuen = NGAY_COI_LA_QUEN } = {}) {
   const ds = [...new Set((maNutDs || []).filter(Boolean))];
   const ho = ds
     .map((ma) => mucThao?.[ma] ?? mucThao?.[encodeURIComponent(ma)])
