@@ -372,6 +372,59 @@ thì dọn sạch dữ liệu thử; kho nguồn để rỗng.
 > từ 1028 mục xuống 19 — nó viết lại danh sách dòng cần sinh âm theo đúng unit vừa
 > dựng. Dựng một unit rồi `git status` mà không để ý là mất danh sách của cả quyển.
 
+## 6d · ĐI THỬ LẠI SAU KHI DEPLOY, VÀ MỘT LỖI NỘI DUNG MỚI · 10-10-2026
+
+Đi lại trọn vòng trên bundle `index-UONB3tYu.js` (bản đã vá cả bốn lỗi). Mọi thứ
+chạy; không một lỗi console nào suốt buổi.
+
+| Kiểm gì | Kết quả |
+|---|---|
+| Phòng luyện nói | dựng ra, **không còn dòng lỗi giả**; cô đọc **ba** câu — kể cả lời dẫn kế hoạch V7 *"Hôm nay mình làm 5 việc nhé…"*, thứ trước đây cũng nằm sau chỗ ném |
+| Lượt nói | ⭐⭐⭐, cô đáp tiếp và đọc cả hai câu |
+| Chấm viết | *"I can see two eye."* → *"I can see two eyes."* · "Cần dùng dạng số nhiều" |
+| Lời cho bố mẹ (mắt xích 3) | có: *"Con đã dùng câu … Tuần này nên tiếp tục luyện tập viết mô tả."* |
+| Phụ đạo V9 | kích lại được, chẩn đoán đúng nút *Minh — bạn Minh*; `sinhCauPhuDao` gọi lúc 04:08:57 |
+| Chấm câu phụ đạo | bấm sai → **báo sai** (trước bản vá thì bấm gì cũng đúng) |
+| Góc bố mẹ | 4 bài chờ xác nhận; bấm Đồng ý → còn 3 |
+| Trí nhớ của cô (V3) | còn nguyên qua phiên mới, đọc từ máy chủ |
+| Ma trận "con đang mắc ở đâu" | hiện đúng 5 nút tôi cố tình làm hỏng |
+
+⚠ **Đường câu DO MÔ HÌNH SOẠN vẫn chưa tới tay bé lần nào.** Hai lần kích phụ đạo,
+`sinhCauPhuDao` đều được gọi, nhưng cả 6 câu bé làm đều là câu TĨNH — đầu ra của mô
+hình bị hậu kiểm bác hoặc vòng tĩnh kịp đủ câu. Nên bản vá ④ đo được bằng cổng và
+bằng bundle đã deploy, còn "một câu AI thật hiện trên màn bé" thì chưa thấy.
+
+### Lỗi nội dung mới: 13 câu có PHƯƠNG ÁN TRÙNG NHAU
+
+Giữa buổi, Luyện tập đưa ra câu này:
+
+```
+"hello" nghĩa là gì?
+  xin chào · chào tạm biệt · chào tạm biệt · xin chào
+```
+
+Bốn nút, **hai giá trị**, và đáp án đúng nằm ở **hai nút**. Đếm cả kho:
+
+```
+câu trắc nghiệm trong pools: 2 736
+câu có phương án trùng nhau:    13   (0,5%) — TRỌN VẸN trong DL:TA3.B01
+   · đáp án xuất hiện 2 lần: 4 câu
+   · chỉ nhiễu trùng nhau:   9 câu
+```
+
+Chấm thì không sai (so theo GIÁ TRỊ nên bấm nút nào cũng đúng), nhưng câu bốn phương
+án thành câu hai phương án — bé đoán bừa trúng 50% — và bé nhìn thấy hai nút giống hệt.
+
+**Gốc:** unit 1 lớp 3 có hai cặp đồng nghĩa (`hello`/`hi` đều là "xin chào",
+`bye`/`goodbye` đều là "chào tạm biệt"), mà bộ sinh dựng phương án nhiễu từ NGHĨA
+tiếng Việt của các từ khác trong unit. Với cặp đồng nghĩa thì dạng câu *"X nghĩa là
+gì?"* tự nó không phân biệt được — không chỉ trùng phương án, mà **không trả lời
+được**: `hello` và `hi` nghĩa y hệt nhau.
+
+⚠ **Luật này ĐÃ CÓ, chỉ không áp cho bộ sinh.** `soiCauAI` bác đúng lỗi ấy ("có hai
+phương án trùng nhau") cho câu mô hình soạn, còn đầu ra của bộ sinh thì không cổng
+nào soi. Vá rẻ nhất: thêm một cổng đếm trùng trên `practice.pools` của mọi bài.
+
 ## 7 · VIỆC KẾ TIẾP, theo thứ tự
 
 1. ~~Thử V9~~ — **XONG, xem mục 6b.** Phụ đạo chạy trọn vòng, `sinhCauPhuDao` đã
@@ -379,16 +432,18 @@ thì dọn sạch dữ liệu thử; kho nguồn để rỗng.
 2. **Chạy `--lay` thật một lượt** để đi nốt đoạn Firestore của
    `tools/nhap_cau_duyet.py` (mục 6c), rồi duyệt thử một đợt — đó cũng là lúc đo được
    tiêu chí §7 *"bác duyệt dưới 10% bác bỏ"*.
-3. **Chốt hướng cho 55 bước thiếu `dapMau`** (mục 5).
-4. **Merge nhánh về `main`** — `main` vẫn ở `555201f3`, không còn là thứ đang chạy.
-5. **Bật ESLint với `no-use-before-define`, hoặc một cổng dựng mỗi màn đúng một lần.**
+3. **13 câu phương án trùng nhau** ở DL:TA3.B01 (mục 6d) — và thêm cổng đếm trùng
+   cho `practice.pools`, vì luật ấy đã có sẵn mà chỉ áp cho câu AI.
+4. **Chốt hướng cho 55 bước thiếu `dapMau`** (mục 5).
+5. **Merge nhánh về `main`** — `main` vẫn ở `555201f3`, không còn là thứ đang chạy.
+6. **Bật ESLint với `no-use-before-define`, hoặc một cổng dựng mỗi màn đúng một lần.**
    Hai lỗi `ReferenceError` lên tới bản thật chỉ vì chỗ này trống.
-6. Mở tài liệu Firestore ra nhìn: `GOOGLE_APPLICATION_CREDENTIALS=~/khoa-dich-vu.json
+7. Mở tài liệu Firestore ra nhìn: `GOOGLE_APPLICATION_CREDENTIALS=~/khoa-dich-vu.json
    node tools/soi_ban_ghi_tienganh.mjs`. Buổi đi thử chỉ chứng minh được điều PHỦ ĐỊNH
    (không bị từ chối), chưa chứng minh **ghi đúng nội dung gì** — đúng cái bẫy tệp ấy
    tự cảnh báo ở đầu trang.
-7. Mấy chỗ nhỏ ở mục 6, theo thứ tự bác thấy cần.
-8. Nợ cũ từ bản 09-10 — ~~`tools/nhap_cau_duyet.py`~~ **XONG, mục 6c** ·
+8. Mấy chỗ nhỏ ở mục 6, theo thứ tự bác thấy cần.
+9. Nợ cũ từ bản 09-10 — ~~`tools/nhap_cau_duyet.py`~~ **XONG, mục 6c** ·
    xưởng chưa qua đợt dùng thật · `GROQ_MODEL_PHU` · `congHuong` chưa ai gọi · 19 nút
    gốc rễ không có bài nào dạy · bộ nối ΔC · Chương 1 và Chương 4 luận văn.
 
