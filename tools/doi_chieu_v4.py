@@ -427,35 +427,42 @@ trang(
          "— là việc TỔ CHỨC, không phải việc mã.",
          "Mọi nhận định về hiệu quả dạy học vẫn là giả thuyết — đúng như Bảng 3.25 tự khai.", "CHƯA"],
         "▌ CHƯA LÀM VÌ CHƯA CÓ ĐƯỜNG DỮ LIỆU",
-        ["C-04", "Nấc phạm vi `bac` và `loaiNut`", "3.8.1",
-         "Bản ghi lượt không mang hai trường ấy. Nhưng DỮ LIỆU ĐÃ SẴN: 3.756/4.226 câu trong nội dung đã khai "
-         "`bac` (1→740 · 2→1.480 · 3→626 · 4→910). Thêm vào bản ghi thì làm y như vừa làm với khoiLop và mon.",
-         "Năm trong bảy nấc đã dùng được. Hai nấc còn lại chưa có đường vào.", "CHƯA"],
-        ["C-05", "Gom chỉ số hành vi theo cặp (dạng câu, bậc)", "3.22 · Bảng 3.25",
-         "Cùng lý do C-04: nhật ký không mang `bac`. Thống kê nay đã gom theo dạng câu và gắn cờ `thieuBac` "
-         "xuống tận tài liệu để người đọc bảng biết là còn thiếu một chiều.",
-         "Chỉ số NG16 đọc được theo dạng câu, chưa tách được theo bậc.", "CHƯA"],
-        ["C-06", "Tách lượt SAU CAN THIỆP khỏi lượt tự gỡ (NG09)", "3.22",
-         "Cần biết một bài phụ đạo đã chạy hay chưa — khung phụ đạo nằm ở học bạ, kho KHÁC với nhật ký lượt. "
-         "Phát hiện này mới có từ lần đo thật đầu tiên.",
-         "Đã có cờ `sauCanThiep` cảnh báo, nhưng chưa đo sạch được.", "CHƯA"],
+        ["C-04", "Nấc phạm vi `loaiNut` (nấc `bac` ĐÃ XONG 10-10)", "3.8.1",
+         "`bac` đã nối: bản ghi v6 mang nó, `nguCanhLuot` đọc nó, đo trên bản thật thấy `bac=1` đi tới máy chủ. "
+         "Còn `loaiNut` — chưa có nhu cầu thật nào đòi đặt ngưỡng riêng theo loại nút.",
+         "SÁU trong bảy nấc đã dùng được. Chỉ `loaiNut` chưa có đường vào.", "MỘT PHẦN"],
+        ["C-05", "Gom chỉ số hành vi theo cặp (dạng câu, bậc) — ĐÃ XONG 10-10", "3.22 · Bảng 3.25",
+         "`chiSoNG16` nay gom theo khoá `dạng·bậc`, đúng điều Bảng 3.22 đòi. Dòng cũ không có bậc rơi vào nửa "
+         "`·—` nên vẫn đếm được và KHÔNG lẫn vào nhóm có bậc.",
+         "Cờ `thieuBac` còn `true` tới khi nhật ký có đủ dòng v6 — phần lớn dòng hiện có vẫn ở nửa `·—`.",
+         "XONG"],
+        ["C-06", "Tách lượt SAU CAN THIỆP khỏi lượt tự gỡ (NG09) — ĐÃ XONG 10-10", "3.22",
+         "Bản ghi v6 KHAI `sauPhuDao` lúc ghi (không suy ngược được: khung phụ đạo nằm ở học bạ, kho khác). "
+         "`chiSoNG09` nay trả thêm `tiLeTuGo` chỉ đếm lượt KHÔNG nằm sau can thiệp. Đánh dấu ở chỗ MỜI phụ đạo "
+         "chứ không ở chỗ bé bấm 'làm' — bé từ chối lời mời thì vẫn đã được chỉ chỗ mắc và bày đáp án.",
+         "Dòng v ≤ 5 không có cờ nên rơi vào `tuGo` y như trước — cách đọc cũ giữ nguyên, không dòng nào mất.",
+         "XONG"],
         "▌ CÓ MÃ, CÓ CỔNG, NHƯNG KHÔNG AI GỌI — tức với người học là chưa có",
         ["C-07", "Lan truyền XUÔI (congHuong)", "3.4.3 · Bảng 3.25",
          "Luận văn đã tự khai giới hạn này. Chưa nối vì chỗ nối đúng là nơi tính vectơ trạng thái, và phải "
          "không ghi đè hồ sơ — chưa làm.",
          "Hệ thống chỉ chẩn đoán ngược, không lan toả mức thạo xuôi xuống nút hệ quả.", "MỘT PHẦN"],
-        ["C-08", "Chính sách mức BÀI (viecTiepCuaBai) và luật vượt ải (duocVuotAi)", "3.5.1",
-         "Chỉ `viecTiepCuaNut` được nối (10-10). Hai hàm kia vẫn chỉ có cổng và tools gọi. "
-         "⚠ Đây là KT-03 của bản đối chiếu 26-08 — vẫn còn mở sau hơn một tháng.",
-         "Bé không bao giờ được 'vượt ải' bỏ qua một bài đã vững.", "MỘT PHẦN"],
+        ["C-08", "Chính sách mức BÀI và luật vượt ải — ĐÃ XONG 10-10", "3.5.1",
+         "KT-03 của bản đối chiếu 26-08, mở hơn một tháng, nay đã đóng. Nối vào THẺ ÔN — chỗ DUY NHẤT hệ thống "
+         "bắt bé làm lại một bài đã đạt, nên cũng là chỗ duy nhất nhánh VƯỢT ẢI có nghĩa. Nối một chỗ là cả "
+         "chuỗi `duocVuotAi → viecTiepCuaBai → viecTiepCuaNut` chạy thật.",
+         "Thẻ của bài bé đã vững hẳn được HOÃN (đẩy hộp), không xoá — phép quên vẫn chạy nên thẻ quay lại khi "
+         "P(L) tụt. Fail-closed: thiếu `mucThao` hay thẻ cũ không có `maNutDs` thì bé cứ ôn.", "XONG"],
         ["C-09", "Đường MÔ HÌNH của bài phụ đạo CHƯA BAO GIỜ CHẠY", "3.5.3 · Bảng 3.25",
          "⚠ SỬA LẠI SAU KHI ĐỌC MÃ. Luận văn ghi KB4 «đang bị chặn», và bản đầu của bảng này chép theo. "
          "Đọc `phudao.js:154` thì KHÔNG phải: đường mô hình đã nối đủ (PhuDao.jsx truyền `goiLLM`, có hai "
          "tầng hậu kiểm, câu sinh ra đi vào `choDuyetTA`). Nó chỉ chạy khi kho TĨNH không đủ `soCau` câu — "
          "`if (tinhCaVong.length >= soCau || !goiLLM)`. Kho tĩnh xưa nay luôn đủ, nên nhánh ấy chưa tới lượt.",
          "Hàng đợi duyệt rỗng (đo 10-10). Nhưng không có gì HỎNG: đúng 32 nút dưới 4 câu là chỗ nhánh ấy sẽ "
-         "chạy, và chưa bé nào mắc đúng vào đó. Muốn chạy KB4 thì cần một CỜ CHIA NHÓM cố ý, y như KB5 — "
-         "không phải 'mở đường'.", "MỘT PHẦN"],
+         "chạy, và chưa bé nào mắc đúng vào đó. CỜ CHIA NHÓM đã dựng 10-10 (`chung/lib/chiaNhom.js`, tất định "
+         "theo mã bé, hai thử nghiệm chia độc lập) nhưng để TẮT: bật `kb4_phudao_llm` là nới ràng buộc R3 — "
+         "câu do mô hình soạn tới tay bé trước khi người lớn duyệt. Đó là quyết định của bác, không phải "
+         "việc kỹ thuật.", "MỘT PHẦN"],
         ["C-10", "Ma trận trạng thái đồ thị", "Bảng 3.16",
          "Chỉ hiện ở Góc bố mẹ màn Tiếng Anh, chưa vào vòng thích ứng.",
          "Người lớn xem được; hệ thống không dùng để quyết định.", "MỘT PHẦN"],
@@ -646,14 +653,15 @@ trang(
     "Thứ tự xếp theo: (1) ảnh hưởng tới trẻ đang học · (2) mở khoá được nhiều việc khác · (3) rẻ.",
     ["Thứ tự", "Việc", "Vì sao đứng ở đây", "Phụ thuộc", "Ước lượng"],
     [
-        ["1", "Nối `viecTiepCuaBai` và `duocVuotAi` vào màn (C-08)",
-         "Đây là KT-03 của bản đối chiếu 26-08 — mở suốt hơn một tháng. Có mã, có cổng, chỉ thiếu chỗ gọi. "
-         "Ảnh hưởng trực tiếp: bé đã vững cả bài vẫn phải làm lại.",
-         "không", "nhỏ"],
-        ["2", "Cờ chia nhóm, dùng chung cho KB4 và KB5 (C-09)",
-         "Không phải 'mở đường' — đường mô hình của phụ đạo đã nối đủ và có hai tầng hậu kiểm; nó chỉ chưa "
-         "tới lượt chạy vì kho tĩnh luôn đủ câu. Một cờ chia nhóm trên hồ sơ người học mở khoá CẢ HAI kịch bản.",
-         "không", "nhỏ"],
+        ["✔", "XONG 10-10 — C-08 · C-04 · C-05 · C-06 · C-09",
+         "Bốn việc nhỏ làm trong một đợt: nhánh VƯỢT ẢI nay có chỗ chạy (thẻ ôn) · bản ghi v6 mang `bac` và "
+         "`sauPhuDao` · chỉ số hành vi gom theo cặp (dạng, bậc) · NG09 tách lượt tự gỡ khỏi lượt sau can "
+         "thiệp · cờ chia nhóm tất định (để TẮT). 110 cổng xanh, đã deploy, đo trên bản thật.",
+         "—", "—"],
+        ["1", "BẬT thử nghiệm KB5 (`kb5_zpd`)",
+         "Cờ đã sẵn. Bật là có số liệu đo tác dụng của việc xếp câu theo vùng phát triển gần — không nới ràng "
+         "buộc nào. ⚠ Nhóm đối chứng sẽ học bằng thứ tự thường suốt đợt đo, nên là quyết định của bác.",
+         "bác chốt", "nhỏ"],
         ["3", "Cập nhật ba chỗ số liệu trong luận văn (C-11 · C-12 · C-14)",
          "Rẻ, và nâng độ tin cậy: hiện luận văn đang tự đánh giá THẤP HƠN thực tế ở hai chỗ.",
          "Thầy chốt C-13", "nhỏ"],
@@ -663,9 +671,7 @@ trang(
          "không", "lớn"],
         ["5", "Nối lan truyền XUÔI vào chỗ tính vectơ trạng thái (C-07)",
          "Luận văn tự khai là giới hạn. Có mã, có cổng.", "không", "vừa"],
-        ["6", "Thêm `bac` vào bản ghi lượt (C-04 · C-05)",
-         "Làm y như vừa làm với `khoiLop` và `mon`. Mở khoá chỉ số hành vi theo cặp (dạng câu, bậc).",
-         "không", "nhỏ"],
+        
         ["7", "Dựng cổng DỰNG THẬT một màn React (C-17)",
          "Hai lỗi ReferenceError đã lên bản thật qua đúng lỗ hổng này. Lưới đỡ đã che hậu quả, nhưng lỗi vẫn lọt.",
          "thêm jsdom + bộ dịch JSX vào devDependencies", "vừa"],

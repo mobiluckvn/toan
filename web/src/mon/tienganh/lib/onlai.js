@@ -23,6 +23,8 @@
  * `firebase-admin`. Cái giá của việc chép là hai bản trôi xa nhau — nên cổng
  * `tienganh_onlai.test.mjs` đọc CẢ HAI tệp rồi so, và nó đỏ nếu ai sửa một bên.
  */
+import { duocVuotAi } from './chinhsach.js';
+
 export const BOX_NGAY = [1, 3, 7, 14, 30];
 
 /**
@@ -60,16 +62,73 @@ export const SO_THE_MOI_LUOT = 3;
  * sáng nay; xếp theo thứ tự tạo thì thẻ trễ bị đẩy mãi ra sau và không bao giờ
  * tới lượt.
  */
-export function theDenHan(cards, { quyen, bayGio = Date.now(), toiDa = SO_THE_MOI_LUOT } = {}) {
+export function theDenHan(cards, { quyen, bayGio = Date.now(), toiDa = SO_THE_MOI_LUOT,
+                                   mucThao = null } = {}) {
   const tien = quyen ? `DL:${String(quyen).toUpperCase()}.` : null;
   return (cards || [])
     .filter((c) => c?.microId && Number.isFinite(c.dueAt) && c.dueAt <= bayGio)
     .filter((c) => !tien || String(c.microId).startsWith(tien))
+    .filter((c) => !duocHoan(c, mucThao))
     .sort((a, b) => a.dueAt - b.dueAt)
     .slice(0, toiDa);
 }
 
-/** Có bao nhiêu thẻ đang chờ — cho con số trên thẻ mời ở trang chính. */
+/**
+ * ── VƯỢT ẢI: THẺ CỦA BÀI BÉ ĐÃ VỮNG HẲN THÌ HOÃN, KHÔNG BÀY RA ──
+ *
+ * Đây là chỗ DUY NHẤT trong cả hệ thống mà bé bị bắt làm lại một thứ đã đạt — bài
+ * chưa đạt thì `baiNenHoc` lo, bài đã đạt thì không bao giờ được gợi ý lại, trừ qua
+ * tấm thẻ ôn này. Nên nó cũng là chỗ duy nhất nhánh VƯỢT ẢI của hàm chính sách
+ * (mục 3.5.1) có nghĩa.
+ *
+ * Nối qua `duocVuotAi`, tức cả chuỗi `duocVuotAi → viecTiepCuaBai → viecTiepCuaNut`
+ * nay chạy thật chứ không chỉ có cổng gọi. Cửa ấy HẸP, và hẹp là chủ ý: đòi mọi nút
+ * của bài đều vững, đòi bài có đủ NG15 nút, và đòi bé đã ĐẠT bài.
+ *
+ * ⚠ FAIL-CLOSED. Thiếu `mucThao` (chưa tải xong) hay thẻ cũ không có `maNutDs` thì
+ * KHÔNG hoãn — bé cứ ôn. Thà ôn thừa một bài đã vững (mất vài phút) còn hơn bỏ qua
+ * một bài bé chưa vững, và đó đúng là lời `duocVuotAi` tự dặn.
+ *
+ * ⚠ KHÔNG XOÁ THẺ. Hoãn là đẩy hộp ra, và phép quên vẫn chạy: bé nghỉ lâu thì P(L)
+ * tụt, `duocVuotAi` thôi đúng, và thẻ quay lại. Xoá thì không có đường về.
+ */
+export function duocHoan(the, mucThao) {
+  if (!mucThao || !Array.isArray(the?.maNutDs) || !the.maNutDs.length) return false;
+  /* `daDat` = true: thẻ ôn chỉ được tạo sau khi bé ĐÃ qua bài (`onMicroDoneTA`). */
+  return duocVuotAi(mucThao, the.maNutDs, true);
+}
+
+/**
+ * Hoãn một thẻ vì bé đã vững — đẩy hộp y như một lượt ôn đạt, nhưng KHÔNG khai là
+ * bé vừa ôn.
+ *
+ * ⚠ KHÔNG đặt `lastResult: true` và KHÔNG tăng `soLanOn`. Bé không trả lời câu nào;
+ * ghi như thể bé vừa ôn đúng là bịa một lượt học không có thật vào sổ của trẻ, và
+ * sổ ấy là thứ bố mẹ đọc. Ghi `hoanVuotAi` để mọi chỗ đọc biết vì sao hộp giãn ra.
+ */
+export function hoanVuotAi(the, bayGio = Date.now()) {
+  const box = Math.min((the?.box ?? 0) + 1, BOX_NGAY.length - 1);
+  return {
+    ...the,
+    box,
+    hoanVuotAi: (Number(the?.hoanVuotAi) || 0) + 1,
+    hoanLuc: bayGio,
+    dueAt: bayGio + BOX_NGAY[box] * 86400000,
+  };
+}
+
+/** Thẻ tới hạn nhưng ĐƯỢC HOÃN — màn hình lấy danh sách này để đẩy hộp. */
+export function theHoan(cards, { quyen, bayGio = Date.now(), mucThao = null } = {}) {
+  const tien = quyen ? `DL:${String(quyen).toUpperCase()}.` : null;
+  return (cards || [])
+    .filter((c) => c?.microId && Number.isFinite(c.dueAt) && c.dueAt <= bayGio)
+    .filter((c) => !tien || String(c.microId).startsWith(tien))
+    .filter((c) => duocHoan(c, mucThao));
+}
+
+/** Có bao nhiêu thẻ đang chờ — cho con số trên thẻ mời ở trang chính.
+ *  Đi qua `theDenHan` nên thẻ được hoãn cũng không đếm: con số trên thẻ mời phải
+ *  khớp với số thẻ bé thực sự sẽ gặp, nếu không bé bấm vào rồi thấy ít hơn. */
 export const demDenHan = (cards, opt = {}) =>
   theDenHan(cards, { ...opt, toiDa: Infinity }).length;
 

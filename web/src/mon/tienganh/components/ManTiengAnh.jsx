@@ -17,7 +17,7 @@ import {
 } from '../lib/duLieu.js';
 /* `theDenHan` nay đi qua `dungBang` (việc V6); `demDenHan` thì không — xem ghi chú
    ở chỗ gọi. */
-import { demDenHan, daySauKhiOn } from '../lib/onlai.js';
+import { demDenHan, daySauKhiOn, theHoan, hoanVuotAi } from '../lib/onlai.js';
 import { dungBang } from '../lib/bangtrangthai.js';
 import { manhNhat, yeuNhat } from '../lib/hoso.js';
 import { diemHienThi, xacNhanDiem, baiChoXacNhan } from '../lib/hocba.js';
@@ -336,6 +336,20 @@ export default function ManTiengAnh({
       answer: e.answer,
       expected: e.expected,
       mode: e.cau.format || null,
+      /* ── BẬC CỦA CÂU (R7 · nấc `bac` của thang phạm vi, và Bảng 3.22) ──
+         Nội dung đã khai sẵn `bac` ở 3.756/4.226 câu; trước nay bản ghi không mang
+         nó, nên mọi phép gom theo bậc đều không có dữ liệu. Bảng 3.22 đòi gom chỉ
+         số hành vi theo CẶP (dạng câu, bậc) — thiếu bậc thì chỉ gom được một nửa,
+         và `thieuBac: true` trong tài liệu thống kê chính là lời khai chỗ thiếu ấy. */
+      bac: Number.isFinite(e.cau.bac) ? e.cau.bac : null,
+      /* ── LƯỢT NÀY CÓ PHẢI LƯỢT SAU CAN THIỆP KHÔNG ──
+         Đo lần đầu trên dữ liệu thật thấy dãy NG09 bật ngược tại đúng k = ngưỡng
+         đang hành: lượt kế tiếp sau lần sai thứ ba không còn là "bé tự gỡ" mà là
+         lượt SAU khi được giúp. Không tách được hai thứ ấy thì chuyên gia sẽ nâng
+         NG09 vì chính tác dụng của can thiệp mà NG09 gây ra.
+         Khung phụ đạo nằm ở học bạ — kho KHÁC với nhật ký lượt — nên không suy
+         ngược được. Phải KHAI ngay lúc ghi. */
+      sauPhuDao: !!e.sauPhuDao,
       mauPrompt: e.mauPrompt || null,
       phienBanMau: e.phienBanMau ?? null,
       vanTayPrompt: e.vanTayPrompt || null,
@@ -373,6 +387,30 @@ export default function ManTiengAnh({
     luuTheOn(learnerId, sau);
   }, [learnerId]);
 
+  /**
+   * ── VƯỢT ẢI: ĐẨY HỘP CHO THẺ CỦA BÀI BÉ ĐÃ VỮNG HẲN ──
+   *
+   * Nhánh VƯỢT ẢI của hàm chính sách (mục 3.5.1) trước nay không có chỗ nào chạy —
+   * `duocVuotAi` và `viecTiepCuaBai` chỉ có cổng và công cụ gọi. Thẻ ôn là chỗ DUY
+   * NHẤT hệ thống bắt bé làm lại một bài đã đạt, nên cũng là chỗ duy nhất "cho đi
+   * nhanh hơn, đừng bắt luyện lại" có nghĩa.
+   *
+   * ⚠ CHẠY MỘT LẦN MỖI LẦN `mucThao` ĐỔI, không chạy mỗi lần vẽ lại. `mucThao` tới
+   * từ máy chủ sau một quãng trễ; chạy lúc chưa có thì `duocHoan` fail-closed trả
+   * `false` và không hoãn gì — đúng ý, nhưng phải chạy LẠI khi nó về.
+   *
+   * ⚠ KHÔNG ghi như thể bé vừa ôn đúng (xem `hoanVuotAi`): bé không trả lời câu
+   * nào, và sổ này là thứ bố mẹ đọc.
+   */
+  useEffect(() => {
+    if (!mucThao || !theOn.length) return;
+    const hoan = theHoan(theOn, { quyen: ct.ma, mucThao });
+    if (!hoan.length) return;
+    const sau = hoan.map((t) => hoanVuotAi(t));
+    datTheOn((ds) => ds.map((x) => sau.find((y) => y.id === x.id) || x));
+    for (const t of sau) luuTheOn(learnerId, t);
+  }, [mucThao, theOn, ct.ma, learnerId]);
+
   const xongSoThich = useCallback((tu, unit = null) => {
     if (!tu) return;
     const sau = ghiSoThich(tienDo, ct.ma, tu, unit);
@@ -388,7 +426,7 @@ export default function ManTiengAnh({
            bảng: nó chỉ ĐẾM để hiện con số trên thẻ mời, không phải trạng thái
            dùng để quyết định gì — đưa nó vào bảng là dựng cả một bảng cho một
            phép đếm. */
-        the={dungBang({ cards: theOn, quyen: ct.ma }).theDenHan || []}
+        the={dungBang({ cards: theOn, quyen: ct.ma, mucThao }).theDenHan || []}
         onXongThe={xongTheOn}
         onLuot={ghiLuot}
         onThoat={() => setView({ page: 'home' })}
@@ -466,7 +504,7 @@ export default function ManTiengAnh({
       onMoDocHieu={(id) => setView({ page: 'dochieu', docId: id })}
       onMoVietBai={(id) => setView({ page: 'vietbai', vietId: id })}
       mucThao={mucThao}
-      soTheOn={demDenHan(theOn, { quyen: ct.ma })}
+      soTheOn={demDenHan(theOn, { quyen: ct.ma, mucThao })}
       onMoOnLai={() => setView({ page: 'onlai' })}
       onXoaHoSoAI={() => xongHoSoAI(xoaHoSoAI())}
       onXacNhanDiem={xongXacNhan}

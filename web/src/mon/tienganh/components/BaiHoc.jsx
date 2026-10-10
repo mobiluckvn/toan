@@ -95,6 +95,12 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
   const maPhien = useMemo(() => maPhienMoi(), [id]);
   const ghiLuot = useCallback((e, phase = 'practice') => {
     soLuot.current += 1;
+    /* ⚠ `sauPhuDao` KHÔNG đặt ở đây, dù đây trông như chỗ hợp lý nhất. Cờ ấy do
+       `LuyenTap` đặt, vì chỉ nó biết nút nào vừa đi qua một lượt phụ đạo — và
+       `LuyenTap` là một component KHÁC trong cùng tệp này. Bản đầu tôi viết ở đây
+       và đọc `daPhuDao.current`: bản dựng xanh, 109 cổng xanh, và bé thấy MÀN
+       TRẮNG, vì biến ấy không tồn tại trong phạm vi của `BaiHoc`. Đúng lớp lỗi đã
+       hai lần lên tới bản thật. */
     onLuot?.({ ...e, phase, maPhien, microId: id });
   }, [onLuot, maPhien, id]);
   const [bai, datBai] = useState(null);
@@ -840,6 +846,11 @@ function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null,
   const demSai = useRef(new Map());        // maNut → số lần sai liên tiếp
   const cauDaLam = useRef(new Map());      // maNut → [mã câu đã trả lời]
   const choPhuDao = useRef(null);          // nút đang chờ mời, xét lúc xong câu
+  /* Nút nào đã ĐI QUA một lượt phụ đạo trong phiên này. Mọi lượt sau đó tại nút ấy
+     là lượt SAU CAN THIỆP, và chỉ số NG09 phải tách chúng ra — xem `thongke.js`.
+     Giữ theo NÚT chứ không theo cả phiên: bé phụ đạo nút A rồi làm câu của nút B
+     thì lượt ở B vẫn là lượt tự gỡ. */
+  const daPhuDao = useRef(new Set());
   const daMoi = useRef(new Set());         // nút đã mời rồi trong bài này
   const [moiPhuDao, datMoiPhuDao] = useState(null);
   const mocPhuDao = useRef(0);
@@ -853,8 +864,13 @@ function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null,
    * là người lớn ngồi cạnh, không phải vòng phụ đạo thứ hai.
    */
   const ghiLuotLuyen = useCallback((e) => {
-    onLuot?.(e);
     const nut = e?.cau?.maNut;
+    /* ── `sauPhuDao` — ĐẶT Ở ĐÂY, và chỉ ở đây ──
+       Lượt này có nằm sau một can thiệp tại CHÍNH nút ấy không. Phải khai lúc ghi:
+       khung phụ đạo nằm ở học bạ, kho KHÁC với nhật ký lượt, nên không ai suy
+       ngược ra được. Chỉ `LuyenTap` biết điều này — `BaiHoc` ở ngoài không thấy
+       `daPhuDao`, và viết ở đó là màn trắng (xem chú thích tại `ghiLuot`). */
+    onLuot?.({ ...e, sauPhuDao: !!(nut && daPhuDao.current.has(nut)) });
     if (!nut) return;
     const ds = cauDaLam.current.get(nut) || [];
     if (e?.cau?.id && !ds.includes(e.cau.id)) cauDaLam.current.set(nut, [...ds, e.cau.id]);
@@ -921,7 +937,16 @@ function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null,
        "để lại sau". Đổi màn ngay lúc ấy là giật mất câu đang dở khỏi tay bé. */
     const cho = choPhuDao.current;
     choPhuDao.current = null;
-    if (cho) { daMoi.current.add(cho); mocPhuDao.current = Date.now(); }
+    if (cho) {
+      daMoi.current.add(cho);
+      mocPhuDao.current = Date.now();
+      /* Từ đây mọi lượt tại nút ấy là lượt SAU CAN THIỆP. Đánh dấu ở chỗ MỜI chứ
+         không ở chỗ bé bấm "làm" — bé từ chối lời mời thì vẫn đã được chỉ ra chỗ
+         mắc và bày đáp án, tức can thiệp đã xảy ra một phần. Thà đánh dấu rộng
+         hơn thực tế còn hơn để lượt sau can thiệp lẫn vào lượt tự gỡ: lẫn vào thì
+         chuyên gia đọc chỉ số NG09 sai theo hướng không ai nhận ra. */
+      daPhuDao.current.add(cho);
+    }
 
     if (i + 1 < pool.length) { datI(i + 1); if (cho) datMoiPhuDao(cho); return; }
     /* Hết lượt. Còn câu nợ mà chưa làm lại lượt nào thì mời làm lại. */

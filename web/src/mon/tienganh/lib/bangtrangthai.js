@@ -75,7 +75,7 @@ export function dungBang({
     nhomZPD: cauDs ? xepTheoZPD(cauDs, mucThao, dinhDang) : null,
     nutGocRe: (doThi && maNutMac)
       ? (nutGocRe(doThi, mucThao, maNutMac, { toiDa: 1 })[0]?.ma || maNutMac) : null,
-    theDenHan: cards ? theDenHan(cards, { quyen, bayGio }) : null,
+    theDenHan: cards ? theDenHan(cards, { quyen, bayGio, mucThao }) : null,
     hoSo: {
       ...vectorS({ mucThao, maNutDs, dinhDang, thich: thich || hoSo?.thich, bayGio }),
       /* Bản đã tính sẵn đắp lên — xem ghi chú ở tham số `hoSo`. Chỉ đắp trường CÓ

@@ -183,6 +183,7 @@ export function chiSoNG08(nhom, bo) {
  */
 export function chiSoNG09(nhom, bo = null) {
   const theoK = {};
+  const tuGo = {};
   for (const ds of nhom.values()) {
     let sai = 0;
     for (const a of ds) {
@@ -190,6 +191,16 @@ export function chiSoNG09(nhom, bo = null) {
         const o = theoK[sai] || (theoK[sai] = { dung: 0, tong: 0 });
         o.tong++;
         if (a.correct) o.dung++;
+        /* ── TỪ v6: TÁCH HẲN LƯỢT TỰ GỠ KHỎI LƯỢT SAU CAN THIỆP ──
+           Cờ `sauPhuDao` do màn học khai lúc ghi. Dòng nhật ký cũ (v ≤ 5) không có
+           cờ ấy — chúng rơi vào `tuGo` y như trước, tức cách đọc cũ giữ nguyên và
+           không có dòng nào bị mất. Khi dữ liệu v6 đủ nhiều thì `tuGo` mới là con
+           số đọc được theo Bảng 3.22, còn `theoK` giữ lại để so hai bên. */
+        if (!a.sauPhuDao) {
+          const g = tuGo[sai] || (tuGo[sai] = { dung: 0, tong: 0 });
+          g.tong++;
+          if (a.correct) g.dung++;
+        }
       }
       sai = a.correct ? 0 : sai + 1;
     }
@@ -201,9 +212,14 @@ export function chiSoNG09(nhom, bo = null) {
   const ra = {};
   for (const k of [1, 2, 3, 4]) {
     const o = theoK[k];
+    const g = tuGo[k];
     ra[`k${k}`] = {
       tiLeDung: o ? o.dung / o.tong : null,
       coMau: o ? o.tong : 0,
+      /* Chỉ những lượt KHÔNG nằm sau can thiệp — đây mới là "bé có tự gỡ được
+         không". Bằng `tiLeDung` khi nhật ký chưa có dòng v6 nào. */
+      tiLeTuGo: g ? g.dung / g.tong : null,
+      coMauTuGo: g ? g.tong : 0,
       /* `true` = con số này KHÔNG đọc được theo Bảng 3.22: tại đây hệ thống đã bật
          phụ đạo, nên nó đo tác dụng của can thiệp chứ không đo khả năng tự gỡ. */
       sauCanThiep: nguong != null && k >= nguong,
@@ -297,13 +313,18 @@ export function chiSoNG16(luots, bo) {
   const theoDang = new Map();
   for (const a of luots) {
     if (!Number.isFinite(a?.ms)) continue;
-    const dang = a.mode ? String(a.mode) : '—';
+    /* ── TỪ v6: GOM THEO CẶP (dạng câu, bậc), đúng điều Bảng 3.22 đòi ──
+       Dòng cũ không có `bac` thì khoá là `dạng·—`, nên chúng vẫn đếm được và không
+       lẫn vào nhóm có bậc. Khi dữ liệu v6 đủ nhiều thì nhóm `·—` teo dần. */
+    const dang = `${a.mode ? String(a.mode) : '—'}·${a.bac != null && a.bac !== '' ? a.bac : '—'}`;
     if (!theoDang.has(dang)) theoDang.set(dang, { tong: 0, beTac: 0 });
     const o = theoDang.get(dang);
     o.tong++;
     if (a.ms / 1000 >= layNguong(bo, 'NG16', nguCanhLuot(a))) o.beTac++;
   }
   return {
+    /* Còn `true` tới khi nhật ký có đủ dòng v6: khoá nay là cặp (dạng, bậc), nhưng
+       phần lớn dòng hiện có vẫn rơi vào nửa `·—`. Người đọc bảng phải thấy điều đó. */
     thieuBac: true,
     theoDangCau: Object.fromEntries(
       [...theoDang.entries()].map(([k, v]) => [k, { tiLeBeTac: v.beTac / v.tong, coMau: v.tong }]),

@@ -69,6 +69,9 @@ export function nguCanhLuot(a = {}) {
      tên `chondapan` của Toán thành `chon` là hai môn dùng chung một ô ngưỡng, và
      chẳng gì kêu. */
   if (a.mode) nc.dangCau = String(a.mode);
+  /* Bậc của câu — nấc `bac`. Nội dung khai sẵn ở 3.756/4.226 câu; bản ghi mang nó
+     từ v6. Dòng cũ không có thì bỏ qua nấc này, tức giữ nguyên cách chấm cũ. */
+  if (a.bac != null && a.bac !== '') nc.bac = String(a.bac);
   if (a.bktUnit) nc.nut = String(a.bktUnit);
   return nc;
 }

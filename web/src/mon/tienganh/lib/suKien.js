@@ -1,4 +1,5 @@
 import { boNguong, nguCanhPhien } from '../../../chung/lib/nguong.js';
+import { nhanNhom } from '../../../chung/lib/chiaNhom.js';
 /**
  * SỰ KIỆN HỌC CỦA TIẾNG ANH — mỗi lượt trả lời một dòng, bất biến.
  *
@@ -112,8 +113,11 @@ export function themDaGui(ids, kho = globalThis.localStorage) {
 /* 4 từ 10-10-2026: thêm `khoiLop` — nấc phạm vi của bộ ngưỡng (R7, mục 3.8.1).
    Dòng v ≤ 3 không có trường ấy, và máy chủ đã chấm chúng bằng bộ `toanHe`.
    5 từ 10-10-2026 (chiều): bản ghi TOÁN thêm `mon` (Tiếng Anh vốn đã có). Hai môn
-   phải khai CÙNG một số, nên số ở đây cũng lên — cổng `nguong_phien` canh. */
-export const PHIEN_BAN_BAN_GHI = 5;
+   phải khai CÙNG một số, nên số ở đây cũng lên — cổng `nguong_phien` canh.
+   6 từ 10-10-2026 (tối): thêm `bac` và `sauPhuDao`. Dòng v ≤ 5 không có hai trường
+   ấy — phép gom theo bậc bỏ qua chúng, và phép tách lượt sau can thiệp coi chúng
+   là lượt thường, tức giữ đúng cách đọc cũ. */
+export const PHIEN_BAN_BAN_GHI = 6;
 
 export const laHocSinhThat = (id) => !!id && id !== 'local';
 
@@ -181,6 +185,16 @@ export function dungSuKien({
     answer: e.answer === undefined ? null : goiDapAn(e.answer),
     expected: e.expected === undefined ? null : goiDapAn(e.expected),
     mode: e.mode || null,
+    /* Bậc của câu — nấc `bac` của thang phạm vi (R7) và chiều còn thiếu của Bảng
+       3.22. `null` khi câu không khai bậc (470/4.226 câu). */
+    bac: Number.isFinite(e.bac) ? e.bac : null,
+    /* Lượt SAU CAN THIỆP: phụ đạo vừa chạy xong trong phiên này. Phải khai lúc ghi
+       vì khung phụ đạo nằm ở học bạ, kho khác với nhật ký lượt. */
+    sauPhuDao: !!e.sauPhuDao,
+    /* ── NHÃN CHIA NHÓM (KB4 · KB5, mục 3.9) ──
+       `null` khi mọi thử nghiệm đang tắt — tức hiện nay. Ghi cả nhãn của thử nghiệm
+       đã tắt thì sáu tháng sau không ai biết nhãn ấy có hiệu lực trong khoảng nào. */
+    nhomThuNghiem: nhanNhom(learnerId),
     /* ── VÂN TAY LỜI DẶN (mục 2.5.2 · "mã prompt để kiểm toán") ──
        Chỉ có ở lượt do MÔ HÌNH tham gia (bài viết, phòng nói); lượt trắc nghiệm
        thì `null`. Băm KHUNG lời dặn chứ không băm cả prompt — không lưu một chữ
