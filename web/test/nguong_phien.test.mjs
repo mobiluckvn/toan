@@ -156,3 +156,102 @@ test('tệp chạy `content/nguong.json` có mặt và khớp bản gốc', () =
     assert.deepEqual(chay.macDinh[x.ma], x.giaTri, `${x.ma}: tệp chạy lệch bản gốc`);
   }
 });
+
+/* ────────────────────────────────────────────────────────────────────────────
+   PHẠM VI HẸP (R7 · mục 3.8.1) — bốn nấc thấp của thang, phía máy chủ.
+
+   Máy con đặt ngữ cảnh PHIÊN lúc bé mở quyển; hàm nền thì phải dựng lại ngữ cảnh
+   từ chính bản ghi, mỗi lượt một lần. Khối cổng này canh đúng chỗ dễ vỡ ấy.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+test('ngữ cảnh lượt chỉ đọc trường bản ghi TỰ KHAI, không suy từ mã nút', async () => {
+  const { nguCanhLuot } = await import('../functions/src/bkt.js');
+
+  assert.deepEqual(
+    nguCanhLuot({ mon: 'tienganh', khoiLop: 5, bktUnit: 'v_g5_u1_city' }),
+    { mon: 'tienganh', khoiLop: '5', nut: 'v_g5_u1_city' },
+  );
+
+  /* Dòng nhật ký đời cũ (v ≤ 3) KHÔNG có `khoiLop`. Mã nút mang chữ `g5` nhưng đó
+     là quy ước đặt tên, không phải lời khai — không được suy ra. */
+  const cu = nguCanhLuot({ mon: 'tienganh', bktUnit: 'v_g5_u1_city' });
+  assert.equal(cu.khoiLop, undefined,
+    'suy khối lớp từ hình dạng mã nút: đổi quy ước đặt tên một lần là mọi lượt rơi về toanHe trong im lặng');
+
+  /* Chuỗi rỗng cũng là THIẾU, không phải một khoá phạm vi tên "" */
+  assert.equal(nguCanhLuot({ khoiLop: '' }).khoiLop, undefined);
+  assert.deepEqual(nguCanhLuot({}), {}, 'bản ghi trắng → không nấc nào, tức toanHe');
+});
+
+test('hàm nền chấm một lượt theo đúng phạm vi của bản ghi', async () => {
+  const n = await import('../functions/src/nguong.js');
+  const b = await import('../functions/src/bkt.js');
+
+  const bo = {
+    phienBan: 77,
+    macDinh: { ...n.MAC_DINH },
+    theoPhamVi: {
+      toanHe: { NG07: 0.85 },
+      khoiLop: { 5: { NG07: 0.60, NG04: 0.05 } },
+      nut: { 'v_g5_u1_city': { NG07: 0.99 } },
+    },
+  };
+  n.datBoNguong(bo);
+
+  const lanDau = { learnerId: 'b', bktUnit: 'v_g5_u1_sun', correct: true, phase: 'practice' };
+
+  /* Cùng MỘT mức thạo, ba phạm vi, ba kết luận "đã thạo" khác nhau — và đó chính
+     là điều Thầy đòi: chuyên gia nới θ cho khối lớp 5 mà không ai sửa mã. */
+  const chung = b.applyAttempt({ p: 0.5, lastSeen: Date.now(), nAttempts: 9 }, lanDau);
+  assert.equal(chung.mastered, false, 'không khai khoiLop → θ toanHe 0,85');
+
+  const lop5 = b.applyAttempt({ p: 0.5, lastSeen: Date.now(), nAttempts: 9 },
+                              { ...lanDau, khoiLop: 5 });
+  assert.equal(lop5.mastered, true, 'khai khoiLop 5 → θ 0,60');
+
+  const hep = b.applyAttempt({ p: 0.5, lastSeen: Date.now(), nAttempts: 9 },
+                             { ...lanDau, khoiLop: 5, bktUnit: 'v_g5_u1_city' });
+  assert.equal(hep.mastered, false, 'nút hẹp hơn khối lớp → θ 0,99 thắng');
+
+  /* Bốn tham số BKT cũng phải theo phạm vi, không chỉ θ. */
+  const ts = b.paramsFor({ khoiLop: 5, bktUnit: 'v_g5_u1_sun' });
+  assert.equal(ts.guess, 0.05, 'NG04 của khối lớp 5');
+  assert.equal(b.paramsFor({}).guess, n.MAC_DINH.NG04, 'không ngữ cảnh → bộ chung');
+
+  n.datBoNguong(null);
+});
+
+test('hàm nền KHÔNG giữ ngữ cảnh giữa hai lượt của hai bé', async () => {
+  const n = await import('../functions/src/nguong.js');
+  const b = await import('../functions/src/bkt.js');
+  n.datBoNguong({
+    phienBan: 78, macDinh: { ...n.MAC_DINH },
+    theoPhamVi: { toanHe: { NG07: 0.85 }, khoiLop: { 5: { NG07: 0.60 } } },
+  });
+
+  const ho = () => ({ p: 0.5, lastSeen: Date.now(), nAttempts: 9 });
+  b.applyAttempt(ho(), { learnerId: 'a', bktUnit: 'u', correct: true, khoiLop: 5 });
+  /* Lượt NGAY SAU của một bé khác, không khai khối lớp. Hàm nền sống chung cho mọi
+     bé, nên một ngữ cảnh rò qua lượt sau là chấm bé này bằng ngưỡng của bé kia. */
+  const sau = b.applyAttempt(ho(), { learnerId: 'z', bktUnit: 'u', correct: true });
+  assert.equal(sau.mastered, false, 'ngữ cảnh của bé trước rò sang bé sau');
+
+  n.datBoNguong(null);
+});
+
+test('hai môn khai CÙNG một phiên bản bản ghi, và bản ghi mang khoiLop', async () => {
+  const ta = await import('../src/mon/tienganh/lib/suKien.js');
+  const to = await import('../src/mon/toan/lib/sync.js');
+  assert.equal(ta.PHIEN_BAN_BAN_GHI, to.PHIEN_BAN_BAN_GHI,
+    'hai môn lệch số phiên bản thì bên đọc nhật ký phải nhớ hai luật');
+  assert.ok(ta.PHIEN_BAN_BAN_GHI >= 4, 'thêm trường vào bản ghi thì phải lên phiên bản');
+
+  const n = await import('../src/chung/lib/nguong.js');
+  n.datNguCanh({ mon: 'tienganh', khoiLop: 3 });
+  const [d] = ta.dungSuKien({
+    learnerId: 'b', maPhien: 'p', microId: 'm',
+    viec: [{ itemId: 'i1', maNut: 'v_g3_u1_x', ok: true }],
+  });
+  assert.equal(d.khoiLop, '3', 'bản ghi phải KHAI khối lớp cho hàm nền dùng');
+  n.datNguCanh({});
+});

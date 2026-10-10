@@ -24,7 +24,7 @@
  * `BAT_NHANH_TRA` ngay dưới. Giữ mốc lớp 3 vì nếu có ngày bật lại thì mốc ấy vẫn là
  * mốc đúng — nhưng đừng đọc đoạn trên như một sự thật đã kiểm.
  */
-import { mucThaoCua, NGUONG_THAO, NGUONG_YEU } from './zpd.js';
+import { mucThaoCua, nguongThao, nguongYeu } from './zpd.js';
 import { nhanNut } from './doThi.js';
 import { moiTuDuocDung } from './phongnoi.js';
 
@@ -139,8 +139,8 @@ export function tomTatMucThao({ von, mucThao, doThi } = {}) {
     const p = mucThaoCua(mucThao, ma);
     if (p === null) continue;
     daCo.add(chu);
-    if (p >= NGUONG_THAO) chac.push(chu);
-    else if (p < NGUONG_YEU) chenh.push(chu);
+    if (p >= nguongThao()) chac.push(chu);
+    else if (p < nguongYeu()) chenh.push(chu);
   }
   if (!chac.length && !chenh.length) return '';
 

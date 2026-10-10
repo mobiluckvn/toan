@@ -30,7 +30,7 @@
  * không phải lỗi — và màn hình phải bày nó như vậy chứ không làm tròn cho đẹp.
  */
 
-import { NGUONG_THAO, mucThaoCua } from './zpd.js';
+import { nguongThao, mucThaoCua } from './zpd.js';
 
 /**
  * Nút nào được tính vào mẫu số.
@@ -87,7 +87,7 @@ export const PHU_DAT = 0.6;
  *   khối nào đạt. `null` KHÔNG có nghĩa "bé kém" — nghĩa là chưa đủ căn cứ để
  *   nói một bậc, và màn hình phải nói đúng như thế.
  */
-export function bacCefr(dt, mucThao, { nguong = NGUONG_THAO } = {}) {
+export function bacCefr(dt, mucThao, { nguong = nguongThao() } = {}) {
   const nut = dt?.nut || {};
   const banDo = KHOI.map((k) => ({
     ...k, tong: 0, vung: 0, phu: 0, dangTin: false, dat: false,

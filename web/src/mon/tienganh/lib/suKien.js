@@ -1,4 +1,4 @@
-import { boNguong } from '../../../chung/lib/nguong.js';
+import { boNguong, nguCanhPhien } from '../../../chung/lib/nguong.js';
 /**
  * SỰ KIỆN HỌC CỦA TIẾNG ANH — mỗi lượt trả lời một dòng, bất biến.
  *
@@ -109,7 +109,9 @@ export function themDaGui(ids, kho = globalThis.localStorage) {
  */
 /* 3 từ 10-10-2026: bản ghi mang thêm `nguongVer` — phiên bản bộ ngưỡng đã dùng
    (R7, mục 3.8.2). Hai môn phải khai CÙNG một số; cổng `tienganh_sukien` canh. */
-export const PHIEN_BAN_BAN_GHI = 3;
+/* 4 từ 10-10-2026: thêm `khoiLop` — nấc phạm vi của bộ ngưỡng (R7, mục 3.8.1).
+   Dòng v ≤ 3 không có trường ấy, và máy chủ đã chấm chúng bằng bộ `toanHe`. */
+export const PHIEN_BAN_BAN_GHI = 4;
 
 export const laHocSinhThat = (id) => !!id && id !== 'local';
 
@@ -191,6 +193,15 @@ export function dungSuKien({
        biết kết quả ấy được tính bằng θ nào — và hai bộ ngưỡng không so được với
        nhau trên cùng một nhật ký. */
     nguongVer: boNguong()?.phienBan ?? null,
+    /* ── KHỐI LỚP (R7 · mục 3.8.1, nấc `khoiLop` của thang phạm vi) ──
+       Để hàm nền chấm lượt này bằng đúng bộ tham số của khối lớp ấy. KHAI THẲNG
+       từ ngữ cảnh phiên, chứ KHÔNG để máy chủ suy từ hình dạng mã nút (`v_g5_…`):
+       mã nút là chuỗi do bộ sinh nội dung đặt, đổi quy ước đặt tên một lần là mọi
+       lượt im lặng rơi về bộ `toanHe` mà không gì kêu. Thiếu thì `null` — máy chủ
+       lùi về `toanHe`, đúng hành vi trước R7.
+       ⚠ Luật Firestore dùng `hasAll` nên trường thêm không bị chặn; nhưng nhật ký
+       là BẤT BIẾN, nên dòng cũ mãi mãi không có trường này. Vì vậy `v` lên 4. */
+    khoiLop: nguCanhPhien()?.khoiLop ?? null,
     v: PHIEN_BAN_BAN_GHI,
     /* Mốc RIÊNG từng lượt (màn hình đóng ngay lúc bé bấm). Dùng chung một mốc cho
        cả loạt thì mọi phép đo thời gian ra 0 — lỗi bên Toán đã dính. */

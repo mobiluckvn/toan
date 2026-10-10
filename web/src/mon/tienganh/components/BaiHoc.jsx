@@ -867,7 +867,9 @@ function LuyenTap({ bai, onTiep, moc, onMoc, onLuot = null, mucThao = null,
        tinh thông, và còn bắt cả nhánh "p tụt dưới ngưỡng yếu" mà một phép so
        `n >= 3` gõ tay ở đây sẽ bỏ sót. Gõ lại luật ở màn hình là dựng một bản thứ
        hai của cùng một chính sách, rồi hai bản trôi xa nhau mà không gì báo. */
-    const viec = viecTiepCuaNut({ p: mucThaoCua(mucThao, nut), saiLienTiep: n });
+    /* Truyền mã NÚT — nấc hẹp nhất của thang phạm vi (mục 3.8.1). Môn và khối lớp
+       đã nằm trong ngữ cảnh phiên, đặt lúc bé mở quyển. */
+    const viec = viecTiepCuaNut({ p: mucThaoCua(mucThao, nut), saiLienTiep: n }, { nut });
     if (viec.viec === VIEC.phuDao && !daMoi.current.has(nut) && !choPhuDao.current
         && daMoi.current.size < PHU_DAO_MOI_BAI) {
       choPhuDao.current = nut;

@@ -25,7 +25,7 @@ import { layNguong, boNguong } from '../../../chung/lib/nguong.js';
  * Nên tệp này KHÔNG thay `dandat.js`. Nó chỉ trả lời câu "nên làm gì tiếp", còn
  * câu "có được đi tiếp không" vẫn thuộc `dandat.js` với lưới đỡ nguyên vẹn.
  */
-import { NGUONG_THAO, NGUONG_YEU, mucThaoCua } from './zpd.js';
+import { nguongThao, nguongYeu, mucThaoCua } from './zpd.js';
 
 export const VIEC = {
   tiep: 'tiep',
@@ -51,9 +51,11 @@ export const SAI_LIEN_TIEP_MAC = layNguong(boNguong(), 'NG09');
  * phải chỉ một mã lệnh. Quyết định về việc học của một đứa trẻ thì phải giải
  * thích được.
  */
-export function viecTiepCuaNut(ho) {
+export function viecTiepCuaNut(ho, nc = {}) {
   const p = Number.isFinite(ho?.p) ? ho.p : null;
   const sai = Number(ho?.saiLienTiep) || 0;
+  /* `nc` — ngữ cảnh HẸP HƠN phiên (thường là `{ nut }`). Môn và khối lớp đã nằm
+     trong ngữ cảnh phiên nên chỗ gọi không phải mang theo; xem `datNguCanh`. */
 
   /* ĐANG MẮC xét TRƯỚC mức thạo, và cố ý: bé có thể có P(L) tàm tạm mà vẫn vừa
      sai ba câu liền — lúc ấy con số trung bình không phải thứ đáng nghe. */
@@ -61,10 +63,10 @@ export function viecTiepCuaNut(ho) {
     return { viec: VIEC.phuDao, p, vi_sao: `sai ${sai} lần liên tiếp` };
   }
   if (p === null) return { viec: VIEC.tiep, p, vi_sao: 'chưa có số liệu' };
-  if (p >= NGUONG_THAO) {
+  if (p >= nguongThao(nc)) {
     return { viec: VIEC.vuotAi, p, vi_sao: `đã vững (${Math.round(p * 100)}%)` };
   }
-  if (p < NGUONG_YEU) {
+  if (p < nguongYeu(nc)) {
     return { viec: VIEC.phuDao, p, vi_sao: `còn yếu (${Math.round(p * 100)}%)` };
   }
   return { viec: VIEC.tiep, p, vi_sao: `đang học được (${Math.round(p * 100)}%)` };
@@ -166,7 +168,7 @@ export function vectorS({ mucThao, maNutDs = [], dinhDang = null, thich = null,
     const ps = ho.map((h) => (Number.isFinite(h.p) ? h.p : null)).filter((x) => x !== null);
     if (ps.length) {
       const tb = ps.reduce((a, b) => a + b, 0) / ps.length;
-      mucNam = tb >= NGUONG_THAO ? 'vung' : (tb < NGUONG_YEU ? 'yeu' : 'dangHoc');
+      mucNam = tb >= nguongThao() ? 'vung' : (tb < nguongYeu() ? 'yeu' : 'dangHoc');
     }
   }
 

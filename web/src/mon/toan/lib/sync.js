@@ -1,4 +1,4 @@
-import { boNguong } from '../../../chung/lib/nguong.js';
+import { boNguong, nguCanhPhien } from '../../../chung/lib/nguong.js';
 /**
  * LỚP DỮ LIỆU HỌC — dựng bản ghi attempts và hàng đợi đồng bộ.
  * Tách khỏi Firebase SDK để chạy test được bằng node (test/sync.test.mjs).
@@ -69,7 +69,9 @@ export const attemptId = (learnerId, sessionId, microId, itemId, seq) =>
  * Thống kê theo thời gian chỉ được dùng dòng v ≥ 2. Thà nói "chưa có số liệu" còn
  * hơn hiện một con số sai cho bố mẹ tin theo.
  */
-export const PHIEN_BAN_BAN_GHI = 3;
+/* 4 từ 10-10-2026: thêm `khoiLop` — nấc phạm vi của bộ ngưỡng (R7, mục 3.8.1).
+   Dòng v ≤ 3 không có trường ấy, và máy chủ đã chấm chúng bằng bộ `toanHe`. */
+export const PHIEN_BAN_BAN_GHI = 4;
 
 /** Đáp án con gõ có thể là mảng nhiều ô — gọn lại thành một chuỗi đọc được, cắt ngắn */
 export const CHU_TOI_DA = 120;
@@ -127,6 +129,15 @@ export function buildAttempts({
        Toán cũng phải mang số phiên bản — thiếu nó thì một mức thạo cũ không còn
        biết được tính bằng θ nào, và hai bộ ngưỡng không so được trên cùng nhật ký. */
     nguongVer: boNguong()?.phienBan ?? null,
+    /* ── KHỐI LỚP (R7 · mục 3.8.1, nấc `khoiLop` của thang phạm vi) ──
+       Để hàm nền chấm lượt này bằng đúng bộ tham số của khối lớp ấy. KHAI THẲNG
+       từ ngữ cảnh phiên, chứ KHÔNG để máy chủ suy từ hình dạng mã nút (`v_g5_…`):
+       mã nút là chuỗi do bộ sinh nội dung đặt, đổi quy ước đặt tên một lần là mọi
+       lượt im lặng rơi về bộ `toanHe` mà không gì kêu. Thiếu thì `null` — máy chủ
+       lùi về `toanHe`, đúng hành vi trước R7.
+       ⚠ Luật Firestore dùng `hasAll` nên trường thêm không bị chặn; nhưng nhật ký
+       là BẤT BIẾN, nên dòng cũ mãi mãi không có trường này. Vì vậy `v` lên 4. */
+    khoiLop: nguCanhPhien()?.khoiLop ?? null,
     /**
      * Mốc RIÊNG của từng lượt trả lời (`khiNao` do màn hình đóng ngay lúc con bấm).
      *

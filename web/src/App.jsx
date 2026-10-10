@@ -7,6 +7,7 @@ import KeSach from './chung/components/KeSach.jsx';
 import BangXepHang from './chung/components/BangXepHang.jsx';
 import ParentReport from './chung/components/ParentReport.jsx';
 import { napSoDangKy, soDangKy } from './chung/lib/soQuyen.js';
+import { datNguCanh } from './chung/lib/nguong.js';
 import { hasFirebase, dungGiaLap, choHienTai } from './chung/lib/nenTang.js';
 import ChonNguoi from './chung/components/ChonNguoi.jsx';
 import HoSoCon from './chung/components/HoSoCon.jsx';
@@ -104,6 +105,28 @@ export default function App() {
     if (monMa) return monCua(monMa);
     return quyen ? monCua(dangKy?.chuongTrinh?.[quyen]?.mon) : null;
   }, [monMa, quyen, dangKy]);
+
+  /**
+   * ── NGỮ CẢNH PHIÊN CHO BỘ NGƯỠNG (R7 · mục 3.8.1) ──
+   *
+   * θ và ba tham số BKT có thể khác nhau giữa hai môn và giữa các khối lớp. Mọi chỗ
+   * gọi `layNguong` đọc ngữ cảnh này, nên nó phải luôn khớp với quyển bé đang mở.
+   *
+   * ⚠ SUY TỪ TRẠNG THÁI, KHÔNG GÁN TAY Ở CHỖ GỌI. Tôi viết bản đầu đặt ngữ cảnh
+   * ngay trong `chonQuyen` — và đó là một trong BỐN đường đổi quyển: `veKeSach` về
+   * kệ sách, `moCuaPhu` vào môn mà không qua quyển, nhánh `loai: 'giai'` mở mùa
+   * giải. Ba đường kia sẽ để ngữ cảnh của quyển TRƯỚC nằm lại, và hậu quả thì câm:
+   * bé lớp 3 làm bài vẫn được chấm bằng θ của lớp 5, không màn nào đổi màu, không
+   * cổng nào đỏ — chỉ mức thạo trong học bạ sai. Ngữ cảnh là HÀM của `mon` và
+   * `quyen`, nên chỗ đúng để đặt nó là nơi hai thứ ấy đã suy xong.
+   *
+   * `khoiLop` lấy từ SỔ ĐĂNG KÝ (`ct.lop`), không bóc từ tên quyển: tên quyển là
+   * chuỗi hiển thị, sổ đăng ký là nơi duy nhất khai lớp (xem `soQuyen.js`).
+   */
+  useEffect(() => {
+    const ct = quyen ? dangKy?.chuongTrinh?.[quyen] : null;
+    datNguCanh({ mon: mon?.ma ?? monMa ?? null, khoiLop: ct?.lop ?? null });
+  }, [mon, monMa, quyen, dangKy]);
 
   const chonQuyen = useCallback((ma) => {
     /* Chương trình `loai: 'giai'` không phải chuỗi bài học tuần tự mà là mùa giải —

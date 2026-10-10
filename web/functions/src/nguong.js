@@ -74,7 +74,11 @@ export const KHOANG = {
  * @param ma       mã ngưỡng, 'NG01'…'NG21'
  * @param nguCanh  { nut, dangCau, bac, loaiNut, khoiLop, mon } — thiếu khoá nào thì bỏ qua nấc ấy
  */
-export function layNguong(bo, ma, nguCanh = {}) {
+export function layNguong(bo, ma, nguCanhRieng = {}) {
+  /* Ngữ cảnh phiên làm NỀN, cái truyền vào ĐÈ lên. Nhờ vậy một chỗ gọi chỉ biết mã
+     nút vẫn lấy đúng giá trị của môn và khối lớp bé đang học, mà không phải mang
+     theo hai thứ ấy qua năm tầng hàm. */
+  const nguCanh = { ..._nguCanh, ...(nguCanhRieng || {}) };
   const theo = bo?.theoPhamVi || {};
   for (const loai of THANG_PHAM_VI) {
     if (loai === 'toanHe') break;
@@ -115,6 +119,33 @@ let _bo = BO_MAC_DINH;
 
 /** Bộ ngưỡng đang dùng cho phiên này. */
 export const boNguong = () => _bo;
+
+/**
+ * NGỮ CẢNH CỦA PHIÊN — `mon` và `khoiLop`, đặt khi bé mở một quyển.
+ *
+ * ── VÌ SAO HAI NẤC NÀY LÀ CHUYỆN CỦA PHIÊN, KHÔNG PHẢI CỦA TỪNG LỜI GỌI ──
+ * Thang phạm vi có sáu nấc, nhưng chúng không cùng một hạng. `nut` · `dangCau` ·
+ * `bac` đổi theo TỪNG LƯỢT, nên chỗ nào cần thì phải tự truyền vào. Còn `mon` và
+ * `khoiLop` thì cả buổi học chỉ có một giá trị: bé đang mở quyển Tiếng Anh lớp 3 thì
+ * mọi lời gọi trong buổi ấy đều thuộc môn ấy, lớp ấy.
+ *
+ * Giữ hai nấc ấy ở đây thì hàng chục chỗ gọi `layNguong` không phải mọc thêm tham
+ * số, mà vẫn lấy đúng giá trị của quyển bé đang học. Chỗ nào cần nấc hẹp hơn thì
+ * truyền thêm, và nó ĐÈ LÊN ngữ cảnh phiên — hẹp luôn thắng rộng, đúng mục 3.8.1.
+ */
+let _nguCanh = {};
+
+/** Ngữ cảnh phiên hiện tại. */
+export const nguCanhPhien = () => _nguCanh;
+
+/** Đặt ngữ cảnh phiên. Gọi khi bé mở một quyển; gọi lại khi đổi quyển. */
+export function datNguCanh(nc) {
+  _nguCanh = {};
+  for (const k of ['mon', 'khoiLop']) {
+    if (nc?.[k] != null && nc[k] !== '') _nguCanh[k] = String(nc[k]);
+  }
+  return _nguCanh;
+}
 
 /** Đặt bộ cho cả phiên. Trả về chính bộ đã đặt, để chỗ gọi ghi `nguongVer`. */
 export function datBoNguong(bo) {

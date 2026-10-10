@@ -29,16 +29,41 @@ export const DEFAULT_PARAMS = {
  * Vì vậy mọi phép tính dưới đây gọi `thamSo()`, và `index.js` nạp bộ ngưỡng
  * (`layBoNguong`) TRƯỚC khi gọi `applyAttempt`.
  */
-const thamSo = () => ({
-  L0: layNguong(boNguong(), 'NG01'),
-  T: layNguong(boNguong(), 'NG02'),
-  slip: layNguong(boNguong(), 'NG03'),
-  guess: layNguong(boNguong(), 'NG04'),
+const thamSo = (nc = {}) => ({
+  L0: layNguong(boNguong(), 'NG01', nc),
+  T: layNguong(boNguong(), 'NG02', nc),
+  slip: layNguong(boNguong(), 'NG03', nc),
+  guess: layNguong(boNguong(), 'NG04', nc),
 });
+
+/**
+ * NGỮ CẢNH PHẠM VI CỦA MỘT LƯỢT (R7 · mục 3.8.1).
+ *
+ * Máy con có ngữ cảnh PHIÊN (`datNguCanh`, đặt lúc bé mở quyển); hàm nền thì không
+ * — nó sống chung cho mọi bé, mọi môn, mọi khối lớp, và xử lượt của bé này ngay sau
+ * lượt của bé khác. Nên ở đây ngữ cảnh phải dựng lại từ CHÍNH BẢN GHI, mỗi lượt một
+ * lần, và không bao giờ được giữ lại giữa hai lượt.
+ *
+ * ⚠ CHỈ ĐỌC TRƯỜNG BẢN GHI TỰ KHAI. Không suy `khoiLop` từ hình dạng `v_g5_u1_city`:
+ * đó là quy ước đặt tên của bộ sinh nội dung, không phải một lời khai: đổi nó một
+ * lần là mọi lượt lặng lẽ rơi về bộ `toanHe`. Dòng nhật ký `v ≤ 3` không có
+ * `khoiLop` — chúng trả `null`, và `layNguong` bỏ qua nấc ấy, tức giữ đúng hành vi
+ * trước R7. Đó là chủ ý: một bản ghi đời cũ phải chấm được, chứ không được ném.
+ */
+export function nguCanhLuot(a = {}) {
+  const nc = {};
+  if (a.mon) nc.mon = String(a.mon);
+  if (a.khoiLop != null && a.khoiLop !== '') nc.khoiLop = String(a.khoiLop);
+  if (a.bktUnit) nc.nut = String(a.bktUnit);
+  return nc;
+}
 export const MASTERY_THRESHOLD = layNguong(BO_MAC_DINH, 'NG07');
 
 /** Một lần trả lời → cập nhật xác suất thạo */
 export function bktUpdate(p, correct, params = null) {
+  /* `params` thường tới từ `paramsFor`, đã mang đúng ngữ cảnh phạm vi của lượt.
+     Gọi trần (không `params`) thì rơi về bộ `toanHe` — đúng cho cổng và cho chỗ
+     nào chỉ cần một con số chung. */
   /* ⚠ GỌI XUỐNG `nguong.js`, KHÔNG giữ công thức riêng ở đây. Màn hình chuyên gia
      cần tính Bảng 3.21 ngay trên máy con, nên công thức phải có ở cả hai phía — và
      hai bản công thức thì sớm muộn trôi khỏi nhau. Chỗ duy nhất đã có hai bản chép
@@ -65,9 +90,10 @@ export const isMastered = (p, th = MASTERY_THRESHOLD) => p >= th;
 export const BAY_PARAMS = layNguong(BO_MAC_DINH, 'NG05');
 
 export function paramsFor(item = {}) {
+  const nc = nguCanhLuot(item);
   return item.mustPass
-    ? { ...thamSo(), ...layNguong(boNguong(), 'NG05') }
-    : thamSo();
+    ? { ...thamSo(nc), ...layNguong(boNguong(), 'NG05', nc) }
+    : thamSo(nc);
 }
 
 /**
@@ -92,8 +118,8 @@ export const NUA_DOI_NGAY = layNguong(BO_MAC_DINH, 'NG06');
  * gian. Nghe ngược đời nhưng đúng: lâu không kiểm thì hiểu biết hiện tại của hệ
  * thống về bé nhạt đi theo cả hai chiều, chứ không phải bé giỏi lên.
  */
-export function quenDan(p, soNgay, nuaDoi = null) {
-  const nua = nuaDoi ?? layNguong(boNguong(), 'NG06');
+export function quenDan(p, soNgay, nuaDoi = null, nc = {}) {
+  const nua = nuaDoi ?? layNguong(boNguong(), 'NG06', nc);
   if (!Number.isFinite(p)) return thamSo().L0;
   if (!Number.isFinite(soNgay) || soNgay <= 0) return p;
   return clamp(0.5 + (p - 0.5) * 2 ** (-soNgay / nua));
@@ -132,7 +158,11 @@ export function applyAttempt(doc, attempt, now = Date.now) {
      như VỪA gặp — thà không phân rã còn hơn phân rã theo một mốc bịa ra. */
   const cach = Number.isFinite(doc?.lastSeen)
     ? Math.max(0, (bayGio - doc.lastSeen) / 86400000) : 0;
-  const cur = quenDan(doc?.p ?? thamSo().L0, cach);
+  /* Dựng ngữ cảnh MỘT lần cho cả lượt: nửa đời trí nhớ, bốn tham số BKT và ngưỡng
+     thạo phải cùng nhìn một phạm vi. Lấy hai lần ở hai chỗ là mở đường cho việc
+     `quenDan` tính theo lớp 5 mà `isMastered` chấm theo `toanHe`. */
+  const nc = nguCanhLuot(attempt);
+  const cur = quenDan(doc?.p ?? thamSo(nc).L0, cach, null, nc);
   const dung = !!attempt.correct;
   const p = bktUpdate(cur, dung, paramsFor(attempt));
   const n = (doc?.nAttempts ?? 0) + 1;
@@ -158,7 +188,7 @@ export function applyAttempt(doc, attempt, now = Date.now) {
     /* Mức thạo TRƯỚC lượt này. Lần đầu chạm nút thì là L0 — vẫn ghi ra, để phép
        trừ `p - pTruoc` lúc nào cũng có nghĩa mà không phải xử lý trường hợp riêng. */
     pTruoc: cur,
-    mastered: isMastered(p),
+    mastered: isMastered(p, layNguong(boNguong(), 'NG07', nc)),
     nAttempts: n,
     nCorrect: (doc?.nCorrect ?? 0) + (dung ? 1 : 0),
     saiLienTiep: dung ? 0 : (doc?.saiLienTiep ?? 0) + 1,

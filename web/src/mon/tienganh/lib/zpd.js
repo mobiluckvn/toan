@@ -31,11 +31,27 @@ import { layNguong, boNguong } from '../../../chung/lib/nguong.js';
 
 import { tiLeDung, xepDinhDang } from './hoso.js';
 
-/** Ngưỡng thạo — giữ đúng con số của `functions/src/bkt.js` (bác chốt 0,85). */
-export const NGUONG_THAO = layNguong(boNguong(), 'NG07');
+/**
+ * NGƯỠNG THẠO VÀ NGƯỠNG YẾU — ĐỌC LÚC GỌI, không đọc lúc nạp module.
+ *
+ * ── VÌ SAO LÀ HÀM, KHÔNG PHẢI HẰNG ──
+ * Từ R7, θ có thể khác nhau giữa khối lớp 1–2 và 3–5, giữa môn Toán và Tiếng Anh
+ * (Bảng 3.19, cột "phạm vi áp dụng"). Mà module nạp xong TRƯỚC khi bé chọn quyển —
+ * một hằng chụp lúc ấy thì mãi mãi là giá trị `toanHe`, và cả cột phạm vi kia thành
+ * trang trí.
+ *
+ * Hàm thì đọc ngữ cảnh phiên (`datNguCanh` gọi lúc mở quyển) nên tự lấy đúng giá trị
+ * của quyển bé đang học — mà KHÔNG chỗ gọi nào phải mọc thêm tham số. Cần nấc hẹp
+ * hơn (`nut`, `dangCau`) thì truyền vào, nó đè lên ngữ cảnh phiên.
+ */
+export const nguongThao = (nc) => layNguong(boNguong(), 'NG07', nc);
+export const nguongYeu = (nc) => layNguong(boNguong(), 'NG08', nc);
 
-/** Dưới mức này thì luyện thêm cùng kiểu câu không giúp gì — cần phụ đạo. */
-export const NGUONG_YEU = layNguong(boNguong(), 'NG08');
+/* Bản `toanHe`, chụp lúc nạp. GIỮ LẠI vì nhiều cổng dùng làm mốc so, và vì mấy chỗ
+   chỉ cần "con số chung" chứ không quyết định gì theo quyển. Đừng dùng nó ở chỗ ra
+   QUYẾT ĐỊNH cho một bé cụ thể — dùng hai hàm trên. */
+export const NGUONG_THAO = layNguong(boNguong(), 'NG07', {});
+export const NGUONG_YEU = layNguong(boNguong(), 'NG08', {});
 
 export const NHOM = {
   chongChenh: 0,

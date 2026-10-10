@@ -27,7 +27,7 @@
  * tính, nên chạy được bằng `node` và cổng soi được. Phần bài học do mô hình viết
  * (Reflexion) đi vào bằng `themBaiHoc`, và nó phải qua phép soi của chính việc ấy.
  */
-import { NGUONG_THAO, mucThaoCua } from './zpd.js';
+import { nguongThao, mucThaoCua } from './zpd.js';
 
 /** Trần ký tự cả hồ sơ. Đi vào lời dặn mỗi lượt, nên phải nhỏ. */
 export const TRAN_KY_TU = 1200;
@@ -153,7 +153,7 @@ export function donHoSo(hs, { mucThao = null, buoiHienTai = 0 } = {}) {
   ra.baiHoc = ra.baiHoc.filter((x) => (x?.hetHanBuoi ?? 0) > nay)
     .slice(-TRAN_PHAN_TU.baiHoc);
 
-  const daThao = (nut) => nut && (mucThaoCua(mucThao, nut) ?? 0) >= NGUONG_THAO;
+  const daThao = (nut) => nut && (mucThaoCua(mucThao, nut) ?? 0) >= nguongThao();
   ra.baiHoc = ra.baiHoc.filter((x) => !daThao(x?.nut));
   /* `loiLap` và `tuNham` là chuỗi chữ trần, không mang nút. Khi chỗ gọi biết nút
      thì nó truyền dạng `{chu, nut}` — nhận cả hai hình dạng, vì bản đầu chỉ có

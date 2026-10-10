@@ -471,3 +471,103 @@ xuất từ máy con.
 Hàm nền học ngưỡng · thống kê (Bảng 3.22) · NG20, NG21 · phạm vi hẹp hơn `toanHe` ·
 màn hình duyệt đề xuất (bảng `nguong_de_xuat` đã có luật **và đã có phép canh luật**,
 nhưng chưa có ai ghi vào).
+
+---
+
+## 11 · PHẠM VI HẸP — ĐÃ LÀM XONG · 10-10-2026
+
+Ba đợt trước mới chỉ dùng **một nấc** của thang phạm vi: `toanHe`. Đợt này mở bốn nấc
+còn lại, tức phần còn thiếu của **quyết định ①** (đợt 1 đã hoãn lại: "toàn hệ thống
+trước"). Từ đây **θ của lớp 3 khác θ của lớp 5 được**, và chuyên gia đặt điều đó
+trong bảng chứ không nhờ ai sửa mã.
+
+### Hai nửa, và chúng không giống nhau
+
+| | Máy con | Hàm nền |
+|---|---|---|
+| Sống bao lâu | một phiên của **một** bé | dùng chung cho **mọi** bé, mọi môn |
+| Lấy ngữ cảnh ở đâu | **phiên** — đặt lúc bé mở quyển | **từng bản ghi**, dựng lại mỗi lượt |
+| Rò rỉ thì sao | không rò được: mỗi tab một bé | **chấm bé này bằng ngưỡng của bé kia** |
+
+Nên hai nửa làm hai cách khác hẳn, và cổng canh riêng từng cách.
+
+### Máy con: ngữ cảnh là HÀM của trạng thái, không gán tay
+
+`datNguCanh` / `nguCanhPhien` đã có từ đợt 1; việc còn lại là đặt nó cho đúng.
+
+Bản đầu tôi viết đặt thẳng trong `chonQuyen` — **và sai**. Đổi quyển có **bốn** đường,
+không phải một: `chonQuyen` · `veKeSach` về kệ sách · `moCuaPhu` vào môn mà không qua
+quyển nào (màn "Học theo chủ đề") · nhánh `loai: 'giai'` mở mùa giải. Ba đường kia sẽ
+để ngữ cảnh của quyển TRƯỚC nằm lại, và hậu quả thì **câm hoàn toàn**: bé lớp 3 làm
+bài vẫn được chấm bằng θ của lớp 5, không màn nào đổi màu, không cổng nào đỏ — chỉ
+mức thạo trong học bạ sai.
+
+Nên ngữ cảnh **suy từ trạng thái** bằng một `useEffect` theo `mon` · `quyen` · `dangKy`.
+Thêm đường thứ năm sau này cũng không hỏng được, vì chẳng có chỗ gọi nào để quên.
+
+`khoiLop` lấy từ **sổ đăng ký** (`ct.lop`), không bóc từ tên quyển — sổ đăng ký là nơi
+duy nhất khai lớp.
+
+Đo trên bản dựng thật, cả bốn đường:
+
+```
+mở Tiếng Anh lớp 5   → { mon: 'tienganh', khoiLop: '5' }
+về kệ sách           → { }                       ← không bám lại quyển trước
+mở Toán lớp 2        → { mon: 'toan', khoiLop: '2' }
+Học theo chủ đề      → { mon: 'toan' }            ← xuyên lớp nên KHÔNG có khối lớp
+```
+
+### Mười lăm chỗ quyết định: từ hằng chụp sẵn sang hàm gọi lúc cần
+
+`NGUONG_THAO` · `NGUONG_YEU` · `NGUONG_TRAN` vốn là hằng chụp lúc nạp module — một
+con số cho cả hệ thống, đọc xong là đóng băng. Nay mỗi chỗ **quyết định** gọi
+`nguongThao(nc)` · `nguongYeu(nc)` · `nguongTran(nc)`, 15 chỗ trong `zpd.js` ·
+`chinhsach.js` · `lantruyen.js` · `hosoai.js` · `hoico.js` · `cefr.js`.
+
+Ba hằng cũ **vẫn còn**, nay là ảnh chụp bản `toanHe`: cổng cần một con số cố định để
+so, và một cổng đọc giá trị đang hành thì nó tự đồng ý với chính nó.
+
+`viecTiepCuaNut(ho, nc = {})` nhận thêm ngữ cảnh hẹp hơn phiên; `BaiHoc.jsx` chuyền
+`{ nut }` — **nấc hẹp nhất của thang**, để chuyên gia nới ngưỡng cho đúng một nút khó
+mà không đụng cả khối lớp.
+
+### Hàm nền: dựng lại ngữ cảnh từ bản ghi, và KHÔNG giữ lại
+
+`nguCanhLuot(a)` trong `functions/src/bkt.js` đọc `mon` · `khoiLop` · `bktUnit` của
+chính bản ghi, mỗi lượt một lần. `applyAttempt` dựng nó **một lần cho cả lượt** rồi
+dùng chung cho `quenDan` (NG06), bốn tham số BKT (NG01–NG05) và `isMastered` (NG07) —
+lấy hai lần ở hai chỗ là mở đường cho việc quên dần tính theo lớp 5 mà chấm thạo lại
+theo `toanHe`.
+
+⚠ **CHỈ ĐỌC TRƯỜNG BẢN GHI TỰ KHAI.** Mã nút `v_g5_u1_city` có sẵn chữ `g5`, bóc ra
+là xong — nhưng đó là **quy ước đặt tên của bộ sinh nội dung, không phải một lời
+khai**. Đổi quy ước một lần là mọi lượt lặng lẽ rơi về `toanHe`. `index.js` đã dặn
+đúng điều này cho trường `mon` từ trước; đây là lần thứ hai nó đáng nhắc.
+
+Nên **bản ghi phải khai `khoiLop`**: `suKien.js` (Tiếng Anh) và `sync.js` (Toán) cùng
+lấy từ `nguCanhPhien()`, và `PHIEN_BAN_BAN_GHI` lên **4**. Nhật ký là bất biến nên
+dòng `v ≤ 3` mãi mãi không có trường ấy — chúng trả `null`, `layNguong` bỏ qua nấc đó,
+tức **giữ đúng hành vi trước R7**. Một bản ghi đời cũ phải chấm được, không được ném.
+
+Luật Firestore dùng `hasAll` nên trường thêm không bị chặn — không phải deploy rules.
+
+### Cổng
+
+Bốn phép mới trong `test/nguong_phien.test.mjs` (**11 → 15 PASS**):
+
+- ngữ cảnh lượt chỉ đọc trường tự khai — **ghim rằng `v_g5_…` KHÔNG suy ra `khoiLop`**
+- cùng một mức thạo, ba phạm vi, ba kết luận "đã thạo" khác nhau (θ 0,85 · 0,60 · 0,99)
+  — và nút hẹp hơn thì **thắng** khối lớp
+- hai lượt liền của **hai bé khác nhau**: ngữ cảnh bé trước không được rò sang bé sau
+- hai môn khai cùng `PHIEN_BAN_BAN_GHI`, và bản ghi thật mang `khoiLop`
+
+**105 tệp cổng · 0 đỏ.** `npm run build` xanh.
+
+### Đợt này KHÔNG làm
+
+Hàm nền học ngưỡng · thống kê (Bảng 3.22) · NG20, NG21 — cả ba đợi **dữ liệu học
+thật** (NG21 đòi 200 lượt mỗi phạm vi) · màn duyệt đề xuất · **deploy R7 lên bản thật**.
+
+Và một việc nhỏ còn bỏ ngỏ: nấc `dangCau` của thang phạm vi **chưa có đường vào** —
+bản ghi lượt không mang trường dạng câu, nên muốn dùng nấc ấy thì phải khai thêm, y
+như vừa làm với `khoiLop`.

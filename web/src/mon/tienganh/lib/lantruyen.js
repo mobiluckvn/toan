@@ -21,7 +21,7 @@ import { layNguong, boNguong } from '../../../chung/lib/nguong.js';
  * lặng. Đây là lỗi nguy nhất của cả mục này, nên `NGUONG_TRAN` chặn cứng.
  */
 import { duyetNguoc, duyetXuoi, nhanNut } from './doThi.js';
-import { NGUONG_THAO, mucThaoCua } from './zpd.js';
+import { nguongThao, mucThaoCua } from './zpd.js';
 
 /** Mỗi bước lùi thì độ ngờ còn lại bấy nhiêu. */
 export const ALPHA = layNguong(boNguong(), 'NG12');
@@ -33,7 +33,10 @@ export const BETA = 0.08;
  * ⚠ TRẦN CỦA LAN TRUYỀN XUÔI. Cộng hưởng không bao giờ được đưa một nút TỚI
  * ngưỡng thạo — chỉ bài bé thật sự làm mới làm được điều đó.
  */
-export const NGUONG_TRAN = NGUONG_THAO - 0.05;
+/* Hàm, không hằng — xem chú thích ở `zpd.js`. */
+export const nguongTran = (nc) => nguongThao(nc) - 0.05;
+/* Bản `toanHe` cho cổng và cho chỗ chỉ cần con số chung. */
+export const NGUONG_TRAN = nguongThao({}) - 0.05;
 
 /**
  * NÚT GỐC RỄ — bé sai ở `maNut`, thật ra hổng ở đâu.
@@ -66,7 +69,7 @@ export function nutGocRe(dt, mucThao, maNut,
     })
     /* Nút bé đã THẠO thì loại hẳn, không xếp hạng thấp: giữ lại là màn hình có
        thể bày ra "chỗ hổng gốc rễ" trỏ vào một thứ bé làm đúng mãi. */
-    .filter((x) => x.p < NGUONG_THAO)
+    .filter((x) => x.p < nguongThao())
     .sort((a, b) => b.doNgo - a.doNgo)
     .slice(0, toiDa);
 }
@@ -85,16 +88,16 @@ export function nutGocRe(dt, mucThao, maNut,
 export function congHuong(dt, mucThao, { sauToiDa = 2, beta = BETA } = {}) {
   const ra = {};
   const nguon = Object.keys(mucThao || {}).filter(
-    (ma) => (mucThaoCua(mucThao, ma) ?? 0) >= NGUONG_THAO,
+    (ma) => (mucThaoCua(mucThao, ma) ?? 0) >= nguongThao(),
   );
   for (const g of nguon) {
     const pg = mucThaoCua(mucThao, g) ?? 0;
     for (const { ma, buoc } of duyetXuoi(dt, g, { sauToiDa })) {
       const cu = ra[ma] ?? mucThaoCua(mucThao, ma) ?? P_MAC_DINH;
       /* Đã thạo rồi thì cộng hưởng không có việc gì làm. */
-      if (cu >= NGUONG_THAO) continue;
+      if (cu >= nguongThao()) continue;
       const them = (beta / buoc) * pg;
-      ra[ma] = Math.min(NGUONG_TRAN, cu + them);
+      ra[ma] = Math.min(nguongTran(), cu + them);
     }
   }
   return ra;
