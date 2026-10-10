@@ -23,7 +23,7 @@
  * nào, và nhánh có kịch bản thì kịch bản vẫn đi trước — kế hoạch chỉ áp cho phần
  * luyện tự do.
  */
-import { KIEU_VIEC, moiTuDuocDung } from './phongnoi.js';
+import { KIEU_VIEC } from './phongnoi.js';
 import { NHOM, nhomCua, mucThaoCua } from './zpd.js';
 
 /** Buổi có từ 5 tới 7 việc. Ít hơn thì không ra một buổi; nhiều hơn thì bé đuối. */

@@ -314,8 +314,12 @@ console.log('\n── C · TRẦN BƯỚC VÀ BẮT LẶP ──\n');
 
   t('chuKyTool phân biệt tham số',
     chuKyTool('tra_tu', { tu: 'dog' }) !== chuKyTool('tra_tu', { tu: 'cat' }));
-  t('chuKyTool ổn định với cùng tham số',
-    chuKyTool('tra_tu', { tu: 'dog' }) === chuKyTool('tra_tu', { tu: 'dog' }));
+  /* HAI LỜI GỌI khác nhau, trùng tham số: đây chính là phép kiểm tính ổn định,
+     không phải so một biến với chính nó. Tách ra hai biến cho ESLint thấy rõ —
+     và đọc cũng rõ hơn. */
+  const ky1 = chuKyTool('tra_tu', { tu: 'dog' });
+  const ky2 = chuKyTool('tra_tu', { tu: 'dog' });
+  t('chuKyTool ổn định với cùng tham số', ky1 === ky2);
   t('bộ đếm có ghi lại lượt lặp', LOI_TOOL.lap >= 1 && LOI_TOOL.goi >= 1);
 }
 

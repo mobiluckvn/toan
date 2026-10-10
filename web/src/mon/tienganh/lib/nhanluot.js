@@ -106,7 +106,7 @@ const laTiengViet = (s) => CO_DAU_VIET.test(s);
  *
  * Thứ tự các nhánh là CÓ Ý: nhánh nào suy từ dữ liệu chắc hơn thì đứng trước.
  */
-export function nhanLuot(luotBe, { von = null, datNguong = DAT } = {}) {
+export function nhanLuot(luotBe, { von: _von = null, datNguong = DAT } = {}) {
   const ra = (nhan, doTin, chiTiet = null) => chotTin({ nhan, doTin, chiTiet });
 
   /* ── CHƯA NÓI CÂU NÀO ĐƯỢC CHẤM → MỞ ĐẦU ──

@@ -329,10 +329,18 @@ test('vector S: lâu không gặp thì bật cờ hayQuen', () => {
 });
 
 test('lời dặn LLM nhận vector S, và KHÔNG nhắc điểm số', () => {
-  const ma = chiMa(doc('../src/mon/tienganh/lib/phongnoi.js'));
-  assert.match(ma, /hoSo\.mucNam/, 'vector S chưa vào lời dặn');
-  const i = ma.indexOf('function dongHoSo');
-  const khoi = ma.slice(i, i + 2000);
+  /* ⚠ SOI `bangtrangthai.js`, KHÔNG soi `phongnoi.js`.
+     Việc V6 chuyển khối «về bé» sang đó (`tomTatChoLoiDan`); hàm `dongHoSo` cũ nằm
+     lại trong `phongnoi.js` không ai gọi. Cổng này vẫn tìm chuỗi `hoSo.mucNam`
+     trong tệp cũ và vẫn XANH — nhưng xanh nhờ MÃ CHẾT, không nhờ mã đang chạy. Gỡ
+     mã chết ngày 10-10 thì cổng đỏ, và đó là lần đầu nó nói thật.
+     Bài học: một cổng tìm chuỗi trong một tệp thì nó canh TỆP ẤY, không canh tính
+     chất — chuyển việc sang tệp khác là nó canh nhầm chỗ mà không ai biết. */
+  const ma = chiMa(doc('../src/mon/tienganh/lib/bangtrangthai.js'));
+  assert.match(ma, /\bmucNam\b/, 'vector S chưa vào lời dặn');
+  const i = ma.indexOf('function tomTatChoLoiDan');
+  assert.ok(i >= 0, 'không thấy hàm dựng khối lời dặn');
+  const khoi = ma.slice(i, i + 2500);
   assert.doesNotMatch(khoi, /\$\{[^}]*\bp\b[^}]*\}|Math\.round\([^)]*p /,
     'lời dặn đổ số vào — mô hình có thể nhại lại nguyên văn trước mặt bé');
 });

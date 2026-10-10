@@ -1,5 +1,4 @@
 import { layNguong, KHOANG, capNhatBKT } from './nguong.js';
-import { nguCanhLuot } from './bkt.js';
 import { chayLaiChuoi, chiSoNG07, chatLuongMoHinh } from './thongke.js';
 
 /**

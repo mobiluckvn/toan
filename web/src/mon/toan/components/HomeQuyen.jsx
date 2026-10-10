@@ -41,10 +41,6 @@ const CHAM = {
   dat: 'bg-teal', dangDo: 'bg-gold', chuaDat: 'bg-alert', mo: 'bg-navy-light', khoa: 'bg-line',
 };
 const BIEU_TUONG = { dat: '🌟', dangDo: '⏳', chuaDat: '🔸', mo: '⭕', khoa: '🔒' };
-const MAU_MUC = {
-  master: 'bg-teal text-white', xongBai: 'bg-gold text-gold-dark',
-  dangHoc: 'bg-navy-light text-white', chuaHoc: 'bg-soft text-mute',
-};
 
 const VI_SAO = {
   dangDo: 'Con đang học dở bài này',

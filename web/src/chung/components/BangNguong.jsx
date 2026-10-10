@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { logout } from '../lib/taiKhoan.js';
 import {
-  MAC_DINH, KHOANG, boNguong, layNguong, soiNguong,
+  MAC_DINH, KHOANG, boNguong, soiNguong,
   nhipTinhThong, NHIP_CHO_PHEP, PHIEN_BAN,
 } from '../lib/nguong.js';
 import { phatHanhNguong } from '../lib/ghiNguong.js';

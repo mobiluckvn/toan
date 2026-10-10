@@ -128,6 +128,8 @@ test('⚠ GIỚI HẠN ĐÃ BIẾT: dựng ở máy chủ KHÔNG bắt được 
   console.error = () => {};
   let nem = null;
   try {
+    /* eslint-disable react-hooks/rules-of-hooks -- component này CỐ TÌNH sai,
+       nó là vật chứng của phép thử. */
     const Sai = ({ som }) => {
       if (som) return null;                     // return sớm
       const [x] = React.useState(1);            // hook sau return → React 310 ở máy con
@@ -138,6 +140,7 @@ test('⚠ GIỚI HẠN ĐÃ BIẾT: dựng ở máy chủ KHÔNG bắt được 
       React.useEffect(() => dat(1), []);        // effect KHÔNG chạy khi dựng ở máy chủ
       return React.createElement(Sai, { som: n === 0 });
     }));
+    /* eslint-enable react-hooks/rules-of-hooks */
   } catch (e) { nem = e; } finally { console.error = im; }
   assert.equal(nem, null,
     'React nay ném cả khi dựng ở máy chủ — nâng cấp cổng này thay vì sửa phép cho xanh');

@@ -1775,65 +1775,17 @@ function dongUnit(u) {
   return d;
 }
 
-/** Lời dặn thêm về bé — chỉ những gì app đã có, không hỏi thêm gì. */
-function dongHoSo(hoSo, tenBe) {
-  /* ⚠ KHÔNG lui sớm khi `hoSo` rỗng. Từ 09-10 tên bé CHỈ còn ở khối này (dòng đầu
-     lời dặn đã bỏ nó ra, xem ghi chú trên), nên lui sớm là cô giáo máy không biết
-     bé tên gì — và mọi ô `[Name]` nhận "con". Bé chưa có hồ sơ nào là chuyện
-     thường: buổi đầu tiên. */
-  const d = [];
-  if (tenBe) d.push(`The child's name is ${tenBe} — use it in [Name] slots.`);
-  if (!hoSo) return d.length ? `${DAU_KHOI_RIENG}\nABOUT THE CHILD: ${d.join(' ')}\n${CUOI_KHOI_RIENG}` : '';
-  if (hoSo.thich) {
-    d.push(`The child told you they like "${hoSo.thich}".`
-      + ' Prefer that word when a pattern needs a thing — it makes the sentence about them.');
-  }
+/* ── `dongHoSo` ĐÃ GỠ — 10-10-2026 ──
+   Việc V6 gộp khối «về bé» vào `bangtrangthai.js` (xem chú thích ở đó, dòng 148:
+   «Trước V6 khối này do `dongHoSo` trong `phongnoi.js` dựng… Nay một hàm»). Hàm cũ
+   nằm lại, không ai gọi, và các tên nó dùng đã đi theo V6 — `DAU_KHOI_RIENG` và
+   `CUOI_KHOI_RIENG` ở đây chỉ còn là TÁI XUẤT (`export { X } from …`), mà tái xuất
+   KHÔNG đưa tên vào phạm vi tệp. Gọi nó là `ReferenceError` ngay dòng đầu.
 
-  /* ══ VECTOR TRẠNG THÁI S = [C, T, P, M] (mục 2.1.2 luận văn) ══
-     Bốn chiều đã đo xong ở các đợt trước, nhưng cho tới đây chúng nằm rời: chiều
-     C ở `mastery`, T ở thẻ ôn và phép quên, P ở bảng định dạng, M ở sở thích.
-     Gom lại thành MỘT khối để cô giáo máy biết mình đang nói với ai.
+   Gỡ hẳn chứ không vá: một hàm không ai gọi mà gọi vào là vỡ thì tệ hơn không có —
+   người sau đọc thấy nó, tưởng dùng được, và dùng.
+   ESLint `no-undef` tìm ra; trước đó 116 cổng và bản dựng đều xanh. */
 
-     ⚠ NÓI BẰNG CÂU NGƯỜI ĐỌC ĐƯỢC, ĐỪNG ĐỔ SỐ VÀO. "p=0.42" thì mô hình không
-     biết làm gì với nó, mà chỗ nào cũng có thể hiểu khác đi. "She is still shaky
-     on this unit" thì rõ một nghĩa.
-
-     ⚠ KHÔNG NHẮC TỚI ĐIỂM SỐ TRƯỚC MẶT BÉ. Lời dặn này đi vào prompt, và mô hình
-     rất dễ nhại lại nguyên văn. Nên câu nào ở đây cũng phải là câu KHÔNG SAO nếu
-     lỡ bị đọc to lên. "Con được 42%" thì không phải câu như thế. */
-  if (hoSo.mucNam === 'yeu') {
-    d.push('She is still shaky on this unit — keep sentences short, stay with words'
-      + ' she has met many times, and praise small correct bits.');
-  } else if (hoSo.mucNam === 'vung') {
-    d.push('She is solid on this unit — you may ask slightly longer questions and'
-      + ' let her lead more of the turns.');
-  }
-  if (hoSo.dangManh) {
-    d.push(`She answers best in "${hoSo.dangManh}" style tasks.`);
-  }
-  if (hoSo.hayQuen) {
-    d.push('She has not touched some of this for a while — bring back one or two'
-      + ' older words on purpose.');
-  }
-  if (hoSo.deMet) {
-    d.push('She slows down towards the end of a session — keep this one brisk.');
-  }
-
-  /* ── TRÍ NHỚ QUA NHIỀU BUỔI ── (việc V3, `lib/hosoai.js`)
-     Mấy dòng trên nói về buổi NÀY; khối này nói về những buổi TRƯỚC. Giữ nguyên
-     quy ước của khối trên: không số, và câu nào cũng phải KHÔNG SAO nếu lỡ bị đọc
-     to lên — `dongHoSoAI` tự chặn chữ số ở đúng một chỗ trước khi trả về. */
-  const nho = dongHoSoAI(hoSo.ai, tenBe);
-
-  const than = [d.length ? `ABOUT THE CHILD: ${d.join(' ')}` : '', nho]
-    .filter(Boolean).join('\n');
-  if (!than) return '';
-  /* ⚠ BỌC CẢ KHỐI TRONG DẤU RIÊNG. Mọi chữ của bé trong lời dặn nằm giữa hai dấu
-     này, và `locKhung` ở `functions/src/vantay.js` bỏ SẠCH phần giữa — nên vân tay
-     prompt không bao giờ đổi theo bé. Dấu khối chắc hơn dấu từng dòng: thêm một
-     dòng mới vào khối thì nó tự động được che, không phải khai thêm mẫu nào. */
-  return `${DAU_KHOI_RIENG}\n${than}\n${CUOI_KHOI_RIENG}`;
-}
 
 /* ─────────── kịch bản viết sẵn cho từng bài ─────────── */
 

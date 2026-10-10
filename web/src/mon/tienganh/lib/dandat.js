@@ -226,7 +226,6 @@ export function viecChangTu({
   const nghe = new Set(daNghe);
   const xem = new Set(daXem);
   const mucNoi = (tu) => noiDuoc(soNoi[tu], datNoi);
-  const noi = new Set(dsTu.map((v) => v.tu).filter((tu) => mucNoi(tu) !== 'chua'));
   const viec = [];
 
   for (const [i, g] of dsVideo.entries()) {

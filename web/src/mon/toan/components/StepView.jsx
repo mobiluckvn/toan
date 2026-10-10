@@ -59,7 +59,6 @@ function PhanTich({ t }) {
 }
 
 export default function StepView({ step, lesson, onNext, onJump, onRecord, log, onFinish, onRestart, onMoBai }) {
-  const K = lesson.knowledgeCore || {};
   const [checked, setChecked] = useState(null);
 
   switch (step.type) {

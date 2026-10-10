@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Chu from '../../../chung/components/Chu.jsx';
 import {
   BAREM, diemBarem, datChua, keDonOn, tuyenAn, conLai, docGio, chamKep,

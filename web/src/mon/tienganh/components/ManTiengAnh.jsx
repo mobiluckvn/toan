@@ -4,7 +4,6 @@ import OnTap from './OnTap.jsx';
 import DocHieu from './DocHieu.jsx';
 import VietBai from './VietBai.jsx';
 import OnLai from './OnLai.jsx';
-import NutNghe from './NutNghe.jsx';
 import {
   napBai, napSoAm, napOnTap, napDocHieu, napVietBai, chuongCua, quyenDau, timQuyen,
 } from '../lib/noiDung.js';

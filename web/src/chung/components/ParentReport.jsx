@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Chu from './Chu.jsx';
 import ThanhTren from './ThanhTren.jsx';
 import { NHAN_MUC_CHUONG, NHAN_TINH_TRANG } from '../lib/nhanHocBa.js';
@@ -156,7 +156,6 @@ export default function ParentReport({ mon = [], tienDo = {}, learnerId, onExit,
   const banDo = !!hb?.chuDe;
   /* Bấm vào một bài để mở lại: đường vào phòng học là của MÔN, không phải của sổ.
      Đợt sau đưa vào giao ước; giờ để trống thay vì gọi liều sang ruột Toán. */
-  const onOpenMicro = null;
 
   const r = cloudReport;
   const weak = r?.weakest || [];

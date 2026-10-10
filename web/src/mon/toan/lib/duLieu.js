@@ -117,7 +117,11 @@ export async function tienDoTuMay(uid) {
     docTienDoMicro(uid).catch(() => ({})),
     docHocBa(uid).catch(() => ({})),
   ]);
-  return { micros, chapters: {}, chuDe: {}, dau: {}, ...hb, micros };
+  /* ⚠ `micros` ĐỨNG SAU `...hb`, và chỉ đứng ở đó. Bản cũ khai nó HAI lần (cả
+     trước lẫn sau phép trải) — khoá trùng trong một object literal: bản sau lặng lẽ
+     đè bản trước, nên bản trước là mã chết. Thứ tự này cố ý: sổ tiến độ micro là
+     nguồn riêng, không được để học bạ đè lên. ESLint `no-dupe-keys` tìm ra. */
+  return { chapters: {}, chuDe: {}, dau: {}, ...hb, micros };
 }
 
 /** Cô lần vào nhật ký từng câu của MỘT em */

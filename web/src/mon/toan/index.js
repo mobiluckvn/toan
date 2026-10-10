@@ -11,7 +11,7 @@
 import ManToan from './components/ManToan.jsx';
 import { loadProgress, saveProgress, gopTienDo } from './lib/progress.js';
 import { reassignQueue } from './lib/sync.js';
-import { chuongTrinhCua, napChiMuc, dsChuongTrinhSapXep, napBanDoDang, CONTENT, dongDau }
+import { napChiMuc, dsChuongTrinhSapXep, napBanDoDang, CONTENT, dongDau }
   from './lib/noiDung.js';
 import { hocBaQuyen, hocBaChuDe, baiCanCoGang, trinhDo, tienDoQuyen } from './lib/hocba.js';
 import { tenDang, dangCuaBai } from './lib/noiDung.js';

@@ -4,7 +4,7 @@ import { Tranh } from './DocHieu.jsx';
 import { hinhCuaTu, napBai, maBaiTruoc, napKichBanNoi, kichBanCua } from '../lib/noiDung.js';
 import {
   vonTu, tuTrongCau, tachTheoTieng, UNIT_CU_TOI_DA,
-  tinhBuoi, loiKet, cauHoiSoThich, PHUT_TOI_DA, luotLuyen,
+  tinhBuoi, loiKet, cauHoiSoThich, luotLuyen,
 } from '../lib/phongnoi.js';
 import { capNhatTuBuoi, donHoSo, themBaiHoc } from '../lib/hosoai.js';
 import {
@@ -813,7 +813,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
           .map(({ x, i }) => (
             <li key={i}>
               {x.vai === 'may'
-                ? <LuotCo luot={x} bai={bai} von={von} />
+                ? <LuotCo luot={x} bai={bai} von={von} mocEn={mocEn} />
                 : (
                   <LuotBe luot={x} dangNghe={laiO === i && dangNghe}
                     onNoiLai={x.mau && buoi.trangThai === 'dang' && ngheDuoc() && !micHong
@@ -902,7 +902,15 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
 
 /* ─────────── một lượt của cô ─────────── */
 
-function LuotCo({ luot, bai, von }) {
+/**
+ * ⚠ `mocEn` PHẢI NHẬN QUA PROP, KHÔNG ĐỌC TỪ `PhongNoi`.
+ * Nó được khai trong `PhongNoi` (component khác, cùng tệp). Bản cũ đọc thẳng từ
+ * đây, nên nút 🔈 «nghe lại lời tiếng Việt» ném `ReferenceError: mocEn is not
+ * defined` MỖI LẦN bé bấm — lỗi nằm trong một hàm xử lý sự kiện nên không làm vỡ
+ * màn, chỉ khiến nút im lặng không làm gì. ESLint (`no-undef`) tìm ra ngày 10-10;
+ * trước đó 116 cổng và bản dựng đều xanh suốt.
+ */
+function LuotCo({ luot, bai, von, mocEn = [] }) {
   const hinh = tuTrongCau(luot.en, von);
   return (
     <div className="flex flex-col gap-2 rounded-xl2 border-2 border-navy bg-white p-4">

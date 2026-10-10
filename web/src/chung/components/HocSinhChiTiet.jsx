@@ -46,7 +46,7 @@ const O = ({ nhan, gia, mau = 'text-navy' }) => (
 export default function HocSinhChiTiet({ em, mon = [] }) {
   /* Học bạ của em này, do CHÍNH MÔN dựng theo khuôn chung. Màn này không biết Toán
      chia chương ra sao — nó chỉ vẽ đúng khuôn ấy, nên thêm môn là thêm một tab. */
-  const [monMa, setMonMa] = useState(mon[0]?.ma);
+  const [monMa] = useState(mon[0]?.ma);
   const m = mon.find((x) => x.ma === monMa) || mon[0];
   const [hb, setHb] = useState(null);
   const [rows, setRows] = useState('loading');

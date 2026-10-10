@@ -18,11 +18,12 @@ export default function PracticeItem({ item: base, level, figure, figureGiai, on
 
   const n = inputCount(item);
   const hs = hintState(item, tries);
-  const finished = res?.ok || hs.reveal;
   /**
-   * Khoá ô CHỈ khi con đã đúng. Trước đây khoá luôn lúc `finished`, mà `finished`
-   * còn bật khi lộ đáp án sau 3 lần sai — màn hình bảo "con thử lại nhé" trong khi
-   * mọi ô đã tắt, con sửa cũng không được. Sai bao nhiêu lần cũng được thử lại.
+   * Khoá ô CHỈ khi con đã đúng. Trước đây có một biến `finished = res?.ok ||
+   * hs.reveal` và màn khoá theo nó — mà nó còn bật khi lộ đáp án sau 3 lần sai:
+   * màn hình bảo "con thử lại nhé" trong khi mọi ô đã tắt, con sửa cũng không
+   * được. Sai bao nhiêu lần cũng phải được thử lại.
+   * Biến ấy nằm lại không ai dùng cho tới 10-10-2026, ESLint tìm ra thì gỡ.
    */
   const khoaO = !!res?.ok;
   const variantable = !!canGenerate(item);

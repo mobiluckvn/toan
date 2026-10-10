@@ -37,7 +37,7 @@ function cauCua(bai) {
     .map((c) => ({ ...c, id: `${bai.id}#${c.id}`, muc, tuBai: bai.id, tenBai: bai.title })));
 }
 
-export default function LuyenChuDe({ maDang, lop, progress, onXongLuot, onMoBai,
+export default function LuyenChuDe({ maDang, lop, progress: _progress, onXongLuot, onMoBai,
                                     onThoat, onDoiBac, onVeNha }) {
   const [bd, setBd] = useState(null);
   const [cau, setCau] = useState(null);
