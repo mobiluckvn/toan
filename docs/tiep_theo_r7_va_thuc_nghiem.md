@@ -12,9 +12,14 @@ luận văn v4**, bảng đối chiếu hệ thống ↔ luận văn, và ba k�
 
 ## 1 · Trạng thái kho — ⚠ ĐỌC TRƯỚC
 
-- Nhánh **`phu-dao-va-bo-do-kb2-kb3`**, HEAD `5f6311f2`, **đã push**, cây sạch.
-- **`main` vẫn đứng ở `555201f3`** (25-08) — chưa merge, và bản thật đang chạy mã
-  của NHÁNH. Đây là việc còn treo lâu nhất.
+- **`main` ĐÃ GỘP** ngày 10-10-2026 (tối): tua nhanh từ `555201f3` (25-08) lên
+  `124a9a8a`, **55 commit**, không một xung đột nào — `main` là tổ tiên thẳng của
+  nhánh, đi sau 55 và đi trước 0.
+  ⚠ Việc này treo từ 25-08; nay `main` · `origin/main` · nhánh đều cùng một chỗ.
+- Nhánh **`phu-dao-va-bo-do-kb2-kb3`** vẫn còn, trỏ cùng commit. Bản thật đang chạy
+  đúng mã ấy, nên **không phải deploy lại** sau khi gộp.
+- ⚠ Chạy trọn cổng TRÊN CHÍNH CÂY `main` sau khi gộp, không tin vào kết quả chạy ở
+  nhánh — kho này từng push một nhánh ở trạng thái vỡ vì `git add` sót thư mục.
 - **116 tệp cổng · 0 đỏ** (sáng nay 103) · **`npm run soi` 0 lỗi** (ESLint mới).
 - Đã deploy trọn **rules + 18 functions + hosting**.
 
@@ -167,9 +172,9 @@ thực tế** (Bảng 3.25 nói chưa đủ dữ liệu, mà đã có 3.227 lư�
 ## 7 · VIỆC KẾ TIẾP
 
 ### Tôi làm được ngay, không cần gì từ bác
-1. **Gộp nhánh vào `main`** — `main` cũ hơn bản đang chạy gần hai tháng.
-2. Nấc `loaiNut` đã xong; không còn nấc nào thiếu.
-3. Dọn 51 cảnh báo `exhaustive-deps` của ESLint (hiện để cảnh báo có chủ ý).
+1. ~~Gộp nhánh vào `main`~~ — **XONG 10-10 tối**, xem mục 1.
+2. Dọn 51 cảnh báo `exhaustive-deps` của ESLint (hiện để cảnh báo có chủ ý).
+3. Không còn nấc phạm vi nào thiếu.
 
 ### Cần bác chốt trước
 | | việc | vì sao cần chốt |
