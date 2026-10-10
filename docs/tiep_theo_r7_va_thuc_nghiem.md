@@ -211,3 +211,44 @@ học mô phỏng **không thay được**.
 
 ⚠ Hai lệnh cần `GOOGLE_APPLICATION_CREDENTIALS=~/khoa-dich-vu.json`:
 `tools/soi_ban_ghi_tienganh.mjs` và `tools/nhap_cau_duyet.py --lay`.
+
+---
+
+## 9 · Dọn cảnh báo ESLint — và ba lỗi ghi sai lộ ra (10-10 đêm, `0704b336`)
+
+`npm run soi` nay **0 lỗi · 0 cảnh báo**. Trước đó 51 cảnh báo, để nguyên có chủ ý
+vì kho này có chỗ cố ý bỏ phụ thuộc. Dọn trọn thì bắt được ba lỗi thật.
+
+### Ba lỗi, cùng một lớp: bao đóng giữ giá trị cũ
+
+| Chỗ | Khai sai | Hậu quả |
+|---|---|---|
+| `BaiHoc.jsx` · `ghiNoi` chặng Mẫu câu | `}, []);` mà thân hàm đọc `ds[i]` | `i` đóng băng ở 0 → **mọi** lượt nói cả chặng ghi `maNut` của câu ĐẦU |
+| `BaiHoc.jsx` · `ManTu` · `ghiNoi` | `[onNoi]` | đổi bài không dựng lại component → tra vốn từ bài TRƯỚC → `maNut` null |
+| `PhongNoi.jsx` · `thuLai` | thiếu `ma` | buổi luyện nói lưu vào quyển bé đã rời khỏi |
+
+Cả ba hỏng **lặng lẽ**. Hai cái đầu đưa mã nút sai vào nhật ký, mà nhật ký là BẤT
+BIẾN — dữ liệu đã ghi trước `0704b336` không sửa lại được. Khi đọc lại Bảng 3.22
+cần biết: **lượt `format: 'noiCau'` ghi trước 10-10-2026 có `bktUnit` không đáng
+tin**; lượt `noiTu` thì tuỳ, chỉ sai khi bé đổi bài mà không rời màn.
+
+### Luật xử cảnh báo phụ thuộc — hai lối, không có lối "để đấy"
+
+**Thêm phụ thuộc** khi chứng minh được là tương đương hoặc đúng hơn:
+- hàm trần chỉ đọc một giá trị → `useCallback` với đúng giá trị ấy (`dangCua`);
+- giá trị đã là `useMemo` nên danh tính ổn định (`mocEn`, `canNoiGi`);
+- mục của một hằng mức mô-đun (`ct?.bai` lấy từ `SO_DK`) — khai nó KHÔNG nạp vòng vòng;
+- effect đã tự chốt "đúng một lần" bằng cờ (`daGhi`, `daDocKet`) → khai ĐỦ là vô
+  hại, và con số ghi sổ thành con số của lượt vừa xong thay vì lúc dựng màn.
+
+**`eslint-disable-next-line` kèm lý do** khi bỏ phụ thuộc là chủ ý — bốn chỗ, mỗi
+chỗ ghi rõ hậu quả nếu thêm: `cau.id` (thêm `cau.the` là xoá chữ bé đang gõ) ·
+`bai?.id` (thêm `pools` là nạp lại đồ thị + bài tiên quyết mỗi lần vẽ) · `khoaBac`
+(`bac` do `.find()` trả nên là object mới mỗi lần vẽ → vòng lặp tải) · `id` của
+`maPhien` (là thứ KÍCH HOẠT, không phải thứ đọc).
+
+### Việc kế tiếp sau đợt này
+
+Nhóm "tôi tự làm được" đã **hết việc**. Mọi mục còn lại ở mục 8 đều chờ bác chốt
+(hai cờ thí nghiệm, Thi thử, 55 `dapMau`, sửa luận văn), chờ Thầy (tên năm nhóm
+ngưỡng), hoặc không phải việc mã (KB6 — học sinh thật, 4 tuần).
