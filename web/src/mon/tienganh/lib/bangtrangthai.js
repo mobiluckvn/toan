@@ -26,7 +26,7 @@
  */
 import { vectorS } from './chinhsach.js';
 import { xepTheoZPD } from './zpd.js';
-import { nutGocRe } from './lantruyen.js';
+import { nutGocRe, hoSoCongHuong } from './lantruyen.js';
 import { theDenHan } from './onlai.js';
 import { dongHoSoAI } from './hosoai.js';
 
@@ -68,6 +68,12 @@ export function dungBang({
 } = {}) {
   const maNutDs = nutCuaBai(bai);
   const ai = hoSoAI || hoSo?.ai || tienDo?.hoSoAI || null;
+  /* ── LAN TRUYỀN XUÔI, chỉ cho VECTƠ TRẠNG THÁI (Bảng 3.25) ──
+     Bé thạo nút gốc thì các nút dựng trên nó nhích lên đôi chút — một phỏng đoán
+     có lý, dùng để lời dặn cho cô giáo máy đỡ lệch. KHÔNG đi vào `mucThao` trả ra
+     dưới kia: chỗ ấy phải là con số ĐO ĐƯỢC, vì nó đi tiếp vào chấm thạo, bật phụ
+     đạo và hoãn thẻ ôn. Xem chú thích dài ở `hoSoCongHuong`. */
+  const mucThaoSuyRa = (doThi && mucThao) ? hoSoCongHuong(doThi, mucThao) : mucThao;
   return {
     mucThao: mucThao || null,
     /* Thứ tự câu theo vùng phát triển gần. Không có kho câu thì `null` — xem ghi
@@ -77,7 +83,7 @@ export function dungBang({
       ? (nutGocRe(doThi, mucThao, maNutMac, { toiDa: 1 })[0]?.ma || maNutMac) : null,
     theDenHan: cards ? theDenHan(cards, { quyen, bayGio, mucThao }) : null,
     hoSo: {
-      ...vectorS({ mucThao, maNutDs, dinhDang, thich: thich || hoSo?.thich, bayGio }),
+      ...vectorS({ mucThao: mucThaoSuyRa, maNutDs, dinhDang, thich: thich || hoSo?.thich, bayGio }),
       /* Bản đã tính sẵn đắp lên — xem ghi chú ở tham số `hoSo`. Chỉ đắp trường CÓ
          giá trị, để một `hoSo` thiếu trường không xoá mất phần `vectorS` vừa tính. */
       ...Object.fromEntries(Object.entries(hoSo || {})

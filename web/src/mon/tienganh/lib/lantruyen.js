@@ -104,6 +104,44 @@ export function congHuong(dt, mucThao, { sauToiDa = 2, beta = BETA } = {}) {
 }
 
 /**
+ * ĐẮP CỘNG HƯỞNG LÊN HỒ SƠ — trả về một BẢN SAO, không sửa hồ sơ gốc.
+ *
+ * ── ⚠ VÌ SAO LÀ BẢN SAO, VÀ VÌ SAO ĐIỀU ĐÓ QUAN TRỌNG ──
+ * Bảng 3.25 của luận văn khai: «Lan truyền xuôi đã viết nhưng chưa nối vào tầng
+ * thích ứng lúc chạy» — và hướng xử lý nó tự đặt ra là «nối vào chỗ tính vectơ
+ * trạng thái, KHÔNG GHI ĐÈ HỒ SƠ».
+ *
+ * Lý do nằm ở chỗ hai con số trả lời hai câu khác nhau:
+ *   `mucThao` là thứ ĐO ĐƯỢC — bé đã trả lời, BKT đã tính. Nó đi vào mọi quyết
+ *     định có hậu quả: chấm thạo, bật phụ đạo, hoãn thẻ ôn, ghi học bạ.
+ *   Cộng hưởng là thứ SUY RA — «bé thạo số đếm thì chắc cũng đỡ hơn ở mẫu câu hỏi
+ *     giờ». Nó là một phỏng đoán có lý, không phải một phép đo.
+ *
+ * Trộn hai thứ ấy vào một chỗ là tuyên thạo khống: hồ sơ phồng lên vì một suy
+ * luận, rồi con số phồng ấy lại đi vào BKT ở lượt sau, rồi phồng tiếp. Nên bản
+ * đắp này chỉ dùng cho vectơ trạng thái — thứ đi vào LỜI DẶN cho mô hình, nơi sai
+ * một chút thì cô giáo máy nói hơi lệch, chứ không ai mất điểm.
+ *
+ * ⚠ `congHuong` đã kẹp kết quả dưới `nguongTran()` (= ngưỡng thạo − 0,05), nên một
+ * nút chỉ nhờ cộng hưởng KHÔNG BAO GIỜ chạm ngưỡng thạo. Nhờ thế `viecTiepCuaNut`
+ * không thể trả `vuotAi` cho nó, và thẻ ôn không thể bị hoãn vì một suy luận. Cổng
+ * `tienganh_conghuong` canh đúng tính chất ấy.
+ */
+export function hoSoCongHuong(dt, mucThao, opt = {}) {
+  if (!dt || !mucThao) return mucThao || null;
+  const them = congHuong(dt, mucThao, opt);
+  if (!Object.keys(them).length) return mucThao;
+  const ra = { ...mucThao };
+  for (const [ma, p] of Object.entries(them)) {
+    const cu = ra[ma] ?? ra[encodeURIComponent(ma)] ?? null;
+    /* Giữ nguyên mọi trường khác của hồ sơ (saiLienTiep, lastSeen…) — chỉ `p` đổi,
+       và đánh dấu `suyRa` để bên đọc biết con số này KHÔNG phải đo được. */
+    ra[ma] = { ...(cu || {}), p, suyRa: true };
+  }
+  return ra;
+}
+
+/**
  * MA TRẬN TRẠNG THÁI — một dòng cho mỗi nút bé đang chật vật, kèm nút gốc rễ.
  *
  * Đây là thứ màn cô giáo cần: không phải "em này sai 12 câu", mà "em này sai ở
