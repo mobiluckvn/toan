@@ -445,10 +445,11 @@ trang(
          "Dòng v ≤ 5 không có cờ nên rơi vào `tuGo` y như trước — cách đọc cũ giữ nguyên, không dòng nào mất.",
          "XONG"],
         "▌ CÓ MÃ, CÓ CỔNG, NHƯNG KHÔNG AI GỌI — tức với người học là chưa có",
-        ["C-07", "Lan truyền XUÔI (congHuong)", "3.4.3 · Bảng 3.25",
-         "Luận văn đã tự khai giới hạn này. Chưa nối vì chỗ nối đúng là nơi tính vectơ trạng thái, và phải "
-         "không ghi đè hồ sơ — chưa làm.",
-         "Hệ thống chỉ chẩn đoán ngược, không lan toả mức thạo xuôi xuống nút hệ quả.", "MỘT PHẦN"],
+        ["C-07", "Lan truyền XUÔI — ĐÃ XONG 10-10", "3.4.3 · Bảng 3.25",
+         "`hoSoCongHuong` trả một BẢN SAO; `dungBang` chỉ dùng bản ấy cho `vectorS`. `mucThao` trả ra vẫn "
+         "là con số ĐO ĐƯỢC — nó đi tiếp vào chấm thạo, bật phụ đạo, hoãn thẻ ôn và học bạ.",
+         "Chín cổng canh. Đáng kể nhất: nút chỉ nhờ cộng hưởng KHÔNG thể ra `vuotAi` và KHÔNG thể hoãn "
+         "thẻ ôn — nhờ chốt trần sẵn có của `congHuong`.", "XONG"],
         ["C-08", "Chính sách mức BÀI và luật vượt ải — ĐÃ XONG 10-10", "3.5.1",
          "KT-03 của bản đối chiếu 26-08, mở hơn một tháng, nay đã đóng. Nối vào THẺ ÔN — chỗ DUY NHẤT hệ thống "
          "bắt bé làm lại một bài đã đạt, nên cũng là chỗ duy nhất nhánh VƯỢT ẢI có nghĩa. Nối một chỗ là cả "
@@ -483,19 +484,19 @@ trang(
          "«Chưa có đủ dữ liệu học tập thật» — nay đã có 3.227 lượt của 10 tài khoản.",
          "Luận văn tự đánh giá thấp hơn thực tế.", "CHƯA"],
         "▌ NGOÀI PHẠM VI LUẬN VĂN, nhưng đã báo và chưa sửa",
-        ["C-19", "46 mã nút `cum_*` nằm ngoài đồ thị tri thức", "3.2 · 3.4.3",
-         "Chín bài của ta3·ta4·ta5 gắn câu hỏi vào các mã `cum_*` (cụm từ) không phải đỉnh của do_thi.json. "
-         "Phát hiện khi dựng bảng này: phép đếm NG20 ra 73 thay vì 32, và chênh lệch chính là chúng.",
-         "Chưa gây hậu quả: nhật ký thật chưa có lượt nào mang mã `cum_*` (0/3.227). Nhưng nếu một bé làm "
-         "tới đó thì BKT vẫn theo dõi được, còn phép chẩn đoán trên đồ thị (nutGocRe) KHÔNG đặt được nút ấy "
-         "vào đâu — nó không có nút trước, không thành ứng viên gốc rễ.", "CHƯA"],
+        ["C-19", "46 mã nút ngoài đồ thị — ĐÃ XONG 10-10", "3.2 · 3.4.3",
+         "Khai `sp_g3_starter_1` vào bản đồ (nút CHÍNH thật sự thiếu) và bỏ 45 mẩu điền ô khỏi `maNutDs`. "
+         "Nút cầu `sp_g3_numbers` nay CÓ bài dạy — «19 nút gốc rễ không có bài dạy» của Bảng 3.25 bớt một.",
+         "⚠ Ba con số luận văn đổi theo: 1.194→1.195 đỉnh · 253→254 cạnh · 1.062→1.063 học được. Cổng "
+         "`cefr_quy_doi` ghim 1062 làm chốt báo động đã đỏ đúng lúc.", "XONG"],
         ["C-15", "55 bước gợi ý của bài tả tranh thiếu `dapMau`", "—", "Đã báo, chưa làm.",
          "Bé xem gợi ý mà không có câu mẫu để đối chiếu.", "CHƯA"],
         ["C-16", "Màn Thi thử dò được đáp án", "—", "Đã báo, chưa làm.", "Bé có thể thử lần lượt tới khi trúng.", "CHƯA"],
-        ["C-17", "Chưa có ESLint", "—",
-         "Kho chạy cổng bằng node trần, không có bộ dịch JSX và không có DOM giả — nên không cổng nào dựng "
-         "một màn React. Hai lỗi ReferenceError đã lên tới bản thật vì lỗ hổng này.",
-         "Đã có lưới đỡ (trang 6, T-27) nên bé không thấy màn trắng nữa, nhưng lỗi vẫn lọt được.", "CHƯA"],
+        ["C-17", "Cổng dựng THẬT màn React — ĐÃ XONG 10-10", "—",
+         "`man_dung_duoc.test.mjs` tự gói bằng esbuild rồi dựng thật bốn màn. ĐÃ THỬ NGƯỢC: gây lại đúng "
+         "lỗi hôm nay trong BangNguong.jsx → cổng ĐỎ; trả nguyên trạng → xanh.",
+         "⚠ Dựng ở máy chủ KHÔNG bắt được React 310 (đòi lượt vẽ thứ hai) — giới hạn ấy ghi thẳng thành "
+         "một phép kiểm. ESLint vẫn chưa có.", "XONG"],
         ["C-18", "Nhánh chưa gộp vào main", "—", "Chưa gộp.", "main đang cũ hơn bản đã deploy.", "CHƯA"],
     ],
     [7, 40, 14, 60, 44, 12],
@@ -626,7 +627,7 @@ trang(
         ["KB1", "Hiệu chỉnh θ, α, h và tạo bộ ngưỡng đề xuất đầu tiên", "cao",
          "CHƯA CHẠY. Nhưng điều kiện nay tốt hơn luận văn tưởng: đã có 3.212 lượt thật, và toàn bộ phép tính "
          "chạy lại được trên nhật ký với bộ ngưỡng khác.",
-         "Bộ sinh người học mô phỏng + vòng quét lưới (= C-01).", "CHƯA"],
+         "ĐÃ CÓ bộ sinh người học mô phỏng (10-10). Còn lại là chạy thành một đợt đo có báo cáo.", "CHƯA"],
         ["KB2", "So sánh bốn phiên bản mô hình", "chờ dữ liệu thật",
          "CHƯA CHẠY. Dữ liệu đã có; chưa có khâu chia 5 phần theo người học và kiểm định DeLong.",
          "Bộ kiểm tra chéo chia theo người học.", "CHƯA"],
@@ -656,81 +657,77 @@ trang(
     "Cột 'Ai quyết' tách rõ việc tôi làm được ngay với việc phải có người chốt.",
     ["#", "Việc", "Vì sao đứng ở đây", "Ai quyết", "Cỡ"],
     [
-        "▌ ĐÃ XONG HÔM NAY — 10-10-2026",
-        ["✔", "C-01 · C-02 — hàm nền HỌC ngưỡng và màn duyệt đề xuất",
-         "Bốn cách học của mục 3.8.3 đều chạy. Bộ đề xuất đầu tiên trên 3.213 lượt thật: 11 dòng, 2 có giá "
-         "trị. Bốn tham số BKT KHÔNG được đề xuất vì bộ hiệu chỉnh tay thắng máy học trên dữ liệu giữ lại.",
+        "▌ ĐÃ XONG — 10-10-2026",
+        ["✔", "Mục 3.8 của luận văn (R7) nay TRỌN",
+         "21 ngưỡng ra bảng dữ liệu · 6/7 nấc phạm vi · 4 bảng Firestore · màn chuyên gia · thống kê Bảng "
+         "3.22 chạy trên dữ liệu thật · hàm HỌC ngưỡng · màn duyệt đề xuất. Deploy cả rules, functions, hosting.",
+         "—", "—"],
+        ["✔", "Bốn việc của danh sách «làm được ngay»",
+         "C-19 (46 mã nút mồ côi, khai nút thật vào đồ thị) · C-07 (lan truyền xuôi, chỉ cho vectơ trạng "
+         "thái) · C-17 (cổng dựng thật màn React, đã thử ngược) · KB1 (1.000 người học mô phỏng).",
          "—", "—"],
         ["✔", "C-04 · C-05 · C-06 · C-08 · C-09 — bốn việc nhỏ một đợt",
          "Nhánh VƯỢT ẢI có chỗ chạy (thẻ ôn) · bản ghi v6 mang `bac` và `sauPhuDao` · chỉ số gom theo cặp "
          "(dạng, bậc) · NG09 tách lượt tự gỡ · cờ chia nhóm (để TẮT).",
          "—", "—"],
-        ["✔", "R7 trọn mục 3.8 — và đã lên bản thật",
-         "21 ngưỡng ra bảng dữ liệu · 6/7 nấc phạm vi · 4 bảng Firestore · màn chuyên gia · thống kê Bảng "
-         "3.22 chạy trên dữ liệu thật · hàm học ngưỡng. Deploy cả rules, functions và hosting.",
-         "—", "—"],
-        ["✔", "Lưới đỡ khi màn vỡ, và 18 câu bé không trả lời đúng được",
-         "Hai lỗi ReferenceError từng cho ra màn TRẮNG trên bản thật; nay bé thấy một câu và một đường ra. "
-         "18 câu của DL:TA3.B01 có hai ô cùng ghi 'xin chào' — đã vá cả bộ sinh lẫn nội dung đã dựng.",
+        ["✔", "Lưới đỡ khi màn vỡ · 18 câu bé không trả lời đúng được · bảng đối chiếu này",
+         "Và `docs/sua_luan_van_v4.md` — mười chỗ cần sửa trong luận văn, mỗi chỗ kèm nguyên văn, câu nên "
+         "sửa thành, và cách tự kiểm chứng.",
          "—", "—"],
 
         "▌ TÔI LÀM ĐƯỢC NGAY, KHÔNG CẦN GÌ TỪ BÁC",
-        ["1", "C-19 — 46 mã nút `cum_*` nằm ngoài đồ thị tri thức",
-         "Chín bài của ta3·ta4·ta5 gắn câu hỏi vào mã không phải đỉnh đồ thị. Chưa gây hậu quả (0/3.227 lượt "
-         "mang chúng), nhưng bé làm tới đó thì phép chẩn đoán trên đồ thị không đặt nút ấy vào đâu được.",
+        ["1", "KB3 — chạy bộ đo an toàn nội dung thành một đợt có báo cáo",
+         "Bộ đo đã có (`tools/do_an_toan_noi_dung.mjs`); thiếu là chạy 30 bài × 20 lượt × 3 vị trí rồi ghi "
+         "lại. Đây là kịch bản DUY NHẤT trong sáu cái không cần người học thật và không cần cờ chia nhóm.",
          "tôi", "vừa"],
-        ["2", "C-07 — nối lan truyền XUÔI vào chỗ tính vectơ trạng thái",
-         "Luận văn tự khai là giới hạn (Bảng 3.25). Có mã, có cổng, chỉ thiếu chỗ nối. Phải cẩn thận vì "
-         "đụng vòng thích ứng: nối vào chỗ tính vectơ trạng thái, KHÔNG ghi đè hồ sơ.",
+        ["2", "KB2 — kiểm tra chéo 5 phần, kiểm định DeLong cho AUC",
+         "Dữ liệu đã có (3.227 lượt) và phép chia theo người học đã viết cho hàm học ngưỡng. Còn thiếu kiểm "
+         "định DeLong để nói hai AUC có khác nhau thật không.",
          "tôi", "vừa"],
-        ["3", "C-11 · C-12 · C-14 — soạn danh sách sửa luận văn",
-         "Rẻ, và nâng độ tin cậy: hiện luận văn tự đánh giá THẤP HƠN thực tế ở hai chỗ (Bảng 3.25 nói chưa "
-         "đủ dữ liệu, mà đã có 3.227 lượt). Tôi soạn từng chỗ sửa, bác dán vào.",
-         "tôi soạn", "nhỏ"],
-        ["4", "KB1 — bộ sinh 1.000 người học mô phỏng",
-         "Hàm học ngưỡng đã chạy trên dữ liệu thật. Phần còn thiếu là người học mô phỏng: có nó thì NG06 và "
-         "NG07 mới đủ cỡ mẫu để thành đề xuất (nay mới 46 lượt, cần 200).",
-         "tôi", "vừa"],
-        ["5", "C-17 — cổng DỰNG THẬT một màn React",
-         "HAI lần hôm nay tôi suýt đưa màn trắng lên bản thật, cả hai lần cổng đều xanh. Bắt được bằng cách "
-         "đọc lại, không bằng chạy cổng. Cần thêm jsdom + bộ dịch JSX vào devDependencies.",
-         "tôi", "vừa"],
-        ["6", "C-04 — nấc `loaiNut`, nấc cuối của thang phạm vi",
-         "Làm y như `bac`. Nhưng chưa có nhu cầu thật nào đòi đặt ngưỡng riêng theo loại nút, nên để sau.",
+        ["3", "C-04 — nấc `loaiNut`, nấc cuối của thang phạm vi",
+         "Làm y như `bac`. Nhưng chưa có nhu cầu thật nào đòi đặt ngưỡng riêng theo loại nút.",
          "tôi", "nhỏ"],
+        ["4", "ESLint",
+         "Cổng dựng màn (C-17) bắt được lỗi phạm vi lúc vẽ, nhưng không bắt được biến thừa, nhánh chết, hay "
+         "hook thiếu phụ thuộc. ⚠ Thêm ESLint vào một kho 115 cổng sẽ đỏ hàng loạt lần đầu — phải tính trước "
+         "là sửa dần hay chỉ bật mấy luật đắt giá nhất.",
+         "tôi", "lớn"],
 
         "▌ CẦN BÁC CHỐT TRƯỚC",
-        ["7", "BẬT thử nghiệm KB5 (`kb5_zpd`)",
+        ["5", "BẬT thử nghiệm KB5 (`kb5_zpd`)",
          "Cờ đã sẵn, tất định, hai thử nghiệm chia độc lập. Bật là có số liệu đo tác dụng của việc xếp câu "
          "theo vùng phát triển gần — KHÔNG nới ràng buộc nào. ⚠ Nhưng nhóm đối chứng sẽ học bằng thứ tự "
          "thường suốt đợt đo, nên đó là quyết định về việc dạy trẻ.",
          "bác", "nhỏ"],
-        ["8", "BẬT thử nghiệm KB4 (`kb4_phudao_llm`)",
+        ["6", "BẬT thử nghiệm KB4 (`kb4_phudao_llm`)",
          "⚠ NỚI RÀNG BUỘC R3: câu do mô hình soạn tới tay bé nhiều hơn hẳn, trước khi người lớn duyệt. Có "
          "hai tầng hậu kiểm tất định, nhưng R3 nói «kiểm duyệt TRƯỚC khi đến tay trẻ». Tôi không tự bật.",
          "bác", "nhỏ"],
-        ["9", "C-16 — màn Thi thử dò được đáp án",
+        ["7", "C-16 — màn Thi thử dò được đáp án",
          "Sửa thế nào là quyết định sư phạm: khoá sau N lần thử, hay đổi câu khác, hay chỉ ghi lại?",
          "bác chọn cách", "vừa"],
-        ["10", "C-15 — 55 bước gợi ý của bài tả tranh thiếu `dapMau`",
+        ["8", "C-15 — 55 bước gợi ý của bài tả tranh thiếu `dapMau`",
          "Sinh được, nhưng bước cuối phải là mắt người — đúng luật của xưởng nội dung.",
          "bác duyệt nội dung", "vừa"],
-        ["11", "C-18 — gộp nhánh vào `main`",
-         "`main` đang cũ hơn bản đã deploy. Bác chốt thời điểm.",
+        ["9", "C-18 — gộp nhánh vào `main`",
+         "`main` đang cũ hơn bản đã deploy khá xa. Bác chốt thời điểm.",
          "bác", "nhỏ"],
-        ["12", "C-13 — «năm nhóm ngưỡng» là những nhóm nào",
+        ["10", "C-13 — «năm nhóm ngưỡng» là những nhóm nào",
          "Mục 3.8.1 nói năm nhóm nhưng Bảng 3.19 không có cột nhóm. Tên nhóm trong `data/nguong.json` hiện "
-         "là tôi đặt tạm, và màn chuyên gia đang gom theo đó.",
+         "là tôi đặt tạm, và màn chuyên gia đang gom theo đó. Xem mục 9 của `docs/sua_luan_van_v4.md`.",
          "Thầy", "nhỏ"],
+        ["11", "Cập nhật luận văn theo `docs/sua_luan_van_v4.md`",
+         "Mười chỗ, trong đó HAI chỗ luận văn đang tự đánh giá thấp hơn thực tế.",
+         "bác", "vừa"],
 
         "▌ KHÔNG PHẢI VIỆC MÃ",
-        ["13", "KB6 — 5–10 học sinh thật trong 4 tuần",
+        ["12", "KB6 — 5–10 học sinh thật trong 4 tuần",
          "Hệ thống đã deploy và chạy được. Khó nhất là khâu tổ chức: phụ huynh đồng ý, giáo viên ra đề kiểm "
          "tra giấy đầu và cuối. ⚠ Tới khi chạy xong thì mọi nhận định về hiệu quả DẠY HỌC vẫn là giả "
-         "thuyết — đúng như Bảng 3.25 tự khai.",
+         "thuyết — đúng như Bảng 3.25 tự khai, và KB1 trên người học mô phỏng KHÔNG thay được.",
          "bác + giáo viên", "lớn"],
     ],
-    [5, 48, 78, 20, 8],
+    [5, 50, 78, 20, 8],
 )
 
 RA.parent.mkdir(parents=True, exist_ok=True)
