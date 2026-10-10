@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import LoginScreen from './chung/components/LoginScreen.jsx';
 import ProfileSetup from './chung/components/ProfileSetup.jsx';
 import TeacherBoard from './chung/components/TeacherBoard.jsx';
+import BangNguong from './chung/components/BangNguong.jsx';
 import KeSach from './chung/components/KeSach.jsx';
 import BangXepHang from './chung/components/BangXepHang.jsx';
 import ParentReport from './chung/components/ParentReport.jsx';
@@ -217,6 +218,13 @@ export default function App() {
   }
 
   // Giáo viên và quản trị không vào phòng học — họ chỉ xem kết quả
+  /* ── CHUYÊN GIA CHƯƠNG TRÌNH (R7, mục 3.8.4) ──
+     Vai trò thứ tư, tách hẳn khỏi `admin`: người hiểu việc DẠY HỌC quyết định
+     ngưỡng. Đặt TRƯỚC nhánh giáo viên vì một tài khoản chỉ mang một vai. */
+  if (auth && role === 'chuyengia') {
+    return <BangNguong onExit={signOut} />;
+  }
+
   if (auth && (role === 'teacher' || role === 'admin')) {
     return <TeacherBoard mon={MON} onExit={signOut} />;
   }

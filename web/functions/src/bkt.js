@@ -1,4 +1,4 @@
-import { layNguong, BO_MAC_DINH, boNguong } from './nguong.js';
+import { layNguong, BO_MAC_DINH, boNguong, capNhatBKT } from './nguong.js';
 /**
  * BKT — Bayesian Knowledge Tracing (thuần toán, không phụ thuộc Firebase).
  *
@@ -39,12 +39,11 @@ export const MASTERY_THRESHOLD = layNguong(BO_MAC_DINH, 'NG07');
 
 /** Một lần trả lời → cập nhật xác suất thạo */
 export function bktUpdate(p, correct, params = null) {
-  const { T, slip, guess } = { ...thamSo(), ...(params || {}) };
-  const prior = clamp(p);
-  const post = correct
-    ? (prior * (1 - slip)) / (prior * (1 - slip) + (1 - prior) * guess)
-    : (prior * slip) / (prior * slip + (1 - prior) * (1 - guess));
-  return clamp(post + (1 - post) * T);
+  /* ⚠ GỌI XUỐNG `nguong.js`, KHÔNG giữ công thức riêng ở đây. Màn hình chuyên gia
+     cần tính Bảng 3.21 ngay trên máy con, nên công thức phải có ở cả hai phía — và
+     hai bản công thức thì sớm muộn trôi khỏi nhau. Chỗ duy nhất đã có hai bản chép
+     KÈM cổng so là `nguong.js`, nên nó ở đó. */
+  return capNhatBKT(p, correct, { ...thamSo(), ...(params || {}) });
 }
 
 const clamp = (x) => (Number.isFinite(x) ? Math.min(0.999, Math.max(0.001, x)) : thamSo().L0);

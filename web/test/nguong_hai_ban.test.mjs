@@ -120,3 +120,86 @@ test('soiNguong trả HẾT chỗ sai một lượt, không dừng ở chỗ đ�
   const loi = con.soiNguong({ macDinh: { ...con.MAC_DINH, NG09: 99, NG12: 9 } });
   assert.ok(loi.filter((x) => ['NG09', 'NG12'].includes(x.ma)).length >= 2);
 });
+
+/* ═══════════ NHỊP TINH THÔNG — Bảng 3.21, và luật chỉ CODE mới bắt được ═══════════ */
+
+test('mã tái tạo ĐÚNG Bảng 3.21 của luận văn', () => {
+  /* Đây là chỗ buộc mã và luận văn vào nhau. Luận văn in bốn dòng ấy từ "Thuật toán
+     3.1 chạy trực tiếp"; nếu một ngày tham số BKT đổi mà bảng trong luận văn không
+     đổi theo, cổng này đỏ — chứ không phải sáu tháng sau mới có người đọc ra. */
+  const BANG = [
+    { theta: 0.80, soCau: 3, mucKhiDat: 0.837, sauKhiSai: 0.470 },
+    { theta: 0.85, soCau: 4, mucKhiDat: 0.944, sauKhiSai: 0.730 },
+    { theta: 0.90, soCau: 4, mucKhiDat: 0.944, sauKhiSai: 0.730 },
+    { theta: 0.95, soCau: 5, mucKhiDat: 0.982, sauKhiSai: 0.896 },
+  ];
+  for (const d of BANG) {
+    const bo = { macDinh: { ...con.MAC_DINH, NG07: d.theta } };
+    const r = con.nhipTinhThong(bo);
+    assert.equal(r.soCau, d.soCau, `θ=${d.theta}: số câu lệch với Bảng 3.21`);
+    assert.equal(+r.mucKhiDat.toFixed(3), d.mucKhiDat, `θ=${d.theta}: mức khi đạt lệch`);
+    assert.equal(+r.sauKhiSai.toFixed(3), d.sauKhiSai, `θ=${d.theta}: sau khi sai lệch`);
+  }
+});
+
+test('θ 0,85 và 0,90 cho CÙNG một nhịp — điều chỉ bảng này mới nói ra', () => {
+  const nhip = (t) => con.nhipTinhThong({ macDinh: { ...con.MAC_DINH, NG07: t } }).soCau;
+  assert.equal(nhip(0.85), nhip(0.90),
+    'mất tính chất này thì lập luận "đổi θ từ 0,85 lên 0,90 không đổi gì" sai');
+  assert.ok(nhip(0.80) < nhip(0.85), 'hạ θ phải cần ít câu hơn');
+});
+
+test('một bộ mà TỪNG ngưỡng đều hợp lệ vẫn có thể cho nhịp vô lý', () => {
+  /* Chính là lý do phép kiểm thứ ba tồn tại: khoảng hợp lệ soi từng con số một,
+     không thấy được hậu quả của việc GHÉP chúng lại. */
+  const bo = { macDinh: { ...con.MAC_DINH, NG07: 0.70, NG02: 0.40 } };
+  for (const ma of ['NG07', 'NG02']) {
+    const [d, t] = con.KHOANG[ma];
+    assert.ok(bo.macDinh[ma] >= d && bo.macDinh[ma] <= t, `${ma} vẫn trong khoảng`);
+  }
+  const loi = con.soiNguong(bo);
+  assert.ok(loi.some((x) => /nhịp tinh thông/.test(x.vi)), 'phải bắt được nhịp 2 câu');
+});
+
+test('công thức BKT chỉ có MỘT bản — bkt.js gọi xuống nguong.js', () => {
+  const s = readFileSync(new URL('../functions/src/bkt.js', import.meta.url), 'utf8');
+  assert.match(s, /capNhatBKT\(/, 'bktUpdate phải gọi xuống bản dùng chung');
+  assert.doesNotMatch(s, /1 - slip\)\) \/ \(/, 'bkt.js còn giữ công thức riêng → hai bản sẽ trôi');
+});
+
+test('bktUpdate của máy chủ và capNhatBKT cho CÙNG kết quả', async () => {
+  const b = await import('../functions/src/bkt.js');
+  const ts = con.thamSoBKT(con.BO_MAC_DINH);
+  for (const p of [0.1, 0.3, 0.5, 0.85, 0.99]) {
+    for (const dung of [true, false]) {
+      assert.equal(b.bktUpdate(p, dung), con.capNhatBKT(p, dung, ts));
+    }
+  }
+});
+
+/* ═══════════ LUẬT FIRESTORE CHO BỐN BẢNG ═══════════ */
+
+test('luật khai đủ bốn bảng ngưỡng và vai trò chuyên gia', () => {
+  const r = readFileSync(new URL('../firestore.rules', import.meta.url), 'utf8');
+  assert.match(r, /function isChuyenGia\(\)/, 'thiếu vai trò thứ tư');
+  for (const bang of ['nguong', 'nguong_lich_su', 'nguong_de_xuat', 'thong_ke_nguong']) {
+    assert.match(r, new RegExp(`match /${bang}/`), `thiếu luật cho bảng ${bang}`);
+  }
+});
+
+test('lịch sử ngưỡng CHỈ THÊM, và đề xuất thì máy con không tạo được', () => {
+  const r = readFileSync(new URL('../firestore.rules', import.meta.url), 'utf8');
+  /* Cắt TỪ SAU tiêu đề khối, không cắt từ chính nó — lát cắt bắt đầu bằng
+     `match /` thì `split` trả về một mẩu rỗng, và cổng khẳng định trên chuỗi rỗng
+     là cổng không khẳng định gì. */
+  const khoi = (ten) => {
+    const dau = r.indexOf(`match /${ten}/`);
+    assert.ok(dau > -1, `không thấy khối ${ten}`);
+    return r.slice(dau + `match /${ten}/`.length).split('match /')[0];
+  };
+  assert.match(khoi('nguong_lich_su'), /allow update, delete: if false/,
+    'sửa hay xoá được lịch sử thì nó không còn là bằng chứng');
+  assert.match(khoi('nguong_de_xuat'), /allow create, delete: if false/,
+    'máy con tạo được đề xuất thì "máy học ra" thành chỗ nhập tay');
+  assert.match(khoi('thong_ke_nguong'), /allow write: if false/);
+});

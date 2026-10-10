@@ -137,6 +137,66 @@ const trongKhoang = (ma, v) => {
 };
 
 /**
+ * MỘT LƯỢT TRẢ LỜI → XÁC SUẤT THẠO MỚI. Thuật toán 3.1, và là bản DUY NHẤT.
+ *
+ * ── VÌ SAO CÔNG THỨC BKT LẠI NẰM Ở TỆP NGƯỠNG ──
+ * Bảng 3.21 ("nhịp tinh thông") phải hiện ngay trên màn hình chuyên gia khi họ kéo
+ * θ — tức máy CON cần tính được nó. Mà BKT vốn chỉ có ở máy chủ (`functions/src/
+ * bkt.js`), và hai phía không import chéo được.
+ *
+ * Ba đường: chép công thức sang máy con (bản thứ ba, sẽ trôi) · gọi máy chủ mỗi lần
+ * kéo thanh trượt (chậm, và chuyên gia mất cảm giác tức thì) · hoặc đặt công thức
+ * vào đúng tệp vốn ĐÃ có hai bản chép và ĐÃ có cổng so. Chọn đường thứ ba:
+ * `functions/src/bkt.js` nay gọi xuống đây, nên vẫn chỉ có MỘT bản công thức.
+ */
+export const KEP = (x, L0) => (Number.isFinite(x) ? Math.min(0.999, Math.max(0.001, x)) : L0);
+
+export function capNhatBKT(p, dung, { T, slip, guess, L0 }) {
+  const truoc = KEP(p, L0);
+  const sau = dung
+    ? (truoc * (1 - slip)) / (truoc * (1 - slip) + (1 - truoc) * guess)
+    : (truoc * slip) / (truoc * slip + (1 - truoc) * (1 - guess));
+  return KEP(sau + (1 - sau) * T, L0);
+}
+
+/** Bốn tham số BKT của một bộ ngưỡng, theo ngữ cảnh. */
+export const thamSoBKT = (bo, nguCanh = {}) => ({
+  L0: layNguong(bo, 'NG01', nguCanh),
+  T: layNguong(bo, 'NG02', nguCanh),
+  slip: layNguong(bo, 'NG03', nguCanh),
+  guess: layNguong(bo, 'NG04', nguCanh),
+});
+
+/**
+ * NHỊP TINH THÔNG — Bảng 3.21, phép kiểm thứ ba của mục 3.8.4.
+ *
+ * ── VÌ SAO CHUYÊN GIA CẦN BẢNG NÀY ──
+ * Nhìn con số θ thì không thấy được điều quan trọng nhất. Với bộ tham số hiện tại,
+ * đổi θ từ 0,85 lên 0,90 KHÔNG đổi gì trong cách hệ thống đối xử với trẻ — cả hai
+ * đều cần bốn câu đúng liên tiếp. Hạ xuống 0,80 thì chỉ còn ba. Nên chuyên gia phải
+ * sửa ngưỡng theo "số câu" và "sai một câu thì còn bao nhiêu", chứ không theo một
+ * con số xác suất.
+ *
+ * @returns { soCau, mucKhiDat, sauKhiSai } — `soCau: null` nghĩa là trong `tran`
+ *          lượt vẫn chưa đạt, tức θ quá cao so với bộ tham số.
+ */
+export function nhipTinhThong(bo, nguCanh = {}, tran = 30) {
+  const ts = thamSoBKT(bo, nguCanh);
+  const theta = layNguong(bo, 'NG07', nguCanh);
+  let p = ts.L0;
+  for (let i = 1; i <= tran; i += 1) {
+    p = capNhatBKT(p, true, ts);
+    if (p >= theta) {
+      return { soCau: i, mucKhiDat: p, sauKhiSai: capNhatBKT(p, false, ts) };
+    }
+  }
+  return { soCau: null, mucKhiDat: p, sauKhiSai: capNhatBKT(p, false, ts) };
+}
+
+/** Nhịp phải nằm trong khoảng này thì mới cho phát hành — mục 3.8.4. */
+export const NHIP_CHO_PHEP = [3, 6];
+
+/**
  * SOI MỘT BỘ NGƯỠNG — ba loại điều kiện của mục 3.8.4, trả về danh sách chỗ sai.
  *
  * ⚠ TRẢ VỀ DANH SÁCH, KHÔNG NÉM. Chuyên gia sửa một lần nhiều ngưỡng thì phải thấy
@@ -170,6 +230,20 @@ export function soiNguong(bo) {
     const v = truong ? lay(ma, {})?.[truong] : lay(ma, {});
     if (typeof v === 'number' && v >= 0.5) {
       loi.push({ ma, vi: `${truong || ma} phải < 0,5 để mô hình không suy biến`, giaTri: v });
+    }
+  }
+  /* Phép kiểm THỨ BA của mục 3.8.4 — nhịp tinh thông. Đây là chỗ bắt được thứ mà
+     hai phép trên không thấy: từng ngưỡng đều trong khoảng, mà GHÉP LẠI thì ra một
+     nhịp dạy vô lý (đạt sau một câu, hoặc không bao giờ đạt). */
+  if (!loi.length) {
+    const { soCau } = nhipTinhThong(bo);
+    const [it, nhieu] = NHIP_CHO_PHEP;
+    if (soCau === null) {
+      loi.push({ ma: 'NG07', vi: `θ quá cao: luyện ${30} câu đúng liên tiếp vẫn chưa đạt` });
+    } else if (soCau < it || soCau > nhieu) {
+      loi.push({ ma: 'NG07',
+                 vi: `nhịp tinh thông ${soCau} câu, phải trong khoảng ${it}–${nhieu}`,
+                 giaTri: soCau });
     }
   }
   return loi;

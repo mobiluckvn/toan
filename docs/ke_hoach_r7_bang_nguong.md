@@ -359,3 +359,86 @@ nó canh thứ tự nạp và đường đọc, không canh cache; và cổng c�
 
 Bốn bảng Firestore · vai trò chuyên gia · màn hình quản lý · hàm học ngưỡng · phạm vi
 hẹp (mới có `toanHe`). Đợt 3–4.
+
+
+---
+
+## 10 · ĐỢT 3 — ĐÃ LÀM XONG · 10-10-2026
+
+Từ đợt này, **chuyên gia sửa được ngưỡng mà không nhờ ai viết mã** — đúng điều R7
+sinh ra để làm.
+
+### Bốn bảng và vai trò thứ tư
+
+`firestore.rules` thêm `isChuyenGia()` (vai trò `chuyengia`, **tách hẳn khỏi `admin`**
+theo quyết định ④) và bốn khối luật:
+
+| Bảng | Đọc | Ghi |
+|---|---|---|
+| `nguong` | mọi tài khoản đã đăng nhập — máy con PHẢI đọc để chạy | chỉ chuyên gia, **và giá trị phải trong `[canDuoi, canTren]`** |
+| `nguong_lich_su` | chuyên gia · admin | **chỉ THÊM** — `allow update, delete: if false` |
+| `nguong_de_xuat` | chuyên gia · admin | máy con **không tạo được**; chuyên gia chỉ đổi `trangThai` |
+| `thong_ke_nguong` | chuyên gia · admin | `if false` — chỉ hàm nền |
+
+Hai chốt đáng nói:
+
+- **Khoảng hợp lệ soi ngay ở tầng cơ sở dữ liệu**, không chỉ ở màn hình. Chốt ở màn
+  hình thì ai gọi thẳng API là qua được.
+- **Chuyên gia không sửa được con số trong `nguong_de_xuat`**, chỉ duyệt hay từ chối.
+  Sửa được thì "giá trị máy học ra" thành chỗ nhập tay, mà cỡ mẫu và khoảng tin cậy
+  đi kèm lại đang nói về một giá trị khác.
+
+### Công thức BKT nay chỉ còn MỘT bản
+
+Bảng 3.21 phải hiện **ngay trên máy con** khi chuyên gia kéo θ — nhưng BKT vốn chỉ có
+ở máy chủ, và hai phía không import chéo được. Ba đường: chép sang máy con (bản thứ
+ba, sẽ trôi) · gọi máy chủ mỗi lần kéo (chậm, mất cảm giác tức thì) · hoặc đặt công
+thức vào đúng tệp **vốn đã có hai bản chép và đã có cổng so**.
+
+Chọn đường thứ ba: `capNhatBKT` nằm ở `nguong.js`, và `functions/src/bkt.js`
+`bktUpdate` **gọi xuống đó**. Cổng khẳng định hai hàm cho cùng kết quả, và khẳng định
+`bkt.js` không còn giữ công thức riêng.
+
+### Phép kiểm THỨ BA: nhịp tinh thông
+
+`soiNguong` nay có phép kiểm mà hai phép kia không thay được: từng ngưỡng đều trong
+khoảng, mà **ghép lại** có thể ra một nhịp dạy vô lý. Đo thật: θ = 0,70 với T = 0,40
+— cả hai đều hợp lệ — cho nhịp **2 câu**, bị bác.
+
+**Mã tái tạo đúng Bảng 3.21 của luận văn**, tới ba chữ số thập phân:
+
+```
+θ      số câu   khi vừa đạt   sai một câu còn
+0,80     3         0,837          0,470
+0,85     4         0,944          0,730
+0,90     4         0,944          0,730
+0,95     5         0,982          0,896
+```
+
+Cổng ghim đúng bốn dòng ấy. Nếu một ngày tham số BKT đổi mà bảng trong luận văn không
+đổi theo, cổng đỏ ngay — chứ không phải sáu tháng sau mới có người đọc ra.
+
+### Màn hình quản lý ngưỡng
+
+`src/chung/components/BangNguong.jsx`, vào bằng vai trò `chuyengia`. Ba điều bày ra,
+mỗi điều một lý do:
+
+1. **Khoảng hợp lệ nằm ngay cạnh ô nhập**, không giấu trong lời báo lỗi — giới hạn mà
+   chỉ thấy sau khi gõ sai thì người ta gõ sai rồi mới biết.
+2. **Nhịp tinh thông hiện LIỀN mỗi lần sửa, và đặt TRÊN danh sách** — vì đó mới là
+   thứ chuyên gia cần nhìn. Màn nói thẳng: *"nên sửa theo con số này, đừng sửa theo
+   giá trị xác suất"*.
+3. **Lý do là bắt buộc** (luật Firestore cũng đòi `lyDo.size() > 0`) — `nguong_lich_su`
+   chỉ đáng giá khi mỗi dòng trả lời được câu "vì sao".
+
+`ghiNguong.js` ghi **hai dòng trong một `writeBatch`**: giá trị mới + dòng lịch sử.
+Ghi được cái trước mà hụt cái sau thì có một con số không ai biết vì sao — đúng một
+trong ba hạn chế R7 sinh ra để bỏ.
+
+⚠ Phát hành **không đổi phiên đang chạy**; màn nói thẳng điều đó thay vì để chuyên gia
+tưởng vừa đổi được cái gì ngay lập tức.
+
+### Đợt 3 KHÔNG làm
+
+Hàm nền học ngưỡng · thống kê (Bảng 3.22) · NG20, NG21 · phạm vi hẹp hơn `toanHe` ·
+màn hình duyệt đề xuất (bảng `nguong_de_xuat` đã có luật nhưng chưa có ai ghi vào).

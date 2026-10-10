@@ -21,6 +21,10 @@ service cloud.firestore {
 
     function isTeacher() { return signedIn() && role() == 'teacher'; }
     function isAdmin()   { return signedIn() && role() == 'admin'; }
+    /* VAI TRÒ THỨ TƯ — chuyên gia chương trình (R7, mục 3.8.4). Bác chốt 10-10-2026
+       là tách hẳn khỏi `admin`: người hiểu việc DẠY HỌC quyết định ngưỡng, không
+       phải người quản trị hệ thống. Và tách ra thì admin không vô tình sửa được. */
+    function isChuyenGia() { return signedIn() && role() == 'chuyengia'; }
     function isMine(id)  { return signedIn() && id == uid(); }
 
     /* Ai được XEM kết quả học của một tài khoản: chính chủ, giáo viên, admin */
@@ -344,6 +348,69 @@ service cloud.firestore {
     /* ── Chỉ mục nội dung: ai đăng nhập cũng đọc, chỉ Admin SDK ghi ── */
     match /contentIndex/{microDoc} {
       allow read:  if signedIn();
+      allow write: if false;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════════
+       BỐN BẢNG QUẢN LÝ NGƯỠNG — R7, Bảng 3.20 của luận văn.
+
+       Nguyên tắc: GIÁ TRỊ MÁY HỌC RA CHỈ LÀ ĐỀ XUẤT; chỉ chuyên gia phát hành được
+       một phiên bản. Luật dưới đây là chỗ biến nguyên tắc ấy thành hàng rào máy gác
+       chứ không phải một lời hứa trong tài liệu.
+
+       ⚠ AI ĐỌC ĐƯỢC. Ngưỡng là thứ máy con PHẢI đọc để chạy, nên `nguong` cho mọi
+       tài khoản đã đăng nhập đọc. Ba bảng kia là việc của người lớn: lịch sử, đề
+       xuất và thống kê chỉ chuyên gia với admin xem.
+       ══════════════════════════════════════════════════════════════════════ */
+
+    /* ── Giá trị hiện hành. CHỈ chuyên gia ghi, và phải trong khoảng hợp lệ ── */
+    match /nguong/{nguongId} {
+      allow read: if signedIn();
+      /* `canDuoi`/`canTren` là GIỚI HẠN CỨNG (mục 3.8.1) — chuyên gia hay thuật toán
+         đều không ra ngoài được. Soi ngay tại tầng cơ sở dữ liệu, vì một màn hình
+         quên soi thì vẫn còn chốt này; mà chốt ở màn hình thì ai gọi thẳng API là
+         qua được. Ràng buộc GIỮA các ngưỡng (θ_yếu ≤ θ − 0,20) luật không so được —
+         nó cần đọc tài liệu khác — nên nằm ở `soiNguong` và ở hàm phát hành. */
+      allow write: if isChuyenGia()
+                   && request.resource.data.keys().hasAll(
+                        ['ma', 'giaTri', 'canDuoi', 'canTren', 'phienBan'])
+                   && request.resource.data.phienBan is int
+                   && (request.resource.data.giaTri is number
+                       ? (request.resource.data.giaTri >= request.resource.data.canDuoi
+                          && request.resource.data.giaTri <= request.resource.data.canTren)
+                       : request.resource.data.giaTri is map);
+    }
+
+    /* ── Lịch sử: CHỈ THÊM. Không sửa, không xoá, kể cả admin ──
+       Cùng lẽ với `attempts`: một bản ghi về việc "ai đổi ngưỡng gì, lúc nào, vì
+       sao" mà xoá được thì nó không còn là bằng chứng nữa. */
+    match /nguong_lich_su/{banGhiId} {
+      allow read:   if isChuyenGia() || isAdmin();
+      allow create: if isChuyenGia()
+                    && request.resource.data.keys().hasAll(
+                         ['ma', 'giaTriMoi', 'phienBan', 'nguoiSua', 'thoiDiem', 'lyDo'])
+                    && request.resource.data.nguoiSua == uid()
+                    && request.resource.data.lyDo is string
+                    && request.resource.data.lyDo.size() > 0;
+      allow update, delete: if false;
+    }
+
+    /* ── Đề xuất do hàm nền học ra. Máy con KHÔNG ghi được ──
+       Chuyên gia chỉ đổi được `trangThai` (duyệt / từ chối) — không sửa được con số
+       máy đã học, nếu không thì "đề xuất" thành chỗ nhập tay và mọi con số kèm theo
+       (cỡ mẫu, khoảng tin cậy) nói về một giá trị khác. */
+    match /nguong_de_xuat/{deXuatId} {
+      allow read:   if isChuyenGia() || isAdmin();
+      allow create, delete: if false;
+      allow update: if isChuyenGia()
+                    && request.resource.data.diff(resource.data).affectedKeys()
+                         .hasOnly(['trangThai', 'nguoiDuyet', 'duyetLuc'])
+                    && request.resource.data.trangThai in ['cho', 'daDuyet', 'tuChoi'];
+    }
+
+    /* ── Thống kê theo dõi: chỉ hàm nền ghi ── */
+    match /thong_ke_nguong/{thongKeId} {
+      allow read:  if isChuyenGia() || isAdmin();
       allow write: if false;
     }
 
