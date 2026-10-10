@@ -36,7 +36,7 @@ export async function nhoCham({ de, viet, vonTu, mauCau, lop = 3 }) {
   }
   /* SOI LẠI, dù đã dặn. Xem chú thích dài ở `chamviet.js`: dặn dò là thứ mô hình
      CÓ THỂ theo, và bé tám tuổi đọc lời chấm là tin. */
-  const { cham, boQua } = soiLoiCham(tho, { vonTu, mauCau });
+  const { cham, boQua } = soiLoiCham(tho, { vonTu, mauCau, beViet: viet });
   if (boQua.length) {
     LOI_CHU_LA.so += boQua.length;
     LOI_CHU_LA.ganNhat = boQua[0];

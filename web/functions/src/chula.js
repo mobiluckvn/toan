@@ -25,11 +25,45 @@
 export const chuTiengAnh = (s) => String(s || '').toLowerCase().match(/[a-z']+/g) || [];
 
 /** Những chữ trong câu KHÔNG nằm trong vốn từ của bài. */
-export function chuLa(cau, { vonTu = [], mauCau = [] } = {}) {
+/**
+ * GỐC CỦA MỘT CHỮ BIẾN HÌNH — `friends` → `friend`, `playing` → `play`/`playe`.
+ *
+ * ⚠ ĐÂY LÀ CHỖ NỚI HÀNG RÀO, nên nới hẹp nhất có thể. Trả về mấy GỐC CÓ THỂ, rồi
+ * `chuLa` chỉ tha khi một gốc ấy THẬT SỰ có trong vốn. Không có gốc nào trúng thì
+ * chữ vẫn là chữ lạ: `has` không lọt nhờ `ha`, `the` không lọt nhờ gì cả.
+ *
+ * ── VÌ SAO PHẢI CÓ ──
+ * Đi thử bản thật 10-10-2026: bé viết *"I can see two friend"*, mô hình sửa đúng
+ * thành *"two friends"*, rồi `friends` bị bác vì bảng vốn chỉ khai `friend` — câu
+ * sửa bị bỏ, và bé nhận điểm 6/10 kèm câu "cô không tìm thấy lỗi nào trong bài của
+ * con". Dạy đúng cái đuôi `-s` ấy CHÍNH LÀ việc của lời chấm; gọi nó là "từ mới"
+ * thì phần sửa lỗi ngữ pháp không bao giờ tới được bé.
+ */
+export function gocBienHinh(w) {
+  const s = String(w || '');
+  const ra = [];
+  if (s.endsWith("'s") && s.length > 3) ra.push(s.slice(0, -2));
+  if (s.endsWith('ies') && s.length > 4) ra.push(`${s.slice(0, -3)}y`);
+  if (s.endsWith('es') && s.length > 3) ra.push(s.slice(0, -2));
+  if (s.endsWith('s') && s.length > 2) ra.push(s.slice(0, -1));
+  if (s.endsWith('ing') && s.length > 4) ra.push(s.slice(0, -3), `${s.slice(0, -3)}e`);
+  if (s.endsWith('ed') && s.length > 3) ra.push(s.slice(0, -2), s.slice(0, -1));
+  return ra;
+}
+
+export function chuLa(cau, { vonTu = [], mauCau = [], beViet = '' } = {}) {
   const kho = new Set();
   for (const v of vonTu) chuTiengAnh(typeof v === 'string' ? v : v?.tu).forEach((w) => kho.add(w));
   for (const m of mauCau) chuTiengAnh(m).forEach((w) => kho.add(w));
-  return chuTiengAnh(cau).filter((w) => !kho.has(w));
+  /* ── CHỮ CHÍNH BÉ VỪA VIẾT ──
+     Câu sửa là câu bé viết được viết lại cho đúng, nên những chữ bé vừa dùng không
+     thể là "chữ bé chưa học" — hàng rào này dựng lên để chặn mô hình DẠY từ mới,
+     không phải để chặn nó nhắc lại từ bé vừa viết. Bỏ vế này thì ở Unit 1 cả
+     `the` · `at` · `school` · `gate` — bốn chữ bé tự gõ ra — đều bị kể là chữ lạ,
+     và mọi câu sửa đều rơi. */
+  for (const w of chuTiengAnh(beViet)) kho.add(w);
+  return chuTiengAnh(cau)
+    .filter((w) => !kho.has(w) && !gocBienHinh(w).some((g) => kho.has(g)));
 }
 
 /** Dấu tiếng Việt — dấu hiệu chắc chắn nhất một mẩu chữ là lời Việt, không phải câu Anh. */

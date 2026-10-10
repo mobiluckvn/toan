@@ -483,7 +483,11 @@ test('chạy đủ chuỗi: (1 ∥ 1b) → 2 → 3, mỗi mắt xích một tr�
   assert.equal(gia.khenDaGoi()[0].max_tokens, TOKEN_TIM_KHEN);
   assert.deepEqual(gia.chuoi().map((x) => x.max_tokens),
     [TOKEN_TIM_LOI, TOKEN_SUA, TOKEN_BO_ME]);
-  assert.ok(TOKEN_TIM_LOI + TOKEN_TIM_KHEN + TOKEN_SUA + TOKEN_BO_ME <= 1700,
+  /* Trần nâng 1700 → 1800 ngày 10-10-2026: luật 3 của mắt xích 2 dài thêm mấy chữ
+     (cho phép dùng lại chữ bé viết), và đo thật thì 700 token KHÔNG đủ — Groq trả
+     400 `json_validate_failed`, bé thấy "chưa chấm được". 900 thì qua. Trần này là
+     để chặn một gói bất thường, không phải để ép chất lượng lời chấm. */
+  assert.ok(TOKEN_TIM_LOI + TOKEN_TIM_KHEN + TOKEN_SUA + TOKEN_BO_ME <= 1800,
     'tổng token vượt trần');
   /* Nhiệt độ TĂNG dần: tìm lỗi là việc máy móc nhất, lời cho bố mẹ cần chữ mềm hơn. */
   assert.deepEqual(gia.chuoi().map((x) => x.temperature), [0.1, 0.2, 0.3]);
@@ -660,4 +664,57 @@ test('máy con đọc lanSuaLai, và GIỮ soiLoiCham làm hàng rào cuối', (
   assert.match(g, /lanSuaLai: data\?\.lanSuaLai/, 'máy con không đọc lanSuaLai');
   assert.match(g, /soiLoiCham\(/,
     'bỏ soiLoiCham vì máy chủ đã soi — mất hàng rào cuối, mà hai tầng là CỐ Ý');
+});
+
+/* ═══════════ BA CHỖ VÁ SAU BUỔI ĐI THỬ BẢN THẬT 10-10-2026 ═══════════
+
+   Triệu chứng bé nhìn thấy: điểm 6/10 kèm câu "cô không tìm thấy lỗi nào trong bài
+   của con". Hai bài thử, hai lần y nhau. Gốc không nằm ở mô hình — mắt xích 1 TÌM
+   RA lỗi và mắt xích 2 VIẾT ĐƯỢC câu sửa đúng — mà ở hàng rào vốn từ: câu sửa nào
+   cũng chạm một chữ ngoài bảng, kể cả chữ chính bé vừa gõ. */
+
+test('câu sửa dùng lại chữ CHÍNH BÉ viết thì KHÔNG bị bỏ', () => {
+  const viet = 'I Ben. Thank you.';
+  const tho = docLoiCham(JSON.stringify({
+    diem: 8, khen: 'Tốt.',
+    loi: [{ cau: 'I Ben.', sua: "Hello. I'm Ben.", viSao: '…' }],
+    goiY: '',
+  }));
+  const { cham, boQua } = soiLoiCham(tho, { vonTu: VON, mauCau: MAU, beViet: viet });
+  assert.equal(boQua.length, 0);
+  assert.equal(cham.loi.length, 1, 'câu sửa toàn chữ bé đã biết thì phải tới được bé');
+});
+
+test('chữ bé CHƯA viết và KHÔNG có trong vốn thì vẫn bị bỏ', () => {
+  /* Chiều ngược lại — nới mà mất luôn hàng rào thì nới để làm gì. */
+  const tho = docLoiCham(JSON.stringify({
+    diem: 7, khen: 'Tốt.',
+    loi: [{ cau: 'I Ben.', sua: 'I am a student.', viSao: '…' }],
+    goiY: '',
+  }));
+  const { cham, boQua } = soiLoiCham(tho, { vonTu: VON, mauCau: MAU, beViet: 'I Ben.' });
+  assert.equal(cham.loi.length, 0);
+  assert.equal(boQua.length, 1);
+});
+
+test('"sua" RỖNG thì phải đếm vào boQua, không được bỏ trong im lặng', () => {
+  /* Luật 5 của lời dặn CHO PHÉP mô hình để `sua` rỗng. Bản trước lọc thẳng mục ấy
+     đi mà không đếm, nên màn hình nói "không tìm thấy lỗi nào" kèm điểm dưới 10. */
+  const tho = docLoiCham(JSON.stringify({
+    diem: 6, khen: 'Tốt.',
+    loi: [{ cau: 'I Ben.', sua: '', viSao: 'thiếu động từ' }],
+    goiY: '',
+  }));
+  const { cham, boQua } = soiLoiCham(tho, { vonTu: VON, mauCau: MAU });
+  assert.equal(cham.loi.length, 0);
+  assert.equal(boQua.length, 1, 'giấu thì phải nói là có giấu');
+});
+
+test('lời dặn mắt xích 2 NÓI RA ba thứ chữ được phép', () => {
+  /* Hàng rào mã nới mà lời dặn vẫn bảo "chỉ dùng bảng vốn" thì mô hình tự kiểm
+     duyệt rồi trả `loi: []` — đúng họ "lời dặn tự chọi nhau" đã dính nhiều lần. */
+  const dan = loiDanSua({ de: 'đề', viet: 'I Ben.', vonTu: VON, mauCau: MAU, lop: 3 },
+    [{ cau: 'I Ben.', loai: 'thieuTu' }], [], []);
+  assert.match(dan, /CHÍNH BÉ đã viết/);
+  assert.match(dan, /dạng biến hình/);
 });

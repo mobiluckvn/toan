@@ -104,3 +104,28 @@ test('chuLaTrongCham gom đủ mọi trường mà máy con cũng soi', () => {
     goiY: 'Viết thêm nhé', choBoMe: 'ổn',
   }, KHO), []);
 });
+
+/* ── HAI VẾ NỚI THÊM 10-10-2026, và chúng phải nới GIỐNG HỆT nhau ──
+   Lệch ở đây hỏng theo kiểu khó thấy nhất: máy chủ duyệt một câu sửa rồi máy con
+   bỏ đúng câu ấy — hai bên đều tin mình đúng, bé thì thấy lời chấm thiếu. */
+const KHO_BE = { ...KHO, beViet: 'I can see two friend at the school gate.' };
+
+test('chuLa: chữ chính bé vừa viết — hai bản tha giống nhau', () => {
+  for (const c of [...CA, 'I can see two friends at the school gate.',
+                   'The gate is big.', 'at the gate']) {
+    assert.deepEqual(may.chuLa(c, KHO_BE), con.chuLa(c, KHO_BE),
+      `lệch ở ${JSON.stringify(c)}`);
+  }
+  /* Và nó phải THẬT SỰ tha, không phải cả hai cùng bác. */
+  assert.deepEqual(may.chuLa('at the gate', KHO_BE), []);
+  assert.ok(may.chuLa('at the gate', KHO).length > 0);
+});
+
+test('gocBienHinh: đuôi đều thì tha, không có gốc thì vẫn bác', () => {
+  for (const w of ['friends', 'friend', 'schools', 'has', 'the', 'is',
+                   "friend's", 'cats', 'studies', 'playing', 'liked', 's', '']) {
+    assert.deepEqual(may.gocBienHinh(w), con.gocBienHinh(w), `lệch ở ${w}`);
+  }
+  assert.deepEqual(may.chuLa('friends', KHO), []);            // friend → friends
+  assert.deepEqual(may.chuLa('She has a cat', KHO), ['she', 'has', 'a']);
+});

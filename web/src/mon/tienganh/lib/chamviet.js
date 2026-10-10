@@ -73,11 +73,45 @@ export const chuTiengAnh = (s) => String(s || '').toLowerCase().match(/[a-z']+/g
  * `your` mà bảng từ vựng không khai — chúng là chữ bé gặp mỗi ngày trong bài, chỉ
  * là không phải "từ mới" của unit nào.
  */
-export function chuLa(cau, { vonTu = [], mauCau = [] } = {}) {
+/**
+ * GỐC CỦA MỘT CHỮ BIẾN HÌNH — `friends` → `friend`, `playing` → `play`/`playe`.
+ *
+ * ⚠ ĐÂY LÀ CHỖ NỚI HÀNG RÀO, nên nới hẹp nhất có thể. Trả về mấy GỐC CÓ THỂ, rồi
+ * `chuLa` chỉ tha khi một gốc ấy THẬT SỰ có trong vốn. Không có gốc nào trúng thì
+ * chữ vẫn là chữ lạ: `has` không lọt nhờ `ha`, `the` không lọt nhờ gì cả.
+ *
+ * ── VÌ SAO PHẢI CÓ ──
+ * Đi thử bản thật 10-10-2026: bé viết *"I can see two friend"*, mô hình sửa đúng
+ * thành *"two friends"*, rồi `friends` bị bác vì bảng vốn chỉ khai `friend` — câu
+ * sửa bị bỏ, và bé nhận điểm 6/10 kèm câu "cô không tìm thấy lỗi nào trong bài của
+ * con". Dạy đúng cái đuôi `-s` ấy CHÍNH LÀ việc của lời chấm; gọi nó là "từ mới"
+ * thì phần sửa lỗi ngữ pháp không bao giờ tới được bé.
+ */
+export function gocBienHinh(w) {
+  const s = String(w || '');
+  const ra = [];
+  if (s.endsWith("'s") && s.length > 3) ra.push(s.slice(0, -2));
+  if (s.endsWith('ies') && s.length > 4) ra.push(`${s.slice(0, -3)}y`);
+  if (s.endsWith('es') && s.length > 3) ra.push(s.slice(0, -2));
+  if (s.endsWith('s') && s.length > 2) ra.push(s.slice(0, -1));
+  if (s.endsWith('ing') && s.length > 4) ra.push(s.slice(0, -3), `${s.slice(0, -3)}e`);
+  if (s.endsWith('ed') && s.length > 3) ra.push(s.slice(0, -2), s.slice(0, -1));
+  return ra;
+}
+
+export function chuLa(cau, { vonTu = [], mauCau = [], beViet = '' } = {}) {
   const kho = new Set();
   for (const v of vonTu) chuTiengAnh(typeof v === 'string' ? v : v?.tu).forEach((w) => kho.add(w));
   for (const m of mauCau) chuTiengAnh(m).forEach((w) => kho.add(w));
-  return chuTiengAnh(cau).filter((w) => !kho.has(w));
+  /* ── CHỮ CHÍNH BÉ VỪA VIẾT ──
+     Câu sửa là câu bé viết được viết lại cho đúng, nên những chữ bé vừa dùng không
+     thể là "chữ bé chưa học" — hàng rào này dựng lên để chặn mô hình DẠY từ mới,
+     không phải để chặn nó nhắc lại từ bé vừa viết. Bỏ vế này thì ở Unit 1 cả
+     `the` · `at` · `school` · `gate` — bốn chữ bé tự gõ ra — đều bị kể là chữ lạ,
+     và mọi câu sửa đều rơi. */
+  for (const w of chuTiengAnh(beViet)) kho.add(w);
+  return chuTiengAnh(cau)
+    .filter((w) => !kho.has(w) && !gocBienHinh(w).some((g) => kho.has(g)));
 }
 
 /** Dấu tiếng Việt — dấu hiệu chắc chắn nhất một mẩu chữ là lời Việt, không phải câu Anh. */
@@ -111,10 +145,13 @@ export function chuLaTrongViet(cau, kho) {
  * thôi, lời khen và điểm vẫn còn. Vứt cả lời chấm vì một chữ là bé mất luôn phần
  * nó xứng đáng được nghe.
  */
-export function soiLoiCham(cham, { vonTu = [], mauCau = [] } = {}) {
+export function soiLoiCham(cham, { vonTu = [], mauCau = [], beViet = '' } = {}) {
   if (!cham) return { cham: null, boQua: [] };
   const boQua = [];
-  const kho = { vonTu, mauCau };
+  /* `beViet` — bài CHÍNH BÉ vừa viết. Phải chuyền tới đây, nếu không máy chủ soi
+     bằng một kho rộng hơn máy con, rồi máy con bỏ mất đúng mục máy chủ vừa duyệt
+     — hai bên đều báo mình đúng mà bé thì thấy lời chấm thiếu. */
+  const kho = { vonTu, mauCau, beViet };
   /* Câu SỬA là tiếng Anh thuần — soi trọn câu. Lời GỢI Ý là tiếng Việt có lẫn
      tiếng Anh — chỉ soi mẩu tiếng Anh trong đó. Hai phép khác nhau vì hai thứ chữ
      khác nhau; dùng chung một phép thì hoặc bỏ oan lời Việt, hoặc thả lọt câu Anh. */
@@ -122,7 +159,18 @@ export function soiLoiCham(cham, { vonTu = [], mauCau = [] } = {}) {
     const la = viet ? chuLaTrongViet(s, kho) : chuLa(s, kho);
     return la.length ? (boQua.push({ cau: s, chuLa: la }), '') : s;
   };
-  const loi = cham.loi.map((x) => ({ ...x, sua: sach(x.sua) }))
+  const loi = cham.loi.map((x) => {
+    /* ⚠ Mô hình ĐƯỢC PHÉP để `sua` rỗng (luật 5 của lời dặn, nhánh xin lại). Bản
+       trước lọc thẳng mục ấy đi và không đếm vào `boQua` — thế là màn hình nói
+       "cô không tìm thấy lỗi nào trong bài của con" kèm một con điểm dưới 10, hai
+       câu chọi nhau. Đếm nó vào `boQua` thì bé đọc được "cô có giấu một chỗ", đúng
+       sự thật. Bắt được khi đi thử bản thật 10-10-2026. */
+    if (!String(x?.sua || '').trim()) {
+      boQua.push({ cau: String(x?.cau || ''), chuLa: [] });
+      return { ...x, sua: '' };
+    }
+    return { ...x, sua: sach(x.sua) };
+  })
     /* Lỗi mà câu sửa bị bỏ thì còn lại "câu con viết sai" và không có câu đúng —
        chỉ ra chỗ sai rồi bỏ đó còn tệ hơn không nói. Bỏ cả mục. */
     .filter((x) => x.sua);

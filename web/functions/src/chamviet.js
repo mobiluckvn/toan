@@ -206,8 +206,13 @@ export function loiDanSua(
         '   Không khen chung chung kiểu "giỏi lắm".']),
     '2. Với MỖI lỗi trên, viết "sua" (câu đúng, TIẾNG ANH) và "viSao"',
     '   (tiếng Việt, nhiều nhất 20 chữ, cho bé tám tuổi hiểu).',
-    '3. Câu sửa và câu gợi ý CHỈ ĐƯỢC dùng từ trong bảng vốn từ ở trên.',
-    '   Tuyệt đối không dạy từ mới, dù từ ấy hay hơn.',
+    /* ⚠ GIỮ BA DÒNG. Bản đầu viết bảy dòng cho đúng luật này, và mắt xích 2 cạn
+       token ngay lượt gọi đầu: Groq trả 400 `json_validate_failed`. Lời dặn dài thì
+       `gpt-oss-120b` nghĩ lâu hơn, mà phần nghĩ ăn chung trần với phần viết — đúng
+       cái bẫy đã ghi ở `goiMot`. Nới luật thì nới bằng chữ ngắn. */
+    '3. Câu sửa và câu gợi ý CHỈ ĐƯỢC dùng: từ trong bảng vốn, từ CHÍNH BÉ đã viết,',
+    '   và dạng biến hình của chúng (-s, -es, -ed, -ing). Sửa "two friend" thành',
+    '   "two friends" LÀ ĐƯỢC. Ngoài ba thứ ấy thì không dạy từ mới, dù hay hơn.',
     '4. Điểm từ 0 tới 10. Bé viết đủ số câu, đúng ngữ pháp, đúng đề thì 9–10.',
     '   Đừng khắt khe về chính tả hoa thường và dấu chấm câu — trừ nhiều nhất 1 điểm.',
     /* ── DÒNG CẤM, chỉ mọc ra khi lượt trước đã dùng chữ ngoài vốn ──
@@ -332,12 +337,15 @@ export const SUA_LAI_TOI_DA = 2;
  * Trần token RIÊNG từng mắt xích, và tổng phải dưới trần cũ.
  *
  * Mắt xích 1 chỉ liệt kê lỗi nên ngắn; mắt xích 2 viết sửa + khen + gợi ý nên dài
- * nhất; mắt xích 3 đúng hai câu. Tổng 1300 — chừa dư so với 900 của một lượt cũ, vì
- * nay là ba lượt, nhưng mỗi lượt lại nhẹ hơn hẳn.
+ * nhất; mắt xích 3 đúng hai câu. Tổng 1800 (từ 10-10-2026, trước là 1300) — cổng
+ * `tienganh_chamviet` canh con số ấy và ghi lý do vì sao nó nhích lên.
  */
 export const TOKEN_TIM_LOI = 400;
 export const TOKEN_TIM_KHEN = 300;   // chỉ liệt kê, ngắn hơn mắt xích tìm lỗi
-export const TOKEN_SUA = 700;
+/* 900, không phải 700: luật 3 dài thêm mấy chữ (vá 10-10-2026) là mô hình nghĩ lâu
+   thêm, và nghĩ hết trần thì Groq trả 400 `json_validate_failed` — bé thấy "chưa
+   chấm được". Đo thật: 700 vỡ, 900 qua. */
+export const TOKEN_SUA = 900;
 export const TOKEN_BO_ME = 200;
 
 /**
@@ -458,7 +466,9 @@ function bocJSON(chu) {
 export async function chamBaiViet(du, taoClient) {
   const goi = soiBaiViet(du);
   const client = taoClient();
-  const kho = { vonTu: goi.vonTu, mauCau: goi.mauCau };
+  /* `beViet` — chữ chính bé vừa viết cũng tính là chữ bé biết. Máy con chuyền đúng
+     thứ này vào `soiLoiCham`, hai bên phải dựng kho GIỐNG HỆT nhau. */
+  const kho = { vonTu: goi.vonTu, mauCau: goi.mauCau, beViet: goi.viet };
 
   /* ── MẮT XÍCH 1 ∥ 1b — HAI LƯỢT SONG SONG (việc V10) ──
      Tìm lỗi và tìm chỗ đáng khen là hai việc KHÔNG phụ thuộc nhau, nên chúng chạy

@@ -213,12 +213,6 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
    */
   const canNoiGi = luotCoCuoi?.can?.length ? luotCoCuoi.can
     : (luotCoCuoi?.en ? [luotCoCuoi.en] : []);
-  const buoi = tinhBuoi({ lichSu, batDau: batDau.current, bayGio: Date.now(),
-                         dichCaDoan: kichBan?.dang === 'tranh',
-                         /* Đích thứ ba của buổi (việc V7): làm hết việc hôm nay. */
-                         xongKeHoach: xongKeHoach(keHoach),
-                         keHoachConViec: khConThieu(keHoach) > 0 });
-  const ket = loiKet(buoi);
   const hoiThich = cauHoiSoThich(von);
 
   /**
@@ -288,6 +282,25 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
 
   const bang = React.useMemo(() => datKeHoach(bangGoc, keHoach), [bangGoc, keHoach]);
   const hoSoBe = bang.hoSo;
+
+  /**
+   * TRẠNG THÁI BUỔI — phải tính SAU `keHoach`, và đó không phải chuyện gọn gàng.
+   *
+   * Việc V7 cho `tinhBuoi` đọc thêm `keHoach`, nhưng chỗ gọi vẫn nằm ở trên chỗ
+   * `useState` khai `keHoach` — mà `const` thì nằm trong vùng chết cho tới dòng khai
+   * báo, nên MỌI lần dựng màn đều ném `ReferenceError: Cannot access 'keHoach'
+   * before initialization`, React gỡ cây, và cả app trắng màn hình.
+   *
+   * ⚠ Lỗi ấy lên tới bản thật và sống ở đó: 103 tệp cổng đều là logic thuần, không
+   * tệp nào DỰNG màn này, còn `npm run build` thì không soi thứ tự dùng biến trong
+   * thân hàm. Chỉ mở phòng nói trên bản dựng mới thấy. Đừng dời khối này lên lại.
+   */
+  const buoi = tinhBuoi({ lichSu, batDau: batDau.current, bayGio: Date.now(),
+                         dichCaDoan: kichBan?.dang === 'tranh',
+                         /* Đích thứ ba của buổi (việc V7): làm hết việc hôm nay. */
+                         xongKeHoach: xongKeHoach(keHoach),
+                         keHoachConViec: khConThieu(keHoach) > 0 });
+  const ket = loiKet(buoi);
 
   /**
    * CUỐI BUỔI THÌ GHI LẠI TRÍ NHỚ — việc V3.
