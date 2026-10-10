@@ -438,7 +438,36 @@ trong ba hạn chế R7 sinh ra để bỏ.
 ⚠ Phát hành **không đổi phiên đang chạy**; màn nói thẳng điều đó thay vì để chuyên gia
 tưởng vừa đổi được cái gì ngay lập tức.
 
+### Luật được MÁY kiểm, không chỉ soi bằng mắt
+
+Bốn khối luật mới nay có **15 phép canh chạy trên bộ giả lập Firestore thật**, thêm
+vào `test/luat_firestore.test.mjs` (**76 PASS · 0 FAIL**, trước là 61). Soi bằng mắt
+không đủ: một luật viết đúng mà đặt sai thứ tự `allow` là mở toang.
+
+```bash
+npm run gia-lap     # cửa sổ 1 — firebase.gialap.json, cổng 8099, dự án ky-su-nhi-thu-luat
+npm run test:luat   # cửa sổ 2
+```
+
+Mấy phép đáng kể: **admin cũng KHÔNG ghi được ngưỡng** (vai trò tách hẳn) · giá trị
+ngoài khoảng bị từ chối ở cả hai đầu · **sửa lại một dòng lịch sử bị từ chối** · thiếu
+lý do bị từ chối · khai `nguoiSua` là người khác bị từ chối · không ai tạo được đề
+xuất từ máy con.
+
+> ⚠ **Một chẩn đoán SAI của tôi, ghi lại kẻo người sau tin nhầm.** Lần đầu chạy,
+> cổng báo *"BỘ GIẢ LẬP KHÔNG CHẠY — bỏ qua"*, và tôi kết luận `npm run test:luat`
+> ghim sai cổng nên đã im lặng bỏ qua từ lâu. **Không phải.** Script ghim 8099 và
+> `firebase.gialap.json` cũng 8099 — hai số trùng nhau, cổng vẫn chạy bình thường.
+> Nó bỏ qua vì chính tôi bật bộ giả lập bằng `firebase.json` (cổng 8080, dự án
+> `ky-su-nhi`) thay vì `npm run gia-lap`. Bài học: bật bằng ĐÚNG lệnh của kho trước
+> khi kết luận cổng hỏng.
+>
+> Tôi vẫn bỏ `FS_EMU` ghim cứng khỏi `package.json` — không phải vì nó hỏng, mà vì
+> chính tệp cổng dặn "ĐỪNG GHIM SỐ, đọc từ `firebase.gialap.json`", và một con số
+> chép hai nơi thì sớm muộn lệch.
+
 ### Đợt 3 KHÔNG làm
 
 Hàm nền học ngưỡng · thống kê (Bảng 3.22) · NG20, NG21 · phạm vi hẹp hơn `toanHe` ·
-màn hình duyệt đề xuất (bảng `nguong_de_xuat` đã có luật nhưng chưa có ai ghi vào).
+màn hình duyệt đề xuất (bảng `nguong_de_xuat` đã có luật **và đã có phép canh luật**,
+nhưng chưa có ai ghi vào).

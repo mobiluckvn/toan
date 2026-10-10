@@ -474,5 +474,63 @@ t('máy con KHÔNG ghi được vào bảng xếp hạng', m === 403, `HTTP ${m}
 m = await doc('bangXepHang/global', BE_A);
 t('bé đăng nhập ĐỌC ĐƯỢC bảng xếp hạng', m === 200 || m === 404, `HTTP ${m}`);
 
+/* ══════════════════════════════════════════════════════════════════════
+   BỐN BẢNG QUẢN LÝ NGƯỠNG — R7, Bảng 3.20.
+
+   Đây là chỗ nguyên tắc "giá trị máy học ra chỉ là ĐỀ XUẤT, chỉ chuyên gia phát
+   hành được" thành hàng rào máy gác chứ không phải một dòng trong tài liệu. Soi
+   bằng mắt không đủ: một luật viết đúng mà đặt sai thứ tự `allow` là mở toang.
+   ══════════════════════════════════════════════════════════════════════ */
+console.log('\n── bốn bảng quản lý ngưỡng (R7) ──');
+
+const CG = 'chuyen_gia_uid';
+const nguongHopLe = (gt = 0.85) => ({
+  ma: V.s('NG07'), giaTri: { doubleValue: gt },
+  canDuoi: { doubleValue: 0.70 }, canTren: { doubleValue: 0.98 },
+  phienBan: V.n(2), nguon: V.s('chuyenGia'),
+});
+
+m = await doc('nguong/NG07', BE_A);
+t('bé ĐỌC được bảng ngưỡng — máy con phải đọc mới chạy được',
+  m === 200 || m === 404, `HTTP ${m}`);
+m = await ghi(CG, 'nguong/NG07', nguongHopLe(), CG, 'chuyengia');
+t('chuyên gia GHI được ngưỡng trong khoảng hợp lệ', m === 200, `HTTP ${m}`);
+m = await ghi(BE_A, 'nguong/NG07', nguongHopLe(0.9));
+t('bé KHÔNG ghi được ngưỡng', m === 403, `HTTP ${m}`);
+m = await ghi('ad_uid', 'nguong/NG07', nguongHopLe(0.9), 'ad_uid', 'admin');
+t('ADMIN cũng KHÔNG ghi được — vai trò tách hẳn', m === 403, `HTTP ${m}`);
+m = await ghi(CG, 'nguong/NG07', nguongHopLe(0.99), CG, 'chuyengia');
+t('giá trị NGOÀI khoảng hợp lệ thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+m = await ghi(CG, 'nguong/NG07', nguongHopLe(0.50), CG, 'chuyengia');
+t('dưới cận dưới cũng BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+m = await ghi(CG, 'nguong/NG99', { ma: V.s('NG99'), giaTri: { doubleValue: 1 } },
+              CG, 'chuyengia');
+t('thiếu canDuoi/canTren/phienBan thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+
+const lichSuHopLe = (nguoi = CG, lyDo = 'tỷ lệ công nhận sớm 18%') => ({
+  ma: V.s('NG07'), giaTriMoi: { doubleValue: 0.88 }, phienBan: V.n(2),
+  nguoiSua: V.s(nguoi), thoiDiem: V.s('2026-10-10T00:00:00Z'), lyDo: V.s(lyDo),
+});
+
+m = await ghi(CG, 'nguong_lich_su/ls1', lichSuHopLe(), CG, 'chuyengia');
+t('chuyên gia THÊM được dòng lịch sử', m === 200, `HTTP ${m}`);
+m = await ghi(CG, 'nguong_lich_su/ls1', lichSuHopLe(CG, 'sửa lại'), CG, 'chuyengia');
+t('nhưng SỬA lại dòng ấy thì BỊ TỪ CHỐI — lịch sử chỉ thêm', m === 403, `HTTP ${m}`);
+m = await ghi(CG, 'nguong_lich_su/ls2', lichSuHopLe(CG, ''), CG, 'chuyengia');
+t('thiếu LÝ DO thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+m = await ghi(CG, 'nguong_lich_su/ls3', lichSuHopLe(BE_A), CG, 'chuyengia');
+t('khai nguoiSua là người KHÁC thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+m = await doc('nguong_lich_su/ls1', BE_A);
+t('bé KHÔNG đọc được lịch sử ngưỡng', m === 403, `HTTP ${m}`);
+
+m = await ghi(CG, 'nguong_de_xuat/dx1',
+              { ma: V.s('NG07'), giaTriDeXuat: { doubleValue: 0.88 }, trangThai: V.s('cho') },
+              CG, 'chuyengia');
+t('KHÔNG AI tạo được đề xuất từ máy con — chỉ hàm nền', m === 403, `HTTP ${m}`);
+m = await doc('thong_ke_nguong/tk1', CG, 'chuyengia');
+t('chuyên gia đọc được thống kê', m === 200 || m === 404, `HTTP ${m}`);
+m = await ghi(CG, 'thong_ke_nguong/tk1', { ma: V.s('NG07') }, CG, 'chuyengia');
+t('nhưng KHÔNG ghi được thống kê — chỉ hàm nền', m === 403, `HTTP ${m}`);
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);

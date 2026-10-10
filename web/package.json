@@ -12,7 +12,7 @@
     "emulators": "firebase emulators:start",
     "deploy": "npm run build && firebase deploy",
     "gia-lap": "PATH=\"/usr/local/Cellar/openjdk/26.0.2/bin:$PATH\" firebase emulators:start --only firestore,auth --config firebase.gialap.json --project ky-su-nhi-thu-luat",
-    "test:luat": "FS_EMU=127.0.0.1:8099 node test/luat_firestore.test.mjs"
+    "test:luat": "node test/luat_firestore.test.mjs"
   },
   "dependencies": {
     "firebase": "^10.12.4",
