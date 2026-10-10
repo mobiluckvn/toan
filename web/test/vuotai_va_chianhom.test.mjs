@@ -211,3 +211,36 @@ test('hai môn khai CÙNG một phiên bản bản ghi, và đã lên 6', () => 
   assert.equal(ta, toan, 'hai môn lệch số thì bên đọc nhật ký phải nhớ hai luật');
   assert.ok(ta >= 6, 'thêm trường vào bản ghi thì phải lên phiên bản');
 });
+
+/* ── NẤC CUỐI: `loaiNut` ────────────────────────────────────────────────── */
+
+test('thang phạm vi nay dùng được ĐỦ BẢY NẤC', () => {
+  /* Mục 3.8.1 khai bảy nấc. Trước 10-10 mới dùng một (`toanHe`); nay đủ cả bảy, và
+     mỗi nấc có đường dữ liệu thật đi vào chứ không phải chỉ có tên trong mảng. */
+  const nc = nguCanhLuot({
+    mon: 'tienganh', khoiLop: 3, bac: 2, loaiNut: 'grammar', mode: 'chon', bktUnit: 'sp_x',
+  });
+  assert.deepEqual(nc, {
+    mon: 'tienganh', khoiLop: '3', dangCau: 'chon', bac: '2', loaiNut: 'grammar', nut: 'sp_x',
+  });
+  /* `toanHe` là nấc cuối cùng của thang và KHÔNG nằm trong ngữ cảnh — nó là chỗ
+     `layNguong` rơi về khi không nấc nào khớp. */
+  assert.equal(nc.toanHe, undefined);
+});
+
+test('loại nút ĐỌC QUA bộ nhớ đệm tầng module, không qua state của React', () => {
+  /* `dt` của React sống ở một component KHÁC với chỗ ghi bản ghi lượt. Đọc nó từ
+     đó là đúng lớp lỗi đã BỐN lần cho ra màn trắng. */
+  const src = readFileSync(new URL('../src/mon/tienganh/components/ManTiengAnh.jsx', import.meta.url), 'utf8');
+  assert.match(src, /loaiNut\(doThiDaNap\(\)/,
+    'phải lấy đồ thị qua `doThiDaNap()` — bộ nhớ đệm tầng module');
+  const than = src.slice(src.indexOf('const ghiLuot = useCallback'), src.indexOf('}, [learnerId'));
+  assert.ok(!/\bdt\b/.test(than), 'ghiLuot đọc `dt` của một component khác');
+});
+
+test('đồ thị chưa nạp xong thì trả `null`, KHÔNG trả đồ thị rỗng', () => {
+  /* «Chưa nạp xong» và «nạp hỏng nên rỗng» là hai chuyện khác nhau: bên gọi phải
+     phân biệt được để không ghi một trường rỗng như thể đã biết câu trả lời. */
+  assert.equal(nguCanhLuot({ loaiNut: null }).loaiNut, undefined);
+  assert.equal(nguCanhLuot({ loaiNut: '' }).loaiNut, undefined);
+});

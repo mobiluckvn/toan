@@ -22,7 +22,7 @@ import { dungBang } from '../lib/bangtrangthai.js';
 import { manhNhat, yeuNhat } from '../lib/hoso.js';
 import { diemHienThi, xacNhanDiem, baiChoXacNhan } from '../lib/hocba.js';
 import { xoaHoSoAI } from '../lib/hosoai.js';
-import { napDoThi } from '../lib/doThi.js';
+import { napDoThi, doThiDaNap, loaiNut } from '../lib/doThi.js';
 import { maTranTrangThai } from '../lib/lantruyen.js';
 import { bacCefr, cauMoTa } from '../lib/cefr.js';
 import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
@@ -342,6 +342,14 @@ export default function ManTiengAnh({
          số hành vi theo CẶP (dạng câu, bậc) — thiếu bậc thì chỉ gom được một nửa,
          và `thieuBac: true` trong tài liệu thống kê chính là lời khai chỗ thiếu ấy. */
       bac: Number.isFinite(e.cau.bac) ? e.cau.bac : null,
+      /* ── LOẠI NÚT (R7 · nấc `loaiNut`, nấc cuối của thang phạm vi) ──
+         Từ vựng · mẫu câu · phát âm · ôn tập là bốn kiểu học khác nhau, và chúng có
+         thể cần ngưỡng khác nhau — một mẫu câu khó thạo hơn một từ đơn.
+         ⚠ ĐỌC QUA `doThiDaNap()` chứ không qua `dt` của React: `dt` sống ở một
+         component KHÁC trong cùng tệp này, và đọc nó từ đây là đúng lớp lỗi đã bốn
+         lần cho ra màn trắng. Chưa nạp xong thì `null` — máy chủ bỏ qua nấc ấy,
+         tức giữ nguyên cách chấm cũ. */
+      loaiNut: loaiNut(doThiDaNap(), e.cau.maNut) || null,
       /* ── LƯỢT NÀY CÓ PHẢI LƯỢT SAU CAN THIỆP KHÔNG ──
          Đo lần đầu trên dữ liệu thật thấy dãy NG09 bật ngược tại đúng k = ngưỡng
          đang hành: lượt kế tiếp sau lần sai thứ ba không còn là "bé tự gỡ" mà là

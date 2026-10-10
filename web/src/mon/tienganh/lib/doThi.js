@@ -58,6 +58,20 @@ export async function napDoThi() {
 /** Chỉ dùng trong cổng — bơm đồ thị giả để khỏi phải fetch. */
 export function datDoThi(d) { nho = d && d.nut && d.canh ? d : RONG; dangNap = null; }
 
+/**
+ * ĐỒ THỊ ĐÃ NẠP, lấy ĐỒNG BỘ — `null` khi chưa nạp xong.
+ *
+ * ⚠ VÌ SAO CẦN: chỗ ghi bản ghi lượt (`ManTiengAnh.ghiLuot`) nằm ở MỘT component,
+ * còn `dt` của React thì sống ở component KHÁC trong cùng tệp. Đọc `dt` từ đó là
+ * đúng lớp lỗi đã bốn lần cho ra màn trắng — build xanh, cổng xanh, bé màn trắng.
+ * Bộ nhớ đệm này ở tầng module nên ai cũng đọc được, không phụ thuộc phạm vi nào.
+ *
+ * ⚠ TRẢ `null` CHỨ KHÔNG TRẢ ĐỒ THỊ RỖNG. Chưa nạp xong và «nạp hỏng nên rỗng» là
+ * hai chuyện khác nhau; bên gọi phải phân biệt được để không ghi một trường rỗng
+ * như thể đã biết câu trả lời.
+ */
+export const doThiDaNap = () => nho;
+
 const locCanh = (canh, keCaTrongBai) =>
   (canh || []).filter((c) => keCaTrongBai || CANH_THAT.has(c.loai || 'ban_do'));
 

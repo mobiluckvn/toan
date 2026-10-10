@@ -114,10 +114,12 @@ export function themDaGui(ids, kho = globalThis.localStorage) {
    Dòng v ≤ 3 không có trường ấy, và máy chủ đã chấm chúng bằng bộ `toanHe`.
    5 từ 10-10-2026 (chiều): bản ghi TOÁN thêm `mon` (Tiếng Anh vốn đã có). Hai môn
    phải khai CÙNG một số, nên số ở đây cũng lên — cổng `nguong_phien` canh.
+   7 từ 10-10-2026 (tối): thêm `loaiNut` — nấc CUỐI của thang phạm vi, nay đủ cả
+   bảy nấc. Và `nhomThuNghiem` cho KB4/KB5 (hiện `null` vì cả hai đang tắt).
    6 từ 10-10-2026 (tối): thêm `bac` và `sauPhuDao`. Dòng v ≤ 5 không có hai trường
    ấy — phép gom theo bậc bỏ qua chúng, và phép tách lượt sau can thiệp coi chúng
    là lượt thường, tức giữ đúng cách đọc cũ. */
-export const PHIEN_BAN_BAN_GHI = 6;
+export const PHIEN_BAN_BAN_GHI = 7;
 
 export const laHocSinhThat = (id) => !!id && id !== 'local';
 
@@ -188,6 +190,8 @@ export function dungSuKien({
     /* Bậc của câu — nấc `bac` của thang phạm vi (R7) và chiều còn thiếu của Bảng
        3.22. `null` khi câu không khai bậc (470/4.226 câu). */
     bac: Number.isFinite(e.bac) ? e.bac : null,
+    /* Loại nút — nấc cuối của thang phạm vi. `null` khi đồ thị chưa nạp xong. */
+    loaiNut: e.loaiNut || null,
     /* Lượt SAU CAN THIỆP: phụ đạo vừa chạy xong trong phiên này. Phải khai lúc ghi
        vì khung phụ đạo nằm ở học bạ, kho khác với nhật ký lượt. */
     sauPhuDao: !!e.sauPhuDao,

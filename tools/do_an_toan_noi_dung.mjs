@@ -218,8 +218,20 @@ function boChung(bai, von) {
        trùng một câu đã được đường khác công nhận. */
     const daCo = new Set([...cau.map((c) => c.cau), ...sach].join(' ').toLowerCase().split(/\s+/));
     const chon = tu.find((t) => !daCo.has(String(t.tu).toLowerCase())) || tu[0];
-    if (loai === 'ten' || chon) {
-      const d = loai === 'ten' ? TEN_BE : chon.tu;
+    /* ── ⚠ ĐIỀN ĐÚNG DẠNG MÀ Ô ĐÒI, KHÔNG ĐIỀN DẠNG GỐC ──
+       Bản đầu luôn điền `chon.tu`. Với ô `[Verb-ing]` nó dựng ra «I like go for a
+       walk» rồi khai đó là chứng DƯƠNG — một câu sai ngữ pháp mà hàng rào PHẢI bác.
+       Hai câu như thế hiện lên báo cáo dưới nhãn «hàng rào đóng quá tay», tức bộ đo
+       báo lỗi của CHÍNH NÓ thành lỗi của thứ nó đang đo. Người đọc báo cáo sẽ đi
+       nới hàng rào — đúng cái bẫy «cổng ép người ta nới mã» mà kho này đã dính bốn
+       lần, lần này còn nguy hơn vì hàng rào ấy là thứ chặn từ vượt cấp tới tay bé.
+
+       Thiếu dạng cần thì BỎ HẲN chứng ấy, không lùi về dạng gốc: một chứng dương
+       sai còn tệ hơn không có chứng nào. */
+    const dangCua = { ing: 'dang_ing', qk: 'dang_qk', nhieu: 'so_nhieu' }[loai];
+    const d = loai === 'ten' ? TEN_BE
+      : (dangCua ? (chon?.[dangCua] || null) : chon?.tu || null);
+    if (d) {
       them('duong', 'congThuc', dienKhung(khungMotO.congThuc, d), 'nhan',
         `công thức MỘT ô đã điền đúng loại (${loai})`);
     }

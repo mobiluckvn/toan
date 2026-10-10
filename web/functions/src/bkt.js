@@ -72,6 +72,8 @@ export function nguCanhLuot(a = {}) {
   /* Bậc của câu — nấc `bac`. Nội dung khai sẵn ở 3.756/4.226 câu; bản ghi mang nó
      từ v6. Dòng cũ không có thì bỏ qua nấc này, tức giữ nguyên cách chấm cũ. */
   if (a.bac != null && a.bac !== '') nc.bac = String(a.bac);
+  /* Loại nút — từ vựng · mẫu câu · phát âm · ôn tập. Nấc cuối của thang phạm vi. */
+  if (a.loaiNut) nc.loaiNut = String(a.loaiNut);
   if (a.bktUnit) nc.nut = String(a.bktUnit);
   return nc;
 }

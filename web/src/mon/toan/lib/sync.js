@@ -72,13 +72,15 @@ export const attemptId = (learnerId, sessionId, microId, itemId, seq) =>
  */
 /* 4 từ 10-10-2026: thêm `khoiLop` — nấc phạm vi của bộ ngưỡng (R7, mục 3.8.1).
    Dòng v ≤ 3 không có trường ấy, và máy chủ đã chấm chúng bằng bộ `toanHe`.
+   7 từ 10-10-2026 (tối): Tiếng Anh thêm `loaiNut`. Toán không có đồ thị tri thức
+   nên không có trường ấy — nhưng hai môn phải khai CÙNG một số phiên bản.
    6 từ 10-10-2026 (tối): Tiếng Anh thêm `bac` và `sauPhuDao`. Toán KHÔNG có hai
    trường ấy (câu Toán không khai bậc, và Toán chưa có phụ đạo) — nhưng hai môn phải
    khai CÙNG một số phiên bản, nếu không bên đọc nhật ký phải nhớ hai luật.
    5 từ 10-10-2026 (chiều): bản ghi Toán thêm `mon`. Trước đó Toán KHÔNG khai môn,
    nên 3075/3212 dòng nhật ký rơi ngoài mọi phép gom theo môn — xem chú thích ở
    chỗ ghi trường ấy. Hai môn vẫn phải khai CÙNG một số. */
-export const PHIEN_BAN_BAN_GHI = 6;
+export const PHIEN_BAN_BAN_GHI = 7;
 
 /** Đáp án con gõ có thể là mảng nhiều ô — gọn lại thành một chuỗi đọc được, cắt ngắn */
 export const CHU_TOI_DA = 120;
