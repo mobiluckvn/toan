@@ -244,13 +244,61 @@ nào** vừa trả lời đúng vừa nằm trong vốn. Cùng họ với
 
 ---
 
+## 6b · V9 ĐÃ THỬ XONG — 10-10-2026, bổ sung sau
+
+Làm ngay trong phiên ấy, bằng cách bơm chữ ở mục 4 để qua cửa "nói đủ 13 từ".
+
+**Đường đi:** Từ mới (13 từ, mỗi từ nghe + nói) → Mẫu câu (4 mẫu, mỗi mẫu xem video +
+nói) → **Luyện tập mở**. Chặng Mẫu câu **bắt buộc xem hết video** (`mo: xemDu &&
+(noiDu || micHong)`, không có đường "nghe đủ" như chặng Từ mới); tua bằng
+`v.currentTime = v.duration - 0.25; v.play()` rồi đợi sự kiện `ended`.
+
+**Kích phụ đạo:** sai **3 lần liên tiếp** trên cùng một nút (`SAI_LIEN_TIEP_MAC = 3`).
+⚠ Lời mời **không hiện ngay lúc sai** — `choPhuDao` chỉ được bày ra khi bé **LÀM XONG
+câu ấy** (trả lời đúng, hoặc "Để câu này lại sau"). Cứ bấm sai mãi thì không bao giờ
+thấy; tôi mất mấy lượt mới nhận ra.
+
+**Kết quả — chạy đúng, trọn vòng:**
+
+| Chặng | Màn hình |
+|---|---|
+| Mời | 🔎 "Mình gỡ chỗ này cùng nhau nhé · Cô thấy con chưa chắc phần **how — như thế nào**. Làm 3 câu ngắn…" — chẩn đoán **đúng** nút tôi cố tình làm hỏng |
+| Làm | "rối · câu 1/3 · how — như thế nào", ba câu, có cả dạng gõ lại |
+| Xong | 👍 "Xong rồi, mình quay lại bài nhé · Con làm đúng 3/3 câu" → quay về Luyện tập |
+
+**`sinhCauPhuDao` đã được gọi LẦN ĐẦU trên bản thật** — log `sinhcauphudao`
+03:26:26 · `auth: VALID`. Tức hai vòng kho tĩnh không đủ câu cho nút ấy và đường mô
+hình đã cắm đúng.
+
+**Còn một mắt chưa nhìn tận nơi: `choDuyetTA` có bao nhiêu dòng.** Luật cho bé GHI mà
+không cho ĐỌC, nên cả máy con lẫn tôi đều không soi được — phải `soi_ban_ghi_tienganh.mjs`.
+
+**Đo riêng bộ sinh bằng mô hình thật** (hai nút, mỗi nút 3 câu) để biết hàng đợi sẽ
+nhận được gì:
+
+- Lượt 1: **3/3 bị `soiCauAI` bác** — "gợi ý lộ thẳng đáp án" (gợi ý liệt kê đúng mấy
+  chữ của đáp án: *"Câu hỏi dùng từ how, you, fine"* ↔ đáp án *"how you fine"*).
+- Lượt 2: **6/6 ĐẠT** — tức tỷ lệ qua cửa dao động mạnh giữa các lượt.
+- ⚠ **Mấy câu ĐẠT lại đúng loại cần người đọc:** *"Nói lời chào"* → đáp án `hello`
+  trong khi `hi` cũng là lời chào; *"Chào một bạn"* → `hello Ben` trong khi
+  `hello Lucy` đúng y hệt. **Hai đáp án đúng** — luật thứ bảy mà code không kiểm được.
+- Và vài câu là tiếng Anh vỡ: *"how you fine"*, *"how Ben you fine"* — đúng điều V12
+  đã thấy: túi vốn một unit không có từ chức năng thì mô hình xếp chữ thành câu không
+  ai nói.
+
+**Rút ra:** đường mô hình **chạy**, tầng hậu kiểm bằng code **có tác dụng thật**, và
+hàng đợi duyệt **là chỗ đúng** cho phần còn lại — nhưng chừng nào `tools/nhap_cau_duyet.py`
+chưa có thì hàng đợi chỉ đầy lên, và **không câu nào do máy soạn được vào kho tĩnh**.
+Đó là việc kế tiếp số 2 dưới đây.
+
+**Một quan sát nhỏ:** lúc 92 lượt trong hàng đợi gửi dồn một lúc, console có ba dòng
+`WebChannelConnection RPC 'Write' stream transport errored`. SDK tự thử lại, hàng đợi
+rút về 0, các lượt sau không lặp lại. Ghi ra đây để lần sau thấy thì biết là cái gì.
+
 ## 7 · VIỆC KẾ TIẾP, theo thứ tự
 
-1. **Thử V9 — phụ đạo `sinhCauPhuDao` + hàng đợi `choDuyetTA`.** Đây là tính năng
-   DUY NHẤT của đợt này còn chưa ai bấm thử. Trước bị chặn vì cửa vào Luyện tập đòi
-   bé **nói đủ 13 từ** (`dandat.js:273` — `mo: (xemXong || ngheDu) && (noiDu || micHong)`).
-   **Nay gỡ được bằng mục 4**: bơm chữ cho 13 từ, mở khoá Luyện tập/Sát hạch, rồi cố
-   tình làm sai để kích phụ đạo.
+1. ~~Thử V9~~ — **XONG, xem mục 6b.** Phụ đạo chạy trọn vòng, `sinhCauPhuDao` đã
+   gọi được lần đầu. Còn lại: mở `choDuyetTA` ra đếm (cần khoá quản trị).
 2. **Chốt hướng cho 55 bước thiếu `dapMau`** (mục 5).
 3. **Merge nhánh về `main`** — `main` vẫn ở `555201f3`, không còn là thứ đang chạy.
 4. **Bật ESLint với `no-use-before-define`, hoặc một cổng dựng mỗi màn đúng một lần.**
@@ -260,7 +308,8 @@ nào** vừa trả lời đúng vừa nằm trong vốn. Cùng họ với
    (không bị từ chối), chưa chứng minh **ghi đúng nội dung gì** — đúng cái bẫy tệp ấy
    tự cảnh báo ở đầu trang.
 6. Mấy chỗ nhỏ ở mục 6, theo thứ tự bác thấy cần.
-7. Nợ cũ còn nguyên từ bản 09-10: `tools/nhap_cau_duyet.py` cho hàng đợi duyệt câu ·
+7. Nợ cũ từ bản 09-10 — ⚠ `tools/nhap_cau_duyet.py` nay **gấp hơn**: mục 6b cho thấy
+   hàng đợi đã thật sự có đường vào, mà vẫn chưa có đường ra ·
    xưởng chưa qua đợt dùng thật · `GROQ_MODEL_PHU` · `congHuong` chưa ai gọi · 19 nút
    gốc rễ không có bài nào dạy · bộ nối ΔC · Chương 1 và Chương 4 luận văn.
 
