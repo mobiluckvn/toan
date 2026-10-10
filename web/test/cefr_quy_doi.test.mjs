@@ -58,7 +58,19 @@ const ok = (dieu, ten, them = '') => {
   ok(kq.tongNut + chua === Object.keys(dt.nut).length,
     'tổng vốn + nút chứa = toàn đồ thị',
     `${kq.tongNut} + ${chua} ≠ ${Object.keys(dt.nut).length}`);
-  ok(kq.tongNut === 1062, 'vốn đếm được đúng 1062 nút học được', `ra ${kq.tongNut}`);
+  /* ── CHỐT BÁO ĐỘNG: ĐỒ THỊ ĐỔI THÌ BA CON SỐ CỦA LUẬN VĂN ĐỔI THEO ──
+     Con số này ghim cố ý. Nó KHÔNG canh một tính chất (hai phép trên đã canh rồi) —
+     nó canh việc đồ thị vừa đổi mà có thể chưa ai cập nhật luận văn, vì mẫu số của
+     phép quy đổi CEFR là thứ phải bảo vệ được khi phản biện.
+     Đỏ ở đây thì việc cần làm KHÔNG phải sửa số cho xanh, mà là: xem đồ thị đổi vì
+     cái gì, rồi sửa CẢ luận văn lẫn dòng này.
+
+     1062 → 1063 ngày 10-10-2026: khai `sp_g3_starter_1` vào bản đồ. Bài DL:TA3.B00
+     dạy thật mẫu câu ấy nhưng bản đồ chưa bao giờ có nút, nên 6 câu mồ côi và nút
+     cầu `sp_g3_numbers` (mà ba mẫu câu lớp 4 khai «cần») không có bài nào dạy —
+     đúng một trong «19 nút gốc rễ không có bài dạy» của Bảng 3.25.
+     Kéo theo: 1.194 → 1.195 đỉnh · 253 → 254 cạnh. */
+  ok(kq.tongNut === 1063, 'vốn đếm được đúng 1063 nút học được', `ra ${kq.tongNut}`);
 }
 
 /* ── 3. Khối quá bé thì mang cờ không đáng tin, và không bao giờ thành mucDat ─ */

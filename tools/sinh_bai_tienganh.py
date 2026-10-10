@@ -36,6 +36,7 @@ nhưng câu sai đứng một mình, không cần ai nói nó ra.
 from __future__ import annotations
 
 import argparse
+import functools
 import json
 import re
 import sys
@@ -605,11 +606,42 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
 #                             phương tiện — bé sai ở đây là sai CẤU TRÚC.
 # `maNutDs` giữ đủ cả hai để sau này lan truyền chẩn đoán (mục 2.3.3) còn dùng,
 # nhưng KHÔNG chỗ nào được lấy nó ra cộng điểm.
+#
+# ── ⚠ `maNutDs` CHỈ ĐƯỢC CHỨA NÚT CỦA ĐỒ THỊ ──
+# Bản cũ nhận mọi mã truyền vào, nên mẩu điền ô lọt được: `them_ten_Bill` (tên
+# Bill), `them_mau_blue` (màu xanh), `cum_a_burger`. Chúng không phải tri thức — bé
+# không "thạo tên Bill" — nhưng mọi chỗ đọc `maNutDs` đều coi từng mục là một nút:
+# `vectorS` gộp mức thạo, `baiTienQuyet` tra nút trước, `viecTiepCuaBai` hỏi hàm
+# chính sách. Mã không có trong đồ thị thì KHÔNG BAO GIỜ có mức thạo, nên 9 bài có
+# chúng không bao giờ ra `vuotAi` — thẻ ôn của chúng không bao giờ được hoãn dù bé
+# đã vững hẳn. Hỏng lặng lẽ: không màn nào đổi, không cổng nào đỏ.
+#
+# 45 mã như thế đã lên bản thật; `tools/va_nut_mo_coi.py` dọn, và cổng
+# `nut_co_trong_do_thi.test.mjs` canh để không quay lại.
+#
+# ⚠ SOI THEO BẢN ĐỒ THẬT, KHÔNG THEO TIỀN TỐ. Bản vá đầu tôi viết một danh sách
+# `("them_", "cum_")` — tức ghim CHÍNH TẢ, cái bẫy kho này đã dính năm lần. Bộ sinh
+# đặt thêm một tiền tố mới là phép lọc lặng lẽ bỏ sót, và không gì báo. Hỏi bản đồ
+# thì câu hỏi đúng là câu ta thực sự muốn hỏi: "mã này có phải một nút tri thức
+# không".
+@functools.lru_cache(maxsize=1)
+def _nut_cua_ban_do() -> frozenset[str]:
+    d = json.loads((GOC / "data/ban_do_tieng_anh.json").read_text("utf8"))
+    return frozenset(n["id"] for n in d["graph"]["nodes"])
+
+
 def nut(chinh, *them):
+    co = _nut_cua_ban_do()
     ds = []
     for x in (chinh, *them):
-        if x and x not in ds:
-            ds.append(x)
+        if not x or x in ds:
+            continue
+        # Nút CHÍNH luôn vào — kể cả khi bản đồ chưa có nó, vì khi ấy thứ cần sửa là
+        # BẢN ĐỒ chứ không phải bản ghi (đúng ca `sp_g3_starter_1`). Mẩu phụ thì chỉ
+        # vào khi bản đồ công nhận nó là một nút.
+        if x is not chinh and x not in co:
+            continue
+        ds.append(x)
     return {"maNut": chinh, "maNutDs": ds} if chinh else {}
 
 
