@@ -414,43 +414,15 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
                         vào bản ghi buổi để đếm được PHÂN PHỐI nhãn: nhánh nào
                         không bao giờ chạy thì lời dặn của nó chưa ai đọc. */
                      nhan: tra.nhan ?? null, doTin: tra.doTin ?? null,
-                     noiKhuon: tra.noiKhuon || null };
+                     noiKhuon: tra.noiKhuon || null,
+                     /* VÂN TAY LỜI DẶN đi theo lượt của CÔ, vì lượt sau của BÉ mới
+                        là chỗ ghi `attempts` — mà lúc ấy `tra` không còn trong tầm
+                        với. Xem khối `onLuot` trong `noi`. */
+                     mauPrompt: tra.mauPrompt || null,
+                     phienBanMau: tra.phienBanMau ?? null,
+                     vanTayPrompt: tra.vanTayPrompt || null };
       const sau = [...ds, luot];
       datLichSu(sau);
-      /* ── LƯỢT NÓI Ở PHÒNG LUYỆN VÀO ENGINE (bác chốt 23-08-2026) ──
-         Trước bản này cả buổi nói được lưu vào `phongNoiTA` (bé nói gì, cô sửa gì)
-         nhưng KHÔNG sinh `attempts` — nên kỹ năng NÓI là kỹ năng duy nhất nằm
-         ngoài BKT, dù nó có điểm từng lượt hẳn hoi.
-
-         ⚠ CHỈ GHI KHI CHẤM ĐƯỢC. `kq` là `null` ở những bước không có câu mẫu để
-         so (bé chào, bé kể tự do). Ghi lượt không điểm là ghi một lượt SAI cho
-         một việc không ai chấm — mức thạo tụt vì một câu bé nói đúng.
-
-         Nút suy từ CHÍNH CÂU vừa chấm (`kq.mau`): tìm mẫu câu của bài có câu ấy,
-         không có thì tìm từ vựng xuất hiện trong câu. Không ra nút nào thì `bktUnit`
-         rỗng và hàm nền bỏ qua — thà thế còn hơn gán bừa vào một nút không liên
-         quan, đúng bài học của `nut_tri_thuc.py`. */
-      if (kq && kq.diem != null) {
-        onLuot?.({
-          cau: {
-            id: `phongnoi:${bai?.id || '?'}:${sau.length}`,
-            maNut: nutCuaCau(bai, kq.mau),
-            format: 'phongNoi',
-          },
-          ok: datNoi(kq.diem),
-          lan: 1,
-          ms: null,
-          hintsUsed: 0,
-          answer: r.noiGi ?? null,
-          expected: kq.mau ?? null,
-          phase: 'practice',
-          mauPrompt: r?.mauPrompt || null,
-          phienBanMau: r?.phienBanMau ?? null,
-          vanTayPrompt: r?.vanTayPrompt || null,
-          maPhien: maBuoi.current,
-          microId: bai?.id || null,
-        });
-      }
       /* Client giữ ngữ cảnh và tự đẩy lên máy chủ — bác chốt như thế; server không
          lưu gì. KHÔNG chờ: mất mạng thì bé vẫn nói chuyện bình thường. */
       luuBuoi(auth?.currentUser?.uid, {
@@ -576,6 +548,50 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
       thieuChucNang: kq?.thieuChucNang || [],
     }];
     datLichSu(sau);
+
+    /* ── LƯỢT NÓI VÀO ENGINE (bác chốt 23-08-2026) ──
+       Trước bản này cả buổi nói được lưu vào `phongNoiTA` (bé nói gì, cô sửa gì)
+       nhưng KHÔNG sinh `attempts` — nên kỹ năng NÓI là kỹ năng duy nhất nằm ngoài
+       BKT, dù nó có điểm từng lượt hẳn hoi.
+
+       ⚠ KHỐI NÀY TỪNG NẰM TRONG `guiLuot`, VÀ Ở ĐẤY NÓ KHÔNG CHẠY NỔI MỘT LẦN.
+       `guiLuot` không có `r` lẫn `kq` — hai biến ấy sinh ra ở ĐÂY. Chúng là biến
+       chưa khai, nên mỗi lượt đều ném `ReferenceError` ngay sau khi cô trả lời:
+       cô KHÔNG đọc thành tiếng (khối `docLen` nằm sau chỗ ném), buổi KHÔNG được
+       `luuBuoi` lên máy chủ, và bé lượt nào cũng thấy "Cô giáo máy chưa trả lời
+       được" dù lượt gọi trả 200. Bắt được khi đi thử bản thật 10-10-2026, ngay
+       sau khi vá màn trắng — lỗi này nấp sau lỗi kia.
+
+       ⚠ CHỈ GHI KHI CHẤM ĐƯỢC. `kq` là `null` ở những bước không có câu mẫu để so
+       (bé chào, bé kể tự do). Ghi lượt không điểm là ghi một lượt SAI cho một việc
+       không ai chấm — mức thạo tụt vì một câu bé nói đúng.
+
+       Nút suy từ CHÍNH CÂU vừa chấm (`kq.mau`). Không ra nút nào thì `bktUnit` rỗng
+       và hàm nền bỏ qua — thà thế còn hơn gán bừa vào một nút không liên quan.
+
+       Vân tay lời dặn lấy từ LƯỢT CỦA CÔ mà bé đang đáp (`luotCoCuoi`), vì lời dặn
+       sinh ra lượt ấy mới là thứ vân tay mô tả. */
+    if (kq && kq.diem != null) {
+      onLuot?.({
+        cau: {
+          id: `phongnoi:${bai?.id || '?'}:${sau.length}`,
+          maNut: nutCuaCau(bai, kq.mau),
+          format: 'phongNoi',
+        },
+        ok: datNoi(kq.diem),
+        lan: 1,
+        ms: null,
+        hintsUsed: 0,
+        answer: r.noiGi ?? null,
+        expected: kq.mau ?? null,
+        phase: 'practice',
+        mauPrompt: luotCoCuoi?.mauPrompt || null,
+        phienBanMau: luotCoCuoi?.phienBanMau ?? null,
+        vanTayPrompt: luotCoCuoi?.vanTayPrompt || null,
+        maPhien: maBuoi.current,
+        microId: bai?.id || null,
+      });
+    }
     /* Lượt này vừa KẾT THÚC buổi thì đừng hỏi cô nữa: bé đã xong, mà gọi thêm
        một lượt là hoặc cô nói chen vào sau lời khen, hoặc mạng trục trặc và bé
        thấy dòng lỗi đỏ ngay dưới câu "con giỏi lắm". Đã thấy thật lúc đi thử. */
@@ -592,7 +608,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
                                  keHoachConViec: khConThieu(keHoach) > 0 });
     if (sauKhiNoi.trangThai !== 'dang') { datLoi(null); return; }
     guiLuot(sau);
-  }, [ghiAm, lichSu, canNoiGi, luotCoCuoi, guiLuot]);
+  }, [ghiAm, lichSu, canNoiGi, luotCoCuoi, guiLuot, onLuot, bai, keHoach, bang]);
 
   /**
    * NÓI LẠI MỘT CÂU — bác dặn 14-08.
