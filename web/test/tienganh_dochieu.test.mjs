@@ -554,12 +554,6 @@ for (const q of quyens) {
         || ['doctor', 'nurse', 'farmer', 'gardener', 'cooking', 'reading',
             'writing', 'dancing', 'singing', 'cycling', 'skipping', 'walking',
             'climbing', 'run'].includes(v.tu));
-      /* Câu nói về NGƯỜI — có tên riêng, hoặc chủ ngữ là người. Tranh có người thì
-         những câu ấy hợp lệ, dù chúng không nêu tên một đồ vật nào. Đây là chỗ
-         khác nhau giữa một bài TẢ CẢNH và một bảng kê đồ. */
-      const laCauNguoi = (c) => /(?:^|\s)(?:I'm|He's|She's|They're|He|She|They)\s/.test(c)
-        || /(?:This is|That's|There's)\s+[A-Z]/.test(c)
-        || /\b(?:Ms|Mr)\b/.test(c);
       /* ⚠ ĐÚNG CHIỀU MỚI BẮT ĐƯỢC CÁI CẦN BẮT.
          Bản đầu tôi hỏi "câu này có nêu vật nào của tranh không" — hỏi thế là đòi
          MỌI câu phải trỏ vào một đồ vật, tức là dựng lại đúng cái kệ vừa dỡ đi.

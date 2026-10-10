@@ -1,7 +1,7 @@
 /** Kiểm đăng nhập bằng OTP — chạy: node test/otp.test.mjs */
 import {
   makeCode, hashCode, safeEqual, canSend, nextRecord, verify, otpEmail,
-  CODE_DIGITS, TTL_MS, MAX_WRONG, RESEND_COOLDOWN_MS, MAX_PER_HOUR,
+  TTL_MS, MAX_WRONG, RESEND_COOLDOWN_MS, MAX_PER_HOUR,
 } from '../functions/src/otp.js';
 import { normalizeEmail, buildUserDoc, ROLES } from '../functions/src/user.js';
 

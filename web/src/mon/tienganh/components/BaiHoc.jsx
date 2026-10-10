@@ -92,6 +92,11 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
      phải ĐỔI khi đổi bài và GIỮ NGUYÊN trong suốt bài — `useMemo` theo `id` cho
      đúng cả hai. Component này KHÔNG dựng lại khi đổi bài (chỗ gọi không đặt
      `key`), nên để mã phiên trong `useRef` trần là hai bài dính chung một phiên. */
+  /* ⚠ `id` là phụ thuộc THỪA về mặt hình thức (thân hàm không đọc nó), và ESLint
+     kêu đúng — nhưng nó chính là THỨ KÍCH HOẠT: mã phiên phải đổi khi đổi bài, và
+     `useMemo` là cách duy nhất ở đây để nói điều đó. Bỏ `id` đi là mọi bài dùng
+     chung một mã phiên, đúng cái chú thích trên vừa cảnh báo. */
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- `id` là thứ kích hoạt, không phải thứ đọc
   const maPhien = useMemo(() => maPhienMoi(), [id]);
   const ghiLuot = useCallback((e, phase = 'practice') => {
     soLuot.current += 1;
@@ -329,7 +334,7 @@ function ManTu({ bai, onTiep, onNoi, moc, onMoc, onLuot = null }) {
   const [iTu, datITu] = useState(() => Math.max(0, Number(moc?.iTu) || 0));
   const [iVideo, datIVideo] = useState(0);
   const K = bai.knowledgeCore.statements || [];
-  const dsTu = bai.knowledgeCore.vocabulary || [];
+  const dsTu = useMemo(() => bai.knowledgeCore.vocabulary || [], [bai]);
   const oVideo = useRef(null);
 
   /* Ghi mốc — `daNghe` là Set nên phải rải thành mảng, không thì JSON ra `{}` và
@@ -407,7 +412,13 @@ function ManTu({ bai, onTiep, onNoi, moc, onMoc, onLuot = null }) {
       });
     }
     onNoi?.(tu, kq);
-  }, [onNoi]);
+    /* ── ⚠ PHẢI PHỤ THUỘC VÀO `bai`, không chỉ `onNoi` ──
+       `BaiHoc` KHÔNG dựng lại khi đổi bài (chỗ gọi không đặt `key` — xem chú thích
+       ở `maPhien`), nên `bai` đổi mà component vẫn sống. Với mảng phụ thuộc cũ
+       `[onNoi]`, bao đóng giữ vốn từ của bài TRƯỚC: bé nói một từ của bài mới thì
+       `find` không thấy, `maNut` thành `null`, và lượt ấy rơi ra ngoài BKT trong im
+       lặng. Cùng lớp lỗi với `ghiNoi` của chặng Mẫu câu bên dưới. */
+  }, [bai.knowledgeCore.vocabulary, onLuot, onNoi]);
 
   return (
     <section className="flex flex-col gap-4">
@@ -604,7 +615,10 @@ function LuyenTu({ bai, ds, i, onDoi, soNoi, micHong, daNgheTu = false,
  * tập và sát hạch.
  */
 function ManCau({ bai, onTiep, moc, onMoc, onLuot = null }) {
-  const ds = bai.video?.cau || [];
+  /* `useMemo` để DANH TÍNH ổn định: không có nó thì mảng mới mỗi lần vẽ, và mọi
+     mảng phụ thuộc chứa nó đều đổi mỗi lần vẽ — tức mất tác dụng, mà vẫn trông như
+     có. */
+  const ds = useMemo(() => bai.video?.cau || [], [bai]);
   const [i, datI] = useState(() => Math.max(0, Number(moc?.i) || 0));
   const [daXem, datDaXem] = useState(() => new Set(moc?.daXem || []));
   const [hong, datHong] = useState(false);
@@ -612,10 +626,9 @@ function ManCau({ bai, onTiep, moc, onMoc, onLuot = null }) {
   const [micHong, datMicHong] = useState(false);
   /* Câu nào bé đã bấm NGHE. Chỉ dùng để mở đường lui tự khai — xem chú ở dưới. */
   const [daNgheCau, datDaNgheCau] = useState(() => new Set());
-  const mcDs = bai.knowledgeCore.mauCauDs || [];
+  const mcDs = useMemo(() => bai.knowledgeCore.mauCauDs || [], [bai]);
   const mc = mcDs[i] || bai.knowledgeCore.mauCau;
   const bay = bai.knowledgeCore.misconceptions?.[0];
-  const NHAN = { hoi: 'Câu hỏi', dap: 'Câu trả lời', cau: 'Mẫu câu' };
 
   const dsCau = useMemo(
     () => ds.map((v) => ({ ...v, nhanVai: NHAN[v.vai] || 'Mẫu câu' })),
@@ -647,7 +660,15 @@ function ManCau({ bai, onTiep, moc, onMoc, onLuot = null }) {
       const cu = s[cau] || { caoNhat: null, lan: 0 };
       return { ...s, [cau]: { caoNhat: Math.max(cu.caoNhat ?? 0, kq.diem ?? 0), lan: cu.lan + 1 } };
     });
-  }, []);
+    /* ── ⚠ MẢNG PHỤ THUỘC NÀY TỪNG RỖNG, VÀ ĐÓ LÀ MỘT LỖI THẬT ──
+       Thân hàm đọc `ds[i]` và `mcDs[i]`, mà `i` là state đổi mỗi lần bé chọn câu
+       khác (`datI` ở thanh chọn câu). Với `[]`, bao đóng giữ NGUYÊN `i` của lần vẽ
+       đầu — nên bé nói câu thứ ba thì lượt được ghi vào `maNut` của câu thứ NHẤT.
+       Sai ở đúng chỗ tệ nhất: `bktUnit` của bản ghi lượt, tức BKT cộng công cho
+       nhầm nút, rồi mức thạo · phụ đạo · cả thang phạm vi đều dựng trên số sai.
+       Không màn nào đổi màu, không cổng nào đỏ. ESLint `exhaustive-deps` tìm ra
+       10-10-2026. */
+  }, [ds, i, mcDs, onLuot]);
 
   const cauNay = ds[i]?.cau;
   const chuaXong = ds.findIndex((v, k) => k > i
@@ -772,6 +793,10 @@ function ManCau({ bai, onTiep, moc, onMoc, onLuot = null }) {
  * `LuyenTap` mang `key={id}` nên đổi bài là dựng lại từ đầu.
  */
 const PHU_DAO_MOI_BAI = 1;
+
+/* Nhãn vai của mẫu câu — HẰNG, nên để ngoài component: dựng lại mỗi lần vẽ thì
+   mọi `useMemo` phụ thuộc vào nó đều mất tác dụng. */
+const NHAN = { hoi: 'Câu hỏi', dap: 'Câu trả lời', cau: 'Mẫu câu' };
 
 const MUC = [
   { khoa: 'warmup', sao: '★', ten: 'Nghe và hiểu' },

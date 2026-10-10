@@ -24,7 +24,7 @@
  */
 
 import {
-  dungSuKien, xepHang, dayHangDoi, docHangDoi, docDaGui, themDaGui,
+  dungSuKien, xepHang, dayHangDoi, docHangDoi, docDaGui,
 } from '../src/mon/tienganh/lib/suKien.js';
 
 let pass = 0; let fail = 0;

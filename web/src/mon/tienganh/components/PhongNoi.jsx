@@ -138,6 +138,11 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
       } catch { /* im — xem ghi chú trên */ }
     })();
     return () => { song = false; };
+    /* ⚠ `bai?.id` là KHOÁ, có chủ ý. ESLint muốn `bai.practice.pools`; cùng một `id`
+       thì pools không đổi nội dung, nhưng khai nó là mỗi lần cha dựng lại object bài
+       sẽ nạp lại đồ thị và toàn bộ bài tiên quyết — đó là gọi mạng thừa, không phải
+       sửa lỗi. */
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- xem ghi chú trên
   }, [bai?.id, daDat, datCu]);
 
   const von = React.useMemo(
@@ -211,8 +216,8 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
    * Nay lượt của cô mang theo `can` (những câu được tính là đúng). Bài thường thì
    * `can` chính là câu cô nói, nên 20 kịch bản kia không đổi hành vi.
    */
-  const canNoiGi = luotCoCuoi?.can?.length ? luotCoCuoi.can
-    : (luotCoCuoi?.en ? [luotCoCuoi.en] : []);
+  const canNoiGi = React.useMemo(() => (luotCoCuoi?.can?.length ? luotCoCuoi.can
+    : (luotCoCuoi?.en ? [luotCoCuoi.en] : [])), [luotCoCuoi]);
   const hoiThich = cauHoiSoThich(von);
 
   /**
@@ -391,7 +396,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
       if (ket.en) await docLen(ket.en, 'en-GB', { nhanh: 0.9 });
       await docDoan(tachTheoTieng(ket.chu, von, mocEn));
     })();
-  }, [ket, von]);
+  }, [ket, von, mocEn]);
 
   /* Gửi một lượt lên cô giáo. `themVaoLichSu` nhận lịch sử ĐÃ có lượt của bé —
      đọc state ngay tại đây thì lượt vừa thêm chưa kịp vào, và cô trả lời câu cũ. */
@@ -649,7 +654,9 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
     luuBuoi(auth?.currentUser?.uid, {
       maBuoi: maBuoi.current, quyen: ma, baiId: bai?.id, tenBai: bai?.title, lichSu: sau,
     });
-  }, [ghiAm, lichSu, bai]);
+    /* `ma` PHẢI có mặt: thiếu nó thì bao đóng giữ mã quyển lúc dựng, và buổi luyện
+       nói lại được lưu vào quyển bé đã rời khỏi. */
+  }, [ghiAm, lichSu, bai, ma]);
 
   /**
    * NÓI CHUYỆN LẠI TỪ ĐẦU — vì màn kết là ngõ cụt.

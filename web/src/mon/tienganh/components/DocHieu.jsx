@@ -217,7 +217,8 @@ function Doan({ doan = [], lien = false }) {
       </h2>
       <ul className="flex flex-col gap-2">
         {doan.map((d, i) => (
-          // eslint-disable-next-line react/no-array-index-key
+          /* Khoá theo chỉ số là chủ ý: danh sách đoạn của một bài không bao giờ
+             chèn/xoá giữa, chỉ thay cả khối khi đổi bài. */
           <li key={i} className="flex items-center gap-3">
             <NutNghe ma={d.am} nhan="Nghe câu này" />
             {d.ai && (

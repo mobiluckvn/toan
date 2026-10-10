@@ -78,7 +78,9 @@ export default function ManTiengAnh({
       datViets(vb || []);
     })();
     return () => { song = false; };
-  }, [ct?.ma]);
+    /* `ct` là chính mục trong `SO_DK` (hằng mức mô-đun), nên `ct.bai` có danh tính
+       ổn định — khai nó KHÔNG làm nạp lại vòng vòng. */
+  }, [ct?.ma, ct?.bai]);
 
   useEffect(() => {
     let song = true;

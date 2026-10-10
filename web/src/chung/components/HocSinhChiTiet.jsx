@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import Chu from './Chu.jsx';
 import { NHAN_MUC_CHUONG, NHAN_TINH_TRANG, NHAN_TRANG_THAI_BAI } from '../lib/nhanHocBa.js';
 import { minutesStudied } from '../../../functions/src/report.js';
@@ -76,17 +76,21 @@ export default function HocSinhChiTiet({ em, mon = [] }) {
   const buoi = useMemo(
     () => (Array.isArray(rows) ? new Set(rows.map((a) => a.sessionId)).size : 0), [rows]);
 
-  const dangCua = (a) => (a.dangBai?.length ? a.dangBai : (m?.dangCuaBai(a.microId) || []));
+  /* `useCallback` chứ không hàm trần: hàm trần dựng lại mỗi lần vẽ, nên hai `useMemo`
+     dưới đây không khai được nó và phải khai `m` thay — đúng về hành vi nhưng ESLint
+     không kiểm được. `dangCua` chỉ đọc `m`, nên hai cách là một. */
+  const dangCua = useCallback(
+    (a) => (a.dangBai?.length ? a.dangBai : (m?.dangCuaBai(a.microId) || [])), [m]);
   const dsDang = useMemo(() => {
     if (!Array.isArray(rows)) return [];
     const d = new Map();
     for (const a of rows) for (const k of dangCua(a)) d.set(k, (d.get(k) || 0) + 1);
     return [...d.entries()].sort((x, y) => y[1] - x[1]);
-  }, [rows, m]);
+  }, [rows, dangCua]);
   const nhatKy = useMemo(() => {
     if (!Array.isArray(rows)) return rows;
     return locDang ? rows.filter((a) => dangCua(a).includes(locDang)) : rows;
-  }, [rows, locDang, m]);
+  }, [rows, locDang, dangCua]);
 
   if (!hb) return <p className="card text-mute">Đang mở học bạ của em…</p>;
 

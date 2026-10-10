@@ -27,7 +27,6 @@ import {
   TOI_DA_TU_VON, SO_CAU_TOI_DA, TOKEN_PHU_DAO,
 } from '../functions/src/phudao.js';
 import { PHIEN_BAN_MAU } from '../functions/src/vantay.js';
-import { nhanNut } from '../src/mon/tienganh/lib/doThi.js';
 
 const doc = (p) => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
 const DT_THAT = doc('../public/content/tienganh/do_thi.json');

@@ -23,7 +23,7 @@ import {
 } from '../src/mon/tienganh/lib/phudao.js';
 import { vonTu } from '../src/mon/tienganh/lib/phongnoi.js';
 import { capHopLe, deltaC, gomTheoMau, mauTotNhat, TOI_THIEU_CAP } from '../functions/src/ara.js';
-import { NGUONG_THAO, NGUONG_YEU } from '../src/mon/tienganh/lib/zpd.js';
+import { NGUONG_THAO } from '../src/mon/tienganh/lib/zpd.js';
 import { MASTERY_THRESHOLD } from '../functions/src/bkt.js';
 
 const doc = (p) => readFileSync(new URL(p, import.meta.url), 'utf8');

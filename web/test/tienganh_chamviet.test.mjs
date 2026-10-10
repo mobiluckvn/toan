@@ -28,9 +28,9 @@ import {
   soiBaiViet, loiDanCham, TOI_DA_CHU_BAI_VIET,
   loiDanTimLoi, loiDanSua, loiDanBoMe, chamBaiViet, khungCham,
   SUA_LAI_TOI_DA, TOKEN_TIM_LOI, TOKEN_SUA, TOKEN_BO_ME, LOI_SUA_LAI,
-  loiDanTimKhen, TOKEN_TIM_KHEN,
+  TOKEN_TIM_KHEN,
 } from '../functions/src/chamviet.js';
-import { PHIEN_BAN_MAU, locKhung } from '../functions/src/vantay.js';
+import { PHIEN_BAN_MAU } from '../functions/src/vantay.js';
 import { diemHienThi } from '../src/mon/tienganh/lib/hocba.js';
 
 const VON = [

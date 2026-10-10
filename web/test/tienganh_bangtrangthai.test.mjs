@@ -173,7 +173,7 @@ test('câu sẵn của sách CÓ chữ số cũng bị cắt sạch', () => {
  */
 test('vượt trần thì cắt từ ƯU TIÊN THẤP lên', () => {
   const ai = { ...hoSoRong(), buoiThu: 3,
-    baiHoc: Array.from({ length: 5 }, (_, i) => ({ chu: `Mot bai hoc rat dai cua co giao so ${'x'.repeat(120)}`, nut: null, hetHanBuoi: 99 })),
+    baiHoc: Array.from({ length: 5 }, () => ({ chu: `Mot bai hoc rat dai cua co giao so ${'x'.repeat(120)}`, nut: null, hetHanBuoi: 99 })),
     soThich: ['fish'], cauDungGanNhat: ['I like fish.'] };
   const b = dungBang({ bai: BAI, mucThao: MUC_THAO, cards: THE, hoSoAI: ai,
     quyen: 'ta1', thich: 'fish', bayGio: NAY });

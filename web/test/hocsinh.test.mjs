@@ -5,10 +5,10 @@
  * quyết định gõ gì, bấm gì. Không đọc lén answerKey để "biết đáp án rồi trả lời" —
  * làm thế thì mọi câu đều qua, chẳng phát hiện được gì.
  */
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import {
-  buildFlow, answerFields, answerBrief, answerMode, checkAnswer, hintState, CACH_TRA_LOI,
+  buildFlow, answerFields, answerBrief, answerMode, checkAnswer,
 } from '../src/mon/toan/lib/flow.js';
 
 const R = new URL('../public/content/', import.meta.url).pathname;

@@ -110,7 +110,7 @@ export async function docDoan(ds = [], { nhanhEn = 0.9 } = {}) {
   for (const d of ds) {
     if (!d?.chu) continue;
     const en = d.tieng === 'en';
-    // eslint-disable-next-line no-await-in-loop
+    /* Đọc TUẦN TỰ là chủ ý — chạy song song thì hai câu nói chồng lên nhau. */
     await doc(d.chu, en ? 'en-GB' : 'vi-VN', { nhanh: en ? nhanhEn : 1 });
   }
 }

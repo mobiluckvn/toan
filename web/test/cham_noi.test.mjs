@@ -12,12 +12,11 @@
  * MỘT UNIT. Nới ở đó thì bài nói mất hết ý nghĩa, và tệ hơn — bé tưởng mình đúng.
  */
 import {
-  chuanHoa, tach, giongNhau, chamTu, chamCau, chamTot, loiKhen, datNoi, DAT,
+  chuanHoa, giongNhau, chamTu, chamCau, chamTot, loiKhen, datNoi, DAT,
 } from '../src/mon/tienganh/lib/chamnoi.js';
 
 let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
-const gan = (a, b, sai = 0) => Math.abs(a - b) <= sai;
 
 /* ══ 1 · TIỀN XỬ LÝ — chỗ quyết định độ chính xác ══ */
 console.log('\n── tiền xử lý ──');

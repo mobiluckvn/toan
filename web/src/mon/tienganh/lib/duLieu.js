@@ -54,7 +54,6 @@ const nuot = (e) => {
   LOI_GHI.tuChoi += 1;
   LOI_GHI.ganNhat = String(e?.code || e?.message || e);
   if (import.meta.env?.DEV) {
-    // eslint-disable-next-line no-console
     console.warn('[tienganh] máy chủ từ chối ghi:', LOI_GHI.ganNhat,
       '— đã deploy firestore.rules cho progressTA/hocBaTA chưa?');
   }

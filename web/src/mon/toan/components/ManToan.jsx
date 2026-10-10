@@ -31,6 +31,25 @@ export default function ManToan({
   tienDo: progress, datTienDo: setProgress, quyen: chuongTrinh, learnerId, lopCon,
   account, view, setView, veKeSach, onSoPhuHuynh, onMoXepHang,
 }) {
+  /* ── ⚠ VÌ SAO `setProgress` (và `setView`) KHÔNG NẰM TRONG PHỤ THUỘC ──
+     ESLint (`exhaustive-deps`) kêu đúng về mặt hình thức, nhưng thêm vào thì hại:
+
+     `datTienDo` tới từ `App.jsx` dưới dạng `datTienDoCua(mon.ma)` — gọi NGAY TRONG
+     JSX, nên nó là một hàm MỚI mỗi lần vẽ. Đưa nó vào phụ thuộc là `useCallback`
+     dựng lại mỗi lần vẽ, tức mất sạch tác dụng ghi nhớ trên một đường NÓNG (chạy
+     mỗi lượt bé trả lời).
+
+     Mà bỏ qua thì VÔ HẠI: `datTienDoCua` là `useCallback(…, [])`, và hàm nó trả về
+     chỉ đóng trên `setTienDo` (bộ đặt của `useState`, ổn định vĩnh viễn) cùng một
+     chuỗi `ma` không đổi. Nên bản đóng "cũ" làm đúng y việc mà bản mới làm — đây là
+     một bao đóng cũ KHÔNG ÔI, khác hẳn trường hợp thường.
+
+     `setView` thì là bộ đặt `useState` thật, vốn ổn định — thêm hay không đều như
+     nhau; để cùng chỗ cho một lời giải thích.
+
+     ⚠ Nếu một ngày `App.jsx` đổi `datTienDoCua` thành thứ có đóng trên state, lời
+     giải thích này hỏng — và lúc ấy phải thêm phụ thuộc vào, chứ không phải sửa
+     chú thích. */
   const finishMicro = useCallback((microId, grade, lesson, session = {}, veLai = null) => {
     /* Ghi kết quả VÀ giờ học trong cùng một lần cập nhật: hai lần `setProgress` liên
        tiếp thì lần sau đọc phải sổ cũ, và số phút của lượt vừa rồi bay mất. */
@@ -54,6 +73,7 @@ export default function ManToan({
     setView(baiDocCham(next)
       ? { page: 'baiDocCham', baiId: next }
       : { page: 'lesson', microId: next });
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- xem khối giải thích ở `useCallback` đầu tiên của tệp
   }, [learnerId]);
 
   /* ── GHI HỌC BẠ: vừa vào sổ tại máy, vừa đẩy lên máy chủ ──
@@ -65,12 +85,14 @@ export default function ManToan({
     setProgress(sau);
     const k = khoaChuong(ma, chuong);
     luuMucHocBa(learnerId, 'chuong', k, { giaTri: sau.chapters[k] }).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- xem khối giải thích ở `useCallback` đầu tiên của tệp
   }, [progress, learnerId]);
 
   const ghiChuDe = useCallback((maDang, lop, kq) => {
     const sau = ghiLuyenChuDe(progress, maDang, lop, kq);
     setProgress(sau);
     luuMucHocBa(learnerId, 'chuDe', maDang, { giaTri: sau.chuDe[maDang] }).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- xem khối giải thích ở `useCallback` đầu tiên của tệp
   }, [progress, learnerId]);
 
   /**
@@ -97,6 +119,7 @@ export default function ManToan({
       learnerId, sessionId: `dau_${kq.khoiId}`, microId: kq.khoiId,
       bktUnit: null, events,
     }).catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- xem khối giải thích ở `useCallback` đầu tiên của tệp
   }, [learnerId]);
 
   /* ── Phòng học — MỘT khối cho cả hai nhịp đọc ──

@@ -58,6 +58,11 @@ export default function CauHoi({ cau, onXong, onLuot = null }) {
   useEffect(() => {
     datDap(cau.the ? [] : ''); datKq(null); datLan(0);
     mocLuot.current = Date.now();
+    /* ⚠ CHỈ `cau.id`, CÓ CHỦ Ý. ESLint muốn thêm `cau.the` và nó đúng về hình thức,
+       nhưng `the` là mảng nằm trong chính `cau` ấy: cùng một `id` thì không bao giờ
+       đổi nội dung, chỉ đổi DANH TÍNH khi chỗ gọi dựng lại object. Thêm vào là mỗi
+       lần cha vẽ lại, đáp án bé đang gõ bị xoá về rỗng và bấm giờ lượt chạy lại. */
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- xem ghi chú trên
   }, [cau.id]);
 
   const nop = (v) => {

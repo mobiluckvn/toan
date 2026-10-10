@@ -19,10 +19,10 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   loiDanTomTat, docTomTat, soiBaiHoc, soiGoiTomTat,
-  TOM_TAT_TOI_DA_CHU, BAI_HOC_TOI_DA_CHU, KHEN_TOI_DA_CHU, BAI_HOC_MOI_BUOI, TU_CAM,
+  TOM_TAT_TOI_DA_CHU, BAI_HOC_TOI_DA_CHU, BAI_HOC_MOI_BUOI, TU_CAM,
 } from '../src/mon/tienganh/lib/baihoc.js';
 import { tomTatBuoi, LOI_TOM_TAT } from '../src/mon/tienganh/lib/goiPhongNoi.js';
-import { vonTu, moiTuDuocDung } from '../src/mon/tienganh/lib/phongnoi.js';
+import { vonTu } from '../src/mon/tienganh/lib/phongnoi.js';
 import { hoSoRong, themBaiHoc, donHoSo, dongHoSoAI } from '../src/mon/tienganh/lib/hosoai.js';
 import { TOI_DA_CHU_LOI_DAN, soiGoi } from '../functions/src/luyennoi.js';
 
@@ -157,7 +157,7 @@ test('gói tóm tắt đi qua được chốt cửa của MÁY CHỦ', () => {
 
 /* ═══════════ 4 · MỘT LƯỢT, CUỐI BUỔI, KHÔNG CHỜ ═══════════ */
 
-const luot = (n, diem) => Array.from({ length: n }, (_, i) => ([
+const luot = (n, diem) => Array.from({ length: n }, () => ([
   { vai: 'may', chu: 'I like fish.', en: 'I like fish.', vi: 'x', buoc: 'mau' },
   { vai: 'be', chu: 'i like fish', diem, mau: 'I like fish.', thieu: [], thieuChucNang: [] },
 ])).flat();

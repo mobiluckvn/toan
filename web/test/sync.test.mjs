@@ -1,6 +1,6 @@
 /** Kiểm lớp dữ liệu học & hàng đợi ngoại tuyến — node test/sync.test.mjs */
 import {
-  buildAttempts, buildProgressDoc, attemptId, enqueue, readQueue, writeQueue,
+  buildAttempts, buildProgressDoc, attemptId, enqueue, readQueue,
   flushQueue, newSessionId, COLLECTIONS, reassignQueue, isCloudLearner,
 } from '../src/mon/toan/lib/sync.js';
 

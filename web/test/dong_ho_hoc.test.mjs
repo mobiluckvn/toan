@@ -18,7 +18,6 @@ import { cong, tomTat, dongHo, maNgay, laBuocLam, TRAN_MOT_LAN }
 
 let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
-const gan = (a, b, sai = 0) => Math.abs(a - b) <= sai;
 
 /* ── Cộng một quãng ── */
 t('cộng quãng thường', cong({}, 'practice', 3000).practice === 3000);

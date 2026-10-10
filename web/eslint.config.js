@@ -105,13 +105,28 @@ export default [
       'use-isnan': 'error',
       'valid-typeof': 'error',
       eqeqeq: ['error', 'always', { null: 'ignore' }],
+      /* ⚠ `new Function` dựng mã từ CHUỖI lúc chạy. Kho có ĐÚNG MỘT chỗ dùng
+         (`toan/lib/flow.js` — tính biểu thức của bài toán), và chỗ ấy đã tự khai
+         miễn kèm lý do. Bật luật để chỗ thứ hai không lặng lẽ xuất hiện: nội dung
+         là tệp tĩnh do người soạn, nhưng một hàm dựng mã từ chuỗi vẫn là cửa duy
+         nhất để một dòng dữ liệu thành một dòng lệnh.
+         ⚠ Ba luật anh em (`no-console`, `no-await-in-loop`, `react/no-array-index-key`)
+         thì KHÔNG bật: đo được 405 chỗ, và một bộ kiểm kêu 405 lần thì người ta tắt
+         nó đi. Mấy chỉ thị `eslint-disable` cho chúng nay là chỉ thị CHẾT — giữ lại
+         làm chú thích, xem các tệp liên quan. */
+      'no-new-func': 'error',
     },
   },
   {
     /* Cổng được phép gọi hàm chưa khai trước (chúng nhập động), và hay có biến chỉ
        dùng để khẳng định sự tồn tại. */
     files: ['test/**/*.mjs'],
-    rules: { 'no-unused-vars': 'warn' },
+    rules: {
+      'no-unused-vars': 'warn',
+      /* Cổng dựng module từ chuỗi để thử — đó là máy móc của phép thử, không phải
+         mã chạy tới tay bé. Ở `src/**` và `functions/**` thì luật vẫn chặt. */
+      'no-new-func': 'off',
+    },
   },
   js.configs.recommended.rules ? {} : {},
 ].filter((x) => Object.keys(x).length);

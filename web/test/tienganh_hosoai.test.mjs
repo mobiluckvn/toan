@@ -116,7 +116,7 @@ test('trần KÝ TỰ và trần SỐ PHẦN TỬ', () => {
     ...hoSoRong(),
     soThich: Array.from({ length: 20 }, (_, i) => `so-thich-rat-dai-so-${i}`),
     cauDungGanNhat: Array.from({ length: 20 }, (_, i) => `Mot cau rat dai so ${i}.`),
-    baiHoc: Array.from({ length: 20 }, (_, i) => ({ chu: 'y'.repeat(150), nut: null, hetHanBuoi: 99 })),
+    baiHoc: Array.from({ length: 20 }, () => ({ chu: 'y'.repeat(150), nut: null, hetHanBuoi: 99 })),
     buoiThu: 1,
   };
   const ra = donHoSo(hs, { buoiHienTai: 1 });

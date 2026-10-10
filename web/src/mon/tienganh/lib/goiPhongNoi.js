@@ -319,7 +319,6 @@ export async function hoiCoGiao({
     if (xet.ok) LOI_SUA_CO.thanh += 1;
   }
   if (lanSua && import.meta.env?.DEV) {
-    // eslint-disable-next-line no-console
     console.info('[tienganh] xin lại câu của cô', lanSua, 'lần —',
       xet.ok ? `đã qua (${xet.duong})` : `vẫn trượt (${xet.bac}), lui về câu máy dựng`);
   }
@@ -499,8 +498,7 @@ export async function luuBuoi(uid, { maBuoi, quyen, baiId, tenBai, lichSu }) {
     LOI_LUU.tuChoi += 1;
     LOI_LUU.ganNhat = String(e?.code || e?.message || e);
     if (import.meta.env?.DEV) {
-      // eslint-disable-next-line no-console
-      console.warn('[tienganh] không lưu được buổi luyện nói:', LOI_LUU.ganNhat,
+        console.warn('[tienganh] không lưu được buổi luyện nói:', LOI_LUU.ganNhat,
         '— đã deploy firestore.rules cho phongNoiTA chưa?');
     }
     return false;

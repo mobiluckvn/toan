@@ -15,7 +15,7 @@
  *     nút "lùi một bước" thì bé phải bấm ba lần mới ra. Đọc MÃ NGUỒN chứ không đọc
  *     dữ liệu: máy khẳng định được điều này, đừng để nó cho mắt người.
  */
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const G = new URL('../src/', import.meta.url).pathname;

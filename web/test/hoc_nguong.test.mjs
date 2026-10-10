@@ -5,7 +5,7 @@ import {
   hocBKT, kiemTraCheo, hocNuaDoi, quetLuoiTheta, phanVi, khoangWilson,
   hocNguongHanhVi, dungDeXuat, hocMoiPhamVi,
 } from '../functions/src/hocNguong.js';
-import { BO_MAC_DINH, MAC_DINH, KHOANG, layNguong } from '../functions/src/nguong.js';
+import { BO_MAC_DINH, KHOANG, layNguong } from '../functions/src/nguong.js';
 
 /**
  * CỔNG CHO HÀM HỌC NGƯỠNG — mục 3.8.3.

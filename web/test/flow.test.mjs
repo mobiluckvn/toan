@@ -6,8 +6,8 @@ import fs from 'fs';
 import {
   parseNum, nearEq, checkAnswer, inputCount, buildFlow, gradeMicro, hintState, PHASES, isSelfCheck,
   buildWorkedSteps, sampleParts, askIsMcq,
-  parseRange, isArithmeticRule, evalRule, canGenerate, makeVariant,
-  inputPlaceholder, choicesFromText, splitAside, parseCompare, buildTeachSteps,
+  parseRange, evalRule, canGenerate, makeVariant,
+  inputPlaceholder, choicesFromText, buildTeachSteps,
   answerFields, answerBrief, answerCore, isNumberList, gradableParts,
 } from '../src/mon/toan/lib/flow.js';
 

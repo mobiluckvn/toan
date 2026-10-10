@@ -24,7 +24,7 @@ import {
   loiGioiThieu, dongBuocKeHoach, oThanhViec, conThieu,
 } from '../src/mon/tienganh/lib/kehoach.js';
 import {
-  vonTu, viecTiepTheo, loiDan, tinhBuoi, moiTuDuocDung, KIEU_VIEC, DAT_LIEN_DE_XONG,
+  vonTu, viecTiepTheo, loiDan, tinhBuoi, moiTuDuocDung, DAT_LIEN_DE_XONG,
 } from '../src/mon/tienganh/lib/phongnoi.js';
 import { dungBang, datKeHoach } from '../src/mon/tienganh/lib/bangtrangthai.js';
 

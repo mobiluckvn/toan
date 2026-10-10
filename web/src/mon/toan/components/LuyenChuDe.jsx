@@ -53,6 +53,10 @@ export default function LuyenChuDe({ maDang, lop, progress: _progress, onXongLuo
 
   const d = bd && !bd.loi ? bd.dang?.[maDang] : null;
   const bac = d ? (d.thang || []).find((b) => b.lop === lop) : null;
+  /* Khoá của bậc, rút ra thành biến để ESLint kiểm được. `bac` do `.find()` trả nên
+     là object MỚI mỗi lần vẽ — khai thẳng nó là nạp lại bài mỗi lần vẽ, tức vòng lặp
+     tải. Danh sách mã bài mới là thứ quyết định phải nạp lại hay không. */
+  const khoaBac = (bac?.bai || []).join();
 
   /* Nạp bài của bậc rồi rút câu. `loadLesson` có sẵn bộ nhớ đệm nên lùi lên lùi
      xuống trong cùng một chủ đề không phải tải lại. */
@@ -68,7 +72,8 @@ export default function LuyenChuDe({ maDang, lop, progress: _progress, onXongLuo
         setCau(ds.slice(0, SO_CAU));
       });
     return () => { bo = true; };
-  }, [maDang, lop, bac?.bai?.join()]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- xem ghi chú ở `khoaBac`
+  }, [maDang, lop, khoaBac]);
 
   /* Ghi sổ ĐÚNG MỘT LẦN khi hết câu. Phải là hiệu ứng chứ không phải làm ngay trong
      lúc vẽ: gọi setState của màn cha giữa chừng một lượt vẽ thì React vẽ lại, và
@@ -78,7 +83,10 @@ export default function LuyenChuDe({ maDang, lop, progress: _progress, onXongLuo
     if (!hetCau || daGhi) return;
     setDaGhi(true);
     onXongLuot?.(maDang, lop, { dat: dung, tong: cau.length });
-  }, [hetCau, daGhi]);
+    /* Khai ĐỦ được vì `daGhi` đã chốt «đúng một lần»: effect có chạy lại thì cũng
+       thoát ngay ở dòng đầu. Khai đủ thì con số ghi sổ là con số của lượt vừa xong,
+       không phải con số lúc dựng màn. */
+  }, [hetCau, daGhi, cau, dung, lop, maDang, onXongLuot]);
 
   if (!bd) return <div className="p-6 text-mute">Đang mở bản đồ chủ đề…</div>;
   if (bd.loi || !d) return <div className="p-6 text-alert">Không nạp được chủ đề này.</div>;
