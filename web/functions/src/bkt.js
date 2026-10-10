@@ -1,4 +1,4 @@
-import { layNguong, BO_MAC_DINH } from './nguong.js';
+import { layNguong, BO_MAC_DINH, boNguong } from './nguong.js';
 /**
  * BKT — Bayesian Knowledge Tracing (thuần toán, không phụ thuộc Firebase).
  *
@@ -17,11 +17,29 @@ export const DEFAULT_PARAMS = {
   slip: layNguong(BO_MAC_DINH, 'NG03'),
   guess: layNguong(BO_MAC_DINH, 'NG04'),
 };
+
+/**
+ * THAM SỐ ĐANG HÀNH — đọc lúc GỌI, không lúc nạp module (việc R7 đợt 2).
+ *
+ * `DEFAULT_PARAMS` ở trên là bộ MẶC ĐỊNH, chụp lúc nạp; nó còn đó vì nhiều chỗ và
+ * nhiều cổng dùng làm mốc. Nhưng hàm nền sống rất lâu giữa hai lượt gọi, nên nếu
+ * phép chấm đọc hằng ấy thì chuyên gia sửa ngưỡng xong phải chờ hàm nền khởi động
+ * lại mới ăn — tức vẫn phải nhờ người viết mã, đúng thứ R7 muốn bỏ.
+ *
+ * Vì vậy mọi phép tính dưới đây gọi `thamSo()`, và `index.js` nạp bộ ngưỡng
+ * (`layBoNguong`) TRƯỚC khi gọi `applyAttempt`.
+ */
+const thamSo = () => ({
+  L0: layNguong(boNguong(), 'NG01'),
+  T: layNguong(boNguong(), 'NG02'),
+  slip: layNguong(boNguong(), 'NG03'),
+  guess: layNguong(boNguong(), 'NG04'),
+});
 export const MASTERY_THRESHOLD = layNguong(BO_MAC_DINH, 'NG07');
 
 /** Một lần trả lời → cập nhật xác suất thạo */
-export function bktUpdate(p, correct, params = DEFAULT_PARAMS) {
-  const { T, slip, guess } = { ...DEFAULT_PARAMS, ...params };
+export function bktUpdate(p, correct, params = null) {
+  const { T, slip, guess } = { ...thamSo(), ...(params || {}) };
   const prior = clamp(p);
   const post = correct
     ? (prior * (1 - slip)) / (prior * (1 - slip) + (1 - prior) * guess)
@@ -29,11 +47,11 @@ export function bktUpdate(p, correct, params = DEFAULT_PARAMS) {
   return clamp(post + (1 - post) * T);
 }
 
-const clamp = (x) => (Number.isFinite(x) ? Math.min(0.999, Math.max(0.001, x)) : DEFAULT_PARAMS.L0);
+const clamp = (x) => (Number.isFinite(x) ? Math.min(0.999, Math.max(0.001, x)) : thamSo().L0);
 
 /** Chạy cả chuỗi trả lời */
-export function bktSequence(answers, params = DEFAULT_PARAMS, start = null) {
-  let p = start ?? (params.L0 ?? DEFAULT_PARAMS.L0);
+export function bktSequence(answers, params = null, start = null) {
+  let p = start ?? (params?.L0 ?? thamSo().L0);
   for (const ok of answers) p = bktUpdate(p, ok, params);
   return p;
 }
@@ -49,8 +67,8 @@ export const BAY_PARAMS = layNguong(BO_MAC_DINH, 'NG05');
 
 export function paramsFor(item = {}) {
   return item.mustPass
-    ? { ...DEFAULT_PARAMS, ...BAY_PARAMS }
-    : DEFAULT_PARAMS;
+    ? { ...thamSo(), ...layNguong(boNguong(), 'NG05') }
+    : thamSo();
 }
 
 /**
@@ -75,10 +93,11 @@ export const NUA_DOI_NGAY = layNguong(BO_MAC_DINH, 'NG06');
  * gian. Nghe ngược đời nhưng đúng: lâu không kiểm thì hiểu biết hiện tại của hệ
  * thống về bé nhạt đi theo cả hai chiều, chứ không phải bé giỏi lên.
  */
-export function quenDan(p, soNgay, nuaDoi = NUA_DOI_NGAY) {
-  if (!Number.isFinite(p)) return DEFAULT_PARAMS.L0;
+export function quenDan(p, soNgay, nuaDoi = null) {
+  const nua = nuaDoi ?? layNguong(boNguong(), 'NG06');
+  if (!Number.isFinite(p)) return thamSo().L0;
   if (!Number.isFinite(soNgay) || soNgay <= 0) return p;
-  return clamp(0.5 + (p - 0.5) * 2 ** (-soNgay / nuaDoi));
+  return clamp(0.5 + (p - 0.5) * 2 ** (-soNgay / nua));
 }
 
 /**
@@ -114,7 +133,7 @@ export function applyAttempt(doc, attempt, now = Date.now) {
      như VỪA gặp — thà không phân rã còn hơn phân rã theo một mốc bịa ra. */
   const cach = Number.isFinite(doc?.lastSeen)
     ? Math.max(0, (bayGio - doc.lastSeen) / 86400000) : 0;
-  const cur = quenDan(doc?.p ?? DEFAULT_PARAMS.L0, cach);
+  const cur = quenDan(doc?.p ?? thamSo().L0, cach);
   const dung = !!attempt.correct;
   const p = bktUpdate(cur, dung, paramsFor(attempt));
   const n = (doc?.nAttempts ?? 0) + 1;

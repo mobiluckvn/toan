@@ -1,4 +1,4 @@
-import { layNguong, BO_MAC_DINH } from '../../../chung/lib/nguong.js';
+import { layNguong, boNguong } from '../../../chung/lib/nguong.js';
 /**
  * CHÍNH SÁCH THÍCH ỨNG — quyết định phiên học tiếp theo.
  * Thuần logic, không phụ thuộc React/Firebase (xem test/adaptive.test.mjs).
@@ -11,7 +11,7 @@ import { layNguong, BO_MAC_DINH } from '../../../chung/lib/nguong.js';
 import { allMicroIds, chapterOf } from './noiDung.js';
 import { isMicroUnlocked, isChapterExamUnlocked, ketQuaChuong } from './progress.js';
 
-export const MASTERY_THRESHOLD = layNguong(BO_MAC_DINH, 'NG07');
+export const MASTERY_THRESHOLD = layNguong(boNguong(), 'NG07');
 export const MAX_REVIEW_PER_SESSION = 3;
 
 /** Mức thạo của micro: đọc theo bktUnit trong chỉ mục */

@@ -1,4 +1,4 @@
-import { layNguong, BO_MAC_DINH } from '../../../chung/lib/nguong.js';
+import { layNguong, boNguong } from '../../../chung/lib/nguong.js';
 /**
  * HÀM CHÍNH SÁCH π — từ trạng thái của bé sang việc nên làm tiếp (mục 2.5.1).
  *
@@ -40,7 +40,7 @@ export const VIEC = {
  * đạo ở đó thì bé bị ngắt mạch liên tục. Ba lần liền thì bé không tự thoát ra
  * được bằng cách thử lại nữa.
  */
-export const SAI_LIEN_TIEP_MAC = layNguong(BO_MAC_DINH, 'NG09');
+export const SAI_LIEN_TIEP_MAC = layNguong(boNguong(), 'NG09');
 
 /**
  * Việc nên làm tiếp cho MỘT nút.
@@ -125,7 +125,7 @@ export function viecTiepCuaBai(mucThao, maNutDs = []) {
  * chưa vững (mất cả một mắt xích, và mắt xích ấy đỡ cho những bài sau).
  */
 /** NG15 · bài phải có ít nhất ngần này nút thì "vượt ải" mới có nghĩa. */
-export const NUT_TOI_THIEU_VUOT_AI = layNguong(BO_MAC_DINH, 'NG15');
+export const NUT_TOI_THIEU_VUOT_AI = layNguong(boNguong(), 'NG15');
 
 export function duocVuotAi(mucThao, maNutDs, daDat,
                            { toiThieuNut = NUT_TOI_THIEU_VUOT_AI } = {}) {
@@ -151,7 +151,7 @@ export function duocVuotAi(mucThao, maNutDs, daDat,
  * Nhãn thì dịch được thành câu người, và câu người thì đọc to lên cũng không sao.
  */
 /** NG13 · nghỉ quá ngần này ngày thì coi là có nguy cơ quên. */
-export const NGAY_COI_LA_QUEN = layNguong(BO_MAC_DINH, 'NG13');
+export const NGAY_COI_LA_QUEN = layNguong(boNguong(), 'NG13');
 
 export function vectorS({ mucThao, maNutDs = [], dinhDang = null, thich = null,
                           bayGio = Date.now(),

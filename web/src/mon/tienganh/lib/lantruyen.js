@@ -1,4 +1,4 @@
-import { layNguong, BO_MAC_DINH } from '../../../chung/lib/nguong.js';
+import { layNguong, boNguong } from '../../../chung/lib/nguong.js';
 /**
  * LAN TRUYỀN TRÊN ĐỒ THỊ — tìm chỗ hổng THẬT, không phải chỗ lộ ra (mục 2.3.3).
  *
@@ -24,7 +24,7 @@ import { duyetNguoc, duyetXuoi, nhanNut } from './doThi.js';
 import { NGUONG_THAO, mucThaoCua } from './zpd.js';
 
 /** Mỗi bước lùi thì độ ngờ còn lại bấy nhiêu. */
-export const ALPHA = layNguong(BO_MAC_DINH, 'NG12');
+export const ALPHA = layNguong(boNguong(), 'NG12');
 
 /** Mỗi bước tiến thì cộng thêm bấy nhiêu, nhân với mức thạo của nút nguồn. */
 export const BETA = 0.08;
@@ -51,9 +51,9 @@ export const NGUONG_TRAN = NGUONG_THAO - 0.05;
 export const P_MAC_DINH = 0.1;
 
 /** NG10 · d — đi ngược xa nhất mấy bước khi tìm nút gốc rễ. */
-export const SAU_TOI_DA = layNguong(BO_MAC_DINH, 'NG10');
+export const SAU_TOI_DA = layNguong(boNguong(), 'NG10');
 /** NG11 · m — trả về nhiều nhất mấy nút gốc. */
-export const NUT_GOC_TOI_DA = layNguong(BO_MAC_DINH, 'NG11');
+export const NUT_GOC_TOI_DA = layNguong(boNguong(), 'NG11');
 
 export function nutGocRe(dt, mucThao, maNut,
                          { sauToiDa = SAU_TOI_DA, toiDa = NUT_GOC_TOI_DA } = {}) {

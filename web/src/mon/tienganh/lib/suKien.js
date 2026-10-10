@@ -1,3 +1,4 @@
+import { boNguong } from '../../../chung/lib/nguong.js';
 /**
  * SỰ KIỆN HỌC CỦA TIẾNG ANH — mỗi lượt trả lời một dòng, bất biến.
  *
@@ -106,7 +107,9 @@ export function themDaGui(ids, kho = globalThis.localStorage) {
  * có dòng đời cũ để phải phân biệt — và dùng chung số với Toán thì bên đọc chỉ
  * cần một luật.
  */
-export const PHIEN_BAN_BAN_GHI = 2;
+/* 3 từ 10-10-2026: bản ghi mang thêm `nguongVer` — phiên bản bộ ngưỡng đã dùng
+   (R7, mục 3.8.2). Hai môn phải khai CÙNG một số; cổng `tienganh_sukien` canh. */
+export const PHIEN_BAN_BAN_GHI = 3;
 
 export const laHocSinhThat = (id) => !!id && id !== 'local';
 
@@ -182,6 +185,12 @@ export function dungSuKien({
     mauPrompt: e.mauPrompt || null,
     phienBanMau: e.phienBanMau ?? null,
     vanTayPrompt: e.vanTayPrompt || null,
+    /* ── PHIÊN BẢN BỘ NGƯỠNG (R7, mục 3.8.2) ──
+       Cùng một lẽ với `phienBanMau` ngay trên: không lưu nội dung, chỉ lưu ĐỦ để
+       tính lại. Một ngưỡng đổi mà bản ghi cũ không mang số phiên bản thì không còn
+       biết kết quả ấy được tính bằng θ nào — và hai bộ ngưỡng không so được với
+       nhau trên cùng một nhật ký. */
+    nguongVer: boNguong()?.phienBan ?? null,
     v: PHIEN_BAN_BAN_GHI,
     /* Mốc RIÊNG từng lượt (màn hình đóng ngay lúc bé bấm). Dùng chung một mốc cho
        cả loạt thì mọi phép đo thời gian ra 0 — lỗi bên Toán đã dính. */

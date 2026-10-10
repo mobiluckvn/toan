@@ -93,6 +93,38 @@ export function layNguong(bo, ma, nguCanh = {}) {
 /** Bộ ngưỡng chỉ gồm giá trị mặc định — dùng khi chưa tải được bộ của chuyên gia. */
 export const BO_MAC_DINH = { phienBan: PHIEN_BAN, macDinh: MAC_DINH, theoPhamVi: {} };
 
+/**
+ * BỘ ĐANG HÀNH — một ô nhớ, đặt MỘT LẦN lúc mở phiên rồi thôi.
+ *
+ * ── VÌ SAO LÀ BIẾN, TRONG KHI `layNguong` PHẢI THUẦN ──
+ * `layNguong` vẫn thuần: nó nhận bộ ngưỡng làm tham số. Ô nhớ này chỉ là chỗ CẤT bộ
+ * đã tải, tách hẳn khỏi phép tính. Nhờ vậy quét lưới (mục 3.8.3) vẫn chạy lại được
+ * cả nhật ký với một dãy giá trị mà không phải đụng vào ô này.
+ *
+ * ── VÌ SAO ĐẶT MỘT LẦN, KHÔNG ĐỔI GIỮA CHỪNG ──
+ * Mục 3.8.2: "Máy người học tải tệp này cùng với `do_thi.json` khi mở bài và dùng nó
+ * cho cả phiên", và 3.8.4: "Phiên bản mới chỉ có hiệu lực từ phiên tiếp theo; phiên
+ * đang chạy giữ nguyên bộ ngưỡng đã tải." Đổi ngưỡng giữa buổi thì nửa đầu buổi và
+ * nửa sau chấm theo hai luật, mà bản ghi chỉ mang được một số `nguongVer`.
+ *
+ * ⚠ Mọi hằng ngưỡng trong `mon/**` đọc ô này LÚC NẠP MODULE. Nên `main.jsx` phải
+ * `await napNguong()` TRƯỚC khi import `App.jsx` — nếu không, mấy hằng ấy chụp đúng
+ * bộ mặc định và tệp tải về chẳng tác dụng gì. Cổng `nguong_phien.test.mjs` canh.
+ */
+let _bo = BO_MAC_DINH;
+
+/** Bộ ngưỡng đang dùng cho phiên này. */
+export const boNguong = () => _bo;
+
+/** Đặt bộ cho cả phiên. Trả về chính bộ đã đặt, để chỗ gọi ghi `nguongVer`. */
+export function datBoNguong(bo) {
+  const sach = bo && typeof bo === 'object' && bo.macDinh ? bo : BO_MAC_DINH;
+  _bo = { phienBan: sach.phienBan ?? PHIEN_BAN,
+          macDinh: { ...MAC_DINH, ...(sach.macDinh || {}) },
+          theoPhamVi: sach.theoPhamVi || {} };
+  return _bo;
+}
+
 /* Mấy ngưỡng mang HAI con số thì soi theo trường nào. */
 const TRUONG_SO = { NG05: ['slip', 'guess'], NG17: ['ti'] };
 

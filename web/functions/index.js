@@ -12,6 +12,7 @@ import { initializeApp } from 'firebase-admin/app';
 import { getFirestore, FieldValue } from 'firebase-admin/firestore';
 import { getAuth } from 'firebase-admin/auth';
 import { applyAttempt } from './src/bkt.js';
+import { layBoNguong } from './src/napNguong.js';
 import { buildReviewCards } from './src/schedule.js';
 import { buildParentReport } from './src/report.js';
 import { buildTeacherBoard } from './src/teacherboard.js';
@@ -67,6 +68,13 @@ export const onAttempt = onDocumentCreated('attempts/{attemptId}', async (event)
      hai môn phát ra pha nào, để không ai thu hẹp lại vì tin một lời ghi sai. */
   if (!['practice', 'assess', 'check', 'worked'].includes(a.phase)) return;
 
+  /* ── NẠP BỘ NGƯỠNG TRƯỚC KHI CHẤM (R7 đợt 2) ──
+     `applyAttempt` đọc tham số BKT lúc GỌI, nên bộ phải có mặt trước. `layBoNguong`
+     nhớ tạm `HAN_NHO_MS` nên đây không phải một lượt đọc Firestore cho mỗi câu bé
+     làm. Firestore trục trặc thì nó lùi về bộ mặc định chứ không ném — một sự cố
+     đọc cấu hình không được phép thành một sự cố mất điểm của trẻ. */
+  const bo = await layBoNguong(db);
+
   const ref = db.doc(`mastery/${a.learnerId}/units/${encodeURIComponent(a.bktUnit)}`);
   await db.runTransaction(async (tx) => {
     const snap = await tx.get(ref);
@@ -75,6 +83,9 @@ export const onAttempt = onDocumentCreated('attempts/{attemptId}', async (event)
       ...next,
       unit: a.bktUnit,
       learnerId: a.learnerId,
+      /* Phiên bản bộ ngưỡng đã dùng để tính con số này — mục 3.8.2. Thiếu nó thì
+         một mức thạo cũ không còn biết được tính bằng θ nào. */
+      nguongVer: bo?.phienBan ?? null,
       /* Môn nào — suy từ chính bản ghi, không đoán từ hình dạng mã nút. Bản ghi
          Toán không có trường này, nên mặc định 'toan' giữ nguyên hành vi cũ. */
       mon: a.mon || 'toan',

@@ -1,4 +1,4 @@
-import { layNguong, BO_MAC_DINH } from '../../../chung/lib/nguong.js';
+import { layNguong, boNguong } from '../../../chung/lib/nguong.js';
 /**
  * DẪN DẮT — luật "đi lần lượt", để riêng khỏi giao diện.
  *
@@ -35,7 +35,7 @@ import { NHAN_TRANG_THAI_BAI } from '../../../chung/lib/nhanHocBa.js';
 export { NHAN_TRANG_THAI_BAI as NHAN_TRANG_THAI };
 
 /** Số lần THỬ THẬT tối thiểu trước khi được đi vòng qua. Xem đầu tệp. */
-export const THU_TOI_THIEU = layNguong(BO_MAC_DINH, 'NG14');
+export const THU_TOI_THIEU = layNguong(boNguong(), 'NG14');
 
 /** Đã thử đủ số lần để được đi tiếp dù chưa đạt chưa? */
 export const daThuDu = (m) => (m?.attempts || 0) >= THU_TOI_THIEU;

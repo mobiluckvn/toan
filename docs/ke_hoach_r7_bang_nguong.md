@@ -262,3 +262,100 @@ phải sạch · khoảng hợp lệ bắt được · θ_yếu ≤ θ − 0,20 
 
 Tải bộ ngưỡng từ Firestore · `nguongVer` trên bản ghi lượt · bốn bảng · vai trò
 chuyên gia · màn hình quản lý · hàm học. Tất cả ở đợt 2–4.
+
+
+---
+
+## 9 · ĐỢT 2 — ĐÃ LÀM XONG · 10-10-2026
+
+Ngưỡng nay đi từ **tệp/Firestore** vào mã, và mỗi bản ghi mang **phiên bản bộ ngưỡng
+đã dùng**. Chưa có bảng Firestore thật (đợt 3) — đọc ra rỗng thì lùi về mặc định,
+đúng như mong muốn, và khi bảng có thật thì tự dùng mà không phải sửa gì.
+
+### Hai đường nạp, và vì sao phần TẢI nằm ngoài tệp dùng chung
+
+`nguong.js` có hai bản chép giống hệt nhau từng ký tự. Nhưng hai phía TẢI theo hai
+cách khác hẳn — máy con `fetch` tệp tĩnh, máy chủ đọc Firestore — nên nhét cả hai vào
+tệp dùng chung là phá luôn phép so của cổng. Phần tải vì thế nằm riêng:
+
+```
+tools/xuat_nguong.py            data/nguong.json → web/public/content/nguong.json
+src/chung/lib/napNguong.js      máy con: fetch, nhớ lại, hỏng thì lùi về mặc định
+functions/src/napNguong.js      máy chủ: đọc bảng `nguong`, NHỚ TẠM 5 phút
+```
+
+`xuat_nguong.py` **fail-closed**: giá trị ngoài `[canDuoi, canTren]` hay vi phạm ràng
+buộc chéo thì DỪNG, không xuất. Để lọt một giá trị xấu ra tệp chạy thì cả hàng rào
+khoảng hợp lệ thành trang trí.
+
+### Bộ đang hành, và cái bẫy thứ tự nạp module
+
+`nguong.js` thêm một ô nhớ `boNguong()` / `datBoNguong()`, đặt **một lần** lúc mở
+phiên — đúng mục 3.8.2 ("dùng nó cho cả phiên") và 3.8.4 ("phiên bản mới chỉ có hiệu
+lực từ phiên tiếp theo"). `layNguong` vẫn **thuần**: ô nhớ chỉ là chỗ cất, tách hẳn
+khỏi phép tính, nên quét lưới của mục 3.8.3 vẫn chạy lại được.
+
+> ⚠ **CÁI BẪY LỚN NHẤT CỦA ĐỢT NÀY.** Mọi hằng ngưỡng trong `mon/**` gọi
+> `layNguong(boNguong(), …)` **lúc nạp module**. Mà `import` tĩnh chạy trước mọi dòng
+> lệnh — nên `import App from './App.jsx'` kiểu thường sẽ nạp cả cây module TRƯỚC khi
+> `napNguong()` kịp đặt bộ. Mấy hằng ấy chụp đúng bộ mặc định, tệp tải về chẳng tác
+> dụng gì, **màn hình vẫn chạy ngon và không lỗi nào**. Nên `main.jsx` phải:
+>
+> ```js
+> await napNguong();
+> const { default: App } = await import('./App.jsx');   // ĐỘNG, không tĩnh
+> ```
+>
+> Cổng `nguong_phien` canh đúng ba điều này: có `await napNguong()`, có `await
+> import('./App.jsx')`, và KHÔNG còn `import App from`.
+
+### Máy chủ đọc lúc GỌI, không đọc bản chụp
+
+Hàm nền sống rất lâu giữa hai lượt. Nếu phép chấm đọc hằng chụp-lúc-nạp thì chuyên
+gia sửa ngưỡng xong phải chờ hàm nền khởi động lại mới ăn — **vẫn phải nhờ người viết
+mã**, đúng thứ R7 muốn bỏ. Nên `bkt.js` có `thamSo()` đọc bộ đang hành mỗi lần gọi;
+`DEFAULT_PARAMS` giữ lại làm mốc cho cổng.
+
+`layBoNguong(db)` **nhớ tạm 5 phút**: đọc Firestore mỗi lượt là thêm một lượt đọc cho
+mỗi câu trẻ làm, đổi lấy một thứ gần như không bao giờ đổi. Hỏng thì **lùi về mặc
+định và ĐẾM** (`LOI_DOC.lui`), không ném — một sự cố đọc cấu hình không được phép
+thành một sự cố mất điểm của trẻ.
+
+### `nguongVer` — và nó kéo theo môn Toán
+
+Bản ghi lượt của **cả hai môn** nay mang `nguongVer`, và tài liệu `mastery` cũng vậy.
+Cùng một lẽ với `phienBanMau` đã có: không lưu nội dung, chỉ lưu đủ để **tính lại**.
+
+Kéo theo hai việc: `PHIEN_BAN_BAN_GHI` lên **3 ở cả hai môn** (cổng
+`tienganh_sukien` đòi hai môn khai cùng một số), và `mon/toan/lib/sync.js` phải import
+`chung/lib/nguong.js`. Hợp lẽ — từ quyết định ②, Toán dùng chung bộ ngưỡng, nên bản
+ghi của Toán cũng cần biết nó được tính bằng θ nào.
+
+⚠ **Luật Firestore KHÔNG phải sửa**: `attempts` dùng `keys().hasAll([...])` (trường
+bắt buộc) chứ không `hasOnly`, nên thêm trường là hợp lệ sẵn. Đã soi tận nơi.
+
+### Cổng `nguong_phien.test.mjs` — 11 phép kiểm
+
+Thứ tự nạp ở `main.jsx` · không còn chỗ nào đọc `BO_MAC_DINH` · BKT đổi kết quả ngay
+khi đổi bộ · quên dần đi theo NG06 · đọc Firestore cả giá trị toàn hệ lẫn theo phạm vi
+· hỏng thì lùi và ĐẾM · bảng rỗng cũng lùi · **nhớ tạm thật sự không đọc lại trong
+hạn** · `nguongVer` ở cả hai môn · hàm nền nạp bộ TRƯỚC khi chấm · tệp chạy khớp bản gốc.
+
+### Chỗ tự vấp — và cổng CŨ bắt được, không phải cổng mới
+
+`napNguong` ban đầu gọi `fetch(`${CONTENT}/nguong.json`)` **không đóng dấu phiên
+bản**. Cổng `cache_noi_dung` đỏ ngay: *"quên `dongDau`: src/chung/lib/napNguong.js:36"*.
+
+Nội dung được phục vụ `public, max-age=604800, immutable` — không có dấu phiên bản
+thì trình duyệt giữ bản cũ **một tuần**. Nghĩa là chuyên gia sửa ngưỡng xong, bé vẫn
+học bằng bộ cũ bảy ngày, **và không gì báo**. Đúng thứ R7 định bỏ, lại tái sinh ở
+tầng cache.
+
+Đáng ghi vì hai lẽ: cổng mới `nguong_phien` của chính tôi KHÔNG bắt được chỗ này —
+nó canh thứ tự nạp và đường đọc, không canh cache; và cổng cũ thì bắt ngay. Thêm một
+đường nạp nội dung là phải nhớ `dongDau`, như 25 đường kia.
+
+### Đợt 2 KHÔNG làm
+
+Bốn bảng Firestore · vai trò chuyên gia · màn hình quản lý · hàm học ngưỡng · phạm vi
+hẹp (mới có `toanHe`). Đợt 3–4.

@@ -1,3 +1,4 @@
+import { boNguong } from '../../../chung/lib/nguong.js';
 /**
  * LỚP DỮ LIỆU HỌC — dựng bản ghi attempts và hàng đợi đồng bộ.
  * Tách khỏi Firebase SDK để chạy test được bằng node (test/sync.test.mjs).
@@ -68,7 +69,7 @@ export const attemptId = (learnerId, sessionId, microId, itemId, seq) =>
  * Thống kê theo thời gian chỉ được dùng dòng v ≥ 2. Thà nói "chưa có số liệu" còn
  * hơn hiện một con số sai cho bố mẹ tin theo.
  */
-export const PHIEN_BAN_BAN_GHI = 2;
+export const PHIEN_BAN_BAN_GHI = 3;
 
 /** Đáp án con gõ có thể là mảng nhiều ô — gọn lại thành một chuỗi đọc được, cắt ngắn */
 export const CHU_TOI_DA = 120;
@@ -121,6 +122,11 @@ export function buildAttempts({
     expected: e.expected === undefined ? null : goiDapAn(e.expected),
     mode: e.mode || null,                 // so · bieuthuc · dungsai · chondapan · tuluan
     revealed: !!e.revealed,               // con chịu thua, đã xem đáp án
+    /* ── PHIÊN BẢN BỘ NGƯỠNG (R7, mục 3.8.2) ──
+       Từ 10-10-2026 hai môn dùng CHUNG một bộ ngưỡng (θ ở `NG07`), nên bản ghi của
+       Toán cũng phải mang số phiên bản — thiếu nó thì một mức thạo cũ không còn
+       biết được tính bằng θ nào, và hai bộ ngưỡng không so được trên cùng nhật ký. */
+    nguongVer: boNguong()?.phienBan ?? null,
     /**
      * Mốc RIÊNG của từng lượt trả lời (`khiNao` do màn hình đóng ngay lúc con bấm).
      *
