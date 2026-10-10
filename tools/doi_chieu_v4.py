@@ -428,8 +428,8 @@ trang(
          "Mọi nhận định về hiệu quả dạy học vẫn là giả thuyết — đúng như Bảng 3.25 tự khai.", "CHƯA"],
         "▌ CHƯA LÀM VÌ CHƯA CÓ ĐƯỜNG DỮ LIỆU",
         ["C-04", "Nấc phạm vi `bac` và `loaiNut`", "3.8.1",
-         "Bản ghi lượt không mang hai trường ấy. Thêm thì làm y như vừa làm với khoiLop và mon — nhưng chưa có "
-         "nhu cầu thật: chưa ai cần đặt ngưỡng riêng theo bậc.",
+         "Bản ghi lượt không mang hai trường ấy. Nhưng DỮ LIỆU ĐÃ SẴN: 3.756/4.226 câu trong nội dung đã khai "
+         "`bac` (1→740 · 2→1.480 · 3→626 · 4→910). Thêm vào bản ghi thì làm y như vừa làm với khoiLop và mon.",
          "Năm trong bảy nấc đã dùng được. Hai nấc còn lại chưa có đường vào.", "CHƯA"],
         ["C-05", "Gom chỉ số hành vi theo cặp (dạng câu, bậc)", "3.22 · Bảng 3.25",
          "Cùng lý do C-04: nhật ký không mang `bac`. Thống kê nay đã gom theo dạng câu và gắn cờ `thieuBac` "
@@ -448,10 +448,14 @@ trang(
          "Chỉ `viecTiepCuaNut` được nối (10-10). Hai hàm kia vẫn chỉ có cổng và tools gọi. "
          "⚠ Đây là KT-03 của bản đối chiếu 26-08 — vẫn còn mở sau hơn một tháng.",
          "Bé không bao giờ được 'vượt ải' bỏ qua một bài đã vững.", "MỘT PHẦN"],
-        ["C-09", "Đường MÔ HÌNH của bài phụ đạo", "3.5.3 · Bảng 3.25",
-         "Có callable `sinhCauPhuDao`, có hàng đợi `choDuyetTA`, có công cụ duyệt `tools/nhap_cau_duyet.py`. "
-         "Chạy thật 10-10: hàng đợi RỖNG. Câu phụ đạo do AI viết CHƯA BAO GIỜ tới tay một bé nào.",
-         "Phụ đạo vẫn chạy bằng kho câu sinh sẵn. KB4 bị chặn, đúng như luận văn khai.", "MỘT PHẦN"],
+        ["C-09", "Đường MÔ HÌNH của bài phụ đạo CHƯA BAO GIỜ CHẠY", "3.5.3 · Bảng 3.25",
+         "⚠ SỬA LẠI SAU KHI ĐỌC MÃ. Luận văn ghi KB4 «đang bị chặn», và bản đầu của bảng này chép theo. "
+         "Đọc `phudao.js:154` thì KHÔNG phải: đường mô hình đã nối đủ (PhuDao.jsx truyền `goiLLM`, có hai "
+         "tầng hậu kiểm, câu sinh ra đi vào `choDuyetTA`). Nó chỉ chạy khi kho TĨNH không đủ `soCau` câu — "
+         "`if (tinhCaVong.length >= soCau || !goiLLM)`. Kho tĩnh xưa nay luôn đủ, nên nhánh ấy chưa tới lượt.",
+         "Hàng đợi duyệt rỗng (đo 10-10). Nhưng không có gì HỎNG: đúng 32 nút dưới 4 câu là chỗ nhánh ấy sẽ "
+         "chạy, và chưa bé nào mắc đúng vào đó. Muốn chạy KB4 thì cần một CỜ CHIA NHÓM cố ý, y như KB5 — "
+         "không phải 'mở đường'.", "MỘT PHẦN"],
         ["C-10", "Ma trận trạng thái đồ thị", "Bảng 3.16",
          "Chỉ hiện ở Góc bố mẹ màn Tiếng Anh, chưa vào vòng thích ứng.",
          "Người lớn xem được; hệ thống không dùng để quyết định.", "MỘT PHẦN"],
@@ -621,9 +625,9 @@ trang(
          "CHƯA CHẠY THÀNH ĐỢT. Bộ đo có (do_an_toan_noi_dung.mjs).",
          "Chạy 30 bài × 20 lượt × 3 vị trí và ghi lại kết quả.", "CHƯA"],
         ["KB4", "So sánh các mẫu lời nhắc bằng ΔC", "đang bị chặn",
-         "VẪN BỊ CHẶN, và nay biết chính xác vì sao: hàng đợi duyệt câu phụ đạo RỖNG — câu do AI viết chưa bao "
-         "giờ tới tay bé (C-09). Vân tay prompt thì đã ghi đủ ở cả 11 lượt AI chấm.",
-         "Mở đường mô hình của phụ đạo.", "CHƯA"],
+         "KHÔNG BỊ CHẶN NHƯ LUẬN VĂN GHI. Đường mô hình đã nối đủ; nó chỉ chạy khi kho tĩnh không đủ câu, mà "
+         "kho tĩnh xưa nay luôn đủ (xem C-09). Vân tay prompt đã ghi đủ ở cả 11 lượt AI chấm.",
+         "Một CỜ CHIA NHÓM cố ý đẩy một phần phiên sang đường mô hình — cùng thứ KB5 cần.", "CHƯA"],
         ["KB5", "Hiệu quả của việc sắp xếp theo vùng phát triển gần", "cần cờ chia nhóm",
          "CHƯA CHẠY. Thuật toán xếp ZPD đã nối vào màn thật.",
          "Cờ chia nhóm ngẫu nhiên trên hồ sơ người học.", "CHƯA"],
@@ -646,10 +650,10 @@ trang(
          "Đây là KT-03 của bản đối chiếu 26-08 — mở suốt hơn một tháng. Có mã, có cổng, chỉ thiếu chỗ gọi. "
          "Ảnh hưởng trực tiếp: bé đã vững cả bài vẫn phải làm lại.",
          "không", "nhỏ"],
-        ["2", "Mở đường MÔ HÌNH của bài phụ đạo (C-09)",
-         "Mở khoá KB4, và là mảnh cuối của mục 3.5.3. Đã có callable, hàng đợi, công cụ duyệt — thiếu bước "
-         "hậu kiểm riêng cho CÂU HỎI, đúng như Bảng 3.25 chỉ ra.",
-         "bước hậu kiểm cho câu hỏi", "vừa"],
+        ["2", "Cờ chia nhóm, dùng chung cho KB4 và KB5 (C-09)",
+         "Không phải 'mở đường' — đường mô hình của phụ đạo đã nối đủ và có hai tầng hậu kiểm; nó chỉ chưa "
+         "tới lượt chạy vì kho tĩnh luôn đủ câu. Một cờ chia nhóm trên hồ sơ người học mở khoá CẢ HAI kịch bản.",
+         "không", "nhỏ"],
         ["3", "Cập nhật ba chỗ số liệu trong luận văn (C-11 · C-12 · C-14)",
          "Rẻ, và nâng độ tin cậy: hiện luận văn đang tự đánh giá THẤP HƠN thực tế ở hai chỗ.",
          "Thầy chốt C-13", "nhỏ"],
