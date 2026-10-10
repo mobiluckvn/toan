@@ -47,3 +47,8 @@ sao_luu_don_ban_ghi*.json
 # chưa qua người duyệt. Không đưa vào kho: nó là thứ sinh lại được, và một bản
 # nháp nằm trong git là một bản nháp sớm muộn có người tưởng là nội dung thật.
 data/tienganh/xuong/
+
+# Hàng đợi duyệt câu kéo về từ `choDuyetTA` (tools/nhap_cau_duyet.py --lay).
+# Trong đó có `learnerId` của bé có thật và câu mô hình soạn CHƯA ai duyệt — hai thứ
+# đều không nên nằm trong git. Câu đã duyệt thì ở `data/tienganh/cau_duyet.json`.
+data/tienganh/cho_duyet/

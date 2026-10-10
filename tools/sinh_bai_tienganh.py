@@ -1353,6 +1353,33 @@ def _tach_mau(m: dict) -> list[dict]:
 # với mọi quyển, và nói ra thứ bé sắp học thật.
 
 
+def _cau_da_duyet(ma_bai: str) -> list[dict]:
+    """Câu phụ đạo do mô hình soạn mà BÁC ĐÃ DUYỆT TỪNG CÂU — đắp vào `warmup`.
+
+    Vào kho bằng `tools/nhap_cau_duyet.py --nhap --ghi`; ra ở đây. Trước 10-10-2026
+    hàng đợi `choDuyetTA` chỉ đầy lên mà không có đường ra, nên không câu nào mô hình
+    soạn tới được bé — đây là nửa còn lại của đường ấy.
+
+    ── BA ĐIỀU ĐÁNG NÓI ──
+
+    · ĐẮP VÀO `warmup`, vì `cauTinhCuaNut` quét `warmup → standard → challenge` và
+      phụ đạo lấy câu theo đúng thứ tự ấy. Để ở pool khác thì câu có đấy mà phần phụ
+      đạo — chỗ sinh ra nó — lại gần như không bao giờ với tới.
+
+    · GIỮ `nguon: "ai"`. App soi lại bằng `soiCauAI` lúc chạy (`PhuDao.jsx`), nên
+      nhãn ấy là một tầng canh nữa, không phải chú thích. Bỏ nhãn đi là tự tắt tầng
+      canh cuối cùng.
+
+    · TRÙNG `id` THÌ BỎ, không đè. Cùng lẽ với `dap_xuong`: đừng thay câu của sách
+      bằng câu mô hình soạn.
+    """
+    tep = Path(__file__).resolve().parent.parent / "data/tienganh/cau_duyet.json"
+    if not tep.exists():
+        return []
+    kho = json.loads(tep.read_text("utf8"))
+    return [c for c in (kho.get("cau") or []) if c.get("bai") == ma_bai]
+
+
 def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
               them: dict, sua_slot: dict, chuong: dict, vai_ten: dict) -> dict:
     ph = u.get("phonics") or {}
@@ -1362,6 +1389,13 @@ def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
     chu = (ph.get("chu") or "?")
     am = ph.get("am") or ""
     ma_bai = f"{TIEN_TO[lop]}B{u['so']:02d}"
+    # Câu bác đã duyệt từ hàng đợi `choDuyetTA` — xem `_cau_da_duyet`.
+    da_co_id = {c.get("id") for c in warmup + standard + challenge}
+    for c in _cau_da_duyet(ma_bai):
+        if c.get("id") in da_co_id:
+            continue
+        da_co_id.add(c.get("id"))
+        warmup.append({k: v for k, v in c.items() if k != "bai"})
     ch_so = next((int(k) for k, v in chuong.items() if u["so"] in (v.get("unit") or [])),
                  (u["so"] - 1) // 4 + 1)
 

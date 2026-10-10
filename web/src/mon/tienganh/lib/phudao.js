@@ -231,6 +231,22 @@ const coCau = (vong, c) => vong.some((v) => v.cau.some((x) => x.id === c.id));
  * mắc" hay chỉ là một chữ bừa trong vốn. Chuyện ấy cần người đọc — và đó đúng là
  * việc của hàng đợi `choDuyetTA`.
  */
+/**
+ * ĐÁP ÁN CỦA MỘT CÂU — đọc được cả hai hình dạng, và đó không phải sự tuỳ tiện.
+ *
+ * Câu của kho tĩnh để đáp án ở `answerKey.choice`; mô hình thì trả về một chuỗi
+ * `answer`. Phép hậu kiểm chạy TRƯỚC lúc `dungCau` chuẩn hoá (nó soi cả gói thô
+ * mô hình vừa trả), nên nó phải đọc được cả hai — còn `cham.js` thì CHỈ hiểu
+ * `answerKey.choice`, và đó là lý do `dungCau` phải dựng đúng hình dạng ấy.
+ *
+ * ⚠ Bản trước đọc `String(cau.answerKey)` nên khi `answerKey` thành object thì ra
+ * `"[object Object]"` và mọi câu đều bị bác "đáp án không nằm trong các phương án".
+ */
+export const dapCuaCau = (c) => String(
+  (c?.answerKey && typeof c.answerKey === 'object' ? c.answerKey.choice : c?.answerKey)
+  ?? c?.answer ?? '',
+).trim();
+
 export const SO_CHON_TOI_THIEU = 2;
 
 export function soiCauAI(cau) {
@@ -247,7 +263,7 @@ export function soiCauAI(cau) {
   if (new Set(chon.map(gon)).size !== chon.length) {
     return { ok: false, vi: 'có hai phương án trùng nhau' };
   }
-  const dap = String(cau.answerKey ?? cau.answer ?? '').trim();
+  const dap = dapCuaCau(cau);
   if (!dap) return { ok: false, vi: 'không có đáp án' };
   if (!chon.map(gon).includes(gon(dap))) {
     return { ok: false, vi: 'đáp án không nằm trong các phương án' };
@@ -289,7 +305,7 @@ export function soiBoCauAI(ds = []) {
   for (const c of ds) {
     /* Dấu vết của một câu = ĐÁP ÁN + TẬP PHƯƠNG ÁN. Hai câu cùng dấu vết là cùng
        một câu hỏi, dù lời dẫn tiếng Việt viết khác đi. */
-    const dap = gon(c?.answerKey ?? c?.answer);
+    const dap = gon(dapCuaCau(c));
     const chon = (c?.choices || []).map(gon).sort().join('|');
     const t = gon(c?.text);
     /* ⚠ KHÔNG CÓ DẤU VẾT THÌ ĐỪNG DỌN. Một câu không có đáp án lẫn phương án lẫn

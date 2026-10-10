@@ -385,3 +385,51 @@ test('dungPhuDao lọc cả BỘ trước khi lọc từng câu', async () => {
   assert.equal(r.cau.filter((c) => c.nguon === 'ai').length, 1,
     'bốn câu y hệt nhau cùng vào bài — bé làm bốn lần một việc');
 });
+
+/* ═══════ CÂU DO MÔ HÌNH SOẠN PHẢI CHẤM ĐƯỢC — vá 10-10-2026 ═══════
+
+   Bắt được khi đi thử bản thật: `dungCau` dựng `format: 'chondapan'` và `answerKey`
+   là một CHUỖI. `cham.js` không biết hai thứ ấy — nó tìm `key.the` · `key.choice` ·
+   `key.value` · `key.parts`, không khớp cái nào thì rơi xuống nhánh cuối
+   `{ ok: true, mode: 'selfcheck' }`. Tức BÉ BẤM GÌ CŨNG ĐÚNG: chọn "xyz" cho một
+   câu bốn phương án vẫn được chấm đúng, và cả phần phụ đạo do mô hình soạn không
+   chấm được một câu nào.
+
+   Cổng này canh HAI ĐẦU, vì vá một đầu là hỏng đầu kia:
+     · `dungCau` phải dựng đúng hình dạng `cham.js` hiểu;
+     · `dapCuaCau` phải đọc được CẢ hình dạng ấy LẪN gói thô mô hình trả về. */
+import { chamTiengAnh } from '../src/mon/tienganh/lib/cham.js';
+import { dapCuaCau } from '../src/mon/tienganh/lib/phudao.js';
+
+const CAU_AI = {
+  id: 'pd_ai_v_g3_u1_how_1', maNut: 'v_g3_u1_how', format: 'chon', nguon: 'ai',
+  text: 'Nói lời chào', choices: ['hello', 'hi', 'bye', 'goodbye'],
+  answerKey: { choice: 'hello' }, hints: [],
+};
+
+test('câu mô hình soạn: chọn ĐÚNG thì đúng, chọn SAI thì sai', () => {
+  assert.equal(chamTiengAnh(CAU_AI, 'hello').ok, true);
+  for (const sai of ['hi', 'bye', 'goodbye', 'xyz', '']) {
+    assert.equal(chamTiengAnh(CAU_AI, sai).ok, false, `"${sai}" phải bị chấm SAI`);
+  }
+});
+
+test('câu mô hình soạn KHÔNG được rơi vào nhánh selfcheck', () => {
+  /* `selfcheck` nghĩa là "bộ chấm không hiểu câu này nên cho qua". Với câu trắc
+     nghiệm thì đó luôn là một lỗi, không bao giờ là ý muốn. */
+  assert.equal(chamTiengAnh(CAU_AI, 'bye').mode, 'auto');
+});
+
+test('dapCuaCau đọc được cả hai hình dạng đáp án', () => {
+  assert.equal(dapCuaCau(CAU_AI), 'hello');                       // sau chuẩn hoá
+  assert.equal(dapCuaCau({ answer: 'hello' }), 'hello');          // gói thô của mô hình
+  assert.equal(dapCuaCau({ answerKey: 'hello' }), 'hello');       // bản cũ, vẫn đọc được
+  assert.equal(dapCuaCau({}), '');
+});
+
+test('soiCauAI vẫn soi đúng sau khi đáp án đổi hình dạng', () => {
+  assert.equal(soiCauAI(CAU_AI).ok, true);
+  /* Và phải còn bác được: đáp án ngoài danh sách phương án. */
+  const lac = { ...CAU_AI, answerKey: { choice: 'mango' } };
+  assert.equal(soiCauAI(lac).ok, false);
+});

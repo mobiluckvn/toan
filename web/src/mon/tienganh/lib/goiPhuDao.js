@@ -28,10 +28,19 @@ function dungCau(x, i, maNut) {
   return {
     id: `pd_ai_${maNut}_${i + 1}`,
     maNut,
-    format: 'chondapan',
+    /* ── HÌNH DẠNG PHẢI GIỐNG HỆT CÂU CỦA KHO TĨNH ──
+       Bản đầu đặt `format: 'chondapan'` và `answerKey` là một CHUỖI. Bộ chấm
+       (`cham.js`) không biết hai thứ ấy: nó tìm `key.the` · `key.choice` ·
+       `key.value` · `key.parts`, không thấy gì khớp thì rơi xuống nhánh cuối
+       `{ ok: true, mode: 'selfcheck' }` — tức BÉ BẤM GÌ CŨNG ĐÚNG. Đo thật
+       10-10-2026: chọn `"xyz"` cho câu bốn phương án vẫn được chấm đúng.
+       Cả phần phụ đạo do mô hình soạn vì thế không chấm được một câu nào.
+       ⚠ Đổi hai trường này thì phải đổi cả chỗ ĐỌC đáp án ở `phudao.js`
+       (`dapCuaCau`) — cổng `tienganh_phudao` canh cả hai đầu. */
+    format: 'chon',
     text: String(x.text).trim(),
     choices: chon,
-    answerKey: dap,
+    answerKey: { choice: dap },
     hints: x.hint ? [String(x.hint).trim()] : [],
     /* ⚠ `nguon` đặt ở ĐÂY nữa, dù `dungPhuDao` cũng đặt: câu này có thể đi qua
        đường khác (hàng đợi duyệt) mà không qua `dungPhuDao`, và một câu do mô hình

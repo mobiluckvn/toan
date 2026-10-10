@@ -295,21 +295,100 @@ chưa có thì hàng đợi chỉ đầy lên, và **không câu nào do máy so
 `WebChannelConnection RPC 'Write' stream transport errored`. SDK tự thử lại, hàng đợi
 rút về 0, các lượt sau không lặp lại. Ghi ra đây để lần sau thấy thì biết là cái gì.
 
+## 6c · HÀNG ĐỢI DUYỆT CÂU NAY CÓ ĐƯỜNG RA — `tools/nhap_cau_duyet.py` · 10-10-2026
+
+### Lỗi thứ tư, tìm ra ngay lúc bắt tay vào làm công cụ
+
+Trước khi mở đường cho câu mô hình soạn vào kho tĩnh, phải hỏi: **câu ấy chấm có
+đúng không.** Hoá ra không:
+
+```
+bé chọn "hello"  → ok = true   · mode = selfcheck
+bé chọn "bye"    → ok = true   · mode = selfcheck
+bé chọn "xyz"    → ok = true   · mode = selfcheck
+```
+
+`dungCau` (`goiPhuDao.js`) dựng `format: 'chondapan'` và `answerKey` là một **chuỗi**.
+`cham.js` không biết hai thứ ấy — nó tìm `key.the` · `key.choice` · `key.value` ·
+`key.parts`, không khớp cái nào thì rơi xuống nhánh cuối
+`{ ok: true, mode: 'selfcheck' }`. **Bé bấm gì cũng đúng**, và cả phần phụ đạo do mô
+hình soạn không chấm được một câu nào.
+
+Vá: `dungCau` dựng đúng hình dạng kho tĩnh (`format: 'chon'`,
+`answerKey: { choice }`), và `phudao.js` có `dapCuaCau` đọc được **cả hai** hình dạng
+— vì phép hậu kiểm chạy TRƯỚC lúc chuẩn hoá, trên gói thô mô hình vừa trả. Cổng
+`tienganh_phudao_v9` nay canh cả hai đầu (4 phép kiểm mới).
+
+### Công cụ, và vì sao nó có hình dạng ấy
+
+```bash
+python3 tools/nhap_cau_duyet.py --tu-kiem            # 9 phép tự kiểm, không cần mạng
+export GOOGLE_APPLICATION_CREDENTIALS=~/khoa-dich-vu.json
+python3 tools/nhap_cau_duyet.py --lay                # kéo hàng đợi → phiếu đọc
+python3 tools/nhap_cau_duyet.py --nhap chon.json     # xem thử: ghép gì, bỏ gì
+python3 tools/nhap_cau_duyet.py --nhap chon.json --ghi
+python3 tools/sinh_bai_tienganh.py --lop 3           # câu duyệt vào pool
+```
+
+Ba chốt, cùng lẽ với `--xuong` của bộ sinh:
+
+| Chốt | Vì sao |
+|---|---|
+| Không sửa tệp bài đã dựng — câu vào `data/tienganh/cau_duyet.json`, bộ sinh đắp lúc dựng | bản dựng lại sau đè mất, bẫy `ban-dung-lai-de-mat-ban-sua-tay` |
+| `--lay` chỉ viết phiếu; muốn giữ câu nào thì **gõ tên nó** vào `chon.json` | hàng đợi mà tự chảy vào kho thì không còn là hàng đợi duyệt |
+| Hậu kiểm lại bằng **chính `soiCauAI` của app**, gọi qua `node` | chép luật sang Python là dựng bản thứ hai, rồi hai bản trôi xa nhau |
+
+`--nhap` **mặc định chỉ xem thử**; phải thêm `--ghi` mới ghi. `--tu-tep` đọc hàng đợi
+từ một tệp JSON thay vì Firestore, nên cả đường đi chạy thử được mà không cần mạng.
+
+**Đắp vào pool `warmup`**, vì `cauTinhCuaNut` quét `warmup → standard → challenge`;
+để pool khác thì câu có đấy mà phần phụ đạo — chỗ sinh ra nó — gần như không với tới.
+Giữ nguyên `nguon: "ai"` để app còn soi lại lúc chạy.
+
+### Đo thật, bằng hàng đợi giả bốn câu
+
+```
+nhận 2 câu · bỏ 3 câu
+  ✔ DL:TA3.B01 · v_g3_u1_how · Nói lời chào
+  ✔ DL:TA3.B02 · v_g3_u2_old · Bạn ấy mấy tuổi?
+  ✗ v_g9_u9_… — không suy ra được bài cho nút ấy
+  ✗ uid3__khong_co_thuc — không có trong hàng đợi đã kéo về
+  ✗ …how_2 — soiCauAI bác: gợi ý lộ thẳng đáp án
+```
+
+Dựng lại lớp 3 unit 1 → pool ★ đi từ **39 lên 40**, câu mới chấm đúng
+(`hello`→đúng, `hi`/`xyz`→sai), và `cauTinhCuaNut('v_g3_u1_how')` lấy được nó. Xong
+thì dọn sạch dữ liệu thử; kho nguồn để rỗng.
+
+> ⚠ `data/tienganh/cho_duyet/` đã vào `.gitignore`: hàng đợi kéo về có `learnerId`
+> của bé có thật và câu **chưa ai duyệt**.
+
+> ⚠ **CHƯA chạy `--lay` thật một lần nào** — lệnh dùng khoá dịch vụ bị quyền của tôi
+> chặn. Đường Firestore là đoạn DUY NHẤT của công cụ chưa đi qua. Bác chạy `--lay`
+> một lượt là biết ngay.
+
+> ⚠ **Một tác dụng phụ bắt được lúc thử, KHÔNG phải do việc này:**
+> `sinh_bai_tienganh.py --lop 3 --unit 1` **cắt cụt** `data/tienganh/lop3_loi.json`
+> từ 1028 mục xuống 19 — nó viết lại danh sách dòng cần sinh âm theo đúng unit vừa
+> dựng. Dựng một unit rồi `git status` mà không để ý là mất danh sách của cả quyển.
+
 ## 7 · VIỆC KẾ TIẾP, theo thứ tự
 
 1. ~~Thử V9~~ — **XONG, xem mục 6b.** Phụ đạo chạy trọn vòng, `sinhCauPhuDao` đã
    gọi được lần đầu. Còn lại: mở `choDuyetTA` ra đếm (cần khoá quản trị).
-2. **Chốt hướng cho 55 bước thiếu `dapMau`** (mục 5).
-3. **Merge nhánh về `main`** — `main` vẫn ở `555201f3`, không còn là thứ đang chạy.
-4. **Bật ESLint với `no-use-before-define`, hoặc một cổng dựng mỗi màn đúng một lần.**
+2. **Chạy `--lay` thật một lượt** để đi nốt đoạn Firestore của
+   `tools/nhap_cau_duyet.py` (mục 6c), rồi duyệt thử một đợt — đó cũng là lúc đo được
+   tiêu chí §7 *"bác duyệt dưới 10% bác bỏ"*.
+3. **Chốt hướng cho 55 bước thiếu `dapMau`** (mục 5).
+4. **Merge nhánh về `main`** — `main` vẫn ở `555201f3`, không còn là thứ đang chạy.
+5. **Bật ESLint với `no-use-before-define`, hoặc một cổng dựng mỗi màn đúng một lần.**
    Hai lỗi `ReferenceError` lên tới bản thật chỉ vì chỗ này trống.
-5. Mở tài liệu Firestore ra nhìn: `GOOGLE_APPLICATION_CREDENTIALS=~/khoa-dich-vu.json
+6. Mở tài liệu Firestore ra nhìn: `GOOGLE_APPLICATION_CREDENTIALS=~/khoa-dich-vu.json
    node tools/soi_ban_ghi_tienganh.mjs`. Buổi đi thử chỉ chứng minh được điều PHỦ ĐỊNH
    (không bị từ chối), chưa chứng minh **ghi đúng nội dung gì** — đúng cái bẫy tệp ấy
    tự cảnh báo ở đầu trang.
-6. Mấy chỗ nhỏ ở mục 6, theo thứ tự bác thấy cần.
-7. Nợ cũ từ bản 09-10 — ⚠ `tools/nhap_cau_duyet.py` nay **gấp hơn**: mục 6b cho thấy
-   hàng đợi đã thật sự có đường vào, mà vẫn chưa có đường ra ·
+7. Mấy chỗ nhỏ ở mục 6, theo thứ tự bác thấy cần.
+8. Nợ cũ từ bản 09-10 — ~~`tools/nhap_cau_duyet.py`~~ **XONG, mục 6c** ·
    xưởng chưa qua đợt dùng thật · `GROQ_MODEL_PHU` · `congHuong` chưa ai gọi · 19 nút
    gốc rễ không có bài nào dạy · bộ nối ΔC · Chương 1 và Chương 4 luận văn.
 
