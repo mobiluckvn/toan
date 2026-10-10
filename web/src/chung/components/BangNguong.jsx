@@ -5,6 +5,7 @@ import {
   nhipTinhThong, NHIP_CHO_PHEP, PHIEN_BAN,
 } from '../lib/nguong.js';
 import { phatHanhNguong } from '../lib/ghiNguong.js';
+import { TEN_NGUONG as TEN } from '../lib/tenNguong.js';
 import { docThongKeNguong, gomTheoPhamVi, docHieu } from '../lib/docThongKe.js';
 
 /**
@@ -41,23 +42,11 @@ const NHOM = [
   ['hanhViVaDo', 'Ngưỡng hành vi và đo lường', ['NG16', 'NG17', 'NG18', 'NG19', 'NG20', 'NG21']],
 ];
 
-const TEN = {
-  NG01: 'P(L₀) — đã biết từ trước', NG02: 'P(T) — học được sau một lượt',
-  NG03: 'P(S) — sơ suất', NG04: 'P(G) — đoán đúng', NG05: 'S/G của câu bẫy',
-  NG06: 'h — bán rã trí nhớ (ngày)', NG07: 'θ — ngưỡng tinh thông',
-  NG08: 'θ_yếu — ngưỡng yếu', NG09: 'sai liên tiếp để bật phụ đạo',
-  NG10: 'd — độ sâu duyệt ngược', NG11: 'm — số nút gốc trả về',
-  NG12: 'α — giảm độ ngờ mỗi bước', NG13: 'ngày coi là có nguy cơ quên',
-  NG14: 'lần thử thật (lưới an toàn)', NG15: 'nút tối thiểu để bỏ qua bài',
-  NG16: 'H3 — coi là bế tắc (giây)', NG17: 'H6 — coi là mệt mỏi',
-  NG18: 'H7 — lượt tối thiểu cho dạng câu', NG19: 'cặp ΔC tối thiểu',
-  NG20: 'câu hỏi tối thiểu mỗi nút', NG21: 'cỡ mẫu để học một ngưỡng',
-};
 
 /** Ngưỡng mang HAI con số thì sửa bằng hai ô. */
 const HAI_O = { NG05: ['slip', 'guess'], NG17: ['ti', 'toiThieuMoiNua'] };
 
-export default function BangNguong({ onExit }) {
+export default function BangNguong({ onExit, onXemDeXuat = null }) {
   const dangHanh = boNguong();
   const [gt, datGt] = useState(() => ({ ...MAC_DINH, ...(dangHanh.macDinh || {}) }));
   const [lyDo, datLyDo] = useState('');
@@ -119,6 +108,17 @@ export default function BangNguong({ onExit }) {
       </header>
 
       {/* NHỊP TINH THÔNG — phần quan trọng nhất của màn, nên đặt TRÊN danh sách. */}
+      {onXemDeXuat && (
+        <button type="button" onClick={onXemDeXuat}
+          className="rounded-xl2 border-2 border-line p-3 text-left text-sm">
+          <b className="text-ink">Đề xuất máy học được →</b>
+          <span className="block text-mute">
+            Máy học từ nhật ký mỗi sáng thứ Hai. Nó chỉ ĐỀ XUẤT — duyệt ở đó rồi vẫn phải
+            quay về đây phát hành thì giá trị mới có hiệu lực.
+          </span>
+        </button>
+      )}
+
       <section className={`rounded-xl2 p-4 ${nhipXau ? 'bg-gold-pale' : 'bg-teal-pale'}`}>
         <h2 className="font-bold text-ink">Với bộ này, con cần nói đúng mấy câu liền?</h2>
         <p className="mt-1 text-2xl font-bold text-navy">

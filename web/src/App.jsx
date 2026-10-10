@@ -3,6 +3,7 @@ import LoginScreen from './chung/components/LoginScreen.jsx';
 import ProfileSetup from './chung/components/ProfileSetup.jsx';
 import TeacherBoard from './chung/components/TeacherBoard.jsx';
 import BangNguong from './chung/components/BangNguong.jsx';
+import DuyetDeXuat from './chung/components/DuyetDeXuat.jsx';
 import KeSach from './chung/components/KeSach.jsx';
 import BangXepHang from './chung/components/BangXepHang.jsx';
 import ParentReport from './chung/components/ParentReport.jsx';
@@ -245,7 +246,15 @@ export default function App() {
      Vai trò thứ tư, tách hẳn khỏi `admin`: người hiểu việc DẠY HỌC quyết định
      ngưỡng. Đặt TRƯỚC nhánh giáo viên vì một tài khoản chỉ mang một vai. */
   if (auth && role === 'chuyengia') {
-    return <BangNguong onExit={signOut} />;
+    /* Hai màn, và chúng trả lời hai câu KHÁC NHAU: màn ngưỡng hỏi «có đổi hệ thống
+       bây giờ không» (phát hành một phiên bản), màn đề xuất hỏi «con số máy học ra
+       có đáng tin không». Gộp làm một là bấm duyệt xong tưởng đã đổi được gì. */
+    if (view.page === 'dexuat') {
+      return <DuyetDeXuat onExit={() => setView({ page: 'home' })} />;
+    }
+    return (
+      <BangNguong onExit={signOut} onXemDeXuat={() => setView({ page: 'dexuat' })} />
+    );
   }
 
   if (auth && (role === 'teacher' || role === 'admin')) {

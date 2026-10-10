@@ -753,15 +753,82 @@ export const tinhLaiThongKeNguong = onCall(
   },
 );
 
+/**
+ * HỌC NGƯỠNG — chạy HẰNG TUẦN, sau phép thống kê một giờ.
+ *
+ * Mục 3.8.3: «Hệ thống học ngưỡng để ĐỀ XUẤT, không tự áp dụng.» Nên hàm này chỉ ghi
+ * vào `nguong_de_xuat`; bảng `nguong` chỉ đổi khi chuyên gia phát hành.
+ *
+ * ⚠ GHI ĐÈ ĐỀ XUẤT CŨ CÒN Ở TRẠNG THÁI `cho`, GIỮ NGUYÊN CÁI ĐÃ DUYỆT HAY TỪ CHỐI.
+ * Tuần sau dữ liệu nhiều hơn thì con số đổi, và để lại cả hai bản là chuyên gia phải
+ * đoán xem bản nào mới. Còn cái đã duyệt hay đã từ chối là một QUYẾT ĐỊNH của người
+ * — đè lên đó là xoá dấu vết một lần cân nhắc.
+ */
+export const hocNguongTuan = onSchedule(
+  { schedule: '0 4 * * 1', timeZone: 'Asia/Ho_Chi_Minh', timeoutSeconds: 540, memory: '1GiB' },
+  async () => { await dungDeXuatNguong(); },
+);
+
+/** Chuyên gia bấm "học lại" — không phải chờ tới thứ Hai. */
+export const hocLaiNguong = onCall(
+  { region: 'asia-southeast1', timeoutSeconds: 540, memory: '1GiB' },
+  async (req) => {
+    const uid = req.auth?.uid;
+    if (!uid) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
+    const vai = (await db.doc(`users/${uid}`).get()).data()?.role;
+    if (vai !== 'chuyengia' && vai !== 'admin') {
+      throw new HttpsError('permission-denied', 'Chỉ chuyên gia học lại được.');
+    }
+    return await dungDeXuatNguong();
+  },
+);
+
+async function dungDeXuatNguong(bayGio = Date.now()) {
+  const { hocMoiPhamVi } = await import('./src/hocNguong.js');
+  const bo = await layBoNguong(db);
+  const luots = await docLuotTrongCuaSo(bayGio);
+
+  const ra = hocMoiPhamVi(luots, bo, { bayGio });
+  const ds = ra.flatMap((x) => x.deXuat);
+
+  /* Dọn đề xuất cũ CÒN CHỜ — xem chú thích trên. */
+  const cu = await db.collection('nguong_de_xuat').where('trangThai', '==', 'cho').get();
+  for (const lo of chiaLo(cu.docs, 400)) {
+    const b = db.batch();
+    for (const d of lo) b.delete(d.ref);
+    await b.commit();
+  }
+
+  let ghi = 0;
+  for (const lo of chiaLo(ds, 400)) {
+    const b = db.batch();
+    for (const d of lo) {
+      const ma = `${d.ma}__${d.phamVi}__${d.khoa ?? 'all'}`;
+      b.set(db.doc(`nguong_de_xuat/${ma}`), { ...d, nguongVer: bo?.phienBan ?? null });
+      ghi += 1;
+    }
+    await b.commit();
+  }
+
+  const coSo = ds.filter((d) => d.giaTriDeXuat !== null).length;
+  console.log(`học ngưỡng: ${luots.length} lượt → ${ghi} dòng, trong đó ${coSo} có giá trị đề xuất`);
+  return { soLuot: luots.length, soDong: ghi, soCoGiaTri: coSo };
+}
+
+const chiaLo = (ds, n) => Array.from({ length: Math.ceil(ds.length / n) }, (_, i) => ds.slice(i * n, i * n + n));
+
+/** Cửa sổ dữ liệu của cả hai hàm nền — xem chú thích ở `thongKeNguongTuan`. */
 const CUA_SO_NGAY = 90;
 
-async function dungThongKeNguong(bayGio = Date.now()) {
-  const { tinhThongKe } = await import('./src/thongke.js');
-  const bo = await layBoNguong(db);
+/**
+ * Đọc nhật ký lượt trong cửa sổ — DÙNG CHUNG cho phép thống kê và phép học ngưỡng.
+ *
+ * ⚠ HAI HÀM NỀN PHẢI ĐỌC CÙNG MỘT TẬP. Mỗi hàm một phép đọc riêng thì một ngày nào
+ * đó chúng lệch nhau — và khi ấy chỉ số nói về một tập dữ liệu, còn đề xuất dựng
+ * trên một tập khác, mà hai thứ ấy lại nằm cạnh nhau trên cùng màn hình.
+ */
+async function docLuotTrongCuaSo(bayGio = Date.now()) {
   const tu = bayGio - CUA_SO_NGAY * 86400000;
-
-  /* Chỉ nhặt những trường phép tính dùng tới. Nhật ký mang cả câu trả lời của bé;
-     giữ nguyên cả tài liệu trong bộ nhớ là vừa tốn vừa không có lý do. */
   /* Phép phân trang nằm ở `src/docLuot.js` — tách ra vì đúng mươi dòng ấy đã sai
      ba lần, và cổng `docluot.test.mjs` nay canh chúng bằng một kho giả. Ở đây chỉ
      còn việc nói cho nó biết cách hỏi Firestore.
@@ -789,7 +856,13 @@ async function dungThongKeNguong(bayGio = Date.now()) {
       };
     });
   };
-  const luots = (await docLuotTuMoc(layTrang)).filter((a) => !a.boQua);
+  return (await docLuotTuMoc(layTrang)).filter((a) => !a.boQua);
+}
+
+async function dungThongKeNguong(bayGio = Date.now()) {
+  const { tinhThongKe } = await import('./src/thongke.js');
+  const bo = await layBoNguong(db);
+  const luots = await docLuotTrongCuaSo(bayGio);
 
   /* Ba mức phạm vi. Hẹp hơn nữa (nút, dạng câu) thì cỡ mẫu vụn ra và mỗi dòng nói
      về vài chục lượt — tính thì vẫn tính được, nhưng ghi hàng nghìn dòng mà dòng
