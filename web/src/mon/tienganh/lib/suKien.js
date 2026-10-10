@@ -110,8 +110,10 @@ export function themDaGui(ids, kho = globalThis.localStorage) {
 /* 3 từ 10-10-2026: bản ghi mang thêm `nguongVer` — phiên bản bộ ngưỡng đã dùng
    (R7, mục 3.8.2). Hai môn phải khai CÙNG một số; cổng `tienganh_sukien` canh. */
 /* 4 từ 10-10-2026: thêm `khoiLop` — nấc phạm vi của bộ ngưỡng (R7, mục 3.8.1).
-   Dòng v ≤ 3 không có trường ấy, và máy chủ đã chấm chúng bằng bộ `toanHe`. */
-export const PHIEN_BAN_BAN_GHI = 4;
+   Dòng v ≤ 3 không có trường ấy, và máy chủ đã chấm chúng bằng bộ `toanHe`.
+   5 từ 10-10-2026 (chiều): bản ghi TOÁN thêm `mon` (Tiếng Anh vốn đã có). Hai môn
+   phải khai CÙNG một số, nên số ở đây cũng lên — cổng `nguong_phien` canh. */
+export const PHIEN_BAN_BAN_GHI = 5;
 
 export const laHocSinhThat = (id) => !!id && id !== 'local';
 

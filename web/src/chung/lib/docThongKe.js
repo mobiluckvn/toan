@@ -91,11 +91,21 @@ export function docHieu(tk) {
   const k = tk.NG09 || {};
   const coK = [1, 2, 3, 4].filter((i) => k[`k${i}`]?.coMau >= 10);
   if (coK.length) {
+    /* ⚠ ĐÁNH DẤU NHỮNG k ĐÃ QUA CAN THIỆP, và nói hẳn ra vì sao. Đo lần đầu trên
+       dữ liệu thật: 47% · 21% · 67,5% · 18% — con số vọt lên nằm đúng tại k = NG09
+       đang hành, tức đúng chỗ hệ thống bật phụ đạo. Lượt kế tiếp ở đó không còn là
+       "bé tự gỡ" mà là lượt SAU khi được giúp. Đọc nguyên văn Bảng 3.22 tại đó thì
+       chuyên gia nâng NG09 vì chính tác dụng của can thiệp mà NG09 gây ra. */
+    const coDauSao = coK.some((i) => k[`k${i}`].sauCanThiep);
     ra.push({
       ma: 'NG09',
       muc: 'on',
-      chu: `Xác suất bé tự làm đúng ở lượt kế tiếp: ${coK.map((i) => `sau ${i} lần sai ${pt(k[`k${i}`].tiLeDung)}`).join(' · ')}.`
-        + ' Nếu sau 3 lần sai bé vẫn thường tự làm đúng thì ngưỡng đang bật phụ đạo sớm.',
+      chu: `Xác suất bé tự làm đúng ở lượt kế tiếp: ${coK.map((i) => `sau ${i} lần sai ${pt(k[`k${i}`].tiLeDung)}${k[`k${i}`].sauCanThiep ? '*' : ''}`).join(' · ')}.`
+        + (coDauSao
+          ? ' ⚠ Mốc có dấu * là mốc hệ thống ĐÃ bật phụ đạo, nên con số ở đó đo tác dụng'
+            + ' của việc giúp chứ không đo khả năng tự gỡ — đừng nâng ngưỡng vì nó.'
+            + ' Chỉ các mốc KHÔNG có dấu * mới đọc được theo cách thường.'
+          : ' Nếu sau nhiều lần sai bé vẫn thường tự làm đúng thì ngưỡng đang bật phụ đạo sớm.'),
     });
   }
 

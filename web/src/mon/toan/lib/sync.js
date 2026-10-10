@@ -70,8 +70,11 @@ export const attemptId = (learnerId, sessionId, microId, itemId, seq) =>
  * hơn hiện một con số sai cho bố mẹ tin theo.
  */
 /* 4 từ 10-10-2026: thêm `khoiLop` — nấc phạm vi của bộ ngưỡng (R7, mục 3.8.1).
-   Dòng v ≤ 3 không có trường ấy, và máy chủ đã chấm chúng bằng bộ `toanHe`. */
-export const PHIEN_BAN_BAN_GHI = 4;
+   Dòng v ≤ 3 không có trường ấy, và máy chủ đã chấm chúng bằng bộ `toanHe`.
+   5 từ 10-10-2026 (chiều): bản ghi Toán thêm `mon`. Trước đó Toán KHÔNG khai môn,
+   nên 3075/3212 dòng nhật ký rơi ngoài mọi phép gom theo môn — xem chú thích ở
+   chỗ ghi trường ấy. Hai môn vẫn phải khai CÙNG một số. */
+export const PHIEN_BAN_BAN_GHI = 5;
 
 /** Đáp án con gõ có thể là mảng nhiều ô — gọn lại thành một chuỗi đọc được, cắt ngắn */
 export const CHU_TOI_DA = 120;
@@ -129,6 +132,16 @@ export function buildAttempts({
        Toán cũng phải mang số phiên bản — thiếu nó thì một mức thạo cũ không còn
        biết được tính bằng θ nào, và hai bộ ngưỡng không so được trên cùng nhật ký. */
     nguongVer: boNguong()?.phienBan ?? null,
+    /* ── MÔN — nấc `mon` của thang phạm vi (R7 · mục 3.8.1) ──
+       ⚠ TOÁN CHƯA BAO GIỜ KHAI TRƯỜNG NÀY. Soi máy chủ bằng khoá quản trị thấy
+       3075/3212 lượt trong nhật ký không có `mon` — tức mọi phép thống kê theo môn
+       đang bỏ qua 96% dữ liệu, mà bảng vẫn hiện ra một con số trông bình thường
+       cho riêng Tiếng Anh. Trước R7 điều đó vô hại vì chỉ có một bộ ngưỡng; từ khi
+       có nấc `mon` thì nó là một lỗ thủng câm.
+
+       Hằng chuỗi chứ không đọc từ ngữ cảnh phiên: tệp này CHỈ Toán dùng, và một
+       lượt Toán thì là Toán kể cả khi ngữ cảnh phiên chưa kịp đặt. */
+    mon: 'toan',
     /* ── KHỐI LỚP (R7 · mục 3.8.1, nấc `khoiLop` của thang phạm vi) ──
        Để hàm nền chấm lượt này bằng đúng bộ tham số của khối lớp ấy. KHAI THẲNG
        từ ngữ cảnh phiên, chứ KHÔNG để máy chủ suy từ hình dạng mã nút (`v_g5_…`):

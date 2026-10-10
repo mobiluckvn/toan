@@ -160,8 +160,28 @@ export function chiSoNG08(nhom, bo) {
  *
  * Trả từng k RIÊNG kèm cỡ mẫu, không gộp thành một con số: cả cách đọc nằm ở chỗ
  * con số ấy đổi thế nào theo k.
+ *
+ * ── ⚠ CON SỐ TẠI k = NG09 ĐANG HÀNH KHÔNG ĐỌC ĐƯỢC THEO BẢNG 3.22 ──
+ * Đo lần đầu trên dữ liệu thật (3212 lượt) ra một dãy bật ngược:
+ *
+ *     k=1  47,0% (394)   k=2  20,8% (207)   k=3  67,5% (160)   k=4  17,6% (51)
+ *
+ * Tụt từ k=1 sang k=2 là hợp lẽ. Nhưng k=3 vọt lên 67,5% — và 3 đúng bằng NG09
+ * đang hành, tức ĐÚNG CHỖ hệ thống bật phụ đạo. Lượt kế tiếp sau lần sai thứ ba
+ * không còn là "bé tự gỡ" nữa: nó là lượt SAU CAN THIỆP, thường là câu dễ hơn do
+ * bài phụ đạo đưa ra.
+ *
+ * Nên cách đọc của Bảng 3.22 ("sau k lần sai bé vẫn thường tự làm đúng thì nên
+ * TĂNG ngưỡng") mất hiệu lực tại đúng k ấy — đọc nguyên văn thì chuyên gia sẽ nâng
+ * NG09 vì chính tác dụng của can thiệp mà NG09 gây ra, rồi vòng sau lại thấy k=4
+ * vọt lên. Một vòng tự khẳng định.
+ *
+ * Nên `tuCan` đánh dấu những k ≥ ngưỡng đang hành, và màn hình phải nói ra. Tách
+ * hẳn lượt sau can thiệp ra khỏi lượt tự gỡ thì cần biết một bài phụ đạo đã chạy
+ * hay chưa — điều nhật ký lượt không ghi (khung phụ đạo nằm ở học bạ, kho khác).
+ * Ghi lại đây để người sau không đọc nhầm, và để biết phải thêm gì nếu muốn đo sạch.
  */
-export function chiSoNG09(nhom) {
+export function chiSoNG09(nhom, bo = null) {
   const theoK = {};
   for (const ds of nhom.values()) {
     let sai = 0;
@@ -174,10 +194,20 @@ export function chiSoNG09(nhom) {
       sai = a.correct ? 0 : sai + 1;
     }
   }
+  /* Ngưỡng đang hành — từ đó trở đi, lượt kế tiếp là lượt SAU CAN THIỆP. */
+  let nguong = null;
+  try { nguong = bo ? layNguong(bo, 'NG09') : null; } catch { nguong = null; }
+
   const ra = {};
   for (const k of [1, 2, 3, 4]) {
     const o = theoK[k];
-    ra[`k${k}`] = o ? { tiLeDung: o.dung / o.tong, coMau: o.tong } : { tiLeDung: null, coMau: 0 };
+    ra[`k${k}`] = {
+      tiLeDung: o ? o.dung / o.tong : null,
+      coMau: o ? o.tong : 0,
+      /* `true` = con số này KHÔNG đọc được theo Bảng 3.22: tại đây hệ thống đã bật
+         phụ đạo, nên nó đo tác dụng của can thiệp chứ không đo khả năng tự gỡ. */
+      sauCanThiep: nguong != null && k >= nguong,
+    };
   }
   return ra;
 }
@@ -307,7 +337,7 @@ export function tinhThongKe(luots, bo, { phamVi = 'toanHe', khoa = null, bayGio 
     duMauDeHoc: ds.length >= layNguong(bo, 'NG21'),
     NG07: chiSoNG07(nhom, bo),
     NG08: chiSoNG08(nhom, bo),
-    NG09: chiSoNG09(nhom),
+    NG09: chiSoNG09(nhom, bo),
     NG01_NG05: chatLuongMoHinh(buocTatCa),
     NG06: chiSoNG06(nhom, bo),
     NG16: chiSoNG16(ds, bo),

@@ -79,7 +79,33 @@ test('NG09: xác suất đúng ở lượt kế tiếp, tách theo từng k', ()
   // sau 3 lần sai: vị trí 8 (đúng) → 1/1
   assert.equal(r.k3.coMau, 1);
   assert.equal(r.k3.tiLeDung, 1);
-  assert.deepEqual(r.k4, { tiLeDung: null, coMau: 0 }, 'chưa có mẫu → null, không phải 0');
+  assert.equal(r.k4.coMau, 0);
+  assert.equal(r.k4.tiLeDung, null, 'chưa có mẫu → null, không phải 0');
+});
+
+test('NG09 đánh dấu những k rơi SAU CAN THIỆP', () => {
+  /* Đo lần đầu trên dữ liệu thật ra dãy 47,0% · 20,8% · 67,5% · 17,6%. Chỗ vọt lên
+     nằm đúng tại k = 3 = NG09 đang hành, tức đúng chỗ hệ thống bật phụ đạo: lượt
+     kế tiếp không còn là "bé tự gỡ" mà là lượt SAU CAN THIỆP. Đọc nguyên văn Bảng
+     3.22 ở đó thì chuyên gia nâng NG09 vì chính tác dụng của can thiệp mà NG09 gây
+     ra — một vòng tự khẳng định. Nên cờ phải có, và phải theo ngưỡng ĐANG HÀNH chứ
+     không phải một con số 3 ghim cứng. */
+  const r = chiSoNG09(nhomCua(chuoi('ssssd')), BO_MAC_DINH);
+  const nguong = layNguong(BO_MAC_DINH, 'NG09');
+  assert.equal(nguong, 3, 'bộ mặc định đang là 3 — nếu đổi thì cổng dưới đây vẫn đúng');
+  assert.equal(r.k1.sauCanThiep, false);
+  assert.equal(r.k2.sauCanThiep, false);
+  assert.equal(r.k3.sauCanThiep, true, 'k = ngưỡng là đã can thiệp rồi');
+  assert.equal(r.k4.sauCanThiep, true);
+
+  /* Hạ ngưỡng xuống 2 thì chỗ đánh dấu phải dịch theo. */
+  const bo2 = { phienBan: 9, macDinh: { ...MAC_DINH, NG09: 2 }, theoPhamVi: {} };
+  const r2 = chiSoNG09(nhomCua(chuoi('ssssd')), bo2);
+  assert.equal(r2.k1.sauCanThiep, false);
+  assert.equal(r2.k2.sauCanThiep, true);
+
+  /* Không truyền bộ ngưỡng thì KHÔNG đoán bừa — không đánh dấu gì. */
+  assert.equal(chiSoNG09(nhomCua(chuoi('ssd'))).k3.sauCanThiep, false);
 });
 
 test('AUC tính bằng hạng, và `null` khi không có hai lớp', () => {
