@@ -1,10 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { logout } from '../lib/taiKhoan.js';
 import {
-  MAC_DINH, KHOANG, boNguong, soiNguong,
-  nhipTinhThong, NHIP_CHO_PHEP, PHIEN_BAN,
+  MAC_DINH, KHOANG, boNguong, chuanHoaBo, soiPhamVi, apDungThayDoi, giaTriHieuLuc,
+  nguCanhCuaPhamVi, nhipTinhThong, NHIP_CHO_PHEP,
 } from '../lib/nguong.js';
-import { phatHanhNguong } from '../lib/ghiNguong.js';
+import { phatHanhNguong, docBangNguong } from '../lib/ghiNguong.js';
+import { PHAM_VI_CHON, phamViHopLe, tenPhamVi } from '../lib/phamViNguong.js';
 import { TEN_NGUONG as TEN } from '../lib/tenNguong.js';
 import { docThongKeNguong, gomTheoPhamVi, docHieu } from '../lib/docThongKe.js';
 
@@ -32,23 +33,42 @@ import { docThongKeNguong, gomTheoPhamVi, docHieu } from '../lib/docThongKe.js';
  * ⚠ MÀN NÀY KHÔNG ĐỔI PHIÊN ĐANG CHẠY. Mục 3.8.4: "Phiên bản mới chỉ có hiệu lực từ
  *   phiên tiếp theo." Nên sau khi phát hành, màn nói thẳng điều ấy thay vì để chuyên
  *   gia tưởng mình vừa đổi cái gì đó ngay lập tức.
+ *
+ * ── SỐ TRÊN MÀN LẤY TỪ BẢNG, KHÔNG TỪ BỘ ĐÃ NẠP (Bảng 4.7, điểm 3) ──
+ * Bộ của phiên (`boNguong()`) là bộ lúc mở app — có thể đã cũ cả ngày. Màn ĐỌC TƯƠI
+ * bảng `nguong` lúc mở và sau mỗi lần phát hành; chưa đọc được thì nói ra, và chỉ
+ * tạm bày bộ của phiên. Hàm phát hành còn đọc lại thêm một lần nữa lúc bấm.
+ *
+ * ── CHỌN PHẠM VI (Bảng 4.7, điểm 2) ──
+ * Chọn một phạm vi hẹp (khối lớp 1, môn Tiếng Anh, dạng câu `go`…) thì các ô hiện
+ * BỘ HIỆU LỰC của phạm vi ấy — ô nào chưa khai thì là giá trị thừa hưởng từ nấc rộng
+ * hơn — và phép soi, bảng nhịp tinh thông đều chạy trên đúng bộ ấy.
  */
 
-const NHOM = [
+export const NHOM = [
   ['moHinh', 'Tham số mô hình người học và trí nhớ', ['NG01', 'NG02', 'NG03', 'NG04', 'NG05', 'NG06']],
   ['quyetDinh', 'Ngưỡng quyết định tinh thông và can thiệp', ['NG07', 'NG08', 'NG09']],
   ['chanDoan', 'Tham số chẩn đoán nguyên nhân', ['NG10', 'NG11', 'NG12', 'NG13']],
   ['danDat', 'Lưới an toàn và dẫn dắt', ['NG14', 'NG15']],
   ['hanhViVaDo', 'Ngưỡng hành vi và đo lường', ['NG16', 'NG17', 'NG18', 'NG19', 'NG20', 'NG21']],
+  ['cauHinh', 'Tham số trước đây gõ cứng trong mã', ['NG22', 'NG23', 'NG24', 'NG25', 'NG26', 'NG27', 'NG28', 'NG29', 'NG30']],
 ];
 
 
-/** Ngưỡng mang HAI con số thì sửa bằng hai ô. */
-const HAI_O = { NG05: ['slip', 'guess'], NG17: ['ti', 'toiThieuMoiNua'] };
+/** Ngưỡng mang NHIỀU con số thì sửa bằng nhiều ô. */
+const NHIEU_O = { NG05: ['slip', 'guess'], NG17: ['ti', 'toiThieuMoiNua'], NG28: ['m1', 'm2', 'm3'] };
+
+const giongNhau = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
 export default function BangNguong({ onExit, onXemDeXuat = null }) {
-  const dangHanh = boNguong();
-  const [gt, datGt] = useState(() => ({ ...MAC_DINH, ...(dangHanh.macDinh || {}) }));
+  /* Bộ ĐỌC TƯƠI từ bảng. `null` = đang đọc. Chưa đọc được thì tạm bày bộ của phiên
+     — nhưng nói rõ ra, vì đó đúng là con số có thể đã cũ. */
+  const [boBang, datBoBang] = useState(null);
+  const [loiBang, datLoiBang] = useState(null);
+  const [phamVi, datPhamVi] = useState({ loai: 'toanHe', khoa: '' });
+  const goc = useMemo(() => boBang || chuanHoaBo(boNguong()), [boBang]);
+  const hieuLuc = useMemo(() => giaTriHieuLuc(goc, phamVi), [goc, phamVi]);
+  const [gt, datGt] = useState(() => ({ ...MAC_DINH, ...hieuLuc }));
   const [lyDo, datLyDo] = useState('');
   const [dangGui, datDangGui] = useState(false);
   const [bao, datBao] = useState(null);
@@ -56,6 +76,17 @@ export default function BangNguong({ onExit, onXemDeXuat = null }) {
      hai trạng thái phải phân biệt được, vì chúng nói hai chuyện khác nhau. */
   const [tk, datTk] = useState(null);
   const [loiTk, datLoiTk] = useState(null);
+
+  const docLaiBang = () => {
+    datLoiBang(null);
+    return docBangNguong()
+      .then(({ bo }) => { datBoBang(bo); })
+      .catch((e) => { datLoiBang(e?.code || e?.message || 'không rõ'); });
+  };
+  useEffect(() => { docLaiBang(); }, []);
+  /* Đổi phạm vi hay đọc xong bảng thì các ô về đúng bộ hiệu lực — giữ những ô đã gõ
+     của phạm vi CŨ là ghi nhầm chúng vào phạm vi mới. */
+  useEffect(() => { datGt({ ...MAC_DINH, ...hieuLuc }); }, [hieuLuc]);
 
   useEffect(() => {
     let song = true;
@@ -67,13 +98,17 @@ export default function BangNguong({ onExit, onXemDeXuat = null }) {
     return () => { song = false; };
   }, []);
 
-  const bo = useMemo(() => ({ phienBan: dangHanh.phienBan, macDinh: gt, theoPhamVi: {} }), [gt, dangHanh]);
-  const loi = useMemo(() => soiNguong(bo), [bo]);
-  const nhip = useMemo(() => nhipTinhThong(bo), [bo]);
+  const saiPhamVi = phamViHopLe(phamVi);
   const doi = useMemo(
-    () => Object.keys(MAC_DINH).filter((m) => JSON.stringify(gt[m]) !== JSON.stringify(dangHanh.macDinh?.[m] ?? MAC_DINH[m])),
-    [gt, dangHanh],
+    () => Object.keys(KHOANG).filter((m) => !giongNhau(gt[m], hieuLuc[m])),
+    [gt, hieuLuc],
   );
+  /* Bộ ỨNG VIÊN: bảng hiện tại + các ô đã sửa, đặt vào ĐÚNG phạm vi đang chọn. Soi và
+     tính nhịp trên bộ này, ở ngữ cảnh của phạm vi ấy — chứ không trên bộ toàn hệ. */
+  const ungVien = useMemo(() => apDungThayDoi(goc, phamVi, gt, doi), [goc, phamVi, gt, doi]);
+  const loi = useMemo(() => (saiPhamVi ? [] : soiPhamVi(ungVien, phamVi)), [ungVien, phamVi, saiPhamVi]);
+  const nhip = useMemo(() => nhipTinhThong(ungVien, nguCanhCuaPhamVi(phamVi)), [ungVien, phamVi]);
+  const mucPhamVi = PHAM_VI_CHON.find((x) => x.loai === phamVi.loai) || PHAM_VI_CHON[0];
 
   const dat = (ma, truong, chu) => {
     const so = Number(chu);
@@ -84,8 +119,10 @@ export default function BangNguong({ onExit, onXemDeXuat = null }) {
   const phatHanh = async () => {
     datDangGui(true); datBao(null);
     try {
-      const pb = await phatHanhNguong({ giaTri: gt, doi, lyDo });
-      datBao({ ok: true, chu: `Đã phát hành phiên bản ${pb}. `
+      const pb = await phatHanhNguong({ giaTri: gt, doi, lyDo, phamVi });
+      datLyDo('');
+      await docLaiBang();
+      datBao({ ok: true, chu: `Đã phát hành phiên bản ${pb} cho ${tenPhamVi(phamVi)}. `
         + 'Phiên đang chạy giữ nguyên bộ cũ — bản mới có hiệu lực từ phiên sau.' });
     } catch (e) {
       datBao({ ok: false, chu: e?.message || 'Không ghi được. Người lớn kiểm tra giúp.' });
@@ -99,13 +136,50 @@ export default function BangNguong({ onExit, onXemDeXuat = null }) {
     <div className="mx-auto flex max-w-3xl flex-col gap-4 p-4">
       <header className="flex items-center gap-3">
         <h1 className="flex-1 text-xl font-bold text-ink sm:text-2xl">
-          Bảng ngưỡng · phiên bản {dangHanh.phienBan ?? PHIEN_BAN}
+          Bảng ngưỡng · phiên bản {boBang ? boBang.phienBan : '…'}
         </h1>
         <button type="button" onClick={() => logout().then(onExit)}
           className="rounded-xl2 border border-line px-3 py-1.5 text-sm text-mute hover:text-navy">
           Thoát
         </button>
       </header>
+
+      {loiBang && (
+        <p className="rounded-xl2 bg-gold-pale p-3 text-sm text-gold-dark">
+          Chưa đọc được bảng ngưỡng ({loiBang}) — đang tạm bày bộ của phiên này, có thể đã cũ.{' '}
+          <button type="button" className="underline" onClick={docLaiBang}>Đọc lại</button>
+        </p>
+      )}
+
+      {/* PHẠM VI — sửa cho cả hệ thống, hay cho một khối lớp, một môn, một dạng câu… */}
+      <section className="flex flex-wrap items-center gap-2 rounded-xl2 border border-line p-3 text-sm">
+        <label htmlFor="pv-loai" className="font-semibold text-ink">Áp cho</label>
+        <select id="pv-loai" className="numin text-[16px]" value={phamVi.loai}
+          onChange={(e) => {
+            const m = PHAM_VI_CHON.find((x) => x.loai === e.target.value);
+            datPhamVi({ loai: e.target.value, khoa: Array.isArray(m?.khoa) ? m.khoa[0][0] : '' });
+            datBao(null);
+          }}>
+          {PHAM_VI_CHON.map((x) => <option key={x.loai} value={x.loai}>{x.ten}</option>)}
+        </select>
+        {Array.isArray(mucPhamVi.khoa) && (
+          <select aria-label="khoá phạm vi" className="numin text-[16px]" value={phamVi.khoa}
+            onChange={(e) => { datPhamVi({ ...phamVi, khoa: e.target.value }); datBao(null); }}>
+            {mucPhamVi.khoa.map(([k, ten]) => <option key={k} value={k}>{ten}</option>)}
+          </select>
+        )}
+        {mucPhamVi.khoa === 'go' && (
+          <input aria-label="khoá phạm vi" className="numin w-48 text-[16px]" value={phamVi.khoa}
+            placeholder={phamVi.loai === 'nut' ? 'mã nút, ví dụ v_g3_u1_how' : 'ví dụ 2'}
+            onChange={(e) => { datPhamVi({ ...phamVi, khoa: e.target.value.trim() }); datBao(null); }} />
+        )}
+        <span className="basis-full text-xs text-mute">
+          {phamVi.loai === 'toanHe'
+            ? 'Giá trị chung — mọi phạm vi chưa khai riêng đều dùng.'
+            : 'Ô hiện giá trị bé ở phạm vi này đang nhận (thừa hưởng nếu chưa khai riêng). Chỉ những ô bạn sửa mới được ghi cho phạm vi này.'}
+          {saiPhamVi ? ` — ${saiPhamVi}` : ''}
+        </span>
+      </section>
 
       {/* NHỊP TINH THÔNG — phần quan trọng nhất của màn, nên đặt TRÊN danh sách. */}
       {onXemDeXuat && (
@@ -137,7 +211,13 @@ export default function BangNguong({ onExit, onXemDeXuat = null }) {
 
       {!!loi.length && (
         <ul className="flex flex-col gap-1 rounded-xl2 bg-gold-pale p-3 text-sm text-gold-dark">
-          {loi.map((x, i) => <li key={`${x.ma}-${i}`}><b>{x.ma}</b> — {x.vi}</li>)}
+          {loi.map((x, i) => (
+            <li key={`${x.ma}-${i}`}>
+              <b>{x.ma}</b> — {x.vi}
+              {x.nguCanh && Object.keys(x.nguCanh).length > 1
+                ? ` (khi ghép với ${Object.entries(x.nguCanh).map(([k, v]) => `${k}=${v}`).join(', ')})` : ''}
+            </li>
+          ))}
         </ul>
       )}
 
@@ -197,7 +277,7 @@ export default function BangNguong({ onExit, onXemDeXuat = null }) {
           <ul className="flex flex-col gap-2">
             {ds.map((ma) => {
               const [d, t] = KHOANG[ma];
-              const truongs = HAI_O[ma];
+              const truongs = NHIEU_O[ma];
               const xau = loi.some((x) => x.ma === ma);
               return (
                 <li key={ma} className="flex flex-wrap items-center gap-2 text-sm">
@@ -220,20 +300,20 @@ export default function BangNguong({ onExit, onXemDeXuat = null }) {
 
       <section className="flex flex-col gap-2 rounded-xl2 border border-line p-3">
         <label className="text-sm font-semibold text-ink" htmlFor="lydo">
-          Vì sao đổi? {doi.length ? `(${doi.length} ngưỡng đã sửa: ${doi.join(', ')})` : '(chưa sửa gì)'}
+          Vì sao đổi? {doi.length ? `(${doi.length} ngưỡng đã sửa cho ${tenPhamVi(phamVi)}: ${doi.join(', ')})` : '(chưa sửa gì)'}
         </label>
         <input id="lydo" className="numin w-full text-[16px]" value={lyDo}
                placeholder="ví dụ: tỷ lệ công nhận sớm tuần này 18%, nâng θ"
                onChange={(e) => { datLyDo(e.target.value); datBao(null); }} />
         <div className="flex items-center gap-3">
-          <button type="button" disabled={!!loi.length || !doi.length || !lyDo.trim() || dangGui}
+          <button type="button" disabled={!!loi.length || !!saiPhamVi || !doi.length || !lyDo.trim() || dangGui}
             onClick={phatHanh}
             className="rounded-xl2 bg-navy px-4 py-2 text-sm font-semibold text-white
                        disabled:opacity-40 focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
             {dangGui ? 'Đang phát hành…' : 'Phát hành phiên bản mới'}
           </button>
           {!!doi.length && (
-            <button type="button" onClick={() => { datGt({ ...MAC_DINH, ...(dangHanh.macDinh || {}) }); datBao(null); }}
+            <button type="button" onClick={() => { datGt({ ...MAC_DINH, ...hieuLuc }); datBao(null); }}
               className="text-sm text-mute underline">bỏ các thay đổi</button>
           )}
         </div>

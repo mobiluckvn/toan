@@ -12,7 +12,7 @@ import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
 import { napBai, napSoAm, hangXom, hinhCuaTu, dsVideoTu, quyenCua } from '../lib/noiDung.js';
 import { maCua } from './NutNghe.jsx';
 import {
-  changCua, NHAN_CHANG, trangThaiChang, THU_TOI_THIEU, viecChangTu, viecChangCau,
+  changCua, NHAN_CHANG, trangThaiChang, thuToiThieu, viecChangTu, viecChangCau,
   noiDuoc, CHANG_KHONG_KHOA,
 } from '../lib/dandat.js';
 import { DAT as DAT_NOI } from '../lib/chamnoi.js';
@@ -1138,7 +1138,7 @@ function SatHach({ bai, onXong }) {
           <p className={dat ? 'text-teal-dark' : 'text-gold-dark'}>
             {dat ? 'Con qua bài rồi. Giỏi lắm!'
                  : `Cần ${can} câu đúng. Con nghe lại phần giảng rồi thử lần nữa nhé — `
-                   + `làm ${THU_TOI_THIEU} lần thì bài sau cũng mở ra.`}
+                   + `làm ${thuToiThieu()} lần thì bài sau cũng mở ra.`}
           </p>
         </div>
         <NutTiep onClick={() => onXong({ pass: dat, dung, tong: ds.length, bac: 4 })}

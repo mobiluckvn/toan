@@ -139,8 +139,8 @@ export function tomTatMucThao({ von, mucThao, doThi } = {}) {
     const p = mucThaoCua(mucThao, ma);
     if (p === null) continue;
     daCo.add(chu);
-    if (p >= nguongThao()) chac.push(chu);
-    else if (p < nguongYeu()) chenh.push(chu);
+    if (p >= nguongThao({ nut: ma })) chac.push(chu);
+    else if (p < nguongYeu({ nut: ma })) chenh.push(chu);
   }
   if (!chac.length && !chenh.length) return '';
 

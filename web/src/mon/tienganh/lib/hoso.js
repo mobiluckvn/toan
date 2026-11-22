@@ -21,6 +21,8 @@ import { layNguong, boNguong } from '../../../chung/lib/nguong.js';
  */
 
 /** Dưới chừng này lượt thì chưa nói được gì về một định dạng. */
+export const toiThieuMau = (nc) => layNguong(boNguong(), 'NG18', nc);
+/* Hằng chụp bộ của phiên — cho cổng và chỗ chỉ HIỂN THỊ. Quyết định dùng hàm trên. */
 export const TOI_THIEU_MAU = layNguong(boNguong(), 'NG18');
 
 /** Tên đọc được cho bố mẹ. Định dạng lạ thì hiện chính mã, đừng giấu. */
@@ -53,7 +55,9 @@ export function ghiDinhDang(hs, format, dung) {
 /** Tỉ lệ đúng của một định dạng, hoặc `null` khi chưa đủ mẫu. */
 export function tiLeDung(hs, format) {
   const d = (hs || {})[format];
-  if (!d || d.tong < TOI_THIEU_MAU) return null;
+  /* Ngữ cảnh `dangCau` = chính định dạng đang xét: một dạng câu khó gom mẫu (nói
+     theo) có thể được chuyên gia hạ ngưỡng riêng mà không kéo cả bảng xuống. */
+  if (!d || d.tong < toiThieuMau({ dangCau: String(format) })) return null;
   return d.dung / d.tong;
 }
 

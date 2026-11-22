@@ -80,6 +80,13 @@ def soi_cau(cau: str, tui: set[str]) -> list[str]:
     ly_do = []
     if not cau_lanh_lan(cau):
         ly_do.append("câu không lành lặn (ô trống · viết hoa giữa câu · thiếu dấu cách)")
+    # `chu_trong` chỉ nhặt CHỮ, nên chữ số và emoji lọt qua mà không ai soi. Bé đọc
+    # "7" thì máy đọc mẫu thành "seven" — một chữ có thể ngoài vốn; emoji thì máy
+    # đọc thành tên của nó, hoặc đọc im.
+    if re.search(r"\d", cau):
+        ly_do.append("có chữ số — viết bằng chữ để soi được vốn từ")
+    if re.search(r"[^\x00-\x7F‘’“”…–—]", cau):
+        ly_do.append("có ký tự lạ (emoji · ký hiệu ngoài bảng chữ)")
     la = chu_la(cau, tui)
     if la:
         ly_do.append("chữ ngoài vốn: " + ", ".join(sorted(set(la))))

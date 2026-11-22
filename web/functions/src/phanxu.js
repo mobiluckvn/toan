@@ -34,6 +34,7 @@
  */
 import { vanTay } from './vantay.js';
 import { MO_HINH, NGHI_NGAN, LoiGoi } from './luyennoi.js';
+import { goiDoiJson } from './llm.js';
 
 export { MO_HINH, NGHI_NGAN, LoiGoi };
 
@@ -173,13 +174,12 @@ export function gopPhieu(phieu) {
    mà cặp mất nhất trí nghĩa là GIỮ ĐIỂM — đúng điều §7 đòi khi mất mạng. */
 async function motPhieu(client, goi, { nhiet, daoChieu }) {
   try {
-    const kq = await client.chat.completions.create({
+    const kq = await goiDoiJson(client, {
       model: MO_HINH,
       messages: [{ role: 'system', content: loiDanPhanXu({ ...goi, daoChieu }) }],
       temperature: nhiet,
       max_tokens: TOKEN_PHAN_XU,
       reasoning_effort: NGHI_NGAN,
-      response_format: { type: 'json_object' },
     });
     const chu = kq?.choices?.[0]?.message?.content || '';
     const b = bocJSON(chu);

@@ -280,6 +280,32 @@ t('ba hạng đầu có huy chương, hạng 4 hiện số',
   t('chỗ đọc dữ liệu có lấy học bạ Tiếng Anh', nen.includes('hocBaTA/${r.uid}/muc'));
 }
 
+/* ═══════════ C · MỖI MÔN MỘT BẢNG (22-11-2026) ═══════════
+   Trước đây bảng chỉ có một danh sách gộp; tab Tiếng Anh của bé trả null nên bé
+   không bao giờ thấy thứ hạng Tiếng Anh của mình. */
+{
+  const ta = (uid, ts, ok = true) => ({ ...att(uid, ts, ok), microId: 'DL:TA1.B01', mon: 'tienganh' });
+  const to = (uid, ts, ok = true) => ({ ...att(uid, ts, ok), microId: 'DL:KSN2.B01' });
+  const b = buildBangXepHang({
+    roster: [em('a'), em('b'), em('c', { grade: 1 })], now: NOW,
+    attempts: [to('a', NOW - 3600e3), to('a', NOW - 3600e3), ta('b', NOW - 3600e3), ta('c', NOW - 3600e3),
+      ta('c', NOW - 3600e3), ta('c', NOW - 3600e3)],
+    progress: { a: { 'DL:KSN2.B01': { pass: true, at: NOW - 1000 } },
+      c: { 'DL:TA1.B01': { microId: 'DL:TA1.B01', pass: true, at: NOW - 1000 } } },
+    hocBa: { c: [{ loai: 'chuong', mon: 'tienganh', giaTri: { dat: true, at: NOW - 1000 } }] },
+  });
+  t('có bảng riêng cho cả hai môn', !!b.theoMon?.toan && !!b.theoMon?.tienganh && b.coTiengAnh === true);
+  const tA = b.theoMon.tienganh.rows, tT = b.theoMon.toan.rows;
+  t('bảng Tiếng Anh chỉ có em từng học Tiếng Anh', tA.map((r) => r.ma).sort().join() === 'b,c');
+  t('bảng Toán không có bé lớp 1 chỉ học Tiếng Anh', !tT.some((r) => r.ma === 'c'));
+  const c = tA.find((r) => r.ma === 'c');
+  t('sao Tiếng Anh: 3 câu + 1 bài + 1 huy hiệu chương (Tiếng Anh ghi `dat`)',
+    c.saoTuan === 3 * SAO.cauDung + SAO.baiDat + SAO.huyHieu && c.huyHieu === 1);
+  t('sao Toán không lẫn câu Tiếng Anh', tT.find((r) => r.ma === 'a').saoTuan === 2 + SAO.baiDat);
+  t('bé dẫn bảng Tiếng Anh là hạng 1 ở bảng ấy', c.hangTuan === 1);
+  t('bảng môn cũng không mang email', !JSON.stringify(b.theoMon).includes('@'));
+}
+
 console.log(`\n   ${BANG.length} bảng · sao: câu ${SAO.cauDung} · bài ${SAO.baiDat}`
   + ` · huy hiệu ${SAO.huyHieu} · vòng đấu ${SAO.vongDau} · trần ${TRAN_SAO_NGAY}/ngày`);
 console.log(`\n${pass} PASS · ${fail} FAIL`);

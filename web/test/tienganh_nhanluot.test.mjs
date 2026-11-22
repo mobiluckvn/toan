@@ -179,7 +179,11 @@ test('lời dặn tổng dưới trần máy chủ với VỐN THẬT, kể cả
     const moi = ds.map((id) => baiTrong(ma, id));
     for (let i = 0; i < moi.length; i += 1) {
       const von = vonTu({
-        baiNay: moi[i], baiCu: moi.slice(0, i), daDat: true, datCu: () => true,
+        /* `baiTQ` = mọi bài khác của quyển: cận trên của tiên quyết. Bản cũ không
+           đắp tiên quyết nên chưa bao giờ thử ca dài nhất (đo ra gần 14.000 ký tự
+           trước khi `vonTu` có trần `TIEN_QUYET_TOI_DA`). */
+        baiNay: moi[i], baiCu: moi.slice(0, i), baiTQ: moi.filter((_, j) => j !== i),
+        daDat: true, datCu: () => true,
       });
       for (const nhan of Object.keys(NHAN)) {
         const d = loiDan({

@@ -262,7 +262,11 @@ export { newSessionId, isCloudLearner };
 export async function bangXepHangToan() {
   if (!db) return null;
   const snap = await getDoc(doc(db, 'bangXepHang/global'));
-  return snap.exists() ? snap.data() : null;
+  if (!snap.exists()) return null;
+  /* Bảng dựng bằng bản mới có bảng riêng từng môn; bản cũ chỉ có bảng gộp. */
+  const d = snap.data();
+  const rieng = d.theoMon?.toan;
+  return rieng ? { ...d, ...rieng } : d;
 }
 
 /** Dựng lại bảng ngay. Máy chủ tự chặn dội nếu vừa dựng xong dưới hai phút. */

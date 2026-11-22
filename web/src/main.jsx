@@ -14,7 +14,9 @@ import './index.css';
  * TRƯỚC khi `napNguong()` kịp đặt bộ — mấy hằng ấy chụp đúng bộ mặc định, tệp tải về
  * chẳng tác dụng gì, và không có gì báo. Nên phải là `await import(...)` động.
  *
- * Mất mạng thì `napNguong()` tự lùi về bộ mặc định (R4), không ném — bé vẫn học được.
+ * Từ 22-11 `napNguong()` đọc BẢNG `nguong` trên Firestore (nơi chuyên gia phát hành),
+ * rồi lùi lần lượt: bản nhớ tại máy → tệp tĩnh → bộ mặc định. Có hạn chót ~3 giây, nên
+ * mất mạng thì bé chỉ chờ chừng ấy rồi vẫn học được (R4) — không ném, không treo.
  */
 const batDau = async () => {
   await napNguong();

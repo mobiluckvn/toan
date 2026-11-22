@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import NutNghe from './NutNghe.jsx';
 import HinhVe from './HinhVe.jsx';
 import { chamTiengAnh } from '../lib/cham.js';
-import { duocBoQua, HIEN_GOI_Y } from '../lib/dandat.js';
+import { duocBoQua, hienGoiY } from '../lib/dandat.js';
 
 /**
  * MỘT CÂU HỎI TIẾNG ANH — bốn bậc, bốn cách trả lời.
@@ -39,7 +39,7 @@ import { duocBoQua, HIEN_GOI_Y } from '../lib/dandat.js';
  *   ms         thời gian làm RIÊNG lượt ấy (RT_avg của mục 2.3.1). Đo từ lúc câu
  *              hiện ra, hoặc từ lúc bé bấm "Thử lại" — không phải từ lúc mở bài.
  *   hintsUsed  bé đã THẤY mấy gợi ý (H_req). Bên Tiếng Anh gợi ý hiện TỰ ĐỘNG sau
- *              `HIEN_GOI_Y` lần thử chứ không do bé xin, nên đây là "đã thấy",
+ *              `hienGoiY()` lần thử chứ không do bé xin, nên đây là "đã thấy",
  *              không phải "đã xin" — nghĩa hơi khác Toán, chỗ nào đọc cũng nên biết.
  *   answer     bé gõ/bấm gì. Trường quý nhất: hai bé sai hai kiểu cần hai cách giúp.
  */
@@ -76,8 +76,9 @@ export default function CauHoi({ cau, onXong, onLuot = null }) {
     /* Bé đã THẤY mấy gợi ý tính tới lượt này. Cùng phép tính với chỗ hiện gợi ý ở
        dưới, nên hai chỗ không lệch nhau được. */
     const dsGoi = cau.hints || [];
-    const daThay = lan >= HIEN_GOI_Y
-      ? Math.min(lan - HIEN_GOI_Y + 1, dsGoi.length) : 0;
+    const nguongGoi = hienGoiY();
+    const daThay = lan >= nguongGoi
+      ? Math.min(lan - nguongGoi + 1, dsGoi.length) : 0;
     onLuot?.({
       cau,
       ok: r.ok,
@@ -315,8 +316,9 @@ function Chua({ kq, cau, lan, onThuLai, onTiep }) {
   }
   /* Sai lần đầu: chỉ bảo thử lại. Sai lần hai: mới đưa gợi ý. Đưa gợi ý ngay từ
      lần đầu thì bé không kịp tự nghĩ, mà giấu mãi thì bé nản. */
-  const goi = lan >= HIEN_GOI_Y
-    ? (cau.hints || [])[Math.min(lan - HIEN_GOI_Y, (cau.hints || []).length - 1)] : null;
+  const nguongGoi = hienGoiY();
+  const goi = lan >= nguongGoi
+    ? (cau.hints || [])[Math.min(lan - nguongGoi, (cau.hints || []).length - 1)] : null;
   return (
     <div className="flex flex-col gap-2 rounded-xl2 bg-gold-pale p-4">
       <div className="flex flex-wrap items-center gap-3">

@@ -23,20 +23,32 @@ import { layNguong, boNguong } from '../../../chung/lib/nguong.js';
 import { duyetNguoc, duyetXuoi, nhanNut } from './doThi.js';
 import { nguongThao, mucThaoCua } from './zpd.js';
 
-/** Mỗi bước lùi thì độ ngờ còn lại bấy nhiêu. */
+/* ── MỌI THAM SỐ ĐỌC LÚC DÙNG, KÈM NGỮ CẢNH (Bảng 4.7, điểm 4 và 5) ──
+   Trước 22-11 α, d, m chụp một lần lúc nạp module, còn β, độ sâu xuôi, trần và P(L)
+   giả định thì gõ cứng. Chuyên gia đặt α riêng cho Tiếng Anh lớp 3 thì không chỗ nào
+   ăn. Nay mỗi tham số là một HÀM đọc bộ của phiên lúc gọi; các hằng viết hoa vẫn còn
+   (chụp bộ của phiên, cho cổng và chỗ chỉ HIỂN THỊ con số chung) nhưng không quyết
+   định gì nữa. */
+
+/** NG12 · α — mỗi bước lùi thì độ ngờ còn lại bấy nhiêu. */
+export const heSoAlpha = (nc) => layNguong(boNguong(), 'NG12', nc);
 export const ALPHA = layNguong(boNguong(), 'NG12');
 
-/** Mỗi bước tiến thì cộng thêm bấy nhiêu, nhân với mức thạo của nút nguồn. */
-export const BETA = 0.08;
+/** NG22 · β — mỗi bước tiến thì cộng thêm bấy nhiêu, nhân với mức thạo của nút nguồn. */
+export const heSoBeta = (nc) => layNguong(boNguong(), 'NG22', nc);
+export const BETA = layNguong(boNguong(), 'NG22');
+
+/** NG24 · lan truyền xuôi đi xa nhất mấy bước. */
+export const doSauXuoi = (nc) => layNguong(boNguong(), 'NG24', nc);
 
 /**
  * ⚠ TRẦN CỦA LAN TRUYỀN XUÔI. Cộng hưởng không bao giờ được đưa một nút TỚI
- * ngưỡng thạo — chỉ bài bé thật sự làm mới làm được điều đó.
+ * ngưỡng thạo — chỉ bài bé thật sự làm mới làm được điều đó. Trần = θ − NG23.
  */
 /* Hàm, không hằng — xem chú thích ở `zpd.js`. */
-export const nguongTran = (nc) => nguongThao(nc) - 0.05;
+export const nguongTran = (nc) => nguongThao(nc) - layNguong(boNguong(), 'NG23', nc);
 /* Bản `toanHe` cho cổng và cho chỗ chỉ cần con số chung. */
-export const NGUONG_TRAN = nguongThao({}) - 0.05;
+export const NGUONG_TRAN = nguongThao({}) - layNguong(boNguong(), 'NG23', {});
 
 /**
  * NÚT GỐC RỄ — bé sai ở `maNut`, thật ra hổng ở đâu.
@@ -50,28 +62,35 @@ export const NGUONG_TRAN = nguongThao({}) - 0.05;
  * ⚠ NÚT CHƯA CÓ SỐ thì coi như P(L) = L0 (bé chưa học) — tức là RẤT đáng ngờ, và
  * đúng thế: một tiên quyết bé chưa từng chạm chính là lý do hay gặp nhất. Nhưng
  * KHÔNG coi nó là 0 tuyệt đối, vì "chưa có tin" vẫn khác "đã đo và thấy hổng".
+ * Con số ấy là NG26 (mặc định bằng L0).
  */
-export const P_MAC_DINH = 0.1;
+export const pChuaCoSo = (nc) => layNguong(boNguong(), 'NG26', nc);
+export const P_MAC_DINH = layNguong(boNguong(), 'NG26');
 
 /** NG10 · d — đi ngược xa nhất mấy bước khi tìm nút gốc rễ. */
+export const doSauNguoc = (nc) => layNguong(boNguong(), 'NG10', nc);
 export const SAU_TOI_DA = layNguong(boNguong(), 'NG10');
 /** NG11 · m — trả về nhiều nhất mấy nút gốc. */
+export const soNutGoc = (nc) => layNguong(boNguong(), 'NG11', nc);
 export const NUT_GOC_TOI_DA = layNguong(boNguong(), 'NG11');
 
-export function nutGocRe(dt, mucThao, maNut,
-                         { sauToiDa = SAU_TOI_DA, toiDa = NUT_GOC_TOI_DA } = {}) {
+export function nutGocRe(dt, mucThao, maNut, { sauToiDa, toiDa } = {}) {
   if (!maNut) return [];
-  const ds = duyetNguoc(dt, maNut, { sauToiDa });
+  /* Ngữ cảnh của LỜI GỌI là nút bé vừa sai; ngữ cảnh của từng ỨNG VIÊN là chính nút
+     ấy — θ và P(L) giả định là chuyện của nút được xét, không của nút xuất phát. */
+  const nc = { nut: maNut };
+  const alpha = heSoAlpha(nc);
+  const ds = duyetNguoc(dt, maNut, { sauToiDa: sauToiDa ?? doSauNguoc(nc) });
   return ds
     .map(({ ma, buoc }) => {
-      const p = mucThaoCua(mucThao, ma) ?? P_MAC_DINH;
-      return { ma, buoc, p, doNgo: (ALPHA ** buoc) * (1 - p) };
+      const p = mucThaoCua(mucThao, ma) ?? pChuaCoSo({ nut: ma });
+      return { ma, buoc, p, doNgo: (alpha ** buoc) * (1 - p) };
     })
     /* Nút bé đã THẠO thì loại hẳn, không xếp hạng thấp: giữ lại là màn hình có
        thể bày ra "chỗ hổng gốc rễ" trỏ vào một thứ bé làm đúng mãi. */
-    .filter((x) => x.p < nguongThao())
+    .filter((x) => x.p < nguongThao({ nut: x.ma }))
     .sort((a, b) => b.doNgo - a.doNgo)
-    .slice(0, toiDa);
+    .slice(0, toiDa ?? soNutGoc(nc));
 }
 
 /**
@@ -85,19 +104,22 @@ export function nutGocRe(dt, mucThao, maNut,
  *   2. mức cộng nhỏ dần theo bước (β / bước);
  *   3. kết quả bị KẸP dưới `NGUONG_TRAN` — không bao giờ chạm ngưỡng thạo.
  */
-export function congHuong(dt, mucThao, { sauToiDa = 2, beta = BETA } = {}) {
+export function congHuong(dt, mucThao, { sauToiDa, beta } = {}) {
   const ra = {};
   const nguon = Object.keys(mucThao || {}).filter(
-    (ma) => (mucThaoCua(mucThao, ma) ?? 0) >= nguongThao(),
+    (ma) => (mucThaoCua(mucThao, ma) ?? 0) >= nguongThao({ nut: ma }),
   );
   for (const g of nguon) {
     const pg = mucThaoCua(mucThao, g) ?? 0;
-    for (const { ma, buoc } of duyetXuoi(dt, g, { sauToiDa })) {
-      const cu = ra[ma] ?? mucThaoCua(mucThao, ma) ?? P_MAC_DINH;
+    const ncG = { nut: g };
+    const b = beta ?? heSoBeta(ncG);
+    for (const { ma, buoc } of duyetXuoi(dt, g, { sauToiDa: sauToiDa ?? doSauXuoi(ncG) })) {
+      const ncDich = { nut: ma };
+      const cu = ra[ma] ?? mucThaoCua(mucThao, ma) ?? pChuaCoSo(ncDich);
       /* Đã thạo rồi thì cộng hưởng không có việc gì làm. */
-      if (cu >= nguongThao()) continue;
-      const them = (beta / buoc) * pg;
-      ra[ma] = Math.min(nguongTran(), cu + them);
+      if (cu >= nguongThao(ncDich)) continue;
+      const them = (b / buoc) * pg;
+      ra[ma] = Math.min(nguongTran(ncDich), cu + them);
     }
   }
   return ra;

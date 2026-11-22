@@ -153,7 +153,7 @@ export function donHoSo(hs, { mucThao = null, buoiHienTai = 0 } = {}) {
   ra.baiHoc = ra.baiHoc.filter((x) => (x?.hetHanBuoi ?? 0) > nay)
     .slice(-TRAN_PHAN_TU.baiHoc);
 
-  const daThao = (nut) => nut && (mucThaoCua(mucThao, nut) ?? 0) >= nguongThao();
+  const daThao = (nut) => nut && (mucThaoCua(mucThao, nut) ?? 0) >= nguongThao({ nut });
   ra.baiHoc = ra.baiHoc.filter((x) => !daThao(x?.nut));
   /* `loiLap` và `tuNham` là chuỗi chữ trần, không mang nút. Khi chỗ gọi biết nút
      thì nó truyền dạng `{chu, nut}` — nhận cả hai hình dạng, vì bản đầu chỉ có

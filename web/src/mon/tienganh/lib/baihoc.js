@@ -57,7 +57,7 @@ export const TU_CAM = [
 ];
 
 /** Lời dặn cho lượt tóm tắt — bản nháp ở §9 mục C1 của bản rà 09-10. */
-export function loiDanTomTat({ von, tenBe = 'con', lop = 1 } = {}) {
+export function loiDanTomTat({ von, lop = 1 } = {}) {
   const tu = [...(von?.loi?.tu || []), ...(von?.on || []).flatMap((x) => x.tu || [])];
   /* Bảng vốn CẮT NGẮN có chủ đích: lời dặn này chịu trần 1500, mà vốn lớp 5 mở rộng
      lên tới vài trăm mục. Phần trích tiếng Anh của bài học chỉ cần vài chữ, và
@@ -69,7 +69,7 @@ export function loiDanTomTat({ von, tenBe = 'con', lop = 1 } = {}) {
     bang.push(t.tu);
   }
   const than = [
-    `You are reviewing a short English practice session of a Vietnamese child named ${tenBe}`
+    `You are reviewing a short English practice session of a Vietnamese child`
       + ` (grade ${lop}). The conversation is below.`,
     '',
     "Write, IN VIETNAMESE, for the teacher's private notebook:",
@@ -89,10 +89,15 @@ export function loiDanTomTat({ von, tenBe = 'con', lop = 1 } = {}) {
     '   note. Say the mistake once, and name the words together if you must.',
     '5. If nothing repeated, return an empty list. An empty list is a good answer.',
     '',
-    'Reply as JSON only: {"baiHoc":[{"chu":"…","nut":null}],"khen":"…"}',
   ].join('\n');
-  return than.length > TOM_TAT_TOI_DA_CHU
-    ? `${than.slice(0, TOM_TAT_TOI_DA_CHU - 3)}...` : than;
+  /* ⚠ DÒNG ĐÒI JSON LUÔN ĐỨNG CUỐI VÀ KHÔNG BAO GIỜ BỊ CẮT. Bản cũ cắt đuôi cả
+     khối ở trần, và ở 35/94 bài cái bị cắt chính là dòng này — mô hình không biết
+     phải trả JSON, `docTomTat` không đọc được, và buổi mất phần rút kinh nghiệm.
+     Nay cắt phần thân, giữ nguyên đuôi. */
+  const duoi = 'Reply as JSON only: {"baiHoc":[{"chu":"…","nut":null}],"khen":"…"}';
+  const tran = TOM_TAT_TOI_DA_CHU - duoi.length - 1;
+  const dau = than.length > tran ? `${than.slice(0, tran - 3)}...` : than;
+  return `${dau}\n${duoi}`;
 }
 
 /**

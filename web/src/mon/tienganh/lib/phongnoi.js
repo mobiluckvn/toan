@@ -187,6 +187,9 @@ export function vonCuaBai(bai) {
  * được vào — kể cả khi đồ thị bảo bài này cần nó. Bỏ chốt ấy là cô giáo máy nói
  * bằng từ bé chưa từng học, tức là tự tay chọc thủng tầng chống ảo giác.
  */
+/** Trần số bài tiên quyết đắp thêm vào vốn từ — xem `vonTu`. */
+export const TIEN_QUYET_TOI_DA = 2;
+
 export function vonTu({
   baiNay, baiCu = [], baiTQ = [], daDat = false, datCu = () => false,
 } = {}) {
@@ -203,9 +206,12 @@ export function vonTu({
      danh sách để trộn vốn từ, một bài xuất hiện hai lần chẳng thêm được chữ nào
      mà làm lời dặn dài ra vô ích. */
   const daCo = new Set(gan.map((b) => b?.id));
+  /* ⚠ CÓ TRẦN. Không chặn thì bài lớp 5 nhiều tiên quyết đẩy lời dặn vượt trần
+     `TOI_DA_CHU_LOI_DAN` của máy chủ (đo cận trên: gần 14.000 ký tự) — máy chủ
+     chặn ở cửa và bé mất MỌI lượt của buổi. Lấy các bài tiên quyết GẦN NHẤT. */
   const them = (baiTQ || []).filter(
     (b) => b?.id && !daCo.has(b.id) && b.id !== baiNay?.id && datCu(b.id),
-  );
+  ).slice(-TIEN_QUYET_TOI_DA);
 
   const on = [...gan, ...them].map(vonCuaBai);
   return { loi, on, moRong: on.length > 0 };
@@ -831,10 +837,21 @@ export function catNguCanh(ds = [], toiDa = LUOT_GUI_TOI_DA) {
   return sach.slice(-toiDa);
 }
 
-/** Dạng gửi lên máy chủ — chỉ vai và chữ, không kèm điểm hay dấu thời gian. */
+/**
+ * Dạng gửi lên máy chủ — chỉ vai và chữ, không kèm điểm hay dấu thời gian.
+ *
+ * ⚠ LƯỢT CỦA CÔ GỬI LẠI ĐÚNG KHUÔN `{en, vi}` mà cô đã trả. Bản cũ chỉ gửi `chu`
+ * (= câu tiếng Anh), nên mô hình không thấy lời tiếng Việt chính nó đã giảng cho
+ * bé, và lịch sử toàn chữ trần trong khi lời dặn đòi JSON — mô hình bắt chước
+ * lịch sử, trả chữ trần, và bị bác khuôn (`json_validate_failed`). Mỗi nửa vẫn cắt
+ * ở `CHU_TOI_DA` như trước.
+ */
 export const goiGui = (ds) => catNguCanh(ds).map((x) => ({
   role: x.vai === 'may' ? 'assistant' : 'user',
-  content: String(x.chu).slice(0, CHU_TOI_DA),
+  content: x.vai === 'may' && (x.en || x.vi)
+    ? JSON.stringify({ en: String(x.en || '').slice(0, CHU_TOI_DA),
+                       vi: String(x.vi || '').slice(0, CHU_TOI_DA) })
+    : String(x.chu).slice(0, CHU_TOI_DA),
 }));
 
 /* ─────────── hình cho từ đang nói tới ─────────── */

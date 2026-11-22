@@ -2,7 +2,21 @@
  * HÀNG ĐỢI ÔN TẬP — dựng từ spacedReview.schedule có sẵn trong mỗi micro.
  * Chuỗi dạng: "+1 ngày: flashcard" · "+3 ngày: câu generator P1" · "+7 ngày: câu P3 (bộ ba)"
  */
+import { layNguong, boNguong } from './nguong.js';
+
 const DAY = 24 * 60 * 60 * 1000;
+
+/**
+ * LỊCH ÔN MẶC ĐỊNH — dùng khi bài KHÔNG khai `spacedReview.schedule`.
+ *
+ * Trước 22-11 ba mốc +1 · +3 · +7 ngày gõ cứng ngay trong `functions/index.js`
+ * (Bảng 4.7, điểm 5). Nay là NG28 trong bảng ngưỡng, đọc lúc dùng từ bộ đã phát hành;
+ * chuỗi ra GIỮ ĐÚNG hình dạng cũ để `parseSchedule` đọc như trước.
+ */
+export function lichOnMacDinh(bo = boNguong(), nc = {}) {
+  const l = layNguong(bo, 'NG28', nc);
+  return [`+${l.m1} ngày: flashcard`, `+${l.m2} ngày: câu luyện`, `+${l.m3} ngày: câu thử thách`];
+}
 
 /** "+3 ngày: câu generator P1" → {days: 3, what: 'câu generator P1'} */
 export function parseSchedule(line) {

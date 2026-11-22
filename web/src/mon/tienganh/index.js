@@ -21,7 +21,10 @@
 import ManTiengAnh from './components/ManTiengAnh.jsx';
 import { napTienDo, luuTienDo, gopTienDo, soRong } from './lib/progress.js';
 import { quyenHoc, tienDoQuyen, hocBaTu } from './lib/hocba.js';
-import { tienDoTuMay, bangXepHang as xepHangTA } from './lib/duLieu.js';
+import {
+  tienDoTuMay, bangXepHang as xepHangTA, lamMoiBangXepHang, soMayChu, lamMoiSoMayChu,
+  nhatKyCuaEm,
+} from './lib/duLieu.js';
 
 export default {
   ma: 'tienganh',
@@ -42,19 +45,23 @@ export default {
   dsQuyen: quyenHoc,
   tienDoQuyen,
   hocBa: async (tienDo) => hocBaTu(tienDo),
-  hocBaCuaEm: async () => ({ quyen: [], chuDe: null, trinhDo: null }),
+  /* Cô giáo xem một em: đọc sổ của em trên máy chủ rồi dựng học bạ bằng ĐÚNG hàm
+     sổ bố mẹ dùng — hai màn không được kể hai câu chuyện khác nhau về cùng một bé. */
+  hocBaCuaEm: async (uid) => {
+    const tienDo = { ...soRong(), ...(await tienDoTuMay(uid)) };
+    return { ...hocBaTu(tienDo), tienDo };
+  },
 
   /* Bảng xếp hạng dùng CHUNG tài liệu `bangXepHang/global` với Toán — thêm bảng
-     thứ hai là mở thêm một lối rò dữ liệu bé. Nhưng hàm nền hiện chỉ đếm sao của
-     Toán, nên hàm dưới trả null cho tới khi nó biết tính cả tiếng Anh. Bảng cô
-     giáo cũng vậy. */
+     thứ hai là mở thêm một lối rò dữ liệu bé. Trong tài liệu ấy mỗi môn một bảng. */
   bangXepHang: xepHangTA,
-  lamMoiBangXepHang: async () => ({ boQua: true }),
-  soMayChu: async () => null,
-  lamMoiSoMayChu: async () => {},
+  lamMoiBangXepHang,
+  /* Sổ học máy chủ là MỘT tài liệu cho cả hai môn — xem `lib/duLieu.js`. */
+  soMayChu,
+  lamMoiSoMayChu,
   bangCoGiao: async () => null,
   lamMoiBangCoGiao: async () => {},
-  nhatKyCuaEm: async () => [],
+  nhatKyCuaEm,
 
   napBanDoDang: async () => ({}),
   tenDang: (ma) => ma,

@@ -67,10 +67,13 @@ export const NHOM = {
  * nền chưa chạy xong, hay trường thiếu — cả ba đều là "chưa có tin", mà coi
  * "chưa có tin" thành "bé rất yếu" là xếp nhầm cả nhóm xuống cuối buổi.
  */
-export function nhomCua(p) {
+export function nhomCua(p, nc) {
   if (!Number.isFinite(p)) return NHOM.chuaBiet;
-  if (p >= NGUONG_THAO) return NHOM.daThao;
-  if (p < NGUONG_YEU) return NHOM.yeu;
+  /* Đọc LÚC GỌI, kèm ngữ cảnh (Bảng 4.7, điểm 4). Trước 22-11 hàm này so với hai hằng
+     chụp lúc nạp module, nên θ chuyên gia đặt cho khối lớp hay cho một nút không bao
+     giờ đổi được thứ tự câu — dù chính sách (`chinhsach.js`) đã đọc đúng phạm vi. */
+  if (p >= nguongThao(nc)) return NHOM.daThao;
+  if (p < nguongYeu(nc)) return NHOM.yeu;
   return NHOM.chongChenh;
 }
 
@@ -138,7 +141,8 @@ export function xepTheoZPD(cauDs, mucThao, hoSo = null) {
 
   return ds
     .map((c, i) => {
-      const n = coThao ? nhomCua(mucThaoCua(mucThao, c?.maNut)) : NHOM.chuaBiet;
+      const n = coThao ? nhomCua(mucThaoCua(mucThao, c?.maNut), { nut: c?.maNut || undefined })
+        : NHOM.chuaBiet;
       return { c, i, n, d: coDang ? hangDinhDang(c?.format, hoSo, n) : 0 };
     })
     .sort((a, b) => (a.n - b.n) || (a.d - b.d) || (a.i - b.i))
@@ -152,7 +156,7 @@ export function xepTheoZPD(cauDs, mucThao, hoSo = null) {
 export function nutChongChenh(mucThao, { toiDa = 5 } = {}) {
   return Object.entries(mucThao || {})
     .map(([ma, d]) => ({ ma, p: Number.isFinite(d?.p) ? d.p : null }))
-    .filter((x) => x.p !== null && nhomCua(x.p) === NHOM.chongChenh)
+    .filter((x) => x.p !== null && nhomCua(x.p, { nut: x.ma }) === NHOM.chongChenh)
     .sort((a, b) => a.p - b.p)
     .slice(0, toiDa);
 }

@@ -49,7 +49,7 @@ const GIU = { gan: 'khac', dieuChinh: 0, nhatTri: false };
  */
 export const goiMay = (du) => {
   if (!hasFirebase || !fns) throw new Error('Máy chưa nối được lên mạng.');
-  return httpsCallable(fns, 'phanXuNoi')(du);
+  return httpsCallable(fns, 'phanXuNoi', { timeout: 15000 })(du);
 };
 
 /**

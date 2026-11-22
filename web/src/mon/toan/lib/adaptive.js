@@ -11,6 +11,8 @@ import { layNguong, boNguong } from '../../../chung/lib/nguong.js';
 import { allMicroIds, chapterOf } from './noiDung.js';
 import { isMicroUnlocked, isChapterExamUnlocked, ketQuaChuong } from './progress.js';
 
+/** NG07 · θ — đọc LÚC GỌI, kèm nút (Bảng 4.7, điểm 4). Hằng dưới chỉ để hiển thị/cổng. */
+export const nguongThaoToan = (nc) => layNguong(boNguong(), 'NG07', nc);
 export const MASTERY_THRESHOLD = layNguong(boNguong(), 'NG07');
 export const MAX_REVIEW_PER_SESSION = 3;
 
@@ -46,7 +48,10 @@ export function pickMicro({ progress, mastery = {}, index = {}, list = allMicroI
     const done = progress.micros?.[id]?.pass;
     const p = masteryOfMicro(mastery, id, index);
     if (!done) return { microId: id, reason: 'chưa học', mastery: p };
-    if (p !== null && p < MASTERY_THRESHOLD) return { microId: id, reason: 'đã quên bớt', mastery: p };
+    const unit = index?.[keyOf(id)]?.bktUnit;
+    if (p !== null && p < nguongThaoToan(unit ? { nut: unit } : {})) {
+      return { microId: id, reason: 'đã quên bớt', mastery: p };
+    }
   }
   return null;
 }

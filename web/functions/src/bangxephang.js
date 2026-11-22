@@ -124,7 +124,49 @@ export function xepHang(ds, diemCua) {
  * @param progress { uid: { microId: {pass, at} } }
  * @param hocBa    { uid: [{loai, giaTri:{pass|dat, at}}] }
  */
-export function buildBangXepHang({
+/** Môn của một lượt · một mã bài. Mã bài hai môn không bao giờ trùng (`DL:TA1.*`). */
+export const monCuaMa = (ma) => (/^DL:TA/.test(String(ma || '')) ? 'tienganh' : 'toan');
+const monCuaLuot = (a) => (a?.mon === 'tienganh' || a?.mon === 'toan' ? a.mon : monCuaMa(a?.microId));
+export const MON_BANG = ['toan', 'tienganh'];
+
+/**
+ * Dựng bảng xếp hạng — bảng GỘP cả hai môn ở `rows`, và mỗi môn một bảng ở
+ * `theoMon[mon].rows`.
+ *
+ * Vì sao vẫn MỘT tài liệu: đây là chỗ duy nhất bé đọc được về bé khác (xem đầu tệp);
+ * tài liệu thứ hai là lối rò thứ hai. Tách theo môn bên trong thì không mở thêm gì.
+ *
+ * Bảng của một môn chỉ có em ĐÃ TỪNG học môn đó (có bài trong sổ tiến độ hoặc có
+ * lượt trong cửa sổ) — bé lớp 1 chỉ học Tiếng Anh thì không đứng bét bảng Toán với
+ * 0 sao.
+ *
+ * `hocBa` của Tiếng Anh mang `mon: 'tienganh'` (hàm nền gắn lúc đọc `hocBaTA`).
+ */
+export function buildBangXepHang(dau) {
+  const gop = dungBang(dau);
+  const { roster = [], attempts = [], progress = {}, hocBa = {} } = dau;
+  const theoMon = {};
+  for (const mon of MON_BANG) {
+    const att = attempts.filter((a) => monCuaLuot(a) === mon);
+    const prog = {};
+    for (const [uid, m] of Object.entries(progress)) {
+      prog[uid] = Object.fromEntries(Object.entries(m || {})
+        .filter(([id, x]) => monCuaMa(x?.microId || id) === mon));
+    }
+    const hb = {};
+    for (const [uid, ds] of Object.entries(hocBa)) {
+      hb[uid] = (ds || []).filter((x) => (x?.mon === 'tienganh' ? 'tienganh' : 'toan') === mon);
+    }
+    const coHoc = new Set(att.map((a) => a.learnerId));
+    for (const [uid, m] of Object.entries(prog)) if (Object.keys(m).length) coHoc.add(uid);
+    const b = dungBang({ ...dau, roster: roster.filter((r) => coHoc.has(r.uid)),
+                         attempts: att, progress: prog, hocBa: hb });
+    theoMon[mon] = { soEm: b.soEm, soEmCoHoc: b.soEmCoHoc, rows: b.rows };
+  }
+  return { ...gop, theoMon, coTiengAnh: true };
+}
+
+function dungBang({
   roster = [], attempts = [], progress = {}, hocBa = {}, now = Date.now(), days = 7,
 }) {
   const from = now - days * 86400000;
@@ -141,7 +183,9 @@ export function buildBangXepHang({
     const nhat = theoEm.get(u.uid) || [];
     const bai = Object.values(progress[u.uid] || {}).filter((m) => m?.pass);
     const hb = hocBa[u.uid] || [];
-    const chuong = hb.filter((x) => x.loai === 'chuong' && x.giaTri?.pass);
+    /* Toán ghi `pass`, Tiếng Anh ghi `dat` (xem `ghiChuong` của môn ấy) — đọc cả
+       hai, không thì huy hiệu chương Tiếng Anh không bao giờ lên bảng. */
+    const chuong = hb.filter((x) => x.loai === 'chuong' && (x.giaTri?.pass || x.giaTri?.dat));
     const dau = hb.filter((x) => x.loai === 'dau' && x.giaTri?.dat);
 
     const trongKhoang = {

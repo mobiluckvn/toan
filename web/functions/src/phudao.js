@@ -17,14 +17,24 @@
  */
 import { vanTay } from './vantay.js';
 import { MO_HINH, NGHI_NGAN, LoiGoi } from './luyennoi.js';
+import { goiDoiJson } from './llm.js';
+import { layNguong, boNguong } from './nguong.js';
 
 export { MO_HINH, NGHI_NGAN, LoiGoi };
 
 /** Trần gói gửi lên. Rộng cho một nút thật, đủ chặn một gói bất thường. */
 export const TOI_DA_TU_VON = 400;
 export const TOI_DA_CHU_NHAN = 200;
-export const SO_CAU_TOI_DA = 4;
+/* NG27 · trần số câu một gói — ĐỌC LÚC DÙNG (Bảng 4.7, điểm 5). Trước 22-11 gõ cứng
+   4, cùng con số với `SO_CAU_PHU_DAO` của máy con nhưng hai nơi hai hằng: chuyên gia
+   nâng bài phụ đạo lên 5 câu thì máy con xin 5, máy chủ bác vì "phải từ 1 tới 4".
+   Nay cả hai đọc NG27; máy chủ tra theo khối lớp gói khai (máy con xin theo khối lớp
+   của phiên), để một giá trị riêng của lớp 3 không bị trần toàn hệ chặn. */
+export const soCauToiDa = (bo = boNguong(), nc = {}) => layNguong(bo, 'NG27', nc);
+export const SO_CAU_TOI_DA = soCauToiDa();
+/* Ngân sách token theo số câu: 700 cho 4 câu như cũ, nới theo khi NG27 lớn hơn. */
 export const TOKEN_PHU_DAO = 700;
+export const tokenPhuDao = (soCau) => Math.max(TOKEN_PHU_DAO, Math.ceil((TOKEN_PHU_DAO / 4) * soCau));
 
 /**
  * Soi gói máy con gửi lên. Trả gói đã sạch, hoặc ném `LoiGoi`.
@@ -32,7 +42,7 @@ export const TOKEN_PHU_DAO = 700;
  * Tách khỏi phần gọi mạng để chạy được bằng `node` mà không cần khoá — chỗ dễ sai
  * ở đây là mấy con số chốt cửa, mà chúng không cần mạng để thử.
  */
-export function soiGoiPhuDao(du) {
+export function soiGoiPhuDao(du, bo = boNguong()) {
   const nhan = String(du?.nhan ?? '').trim();
   const soCau = Number(du?.soCau);
   const vonTu = Array.isArray(du?.vonTu) ? du.vonTu : null;
@@ -45,13 +55,15 @@ export function soiGoiPhuDao(du) {
   if (vonTu.length > TOI_DA_TU_VON) {
     throw new LoiGoi('von-qua-lon', `Vốn từ nhiều quá ${TOI_DA_TU_VON} mục.`);
   }
-  if (!Number.isFinite(soCau) || soCau < 1 || soCau > SO_CAU_TOI_DA) {
-    throw new LoiGoi('so-cau-la', `Số câu phải từ 1 tới ${SO_CAU_TOI_DA}.`);
+  const lop = Number(du?.lop) || 1;
+  const tran = soCauToiDa(bo, { mon: 'tienganh', khoiLop: String(lop) });
+  if (!Number.isFinite(soCau) || soCau < 1 || soCau > tran) {
+    throw new LoiGoi('so-cau-la', `Số câu phải từ 1 tới ${tran}.`);
   }
   return {
     nhan,
     soCau: Math.floor(soCau),
-    lop: Number(du?.lop) || 1,
+    lop,
     vonTu: vonTu.map((v) => ({ tu: String(v?.tu ?? v ?? ''), nghia: String(v?.nghia || '') }))
       .filter((v) => v.tu),
     mauCau: mauCau.map((x) => String(x || '')).filter(Boolean),
@@ -101,16 +113,16 @@ export const khungPhuDao = (lop, soCau, coMauCau) => loiDanSinhPhuDao({
   nhan: '', vonTu: [], mauCau: coMauCau ? ['—'] : [], soCau, lop,
 });
 
-export async function sinhPhuDao(du, taoClient) {
-  const goi = soiGoiPhuDao(du);
+export async function sinhPhuDao(du, taoClient, bo = boNguong()) {
+  const goi = soiGoiPhuDao(du, bo);
+  const token = tokenPhuDao(goi.soCau);
   const client = taoClient();
-  const kq = await client.chat.completions.create({
+  const kq = await goiDoiJson(client, {
     model: MO_HINH,
     messages: [{ role: 'system', content: loiDanSinhPhuDao(goi) }],
     temperature: 0.3,
-    max_tokens: TOKEN_PHU_DAO,
+    max_tokens: token,
     reasoning_effort: NGHI_NGAN,
-    response_format: { type: 'json_object' },
   });
   const chon = kq?.choices?.[0];
   const chu = chon?.message?.content || '';
@@ -125,7 +137,7 @@ export async function sinhPhuDao(du, taoClient) {
     chu,
     moHinh: MO_HINH,
     ...vanTay('phudao', khungPhuDao(goi.lop, goi.soCau, goi.mauCau.length > 0), {
-      moHinh: MO_HINH, nhiet: 0.3, token: TOKEN_PHU_DAO,
+      moHinh: MO_HINH, nhiet: 0.3, token,
     }),
   };
 }

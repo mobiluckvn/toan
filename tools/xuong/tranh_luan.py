@@ -97,8 +97,16 @@ def tranh_luan(muc: dict, *, loai: str, lop: int, chu_de: str, ly_do_bac: str,
         'TRẢ LỜI ĐÚNG MỘT KHỐI JSON: {"dap": "…"}',
         '- "dap": tiếng Việt, nhiều nhất 60 chữ.',
     ]), NHIET_THUAN, chung.MO_HINH, k)
-    dap = str(d1.get("dap") or d1.get("_loi") or "").strip()
-    vong.append({"phia": "thuan", "chu": dap, "loi": d1.get("_loi")})
+    # ⚠ Lượt hỏng thì KHÔNG có câu đáp. Bản cũ đem chuỗi lỗi (`_loi`) làm câu đáp
+    # rồi đưa cho phía bác đọc — mô hình "phản biện" một dòng báo lỗi HTTP.
+    dap = str(d1.get("dap") or "").strip()
+    vong.append({"phia": "thuan",
+                 "chu": dap or (f"(lỗi: {d1['_loi']})" if "_loi" in d1 else ""),
+                 "loi": d1.get("_loi")})
+    if "_loi" in d1 or not dap:
+        DEM["giu_y"] += 1
+        return {"vong": vong, "giu_y": True, "mot_model": chung.MO_HINH_PHU == chung.MO_HINH,
+                "so_vong": SO_VONG, "loi": d1.get("_loi") or "phía thuận không đáp"}
 
     # ── VÒNG 2 · phía BÁC đọc câu đáp rồi nói còn giữ ý không ──
     d2 = _goi("\n".join([

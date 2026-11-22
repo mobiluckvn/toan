@@ -19,4 +19,9 @@ export const TEN_NGUONG = {
   NG16: 'H3 — coi là bế tắc (giây)', NG17: 'H6 — coi là mệt mỏi',
   NG18: 'H7 — lượt tối thiểu cho dạng câu', NG19: 'cặp ΔC tối thiểu',
   NG20: 'câu hỏi tối thiểu mỗi nút', NG21: 'cỡ mẫu để học một ngưỡng',
+  NG22: 'β — cộng hưởng lan truyền xuôi', NG23: 'trần lan truyền xuôi (dưới θ)',
+  NG24: 'độ sâu lan truyền xuôi', NG25: 'điểm tựa của hàm quên',
+  NG26: 'P(L) giả định của nút chưa có số', NG27: 'số câu một bài phụ đạo',
+  NG28: 'lịch ôn sau khi đạt bài (ngày)', NG29: 'CEFR — phần vốn để coi là đạt',
+  NG30: 'CEFR — số nút tối thiểu của khối',
 };

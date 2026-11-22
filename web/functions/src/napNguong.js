@@ -19,10 +19,14 @@
  * ⚠ HỎNG THÌ LÙI VỀ MẶC ĐỊNH, KHÔNG NÉM. Firestore trục trặc mà làm hỏng cả đường
  *   chấm BKT thì một sự cố đọc cấu hình thành một sự cố mất điểm của trẻ.
  *
- * ⚠ BẢNG `nguong` CHƯA TỒN TẠI cho tới đợt 3 — lúc ấy đọc ra rỗng và hàm này lùi về
- *   bộ mặc định, đúng như mong muốn. Khi bảng có thật thì nó tự dùng, không phải sửa.
+ * ⚠ BẢNG `nguong` RỖNG (chưa ai phát hành) thì đọc ra rỗng và hàm này lùi về bộ
+ *   mặc định, đúng như mong muốn.
+ *
+ * ⚠ AI DÙNG BỘ NÀY. Không chỉ `onAttempt`: sổ bố mẹ (`report.js`), lịch ôn mặc định
+ *   (`schedule.js`), phép soi gói phụ đạo (`phudao.js`) và ΔC (`ara.js`) đều nhận bộ
+ *   từ đây, truyền vào tận tay — chứ không đọc `BO_MAC_DINH` (Bảng 4.7, điểm 4).
  */
-import { datBoNguong, BO_MAC_DINH, boNguong } from './nguong.js';
+import { datBoNguong, BO_MAC_DINH, boNguong, boTuBang } from './nguong.js';
 
 /** Nhớ bao lâu thì đọc lại. */
 export const HAN_NHO_MS = 5 * 60 * 1000;
@@ -50,22 +54,11 @@ export async function layBoNguong(db, { bayGio = Date.now } = {}) {
     let tho = null;
     try {
       const snap = await db.collection('nguong').get();
-      const macDinh = {};
-      const theoPhamVi = {};
-      let phienBan = BO_MAC_DINH.phienBan;
-      snap.forEach((d) => {
-        const x = d.data() || {};
-        if (!x.ma) return;
-        if (Number.isFinite(x.phienBan)) phienBan = Math.max(phienBan, x.phienBan);
-        const pv = x.phamVi;
-        if (!pv || pv.loai === 'toanHe' || !pv.khoa) { macDinh[x.ma] = x.giaTri; return; }
-        theoPhamVi[pv.loai] = theoPhamVi[pv.loai] || {};
-        theoPhamVi[pv.loai][pv.khoa] = theoPhamVi[pv.loai][pv.khoa] || {};
-        theoPhamVi[pv.loai][pv.khoa][x.ma] = x.giaTri;
-      });
-      if (Object.keys(macDinh).length || Object.keys(theoPhamVi).length) {
-        tho = { phienBan, macDinh, theoPhamVi };
-      }
+      const dong = [];
+      snap.forEach((d) => { dong.push(d.data() || {}); });
+      /* Phép đổi dòng → bộ nằm ở `nguong.js` (`boTuBang`), dùng CHUNG với máy con —
+         hai phía hiểu `phamVi` theo đúng một luật. Bảng rỗng thì nó trả `null`. */
+      tho = boTuBang(dong);
     } catch (e) {
       LOI_DOC.ganNhat = String(e?.code || e?.message || e);
     }

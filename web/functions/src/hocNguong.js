@@ -206,7 +206,9 @@ export function hocNuaDoi(nhom, bo, { luoi = null } = {}) {
   for (const h of ds) {
     let sse = 0;
     for (const m of mau) {
-      const pQuen = 0.5 + (m.p - 0.5) * 2 ** (-m.cach / h);
+      /* Điểm tựa của hàm quên là NG25 (Bảng 4.7, điểm 5) — cùng công thức `quenDan`. */
+      const tua = layNguong(bo, 'NG25', m.nc);
+      const pQuen = tua + (m.p - tua) * 2 ** (-m.cach / h);
       const duDoan = pQuen * (1 - layNguong(bo, 'NG03', m.nc)) + (1 - pQuen) * layNguong(bo, 'NG04', m.nc);
       sse += (duDoan - (m.dung ? 1 : 0)) ** 2;
     }

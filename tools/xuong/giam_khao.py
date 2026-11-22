@@ -113,17 +113,29 @@ def _mot_phieu(chieu: str, *, lop: int, chu_de: str, bang: str, loai: str,
                       khoa_api=khoa_api)
     except chung.LoiXuong as e:
         DEM["hong"] += 1
-        # ⚠ LƯỢT HỎNG = PHIẾU THUẬN, KHÔNG PHẢI PHIẾU BÁC. Mạng hỏng thì không có
-        # bằng chứng gì về mục này, mà coi "không có bằng chứng" thành "bác" là để
-        # một lúc Groq chập chờn xoá sạch đầu ra của cả xưởng. Mục vẫn vào `duyet.md`
-        # và bác vẫn đọc nó.
-        return {"chieu": chieu, "thuan": True, "ly_do": "", "loi": str(e)}
+        # ⚠ LƯỢT HỎNG = KHÔNG CÓ PHIẾU (`None`) — không thuận, cũng không bác.
+        # Bản cũ coi lượt hỏng là THUẬN: một lúc nhà cung cấp trả 429 là cả lô được
+        # "3/3 thuận" mà `duyet.md` không ghi gì. Coi là bác thì lại xoá oan đầu ra.
+        # Nên mục thiếu phiếu đi vào nhóm riêng `thieu_phieu`, và bác đọc nó.
+        return {"chieu": chieu, "thuan": None, "ly_do": "", "loi": str(e)}
+    thuan = doc_thuan(d.get("thuan"))
     return {
         "chieu": chieu,
-        "thuan": bool(d.get("thuan", True)),
+        "thuan": thuan,
         "ly_do": str(d.get("ly_do") or "").strip(),
-        "loi": None,
+        "loi": None if thuan is not None else f"phiếu không đọc được: {d.get('thuan')!r}",
     }
+
+
+def doc_thuan(v) -> bool | None:
+    """Đọc phiếu NGHIÊM. `bool("false")` là True — bản cũ để chuỗi "false" thành
+    thuận, và thiếu khoá cũng thành thuận. Chỉ nhận true/false thật hoặc chuỗi
+    "true"/"false"; còn lại là KHÔNG CÓ PHIẾU."""
+    if isinstance(v, bool):
+        return v
+    if isinstance(v, str) and v.strip().lower() in ("true", "false"):
+        return v.strip().lower() == "true"
+    return None
 
 
 def xet(muc: dict, *, loai: str, lop: int, chu_de: str, bang: str,
@@ -139,10 +151,15 @@ def xet(muc: dict, *, loai: str, lop: int, chu_de: str, bang: str,
             lambda c: _mot_phieu(c, lop=lop, chu_de=chu_de, bang=bang, loai=loai,
                                  muc=muc, khoa_api=k),
             CHIEU))
-    so_bac = sum(1 for p in phieu if not p["thuan"])
+    so_bac = sum(1 for p in phieu if p["thuan"] is False)
+    thieu = sum(1 for p in phieu if p["thuan"] is None)
     if so_bac >= BAC_DE_LOAI:
         DEM["loai"] += 1
         ket = "loai"
+    elif thieu:
+        # Thiếu phiếu thì KHÔNG được ra "qua": "qua" phải là ba phiếu thuận thật.
+        DEM["thieu_phieu"] = DEM.get("thieu_phieu", 0) + 1
+        ket = "thieu_phieu"
     elif so_bac == 1:
         DEM["tranh_luan"] += 1
         ket = "tranh_luan"

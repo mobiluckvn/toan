@@ -22,8 +22,10 @@
  */
 import {
   doc, getDoc, setDoc, collection, getDocs, serverTimestamp, writeBatch,
+  query, where, orderBy, limit,
 } from 'firebase/firestore';
-import { db, hasFirebase } from '../../../chung/lib/nenTang.js';
+import { httpsCallable } from 'firebase/functions';
+import { db, fns, hasFirebase } from '../../../chung/lib/nenTang.js';
 import {
   KHO_SU_KIEN, dungSuKien, xepHang, dayHangDoi, laHocSinhThat,
 } from './suKien.js';
@@ -167,6 +169,30 @@ export async function luuTheOn(uid, the) {
     }, { merge: true });
     return true;
   } catch (e) { nuot(e); return false; }
+}
+
+/* ─────────── SỔ HỌC DO MÁY CHỦ DỰNG ─────────── */
+
+/**
+ * Sổ học `report/{uid}` — MỘT tài liệu cho cả hai môn: `dungSoHoc` ở máy chủ đã đọc
+ * cả `progressTA/` lẫn `hocBaTA/` từ 23-08-2026.
+ *
+ * ⚠ TRƯỚC 22-11-2026 môn này khai `soMayChu: async () => null` và
+ * `lamMoiSoMayChu: async () => {}` — nên tab Tiếng Anh của Sổ bố mẹ LUÔN báo "Chưa có
+ * số liệu máy chủ cho tuần này", và nút "Cập nhật ngay" bấm không làm gì. Tài liệu
+ * dùng chung nên không phải chép phép dựng; chỉ cần đọc đúng chỗ.
+ */
+export async function soMayChu(uid) {
+  if (!dungDuoc(uid)) return null;
+  const snap = await getDoc(doc(db, 'report', uid));
+  return snap.exists() ? snap.data() : null;
+}
+
+/** Dựng lại sổ ngay, không chờ 21:00 — cùng hàm máy chủ mà tab Toán gọi. */
+export async function lamMoiSoMayChu(uid, soNgay = 7) {
+  if (!fns) throw new Error('chưa cấu hình Firebase');
+  const { data } = await httpsCallable(fns, 'refreshMyReport')({ uid, soNgay });
+  return data;
 }
 
 /* ─────────── GHI ─────────── */
@@ -343,15 +369,36 @@ export async function tienDoTuMay(uid) {
  * lớp · sao. Dựng thêm một bảng thứ hai cho tiếng Anh nghĩa là mở thêm một lối rò dữ
  * liệu nữa — đắt hơn nhiều so với cái lợi.
  *
- * Nhưng hàm nền hiện CHỈ đếm sao của Toán. Nên ở đây trả `null` cho tới khi hàm ấy
- * biết tính cả tiếng Anh — trả một bảng chỉ có điểm Toán mà gắn nhãn "Tiếng Anh" thì
- * còn tệ hơn không có bảng.
+ * Hàm nền dựng trong tài liệu ấy một bảng RIÊNG cho từng môn (`theoMon.tienganh`):
+ * sao chỉ từ câu · bài · huy hiệu chương Tiếng Anh. Bảng dựng bằng bản cũ không có
+ * phần ấy thì trả `null` — trả bảng gộp mà gắn nhãn "Tiếng Anh" là nói sai.
  */
 export async function bangXepHang() {
   if (!dungDuoc('x')) return null;
   try {
     const snap = await getDoc(doc(db, 'bangXepHang/global'));
     const d = snap.exists() ? snap.data() : null;
-    return d && d.coTiengAnh ? d : null;
+    const rieng = d?.theoMon?.tienganh;
+    return rieng ? { ...d, ...rieng } : null;
   } catch { return null; }
+}
+
+/** Dựng lại bảng ngay — cùng một hàm nền với Toán, vì cùng một tài liệu. */
+export async function lamMoiBangXepHang() {
+  if (!fns) throw new Error('chưa cấu hình Firebase');
+  const { data } = await httpsCallable(fns, 'refreshBangXepHang')({});
+  return data;
+}
+
+/**
+ * Cô lần vào nhật ký Tiếng Anh của MỘT em. `attempts` là MỘT collection cho cả hai
+ * môn, nên đọc dư rồi lọc theo mã bài — lọc ở truy vấn thì phải thêm chỉ mục mới
+ * chỉ để đổi lấy vài chục lượt đọc.
+ */
+export async function nhatKyCuaEm(uid, n = 200) {
+  if (!db) return [];
+  const q = query(collection(db, 'attempts'),
+    where('learnerId', '==', uid), orderBy('serverTs', 'desc'), limit(n * 3));
+  return (await getDocs(q)).docs.map((d) => d.data())
+    .filter((a) => a.mon === 'tienganh' || /^DL:TA/.test(a.microId || '')).slice(0, n);
 }

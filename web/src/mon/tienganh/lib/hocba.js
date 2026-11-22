@@ -48,6 +48,10 @@ export function soBaiTuMa(ma) {
   return m ? Number(m[1]) : null;
 }
 
+/** Mốc gần nhất bé động vào một bài, mili-giây; 0 khi không có dấu. `at` có thể là
+    chuỗi ISO (máy con ghi) hoặc số (bản ghi cũ) — nhận cả hai. */
+const mocBai = (m) => (typeof m?.at === 'number' ? m.at : Date.parse(m?.at || '') || 0);
+
 /** Học bạ một quyển — đúng khuôn `HocBaMon` mà bốn màn tổng cùng đọc. */
 export function hocBaQuyen(tienDo, ct) {
   const ds = ct.bai || [];
@@ -65,6 +69,8 @@ export function hocBaQuyen(tienDo, ct) {
     masterChuong: chuongDat.length,
     huyHieu: [],
     daBatDau: ds.some((id) => m[id]),
+    /* Mốc bé động vào quyển này gần nhất — `trinhDoTu` chọn "quyển đang học" theo nó. */
+    ganNhat: Math.max(0, ...ds.map((id) => mocBai(m[id]))),
     chuong: [],
     /* Bài bé làm rồi mà CHƯA đạt — đúng chỗ bố mẹ cần nhìn, không phải danh sách
        bài chưa mở.
@@ -89,13 +95,40 @@ export function hocBaQuyen(tienDo, ct) {
   };
 }
 
-export const hocBaTu = (tienDo) => ({
-  quyen: quyenHoc().map((ct) => hocBaQuyen(tienDo, ct)),
-  /* Màn "học theo chủ đề" là ma trận của TOÁN. Tiếng Anh có thang tiên quyết riêng
-     (10 mối trong lớp 1) nhưng chưa dựng thành màn — trả null chứ không trộn vào. */
-  chuDe: null,
-  trinhDo: null,
-});
+/**
+ * TRÌNH ĐỘ HIỆN TẠI của môn Tiếng Anh — khối đầu Sổ bố mẹ.
+ *
+ * ⚠ TRƯỚC 22-11-2026 HÀM NÀY KHÔNG CÓ: `hocBaTu` trả `trinhDo: null`, nên khối đầu
+ * Sổ bố mẹ báo "Con chưa học bài nào" cho MỌI em học Tiếng Anh — kể cả em đã xong
+ * 16/16 unit, mà danh sách quyển ngay bên dưới vẫn ghi đúng 16/16. Hai con số trái
+ * nhau trên cùng một màn.
+ *
+ * Cùng khuôn với `trinhDo` của Toán (`ParentReport.jsx` đọc chung): quyển đang học là
+ * quyển bé động vào GẦN NHẤT; `bacChuDe` để `null` vì Tiếng Anh chưa có màn chủ đề.
+ */
+export function trinhDoTu(dsHocBa) {
+  const daHoc = dsHocBa.filter((h) => h.daBatDau);
+  const ganNhat = daHoc.slice().sort((a, b) => (b.ganNhat || 0) - (a.ganNhat || 0))[0] || null;
+  return {
+    quyen: ganNhat,
+    soQuyenDangHoc: daHoc.length,
+    tongBaiDat: dsHocBa.reduce((s, h) => s + h.datBai, 0),
+    tongChuongMaster: dsHocBa.reduce((s, h) => s + h.masterChuong, 0),
+    bacChuDe: null,
+    soChuDeDoDuoc: 0,
+  };
+}
+
+export const hocBaTu = (tienDo) => {
+  const quyen = quyenHoc().map((ct) => hocBaQuyen(tienDo, ct));
+  return {
+    quyen,
+    /* Màn "học theo chủ đề" là ma trận của TOÁN. Tiếng Anh có thang tiên quyết riêng
+       (10 mối trong lớp 1) nhưng chưa dựng thành màn — trả null chứ không trộn vào. */
+    chuDe: null,
+    trinhDo: trinhDoTu(quyen),
+  };
+};
 
 /* ═══════════ ĐIỂM MÁY CHẤM Ở TRẠNG THÁI "TẠM" (việc V5, mẫu Human-in-the-loop) ═══════════ */
 

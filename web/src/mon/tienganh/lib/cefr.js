@@ -30,6 +30,7 @@
  * không phải lỗi — và màn hình phải bày nó như vậy chứ không làm tròn cho đẹp.
  */
 
+import { layNguong, boNguong } from '../../../chung/lib/nguong.js';
 import { nguongThao, mucThaoCua } from './zpd.js';
 
 /**
@@ -62,8 +63,10 @@ export const KHOI = [
   { ma: 'A2', ten: 'Bậc 2 — A2', lop: [6], moTa: 'bắc cầu cấp hai' },
 ];
 
-/** Dưới bằng này nút thì % phủ không đáng tin để kết luận. */
-export const TOI_THIEU_NUT = 30;
+/** NG30 · dưới bằng này nút thì % phủ không đáng tin để kết luận.
+ *  Trước 22-11 gõ cứng 30 (Bảng 4.7, điểm 5); nay đọc bảng ngưỡng LÚC GỌI. */
+export const toiThieuNutKhoi = (nc) => layNguong(boNguong(), 'NG30', nc);
+export const TOI_THIEU_NUT = layNguong(boNguong(), 'NG30');
 
 /**
  * Phủ bao nhiêu phần vốn của khối thì mới gọi là ĐẠT bậc ấy.
@@ -74,7 +77,9 @@ export const TOI_THIEU_NUT = 30;
  * nắm, nói ra không xuôi. Bác đổi số này thì nhớ là nó đổi NGHĨA của chữ "đạt",
  * không phải đổi độ chính xác của phép đo.
  */
-export const PHU_DAT = 0.6;
+export const phuDat = (nc) => layNguong(boNguong(), 'NG29', nc);
+/* NG29 — trước 22-11 gõ cứng 0,6. Hằng chụp bộ của phiên, cho cổng và chỗ hiển thị. */
+export const PHU_DAT = layNguong(boNguong(), 'NG29');
 
 /**
  * Đo mức phủ vốn theo từng khối.
@@ -87,7 +92,7 @@ export const PHU_DAT = 0.6;
  *   khối nào đạt. `null` KHÔNG có nghĩa "bé kém" — nghĩa là chưa đủ căn cứ để
  *   nói một bậc, và màn hình phải nói đúng như thế.
  */
-export function bacCefr(dt, mucThao, { nguong = nguongThao() } = {}) {
+export function bacCefr(dt, mucThao, { nguong = null } = {}) {
   const nut = dt?.nut || {};
   const banDo = KHOI.map((k) => ({
     ...k, tong: 0, vung: 0, phu: 0, dangTin: false, dat: false,
@@ -104,14 +109,21 @@ export function bacCefr(dt, mucThao, { nguong = nguongThao() } = {}) {
     const p = mucThaoCua(mucThao, ma);
     if (Number.isFinite(p)) {
       coSo += 1;
-      if (p >= nguong) b.vung += 1;
+      /* θ của CHÍNH nút ấy (Bảng 4.7, điểm 4): khối lớp lấy từ đồ thị chứ không từ
+         quyển bé đang mở — bảng này trải trên mọi khối, và một nút lớp 1 phải được
+         chấm bằng θ của lớp 1 dù bé đang mở quyển lớp 3. */
+      const th = nguong ?? nguongThao({ nut: ma, loaiNut: n?.t, khoiLop: n?.g != null ? String(n.g) : undefined });
+      if (p >= th) b.vung += 1;
     }
   }
 
+  const ncCefr = { mon: 'tienganh' };
+  const toiThieu = toiThieuNutKhoi(ncCefr);
+  const phu = phuDat(ncCefr);
   banDo.forEach((b) => {
     b.phu = b.tong ? b.vung / b.tong : 0;
-    b.dangTin = b.tong >= TOI_THIEU_NUT;
-    b.dat = b.dangTin && b.phu >= PHU_DAT;
+    b.dangTin = b.tong >= toiThieu;
+    b.dat = b.dangTin && b.phu >= phu;
   });
 
   /* Lấy khối ĐẠT cao nhất. Duyệt ngược vì `KHOI` xếp từ thấp lên cao. */

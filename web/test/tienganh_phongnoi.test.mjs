@@ -845,7 +845,8 @@ test('nói lại giữ LẦN TỐT NHẤT, và giữ cả câu của lần ấy'
      trong khi 9 điểm là của lần trước. Hai thứ phải đi cùng nhau. */
   const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
     .replace(/\/\*[\s\S]*?\*\//g, '');
-  assert.match(pn, /chu:\s*hon \? r\.noiGi : x\.chu/, 'câu phải đi theo lần tốt nhất');
+  /* `kq.nghe` là đúng phương án nhận dạng được chấm điểm ấy (`chamTot`). */
+  assert.match(pn, /chu:\s*hon \? \(kq\.nghe \?\? r\.noiGi\) : x\.chu/, 'câu phải đi theo lần tốt nhất');
   assert.match(pn, /diem:\s*hon \? kq\.diem : x\.diem/, 'điểm phải là lần tốt nhất');
   assert.doesNotMatch(pn, /Math\.max\(x\.diem/, 'không được lấy max điểm rời khỏi câu');
 });
@@ -1033,7 +1034,7 @@ test('buổi vừa kết thì KHÔNG hỏi cô thêm lượt nữa', () => {
     .replace(/\/\*[\s\S]*?\*\//g, '');
   assert.match(pn, /sauKhiNoi\.trangThai !== 'dang'/, 'phải tính lại trạng thái SAU lượt vừa nói');
   const iChan = pn.indexOf("sauKhiNoi.trangThai !== 'dang'");
-  const iGoi = pn.indexOf('guiLuot(sau)');
+  const iGoi = pn.indexOf('guiLuot(sau');
   assert.ok(iChan > 0 && iChan < iGoi, 'phải chặn TRƯỚC khi gọi cô');
 });
 

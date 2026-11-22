@@ -328,7 +328,9 @@ export function chamTot(cham, dich, phuongAn, opt) {
   let tot = null;
   for (const x of ds) {
     const k = cham(dich, x, opt);
-    if (!tot || k.diem > tot.diem) tot = k;
+    /* `nghe` — CHÍNH phương án được chấm điểm này. Màn hình phải hiện và lưu đúng
+       câu ấy: hiện phương án đầu mà điểm là của phương án khác thì thẻ nói dối. */
+    if (!tot || k.diem > tot.diem) tot = { ...k, nghe: x };
   }
   return { ...tot, soPhuongAn: ds.length };
 }

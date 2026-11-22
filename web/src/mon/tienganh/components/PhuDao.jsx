@@ -28,7 +28,7 @@ import CauHoi from './CauHoi.jsx';
 import { napDoThi, baiCuaNut, baiTienQuyet, nhanNut } from '../lib/doThi.js';
 import { napBai, maBaiTruoc } from '../lib/noiDung.js';
 import { dungBang } from '../lib/bangtrangthai.js';
-import { dungPhuDao, cauHoiHopLe, soiCauAI, SO_CAU_PHU_DAO } from '../lib/phudao.js';
+import { dungPhuDao, cauHoiHopLe, soiCauAI, soCauPhuDao } from '../lib/phudao.js';
 import { nhoSinh } from '../lib/goiPhuDao.js';
 import { luuCauChoDuyet } from '../lib/duLieu.js';
 import { auth } from '../../../chung/lib/nenTang.js';
@@ -112,7 +112,8 @@ function useBaiPhuDao({ baiNay, maNutMac, mucThao, tienDo, tenBe, nhan = null, l
              thích cuối tệp đã cảnh báo trước khi cắm mô hình. */
           soiCau: (c) => cauHoiHopLe(c, { von, tenBe })
             && (c.nguon !== 'ai' || soiCauAI(c).ok),
-          soCau: SO_CAU_PHU_DAO,
+          /* NG27 đọc LÚC GỌI (Bảng 4.7, điểm 5) — ngữ cảnh phiên mang sẵn môn, khối lớp. */
+          soCau: soCauPhuDao({ nut: maNutMac || undefined }),
         });
         if (!song) return;
 

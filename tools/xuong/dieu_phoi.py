@@ -156,7 +156,7 @@ def chay(*, lop: int, so: int, ra: Path, so_tu: int, kho: bool) -> int:
     for x in xet_ds:
         if x["ket"] != "tranh_luan":
             continue
-        ly_do = next((p["ly_do"] for p in x["phieu"] if not p["thuan"]), "")
+        ly_do = next((p["ly_do"] for p in x["phieu"] if p["thuan"] is False), "")
         x["tranh_luan"] = tl.tranh_luan(x["muc"], loai=x["loai"], lop=lop,
                                         chu_de=chu_de, ly_do_bac=ly_do, khoa_api=k)
 
@@ -165,7 +165,7 @@ def chay(*, lop: int, so: int, ra: Path, so_tu: int, kho: bool) -> int:
         tui=tui, tui_noi=tui_noi, giay=giay)
     print(f"\n   xong trong {giay:.0f}s")
     chung.in_dem()
-    print(f"\n   ĐỌC TIẾP: {(ra / 'duyet.md').relative_to(GOC)}")
+    print(f"\n   ĐỌC TIẾP: {(ra / f'duyet_lop{lop}_u{so:02d}.md').relative_to(GOC)}")
     return 0
 
 
@@ -179,6 +179,7 @@ def ghi(ra: Path, *, lop: int, so: int, chu_de: str, u: dict, phan: dict,
     qua = [x for x in xet_ds if x["ket"] == "qua"]
     ban = [x for x in xet_ds if x["ket"] == "tranh_luan"]
     loai = [x for x in xet_ds if x["ket"] == "loai"]
+    thieu = [x for x in xet_ds if x["ket"] == "thieu_phieu"]
 
     nhap = {
         "_doc": ("BẢN NHÁP DO XƯỞNG SOẠN — CHƯA ĐƯỢC DUYỆT. Không rót vào "
@@ -196,15 +197,19 @@ def ghi(ra: Path, *, lop: int, so: int, chu_de: str, u: dict, phan: dict,
                      "tranh_luan": x.get("tranh_luan")} for x in ban],
         "bi_loai": [{"loai": x["loai"], "muc": x["muc"], "phieu": x["phieu"]}
                     for x in loai],
+        "thieu_phieu": [{"loai": x["loai"], "muc": x["muc"], "phieu": x["phieu"]}
+                        for x in thieu],
         "bac_boi_code": {k: v["bac"] for k, v in phan.items() if v["bac"]},
         "loi_worker": {k: v["loi"] for k, v in phan.items() if v["loi"]},
     }
     (ra / f"{ten}.json").write_text(
         json.dumps(nhap, ensure_ascii=False, indent=1) + "\n", "utf8")
 
-    (ra / "duyet.md").write_text(bao_cao(
+    # ⚠ MỖI UNIT MỘT TỆP DUYỆT. Bản cũ ghi `duyet.md` chung, nên chạy unit sau là
+    # đè mất danh sách chờ duyệt của unit trước khi chưa ai đọc.
+    (ra / f"duyet_{ten}.md").write_text(bao_cao(
         ten=ten, lop=lop, so=so, chu_de=chu_de, phan=phan,
-        qua=qua, ban=ban, loai=loai, giay=giay), "utf8")
+        qua=qua, ban=ban, loai=loai, giay=giay, thieu=thieu), "utf8")
 
 
 def _mot_dong(loai: str, m: dict) -> str:
@@ -219,7 +224,7 @@ def _mot_dong(loai: str, m: dict) -> str:
 
 
 def bao_cao(*, ten: str, lop: int, so: int, chu_de: str, phan: dict,
-            qua: list, ban: list, loai: list, giay: float) -> str:
+            qua: list, ban: list, loai: list, giay: float, thieu: list = ()) -> str:
     d = [
         f"# Chờ duyệt · lớp {lop} unit {so} · {chu_de}",
         "",
@@ -234,6 +239,7 @@ def bao_cao(*, ten: str, lop: int, so: int, chu_de: str, phan: dict,
         f"| ba giám khảo đều thuận | {len(qua)} |",
         f"| **còn bàn (phiếu 2–1)** | **{len(ban)}** |",
         f"| bị loại (≥2 bác) | {len(loai)} |",
+        f"| **thiếu phiếu (giám khảo gọi hỏng)** | **{len(thieu)}** |",
         f"| bị code bác trước giám khảo | {sum(len(v['bac']) for v in phan.values())} |",
         "",
         "⚠ **Ba giám khảo đều thuận KHÔNG phải một phép duyệt.** Đó là ba lượt gọi",
@@ -245,7 +251,7 @@ def bao_cao(*, ten: str, lop: int, so: int, chu_de: str, phan: dict,
     if ban:
         d += ["## Còn bàn — đọc trước, mấy mục này cần bác quyết", ""]
         for x in ban:
-            p_bac = next((p for p in x["phieu"] if not p["thuan"]), {})
+            p_bac = next((p for p in x["phieu"] if p["thuan"] is False), {})
             t = x.get("tranh_luan") or {}
             d += [
                 f"### {x['loai']} · {_mot_dong(x['loai'], x['muc'])}",
@@ -260,12 +266,22 @@ def bao_cao(*, ten: str, lop: int, so: int, chu_de: str, phan: dict,
                     them = " · **vẫn bác**" if v.get("giu_y") else " · **bỏ lời bác**"
                 d.append(f"- **{nhan}{them}:** {v.get('chu') or '(không có)'}")
             if t.get("mot_model"):
-                d.append("- ⚠ *Hai phía tranh luận dùng CÙNG một mô hình* — mọi model "
-                         "khác đang bị chặn ở cấp tổ chức, nên lập luận hai bên kém "
-                         "độc lập hơn thiết kế muốn. Đặt `GROQ_MODEL_PHU` để có hai "
+                d.append("- ⚠ *Hai phía tranh luận dùng CÙNG một mô hình* — chưa đặt "
+                         "mô hình phụ, nên lập luận hai bên kém "
+                         "độc lập hơn thiết kế muốn. Đặt `LLM_MODEL_PHU` để có hai "
                          "model thật.")
             d += ["", "```json", json.dumps(x["muc"], ensure_ascii=False, indent=1),
                   "```", ""]
+
+    if thieu:
+        d += ["## Thiếu phiếu — giám khảo gọi hỏng, CHƯA ai soát mục này", "",
+              "Không phải \"qua\": ít nhất một giám khảo không trả lời được. Đọc kỹ",
+              "như một mục chưa được sàng, hoặc chạy lại xưởng cho unit này.", ""]
+        for x in thieu:
+            hong = "; ".join(f"{giam_khao.TEN.get(p['chieu'], '?')}: {p['loi']}"
+                             for p in x["phieu"] if p["thuan"] is None)
+            d.append(f"- **{x['loai']}** · {_mot_dong(x['loai'], x['muc'])} — {hong}")
+        d.append("")
 
     if qua:
         d += ["## Ba giám khảo đều thuận", ""]
@@ -276,7 +292,7 @@ def bao_cao(*, ten: str, lop: int, so: int, chu_de: str, phan: dict,
     if loai:
         d += ["## Bị loại (≥2 giám khảo bác)", ""]
         for x in loai:
-            ly = "; ".join(p["ly_do"] for p in x["phieu"] if not p["thuan"] and p["ly_do"])
+            ly = "; ".join(p["ly_do"] for p in x["phieu"] if p["thuan"] is False and p["ly_do"])
             d.append(f"- **{x['loai']}** · {_mot_dong(x['loai'], x['muc'])} — {ly or '(không ghi lý do)'}")
         d.append("")
 

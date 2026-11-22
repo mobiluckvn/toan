@@ -14,9 +14,9 @@
  *   theo kiểu khó thấy nhất: BKT chấm bằng θ này, màn hình quyết định bằng θ kia,
  *   và không gì báo.
  *
- * ── ĐỢT 1 LÀM TỚI ĐÂU ──
- * Mới có nấc phạm vi `toanHe`; máy chủ CHƯA đọc bộ của chuyên gia từ Firestore —
- * đó là đợt 2 (bác chốt: đọc Firestore, có nhớ tạm).
+ * ── TỚI ĐÂU RỒI (22-11-2026, Bảng 4.7) ──
+ * Máy chủ đọc bảng `nguong` qua `napNguong.js` (có nhớ tạm). Phép đổi dòng bảng →
+ * bộ (`boTuBang`) nằm trong phần thân dùng chung, nên hai phía dựng bộ cùng một luật.
  */
 
 /** Thang phạm vi, HẸP TRƯỚC RỘNG SAU. `layNguong` duyệt đúng thứ tự này. */
@@ -53,6 +53,19 @@ export const MAC_DINH = {
   NG19: 5,
   NG20: 4,
   NG21: 200,
+  /* ── NG22–NG30: hằng số TRƯỚC ĐÂY GÕ CỨNG TRONG MÃ (Bảng 4.7, điểm 5) ──
+     Nguyên tắc "mọi tham số nằm trong cấu hình" của mục 3.8. Mỗi giá trị dưới đây
+     ĐÚNG BẰNG con số đã gõ cứng ở chỗ cũ (`oDau` trong `data/nguong.json` chỉ chỗ),
+     nên đưa chúng ra bảng không đổi hành vi — 103 cổng cũ vẫn là phép kiểm. */
+  NG22: 0.08,
+  NG23: 0.05,
+  NG24: 2,
+  NG25: 0.5,
+  NG26: 0.1,
+  NG27: 4,
+  NG28: { m1: 1, m2: 3, m3: 7 },
+  NG29: 0.6,
+  NG30: 30,
 };
 
 /** Khoảng hợp lệ — GIỚI HẠN CỨNG, chuyên gia lẫn máy đều không ra ngoài được. */
@@ -62,6 +75,8 @@ export const KHOANG = {
   NG09: [2, 6], NG10: [1, 6], NG11: [1, 5], NG12: [0.3, 0.9], NG13: [3, 60],
   NG14: [1, 5], NG15: [2, 10], NG16: [15, 120], NG17: [0.10, 0.60], NG18: [5, 30],
   NG19: [3, 50], NG20: [3, 10], NG21: [50, 5000],
+  NG22: [0.01, 0.30], NG23: [0.01, 0.30], NG24: [1, 6], NG25: [0.2, 0.6],
+  NG26: [0.01, 0.50], NG27: [2, 6], NG28: [1, 60], NG29: [0.5, 0.95], NG30: [10, 200],
 };
 
 /**
@@ -71,14 +86,24 @@ export const KHOANG = {
  * với một dãy giá trị chỉ làm được khi hàm quyết định không giấu trạng thái nào.
  *
  * @param bo       bộ ngưỡng: { macDinh: {ma: giaTri}, theoPhamVi?: {loai: {khoa: {ma: giaTri}}} }
- * @param ma       mã ngưỡng, 'NG01'…'NG21'
+ * @param ma       mã ngưỡng, 'NG01'…'NG30'
  * @param nguCanh  { nut, dangCau, bac, loaiNut, khoiLop, mon } — thiếu khoá nào thì bỏ qua nấc ấy
  */
 export function layNguong(bo, ma, nguCanhRieng = {}) {
   /* Ngữ cảnh phiên làm NỀN, cái truyền vào ĐÈ lên. Nhờ vậy một chỗ gọi chỉ biết mã
      nút vẫn lấy đúng giá trị của môn và khối lớp bé đang học, mà không phải mang
      theo hai thứ ấy qua năm tầng hàm. */
-  const nguCanh = { ..._nguCanh, ...(nguCanhRieng || {}) };
+  return layNguongThuan(bo, ma, { ..._nguCanh, ...(nguCanhRieng || {}) });
+}
+
+/**
+ * CÙNG PHÉP TRA, NHƯNG KHÔNG ĐỌC NGỮ CẢNH PHIÊN — chỉ đúng `nguCanh` truyền vào.
+ *
+ * Màn chuyên gia soi "bộ hiệu lực của phạm vi khối lớp 3" thì phải ra đúng bộ ấy,
+ * dù máy đang mở dở một quyển nào đó: để ngữ cảnh phiên lọt vào phép soi là soi
+ * nhầm phạm vi mà không gì báo. Nên `soiNguong`/`nhipTinhThong` dùng hàm này.
+ */
+export function layNguongThuan(bo, ma, nguCanh = {}) {
   const theo = bo?.theoPhamVi || {};
   for (const loai of THANG_PHAM_VI) {
     if (loai === 'toanHe') break;
@@ -92,6 +117,51 @@ export function layNguong(bo, ma, nguCanhRieng = {}) {
   const mac = (bo?.macDinh ?? MAC_DINH)[ma];
   if (mac === undefined) throw new Error(`layNguong: không có ngưỡng ${ma}`);
   return mac;
+}
+
+/** Một phạm vi `{ loai, khoa }` → ngữ cảnh tra cứu tương ứng. `toanHe` là ngữ cảnh rỗng. */
+export function nguCanhCuaPhamVi(phamVi) {
+  const loai = phamVi?.loai;
+  if (!loai || loai === 'toanHe' || phamVi?.khoa == null || phamVi.khoa === '') return {};
+  return { [loai]: String(phamVi.khoa) };
+}
+
+/**
+ * CÁC DÒNG CỦA BẢNG `nguong` → MỘT BỘ NGƯỠNG. Bản DUY NHẤT của phép đổi này.
+ *
+ * ── VÌ SAO NẰM Ở TỆP DÙNG CHUNG ──
+ * Máy chủ (`functions/src/napNguong.js`) và máy con (`src/chung/lib/napNguong.js`)
+ * cùng đọc bảng `nguong`. Mỗi bên tự đổi theo kiểu của mình thì sớm muộn một bên
+ * hiểu `phamVi` khác bên kia — BKT chấm theo θ của khối lớp 3, màn hình bé quyết
+ * định theo θ toàn hệ. Đặt ở đây thì cổng `nguong_hai_ban` canh luôn phép đổi.
+ *
+ * Dòng thiếu `phamVi`, hoặc `loai: 'toanHe'`, hoặc thiếu `khoa` → giá trị toàn hệ.
+ * Dòng có `phamVi: { loai, khoa }` hợp lệ → `theoPhamVi[loai][khoa][ma]`.
+ * Dòng mang `loai` lạ (không có trên thang) thì BỎ, không đoán: một dòng `loai: 'lop'`
+ * gõ nhầm mà được coi là toàn hệ thì nó đè lên cả hệ thống.
+ *
+ * @returns bộ ngưỡng, hoặc `null` khi bảng không có dòng dùng được — để bên gọi tự
+ *          lùi về nguồn kế tiếp, chứ không lặng lẽ thành bộ rỗng.
+ */
+export function boTuBang(dsDong) {
+  const macDinh = {};
+  const theoPhamVi = {};
+  let phienBan = PHIEN_BAN;
+  let co = false;
+  for (const x of (dsDong || [])) {
+    if (!x || !x.ma || x.giaTri === undefined) continue;
+    const pv = x.phamVi;
+    const hep = pv && pv.loai && pv.loai !== 'toanHe' && pv.khoa != null && pv.khoa !== '';
+    if (hep && !THANG_PHAM_VI.includes(pv.loai)) continue;
+    if (Number.isFinite(x.phienBan)) phienBan = Math.max(phienBan, x.phienBan);
+    co = true;
+    if (!hep) { macDinh[x.ma] = x.giaTri; continue; }
+    const k = String(pv.khoa);
+    theoPhamVi[pv.loai] = theoPhamVi[pv.loai] || {};
+    theoPhamVi[pv.loai][k] = theoPhamVi[pv.loai][k] || {};
+    theoPhamVi[pv.loai][k][x.ma] = x.giaTri;
+  }
+  return co ? { phienBan, macDinh, theoPhamVi } : null;
 }
 
 /** Bộ ngưỡng chỉ gồm giá trị mặc định — dùng khi chưa tải được bộ của chuyên gia. */
@@ -111,9 +181,12 @@ export const BO_MAC_DINH = { phienBan: PHIEN_BAN, macDinh: MAC_DINH, theoPhamVi:
  * đang chạy giữ nguyên bộ ngưỡng đã tải." Đổi ngưỡng giữa buổi thì nửa đầu buổi và
  * nửa sau chấm theo hai luật, mà bản ghi chỉ mang được một số `nguongVer`.
  *
- * ⚠ Mọi hằng ngưỡng trong `mon/**` đọc ô này LÚC NẠP MODULE. Nên `main.jsx` phải
- * `await napNguong()` TRƯỚC khi import `App.jsx` — nếu không, mấy hằng ấy chụp đúng
- * bộ mặc định và tệp tải về chẳng tác dụng gì. Cổng `nguong_phien.test.mjs` canh.
+ * ⚠ Từ 22-11 (Bảng 4.7, điểm 4) mọi QUYẾT ĐỊNH trong `mon/**` đọc ô này LÚC DÙNG,
+ * kèm ngữ cảnh. Các hằng viết hoa cũ (`SAI_LIEN_TIEP_MAC`, `ALPHA`…) vẫn còn — chụp
+ * bộ của phiên lúc nạp module, chỉ để cổng và chỗ HIỂN THỊ con số chung dùng. Dù
+ * vậy `main.jsx` vẫn phải `await napNguong()` TRƯỚC khi import `App.jsx`: mấy hằng
+ * ấy phải chụp đúng bộ của phiên, và ô này phải có bộ trước lượt chấm đầu tiên.
+ * Cổng `nguong_phien.test.mjs` canh.
  */
 let _bo = BO_MAC_DINH;
 
@@ -147,17 +220,52 @@ export function datNguCanh(nc) {
   return _nguCanh;
 }
 
+/**
+ * CHUẨN HOÁ MỘT BỘ — lấp mã thiếu bằng mặc định. THUẦN: không đụng bộ đang hành.
+ *
+ * Màn chuyên gia đọc bảng tươi rồi cần đúng hình dạng này để soi, mà KHÔNG được đặt
+ * nó làm bộ của phiên (mục 3.8.4: phiên đang chạy giữ bộ đã tải). Nên tách khỏi
+ * `datBoNguong`.
+ */
+export function chuanHoaBo(bo) {
+  const sach = bo && typeof bo === 'object' && bo.macDinh ? bo : BO_MAC_DINH;
+  return { phienBan: sach.phienBan ?? PHIEN_BAN,
+           macDinh: { ...MAC_DINH, ...(sach.macDinh || {}) },
+           theoPhamVi: sach.theoPhamVi || {} };
+}
+
 /** Đặt bộ cho cả phiên. Trả về chính bộ đã đặt, để chỗ gọi ghi `nguongVer`. */
 export function datBoNguong(bo) {
-  const sach = bo && typeof bo === 'object' && bo.macDinh ? bo : BO_MAC_DINH;
-  _bo = { phienBan: sach.phienBan ?? PHIEN_BAN,
-          macDinh: { ...MAC_DINH, ...(sach.macDinh || {}) },
-          theoPhamVi: sach.theoPhamVi || {} };
+  _bo = chuanHoaBo(bo);
   return _bo;
 }
 
+/**
+ * BỘ ỨNG VIÊN — bộ `bo` sau khi đặt `giaTri[ma]` (với mọi `ma` trong `doi`) vào ĐÚNG
+ * phạm vi `phamVi`. THUẦN, trả bản sao. Đây là thứ màn chuyên gia soi TRƯỚC khi phát
+ * hành, và cũng là thứ hàm phát hành soi lại lần cuối.
+ */
+export function apDungThayDoi(bo, phamVi, giaTri, doi) {
+  const goc = chuanHoaBo(bo);
+  const macDinh = { ...goc.macDinh };
+  const theoPhamVi = {};
+  for (const [loai, theoKhoa] of Object.entries(goc.theoPhamVi || {})) {
+    theoPhamVi[loai] = {};
+    for (const [khoa, v] of Object.entries(theoKhoa || {})) theoPhamVi[loai][khoa] = { ...v };
+  }
+  const nc = nguCanhCuaPhamVi(phamVi);
+  const [loai] = Object.keys(nc);
+  for (const ma of (doi || [])) {
+    if (!loai) { macDinh[ma] = giaTri[ma]; continue; }
+    theoPhamVi[loai] = theoPhamVi[loai] || {};
+    theoPhamVi[loai][nc[loai]] = theoPhamVi[loai][nc[loai]] || {};
+    theoPhamVi[loai][nc[loai]][ma] = giaTri[ma];
+  }
+  return { phienBan: goc.phienBan, macDinh, theoPhamVi };
+}
+
 /* Mấy ngưỡng mang HAI con số thì soi theo trường nào. */
-const TRUONG_SO = { NG05: ['slip', 'guess'], NG17: ['ti'] };
+const TRUONG_SO = { NG05: ['slip', 'guess'], NG17: ['ti'], NG28: ['m1', 'm2', 'm3'] };
 
 const trongKhoang = (ma, v) => {
   const k = KHOANG[ma];
@@ -212,8 +320,11 @@ export const thamSoBKT = (bo, nguCanh = {}) => ({
  *          lượt vẫn chưa đạt, tức θ quá cao so với bộ tham số.
  */
 export function nhipTinhThong(bo, nguCanh = {}, tran = 30) {
-  const ts = thamSoBKT(bo, nguCanh);
-  const theta = layNguong(bo, 'NG07', nguCanh);
+  /* Tra THUẦN — không trộn ngữ cảnh phiên. Bảng này trả lời cho ĐÚNG phạm vi chuyên
+     gia đang xem, không cho quyển mà máy tình cờ đang mở. */
+  const lay = (ma) => layNguongThuan(bo, ma, nguCanh);
+  const ts = { L0: lay('NG01'), T: lay('NG02'), slip: lay('NG03'), guess: lay('NG04') };
+  const theta = lay('NG07');
   let p = ts.L0;
   for (let i = 1; i <= tran; i += 1) {
     p = capNhatBKT(p, true, ts);
@@ -234,31 +345,48 @@ export const NHIP_CHO_PHEP = [3, 6];
  * HẾT chỗ sai, chứ không phải sửa một chỗ rồi lại gặp chỗ sau — đúng lẽ `soiLoiCham`
  * đã dùng ở phần chấm viết.
  *
- * Phép kiểm thứ ba của mục 3.8.4 — NHỊP TINH THÔNG phải nằm trong 3–6 câu — KHÔNG
- * làm ở đây: nó cần chạy Thuật toán 3.1 (BKT), mà BKT nằm ở máy chủ. Màn hình quản
- * lý ngưỡng gọi riêng; xem mục 3.8.4 và `ke_hoach_r7_bang_nguong.md` đợt 3.
+ * @param nguCanh  soi BỘ HIỆU LỰC của ngữ cảnh nào. Rỗng = toàn hệ. Chuyên gia sửa
+ *                 θ cho khối lớp 3 thì phải soi bộ mà bé lớp 3 thật sự nhận — gồm
+ *                 θ mới ấy GHÉP với θ_yếu, P(T)… thừa hưởng từ phạm vi rộng hơn —
+ *                 chứ không soi bộ toàn hệ rồi tưởng là xong.
  */
-export function soiNguong(bo) {
+export function soiNguong(bo, nguCanh = {}) {
   const loi = [];
-  const lay = (ma, nguCanh) => {
-    try { return layNguong(bo, ma, nguCanh); } catch { return undefined; }
+  /* Tra THUẦN: ngữ cảnh phiên không được lọt vào phép soi (xem `layNguongThuan`). */
+  const lay = (ma) => {
+    try { return layNguongThuan(bo, ma, nguCanh); } catch { return undefined; }
   };
   for (const ma of Object.keys(KHOANG)) {
-    const v = lay(ma, {});
+    const v = lay(ma);
     if (v === undefined) { loi.push({ ma, vi: 'không có giá trị' }); continue; }
     if (!trongKhoang(ma, v)) {
       loi.push({ ma, vi: `ngoài khoảng [${KHOANG[ma][0]}, ${KHOANG[ma][1]}]`, giaTri: v });
     }
   }
   /* Ràng buộc GIỮA các ngưỡng — mục 3.8.4. */
-  const theta = lay('NG07', {});
-  const yeu = lay('NG08', {});
+  const theta = lay('NG07');
+  const yeu = lay('NG08');
   if (typeof theta === 'number' && typeof yeu === 'number' && yeu > theta - 0.20) {
     loi.push({ ma: 'NG08', vi: `θ_yếu phải ≤ θ − 0,20 (θ = ${theta})`, giaTri: yeu });
   }
+  /* Hàm quên kéo P(L) về NG25 khi bé nghỉ lâu. Điểm tựa ấy mà sát θ thì nghỉ đủ lâu
+     là bé TỰ THÀNH "đã thạo" một nút chưa từng vững — tuyên thạo khống bằng thời
+     gian. Đòi cùng khoảng cách 0,20 như θ_yếu. (Có `1e-9` vì 0,70 − 0,20 trong số
+     thực ra 0,4999…, và θ = 0,70 là giá trị hợp lệ — thiếu nó thì bộ mặc định của
+     hàm quên tự đỏ ở đúng cận dưới của θ.) */
+  const tua = lay('NG25');
+  if (typeof theta === 'number' && typeof tua === 'number' && tua > theta - 0.20 + 1e-9) {
+    loi.push({ ma: 'NG25', vi: `điểm tựa của hàm quên phải ≤ θ − 0,20 (θ = ${theta})`, giaTri: tua });
+  }
+  /* Lịch ôn phải GIÃN DẦN: +1 · +3 · +7. Hai mốc trùng nhau là hai thẻ ôn cùng
+     ngày; mốc sau sớm hơn mốc trước thì "ôn ngắt quãng" chạy ngược. */
+  const lich = lay('NG28');
+  if (lich && typeof lich === 'object' && !(lich.m1 < lich.m2 && lich.m2 < lich.m3)) {
+    loi.push({ ma: 'NG28', vi: 'ba mốc ôn phải tăng dần (mốc 1 < mốc 2 < mốc 3)', giaTri: lich });
+  }
   for (const [ma, truong] of [['NG03', null], ['NG04', null],
                               ['NG05', 'slip'], ['NG05', 'guess']]) {
-    const v = truong ? lay(ma, {})?.[truong] : lay(ma, {});
+    const v = truong ? lay(ma)?.[truong] : lay(ma);
     if (typeof v === 'number' && v >= 0.5) {
       loi.push({ ma, vi: `${truong || ma} phải < 0,5 để mô hình không suy biến`, giaTri: v });
     }
@@ -267,7 +395,7 @@ export function soiNguong(bo) {
      hai phép trên không thấy: từng ngưỡng đều trong khoảng, mà GHÉP LẠI thì ra một
      nhịp dạy vô lý (đạt sau một câu, hoặc không bao giờ đạt). */
   if (!loi.length) {
-    const { soCau } = nhipTinhThong(bo);
+    const { soCau } = nhipTinhThong(bo, nguCanh);
     const [it, nhieu] = NHIP_CHO_PHEP;
     if (soCau === null) {
       loi.push({ ma: 'NG07', vi: `θ quá cao: luyện ${30} câu đúng liên tiếp vẫn chưa đạt` });
@@ -278,4 +406,54 @@ export function soiNguong(bo) {
     }
   }
   return loi;
+}
+
+/**
+ * BỘ HIỆU LỰC CỦA MỘT PHẠM VI — giá trị bé ở phạm vi ấy thật sự nhận, từng mã.
+ *
+ * Màn chuyên gia bày bộ này khi chọn một phạm vi hẹp: ô nào phạm vi ấy chưa khai thì
+ * hiện giá trị THỪA HƯỞNG từ nấc rộng hơn, để chuyên gia thấy đúng điểm xuất phát.
+ */
+export function giaTriHieuLuc(bo, phamVi = null) {
+  const nc = nguCanhCuaPhamVi(phamVi);
+  const ra = {};
+  for (const ma of Object.keys(KHOANG)) ra[ma] = layNguongThuan(bo, ma, nc);
+  return ra;
+}
+
+/**
+ * SOI MỘT PHẠM VI — và mọi chỗ nó GIAO với phạm vi khác đã khai.
+ *
+ * ── VÌ SAO KHÔNG CHỈ SOI ĐÚNG MỘT NGỮ CẢNH ──
+ * Đặt θ = 0,75 cho khối lớp 3 thì bộ `{ khoiLop: 3 }` có thể sạch, nhưng một bé lớp
+ * 3 học Tiếng Anh nhận ngữ cảnh `{ mon: tienganh, khoiLop: 3 }` — mà nếu môn Tiếng
+ * Anh đã khai θ_yếu = 0,60 thì GHÉP lại ra θ_yếu > θ − 0,20. Từng phạm vi đều hợp
+ * lệ, chỗ giao thì không; và đó đúng là chỗ một đứa trẻ thật sẽ đứng.
+ *
+ * Nên soi: ngữ cảnh của chính phạm vi, rồi từng cặp (phạm vi ấy × mỗi khoá đã khai
+ * ở một nấc KHÁC). Cặp là đủ cho trường hợp hay gặp (môn × khối lớp, khối lớp × dạng
+ * câu); bộ ba trở lên thì số tổ hợp nổ theo số nút, nên không soi ở đây.
+ *
+ * @returns danh sách lỗi như `soiNguong`, mỗi lỗi kèm `nguCanh` nơi nó xảy ra.
+ */
+export function soiPhamVi(bo, phamVi = null) {
+  const goc = nguCanhCuaPhamVi(phamVi);
+  const loaiGoc = Object.keys(goc)[0] || null;
+  const dsNguCanh = [goc];
+  const theo = bo?.theoPhamVi || {};
+  for (const loai of THANG_PHAM_VI) {
+    if (loai === 'toanHe' || loai === loaiGoc) continue;
+    for (const khoa of Object.keys(theo[loai] || {})) dsNguCanh.push({ ...goc, [loai]: khoa });
+  }
+  const ra = [];
+  const daCo = new Set();
+  for (const nc of dsNguCanh) {
+    for (const l of soiNguong(bo, nc)) {
+      const k = `${l.ma}|${l.vi}`;
+      if (daCo.has(k)) continue;
+      daCo.add(k);
+      ra.push({ ...l, nguCanh: nc });
+    }
+  }
+  return ra;
 }

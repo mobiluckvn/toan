@@ -28,7 +28,7 @@ const loi = (n, chu = 'xin chao') =>
   Array.from({ length: n }, (_, i) => ({ role: i % 2 ? 'assistant' : 'user', content: chu }));
 
 console.log('── mô hình ──');
-t('dùng đúng mô hình bác chốt', MO_HINH === 'openai/gpt-oss-120b');
+t('dùng đúng mô hình bác chốt (Gemini từ 22-11-2026)', MO_HINH === (process.env.LLM_MODEL || 'gemini-3.8-flash'));
 
 console.log('\n── chốt cửa ──');
 t('gói rỗng bị chặn', nem(() => soiGoi({ messages: [] }), 'thieu-loi'));
@@ -169,30 +169,40 @@ console.log('\n── máy chủ KHÔNG lưu gì ──');
      bị dẫn đi sai hướng (đã xảy ra thật khi thêm hàm thống kê ngưỡng). Nay dừng ở
      `export` kế tiếp, nên cổng soi đúng cái nó định soi. */
   const idx = bo(readFileSync(new URL('../functions/index.js', import.meta.url), 'utf8'));
-  const dau = idx.indexOf('export const luyenNoi');
-  const ke = idx.slice(dau + 1).search(/^export (const|function) /m);
-  const than = ke < 0 ? idx.slice(dau) : idx.slice(dau, dau + 1 + ke);
-  t('chỗ nối dây cũng không ghi Firestore', !/db\.(doc|collection)/.test(than));
-  t('và lát cắt ấy đúng là thân hàm luyenNoi', /onCall/.test(than) && than.length < 4000);
-  t('phải đăng nhập mới gọi được', /req\.auth/.test(than));
-  t('thiếu khoá thì NÓI RÕ, không im lặng', /functions:secrets:set GROQ_API_KEY/.test(than));
-  /* Khoá SAI khác hẳn Groq HỎNG: khoá sai thì người lớn phải đi sửa, Groq hỏng thì
-     chờ là xong. Gộp làm một câu "thử lại nhé" thì bé cứ bấm mãi trong khi lỗi nằm
-     ở chỗ chẳng ai xem. Đã dựng và thử thật trên bộ giả lập bằng khoá giả. */
-  t('phân biệt được KHOÁ SAI với GROQ HỎNG',
-    /401|403/.test(than) && /permission-denied/.test(than) && /unavailable/.test(than));
-  /* `e.message` của LoiGoi thì AN TOÀN — đó là lời mình tự đặt, và bé cần đọc được
-     "gói quá dài" chứ không phải "có lỗi". Chỉ nhánh lỗi TỪ GROQ mới không được rò:
-     trong đó có thể có mẩu khoá hoặc đường dẫn nội bộ. Nên bỏ dòng LoiGoi ra rồi
-     mới soi phần còn lại — cổng bản đầu soi cả khối `catch` nên kêu oan. */
-  const catchNgoai = than.slice(than.indexOf('catch'))
-    .split('\n').filter((d) => !/instanceof LoiGoi/.test(d)).join('\n');
+  /* Từ 22-11-2026 năm callable gọi mô hình đi qua MỘT khung `goiMoHinh`, nên luật
+     cửa nằm trong thân khung ấy — soi khung, rồi soi `luyenNoi` có đi qua khung. */
+  const cat = (dau) => {
+    const i = idx.indexOf(dau);
+    if (i < 0) return '';
+    const ke = idx.slice(i + 1).search(/^(export )?(const|function|async function) /m);
+    return ke < 0 ? idx.slice(i) : idx.slice(i, i + 1 + ke);
+  };
+  const khung = cat('function goiMoHinh');
+  const hanMuc = cat('async function tinhHanMuc');
+  const than = cat('export const luyenNoi ');
+  t('luyenNoi đi qua khung chung', /goiMoHinh\(hoiMay/.test(than));
+  t('và lát cắt ấy đúng là thân khung', /onCall/.test(khung) && khung.length < 4000);
+  /* Máy chủ chỉ được ghi MỘT thứ: bộ đếm hạn mức, và bộ đếm chỉ có ngày và số. */
+  t('khung không tự ghi Firestore', !/db\.(doc|collection)/.test(khung));
+  t('chỉ bộ đếm hạn mức được ghi, và chỉ có ngày + số',
+    /collection\('hanMucLLM'\)/.test(hanMuc) && /tx\.set\(ref, \{ ngay, so: so \+ 1 \}\)/.test(hanMuc));
+  t('phải đăng nhập mới gọi được', /req\.auth/.test(khung));
+  t('có hạn mức mỗi ngày', /tinhHanMuc\(req\.auth\.uid\)/.test(khung));
+  t('có trần thời gian', /timeoutSeconds/.test(khung));
+  t('thiếu khoá thì NÓI RÕ, không im lặng', /functions:secrets:set GEMINI_API_KEY/.test(idx));
+  /* Khoá SAI khác hẳn nhà cung cấp HỎNG: khoá sai thì người lớn phải đi sửa, hỏng
+     thì chờ là xong. Gộp làm một câu "thử lại nhé" thì bé cứ bấm mãi. */
+  t('phân biệt được KHOÁ SAI với NHÀ CUNG CẤP HỎNG',
+    /401|403/.test(khung) && /permission-denied/.test(khung) && /unavailable/.test(khung));
+  t('mô hình trả rỗng KHÔNG bị báo là lỗi máy con', /tra-loi-rong/.test(khung));
+  /* `e.message` của LoiGoi thì an toàn (lời mình tự đặt) — bỏ đúng dòng ấy ra rồi
+     mới soi phần còn lại. */
+  const catchNgoai = khung.slice(khung.indexOf('catch'))
+    .split('\n').filter((d) => !/instanceof LoiGoi|if \(loiMayCon\)/.test(d)).join('\n');
   t('không ném nguyên văn lỗi nhà cung cấp xuống máy con',
     !/e\.message|String\(e\)|e\.stack/.test(catchNgoai));
 }
 
-console.log(`\n${pass} PASS · ${fail} FAIL`);
-process.exit(fail ? 1 : 0);
 
 console.log('\n── lời dặn THẬT có qua được cửa của chính mình không ──');
 {
@@ -231,3 +241,8 @@ console.log('\n── lời dặn THẬT có qua được cửa của chính mì
   t(`còn dư ít nhất 25% chỗ (${Math.round((1 - dai / TOI_DA_CHU_LOI_DAN) * 100)}%)`,
     dai <= TOI_DA_CHU_LOI_DAN * 0.75);
 }
+
+/* ⚠ Dòng thoát phải nằm CUỐI tệp. Bản cũ đặt nó giữa tệp, nên khối "lời dặn THẬT
+   qua cửa" ở trên chưa bao giờ chạy. */
+console.log(`\n${pass} PASS · ${fail} FAIL`);
+process.exit(fail ? 1 : 0);

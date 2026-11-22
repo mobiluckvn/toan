@@ -24,6 +24,13 @@ import { loiDanTomTat, docTomTat, soiGoiTomTat } from './baihoc.js';
 /** Collection riêng của Tiếng Anh — hậu tố TA để không bao giờ lẫn với Toán. */
 export const KHO_PHONG_NOI = (uid) => `phongNoiTA/${uid}/buoi`;
 
+/* TRẦN CHỜ ở máy con. Mặc định của Firebase là 70 giây — bé ngồi nhìn "Cô đang
+   nghĩ…" cả phút. Một lượt có thể gọi tới bốn lần nối tiếp (lượt đầu, hai lần xin
+   lại câu, một lần xin lại lời Việt), nên mỗi lần phải ngắn. Khớp `CHO_TOI_DA_MS`
+   ở `functions/src/llm.js` cộng một khoảng dư cho mạng. */
+export const TRAN_CHO_MS = 30000;
+export const TRAN_CHO_TOOL_MS = 60000;
+
 /**
  * MỘT lời gọi lên callable `luyenNoi` — TÁCH RA để tiêm được hàm giả trong cổng.
  *
@@ -41,7 +48,7 @@ async function goiMay(messages) {
     e.code = 'functions/unavailable';
     throw e;
   }
-  return httpsCallable(fns, 'luyenNoi')({ messages });
+  return httpsCallable(fns, 'luyenNoi', { timeout: TRAN_CHO_MS })({ messages });
 }
 
 /**
@@ -57,7 +64,7 @@ async function goiMayCoTool(messages, kho) {
     e.code = 'functions/unavailable';
     throw e;
   }
-  return httpsCallable(fns, 'luyenNoiTool')({ messages, kho });
+  return httpsCallable(fns, 'luyenNoiTool', { timeout: TRAN_CHO_TOOL_MS })({ messages, kho });
 }
 
 /**
@@ -307,7 +314,16 @@ export async function hoiCoGiao({
     lanSua += 1;
     LOI_SUA_CO.so += 1;
     LOI_SUA_CO.ganNhat = xet.bac;
-    const { data: lai } = await goi(messages);
+    /* Mất mạng giữa vòng xin lại thì THÔI XIN, đừng làm mất cả lượt: bên dưới đã
+       có sẵn câu dự phòng (`cauThayThe`) cho đúng ca câu vẫn trượt. Bản cũ để lỗi
+       ném thẳng lên, và bé thấy dòng đỏ dù lượt đầu đã về. */
+    let lai;
+    try {
+      ({ data: lai } = await goi(messages));
+    } catch (e) {
+      LOI_SUA_CO.ganNhat = `goi-lai-hong: ${String(e?.code || e?.message || e)}`;
+      break;
+    }
     const moi = docTraLoi(lai?.chu);
     /* Ghi ĐÈ lên `tra`, không dựng object mới: `mauPrompt` · `phienBanMau` ·
        `vanTayPrompt` phải giữ nguyên, vì lời dặn (thứ vân tay ấy mô tả) không đổi

@@ -1,4 +1,4 @@
-import { layNguong, BO_MAC_DINH } from './nguong.js';
+import { layNguong, boNguong } from './nguong.js';
 /**
  * A-R-A và ΔC — bài phụ đạo có thật sự giúp được không (mục 2.5.3).
  *
@@ -19,8 +19,12 @@ import { layNguong, BO_MAC_DINH } from './nguong.js';
  * phát hiện lệch ngoài ý muốn — ai đó sửa lời dặn mà quên tăng số.
  */
 
-/** Cỡ mẫu tối thiểu để nói một mẫu prompt tốt hơn mẫu khác. */
-export const TOI_THIEU_CAP = layNguong(BO_MAC_DINH, 'NG19');
+/** NG19 · cỡ mẫu tối thiểu để nói một mẫu prompt tốt hơn mẫu khác.
+ *  ĐỌC LÚC DÙNG từ bộ truyền vào (Bảng 4.7, điểm 4) — trước 22-11 chụp bộ mặc định,
+ *  nên chuyên gia nâng NG19 lên 20 thì báo cáo ΔC vẫn kết luận trên 5 cặp. Chỗ gọi ở
+ *  máy chủ nạp bộ bằng `layBoNguong(db)` rồi truyền `bo`. Hằng dưới còn cho cổng. */
+export const toiThieuCap = (bo = boNguong(), nc = {}) => layNguong(bo, 'NG19', nc);
+export const TOI_THIEU_CAP = toiThieuCap();
 
 /**
  * Một cặp A-R-A hợp lệ chưa?
@@ -58,7 +62,8 @@ export const deltaC = (cap) => (capHopLe(cap).ok ? cap.sau.p - cap.truoc.p : nul
  * mà 35 bị loại thì con số trung bình của 5 cặp còn lại không đáng tin, và người
  * đọc phải thấy điều đó.
  */
-export function gomTheoMau(dsCap, { toiThieu = TOI_THIEU_CAP } = {}) {
+export function gomTheoMau(dsCap, { toiThieu = null, bo = boNguong() } = {}) {
+  const can = toiThieu ?? toiThieuCap(bo);
   const nhom = new Map();
   for (const c of (dsCap || [])) {
     const k = `${c?.mauPrompt || '?'}@${c?.phienBanMau ?? 0}`;
@@ -83,8 +88,8 @@ export function gomTheoMau(dsCap, { toiThieu = TOI_THIEU_CAP } = {}) {
       /* Dưới cỡ mẫu thì KHÔNG đưa ra con số. Một mẫu prompt bị chê hay được khen
          dựa trên 2 cặp là kết luận tự nuôi chính nó — cùng cái bẫy với bảng định
          dạng ở Đợt 2. */
-      deltaTB: n.soCap >= toiThieu ? +(n.tong / n.soCap).toFixed(4) : null,
-      duMau: n.soCap >= toiThieu,
+      deltaTB: n.soCap >= can ? +(n.tong / n.soCap).toFixed(4) : null,
+      duMau: n.soCap >= can,
     }))
     .sort((a, b) => (b.deltaTB ?? -Infinity) - (a.deltaTB ?? -Infinity));
 }

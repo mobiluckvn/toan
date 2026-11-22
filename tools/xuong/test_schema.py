@@ -290,5 +290,23 @@ t("KHÔNG đè mục đã có (kể cả khác chữ hoa)",
 t("mục đắp vào có mã riêng để lần ra",
   any(str(x.get("ma", "")).startswith("v_x_") for x in u["tu"]))
 
+print("\n── E · GIÁM KHẢO HỎNG KHÔNG ĐƯỢC THÀNH \"QUA\" ──")
+t('phiếu "false" dạng chuỗi là BÁC', giam_khao.doc_thuan("false") is False)
+t("phiếu thiếu khoá là KHÔNG CÓ PHIẾU", giam_khao.doc_thuan(None) is None)
+t("phiếu true thật là thuận", giam_khao.doc_thuan(True) is True)
+_goc = chung.goi
+def _hong(*a, **k):
+    raise chung.LoiXuong("Gemini trả 429: hết hạn mức")
+chung.goi = _hong
+try:
+    _kq = giam_khao.xet({"tu": "cat", "nghia": "con mèo"}, loai="tu", lop=1,
+                        chu_de="x", bang="cat", khoa_api="gia")
+finally:
+    chung.goi = _goc
+t("cả ba giám khảo gọi hỏng thì KHÔNG ra 'qua'", _kq["ket"] == "thieu_phieu")
+t("và không đếm thành phiếu bác", _kq["so_bac"] == 0)
+t("hàng rào bác chữ số", any("chữ số" in x for x in hang_rao.soi_cau("I am 7.", {"i", "am"})))
+t("hàng rào bác emoji", any("ký tự lạ" in x for x in hang_rao.soi_cau("I am 🐱.", {"i", "am"})))
+
 print(f"\n{pass_} PASS · {fail} FAIL\n")
 raise SystemExit(1 if fail else 0)

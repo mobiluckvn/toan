@@ -13,7 +13,7 @@
  */
 import { httpsCallable } from 'firebase/functions';
 import { fns, hasFirebase } from '../../../chung/lib/nenTang.js';
-import { SO_CAU_PHU_DAO } from './phudao.js';
+import { soCauPhuDao } from './phudao.js';
 
 /** Đếm số lần nhờ máy soạn bài, và số lần hỏng. Không hiện ra cho bé. */
 export const LOI_SINH = { goi: 0, hong: 0, cau: 0, ganNhat: null };
@@ -56,7 +56,7 @@ function dungCau(x, i, maNut) {
  * ĐẦY ĐỦ của bài (gồm cả bài của nút gốc rễ, có thể ở quyển khác). Soi ở đây thì
  * phải chuyền vốn qua hai tầng, và chỗ nào soi bằng vốn thiếu là chỗ bác oan.
  */
-export async function nhoSinh({ maNut, nhan, von, soCau = SO_CAU_PHU_DAO, lop = 1 }) {
+export async function nhoSinh({ maNut, nhan, von, soCau = soCauPhuDao({ nut: maNut || undefined }), lop = 1 }) {
   if (!hasFirebase || !fns) {
     const e = new Error('Máy chưa nối được lên mạng.');
     e.code = 'functions/unavailable';
@@ -64,7 +64,7 @@ export async function nhoSinh({ maNut, nhan, von, soCau = SO_CAU_PHU_DAO, lop = 
   }
   LOI_SINH.goi += 1;
   try {
-    const { data } = await httpsCallable(fns, 'sinhCauPhuDao')({
+    const { data } = await httpsCallable(fns, 'sinhCauPhuDao', { timeout: 30000 })({
       nhan: nhan || maNut,
       lop,
       soCau,

@@ -193,6 +193,10 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
      bấm "nói lại từ đầu" — xem `noiLaiTuDau`. */
   const [lanBuoi, datLanBuoi] = useState(0);
   const cuoiDs = useRef(null);
+  /* THẾ HỆ CỦA BUỔI. Tăng mỗi khi bé rời phòng hoặc bấm "nói chuyện lại": câu trả
+     lời nào về muộn mà mang thế hệ cũ thì BỎ, không áp vào buổi mới (đã thấy: rời
+     phòng rồi cô vẫn nói; bấm nói lại thì câu cũ chen vào buổi mới). */
+  const theHe = useRef(0);
   const phien = useRef(null);
   const daChao = useRef(false);
   const daDocKet = useRef(false);
@@ -352,7 +356,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
       .catch(() => { /* đã đếm trong `tomTatBuoi` */ });
   }, [buoi.trangThai, lichSu, onHoSoAI, tienDo?.hoSoAI, hoSoBe, mucThao, von, tenBe, lop]);
 
-  useEffect(() => () => { phien.current?.huy(); thoiDoc(); }, []);
+  useEffect(() => () => { theHe.current += 1; phien.current?.huy(); thoiDoc(); }, []);
   /* Nhịp 30 giây chỉ để VẼ LẠI, không đụng gì tới dữ liệu — hết 20 phút mà màn
      hình không tự biết thì bé cứ nói tiếp, rồi đúng lượt sau mới bị cắt ngang. */
   useEffect(() => { const id = setInterval(() => datNhip((n) => n + 1), 30000); return () => clearInterval(id); }, []);
@@ -400,11 +404,18 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
 
   /* Gửi một lượt lên cô giáo. `themVaoLichSu` nhận lịch sử ĐÃ có lượt của bé —
      đọc state ngay tại đây thì lượt vừa thêm chưa kịp vào, và cô trả lời câu cũ. */
-  const guiLuot = useCallback(async (ds) => {
+  const guiLuot = useCallback(async (ds, bangMoi) => {
+    const the = theHe.current;
+    const maBuoiLuc = maBuoi.current;
+    const conHieuLuc = () => the === theHe.current;
     datLoi(null); datDangHoi(true);
     try {
+      /* `bangMoi` — bảng ĐÃ nhích theo lượt bé vừa nói. `bang` trong bao đóng là
+         của lượt TRƯỚC (setState chưa kịp áp), nên không truyền thì cô được dặn
+         dạy bước bé vừa làm xong — kế hoạch chạy chậm một nhịp. */
       const tra = await hoiCoGiao({ von, lichSu: ds, tenBe, lop,
-        haDoKho: buoi.haDoKho, bang, kichBan });
+        haDoKho: buoi.haDoKho, bang: bangMoi || bang, kichBan });
+      if (!conHieuLuc()) return;
       /* `buoc` — bước nào sinh ra lượt này. Không bày ra màn hình, nhưng
          `luotLuyen` cần: lượt bé đáp lời chào KHÔNG được tính là một lần luyện.
 
@@ -431,7 +442,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
       /* Client giữ ngữ cảnh và tự đẩy lên máy chủ — bác chốt như thế; server không
          lưu gì. KHÔNG chờ: mất mạng thì bé vẫn nói chuyện bình thường. */
       luuBuoi(auth?.currentUser?.uid, {
-        maBuoi: maBuoi.current, quyen: ma, baiId: bai?.id, tenBai: bai?.title, lichSu: sau,
+        maBuoi: maBuoiLuc, quyen: ma, baiId: bai?.id, tenBai: bai?.title, lichSu: sau,
       });
       /* Câu tiếng Anh đọc nguyên khối giọng en-GB; lời giải thích thì TÁCH theo
          thứ tiếng — trong đó thường có lẫn chính từ bé đang học. */
@@ -449,14 +460,17 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
         await docDoan(tachTheoTieng(tra.vi, von, mocEn));
       })();
     } catch (e) {
+      if (!conHieuLuc()) return;
       /* Nói đúng chỗ hỏng. "Có lỗi xảy ra" là câu vô dụng nhất — bố mẹ không biết
          phải sửa gì, mà mấy lỗi ở đây thì mỗi lỗi một cách chữa hẳn. */
       datLoi(e?.code === 'functions/permission-denied'
         ? 'Khoá của cô giáo máy chưa dùng được — người lớn kiểm tra giúp con nhé.'
         : e?.code === 'functions/unauthenticated'
           ? 'Con đăng nhập rồi mới vào phòng này được nhé.'
-          : 'Cô giáo máy chưa trả lời được. Con thử lại nhé.');
-    } finally { datDangHoi(false); }
+          : e?.code === 'functions/resource-exhausted'
+            ? 'Hôm nay con đã luyện rất nhiều rồi. Mai mình học tiếp nhé!'
+            : 'Cô giáo máy chưa trả lời được. Con thử lại nhé.');
+    } finally { if (conHieuLuc()) datDangHoi(false); }
   }, [von, tenBe, lop, bai, buoi.haDoKho, bang, kichBan, ma, mocEn]);
 
   /* Cô chào trước. Bé 6 tuổi mở ra thấy màn trắng thì không biết làm gì cả. */
@@ -546,7 +560,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
        Nay đi kèm lượt của bé, rồi `dongBuoc` gửi lên cùng lời dặn. */
     const sau = [...lichSu, {
       vai: 'be',
-      chu: r.noiGi,
+      chu: kq?.nghe ?? r.noiGi,
       diem: kq?.diem ?? null,
       mau: kq?.mau || luotCoCuoi?.en || null,
       thieu: kq?.thieu || [],
@@ -587,7 +601,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
         lan: 1,
         ms: null,
         hintsUsed: 0,
-        answer: r.noiGi ?? null,
+        answer: kq?.nghe ?? r.noiGi ?? null,
         expected: kq.mau ?? null,
         phase: 'practice',
         mauPrompt: luotCoCuoi?.mauPrompt || null,
@@ -604,16 +618,21 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
        Đặt ở ĐÂY, không đặt trong `guiLuot`: `guiLuot` chạy khi CÔ trả lời, còn kế
        hoạch phải nhích theo việc BÉ làm được. Đặt sai chỗ thì bước xong ngay khi cô
        nói, bất kể bé nói được hay không. */
+    /* ⚠ TÍNH KẾ HOẠCH MỚI NGAY TẠI ĐÂY, rồi dùng chính nó. Bản cũ gọi setState
+       dạng hàm rồi đọc lại `keHoach` — tức kế hoạch CŨ: `tinhBuoi` không thấy bước
+       cuối vừa xong (lời chào kết bị cô chen ngang), và cô được dặn dạy bước bé
+       vừa làm xong. */
     const nhanLuotNay = luotCoCuoi?.nhan || null;
-    datKeHoachState((kh) => (kh
-      ? capNhatSauLuot(kh, { nhan: nhanLuotNay, diem: kq?.diem ?? null, bang })
-      : kh));
+    const khMoi = keHoach
+      ? capNhatSauLuot(keHoach, { nhan: nhanLuotNay, diem: kq?.diem ?? null, bang })
+      : keHoach;
+    datKeHoachState(khMoi);
     const sauKhiNoi = tinhBuoi({ lichSu: sau, batDau: batDau.current, bayGio: Date.now(),
-                                 xongKeHoach: xongKeHoach(keHoach),
-                                 keHoachConViec: khConThieu(keHoach) > 0 });
+                                 xongKeHoach: xongKeHoach(khMoi),
+                                 keHoachConViec: khConThieu(khMoi) > 0 });
     if (sauKhiNoi.trangThai !== 'dang') { datLoi(null); return; }
-    guiLuot(sau);
-  }, [ghiAm, lichSu, canNoiGi, luotCoCuoi, guiLuot, onLuot, bai, keHoach, bang]);
+    guiLuot(sau, khMoi ? datKeHoach(bangGoc, khMoi) : undefined);
+  }, [ghiAm, lichSu, canNoiGi, luotCoCuoi, guiLuot, onLuot, bai, keHoach, bang, bangGoc]);
 
   /**
    * NÓI LẠI MỘT CÂU — bác dặn 14-08.
@@ -633,7 +652,10 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
    */
   const noiLai = useCallback(async (chiSo) => {
     const cu = lichSu[chiSo];
-    if (!cu?.mau) return;
+    /* Cô đang nghĩ thì KHÔNG cho nói lại: câu của cô về giữa lúc bé đang thu, rồi
+       `datLichSu(sau)` dưới đây dựng từ `lichSu` cũ sẽ đè mất câu ấy — hoặc ngược
+       lại, câu của cô đè mất điểm mới của bé. */
+    if (!cu?.mau || dangHoi) return;
     datLaiO(chiSo);
     const r = await ghiAm();
     datLaiO(null);
@@ -642,7 +664,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
     const hon = (kq?.diem ?? 0) > (cu.diem ?? -1);
     const sau = lichSu.map((x, i) => (i !== chiSo ? x : {
       ...x,
-      chu: hon ? r.noiGi : x.chu,
+      chu: hon ? (kq.nghe ?? r.noiGi) : x.chu,
       diem: hon ? kq.diem : x.diem,
       /* Chỗ sót đi CÙNG lần thử được giữ lại. Giữ điểm của lần này mà giữ chỗ sót
          của lần kia thì cô sửa một chữ bé đã nói được rồi. */
@@ -656,7 +678,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
     });
     /* `ma` PHẢI có mặt: thiếu nó thì bao đóng giữ mã quyển lúc dựng, và buổi luyện
        nói lại được lưu vào quyển bé đã rời khỏi. */
-  }, [ghiAm, lichSu, bai, ma]);
+  }, [ghiAm, lichSu, bai, ma, dangHoi]);
 
   /**
    * NÓI CHUYỆN LẠI TỪ ĐẦU — vì màn kết là ngõ cụt.
@@ -668,6 +690,8 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
    * Mã buổi dựng LẠI, để buổi mới không ghi đè lên buổi vừa xong trên máy chủ.
    */
   const noiLaiTuDau = useCallback(() => {
+    theHe.current += 1;
+    datDangHoi(false);
     thoiDoc();
     phien.current?.huy();
     datLichSu([]); datLoi(null); datTam(''); datMicHong(false);
@@ -824,7 +848,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con',
                 : (
                   <LuotBe luot={x} dangNghe={laiO === i && dangNghe}
                     onNoiLai={x.mau && buoi.trangThai === 'dang' && ngheDuoc() && !micHong
-                      ? () => noiLai(i) : null} />
+                      && !dangHoi ? () => noiLai(i) : null} />
                 )}
             </li>
           ))}

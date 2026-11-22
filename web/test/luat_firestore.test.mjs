@@ -484,28 +484,78 @@ t('bé đăng nhập ĐỌC ĐƯỢC bảng xếp hạng', m === 200 || m === 40
 console.log('\n── bốn bảng quản lý ngưỡng (R7) ──');
 
 const CG = 'chuyen_gia_uid';
-const nguongHopLe = (gt = 0.85) => ({
+const nguongHopLe = (gt = 0.85, phienBan = 2, phamVi = null) => ({
   ma: V.s('NG07'), giaTri: { doubleValue: gt },
   canDuoi: { doubleValue: 0.70 }, canTren: { doubleValue: 0.98 },
-  phienBan: V.n(2), nguon: V.s('chuyenGia'),
+  phienBan: V.n(phienBan), nguon: V.s('chuyenGia'),
+  ...(phamVi ? { phamVi: V.m({ loai: V.s(phamVi.loai), ...(phamVi.khoa != null ? { khoa: V.s(phamVi.khoa) } : {}) }) } : {}),
 });
+
+/* ── GHI NHIỀU TÀI LIỆU TRONG MỘT LẦN CAM KẾT ──
+   Từ 22-11 (Bảng 4.7, điểm 3) mỗi dòng `nguong`/`nguong_lich_su` phải đi CÙNG lần tăng
+   bộ đếm `nguong_phien_ban/hienHanh` — luật đọc `getAfter` của bộ đếm. Ghi lẻ từng
+   tài liệu bằng PATCH thì luật thấy bộ đếm chưa đổi và từ chối, đúng như phải thế;
+   nên phép thử chiều CHO phải cam kết cả lô bằng `:commit`, y như giao dịch thật. */
+const tenDayDu = (duong) => `projects/${DU_AN}/databases/(default)/documents/${duong}`;
+async function camKet(nhuAi, role, ds) {
+  const r = await fetch(`${goc}:commit`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token(nhuAi, role)}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ writes: ds.map(([duong, fields]) => ({ update: { name: tenDayDu(duong), fields } })) }),
+  });
+  return r.status;
+}
+/* Số hiện tại của bộ đếm (0 khi chưa có). Bộ giả lập giữ dữ liệu giữa các lần chạy
+   trong cùng một phiên bật, nên phải hỏi chứ không đoán. */
+async function soDem() {
+  const r = await fetch(`${goc}/nguong_phien_ban/hienHanh`, {
+    headers: { Authorization: `Bearer ${token(CG, 'chuyengia')}` },
+  });
+  if (r.status !== 200) return 0;
+  return Number((await r.json())?.fields?.so?.integerValue) || 0;
+}
+const dem = (so) => ['nguong_phien_ban/hienHanh', { so: V.n(so) }];
 
 m = await doc('nguong/NG07', BE_A);
 t('bé ĐỌC được bảng ngưỡng — máy con phải đọc mới chạy được',
   m === 200 || m === 404, `HTTP ${m}`);
-m = await ghi(CG, 'nguong/NG07', nguongHopLe(), CG, 'chuyengia');
-t('chuyên gia GHI được ngưỡng trong khoảng hợp lệ', m === 200, `HTTP ${m}`);
-m = await ghi(BE_A, 'nguong/NG07', nguongHopLe(0.9));
+let so = await soDem();
+m = await camKet(CG, 'chuyengia', [dem(so + 1), ['nguong/NG07', nguongHopLe(0.85, so + 1)]]);
+t('chuyên gia GHI được ngưỡng trong khoảng hợp lệ (kèm tăng bộ đếm)', m === 200, `HTTP ${m}`);
+so = await soDem();
+m = await ghi(CG, 'nguong/NG07', nguongHopLe(0.86, so), CG, 'chuyengia');
+t('ghi ngưỡng mà KHÔNG tăng bộ đếm thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+m = await camKet(CG, 'chuyengia', [dem(so + 2), ['nguong/NG07', nguongHopLe(0.86, so + 2)]]);
+t('bộ đếm chỉ được tăng ĐÚNG MỘT — nhảy số thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+m = await camKet(CG, 'chuyengia', [dem(so + 1), ['nguong/NG07', nguongHopLe(0.86, so)]]);
+t('dòng ngưỡng mang số KHÁC bộ đếm thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+m = await ghi(BE_A, 'nguong/NG07', nguongHopLe(0.9, so + 1));
 t('bé KHÔNG ghi được ngưỡng', m === 403, `HTTP ${m}`);
-m = await ghi('ad_uid', 'nguong/NG07', nguongHopLe(0.9), 'ad_uid', 'admin');
+m = await ghi(BE_A, 'nguong_phien_ban/hienHanh', { so: V.n(so + 1) });
+t('bé KHÔNG tăng được bộ đếm', m === 403, `HTTP ${m}`);
+m = await camKet('ad_uid', 'admin', [dem(so + 1), ['nguong/NG07', nguongHopLe(0.9, so + 1)]]);
 t('ADMIN cũng KHÔNG ghi được — vai trò tách hẳn', m === 403, `HTTP ${m}`);
-m = await ghi(CG, 'nguong/NG07', nguongHopLe(0.99), CG, 'chuyengia');
+m = await camKet(CG, 'chuyengia', [dem(so + 1), ['nguong/NG07', nguongHopLe(0.99, so + 1)]]);
 t('giá trị NGOÀI khoảng hợp lệ thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
-m = await ghi(CG, 'nguong/NG07', nguongHopLe(0.50), CG, 'chuyengia');
+m = await camKet(CG, 'chuyengia', [dem(so + 1), ['nguong/NG07', nguongHopLe(0.50, so + 1)]]);
 t('dưới cận dưới cũng BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
-m = await ghi(CG, 'nguong/NG99', { ma: V.s('NG99'), giaTri: { doubleValue: 1 } },
-              CG, 'chuyengia');
+m = await camKet(CG, 'chuyengia', [dem(so + 1), ['nguong/NG99', { ma: V.s('NG99'), giaTri: { doubleValue: 1 } }]]);
 t('thiếu canDuoi/canTren/phienBan thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+
+/* ── PHẠM VI HẸP (Bảng 4.7, điểm 2) ── */
+m = await camKet(CG, 'chuyengia', [dem(so + 1),
+  ['nguong/NG07__khoiLop__3', nguongHopLe(0.80, so + 1, { loai: 'khoiLop', khoa: '3' })]]);
+t('chuyên gia ghi được ngưỡng cho MỘT khối lớp', m === 200, `HTTP ${m}`);
+so = await soDem();
+m = await camKet(CG, 'chuyengia', [dem(so + 1),
+  ['nguong/NG07__khoiLop__4', nguongHopLe(0.80, so + 1, { loai: 'khoiLop', khoa: '3' })]]);
+t('mã tài liệu LỆCH phạm vi khai bên trong thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+m = await camKet(CG, 'chuyengia', [dem(so + 1),
+  ['nguong/NG07__lop__3', nguongHopLe(0.80, so + 1, { loai: 'lop', khoa: '3' })]]);
+t('nấc phạm vi KHÔNG có trên thang thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+m = await camKet(CG, 'chuyengia', [dem(so + 1),
+  ['nguong/NG07', nguongHopLe(0.80, so + 1, { loai: 'khoiLop', khoa: '3' })]]);
+t('dòng phạm vi hẹp KHÔNG được nằm ở mã tài liệu toàn hệ', m === 403, `HTTP ${m}`);
 
 /* ⚠ MÃ TÀI LIỆU PHẢI KHÁC NHAU MỖI LẦN CHẠY. `nguong_lich_su` là bảng CHỈ-THÊM, nên
    một mã ghim cứng làm lần chạy thứ hai trên cùng bộ giả lập tự đỏ: phép "chuyên gia
@@ -514,19 +564,23 @@ t('thiếu canDuoi/canTren/phienBan thì BỊ TỪ CHỐI', m === 403, `HTTP ${m
    dẫn người sửa đi sai hướng, nên mỗi lần chạy dùng một hậu tố riêng. */
 const LAN = `${Date.now()}_${Math.floor(Math.random() * 1e6)}`;
 
-const lichSuHopLe = (nguoi = CG, lyDo = 'tỷ lệ công nhận sớm 18%') => ({
-  ma: V.s('NG07'), giaTriMoi: { doubleValue: 0.88 }, phienBan: V.n(2),
+const lichSuHopLe = (nguoi = CG, lyDo = 'tỷ lệ công nhận sớm 18%', phienBan = 2) => ({
+  ma: V.s('NG07'), giaTriMoi: { doubleValue: 0.88 }, phienBan: V.n(phienBan),
   nguoiSua: V.s(nguoi), thoiDiem: V.s('2026-10-10T00:00:00Z'), lyDo: V.s(lyDo),
 });
 
-m = await ghi(CG, `nguong_lich_su/ls1_${LAN}`, lichSuHopLe(), CG, 'chuyengia');
-t('chuyên gia THÊM được dòng lịch sử', m === 200, `HTTP ${m}`);
-m = await ghi(CG, `nguong_lich_su/ls1_${LAN}`, lichSuHopLe(CG, 'sửa lại'), CG, 'chuyengia');
+so = await soDem();
+m = await camKet(CG, 'chuyengia', [dem(so + 1), [`nguong_lich_su/ls1_${LAN}`, lichSuHopLe(CG, undefined, so + 1)]]);
+t('chuyên gia THÊM được dòng lịch sử (cùng lần tăng bộ đếm)', m === 200, `HTTP ${m}`);
+so = await soDem();
+m = await camKet(CG, 'chuyengia', [dem(so + 1), [`nguong_lich_su/ls1_${LAN}`, lichSuHopLe(CG, 'sửa lại', so + 1)]]);
 t('nhưng SỬA lại dòng ấy thì BỊ TỪ CHỐI — lịch sử chỉ thêm', m === 403, `HTTP ${m}`);
-m = await ghi(CG, `nguong_lich_su/ls2_${LAN}`, lichSuHopLe(CG, ''), CG, 'chuyengia');
+m = await camKet(CG, 'chuyengia', [dem(so + 1), [`nguong_lich_su/ls2_${LAN}`, lichSuHopLe(CG, '', so + 1)]]);
 t('thiếu LÝ DO thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
-m = await ghi(CG, `nguong_lich_su/ls3_${LAN}`, lichSuHopLe(BE_A), CG, 'chuyengia');
+m = await camKet(CG, 'chuyengia', [dem(so + 1), [`nguong_lich_su/ls3_${LAN}`, lichSuHopLe(BE_A, undefined, so + 1)]]);
 t('khai nguoiSua là người KHÁC thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+m = await ghi(CG, `nguong_lich_su/ls4_${LAN}`, lichSuHopLe(CG, undefined, so), CG, 'chuyengia');
+t('dòng lịch sử KHÔNG đi cùng một lần phát hành thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
 m = await doc(`nguong_lich_su/ls1_${LAN}`, BE_A);
 t('bé KHÔNG đọc được lịch sử ngưỡng', m === 403, `HTTP ${m}`);
 

@@ -100,7 +100,9 @@ export function bktSequence(answers, params = null, start = null) {
   return p;
 }
 
-export const isMastered = (p, th = MASTERY_THRESHOLD) => p >= th;
+/* Ngưỡng mặc định đọc LÚC GỌI từ bộ đang hành (Bảng 4.7, điểm 4) — không phải hằng
+   `MASTERY_THRESHOLD` chụp từ bộ mặc định lúc nạp module. */
+export const isMastered = (p, th = layNguong(boNguong(), 'NG07')) => p >= th;
 
 /**
  * Câu BẮT BUỘC ĐÚNG (bẫy) đáng tin hơn câu thường: trả lời đúng nhờ đoán khó hơn.
@@ -120,7 +122,7 @@ export function paramsFor(item = {}) {
  * NỬA ĐỜI CỦA TRÍ NHỚ — sau chừng này ngày không gặp lại, mức thạo rơi một nửa
  * quãng đường về phía "không chắc".
  *
- * 14 ngày là con số đặt theo lịch ôn sẵn có (+1 · +3 · +7 ngày): bé theo đúng
+ * 14 ngày là con số đặt theo lịch ôn sẵn có (+1 · +3 · +7 ngày, nay là NG28): bé theo đúng
  * lịch thì gặp lại trước khi rơi đáng kể, bỏ hẳn hai tuần thì mới thấy tụt.
  * ⚠ Đây là con số CHỌN, không phải đo được — chưa có dữ liệu học thật để hiệu
  * chỉnh. Khi có rồi thì chỉnh ở đây, và ghi lại lý do như `DEFAULT_PARAMS`.
@@ -130,7 +132,7 @@ export const NUA_DOI_NGAY = layNguong(BO_MAC_DINH, 'NG06');
 /**
  * Mức thạo tụt dần khi lâu không gặp lại (chiều Thời gian, mục 2.1.2 luận văn).
  *
- * ⚠ KÉO VỀ 0.5, KHÔNG KÉO VỀ 0. Bé quên thì thành "không chắc", chứ không thành
+ * ⚠ KÉO VỀ 0.5 (NG25), KHÔNG KÉO VỀ 0. Bé quên thì thành "không chắc", chứ không thành
  * "chưa từng biết" — kéo về 0 là bắt bé học lại từ đầu một thứ đã từng thạo, và
  * với trẻ con thì đó là hình phạt cho việc nghỉ vài hôm.
  *
@@ -142,7 +144,10 @@ export function quenDan(p, soNgay, nuaDoi = null, nc = {}) {
   const nua = nuaDoi ?? layNguong(boNguong(), 'NG06', nc);
   if (!Number.isFinite(p)) return thamSo().L0;
   if (!Number.isFinite(soNgay) || soNgay <= 0) return p;
-  return clamp(0.5 + (p - 0.5) * 2 ** (-soNgay / nua));
+  /* Điểm tựa trước 22-11 gõ cứng 0,5; nay là NG25 trong bảng ngưỡng (Bảng 4.7, điểm
+     5). `soiNguong` đòi nó ≤ θ − 0,20, để nghỉ lâu không bao giờ tự thành "đã thạo". */
+  const tua = layNguong(boNguong(), 'NG25', nc);
+  return clamp(tua + (p - tua) * 2 ** (-soNgay / nua));
 }
 
 /**

@@ -101,6 +101,9 @@ export const DAU_RIENG = [
      tiền tố. Cổng `tienganh_nhanluot.test.mjs` soi TÍNH CHẤT (đem từng giá trị của
      `chiTiet` đi tìm trong phần khung còn lại), không soi chính tả mấy mẫu này. */
   /^\s*CHILD:/i, /she said/i, /she asked/i, /left out:/i,
+  /* Dòng mở đầu lời dặn tả tranh mang TÊN BÉ ("…child named An"). Không lọc thì
+     mỗi bé một vân tay, và vân tay thành mã nhận diện từng bé. */
+  /child named/i,
 ];
 
 /**

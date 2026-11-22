@@ -41,7 +41,10 @@ service cloud.firestore {
       allow update: if isMine(userId)
                     && request.resource.data.role == resource.data.role
                     && request.resource.data.uid == resource.data.uid
-                    && request.resource.data.email == resource.data.email;
+                    && request.resource.data.email == resource.data.email
+                    /* Cờ mô phỏng do quản trị đặt (tools/mo_phong). Mở cho chính chủ
+                       thì một em thật tự giấu mình khỏi bảng cô giáo được. */
+                    && request.resource.data.get('moPhong', false) == resource.data.get('moPhong', false);
 
       /* Tạo hồ sơ là việc của Cloud Function lúc đăng nhập (Admin SDK bỏ qua luật này).
          Không mở cho máy con, nếu không người ta tự tạo hồ sơ kèm role tuỳ ý. */
@@ -363,6 +366,46 @@ service cloud.firestore {
        xuất và thống kê chỉ chuyên gia với admin xem.
        ══════════════════════════════════════════════════════════════════════ */
 
+    /* ── BỘ ĐẾM PHIÊN BẢN (Bảng 4.7, điểm 3) ──
+       Một tài liệu `hienHanh`, một trường `so`. Hàm phát hành đọc nó TRONG giao dịch
+       rồi ghi `so + 1`; luật chỉ cho TĂNG ĐÚNG MỘT, nên hai lần phát hành song song
+       không thể ra cùng một số — lần sau bị từ chối, giao dịch chạy lại và lấy số kế
+       tiếp. Mọi dòng `nguong`/`nguong_lich_su` phải mang đúng số mà bộ đếm có SAU
+       lần ghi (`getAfter`), tức là phải được ghi CÙNG giao dịch với lần tăng ấy. */
+    /* `getAfter` một mình KHÔNG đủ: ghi lẻ một dòng mà không đụng bộ đếm thì trạng
+       thái "sau" vẫn là bộ đếm cũ, và dòng mang số cũ lọt qua — tức là ghi đè một
+       phiên bản đã phát hành mà không tạo phiên bản mới. Nên còn đòi bộ đếm phải
+       TĂNG ĐÚNG MỘT trong chính lần ghi này (hoặc vừa được tạo). */
+    function soPhienBanSau() {
+      return getAfter(/databases/$(database)/documents/nguong_phien_ban/hienHanh).data.so;
+    }
+    function phienBanVuaTang() {
+      return !exists(/databases/$(database)/documents/nguong_phien_ban/hienHanh)
+        || get(/databases/$(database)/documents/nguong_phien_ban/hienHanh).data.so + 1
+           == soPhienBanSau();
+    }
+    match /nguong_phien_ban/{demId} {
+      allow read:   if isChuyenGia() || isAdmin();
+      allow create: if isChuyenGia() && demId == 'hienHanh'
+                    && request.resource.data.so is int && request.resource.data.so >= 1;
+      allow update: if isChuyenGia()
+                    && request.resource.data.so == resource.data.so + 1;
+      allow delete: if false;
+    }
+
+    /* PHẠM VI CỦA MỘT DÒNG NGƯỠNG (Bảng 4.7, điểm 2) — và mã tài liệu phải khớp nó.
+       Toàn hệ: mã tài liệu là mã ngưỡng (`NG07`). Phạm vi hẹp: `NG07__khoiLop__3`, với
+       `loai` là một nấc CÓ TRÊN THANG và `khoa` là chuỗi không rỗng. Khớp mã tài liệu
+       với nội dung là để không thể có HAI dòng cùng nói về một ô (NG07 · khối lớp 3) —
+       khi ấy máy đọc lấy dòng nào là tuỳ thứ tự, tức tuỳ may. */
+    function phamViHopLe(d, id) {
+      return !('phamVi' in d) || d.phamVi.loai == 'toanHe'
+        ? id == d.ma
+        : (d.phamVi.loai in ['nut', 'dangCau', 'bac', 'loaiNut', 'khoiLop', 'mon']
+           && d.phamVi.khoa is string && d.phamVi.khoa.size() > 0
+           && id == d.ma + '__' + d.phamVi.loai + '__' + d.phamVi.khoa);
+    }
+
     /* ── Giá trị hiện hành. CHỈ chuyên gia ghi, và phải trong khoảng hợp lệ ── */
     match /nguong/{nguongId} {
       allow read: if signedIn();
@@ -375,6 +418,9 @@ service cloud.firestore {
                    && request.resource.data.keys().hasAll(
                         ['ma', 'giaTri', 'canDuoi', 'canTren', 'phienBan'])
                    && request.resource.data.phienBan is int
+                   && request.resource.data.phienBan == soPhienBanSau()
+                   && phienBanVuaTang()
+                   && phamViHopLe(request.resource.data, nguongId)
                    && (request.resource.data.giaTri is number
                        ? (request.resource.data.giaTri >= request.resource.data.canDuoi
                           && request.resource.data.giaTri <= request.resource.data.canTren)
@@ -390,6 +436,8 @@ service cloud.firestore {
                     && request.resource.data.keys().hasAll(
                          ['ma', 'giaTriMoi', 'phienBan', 'nguoiSua', 'thoiDiem', 'lyDo'])
                     && request.resource.data.nguoiSua == uid()
+                    && request.resource.data.phienBan == soPhienBanSau()
+                    && phienBanVuaTang()
                     && request.resource.data.lyDo is string
                     && request.resource.data.lyDo.size() > 0;
       allow update, delete: if false;

@@ -34,6 +34,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -41,11 +42,22 @@ from pathlib import Path
 GOC = Path(__file__).resolve().parent.parent.parent
 
 # ── MÔ HÌNH ──
-MO_HINH = "openai/gpt-oss-120b"
-#: Model thứ hai cho vòng tranh luận. Xem khối chú thích đầu tệp: mọi model khác
-#: đang bị chặn ở cấp tổ chức, nên mặc định nó TRÙNG model chính — và `tranh_luan`
-#: nói thẳng điều đó ra trong báo cáo thay vì im lặng.
-MO_HINH_PHU = os.environ.get("GROQ_MODEL_PHU", "").strip() or MO_HINH
+# 22-11-2026: chuyển từ Groq `openai/gpt-oss-120b` sang Gemini, khớp với
+# `web/functions/src/llm.js`. Đổi bằng biến môi trường `LLM_MODEL`, không sửa mã.
+MO_HINH = os.environ.get("LLM_MODEL", "").strip() or "gemini-3.8-flash"
+#: Model thứ hai cho vòng tranh luận và giám khảo. Trên Groq mọi model khác bị chặn
+#: ở cấp tổ chức; trên Gemini thì đặt được (vd. `LLM_MODEL_PHU=gemini-3.8-pro`) để
+#: người soạn và người soát KHÁC mô hình. Chưa đặt thì TRÙNG model chính — và
+#: `tranh_luan` nói thẳng điều đó ra trong báo cáo thay vì im lặng.
+MO_HINH_PHU = (os.environ.get("LLM_MODEL_PHU", "").strip()
+               or os.environ.get("GROQ_MODEL_PHU", "").strip() or MO_HINH)
+
+CONG_LLM = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+#: Token phần nghĩ của Gemini tính chung vào trần — trần nào thấp hơn mức này thì nâng.
+TOKEN_SAN = 2048
+#: Lỗi tạm (quá tải, hết hạn mức phút) thì thử lại, chờ tăng dần.
+LOI_TAM = {429, 500, 502, 503, 504}
+SO_LAN_THU = 3
 
 NGHI_NGAN = "low"
 
@@ -115,20 +127,20 @@ def soi_duong_ra(p: str | Path) -> Path:
 # ─────────────────────────── KHOÁ VÀ LỜI GỌI ───────────────────────────
 
 def khoa() -> str:
-    """Khoá Groq. Đọc biến môi trường trước, rồi tới tệp bí mật của functions.
+    """Khoá Gemini. Đọc biến môi trường trước, rồi tới tệp bí mật của functions.
 
     ⚠ KHÔNG in khoá ra, và không đưa nó vào bất cứ thông báo lỗi nào — thông báo
     lỗi của công cụ hay bị dán nguyên văn vào chỗ khác.
     """
-    k = os.environ.get("GROQ_API_KEY", "").strip()
+    k = os.environ.get("GEMINI_API_KEY", "").strip()
     if k:
         return k
     tep = GOC / "web/functions/.secret.local"
     if tep.exists():
-        m = re.search(r'GROQ_API_KEY\s*=\s*"?([^"\n]+)', tep.read_text("utf8"))
+        m = re.search(r'GEMINI_API_KEY\s*=\s*"?([^"\n]+)', tep.read_text("utf8"))
         if m:
             return m.group(1).strip()
-    raise LoiXuong("Chưa có khoá Groq. Đặt GROQ_API_KEY, hay ghi vào "
+    raise LoiXuong("Chưa có khoá Gemini. Đặt GEMINI_API_KEY, hay ghi vào "
                    "web/functions/.secret.local")
 
 
@@ -146,45 +158,53 @@ def goi(dan: str, *, token: int, nhiet: float = 0.3, mo_hinh: str | None = None,
     requirements cho `tools/`, và một công cụ offline thì không đáng đổi lấy một gói
     nữa phải cài.
     """
-    goi_den = "https://api.groq.com/openai/v1/chat/completions"
+    # `temperature` KHÔNG gửi: Google dặn với Gemini 3.x để mặc định (1.0), hạ thấp
+    # làm mô hình dễ lặp. `nhiet` vẫn nhận để chỗ gọi không phải đổi.
+    # Gói chỉ có `system` thì Gemini bác — thêm một lượt `user` ngắn.
     than = json.dumps({
         "model": mo_hinh or MO_HINH,
-        "messages": [{"role": "system", "content": dan}],
-        "temperature": nhiet,
-        "max_tokens": token,
+        "messages": [{"role": "system", "content": dan},
+                     {"role": "user", "content": "Follow the instructions above and reply now."}],
+        "max_tokens": max(token, TOKEN_SAN),
         "reasoning_effort": NGHI_NGAN,
         "response_format": {"type": "json_object"},
     }).encode("utf8")
-    yeu_cau = urllib.request.Request(goi_den, data=than, headers={
+    yeu_cau = urllib.request.Request(CONG_LLM, data=than, headers={
         "Authorization": f"Bearer {khoa_api or khoa()}",
         "Content-Type": "application/json",
-        # ⚠ PHẢI CÓ `User-Agent`, VÀ ĐÂY LÀ MỘT CHỖ HỎNG CÓ THẬT.
-        # Groq nằm sau Cloudflare, và Cloudflare chặn `User-Agent` mặc định của
-        # `urllib` (`Python-urllib/3.x`). Không đặt thì MỌI lượt gọi trả:
-        #     403  error code: 1010
-        # Không có thân lỗi, không có lời giải thích — nên nó trông y như khoá sai.
-        # Mất một lúc mới lần ra, vì cùng khoá ấy `curl` chạy ngon và SDK JavaScript
-        # bên `functions/` cũng chạy ngon (SDK tự đặt UA của nó). Đây là cái giá của
-        # việc dùng `urllib` thay cho một thư viện HTTP, và nó đáng ghi lại hơn là
-        # đáng đổi sang `requests`.
+        # Giữ `User-Agent` riêng: Groq (sau Cloudflare) từng chặn UA mặc định của
+        # urllib với 403 code 1010. Gemini không chặn, nhưng đặt UA vẫn là thói quen
+        # rẻ và đỡ một lần lần lỗi nếu đổi nhà cung cấp lần nữa.
         "User-Agent": "web5-xuong-tienganh/1.0",
     })
     DEM["goi"] += 1
-    try:
-        with urllib.request.urlopen(yeu_cau, timeout=180) as tra:
-            d = json.loads(tra.read().decode("utf8"))
-    except urllib.error.HTTPError as e:
-        DEM["hong"] += 1
-        # Đọc thân lỗi: Groq nói rõ vì sao (khoá sai · model bị chặn · khuôn JSON),
-        # và ba cái ấy ba cách chữa khác nhau. "Lỗi HTTP 400" thì không chữa được gì.
+    d = None
+    for lan in range(SO_LAN_THU):
         try:
-            chi_tiet = json.loads(e.read().decode("utf8")).get("error", {}).get("message", "")
-        except Exception:
-            chi_tiet = ""
-        raise LoiXuong(f"Groq trả {e.code}: {chi_tiet or e.reason}") from None
-    except Exception as e:
-        DEM["hong"] += 1
-        raise LoiXuong(f"Không gọi được Groq: {e}") from None
+            with urllib.request.urlopen(yeu_cau, timeout=180) as tra:
+                d = json.loads(tra.read().decode("utf8"))
+            break
+        except urllib.error.HTTPError as e:
+            if e.code in LOI_TAM and lan < SO_LAN_THU - 1:
+                time.sleep(2 * (lan + 1))
+                continue
+            DEM["hong"] += 1
+            # Đọc thân lỗi: nhà cung cấp nói rõ vì sao (khoá sai · model sai tên ·
+            # hết hạn mức), và mỗi cái một cách chữa. "Lỗi HTTP 400" thì không.
+            try:
+                than_loi = json.loads(e.read().decode("utf8"))
+                if isinstance(than_loi, list):
+                    than_loi = than_loi[0] if than_loi else {}
+                chi_tiet = than_loi.get("error", {}).get("message", "")
+            except Exception:
+                chi_tiet = ""
+            raise LoiXuong(f"Gemini trả {e.code}: {chi_tiet or e.reason}") from None
+        except Exception as e:
+            if lan < SO_LAN_THU - 1:
+                time.sleep(2 * (lan + 1))
+                continue
+            DEM["hong"] += 1
+            raise LoiXuong(f"Không gọi được Gemini: {e}") from None
 
     chon = (d.get("choices") or [{}])[0]
     chu = (chon.get("message") or {}).get("content") or ""

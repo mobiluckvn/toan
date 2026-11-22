@@ -80,10 +80,14 @@ def dem() -> dict:
     #   và bảng đối chiếu sẽ báo LỆCH với luận văn vì một lý do sai. Chính phép so này
     #   đã bắt được chỗ ấy khi tôi viết hỏng lần đầu.
     trong_dt = {m for m in theo_nut if m in dt["nut"]}
+    # NG20 ĐỌC TỪ DANH MỤC NGƯỠNG, không gõ lại số 4 (Bảng 4.7, điểm 6) — cùng phép
+    # đếm với `web/src/mon/tienganh/lib/soatCau.js` và cổng `nguong_ng20.test.mjs`.
+    ng20 = next(x["giaTri"] for x in json.loads((GOC / "data/nguong.json").read_text(encoding="utf8"))["nguong"]
+                if x["ma"] == "NG20")
     d["nut_co_cau"] = sum(1 for m in trong_dt if not m.startswith("ph_"))
-    d["nut_duoi_4_cau"] = sum(1 for m in trong_dt if not m.startswith("ph_") and theo_nut[m] < 4)
+    d["nut_duoi_4_cau"] = sum(1 for m in trong_dt if not m.startswith("ph_") and theo_nut[m] < ng20)
     d["ma_nut_ngoai_do_thi"] = len(theo_nut) - len(trong_dt)
-    d["ngoai_dt_duoi_4"] = sum(1 for m in theo_nut if m not in dt["nut"] and theo_nut[m] < 4)
+    d["ngoai_dt_duoi_4"] = sum(1 for m in theo_nut if m not in dt["nut"] and theo_nut[m] < ng20)
 
     d["cong"] = len(glob.glob(str(GOC / "web/test/*.test.mjs")))
     d["nguong"] = len(json.loads((GOC / "data/nguong.json").read_text(encoding="utf8"))["nguong"])

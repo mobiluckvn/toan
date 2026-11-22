@@ -151,7 +151,9 @@ test('tệp chạy `content/nguong.json` có mặt và khớp bản gốc', () =
   const chay = JSON.parse(doc('../public/content/nguong.json'));
   const goc = JSON.parse(doc('../../data/nguong.json'));
   assert.equal(chay.phienBan, goc.phienBan);
-  assert.equal(Object.keys(chay.macDinh).length, 21);
+  assert.equal(Object.keys(chay.macDinh).length, goc.nguong.length,
+    'tệp chạy phải mang ĐỦ mọi mã của bản gốc (30 từ 22-11-2026)');
+  assert.equal(goc.nguong.length, 30);
   for (const x of goc.nguong) {
     assert.deepEqual(chay.macDinh[x.ma], x.giaTri, `${x.ma}: tệp chạy lệch bản gốc`);
   }

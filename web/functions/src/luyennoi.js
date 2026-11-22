@@ -27,8 +27,9 @@ import {
  * thì phải giữ một bộ đếm ở đâu đó — để bác quyết, đừng lặng lẽ thêm vào.
  */
 
-/** Bác chốt mô hình. Đổi thì đổi ở ĐÚNG đây, đừng rải ra nhiều chỗ. */
-export const MO_HINH = 'openai/gpt-oss-120b';
+/** Mô hình chốt ở `llm.js` (22-11-2026: chuyển sang Gemini). Đổi thì đổi ở ĐÚNG đó. */
+import { MO_HINH, LOI_KHUON_JSON, laLoiKhuon } from './llm.js';
+export { MO_HINH, LOI_KHUON_JSON, laLoiKhuon };
 
 /* Ba chốt cửa. Rộng rãi so với một buổi nói chuyện thật của bé, nhưng đủ chặn
    một gói bất thường. */
@@ -153,18 +154,9 @@ export const TOKEN_TRA_LOI = 800;
  * Groq bác vì khuôn. Lượt thường không đổi một li; lượt đáng lẽ chết thì nay có
  * cơ hội thứ hai, và `docTraLoi` cuối cùng được làm việc nó sinh ra để làm.
  */
-export const LOI_KHUON_JSON = ['json_validate_failed', 'output_parse_failed'];
 
 /** Đếm số lần phải nới khuôn. Không log (máy chủ không ghi gì) — chỉ đếm. */
 export const LOI_NOI_KHUON = { so: 0, thanh: 0, ganNhat: null };
-
-/** Lỗi này có phải "Groq bác vì KHUÔN" không — chứ không phải khoá sai hay mạng. */
-export function laLoiKhuon(e) {
-  if (e?.status !== 400) return false;
-  const ma = e?.error?.error?.code || e?.error?.code || '';
-  const loi = String(e?.message || '');
-  return LOI_KHUON_JSON.some((x) => ma === x || loi.includes(x));
-}
 
 const goiGroq = (client, messages, nghiemNgat) => client.chat.completions.create({
   model: MO_HINH,

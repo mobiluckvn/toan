@@ -71,8 +71,9 @@ const theoBe = (luots) => {
   return m;
 };
 
-/** Kéo `p` về 0,5 theo số ngày nghỉ — cùng công thức `quenDan` của hàm nền. */
-const quen = (p, soNgay, nuaDoi) => (soNgay > 0 ? 0.5 + (p - 0.5) * 2 ** (-soNgay / nuaDoi) : p);
+/** Kéo `p` về điểm tựa NG25 (mặc định 0,5) theo số ngày nghỉ — cùng công thức
+ *  `quenDan` của hàm nền. Điểm tựa trước 22-11 gõ cứng (Bảng 4.7, điểm 5). */
+const quen = (p, soNgay, nuaDoi, tua = 0.5) => (soNgay > 0 ? tua + (p - tua) * 2 ** (-soNgay / nuaDoi) : p);
 
 /**
  * Dự đoán của một phiên bản trên một tập chuỗi.
@@ -89,12 +90,13 @@ export function duDoan(chuoiDs, bo, ban, { thamSo = null, tiLeChung = 0.5, theoN
       slip: layNguong(bo, 'NG03', nc), guess: layNguong(bo, 'NG04', nc),
     };
     const nuaDoi = layNguong(bo, 'NG06', nc);
+    const tua = layNguong(bo, 'NG25', nc);
     let p = ts.L0;
     for (let i = 0; i < ds.length; i += 1) {
       const a = ds[i];
       if (ban === 'bktQuen' && i > 0) {
         const cach = ((a.ts ?? 0) - (ds[i - 1].ts ?? 0)) / NGAY;
-        p = quen(p, cach, nuaDoi);
+        p = quen(p, cach, nuaDoi, tua);
       }
       const duDoanP = ban === 'moc'
         /* Nút chưa gặp trong tập học thì lùi về tỉ lệ chung — thà đoán bằng mức

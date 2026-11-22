@@ -27,7 +27,7 @@ export async function nhoCham({ de, viet, vonTu, mauCau, lop = 3 }) {
     e.code = 'functions/unavailable';
     throw e;
   }
-  const { data } = await httpsCallable(fns, 'chamViet')({ de, viet, vonTu, mauCau, lop });
+  const { data } = await httpsCallable(fns, 'chamViet', { timeout: 90000 })({ de, viet, vonTu, mauCau, lop });
   const tho = docLoiCham(data?.chu);
   if (!tho) {
     const e = new Error('Máy chấm trả lời không đọc được.');

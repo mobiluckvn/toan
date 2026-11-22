@@ -34,11 +34,14 @@ import { NHAN_TRANG_THAI_BAI } from '../../../chung/lib/nhanHocBa.js';
 
 export { NHAN_TRANG_THAI_BAI as NHAN_TRANG_THAI };
 
-/** Số lần THỬ THẬT tối thiểu trước khi được đi vòng qua. Xem đầu tệp. */
+/** NG14 · số lần THỬ THẬT tối thiểu trước khi được đi vòng qua. Xem đầu tệp.
+ *  Đọc LÚC GỌI (Bảng 4.7, điểm 4) — ngữ cảnh phiên mang sẵn môn và khối lớp. */
+export const thuToiThieu = (nc) => layNguong(boNguong(), 'NG14', nc);
+/* Hằng chụp bộ của phiên — cho cổng và chỗ chỉ HIỂN THỊ. Quyết định dùng hàm trên. */
 export const THU_TOI_THIEU = layNguong(boNguong(), 'NG14');
 
 /** Đã thử đủ số lần để được đi tiếp dù chưa đạt chưa? */
-export const daThuDu = (m) => (m?.attempts || 0) >= THU_TOI_THIEU;
+export const daThuDu = (m) => (m?.attempts || 0) >= thuToiThieu();
 
 /* ═══════════ TẦNG 1 · MỘT BÀI TRONG QUYỂN ═══════════ */
 
@@ -203,7 +206,7 @@ export const TT_VIEC = { chua: 'chua', dang: 'dang', xong: 'xong' };
  */
 export function noiDuoc({ caoNhat = null, lan = 0 } = {}, dat = 6) {
   if (caoNhat != null && caoNhat >= dat) return 'dat';
-  return lan >= THU_TOI_THIEU ? 'thu' : 'chua';
+  return lan >= thuToiThieu() ? 'thu' : 'chua';
 }
 
 /**
@@ -347,8 +350,10 @@ export function viecChangCau({
  * Câu bỏ qua bị ĐẾM lại — xem `conNoTrongMuc` — để cuối mức bé được mời làm lại
  * đúng những câu ấy.
  */
-export const HIEN_GOI_Y = THU_TOI_THIEU;
-export const duocBoQua = (lan) => lan > THU_TOI_THIEU;
+export const hienGoiY = (nc) => thuToiThieu(nc);
+/* Hằng chụp bộ của phiên — cho cổng. Màn `CauHoi.jsx` gọi `hienGoiY()` lúc dùng. */
+export const HIEN_GOI_Y = hienGoiY();
+export const duocBoQua = (lan) => lan > thuToiThieu();
 
 /** Trong một mức luyện tập: những câu bé bỏ qua, để mời làm lại. */
 export const conNoTrongMuc = (ketQua = []) => ketQua.filter((k) => k?.boQua).map((k) => k.id);

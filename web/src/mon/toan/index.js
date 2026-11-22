@@ -146,7 +146,10 @@ export default {
      chỉ gọi qua giao ước nên không cần biết. */
   bangCoGiao: teacherBoard,
   lamMoiBangCoGiao: refreshTeacherBoard,
-  nhatKyCuaEm: learnerAttempts,
+  /* `attempts` chung cho cả hai môn — lọc lượt Tiếng Anh ra, không thì nhật ký
+     "Toán" của cô lẫn cả từ vựng. */
+  nhatKyCuaEm: async (uid, n = 200) => (await learnerAttempts(uid, n * 3))
+    .filter((a) => a.mon !== 'tienganh' && !/^DL:TA/.test(a.microId || '')).slice(0, n),
   napBanDoDang,
   tenDang,
   dangCuaBai,

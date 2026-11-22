@@ -2,7 +2,8 @@
  * CỔNG · BỘ NGƯỠNG — SO BA BẢN, và canh cơ chế chứ không canh con số.
  *
  * ── VÌ SAO TỆP NÀY TỒN TẠI ──
- * Ràng buộc R7 đưa 21 ngưỡng ra thành dữ liệu. Nhưng dữ liệu ấy phải có mặt ở BA
+ * Ràng buộc R7 đưa 21 ngưỡng ra thành dữ liệu (từ 22-11-2026 là 30 — Bảng 4.7).
+ * Nhưng dữ liệu ấy phải có mặt ở BA
  * nơi: `data/nguong.json` (bản gốc người sửa đọc), `src/chung/lib/nguong.js` (máy
  * con), `functions/src/nguong.js` (máy chủ). Không import chéo được — xem chú thích
  * đầu hai tệp ấy.
@@ -46,9 +47,11 @@ test('hai bản chép xuất ra cùng một bộ giá trị', () => {
   assert.equal(may.PHIEN_BAN, con.PHIEN_BAN);
 });
 
-test('`data/nguong.json` khớp với mã: đủ 21 mã, cùng giá trị, cùng khoảng', () => {
+test('`data/nguong.json` khớp với mã: đủ 30 mã, cùng giá trị, cùng khoảng', () => {
   const ds = GOC.nguong;
-  assert.equal(ds.length, 21, 'Bảng 3.19 có 21 ngưỡng');
+  /* 21 ngưỡng của Bảng 3.19, cộng NG22–NG30 thêm 22-11-2026 (Bảng 4.7, điểm 5) — hằng
+     số trước đây gõ cứng trong mã. */
+  assert.equal(ds.length, 30, 'Bảng 3.19 có 21 ngưỡng, cộng 9 ngưỡng của Bảng 4.7');
   assert.deepEqual(ds.map((x) => x.ma).sort(), Object.keys(con.MAC_DINH).sort());
   for (const x of ds) {
     assert.deepEqual(con.MAC_DINH[x.ma], x.giaTri, `${x.ma}: giá trị lệch với bản gốc`);

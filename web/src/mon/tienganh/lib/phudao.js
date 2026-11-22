@@ -25,13 +25,18 @@
  * nhất còn lại. Bỏ nó đi để "cho nhanh" là mở đúng cái cửa mà cả tầng chống ảo
  * giác từ vựng sinh ra để đóng.
  */
+import { layNguong, boNguong } from '../../../chung/lib/nguong.js';
 import { nutGocRe } from './lantruyen.js';
+import { canhBaoThieuCau } from './soatCau.js';
 import { baiCuaNut } from './doThi.js';
 import { soiCau as soiMotCau } from './phongnoi.js';
 import { cauChanDoan, chamCauTinh } from './chandoan.js';
 
-/** Bài phụ đạo dài bao nhiêu câu. Ngắn — đây là chỗ gỡ, không phải bài học mới. */
-export const SO_CAU_PHU_DAO = 4;
+/** NG27 · bài phụ đạo dài bao nhiêu câu. Ngắn — đây là chỗ gỡ, không phải bài học mới.
+ *  Trước 22-11 gõ cứng 4 (Bảng 4.7, điểm 5); nay đọc bảng ngưỡng LÚC GỌI. Máy chủ
+ *  (`functions/src/phudao.js`) soi gói bằng CÙNG mã này, nên hai bên không lệch trần. */
+export const soCauPhuDao = (nc) => layNguong(boNguong(), 'NG27', nc);
+export const SO_CAU_PHU_DAO = layNguong(boNguong(), 'NG27');
 
 /**
  * Gom câu TĨNH quanh một nút, từ những bài đã tải sẵn.
@@ -41,7 +46,7 @@ export const SO_CAU_PHU_DAO = 4;
  * ⚠ Ưu tiên câu BẬC THẤP. Bé đang mắc thì đừng đưa câu khó nhất của nút ấy —
  * mục đích là gỡ, và gỡ thì bắt đầu từ chỗ bé làm được.
  */
-export function cauTinhCuaNut(baiDs, maNut, { soCau = SO_CAU_PHU_DAO } = {}) {
+export function cauTinhCuaNut(baiDs, maNut, { soCau = soCauPhuDao({ nut: maNut || undefined }) } = {}) {
   if (!maNut) return [];
   const uu = ['warmup', 'standard', 'challenge'];
   const ra = [];
@@ -121,7 +126,7 @@ export const VONG_TOI_DA = 2;
 
 export async function dungPhuDao({
   dt, mucThao, maNutMac, baiDs = [], von = null, nhan = null,
-  goiLLM = null, soiCau = () => true, soCau = SO_CAU_PHU_DAO,
+  goiLLM = null, soiCau = () => true, soCau = soCauPhuDao({ nut: maNutMac || undefined }),
   toiDaVong = VONG_TOI_DA,
 }) {
   /* Nút gốc rễ — nếu không tìm được thì vá ngay tại chỗ bé mắc. Đó không phải
@@ -139,6 +144,11 @@ export async function dungPhuDao({
     .filter((c) => chamCauTinh(c, { maNut: nut, doThi: dt }) && soiCau(c));
 
   const tinh = lay(goc);
+  /* ── NG20: KHO CỦA NÚT GỐC RỄ CÓ MỎNG KHÔNG (Bảng 4.7, điểm 6) ──
+     Đếm trên mọi câu của các bài đang có trong tay (trước khi lọc), đúng phép đếm
+     của cổng soát kho. Mỏng thì bài phụ đạo mang cờ `thieuCau` — màn hình và nhật ký
+     biết bài ấy dựng trên một kho dưới NG20, và vì sao nó phải nhờ tới mô hình. */
+  const thieuCau = canhBaoThieuCau(baiDs, goc);
   /* ── VÒNG 2: nút gốc rễ #2 ──
      Vòng 1 thiếu câu thì thử nút gốc rễ KẾ TIẾP trước khi nghĩ tới mô hình: một câu
      tĩnh của nút #2 vẫn là câu đã qua bộ sinh và 83 cổng, còn câu mô hình sinh thì
@@ -158,6 +168,7 @@ export async function dungPhuDao({
       soVong: vong.length,
       nutDaThu: vong.map((v) => v.nut),
       chanDoan: cauChanDoan({ dt, nutSai: maNutMac, nutGocRe: goc, nhan }),
+      thieuCau,
     };
   }
   const tinh2 = tinhCaVong;
@@ -194,6 +205,7 @@ export async function dungPhuDao({
     soVong: vong.length,
     nutDaThu: vong.map((v) => v.nut),
     chanDoan: cauChanDoan({ dt, nutSai: maNutMac, nutGocRe: goc, nhan }),
+    thieuCau,
     /* Câu mô hình sinh CHỜ NGƯỜI LỚN DUYỆT trước khi vào kho tĩnh — xem
        `choDuyetTA` trong `firestore.rules`. Trả ra đây để màn hình đẩy lên.
        ⚠ CHỈ những câu BÉ THẬT SỰ LÀM, không phải mọi câu hợp lệ mô hình trả về.

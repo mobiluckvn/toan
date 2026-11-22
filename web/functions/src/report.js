@@ -1,4 +1,5 @@
-import { layNguong, BO_MAC_DINH } from './nguong.js';
+import { layNguong, boNguong } from './nguong.js';
+import { nguCanhLuot } from './bkt.js';
 /**
  * SỔ PHỤ HUYNH — tổng hợp từ nhật ký thô thành MỘT document.
  * Bố mẹ mở app đọc 1 lần, thay vì quét hàng nghìn attempts.
@@ -96,11 +97,20 @@ export function topTraps(attempts, index = {}, n = 3) {
 /** NG16 · H3 — làm lâu hơn ngần này mà vẫn sai thì coi là bế tắc (mili-giây). */
 /* ⚠ Danh mục ghi NG16 bằng GIÂY (Bảng 3.19), mã ở đây đo bằng MILI-GIÂY. Đổi
    đơn vị ngay tại chỗ đọc, đừng để hai đơn vị cùng tên trôi nổi hai nơi. */
-export const MS_BE_TAC = layNguong(BO_MAC_DINH, 'NG16') * 1000;
+/* ⚠ ĐỌC LÚC DÙNG, TỪ BỘ ĐÃ PHÁT HÀNH (Bảng 4.7, điểm 4). Trước 22-11 hằng này chụp
+   bộ MẶC ĐỊNH lúc nạp module — chuyên gia đặt H3 = 60 giây cho câu gõ chữ thì BKT ăn, sổ bố mẹ
+   vẫn báo "bế tắc" ở 45 giây. Nay `dungSoHoc` nạp bộ bằng `layBoNguong(db)` rồi
+   truyền vào; và NG16 tra theo ngữ cảnh CỦA TỪNG LƯỢT (dạng câu, bậc) — đúng phạm vi
+   Bảng 3.19 khai cho nó. Hằng dưới còn lại cho cổng: bộ của tiến trình, ở toàn hệ. */
+export const msBeTac = (bo = boNguong(), nc = {}) => layNguong(bo, 'NG16', nc) * 1000;
+export const MS_BE_TAC = msBeTac();
 
-export function stuckItems(attempts, msThreshold = MS_BE_TAC, n = 3) {
+export function stuckItems(attempts, msThreshold = null, n = 3, bo = boNguong()) {
+  /* `msThreshold` truyền tay thì dùng đúng số ấy cho mọi lượt (cổng, quét lưới);
+     bỏ trống thì mỗi lượt lấy NG16 của chính nó. */
+  const nguong = (a) => (Number.isFinite(msThreshold) ? msThreshold : msBeTac(bo, nguCanhLuot(a)));
   return attempts
-    .filter((a) => DU_TIN_CAY(a) && !a.correct && (a.ms ?? 0) >= msThreshold)
+    .filter((a) => DU_TIN_CAY(a) && !a.correct && (a.ms ?? 0) >= nguong(a))
     .sort((x, y) => (y.ms ?? 0) - (x.ms ?? 0))
     .slice(0, n)
     .map((a) => ({ microId: a.microId, itemId: a.itemId, seconds: Math.round((a.ms ?? 0) / 1000) }));
@@ -111,13 +121,16 @@ export function stuckItems(attempts, msThreshold = MS_BE_TAC, n = 3) {
  * lessonsIndex: { DL_KSN5Q1_B49_M1: {microId, homeActivity, watchFor, title} }
  */
 export function buildParentReport({ learnerId, attempts, progress = {}, mastery = {},
-                                    soGio = [], index = {}, now = Date.now(), days = 7 }) {
+                                    soGio = [], index = {}, now = Date.now(), days = 7,
+                                    bo = boNguong() }) {
   const from = now - days * 86400000;
   const win = inRange(attempts, from, now);
   const micros = [...new Set(win.map((a) => a.microId))];
   const passed = Object.values(progress).filter((m) => m.pass).length;
   const units = Object.values(mastery);
-  const mastered = units.filter((u) => (u.p ?? 0) >= 0.85).length;
+  /* θ của CHÍNH nút ấy (môn của nó, mã nút của nó) — trước 22-11 gõ cứng 0,85. */
+  const mastered = units.filter((u) => (u.p ?? 0) >= layNguong(bo, 'NG07',
+    nguCanhLuot({ mon: u.mon, bktUnit: u.unit }))).length;
 
   const gio = phutHoc(win, soGio, { from, to: now });
   const traps = topTraps(win, index);
@@ -146,14 +159,14 @@ export function buildParentReport({ learnerId, attempts, progress = {}, mastery 
     unitsMastered: mastered,
     unitsTotal: units.length,
     topTraps: traps,
-    stuck: stuckItems(win),
+    stuck: stuckItems(win, null, 3, bo),
     suggestion: tip?.homeActivity || '',
     watchFor: tip?.watchFor || '',
     focusMicro: focus || null,
     /* Đường cong học tập — xem `duongCongHoc` cho hai cái bẫy đã tránh. */
     duongCong: duongCongHoc(win, mastery),
     /* Mệt mỏi nhận thức — xem `metMoi` cho cái bẫy "phiên nào cũng ra mệt". */
-    metMoi: metMoi(win),
+    metMoi: metMoi(win, { bo }),
   };
 }
 
@@ -249,12 +262,14 @@ export function duongCongHoc(attempts, mastery = {}, {
  * Một định dạng phải có ít nhất `TOI_THIEU_MOI_NUA` lượt ở MỖI nửa thì mới so.
  * Dưới đó, chênh lệch chỉ là một câu bé mải nhìn ra ngoài cửa sổ.
  */
-export const TOI_THIEU_MOI_NUA = layNguong(BO_MAC_DINH, 'NG17').toiThieuMoiNua;
+/* NG17 — đọc LÚC DÙNG từ bộ truyền vào (Bảng 4.7, điểm 4); hai hằng dưới chỉ còn cho
+   cổng. `toiThieuMoiNua` tra theo dạng câu của từng nhóm; `ti` so trên cả phiên. */
+export const TOI_THIEU_MOI_NUA = layNguong(boNguong(), 'NG17').toiThieuMoiNua;
 
 /** Chậm hơn bao nhiêu phần trăm thì đáng nói. Dưới ngưỡng là dao động thường. */
-export const NGUONG_CHAM = layNguong(BO_MAC_DINH, 'NG17').ti;
+export const NGUONG_CHAM = layNguong(boNguong(), 'NG17').ti;
 
-export function metMoi(attempts, { toiThieu = TOI_THIEU_MOI_NUA } = {}) {
+export function metMoi(attempts, { toiThieu = null, bo = boNguong() } = {}) {
   /* Chỉ dùng lượt ĐO ĐƯỢC thời gian và có đủ định danh phiên. */
   const dung = (attempts || []).filter(
     (a) => a?.sessionId && Number.isFinite(a.ms) && a.ms > 0 && Number.isFinite(a.ts),
@@ -280,8 +295,9 @@ export function metMoi(attempts, { toiThieu = TOI_THIEU_MOI_NUA } = {}) {
       theoDang.get(k).push(a);
     }
     let phienCoDung = false;
-    for (const nhom of theoDang.values()) {
-      if (nhom.length < toiThieu * 2) continue;
+    for (const [dang, nhom] of theoDang.entries()) {
+      const tt = toiThieu ?? layNguong(bo, 'NG17', dang === '?' ? {} : { dangCau: String(dang) }).toiThieuMoiNua;
+      if (nhom.length < tt * 2) continue;
       const nua = Math.floor(nhom.length / 2);
       for (const a of nhom.slice(0, nua)) { dauTong += a.ms; dauDem += 1; }
       /* Lấy từ CUỐI ngược lại đúng `nua` lượt — số lẻ thì bỏ lượt GIỮA, không dồn
@@ -305,7 +321,7 @@ export function metMoi(attempts, { toiThieu = TOI_THIEU_MOI_NUA } = {}) {
     msDau,
     msCuoi,
     chamHon: Math.round(chamHon * 100) / 100,
-    metMoi: chamHon >= NGUONG_CHAM,
+    metMoi: chamHon >= layNguong(bo, 'NG17').ti,
   };
 }
 

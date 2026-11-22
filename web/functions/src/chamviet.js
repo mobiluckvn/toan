@@ -26,6 +26,7 @@
 /** Cùng mô hình với phòng luyện nói. Đổi thì đổi ở `luyennoi.js` rồi sửa cả đây. */
 export { MO_HINH, NGHI_NGAN, LoiGoi } from './luyennoi.js';
 import { MO_HINH, NGHI_NGAN, LoiGoi } from './luyennoi.js';
+import { goiDoiJson } from './llm.js';
 import { vanTay } from './vantay.js';
 import { chuLaTrongCham } from './chula.js';
 
@@ -417,15 +418,16 @@ export function gopKhen(loiDs, khenDs, viet) {
   return ra;
 }
 
-/* Một lượt gọi Groq. Gom về một chỗ để ba mắt xích không lệch nhau mấy nút vặn. */
+/* Một lượt gọi mô hình. Gom về một chỗ để ba mắt xích không lệch nhau mấy nút vặn.
+   Bị bác vì khuôn JSON thì nới đúng một lần (`goiDoiJson`) — trước đây một lần bác
+   là mất cả bài chấm. */
 async function goiMot(client, dan, { nhiet, token }) {
-  const kq = await client.chat.completions.create({
+  const kq = await goiDoiJson(client, {
     model: MO_HINH,
     messages: [{ role: 'system', content: dan }],
     temperature: nhiet,
     max_tokens: token,
     reasoning_effort: NGHI_NGAN,
-    response_format: { type: 'json_object' },
   });
   const chon = kq?.choices?.[0];
   const chu = chon?.message?.content || '';

@@ -13,17 +13,20 @@ import { getFirestore, FieldValue } from 'firebase-admin/firestore';
 import { getAuth } from 'firebase-admin/auth';
 import { applyAttempt } from './src/bkt.js';
 import { layBoNguong } from './src/napNguong.js';
+import { laAo, dsHocSinhAo, luotAo } from './src/moPhong.js';
 import { docLuotTuMoc } from './src/docLuot.js';
-import { buildReviewCards } from './src/schedule.js';
+import { buildReviewCards, lichOnMacDinh } from './src/schedule.js';
 import { buildParentReport } from './src/report.js';
 import { buildTeacherBoard } from './src/teacherboard.js';
 import { buildBangXepHang } from './src/bangxephang.js';
+import { buildBieuDo, buildMoHinh } from './src/bieuDo.js';
 import { makeCode, canSend, nextRecord, verify, otpEmail } from './src/otp.js';
 import { normalizeEmail, buildUserDoc } from './src/user.js';
 import { hoiMay, hoiMayCoTool, LoiGoi } from './src/luyennoi.js';
 import { chamBaiViet } from './src/chamviet.js';
 import { sinhPhuDao } from './src/phudao.js';
 import { phanXu } from './src/phanxu.js';
+import { taoClientLLM } from './src/llm.js';
 
 setGlobalOptions({ region: 'asia-southeast1', maxInstances: 10 });
 initializeApp();
@@ -49,6 +52,10 @@ const db = getFirestore();
 export const onAttempt = onDocumentCreated('attempts/{attemptId}', async (event) => {
   const a = event.data?.data();
   if (!a?.learnerId || !a?.bktUnit) return;
+  /* Lượt mô phỏng sinh bằng script đã mang sẵn mức thạo tính theo ĐỒNG HỒ MÔ PHỎNG
+     (tháng 7–10). Để hàm này chấm lại là đè lên bằng `Date.now()` — quên dần tính
+     sai cả. Xem `src/moPhong.js`. */
+  if (laAo(a)) return;
   /* ── PHA NÀO ĐƯỢC TÍNH VÀO BKT ──
      `practice`·`assess` là hai pha của bài học. Từ 23-08-2026 thêm hai pha nữa,
      vì bác chốt phần ĐỌC và phần VIẾT cũng phải vào engine:
@@ -108,20 +115,25 @@ export const onAttempt = onDocumentCreated('attempts/{attemptId}', async (event)
  * sinh ra rồi nằm đó, và lịch ngắt quãng mới xong nửa đường ống. Nối thêm Tiếng
  * Anh vào là đúng, nhưng đừng ai đọc chỗ này thành "đã có ôn ngắt quãng".
  */
-async function sinhTheOn(event) {
+async function sinhTheOn(event, mon) {
   const after = event.data?.after?.data();
   const before = event.data?.before?.data();
   if (!after?.pass || before?.pass) return;                     // chỉ khi VỪA đạt lần đầu
+  if (laAo(after)) return;                                      // tiến độ mô phỏng: không sinh thẻ theo giờ thật
 
   const { learnerId } = event.params;
   const microId = after.microId;
   if (!microId) return;
   const lessonSnap = await db.doc(`contentIndex/${microId.replace(/[:.]/g, '_')}`).get();
   const schedule = lessonSnap.exists ? lessonSnap.data().schedule : null;
+  /* Lịch mặc định là NG28 của bộ ĐÃ PHÁT HÀNH (Bảng 4.7, điểm 5) — chỉ đọc khi bài
+     không khai lịch riêng, nên bài có lịch thì không tốn lượt đọc nào thêm (và
+     `layBoNguong` có nhớ tạm). */
+  const lich = schedule || lichOnMacDinh(await layBoNguong(db), { mon });
 
   const cards = buildReviewCards({
     learnerId, microId,
-    lesson: { spacedReview: { schedule: schedule || ['+1 ngày: flashcard', '+3 ngày: câu luyện', '+7 ngày: câu thử thách'] } },
+    lesson: { spacedReview: { schedule: lich } },
     at: Date.now(),
   });
 
@@ -132,7 +144,7 @@ async function sinhTheOn(event) {
 }
 
 export const onMicroDone = onDocumentWritten(
-  'progress/{learnerId}/micros/{microDoc}', sinhTheOn,
+  'progress/{learnerId}/micros/{microDoc}', (e) => sinhTheOn(e, 'toan'),
 );
 
 /* Cùng một việc cho môn Tiếng Anh. Phải là HÀM RIÊNG chứ không gộp đường dẫn:
@@ -140,7 +152,7 @@ export const onMicroDone = onDocumentWritten(
    mã bài hai môn không bao giờ trùng (`DL:TA5.*` với `DL:KSN2.*`), nên hai bên
    đổ chung vào `reviewQueue` được mà không đè nhau. */
 export const onMicroDoneTA = onDocumentWritten(
-  'progressTA/{learnerId}/micros/{microDoc}', sinhTheOn,
+  'progressTA/{learnerId}/micros/{microDoc}', (e) => sinhTheOn(e, 'tienganh'),
 );
 
 /**
@@ -188,7 +200,11 @@ async function dungSoHoc(learnerId, index, soNgay = 7) {
   const mastery = {}; mastSnap.forEach((d) => { mastery[d.id] = d.data(); });
 
   const soGio = [...gioSnap.docs, ...gioTASnap.docs].map((d) => d.data());
-  const report = buildParentReport({ learnerId, attempts, progress, mastery, soGio, index, days: soNgay });
+  /* Sổ bố mẹ chấm "bế tắc", "mệt", "đã thạo" bằng bộ ĐÃ PHÁT HÀNH (Bảng 4.7, điểm 4),
+     không bằng bộ mặc định. `layBoNguong` có nhớ tạm, nên lô đêm vài nghìn tài khoản
+     vẫn chỉ đọc bảng ngưỡng vài lần. */
+  const bo = await layBoNguong(db);
+  const report = buildParentReport({ learnerId, attempts, progress, mastery, soGio, index, days: soNgay, bo });
   await db.doc(`report/${learnerId}`).set(report, { merge: true });
   return report;
 }
@@ -232,6 +248,37 @@ export const refreshMyReport = onCall(
 );
 
 /**
+ * BIỂU ĐỒ MỘT EM — cô bấm vào em nào thì dựng cho em ấy, từ TOÀN BỘ nhật ký.
+ * Xem `src/bieuDo.js`. Không ghi lại đâu cả: vài nghìn lượt đọc mỗi lần bấm, rẻ hơn
+ * dựng sẵn mỗi đêm cho cả trường khi cô chỉ mở vài em.
+ */
+export const bieuDoHocSinh = onCall(
+  { region: 'asia-southeast1', timeoutSeconds: 120, memory: '512MiB' },
+  async (req) => {
+    const vai = req.auth?.token?.role;
+    if (vai !== 'teacher' && vai !== 'admin') {
+      throw new HttpsError('permission-denied', 'Chỉ giáo viên và quản trị xem được biểu đồ.');
+    }
+    const uid = String(req.data?.uid || '');
+    if (!uid) throw new HttpsError('invalid-argument', 'Thiếu mã học sinh.');
+    /* Bộ ngưỡng phải nạp TRƯỚC khi chạy lại BKT (`buildMoHinh`) — như `onAttempt`. */
+    const [snap] = await Promise.all([
+      db.collection('attempts').where('learnerId', '==', uid)
+        .select('ts', 'serverTs', 'microId', 'bktUnit', 'mon', 'correct', 'tries', 'ms', 'sessionId',
+          'v', 'hintsUsed', 'mustPass', 'mode', 'bac', 'loaiNut', 'khoiLop')
+        .get(),
+      layBoNguong(db),
+    ]);
+    const luot = snap.docs.map((d) => {
+      const a = d.data();
+      const sv = a.serverTs?.toMillis ? a.serverTs.toMillis() : a.serverTs;
+      return { ...a, serverTs: sv, ts: sv ?? a.ts };
+    });
+    return { ...buildBieuDo(luot), moHinh: buildMoHinh(luot) };
+  },
+);
+
+/**
  * BẢNG GIÁO VIÊN — 21h15 mỗi đêm, MỘT document cho toàn hệ thống.
  * Cô mở app đọc đúng một lần, thay vì quét hàng chục nghìn dòng nhật ký.
  */
@@ -249,13 +296,22 @@ export const refreshMyReport = onCall(
 async function docDuLieuChung(soNgay = 7) {
   const since = Date.now() - soNgay * 86400000;
 
+  /* ── HỌC SINH MÔ PHỎNG — `src/moPhong.js` ──
+     Đọc CẢ em ảo, gắn cờ `moPhong`. Bảng xếp hạng có em ảo, hiện tên như mọi em
+     (bác chốt 22-11-2026: mọi tài khoản hiện có đều do tác giả tạo để thử, không có
+     trẻ thật nào xem bảng). Cờ vẫn giữ trong dữ liệu để kiểm chứng được. Bảng cô
+     giáo cũng có em ảo; chỉ thống kê · học ngưỡng mới loại ra. */
+  const ao = await dsHocSinhAo(db);
   const roster = [];
   for await (const U of eachDoc(db.collection('users').where('role', '==', 'learner'))) {
     const d = U.data();
+    const laEmAo = laAo(d);
     roster.push({
       uid: U.id, displayName: d.displayName || '', email: d.email || '',
       // Ba trường dưới đây CHỈ bảng xếp hạng dùng; bảng cô giáo bỏ qua.
-      bietDanh: d.bietDanh || '', grade: d.grade || 5, profileComplete: !!d.profileComplete,
+      bietDanh: d.bietDanh || '',
+      grade: d.grade || 5, profileComplete: !!d.profileComplete,
+      moPhong: laEmAo,
     });
   }
 
@@ -266,7 +322,7 @@ async function docDuLieuChung(soNgay = 7) {
     const sv = a.serverTs?.toMillis ? a.serverTs.toMillis() : a.serverTs;
     /* Quy `ts` về mốc MÁY CHỦ: `ts` là giờ máy con, máy tính bảng đặt sai ngày là
        chuỗi ngày học của bé nhảy loạn — mà chuỗi ngày là một trong ba bảng. */
-    return { ...a, serverTs: sv, ts: sv ?? a.ts };
+    return { ...a, serverTs: sv, ts: sv ?? a.ts, moPhong: luotAo(a, ao) };
   });
 
   /* ── ĐỌC CẢ HAI MÔN ──
@@ -289,14 +345,22 @@ async function docDuLieuChung(soNgay = 7) {
     const m = {};
     for (const snap of [s, sTA]) snap.forEach((d) => { m[d.data().microId || d.id] = d.data(); });
     progress[r.uid] = m;
-    hocBa[r.uid] = [...h.docs, ...hTA.docs].map((d) => d.data());
+    /* Gắn `mon` cho mục của Tiếng Anh: bảng xếp hạng tách bảng theo môn mà mục
+       học bạ hai môn cùng hình dạng (`loai: 'chuong'`), không có cách nào khác để
+       biết mục nào của môn nào. */
+    hocBa[r.uid] = [...h.docs.map((d) => d.data()),
+      ...hTA.docs.map((d) => ({ ...d.data(), mon: 'tienganh' }))];
   }
   return { roster, attempts, progress, hocBa, soNgay };
 }
 
 async function dungBangGiaoVien(soNgay = 7, du = null) {
   const index = await loadContentIndex();
-  const { roster, attempts, progress, hocBa } = du || await docDuLieuChung(soNgay);
+  const tat = du || await docDuLieuChung(soNgay);
+  /* Bảng cô giáo CÓ em mô phỏng (bác chốt 22-11-2026: mọi tài khoản hiện có đều do
+     tác giả tạo, cô cần mở được từng em để xem biểu đồ). Cờ `moPhong` vẫn nằm trên
+     từng dòng để kiểm chứng; chỉ thống kê · học ngưỡng mới loại các em ra. */
+  const { roster, attempts, progress, hocBa } = tat;
   /* `hocBa` mang theo sổ giờ theo ngày (`loai='gio'`) — nhờ nó cột "số phút" của cô
      là số ĐO THẬT, có tính cả lúc em xem giảng, thay vì số suy ra từ khoảng cách
      giữa các câu trả lời. Xem `src/mon/toan/lib/dongHo.js`. */
@@ -539,177 +603,139 @@ async function sendMail(to, { subject, text }) {
 /* ═══════════════ PHÒNG LUYỆN NÓI ═══════════════ */
 
 /**
- * Khoá Groq. Đặt bằng: firebase functions:secrets:set GROQ_API_KEY
+ * Khoá mô hình. Từ 22-11-2026 là khoá Gemini (Google AI Studio), đặt bằng:
+ *   firebase functions:secrets:set GEMINI_API_KEY
  *
- * Chưa đặt thì hàm này ném lỗi NÓI RÕ chứ không im lặng trả rỗng — máy chủ im lặng
+ * Chưa đặt thì hàm ném lỗi NÓI RÕ chứ không im lặng trả rỗng — máy chủ im lặng
  * là chỗ mất nhiều thời gian nhất khi lần lỗi (xem `duLieu.js` của Tiếng Anh).
+ * Tên mô hình và cổng gọi nằm ở `src/llm.js`, không nằm ở đây.
  */
-const GROQ_API_KEY = defineSecret('GROQ_API_KEY');
+const GEMINI_API_KEY = defineSecret('GEMINI_API_KEY');
+const THIEU_KHOA = 'Máy chủ chưa có khoá Gemini. Đặt bằng: firebase functions:secrets:set GEMINI_API_KEY';
+const KHOA_SAI = 'Khoá Gemini không dùng được. Người lớn kiểm tra lại GEMINI_API_KEY giúp con nhé.';
 
 /**
- * Chuyển lời của bé lên Groq, đem câu trả lời về. KHÔNG ghi gì xuống Firestore.
+ * HẠN MỨC LƯỢT GỌI MÔ HÌNH MỖI TÀI KHOẢN MỖI NGÀY.
  *
- * Ngữ cảnh do client giữ và client tự đẩy lên `phongNoiTA` — bác chốt như thế, và
- * nó cũng là cách giữ tiếng nói của bé ở ít chỗ nhất.
+ * Khoá mô hình là khoá của mình: không có hạn mức thì một tài khoản đăng nhập bất
+ * kỳ dùng được nó như một chatbot miễn phí. Một buổi nói của bé chừng 20–40 lượt,
+ * cả ngày học nhiều nhất vài buổi cộng chấm viết và phụ đạo — 400 là dư rộng.
+ *
+ * Bộ đếm chỉ có NGÀY và SỐ, không có chữ nào của bé. `hanMucLLM/` không có luật
+ * mở nào trong `firestore.rules`, nên máy con không đọc được và không sửa được.
  */
+export const HAN_MUC_NGAY = 400;
+async function tinhHanMuc(uid) {
+  const ngay = new Date().toISOString().slice(0, 10);
+  const ref = db.collection('hanMucLLM').doc(uid);
+  const vuot = await db.runTransaction(async (tx) => {
+    const d = (await tx.get(ref)).data();
+    const so = d?.ngay === ngay ? d.so : 0;
+    if (so >= HAN_MUC_NGAY) return true;
+    tx.set(ref, { ngay, so: so + 1 });
+    return false;
+  });
+  if (vuot) {
+    throw new HttpsError('resource-exhausted',
+      'Hôm nay con đã luyện rất nhiều rồi. Mai mình học tiếp nhé!');
+  }
+}
+
 /**
- * CHẤM BÀI VIẾT NGẮN của bé — cùng một khoá Groq, cùng một luật cửa với `luyenNoi`.
+ * Khung chung của mọi callable gọi mô hình: cửa đăng nhập → khoá → hạn mức →
+ * gọi → đổi lỗi. Trước đây năm hàm chép tay năm bản, và lệch nhau ở chỗ đổi lỗi.
+ *
+ * ── ĐỔI LỖI ──
+ *   LoiGoi `tra-loi-rong`  → `unavailable`: mô hình không trả lời được là lỗi PHÍA
+ *                            MÁY CHỦ/NHÀ CUNG CẤP, thử lại có thể được. Trước đây
+ *                            nó bị gộp vào `invalid-argument` (lỗi của máy con).
+ *   LoiGoi khác            → `invalid-argument`: gói sai, lỗi lập trình máy con.
+ *   401 / 403              → `permission-denied`: khoá sai, người lớn phải sửa.
+ *   còn lại                → `unavailable` với câu `loiTam`.
+ * Vẫn KHÔNG ném nguyên văn lỗi nhà cung cấp xuống máy con — trong đó có thể có
+ * mẩu khoá hoặc đường dẫn nội bộ.
+ */
+function goiMoHinh(chay, { loiTam, timeoutSeconds = 60, khiHong } = {}) {
+  return onCall(
+    { secrets: [GEMINI_API_KEY], region: 'asia-southeast1', timeoutSeconds },
+    async (req) => {
+      if (!req.auth) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
+      const khoa = GEMINI_API_KEY.value();
+      if (!khoa) {
+        if (khiHong) return khiHong({ thieuKhoa: true });
+        throw new HttpsError('failed-precondition', THIEU_KHOA);
+      }
+      await tinhHanMuc(req.auth.uid);
+      try {
+        return await chay(req.data, () => taoClientLLM(khoa));
+      } catch (e) {
+        /* `e.message` của LoiGoi thì AN TOÀN — đó là lời mình tự đặt. */
+        const loiMayCon = e instanceof LoiGoi && e.ma !== 'tra-loi-rong';
+        if (loiMayCon) throw new HttpsError('invalid-argument', e.message);
+        if (khiHong) return khiHong({ hong: true });
+        if (e?.status === 401 || e?.status === 403) {
+          throw new HttpsError('permission-denied', KHOA_SAI);
+        }
+        throw new HttpsError('unavailable', loiTam);
+      }
+    },
+  );
+}
+
+/**
+ * CHẤM BÀI VIẾT NGẮN của bé — cùng khoá, cùng luật cửa với `luyenNoi`.
  *
  * KHÔNG ghi gì xuống Firestore ở đây: điểm và lời chấm do MÁY CON đẩy lên
- * `hocBaTA` (loai `viet`), y như cách buổi luyện nói được lưu. Một chỗ giữ dữ liệu
- * của bé là đủ, và chỗ ấy đã có luật canh.
+ * `hocBaTA` (loai `viet`), y như cách buổi luyện nói được lưu.
+ * Chuỗi chấm có tới bốn lời gọi nối tiếp nên được 120 giây thay vì 60.
  */
-export const chamViet = onCall(
-  { secrets: [GROQ_API_KEY], region: 'asia-southeast1' },
-  async (req) => {
-    if (!req.auth) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
-    const khoa = GROQ_API_KEY.value();
-    if (!khoa) {
-      throw new HttpsError('failed-precondition',
-        'Máy chủ chưa có khoá Groq. Đặt bằng: firebase functions:secrets:set GROQ_API_KEY');
-    }
-    try {
-      const { Groq } = await import('groq-sdk');
-      return await chamBaiViet(req.data, () => new Groq({ apiKey: khoa }));
-    } catch (e) {
-      if (e instanceof LoiGoi) throw new HttpsError('invalid-argument', e.message);
-      if (e?.status === 401 || e?.status === 403) {
-        throw new HttpsError('permission-denied',
-          'Khoá Groq không dùng được. Người lớn kiểm tra lại GROQ_API_KEY giúp con nhé.');
-      }
-      throw new HttpsError('unavailable', 'Chưa chấm được bài. Con thử lại nhé.');
-    }
-  },
-);
+export const chamViet = goiMoHinh(chamBaiViet,
+  { loiTam: 'Chưa chấm được bài. Con thử lại nhé.', timeoutSeconds: 120 });
 
 /**
  * SOẠN CÂU PHỤ ĐẠO — đường CUỐI của phụ đạo (việc V9).
  *
- * `dungPhuDao` đi hai vòng kho TĨNH trước (nút gốc rễ #1, rồi #2) rồi mới gọi tới
- * đây. Cùng một khoá Groq, cùng luật cửa với `luyenNoi` và `chamViet`.
+ * ⚠ Lỗi nhẹ (`unavailable`): phụ đạo CÓ ĐƯỜNG LÙI TĨNH. Máy con bắt lỗi này rồi vẫn
+ * ra bài bằng phần tĩnh — xem `dungPhuDao`.
  */
-export const sinhCauPhuDao = onCall(
-  { secrets: [GROQ_API_KEY], region: 'asia-southeast1' },
-  async (req) => {
-    if (!req.auth) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
-    const khoa = GROQ_API_KEY.value();
-    if (!khoa) {
-      throw new HttpsError('failed-precondition',
-        'Máy chủ chưa có khoá Groq. Đặt bằng: firebase functions:secrets:set GROQ_API_KEY');
-    }
-    try {
-      const { Groq } = await import('groq-sdk');
-      return await sinhPhuDao(req.data, () => new Groq({ apiKey: khoa }));
-    } catch (e) {
-      if (e instanceof LoiGoi) throw new HttpsError('invalid-argument', e.message);
-      if (e?.status === 401 || e?.status === 403) {
-        throw new HttpsError('permission-denied',
-          'Khoá Groq không dùng được. Người lớn kiểm tra lại GROQ_API_KEY giúp con nhé.');
-      }
-      /* ⚠ KHÔNG ném lỗi nặng lên máy con: phụ đạo CÓ ĐƯỜNG LÙI TĨNH. Máy con bắt
-         lỗi này rồi vẫn ra bài bằng phần tĩnh — xem `dungPhuDao`. */
-      throw new HttpsError('unavailable', 'Chưa soạn được bài ôn. Con thử lại nhé.');
-    }
-  },
-);
+/* Trần số câu (NG27) soi bằng bộ ĐÃ PHÁT HÀNH, nạp trước khi soi gói. */
+export const sinhCauPhuDao = goiMoHinh(
+  async (du, taoClient) => sinhPhuDao(du, taoClient, await layBoNguong(db)),
+  { loiTam: 'Chưa soạn được bài ôn. Con thử lại nhé.' });
 
 /**
  * PHÂN XỬ LƯỢT NÓI MƠ HỒ — hai phiếu song song (việc V10).
  *
- * Máy con chỉ gọi tới đây khi `moHoCanBoPhieu` đúng: điểm nằm trong [5, 7] và có
- * một từ cùng unit ở gần. Ngoài vùng ấy thì không ai gọi — con số chốt nằm ở
- * `lib/chamnoi.js` và có cổng canh.
- *
  * ⚠ KHÔNG ném lỗi nặng lên máy con. Phân xử là phần THÊM: mất nó thì bé vẫn có
- * nguyên điểm của bộ chấm chuỗi, đúng như trước V10. Nên mọi trục trặc trả về mức
- * điều chỉnh 0 — máy con giữ điểm cũ và KHÔNG báo gì cho bé (§7 chốt thế). Báo lỗi
- * ở đây là bắt bé đọc một dòng đỏ về một việc bé không biết là có.
+ * nguyên điểm của bộ chấm chuỗi. Nên mọi trục trặc (kể cả thiếu khoá) trả về mức
+ * điều chỉnh 0 — máy con giữ điểm cũ và KHÔNG báo gì cho bé (§7 chốt thế). Gói sai
+ * thì vẫn nói ra, vì đó là lỗi lập trình của máy con.
  */
-export const phanXuNoi = onCall(
-  { secrets: [GROQ_API_KEY], region: 'asia-southeast1' },
-  async (req) => {
-    if (!req.auth) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
-    const khoa = GROQ_API_KEY.value();
-    /* Chưa có khoá thì GIỮ ĐIỂM, không ném: khác hẳn `chamViet` và `luyenNoi`, nơi
-       thiếu khoá là mất hẳn một việc nên phải nói to. Ở đây thiếu khoá chỉ là mất
-       phần chỉnh ±1, mà người lớn đã có ba hàm kia kêu rồi. */
-    if (!khoa) return { gan: 'khac', dieuChinh: 0, nhatTri: false, thieuKhoa: true };
-    try {
-      const { Groq } = await import('groq-sdk');
-      return await phanXu(req.data, () => new Groq({ apiKey: khoa }));
-    } catch (e) {
-      /* Gói sai vẫn phải nói ra — đó là lỗi của máy con, và nó không bao giờ xảy ra
-         trên bản chạy đúng. Che nó đi là che một lỗi lập trình. */
-      if (e instanceof LoiGoi) throw new HttpsError('invalid-argument', e.message);
-      return { gan: 'khac', dieuChinh: 0, nhatTri: false, hong: true };
-    }
-  },
-);
+export const phanXuNoi = goiMoHinh(phanXu, {
+  timeoutSeconds: 30,
+  khiHong: (dau) => ({ gan: 'khac', dieuChinh: 0, nhatTri: false, ...dau }),
+});
 
 /**
  * PHÒNG NÓI, NHÁNH ReAct — cô được TRA trước khi đáp (việc V11).
  *
- * Máy con chỉ rẽ vào đây khi nhãn lượt là `hoiLai` và bé từ lớp 3 (`lib/hoico.js`,
- * có cổng canh). Cùng khoá Groq, cùng luật cửa với `luyenNoi`.
- *
  * ⚠ KHÔNG ĐỌC FIRESTORE, VÀ KHÔNG LƯU GÌ. Bốn tool chạy trên đúng gói `kho` máy con
- * gửi lên rồi gói ấy biến mất cùng lời gọi — xem `src/tool_phongnoi.js`. Một tool
- * biết tự đi tìm dữ liệu là một tool cần quyền đọc, mà quyền đọc là chỗ dữ liệu của
- * bé bắt đầu rò.
- *
- * Lỗi nặng vẫn ném lên như `luyenNoi`: máy con bắt rồi LÙI về nhánh cũ, nên bé
- * không mất lượt. Nuốt lỗi ở đây thì máy con không biết để lùi.
+ * gửi lên rồi gói ấy biến mất cùng lời gọi — xem `src/tool_phongnoi.js`.
+ * Lỗi nặng vẫn ném lên: máy con bắt rồi LÙI về nhánh cũ, nên bé không mất lượt.
+ * Tối đa bốn lời gọi nối tiếp (ba bước tra + lượt chốt) nên được 90 giây.
  */
-export const luyenNoiTool = onCall(
-  { secrets: [GROQ_API_KEY], region: 'asia-southeast1' },
-  async (req) => {
-    if (!req.auth) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
-    const khoa = GROQ_API_KEY.value();
-    if (!khoa) {
-      throw new HttpsError('failed-precondition',
-        'Máy chủ chưa có khoá Groq. Đặt bằng: firebase functions:secrets:set GROQ_API_KEY');
-    }
-    try {
-      const { Groq } = await import('groq-sdk');
-      return await hoiMayCoTool(req.data, () => new Groq({ apiKey: khoa }));
-    } catch (e) {
-      if (e instanceof LoiGoi) throw new HttpsError('invalid-argument', e.message);
-      if (e?.status === 401 || e?.status === 403) {
-        throw new HttpsError('permission-denied',
-          'Khoá Groq không dùng được. Người lớn kiểm tra lại GROQ_API_KEY giúp con nhé.');
-      }
-      throw new HttpsError('unavailable', 'Cô giáo chưa trả lời được. Con thử lại nhé.');
-    }
-  },
-);
+export const luyenNoiTool = goiMoHinh(hoiMayCoTool,
+  { loiTam: 'Cô giáo chưa trả lời được. Con thử lại nhé.', timeoutSeconds: 90 });
 
-export const luyenNoi = onCall(
-  { secrets: [GROQ_API_KEY], region: 'asia-southeast1' },
-  async (req) => {
-    if (!req.auth) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
-    const khoa = GROQ_API_KEY.value();
-    if (!khoa) {
-      throw new HttpsError('failed-precondition',
-        'Máy chủ chưa có khoá Groq. Đặt bằng: firebase functions:secrets:set GROQ_API_KEY');
-    }
-    try {
-      const { Groq } = await import('groq-sdk');
-      return await hoiMay(req.data, () => new Groq({ apiKey: khoa }));
-    } catch (e) {
-      if (e instanceof LoiGoi) throw new HttpsError('invalid-argument', e.message);
-      /* KHOÁ SAI khác hẳn GROQ HỎNG, và phải nói ra được: khoá sai thì người lớn
-         phải đi sửa, còn Groq hỏng thì chờ một lúc là xong. Gộp cả hai vào một câu
-         "thử lại nhé" là bé cứ bấm mãi trong khi lỗi nằm ở chỗ chẳng ai xem.
-         Vẫn KHÔNG ném nguyên văn lỗi nhà cung cấp xuống máy con — trong đó có thể
-         có mẩu khoá hoặc đường dẫn nội bộ. */
-      if (e?.status === 401 || e?.status === 403) {
-        throw new HttpsError('permission-denied',
-          'Khoá Groq không dùng được. Người lớn kiểm tra lại GROQ_API_KEY giúp con nhé.');
-      }
-      throw new HttpsError('unavailable', 'Chưa gọi được cô giáo máy. Con thử lại nhé.');
-    }
-  },
-);
+/**
+ * Chuyển lời của bé lên mô hình, đem câu trả lời về. KHÔNG ghi gì xuống Firestore
+ * (ngoài bộ đếm hạn mức, chỉ có ngày và số).
+ *
+ * Ngữ cảnh do client giữ và client tự đẩy lên `phongNoiTA` — bác chốt như thế, và
+ * nó cũng là cách giữ tiếng nói của bé ở ít chỗ nhất.
+ */
+export const luyenNoi = goiMoHinh(hoiMay,
+  { loiTam: 'Chưa gọi được cô giáo máy. Con thử lại nhé.' });
 
 /* ══════════════════════════════════════════════════════════════════════════════
    THỐNG KÊ NGƯỠNG — Bảng 3.22, mục 3.8.5
@@ -829,6 +855,8 @@ const CUA_SO_NGAY = 90;
  */
 async function docLuotTrongCuaSo(bayGio = Date.now()) {
   const tu = bayGio - CUA_SO_NGAY * 86400000;
+  /* θ học từ trẻ THẬT — lượt của học sinh mô phỏng gắn `boQua` ở dưới. */
+  const ao = await dsHocSinhAo(db);
   /* Phép phân trang nằm ở `src/docLuot.js` — tách ra vì đúng mươi dòng ấy đã sai
      ba lần, và cổng `docluot.test.mjs` nay canh chúng bằng một kho giả. Ở đây chỉ
      còn việc nói cho nó biết cách hỏi Firestore.
@@ -847,7 +875,7 @@ async function docLuotTrongCuaSo(bayGio = Date.now()) {
       /* ⚠ Lượt thiếu nút hay thiếu bé vẫn PHẢI trả về (gắn cờ `boQua`), rồi mới
          lọc ở dưới. Loại ngay tại đây thì một trang đầy 500 tài liệu hỏng trả về 0
          mục và vòng lặp tưởng đã hết nhật ký — mất sạch phần sau. */
-      if (!v?.learnerId || !v?.bktUnit) return { id: d.id, ts: v?.ts ?? 0, boQua: true };
+      if (!v?.learnerId || !v?.bktUnit || luotAo(v, ao)) return { id: d.id, ts: v?.ts ?? 0, boQua: true };
       return {
         id: d.id,
         learnerId: v.learnerId, bktUnit: v.bktUnit, correct: !!v.correct,

@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Chu from './Chu.jsx';
+import BieuDoHocSinh from './BieuDoHocSinh.jsx';
 import { NHAN_MUC_CHUONG, NHAN_TINH_TRANG, NHAN_TRANG_THAI_BAI } from '../lib/nhanHocBa.js';
 import { minutesStudied } from '../../../functions/src/report.js';
 
@@ -46,7 +47,8 @@ const O = ({ nhan, gia, mau = 'text-navy' }) => (
 export default function HocSinhChiTiet({ em, mon = [] }) {
   /* Học bạ của em này, do CHÍNH MÔN dựng theo khuôn chung. Màn này không biết Toán
      chia chương ra sao — nó chỉ vẽ đúng khuôn ấy, nên thêm môn là thêm một tab. */
-  const [monMa] = useState(mon[0]?.ma);
+  const [monMa, setMonMa] = useState(mon[0]?.ma);
+  const daTuChon = useRef(false);
   const m = mon.find((x) => x.ma === monMa) || mon[0];
   const [hb, setHb] = useState(null);
   const [rows, setRows] = useState('loading');
@@ -58,13 +60,26 @@ export default function HocSinhChiTiet({ em, mon = [] }) {
   useEffect(() => {
     let song = true;
     setHb(null); setRows('loading'); setLocDang(''); setTab('tong');
-    m?.hocBaCuaEm(em.uid).then((x) => song && setHb(x)).catch(() => song && setHb({ quyen: [] }));
+    m?.hocBaCuaEm(em.uid).then((x) => {
+      if (!song) return;
+      /* Mở môn em CÓ học. Em lớp 1 chỉ học Tiếng Anh mà màn mở sẵn Toán thì cô thấy
+         "Em chưa có bài nào được ghi" và tưởng em chưa học gì. Chỉ tự chuyển MỘT lần
+         (lúc vừa mở em) — cô bấm sang môn trống thì phải ở yên đó. */
+      const khac = mon.find((x2) => x2.ma !== m.ma);
+      if (!daTuChon.current && khac && !(x?.quyen || []).some((h) => h.daBatDau)) {
+        daTuChon.current = true;
+        setMonMa(khac.ma);
+        return;
+      }
+      daTuChon.current = true;
+      setHb(x);
+    }).catch(() => song && setHb({ quyen: [] }));
     m?.nhatKyCuaEm(em.uid, 200).then((r) => song && setRows(r)).catch(() => song && setRows([]));
     return () => { song = false; };
-  }, [em.uid, m]);
+  }, [em.uid, m, mon]);
 
   const dsHocBa = hb?.quyen || [];
-  const td = hb?.trinhDo;
+  const td = hb?.trinhDo || { quyen: null, tongBaiDat: 0, tongChuongMaster: 0, bacChuDe: null };
   const cd = hb?.chuDe;
 
   /* Thời gian học tính TẠI ĐÂY từ nhật ký, cùng một công thức với sổ phụ huynh
@@ -94,10 +109,26 @@ export default function HocSinhChiTiet({ em, mon = [] }) {
 
   if (!hb) return <p className="card text-mute">Đang mở học bạ của em…</p>;
 
-  const TAB = [['tong', 'Tổng quan'], ['lop', 'Theo lớp'], ['chude', 'Theo chủ đề'], ['nhatky', 'Nhật ký']];
+  /* "Theo chủ đề" là ma trận dạng bài của Toán — môn nào không nộp `chuDe` thì
+     không hiện tab ấy, đừng để cô bấm vào một màn trống. */
+  const TAB = [['tong', 'Tổng quan'], ['bieudo', 'Biểu đồ'], ['lop', 'Theo lớp'],
+    ...(cd ? [['chude', 'Theo chủ đề']] : []), ['nhatky', 'Nhật ký']];
 
   return (
     <>
+      {/* Chọn MÔN — học bạ, nhật ký của mỗi môn do chính môn ấy dựng. Biểu đồ thì
+          vẽ cả hai môn trên cùng một trục nên không đổi theo nút này. */}
+      {mon.length > 1 && tab !== 'bieudo' && (
+        <div className="mb-2 flex gap-1.5">
+          {mon.map((x) => (
+            <button key={x.ma} onClick={() => setMonMa(x.ma)}
+              className={`flex-1 rounded-xl border-[1.5px] px-2 py-1.5 text-[13px] font-bold ${
+                x.ma === m?.ma ? 'border-navy bg-navy text-white' : 'border-line bg-white text-navy'}`}>
+              {x.bieuTuong} {x.ten}
+            </button>
+          ))}
+        </div>
+      )}
       <div className="mb-3 flex flex-wrap gap-1.5">
         {TAB.map(([id, ten]) => (
           <button key={id} onClick={() => setTab(id)}
@@ -165,6 +196,9 @@ export default function HocSinhChiTiet({ em, mon = [] }) {
         </>
       )}
 
+      {/* ══════════ BIỂU ĐỒ — cả hai môn, toàn bộ nhật ký ══════════ */}
+      {tab === 'bieudo' && <BieuDoHocSinh uid={em.uid} />}
+
       {/* ══════════ THEO LỚP · CHƯƠNG · BÀI ══════════ */}
       {tab === 'lop' && dsHocBa.map((h) => {
         const bung = moQuyen === h.ma;
@@ -176,7 +210,8 @@ export default function HocSinhChiTiet({ em, mon = [] }) {
                 <b className="block text-[14.5px] leading-snug text-navy">{h.ten}</b>
                 <span className="text-[12px] text-mute">
                   {h.daBatDau
-                    ? `${h.datBai}/${h.tongBai} bài · master ${h.masterChuong}/${h.tongChuong} chương · ${h.huyHieu} huy hiệu`
+                    ? `${h.datBai}/${h.tongBai} bài · master ${h.masterChuong}/${h.tongChuong} chương`
+                      + (Array.isArray(h.huyHieu) ? '' : ` · ${h.huyHieu} huy hiệu`)
                     : 'chưa mở quyển này'}
                 </span>
               </span>

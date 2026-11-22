@@ -40,6 +40,8 @@ export const VIEC = {
  * đạo ở đó thì bé bị ngắt mạch liên tục. Ba lần liền thì bé không tự thoát ra
  * được bằng cách thử lại nữa.
  */
+export const saiLienTiepMac = (nc) => layNguong(boNguong(), 'NG09', nc);
+/* Hằng chụp bộ của phiên — cho cổng và chỗ chỉ HIỂN THỊ. Quyết định dùng hàm trên. */
 export const SAI_LIEN_TIEP_MAC = layNguong(boNguong(), 'NG09');
 
 /**
@@ -59,7 +61,7 @@ export function viecTiepCuaNut(ho, nc = {}) {
 
   /* ĐANG MẮC xét TRƯỚC mức thạo, và cố ý: bé có thể có P(L) tàm tạm mà vẫn vừa
      sai ba câu liền — lúc ấy con số trung bình không phải thứ đáng nghe. */
-  if (sai >= SAI_LIEN_TIEP_MAC) {
+  if (sai >= saiLienTiepMac(nc)) {
     return { viec: VIEC.phuDao, p, vi_sao: `sai ${sai} lần liên tiếp` };
   }
   if (p === null) return { viec: VIEC.tiep, p, vi_sao: 'chưa có số liệu' };
@@ -91,7 +93,7 @@ export function viecTiepCuaBai(mucThao, maNutDs = []) {
   const tung = ds.map((ma) => {
     const p = mucThaoCua(mucThao, ma);
     const ho = mucThao?.[ma] ?? mucThao?.[encodeURIComponent(ma)] ?? {};
-    return { ma, ...viecTiepCuaNut({ ...ho, p }) };
+    return { ma, ...viecTiepCuaNut({ ...ho, p }, { nut: ma }) };
   });
 
   const mac = tung.filter((x) => x.viec === VIEC.phuDao);
@@ -127,10 +129,11 @@ export function viecTiepCuaBai(mucThao, maNutDs = []) {
  * chưa vững (mất cả một mắt xích, và mắt xích ấy đỡ cho những bài sau).
  */
 /** NG15 · bài phải có ít nhất ngần này nút thì "vượt ải" mới có nghĩa. */
+export const nutToiThieuVuotAi = (nc) => layNguong(boNguong(), 'NG15', nc);
 export const NUT_TOI_THIEU_VUOT_AI = layNguong(boNguong(), 'NG15');
 
 export function duocVuotAi(mucThao, maNutDs, daDat,
-                           { toiThieuNut = NUT_TOI_THIEU_VUOT_AI } = {}) {
+                           { toiThieuNut = nutToiThieuVuotAi() } = {}) {
   if (!daDat) return false;
   const ds = [...new Set((maNutDs || []).filter(Boolean))];
   if (ds.length < toiThieuNut) return false;
@@ -153,11 +156,12 @@ export function duocVuotAi(mucThao, maNutDs, daDat,
  * Nhãn thì dịch được thành câu người, và câu người thì đọc to lên cũng không sao.
  */
 /** NG13 · nghỉ quá ngần này ngày thì coi là có nguy cơ quên. */
+export const soNgayCoiLaQuen = (nc) => layNguong(boNguong(), 'NG13', nc);
 export const NGAY_COI_LA_QUEN = layNguong(boNguong(), 'NG13');
 
 export function vectorS({ mucThao, maNutDs = [], dinhDang = null, thich = null,
                           bayGio = Date.now(),
-                          ngayCoiLaQuen = NGAY_COI_LA_QUEN } = {}) {
+                          ngayCoiLaQuen = soNgayCoiLaQuen() } = {}) {
   const ds = [...new Set((maNutDs || []).filter(Boolean))];
   const ho = ds
     .map((ma) => mucThao?.[ma] ?? mucThao?.[encodeURIComponent(ma)])

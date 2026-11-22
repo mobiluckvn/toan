@@ -29,7 +29,7 @@ RA = GOC / "web/public/content/nguong.json"
 
 # Mấy ngưỡng mang HAI con số thì soi theo trường nào — khớp `TRUONG_SO` của
 # `src/chung/lib/nguong.js`. Lệch ở đây là tệp chạy soi lỏng hơn mã.
-TRUONG_SO = {"NG05": ["slip", "guess"], "NG17": ["ti"]}
+TRUONG_SO = {"NG05": ["slip", "guess"], "NG17": ["ti"], "NG28": ["m1", "m2", "m3"]}
 
 
 def soi(ds: list[dict]) -> list[str]:
@@ -47,6 +47,14 @@ def soi(ds: list[dict]) -> list[str]:
     if g.get("NG08") is not None and g.get("NG07") is not None:
         if g["NG08"] > g["NG07"] - 0.20:
             loi.append(f"NG08: θ_yếu {g['NG08']} phải ≤ θ − 0,20 (θ = {g['NG07']})")
+    # Điểm tựa của hàm quên — cùng luật `soiNguong`: phải ≤ θ − 0,20.
+    if g.get("NG25") is not None and g.get("NG07") is not None:
+        if g["NG25"] > g["NG07"] - 0.20 + 1e-9:
+            loi.append(f"NG25: điểm tựa hàm quên {g['NG25']} phải ≤ θ − 0,20 (θ = {g['NG07']})")
+    # Lịch ôn phải giãn dần — cùng luật `soiNguong`.
+    lich = g.get("NG28")
+    if isinstance(lich, dict) and not (lich.get("m1", 0) < lich.get("m2", 0) < lich.get("m3", 0)):
+        loi.append(f"NG28: ba mốc ôn phải tăng dần — {lich!r}")
     for ma, truong in (("NG03", None), ("NG04", None), ("NG05", "slip"), ("NG05", "guess")):
         v = g.get(ma, {}).get(truong) if truong else g.get(ma)
         if isinstance(v, (int, float)) and v >= 0.5:

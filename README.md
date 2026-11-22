@@ -1,5 +1,47 @@
 # Kỹ Sư Nhí — Trang học tập thích ứng cho tiểu học
 
+## Đề tài luận văn thạc sĩ
+
+Hệ thống này là phần cài đặt và thực nghiệm của luận văn thạc sĩ:
+
+| | |
+|---|---|
+| **Tên đề tài** | Ứng dụng phương pháp học thích ứng hỗ trợ cá nhân hóa trong đào tạo tiếng Anh |
+| **Tên tiếng Anh** | Applying adaptive learning methods to support personalization in English language training |
+| **Học viên** | Vũ Trí Công |
+| **Giảng viên hướng dẫn** | **PGS. TS. Trần Đình Khang** |
+| **Đơn vị** | Trường Công nghệ Thông tin và Truyền thông, Đại học Bách khoa Hà Nội |
+| **Bảo vệ** | Hà Nội, 12/2026 |
+
+**Luận văn nghiên cứu những gì:**
+- **Đồ thị tri thức có quan hệ tiên quyết:** biểu diễn chương trình Tiếng Anh tiểu học (lớp 1–5) bằng đồ thị 1.195 đỉnh.
+- **Theo dõi tri thức Bayes có tính quên (BKT):** ước lượng mức nắm vững P(L) của người học ở từng đỉnh.
+- **Lan truyền ngược trên đồ thị:** khi người học sai nhiều lần, tìm đỉnh là *nguyên nhân* rồi dựng bài phụ đạo đúng chỗ đó.
+- **Sinh nội dung bằng mô hình ngôn ngữ có kiểm tra:** câu sinh ra phải qua bước soát theo vốn từ người học đã học.
+- **Ngưỡng nằm trong cấu hình:** mọi ngưỡng của hệ thống (θ, θ_yếu, số lần sai liên tiếp…) lưu trong bảng cơ sở dữ liệu, có đề xuất học từ dữ liệu và do chuyên gia duyệt trên màn hình quản lý.
+
+**Đối chiếu luận văn với mã nguồn:**
+
+| Trong luận văn | Ở mã nguồn |
+|---|---|
+| BKT có tính quên (mục 2.3.3, 3.4) | `web/functions/src/bkt.js` (`applyAttempt`, `quenDan`) |
+| Lan truyền tìm nút nguyên nhân (mục 2.3.4, 3.4.3) | `web/src/mon/tienganh/lib/lantruyen.js` |
+| Sáu tình trạng của nút và hàm chính sách (Bảng 3.9, mục 3.5) | `web/src/mon/tienganh/lib/zpd.js`, `chinhsach.js` |
+| Quản lý ngưỡng (mục 3.8, Bảng 4.7) | `web/functions/src/nguong.js`, `web/src/chung/components/BangNguong.jsx` |
+| Biểu đồ của cô giáo theo các hình 3.9, 3.10, 3.13, 3.14, 3.16 và mục 2.5 | `web/functions/src/bieuDo.js`, `web/src/chung/components/BieuDoHocSinh.jsx` |
+| Người học mô phỏng (Chương 4) | `web/tools/mo_phong/hoc_sinh_ao.mjs` |
+
+**Tài liệu luận văn** nằm ở [`docs/luan_van/`](docs/luan_van/):
+- bản luận văn mới nhất (`.docx` và bản xem thử `.pdf`);
+- bảng minh chứng ảnh chụp màn hình: [`MinhChung_ManHinh/BANG_MINH_CHUNG.md`](docs/luan_van/MinhChung_ManHinh/BANG_MINH_CHUNG.md);
+- gói số liệu mô phỏng (CSV/JSON) kèm hướng dẫn: [`MinhChung_ManHinh/goi_cho_claude_desktop/`](docs/luan_van/MinhChung_ManHinh/goi_cho_claude_desktop/HUONG_DAN_CHO_CLAUDE.md).
+
+> ⚠ **Mọi tài khoản học sinh trên bản chạy thật đều do tác giả tạo để thử nghiệm.** 30 em sinh bằng script mô phỏng mang cờ `moPhong` trong cơ sở dữ liệu. Số liệu Chương 4 là **dữ liệu mô phỏng**, không phải kết quả đo trên học sinh thật. Luận văn chưa đo hiệu quả dạy học với nhóm đối chứng; việc này thuộc hướng phát triển.
+
+> Bản gốc của hồ sơ bảo vệ nằm ở thư mục `HoSo_BaoVe_LuanVan_12-2026/` (ngoài repo). `docs/luan_van/` là bản chép để lưu trữ cùng mã nguồn; khi sửa thì sửa ở bản gốc rồi chép lại.
+
+---
+
 **MOBILUCK / code247.ai** · **hai môn · chín quyển · 462 bài · 713 video · 2 874 phép kiểm**
 
 | Môn | Quyển | Bài | Lối học |
